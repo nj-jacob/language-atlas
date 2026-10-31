@@ -1,7 +1,7 @@
 /* Grade 2 reading passages, shared by the two comprehension chapters (reading.js and thinking.js).
    Every passage is written for this site. Short sentences and everyday words, for Grade 2 readers.
    Each one carries what its questions need: facts ([question, answer, two wrong answers, words from the sentence that answers it]),
-   events in order, the main idea, the narrator, feelings to infer with the words that show them, and a prediction with its clue.
+   events in order, the main idea, the narrator (and the story told by someone else), feelings to infer with the words that show them, and a prediction with its clue.
    The answer checks keep their own answer key (tests/verify/grade2-reading.js), like a second marker. */
 (function () {
   'use strict';
@@ -15,6 +15,7 @@
       order: ['ran across the field', 'string slipped out', 'landed in the top', 'got a long rake', 'tugged the kite down'],
       main: ['Kai' + AP + 's kite gets stuck in a tree, and his grandpa helps get it down.', 'Pine trees are tall.', 'Kai has a grandpa.'],
       infer: [['How does Kai feel at the end?', 'happy', 'angry', 'Kai hugged it'], ['How does Kai feel when the string slips?', 'worried', 'sleepy', 'slipped out of his hand!']],
+      alt: { who: 'Kai', right: 'I ran across the field with my new kite.', wrong: ['Kai ran across the field with his new kite.', 'They ran across the field with a new kite.'] },
       predict: { upTo: 4, right: 'Someone will help Kai get the kite down.', wrong: ['Kai will fly to the moon.', 'The tree will fall over.'], clue: 'landed in the top of a tall pine tree' } },
     beans: { title: 'My Bean Plant', kind: 'journal entry', pov: 'first', purpose: 'to enjoy a story',
       lines: ['# Monday', 'Today I planted a bean seed in a cup of soil. I gave it a little water.', '# Thursday', 'A tiny green shoot poked out of the soil! I put the cup by the window.',
