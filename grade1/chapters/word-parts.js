@@ -53,7 +53,8 @@
       hint: 'Find the base word first. Then the ending.', explain: W.sum([[base, 'base'], [suf, 'suffix']]), meta: { k: 'g1-build-word', word: base + suf } };
   }
   function compound(lv) {
-    var c = R.pick(COMPOUND), other = R.pick(COMPOUND.filter(function (x) { return x !== c; }));
+    var c = R.pick(COMPOUND), real = COMPOUND.map(function (x) { return x[0] + x[1]; });
+    var other = R.pick(COMPOUND.filter(function (x) { return x !== c && real.indexOf(c[0] + x[1]) < 0 && real.indexOf(x[0] + c[1]) < 0; }));
     return Q.one('Join the two words. What new word do you get?', c[0] + c[1], [c[0] + other[1], other[0] + c[1]].slice(0, lv > 1 ? 2 : 1), { fig: W.tile(c[0], 'base') + ' + ' + W.tile(c[1], 'base'),
       hint: 'Put the second word right after the first.', explain: W.sum([[c[0], 'base'], [c[1], 'base']]), meta: { k: 'g1-compound', a: c[0], b: c[1] } });
   }
