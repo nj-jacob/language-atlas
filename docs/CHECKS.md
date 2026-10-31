@@ -2,7 +2,7 @@
 
 The checks in `tests/run.js` stand in for a careful human tester. They run:
 - on every pull request (workflow **Checks**);
-- before every publish (workflow **Publish to Firebase**). If any check fails, nothing is published and the live site stays as it was.
+- before every publish (workflow **Publish**). If any check fails, nothing is published and the live site stays as it was.
 
 ## What they check
 
