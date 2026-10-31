@@ -1,9 +1,8 @@
-# Publishes the site to Firebase (ontario-language-atlas.web.app) every time main changes,
-# but only after the automatic checks (tests/run.js) pass.
-# The site lives in the Math Atlas Firebase project (ontario-math-atlas), so both sites can share one family sign-in.
-# It publishes ONLY the Language Atlas web pages ("--only hosting"). It never touches Math Atlas or its saved data.
-# Needs one repository secret, FIREBASE_SERVICE_ACCOUNT (see SETUP.md).
-name: Publish to Firebase
+# Language pages are published as part of Atlas (ontario-math-atlas.web.app/language/), by the math-atlas repository.
+# Every time main changes, this runs the automatic checks (tests/run.js). Only if they pass does it ask math-atlas
+# to publish again; math-atlas then copies this repository's main into /language/ and publishes the whole site.
+# Needs one repository secret, ATLAS_TOKEN (see SETUP.md).
+name: Publish
 on:
   push:
     branches: [main]
@@ -25,27 +24,16 @@ jobs:
       - name: Run the checks
         working-directory: tests
         run: npm test
-  deploy:
+  publish:
     needs: checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Write the service account key
-        id: key
+      - name: Ask math-atlas to publish Atlas with these Language pages
         env:
-          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          TOKEN: ${{ secrets.ATLAS_TOKEN }}
         run: |
-          if [ -z "$SA" ]; then echo "::warning::FIREBASE_SERVICE_ACCOUNT secret is not set yet, so nothing was published."; exit 0; fi
-          printf '%s' "$SA" > "$RUNNER_TEMP/sa.json"
-          echo "ready=yes" >> "$GITHUB_OUTPUT"
-      - name: Publish the web pages
-        if: steps.key.outputs.ready == 'yes'
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
-        run: npx --yes firebase-tools@15 deploy --only hosting --project ontario-math-atlas --non-interactive
-      - name: Remove the key
-        if: always()
-        run: rm -f "$RUNNER_TEMP/sa.json"
+          if [ -z "$TOKEN" ]; then echo "::warning::ATLAS_TOKEN secret is not set yet, so nothing was published."; exit 0; fi
+          curl --fail-with-body -sS -X POST \
+            -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/nj-jacob/math-atlas/dispatches \
+            -d '{"event_type":"language-updated"}'
