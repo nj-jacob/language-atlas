@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ontario-language-atlas",
+    "public": ".",
+    "ignore": ["firebase.json", "*.md", "docs/**", "tests/**", "**/.*", "**/node_modules/**", "**/*.log"],
+    "cleanUrls": false,
+    "headers": [
+      { "source": "**/*.@(js|css)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+    ]
+  }
+}

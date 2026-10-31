@@ -1,0 +1,12 @@
+{
+  "name": "language-atlas-checks",
+  "private": true,
+  "description": "Automatic checks for Language Atlas. Run: npm test (from this folder).",
+  "scripts": {
+    "test": "node run.js",
+    "quick": "node run.js --quick"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

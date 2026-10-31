@@ -1,0 +1,167 @@
+/* Language Atlas: the one look for every page. Same colours, fonts and shapes as Math Atlas, so the two sites feel like one family.
+   Every page loads it:  <link rel="stylesheet" href="../assets/atlas-theme.css">
+   Grades never add their own colours or fonts (a check fails if they do). The lesson engine's own layout lives in engine/engine.css
+   and uses only the colours named here. */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap');
+
+/* ---------- 1. Colours and type ---------- */
+:root{
+  --paper:#f4f6f9; --card:#ffffff; --ink:#132039; --ink2:#55627a; --ink3:#7b879c; --line:#dfe5ee; --line2:#cdd5e1;
+  --accent:#0b6e78; --accent2:#0a5961; --accent-ink:#ffffff; --tint:#e8f3f4; --hi:#f6d36b; --good:#17804a; --bad:#b4283f; --focus:#0b6e78;
+  /* the four strands of the 2023 Language curriculum */
+  --sa:#c25a12; --sb:#2f62c4; --sc:#7646bf; --sd:#1d8550;
+  --strand:var(--accent);
+  --display:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --shadow:0 1px 2px rgba(19,32,57,.05),0 8px 24px rgba(19,32,57,.06);
+  --radius:16px;
+  color-scheme:light;
+}
+[data-strand="A"]{--strand:var(--sa)}
+[data-strand="B"]{--strand:var(--sb)}
+[data-strand="C"]{--strand:var(--sc)}
+[data-strand="D"]{--strand:var(--sd)}
+
+/* ---------- 2. Page ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+html.bigtext body{font-size:21px;line-height:1.75;letter-spacing:.01em;word-spacing:.06em}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.01em;margin:0;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.5rem;font-weight:700}
+h3{font-size:1.1rem;font-weight:700;margin:18px 0 6px}
+p{margin:.7em 0;max-width:65ch}
+.lede{font-size:1.15rem;color:var(--ink2)}
+.t2{color:var(--ink2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:8px 12px;z-index:90;border-radius:6px}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+::selection{background:var(--tint)}
+main{padding:28px 0 56px}
+main:focus{outline:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.wrap.wide{max-width:1140px}
+.crumb{font-size:.9rem;margin:0 0 10px}
+.crumb a{color:var(--ink2)}
+
+/* ---------- 3. Header (drawn by atlas-header.js) ----------
+   Computer: ‹ All grades | Grade N Language Atlas | Chapters  Check-up  My progress | Math Atlas, then Text and Grown-up view.
+   Phone:    ‹ All grades ........ Math Atlas
+             Grade N Language Atlas
+             Chapters  Check-up  My progress
+             Text  Grown-up view */
+.bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;grid-template-areas:"home brand nav sister" "tools tools tools tools";align-items:center;gap:6px 14px;padding-top:10px;padding-bottom:10px;max-width:1140px}
+.bar .athome,.bar .sister{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:99px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
+.bar .athome{grid-area:home}
+.bar .sister{grid-area:sister;justify-self:end;color:var(--accent)}
+.bar .athome:hover,.bar .sister:hover{border-color:var(--ink2);background:var(--paper)}
+.bar .athome span,.bar .sister span{font-size:1.1rem;line-height:1}
+.brand{grid-area:brand;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:-.01em;white-space:nowrap}
+.brand i{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;font-style:normal;font-size:15px;font-weight:800}
+.bar nav{grid-area:nav;display:flex;justify-content:flex-end;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--ink2);text-decoration:none;font-weight:700;font-size:.93rem;padding:8px 10px;border-radius:8px;white-space:nowrap;line-height:1.2}
+.bar nav a:hover,.bar nav a[aria-current]{color:var(--ink);background:var(--paper)}
+.bar .tools{grid-area:tools;display:flex;flex-wrap:wrap;gap:6px}
+.tools button{font:inherit;font-size:.8rem;font-weight:700;color:var(--ink2);background:var(--card);border:1px solid var(--line2);border-radius:99px;padding:3px 12px;min-height:34px;cursor:pointer;white-space:nowrap}
+.tools button:hover{color:var(--ink);border-color:var(--ink2)}
+.tools button[aria-pressed="true"]{background:var(--tint);color:var(--accent2);border-color:var(--accent)}
+#adultb[aria-pressed="true"]{color:#fff;background:var(--ink);border-color:var(--ink)}
+.bar.home .wrap{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand nav sister"}
+@media (max-width:980px){
+  .bar .wrap{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"home brand sister" "nav nav nav" "tools tools tools"}
+  .bar nav{justify-content:flex-start;margin:0 -6px}
+}
+@media (max-width:640px){
+  .bar{position:static}
+  .bar .wrap{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"home sister" "brand brand" "nav nav" "tools tools";gap:8px 10px}
+  .bar.home .wrap{grid-template-areas:"brand sister"}
+  .bar .athome{justify-self:start}
+  .brand{font-size:1.2rem}
+  .bar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:6px;margin:2px 0 0;overflow:visible}
+  .bar nav a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:6px 4px;font-size:.88rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+  .bar nav a:hover,.bar nav a[aria-current]{background:var(--tint)}
+}
+
+/* ---------- 4. Buttons and inputs ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-weight:700;font-size:.95rem;line-height:1.2;min-height:44px;padding:10px 18px;border-radius:10px;
+  border:1.5px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.btn:hover{background:var(--accent2);border-color:var(--accent2)}
+.btn.alt{background:var(--card);color:var(--ink);border-color:var(--line2)}
+.btn.alt:hover{border-color:var(--ink2);background:var(--card)}
+.btn[disabled]{opacity:.55;cursor:default}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+input[type=text]{font:inherit;font-size:1.05rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line2);border-radius:10px;padding:8px 12px;min-height:46px;max-width:100%}
+
+/* ---------- 5. Cards, sections and notes ---------- */
+.card,.sec,.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.sec{padding:20px 20px 12px;margin:22px 0}
+.sec>h2{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.n{flex:none;display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 8px;border-radius:10px;background:var(--ink);color:#fff;font-size:1rem;font-weight:800}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px 16px;margin:18px 0;font-size:.95rem}
+.note p{margin:.3em 0}
+.key,.mistake,.coach{border-radius:12px;padding:10px 14px;margin:14px 0;font-size:.97rem}
+.key{background:var(--tint);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line))}
+.mistake{background:#fdf3f4;border:1px solid #f0d0d5}
+.coach{background:var(--paper);border:1px solid var(--line2)}
+.key b.t,.mistake b.t,.coach b.t{display:block;font-family:var(--display);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.key b.t{color:var(--accent2)} .mistake b.t{color:var(--bad)} .coach b.t{color:var(--ink2)}
+.key p,.mistake p,.coach p{margin:.25em 0}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--ink2);text-decoration:none}
+.pill::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--strand)}
+.codes{font-size:.8rem;color:var(--ink2);font-weight:700}
+/* Coaching notes and "common mistake" boxes are for the parent or tutor only */
+html:not(.adult) .adult-only{display:none!important}
+html.adult .adult-only{position:relative;border-style:dashed;padding-top:16px;margin-top:22px}
+html.adult .adult-only::after{content:"Grown-up view";position:absolute;top:-11px;right:14px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 10px;border-radius:99px;background:var(--ink);color:#fff}
+
+/* ---------- 6. Home pages: hero, chapter cards, grade list ---------- */
+.hero{padding:8px 0 4px}
+.eyebrow{margin:0 0 10px;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin:18px 0}
+.card{display:flex;flex-direction:column;gap:6px;padding:16px;text-decoration:none;color:var(--ink);transition:box-shadow .15s,border-color .15s}
+a.card:hover{border-color:var(--line2);box-shadow:0 2px 4px rgba(19,32,57,.06),0 14px 32px rgba(19,32,57,.10)}
+.card .no{font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1;color:var(--strand)}
+.card h2{font-size:1.25rem}
+.card .sub{font-style:italic;color:var(--ink2);font-size:.95rem;margin:0}
+.card .desc{font-size:.92rem;margin:0;color:var(--ink2)}
+.card .meta{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:.85rem;color:var(--ink2)}
+.card.soon{opacity:.6;box-shadow:none;border-style:dashed}
+.cards.grades{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.card.span{grid-column:1/-1}
+.done{color:var(--good);font-weight:700}
+.start{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:10px 16px;margin:16px 0}
+.start p{margin:.35em 0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+
+/* ---------- 7. Chapter pages ---------- */
+.chead{margin-bottom:8px}
+.chead .num{display:inline-block;padding:2px 10px;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:10px}
+.chead h1{margin:6px 0 8px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.jump a{font-weight:700;font-size:.92rem;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line2);border-radius:99px;padding:6px 14px}
+.jump a:hover{border-color:var(--strand)}
+.jump a[aria-current="page"]{background:var(--tint);border-color:var(--accent)}
+.pn{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px}
+.pn a{flex:1 1 220px;display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;text-decoration:none;color:var(--ink)}
+.pn a small{display:block;color:var(--ink2)}
+.pn a.nx{text-align:right}
+.pn a:hover{border-color:var(--accent)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;min-width:100%;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:6px 12px;text-align:left}
+th{background:var(--paper);font-family:var(--display)}
+.bar-h{height:12px;border-radius:99px;background:var(--line);overflow:hidden;display:flex}
+.bar-h i{display:block;height:100%;background:var(--accent)}
+
+/* ---------- 8. Footer ---------- */
+footer.site{background:var(--card);border-top:1px solid var(--line);padding:16px 0;font-size:.9rem;color:var(--ink2)}
+footer.site p{margin:.2em 0;max-width:none}
+
+@media (max-width:480px){body{font-size:17px}.sec{padding:16px 14px 8px}th,td{padding:4px 6px}table{font-size:.88rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{.bar,.jump,.pn,footer.site,.btn,.crumb{display:none!important}body{background:#fff}.sec{border:1px solid #999;box-shadow:none;break-inside:avoid-page}}

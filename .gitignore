@@ -1,0 +1,5 @@
+*.log
+.firebase/
+node_modules/
+tests/node_modules/
+tests/shots/

@@ -1,0 +1,59 @@
+# Runs the automatic checks (tests/run.js) on every pull request and every push to a branch.
+# A pull request shows a red cross if anything is broken. See docs/CHECKS.md.
+# When the checks pass on a pull request, a private preview of the site is published (for 7 days) and its link is
+# posted on the pull request, so Noel can try the change before it goes live. See SETUP.md.
+name: Checks
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]   # main is checked by the publish workflow before it publishes
+  workflow_dispatch:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install the browser used by the checks
+        working-directory: tests
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Run the checks
+        working-directory: tests
+        run: npm test
+
+  preview:
+    needs: checks
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Write the service account key
+        id: key
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$SA" ]; then echo "::notice::FIREBASE_SERVICE_ACCOUNT secret is not set yet, so no preview was made."; exit 0; fi
+          printf '%s' "$SA" > "$RUNNER_TEMP/sa.json"
+          echo "ready=yes" >> "$GITHUB_OUTPUT"
+      - name: Publish a private preview and post its link
+        if: steps.key.outputs.ready == 'yes'
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          npx --yes firebase-tools@15 hosting:channel:deploy "pr-$PR" --expires 7d --project ontario-math-atlas --json > preview.json
+          URL=$(jq -r '.result[].url' preview.json | head -n 1)
+          BODY="Preview of this pull request (works for 7 days): $URL"
+          gh pr comment "$PR" --edit-last --body "$BODY" || gh pr comment "$PR" --body "$BODY"
+      - name: Remove the key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/sa.json"

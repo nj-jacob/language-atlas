@@ -1,0 +1,51 @@
+# Publishes the site to Firebase (ontario-language-atlas.web.app) every time main changes,
+# but only after the automatic checks (tests/run.js) pass.
+# The site lives in the Math Atlas Firebase project (ontario-math-atlas), so both sites can share one family sign-in.
+# It publishes ONLY the Language Atlas web pages ("--only hosting"). It never touches Math Atlas or its saved data.
+# Needs one repository secret, FIREBASE_SERVICE_ACCOUNT (see SETUP.md).
+name: Publish to Firebase
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency: deploy
+jobs:
+  # The automatic checks run first. If any fail, nothing is published and the live site stays as it was.
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install the browser used by the checks
+        working-directory: tests
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Run the checks
+        working-directory: tests
+        run: npm test
+  deploy:
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Write the service account key
+        id: key
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$SA" ]; then echo "::warning::FIREBASE_SERVICE_ACCOUNT secret is not set yet, so nothing was published."; exit 0; fi
+          printf '%s' "$SA" > "$RUNNER_TEMP/sa.json"
+          echo "ready=yes" >> "$GITHUB_OUTPUT"
+      - name: Publish the web pages
+        if: steps.key.outputs.ready == 'yes'
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
+        run: npx --yes firebase-tools@15 deploy --only hosting --project ontario-math-atlas --non-interactive
+      - name: Remove the key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/sa.json"
