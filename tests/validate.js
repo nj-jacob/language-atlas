@@ -6,7 +6,7 @@ window.__validate = function (q) {
   const bad = [], strip = window.__H.strip;
   if (!q || typeof q !== 'object') return ['not a question object'];
   if (typeof q.q !== 'string' || !strip(q.q)) bad.push('no question text');
-  const texts = [q.q, q.fig, q.hint, q.explain, q.prompt, q.answerText].concat(q.options || [], q.items || [], q.steps || [], q.tiles || []).concat((q.pairs || []).flat()).concat(q.why ? q.why.options : []);
+  const texts = [q.q, q.fig, q.hint, q.explain, q.prompt, q.answerText].concat(q.options || [], q.items || [], q.parts || [], q.steps || [], q.tiles || []).concat((q.pairs || []).flat()).concat(q.why ? q.why.options : []);
   texts.forEach(t => { if (t != null && /\bundefined\b|\bNaN\b|\[object Object\]|\bnull\b/.test(strip(t))) bad.push('text shows undefined/NaN/null: ' + strip(t).slice(0, 60)); });
   const uniq = a => new Set(a.map(x => /<svg|<img/.test(String(x)) ? String(x) : strip(x))).size === a.length;
   const idx = (j, n) => Number.isInteger(j) && j >= 0 && j < n;
@@ -18,6 +18,7 @@ window.__validate = function (q) {
       break; }
     case 'pick': if (!Array.isArray(q.options) || !Array.isArray(q.answer) || !q.answer.length) bad.push('pick needs options and a non-empty answer list'); else { if (q.answer.some(j => !idx(j, q.options.length))) bad.push('pick answer out of range'); if (q.answer.length === q.options.length) bad.push('pick: every option is right'); if (!uniq(q.options)) bad.push('pick options repeat'); } break;
     case 'order': if (!Array.isArray(q.items) || q.items.length < 2) bad.push('order needs 2+ items'); else if (!uniq(q.items)) bad.push('order items repeat'); break;
+    case 'build': if (!Array.isArray(q.parts) || !Array.isArray(q.answer) || q.answer.length < 2) bad.push('build needs parts and an answer of 2+ parts'); else { if (q.answer.some(j => !idx(j, q.parts.length)) || new Set(q.answer).size !== q.answer.length) bad.push('build answer is broken'); if (q.parts.length <= q.answer.length) bad.push('build needs at least one part that is not used'); if (!uniq(q.parts)) bad.push('build parts repeat'); } break;
     case 'match': if (!Array.isArray(q.pairs) || q.pairs.length < 2) bad.push('match needs 2+ pairs'); else if (!uniq(q.pairs.map(p => p[0])) || !uniq(q.pairs.map(p => p[1]))) bad.push('match cards repeat'); break;
     case 'tf': if (typeof q.answer !== 'boolean') bad.push('tf answer must be true or false'); if (q.why && !(Array.isArray(q.why.options) && idx(q.why.answer, q.why.options.length) && uniq(q.why.options))) bad.push('tf why is broken'); break;
     default: bad.push('unknown question type ' + q.type);

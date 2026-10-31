@@ -1,0 +1,143 @@
+/* Grade 3 demo chapter: the prefixes un- (not) and re- (again).
+   Ontario 2023 Language, Grade 3:
+   B2.3 "use developing knowledge of the meanings of words and morphemes (i.e., bases, prefixes, and suffixes) to read and spell words"
+   B2.4 "... use morphological knowledge to analyze and understand new words in context"
+   Built to show, not tell: word-part tiles, a picture cue for each prefix, and very short sentences.
+   All word lists are written for this site. Answer checks: tests/verify/grade3.js. */
+(function () {
+  'use strict';
+  var R = Atlas.R, Q = Atlas.Q, W = Atlas.W, step = W.step;
+
+  /* base words that take each prefix, with the meaning it makes */
+  var P = {
+    un: { icon: 'not', bases: ['happy', 'kind', 'safe', 'fair', 'sure', 'tidy', 'well', 'even', 'true', 'clear'], mean: function (b) { return 'not ' + b; } },
+    re: { icon: 'again', bases: ['paint', 'read', 'fill', 'build', 'write', 'tell', 'play', 'pack', 'heat', 'wash', 'visit', 'check'], mean: function (b) { return b + ' again'; } }
+  };
+  /* words that start with the same letters but have no prefix: cover the letters and no word is left */
+  var LOOKALIKE = { un: ['uncle', 'under'], re: ['ready', 'reach', 'red', 'real'] };
+  var OTHER = { un: 're', re: 'un' };
+
+  function pre(p) { return p || R.pick(['un', 're']); }
+  function parts(p, b) { return [[p, 'prefix'], [b, 'base']]; }
+  function wrongMeanings(p, b) { return [P[OTHER[p]].mean(b), b]; }
+
+  /* ---------- question makers (each sets meta.k for its answer check) ---------- */
+  /* What does unhappy mean? Level 1 shows the parts; later levels show only the word. */
+  function meaning(lv, p0) {
+    var p = pre(p0), b = R.pick(P[p].bases), word = p + b, o = R.mc(P[p].mean(b), wrongMeanings(p, b).slice(0, lv > 1 ? 2 : 1));
+    return { q: 'What does <b>' + word + '</b> mean?', fig: lv > 1 ? W.tile(word) : W.sum(parts(p, b)), type: 'mc', options: o.options, answer: o.answer,
+      prompt: 'Cover <b>' + p + '</b>. What word is left?', hint: 'Cover the prefix. Read the base word.',
+      explain: W.means(P[p].icon, '<b>' + p + '-</b> means <b>' + P[p].icon + '</b>'),
+      steps: ['Cover <b>' + p + '</b>. The base word is <b>' + b + '</b>.', '<b>' + p + '-</b> means <b>' + P[p].icon + '</b>.', 'So <b>' + word + '</b> means <b>' + P[p].mean(b) + '</b>.'],
+      meta: { k: 'g3-meaning', word: word } };
+  }
+  /* Which word means "not kind"? */
+  function whichWord(lv, p0) {
+    var p = pre(p0), b = R.pick(P[p].bases), other = R.pick(P[p].bases.filter(function (x) { return x !== b; }));
+    var tiles = R.shuffle([p + b, b, lv > 1 ? OTHER[p] + R.pick(P[OTHER[p]].bases) : p + other]);
+    return { q: 'Which word means <b>' + P[p].mean(b) + '</b>?', fig: lv > 1 ? '' : W.means(P[p].icon, P[p].mean(b)), type: 'tap', tiles: tiles, answer: tiles.indexOf(p + b),
+      hint: 'Which prefix means ' + P[p].icon + '?', explain: W.sum(parts(p, b)),
+      meta: { k: 'g3-which-word', mean: P[p].mean(b) } };
+  }
+  /* match three words to what they mean */
+  function matchUp() {
+    var list = [['un', R.pick(P.un.bases)], ['re', R.pick(P.re.bases)]], p = pre();
+    var third = R.pick(P[p].bases.filter(function (b) { return list.every(function (x) { return x[1] !== b; }); }));
+    list.push([p, third]);
+    return { q: 'Match each word to what it means.', type: 'match', pairs: list.map(function (x) { return [x[0] + x[1], P[x[0]].mean(x[1])]; }),
+      hint: 'un- means not. re- means again.', explain: 'Cover the prefix, read the base word, then add "not" or "again".',
+      meta: { k: 'g3-match' } };
+  }
+  /* "Refill means not fill." True or false? Then why. */
+  function tfMeaning() {
+    var p = pre(), b = R.pick(P[p].bases), right = R.int(0, 1) === 1, said = right ? P[p].mean(b) : P[OTHER[p]].mean(b);
+    return { q: Q.name() + ' says:', fig: W.sent('<b>' + p + b + '</b> means <b>' + said + '</b>.'), type: 'tf', answer: right,
+      why: { options: ['un- means not.', 're- means again.'], answer: p === 'un' ? 0 : 1 },
+      hint: 'Look at the prefix. What does it mean?', explain: '<b>' + p + b + '</b> means <b>' + P[p].mean(b) + '</b>.',
+      meta: { k: 'g3-tf', word: p + b, said: said } };
+  }
+  /* Build the word that means "paint again" from part tiles (one prefix and one base are not needed) */
+  function build(lv, p0) {
+    var p = pre(p0), b = R.pick(P[p].bases), extra = R.pick(P[p].bases.filter(function (x) { return x !== b; }));
+    var list = [W.tile(p, 'prefix'), W.tile(OTHER[p], 'prefix'), W.tile(b, 'base')].concat(lv > 1 ? [W.tile(extra, 'base')] : []);
+    return { q: 'Build the word that means <b>' + P[p].mean(b) + '</b>.', fig: lv > 1 ? '' : W.means(P[p].icon, P[p].mean(b)), type: 'build',
+      parts: list, answer: [0, 2], hint: 'Prefix first, then the base word.', explain: W.sum(parts(p, b)),
+      steps: ['Which prefix means <b>' + P[p].icon + '</b>? <b>' + p + '</b>.', 'Put it in front of <b>' + b + '</b>.'],
+      meta: { k: 'g3-build', mean: P[p].mean(b) } };
+  }
+  /* Which prefix makes "not tidy"? */
+  function addPrefix(lv, p0) {
+    var p = pre(p0), b = R.pick(P[p].bases), tiles = [W.tile('un', 'prefix'), W.tile('re', 'prefix')];
+    return { q: 'Which prefix makes a word that means <b>' + P[p].mean(b) + '</b>?', fig: '<span class="wsum">' + W.tile('?', 'prefix') + W.tile(b, 'base') + '</span>', type: 'tap', tiles: tiles, answer: p === 'un' ? 0 : 1,
+      prompt: 'Does it mean <b>not</b>, or <b>again</b>?', hint: 'un- means not. re- means again.', explain: W.sum(parts(p, b)),
+      meta: { k: 'g3-add', mean: P[p].mean(b) } };
+  }
+  /* Which is the base word of unkind? */
+  function baseWord() {
+    var p = pre(), b = R.pick(P[p].bases), tiles = R.shuffle([b, p, p + b]);
+    return { q: 'What is the <b>base word</b> in <b>' + p + b + '</b>?', type: 'tap', tiles: tiles, answer: tiles.indexOf(b),
+      hint: 'Cover the prefix. What word is left?', explain: W.sum(parts(p, b)),
+      meta: { k: 'g3-base', word: p + b } };
+  }
+  /* Pick every word with the prefix: some words only look like they have one */
+  function realPrefix() {
+    var p = pre(), real = R.some(P[p].bases, R.int(1, 2)).map(function (b) { return p + b; }), fake = R.some(LOOKALIKE[p], 4 - real.length);
+    var options = R.shuffle(real.concat(fake));
+    return { q: 'Pick every word that has the prefix <b>' + p + '-</b>.', type: 'pick', options: options,
+      answer: options.map(function (w, i) { return real.indexOf(w) >= 0 ? i : -1; }).filter(function (i) { return i >= 0; }),
+      hint: 'Cover the first two letters. Is a real word left?', explain: 'Words like <b>' + fake[0] + '</b> start with the same letters, but there is no prefix: cover them and no word is left.',
+      meta: { k: 'g3-real', pre: p } };
+  }
+
+  Atlas.register('prefixes', {
+    lessons: [{
+      id: 'un-re', title: 'Prefixes: un- and re-', sub: 'A small part at the front changes the meaning.',
+      concepts: [
+        { slug: 'un', title: 'un- means not', exp: ['B2.3', 'B2.4'], skill: 'prefix-meaning',
+          model: [
+            step(W.tile('happy', 'base'), 'This is a <b>base word</b>.'),
+            step(W.tile('un', 'prefix'), 'This is a <b>prefix</b>. It goes at the front.'),
+            step(W.sum(parts('un', 'happy')), 'Put them together.'),
+            step(W.means('not', '<b>unhappy</b> = <b>not</b> happy'), '<b>un-</b> means <b>not</b>.')
+          ],
+          key: W.means('not', '<b>un-</b> means <b>not</b>'),
+          guided: [function () { return meaning(1, 'un'); }, function () { return whichWord(1, 'un'); }],
+          check: [function () { return meaning(1, 'un'); }, function () { return whichWord(1, 'un'); }],
+          coach: '<p>Have the child cover the prefix with a finger, read the base word, then say "not" in front of it. Keep it quick and keep it oral.</p>',
+          mistake: '<p>Seeing a prefix in words like <b>under</b> or <b>uncle</b>. Cover the "un": if no word is left, there is no prefix. On action words, un- means "undo" (unlock, untie); this demo uses describing words only.</p>' },
+        { slug: 're', title: 're- means again', exp: ['B2.3', 'B2.4'], skill: 'prefix-meaning',
+          model: [
+            step(W.tile('paint', 'base'), 'A <b>base word</b>.'),
+            step(W.sum(parts('re', 'paint')), 'Add the prefix <b>re</b> at the front.'),
+            step(W.means('again', '<b>repaint</b> = paint <b>again</b>'), '<b>re-</b> means <b>again</b>.')
+          ],
+          key: W.means('again', '<b>re-</b> means <b>again</b>'),
+          guided: [function () { return meaning(1, 're'); }, function () { return whichWord(1, 're'); }],
+          check: [function () { return meaning(1, 're'); }, function () { return whichWord(1, 're'); }],
+          coach: '<p>Act it out: "I fill the cup. Now I <b>refill</b> it." Ask the child to tell you something they would like to <b>redo</b>.</p>',
+          mistake: '<p>Seeing a prefix in words like <b>ready</b>, <b>reach</b> or <b>red</b>. Cover the "re": if no word is left, there is no prefix.</p>' },
+        { slug: 'which', title: 'un- or re-?', exp: ['B2.3', 'B2.4'], skill: 'prefix-build',
+          model: [
+            step(W.means('not', 'not safe'), 'This means <b>not</b>.'),
+            step(W.sum(parts('un', 'safe')), 'So I use <b>un</b>.'),
+            step(W.means('again', 'read again'), 'This means <b>again</b>.'),
+            step(W.sum(parts('re', 'read')), 'So I use <b>re</b>.')
+          ],
+          key: W.means('not', '<b>un-</b> = not') + ' ' + W.means('again', '<b>re-</b> = again'),
+          guided: [addPrefix, function () { return build(1); }],
+          check: [addPrefix, function () { return build(1); }],
+          coach: '<p>Before choosing, ask: "Does it mean not, or again?" Wait for the answer, then let the child tap.</p>',
+          mistake: '<p>Putting the prefix at the end (happyun). Point to the boxes: the prefix always goes in the first box.</p>' }
+      ]
+    }],
+    practice: [
+      { id: 'prefix-meaning', name: 'What prefixes mean', code: 'B2.4', gen: function (lv) { return meaning(lv); } },
+      { id: 'prefix-build', name: 'Build words with prefixes', code: 'B2.3', gen: function (lv) { return build(lv); } }
+    ]
+  });
+
+  Q.shapes('prefixes', {
+    'prefix-meaning': [[1, 'which-word', whichWord], [2, 'match', matchUp], [2, 'true-false', tfMeaning]],
+    'prefix-build': [[1, 'add-prefix', addPrefix], [1, 'base-word', baseWord], [2, 'real-prefix', realPrefix]]
+  });
+})();

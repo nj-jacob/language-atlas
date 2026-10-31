@@ -24,7 +24,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'lesson.js', 'practice.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -193,7 +193,7 @@ async function checkGrade(browser, base, g) {
   for (const [cid, slug] of ideas) {
     const w = where + ' ' + cid + ' idea ' + slug;
     await go(cid + '/learn/' + slug);
-    const s1 = await page.evaluate(() => { let n = 0; while (document.querySelector('.di-step') && n++ < 30) document.querySelector('.di-step').click(); return { go: !!document.querySelector('.di-go .btn'), steps: document.querySelectorAll('.di-model li').length }; });
+    const s1 = await page.evaluate(() => { let n = 0; while (document.querySelector('.di-step') && n++ < 30) document.querySelector('.di-step').click(); return { go: !!document.querySelector('.di-go .btn')}; });
     if (!s1.go) fail(w, '"Watch me" never reaches the button to go on');
     await screenCheck(page, w, '"Watch me" with every step showing');
     await go(cid + '/learn/' + slug + '/2');

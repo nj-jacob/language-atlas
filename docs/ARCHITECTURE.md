@@ -21,7 +21,8 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | File | What it does |
 | --- | --- |
 | `atlas.js` | The `Atlas` object: saved progress, random helpers, the page router, the grade's home page, text size and grown-up view |
-| `qkit.js` | The answer types (`Atlas.Q`): pick one, tap, pick all, put in order, match, true or false with a reason. Also question shapes. |
+| `qkit.js` | The answer types (`Atlas.Q`): pick one, tap, pick all, put in order, build a word, match, true or false with a reason. Also question shapes. |
+| `words.js` | Word pictures (`Atlas.W`): sentence strips, highlighted letters, coloured word-part tiles (prefix, base, suffix), picture cues and "Watch me" steps. Lessons show more and say less. |
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
 | `practice.js` | Adaptive practice, the chapter quiz and the check-up |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
@@ -30,7 +31,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 
 `gradeN/index.html` sets three `meta` tags for the header, loads `engine.css` then `atlas-theme.css`, then the scripts in this order:
 1. `../assets/atlas-header.js` (first thing in `<body>`)
-2. `../assets/engine/atlas.js`, `qkit.js`, `lesson.js`, `practice.js`
+2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`
 3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
 4. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`
 5. `<script>Atlas.start();</script>`
@@ -54,7 +55,7 @@ An idea is `{ slug, title, exp, skill, intro, model, key, guided, check, coach, 
 | --- | --- |
 | `#home` | The grade's chapters |
 | `#sentences` | A chapter: its lessons |
-| `#sentences/learn/capital`, `/2`, `/3` | One idea: Watch me, Together, On your own |
+| `#sentences/learn/capital`, `/2`, `/3` | One idea: Watch me (one step on screen at a time), Together, On your own |
 | `#sentences/done/start-end` | End of a lesson: where each idea stands, what to practise |
 | `#sentences/practice`, `#sentences/practice/cap-end` | Practice, optionally starting on one skill |
 | `#sentences/quiz` | Chapter quiz |

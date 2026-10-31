@@ -18,9 +18,9 @@
   function any() { return R.pick(TELL.concat(ASK)); }
   function noCap(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
   function noEnd(s) { return s.slice(0, -1); }
-  function sent(s) { return '<span class="sent">' + s + '</span>'; }
-  function hlFirst(s) { return '<mark class="hl">' + s.charAt(0) + '</mark>' + s.slice(1); }
-  function hlEnd(s) { return s.slice(0, -1) + '<mark class="hl">' + s.slice(-1) + '</mark>'; }
+  var W = Atlas.W, sent = W.sent, step = W.step;
+  function hlFirst(s) { return Atlas.W.hl(s, 0, 1); }
+  function hlEnd(s) { return Atlas.W.hl(s, s.length - 1, s.length); }
 
   /* ---------- question makers (each sets meta.k for its answer check) ---------- */
   /* Which sentence is written the right way? focus: 'cap', 'end' or 'both'; n: number of options */
@@ -78,28 +78,24 @@
       id: 'start-end', title: 'Start and end a sentence', sub: 'A capital letter at the start. A mark at the end.',
       concepts: [
         { slug: 'capital', title: 'A sentence starts with a capital letter', exp: ['B3.3'], skill: 'cap-end',
-          intro: '<p>A <b>sentence</b> tells a whole idea. The first word of a sentence starts with a <b>capital letter</b>.</p><p>A capital letter is the big form of a letter: <b>W</b> is the capital of <b>w</b>.</p>',
           model: [
-            'Look at this sentence. ' + sent('We went to the park.'),
-            'I look at the first word. It is <b>We</b>.',
-            'I look at its first letter: ' + sent(hlFirst('We went to the park.')) + ' It is a capital letter. That is right.',
-            'Now look at this one: ' + sent('my dog can run fast.') + ' The first letter is a small <b>m</b>. I fix it: ' + sent(hlFirst('My dog can run fast.'))
+            step(sent('We went to the park.'), 'A sentence.'),
+            step(sent(hlFirst('We went to the park.')), 'It starts with a <b>capital letter</b>.'),
+            step(sent(hlFirst('my dog can run fast.')), 'This one starts with a small <b>m</b>.'),
+            step(sent(hlFirst('My dog can run fast.')), 'Fix it: capital <b>M</b>.')
           ],
-          key: '<p>The first word of a sentence starts with a capital letter.</p>',
+          key: '<p>First word: <b>capital letter</b>.</p>',
           guided: [function () { return rightWay('cap', 2); }, function () { return rightWay('cap', 2); }],
           check: [function () { return rightWay('cap', 2); }, function () { return fixTf(1, [0, 1]); }],
           coach: '<p>Ask: "Point to the first word. Is its first letter big or small?" Let the child point before choosing. Praise careful looking.</p>',
           mistake: '<p>Putting a capital on every word (We Went To The Park). Only the first word needs one here. Names, like Amara, have a capital too: that comes in a later lesson.</p>' },
         { slug: 'end-mark', title: 'A sentence ends with a mark', exp: ['B3.3'], skill: 'cap-end',
-          intro: '<p>A sentence ends with a <b>mark</b>.</p><p>A sentence that <b>tells</b> ends with a <b>period</b> ( . ). A sentence that <b>asks</b> ends with a <b>question mark</b> ( ? ).</p>',
           model: [
-            'Look: ' + sent('The snow is cold') + ' It tells us something.',
-            'So I put a period at the end: ' + sent(hlEnd('The snow is cold.')),
-            'Now look: ' + sent('Is it time for lunch') + ' It asks something.',
-            'So I put a question mark at the end: ' + sent(hlEnd('Is it time for lunch?')),
-            'Asking sentences often start with words like <b>Is</b>, <b>Can</b>, <b>Do</b>, <b>Who</b> or <b>What</b>.'
+            step(sent(hlEnd('The snow is cold.')), 'It <b>tells</b>. It ends with a <b>period</b>.'),
+            step(sent(hlEnd('Is it time for lunch?')), 'It <b>asks</b>. It ends with a <b>question mark</b>.'),
+            step(W.tile('Is') + W.tile('Can') + W.tile('Do') + W.tile('Who') + W.tile('What'), 'Asking sentences often start with these.')
           ],
-          key: '<p>A telling sentence ends with a period ( . ). An asking sentence ends with a question mark ( ? ).</p>',
+          key: '<p><b>.</b> tells &nbsp;&middot;&nbsp; <b>?</b> asks</p>',
           guided: [endMark, endMark],
           check: [endMark, function () { return rightWay('end', 2); }],
           coach: '<p>Read the sentence aloud with your voice going up for a question. Ask: "Is it telling me something, or asking me?" This demo covers periods and question marks; exclamation marks come later.</p>',

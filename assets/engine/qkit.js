@@ -5,6 +5,7 @@
                                         answerText: words for the reveal.
      pick   pick every answer that fits. options: [html], answer: [indexes] (never all of them)
      order  put in order.               items: [html] IN THE RIGHT ORDER (shown mixed up); first/last: labels
+     build  build a word from parts.    parts: [html, ...] (shown as tiles, including some that are not needed), answer: [indexes in order]
      match  match pairs.                pairs: [[left, right], ...] (right side shown mixed up)
      tf     true or false, then why.    answer: true/false, why: { options: [...], answer: index }
    Atlas.Q.mount(el, q, cb) draws the answer area. cb(ok, givenText) runs when the child commits an answer.
@@ -19,7 +20,7 @@
   if (!A) return;
   var $ = A.$, $$ = A.$$;
   var Q = (A.Q = {});
-  var TYPES = { mc: 1, tap: 1, pick: 1, order: 1, match: 1, tf: 1 };
+  var TYPES = { mc: 1, tap: 1, pick: 1, order: 1, build: 1, match: 1, tf: 1 };
   Q.has = function (q) { return !!(q && TYPES[q.type]); };
   function strip(h) { var d = document.createElement('div'); d.innerHTML = String(h); return (d.textContent || '').replace(/\s+/g, ' ').trim(); }
   var shuffle = A.R.shuffle, bump = function (el) { A.bump(el, 'qk-shake'); };
@@ -39,6 +40,7 @@
       case 'tap': return q.answerText || (q.tiles ? strip(q.tiles[q.answer]) : String(q.answer));
       case 'pick': return q.answer.map(function (i) { return strip(q.options[i]); }).join(', ');
       case 'order': return q.items.map(strip).join(', ');
+      case 'build': return q.answer.map(function (i) { return strip(q.parts[i]); }).join('');
       case 'match': return q.pairs.map(function (p) { return strip(p[0]) + ' with ' + strip(p[1]); }).join('; ');
       case 'tf': return (q.answer ? 'True' : 'False') + (q.why ? '. ' + strip(q.why.options[q.why.answer]) : '');
     }
@@ -143,6 +145,36 @@
         cb(ok, placed.map(function (k) { return strip(q.items[k]); }).join(', '));
       });
       api.reveal = function () { placed = []; for (var i = 0; i < n; i++) placed.push(i); draw(); $$('.qk-slots .qk-card', el).forEach(function (b) { b.classList.add('qk-yes'); }); };
+    },
+
+    /* ---------- build a word: tap parts into the boxes ---------- */
+    build: function (el, q, cb, api, msg) {
+      var n = q.answer.length, show = shuffle(q.parts.map(function (p, i) { return i; })), placed = [];
+      el.innerHTML = '<p class="qk-tip">Tap the parts to build the word. Tap a part in a box to take it back.</p><div class="qk-slots qk-build"></div><div class="qk-pool"></div>' + checkBtn();
+      var slots = $('.qk-slots', el), pool = $('.qk-pool', el);
+      function draw() {
+        var h = '';
+        for (var i = 0; i < n; i++) h += placed[i] != null ? '<button type="button" class="qk-card qk-in" data-k="' + placed[i] + '">' + q.parts[placed[i]] + '</button>' : '<span class="qk-slot"></span>';
+        slots.innerHTML = h;
+        pool.innerHTML = show.filter(function (k) { return placed.indexOf(k) < 0; }).map(function (k) { return '<button type="button" class="qk-card" data-k="' + k + '">' + q.parts[k] + '</button>'; }).join('');
+        $$('.qk-card', el).forEach(function (b) {
+          b.addEventListener('click', function () {
+            if (api.locked) return;
+            var k = +b.getAttribute('data-k'), at = placed.indexOf(k);
+            if (at >= 0) placed.splice(at, 1); else if (placed.length < n) placed.push(k);
+            msg(''); draw();
+          });
+        });
+        if (api.locked) api.lock();
+      }
+      draw();
+      $('.qk-go', el).addEventListener('click', function () {
+        if (placed.length < n) { msg('Fill every box first.'); return; }
+        var ok = placed.every(function (k, i) { return k === q.answer[i]; });
+        if (!ok) { $$('.qk-slots .qk-card', el).forEach(function (b, i) { if (placed[i] !== q.answer[i]) b.classList.add('qk-no'); }); bump(slots); }
+        cb(ok, placed.map(function (k) { return strip(q.parts[k]); }).join(''));
+      });
+      api.reveal = function () { placed = q.answer.slice(); draw(); $$('.qk-slots .qk-card', el).forEach(function (b) { b.classList.add('qk-yes'); }); };
     },
 
     /* ---------- match pairs: tap one on the left, then its partner on the right ---------- */

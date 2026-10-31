@@ -1,7 +1,7 @@
 /* Language Atlas lessons, shared by every grade. Needs atlas.js and qkit.js.
    A chapter is a few lessons, a lesson is a few ideas, and the child sees ONE idea per screen.
    Each idea is taught in three steps, in the Direct Instruction way:
-     1. Watch me    ("I do")   a short explanation, then a worked example shown one step at a time, then the key idea.
+     1. Watch me    ("I do")   a one-line intro, then a worked example shown one step at a time (one step on screen), then the key idea.
      2. Together    ("we do")  guided questions with a thinking cue. A wrong answer is corrected at once, then the same
                                question is asked again, so the child ends on a right answer.
      3. On your own ("you do") quick questions with no cue. Two right on the first try marks the idea "Got it".
@@ -135,18 +135,20 @@
 
   /* 1. Watch me: the worked example appears one step at a time */
   function watch(box, c, base) {
-    var k = 0;
-    box.innerHTML = '<div class="ls-body">' + (c.intro || '') + '</div><ol class="di-model"></ol><div class="di-act"></div>';
-    var list = $('.di-model', box), act = $('.di-act', box);
+    var k = 0, n = c.model.length;
+    box.innerHTML = (c.intro ? '<div class="ls-body">' + c.intro + '</div>' : '') + '<div class="di-model" aria-live="polite"></div><div class="di-act"></div>';
+    var stepBox = $('.di-model', box), act = $('.di-act', box);
     function draw() {
-      list.innerHTML = c.model.slice(0, k + 1).map(function (s, j) { return '<li' + (j === k ? ' class="di-new"' : '') + '>' + s + '</li>'; }).join('');
-      if (k + 1 < c.model.length) {
-        act.innerHTML = '<button type="button" class="btn alt di-step">Next step <span class="t2">(' + (k + 1) + ' of ' + c.model.length + ')</span></button>';
-        $('.di-step', act).addEventListener('click', function () { k++; draw(); $('.di-step, .di-go .btn', box).focus(); });
-        return;
-      }
-      mark(c, { watched: 1 });
-      act.innerHTML = (c.key ? '<div class="key"><b class="t">Key idea</b>' + c.key + '</div>' : '') + goOn(base + '/2', 'Now we do it together');
+      stepBox.innerHTML = '<p class="di-count"><span class="di-pips" aria-hidden="true">' + c.model.map(function (x, j) { return '<i class="' + (j <= k ? 'on' : '') + '"></i>'; }).join('') + '</span>Step ' + (k + 1) + ' of ' + n + '</p>' +
+        '<div class="di-show">' + c.model[k] + '</div>';
+      var last = k + 1 === n;
+      if (last) mark(c, { watched: 1 });
+      act.innerHTML = '<div class="di-nav">' + (k ? '<button type="button" class="btn alt di-back">&larr; Back</button>' : '<span></span>') +
+        (last ? '' : '<button type="button" class="btn di-step">Next step &rarr;</button>') + '</div>' +
+        (last ? (c.key ? '<div class="key"><b class="t">Key idea</b>' + c.key + '</div>' : '') + goOn(base + '/2', 'Now we do it together') : '');
+      var nb = $('.di-step', act), bb = $('.di-back', act);
+      if (nb) nb.addEventListener('click', function () { k++; draw(); ($('.di-step', box) || $('.di-go .btn', box)).focus(); });
+      if (bb) bb.addEventListener('click', function () { k--; draw(); $('.di-step', box).focus(); });
     }
     draw();
   }

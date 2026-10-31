@@ -11,7 +11,7 @@ Read this before changing anything. The owner, Noel, is not a developer, so thes
 
 ## Where things live
 See `docs/ARCHITECTURE.md`. In short:
-- `assets/engine/` holds the **one shared copy** of the engine: `atlas.js` (core and pages), `qkit.js` (answer types), `lesson.js` (lessons and progress), `practice.js` (practice, quiz, check-up) and `engine.css`. Never copy any of it into a grade folder. A check fails if you do.
+- `assets/engine/` holds the **one shared copy** of the engine: `atlas.js` (core and pages), `qkit.js` (answer types), `words.js` (word pictures), `lesson.js` (lessons and progress), `practice.js` (practice, quiz, check-up) and `engine.css`. Never copy any of it into a grade folder. A check fails if you do.
 - `assets/atlas-theme.css` is the one look, matching Math Atlas. No grade adds colours, fonts or style sheets. A check fails if one does.
 - `assets/atlas-header.js` draws the same header on every page ("All grades", the Math Atlas link, text size, grown-up view).
 - `gradeN/grade.js` lists the grade's chapters. `gradeN/chapters/<id>.js` holds one chapter: lessons, practice skills, question shapes.
@@ -19,6 +19,7 @@ See `docs/ARCHITECTURE.md`. In short:
 
 ## Writing content
 - **Fetch the curriculum first.** Before writing any lesson, read the official 2023 Ontario Language curriculum for that grade (dcp.edu.gov.on.ca). Do not rely on memory. Every idea (`exp`) and practice skill (`code`) names its expectation codes, for example `B3.3`.
+- **Show, don't tell.** Very little text for the child: each "Watch me" step is one picture and one short line. Use the word pictures in `words.js`.
 - **One idea per screen**, taught in three steps (Direct Instruction): Watch me (I do), Together (we do, with a thinking cue and quick correction), On your own (you do). See `docs/QUESTIONS.md`.
 - **4 or more ways of asking** for every practice skill (`Atlas.Q.shapes`). A check fails with fewer.
 - **Every auto-marked question** sets `meta.k`, and `tests/verify/gradeN.js` has a check with that key that works the answer out independently. Open-ended writing is never auto-marked: it goes to the grown-up with a simple rubric.

@@ -1,6 +1,8 @@
 # Writing lessons and questions
 
-`grade1/chapters/sentences.js` is the worked example.
+`grade3/chapters/prefixes.js` is the worked example (`grade1/chapters/sentences.js` is a second one).
+
+**Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs.
 
 ## An idea (one screen)
 
@@ -10,8 +12,8 @@
 | `title` | One plain sentence, like "A sentence starts with a capital letter" |
 | `exp` | The expectation codes it teaches, like `['B3.3']` (fetch the curriculum first) |
 | `skill` | The practice skill that makes it "Mastered" |
-| `intro` | A short explanation (HTML), a few sentences |
-| `model` | **Watch me** (I do): the worked example as a list of steps (HTML). They appear one at a time. |
+| `intro` | Optional: one short line before the example. Usually leave it out. |
+| `model` | **Watch me** (I do): the worked example as a list of steps, each `Atlas.W.step(picture, line)`. One step shows at a time, with Back and Next. |
 | `key` | The key idea, shown after the last step |
 | `guided` | **Together** (we do): a list of functions that each make a question. Give each a `prompt`, a cue to think about. |
 | `check` | **On your own** (you do): a list of functions that each make a question. No cue. |
@@ -44,10 +46,11 @@ How the steps behave:
 | `tap` | taps one tile or part of a picture | `tiles` (list of HTML) and `answer` (index), **or** `pic` (SVG with `data-hit="key"` parts) and `answer` (key); optional `answerText` |
 | `pick` | picks every answer that fits | `options`, `answer` (list of indexes; never all of them) |
 | `order` | taps cards into order | `items` **in the right order** (shown mixed up), optional `first` / `last` labels |
+| `build` | taps word parts into boxes to build a word | `parts` (list of HTML, including at least one that is not needed), `answer` (indexes of the parts, in order) |
 | `match` | matches pairs | `pairs: [[left, right], ...]` (right side shown mixed up) |
 | `tf` | says true or false, then picks why | `answer` (true or false), optional `why: { options, answer }` |
 
-More language types (tap a word, sort, letter tiles, cloze, highlight evidence, written answers for the grown-up to mark) come next. Each new type needs: its maker in `qkit.js`, a structure check in `tests/validate.js`, a way to answer it in `tests/answer.js`, and a row here.
+More language types (tap a word in a sentence, sort, letter tiles, cloze, highlight evidence, written answers for the grown-up to mark) come next. Each new type needs: its maker in `qkit.js`, a structure check in `tests/validate.js`, a way to answer it in `tests/answer.js`, and a row here.
 
 ## Question shapes: 4 or more ways to ask
 
