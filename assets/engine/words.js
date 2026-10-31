@@ -7,7 +7,7 @@
      Atlas.W.syl(['rab', 'bit'])                  a word split into syllables (beats)
      Atlas.W.gap()                                a blank to fill in a sentence
      Atlas.W.passage('Title', ['Line one.', ...]) a short reading passage on a card ('# Heading' lines show as headings)
-     Atlas.W.icon('not')                          a small picture cue: not, again, full, without, listen, talk, read, write, lock, screen, people, think, star
+     Atlas.W.icon('not')                          a small picture cue: not, again, full, without, before, wrong, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
      Atlas.W.pic('sun')                           a picture cue for a word (Atlas.W.pics lists them all)
      Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line (leave the line out when the picture says it) */
@@ -39,6 +39,10 @@
     people: '<circle cx="11.5" cy="11" r="3.6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="21.5" cy="11" r="3.6" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M5 25c0-4 3-7 6.5-7s6.5 3 6.5 7M15 25c0-4 3-7 6.5-7s6.5 3 6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>',
     /* a thought cloud */
     think: '<path d="M10 20a5 5 0 0 1 1-10 6 6 0 0 1 11 1 4.5 4.5 0 0 1 0 9z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="10" cy="24.5" r="1.8" fill="currentColor"/><circle cx="7" cy="27.5" r="1.2" fill="currentColor"/>',
+    /* a clock with its hand turned back */
+    before: '<circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M16 10v6l-4 3" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>',
+    /* a cross in a circle */
+    wrong: '<circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M11.5 11.5l9 9M20.5 11.5l-9 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>',
     /* a star */
     star: '<path d="M16 5l3.3 7 7.7.9-5.7 5.2 1.6 7.6L16 21.9l-6.9 3.8 1.6-7.6L5 12.9l7.7-.9z" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/>'
   };
