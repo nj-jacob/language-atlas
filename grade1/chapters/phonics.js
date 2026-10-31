@@ -49,7 +49,7 @@
   }
   function whichVowel(lv) {
     var w = R.pick(CVC), v = vowelOf(w);
-    return Q.tiles('Which vowel do you hear in <b>' + w + '</b>?', v, R.some(VOWELS.filter(function (x) { return x !== v; }), lv > 1 ? 4 : 2), { fig: W.tile(w),
+    return Q.tiles('Which vowel do you hear in <b>' + w + '</b>?', v, R.some(VOWELS.filter(function (x) { return x !== v; }), lv > 1 ? 4 : 2), { fig: (W.pics.indexOf(w) >= 0 ? W.pic(w) : '') + W.tile(w),
       hint: 'a e i o u: which one is in the word?', explain: W.tile(W.hl(w, 1, 2)), meta: { k: 'g1-which-vowel', word: w } });
   }
   function pickVowel() {
@@ -115,7 +115,7 @@
         { slug: 'vowels', title: 'Five vowels', exp: ['B2.3'], skill: 'short-vowels',
           model: [
             step(W.tile('a') + W.tile('e') + W.tile('i') + W.tile('o') + W.tile('u'), 'Every word has at least one.'),
-            step(W.tile(W.hl('cat', 1, 2)), '/a/ as in cat.'),
+            step(W.pic('cat') + W.tile(W.hl('cat', 1, 2)), '/a/ as in cat.'),
             step(W.tile(W.hl('pig', 1, 2)) + W.tile(W.hl('dog', 1, 2)), '/i/ as in pig. /o/ as in dog.')
           ],
           guided: [function () { return whichVowel(1); }, function () { return whichVowel(1); }],
@@ -164,7 +164,7 @@
           model: [
             step(W.tile('kit'), 'Short i.'),
             step(W.tile('kit') + W.tile('+ e'), 'Add e on the end.'),
-            step(W.tile(W.hl('kite', 3, 4)), 'You do not hear the e. The i says its name.')
+            step(W.pic('kite') + W.tile(W.hl('kite', 3, 4)), 'You do not hear the e. The i says its name.')
           ],
           guided: [function () { return addE(1); }, function () { return silentE(1); }],
           check: [function () { return silentE(1); }, function () { return silentE(2); }],
@@ -172,7 +172,7 @@
           mistake: '<p>Reading the e out loud ("kit-eh"). The e is silent; its job is to change the vowel.</p>' },
         { slug: 'teams', title: 'Vowel teams', exp: ['B2.3'], skill: 'vowel-patterns',
           model: [
-            step(W.tile(W.hl('tree', 2, 4)), '<b>ee</b> says /ē/.'),
+            step(W.pic('tree') + W.tile(W.hl('tree', 2, 4)), '<b>ee</b> says /ē/.'),
             step(W.tile(W.hl('rain', 1, 3)) + W.tile(W.hl('day', 1, 3)), '<b>ai</b> and <b>ay</b> say /ā/.'),
             step(W.tile(W.hl('boat', 1, 3)), '<b>oa</b> says /ō/.')
           ],

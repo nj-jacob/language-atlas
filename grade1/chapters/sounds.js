@@ -20,6 +20,8 @@
     ['cup', 'k', 'p', 'pup'], ['fan', 'f', 'v', 'van'], ['lid', 'd', 'p', 'lip'], ['pig', 'g', 'n', 'pin'], ['hat', 'a', 'i', 'hit'], ['net', 'e', 'u', 'nut']];
 
   function snd(p) { return '/' + p + '/'; }
+  /* the word's picture when there is one (the grown-up says the word), otherwise the written word */
+  function show(w) { return W.pics.indexOf(w) >= 0 ? W.pic(w) : W.tile(w); }
   function sounds(x) { return '<span class="wsyl">' + x.p.map(function (p) { return W.tile(snd(p), 'syl'); }).join('') + '</span>'; }
   function noRepeat(x) { return x.p.every(function (p, i) { return x.p.indexOf(p) === i; }); }
   /* tiles: the right sound, other sounds from the word, and a sound that is often mixed up with it */
@@ -35,7 +37,7 @@
   function isolate(where, lv) {
     var list = where === 'middle' ? THREE : WORDS.filter(function (x) { return lv > 1 || x.p.length <= 3; }), x = R.pick(list);
     var at = where === 'first' ? 0 : where === 'last' ? x.p.length - 1 : 1, t = soundTiles(x, x.p[at], lv > 1 ? 4 : 3);
-    return Q.tiles('What is the <b>' + where + '</b> sound in <b>' + x.w + '</b>?', t[0], t[1], { fig: W.tile(x.w),
+    return Q.tiles('What is the <b>' + where + '</b> sound in <b>' + x.w + '</b>?', t[0], t[1], { fig: show(x.w),
       prompt: where === 'first' ? 'Say the word slowly. What do you hear first?' : where === 'last' ? 'Stretch the word. What do you hear at the very end?' : 'Stretch the word. What do you hear between the first and last sound?',
       hint: 'Say it slowly, one sound at a time.', explain: sounds(x),
       steps: ['Say <b>' + x.w + '</b> slowly.', 'Its sounds: ' + x.p.map(snd).join(' ') + '.', 'The ' + where + ' one is ' + snd(x.p[at]) + '.'],
@@ -66,7 +68,7 @@
   /* How many sounds in fish? */
   function count(lv) {
     var x = R.pick(WORDS.filter(function (w) { return lv > 1 || w.p.length <= 4; })), n = x.p.length;
-    return Q.one('How many <b>sounds</b> in <b>' + x.w + '</b>?', String(n), ['2', '3', '4', '5'].filter(function (k) { return +k !== n; }).slice(0, lv > 1 ? 3 : 2), { fig: W.tile(x.w),
+    return Q.one('How many <b>sounds</b> in <b>' + x.w + '</b>?', String(n), ['2', '3', '4', '5'].filter(function (k) { return +k !== n; }).slice(0, lv > 1 ? 3 : 2), { fig: show(x.w),
       prompt: 'Tap one finger for each sound you say.', hint: 'Count sounds, not letters. <b>sh</b> is one sound.', explain: sounds(x),
       steps: ['Say <b>' + x.w + '</b> slowly.', 'One finger for each sound: ' + x.p.map(snd).join(' ') + '.', 'That is ' + n + ' sounds.'], meta: { k: 'g1-count', word: x.w } });
   }
@@ -92,7 +94,7 @@
       concepts: [
         { slug: 'first', title: 'The first sound', exp: ['B2.1'], skill: 'hear',
           model: [
-            step(W.tile('sun'), 'Say it slowly: sss-un.'),
+            step(W.pic('sun'), 'Say it slowly: sss-un.'),
             step(W.tile(W.hl('sun', 0, 1)), 'You hear /s/ first.'),
             step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b> is one sound: /sh/.')
           ],
@@ -102,7 +104,7 @@
           mistake: '<p>Saying the letter name ("em") instead of the sound (/m/). Say: "That is its name. What sound does it make in the word?"</p>' },
         { slug: 'last', title: 'The last sound', exp: ['B2.1'], skill: 'hear',
           model: [
-            step(W.tile('map'), 'Stretch it: ma-p.'),
+            step(W.pic('map'), 'Stretch it: ma-p.'),
             step(W.tile(W.hl('map', 2, 3)), 'You hear /p/ at the very end.'),
             step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b> makes one sound: /k/.')
           ],
@@ -137,7 +139,7 @@
           mistake: '<p>Adding "uh" after a sound ("buh-a-tuh"). Keep stop sounds short and clipped: /b/, not "buh".</p>' },
         { slug: 'count', title: 'Count the sounds', exp: ['B2.1'], skill: 'blend',
           model: [
-            step(W.tile('fish'), 'One finger for each sound.'),
+            step(W.pic('fish'), 'One finger for each sound.'),
             step(sounds(x0('fish')), 'Three sounds.'),
             step(W.tile('fish'), 'Four letters, but only three sounds.')
           ],
@@ -147,8 +149,8 @@
           mistake: '<p>Counting letters instead of sounds. Ask the child to say the sounds out loud, not read the letters.</p>' },
         { slug: 'change', title: 'Swap one sound', exp: ['B2.1'], skill: 'blend',
           model: [
-            step(W.tile('cat'), 'Take away /k/.'),
-            step(W.tile(W.hl('hat', 0, 1)), 'Put in /h/: <b>hat</b>.'),
+            step(W.pic('cat'), 'Take away /k/.'),
+            step(W.pic('hat') + W.tile(W.hl('hat', 0, 1)), 'Put in /h/: <b>hat</b>.'),
             step(W.tile('hat') + W.tile('hit'), 'Change the middle: /a/ to /i/.')
           ],
           guided: [function () { return change(1); }, function () { return change(1); }],

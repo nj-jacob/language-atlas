@@ -4,7 +4,7 @@
         words, in isolation and various text contexts (here: CVC, CCVC, CVCC, CCVCC and CVCe words).
    B2.5 use developing orthographic knowledge, including position-based tendencies, to make a spelling choice
         (here: ck after a short vowel, ff ll ss zz, k or c, ai or ay, oi or oy, and no word ends in v).
-   All words, clues and sentences are written for this site. Answer checks: tests/verify/grade1-words.js. */
+   All words, clues and sentences are written for this site. Answer checks: tests/verify/grade1-word-reading.js. */
 (function () {
   'use strict';
   var R = Atlas.R, Q = Atlas.Q, W = Atlas.W, step = W.step;
@@ -90,7 +90,7 @@
       hint: 'Check the end of each word.', explain: 'Right: ' + ss.slice(0, nRight).map(function (s) { return s[0]; }).join(', ') + '.', meta: { k: 'g1-pick-right' } });
   }
 
-  Atlas.register('words', {
+  Atlas.register('word-reading', {
     lessons: [{
       id: 'read-spell', title: 'Sound it out', sub: 'Blend sounds to read a word. Split a word into sounds to spell it.',
       concepts: [
@@ -180,7 +180,7 @@
     ]
   });
 
-  Q.shapes('words', {
+  Q.shapes('word-reading', {
     'read-words': [[1, 'blend-read', blendRead], [1, 'spell', spellClue], [2, 'fit', fitWord]],
     'spell-patterns': [[1, 'fill-end', fillEnd], [1, 'k-or-c', kOrC], [1, 'ai-ay', aiAy], [2, 'pick', pickRight]]
   });

@@ -10,7 +10,7 @@ Atlas.setup({
       desc: 'Match big and small letters, tell b from d, and put letters and words in ABC order.' },
     { id: 'phonics', title: 'Letters and Sounds', sub: 'the sound each letter makes', strand: 'B', codes: 'B2.3',
       desc: 'Short vowels, two letters that make one sound (sh, ch, th), and long vowels with a silent e or a vowel team.' },
-    { id: 'words', title: 'Reading and Spelling Words', sub: 'sound it out, and spelling patterns', strand: 'B', codes: 'B2.4, B2.5',
+    { id: 'word-reading', title: 'Reading and Spelling Words', sub: 'sound it out, and spelling patterns', strand: 'B', codes: 'B2.4, B2.5',
       desc: 'Blend sounds to read a word, spell a word sound by sound, and learn where ck, ll, ss and ay go.' },
     { id: 'word-parts', title: 'Word Parts and Meanings', sub: 'endings, compound words and new words', strand: 'B', codes: 'B2.6, B2.7',
       desc: 'Add -s, -es, -ing and -ed. Join two words into one. Learn words that mean the same or the opposite.' },

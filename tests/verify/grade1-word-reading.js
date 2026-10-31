@@ -1,4 +1,4 @@
-/* Grade 1 answer checks: reading and spelling words (grade1/chapters/words.js).
+/* Grade 1 answer checks: reading and spelling words (grade1/chapters/word-reading.js).
    Spelling choices are worked out from the spelling rules themselves; clue and sentence questions use the checker's own key. */
 (function () {
   const V = window.__verify, H = window.__H, text = s => H.strip(s).replace(/’/g, "'");
