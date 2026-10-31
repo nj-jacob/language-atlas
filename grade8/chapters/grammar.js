@@ -80,7 +80,7 @@
   }
   function matchIng() {
     var xs = ['gerund', 'participle', 'verb'].map(function (k) { return R.pick(ING.filter(function (i) { return i[2] === k; })); });
-    return { q: 'Match each sentence to how its -ing word is used.', type: 'match', pairs: xs.map(function (x) { return [x[0].replace(x[1], '<b>' + x[1] + '</b>'), USE[x[2]]]; }), hint: 'Look at the words just before each -ing word.', explain: 'The same ending can do three jobs.', meta: { k: 'g8-match-ing' } };
+    return { q: 'Match each sentence to how its -ing word is used.', type: 'match', pairs: xs.map(function (x) { return [x[0], USE[x[2]]]; }), hint: 'Look at the words just before each -ing word.', explain: 'The same ending can do three jobs.', meta: { k: 'g8-match-ing' } };
   }
   function gerundTf() {
     var x = R.pick(ING), right = R.int(0, 1) === 1, said = right === (x[2] === 'gerund') ? 'a gerund' : 'not a gerund';

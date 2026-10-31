@@ -20,7 +20,7 @@
   const LABEL = { gerund: 'noun', participle: 'describe', verb: 'part of the verb' };
   V['g8-ing'] = (q, m) => mk(q).includes(LABEL[ingJob(text(m.s), m.w)]) ? '' : m.w + ' is a ' + ingJob(text(m.s), m.w);
   V['g8-tap-gerund'] = (q, m) => ingJob(text(m.s), mk(q)) === 'gerund' && /ing$/.test(mk(q)) ? '' : 'the gerund is not the word marked';
-  V['g8-match-ing'] = q => q.pairs.every(p => { const d = document.createElement('div'); d.innerHTML = p[0]; const w = d.querySelector('b').textContent; return text(p[1]).includes(LABEL[ingJob(text(p[0]), w)]); }) ? '' : 'a sentence is matched wrong';
+  V['g8-match-ing'] = q => q.pairs.every(p => { const w = text(p[0]).replace(/[.]/g, '').split(' ').find(x => /ing$/.test(x)); return text(p[1]).includes(LABEL[ingJob(text(p[0]), w)]); }) ? '' : 'a sentence is matched wrong';
   V['g8-gerund-tf'] = (q, m) => ((ingJob(text(m.s), m.w) === 'gerund' ? 'a gerund' : 'not a gerund') === m.said) === q.answer ? '' : 'true/false is wrong for ' + m.w;
 
   const GIVE = new Set('gave told sent showed offered bought'.split(' ')), DET = new Set('a an the my her his our their'.split(' '));
