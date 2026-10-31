@@ -12,6 +12,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - Every grade page loads the whole engine, the theme and the header.
    - No grade has its own style sheet, colours or fonts.
    - Canadian spelling: common US spellings fail (the list is in `tests/run.js`).
+   - Every recorded sound listed in `words.js` has its file in `assets/sounds/`, and there are no extra files.
 2. **Content rules.**
    - Every idea has an expectation code, "Watch me" steps, "Together" questions and "On your own" questions.
    - Every practice skill asks in at least 4 ways.
@@ -22,7 +23,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - the question fits its type (for example, the right answer is one of the options, options do not repeat);
    - nothing says "undefined", "NaN" or "null";
    - the answer is worked out again by `tests/verify/` and must match.
-4. **Every page**, on a phone-size screen (390 px wide), with grown-up view off and then on: it opens with no errors, nothing runs off the side, numbers of 5 or more digits have a space, and coaching notes are hidden unless grown-up view is on. The Grown-up view button must show and hide them. The home page's links must all lead somewhere, including the link to Math Atlas.
+4. **Every page**, on a phone-size screen (390 px wide), with grown-up view off and then on: it opens with no errors, nothing runs off the side, numbers of 5 or more digits have a space, and coaching notes are hidden unless grown-up view is on. Every sound button plays a file that exists and is never inside an answer choice; on each "Watch me", tapping a sound button gives no error. The Grown-up view button must show and hide them. The home page's links must all lead somewhere, including the link to Math Atlas.
 5. **Answering like a child**, on the phone-size screen:
    - every idea is walked through: all "Watch me" steps; every "Together" question answered wrong first (it must be corrected and asked again), then right; "On your own" answered wrong then right, then right twice, which must mark the idea "Got it";
    - practice questions at every level, sometimes wrong first, must be marked correctly;

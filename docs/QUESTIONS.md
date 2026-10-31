@@ -4,6 +4,8 @@
 
 **Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs. For words a child names by sound, use the line-art pictures: `Atlas.W.pic('sun')` (the list is `Atlas.W.pics`: sun, cat, dog, pig, fish, hat, bed, cup, bus, map, jet, fox, egg, bee, kite, moon, tree, apple, ball, box, key, nest, van). An unknown name stops the page with an error, so the checks catch it.
 
+**Letter sounds (phonics only).** `Atlas.W.sound('sh')` is a small button that plays the recorded sound and shows /sh/; give other text with `Atlas.W.sound('ee', '/ē/')`. `Atlas.W.soundRow(['f', 'r', 'o', 'g'])` shows a word as its sounds, one button per tile, for blending and counting. The 44 recorded sounds are `Atlas.W.soundNames` (files in `assets/sounds/`); c and ck play k, and ay plays ai. Put sound buttons in a "Watch me" line, a question's picture (`fig`), its `prompt` or its `steps`, never in an answer choice: a choice is a button already, and the checks fail if a sound button is inside one. No other read-aloud.
+
 ## An idea (one screen)
 
 | Field | Meaning |

@@ -14,6 +14,12 @@ window.__page = {
   },
   /* numbers of 5 or more digits must have a space (12 500), Canadian style */
   bigNumbers() { const m = document.body.innerText.match(/\b\d{5,}\b/g); return m ? m.slice(0, 3).join(', ') : ''; },
+  /* sound buttons: the recorded sounds a page plays, and any sound button put inside an answer choice (a choice is a button already) */
+  sounds() {
+    const b = [...document.querySelectorAll('.wsnd')];
+    const inside = b.find(e => e.parentElement.closest('button, .qk-card, .qk-tile'));
+    return { names: [...new Set(b.map(e => e.getAttribute('data-snd')))], inside: inside ? (inside.textContent || '').trim() : '' };
+  },
   /* coaching notes and common mistakes: every one must be grown-up only, and none may show unless grown-up view is on */
   adultLeak() {
     const notMarked = [...document.querySelectorAll('.mistake, .coach')].filter(e => !e.classList.contains('adult-only'));
