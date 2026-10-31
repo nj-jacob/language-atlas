@@ -135,7 +135,7 @@
             step(W.syl(['f', 'r', 'o', 'g']), 'One tile for each sound.'),
             step(W.syl(['f', 'r', 'o', 'g']), 'Say them slowly: f, r, o, g.'),
             step(W.tile('frog'), 'Say them fast.'),
-            step(W.syl(['sh', 'o', 'p']) + ' ' + W.tile('shop'), '<b>sh</b> is one sound.')
+            step(W.syl(['f', 'i', 'sh']) + W.pic('fish'), '<b>sh</b> is one sound.')
           ],
           guided: [function () { return blend(1); }, function () { return blend(1); }],
           check: [function () { return blend(2); }, function () { return blend(2); }],
