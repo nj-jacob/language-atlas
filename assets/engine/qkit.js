@@ -13,6 +13,7 @@
    Atlas.Q.text(q) gives the right answer in words.
    Atlas.Q.vary(id, lv, list) picks a question shape for a skill: list = [[minLevel, shapeName, fn(lv)], ...].
    Atlas.Q.shapes(chapterId, SHAPES) wires a chapter's shapes into all its practice skills.
+   Atlas.Q.one, Atlas.Q.tiles and Atlas.Q.all make the common types quickly (see below).
    See docs/QUESTIONS.md. */
 (function () {
   'use strict';
@@ -279,6 +280,21 @@
       sk.gen = function (lv) { return Q.vary(sk.id, lv, [[1, 'plain', plain]].concat(extra)); };
     });
   };
+  /* quick ways to make the common question types. more = the other fields (fig, hint, explain, steps, prompt, meta).
+       Q.one(q, right, [wrong, ...], more)          pick one, options mixed up
+       Q.tiles(q, right, [wrong, ...], more)        tap one tile, tiles mixed up
+       Q.all(q, [right, ...], [wrong, ...], more)   pick every answer that fits */
+  function merge(q, more) { Object.keys(more || {}).forEach(function (k) { q[k] = more[k]; }); return q; }
+  Q.one = function (q, right, wrong, more) { var o = A.R.mc(right, wrong); return merge({ q: q, type: 'mc', options: o.options, answer: o.answer }, more); };
+  Q.tiles = function (q, right, wrong, more) {
+    var t = shuffle([right].concat(wrong.filter(function (w, i) { return w !== right && wrong.indexOf(w) === i; })));
+    return merge({ q: q, type: 'tap', tiles: t, answer: t.indexOf(right) }, more);
+  };
+  Q.all = function (q, right, wrong, more) {
+    var o = shuffle(right.concat(wrong));
+    return merge({ q: q, type: 'pick', options: o, answer: o.map(function (x, i) { return right.indexOf(x) >= 0 ? i : -1; }).filter(function (i) { return i >= 0; }) }, more);
+  };
+
   /* names for sentences and stories: short, easy to read, and as varied as a Canadian classroom */
   Q.names = ['Ava', 'Liam', 'Noor', 'Ethan', 'Mei', 'Arjun', 'Chloe', 'Kai', 'Zara', 'Owen', 'Amara', 'Lucas', 'Sofia', 'Jayden', 'Leila', 'Mateo', 'Hana', 'Theo', 'Tala', 'Omar', 'Priya', 'Sam'];
   Q.name = function () { return Q.names[Math.floor(Math.random() * Q.names.length)]; };

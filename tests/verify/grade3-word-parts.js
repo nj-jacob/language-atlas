@@ -1,5 +1,5 @@
-/* Grade 3 answer checks. Each one works the answer out again from what the child sees, without the site's code.
-   Return '' when the marked answer is right, or a short message saying what is wrong. Keys match meta.k in grade3/chapters/. */
+/* Grade 3 answer checks: word parts (grade3/chapters/word-parts.js). Each one works the answer out again from what the child sees, without the site's code.
+   Return '' when the marked answer is right, or a short message saying what is wrong. Keys match meta.k in the chapter. */
 (function () {
   const V = window.__verify, H = window.__H, text = s => H.strip(s);
   /* the checker's own word list: base words that can take a prefix. A word only has a prefix if a real base word is left. */
@@ -47,5 +47,20 @@
   V['g3-real'] = (q, m) => {
     const good = q.options.map((o, i) => { const s = split(text(o)); return s && s.p === m.pre ? i : -1; }).filter(i => i >= 0);
     return H.sameSet(good, q.answer) ? '' : 'marked ' + q.answer + ' but words with the prefix are ' + good;
+  };
+
+  /* suffixes: the checker's own bases, and what each suffix means */
+  const SBASE = new Set('help care hope use thank pain fear rest joy cheer home sleep harm'.split(' '));
+  const sufSplit = w => { const m = w.match(/^(\w+?)(ful|less)$/); return m && SBASE.has(m[1]) ? { b: m[1], s: m[2] } : null; };
+  const sufMean = w => { const x = sufSplit(w); return !x ? null : (x.s === 'ful' ? 'full of ' : 'without ') + x.b; };
+  const sufWord = m => { const x = m.match(/^(full of|without) (\w+)$/); return x ? x[2] + (x[1] === 'without' ? 'less' : 'ful') : null; };
+  V['g3-suf-meaning'] = (q, m) => sufMean(m.word) && H.marked(q) === sufMean(m.word) && text(q.q).includes(m.word) ? '' : 'expected "' + sufMean(m.word) + '"';
+  V['g3-suf-which'] = (q, m) => H.marked(q) === sufWord(m.mean) && q.tiles.map(text).filter(t => sufMean(t) === m.mean).length === 1 ? '' : 'expected ' + sufWord(m.mean);
+  V['g3-suf-build'] = (q, m) => { const b = q.answer.map(i => text(q.parts[i])).join(''); return b === sufWord(m.mean) && sufMean(b) === m.mean ? '' : 'built ' + b; };
+  V['g3-suf-match'] = q => q.pairs.every(p => sufMean(text(p[0])) === text(p[1])) ? '' : 'a word is matched to the wrong meaning';
+  V['g3-suf-tf'] = (q, m) => {
+    if ((sufMean(m.word) === m.said) !== q.answer) return 'true/false is wrong for ' + m.word;
+    const why = text(q.why.options[q.why.answer]), s = sufSplit(m.word).s;
+    return why.startsWith('-' + s) ? '' : 'the reason does not fit';
   };
 })();

@@ -12,6 +12,7 @@
             guided: [function () -> question, ...], check: [function () -> question, ...],
             coach: html, mistake: html }
    Routes: #chapter (lesson list), #chapter/learn/idea (step 1), #chapter/learn/idea/2, #chapter/learn/idea/3, #chapter/done/lesson (end of a lesson).
+   #chapter/tasks is drawn by tasks.js (activities with a grown-up).
    Saved (prefix lang-gN:): cn:<grade-chapter-idea> { seen, watched, together, n, ok, got, t }.
    An idea is "Mastered" when its practice skill is secure. */
 (function () {
@@ -70,12 +71,13 @@
   L.chapter = function (app, id, sub) {
     var ch = prep(id), ctx = A.chapterHead(id), parts = (sub || '').split('/'), tab = parts[0] || 'learn';
     var h = '<div class="wrap chapter" data-strand="' + ctx.m.strand + '"><p class="crumb"><a href="#home">All chapters</a></p>' + ctx.head +
-      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id], ['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']].map(function (t) {
+      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id], ['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']].concat(ch.tasks ? [['tasks', 'With a grown-up', '#' + id + '/tasks']] : []).map(function (t) {
         return '<a href="' + t[2] + '"' + (tab === t[0] ? ' aria-current="page"' : '') + '>' + t[1] + '</a>';
       }).join('') + '<a href="#check-up/' + id + '">Check-up</a></nav>';
     /* an idea gets the whole screen: only a link back to its chapter above it */
     if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, '<div class="wrap chapter" data-strand="' + ctx.m.strand + '"><p class="crumb"><a href="#' + id + '">&lsaquo; ' + ctx.m.title + '</a></p>');
     if (tab === 'done') return lessonEnd(app, id, parts[1], h);
+    if (tab === 'tasks') return A.tasks.page(app, id, parts[1], h);
     if (tab === 'practice') {
       app.innerHTML = h + '<div class="quiz prac" id="practice"></div>' + A.nextPrev(ctx) + '</div>';
       A.practice($('#practice', app), id, ch.practice, parts[1] || null);
@@ -96,6 +98,7 @@
             return '<li><a href="#' + id + '/learn/' + c.slug + '">' + dot(k) + '<span>' + c.title + '</span><span class="sr"> (' + ST[k] + ')</span></a></li>';
           }).join('') + '</ul></section>';
       }).join('') + '</div>' +
+      (ch.tasks ? '<section class="ls-lesson"><h2>With a grown-up</h2><p class="t2">Speaking, reading aloud and writing, marked by a grown-up.</p>' + A.tasks.list(id) + '</section>' : '') +
       '<div class="note"><p><b>How each idea works.</b> First <b>watch</b> a short example, one step at a time. Then do a few <b>together</b>, with a hint to think about. ' +
       'Then try some <b>on your own</b>. Getting ' + GOT + ' right on the first try marks the idea <b>Got it</b>. It becomes <b>Mastered</b> when the matching skill in Practise is secure.</p></div>' +
       A.nextPrev(ctx) + '</div>';
@@ -264,7 +267,9 @@
         }).join('') + '</tbody></table></div>' +
         '<div class="tbl"><table><thead><tr><th>Practice skill</th><th>Expectation</th><th>Level</th></tr></thead><tbody>' + (ch.practice || []).map(function (s) {
           return '<tr><td><a href="#' + m.id + '/practice/' + s.id + '">' + s.name + '</a></td><td>' + s.code + '</td><td>' + A.skillStatus(s.id).t + '</td></tr>';
-        }).join('') + '</tbody></table></div></details>';
+        }).join('') + '</tbody></table></div>' + (ch.tasks ? '<div class="tbl"><table><thead><tr><th>With a grown-up</th><th>Expectation</th><th>Marked</th></tr></thead><tbody>' + ch.tasks.map(function (t) {
+          return '<tr><td><a href="#' + m.id + '/tasks/' + t.id + '">' + t.title + '</a></td><td>' + t.code + '</td><td>' + A.tasks.result(t) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' : '') + '</details>';
     });
     app.innerHTML = h + '<div class="note"><p><b>For parents and tutors.</b> "Seen" means the idea was opened. "Got it" means ' + GOT + ' questions in "On your own" were right on the first try. ' +
       '"Mastered" means the matching practice skill reached the top level three times in a row.</p></div></div>';

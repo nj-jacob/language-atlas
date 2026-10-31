@@ -13,7 +13,8 @@
       and grown-up notes stay hidden unless grown-up view is on.
    5. Answering like a child: on the phone screen, every lesson is walked through, practice questions of every kind are answered
       right and sometimes wrong first, every chapter quiz scores full marks when answered right, every check-up is finished,
-      and the results are saved where the progress page (and later the family page) reads them. */
+      and the results are saved where the progress page (and later the family page) reads them. Every activity with a grown-up
+      is opened, written in and marked, and the mark reaches the check-up map. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -24,7 +25,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -135,6 +136,14 @@ async function checkGrade(browser, base, g) {
         sk.code.split(/,\s*/).forEach(x => { if (!CODE.test(x)) out.push(m.id + ' skill ' + sk.id + ': "' + x + '" is not an expectation code'); taught.add(x); });
         if (!sk.shapes || sk.shapes.length < 4) out.push(m.id + ' skill ' + sk.id + ': asks in only ' + (sk.shapes || [1]).length + ' way(s). Every skill needs at least 4 (Atlas.Q.shapes).');
       });
+      (ch.tasks || []).forEach(t => {
+        const w = m.id + ' activity ' + t.id;
+        if (!t.id || !t.title || !t.say || !t.pic) out.push(w + ': needs an id, a title, a picture (pic) and one line for the child (say)');
+        if (!CODE.test(t.code || '')) out.push(w + ': "' + t.code + '" is not an expectation code like B1.3');
+        if (!Array.isArray(t.run) || !t.run.length) out.push(w + ': needs steps for the grown-up (run)');
+        if (!Array.isArray(t.rubric) || t.rubric.length !== 4 || t.rubric.some(r => !r)) out.push(w + ': needs a rubric with exactly 4 levels');
+        taught.add(t.code);
+      });
       listed.forEach(x => { if (!taught.has(x)) out.push(m.id + ': lists ' + x + ' but no idea or skill teaches it'); });
       taught.forEach(x => { if (!listed.includes(x)) out.push(m.id + ': teaches ' + x + ' but does not list it in its codes'); });
     }
@@ -167,6 +176,7 @@ async function checkGrade(browser, base, g) {
     const r = ['home', 'check-up', 'check-up/all', 'progress'];
     for (const [id, ch] of Object.entries(Atlas.chapters)) {
       r.push(id, id + '/practice', id + '/quiz', 'check-up/' + id);
+      if (ch.tasks) { r.push(id + '/tasks'); ch.tasks.forEach(t => r.push(id + '/tasks/' + t.id)); }
       ch.lessons.forEach(ls => { ls.concepts.forEach(c => r.push(id + '/learn/' + c.slug, id + '/learn/' + c.slug + '/2', id + '/learn/' + c.slug + '/3')); r.push(id + '/done/' + ls.id); });
     }
     return r;
@@ -296,9 +306,40 @@ async function checkGrade(browser, base, g) {
   const cov = await page.evaluate(() => { const c = Atlas.load('cov', {}), all = Atlas.allSkills().flatMap(p => p.sk.code.split(/,\s*/)); return all.filter(x => !c[x]); });
   if (cov.length) fail(where, 'chapter check-ups did not cover these expectations: ' + cov.join(', '));
 
+  /* 5e. activities with a grown-up: the child can write and it is kept; the grown-up marks a level; the mark reaches the map */
+  const tasks = await page.evaluate(() => Atlas.allTasks().map(p => [p.ch.id, p.t.id, p.t.code, !!p.t.write]));
+  await page.evaluate(() => Atlas.adult(true));
+  for (const [cid, tid, code, write] of tasks) {
+    const w = where + ' ' + cid + ' activity ' + tid;
+    await go(cid + '/tasks/' + tid);
+    const r = await page.evaluate(write => {
+      const box = document.querySelector('#tkw');
+      if (write && !box) return { err: 'has no box to write in' };
+      if (box) { box.value = 'My draft.'; box.dispatchEvent(new Event('input')); }
+      const b = [...document.querySelectorAll('.tk-b')];
+      if (b.length !== 4) return { err: 'does not show 4 rubric levels in grown-up view' };
+      b[2].click();
+      return { off: __page.runsOff(), pressed: b[2].getAttribute('aria-pressed') };
+    }, write);
+    if (r.err) { fail(w, r.err); continue; }
+    if (r.off) fail(w, 'runs off the side of a phone screen (' + r.off + ')');
+    if (r.pressed !== 'true') fail(w, 'the grown-up\'s mark does not show as chosen');
+    await go('home'); await go(cid + '/tasks/' + tid);
+    const kept = await page.evaluate(([tid, code]) => ({ text: (document.querySelector('#tkw') || {}).value, saved: Atlas.load('task:' + tid, null), cov: Atlas.load('cov', {})[code] }), [tid, code]);
+    if (write && kept.text !== 'My draft.') fail(w, 'what the child wrote was not kept');
+    if (!kept.saved || kept.saved.lv !== 3) fail(w, 'the grown-up\'s mark was not saved');
+    if (!kept.cov || !kept.cov.ok) fail(w, 'the mark did not reach the check-up map for ' + code);
+  }
+  await page.evaluate(() => Atlas.adult(false));
+  if (tasks.length) {
+    await go('check-up');
+    const map = await page.evaluate(() => [...document.querySelectorAll('.pg-cov span')].filter(s => !s.className).map(s => s.textContent));
+    if (map.length) fail(where, 'after every check-up and activity, the map still shows these expectations as not checked: ' + map.join(', '));
+  }
+
   if (errs.length) fail(where, 'errors while answering: ' + [...new Set(errs)].slice(0, 5).join(' / '));
   await ctx.close();
-  return { made: gen.made, routes: routes.length, ideas: ideas.length, answered, types: gen.types };
+  return { made: gen.made, routes: routes.length, ideas: ideas.length, answered, tasks: tasks.length, types: gen.types };
 }
 
 (async () => {
@@ -312,7 +353,7 @@ async function checkGrade(browser, base, g) {
     try {
       const s = await checkGrade(browser, url, g);
       log('Grade ' + g + ': ' + s.made + ' questions made and checked, ' + s.routes + ' pages opened twice (grown-up view off and on), ' + s.ideas + ' ideas walked through, ' +
-        s.answered + ' practice questions answered on a phone screen. Types: ' + Object.entries(s.types).map(([k, v]) => k + ' ' + v).join(', ') + '. ' +
+        s.answered + ' practice questions answered on a phone screen, ' + s.tasks + ' activities marked. Types: ' + Object.entries(s.types).map(([k, v]) => k + ' ' + v).join(', ') + '. ' +
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }

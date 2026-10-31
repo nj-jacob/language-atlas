@@ -5,7 +5,8 @@
      and shows the steps. Three in a row at level 3 marks the skill "Secure".
    - Every fourth question reviews another skill from the chapter that the child has already practised.
    Chapter quiz: seven questions made fresh from the chapter's skills (plus any fixed quiz questions).
-   Check-up: one level-1 question for every skill in a chapter (so all chapter check-ups together cover every expectation),
+   Check-up: one level-1 question for every skill in a chapter (so all chapter check-ups together cover every expectation a
+   computer can mark; activities marked by a grown-up, in tasks.js, cover the rest on the same map),
    then up to three level-2 questions on skills answered right. It sets practice levels and makes a short plan.
 
    Saved (prefix lang-gN:):  sk:<skill> { lv, streak, miss, n, ok, secure, t }   best:<chapter> { s, n, d }
@@ -172,11 +173,13 @@
   function coverage() {
     var cov = A.load('cov', {}), codes = [], seen = {};
     A.allSkills().forEach(function (p) { codesOf(p.sk).forEach(function (c) { if (!seen[c]) { seen[c] = 1; codes.push(c); } }); });
+    A.allTasks().forEach(function (p) { if (!seen[p.t.code]) { seen[p.t.code] = 1; codes.push(p.t.code); } });
     codes.sort(function (a, b) { return a.localeCompare(b, 'en', { numeric: true }); });
     return '<h3>Expectations checked: ' + codes.filter(function (c) { return cov[c]; }).length + ' of ' + codes.length + '</h3><p class="pg-cov">' + codes.map(function (c) {
       var v = cov[c];
       return '<span class="' + (v ? (v.ok ? 'ok' : 'part') : '') + '" title="' + (v ? 'Checked ' + v.d + (v.ok ? ', all right' : ', some to practise') : 'Not checked yet') + '">' + c + '</span>';
-    }).join('') + '</p><p class="t2">Green: checked and right. Yellow: checked, some to practise. White: not checked yet.</p>';
+    }).join('') + '</p><p class="t2">Green: checked and right. Yellow: checked, some to practise. White: not checked yet.</p>' +
+      (A.allTasks().length ? '<p class="t2">Speaking, reading aloud and writing are checked by a grown-up: open <b>With a grown-up</b> in a chapter and mark the activity. Those marks fill in the map too.</p>' : '');
   }
   function checkupHome(app) {
     var hist = A.load('checkups', []), built = A.built().filter(function (m) { return A.chapters[m.id].practice; });

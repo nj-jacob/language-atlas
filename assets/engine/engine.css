@@ -183,3 +183,35 @@ html.bigtext .opts{grid-template-columns:1fr}
 .fig .wmeans,.fig .wsum{display:flex;width:fit-content;max-width:100%;margin:6px auto}
 .qk-tile .wt,.qk-card .wt{min-height:0;border:0;background:none;padding:0;font-size:inherit}
 .qk-build{gap:4px}
+
+/* ---------- more word pictures (words.js) ---------- */
+.wt-syl{border-color:var(--sb);color:var(--sb)}
+.wt-syl:nth-child(4n+3){border-color:var(--sd);color:var(--sd)}
+.wsyl{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
+.wsyl .wop{color:var(--ink3)}
+.wgap{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--ink2);margin:0 .15em;vertical-align:baseline;height:1em}
+.psg{background:var(--card);border:1px solid var(--line2);border-left:5px solid var(--strand);border-radius:12px;padding:12px 16px;margin:8px 0;text-align:left;max-width:34em}
+.psg b.pt{display:block;font-family:var(--display);font-size:1.1rem;margin-bottom:4px}
+.psg p{margin:.35em 0;font-size:1.12rem;line-height:1.55}
+.fig .psg{margin:8px auto}
+.wpics{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+/* ---------- activities with a grown-up (tasks.js) ---------- */
+.tk-list{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.tk-list a{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);padding:10px 12px;border:1px solid var(--line2);border-radius:12px;background:var(--card)}
+.tk-list a:hover{border-color:var(--accent)}
+.tk-list a>span:last-child{display:grid;gap:2px}
+.tk-pic{display:flex;flex:none}
+.tk-pic .wicon{width:34px;height:34px}
+.tk-show{display:grid;justify-items:center;text-align:center;gap:6px;margin:10px 0 14px}
+.tk-show .wicon{width:64px;height:64px}
+.tk-show p{font-size:1.2rem;font-weight:700;margin:0}
+.tk-wl{display:block;font-weight:700;margin:8px 0 4px}
+.tk-w{width:100%;box-sizing:border-box;font:inherit;font-size:1.15rem;line-height:1.6;padding:10px 12px;border:1.5px solid var(--line2);border-radius:12px;background:var(--card);color:var(--ink);resize:vertical}
+.tk-w:focus{outline:3px solid var(--focus);outline-offset:1px}
+.tk-mark{margin-top:14px;padding:14px 16px;border-radius:12px;border:1px dashed var(--line2);background:var(--paper)}
+.tk-lv{display:grid;gap:8px;margin:8px 0}
+.tk-b{font:inherit;text-align:left;cursor:pointer;display:grid;gap:2px;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink);min-height:48px}
+.tk-b span{font-size:.95rem;color:var(--ink2)}
+.tk-b.qk-on{border-color:var(--accent);background:var(--tint)}
+.tk-now{font-weight:700;margin:4px 0 0}

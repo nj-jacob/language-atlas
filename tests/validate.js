@@ -38,6 +38,11 @@ window.__H = {
   sentenceOk: s => /^[A-Z]/.test(s) && /[.?!]$/.test(s),
   /* words that start an asking sentence */
   askWords: ['Can', 'Is', 'Did', 'Do', 'Does', 'Where', 'Who', 'What', 'When', 'Why', 'How', 'Are', 'Will', 'May'],
+  /* the marked answer of a pick-one or tap question, as plain text, or null when the right text is not there exactly once */
+  marked: q => { const list = (q.options || q.tiles).map(window.__H.strip), a = list[q.answer]; return list.filter(x => x === a).length === 1 ? a : null; },
+  /* the texts a pick-every-answer question marks right */
+  picked: q => q.answer.map(i => window.__H.strip(q.options[i])),
+  has: (html, s) => window.__H.strip(html).includes(s),
   sameSet: (a, b) => a.length === b.length && a.slice().sort().join(',') === b.slice().sort().join(',')
 };
 
