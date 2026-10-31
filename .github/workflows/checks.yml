@@ -29,7 +29,8 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
+      contents: read          # to check out this private repository
+      pull-requests: write    # to post the preview link
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
