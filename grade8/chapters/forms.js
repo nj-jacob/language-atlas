@@ -30,15 +30,15 @@
   function graph(title, bars, lo) {
     var hi = Math.max.apply(null, bars.map(function (b) { return b[1]; })) + 2, H = 120, x0 = 34, bw = 46, gap = 26;
     var y = function (v) { return 20 + H - (v - lo) / (hi - lo) * H; };
-    var s = '<svg viewBox="0 0 260 175" width="260" role="img" aria-label="' + title + '"><text x="130" y="12" text-anchor="middle" font-size="11" fill="currentColor">' + title + '</text>' +
+    var s = '<svg viewBox="0 0 260 175" width="260" role="img" aria-label="' + title + '"><text x="130" y="12" text-anchor="middle" font-size="12" fill="currentColor">' + title + '</text>' +
       '<line x1="' + x0 + '" y1="20" x2="' + x0 + '" y2="' + (20 + H) + '" stroke="currentColor"/><line x1="' + x0 + '" y1="' + (20 + H) + '" x2="250" y2="' + (20 + H) + '" stroke="currentColor"/>' +
-      '<text x="' + (x0 - 4) + '" y="' + (24 + H) + '" text-anchor="end" font-size="10" fill="currentColor" class="axis">' + lo + '</text>' +
-      '<text x="' + (x0 - 4) + '" y="26" text-anchor="end" font-size="10" fill="currentColor" class="axis">' + hi + '</text>';
+      '<text x="' + (x0 - 4) + '" y="' + (24 + H) + '" text-anchor="end" font-size="12" fill="currentColor" class="axis">' + lo + '</text>' +
+      '<text x="' + (x0 - 4) + '" y="26" text-anchor="end" font-size="12" fill="currentColor" class="axis">' + hi + '</text>';
     bars.forEach(function (b, i) {
       var bx = x0 + 14 + i * (bw + gap);
       s += '<rect x="' + bx + '" y="' + y(b[1]) + '" width="' + bw + '" height="' + (20 + H - y(b[1])) + '" fill="currentColor" fill-opacity=".35"/>' +
-        '<text x="' + (bx + bw / 2) + '" y="' + (y(b[1]) - 4) + '" text-anchor="middle" font-size="10" fill="currentColor" class="val">' + b[1] + '</text>' +
-        '<text x="' + (bx + bw / 2) + '" y="' + (34 + H) + '" text-anchor="middle" font-size="10" fill="currentColor" class="lab">' + b[0] + '</text>';
+        '<text x="' + (bx + bw / 2) + '" y="' + (y(b[1]) - 4) + '" text-anchor="middle" font-size="12" fill="currentColor" class="val">' + b[1] + '</text>' +
+        '<text x="' + (bx + bw / 2) + '" y="' + (34 + H) + '" text-anchor="middle" font-size="12" fill="currentColor" class="lab">' + b[0] + '</text>';
     });
     return '<div class="fig">' + s + '</svg></div>';
   }
