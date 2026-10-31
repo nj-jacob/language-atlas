@@ -12,6 +12,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `assets/atlas-theme.css` | The one look for every page, matching Math Atlas |
 | `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button; on a computer the header is one row and text size and grown-up view sit behind "Settings" |
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
+| `assets/sounds/` | The 44 recorded letter sounds (one short mp3 each), played by the sound buttons in Grades 1 and 2 |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
 | `.github/workflows/` | `checks.yml` runs the checks on pull requests. `publish.yml` runs them again on `main`, then asks math-atlas to publish (needs the `ATLAS_TOKEN` secret, see `SETUP.md`). |
 
@@ -21,7 +22,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | --- | --- |
 | `atlas.js` | The `Atlas` object: saved progress, random helpers, the page router, the grade's home page, text size and grown-up view |
 | `qkit.js` | The answer types (`Atlas.Q`): pick one, tap, pick all, put in order, build a word, match, true or false with a reason. Also question shapes. |
-| `words.js` | Word pictures (`Atlas.W`): sentence strips, highlighted letters, coloured word-part tiles (prefix, base, suffix), picture cues and "Watch me" steps. Lessons show more and say less. |
+| `words.js` | Word pictures (`Atlas.W`): sentence strips, highlighted letters, coloured word-part tiles (prefix, base, suffix), picture cues, "Watch me" steps and letter-sound buttons that play the recorded clips in `assets/sounds/`. Lessons show more and say less. |
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
 | `practice.js` | Adaptive practice, the chapter quiz and the check-up |
 | `tasks.js` | Activities with a grown-up: speaking, reading aloud, drafting and more, marked with a four-level rubric in grown-up view |

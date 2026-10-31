@@ -47,7 +47,7 @@
   /* Blend these sounds. Which word? */
   function blend(lv) {
     var s = R.pick(lv > 1 ? SOUNDS.filter(function (x) { return x.length > 3; }) : SOUNDS.filter(function (x) { return x.length <= 4; })), w = word(s);
-    return Q.tiles('Blend the sounds. Which word is it?', w, NEAR[w].slice(0, lv > 1 ? 2 : 1), { fig: W.syl(s), prompt: 'Say each sound. Then say them fast.',
+    return Q.tiles('Blend the sounds. Which word is it?', w, NEAR[w].slice(0, lv > 1 ? 2 : 1), { fig: W.soundRow(s), prompt: 'Tap each sound. Then say them fast.',
       hint: 'Touch each tile and say its sound.', explain: W.syl(s) + ' ' + W.tile(w), steps: ['Say the sounds: ' + s.join(', ') + '.', 'Say them fast: <b>' + w + '</b>.'], meta: { k: 'g2-blend', word: w } });
   }
   /* How many sounds in "ship"? */
@@ -132,10 +132,10 @@
       concepts: [
         { slug: 'blend', title: 'Blend the sounds', exp: ['B2.1'], skill: 'sound-out',
           model: [
-            step(W.syl(['f', 'r', 'o', 'g']), 'One tile for each sound.'),
-            step(W.syl(['f', 'r', 'o', 'g']), 'Say them slowly: f, r, o, g.'),
+            step(W.soundRow(['f', 'r', 'o', 'g']), 'One tile for each sound.'),
+            step(W.soundRow(['f', 'r', 'o', 'g']), 'Tap each one. Say them slowly.'),
             step(W.tile('frog'), 'Say them fast.'),
-            step(W.syl(['f', 'i', 'sh']) + W.pic('fish'), '<b>sh</b> is one sound.')
+            step(W.soundRow(['f', 'i', 'sh']) + W.pic('fish'), '<b>sh</b> is one sound.')
           ],
           guided: [function () { return blend(1); }, function () { return blend(1); }],
           check: [function () { return blend(2); }, function () { return blend(2); }],
@@ -144,8 +144,8 @@
         { slug: 'segment', title: 'Split a word into sounds to spell it', exp: ['B2.1'], skill: 'sound-out',
           model: [
             step(W.tile('stomp'), 'Say it slowly.'),
-            step(W.syl(['s', 't', 'o', 'm', 'p']), 'Five sounds. Five fingers.'),
-            step(W.syl(['d', 'u', 'ck']), '<b>ck</b> is one sound: three fingers.')
+            step(W.soundRow(['s', 't', 'o', 'm', 'p']), 'Five sounds. Five fingers.'),
+            step(W.soundRow(['d', 'u', 'ck']), '<b>ck</b> is one sound: three fingers.')
           ],
           guided: [function () { return countSounds(1); }, function () { return spellSounds(1); }],
           check: [function () { return countSounds(2); }, function () { return spellSounds(2); }],
@@ -168,9 +168,9 @@
       concepts: [
         { slug: 'soft-c', title: 'c before e, i or y says s', exp: ['B2.2'], skill: 'spelling-choices',
           model: [
-            step(W.tile(W.hl('cat', 0, 1)), 'Hard c: like k.'),
-            step(W.tile(W.hl('city', 0, 2)), '<b>i</b> comes next: like s.'),
-            step(W.tile(W.hl('face', 2, 4)), '<b>e</b> next: s again.')
+            step(W.tile(W.hl('cat', 0, 1)), 'Hard c: like ' + W.sound('k') + '.'),
+            step(W.tile(W.hl('city', 0, 2)), '<b>i</b> comes next: like ' + W.sound('s') + '.'),
+            step(W.tile(W.hl('face', 2, 4)), '<b>e</b> next: ' + W.sound('s') + ' again.')
           ],
           guided: [function () { return softSound(1, 'c'); }, function () { return softSound(1, 'c'); }],
           check: [function () { return softSound(1, 'c'); }, function () { return softPick(1, 'c'); }],
@@ -178,9 +178,9 @@
           mistake: '<p>Reading <b>city</b> as "kitty". Look at the letter after c.</p>' },
         { slug: 'soft-g', title: 'g before e, i or y often says j', exp: ['B2.2'], skill: 'spelling-choices',
           model: [
-            step(W.tile(W.hl('gate', 0, 1)), 'Hard g, like in goat.'),
-            step(W.tile(W.hl('giant', 0, 2)), '<b>i</b> next: j, like in jam.'),
-            step(W.tile(W.hl('page', 2, 4)), '<b>e</b> next: j again.')
+            step(W.tile(W.hl('gate', 0, 1)), 'Hard g: ' + W.sound('g') + ', like in goat.'),
+            step(W.tile(W.hl('giant', 0, 2)), '<b>i</b> next: ' + W.sound('j') + ', like in jam.'),
+            step(W.tile(W.hl('page', 2, 4)), '<b>e</b> next: ' + W.sound('j') + ' again.')
           ],
           guided: [function () { return softSound(1, 'g'); }, function () { return softSound(1, 'g'); }],
           check: [function () { return softSound(1, 'g'); }, function () { return softPick(1, 'g'); }],
@@ -189,7 +189,7 @@
         { slug: 'long-o', title: 'Long o in the middle: try o-e first', exp: ['B2.2'], skill: 'spelling-choices',
           model: [
             step(W.tile(W.hl('bone', 1, 4)), 'o, a consonant, then e.'),
-            step(W.tile(W.hl('boat', 1, 3)), 'Sometimes <b>oa</b>.'),
+            step(W.tile(W.hl('boat', 1, 3)), 'Sometimes <b>oa</b>. Both say ' + W.sound('oa', '/ō/') + '.'),
             step(W.icon('read'), 'Not sure? Write it both ways. Which one looks right?')
           ],
           guided: [function () { return longO(1); }, function () { return longO(1); }],
@@ -198,7 +198,7 @@
           mistake: '<p>Writing <b>oa</b> everywhere ("hoam"). o-e is the more common spelling in the middle of a word.</p>' },
         { slug: 'air', title: 'The air sound: air, are or ear', exp: ['B2.2'], skill: 'spelling-choices',
           model: [
-            step(W.tile(W.hl('chair', 2, 5)), '<b>air</b>, as in hair.'),
+            step(W.tile(W.hl('chair', 2, 5)), W.sound('air', '<b>air</b>') + ', as in hair.'),
             step(W.tile(W.hl('care', 1, 4)), '<b>are</b>, as in share.'),
             step(W.tile(W.hl('bear', 1, 4)), '<b>ear</b>, in only a few words.'),
             step(W.means('people', '<b>pair</b> of socks, <b>pear</b> to eat'), 'Same sound, different meaning.')

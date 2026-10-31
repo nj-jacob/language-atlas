@@ -1,7 +1,7 @@
 /* Grade 1: sounds in words (phonemic awareness).
    Ontario 2023 Language, Grade 1, B2.1: "use understanding of the sound structure of spoken words to orally isolate, blend,
    and segment phonemes, from simple structures with two phonemes to structures with more phonemes".
-   This is about hearing sounds, so the grown-up says each word and each sound aloud. A sound is written between slashes:
+   This is about hearing sounds, so the grown-up says each word aloud, and sound buttons (Atlas.W.sound) play each sound. A sound is written between slashes:
    /s/ is the sound s makes. All word lists are written for this site. Answer checks: tests/verify/grade1-sounds.js. */
 (function () {
   'use strict';
@@ -20,9 +20,11 @@
     ['cup', 'k', 'p', 'pup'], ['fan', 'f', 'v', 'van'], ['lid', 'd', 'p', 'lip'], ['pig', 'g', 'n', 'pin'], ['hat', 'a', 'i', 'hit'], ['net', 'e', 'u', 'nut']];
 
   function snd(p) { return '/' + p + '/'; }
+  /* the same, as a button that plays the recorded sound (never inside an answer choice) */
+  function say(p) { return W.sound(p, snd(p)); }
   /* the word's picture when there is one (the grown-up says the word), otherwise the written word */
   function show(w) { return W.pics.indexOf(w) >= 0 ? W.pic(w) : W.tile(w); }
-  function sounds(x) { return '<span class="wsyl">' + x.p.map(function (p) { return W.tile(snd(p), 'syl'); }).join('') + '</span>'; }
+  function sounds(x) { return W.soundRow(x.p, x.p.map(snd)); }
   function noRepeat(x) { return x.p.every(function (p, i) { return x.p.indexOf(p) === i; }); }
   /* tiles: the right sound, other sounds from the word, and a sound that is often mixed up with it */
   function soundTiles(x, right, n) {
@@ -40,7 +42,7 @@
     return Q.tiles('What is the <b>' + where + '</b> sound in <b>' + x.w + '</b>?', t[0], t[1], { fig: show(x.w),
       prompt: where === 'first' ? 'Say the word slowly. What do you hear first?' : where === 'last' ? 'Stretch the word. What do you hear at the very end?' : 'Stretch the word. What do you hear between the first and last sound?',
       hint: 'Say it slowly, one sound at a time.', explain: sounds(x),
-      steps: ['Say <b>' + x.w + '</b> slowly.', 'Its sounds: ' + x.p.map(snd).join(' ') + '.', 'The ' + where + ' one is ' + snd(x.p[at]) + '.'],
+      steps: ['Say <b>' + x.w + '</b> slowly.', 'Its sounds: ' + x.p.map(say).join(' ') + '.', 'The ' + where + ' one is ' + say(x.p[at]) + '.'],
       meta: { k: 'g1-isolate', word: x.w, where: where } });
   }
   function first(lv) { return isolate('first', lv); }
@@ -53,7 +55,7 @@
     var wrong = R.some(WORDS.filter(function (y) { return y.p[0] !== x.p[0]; }), lv > 1 ? 3 : 2);
     return Q.one('Which word starts with the same sound as <b>' + x.w + '</b>?', right.w, wrong.map(function (y) { return y.w; }), {
       prompt: 'Say the first sound of <b>' + x.w + '</b>. Then say the first sound of each word.', hint: 'Listen to the very first sound, not the letter.',
-      explain: '<b>' + x.w + '</b> and <b>' + right.w + '</b> both start with ' + snd(x.p[0]) + '.', meta: { k: 'g1-same-first', word: x.w } });
+      explain: '<b>' + x.w + '</b> and <b>' + right.w + '</b> both start with ' + say(x.p[0]) + '.', meta: { k: 'g1-same-first', word: x.w } });
   }
 
   /* /m/ /a/ /p/: what word? */
@@ -62,15 +64,15 @@
     var wrong = WORDS.filter(function (y) { return y !== x && y.p.length === x.p.length && (y.p[0] === x.p[0] || y.p[y.p.length - 1] === x.p[x.p.length - 1] || y.p[1] === x.p[1]); });
     if (wrong.length < 2) wrong = wrong.concat(R.some(WORDS.filter(function (y) { return y !== x && y.p.length === x.p.length; }), 2));
     return Q.one('Blend the sounds. What word do they make?', x.w, R.some(wrong, lv > 2 ? 3 : 2).map(function (y) { return y.w; }), { fig: sounds(x),
-      prompt: 'Say each sound, then say them faster and faster.', hint: 'Say the sounds quickly, with no gaps.', explain: x.p.map(snd).join(' ') + ' makes <b>' + x.w + '</b>.',
-      steps: ['Say ' + x.p.map(snd).join(', ') + '.', 'Now say them fast, with no gaps: <b>' + x.w + '</b>.'], meta: { k: 'g1-blend', word: x.w } });
+      prompt: 'Say each sound, then say them faster and faster.', hint: 'Say the sounds quickly, with no gaps.', explain: sounds(x) + ' makes <b>' + x.w + '</b>.',
+      steps: ['Say ' + x.p.map(say).join(' ') + '.', 'Now say them fast, with no gaps: <b>' + x.w + '</b>.'], meta: { k: 'g1-blend', word: x.w } });
   }
   /* How many sounds in fish? */
   function count(lv) {
     var x = R.pick(WORDS.filter(function (w) { return lv > 1 || w.p.length <= 4; })), n = x.p.length;
     return Q.one('How many <b>sounds</b> in <b>' + x.w + '</b>?', String(n), ['2', '3', '4', '5'].filter(function (k) { return +k !== n; }).slice(0, lv > 1 ? 3 : 2), { fig: show(x.w),
       prompt: 'Tap one finger for each sound you say.', hint: 'Count sounds, not letters. <b>sh</b> is one sound.', explain: sounds(x),
-      steps: ['Say <b>' + x.w + '</b> slowly.', 'One finger for each sound: ' + x.p.map(snd).join(' ') + '.', 'That is ' + n + ' sounds.'], meta: { k: 'g1-count', word: x.w } });
+      steps: ['Say <b>' + x.w + '</b> slowly.', 'One finger for each sound: ' + x.p.map(say).join(' ') + '.', 'That is ' + n + ' sounds.'], meta: { k: 'g1-count', word: x.w } });
   }
   /* put the sounds of frog in order */
   function segment(lv) {
@@ -83,7 +85,7 @@
     var s = R.pick(SWAP), others = SWAP.filter(function (o) { return o !== s; });
     var wrong = [s[0]].concat(others.filter(function (o) { return o[3].length === s[3].length && o[3] !== s[3]; }).map(function (o) { return o[3]; }));
     return Q.one('Say <b>' + s[0] + '</b>. Change ' + snd(s[1]) + ' to ' + snd(s[2]) + '. What new word do you get?', s[3], R.some(wrong.slice(1), lv > 1 ? 2 : 1).concat(lv > 2 ? [s[0]] : []), {
-      fig: W.tile(s[0]), prompt: 'Take out ' + snd(s[1]) + '. Put in ' + snd(s[2]) + '. Say it.', hint: 'Keep the other sounds the same.',
+      fig: W.tile(s[0]), prompt: 'Take out ' + say(s[1]) + '. Put in ' + say(s[2]) + '. Say it.', hint: 'Keep the other sounds the same.',
       explain: '<b>' + s[0] + '</b> becomes <b>' + s[3] + '</b>.', meta: { k: 'g1-change', from: s[0], out: s[1], into: s[2] } });
   }
 
@@ -95,8 +97,8 @@
         { slug: 'first', title: 'The first sound', exp: ['B2.1'], skill: 'hear',
           model: [
             step(W.pic('sun'), 'Say it slowly: sss-un.'),
-            step(W.tile(W.hl('sun', 0, 1)), 'You hear /s/ first.'),
-            step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b> is one sound: /sh/.')
+            step(W.tile(W.hl('sun', 0, 1)), 'You hear ' + say('s') + ' first.'),
+            step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b> is one sound: ' + say('sh') + '.')
           ],
           guided: [function () { return first(1); }, function () { return first(1); }],
           check: [function () { return first(1); }, function () { return sameFirst(1); }],
@@ -105,8 +107,8 @@
         { slug: 'last', title: 'The last sound', exp: ['B2.1'], skill: 'hear',
           model: [
             step(W.pic('map'), 'Stretch it: ma-p.'),
-            step(W.tile(W.hl('map', 2, 3)), 'You hear /p/ at the very end.'),
-            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b> makes one sound: /k/.')
+            step(W.tile(W.hl('map', 2, 3)), 'You hear ' + say('p') + ' at the very end.'),
+            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b> makes one sound: ' + say('k') + '.')
           ],
           guided: [function () { return last(1); }, function () { return last(1); }],
           check: [function () { return last(1); }, function () { return last(2); }],
@@ -115,8 +117,8 @@
         { slug: 'middle', title: 'The middle sound', exp: ['B2.1'], skill: 'hear',
           model: [
             step(sounds(x0('cat'))),
-            step(W.tile(W.hl('cat', 1, 2)), 'Between /k/ and /t/: /a/.'),
-            step(W.tile(W.hl('pig', 1, 2)), 'In <b>pig</b>: /i/.')
+            step(W.tile(W.hl('cat', 1, 2)), 'Between ' + say('k') + ' and ' + say('t') + ': ' + say('a') + '.'),
+            step(W.tile(W.hl('pig', 1, 2)), 'In <b>pig</b>: ' + say('i') + '.')
           ],
           key: '<p>The middle sound is often a vowel: a, e, i, o or u.</p>',
           guided: [function () { return middle(1); }, function () { return middle(1); }],
@@ -149,9 +151,9 @@
           mistake: '<p>Counting letters instead of sounds. Ask the child to say the sounds out loud, not read the letters.</p>' },
         { slug: 'change', title: 'Swap one sound', exp: ['B2.1'], skill: 'blend',
           model: [
-            step(W.pic('cat'), 'Take away /k/.'),
-            step(W.pic('hat') + W.tile(W.hl('hat', 0, 1)), 'Put in /h/: <b>hat</b>.'),
-            step(W.tile('hat') + W.tile('hit'), 'Change the middle: /a/ to /i/.')
+            step(W.pic('cat'), 'Take away ' + say('k') + '.'),
+            step(W.pic('hat') + W.tile(W.hl('hat', 0, 1)), 'Put in ' + say('h') + ': <b>hat</b>.'),
+            step(W.tile('hat') + W.tile('hit'), 'Change the middle: ' + say('a') + ' to ' + say('i') + '.')
           ],
           guided: [function () { return change(1); }, function () { return change(1); }],
           check: [function () { return change(2); }, function () { return change(2); }],

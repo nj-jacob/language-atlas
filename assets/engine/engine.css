@@ -188,6 +188,13 @@ html.bigtext .opts{grid-template-columns:1fr}
 .wt-syl:nth-child(4n+3){border-color:var(--sd);color:var(--sd)}
 .wsyl{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
 .wsyl .wop{color:var(--ink3)}
+/* sound buttons (words.js): tap to hear a recorded letter sound */
+.wsnd{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:4px 12px 4px 8px;margin:0 2px;border-radius:999px;border:2px solid var(--sb);background:var(--card);color:var(--sb);font:inherit;font-weight:700;cursor:pointer;vertical-align:middle}
+.wsnd.wt{border-radius:12px;font-size:1.4rem}
+.wsnd-i{width:20px;height:20px;flex:none;opacity:.8}
+.wsnd:hover{background:color-mix(in srgb,var(--sb) 8%,var(--card))}
+.wsnd:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.wsnd-on{background:color-mix(in srgb,var(--sb) 16%,var(--card))}
 .wgap{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--ink2);margin:0 .15em;vertical-align:baseline;height:1em}
 .psg{background:var(--card);border:1px solid var(--line2);border-left:5px solid var(--strand);border-radius:12px;padding:12px 16px;margin:8px 0;text-align:left;max-width:34em}
 .psg b.pt{display:block;font-family:var(--display);font-size:1.1rem;margin-bottom:4px}

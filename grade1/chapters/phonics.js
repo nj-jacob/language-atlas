@@ -44,7 +44,7 @@
   function sameVowel(lv) {
     var w = R.pick(CVC), v = vowelOf(w), right = R.pick(CVC.filter(function (x) { return x !== w && vowelOf(x) === v; }));
     var wrong = R.some(CVC.filter(function (x) { return vowelOf(x) !== v; }), lv > 1 ? 3 : 2);
-    return Q.one('Which word has the same <b>middle sound</b> as <b>' + w + '</b>?', right, wrong, { prompt: 'Say the middle sound of <b>' + w + '</b>: /' + v + '/.',
+    return Q.one('Which word has the same <b>middle sound</b> as <b>' + w + '</b>?', right, wrong, { prompt: 'Say the middle sound of <b>' + w + '</b>: ' + W.sound(v) + '.',
       hint: 'Look at the vowel in the middle.', explain: W.tile(W.hl(w, 1, 2)) + ' ' + W.tile(W.hl(right, 1, 2)), meta: { k: 'g1-same-vowel', word: w } });
   }
   function whichVowel(lv) {
@@ -104,7 +104,7 @@
   function fillR(lv) {
     var c = R.pick(RCLUES), t = teamOf(c[0]);
     return Q.tiles('Which letters fill the gap? <i>' + c[1].charAt(0).toUpperCase() + c[1].slice(1) + '.</i>', t, [t === 'ar' ? 'or' : 'ar'].concat(lv > 1 ? ['ee'] : []), {
-      fig: gapAt(c[0], t), prompt: 'Say the word. Is it /ar/ like car, or /or/ like fork?', hint: '<b>ar</b> as in car. <b>or</b> as in fork.',
+      fig: gapAt(c[0], t), prompt: 'Say the word. Is it ' + W.sound('ar') + ' like car, or ' + W.sound('or') + ' like fork?', hint: '<b>ar</b> as in car. <b>or</b> as in fork.',
       explain: W.tile(W.hl(c[0], c[0].indexOf(t), c[0].indexOf(t) + 2)), meta: { k: 'g1-fill-team', clue: c[1] } });
   }
 
@@ -115,8 +115,8 @@
         { slug: 'vowels', title: 'Five vowels', exp: ['B2.3'], skill: 'short-vowels',
           model: [
             step(W.tile('a') + W.tile('e') + W.tile('i') + W.tile('o') + W.tile('u'), 'Every word has at least one.'),
-            step(W.pic('cat') + W.tile(W.hl('cat', 1, 2)), '/a/ as in cat.'),
-            step(W.tile(W.hl('pig', 1, 2)) + W.tile(W.hl('dog', 1, 2)), '/i/ as in pig. /o/ as in dog.')
+            step(W.pic('cat') + W.tile(W.hl('cat', 1, 2)), W.sound('a') + ' as in cat.'),
+            step(W.tile(W.hl('pig', 1, 2)) + W.tile(W.hl('dog', 1, 2)), W.sound('i') + ' as in pig. ' + W.sound('o') + ' as in dog.')
           ],
           guided: [function () { return whichVowel(1); }, function () { return whichVowel(1); }],
           check: [function () { return whichVowel(1); }, function () { return sameVowel(1); }],
@@ -138,10 +138,10 @@
       concepts: [
         { slug: 'sh-ch-th', title: 'Two letters can make one sound', exp: ['B2.3'], skill: 'digraphs',
           model: [
-            step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b>: /sh/, like hush.'),
-            step(W.tile(W.hl('chin', 0, 2)), '<b>ch</b>: /ch/, like a train.'),
-            step(W.tile(W.hl('thin', 0, 2)) + W.tile(W.hl('whale', 0, 2)), '<b>th</b>: tongue out. <b>wh</b>: /w/.'),
-            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b>: /k/, at the end.')
+            step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b>: ' + W.sound('sh') + ', like hush.'),
+            step(W.tile(W.hl('chin', 0, 2)), '<b>ch</b>: ' + W.sound('ch') + ', like a train.'),
+            step(W.tile(W.hl('thin', 0, 2)) + W.tile(W.hl('whale', 0, 2)), '<b>th</b>: ' + W.sound('th') + ', tongue out. <b>wh</b>: ' + W.sound('wh', '/w/') + '.'),
+            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b>: ' + W.sound('ck', '/k/') + ', at the end.')
           ],
           guided: [function () { return whichDigraph(1); }, function () { return whichDigraph(1); }],
           check: [function () { return whichDigraph(1); }, function () { return fillDigraph(1); }],
@@ -172,9 +172,9 @@
           mistake: '<p>Reading the e out loud ("kit-eh"). The e is silent; its job is to change the vowel.</p>' },
         { slug: 'teams', title: 'Vowel teams', exp: ['B2.3'], skill: 'vowel-patterns',
           model: [
-            step(W.pic('tree') + W.tile(W.hl('tree', 2, 4)), '<b>ee</b> says /ē/.'),
-            step(W.tile(W.hl('rain', 1, 3)) + W.tile(W.hl('day', 1, 3)), '<b>ai</b> and <b>ay</b> say /ā/.'),
-            step(W.tile(W.hl('boat', 1, 3)), '<b>oa</b> says /ō/.')
+            step(W.pic('tree') + W.tile(W.hl('tree', 2, 4)), '<b>ee</b> says ' + W.sound('ee', '/ē/') + '.'),
+            step(W.tile(W.hl('rain', 1, 3)) + W.tile(W.hl('day', 1, 3)), '<b>ai</b> and <b>ay</b> say ' + W.sound('ai', '/ā/') + '.'),
+            step(W.tile(W.hl('boat', 1, 3)), '<b>oa</b> says ' + W.sound('oa', '/ō/') + '.')
           ],
           key: '<p>Two vowels together: the first one often says its name.</p>',
           guided: [function () { return teamIn(1); }, function () { return fillTeam(1); }],
@@ -183,8 +183,8 @@
           mistake: '<p>Reading each vowel on its own (bo-at). Cover one vowel to show that the pair makes one sound.</p>' },
         { slug: 'ar-or', title: 'ar and or', exp: ['B2.3'], skill: 'vowel-patterns',
           model: [
-            step(W.tile(W.hl('car', 1, 3)), '<b>ar</b> as in car.'),
-            step(W.tile(W.hl('fork', 1, 3)), '<b>or</b> as in fork.'),
+            step(W.tile(W.hl('car', 1, 3)), W.sound('ar', '<b>ar</b>') + ' as in car.'),
+            step(W.tile(W.hl('fork', 1, 3)), W.sound('or', '<b>or</b>') + ' as in fork.'),
             step(W.tile(W.hl('star', 2, 4)) + W.tile(W.hl('corn', 1, 3)))
           ],
           key: '<p>The r changes the sound of the vowel.</p>',
