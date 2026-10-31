@@ -177,6 +177,7 @@ html.bigtext .opts{grid-template-columns:1fr}
 .wsum{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:6px 0}
 .wop{font-size:1.4rem;font-weight:700;color:var(--ink2)}
 .wicon{width:30px;height:30px;flex:none;color:var(--sc)}
+.wpic{width:72px;height:72px;flex:none;color:var(--ink);vertical-align:middle}
 .wmeans{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:12px;background:var(--paper);border:1px solid var(--line2);font-size:1.15rem}
 .fig .wmeans,.fig .wsum{display:flex;width:fit-content;max-width:100%;margin:6px auto}
 .qk-tile .wt,.qk-card .wt{min-height:0;border:0;background:none;padding:0;font-size:inherit}
