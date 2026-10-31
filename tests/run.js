@@ -32,7 +32,7 @@ function fail(where, what) { problems.push(where + ': ' + what); }
 function log(s) { process.stdout.write(s + '\n'); }
 function walk(d) {
   return fs.readdirSync(d, { withFileTypes: true }).flatMap(e => {
-    if (['node_modules', '.git', '.firebase', 'shots'].includes(e.name)) return [];
+    if (['node_modules', '.git', '.firebase', '.preview', 'shots'].includes(e.name)) return [];
     const p = path.join(d, e.name);
     return e.isDirectory() ? walk(p) : [p];
   });
