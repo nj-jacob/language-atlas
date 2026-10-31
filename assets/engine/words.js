@@ -6,7 +6,7 @@
      Atlas.W.sum([['un', 'prefix'], ['happy', 'base']])   un + happy = unhappy, as tiles
      Atlas.W.syl(['rab', 'bit'])                  a word split into syllables (beats)
      Atlas.W.gap()                                a blank to fill in a sentence
-     Atlas.W.passage('Title', ['Line one.', ...]) a short reading passage on a card
+     Atlas.W.passage('Title', ['Line one.', ...]) a short reading passage on a card ('# Heading' lines show as headings)
      Atlas.W.icon('not')                          a small picture cue: not, again, full, without, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
      Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line */
@@ -51,7 +51,9 @@
     },
     syl: function (parts) { return '<span class="wsyl">' + parts.map(function (p) { return W.tile(p, 'syl'); }).join('<span class="wop" aria-hidden="true">&middot;</span>') + '</span>'; },
     gap: function () { return '<span class="wgap" aria-label="blank"></span>'; },
-    passage: function (title, lines) { return '<div class="psg">' + (title ? '<b class="pt">' + title + '</b>' : '') + lines.map(function (l) { return '<p>' + l + '</p>'; }).join('') + '</div>'; },
+    passage: function (title, lines) {
+      return '<div class="psg">' + (title ? '<b class="pt">' + title + '</b>' : '') + lines.map(function (l) { return l.charAt(0) === '#' ? '<b class="psh">' + l.slice(2) + '</b>' : '<p>' + l + '</p>'; }).join('') + '</div>';
+    },
     icon: function (name) { return '<svg class="wicon" viewBox="0 0 32 32" aria-hidden="true">' + ICONS[name] + '</svg>'; },
     means: function (icon, html) { return '<span class="wmeans">' + W.icon(icon) + '<span>' + html + '</span></span>'; },
     step: function (pic, line) { return '<div class="wsum">' + pic + '</div><p>' + line + '</p>'; }

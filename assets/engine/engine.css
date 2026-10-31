@@ -215,3 +215,4 @@ html.bigtext .opts{grid-template-columns:1fr}
 .tk-b span{font-size:.95rem;color:var(--ink2)}
 .tk-b.qk-on{border-color:var(--accent);background:var(--tint)}
 .tk-now{font-weight:700;margin:4px 0 0}
+.psg b.psh{display:block;font-size:1rem;margin:10px 0 0;color:var(--strand)}

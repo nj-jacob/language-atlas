@@ -2,7 +2,7 @@
    A chapter listed here without a file shows as "Coming soon". */
 Atlas.setup({
   grade: 3,
-  curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B and D. Strand C (Comprehension) is waiting for the official text.',
+  curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D.',
   chapters: [
     { id: 'sounds', title: 'Syllables and Spelling', sub: 'beats in long words, vowel teams and tricky words', strand: 'B', codes: 'B2.1, B2.2',
       desc: 'Split long words into beats to read them. Spell ai, ay, oa and ow in the right place.' },
@@ -20,8 +20,10 @@ Atlas.setup({
       desc: 'Quotation marks and commas for speech, apostrophes in contractions, and capitals in titles.' },
     { id: 'talking', title: 'Listening and Speaking', sub: 'listen well, speak clearly', strand: 'B', codes: 'B1.1 to B1.5',
       desc: 'Ask questions to check, pick a voice for the audience, use your face and hands, and choose clear words.' },
-    { id: 'reading', title: 'Reading for Meaning', sub: 'understanding what you read', strand: 'C', codes: 'Strand C',
-      desc: 'Waiting for the official Grade 3 Strand C wording before it is written.' },
+    { id: 'reading', title: 'Reading for Meaning', sub: 'facts, main ideas, predictions and kinds of texts', strand: 'C', codes: 'C1.1, C1.2, C1.6, C1.7, C2.1 to C2.7',
+      desc: 'Find answers in the text, tell the main idea, predict with a clue, fix it when it does not make sense, and tell who is telling the story.' },
+    { id: 'thinking', title: 'Thinking About Texts', sub: 'how texts are built, the writer\'s craft, and reading between the lines', strand: 'C', codes: 'C1.3, C1.4, C1.5, C3.1 to C3.8',
+      desc: 'Headings, pictures and cause and effect. Metaphors and sound patterns. Feelings, comparisons and points of view.' },
     { id: 'planning', title: 'Planning Writing', sub: 'purpose, audience, ideas and order', strand: 'D', codes: 'D1.1 to D1.5',
       desc: 'Decide who you are writing for and why, gather ideas from three sources, and put them in order.' },
     { id: 'writing', title: 'Writing and Publishing', sub: 'draft, revise, edit and share', strand: 'D', codes: 'D2.1 to D2.6, D3.1 to D3.3',
