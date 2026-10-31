@@ -1,5 +1,5 @@
 /* Grade 1 answer checks. Each one works the answer out again from what the child sees, without the site's code.
-   Return '' when the marked answer is right, or a short message saying what is wrong. Keys match meta.k in grade1/chapters/. */
+   Return an empty string when the marked answer is right, or a short message saying what is wrong. Keys match meta.k in grade1/chapters/sentences.js. */
 (function () {
   const V = window.__verify, H = window.__H;
   const text = s => H.strip(s);
@@ -39,4 +39,18 @@
     const good = q.options.map((o, i) => (H.sentenceOk(text(o)) ? i : -1)).filter(i => i >= 0);
     return H.sameSet(good, q.answer) ? '' : 'marked ' + q.answer + ' but right ones are ' + good;
   };
+})();
+/* kinds of sentences, complete sentences and joining with and (B3.1) */
+(function () {
+  const V = window.__verify, H = window.__H, text = s => H.strip(s);
+  const COMMAND = ['Sit', 'Close', 'Put', 'Wash', 'Bring', 'Please', 'Feed', 'Turn'];
+  const kind = s => /\?$/.test(s) ? 'asking' : /!$/.test(s) ? 'strong feeling' : COMMAND.includes(s.split(/[ ,]/)[0]) ? 'command' : 'telling';
+  const FULL = ['The dog ran to the park.', 'My sister likes to swim.', 'Grandma baked a pie.', 'The loon dove under the water.', 'Omar kicked the ball.', 'The bus stopped at the corner.'];
+  const joined = (a, b) => a.replace(/\.$/, '') + ' and ' + b;
+  V['g1-kind-of'] = (q, m) => text(q.fig) === m.s && H.marked(q) === kind(m.s) ? '' : 'expected ' + kind(m.s) + ' for "' + m.s + '"';
+  V['g1-match-kind'] = q => q.pairs.every(p => kind(text(p[0])) === text(p[1])) ? '' : 'a sentence is matched to the wrong kind';
+  V['g1-pick-kind'] = (q, m) => H.sameSet(q.options.map((o, i) => kind(text(o)) === m.kind ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the ' + m.kind + ' sentences are not the ones marked';
+  V['g1-complete'] = q => { const ok = q.options.map(text).filter(o => FULL.includes(o)); return ok.length === 1 && H.marked(q) === ok[0] ? '' : 'expected the complete sentence'; };
+  V['g1-join-and'] = (q, m) => { const want = joined(m.a, m.b); return H.sentenceOk(want) && H.marked(q) === want && q.options.map(text).filter(o => o === want).length === 1 ? '' : 'expected ' + want; };
+  V['g1-build-join'] = (q, m) => { const s = q.items.map(text).join(' '); return s === joined(m.a, m.b) && H.sentenceOk(s) ? '' : 'the words make "' + s + '"'; };
 })();
