@@ -25,7 +25,7 @@
     return { q: Q.name() + ' says:', fig: W.sent(said), type: 'tf', answer: right, why: { options: ['Others can screenshot, save or share it.', 'Deleting removes every copy.'], answer: 0 },
       hint: 'Can someone save a post before you delete it?', explain: 'Your digital footprint can last. Post as if anyone could see it.', meta: { k: 'g7-footprint-tf', said: said } };
   }
-  var STRONG = ['maple-canoe-7-river-lantern', 'Purple!Moose#Skates42', 'quiet-cedar-blue-kettle-19'];
+  var STRONG = ['maple-canoe-7-river-lantern', 'Purple-Moose!Skates-42', 'quiet-cedar-blue-kettle-19'];
   var WEAK = ['password123', 'liam2013', 'qwerty', 'hockey'];
   function password(lv) {
     return Q.one('Which password is the <b>strongest</b>?', R.pick(STRONG), R.some(WEAK, lv > 1 ? 3 : 2), { hint: 'Long, hard to guess, and not your name or birthday.',
