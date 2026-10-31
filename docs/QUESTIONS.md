@@ -2,7 +2,7 @@
 
 `grade3/chapters/word-parts.js` is the worked example. Every chapter in `grade3/chapters/` follows the same pattern.
 
-**Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs.
+**Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs. For words a child names by sound, use the line-art pictures: `Atlas.W.pic('sun')` (the list is `Atlas.W.pics`: sun, cat, dog, pig, fish, hat, bed, cup, bus, map, jet, fox, egg, bee, kite, moon, tree, apple, ball, box, key, nest, van). An unknown name stops the page with an error, so the checks catch it.
 
 ## An idea (one screen)
 
