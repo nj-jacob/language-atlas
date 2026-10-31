@@ -1,0 +1,71 @@
+/* Grade 8 reading passages, shared by the three comprehension chapters (reading.js, forms.js and thinking.js).
+   Every passage is written for this site. Each one carries what its questions need: facts ([question, answer, two wrong answers,
+   words from the sentence that answers it]), a summary with two weaker ones (a detail, an opinion), inferences ([question, answer,
+   wrong answer, words that show it]), a prediction with its clue, the narrator's point of view, and the text pattern.
+   The answer checks keep their own answer key (tests/verify/grade8-reading.js), like a second marker. */
+(function () {
+  'use strict';
+  var AP = '’';
+  Atlas.texts = {
+    ferry: { title: 'The Last Ferry', kind: 'short story', pov: 'limited', purpose: 'to enjoy a story',
+      lines: ['Amira ran down the hill, her backpack thumping against her shoulders.', 'The ferry horn sounded once, low and long, across the dark water.',
+        'She pictured her grandmother waiting on the island dock, wrapped in the same grey shawl as always.', 'At the bottom of the hill, the ramp was already rising.',
+        'A deckhand spotted her, spoke into his radio, and the ramp slowly lowered again.', 'Amira stepped aboard, too out of breath to speak, and pressed a hand to her heart.'],
+      facts: [['Who is waiting on the island?', 'her grandmother', 'the deckhand', 'her teacher', 'her grandmother waiting'],
+        ['What was happening when Amira reached the bottom of the hill?', 'the ramp was rising', 'the horn was broken', 'the dock was empty', 'ramp was already rising']],
+      summary: ['Amira races to catch the last ferry to her grandmother' + AP + 's island, and a deckhand holds it for her.', 'Amira' + AP + 's grandmother owns a grey shawl.', 'Ferries should always wait for late passengers.'],
+      infer: [['Why did the ramp lower again?', 'The deckhand asked for the ferry to wait for Amira.', 'The ramp was broken.', 'spoke into his radio'],
+        ['How does Amira feel at the end?', 'relieved and grateful', 'angry and embarrassed', 'pressed a hand to her heart']],
+      predict: { upTo: 6, right: 'Amira will meet her grandmother at the island dock.', wrong: ['Amira will get off the ferry and walk home.', 'The ferry will sail to a different island.'], clue: 'her grandmother waiting on the island dock' } },
+    river: { title: 'Breakup', kind: 'short story', pov: 'omniscient', purpose: 'to enjoy a story',
+      lines: ['Every April, the ice on the river cracked apart with a sound like thunder.', 'On the east bank, Mr. Tremblay watched the water and worried about his barn.',
+        'On the west bank, Josée hoped that this year' + AP + 's flood would finally convince the town to build a wall.',
+        'Neither of them knew that, upstream, the broken ice had already jammed under the old bridge.', 'Behind the jam, the water was rising quickly.'],
+      facts: [['What is Mr. Tremblay worried about?', 'his barn', 'the bridge', 'the town wall', 'worried about his barn'],
+        ['Where has the ice jammed?', 'under the old bridge', 'on the east bank', 'beside the barn', 'jammed under the old bridge']],
+      summary: ['As the spring ice breaks up, two neighbours think about the river in different ways, while a hidden ice jam makes a flood likely.', 'The breaking ice sounds like thunder.', 'The town should have built a wall years ago.'],
+      infer: [['What has probably happened in other springs?', 'The river has flooded before.', 'The river has never flooded.', 'would finally convince the town']],
+      predict: { upTo: 5, right: 'The river will flood the land near its banks.', wrong: ['The river will freeze solid again tonight.', 'The town will finish building a wall tonight.'], clue: 'the water was rising quickly' } },
+    captain: { title: 'The Calmest Player on the Team', kind: 'short story', pov: 'unreliable', purpose: 'to enjoy a story',
+      lines: ['I am the calmest player on our soccer team. Everyone would agree, if they were honest.', 'When the referee made a terrible call, I explained, at a perfectly reasonable volume, that he needed new glasses.',
+        'I kicked the water bottle only because it was in my way.', 'For some reason, Coach Ahmed kept me on the bench for the whole second half.', 'After the game, three teammates asked if I was okay. I can' + AP + 't imagine why.'],
+      facts: [['What did the narrator kick?', 'a water bottle', 'the ball', 'the bench', 'kicked the water bottle'],
+        ['Where did the narrator spend the second half?', 'on the bench', 'in goal', 'in the change room', 'on the bench']],
+      summary: ['A player who claims to be calm describes losing their temper in a game, without seeing it.', 'The referee needed new glasses.', 'Referees often make bad calls.'],
+      infer: [['Is the narrator really calm?', 'No. The narrator' + AP + 's actions show a lost temper.', 'Yes. The narrator says so.', 'kicked the water bottle'],
+        ['Why did the coach keep the narrator on the bench?', 'because of the way the narrator acted', 'because the narrator was hurt', 'For some reason']] },
+    rooftop: { title: 'A Garden on the Roof', kind: 'information text', pov: null, purpose: 'to learn facts', pattern: 'problem and solution',
+      lines: ['# The problem', 'Many city schoolyards are covered in asphalt and have almost no shade.', 'On a hot day, the asphalt can become much hotter than the air.',
+        '# A solution', 'Students at one Toronto school worked with neighbours to plant a garden on part of the school roof.', 'Soil, plants and shade cloth now cover about 400 square metres.',
+        '# The results', 'The classrooms below stay cooler in June.', 'The garden also grows vegetables, which the school shares with a local food bank.'],
+      glossary: ['asphalt', 'a black, sticky material used to pave roads and yards'],
+      facts: [['How big is the garden?', 'about 400 square metres', 'about 40 square metres', 'about 4000 square metres', '400 square metres'],
+        ['Who gets the vegetables?', 'a local food bank', 'the students' + AP + ' families', 'a grocery store', 'local food bank']],
+      summary: ['A school solved the problem of a hot yard with no shade by building a rooftop garden that cools classrooms and grows food.', 'Asphalt can get hotter than the air.', 'Every school should have a garden.'] },
+    library: { title: 'Letter to the Editor: Keep the Library Open', kind: 'letter to the editor', pov: null, purpose: 'to be persuaded', pattern: 'problem and solution',
+      lines: ['Dear Editor,', 'Town council plans to close the public library at 6 p.m. to save money. This is a mistake.', 'For many students, the library is the only quiet place with free internet after school.',
+        'Last year, the library had more than 12 000 visits between 6 p.m. and 9 p.m.', 'Everyone knows that teens with nowhere to go will end up in trouble.',
+        'Council should find the money elsewhere and keep the doors open until 9 p.m.', 'Sincerely, Mei Lin Chen, Grade 8 student'],
+      facts: [['How many evening visits did the library have last year?', 'more than 12 000', 'about 600', 'fewer than 100', '12 000 visits']],
+      view: { who: 'Mei Lin Chen', thinks: 'The library should stay open until 9 p.m.', wrong: ['The library should close at 6 p.m.', 'The town should build a second library.'],
+        evidence: 'Last year, the library had more than 12 000 visits between 6 p.m. and 9 p.m.', bias: 'Everyone knows that teens with nowhere to go will end up in trouble.',
+        missing: 'the council members who must balance the budget' } },
+    spoon: { title: 'Introducing the SmartSpoon', kind: 'satire', pov: null, purpose: 'to laugh and to think',
+      lines: ['Tired of lifting your own spoon? The SmartSpoon is here.', 'It connects to Wi-Fi, counts every bite, and sends a weekly chewing report to your phone.',
+        'Battery life: almost one whole bowl of soup.', 'Only $49.99 a month, with a two-year subscription.', 'Food not included. Hands still required.'],
+      target: 'adding technology and fees to things that work fine without them' },
+    portage: { title: 'Portage', kind: 'poem', pov: null, purpose: 'to enjoy a poem',
+      lines: ['Lift the canoe. Carry the weight.', 'Step over roots. Step over stone.', 'The trail is long; the lake will wait.', 'Lift the canoe. Carry it home.'] },
+    roads: { title: 'Winter Roads', kind: 'information text', pov: null, purpose: 'to learn facts', pattern: 'cause and effect',
+      lines: ['# Roads made of ice', 'Some communities in Northern Ontario have no road that is open all year.', 'In winter, crews build roads across frozen lakes and land so trucks can bring in fuel, food and building supplies.',
+        '# A changing climate', 'Warmer winters mean the ice forms later and melts sooner.', 'As a result, the roads stay open for fewer weeks, and less can be delivered.',
+        '# Looking ahead', 'Some First Nations are working with governments to plan roads that can be used all year.'],
+      facts: [['What do trucks bring in on winter roads?', 'fuel, food and building supplies', 'tourists and campers', 'only mail', 'fuel, food and building supplies'],
+        ['What happens when winters are warmer?', 'The ice forms later and melts sooner.', 'The roads stay open longer.', 'More trucks can drive.', 'forms later and melts sooner']],
+      summary: ['Warmer winters are shortening the season for the ice roads that some northern communities rely on, so new all-year roads are being planned.', 'Trucks drive across frozen lakes.', 'Winter is the best season.'],
+      cause: [['Winters are warmer.', 'The ice forms later and melts sooner.'], ['The roads are open for fewer weeks.', 'Less can be delivered.']] }
+  };
+  /* the passage on a card, the way questions show it */
+  Atlas.texts.show = function (t, upTo) { return Atlas.W.passage(t.title, upTo ? t.lines.slice(0, upTo) : t.lines); };
+  Atlas.texts.list = function (need) { return Object.keys(Atlas.texts).filter(function (k) { return Atlas.texts[k].lines && Atlas.texts[k][need]; }).map(function (k) { return Atlas.texts[k]; }); };
+})();
