@@ -20,7 +20,7 @@ Atlas.setup({
       desc: 'Ask relevant questions, build on what others say, suit your talk to the audience, read body language, and choose active or passive voice.' },
     { id: 'reading', title: 'Reading for Meaning', sub: 'cohesive ties, summaries, conclusions and strategies', strand: 'C', codes: 'C1.1, C2.1 to C2.7',
       desc: 'Follow the words that tie a text together, summarize the main idea and details, draw conclusions, predict, and fix confusion.' },
-    { id: 'texts', title: 'How Texts Work', sub: 'forms, patterns, features, visuals, style and narrators', strand: 'C', codes: 'C1.2 to C1.7',
+    { id: 'how-texts', title: 'How Texts Work', sub: 'forms, patterns, features, visuals, style and narrators', strand: 'C', codes: 'C1.2 to C1.7',
       desc: 'Genres and text patterns, features like a bibliography, how images and design carry meaning, style, and first, second or third person.' },
     { id: 'thinking', title: 'Thinking Critically', sub: 'literary devices, inferences, perspectives and bias', strand: 'C', codes: 'C3.1 to C3.8',
       desc: 'Foreshadowing, symbolism and allegory. Inferences from small clues and whole texts. Synthesizing sources, and spotting bias.' },
