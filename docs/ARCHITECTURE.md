@@ -1,20 +1,19 @@
 # How Language Atlas is built
 
-Plain web pages with no build step: what is in this repository is exactly what the browser loads. Hosted on Firebase as a second site (`ontario-language-atlas`) inside the Math Atlas Firebase project (`ontario-math-atlas`), so the two sites can later share one family sign-in.
+Plain web pages with no build step: what is in this repository is exactly what the browser loads. It is published as part of **Atlas** (one site for Math and Language) at https://ontario-math-atlas.web.app/language/. The math-atlas repository owns the Atlas home, Curriculum page, sign-in and family pages, and publishes the whole site; see "Inside Atlas" below and math-atlas `docs/ARCHITECTURE.md`.
 
 ## Folders
 
 | Folder or file | What it is |
 | --- | --- |
-| `index.html` | Home page: all grades, and a link to Math Atlas |
+| `index.html` | Language home page: all grades. Atlas's Curriculum page reads its `href="gradeN/"` links to know which grades are ready, so link every ready grade that way |
 | `grade1/` … `grade8/` | One site per grade (see below) |
 | `assets/engine/` | **Shared by every grade**: the engine (see below) |
 | `assets/atlas-theme.css` | The one look for every page, matching Math Atlas |
 | `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button; on a computer the header is one row and text size and grown-up view sit behind "Settings" |
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
-| `.github/workflows/` | `checks.yml` runs the checks on pull requests and posts a preview link. `publish.yml` runs them again, then publishes `main`. |
-| `firebase.json`, `.firebaserc` | Firebase hosting settings |
+| `.github/workflows/` | `checks.yml` runs the checks on pull requests. `publish.yml` runs them again on `main`, then asks math-atlas to publish (needs the `ATLAS_TOKEN` secret, see `SETUP.md`). |
 
 ## The engine (`assets/engine/`)
 
@@ -83,4 +82,14 @@ Kept in the browser (`localStorage`), every key starting `lang-gN:` (for example
 | `tw:<id>` | What the child wrote in an activity |
 | `big` | Larger text on or off |
 
-Grown-up view is kept separately (`atlas:adult`), so it is never copied to the child's account. When family sign-in arrives, these keys are what it copies to Firebase for the parent page, so quiz and check-up results reach the parent.
+Grown-up view is kept separately (`atlas:adult`), so it is never copied to the child's account. Inside Atlas, the family sign-in copies these keys to the student's account (as `students/{id}/progress/lN`), so quiz and check-up results reach the parent page.
+
+## Inside Atlas
+
+The math-atlas publish step copies this repository into `language/` on the Atlas site. `assets/atlas-header.js` notices that (the address contains `/language/`) and then:
+- points "All grades" to the Atlas Curriculum page (Language tab) and the Math link to the Math pages on the same site;
+- on a grade page, loads Atlas's `assets/sync.js` and `family.css` with the tags `atlas-site` (`l3` for Grade 3), `atlas-prefix` (`lang-g3:`) and `atlas-hub` (the path to the Atlas home). That adds the Sign in / account link to the header and saves progress to the family account.
+
+Run on its own (the checks, or a local copy) none of this happens and the pages work with progress in the browser only.
+
+Keep `gradeN/grade.js` calling `Atlas.setup({ grade, chapters: [{ id, title, sub, strand, ... }] })`: the Atlas Curriculum page reads it to list each grade's chapters, and links to them as `language/gradeN/#<chapter id>`.
