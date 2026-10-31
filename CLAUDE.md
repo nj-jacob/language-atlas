@@ -5,8 +5,8 @@ Read this before changing anything. The owner, Noel, is not a developer, so thes
 ## How a change goes live
 1. Work on a branch, never directly on `main`. Pushing to `main` publishes to the live site, where a child uses it.
 2. Run the checks before you push: `cd tests && npm install && npm test`. For a quicker pass, `npm run quick` or `node run.js --grade 1`.
-3. Open a pull request. The **Checks** workflow runs on it and, once the secret is set up, posts a private preview link. Merge only when Checks is green and Noel has OK'd the change.
-4. The **Publish to Firebase** workflow runs the checks again and publishes only if they pass.
+3. Open a pull request. The **Checks** workflow runs on it. Merge only when Checks is green and Noel has OK'd the change.
+4. The **Publish** workflow runs the checks again and, only if they pass, asks math-atlas to publish Atlas with the new Language pages (under `/language/`).
 5. Add a line to `CHANGELOG.md` under today's date. On parallel pull requests, CHANGELOG conflicts are normal: merge `main` in and keep both sides.
 
 ## Where things live

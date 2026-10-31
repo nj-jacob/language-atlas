@@ -52,13 +52,14 @@ main:focus{outline:none}
    Phone and tablet: Grade N Language Atlas ........ Menu
              (Menu opens: ‹ All grades, Math Atlas, Chapters  Check-up  My progress, Text  Grown-up view) */
 .bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
-.bar .wrap{position:relative;display:grid;grid-template-columns:auto auto minmax(0,1fr) auto auto;grid-template-areas:"home brand nav sister set";align-items:center;gap:6px 12px;padding-top:10px;padding-bottom:10px;max-width:1140px}
+.bar .wrap{position:relative;display:grid;grid-template-columns:auto auto minmax(0,1fr) auto auto auto;grid-template-areas:"home brand nav sister acct set";align-items:center;gap:6px 12px;padding-top:10px;padding-bottom:10px;max-width:1140px}
 .bar .more{display:contents}
 .bar .athome,.bar .sister,.bar .menub,.bar .setb{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:99px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap;cursor:pointer}
 .bar .menub{display:none}
 .bar .setb{grid-area:set;color:var(--ink2)}
 .bar .setb[aria-expanded="true"],.bar .menub[aria-expanded="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .bar .athome{grid-area:home}
+.bar .acct{grid-area:acct}
 .bar .sister{grid-area:sister;justify-self:end;color:var(--accent)}
 .bar .athome:hover,.bar .sister:hover,.bar .menub:hover{border-color:var(--ink2);background:var(--paper)}
 .bar .athome span,.bar .sister span{font-size:1.1rem;line-height:1}
@@ -81,7 +82,7 @@ main:focus{outline:none}
   .bar .setb{display:none}
   .bar .tools{display:flex;position:static;grid-area:tools;flex-wrap:wrap;margin:0;padding:0;border:0;box-shadow:none;background:none}
   .bar .more{display:none;grid-column:1/-1}
-  .bar.open .more{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"home sister" "nav nav" "tools tools";gap:8px 10px;padding:6px 0 4px;border-top:1px solid var(--line)}
+  .bar.open .more{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"home sister" "nav nav" "tools tools" "acct acct";gap:8px 10px;padding:6px 0 4px;border-top:1px solid var(--line)}
   .bar .athome{justify-self:start}
   .bar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:6px;overflow:visible}
   .bar nav a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:6px 4px;font-size:.88rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
