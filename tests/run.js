@@ -10,7 +10,7 @@
    3. Questions: every practice skill at every level, and every "Together" and "On your own" question, is made many times and
       checked: the right shape for its type, nothing says "undefined", and the answer is worked out again by verify/*.js.
    4. Pages: every page opens on a phone-size screen (390 px) with no errors, nothing runs off the side, big numbers have a space,
-      and grown-up notes stay hidden unless grown-up view is on.
+      grown-up notes stay hidden unless grown-up view is on, and sound buttons play files that exist (never inside an answer choice).
    5. Answering like a child: on the phone screen, every lesson is walked through, practice questions of every kind are answered
       right and sometimes wrong first, every chapter quiz scores full marks when answered right, every check-up is finished,
       and the results are saved where the progress page (and later the family page) reads them. Every activity with a grown-up
@@ -68,6 +68,11 @@ function repoRules() {
       if (/<style|font-family|#[0-9a-f]{3,8}\b(?![-\w])|rgba?\(|hsla?\(/i.test(src.replace(/href="#[\w/-]*"/g, ''))) fail(r, 'sets its own colours or fonts. Use the shared theme (assets/atlas-theme.css).');
     }
   }
+  /* the recorded sounds: the list in words.js and the files in assets/sounds/ match */
+  const listed = (fs.readFileSync(path.join(ROOT, 'assets', 'engine', 'words.js'), 'utf8').match(/var SOUNDS = '([^']+)'/) || [, ''])[1].split(' ').filter(Boolean);
+  const clips = fs.existsSync(path.join(ROOT, 'assets', 'sounds')) ? fs.readdirSync(path.join(ROOT, 'assets', 'sounds')) : [];
+  for (const n of listed) if (!clips.includes(n + '.mp3')) fail('assets/sounds', n + '.mp3 is missing (words.js lists it)');
+  for (const f of clips) if (!listed.includes(f.replace(/\.mp3$/, ''))) fail('assets/sounds/' + f, 'is not in the list of sounds in assets/engine/words.js');
   /* Canadian spelling in everything a child or parent reads */
   for (const f of files.filter(f => /\.(html|js|md)$/.test(f))) {
     const lines = fs.readFileSync(f, 'utf8').split('\n');
@@ -88,7 +93,9 @@ async function newPage(browser, base) {
   return { ctx, page, errs };
 }
 async function screenCheck(page, where, label) {
-  const r = await page.evaluate(() => ({ off: __page.runsOff(), big: __page.bigNumbers(), adult: __page.adultLeak() }));
+  const r = await page.evaluate(() => ({ off: __page.runsOff(), big: __page.bigNumbers(), adult: __page.adultLeak(), snd: __page.sounds() }));
+  for (const n of r.snd.names) if (!fs.existsSync(path.join(ROOT, 'assets', 'sounds', n + '.mp3'))) fail(where, label + ' plays the sound "' + n + '", but assets/sounds/' + n + '.mp3 is missing');
+  if (r.snd.inside) fail(where, label + ' has a sound button (' + r.snd.inside + ') inside an answer choice. Put it in the question or the picture instead.');
   if (r.off) fail(where, label + ' runs off the side of a phone screen (' + r.off + ')');
   if (r.big) fail(where, label + ' shows a big number without a space: ' + r.big + ' (write 12 500)');
   if (r.adult) fail(where, label + ': ' + r.adult);
@@ -219,6 +226,9 @@ async function checkGrade(browser, base, g) {
     const s1 = await page.evaluate(() => { let n = 0; while (document.querySelector('.di-step') && n++ < 30) document.querySelector('.di-step').click(); return { go: !!document.querySelector('.di-go .btn')}; });
     if (!s1.go) fail(w, '"Watch me" never reaches the button to go on');
     await screenCheck(page, w, '"Watch me" with every step showing');
+    const beforeSnd = errs.length;
+    const tapped = await page.evaluate(() => { const b = document.querySelector('.wsnd'); if (b) b.click(); return !!b; });
+    if (tapped) { await page.waitForTimeout(30); if (errs.length > beforeSnd) fail(w, 'tapping a sound button gives an error: ' + errs.slice(beforeSnd).join(' / ')); }
     await go(cid + '/learn/' + slug + '/2');
     const s2 = await page.evaluate(async () => {
       for (let i = 0; i < 20; i++) {

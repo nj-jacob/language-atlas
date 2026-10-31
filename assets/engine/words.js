@@ -10,7 +10,11 @@
      Atlas.W.icon('not')                          a small picture cue: not, again, full, without, before, wrong, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
      Atlas.W.pic('sun')                           a picture cue for a word (Atlas.W.pics lists them all)
-     Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line (leave the line out when the picture says it) */
+     Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line (leave the line out when the picture says it)
+     Atlas.W.sound('sh')                          a button that plays a recorded letter sound, shown as /sh/ (Atlas.W.sound('ee', '/ē/') to show other text)
+     Atlas.W.soundRow(['f', 'r', 'o', 'g'])       a word as its sounds: one sound button per tile (soundRow(list, labels) to show other text)
+     Atlas.W.soundNames                           the recorded sounds (assets/sounds/<name>.mp3). c and ck play k; ay plays ai.
+   Sound buttons are for phonics only. Never put one inside an answer choice: a choice is a button already. */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -72,6 +76,39 @@
     nest: '<path d="M7 26c0 8 8 13 17 13s17-5 17-13"/><path d="M7 26h34"/><path d="M10 31c5-2 9 1 14-1s9 1 14-1M13 36c4-1 8 1 11 0s7 1 11 0"/><ellipse cx="19" cy="22" rx="4" ry="5"/><ellipse cx="29" cy="22" rx="4" ry="5"/>',
     van: '<path d="M5 33V15c0-2 1-3 3-3h22l8 8h3c1.5 0 2 1 2 2v11z"/><path d="M30 12v8h8M18 12v21"/><circle cx="14" cy="35" r="3.5"/><circle cx="34" cy="35" r="3.5"/>'
   };
+  /* the 44 recorded sounds, and spellings that share a clip */
+  var SOUNDS = 'b d f g h j k l m n p r s t v w wh y z sh ch th th-voiced ng zh a e i o u ai ee igh oa ue oo-short oo ow oy ar or er air ear'.split(' ');
+  var SAME = { c: 'k', ck: 'k', ay: 'ai' };
+  var me = document.currentScript, SOUND_DIR = me ? me.src.replace(/engine\/words\.js(\?.*)?$/, 'sounds/') : '../assets/sounds/';
+  var SPEAKER = '<svg class="wsnd-i" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h5l7-6v20l-7-6H6z" fill="currentColor"/><path d="M22 11c2 3 2 7 0 10M25.5 8c4 4.5 4 11.5 0 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
+  function clip(name) {
+    var n = SAME[name] || name;
+    if (SOUNDS.indexOf(n) < 0) throw new Error('Atlas.W.sound: no recorded sound called "' + name + '"');
+    return n;
+  }
+  function soundButton(name, label, cls) {
+    var n = clip(name);
+    return '<button type="button" class="wsnd' + (cls ? ' ' + cls : '') + '" data-snd="' + n + '" aria-label="Play the sound ' + label.replace(/<[^>]*>/g, '') + '">' + SPEAKER + '<span>' + label + '</span></button>';
+  }
+  /* one player for every sound button: a new tap stops the sound before */
+  var player = null, playing = null;
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.wsnd');
+    if (!b) return;
+    e.preventDefault();
+    if (!player) {
+      player = new Audio();
+      player.addEventListener('ended', function () { if (playing) playing.classList.remove('wsnd-on'); playing = null; });
+    }
+    if (playing) playing.classList.remove('wsnd-on');
+    player.pause();
+    player.src = SOUND_DIR + b.getAttribute('data-snd') + '.mp3';
+    playing = b;
+    b.classList.add('wsnd-on');
+    var p = player.play();
+    if (p && p.catch) p.catch(function () { b.classList.remove('wsnd-on'); });
+  });
+
   var W = (A.W = {
     sent: function (s) { return '<span class="sent">' + s + '</span>'; },
     hl: function (s, from, to) { return s.slice(0, from) + '<mark class="hl">' + s.slice(from, to) + '</mark>' + s.slice(to); },
@@ -92,6 +129,11 @@
     },
     pics: Object.keys(PICS),
     means: function (icon, html) { return '<span class="wmeans">' + W.icon(icon) + '<span>' + html + '</span></span>'; },
+    sound: function (name, label) { return soundButton(name, label || '/' + name + '/'); },
+    soundRow: function (names, labels) {
+      return '<span class="wsyl">' + names.map(function (n, i) { return soundButton(n, labels ? labels[i] : n, 'wt wt-syl'); }).join('') + '</span>';
+    },
+    soundNames: SOUNDS.slice(),
     step: function (pic, line) { return '<div class="wsum">' + pic + '</div>' + (line ? '<p>' + line + '</p>' : ''); }
   });
 })();
