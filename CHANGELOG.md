@@ -5,3 +5,5 @@
 - Grade 1 placeholder with one demo chapter: capital letters and end marks (B3.3).
 - Lessons show more and say less: "Watch me" shows one step at a time (a picture and one short line), new word pictures (`words.js`: word-part tiles, picture cues, sentence strips), and a new "build a word" answer type. Grade 1 demo text shortened.
 - Grade 3 demo chapter: the prefixes un- and re- (B2.3, B2.4), with 3 ideas and 2 practice skills that each ask in 4 ways.
+- Full Grade 3: 13 chapters, 71 ideas, 29 practice skills and 31 activities with a grown-up, covering all 61 Grade 3 expectations in strands A, B, C and D. Seven original reading passages (`grade3/texts.js`).
+- Engine: activities with a grown-up (`tasks.js`): a picture and one line for the child, an optional box to write in, and a four-level rubric the grown-up marks in grown-up view. The marks fill in the check-up map. Also new word pictures (syllables, blanks, passages with headings, more picture cues) and quick question makers (`Atlas.Q.one`, `Atlas.Q.tiles`, `Atlas.Q.all`).

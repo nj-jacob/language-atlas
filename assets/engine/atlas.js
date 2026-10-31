@@ -2,7 +2,7 @@
    the grade's home page, and the display settings (text size, grown-up view). No dependencies.
 
    Load order on a grade page (see docs/ARCHITECTURE.md):
-     engine/atlas.js, engine/qkit.js, engine/lesson.js, engine/practice.js, then gradeN/grade.js, gradeN/chapters/*.js,
+     engine/atlas.js, qkit.js, words.js, lesson.js, practice.js, tasks.js, then gradeN/grade.js (and texts.js), gradeN/chapters/*.js,
      then  <script>Atlas.start();</script>
 
    gradeN/grade.js describes the grade:

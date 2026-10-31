@@ -26,10 +26,10 @@
     scared: ['What was that noise in the dark?', 'Is someone there?', 'The thunder is so loud.']
   };
   var PASSAGES = {
-    snow: ['The First Snow', ['Kai woke up and looked outside. Everything was white!', '"Snow!" he shouted. He ran to wake his sister, Tala.', 'They pulled on boots, mitts and warm hats. Outside, the air was cold and still.',
-      '"Can we build a fort?" asked Tala.', '"Yes, a big one," said Kai. "Big enough for both of us."']],
+    snow: ['The First Snow', ['Kai woke up and looked outside. Everything was white!', '\u201cSnow!\u201d he shouted. He ran to wake his sister, Tala.', 'They pulled on boots, mitts and warm hats. Outside, the air was cold and still.',
+      '\u201cCan we build a fort?\u201d asked Tala.', '\u201cYes, a big one,\u201d said Kai. \u201cBig enough for both of us.\u201d']],
     loon: ['At the Lake', ['Noor and her grandmother sat on the dock at dawn. The lake was calm.', 'A loon called across the water. Its cry sounded like a song.',
-      '"Listen," whispered Grandma. "It is calling to its family."', 'Noor held very still. Then, far away, another loon answered.']]
+      '\u201cListen,\u201d whispered Grandma. \u201cIt is calling to its family.\u201d', 'Noor held very still. Then, far away, another loon answered.']]
   };
 
   /* ---------- question makers ---------- */

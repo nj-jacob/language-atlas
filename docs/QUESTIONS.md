@@ -1,6 +1,6 @@
 # Writing lessons and questions
 
-`grade3/chapters/prefixes.js` is the worked example (`grade1/chapters/sentences.js` is a second one).
+`grade3/chapters/word-parts.js` is the worked example. Every chapter in `grade3/chapters/` follows the same pattern.
 
 **Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs.
 
@@ -72,7 +72,7 @@ Each entry is `[lowest level, name, function (level) -> question]`. The skill's 
 
 ## Answer checks (required)
 
-Every question sets `meta.k`. Add a check with the same key to `tests/verify/gradeN.js`:
+Every question sets `meta.k`. Add a check with the same key to `tests/verify/gradeN.js` (or a file per chapter, like `tests/verify/grade3-sounds.js`). Keys must be unique across all grades: a check fails if two share one.
 
 ```
 V['g1-pick'] = q => {
@@ -81,6 +81,31 @@ V['g1-pick'] = q => {
 };
 ```
 
-The check works the answer out again **in its own way**, from what the child sees, without calling the site's code. It returns `''` when the marked answer is right, or a short message when it is wrong. Shared helpers are in `tests/validate.js` (`H.strip`, `H.sentenceOk`, `H.askWords`, `H.sameSet`).
+The check works the answer out again **in its own way**, from what the child sees, without calling the site's code. It returns `''` when the marked answer is right, or a short message when it is wrong. Shared helpers are in `tests/validate.js` (`H.strip`, `H.sentenceOk`, `H.askWords`, `H.sameSet`, `H.marked` for the text of the marked option, `H.has`).
+
+For reading passages the answer is authored, so the check keeps its **own answer key** (a second marker) and works out everything it can from the passage itself, such as where events come in the text or who is telling it. See `tests/verify/grade3-reading.js`.
 
 Open-ended writing is never auto-marked. It goes to the grown-up with a simple rubric.
+
+## Quick question makers
+
+`Atlas.Q.one(q, right, [wrong...], more)` makes a pick-one question, `Atlas.Q.tiles(...)` a tap-a-tile question, and `Atlas.Q.all(q, [right...], [wrong...], more)` a pick-every-answer question. `more` holds the other fields (`fig`, `hint`, `explain`, `steps`, `prompt`, `meta`).
+
+## Activities with a grown-up
+
+Some expectations cannot be marked by a computer: speaking, listening, reading aloud, drafting, handwriting, presenting, and talking about identity and culture. Add them to the chapter as `tasks`:
+
+| Field | Meaning |
+| --- | --- |
+| `id`, `title` | Short name for the address, and a plain title |
+| `code` | The expectation code, like `'B1.3'` |
+| `pic`, `say` | A picture cue (`Atlas.W.icon('talk')`) and one short line for the child |
+| `text` | Optional: a passage or prompt to work from |
+| `write` | `true` gives the child a box to write in (kept on this device) |
+| `run` | Steps for the grown-up (grown-up view only) |
+| `rubric` | Exactly 4 short descriptions: Not yet, Getting there, Yes, Strong |
+| `coach` | Optional extra note for the grown-up |
+
+The grown-up taps a level in grown-up view. "Yes" or "Strong" counts the expectation as met on the check-up map.
+
+For First Nations, Métis and Inuit content, point to real books by creators from those communities rather than writing about cultures on their behalf.
