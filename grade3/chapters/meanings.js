@@ -93,9 +93,9 @@
       concepts: [
         { slug: 'same', title: 'Words that mean the same', exp: ['B2.4'], skill: 'same-opposite',
           model: [
-            step(W.tile('big'), 'A word.'),
-            step(W.tile('big') + ' = ' + W.tile('large'), 'Another word that means the <b>same</b>.'),
-            step(W.sent('The bear is <b>large</b>.'), 'Swap it in. It still makes sense.')
+            step(W.tile('big') + ' = ' + W.tile('large')),
+            step(W.sent('The bear is <b>large</b>.'), 'Swap it in. It still makes sense.'),
+            step(W.tile('small') + ' = ' + W.tile('little'))
           ],
           key: '<p>Same meaning: <b>big</b> = <b>large</b>. These are <b>synonyms</b>.</p>',
           guided: [function () { return same(1); }, function () { return same(1); }],
@@ -104,9 +104,8 @@
           mistake: '<p>Picking a word that goes with it (big and bear) rather than one that means the same. Test it in a sentence.</p>' },
         { slug: 'opposite', title: 'Words that mean the opposite', exp: ['B2.4'], skill: 'same-opposite',
           model: [
-            step(W.tile('hot'), 'A word.'),
-            step(W.tile('hot') + ' &harr; ' + W.tile('cold'), 'The <b>opposite</b>: the other end.'),
-            step(W.tile('full') + ' &harr; ' + W.tile('empty'), 'Another pair.')
+            step(W.tile('hot') + ' &harr; ' + W.tile('cold'), 'The other end.'),
+            step(W.tile('full') + ' &harr; ' + W.tile('empty'))
           ],
           key: '<p>Opposite meaning: <b>hot</b> &harr; <b>cold</b>. These are <b>antonyms</b>.</p>',
           guided: [function () { return opposite(1); }, sameOrOpp],
@@ -120,10 +119,10 @@
         { slug: 'clue', title: 'Find the clue', exp: ['B2.4'], skill: 'clues',
           model: [
             step(W.sent('The puppy was so <b>drowsy</b> that it fell asleep in my lap.'), 'A new word: <b>drowsy</b>.'),
-            step(W.sent('The puppy was so <b>drowsy</b> that it <mark class="hl">fell asleep</mark> in my lap.'), 'Find the clue.'),
-            step(W.tile('drowsy') + ' = ' + W.tile('sleepy'), 'So <b>drowsy</b> means <b>sleepy</b>.')
+            step(W.sent('The puppy was so <b>drowsy</b> that it <mark class="hl">fell asleep</mark> in my lap.'), 'The clue: <b>fell asleep</b>.'),
+            step(W.tile('drowsy') + ' = ' + W.tile('sleepy'), 'Check: it makes sense.')
           ],
-          key: '<p>Read the whole sentence. Find the clue. Guess. Check it makes sense.</p>',
+          key: '<p>Read the whole sentence, guess, then check.</p>',
           guided: [function () { return clueMeaning(1); }, clueFind],
           check: [function () { return clueMeaning(2); }, clueSwap],
           coach: '<p>When you meet a new word in a book, stop and ask: "What words around it help?" Then try a simpler word in its place.</p>',

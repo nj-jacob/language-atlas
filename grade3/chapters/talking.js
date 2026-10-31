@@ -122,7 +122,7 @@
         { slug: 'clear-words', title: 'Exact words', exp: ['B1.5'], skill: 'speaking',
           model: [
             step(W.sent('Put the thing over there.'), 'Which thing? Where?'),
-            step(W.sent('Put the <b>red bowl</b> on the <b>table</b>.'), 'Exact words. Now I know.')
+            step(W.sent('Put the <b>red bowl</b> on the <b>table</b>.'), 'Now I know which one, and where.')
           ],
           key: '<p>Say exactly what you mean, in full sentences.</p>',
           guided: [clearer, clearer],

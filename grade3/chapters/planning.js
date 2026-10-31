@@ -79,8 +79,7 @@
           mistake: '<p>Writing every piece as a story. Facts belong in a report; steps belong in instructions.</p>' },
         { slug: 'audience', title: 'Who will read it?', exp: ['D1.1'], skill: 'purpose-form',
           model: [
-            step(W.icon('people'), 'Who will read it?'),
-            step(W.sent('a kindergarten class'), 'Young readers.'),
+            step(W.icon('people') + W.sent('a kindergarten class'), 'My readers are young.'),
             step(W.sent('short sentences and big pictures'), 'So I keep it simple.')
           ],
           key: '<p>Write for your reader.</p>',

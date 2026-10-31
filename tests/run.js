@@ -6,7 +6,7 @@
    1. Repository rules: every script parses; the shared engine has exactly one copy (assets/engine/) and every grade page loads it;
       no grade adds its own colours or fonts; Canadian spelling.
    2. Content rules: every idea has its three steps and an expectation code; every practice skill asks in at least 4 ways;
-      the codes a chapter lists are the codes it teaches.
+      the codes a chapter lists are the codes it teaches; a "Watch me" line or recap never repeats the idea's title.
    3. Questions: every practice skill at every level, and every "Together" and "On your own" question, is made many times and
       checked: the right shape for its type, nothing says "undefined", and the answer is worked out again by verify/*.js.
    4. Pages: every page opens on a phone-size screen (390 px) with no errors, nothing runs off the side, big numbers have a space,
@@ -117,6 +117,7 @@ async function checkGrade(browser, base, g) {
   /* 2. content rules */
   (await page.evaluate(() => {
     const out = [], CODE = /^[A-D]\d\.\d+$/;
+    const STOP = new Set('a an the is it to of and in on for with this that you your we i be are was what how do does means mean not it’s its'.split(' '));
     const expand = s => s.split(/,\s*/).flatMap(p => { const m = p.match(/^([A-D]\d)\.(\d+) to \1\.(\d+)$/); if (!m) return [p]; const r = []; for (let i = +m[2]; i <= +m[3]; i++) r.push(m[1] + '.' + i); return r; });
     for (const m of Atlas.meta) {
       const ch = Atlas.chapters[m.id];
@@ -128,6 +129,18 @@ async function checkGrade(browser, base, g) {
         if (!c.title || !Array.isArray(c.exp) || !c.exp.length) out.push(w + ': needs a title and its expectation codes (exp)');
         (c.exp || []).forEach(x => { if (!CODE.test(x)) out.push(w + ': "' + x + '" is not an expectation code like B3.3'); taught.add(x); });
         if (!Array.isArray(c.model) || !c.model.length) out.push(w + ': needs "Watch me" steps (model)');
+        /* say it once: the title is the rule, so a step line or the recap must add something new */
+        const txt = h => { const d = document.createElement('div'); d.innerHTML = h || ''; return d.textContent; };
+        const words = t => (t.toLowerCase().match(/[a-z0-9’'-]+/g) || []).filter(x => !STOP.has(x));
+        const tw = new Set(words(c.title)), echo = t => { const lw = words(t); return lw.length >= 2 && lw.filter(x => tw.has(x)).length / lw.length >= 0.8; }, lines = [];
+        (c.model || []).forEach((m, k) => {
+          const d = document.createElement('div'); d.innerHTML = m; const p = d.querySelector(':scope > p'), line = p ? p.textContent.trim() : '';
+          if (!line) return;
+          if (echo(line)) out.push(w + ': "Watch me" step ' + (k + 1) + ' repeats the title ("' + line + '"). Show it, or say something new.');
+          if (lines.includes(line)) out.push(w + ': "Watch me" step ' + (k + 1) + ' repeats an earlier line ("' + line + '")');
+          lines.push(line);
+        });
+        if (c.key && echo(txt(c.key))) out.push(w + ': its recap (key) repeats the title. Leave it out, or say something new.');
         if (!Array.isArray(c.guided) || !c.guided.length) out.push(w + ': needs "Together" questions (guided)');
         if (!Array.isArray(c.check) || !c.check.length) out.push(w + ': needs "On your own" questions (check)');
         if (c.skill && !(ch.practice || []).some(s => s.id === c.skill)) out.push(w + ': its skill "' + c.skill + '" is not in the chapter');

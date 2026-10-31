@@ -9,7 +9,7 @@
      Atlas.W.passage('Title', ['Line one.', ...]) a short reading passage on a card ('# Heading' lines show as headings)
      Atlas.W.icon('not')                          a small picture cue: not, again, full, without, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
-     Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line */
+     Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line (leave the line out when the picture says it) */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -56,6 +56,6 @@
     },
     icon: function (name) { return '<svg class="wicon" viewBox="0 0 32 32" aria-hidden="true">' + ICONS[name] + '</svg>'; },
     means: function (icon, html) { return '<span class="wmeans">' + W.icon(icon) + '<span>' + html + '</span></span>'; },
-    step: function (pic, line) { return '<div class="wsum">' + pic + '</div><p>' + line + '</p>'; }
+    step: function (pic, line) { return '<div class="wsum">' + pic + '</div>' + (line ? '<p>' + line + '</p>' : ''); }
   });
 })();

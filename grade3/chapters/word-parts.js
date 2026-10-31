@@ -139,33 +139,32 @@
       concepts: [
         { slug: 'un', title: 'un- means not', exp: ['B2.3', 'B2.4'], skill: 'prefix-meaning',
           model: [
-            step(W.tile('happy', 'base'), 'This is a <b>base word</b>.'),
-            step(W.tile('un', 'prefix'), 'This is a <b>prefix</b>. It goes at the front.'),
-            step(W.sum(parts('un', 'happy')), 'Put them together.'),
-            step(W.means('not', '<b>unhappy</b> = <b>not</b> happy'), '<b>un-</b> means <b>not</b>.')
+            step(W.tile('happy', 'base'), 'A <b>base word</b>.'),
+            step(W.tile('un', 'prefix'), 'A <b>prefix</b> goes at the front.'),
+            step(W.sum(parts('un', 'happy')), 'Cover <b>un</b>. Read <b>happy</b>.'),
+            step(W.means('not', '<b>unhappy</b> = <b>not</b> happy')),
+            step(W.means('not', '<b>unsafe</b> = <b>not</b> safe'))
           ],
-          key: W.means('not', '<b>un-</b> means <b>not</b>'),
           guided: [function () { return meaning(1, 'un'); }, function () { return whichWord(1, 'un'); }],
           check: [function () { return meaning(1, 'un'); }, function () { return whichWord(1, 'un'); }],
           coach: '<p>Have the child cover the prefix with a finger, read the base word, then say "not" in front of it. Keep it quick and keep it oral.</p>',
           mistake: '<p>Seeing a prefix in words like <b>under</b> or <b>uncle</b>. Cover the "un": if no word is left, there is no prefix. On action words, un- means "undo" (unlock, untie); these lessons use describing words only.</p>' },
         { slug: 're', title: 're- means again', exp: ['B2.3', 'B2.4'], skill: 'prefix-meaning',
           model: [
-            step(W.tile('paint', 'base'), 'A <b>base word</b>.'),
-            step(W.sum(parts('re', 'paint')), 'Add the prefix <b>re</b> at the front.'),
-            step(W.means('again', '<b>repaint</b> = paint <b>again</b>'), '<b>re-</b> means <b>again</b>.')
+            step(W.sum(parts('re', 'paint')), 'Cover <b>re</b>. Read <b>paint</b>.'),
+            step(W.means('again', '<b>repaint</b> = paint <b>again</b>')),
+            step(W.means('again', '<b>refill</b> = fill <b>again</b>'))
           ],
-          key: W.means('again', '<b>re-</b> means <b>again</b>'),
           guided: [function () { return meaning(1, 're'); }, function () { return whichWord(1, 're'); }],
           check: [function () { return meaning(1, 're'); }, function () { return whichWord(1, 're'); }],
           coach: '<p>Act it out: "I fill the cup. Now I <b>refill</b> it." Ask the child to tell you something they would like to <b>redo</b>.</p>',
           mistake: '<p>Seeing a prefix in words like <b>ready</b>, <b>reach</b> or <b>red</b>. Cover the "re": if no word is left, there is no prefix.</p>' },
         { slug: 'which', title: 'un- or re-?', exp: ['B2.3', 'B2.4'], skill: 'prefix-build',
           model: [
-            step(W.means('not', 'not safe'), 'This means <b>not</b>.'),
-            step(W.sum(parts('un', 'safe')), 'So I use <b>un</b>.'),
-            step(W.means('again', 'read again'), 'This means <b>again</b>.'),
-            step(W.sum(parts('re', 'read')), 'So I use <b>re</b>.')
+            step(W.means('not', 'not safe'), '<b>Not</b>? Use <b>un</b>.'),
+            step(W.sum(parts('un', 'safe'))),
+            step(W.means('again', 'read again'), '<b>Again</b>? Use <b>re</b>.'),
+            step(W.sum(parts('re', 'read')))
           ],
           key: W.means('not', '<b>un-</b> = not') + ' ' + W.means('again', '<b>re-</b> = again'),
           guided: [addPrefix, function () { return build(1); }],
@@ -178,23 +177,21 @@
       concepts: [
         { slug: 'ful', title: '-ful means full of', exp: ['B2.3', 'B2.4'], skill: 'suffixes',
           model: [
-            step(W.tile('help', 'base'), 'A base word.'),
-            step(W.tile('ful', 'suffix'), 'A <b>suffix</b>. It goes at the end.'),
-            step(W.sum(sparts('ful', 'help')), 'Put them together.'),
-            step(W.means('full', '<b>helpful</b> = full of help'), '<b>-ful</b> means <b>full of</b>.')
+            step(W.tile('ful', 'suffix'), 'A <b>suffix</b> goes at the end.'),
+            step(W.sum(sparts('ful', 'help')), 'Cover <b>ful</b>. Read <b>help</b>.'),
+            step(W.means('full', '<b>helpful</b> = full of help')),
+            step(W.means('full', '<b>joyful</b> = full of joy'))
           ],
-          key: W.means('full', '<b>-ful</b> means <b>full of</b>'),
           guided: [function () { return sufMeaning(1, 'ful'); }, function () { return sufWhich(1, 'ful'); }],
           check: [function () { return sufMeaning(1, 'ful'); }, function () { return sufBuild(1, 'ful'); }],
           coach: '<p>Fill a cup with water as you say "full of". Ask: "What is something that is full of joy?"</p>',
           mistake: '<p>Spelling it "full". As a suffix it has only one l: help<b>ful</b>.</p>' },
         { slug: 'less', title: '-less means without', exp: ['B2.3', 'B2.4'], skill: 'suffixes',
           model: [
-            step(W.tile('care', 'base'), 'A base word.'),
-            step(W.sum(sparts('less', 'care')), 'Add the suffix <b>less</b> at the end.'),
-            step(W.means('without', '<b>careless</b> = without care'), '<b>-less</b> means <b>without</b>.')
+            step(W.sum(sparts('less', 'care')), 'Cover <b>less</b>. Read <b>care</b>.'),
+            step(W.means('without', '<b>careless</b> = without care')),
+            step(W.means('without', '<b>sleepless</b> = without sleep'))
           ],
-          key: W.means('without', '<b>-less</b> means <b>without</b>'),
           guided: [function () { return sufMeaning(1, 'less'); }, function () { return sufWhich(1, 'less'); }],
           check: [function () { return sufMeaning(2, 'less'); }, function () { return sufBuild(1, 'less'); }],
           coach: '<p>Pour the cup out: "without". Pair the words: hopeful and hopeless, careful and careless.</p>',

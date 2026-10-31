@@ -9,12 +9,12 @@
 | Field | Meaning |
 | --- | --- |
 | `slug` | Short name used in the address, like `capital` |
-| `title` | One plain sentence, like "A sentence starts with a capital letter" |
+| `title` | One plain sentence, like "A sentence starts with a capital letter". This is the rule, said **once**. |
 | `exp` | The expectation codes it teaches, like `['B3.3']` (fetch the curriculum first) |
 | `skill` | The practice skill that makes it "Mastered" |
 | `intro` | Optional: one short line before the example. Usually leave it out. |
-| `model` | **Watch me** (I do): the worked example as a list of steps, each `Atlas.W.step(picture, line)`. One step shows at a time, with Back and Next. |
-| `key` | The key idea, shown after the last step |
+| `model` | **Watch me** (I do): the worked example as a list of steps, each `Atlas.W.step(picture, line)`. One step shows at a time, with Back and Next on one row. The line adds something the picture does not show ("Cover re. Read paint."), or is left out: `Atlas.W.step(picture)`. Never repeat the title. |
+| `key` | Optional: a one-line recap shown on the end-of-lesson page. Leave it out if it would only repeat the title. |
 | `guided` | **Together** (we do): a list of functions that each make a question. Give each a `prompt`, a cue to think about. |
 | `check` | **On your own** (you do): a list of functions that each make a question. No cue. |
 | `coach` | For grown-ups: how to coach this idea. Grown-up view only. |

@@ -107,9 +107,8 @@
           mistake: '<p>Thinking revising means recopying neatly. Revising changes what it says.</p>' },
         { slug: 'edit', title: 'Edit: fix the mistakes', exp: ['D2.6'], skill: 'revise-edit',
           model: [
-            step(W.sent('my friend Zara came over.'), 'Check each word.'),
-            step(W.sent('<mark class="hl">my</mark> friend Zara came over.'), 'The first word needs a capital.'),
-            step(W.sent('My friend Zara came over.'), 'Fixed.')
+            step(W.sent('<mark class="hl">my</mark> friend Zara came over.'), 'Check each word. This one needs a capital.'),
+            step(W.sent('<mark class="hl">M</mark>y friend Zara came over.'))
           ],
           key: '<p>Check: capitals, end marks, spelling, and that it sounds right.</p>',
           guided: [findError, fixed],

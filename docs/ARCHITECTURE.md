@@ -10,7 +10,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `grade1/` … `grade8/` | One site per grade (see below) |
 | `assets/engine/` | **Shared by every grade**: the engine (see below) |
 | `assets/atlas-theme.css` | The one look for every page, matching Math Atlas |
-| `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button |
+| `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button; on a computer the header is one row and text size and grown-up view sit behind "Settings" |
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
 | `.github/workflows/` | `checks.yml` runs the checks on pull requests and posts a preview link. `publish.yml` runs them again, then publishes `main`. |

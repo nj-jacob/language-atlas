@@ -79,12 +79,10 @@
       concepts: [
         { slug: 'capital', title: 'A sentence starts with a capital letter', exp: ['B3.3'], skill: 'cap-end',
           model: [
-            step(sent('We went to the park.'), 'A sentence.'),
-            step(sent(hlFirst('We went to the park.')), 'It starts with a <b>capital letter</b>.'),
+            step(sent(hlFirst('We went to the park.')), '<b>W</b> is a capital.'),
             step(sent(hlFirst('my dog can run fast.')), 'This one starts with a small <b>m</b>.'),
             step(sent(hlFirst('My dog can run fast.')), 'Fix it: capital <b>M</b>.')
           ],
-          key: '<p>First word: <b>capital letter</b>.</p>',
           guided: [function () { return rightWay('cap', 2); }, function () { return rightWay('cap', 2); }],
           check: [function () { return rightWay('cap', 2); }, function () { return fixTf(1, [0, 1]); }],
           coach: '<p>Ask: "Point to the first word. Is its first letter big or small?" Let the child point before choosing. Praise careful looking.</p>',

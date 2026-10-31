@@ -143,7 +143,6 @@
             step(W.icon('people'), 'Test it with someone.'),
             step(W.icon('again'), 'Make it better.')
           ],
-          key: '<p>Plan, make, test, improve.</p>',
           guided: [design, design],
           check: [design, design],
           coach: '<p>Try the "Design a poster" activity in this chapter. The test step matters: ask a family member what they understood.</p>',

@@ -80,7 +80,7 @@
         { slug: 'speech-marks', title: 'Speech marks', exp: ['B3.3'], skill: 'speech',
           model: [
             step(W.sent('Let' + AP + 's go to the rink'), 'Ava says this.'),
-            step(W.sent(OQ + 'Let' + AP + 's go to the rink' + CQ), 'Speech marks go around the words she says.'),
+            step(W.sent(OQ + 'Let' + AP + 's go to the rink' + CQ), 'Only around the words she says.'),
             step(W.sent(OQ + 'Let' + AP + 's go to the rink,' + CQ + ' said Ava.'), 'Then who said it.')
           ],
           key: '<p>Speech marks <b>' + OQ + ' ' + CQ + '</b> go around only the words someone says.</p>',
@@ -115,8 +115,7 @@
       concepts: [
         { slug: 'contractions', title: 'Contractions', exp: ['B3.3'], skill: 'short-and-titles',
           model: [
-            step(W.tile('do not'), 'Two words.'),
-            step(W.tile('do n<mark class="hl">o</mark>t'), 'Squeeze them together. Leave out <b>o</b>.'),
+            step(W.tile('do n<mark class="hl">o</mark>t'), 'Squeeze two words. Leave out <b>o</b>.'),
             step(W.tile('don' + AP + 't'), 'The apostrophe takes its place.')
           ],
           key: '<p>The <b>' + AP + '</b> goes where letters were left out.</p>',

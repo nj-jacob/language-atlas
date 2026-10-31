@@ -1,14 +1,15 @@
 /* Language Atlas lessons, shared by every grade. Needs atlas.js and qkit.js.
    A chapter is a few lessons, a lesson is a few ideas, and the child sees ONE idea per screen.
    Each idea is taught in three steps, in the Direct Instruction way:
-     1. Watch me    ("I do")   a one-line intro, then a worked example shown one step at a time (one step on screen), then the key idea.
+     1. Watch me    ("I do")   a one-line intro, then a worked example shown one step at a time (one step on screen).
+                               The title says the rule once; step lines add something new, never repeat it.
      2. Together    ("we do")  guided questions with a thinking cue. A wrong answer is corrected at once, then the same
                                question is asked again, so the child ends on a right answer.
      3. On your own ("you do") quick questions with no cue. Two right on the first try marks the idea "Got it".
    Coaching notes and common mistakes are for the grown-up only (class adult-only).
 
    idea = { slug, title, exp: ['B3.3'], skill: 'practice-skill-id',
-            intro: html, model: [html, ...], key: html,
+            intro: html, model: [html, ...], key: html (optional: a one-line recap for the end of the lesson; never a repeat of the title),
             guided: [function () -> question, ...], check: [function () -> question, ...],
             coach: html, mistake: html }
    Routes: #chapter (lesson list), #chapter/learn/idea (step 1), #chapter/learn/idea/2, #chapter/learn/idea/3, #chapter/done/lesson (end of a lesson).
@@ -76,7 +77,7 @@
       }).join('') + '<a href="#check-up/' + id + '">Check-up</a></nav>';
     /* an idea gets the whole screen: only a link back to its chapter above it */
     if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, ctx.m);
-    if (tab === 'done') return lessonEnd(app, id, parts[1], h);
+    if (tab === 'done') return lessonEnd(app, id, parts[1]);
     if (tab === 'tasks') return A.tasks.page(app, id, parts[1], h);
     if (tab === 'practice' && parts[1]) {
       app.innerHTML = '<div class="wrap chapter focus" data-strand="' + ctx.m.strand + '"><div class="quiz prac" id="practice"></div></div>';
@@ -124,8 +125,8 @@
       '<p class="di-where" aria-live="polite">' + STAGES[stage - 1] + '</p>' +
       '<div class="di-stage"></div>' + grownUp(c) +
       '<p class="codes adult-only">Ontario expectation ' + c.exp.join(', ') + ' &middot; Steps: ' + STAGES.map(function (x, k) { return '<a href="' + base + (k ? '/' + (k + 1) : '') + '">' + x + '</a>'; }).join(', ') + '</p></article>' +
-      '<nav class="ls-nav" aria-label="Ideas">' + (prev ? '<a class="btn alt" href="#' + id + '/learn/' + prev.slug + '">&larr; Back</a>' : '<a class="btn alt" href="#' + id + '">&larr; Lessons</a>') +
-      '<a class="btn ls-next" href="#' + id + (endOfLesson ? '/done/' + ls.id : '/learn/' + next.slug) + '">' + (endOfLesson ? 'Finish the lesson' : 'Next idea') + ' &rarr;</a></nav></div>';
+      (stage < 3 ? '' : '<nav class="ls-nav" aria-label="Ideas">' + (prev ? '<a class="btn alt" href="#' + id + '/learn/' + prev.slug + '">&larr; Back</a>' : '<a class="btn alt" href="#' + id + '">&larr; Lessons</a>') +
+      '<a class="btn ls-next" href="#' + id + (endOfLesson ? '/done/' + ls.id : '/learn/' + next.slug) + '">' + (endOfLesson ? 'Finish the lesson' : 'Next idea') + ' &rarr;</a></nav>') + '</div>';
     app.innerHTML = h;
     var box = $('.di-stage', app), where = function (t) { $('.di-where', app).textContent = STAGES[stage - 1] + (t ? ' \u00b7 ' + t : ''); };
     if (stage === 1) watch(box, c, base, where);
@@ -148,12 +149,12 @@
       stepBox.innerHTML = '<div class="di-show">' + c.model[k] + '</div>';
       var last = k + 1 === n;
       if (last) mark(c, { watched: 1 });
+      /* one row: Back on the left, the way on at the right, in the same place on every step */
       act.innerHTML = '<div class="di-nav">' + (k ? '<button type="button" class="btn alt di-back">&larr; Back</button>' : '<span></span>') +
-        (last ? '' : '<button type="button" class="btn di-step">Next step &rarr;</button>') + '</div>' +
-        (last ? (c.key ? '<div class="key"><b class="t">Key idea</b>' + c.key + '</div>' : '') + goOn(base + '/2', 'Now we do it together') : '');
+        (last ? '<span class="di-go"><a class="btn" href="' + base + '/2">Now we do it together &rarr;</a></span>' : '<button type="button" class="btn di-step">Next step &rarr;</button>') + '</div>';
       var nb = $('.di-step', act), bb = $('.di-back', act);
       if (nb) nb.addEventListener('click', function () { k++; draw(); ($('.di-step', box) || $('.di-go .btn', box)).focus(); });
-      if (bb) bb.addEventListener('click', function () { k--; draw(); $('.di-step', box).focus(); });
+      if (bb) bb.addEventListener('click', function () { k--; draw(); ($('.di-step', box) || $('.di-go .btn', box)).focus(); });
     }
     draw();
   }
@@ -232,19 +233,19 @@
   }
 
   /* ---------- end of a lesson: where each idea stands, and what to practise ---------- */
-  function lessonEnd(app, id, lsId, h) {
-    var ch = A.chapters[id], ls = ch.lessons.filter(function (x) { return x.id === lsId; })[0];
+  function lessonEnd(app, id, lsId) {
+    var ch = A.chapters[id], m = A.chapterHead(id).m, ls = ch.lessons.filter(function (x) { return x.id === lsId; })[0];
     if (!ls) { location.hash = '#' + id; return; }
     var nextLs = ch.lessons[ls.n], want = {};
     ls.concepts.forEach(function (c) { if (c.skill) want[c.skill] = 1; });
     var sk = (ch.practice || []).filter(function (s) { return want[s.id]; });
-    app.innerHTML = h + '<article class="sec ls-card"><h2><span class="n">' + ls.n + '</span>Lesson ' + ls.n + ' done: ' + ls.title + '</h2>' +
-      '<p>Here is where each idea stands.</p><ul class="ls-sum">' + ls.concepts.map(function (c) {
+    app.innerHTML = '<div class="wrap chapter focus" data-strand="' + m.strand + '"><div class="ls-top"><a class="ls-back" href="#' + id + '">&lsaquo; ' + m.title + '</a></div>' +
+      '<article class="sec ls-card"><h2>' + ls.title + '</h2><p class="di-where">Lesson ' + ls.n + ' done</p><ul class="ls-sum">' + ls.concepts.map(function (c) {
         var k = L.status(c);
-        return '<li>' + dot(k) + '<a href="#' + id + '/learn/' + c.slug + '">' + c.title + '</a> <span class="t2">' + ST[k] + '</span></li>';
+        return '<li>' + dot(k) + '<span><a href="#' + id + '/learn/' + c.slug + '">' + c.title + '</a> <span class="sr">(' + ST[k] + ')</span>' + (c.key ? '<span class="ls-key">' + c.key + '</span>' : '') + '</span></li>';
       }).join('') + '</ul>' +
-      (sk.length ? '<p><b>Practise to make it stick.</b> A few minutes now helps you remember tomorrow.</p><div class="btnrow">' + sk.map(function (s) { return '<a class="btn alt" href="#' + id + '/practice/' + s.id + '">Practise: ' + s.name + '</a>'; }).join('') + '</div>' : '') +
-      '</article><nav class="ls-nav"><a class="btn alt" href="#' + id + '">All lessons</a>' +
+      (sk.length ? '<div class="btnrow">' + sk.map(function (s) { return '<a class="btn alt" href="#' + id + '/practice/' + s.id + '">Practise: ' + s.name + '</a>'; }).join('') + '</div>' : '') +
+      '</article><nav class="ls-nav"><span></span>' +
       (nextLs ? '<a class="btn ls-next" href="#' + id + '/learn/' + nextLs.concepts[0].slug + '">Lesson ' + nextLs.n + ': ' + nextLs.title + ' &rarr;</a>' : '<a class="btn ls-next" href="#' + id + '/quiz">Chapter quiz &rarr;</a>') +
       '</nav></div>';
   }

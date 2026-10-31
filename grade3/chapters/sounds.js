@@ -127,7 +127,6 @@
           mistake: '<p>Clapping each letter, or each sound, instead of each beat. Keep the claps to vowel sounds.</p>' },
         { slug: 'split', title: 'Split between two consonants', exp: ['B2.1'], skill: syllableSkill,
           model: [
-            step(W.tile('rabbit'), 'A long word.'),
             step(W.tile(W.hl('rabbit', 2, 4)), 'Two consonants in the middle.'),
             step(W.syl(['rab', 'bit']), 'Split between them.'),
             step(W.syl(['ti', 'ger']), 'One consonant? Split after the long vowel.')
@@ -139,9 +138,9 @@
           mistake: '<p>Splitting after the first letter (r-abbit). The first beat needs its vowel.</p>' },
         { slug: 'long-words', title: 'Read a long word in parts', exp: ['B2.1'], skill: syllableSkill,
           model: [
-            step(W.tile('toboggan'), 'A long word.'),
-            step(W.syl(['to', 'bog', 'gan']), 'Split it into beats.'),
-            step(W.syl(['to', 'bog', 'gan']), 'Read each beat, then blend: <b>toboggan</b>.')
+            step(W.tile('toboggan')),
+            step(W.syl(['to', 'bog', 'gan']), 'Split it. Read each beat.'),
+            step(W.tile('toboggan'), 'Blend the beats.')
           ],
           key: '<p>Split, read each beat, blend.</p>',
           guided: [function () { return buildBeats(1); }, function () { return buildBeats(2); }],
@@ -176,11 +175,9 @@
           mistake: '<p>Writing "snoa". Point to where the sound is in the word.</p>' },
         { slug: 'tricky', title: 'Words to just know', exp: ['B2.2'], skill: patternSkill,
           model: [
-            step(W.tile('said'), 'Some words break the rules.'),
-            step(W.tile(W.hl('said', 1, 3)), 'Look at the tricky part.'),
-            step(W.tile('said'), 'Say it, spell it, cover it, write it.')
+            step(W.tile(W.hl('said', 1, 3)), 'It breaks the rules here.'),
+            step(W.icon('write'), 'Say it, spell it, cover it, write it.')
           ],
-          key: '<p>Look, say, cover, write, check.</p>',
           guided: [function () { return tricky(1); }, function () { return tricky(1); }],
           check: [function () { return tricky(2); }, function () { return tricky(2); }],
           coach: '<p>Pick three tricky words a week. Write each on a card with the tricky part in a different colour.</p>',

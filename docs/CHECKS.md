@@ -15,6 +15,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
 2. **Content rules.**
    - Every idea has an expectation code, "Watch me" steps, "Together" questions and "On your own" questions.
    - Every practice skill asks in at least 4 ways.
+   - Say it once: no "Watch me" line or recap repeats the idea's title, and no line repeats an earlier one.
    - The codes a chapter lists are exactly the codes its ideas, skills and activities teach.
    - Every activity with a grown-up has a picture, one line for the child, steps for the grown-up, an expectation code and a rubric with exactly 4 levels.
 3. **Every question.** Each practice skill is made 40 times at each level, and every "Together" and "On your own" question 10 times:

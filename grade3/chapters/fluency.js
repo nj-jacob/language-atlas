@@ -95,9 +95,9 @@
           mistake: '<p>Stopping after "the" or "a". These small words always go with the next word.</p>' },
         { slug: 'feeling', title: 'Read with feeling', exp: ['B2.5'], skill: 'fluency',
           model: [
-            step(W.sent('We won the game!'), 'How do they feel? <b>Excited</b>.'),
-            step(W.sent('I miss my best friend.'), 'How do they feel? <b>Sad</b>. A soft, slow voice.'),
-            step(W.sent('Is someone there?'), 'How do they feel? <b>Scared</b>.')
+            step(W.sent('We won the game!'), 'How do they feel? <b>Excited</b>: a bright voice.'),
+            step(W.sent('I miss my best friend.'), '<b>Sad</b>: a soft, slow voice.'),
+            step(W.sent('Is someone there?'), '<b>Scared</b>: a quiet, shaky voice.')
           ],
           key: '<p>Think how the person feels. Let your voice show it.</p>',
           guided: [feeling, feeling],

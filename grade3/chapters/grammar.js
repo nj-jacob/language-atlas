@@ -88,7 +88,7 @@
           model: [
             step(W.tile('Kai') + ' ' + W.tile('kite'), 'The kite belongs to Kai.'),
             step(W.tile('Kai’s') + ' ' + W.tile('kite'), 'Add <b>’s</b> to the owner.'),
-            step(W.sent('Kai’s kite is red.'), 'Read it: Kai’s kite.')
+            step(W.tile('Noor’s') + ' ' + W.tile('mitts'))
           ],
           key: '<p>Owner + <b>’s</b> + thing: <b>Kai’s kite</b>.</p>',
           guided: [function () { return possessive(1); }, function () { return possessive(1); }],

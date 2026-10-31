@@ -99,7 +99,7 @@
           model: [
             step(T.show(mitten), 'What is it mostly about?'),
             step(W.sent('The park has a tall slide.'), 'Only one part. Too small.'),
-            step(W.sent('Leila loses her mitten, and they find it by following their footprints.'), 'The whole story: the main idea.')
+            step(W.sent('Leila loses her mitten, and they find it by following their footprints.'), 'It fits the whole story.')
           ],
           key: '<p>The main idea fits the <b>whole</b> text.</p>',
           guided: [function () { return mainIdea(1); }, function () { return mainIdea(1); }],

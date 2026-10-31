@@ -20,6 +20,7 @@ See `docs/ARCHITECTURE.md`. In short:
 ## Writing content
 - **Fetch the curriculum first.** Before writing any lesson, read the official 2023 Ontario Language curriculum for that grade (dcp.edu.gov.on.ca). Do not rely on memory. Every idea (`exp`) and practice skill (`code`) names its expectation codes, for example `B3.3`.
 - **Show, don't tell.** Very little text for the child: each "Watch me" step is one picture and one short line. Use the word pictures in `words.js`.
+- **Say it once.** Screen space is precious. The idea's title is the rule; a step's line adds something new or is left out. Nothing on a screen repeats something else on it. A check fails if a line repeats the title.
 - **One idea per screen**, taught in three steps (Direct Instruction): Watch me (I do), Together (we do, with a thinking cue and quick correction), On your own (you do). See `docs/QUESTIONS.md`.
 - **4 or more ways of asking** for every practice skill (`Atlas.Q.shapes`). A check fails with fewer.
 - **Every auto-marked question** sets `meta.k`, and `tests/verify/gradeN*.js` has a check with that key that works the answer out independently. Open-ended writing, speaking, reading aloud and handwriting are never auto-marked: they are activities (`tasks`) the grown-up marks with a four-level rubric.

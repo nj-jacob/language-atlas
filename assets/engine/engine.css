@@ -47,14 +47,17 @@
 .ls-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0}
 .ls-nav .btn{min-width:130px}
 .ls-sum{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
-.ls-sum li{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ls-sum li{display:flex;align-items:flex-start;gap:10px}
+.ls-sum .ls-st{margin-top:5px}
+.ls-key{display:block;color:var(--ink2);font-size:.95rem}
+.ls-key p{margin:0}
 .ls-reveal{animation:la-fade .4s both}
 
 /* the three steps of an idea: Watch me, Together, On your own */
-.di-model{margin:12px 0;padding:14px;background:var(--paper);border-radius:14px;min-height:150px}
+.di-model{margin:8px 0 14px;min-height:130px}
 .di-show{animation:la-fade .3s ease-out both;font-size:1.12rem}
 .di-show p{margin:.4em 0}
-.di-nav{display:flex;justify-content:space-between;gap:10px}
+.di-nav{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .di-cue{background:var(--tint);border-radius:12px;padding:8px 12px;margin:6px 0 10px}
 .di-go{margin:14px 0 4px}
 .ytn{margin-top:10px}
