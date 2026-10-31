@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-10-31
+- One app: Language is now part of Atlas, at ontario-math-atlas.web.app/language/, with the same sign-in as Math. Inside Atlas, "All grades" opens the Atlas Curriculum page, the Math link stays on the same site, and a signed-in student's progress saves to their family account so it shows on the parent page. The separate Language site, its Firebase settings and the preview links are gone. Publishing now asks math-atlas to publish the whole site (one-time setup in SETUP.md).
 - Foundation: shared look matching Math Atlas, shared header (All grades, Math Atlas link, text size, grown-up view), one shared engine (lessons in three steps, adaptive practice, chapter quiz, check-up, progress page, six answer types), automatic checks, GitHub workflows (checks, previews, publish), Firebase hosting as a second site in the Math Atlas project, and docs.
 - Grade 1 placeholder with one demo chapter: capital letters and end marks (B3.3).
 - Lessons show more and say less: "Watch me" shows one step at a time (a picture and one short line), new word pictures (`words.js`: word-part tiles, picture cues, sentence strips), and a new "build a word" answer type. Grade 1 demo text shortened.
