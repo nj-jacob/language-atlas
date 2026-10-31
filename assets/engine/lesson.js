@@ -20,7 +20,7 @@
   var A = window.Atlas, $ = A.$, $$ = A.$$, Q = A.Q;
   var L = (A.lessons = {});
   var ST = (L.labels = ['Not started', 'Seen', 'Got it', 'Mastered']);
-  var STAGES = [['Watch me', 'I show you how'], ['Together', 'We do it together'], ['On your own', 'You try it']];
+  var STAGES = ['Watch me', 'Together', 'On your own'];
   var GOT = 2; /* right on the first try this many times to mark "Got it" */
 
   function prep(chId) {
@@ -75,12 +75,15 @@
         return '<a href="' + t[2] + '"' + (tab === t[0] ? ' aria-current="page"' : '') + '>' + t[1] + '</a>';
       }).join('') + '<a href="#check-up/' + id + '">Check-up</a></nav>';
     /* an idea gets the whole screen: only a link back to its chapter above it */
-    if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, '<div class="wrap chapter" data-strand="' + ctx.m.strand + '"><p class="crumb"><a href="#' + id + '">&lsaquo; ' + ctx.m.title + '</a></p>');
+    if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, ctx.m);
     if (tab === 'done') return lessonEnd(app, id, parts[1], h);
     if (tab === 'tasks') return A.tasks.page(app, id, parts[1], h);
-    if (tab === 'practice') {
+    if (tab === 'practice' && parts[1]) {
+      app.innerHTML = '<div class="wrap chapter focus" data-strand="' + ctx.m.strand + '"><div class="quiz prac" id="practice"></div></div>';
+      A.practice($('#practice', app), id, ch.practice, parts[1]);
+    } else if (tab === 'practice') {
       app.innerHTML = h + '<div class="quiz prac" id="practice"></div>' + A.nextPrev(ctx) + '</div>';
-      A.practice($('#practice', app), id, ch.practice, parts[1] || null);
+      A.practice($('#practice', app), id, ch.practice, null);
     } else if (tab === 'quiz') {
       app.innerHTML = h + '<div class="quiz" id="quiz"></div>' + A.nextPrev(ctx) + '</div>';
       A.quiz($('#quiz', app), id, ch);
@@ -105,29 +108,28 @@
   }
 
   /* ---------- one idea, one step of it ---------- */
-  function concept(app, id, slug, stage, h) {
+  function concept(app, id, slug, stage, m) {
     var all = flat(id), i = -1;
     all.forEach(function (c, j) { if (c.slug === slug) i = j; });
     if (i < 0) { location.hash = '#' + id; return; }
     var c = all[i], ls = c.lesson, prev = all[i - 1], next = all[i + 1], base = '#' + id + '/learn/' + c.slug;
     stage = Math.min(3, Math.max(1, stage));
     var st = mark(c, { seen: 1 }), endOfLesson = !next || next.lesson !== ls;
-    h += '<div class="ls-top"><span class="ls-where">Lesson ' + ls.n + ': ' + ls.title + ' &middot; idea ' + c.n + ' of ' + ls.concepts.length + '</span>' +
-      '<span class="ls-dots" aria-label="Ideas in this lesson">' + ls.concepts.map(function (x) {
+    /* a calm screen: one slim row (back to the chapter, and dots for the ideas in this lesson), then the idea itself */
+    var h = '<div class="wrap chapter focus" data-strand="' + m.strand + '"><div class="ls-top"><a class="ls-back" href="#' + id + '">&lsaquo; ' + m.title + '</a>' +
+      '<span class="ls-dots" role="group" aria-label="Lesson ' + ls.n + ': ' + ls.title + ', idea ' + c.n + ' of ' + ls.concepts.length + '">' + ls.concepts.map(function (x) {
         return '<a href="#' + id + '/learn/' + x.slug + '" class="s' + L.status(x) + '"' + (x === c ? ' aria-current="step"' : '') + ' aria-label="' + x.title + ' (' + ST[L.status(x)] + ')"></a>';
       }).join('') + '</span></div>' +
-      '<article class="sec ls-card" id="lesson"><h2><span class="n">' + ls.n + '.' + c.n + '</span>' + c.title + '<span class="ls-badge">' + (st.got ? '<span class="ls-got">Got it</span>' : '') + '</span></h2>' +
-      '<p class="codes">Ontario expectation ' + c.exp.join(', ') + '</p>' +
-      '<nav class="di-steps" aria-label="Steps for this idea">' + STAGES.map(function (s, k) {
-        return '<a href="' + base + (k ? '/' + (k + 1) : '') + '"' + (stage === k + 1 ? ' aria-current="step"' : '') + '><i>' + (k + 1) + '</i><span>' + s[0] + '</span></a>';
-      }).join('') + '</nav>' +
-      '<p class="di-say">' + STAGES[stage - 1][1] + '.</p><div class="di-stage"></div>' + grownUp(c) + '</article>' +
+      '<article class="sec ls-card" id="lesson"><h2>' + c.title + '<span class="ls-badge">' + (st.got ? '<span class="ls-got">Got it</span>' : '') + '</span></h2>' +
+      '<p class="di-where" aria-live="polite">' + STAGES[stage - 1] + '</p>' +
+      '<div class="di-stage"></div>' + grownUp(c) +
+      '<p class="codes adult-only">Ontario expectation ' + c.exp.join(', ') + ' &middot; Steps: ' + STAGES.map(function (x, k) { return '<a href="' + base + (k ? '/' + (k + 1) : '') + '">' + x + '</a>'; }).join(', ') + '</p></article>' +
       '<nav class="ls-nav" aria-label="Ideas">' + (prev ? '<a class="btn alt" href="#' + id + '/learn/' + prev.slug + '">&larr; Back</a>' : '<a class="btn alt" href="#' + id + '">&larr; Lessons</a>') +
       '<a class="btn ls-next" href="#' + id + (endOfLesson ? '/done/' + ls.id : '/learn/' + next.slug) + '">' + (endOfLesson ? 'Finish the lesson' : 'Next idea') + ' &rarr;</a></nav></div>';
     app.innerHTML = h;
-    var box = $('.di-stage', app);
-    if (stage === 1) watch(box, c, base);
-    else if (stage === 2) together(box, c, base);
+    var box = $('.di-stage', app), where = function (t) { $('.di-where', app).textContent = STAGES[stage - 1] + (t ? ' \u00b7 ' + t : ''); };
+    if (stage === 1) watch(box, c, base, where);
+    else if (stage === 2) together(box, c, base, where);
     else onYourOwn(box, c, function () {
       $('.ls-badge', app).innerHTML = '<span class="ls-got">Got it</span>';
       A.bump($('.ls-next', app), 'ls-ready');
@@ -137,13 +139,13 @@
   function goOn(href, label) { return '<p class="di-go"><a class="btn" href="' + href + '">' + label + ' &rarr;</a></p>'; }
 
   /* 1. Watch me: the worked example appears one step at a time */
-  function watch(box, c, base) {
+  function watch(box, c, base, where) {
     var k = 0, n = c.model.length;
     box.innerHTML = (c.intro ? '<div class="ls-body">' + c.intro + '</div>' : '') + '<div class="di-model" aria-live="polite"></div><div class="di-act"></div>';
     var stepBox = $('.di-model', box), act = $('.di-act', box);
     function draw() {
-      stepBox.innerHTML = '<p class="di-count"><span class="di-pips" aria-hidden="true">' + c.model.map(function (x, j) { return '<i class="' + (j <= k ? 'on' : '') + '"></i>'; }).join('') + '</span>Step ' + (k + 1) + ' of ' + n + '</p>' +
-        '<div class="di-show">' + c.model[k] + '</div>';
+      where((k + 1) + ' of ' + n);
+      stepBox.innerHTML = '<div class="di-show">' + c.model[k] + '</div>';
       var last = k + 1 === n;
       if (last) mark(c, { watched: 1 });
       act.innerHTML = '<div class="di-nav">' + (k ? '<button type="button" class="btn alt di-back">&larr; Back</button>' : '<span></span>') +
@@ -157,11 +159,12 @@
   }
 
   /* 2. Together: a cue to think about, quick correction, and the same question again after a miss */
-  function together(box, c, base) {
+  function together(box, c, base, where) {
     var g = 0, n = c.guided.length;
     function show(q) {
       var tries = 0;
-      box.innerHTML = '<div class="di-guided"><p class="ytl">Question ' + (g + 1) + ' of ' + n + '</p>' +
+      where((g + 1) + ' of ' + n);
+      box.innerHTML = '<div class="di-guided">' +
         (q.prompt ? '<p class="di-cue"><b>Think:</b> ' + q.prompt + '</p>' : '') + Q.html(q) + '<div class="fb" aria-live="polite"></div><div class="ytn"></div></div>';
       var gb = $('.di-guided', box), fb = $('.fb', box), nx = $('.ytn', box);
       var api = Q.mount($('.qkbox', box), q, function (ok) {

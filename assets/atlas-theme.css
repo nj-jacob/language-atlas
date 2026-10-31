@@ -49,19 +49,19 @@ main:focus{outline:none}
 
 /* ---------- 3. Header (drawn by atlas-header.js) ----------
    Computer: ‹ All grades | Grade N Language Atlas | Chapters  Check-up  My progress | Math Atlas, then Text and Grown-up view.
-   Phone:    ‹ All grades ........ Math Atlas
-             Grade N Language Atlas
-             Chapters  Check-up  My progress
-             Text  Grown-up view */
+   Phone and tablet: Grade N Language Atlas ........ Menu
+             (Menu opens: ‹ All grades, Math Atlas, Chapters  Check-up  My progress, Text  Grown-up view) */
 .bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
 .bar .wrap{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;grid-template-areas:"home brand nav sister" "tools tools tools tools";align-items:center;gap:6px 14px;padding-top:10px;padding-bottom:10px;max-width:1140px}
-.bar .athome,.bar .sister{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:99px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
+.bar .more{display:contents}
+.bar .athome,.bar .sister,.bar .menub{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:99px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap;cursor:pointer}
+.bar .menub{display:none}
 .bar .athome{grid-area:home}
 .bar .sister{grid-area:sister;justify-self:end;color:var(--accent)}
-.bar .athome:hover,.bar .sister:hover{border-color:var(--ink2);background:var(--paper)}
+.bar .athome:hover,.bar .sister:hover,.bar .menub:hover{border-color:var(--ink2);background:var(--paper)}
 .bar .athome span,.bar .sister span{font-size:1.1rem;line-height:1}
-.brand{grid-area:brand;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:-.01em;white-space:nowrap}
-.brand i{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;font-style:normal;font-size:15px;font-weight:800}
+.brand{grid-area:brand;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:-.01em;white-space:nowrap;min-width:0}
+.brand i{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;font-style:normal;font-size:15px;font-weight:800;flex:none}
 .bar nav{grid-area:nav;display:flex;justify-content:flex-end;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none}
 .bar nav::-webkit-scrollbar{display:none}
 .bar nav a{color:var(--ink2);text-decoration:none;font-weight:700;font-size:.93rem;padding:8px 10px;border-radius:8px;white-space:nowrap;line-height:1.2}
@@ -73,18 +73,17 @@ main:focus{outline:none}
 #adultb[aria-pressed="true"]{color:#fff;background:var(--ink);border-color:var(--ink)}
 .bar.home .wrap{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand nav sister"}
 @media (max-width:980px){
-  .bar .wrap{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"home brand sister" "nav nav nav" "tools tools tools"}
-  .bar nav{justify-content:flex-start;margin:0 -6px}
-}
-@media (max-width:640px){
-  .bar{position:static}
-  .bar .wrap{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"home sister" "brand brand" "nav nav" "tools tools";gap:8px 10px}
-  .bar.home .wrap{grid-template-areas:"brand sister"}
+  .bar .wrap{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand menu";gap:8px 10px;padding-top:8px;padding-bottom:8px}
+  .bar .menub{display:inline-flex;grid-area:menu}
+  .bar .menub[aria-expanded="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .bar .more{display:none;grid-column:1/-1}
+  .bar.open .more{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"home sister" "nav nav" "tools tools";gap:8px 10px;padding:6px 0 4px;border-top:1px solid var(--line)}
   .bar .athome{justify-self:start}
-  .brand{font-size:1.2rem}
-  .bar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:6px;margin:2px 0 0;overflow:visible}
+  .bar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:6px;overflow:visible}
   .bar nav a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:6px 4px;font-size:.88rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
   .bar nav a:hover,.bar nav a[aria-current]{background:var(--tint)}
+  .bar.home .wrap{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand sister"}
+  .brand{overflow:hidden;text-overflow:ellipsis}
 }
 
 /* ---------- 4. Buttons and inputs ---------- */
@@ -118,6 +117,9 @@ input[type=text]{font:inherit;font-size:1.05rem;color:var(--ink);background:var(
 html:not(.adult) .adult-only{display:none!important}
 html.adult .adult-only{position:relative;border-style:dashed;padding-top:16px;margin-top:22px}
 html.adult .adult-only::after{content:"Grown-up view";position:absolute;top:-11px;right:14px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 10px;border-radius:99px;background:var(--ink);color:#fff}
+/* small inline marks (an expectation code beside a title) show without the label */
+html.adult span.adult-only{padding-top:0;margin-top:0}
+html.adult span.adult-only::after{content:none}
 
 /* ---------- 6. Home pages: hero, chapter cards, grade list ---------- */
 .hero{padding:8px 0 4px}

@@ -45,19 +45,21 @@
         return ka - kb || (a.s.t || 0) - (b.s.t || 0);
       })[0].sk;
     }
-    box.innerHTML = '<div class="qhead"><h2>Practise</h2><p class="qscore pscore" aria-live="polite"></p></div>' +
-      '<p class="qintro">New questions every time. Pick a skill. Three right in a row moves you up a level. If a question is tricky, you get a hint, then the steps, then a similar one to try.</p>' +
-      '<div class="skills"></div><div class="pq" aria-live="polite"></div>';
+    /* started on one skill: the question gets the screen, with one link back to the list of skills */
+    var focus = !!startSkill;
+    box.innerHTML = focus
+      ? '<div class="ls-top"><a class="ls-back" href="#' + id + '/practice"><span aria-hidden="true">&lsaquo;</span> All skills</a><p class="qscore pscore" aria-live="polite"></p></div><div class="pq" aria-live="polite"></div>'
+      : '<div class="qhead"><h2>Practise</h2><p class="qscore pscore" aria-live="polite"></p></div>' +
+        '<p class="qintro">Pick a skill. Three right in a row moves you up a level.</p>' +
+        '<div class="skills"></div><div class="pq" aria-live="polite"></div>';
     var row = $('.skills', box), pq = $('.pq', box);
     function refreshRow() {
+      if (!row) return;
       row.innerHTML = skills.map(function (sk) {
-        var st = status(skillState(sk.id)), on = cur && cur.id === sk.id;
-        return '<button type="button" class="skill' + (on ? ' cur' : '') + '" data-sk="' + sk.id + '" aria-pressed="' + !!on + '">' +
-          '<span class="sn">' + sk.name + '</span><span class="ss">' + meter(st.k) + ' ' + st.t + '</span><span class="sc">' + sk.code + '</span></button>';
+        var st = status(skillState(sk.id));
+        return '<a class="skill" href="#' + id + '/practice/' + sk.id + '">' +
+          '<span class="sn">' + sk.name + '</span><span class="ss">' + meter(st.k) + ' ' + st.t + '</span><span class="sc adult-only">' + sk.code + '</span></a>';
       }).join('');
-      $$('.skill', row).forEach(function (b) {
-        b.addEventListener('click', function () { cur = skills.filter(function (s) { return s.id === b.getAttribute('data-sk'); })[0]; home = null; next(true); });
-      });
     }
     function scoreLine() { $('.pscore', box).textContent = session.n ? 'This session: ' + session.n + ' done, ' + session.first + ' right first time' : ''; }
     function next(focus, easier) {
@@ -68,7 +70,7 @@
       q = make(cur, lv); tries = 0; done = false;
       A._q = q; /* for the automatic checks */
       refreshRow();
-      pq.innerHTML = '<div class="pcard"><p class="plv"><span class="pill">' + cur.code + '</span> <b>' + cur.name + '</b> &middot; Level ' + lv + ': ' + LV[lv] + (home ? ' &middot; <i>Review from earlier</i>' : '') + '</p>' +
+      pq.innerHTML = '<div class="pcard"><p class="plv"><b>' + cur.name + '</b> &middot; Level ' + lv + (home ? ' &middot; <i>Review</i>' : '') + '<span class="pill adult-only">' + cur.code + '</span></p>' +
         Q.html(q) + '<div class="fb" aria-live="polite"></div><div class="steps"></div><div class="pnext"></div></div>';
       qk = Q.mount($('.qkbox', pq), q, function (ok) { if (!done) answer(ok); });
       A._qk = qk;
@@ -116,9 +118,8 @@
     }
     cur = (startSkill && skills.filter(function (s) { return s.id === startSkill; })[0]) || pickWeakest();
     refreshRow();
-    if (startSkill) return next(false);
-    pq.innerHTML = '<p class="pstart">Start with <b>' + cur.name + '</b>, or pick any skill above.</p><button type="button" class="btn">Start practising</button>';
-    $('.btn', pq).addEventListener('click', function () { next(true); });
+    if (focus) return next(false);
+    pq.innerHTML = '<p class="pstart">Best next: <b>' + cur.name + '</b></p><a class="btn" href="#' + id + '/practice/' + cur.id + '">Start practising</a>';
   };
 
   /* ---------- chapter quiz: seven questions, a hint after a wrong answer, then a second try ---------- */

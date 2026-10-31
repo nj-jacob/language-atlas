@@ -5,7 +5,8 @@
      <meta name="atlas-root"  content="../">                       path back to the site's home page ("All grades")
      <meta name="atlas-brand" content="Grade 1 Language Atlas">    the name shown in the bar (leave out on the home page)
      <meta name="atlas-math"  content="grade1/">                   which Math Atlas page the sister link opens (optional)
-   Grade pages get the chapter links and the display buttons (text size, grown-up view). The home page gets only the brand and the Math Atlas link. */
+   Grade pages get the chapter links and the display buttons (text size, grown-up view). On phones and tablets these sit behind
+   one "Menu" button, so a learning screen starts with the lesson, not the settings. The home page gets only the brand and the Math Atlas link. */
 (function () {
   'use strict';
   var MATH = 'https://ontario-math-atlas.web.app/';
@@ -15,16 +16,24 @@
   bar.className = 'bar' + (brand ? '' : ' home');
   var sister = '<a class="sister" href="' + math + '" aria-label="Math Atlas, our sister site for math">Math Atlas <span aria-hidden="true">&rsaquo;</span></a>';
   bar.innerHTML = '<div class="wrap">' + (brand
-    ? '<a class="athome" href="' + root + '" aria-label="All grades: back to the Language Atlas home page"><span aria-hidden="true">&lsaquo;</span> All grades</a>' +
-      '<a class="brand" href="#home"><i aria-hidden="true">L</i>' + brand + '</a>' +
+    ? '<a class="brand" href="#home"><i aria-hidden="true">L</i>' + brand + '</a>' +
+      '<button type="button" class="menub" id="menub" aria-expanded="false" aria-controls="more">Menu</button>' +
+      '<div class="more" id="more"><a class="athome" href="' + root + '" aria-label="All grades: back to the Language Atlas home page"><span aria-hidden="true">&lsaquo;</span> All grades</a>' +
       '<nav aria-label="Main"><a href="#home">Chapters</a><a href="#check-up">Check-up</a><a href="#progress">My progress</a></nav>' + sister +
       '<div class="tools" role="group" aria-label="Display settings"><button type="button" id="bigb" aria-pressed="false">Text: normal</button>' +
-      '<button type="button" id="adultb" aria-pressed="false" title="Shows coaching notes, like common mistakes, for a parent or tutor">Grown-up view: off</button></div>'
+      '<button type="button" id="adultb" aria-pressed="false" title="Shows coaching notes, like common mistakes, for a parent or tutor">Grown-up view: off</button></div></div>'
     : '<a class="brand" href="' + root + '"><i aria-hidden="true">L</i>Language Atlas</a><nav aria-label="Main"></nav>' + sister) + '</div>';
   var skip = document.createElement('a');
   skip.className = 'skip'; skip.href = '#app'; skip.textContent = 'Skip to content';
   /* pages route on the # part of the address, so the skip link moves focus itself instead of changing it */
   skip.addEventListener('click', function (e) { var m = document.getElementById('app'); if (m) { e.preventDefault(); m.focus(); } });
+  var menub = bar.querySelector('#menub');
+  function open(on) { bar.classList.toggle('open', on); if (menub) menub.setAttribute('aria-expanded', String(on)); }
+  if (menub) {
+    menub.addEventListener('click', function () { open(!bar.classList.contains('open')); });
+    /* any move to another screen closes the menu */
+    window.addEventListener('hashchange', function () { open(false); });
+  }
   document.body.insertBefore(bar, document.body.firstChild);
   document.body.insertBefore(skip, bar);
 })();

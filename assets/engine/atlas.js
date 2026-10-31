@@ -80,7 +80,7 @@
       m: m, prev: built[at - 1] || null, next: built[at + 1] || null,
       head: '<header class="chead"><span class="num">Chapter ' + (idx + 1) + '</span><h1>' + m.title + '</h1>' +
         '<p class="lede">' + m.sub.charAt(0).toUpperCase() + m.sub.slice(1) + '.</p>' +
-        '<span class="pill">' + m.strand + ' &middot; ' + Atlas.strands[m.strand] + '</span> <span class="codes">Ontario expectations ' + m.codes + '</span></header>'
+        '<span class="pill">' + m.strand + ' &middot; ' + Atlas.strands[m.strand] + '</span> <span class="codes adult-only">Ontario expectations ' + m.codes + '</span></header>'
     };
   };
   Atlas.nextPrev = function (ctx) {

@@ -10,7 +10,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `grade1/` … `grade8/` | One site per grade (see below) |
 | `assets/engine/` | **Shared by every grade**: the engine (see below) |
 | `assets/atlas-theme.css` | The one look for every page, matching Math Atlas |
-| `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view |
+| `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button |
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
 | `.github/workflows/` | `checks.yml` runs the checks on pull requests and posts a preview link. `publish.yml` runs them again, then publishes `main`. |
@@ -54,13 +54,16 @@ An idea is `{ slug, title, exp, skill, intro, model, key, guided, check, coach, 
 
 ## Pages (the part after `#` in the address)
 
+Learning screens (an idea, or practising one skill) are calm on purpose: no chapter header, tabs or settings on screen, so the question, its picture and its answers fit on a phone without scrolling.
+
 | Address | Page |
 | --- | --- |
 | `#home` | The grade's chapters |
 | `#sentences` | A chapter: its lessons |
-| `#sentences/learn/capital`, `/2`, `/3` | One idea: Watch me (one step on screen at a time), Together, On your own |
+| `#sentences/learn/capital`, `/2`, `/3` | One idea: Watch me (one step on screen at a time), Together, On your own. Focus screen: a link back to the chapter, the progress dots, the idea and one small line such as "Together · 1 of 2". Expectation codes show only in grown-up view |
 | `#sentences/done/start-end` | End of a lesson: where each idea stands, what to practise |
-| `#sentences/practice`, `#sentences/practice/cap-end` | Practice, optionally starting on one skill |
+| `#sentences/practice` | Practice: pick a skill |
+| `#sentences/practice/cap-end` | Practising one skill: the question gets the screen, with one link back to the skills |
 | `#sentences/quiz` | Chapter quiz |
 | `#check-up`, `#check-up/all`, `#check-up/sentences` | Check-ups |
 | `#sentences/tasks`, `#sentences/tasks/<id>` | Activities with a grown-up, and one activity |
