@@ -62,18 +62,18 @@
     return Q.tiles('Which word is the <b>strongest</b>?', s[2], [s[0], s[1]], { hint: 'Strongest means the most.', explain: W.sent(s.join(' &rarr; ')), meta: { k: 'g4-strongest' } });
   }
 
-  /* ---------- one word, more than one meaning: [word, sentence, meaning here, other meaning] ---------- */
+  /* ---------- one word, more than one meaning: [word, sentence, meaning here, other meaning, a short cue for matching] ---------- */
   var MULTI = [
-    ['bark', 'The dog' + AP + 's <b>bark</b> woke the baby.', 'the sound a dog makes', 'the outside of a tree'],
-    ['bark', 'The birch <b>bark</b> was white and smooth.', 'the outside of a tree', 'the sound a dog makes'],
-    ['bat', 'A <b>bat</b> flew out of the cave at night.', 'a flying animal', 'a stick for hitting a ball'],
-    ['bat', 'Owen swung the <b>bat</b> and hit the ball.', 'a stick for hitting a ball', 'a flying animal'],
-    ['current', 'The <b>current</b> in the river was strong.', 'moving water', 'happening now'],
-    ['current', 'What is the <b>current</b> score?', 'happening now', 'moving water'],
-    ['fair', 'We rode the Ferris wheel at the fall <b>fair</b>.', 'a show with rides and games', 'treating everyone the same'],
-    ['fair', 'It is <b>fair</b> to give everyone a turn.', 'treating everyone the same', 'a show with rides and games'],
-    ['light', 'The box was <b>light</b> enough to carry.', 'not heavy', 'something that lets you see'],
-    ['light', 'Turn on the <b>light</b>, please.', 'something that lets you see', 'not heavy']
+    ['bark', 'The dog' + AP + 's <b>bark</b> woke the baby.', 'the sound a dog makes', 'the outside of a tree', 'the dog' + AP + 's bark'],
+    ['bark', 'The birch <b>bark</b> was white and smooth.', 'the outside of a tree', 'the sound a dog makes', 'birch bark'],
+    ['bat', 'A <b>bat</b> flew out of the cave at night.', 'a flying animal', 'a stick for hitting a ball', 'a bat flew'],
+    ['bat', 'Owen swung the <b>bat</b> and hit the ball.', 'a stick for hitting a ball', 'a flying animal', 'swung the bat'],
+    ['current', 'The <b>current</b> in the river was strong.', 'moving water', 'happening now', 'current in the river'],
+    ['current', 'What is the <b>current</b> score?', 'happening now', 'moving water', 'the current score'],
+    ['fair', 'We rode the Ferris wheel at the fall <b>fair</b>.', 'a show with rides and games', 'treating everyone the same', 'the fall fair'],
+    ['fair', 'It is <b>fair</b> to give everyone a turn.', 'treating everyone the same', 'a show with rides and games', 'fair to give a turn'],
+    ['light', 'The box was <b>light</b> enough to carry.', 'not heavy', 'something that lets you see', 'light enough to carry'],
+    ['light', 'Turn on the <b>light</b>, please.', 'something that lets you see', 'not heavy', 'turn on the light']
   ];
   function multi() {
     var m = R.pick(MULTI);
@@ -82,7 +82,7 @@
   }
   function multiMatch() {
     var w = R.pick(['bark', 'bat', 'current', 'fair', 'light']), two = MULTI.filter(function (m) { return m[0] === w; });
-    return { q: 'Match each sentence to what <b>' + w + '</b> means.', type: 'match', pairs: two.map(function (m) { return [m[1], m[2]]; }),
+    return { q: 'Match each use of <b>' + w + '</b> to what it means.', type: 'match', pairs: two.map(function (m) { return [m[4], m[2]]; }),
       hint: 'Try each meaning in each sentence.', explain: 'The same word can mean different things.', meta: { k: 'g4-multi-match' } };
   }
 
