@@ -33,7 +33,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 1. `../assets/atlas-header.js` (first thing in `<body>`)
 2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`
 3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
-4. `texts.js` (optional): reading passages shared by the grade's chapters (Grade 3 has seven, Grades 4 and 5 have nine each)
+4. `texts.js` (optional): reading passages shared by the grade's chapters
 5. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`
 6. `<script>Atlas.start();</script>`
 
