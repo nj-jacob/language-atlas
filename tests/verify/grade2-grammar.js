@@ -7,7 +7,7 @@
   const pro = n => (/\band I$/.test(n) ? 'We' : /s$/.test(n) ? 'They' : /\b(aunt|sister|girl|mom|grandma)$/i.test(n) ? 'She' : /\b(grandpa|brother|boy|dad|uncle)$/i.test(n) ? 'He' : 'It');
   /* the form of "to be", by rule: who it is about, and whether it is in the past */
   const be = s => { const past = /^(Yesterday|Last)/.test(s), who = s.replace(/^(Yesterday|Last week|Last night), /, '').split(' _')[0];
-    if (who === 'I') return 'am'; const many = /^(We|They)$|s$|twins/.test(who); return past ? (many ? 'were' : 'was') : (many ? 'are' : 'is'); };
+    if (who === 'I') return 'am'; const many = /^(we|they)$|s$|twins/i.test(who); return past ? (many ? 'were' : 'was') : (many ? 'are' : 'is'); };
   const cmp = (s, w) => (/ than /.test(s) ? /er$/.test(w) : /\bthe _/.test(s) ? /est$/.test(w) : false);
   const HOW = { slowly: 'walked', softly: 'sang', loudly: 'barked', quickly: 'ran', carefully: 'carried', quietly: 'slept' };
 
