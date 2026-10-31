@@ -20,7 +20,8 @@
   };
   V['g1-build-word'] = (q, m) => q.answer.map(i => text(q.parts[i])).join('') === m.word && text(q.q).includes(m.word) ? '' : 'the parts do not build ' + m.word;
   V['g1-compound'] = (q, m) => H.marked(q) === m.a + m.b && COMPOUND.has(m.a + m.b) && q.options.map(text).filter(o => COMPOUND.has(o)).length === 1 ? '' : 'expected ' + m.a + m.b;
-  V['g1-split-compound'] = (q, m) => { const t = H.marked(q) || ''; const [a, b] = t.split(' + '); return COMPOUND.has(m.w) && a + b === m.w && !/^(s|n)$/.test(b[0] + '') && [a, b].every(x => x.length >= 2) && q.tiles.map(text).filter(x => x.replace(' + ', '') === m.w).length === q.tiles.length ? '' : 'expected the split into two whole words'; };
+  const SMALL = new Set('sun set rain bow snow man pop corn cup cake back pack foot ball bed room star fish tooth brush play ground pan'.split(' '));
+  V['g1-split-compound'] = (q, m) => { const ok = q.tiles.map(text).filter(t => { const [a, b] = t.split(' + '); return a + b === m.w && SMALL.has(a) && SMALL.has(b); }); return COMPOUND.has(m.w) && ok.length === 1 && H.marked(q) === ok[0] ? '' : 'expected the split into two whole words'; };
   V['g1-pick-compound'] = q => H.sameSet(q.options.map((o, i) => COMPOUND.has(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the compound words are not the ones marked';
   V['g1-same'] = (q, m) => { const ok = q.options.map(text).filter(o => partner(SAME, m.w).includes(o)); return ok.length === 1 && H.marked(q) === ok[0] ? '' : 'expected the word that means the same as ' + m.w; };
   V['g1-opposite'] = (q, m) => { const ok = q.options.map(text).filter(o => partner(OPP, m.w).includes(o)); return ok.length === 1 && H.marked(q) === ok[0] ? '' : 'expected the opposite of ' + m.w; };
