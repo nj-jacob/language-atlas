@@ -31,7 +31,7 @@
   const at = s => STEPS.indexOf(text(s).split(' ')[0]);
   V['g7-design-order'] = q => q.items.map(at).every((p, i, a) => p >= 0 && (i === 0 || p > a[i - 1])) ? '' : 'the design steps are out of order';
   V['g7-design-next'] = (q, m) => at(mk(q)) === at(m.s) + 1 ? '' : 'expected the next design step';
-  const RESPECT = /^(Comment: "Interesting idea|Learn who it belongs to|Welcome them|Say it is not okay)/;
+  const RESPECT = /^(Comment: “Interesting idea|Learn who it belongs to|Welcome them|Say it is not okay)/;
   V['g7-collab'] = q => { const ok = q.options.map(text).filter(o => RESPECT.test(o)); return ok.length === 1 && mk(q) === ok[0] ? '' : 'expected the respectful response'; };
   V['g7-culture-symbol-tf'] = (q, m) => /ask permission/.test(m.said) === q.answer && q.why.answer === 0 ? '' : 'true/false is wrong';
 })();

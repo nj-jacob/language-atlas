@@ -105,7 +105,7 @@
     return { q: 'Put the design process in order.', type: 'order', items: steps, first: 'First', last: 'Last', hint: 'Understand the problem before solving it; test before proposing.', explain: DESIGN.join(' &rarr; '), meta: { k: 'g7-design-order' } };
   }
   /* [situation online, respectful and inclusive response, others] */
-  var COLLAB = [['Your group' + '’' + 's shared document: a teammate' + '’' + 's idea is different from yours.', 'Comment: "Interesting idea. Could we combine it with mine?"', ['Delete their paragraph.', 'Ignore it and keep writing.']],
+  var COLLAB = [['Your group' + '’' + 's shared document: a teammate' + '’' + 's idea is different from yours.', 'Comment: “Interesting idea. Could we combine it with mine?”', ['Delete their paragraph.', 'Ignore it and keep writing.']],
     ['You want to use a First Nations design you saw online in your project.', 'Learn who it belongs to and ask permission, or choose something else.', ['Use it, since it looks nice.', 'Change the colours so it is yours.']],
     ['A new member of an online club writes in a mix of English and Tagalog.', 'Welcome them and ask how they would like to share.', ['Tell them to use English only.', 'Leave them out of the chat.']],
     ['In a video call, someone makes a joke about a classmate' + '’' + 's culture.', 'Say it is not okay, and check in with the classmate.', ['Laugh along.', 'Turn off your camera and say nothing.']]];
