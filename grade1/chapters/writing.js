@@ -11,43 +11,94 @@
   'use strict';
   var R = Atlas.R, Q = Atlas.Q, W = Atlas.W, step = W.step;
 
-  var SENTS = ['I like my cat.', 'We can run fast.', 'The sun is hot.', 'Mom has a red hat.', 'My dog can sit.', 'I see a big bus.', 'We play in the snow.'];
+  var SENTS = ['I like my cat.', 'We can run fast.', 'The sun is hot.', 'Mom has a red hat.', 'My dog can sit.', 'I see a big bus.', 'We play in the snow.',
+    'The fox ran up the hill.', 'Kai has a new kite.', 'We sat by the lake.', 'I can see the moon.', 'The bee is on a leaf.', 'Dad made a big cake.', 'My hat is blue.'];
   /* sentences that share a thought, feeling or opinion, and plain ones */
-  var VOICE = ['I love the smell of rain.', 'I think dogs are the best pets.', 'I felt so proud when I learned to swim.', 'Skating is my favourite thing to do.', 'I was nervous on my first day.'];
-  var FLAT = ['It rained.', 'There is a dog.', 'We went to the pool.', 'The rink is open.', 'School starts at nine.'];
+  var VOICE = ['I love the smell of rain.', 'I think dogs are the best pets.', 'I felt so proud when I learned to swim.', 'Skating is my favourite thing to do.', 'I was nervous on my first day.',
+    'I think snow days are the best.', 'I felt happy when the bus came.', 'My favourite colour is green.', 'I love my auntie' + '’' + 's soup.'];
+  var FLAT = ['It rained.', 'There is a dog.', 'We went to the pool.', 'The rink is open.', 'School starts at nine.', 'The bus came.', 'The soup is hot.', 'Grass is green.', 'The bell rang.'];
+  /* [a plain sentence, the same idea with the writer's feeling] */
+  var ADD = [['It rained.', 'I love the smell of rain.'], ['We went to the pool.', 'I felt brave when I jumped in the pool.'], ['The rink is open.', 'Skating at the rink is my favourite thing.'],
+    ['There is a dog.', 'I think that dog is so cute.'], ['School starts at nine.', 'I felt nervous before school.'], ['The bus came.', 'I felt happy when the bus came.'], ['The soup is hot.', 'I love hot soup on a cold day.']];
   /* [first person, the same thing in third person] */
-  var POV = [['I rode my bike.', 'She rode her bike.'], ['We baked bread.', 'They baked bread.'], ['I lost my mitten.', 'He lost his mitten.'], ['My cat sleeps on my bed.', 'Her cat sleeps on her bed.']];
+  var POV = [['I rode my bike.', 'She rode her bike.'], ['We baked bread.', 'They baked bread.'], ['I lost my mitten.', 'He lost his mitten.'], ['My cat sleeps on my bed.', 'Her cat sleeps on her bed.'],
+    ['I fed the ducks.', 'He fed the ducks.'], ['We built a fort.', 'They built a fort.'], ['I read my book.', 'She read her book.'], ['My brother and I went fishing.', 'Her brother and she went fishing.']];
   /* a sentence with one mistake, and its fix: [shown, fixed, the wrong word, the kind of mistake] */
   var EDITS = [['the dog ran home.', 'The dog ran home.', 'the', 'capital'], ['We went to the park', 'We went to the park.', 'park', 'mark'], ['I sed hello.', 'I said hello.', 'sed', 'spelling'],
     ['my mom is a nurse.', 'My mom is a nurse.', 'my', 'capital'], ['Can we go now.', 'Can we go now?', 'now.', 'mark'], ['The cat wuz hungry.', 'The cat was hungry.', 'wuz', 'spelling'],
-    ['Sam and i played.', 'Sam and I played.', 'i', 'capital'], ['They hav a boat.', 'They have a boat.', 'hav', 'spelling'], ['I like snow', 'I like snow.', 'snow', 'mark']];
+    ['Sam and i played.', 'Sam and I played.', 'i', 'capital'], ['They hav a boat.', 'They have a boat.', 'hav', 'spelling'], ['I like snow', 'I like snow.', 'snow', 'mark'],
+    ['the bus is big.', 'The bus is big.', 'the', 'capital'], ['I see a big dog', 'I see a big dog.', 'dog', 'mark'], ['We can plai in the snow.', 'We can play in the snow.', 'plai', 'spelling'],
+    ['Is the sun hot.', 'Is the sun hot?', 'hot.', 'mark'], ['Mom and i ran home.', 'Mom and I ran home.', 'i', 'capital'], ['The cat iz hungry.', 'The cat is hungry.', 'iz', 'spelling']];
   var KINDLINE = { capital: 'It needs a capital letter.', mark: 'It needs the right end mark.', spelling: 'A word is spelled wrong.' };
 
   function squash(s) { var w = s.split(' '), i = R.int(0, w.length - 2); return w.slice(0, i).concat([w[i] + w[i + 1]]).concat(w.slice(i + 2)).join(' '); }
   function stretch(s) { return s.split(' ').map(function (w, i) { return i === 1 ? w.split('').join(' ') : w; }).join('  '); }
+  function tfWhy(right, yes, no) { return { options: [yes, no], answer: right ? 0 : 1 }; }
 
-  /* ---------- question makers: printing, voice and point of view ---------- */
+  /* ---------- question makers: spaces ---------- */
   function spacing(lv) {
     var s = R.pick(SENTS);
     return Q.one('Which sentence has a <b>space</b> between each word?', s, [squash(s)].concat(lv > 1 ? [stretch(s)] : []), { prompt: 'Look for a finger space between words.',
       hint: 'One space between words. No space inside a word.', explain: W.sent(s), meta: { k: 'g1-spacing', s: s } });
   }
+  function spaceTf() {
+    var s = R.pick(SENTS), right = R.int(0, 1) === 1, shown = right ? s : squash(s);
+    return { q: 'Is there a space between each word?', fig: W.sent(shown), type: 'tf', answer: right, why: tfWhy(right, 'Every word has a space after it.', 'Two words run together.'),
+      hint: 'Point to each word as you read.', explain: W.sent(s), meta: { k: 'g1-space-tf', shown: shown } };
+  }
+  function spaceTap() {
+    var s = R.pick(SENTS), shown = squash(s), t = shown.split(' '), joined = t.filter(function (w) { return s.split(' ').indexOf(w) < 0; })[0];
+    return { q: 'Tap where two words run together.', type: 'tap', tiles: t, answer: t.indexOf(joined), fig: W.sent(shown), hint: 'Point to each word as you read.', explain: W.sent(s), meta: { k: 'g1-space-tap', s: s } };
+  }
+  function countWords(lv) {
+    var s = R.pick(SENTS), n = s.split(' ').length, opts = [n - 1, n + 1].concat(lv > 1 ? [n + 2] : []);
+    return Q.tiles('How many words?', String(n), opts.map(String), { fig: W.sent(s), hint: 'Count the spaces, then add one.', explain: n + ' words.', meta: { k: 'g1-count-words', s: s } });
+  }
+
+  /* ---------- question makers: voice ---------- */
   function feeling(lv) {
     return Q.one('Which sentence shares a <b>thought or feeling</b>?', R.pick(VOICE), R.some(FLAT, lv > 1 ? 2 : 1), { prompt: 'Which one tells what the writer thinks or feels?',
       hint: 'Look for words like love, think, felt, favourite.', explain: 'Sharing what you think and feel gives your writing your own voice.', meta: { k: 'g1-voice' } });
   }
   function pickVoice() {
-    return Q.all('Pick every sentence that shares a <b>thought or feeling</b>.', R.some(VOICE, 2), R.some(FLAT, 2), { hint: 'Which ones tell what the writer thinks or feels?', explain: 'Those show the writer' + '’' + 's voice.', meta: { k: 'g1-pick-voice' } });
+    var n = R.int(1, 3);
+    return Q.all('Pick every sentence that shares a <b>thought or feeling</b>.', R.some(VOICE, n), R.some(FLAT, 4 - n), { hint: 'Which ones tell what the writer thinks or feels?', explain: 'Those show the writer' + '’' + 's voice.', meta: { k: 'g1-pick-voice' } });
   }
+  function voiceTf() {
+    var right = R.int(0, 1) === 1, sn = R.pick(right ? VOICE : FLAT);
+    return { q: 'Does this share what the writer thinks or feels?', fig: W.means('write', sn), type: 'tf', answer: right, why: tfWhy(right, 'It tells a thought or feeling.', 'It only tells a fact.'),
+      hint: 'Look for words like love, think, felt, favourite.', explain: right ? 'Yes: you can hear the writer.' : 'No: it is just a fact.', meta: { k: 'g1-voice-tf', s: sn } };
+  }
+  function addFeeling(lv) {
+    var p = R.pick(ADD);
+    return Q.one('Which sentence adds the writer' + '’' + 's feeling?', p[1], R.some(FLAT.filter(function (f) { return f !== p[0]; }), lv > 1 ? 2 : 1), { fig: W.sent(p[0]),
+      hint: 'Which one tells how the writer feels about it?', explain: W.sent(p[1]), meta: { k: 'g1-add-feeling', plain: p[0] } });
+  }
+
+  /* ---------- question makers: first person ---------- */
   function firstPerson(lv) {
     var p = R.pick(POV), other = R.pick(POV.filter(function (x) { return x !== p; }));
     return Q.one('Which sentence is about <b>me</b> (first person)?', p[0], [p[1]].concat(lv > 1 ? [other[1]] : []), { prompt: 'Look for I, me, my or we.',
       hint: 'First person uses I, my and we.', explain: W.sent(p[0]) + ' uses ' + (/^We/.test(p[0]) ? 'we' : 'I or my') + '.', meta: { k: 'g1-first-person' } });
   }
+  function povTf() {
+    var p = R.pick(POV), right = R.int(0, 1) === 1, sn = p[right ? 0 : 1];
+    return { q: 'Is this sentence about <b>me</b> (first person)?', fig: W.sent(sn), type: 'tf', answer: right, why: tfWhy(right, 'It uses I, my or we.', 'It uses she, he, her, his or they.'),
+      hint: 'Look for I, my or we.', explain: W.sent(p[0]) + ' is first person.', meta: { k: 'g1-pov-me-tf', s: sn } };
+  }
+  function povWord() {
+    var p = R.pick(POV), t = p[0].replace(/[.?!]/g, '').split(' '), i = t.findIndex(function (w) { return /^(I|my|My|We)$/.test(w); });
+    return { q: 'Tap the word that shows it is about <b>me</b>.', type: 'tap', tiles: t, answer: i, fig: W.sent(p[0]), hint: 'Look for I, my or we.', explain: '<b>' + t[i] + '</b> means the writer.', meta: { k: 'g1-pov-word', s: p[0] } };
+  }
+  function povChange(lv) {
+    var p = R.pick(POV), other = R.pick(POV.filter(function (x) { return x !== p; }));
+    return Q.one('Change it so it is about <b>me</b>.', p[0], [p[1]].concat(lv > 1 ? [other[0]] : []), { fig: W.sent(p[1]), hint: 'Swap she, he or they for I or we. Keep the rest the same.',
+      explain: W.sent(p[0]), meta: { k: 'g1-pov-change', from: p[1] } });
+  }
 
   /* ---------- question makers: editing ---------- */
   function fixIt(lv) {
-    var e = R.pick(EDITS), other = R.pick(EDITS.filter(function (x) { return x !== e; }));
+    var e = R.pick(EDITS);
     return Q.one('Which is the <b>fixed</b> sentence?', e[1], [e[0]].concat(lv > 1 ? [e[1].replace(/[.?]$/, '')] : []).filter(function (x) { return x !== e[1]; }), { fig: W.sent(e[0]),
       prompt: 'Check the capital, the end mark, and the spelling.', hint: 'Capital at the start. A mark at the end. Words spelled right.', explain: W.sent(e[1]), meta: { k: 'g1-fix-it', shown: e[0] } });
   }
@@ -69,35 +120,41 @@
   }
 
   Atlas.register('writing', {
+    full: true,
     lessons: [{
       id: 'write', title: 'Writing your ideas', sub: 'Neat spaces, your own voice, and writing about you.',
       concepts: [
-        { slug: 'spaces', title: 'A space between words', exp: ['D2.2'], skill: 'craft',
+        { slug: 'spaces', title: 'A space between words', exp: ['D2.2'], skill: 'spaces',
           model: [
             step(W.sent('Ilikemycat.'), 'Hard to read.'),
-            step(W.sent('I like my cat.'), 'A finger space between words.'),
+            step(W.sent('I like my cat.'), 'A finger space after each word.'),
+            step(W.sent('I l i k e my cat.'), 'No spaces inside a word.'),
             step(W.icon('write'), 'Letters sit on the line. Tall letters reach up.')
           ],
-          guided: [function () { return spacing(1); }, function () { return spacing(1); }],
-          check: [function () { return spacing(2); }, function () { return spacing(2); }],
+          guided: [function () { return spacing(1); }, spaceTf, spaceTap],
+          check: [function () { return spacing(2); }, spaceTap, function () { return countWords(2); }, spaceTf, function () { return spacing(2); }],
           coach: '<p>Use a finger (or a craft stick) as a spacer between words. Use lined paper with a dotted middle line so the child sees where small and tall letters go.</p>',
           mistake: '<p>Words running together, or spaces inside a word. Read the sentence aloud while pointing to each word.</p>' },
-        { slug: 'voice', title: 'Say what you think and feel', exp: ['D2.3'], skill: 'craft',
+        { slug: 'voice', title: 'Say what you think and feel', exp: ['D2.3'], skill: 'voice',
           model: [
             step(W.sent('It rained.'), 'Just a fact.'),
-            step(W.sent('I <b>love</b> the smell of rain.'), 'Now I hear the writer.')
+            step(W.sent('I <b>love</b> the smell of rain.'), 'Now I hear the writer.'),
+            step(W.sent('We went to the pool.'), 'How did it feel?'),
+            step(W.sent('I <b>felt brave</b> when I jumped in the pool.'))
           ],
-          guided: [function () { return feeling(1); }, pickVoice],
-          check: [function () { return feeling(2); }, pickVoice],
+          guided: [function () { return feeling(1); }, function () { return addFeeling(1); }, voiceTf],
+          check: [function () { return feeling(2); }, pickVoice, function () { return addFeeling(2); }, voiceTf, function () { return feeling(2); }],
           coach: '<p>After the child writes a fact, ask: "How did you feel about it?" Add that sentence.</p>',
           mistake: '<p>Writing only "I like it." Ask: "Why? What did you love about it?"</p>' },
-        { slug: 'about-me', title: 'Writing about me', exp: ['D2.4'], skill: 'craft',
+        { slug: 'about-me', title: 'Writing about me', exp: ['D2.4'], skill: 'first-person',
           model: [
             step(W.sent('<b>I</b> rode <b>my</b> bike.'), 'I and my: first person.'),
-            step(W.sent('<b>She</b> rode <b>her</b> bike.'), 'She and her: about someone else.')
+            step(W.sent('<b>She</b> rode <b>her</b> bike.'), 'She and her: about someone else.'),
+            step(W.sent('<b>We</b> baked bread.'), 'We: me and others.'),
+            step(W.sent('<b>They</b> baked bread.'), 'They: other people.')
           ],
-          guided: [function () { return firstPerson(1); }, function () { return firstPerson(1); }],
-          check: [function () { return firstPerson(2); }, function () { return firstPerson(2); }],
+          guided: [function () { return firstPerson(1); }, povWord, povTf],
+          check: [function () { return firstPerson(2); }, function () { return povChange(2); }, povWord, povTf, function () { return firstPerson(2); }],
           coach: '<p>After the child writes about their day, ask: "Who is this about? How can you tell?" Point to I and my.</p>',
           mistake: '<p>Switching between I and she in one story. Read it back and check.</p>' }
       ]
@@ -108,17 +165,20 @@
           model: [
             step(W.sent(W.hl('t', 0, 1) + 'he dog ran home.'), 'A capital at the start?'),
             step(W.sent('We went to the park' + W.gap()), 'A mark at the end?'),
-            step(W.sent('I ' + W.hl('sed', 0, 3) + ' hello.'), 'Words spelled right? <b>said</b>.')
+            step(W.sent('I ' + W.hl('sed', 0, 3) + ' hello.'), 'Words spelled right?'),
+            step(W.sent('I <b>said</b> hello.'), 'Fixed: <b>said</b>.')
           ],
           key: '<p>Capital, mark, spelling: check all three.</p>',
-          guided: [function () { return fixIt(1); }, tapMistake],
-          check: [function () { return fixIt(2); }, whatWrong],
+          guided: [function () { return fixIt(1); }, tapMistake, editTf],
+          check: [function () { return fixIt(2); }, whatWrong, tapMistake, editTf, function () { return fixIt(2); }],
           coach: '<p>Make a three-picture checklist card: a capital A, a period, and an eye for "does it look right?" The child checks each sentence against the card.</p>',
           mistake: '<p>Reading what they meant, not what they wrote. Read it aloud slowly, pointing to each word.</p>' }
       ]
     }],
     practice: [
-      { id: 'craft', name: 'Spaces, voice and first person', code: 'D2.2, D2.3, D2.4', gen: spacing },
+      { id: 'spaces', name: 'Spaces between words', code: 'D2.2', gen: spacing },
+      { id: 'voice', name: 'Thoughts and feelings', code: 'D2.3', gen: feeling },
+      { id: 'first-person', name: 'Writing about me', code: 'D2.4', gen: firstPerson },
       { id: 'editing', name: 'Fix it up', code: 'D2.5', gen: fixIt }
     ],
     tasks: [
@@ -148,7 +208,9 @@
   });
 
   Q.shapes('writing', {
-    craft: [[1, 'voice', feeling], [1, 'first-person', firstPerson], [2, 'pick-voice', pickVoice]],
+    spaces: [[1, 'true or false', spaceTf], [1, 'tap', spaceTap], [1, 'count', countWords]],
+    voice: [[1, 'pick', pickVoice], [1, 'true or false', voiceTf], [1, 'add a feeling', addFeeling]],
+    'first-person': [[1, 'true or false', povTf], [1, 'tap', povWord], [1, 'change it', povChange]],
     editing: [[1, 'tap', tapMistake], [1, 'what-wrong', whatWrong], [2, 'true-false', editTf]]
   });
 })();
