@@ -54,7 +54,7 @@
 
   /* ---------- security ---------- */
   var STRONG = ['maple-canoe-7-river-lantern', 'Purple-Moose!Skates-42', 'quiet-cedar-blue-kettle-19', 'Northern-Lights!Paddle-88', 'toboggan-river-quiet-2026', 'blue-heron-snow-fort-31'];
-  var WEAK = ['password123', 'liam2013', 'qwerty', 'hockey', 'sunshine', 'abc12345', '11111111', 'maple'];
+  var WEAK = ['password123', 'liam2013', 'qwerty', 'hockey', 'sunshine', 'abc12345', 'aaaaaaaa', 'maple'];
   function password(lv) {
     return Q.one('Which password is the <b>strongest</b>?', R.pick(STRONG), R.some(WEAK, lv > 1 ? 3 : 2), { hint: 'Long, hard to guess, and not your name or birthday.',
       explain: 'Long passphrases with mixed parts are hardest to crack.', meta: { k: 'g7-password' } });
