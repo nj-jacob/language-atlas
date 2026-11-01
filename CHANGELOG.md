@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-01
+- Deeper Grade 8 "Reading Strategies" (full chapter): 7 new original passages at Grade 8 length (160 to 210 words, each with a picture band: an Iqaluit radio station in a blizzard, the return of the lake sturgeon, a wheelchair basketball tryout, the Bay of Fundy tides, a skate park opinion piece, a Niagara frost night, a repair café), 7 practice skills instead of 3 (one per idea, each asked in 4 ways), two worked examples per idea, 3 "Together" and 5 "On your own" questions, and "Read and answer" sets. Grade 8 passages now use the shared `Atlas.passages`.
 - Deeper Grade 3 "Reading for Meaning", the pilot for making every chapter a real study tool: 16 new original passages (23 in all, 9 of them at Grade 3 length, each with a picture), 8 practice skills instead of 3 (one per idea, each asked in 4 ways), two worked examples in every "Watch me", 3 "Together" and 5 "On your own" questions per idea, and new "Read and answer" sets (read a whole text, then answer 5 questions about it).
 - Engine: tap the sentence in the text, main idea and story map pictures (`Atlas.W.web`, `Atlas.W.chain`), passages in paragraphs with a picture band, 15 new line-art pictures, practice never repeats a question the child has just seen, and "Got it" needs 4 right first time when an idea has 5 "On your own" questions. A new check holds chapters marked `full: true` to the full standard. Passage helpers are shared in the engine (`Atlas.passages`), so every grade's `texts.js` uses one copy.
 
