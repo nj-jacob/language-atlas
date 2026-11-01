@@ -249,9 +249,12 @@
     ['medium', 'Visual Arts', 'Her favourite <b>medium</b> is watercolour.', 'the material an artist uses', 'I ordered a <b>medium</b> hot chocolate.', 'middle-sized']];
   /* one use of a word: [word, sentence, meaning there, the other meaning] */
   function use(m, school) { return school ? [m[0], m[2], m[3], m[5]] : [m[0], m[4], m[5], m[3]]; }
+  /* two meanings overlap when they share a long word, like "government" or "answer" */
+  function overlap(a, b) { var long = function (s) { return s.split(/\W+/).filter(function (w) { return w.length > 4; }); }; return long(a).some(function (w) { return long(b).indexOf(w) >= 0; }); }
   function multi(lv) {
     var m = R.pick(MULTI), u = use(m, R.int(0, 1) === 1);
-    return Q.one('What does <b>' + u[0] + '</b> mean <b>here</b>?', u[2], [u[3]].concat(lv > 1 ? [R.pick(MULTI.filter(function (x) { return x !== m; }))[R.pick([3, 5])]] : []), {
+    var extra = MULTI.filter(function (x) { return x !== m; }).map(function (x) { return x[R.pick([3, 5])]; }).filter(function (x) { return !overlap(x, u[2]); });
+    return Q.one('What does <b>' + u[0] + '</b> mean <b>here</b>?', u[2], [u[3]].concat(lv > 1 ? [R.pick(extra)] : []), {
       fig: W.sent(u[1]), prompt: 'Which meaning makes sense in this sentence?', hint: 'The word has two meanings: ' + m[3] + ', and ' + m[5] + '.',
       explain: W.sent(u[1]) + '<b>' + u[0] + '</b>: ' + u[2] + '.', meta: { k: 'g8-multi', word: u[0] } });
   }
