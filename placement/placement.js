@@ -13,9 +13,9 @@
    yet") = go down one. It stops at the highest secure grade whose next grade is not secure, at two grades above the school
    grade, or after 16 questions.
 
-   Reading aloud (aloud.js) is the part a computer cannot mark: a timed one-minute reading the grown-up marks.
+   Reading aloud (aloud.js) and the writing sample (writing.js) are the parts a computer cannot mark: the grown-up marks them.
 
-   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last, aloud }   (see fresh(), start() and aloud.js) */
+   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last, aloud, writing }   (see fresh(), start(), aloud.js and writing.js) */
 (function () {
   'use strict';
   var A = window.Atlas, $ = A.$, R = A.R, Q = A.Q;
@@ -283,6 +283,9 @@
       h += '<section class="sec cu" data-strand="C"><h2>Reading aloud</h2>' + (st.aloud
         ? A.aloudSummary(st.aloud) + '<p class="adult-only">Grade ' + st.aloud.g + ' passages, ' + st.aloud.d + '. <a href="../grade' + st.aloud.g + '/#fluency">Fluency lessons for Grade ' + st.aloud.g + '</a></p><p><a href="#aloud">Do the reading again</a></p>'
         : '<p>One minute, twice, with a grown-up. It shows how smoothly you read.</p><p><a class="btn alt" href="#aloud">Start reading aloud</a></p>') + '</section>';
+      h += '<section class="sec cu" data-strand="D"><h2>Writing sample</h2>' + (st.writing && st.writing.g === st.grade
+        ? A.writingSummary(st.writing) + '<p><a href="#writing">Open the writing</a></p>'
+        : '<p>About 10 to 15 minutes of writing on your own. A grown-up marks it.</p><p><a class="btn alt" href="#writing">Start the writing sample</a></p>') + '</section>';
       if (gp.length) {
         h += '<section class="sec cu adult-only"><h2>Also worth practising</h2><p>Missed in the check, at a grade that is otherwise secure.</p><ul class="plan">' + gp.map(function (x) {
           return '<li><a href="../grade' + x.g + '/#' + x.ch + '/practice/' + x.sk + '">' + x.skn + '</a> <span class="t2">(Grade ' + x.g + ', ' + x.cht + ', ' + x.code + ')</span></li>';
