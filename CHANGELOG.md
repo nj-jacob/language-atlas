@@ -1,13 +1,10 @@
 # Changelog
 
 ## 2026-11-01
-<<<<<<< HEAD
 - Placement check (pilot, `placement/`): finds where a student is in 7 parts of Language, Grades 1 to 8, and links each part to the lesson to start with. Like Math's placement check, each part starts a grade below the school grade and moves up or down a grade after two answers. The questions are the grades' own practice skills, so every one is already answer-checked. Grown-up view shows every question and the skills worth practising. New check: made-up children at known levels must be placed exactly there.
 - Placement check, after Noel's review: a grade now counts as secure after 3 right out of 4 (not 2 out of 2), so lucky guesses rarely count. New reading-aloud check: two one-minute readings of original passages, marked by the grown-up, giving words correct per minute compared with the published Hasbrouck and Tindal norms.
-=======
 - Deeper Grade 3 "Reading for Meaning", the pilot for making every chapter a real study tool: 16 new original passages (23 in all, 9 of them at Grade 3 length, each with a picture), 8 practice skills instead of 3 (one per idea, each asked in 4 ways), two worked examples in every "Watch me", 3 "Together" and 5 "On your own" questions per idea, and new "Read and answer" sets (read a whole text, then answer 5 questions about it).
 - Engine: tap the sentence in the text, main idea and story map pictures (`Atlas.W.web`, `Atlas.W.chain`), passages in paragraphs with a picture band, 15 new line-art pictures, practice never repeats a question the child has just seen, and "Got it" needs 4 right first time when an idea has 5 "On your own" questions. A new check holds chapters marked `full: true` to the full standard. Passage helpers are shared in the engine (`Atlas.passages`), so every grade's `texts.js` uses one copy.
->>>>>>> origin/main
 
 ## 2026-10-31
 - Letter sounds: Noel's 44 recorded sounds (`assets/sounds/`) now play from sound buttons in the Grade 1 and Grade 2 phonics lessons and questions (`Atlas.W.sound`, `Atlas.W.soundRow`). The checks make sure every button has its file and none sits inside an answer choice.
