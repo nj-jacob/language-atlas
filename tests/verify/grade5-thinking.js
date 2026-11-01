@@ -3,11 +3,18 @@
   const V = window.__verify, H = window.__H, text = s => H.strip(s).replace(/’/g, "'"), mk = q => text(H.marked(q) || '');
   const INFER = { 'Why did the coach tell the team to hold hands?': ['no one would get lost', 'walk slowly to the exit'], 'How does Daniel help his grandmother?': ['finds a light', 'helped his grandmother'],
     'How does Jun feel at the start?': ['nervous', 'My hands were shaking'], 'How does Jun feel at the end?': ['proud', 'grinned all the way home'],
-    'How do you feel when you first step on the ice?': ['nervous', 'your heart thumps'], 'Was making pancakes easy?': ['No, it went badly', 'In the end, we had cereal'] };
+    'How do you feel when you first step on the ice?': ['nervous', 'your heart thumps'], 'Was making pancakes easy?': ['No, it went badly', 'In the end, we had cereal'],
+    'How does Kenji feel when he hears the boom?': ['scared', 'gripped the seat'], 'Why does Uncle Ray smile?': ['the ice is strong', 'It is cold and strong today'],
+    'Why might a family build an inuksuk?': ['to mark a place', 'important to a family'], 'How does the narrator feel when nothing happens?': ['embarrassed', 'my face turned hot'],
+    'Why did the volcano erupt so much?': ['Too much vinegar', 'then a little more for luck'], 'How do you feel at the start?': ['nervous', 'Your heart pounds'],
+    'How do your teammates feel after the save?': ['proud and excited', 'bang their sticks'], 'Why does Ada look at the stairs?': ['deciding to climb', 'then at the long, winding stairs'],
+    'How does Ada feel at the top?': ['nervous', 'her hands shook'] };
   const passage = q => text(q.fig);
   V['g5-infer'] = (q, m) => { const k = INFER[text(m.q)]; return k && mk(q).includes(k[0]) && passage(q).includes(k[1]) ? '' : 'expected "' + (k && k[0]) + '"'; };
   V['g5-evidence'] = (q, m) => { const k = INFER[text(m.q)]; return k && mk(q) === k[1] && passage(q).includes(k[1]) ? '' : 'expected the words "' + (k && k[1]) + '"'; };
-  const GLOBAL = { 'The Tryout': ['does not give up', 'I kept going'], 'When the Lights Went Out': ['look after each other', 'helped his grandmother'] };
+  const GLOBAL = { 'The Tryout': ['does not give up', 'I kept going'], 'When the Lights Went Out': ['look after each other', 'helped his grandmother'],
+    'The Ice Road': ['careful and knows the land', 'never faster than 25'], 'The Volcano That Would Not Stop': ['measure', 'Always measure your vinegar'],
+    'You Are the Goalie': ['without scoring', 'the save made it possible'], 'The Night of the Storm': ['brave and responsible', 'began to climb'] };
   V['g5-global'] = (q, m) => mk(q).includes(GLOBAL[m.t][0]) ? '' : 'expected ' + GLOBAL[m.t][0];
   V['g5-global-clue'] = (q, m) => mk(q) === GLOBAL[m.t][1] && passage(q).includes(mk(q)) ? '' : 'expected ' + GLOBAL[m.t][1];
   const PLOT = { 'found a flashlight': 'At home', 'played cards by candlelight': 'At home', 'the arena went black': 'At the arena', 'walk slowly to the exit': 'At the arena' };

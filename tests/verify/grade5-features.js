@@ -6,7 +6,13 @@
   const WHERE = { 'what the word bog means': 'glossary', 'which page tells about turtles': 'index', 'why the author wrote the book': 'preface', 'what chapter 3 is called': 'table of contents', 'what a photo shows': 'caption' };
   V['g5-where'] = (q, m) => mk(q) === WHERE[text(m.want)] ? '' : 'expected ' + WHERE[text(m.want)];
   const EFFECT = { 'Every light on Birch Street went dark.': 'Daniel found a flashlight.', 'The arena went black.': 'The coach led the team slowly to the exit.', 'Wetlands soak up rain.': 'They help stop floods.',
-    'Wetlands clean the water and give shelter.': 'Frogs, ducks and turtles have homes.', 'Some grains fall back into the water.': 'New plants grow the next year.', 'The grains are knocked gently.': 'The plants are not harmed.' };
+    'Wetlands clean the water and give shelter.': 'Frogs, ducks and turtles have homes.', 'Some grains fall back into the water.': 'New plants grow the next year.', 'The grains are knocked gently.': 'The plants are not harmed.',
+    'The truck goes too fast.': 'A wave under the ice can crack it.', 'The lake freezes thick.': 'Trucks can drive across it.',
+    'There are few trees or hills on the tundra.': 'Travellers use inuksuit to find their way.', 'Each inuksuk was built for a reason.': 'People are taught not to knock one down.',
+    'The water turns to steam.': 'The sap becomes thicker and sweeter.', 'Nights are cold and days are warm.': 'Sap flows inside the trees.',
+    'Extra vinegar was poured in.': 'The foam overflowed onto the next table.', 'There is no crosswalk, and cars drive fast.': 'A driver had to stop suddenly.',
+    'A crosswalk has flashing lights.': 'Drivers slow down and watch for children.', 'Monarch caterpillars eat only milkweed.': 'Planting milkweed helps monarchs grow.',
+    'The butterflies stay close together.': 'They keep warm all winter.', 'Her father hurt his ankle.': 'Ada had to light the lamp.', 'The lamp blazed to life.': 'The captain steered away from the rocks.' };
   V['g5-cause'] = q => q.pairs.every(p => EFFECT[text(p[0])] === text(p[1])) ? '' : 'a cause is matched to the wrong effect';
   V['g5-persuade-cause'] = q => /quit clubs/.test(mk(q)) && /If the late bus is cut/.test(text(q.fig)) ? '' : 'expected the effect the letter warns about';
   const SHOW = { 'how many students rode the bus each month': 'a bar graph', 'where the wetlands are in Ontario': 'a map', 'the parts of a canoe': 'a labelled diagram', 'the steps to harvest manoomin, in order': 'a numbered flow chart', 'what a marsh looks like': 'a photo with a caption' };
