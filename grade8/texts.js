@@ -9,7 +9,8 @@
      predict  { stop (words from the last sentence shown) or upTo (lines shown), right, wrong: [two], clue: words in the text }
      check    [a prediction made part way, whether the whole text confirms it, words in the text that show it]
      tags     what is true of it, for comparing two texts (the tag sentences are in chapters/reading.js)
-   and for the other chapters: inferences, the narrator's point of view, the text pattern, a viewpoint and its bias.
+     infer    [question, answer, wrong, words that show it]; order: words from each event, in the order they happen
+   and for the other chapters: the narrator's point of view, the text pattern, a viewpoint and its bias.
    The answer checks keep their own answer key (tests/verify/grade8-reading.js), like a second marker. */
 (function () {
   'use strict';
@@ -29,6 +30,7 @@
       summary: ['Amira races to catch the last ferry to her grandmother' + AP + 's island, and a deckhand holds it for her.', 'Amira' + AP + 's grandmother owns a grey shawl.', 'Ferries should always wait for late passengers.'],
       infer: [['Why did the ramp lower again?', 'The deckhand asked for the ferry to wait for Amira.', 'The ramp was broken.', 'spoke into his radio'],
         ['How does Amira feel at the end?', 'relieved and grateful', 'angry and embarrassed', 'pressed a hand to her heart']],
+      order: ['ran down the hill', 'ferry horn sounded', 'ramp was already rising', 'ramp slowly lowered', 'stepped aboard'],
       predict: { upTo: 6, right: 'Amira will meet her grandmother at the island dock.', wrong: ['Amira will get off the ferry and walk home.', 'The ferry will sail to a different island.'], clue: 'her grandmother waiting on the island dock' } },
     river: { pics: ['snow', 'house'],
       tags: ['story', 'third', 'water'],
@@ -117,6 +119,9 @@
       points: ['the aunt is stuck at home', 'they read the messages', 'a stove gets fixed'],
       ties: [['she had said on the phone', 'she', 'their aunt', 'Elisapee', 'the elder'], ['She read each message', 'She', 'Elisapee', 'the elder', 'their aunt'], ['so that listeners would not', 'listeners', 'people listening to the station', 'the messages', 'the microphones']],
       predict: { stop: 'the station phone lit up', right: 'The caller will have news about the elder on the hill.', wrong: ['The station will lose power for the night.', 'Jonah will go home to sleep.'], clue: 'An elder on the hill needed someone' },
+      infer: [['How does Elisapee feel when she starts the show?', 'nervous', 'bored', 'hands shook'], ['How does Elisapee feel by the end of the show?', 'more confident', 'more frightened', 'this time her hands were steady'],
+        ['Why does the aunt call again at the end?', 'to tell them she is proud of them', 'to ask them to stop the show', 'I heard every word']],
+      order: ['closed every road', 'pulled on her headphones', 'pressed the red button', 'phone lit up', 'wind finally dropped'],
       check: [['Elisapee will stay nervous for the whole show.', false, 'this time her hands were steady'], ['Someone will help the elder on the hill.', true, 'fixed the stove']] },
     sturgeon: { pics: ['fish'], title: 'The Return of the Lake Sturgeon', kind: 'information text', pov: null, purpose: 'to learn facts', pattern: 'problem and solution', tags: ['info', 'problem', 'water', 'indigenous'],
       lines: ['# An ancient fish', 'The lake sturgeon has lived in the rivers and lakes of Ontario for millions of years.', 'It can grow longer than two metres and live for more than 100 years.',
@@ -150,6 +155,9 @@
       points: ['nervous at the start', 'passes drift left', 'a big steal'],
       ties: [['wrote something on her clipboard', 'her', 'Coach Dubois', 'the narrator', 'Marcus'], ['cut in front of him', 'him', 'Marcus', 'Coach Dubois', 'an open teammate'], ['waited for mine', 'mine', 'the narrator' + AP + 's name', 'the coach' + AP + 's list', 'Marcus' + AP + 's chair']],
       predict: { stop: 'began to read the list', right: 'The narrator will make the team.', wrong: ['The narrator will quit basketball.', 'Marcus will become the coach.'], clue: 'never quit on a play' },
+      infer: [['How does the narrator feel at the start?', 'nervous', 'confident', 'stomach still flipped'], ['Why does the narrator try not to imagine what the coach wrote?', 'The narrator is afraid it is bad news.', 'The narrator cannot read it from far away.', 'not to imagine what it said'],
+        ['Why might the narrator have a good chance of making the team?', 'The coach wants players who never quit, and the narrator kept pushing.', 'The narrator made every shot.', 'never quit on a play']],
+      order: ['rolled into the gym', 'The first drill', 'Next came the scrimmage', 'stole the ball', 'called us into a circle'],
       check: [['The narrator will make every pass perfectly.', false, 'drifting to the left'], ['The narrator will make an important play in the scrimmage.', true, 'stole the ball']] },
     tides: { pics: ['moon', 'sky'], title: 'The Highest Tides on Earth', kind: 'information text', pov: null, purpose: 'to learn facts', pattern: 'cause and effect', tags: ['info', 'cause', 'water'],
       lines: ['# A giant bathtub', 'The Bay of Fundy lies between New Brunswick and Nova Scotia.', 'Twice a day, its tide rises and falls by as much as 16 metres, about the height of a four-storey building.', 'No other tides on Earth are higher.',
@@ -197,6 +205,9 @@
       points: ['frost could kill the blossoms', 'fans move warm air', 'clouds trap warmth'],
       ties: [['He knew the fans', 'He', 'Desmond', 'Claire' + AP + 's father', 'the radio announcer'], ['Neither of them noticed', 'them', 'Claire and Desmond', 'the cherry trees', 'Claire' + AP + 's parents'], ['it read zero degrees', 'it', 'the thermometer', 'the flashlight', 'the orchard']],
       predict: { stop: 'slowly clouding over', right: 'The clouds will help keep the orchard warm.', wrong: ['A snowstorm will bury the farm.', 'Desmond will fly home to Jamaica.'], clue: 'slowly clouding over' },
+      infer: [['Why does Desmond start the wind machines?', 'to protect the blossoms from frost', 'to dry the cherries', 'pull warmer air down'], ['How does Desmond feel about being far from home?', 'He misses his daughter.', 'He is glad to be away.', 'thinking of his daughter'],
+        ['Why do Claire and Desmond laugh at the end?', 'They are relieved and worn out.', 'They are angry with each other.', 'laughed from tiredness']],
+      order: ['radio warned of frost', 'started the big wind machines', 'At two', 'clouding over', 'sun rose'],
       check: [['Every blossom will be killed by the frost.', false, 'pink and whole'], ['Someone will try to protect the trees.', true, 'started the big wind machines']] },
     repair: { pics: ['key', 'box'], title: 'Fix It, Don' + AP + 't Toss It', kind: 'information text', pov: null, purpose: 'to learn facts', pattern: 'description', tags: ['info'],
       lines: ['# What is a repair café?', 'A repair café is a free event where volunteers help people fix broken things instead of throwing them away.', 'The first one opened in the Netherlands in 2009, and now there are repair cafés in many Canadian cities.',
