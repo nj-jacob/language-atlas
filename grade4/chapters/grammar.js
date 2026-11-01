@@ -11,7 +11,9 @@
   var REL = [['My neighbour, ___ grows tomatoes, gave us a basket.', 'who'], ['Our coach, ___ played in the NHL, taught us to skate backwards.', 'who'],
     ['The pilot, ___ flew us to Iqaluit, waved goodbye.', 'who'], ['My aunt, ___ lives in Halifax, is visiting.', 'who'], ['The doctor, ___ was very kind, checked my ears.', 'who'],
     ['Our canoe, ___ is red, is in the shed.', 'which'], ['The CN Tower, ___ is in Toronto, is very tall.', 'which'], ['My backpack, ___ has a broken zipper, needs fixing.', 'which'],
-    ['The library, ___ opens at nine, has new computers.', 'which'], ['The moose, ___ was huge, crossed the road.', 'which']];
+    ['The library, ___ opens at nine, has new computers.', 'which'], ['The moose, ___ was huge, crossed the road.', 'which'],
+    ['Mr. Singh, ___ drives our bus, always says hello.', 'who'], ['My cousin, ___ is twelve, plays lacrosse.', 'who'],
+    ['Our garden, ___ gets lots of sun, grows big squash.', 'which'], ['The ferry, ___ leaves at noon, goes to the island.', 'which']];
   function relFill() {
     var r = R.pick(REL);
     return { q: 'Which word fits?', fig: W.sent(r[0].replace('___', W.gap())), type: 'tap', tiles: ['who', 'which'], answer: r[1] === 'who' ? 0 : 1,
@@ -32,6 +34,11 @@
     var ppl = R.some(REL.filter(function (r) { return r[1] === 'who'; }), 2), things = R.some(REL.filter(function (r) { return r[1] === 'which'; }), 2);
     var name = function (r) { return r[0].split(',')[0]; };
     return Q.all('Pick every one that needs <b>who</b>.', ppl.map(name), things.map(name), { hint: 'who is for people.', explain: 'who: people. which: things and animals.', meta: { k: 'g4-rel-pick' } });
+  }
+  function relOrder() {
+    var r = R.pick(REL), parts = r[0].replace('___', r[1]).split(', ');
+    return { q: 'Put the parts in order to make the sentence.', type: 'order', items: [parts[0] + ',', parts[1] + ',', parts[2]],
+      hint: 'Who or what first, then the extra detail, then the rest.', explain: W.sent(r[0].replace('___', '<b>' + r[1] + '</b>')), meta: { k: 'g4-rel-order' } };
   }
 
   /* ---------- the perfect tense: [base, past, with has, have or had] ---------- */
@@ -78,9 +85,11 @@
     statement: ['The door is closed.', 'Kai found his mitts.', 'The bus came early.', 'The soup is hot.', 'My library book is due.']
   };
   /* [a telling sentence, the same as a question] */
-  var ASK = [['The bus is late.', 'Is the bus late?'], ['You can skate.', 'Can you skate?'], ['The lake is frozen.', 'Is the lake frozen?'], ['They will come.', 'Will they come?'], ['She has finished.', 'Has she finished?']];
+  var ASK = [['The bus is late.', 'Is the bus late?'], ['You can skate.', 'Can you skate?'], ['The lake is frozen.', 'Is the lake frozen?'], ['They will come.', 'Will they come?'], ['She has finished.', 'Has she finished?'],
+    ['The store is open.', 'Is the store open?'], ['We can go now.', 'Can we go now?'], ['He will help.', 'Will he help?'], ['The dog has eaten.', 'Has the dog eaten?']];
   /* commands with the command verb */
-  var CMD = [['Please stir the soup slowly.', 'stir'], ['Now close your eyes.', 'close'], ['Always wear a helmet.', 'wear'], ['Carefully pour the water.', 'pour'], ['Please wash your hands.', 'wash']];
+  var CMD = [['Please stir the soup slowly.', 'stir'], ['Now close your eyes.', 'close'], ['Always wear a helmet.', 'wear'], ['Carefully pour the water.', 'pour'], ['Please wash your hands.', 'wash'],
+    ['Gently pat the puppy.', 'pat'], ['Please hang up your coat.', 'hang']];
   function kindOf() {
     var k = R.pick(['command', 'question', 'statement']), s = R.pick(KIND[k]);
     return Q.tiles('What kind of sentence is this?', k, ['command', 'question', 'statement'].filter(function (x) { return x !== k; }), { fig: W.sent(s),
@@ -96,13 +105,20 @@
     return { q: 'Tap the <b>command verb</b>: the action you are told to do.', fig: W.sent(c[0]), type: 'tap', tiles: words, answer: words.indexOf(c[1]),
       hint: 'What are you told to do?', explain: '<b>' + c[1] + '</b> is the command verb.', meta: { k: 'g4-tap-command', s: c[0] } };
   }
+  function questionTf() {
+    var a = R.pick(ASK), right = R.int(0, 1) === 1, s = right ? a[1] : a[0].replace('.', '?');
+    return { q: 'True or false? This question is made correctly.', fig: W.sent(a[0]) + W.sent(s), type: 'tf', answer: right,
+      why: { options: ['A question moves the helping verb to the front.', 'A question only needs a question mark.'], answer: 0 },
+      hint: 'Where is the helping verb?', explain: W.sent(a[1]), meta: { k: 'g4-question-tf', s: a[0], shown: s } };
+  }
   function pickCommands() {
     return Q.all('Pick every <b>command</b>.', R.some(KIND.command, 2), R.some(KIND.question, 1).concat(R.some(KIND.statement, 1)), { hint: 'A command tells someone to do something.', explain: 'Commands start with an action word.', meta: { k: 'g4-pick-commands' } });
   }
 
   /* ---------- pronouns as adjectives: [sentence with a gap, the word] ---------- */
   var OWN = [['Mei lost ___ hat.', 'her'], ['The twins packed ___ lunches.', 'their'], ['The dog wagged ___ tail.', 'its'], ['Owen fixed ___ bike.', 'his'],
-    ['We cleaned ___ room.', 'our'], ['I found ___ mitts.', 'my'], ['The birds built ___ nest.', 'their'], ['Leila fed ___ cat.', 'her'], ['The tree lost ___ leaves.', 'its']];
+    ['We cleaned ___ room.', 'our'], ['I found ___ mitts.', 'my'], ['The birds built ___ nest.', 'their'], ['Leila fed ___ cat.', 'her'], ['The tree lost ___ leaves.', 'its'],
+    ['Ravi and I washed ___ boots.', 'our'], ['Grandpa lost ___ glasses.', 'his'], ['The kids hung up ___ coats.', 'their'], ['Can you find ___ shoes?', 'your']];
   var OWNERS = ['my', 'your', 'his', 'her', 'its', 'our', 'their'];
   function ownFill(lv) {
     var o = R.pick(OWN);
@@ -121,34 +137,44 @@
     return { q: 'Tap the word that tells <b>whose</b>.', fig: W.sent(s), type: 'tap', tiles: words, answer: words.indexOf(o[1]),
       hint: 'Look for my, his, her, our or their.', explain: '<b>' + o[1] + '</b> tells whose. It works like an adjective.', meta: { k: 'g4-tap-owner', s: o[0] } };
   }
+  function ownTf() {
+    var o = R.pick(OWN), right = R.int(0, 1) === 1, w = right ? o[1] : R.pick(OWNERS.filter(function (x) { return x !== o[1]; }));
+    return { q: 'True or false? <b>' + w + '</b> fits here.', fig: W.sent(o[0].replace('___', '<b>' + w + '</b>')), type: 'tf', answer: right,
+      why: { options: ['The word must match who owns it.', 'Any of these words can go there.'], answer: 0 },
+      hint: 'Who owns it? One or more?', explain: W.sent(o[0].replace('___', '<b>' + o[1] + '</b>')), meta: { k: 'g4-own-tf', s: o[0], used: w } };
+  }
   function ownMatch() {
     return { q: 'Match each owner to the word you would use.', type: 'match', pairs: R.shuffle([['Owen', 'his'], ['Leila', 'her'], ['the two dogs', 'their'], ['the bird', 'its']]).slice(0, 3),
       hint: 'One boy, one girl, an animal, or more than one?', explain: 'his, her, its, their.', meta: { k: 'g4-own-match' } };
   }
 
   Atlas.register('grammar', {
+    full: true,
     lessons: [{
       id: 'pronouns', title: 'Pronouns that do more', sub: 'who and which, and words that tell whose.',
       concepts: [
         { slug: 'relative', title: 'who for people, which for things', exp: ['B3.2'], skill: 'relative',
           model: [
-            step(W.sent('My aunt, <b>who</b> lives in Halifax, is visiting.'), 'My aunt is a person.'),
-            step(W.sent('Our canoe, <b>which</b> is red, is in the shed.'), 'A canoe is a thing.'),
+            step(W.sent('My aunt, ' + W.gap() + ' lives in Halifax, is visiting.'), 'My aunt is a person.'),
+            step(W.sent('My aunt, <b>who</b> lives in Halifax, is visiting.'), 'A person: <b>who</b>.'),
+            step(W.pic('canoe') + W.sent('Our canoe, ' + W.gap() + ' is red, is in the shed.'), 'A canoe is a thing.'),
+            step(W.sent('Our canoe, <b>which</b> is red, is in the shed.'), 'A thing or an animal: <b>which</b>.'),
             step(W.icon('think'), 'The commas hold the extra detail.')
           ],
-          guided: [relFill, function () { return relJoin(1); }],
-          check: [relFill, relTf],
+          guided: [relFill, function () { return relJoin(1); }, relOrder],
+          check: [relFill, function () { return relJoin(2); }, relTf, relPick, relOrder],
           coach: '<p>Point to people and things in the room and add a detail: "Dad, who is cooking..." "The lamp, which is on..."</p>',
           mistake: '<p>Using "which" for a person ("my friend, which..."). Ask: is it a person?</p>' },
         { slug: 'whose', title: 'Words that tell whose', exp: ['B3.2'], skill: 'owners',
           model: [
             step(W.sent('Mei lost <b>her</b> hat.'), '<b>her</b> tells whose hat.'),
             step(W.sent('The twins packed <b>their</b> lunches.'), 'More than one: <b>their</b>.'),
-            step(W.sent('The dog wagged <b>its</b> tail.'), 'No apostrophe in <b>its</b>.')
+            step(W.pic('dog') + W.sent('The dog wagged ' + W.gap() + ' tail.'), 'An animal.'),
+            step(W.sent('The dog wagged <b>its</b> tail.'), 'Try "it is tail". No? Then no apostrophe.'),
+            step(W.sent('my &middot; your &middot; his &middot; her &middot; its &middot; our &middot; their'), 'Each one comes before a naming word.')
           ],
-          key: '<p>my, your, his, her, its, our, their come before a naming word, like an adjective.</p>',
-          guided: [function () { return ownFill(1); }, tapOwner],
-          check: [function () { return ownFill(2); }, itsIts],
+          guided: [function () { return ownFill(1); }, tapOwner, itsIts],
+          check: [function () { return ownFill(2); }, itsIts, ownTf, tapOwner, ownMatch],
           coach: '<p>Hand objects around: "Whose pencil? Her pencil. Whose books? Their books."</p>',
           mistake: '<p>Writing "it' + '’' + 's tail". Try "it is tail": it does not work, so use its.</p>' }
       ]
@@ -157,22 +183,26 @@
       concepts: [
         { slug: 'perfect', title: 'has, have or had + the helper form', exp: ['B3.2'], skill: 'perfect',
           model: [
-            step(W.sent('Today I <b>eat</b>. Yesterday I <b>ate</b>.')),
+            step(W.chain(['eat', 'ate', 'has eaten'], ['today', 'yesterday', 'done'])),
             step(W.sent('I <b>have eaten</b> lunch.'), 'Done before now.'),
-            step(W.sent('By the time Dad got home, we <b>had eaten</b>.'), 'Done before something else in the past.')
+            step(W.chain(['go', 'went', 'has gone'], ['today', 'yesterday', 'done']), 'Another verb.'),
+            step(W.sent('Omar <b>has gone</b> home.'), 'One person: <b>has</b>.'),
+            step(W.sent('By the time Dad got home, we <b>had eaten</b>.'), '<b>had</b>: done before something else in the past.')
           ],
-          guided: [hasHave, function () { return participle(1); }],
-          check: [function () { return participle(2); }, hadBefore],
+          guided: [hasHave, function () { return participle(1); }, perfectMatch],
+          check: [function () { return participle(2); }, hadBefore, perfectTf, hasHave, perfectMatch],
           coach: '<p>Make a three-column chart: eat, ate, has eaten. Say each line aloud with the child: "Today I eat. Yesterday I ate. I have eaten."</p>',
           mistake: '<p>Saying "has went" or "have saw". After has or have, use gone, seen, eaten.</p>' },
         { slug: 'commands', title: 'Commands and questions', exp: ['B3.2'], skill: 'commands',
           model: [
             step(W.sent('<b>Stir</b> the soup slowly.'), 'A command starts with the action. "You" is hidden.'),
-            step(W.sent('The soup is hot.'), 'A statement tells.'),
-            step(W.sent('<b>Is</b> the soup hot?'), 'A question: move the helping verb to the front.')
+            step(W.sent('Please <b>wash</b> your hands.'), '"Please" is polite. It is still a command.'),
+            step(W.sent('The soup <mark class="hl">is</mark> hot.'), 'A statement. Find the helping verb.'),
+            step(W.sent('<mark class="hl">Is</mark> the soup hot?'), 'Move it to the front: a question.'),
+            step(W.sent('<mark class="hl">Can</mark> you skate?'), 'can, will and has move too.')
           ],
-          guided: [kindOf, tapCommand],
-          check: [kindOf, function () { return makeQuestion(2); }],
+          guided: [kindOf, tapCommand, function () { return makeQuestion(1); }],
+          check: [kindOf, function () { return makeQuestion(2); }, questionTf, pickCommands, tapCommand],
           coach: '<p>Play "Simon says" with full sentences. Then switch: the child asks a question back ("Can I stop now?").</p>',
           mistake: '<p>Calling a sentence with "please" a question. A command can be polite and still end with a period.</p>' }
       ]
@@ -186,9 +216,9 @@
   });
 
   Q.shapes('grammar', {
-    relative: [[1, 'join', relJoin], [1, 'true-false', relTf], [2, 'pick', relPick]],
-    owners: [[1, 'tap', tapOwner], [1, 'its', itsIts], [2, 'match', ownMatch]],
+    relative: [[1, 'join', relJoin], [1, 'order', relOrder], [1, 'true-false', relTf], [2, 'pick', relPick]],
+    owners: [[1, 'tap', tapOwner], [1, 'its', itsIts], [2, 'true-false', ownTf], [2, 'match', ownMatch]],
     perfect: [[1, 'has-have', hasHave], [1, 'had', hadBefore], [2, 'true-false', perfectTf], [2, 'match', perfectMatch]],
-    commands: [[1, 'question', makeQuestion], [1, 'tap', tapCommand], [2, 'pick', pickCommands]]
+    commands: [[1, 'question', makeQuestion], [1, 'tap', tapCommand], [2, 'true-false', questionTf], [2, 'pick', pickCommands]]
   });
 })();
