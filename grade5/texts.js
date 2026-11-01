@@ -210,6 +210,7 @@
       conclude: ['Ada is brave when it matters.', 'Ada is afraid to help her father.', 'The lamp did not matter that night.', 'She grabbed the matches and began to climb'],
       predict: { stop: 'the long, winding stairs', right: 'Ada will climb the stairs and light the lamp herself.', wrong: ['Ada will go to bed.', 'The storm will stop right away.'], clue: 'The fishing boats are still out' },
       infer: [['Why does Ada look at the stairs?', 'She is deciding to climb them herself.', 'She is counting them for fun.', 'then at the long, winding stairs'], ['How does Ada feel at the top?', 'nervous', 'sleepy', 'her hands shook']],
+      plots: [['In the lighthouse', ['climbed the ninety steps', 'slipped on the wet stairs', 'began to climb', 'the great lamp blazed']], ['Out at sea', ['a fishing captain saw the beam', 'turned his boat away from the rocks', 'steered safely into the harbour']]],
       global: ['What kind of person is Ada?', 'brave and responsible', 'careless and lazy', 'began to climb'],
       cause: [['Her father hurt his ankle.', 'Ada had to light the lamp.'], ['The lamp blazed to life.', 'The captain steered away from the rocks.']] }
   }, { short: 120 });
