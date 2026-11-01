@@ -10,9 +10,11 @@
   /* ---------- compound sentences: [first sentence, second sentence, the joining word] ---------- */
   var JOIN = [['The snow was deep', 'we wore our snowshoes', 'so'], ['Kai wanted to skate', 'the rink was closed', 'but'], ['Noor plays the drums', 'her sister plays the fiddle', 'and'],
     ['We can walk to the park', 'we can take the bus', 'or'], ['The wind was strong', 'the canoe drifted to shore', 'so'], ['Mateo likes soup', 'he does not like salad', 'but'],
-    ['Grandma baked bannock', 'Grandpa made tea', 'and'], ['You can read a book', 'you can draw a picture', 'or'], ['It started to rain', 'we went inside', 'so'], ['The trail was long', 'nobody wanted to stop', 'but']];
+    ['Grandma baked bannock', 'Grandpa made tea', 'and'], ['You can read a book', 'you can draw a picture', 'or'], ['It started to rain', 'we went inside', 'so'], ['The trail was long', 'nobody wanted to stop', 'but'],
+    ['The lake froze', 'we went skating', 'so'], ['Ella likes cats', 'she is scared of big dogs', 'but'], ['Sam packed apples', 'Lee packed crackers', 'and'], ['We can paint', 'we can build a fort', 'or']];
   var SIMPLE = ['Kai and Mei went skating after school.', 'The big brown moose crossed the road.', 'My cousin plays hockey on Saturdays.', 'We ate lunch beside the lake.',
-    'The library opens at nine.', 'Owen and his dog ran along the beach.'];
+    'The library opens at nine.', 'Owen and his dog ran along the beach.', 'The geese flew over the pond.', 'Ana and Ravi built a snow fort.',
+    'My grandpa makes maple syrup in spring.', 'The bus stopped at the corner.'];
   var WORDJOB = { and: 'adds another idea', but: 'shows a difference', so: 'shows what happened because of it', or: 'gives a choice' };
   function compound(j) { return j[0] + ', ' + j[2] + ' ' + j[1] + '.'; }
   function simpleOrCompound() {
@@ -43,11 +45,32 @@
       why: { options: ['A comma goes before the joining word.', 'Compound sentences never have a comma.'], answer: 0 },
       hint: 'Look just before the joining word.', explain: W.sent(compound(j)), meta: { k: 'g4-tf-compound', s: s } };
   }
+  function pickCompound() {
+    return Q.all('Pick every <b>compound</b> sentence.', R.some(JOIN, 2).map(compound), R.some(SIMPLE, 2), {
+      prompt: 'Could you split it into two sentences?', hint: 'Look for a comma and a joining word between two sentences.', explain: 'A compound sentence is two sentences joined.', meta: { k: 'g4-pick-compound' } });
+  }
+  function wordJob() {
+    var j = R.pick(JOIN);
+    return Q.tiles('What does <b>' + j[2] + '</b> do in this sentence?', WORDJOB[j[2]], Object.keys(WORDJOB).filter(function (w) { return w !== j[2]; }).map(function (w) { return WORDJOB[w]; }),
+      { fig: W.sent(j[0] + ', <b>' + j[2] + '</b> ' + j[1] + '.'), hint: 'More, a difference, a result, or a choice?', explain: '<b>' + j[2] + '</b> ' + WORDJOB[j[2]] + '.', meta: { k: 'g4-word-job', s: j[0] } });
+  }
+  function joinTf() {
+    var j = R.pick(JOIN), right = R.int(0, 1) === 1, w = right ? j[2] : R.pick(Object.keys(WORDJOB).filter(function (x) { return x !== j[2]; }));
+    return { q: 'True or false? <b>' + w + '</b> is the best joining word here.', fig: W.sent(j[0] + ', <b>' + w + '</b> ' + j[1] + '.'), type: 'tf', answer: right,
+      why: { options: ['The joining word must fit how the two ideas connect.', 'Any joining word works.'], answer: 0 },
+      hint: 'Read it aloud. Does it make sense?', explain: W.sent(compound(j)), meta: { k: 'g4-join-tf', s: j[0], w: w } };
+  }
+  function joinMatch() {
+    var ws = R.some(Object.keys(WORDJOB), 3);
+    return { q: 'Match each joining word to its job.', type: 'match', pairs: ws.map(function (w) { return [w, WORDJOB[w]]; }), hint: 'and: more. but: a difference. so: a result. or: a choice.',
+      explain: 'Each joining word has its own job.', meta: { k: 'g4-join-match' } };
+  }
 
   /* ---------- dependent clauses: [dependent clause, independent clause] ---------- */
   var CLAUSE = [['When the bell rang', 'we lined up at the door'], ['Because it was raining', 'the game was cancelled'], ['Although the water was cold', 'Hana jumped in'],
     ['If you finish early', 'you can help me'], ['After we ate dinner', 'we played cards'], ['Before the sun came up', 'the birds started singing'],
-    ['While Dad cooked', 'Liam set the table'], ['Since the bus was late', 'we walked to school']];
+    ['While Dad cooked', 'Liam set the table'], ['Since the bus was late', 'we walked to school'], ['When the ice melted', 'the ducks came back'],
+    ['Because the road was icy', 'Mom drove slowly'], ['If it snows tonight', 'we will build a fort'], ['After the movie ended', 'we walked home']];
   var NOTEND = ['because we were late.', 'under the old bridge.', 'when the snow melted.', 'after the long day.'];
   function full(c) { return c[0] + ', ' + c[1] + '.'; }
   function complete(lv) {
@@ -80,7 +103,8 @@
   /* ---------- prepositional phrases: [who, what they did, the phrase, where or when] ---------- */
   var PHRASE = [['The fox', 'hid', 'under the old log', 'where'], ['Tala', 'skated', 'after school', 'when'], ['The kite', 'flew', 'over the trees', 'where'],
     ['We', 'will leave', 'before lunch', 'when'], ['My cat', 'sleeps', 'on the windowsill', 'where'], ['The geese', 'flew south', 'in October', 'when'],
-    ['Omar', 'waited', 'beside the door', 'where'], ['The store', 'closes', 'at six', 'when'], ['A heron', 'stood', 'in the shallow water', 'where'], ['We', 'played games', 'during the storm', 'when']];
+    ['Omar', 'waited', 'beside the door', 'where'], ['The store', 'closes', 'at six', 'when'], ['A heron', 'stood', 'in the shallow water', 'where'], ['We', 'played games', 'during the storm', 'when'],
+    ['The loon', 'dove', 'under the water', 'where'], ['Mia', 'reads', 'at night', 'when'], ['The bus', 'stopped', 'beside the park', 'where'], ['We', 'went sledding', 'on Saturday morning', 'when']];
   var NOTPHRASE = ['the old log', 'ran quickly', 'my little brother', 'very happy'];
   function sentOf(p) { return p[0] + ' ' + p[1] + ' ' + p[2] + '.'; }
   function tapPhrase() {
@@ -104,6 +128,7 @@
   }
 
   Atlas.register('sentences', {
+    full: true,
     lessons: [{
       id: 'compound', title: 'Simple and compound sentences', sub: 'Join two sentences into one.',
       concepts: [
@@ -111,21 +136,25 @@
           model: [
             step(W.sent('The snow was deep.') + W.sent('We wore our snowshoes.'), 'Two simple sentences.'),
             step(W.sent('The snow was deep<mark class="hl">, so</mark> we wore our snowshoes.'), 'One <b>compound</b> sentence.'),
+            step(W.sent('Sam packed apples.') + W.sent('Lee packed crackers.'), 'Two more.'),
+            step(W.sent('Sam packed apples<mark class="hl">, and</mark> Lee packed crackers.'), 'Comma first, then the word.'),
             step(W.sent('Kai and Mei went skating.'), 'Two names, but one idea: still simple.')
           ],
-          guided: [simpleOrCompound, combine.bind(null, 1)],
-          check: [simpleOrCompound, orderCompound],
+          guided: [simpleOrCompound, function () { return combine(1); }, orderCompound],
+          check: [simpleOrCompound, function () { return combine(2); }, tfCompound, pickCompound, orderCompound],
           coach: '<p>Test it: cover the joining word. If both halves are complete sentences, it is compound and needs the comma.</p>',
           mistake: '<p>Putting a comma before every "and", even in a list of two names. Only two complete sentences need it.</p>' },
-        { slug: 'join-word', title: 'Choose the joining word', exp: ['B3.1'], skill: 'compound',
+        { slug: 'join-word', title: 'Choose the joining word', exp: ['B3.1'], skill: 'joining',
           model: [
             step(W.sent('Noor plays the drums, <b>and</b> her sister plays the fiddle.'), '<b>and</b>: more.'),
             step(W.sent('Kai wanted to skate, <b>but</b> the rink was closed.'), '<b>but</b>: a difference.'),
             step(W.sent('It started to rain, <b>so</b> we went inside.'), '<b>so</b>: a result.'),
-            step(W.sent('We can walk, <b>or</b> we can take the bus.'), '<b>or</b>: a choice.')
+            step(W.sent('We can walk, <b>or</b> we can take the bus.'), '<b>or</b>: a choice.'),
+            step(W.sent('The lake froze, ' + W.gap() + ' we went skating.'), 'Froze, then skating: a result.'),
+            step(W.sent('The lake froze, <b>so</b> we went skating.'))
           ],
-          guided: [function () { return joinWord(1); }, function () { return joinWord(1); }],
-          check: [function () { return joinWord(2); }, tfCompound],
+          guided: [function () { return joinWord(1); }, wordJob, joinMatch],
+          check: [function () { return joinWord(2); }, wordJob, joinTf, function () { return joinWord(2); }, joinMatch],
           coach: '<p>Make a hand sign for each word (and: add, but: turn, so: arrow, or: two hands up) and use them when talking.</p>',
           mistake: '<p>Using "and" for everything. Ask: is the second idea more, different, a result, or a choice?</p>' }
       ]
@@ -136,34 +165,39 @@
           model: [
             step(W.sent('When the bell rang.'), 'When the bell rang... what happened?'),
             step(W.sent('<b>When the bell rang</b>, we lined up at the door.'), 'Now it is complete.'),
+            step(W.sent('Because the road was icy.'), 'Another one that hangs.'),
+            step(W.sent('<b>Because the road was icy</b>, Mom drove slowly.'), 'Add the part that stands alone, after a comma.'),
             step(W.sent('because &middot; when &middot; if &middot; after &middot; although'), 'These words often start one.')
           ],
-          guided: [function () { return complete(1); }, tapDependent],
-          check: [function () { return complete(2); }, function () { return finish(1); }],
+          guided: [function () { return complete(1); }, tapDependent, function () { return finish(1); }],
+          check: [function () { return complete(2); }, function () { return finish(2); }, tfFragment, orderClause, tapDependent],
           coach: '<p>Say a dependent clause in a hanging voice ("Because it was raining...") and let the child finish it. Then write it with the comma.</p>',
           mistake: '<p>Writing "Because it was late." on its own. Ask: "Because it was late... what happened?"</p>' },
         { slug: 'phrase', title: 'A prepositional phrase tells where or when', exp: ['B3.1'], skill: 'phrases',
           model: [
             step(W.sent('The fox hid.'), 'Where?'),
             step(W.sent('The fox hid <mark class="hl">under the old log</mark>.'), 'A place.'),
-            step(W.sent('Tala skated <mark class="hl">after school</mark>.'), 'A time.')
+            step(W.sent('Tala skated.'), 'When?'),
+            step(W.sent('Tala skated <mark class="hl">after school</mark>.'), 'A time.'),
+            step(W.sent('in &middot; on &middot; under &middot; after &middot; before &middot; during'), 'Phrases start with words like these.')
           ],
-          key: '<p>Phrases start with words like in, on, under, after, before and during.</p>',
-          guided: [tapPhrase, whereWhen],
-          check: [tapPhrase, addPhrase],
+          guided: [tapPhrase, whereWhen, addPhrase],
+          check: [tapPhrase, addPhrase, whereWhen, pickPhrases, tapPhrase],
           coach: '<p>Play "stretch it": say a short sentence and ask "Where?" or "When?" to make it longer with a phrase.</p>',
           mistake: '<p>Thinking any group of words is a phrase. It must start with a word like in, on or after.</p>' }
       ]
     }],
     practice: [
       { id: 'compound', name: 'Compound sentences', code: 'B3.1', gen: simpleOrCompound },
+      { id: 'joining', name: 'Joining words', code: 'B3.1', gen: joinWord },
       { id: 'clauses', name: 'Dependent clauses', code: 'B3.1', gen: complete },
       { id: 'phrases', name: 'Prepositional phrases', code: 'B3.1', gen: tapPhrase }
     ]
   });
 
   Q.shapes('sentences', {
-    compound: [[1, 'join-word', joinWord], [1, 'combine', combine], [1, 'order', orderCompound], [2, 'true-false', tfCompound]],
+    compound: [[1, 'combine', combine], [1, 'order', orderCompound], [1, 'pick', pickCompound], [2, 'true-false', tfCompound]],
+    joining: [[1, 'job', wordJob], [1, 'match', joinMatch], [2, 'true-false', joinTf], [2, 'which-word', joinWord]],
     clauses: [[1, 'tap-clause', tapDependent], [1, 'finish', finish], [2, 'true-false', tfFragment], [1, 'order', orderClause]],
     phrases: [[1, 'where-when', whereWhen], [1, 'add-phrase', addPhrase], [2, 'pick', pickPhrases]]
   });
