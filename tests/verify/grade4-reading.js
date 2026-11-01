@@ -38,6 +38,10 @@
       'What does a rain gauge measure?': ['how much rain falls', 'A rain gauge measures'], 'Who should cut the bottle?': ['a grown-up', 'cut the top off'] }, main: 'build a rain gauge' },
     'Bring Back Our School Garden': { facts: { 'Who is the letter to?': ['Principal Okafor', 'Dear'], 'What did the class grow last spring?': ['beans, squash and sunflowers', 'Last spring'], 'Where did the vegetables go?': ['to the community food bank', 'In June'],
       'How could the class pay for seeds?': ['hold a plant sale', 'pay for seeds'] }, main: 'bring back the school garden', conclusion: ['money problem', 'plant sale'] },
+    'We Need a Skatepark': { facts: { 'Who is the letter to?': ['the editor', 'Dear Editor'], 'Where do kids skate now?': ['in a parking lot', 'Right now'], 'Where could the skatepark go?': ['in Lakeview Park', 'could go'] },
+      main: 'build a skatepark', conclusion: ['worried about kids getting hurt', 'Last month'] },
+    'Keep Dogs on Leashes': { facts: { 'Who does Grace walk with?': ['her grandson', 'every morning'], 'What happened near the slide?': ['A dog knocked over a small child.', 'Last week'], 'What does the sign at the gate say?': ['Dogs must be on a leash.', 'already says'] },
+      main: 'stay on leashes', conclusion: ['not being followed', 'ignore it'] },
     'Geese Going South': { facts: { 'What shape do the geese make?': ['a V', 'cuts the sky'], 'What is the speaker holding?': ['a rake', 'I stand still'], 'What do the geese follow?': ['rivers', 'rivers down'] }, main: 'watches geese fly south' },
     'Beaver and Otter': { facts: { 'What did Beaver pile by her lodge?': ['branches', 'Beaver worked all autumn'], 'What did Otter do while Beaver worked?': ['slid and splashed in the pond', 'muddy bank'], 'What did Otter do in the spring?': ['dragged branches to the lodge', 'In the spring'] },
       main: 'get ready for hard times', conclusion: ['Otter has changed', 'first one up'], predict: ['sorry when winter comes', 'Winter is coming', 'Was Otter sorry when winter came?'] },
@@ -126,7 +130,7 @@
   V['g4-purpose-tf'] = (q, m) => q.answer === (text(m.said) === PURPOSE[kindOf(card(q))]) && q.why.answer === (q.answer ? 0 : 1) ? '' : 'true or false is wrong for ' + m.said;
   /* the title alone: letters ask for something ("Keep...", "Bring Back..."); information texts are named in the key below */
   const INFO = { 'monarch butterflies': 'Monarch Butterflies', 'the Three Sisters': 'The Three Sisters', inuksuit: 'Inuksuit: Messengers of Stone', 'how bees make honey': 'From Flower to Honey', snowflakes: 'How a Snowflake Grows', lacrosse: "Lacrosse: The Creator's Game" };
-  const LETTERS = ['Keep Riverside Pool Open', 'Bring Back Our School Garden'];
+  const LETTERS = ['Keep Riverside Pool Open', 'Bring Back Our School Garden', 'We Need a Skatepark', 'Keep Dogs on Leashes'];
   const titleKind = t => LETTERS.includes(t) ? 'letter' : Object.values(INFO).includes(t) ? 'information' : kindOfTitle(t);
   V['g4-choose'] = (q, m) => PURPOSE[titleKind(mk(q))] === text(m.want) && q.tiles.filter(t => PURPOSE[titleKind(text(t))] === text(m.want)).length === 1 ? '' : 'the text marked does not fit "' + m.want + '"';
   V['g4-choose-topic'] = (q, m) => mk(q) === INFO[text(m.want)] ? '' : 'expected ' + INFO[text(m.want)];
