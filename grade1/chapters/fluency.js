@@ -11,7 +11,7 @@
   /* common words, with spellings children often try */
   var SIGHT = [['said', 'sed', 'siad'], ['was', 'wuz', 'waz'], ['they', 'thay', 'thea'], ['the', 'teh', 'thu'], ['you', 'yoo', 'yuo'], ['are', 'ar', 'aer'], ['of', 'uv', 'ov'],
     ['come', 'cum', 'kom'], ['one', 'wun', 'wan'], ['have', 'hav', 'haev'], ['what', 'wut', 'wat'], ['where', 'wer', 'whare'], ['some', 'som', 'sume'], ['there', 'thare', 'ther'], ['do', 'doo', 'du'],
-    ['to', 'tu', 'tuu'], ['who', 'hoo', 'hu'], ['were', 'wer', 'wure'], ['your', 'yor', 'yur'], ['does', 'duz', 'duss']];
+    ['to', 'tu', 'tuu'], ['who', 'hoo', 'hu'], ['were', 'wur', 'wure'], ['your', 'yor', 'yur'], ['does', 'duz', 'duss']];
   /* a sentence that one common word fits: [sentence, word, other common words] */
   var FIT = [['The cat ___ asleep on the mat.', 'was', ['are', 'you']], ['Where ___ my boots?', 'are', ['was', 'of']], ['I ___ a red bike.', 'have', ['are', 'of']],
     ['Mom ___, "Time for bed."', 'said', ['have', 'are']], ['___ you want to play?', 'Do', ['Of', 'Was']], ['A cup ___ milk is on the table.', 'of', ['are', 'they']],
