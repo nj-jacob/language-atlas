@@ -62,7 +62,7 @@
 
   /* ---------- question makers: forms ---------- */
   function genre(lv) {
-    var t = R.pick(T.list('kind')), others = Object.keys(GENRE).filter(function (g) { return g !== t.kind; });
+    var t = R.pick(T.list('kind', 1)), others = Object.keys(GENRE).filter(function (g) { return g !== t.kind; });
     return Q.tiles('What form or genre is this?', t.kind, R.some(others, lv > 1 ? 3 : 2), { fig: T.show(t), prompt: 'What features do you see?',
       hint: 'Look for: ' + GENRE[t.kind] + '?', explain: 'It is ' + (t.kind === 'information text' ? 'an information text' : 'a ' + t.kind) + ': ' + GENRE[t.kind] + '.', meta: { k: 'g8-genre', t: t.title } });
   }
@@ -77,7 +77,7 @@
   }
 
   function genreTf() {
-    var t = R.pick(T.list('kind')), right = R.int(0, 1) === 1, said = right ? t.kind : R.pick(Object.keys(GENRE).filter(function (g) { return g !== t.kind; }));
+    var t = R.pick(T.list('kind', 1)), right = R.int(0, 1) === 1, said = right ? t.kind : R.pick(Object.keys(GENRE).filter(function (g) { return g !== t.kind; }));
     return { q: Q.name() + ' says this is ' + (said === 'information text' ? 'an ' : 'a ') + '<b>' + said + '</b>.', fig: T.show(t), type: 'tf', answer: right,
       why: { options: ['Its features show what form it is.', 'Every text with a title is a short story.'], answer: 0 }, hint: 'Look for the features of each form.', explain: 'It is ' + (t.kind === 'information text' ? 'an information text' : 'a ' + t.kind) + '.', meta: { k: 'g8-genre-tf', t: t.title, said: said } };
   }
@@ -89,7 +89,7 @@
       prompt: 'Look for signal words.', hint: 'solution: problem. because, as a result: cause. however, on the other hand: compare. first, next: time order.', explain: p[1] + '.', meta: { k: 'g8-pattern', s: p[0] } });
   }
   function passagePattern() {
-    var t = R.pick(T.list('pattern'));
+    var t = R.pick(T.list('pattern', 1));
     return Q.tiles('Which pattern organizes this text?', t.pattern, PATTERNS.filter(function (x) { return x !== t.pattern; }).slice(0, 2), { fig: T.show(t), hint: 'Look at the headings and signal words.', explain: t.pattern + '.', meta: { k: 'g8-passage-pattern', t: t.title } });
   }
   function feature(lv) {
