@@ -25,7 +25,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `qkit.js` | The answer types (`Atlas.Q`): pick one, tap, pick all, put in order, build a word, match, true or false with a reason. Also question shapes. |
 | `words.js` | Word pictures (`Atlas.W`): sentence strips, highlighted letters, coloured word-part tiles (prefix, base, suffix), picture cues, "Watch me" steps and letter-sound buttons that play the recorded clips in `assets/sounds/`. Lessons show more and say less. |
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
-| `practice.js` | Adaptive practice, the chapter quiz and the check-up |
+| `practice.js` | Adaptive practice (never the same question twice in a row), "Read and answer" sets, the chapter quiz and the check-up |
 | `tasks.js` | Activities with a grown-up: speaking, reading aloud, drafting and more, marked with a four-level rubric in grown-up view |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
 
@@ -46,6 +46,8 @@ Atlas.register('sentences', {
   lessons: [ { id, title, sub, concepts: [ idea, ... ] } ],
   practice: [ { id, name, code: 'B3.3', gen: function (level) { return question; } } ],
   quiz: [ fixed questions ],       // optional; the chapter quiz is otherwise made fresh from the practice skills
+  full: true,                      // optional; the chapter meets the full standard, and the checks hold it to it (QUESTIONS.md)
+  read: { texts, show, ask },      // optional; "Read and answer" sets (QUESTIONS.md)
   tasks: [ activities ]            // optional; marked by a grown-up (see QUESTIONS.md)
 });
 Atlas.Q.shapes('sentences', { skillId: [[minLevel, 'shape-name', fn], ...] });
@@ -66,6 +68,7 @@ Learning screens (an idea, or practising one skill) are calm on purpose: no chap
 | `#sentences/practice` | Practice: pick a skill |
 | `#sentences/practice/cap-end` | Practising one skill: the question gets the screen, with one link back to the skills |
 | `#sentences/quiz` | Chapter quiz |
+| `#reading/read`, `#reading/read/3` | Read and answer (a chapter with `read`): the list of passages, shortest first; one passage on its own screen, then its questions one at a time, then the score |
 | `#check-up`, `#check-up/all`, `#check-up/sentences` | Check-ups |
 | `#sentences/tasks`, `#sentences/tasks/<id>` | Activities with a grown-up, and one activity |
 | `#progress` | My progress |
@@ -89,6 +92,7 @@ Kept in the browser (`localStorage`), every key starting `lang-gN:` (for example
 | `cn:<g1-chapter-idea>` | One idea: seen, watched, done together, questions tried, "Got it" |
 | `sk:<skill>` | One practice skill: level, streak, secure |
 | `best:<chapter>` | Best chapter quiz score and date |
+| `rd:<chapter>:<n>` | Best "Read and answer" score for passage n, and date |
 | `checkups`, `cov`, `plan` | Check-up history, which expectations were checked (by check-ups and by grown-up marks), and the practice plan |
 | `task:<id>` | The grown-up's mark for an activity (level 1 to 4) and date |
 | `tw:<id>` | What the child wrote in an activity |

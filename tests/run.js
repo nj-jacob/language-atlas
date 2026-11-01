@@ -171,6 +171,23 @@ async function checkGrade(browser, base, g) {
         if (!Array.isArray(t.rubric) || t.rubric.length !== 4 || t.rubric.some(r => !r)) out.push(w + ': needs a rubric with exactly 4 levels');
         taught.add(t.code);
       });
+      /* a full chapter (full: true) is deep enough to study from: two worked examples, more practice, a skill per idea, few repeats */
+      if (ch.full) {
+        const used = {};
+        (ch.lessons || []).forEach(ls => ls.concepts.forEach(c => {
+          const w = m.id + ' idea ' + c.slug + ' (full chapter)';
+          if ((c.model || []).length < 4) out.push(w + ': "Watch me" needs two worked examples (4 or more steps)');
+          if ((c.guided || []).length < 3) out.push(w + ': needs 3 or more "Together" questions');
+          if ((c.check || []).length < 5) out.push(w + ': needs 5 or more "On your own" questions');
+          if (used[c.skill]) out.push(w + ': shares its practice skill with ' + used[c.skill] + '. Give each idea its own skill.');
+          used[c.skill] = c.slug;
+        }));
+        (ch.practice || []).forEach(sk => {
+          const seen = new Set();
+          for (let i = 0; i < 600; i++) { const q = sk.gen(1 + i % 3); seen.add([q.q, q.fig || q.pic || '', Atlas.Q.text(q)].join('|')); }
+          if (seen.size < 30) out.push(m.id + ' skill ' + sk.id + ' (full chapter): can make only ' + seen.size + ' different questions. A full skill needs 30 or more, so practice does not repeat.');
+        });
+      }
       listed.forEach(x => { if (!taught.has(x)) out.push(m.id + ': lists ' + x + ' but no idea or skill teaches it'); });
       taught.forEach(x => { if (!listed.includes(x)) out.push(m.id + ': teaches ' + x + ' but does not list it in its codes'); });
     }
@@ -189,6 +206,7 @@ async function checkGrade(browser, base, g) {
     for (const [id, ch] of Object.entries(Atlas.chapters)) {
       (ch.practice || []).forEach(sk => { for (let lv = 1; lv <= 3; lv++) run(() => sk.gen(lv), TRIES, id + ' skill ' + sk.id + ' L' + lv); });
       (ch.quiz || []).forEach((q, i) => run(() => q, 1, id + ' quiz #' + (i + 1)));
+      if (ch.read) ch.read.texts.forEach(t => { for (let i = 0; i < 4; i++) { let qs; try { qs = ch.read.ask(t); } catch (e) { out.problems.push(id + ' read "' + t.title + '" crashed: ' + e.message); break; } qs.forEach(q => check(q, id + ' read "' + t.title + '"')); } });
       (ch.lessons || []).forEach(ls => ls.concepts.forEach(c => {
         (c.guided || []).forEach((f, k) => run(f, Math.ceil(TRIES / 4), id + ' together ' + c.slug + '#' + (k + 1)));
         (c.check || []).forEach((f, k) => run(f, Math.ceil(TRIES / 4), id + ' on-your-own ' + c.slug + '#' + (k + 1)));
@@ -204,6 +222,7 @@ async function checkGrade(browser, base, g) {
     for (const [id, ch] of Object.entries(Atlas.chapters)) {
       r.push(id, id + '/practice', id + '/quiz', 'check-up/' + id);
       if (ch.tasks) { r.push(id + '/tasks'); ch.tasks.forEach(t => r.push(id + '/tasks/' + t.id)); }
+      if (ch.read) { r.push(id + '/read'); ch.read.texts.forEach((t, i) => r.push(id + '/read/' + i)); }
       ch.lessons.forEach(ls => { ls.concepts.forEach(c => r.push(id + '/learn/' + c.slug, id + '/learn/' + c.slug + '/2', id + '/learn/' + c.slug + '/3')); r.push(id + '/done/' + ls.id); });
     }
     return r;
@@ -263,11 +282,11 @@ async function checkGrade(browser, base, g) {
       if (!/Not yet/.test(box.querySelector('.fb').textContent)) return { err: 'a wrong answer did not get a hint' };
       await __answer(box._q, box, box._qk, false);
       if (!/fixed it/.test(box.querySelector('.fb').textContent)) return { err: 'a right second try was not accepted' };
-      for (let i = 0; i < 2; i++) { box.querySelector('.ytn .btn').click(); box = await one(false); if (!/\bok\b/.test(box.querySelector('.fb').className)) return { err: 'a right answer was marked wrong' }; }
       const c = Atlas.lessons.flat(cid).find(c => c.slug === slug);
+      for (let i = 0; i < Atlas.lessons.need(c); i++) { box.querySelector('.ytn .btn').click(); box = await one(false); if (!/\bok\b/.test(box.querySelector('.fb').className)) return { err: 'a right answer was marked wrong' }; }
       return { got: Atlas.lessons.status(c) >= 2, off: __page.runsOff() };
     }, [cid, slug]);
-    if (s3.err) fail(w, 'On your own: ' + s3.err); else if (!s3.got) fail(w, 'two right on the first try did not mark the idea "Got it"');
+    if (s3.err) fail(w, 'On your own: ' + s3.err); else if (!s3.got) fail(w, 'enough right on the first try did not mark the idea "Got it"');
     else if (s3.off) fail(w, 'On your own runs off the side of a phone screen (' + s3.off + ')');
   }
 
@@ -300,6 +319,31 @@ async function checkGrade(browser, base, g) {
         if (r.off) fail(where, cid + ' / ' + sid + ' L' + lv + ' ' + r.t + ': runs off the side of a phone screen (' + r.off + ')');
       }
     }
+  }
+
+  /* 5f. read and answer: read the passage, answer every question (one wrong first), and the score is saved */
+  const sets = await page.evaluate(() => Object.entries(Atlas.chapters).flatMap(([id, ch]) => ch.read ? ch.read.texts.map((t, i) => [id, i]) : []));
+  for (const [cid, n] of sets) {
+    await go(cid + '/read/' + n);
+    const r = await page.evaluate(async ([cid, n]) => {
+      const b = document.querySelector('.rd-read .btn'); if (!b) return { err: 'the passage screen has no button to go on' };
+      b.click();
+      let off = '';
+      for (let i = 0; i < 12; i++) {
+        const root = document.querySelector('.rd-q'); if (!root) break;
+        const q = Atlas._q;
+        await __answer(q, root, Atlas._qk, true);
+        if (!/\bbad\b/.test(root.querySelector('.fb').className)) return { err: 'a wrong answer was not caught' };
+        await __answer(q, root, Atlas._qk, false);
+        if (!/\bok\b/.test(root.querySelector('.fb').className)) return { err: 'a right second try was marked wrong' };
+        off = off || __page.runsOff();
+        root.querySelector('.pnext .btn').click();
+      }
+      const end = document.querySelector('.rd-end'), best = Atlas.load('rd:' + cid + ':' + n, null);
+      return end ? { off, saved: !!best } : { err: 'the set never reaches its end screen' };
+    }, [cid, n]);
+    const w = where + ' ' + cid + ' read ' + n;
+    if (r.err) fail(w, r.err); else { if (!r.saved) fail(w, 'the score was not saved'); if (r.off) fail(w, 'runs off the side of a phone screen (' + r.off + ')'); }
   }
 
   /* 5c. chapter quizzes: answered all right, full marks, and the result is saved */

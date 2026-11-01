@@ -4,6 +4,7 @@
    - Adaptive: level 1 (gentlest), 2, 3. Three right in a row on the first try moves up a level; two misses in a row moves down
      and shows the steps. Three in a row at level 3 marks the skill "Secure".
    - Every fourth question reviews another skill from the chapter that the child has already practised.
+   - A question the child has just seen (the last 12 of a skill) is not asked again straight away.
    Chapter quiz: seven questions made fresh from the chapter's skills (plus any fixed quiz questions).
    Check-up: one level-1 question for every skill in a chapter (so all chapter check-ups together cover every expectation a
    computer can mark; activities marked by a grown-up, in tasks.js, cover the rest on the same map),
@@ -29,7 +30,16 @@
     A.built().forEach(function (m) { (A.chapters[m.id].practice || []).forEach(function (sk) { out.push({ ch: m, sk: sk }); }); });
     return out;
   };
-  function make(sk, lv) { var q = sk.gen(lv); q.skill = sk.id; q.lv = lv; return q; }
+  /* a fresh question: one the child has not just seen (the last 12 of each skill are remembered on this page) */
+  var recent = {};
+  function sig(q) { return [q.q, q.fig || q.pic || '', Q.text(q)].join('|'); }
+  function make(sk, lv) {
+    var seen = recent[sk.id] || (recent[sk.id] = []), q;
+    for (var i = 0; i < 12; i++) { q = sk.gen(lv); if (seen.indexOf(sig(q)) < 0) break; }
+    seen.push(sig(q)); if (seen.length > 12) seen.shift();
+    q.skill = sk.id; q.lv = lv; return q;
+  }
+  A.freshQ = make;
   function meter(k) {
     var h = '<span class="meter" aria-hidden="true">';
     for (var i = 1; i <= 4; i++) h += '<i class="' + (i <= k ? 'on' : '') + '"></i>';
@@ -120,6 +130,70 @@
     refreshRow();
     if (focus) return next(false);
     pq.innerHTML = '<p class="pstart">Best next: <b>' + cur.name + '</b></p><a class="btn" href="#' + id + '/practice/' + cur.id + '">Start practising</a>';
+  };
+
+  /* ---------- read and answer: read one passage on its own screen, then a few questions about it ----------
+     A chapter can add read: { texts: [passage, ...], show: function (t) -> html, ask: function (t) -> [question, ...] }.
+     #chapter/read lists the passages, shortest first; #chapter/read/<n> is one passage: the passage alone, then its questions
+     one at a time (a hint after a miss, then a second try). Saved: rd:<chapter>:<n> { s, n, d } (best score). */
+  A.readList = function (box, id, ch) {
+    var r = ch.read;
+    box.innerHTML = '<div class="qhead"><h2>Read and answer</h2></div><p class="qintro">Read a whole text, then answer questions about it. Short texts are first.</p>' +
+      '<div class="rd-list">' + r.texts.map(function (t, i) {
+        var best = A.load('rd:' + id + ':' + i, null);
+        return '<a class="rd-item" href="#' + id + '/read/' + i + '">' + (t.pics ? '<span class="rd-pic" aria-hidden="true">' + A.W.pic(t.pics[0]) + '</span>' : '') +
+          '<span class="rd-t"><b>' + t.title + '</b><span class="t2">' + (t.kind === 'information' ? 'Information' : t.kind.charAt(0).toUpperCase() + t.kind.slice(1)) + ' &middot; ' + A.words(t) + ' words' +
+          (best ? ' &middot; <span class="done">' + best.s + ' of ' + best.n + '</span>' : '') + '</span></span></a>';
+      }).join('') + '</div>';
+  };
+  A.words = function (t) { return t.lines.filter(function (l) { return l && l.charAt(0) !== '#'; }).join(' ').replace(/<[^>]+>/g, '').split(/\s+/).length; };
+  A.readSet = function (box, id, ch, n) {
+    var r = ch.read, t = r.texts[n];
+    if (!t) { location.hash = '#' + id + '/read'; return; }
+    var qs = r.ask(t), at = 0, first = 0;
+    var top = '<div class="ls-top"><a class="ls-back" href="#' + id + '/read"><span aria-hidden="true">&lsaquo;</span> All texts</a><p class="qscore rd-where" aria-live="polite"></p></div>';
+    function where(s) { $('.rd-where', box).textContent = s; }
+    function intro() {
+      box.innerHTML = top + '<div class="pcard rd-read">' + r.show(t) + '<p class="di-go"><button type="button" class="btn">I have read it &rarr;</button></p></div>';
+      where('Read it first');
+      $('.rd-read .btn', box).addEventListener('click', function () { ask(); });
+    }
+    function ask() {
+      var q = qs[at], tries = 0, done = false;
+      box.innerHTML = top + '<div class="pcard rd-q">' + Q.html(q) + '<div class="fb" aria-live="polite"></div><div class="pnext"></div></div>';
+      window.scrollTo(0, 0);
+      where('Question ' + (at + 1) + ' of ' + qs.length);
+      A._q = q; /* for the automatic checks */
+      var fb = $('.fb', box), api = Q.mount($('.qkbox', box), q, function (ok) {
+        if (done) return;
+        tries++;
+        if (!ok && tries < 2) { fb.className = 'fb bad'; fb.innerHTML = '<b>Not quite.</b> <span>' + (q.hint || 'Look back in the text.') + '</span>'; return; }
+        done = true;
+        if (ok && tries === 1) first++;
+        if (!ok) api.reveal();
+        api.lock();
+        fb.className = 'fb ' + (ok ? 'ok' : 'bad');
+        fb.innerHTML = '<b>' + (ok ? (tries === 1 ? 'Correct.' : 'Correct on the second try.') : 'The answer is: ' + Q.text(q) + '.') + '</b> <span>' + (q.explain || '') + '</span>';
+        var last = at + 1 === qs.length;
+        $('.pnext', box).innerHTML = '<button type="button" class="btn">' + (last ? 'See how you did' : 'Next question') + ' &rarr;</button>';
+        var nb = $('.pnext .btn', box);
+        nb.addEventListener('click', function () { at++; if (last) end(); else ask(); });
+        nb.focus();
+      });
+      A._qk = api;
+    }
+    function end() {
+      var best = A.load('rd:' + id + ':' + n, null);
+      if (!best || first > best.s) A.save('rd:' + id + ':' + n, { s: first, n: qs.length, d: A.today() });
+      var next = r.texts[n + 1] ? '#' + id + '/read/' + (n + 1) : '#' + id + '/read';
+      box.innerHTML = top + '<div class="pcard rd-end"><h2>' + first + ' of ' + qs.length + ' right first time</h2>' +
+        '<p>' + (first === qs.length ? 'You found every answer in the text.' : first >= qs.length - 1 ? 'Nearly all. Look back at the one you missed.' : 'Read it once more, slowly, then try again.') + '</p>' +
+        '<div class="di-nav"><button type="button" class="btn alt rd-again">Read it again</button><a class="btn" href="' + next + '">' + (r.texts[n + 1] ? 'Next text' : 'All texts') + ' &rarr;</a></div></div>';
+      where('');
+      window.scrollTo(0, 0);
+      $('.rd-again', box).addEventListener('click', function () { qs = r.ask(t); at = 0; first = 0; intro(); });
+    }
+    intro();
   };
 
   /* ---------- chapter quiz: seven questions, a hint after a wrong answer, then a second try ---------- */

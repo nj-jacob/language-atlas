@@ -5,7 +5,8 @@
                                The title says the rule once; step lines add something new, never repeat it.
      2. Together    ("we do")  guided questions with a thinking cue. A wrong answer is corrected at once, then the same
                                question is asked again, so the child ends on a right answer.
-     3. On your own ("you do") quick questions with no cue. Two right on the first try marks the idea "Got it".
+     3. On your own ("you do") questions with no cue, fresh each time. Right on the first try 4 times (or as many times as
+                               the idea has "On your own" questions, if fewer, but at least 2) marks the idea "Got it".
    Coaching notes and common mistakes are for the grown-up only (class adult-only).
 
    idea = { slug, title, exp: ['B3.3'], skill: 'practice-skill-id',
@@ -13,7 +14,7 @@
             guided: [function () -> question, ...], check: [function () -> question, ...],
             coach: html, mistake: html }
    Routes: #chapter (lesson list), #chapter/learn/idea (step 1), #chapter/learn/idea/2, #chapter/learn/idea/3, #chapter/done/lesson (end of a lesson).
-   #chapter/tasks is drawn by tasks.js (activities with a grown-up).
+   #chapter/tasks is drawn by tasks.js (activities with a grown-up). #chapter/read and #chapter/read/<n> (read and answer) by practice.js.
    Saved (prefix lang-gN:): cn:<grade-chapter-idea> { seen, watched, together, n, ok, got, t }.
    An idea is "Mastered" when its practice skill is secure. */
 (function () {
@@ -22,7 +23,9 @@
   var L = (A.lessons = {});
   var ST = (L.labels = ['Not started', 'Seen', 'Got it', 'Mastered']);
   var STAGES = ['Watch me', 'Together', 'On your own'];
-  var GOT = 2; /* right on the first try this many times to mark "Got it" */
+  /* right on the first try this many times to mark "Got it": 4 for a full idea, never fewer than 2 */
+  function need(c) { return Math.min(4, Math.max(2, c.check.length)); }
+  L.need = need;
 
   function prep(chId) {
     var ch = A.chapters[chId];
@@ -72,13 +75,18 @@
   L.chapter = function (app, id, sub) {
     var ch = prep(id), ctx = A.chapterHead(id), parts = (sub || '').split('/'), tab = parts[0] || 'learn';
     var h = '<div class="wrap chapter" data-strand="' + ctx.m.strand + '"><p class="crumb"><a href="#home">All chapters</a></p>' + ctx.head +
-      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id], ['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']].concat(ch.tasks ? [['tasks', 'With a grown-up', '#' + id + '/tasks']] : []).map(function (t) {
+      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id]].concat(ch.read ? [['read', 'Read and answer', '#' + id + '/read']] : []).concat([['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']]).concat(ch.tasks ? [['tasks', 'With a grown-up', '#' + id + '/tasks']] : []).map(function (t) {
         return '<a href="' + t[2] + '"' + (tab === t[0] ? ' aria-current="page"' : '') + '>' + t[1] + '</a>';
       }).join('') + '<a href="#check-up/' + id + '">Check-up</a></nav>';
     /* an idea gets the whole screen: only a link back to its chapter above it */
     if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, ctx.m);
     if (tab === 'done') return lessonEnd(app, id, parts[1]);
     if (tab === 'tasks') return A.tasks.page(app, id, parts[1], h);
+    if (tab === 'read' && ch.read && parts[1]) {
+      app.innerHTML = '<div class="wrap chapter focus" data-strand="' + ctx.m.strand + '"><div class="quiz prac" id="read"></div></div>';
+      return A.readSet($('#read', app), id, ch, +parts[1]);
+    }
+    if (tab === 'read' && ch.read) { app.innerHTML = h + '<div class="quiz" id="read"></div>' + A.nextPrev(ctx) + '</div>'; return A.readList($('#read', app), id, ch); }
     if (tab === 'practice' && parts[1]) {
       app.innerHTML = '<div class="wrap chapter focus" data-strand="' + ctx.m.strand + '"><div class="quiz prac" id="practice"></div></div>';
       A.practice($('#practice', app), id, ch.practice, parts[1]);
@@ -102,9 +110,10 @@
             return '<li><a href="#' + id + '/learn/' + c.slug + '">' + dot(k) + '<span>' + c.title + '</span><span class="sr"> (' + ST[k] + ')</span></a></li>';
           }).join('') + '</ul></section>';
       }).join('') + '</div>' +
+      (ch.read ? '<section class="ls-lesson"><h2>Read and answer</h2><p class="t2">' + ch.read.texts.length + ' texts to read, each with questions about it.</p><p><a class="btn alt" href="#' + id + '/read">Choose a text</a></p></section>' : '') +
       (ch.tasks ? '<section class="ls-lesson"><h2>With a grown-up</h2><p class="t2">Speaking, reading aloud and writing, marked by a grown-up.</p>' + A.tasks.list(id) + '</section>' : '') +
       '<div class="note"><p><b>How each idea works.</b> First <b>watch</b> a short example, one step at a time. Then do a few <b>together</b>, with a hint to think about. ' +
-      'Then try some <b>on your own</b>. Getting ' + GOT + ' right on the first try marks the idea <b>Got it</b>. It becomes <b>Mastered</b> when the matching skill in Practise is secure.</p></div>' +
+      'Then try some <b>on your own</b>. Getting them right on the first try marks the idea <b>Got it</b>. It becomes <b>Mastered</b> when the matching skill in Practise is secure.</p></div>' +
       A.nextPrev(ctx) + '</div>';
   }
 
@@ -131,7 +140,7 @@
     var box = $('.di-stage', app), where = function (t) { $('.di-where', app).textContent = STAGES[stage - 1] + (t ? ' \u00b7 ' + t : ''); };
     if (stage === 1) watch(box, c, base, where);
     else if (stage === 2) together(box, c, base, where);
-    else onYourOwn(box, c, function () {
+    else onYourOwn(box, c, where, function () {
       $('.ls-badge', app).innerHTML = '<span class="ls-got">Got it</span>';
       A.bump($('.ls-next', app), 'ls-ready');
       var d = $('.ls-dots [aria-current]', app); if (d) d.className = 's' + L.status(c);
@@ -193,9 +202,11 @@
   }
 
   /* 3. On your own: no cue; a hint after the first miss, the answer and steps after the second */
-  function onYourOwn(box, c, onGot) {
+  function onYourOwn(box, c, where, onGot) {
     var round = 0;
+    function count() { var s = L.cstate(c); where(s.got ? '' : Math.min(s.ok || 0, need(c)) + ' of ' + need(c) + ' right first time'); }
     function show() {
+      count();
       var q = c.check[round % c.check.length](), tries = 0, done = false;
       round++;
       box.innerHTML = '<div class="ls-check">' + Q.html(q) + '<div class="fb" aria-live="polite"></div><div class="ytn"></div></div>';
@@ -211,7 +222,8 @@
           done = true; api.lock();
           var s = L.cstate(c), first = tries === 1, was = s.got;
           s = mark(c, { n: (s.n || 0) + 1, ok: (s.ok || 0) + (first ? 1 : 0) });
-          if (!s.got && s.ok >= GOT) s = mark(c, { got: true });
+          if (!s.got && s.ok >= need(c)) s = mark(c, { got: true });
+          count();
           fb.className = 'fb ok';
           fb.innerHTML = '<b>' + (first ? 'Yes.' : 'Yes, you fixed it.') + '</b> <span>' + (q.explain || '') + '</span>' + (!was && s.got ? '<p class="ls-got">Got it. This idea is marked on your progress page.</p>' : '');
           again('Another one');
@@ -275,7 +287,7 @@
           return '<tr><td><a href="#' + m.id + '/tasks/' + t.id + '">' + t.title + '</a></td><td>' + t.code + '</td><td>' + A.tasks.result(t) + '</td></tr>';
         }).join('') + '</tbody></table></div>' : '') + '</details>';
     });
-    app.innerHTML = h + '<div class="note"><p><b>For parents and tutors.</b> "Seen" means the idea was opened. "Got it" means ' + GOT + ' questions in "On your own" were right on the first try. ' +
+    app.innerHTML = h + '<div class="note"><p><b>For parents and tutors.</b> "Seen" means the idea was opened. "Got it" means 4 questions in "On your own" were right on the first try (2 for a short idea). ' +
       '"Mastered" means the matching practice skill reached the top level three times in a row.</p></div></div>';
   });
 
