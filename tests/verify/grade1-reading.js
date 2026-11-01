@@ -79,7 +79,7 @@
     return q.answer === right && CLUES[k].test(why) ? '' : 'expected ' + right + ' because of the clue for ' + k; };
   V['g1-match-form'] = q => q.pairs.every(p => (KEY[text(p[0])] || {}).kind === text(p[1])) ? '' : 'a title is matched to the wrong kind';
   /* think before you read */
-  V['g1-know'] = (q, m) => { const k = key(m, 'know'); return k && mk(q).includes(k) && text(q.q).includes(m.t) ? '' : 'expected "' + k + '"'; };
+  V['g1-know'] = (q, m) => { const k = key(m, 'know'); return k && mk(q).includes(k) && text(q.q).includes(text(m.t)) ? '' : 'expected "' + k + '"'; };
   V['g1-know-tf'] = (q, m) => { const k = key(m, 'know'), right = !!k && text(m.said).includes(k); return k && q.answer === right && tfWhy(q, right) ? '' : 'expected ' + right; };
   V['g1-purpose'] = q => mk(q) === PURPOSE[kindOf(card(q))] ? '' : 'expected ' + PURPOSE[kindOf(card(q))];
   V['g1-which-text'] = q => { const w = text(q.q).match(/You want (.+)\. Which/)[1], fits = q.tiles.map(t => PURPOSE[(KEY[text(t)] || {}).kind] === w);

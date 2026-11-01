@@ -11,7 +11,11 @@
      know     [something you might already know that helps, [two that do not]]
      connect  [a connection to your own life, [two that are not], words from the sentence it links to]
      other    [someone else in the story who could tell it, [two who were not there], what they might say]
-   and for thinking.js: feelings to infer with the words that show them, causes, rhymes, sound words and a writer's view.
+   and for thinking.js:
+     infer    [question, feeling, wrong feeling, words that show it]
+     rhyme    [word, the word it rhymes with] in a poem, and plain: words from the poem that do not rhyme
+     sound    sound words in the text
+     view     { who, about, thinks, wrong: [two], clue: words that show it } for a letter
    The answer checks keep their own answer key (tests/verify/grade1-reading.js), like a second marker. */
 (function () {
   'use strict';
@@ -33,8 +37,7 @@
       order: ['tiny egg in a pond', 'Out comes a tadpole', 'grows legs', 'It can hop'],
       main: ['A frog grows from an egg, to a tadpole, to a frog.', 'A tadpole swims like a fish.', 'Cats like to nap.'],
       know: ['Frogs live near ponds.', ['Cars need gas.', 'Birthdays have cake.']],
-      connect: ['I saw tadpoles in the creek last spring.', ['I have a red coat.', 'My cousin plays the drum.'], 'swims like a fish'],
-      cause: [['The tadpole grows legs.', 'It can hop.']] },
+      connect: ['I saw tadpoles in the creek last spring.', ['I have a red coat.', 'My cousin plays the drum.'], 'swims like a fish'] },
     snow: { pics: ['snow', 'angel'], title: 'My Snowy Day', kind: 'story', pov: 'first', purpose: 'to enjoy a story',
       lines: ['I put on my boots and my warm hat.', 'I went outside to play in the snow.', 'I made a snow angel.', 'My cheeks got cold and pink.', 'Then I went inside for hot soup.'],
       facts: [['What did the narrator make?', 'a snow angel', 'a snowman', 'a snow fort', 'made a snow angel'], ['What did the narrator eat?', 'hot soup', 'a sandwich', 'ice cream', 'hot soup']],
@@ -53,11 +56,11 @@
       know: ['Plants need water and sun.', ['Dogs bark.', 'Rain comes from clouds.']] },
     rain: { pics: ['rain'], title: 'Rain', kind: 'poem', pov: null, purpose: 'to enjoy a poem',
       lines: ['Drip, drop, rain on the top.', 'Splash in the puddle, plop, plop, plop.', 'The rain is fun, but now it is done.', 'Out comes the warm and yellow sun.'],
-      rhyme: [['top', 'drop'], ['done', 'sun'], ['top', 'plop']], sound: ['Drip', 'drop', 'Splash', 'plop'] },
+      rhyme: [['top', 'drop'], ['done', 'sun'], ['top', 'plop']], plain: ['rain', 'yellow', 'puddle', 'warm'], sound: ['Drip', 'drop', 'Splash', 'plop'] },
     note: { pics: ['letter'], title: 'A Note to Grandma', kind: 'letter', pov: 'first', purpose: 'to hear what someone thinks',
       lines: ['Dear Grandma,', 'Thank you for the green scarf.', 'I wear it every day.', 'It keeps my neck warm, and green is my favourite colour!', 'Love, Arjun'],
       facts: [['What colour is the scarf?', 'green', 'red', 'blue', 'green scarf'], ['How often does Arjun wear the scarf?', 'every day', 'never', 'once a year', 'every day']],
-      view: { who: 'Arjun', thinks: 'He loves the scarf.', wrong: ['He does not like the scarf.', 'He lost the scarf.'], clue: 'I wear it every day' } },
+      view: { who: 'Arjun', about: 'the scarf', thinks: 'He loves the scarf.', wrong: ['He does not like the scarf.', 'He lost the scarf.'], clue: 'I wear it every day' } },
 
     canoe: { pics: ['canoe'], title: 'Paddling with Dad', kind: 'story', pov: 'first', purpose: 'to enjoy a story',
       lines: ['Dad and I carried the canoe down to the lake.', 'The water was calm and flat.', '',
@@ -70,7 +73,8 @@
       predict: { stop: 'sun went down', right: 'They will paddle back to the dock.', wrong: ['They will swim to the rock.', 'They will catch the loon.'], clue: 'sun went down' },
       other: ['Dad', ['a bus driver', 'a hockey player'], 'I steered the canoe. My child saw a loon!'],
       know: ['A canoe is a small boat you paddle.', ['Cats like to nap.', 'Pizza can be hot.']],
-      connect: ['I went out in a boat with my family.', ['I have a red pencil.', 'My sister likes to draw.'], 'carried the canoe'] },
+      connect: ['I went out in a boat with my family.', ['I have a red pencil.', 'My sister likes to draw.'], 'carried the canoe'],
+      infer: [['How does the narrator feel about the loon?', 'curious', 'angry', 'Where did it go']] },
     geese: { pics: ['goose'], title: 'Canada Geese', kind: 'information', pov: null, purpose: 'to learn facts',
       lines: ['# Big birds', 'Canada geese are big birds.', 'They have a black neck and a white patch on the face.',
         '# Flying south', 'In the fall, geese fly south where it is warm.', 'They fly in the shape of a V.',
@@ -92,7 +96,8 @@
       predict: { stop: 'walls got higher', right: 'They will finish the iglu.', wrong: ['They will go swimming.', 'They will plant a garden.'], clue: 'walls got higher' },
       other: ['his grandfather', ['a goldfish', 'a pilot'], 'I cut the snow blocks. My grandson stacked them.'],
       know: ['Snow can be packed hard.', ['Bananas are yellow.', 'Buses stop at stops.']],
-      connect: ['I built something with my grandpa.', ['I like the colour blue.', 'My cat is asleep.'], 'We made it together'] },
+      connect: ['I built something with my grandpa.', ['I like the colour blue.', 'My cat is asleep.'], 'We made it together'],
+      infer: [['How does Pauloosie feel at the end?', 'proud', 'angry', 'We made it together']] },
     hockey: { pics: ['hockey'], title: 'Ava' + '’' + 's First Game', kind: 'story', pov: 'third', purpose: 'to enjoy a story',
       lines: ['Ava put on her skates and her helmet.', 'It was her first hockey game.', 'Her tummy felt full of butterflies.', '',
         'The puck slid across the ice.', 'Ava skated fast and hit it with her stick.', 'The puck went into the net!', '',
@@ -104,7 +109,8 @@
       predict: { stop: 'hit it with her stick', right: 'The puck will go into the net.', wrong: ['Ava will go to sleep.', 'The ice will melt.'], clue: 'skated fast' },
       other: ['someone on her team', ['a fish in a pond', 'a train driver'], 'I saw Ava score. We all cheered!'],
       know: ['Hockey is played on ice.', ['Rain falls from clouds.', 'Cows say moo.']],
-      connect: ['I felt butterflies before my swim lesson.', ['My lunch is in a bag.', 'I like grapes.'], 'full of butterflies'] },
+      connect: ['I felt butterflies before my swim lesson.', ['My lunch is in a bag.', 'I like grapes.'], 'full of butterflies'],
+      infer: [['How does Ava feel before the game?', 'nervous', 'bored', 'full of butterflies'], ['How does Ava feel at the end?', 'happy', 'sad', 'grinned all the way']] },
     ferry: { pics: ['ferry'], title: 'The Island Ferry', kind: 'story', pov: 'first', purpose: 'to enjoy a story',
       lines: ['Mom and I took the ferry to Toronto Island.', 'The boat was big and white.', '',
         'The horn went HONK!', 'I held my ears.', 'Gulls flew next to the boat.', '',
@@ -115,7 +121,8 @@
       predict: { stop: 'Gulls flew', right: 'They will get to the island.', wrong: ['They will fly in a plane.', 'They will go to the dentist.'], clue: 'ferry to Toronto Island' },
       other: ['Mom', ['a cat at home', 'a firefighter'], 'I took my child on the ferry. We had a picnic.'],
       know: ['A ferry is a boat that carries people.', ['Glue is sticky.', 'Owls sleep in the day.']],
-      connect: ['I had a picnic at the beach.', ['I have two pencils.', 'My hat is green.'], 'had a picnic'] },
+      connect: ['I had a picnic at the beach.', ['I have two pencils.', 'My hat is green.'], 'had a picnic'],
+      sound: ['HONK'] },
     moose: { pics: ['moose', 'tree'], title: 'The Moose', kind: 'information', pov: null, purpose: 'to learn facts',
       lines: ['# Big animals', 'A moose is a very big animal.', 'It has long legs and a big nose.',
         '# Food', 'A moose eats leaves and twigs.', 'In summer, it eats plants in the water.',
@@ -146,10 +153,12 @@
       facts: [['Who is the letter to?', 'Principal Diaz', 'Mia', 'Grandma', 'Dear'], ['What does Mia want?', 'a garden at school', 'a new swing', 'a pet fish', 'should have a garden'], ['What could they grow?', 'beans, peas and sunflowers', 'apples and pears', 'tall trees', 'grow beans']],
       main: ['Mia asks for a garden at her school.', 'The bees would like it.', 'Mia likes recess.'],
       know: ['Gardens need sun and water.', ['Fish have fins.', 'Clocks tell time.']],
-      connect: ['We grow beans at home.', ['I can whistle.', 'My mitts are wet.'], 'grow beans'] },
+      connect: ['We grow beans at home.', ['I can whistle.', 'My mitts are wet.'], 'grow beans'],
+      view: { who: 'Mia', about: 'a school garden', thinks: 'A school garden is a good idea.', wrong: ['Gardens are boring.', 'The school is too big.'], clue: 'I think our school should' } },
     moon: { pics: ['moon'], title: 'The Moon', kind: 'poem', pov: null, purpose: 'to enjoy a poem',
       lines: ['The moon is up, so round and bright.', 'It shines on me all through the night.', 'It peeks in at my window too,', 'A silver light, so soft and new.'],
-      facts: [['When does the moon shine?', 'all through the night', 'in the morning', 'at lunch', 'all through the night'], ['Where does the moon peek in?', 'at my window', 'under the bed', 'in the barn', 'at my window']] },
+      facts: [['When does the moon shine?', 'all through the night', 'in the morning', 'at lunch', 'all through the night'], ['Where does the moon peek in?', 'at my window', 'under the bed', 'in the barn', 'at my window']],
+      rhyme: [['night', 'bright'], ['new', 'too']], plain: ['moon', 'round', 'silver', 'window'] },
     biscuit: { pics: ['dog', 'house'], title: 'Where Is Biscuit?', kind: 'story', pov: 'first', purpose: 'to enjoy a story',
       lines: ['My dog Biscuit was not in his bed.', 'I looked under the table.', 'I looked behind the couch.', 'No Biscuit!', '',
         'Then I heard a little sound.', 'Scratch, scratch.', 'It came from the closet.', '',
@@ -160,6 +169,7 @@
       predict: { stop: 'came from the closet', right: 'The child will find Biscuit in the closet.', wrong: ['The child will go to school.', 'The child will find a cat.'], clue: 'came from the closet' },
       other: ['Biscuit', ['a goldfish at school', 'a mail carrier'], 'I was napping in the closet. My friend found me!'],
       know: ['Dogs like soft places to sleep.', ['Rockets go fast.', 'Leaves can be red.']],
-      connect: ['I looked all over for my lost shoe.', ['I like to paint.', 'My dad drives a van.'], 'looked under the table'] }
+      connect: ['I looked all over for my lost shoe.', ['I like to paint.', 'My dad drives a van.'], 'looked under the table'],
+      infer: [['How does the child feel when Biscuit is gone?', 'worried', 'sleepy', 'No Biscuit']], sound: ['Scratch'] }
   }, { short: 45 });
 })();
