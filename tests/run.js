@@ -17,7 +17,8 @@
       is opened, written in and marked, and the mark reaches the check-up map.
    6. The placement check: every grade has questions in every area, and children at made-up levels are placed at exactly
       those levels, with a lesson to start each part, on a phone screen with no errors. Reading aloud: two timed readings,
-      marked like a grown-up would, give the right words correct per minute. */
+      marked like a grown-up would, give the right words correct per minute. Writing sample: the writing and the grown-up's mark
+      are kept and shown, and nothing is marked until the grown-up marks it. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -495,6 +496,26 @@ async function checkPlacement(browser, base) {
   await page.goto(base + '/placement/index.html#results');
   await page.waitForSelector('.pl-start');
   if (!(await page.evaluate(() => /89 words correct per minute/.test(document.querySelector('#app').textContent)))) fail(w, 'the result does not show on the starting points page');
+  /* writing sample: the child writes, the grown-up marks; nothing is marked by the computer */
+  const ws = where + ' (writing sample)';
+  for (const g of ALL_GRADES) {
+    const ok = await page.evaluate(g => !!Atlas.writingPrompts[g] && Atlas.writingRubric(g).length === 4, g);
+    if (!ok) fail(ws, 'Grade ' + g + ' needs a prompt and a rubric with exactly 4 levels');
+  }
+  await page.goto(base + '/placement/index.html#writing');
+  await page.waitForSelector('#plw');
+  await screenCheck(page, ws, 'the writing screen');
+  await page.fill('#plw', 'My writing sample.');
+  if (await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('lang-place:state')).writing; return s && s.lv; })) fail(ws, 'the writing was marked before a grown-up marked it');
+  await page.evaluate(() => Atlas.adult(true));
+  await screenCheck(page, ws, 'the writing screen in grown-up view');
+  await page.click('.tk-b[data-lv="2"]');
+  await page.evaluate(() => Atlas.adult(false));
+  const wr = await page.evaluate(() => JSON.parse(localStorage.getItem('lang-place:state')).writing);
+  if (!wr || wr.text !== 'My writing sample.' || wr.lv !== 2) fail(ws, 'the writing and the grown-up\'s mark were not both saved');
+  await page.goto(base + '/placement/index.html#results');
+  await page.waitForSelector('.pl-start');
+  if (!(await page.evaluate(() => /Marked Getting there/.test(document.querySelector('#app').textContent)))) fail(ws, 'the mark does not show on the starting points page');
   if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
   await ctx.close();
   return asked;
