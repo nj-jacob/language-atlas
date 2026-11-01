@@ -8,34 +8,68 @@
   'use strict';
   var R = Atlas.R, Q = Atlas.Q, W = Atlas.W, step = W.step;
 
-  /* the seven transferable skills, each with an example from language and literacy */
-  var SKILLS = [['critical thinking', 'checking whether a website is reliable'], ['creativity', 'inventing a new form for a poem'], ['self-directed learning', 'setting a reading goal and tracking it'],
-    ['collaboration', 'writing a script with a group'], ['communication', 'adjusting a talk for a younger audience'], ['global citizenship', 'reading news about climate change around the world'],
-    ['digital literacy', 'using a word processor' + '’' + 's tools to edit']];
+  function others(list, item) { return list.filter(function (x) { return x !== item; }); }
+  function tfWhy(right, yes, no) { return { options: [yes, no], answer: right ? 0 : 1 }; }
+  var AP = '’';
+
+  /* the seven transferable skills, each with three examples from language and literacy */
+  var SKILLS = [['critical thinking', ['checking whether a website is reliable', 'comparing two news reports about the same event', 'asking whose voice is missing from a story']],
+    ['creativity', ['inventing a new form for a poem', 'imagining a new ending for a story', 'turning a report into a comic']],
+    ['self-directed learning', ['setting a reading goal and tracking it', 'choosing your next book on your own', 'checking your writing against a list before handing it in']],
+    ['collaboration', ['writing a script with a group', 'sharing jobs fairly on a group poster', 'building on a partner' + AP + 's idea in a discussion']],
+    ['communication', ['adjusting a talk for a younger audience', 'using gestures to make a point clear', 'writing clear steps for a recipe']],
+    ['global citizenship', ['reading news about climate change around the world', 'learning greetings in a classmate' + AP + 's home language', 'writing a letter about protecting a local river']],
+    ['digital literacy', ['using a word processor' + AP + 's tools to edit', 'checking the privacy settings on an app', 'making a slide show for a talk']]];
   /* [a language skill, where it helps beyond Language class] */
   var USES = [['summarizing', 'writing up a science experiment'], ['reading a chart', 'understanding data in math'], ['using primary sources', 'learning history in social studies'],
-    ['following steps in order', 'cooking a recipe at home'], ['persuasive writing', 'asking the school council for a change'], ['listening carefully', 'learning a dance in phys ed']];
+    ['following steps in order', 'cooking a recipe at home'], ['persuasive writing', 'asking the school council for a change'], ['listening carefully', 'learning a dance in phys ed'],
+    ['taking notes', 'studying for a science test'], ['reading word problems slowly', 'solving problems in math'], ['speaking clearly', 'giving directions to a visitor'],
+    ['writing a formal letter', 'applying to be a library volunteer'], ['checking sources', 'finding facts for a geography project'], ['using precise words', 'describing how you feel to a doctor'],
+    ['reading a map legend', 'planning a hike'], ['asking clarifying questions', 'understanding a coach' + AP + 's new play']];
+  function example(s) { return R.pick(s[1]); }
 
   function skillFor(lv) {
-    var s = R.pick(SKILLS);
-    return Q.one('Which transferable skill are you using when you are <b>' + s[1] + '</b>?', s[0], R.some(SKILLS.filter(function (x) { return x !== s; }), lv > 1 ? 3 : 2).map(function (x) { return x[0]; }), {
-      hint: 'What are you really doing?', explain: s[1] + ': <b>' + s[0] + '</b>.', meta: { k: 'g6-skill-for', ex: s[1] } });
+    var s = R.pick(SKILLS), ex = example(s);
+    return Q.one('Which transferable skill are you using when you are <b>' + ex + '</b>?', s[0], R.some(others(SKILLS, s), lv > 1 ? 3 : 2).map(function (x) { return x[0]; }), {
+      prompt: 'What are you really doing?', hint: 'What are you really doing?', explain: ex + ': <b>' + s[0] + '</b>.', meta: { k: 'g6-skill-for', ex: ex } });
   }
   function matchSkill() {
     var s = R.some(SKILLS, 3);
-    return { q: 'Match each skill to an example.', type: 'match', pairs: s.map(function (x) { return [x[0], x[1]]; }), hint: 'Picture yourself doing each one.', explain: 'These skills travel to every subject.', meta: { k: 'g6-match-skill' } };
+    return { q: 'Match each skill to an example.', type: 'match', pairs: s.map(function (x) { return [x[0], example(x)]; }), hint: 'Picture yourself doing each one.', explain: 'These skills travel to every subject.', meta: { k: 'g6-match-skill' } };
   }
+  function skillTf() {
+    var s = R.pick(SKILLS), ex = example(s), right = R.int(0, 1) === 1, said = right ? s[0] : R.pick(others(SKILLS, s))[0];
+    return { q: Q.name() + ' says that <b>' + ex + '</b> is mostly <b>' + said + '</b>.', type: 'tf', answer: right, why: tfWhy(right, 'That is the main skill it uses.', 'It mostly uses a different skill.'),
+      hint: 'What are you really doing?', explain: ex + ': <b>' + s[0] + '</b>.', meta: { k: 'g6-skill-tf', ex: ex, said: said } };
+  }
+  function skillPick() {
+    var s = R.pick(SKILLS);
+    return Q.all('Pick every example of <b>' + s[0] + '</b>.', R.some(s[1], 2), R.some(others(SKILLS, s), 2).map(example), {
+      hint: 'Picture yourself doing each one.', explain: '<b>' + s[0] + '</b>: ' + s[1].join('; ') + '.', meta: { k: 'g6-skill-pick', skill: s[0] } });
+  }
+
   function useIn(lv) {
     var u = R.pick(USES);
-    return Q.one('Where would <b>' + u[0] + '</b> help you most?', u[1], R.some(USES.filter(function (x) { return x !== u; }), lv > 1 ? 3 : 2).map(function (x) { return x[1]; }), {
-      hint: 'Which task needs that skill?', explain: '<b>' + u[0] + '</b> helps with ' + u[1] + '.', meta: { k: 'g6-use-in', skill: u[0] } });
+    return Q.one('Where would <b>' + u[0] + '</b> help you most?', u[1], R.some(others(USES, u), lv > 1 ? 3 : 2).map(function (x) { return x[1]; }), {
+      prompt: 'Which task needs that skill?', hint: 'Which task needs that skill?', explain: '<b>' + u[0] + '</b> helps with ' + u[1] + '.', meta: { k: 'g6-use-in', skill: u[0] } });
   }
   function useMatch() {
     var u = R.some(USES, 3);
     return { q: 'Match each language skill to where it helps.', type: 'match', pairs: u.map(function (x) { return [x[0], x[1]]; }), hint: 'Think about other subjects and home.', explain: 'Language skills are used everywhere.', meta: { k: 'g6-use-match' } };
   }
+  function useTf() {
+    var u = R.pick(USES), right = R.int(0, 1) === 1, said = right ? u[1] : R.pick(others(USES, u))[1];
+    return { q: Q.name() + ' says <b>' + u[0] + '</b> helps most with <b>' + said + '</b>.', type: 'tf', answer: right, why: tfWhy(right, 'That task needs that skill.', 'That task needs a different skill.'),
+      hint: 'Which task needs that skill?', explain: '<b>' + u[0] + '</b> helps with ' + u[1] + '.', meta: { k: 'g6-use-tf', skill: u[0], said: said } };
+  }
+  function skillNeeded(lv) {
+    var u = R.pick(USES);
+    return Q.one('Which language skill helps most with <b>' + u[1] + '</b>?', u[0], R.some(others(USES, u), lv > 1 ? 3 : 2).map(function (x) { return x[0]; }), {
+      hint: 'What would you need to do well?', explain: '<b>' + u[0] + '</b>', meta: { k: 'g6-skill-needed', use: u[1] } });
+  }
 
   Atlas.register('connections', {
+    full: true,
     lessons: [{
       id: 'skills', title: 'Skills for learning and life', sub: 'Skills that travel to every subject.',
       concepts: [
@@ -44,26 +78,29 @@
             step(W.icon('think'), '<b>Critical thinking</b>: is this website reliable?'),
             step(W.icon('people'), '<b>Collaboration</b>: writing a script with a group.'),
             step(W.icon('talk'), '<b>Communication</b>: changing a talk for younger listeners.'),
-            step(W.icon('screen'), '<b>Digital literacy</b>: editing with a word processor.')
+            step(W.icon('screen'), '<b>Digital literacy</b>: editing with a word processor.'),
+            step(W.icon('star'), '<b>Creativity</b>: a new ending for a story.')
           ],
-          guided: [function () { return skillFor(1); }, matchSkill],
-          check: [function () { return skillFor(2); }, matchSkill],
+          guided: [function () { return skillFor(1); }, matchSkill, skillTf],
+          check: [function () { return skillFor(2); }, skillPick, skillTf, matchSkill, function () { return skillFor(2); }],
           coach: '<p>Name the skill when you see it: "You just checked that source. That is critical thinking."</p>',
           mistake: '<p>Thinking these skills belong only to school. They are life skills.</p>' },
-        { slug: 'everywhere', title: 'Language in every subject', exp: ['A3.1'], skill: 'skills',
+        { slug: 'everywhere', title: 'Language in every subject', exp: ['A3.1'], skill: 'everywhere',
           model: [
             step(W.means('read', 'summarizing'), 'Science: write up an experiment.'),
             step(W.means('read', 'reading a chart'), 'Math: understand the data.'),
-            step(W.means('write', 'persuasive writing'), 'Life: ask the school council for a change.')
+            step(W.means('write', 'persuasive writing'), 'Life: ask the school council for a change.'),
+            step(W.means('listen', 'asking clarifying questions'), 'Sports: understand a new play.')
           ],
-          guided: [function () { return useIn(1); }, useMatch],
-          check: [function () { return useIn(2); }, useMatch],
+          guided: [function () { return useIn(1); }, useMatch, useTf],
+          check: [function () { return useIn(2); }, function () { return skillNeeded(2); }, useTf, useMatch, function () { return useIn(2); }],
           coach: '<p>During homework in another subject, ask: "Which language skill are you using right now?"</p>',
           mistake: '<p>Forgetting good writing habits in other subjects. A science report still needs editing.</p>' }
       ]
     }],
     practice: [
-      { id: 'skills', name: 'Skills and connections', code: 'A1.1, A3.1', gen: skillFor }
+      { id: 'skills', name: 'Transferable skills', code: 'A1.1', gen: skillFor },
+      { id: 'everywhere', name: 'Language everywhere', code: 'A3.1', gen: useIn }
     ],
     tasks: [
       { id: 'my-goal', title: 'My skills and my next step', code: 'A1.2', pic: W.icon('star'), say: 'Which skill helps you share your ideas best? Choose one to grow, and make a plan.', write: true,
@@ -82,6 +119,7 @@
   });
 
   Q.shapes('connections', {
-    skills: [[1, 'match', matchSkill], [1, 'use-in', useIn], [2, 'use-match', useMatch]]
+    skills: [[1, 'match', matchSkill], [1, 'true-false', skillTf], [2, 'pick', skillPick]],
+    everywhere: [[1, 'match', useMatch], [1, 'true-false', useTf], [2, 'skill-needed', skillNeeded]]
   });
 })();
