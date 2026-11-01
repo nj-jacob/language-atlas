@@ -35,7 +35,7 @@
       hint: 'Two things side by side? A reason? A fix? An order?', explain: SIGNAL[p].join(', ') + ': <b>' + p + '</b>.', meta: { k: 'g6-which-signal', p: p } });
   }
   function effect(lv) {
-    var c = R.pick(causes()), others = causes().filter(function (x) { return x !== c; }).map(function (x) { return x[1][1]; });
+    var c = R.pick(causes()), others = causes().filter(function (x) { return x[1][0] !== c[1][0]; }).map(function (x) { return x[1][1]; });
     return Q.one('What is the <b>effect</b>?', c[1][1], R.some(others, lv > 1 ? 2 : 1), { fig: W.chain([c[1][0], W.gap()], ['Cause', 'Effect']) + T.show(c[0]),
       hint: 'What happens because of the cause?', explain: W.chain(c[1], ['Cause', 'Effect']), meta: { k: 'g6-effect', cause: c[1][0] } });
   }
