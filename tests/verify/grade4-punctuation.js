@@ -13,7 +13,7 @@
   V['g4-cap-match'] = q => q.pairs.every(p => FROM[text(p[0])] === text(p[1])) ? '' : 'a place is matched to the wrong word';
   /* direct address: the name is set off by a comma, before it at the end or after it at the start */
   const NAMES = ['Kai', 'Ms. Lee', 'Omar', 'Grandma', 'Mateo', 'Zara', 'Mr. Singh'];
-  const SPOKEN = /^(Kai please|Thank you Ms|Can you help me Omar|Grandma look at|Mateo your|Hurry up Zara|Do you know the way Mr|Ayesha are you|Good morning Coach|Liam don't|Look out Noah)/;
+  const SPOKEN = /^(Kai please|Thank you Ms|Can you help me Omar|Grandma look at|Mateo your|Hurry up Zara|Do you know the way Mr|Ayesha are you|Good morning Coach|Liam please put|Look out Noah)/;
   const addrOk = (s, n) => s.startsWith(n + ', ') || s.replace(/[.!?]$/, '').endsWith(', ' + n);
   V['g4-addr-right'] = (q, m) => { const ok = q.options.map(text).filter(o => addrOk(o, m.name) && (o.match(/,/g) || []).length === 1); return ok.length === 1 && H.marked(q) === ok[0] ? '' : 'expected the comma next to ' + m.name; };
   V['g4-addr-tap'] = (q, m) => { const t = q.tiles.map(text), i = t.indexOf(m.name); const want = i === 0 ? i : i - 1; return q.answer === want && addrOk(m.s, m.name) ? '' : 'the comma goes after ' + t[want]; };

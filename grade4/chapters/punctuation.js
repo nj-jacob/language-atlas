@@ -44,7 +44,7 @@
   /* ---------- commas for the person you speak to: [the sentence, the name, the word after which the comma goes] ---------- */
   var ADDR = [['Kai, please pass the salt.', 'Kai'], ['Thank you, Ms. Lee.', 'Ms. Lee'], ['Can you help me, Omar?', 'Omar'], ['Grandma, look at the moon!', 'Grandma'],
     ['Mateo, your bus is here.', 'Mateo'], ['Hurry up, Zara!', 'Zara'], ['Do you know the way, Mr. Singh?', 'Mr. Singh'],
-    ['Ayesha, are you ready?', 'Ayesha'], ['Good morning, Coach!', 'Coach'], ['Liam, don' + '’' + 't forget your mitts.', 'Liam'], ['Look out, Noah!', 'Noah']];
+    ['Ayesha, are you ready?', 'Ayesha'], ['Good morning, Coach!', 'Coach'], ['Liam, please put on your mitts.', 'Liam'], ['Look out, Noah!', 'Noah']];
   /* a name in a sentence that is not spoken to: no comma */
   var NOTADDR = ['Kai passed the salt.', 'Grandma looked at the moon.', 'Mateo caught his bus.', 'Zara hurried home.', 'Ayesha is ready.', 'Coach blew the whistle.',
     'Noah looked out the window.', 'Liam forgot his mitts.'];
