@@ -461,6 +461,9 @@ async function checkPlacement(browser, base) {
       const m = /^\.\.\/grade(\d)\/#([\w-]+)$/.exec(h);
       if (!m || !fs.existsSync(path.join(ROOT, 'grade' + m[1], 'chapters', m[2] + '.js'))) fail(w, 'the starting lesson link ' + h + ' goes nowhere');
     }
+    /* the same starting lessons are kept for the Atlas parent page */
+    const kept = await page.evaluate(() => (JSON.parse(localStorage.getItem('lang-place:state')) || {}).starts || []);
+    if (kept.map(s => s && '../grade' + s.g + '/#' + s.ch).join() !== links.join()) fail(w, 'the starting lessons kept for the parent page differ from the ones shown');
     await screenCheck(page, w, 'the results');
     await page.evaluate(() => Atlas.adult(true));
     await screenCheck(page, w, 'the results in grown-up view');
