@@ -16,7 +16,8 @@
       and the results are saved where the progress page (and later the family page) reads them. Every activity with a grown-up
       is opened, written in and marked, and the mark reaches the check-up map.
    6. The placement check: every grade has questions in every area, and children at made-up levels are placed at exactly
-      those levels, with a lesson to start each part, on a phone screen with no errors. */
+      those levels, with a lesson to start each part, on a phone screen with no errors. Reading aloud: two timed readings,
+      marked like a grown-up would, give the right words correct per minute. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -420,6 +421,36 @@ async function checkPlacement(browser, base) {
     await screenCheck(page, w, 'the results in grown-up view');
     await page.evaluate(() => Atlas.adult(false));
   }
+  /* reading aloud: two timed readings marked by the grown-up (the clock is fast-forwarded) */
+  const passages = await page.evaluate(() => Object.keys(window.ALOUD_PASSAGES).map(g => [+g, window.ALOUD_PASSAGES[g].map(p => p.text.split(/\s+/).length)]));
+  for (const g of ALL_GRADES) {
+    const p = passages.find(x => x[0] === g);
+    if (!p || p[1].length !== 2 || p[1].some(n => n < 100)) fail(where, 'Grade ' + g + ' needs two reading-aloud passages of at least 100 words');
+    if (!(await page.evaluate(g => !!Atlas.aloudNorms[g], g))) fail(where, 'Grade ' + g + ' has no reading-aloud norms');
+  }
+  const w = where + ' (reading aloud)';
+  await page.clock.install();
+  await page.goto(base + '/placement/index.html#aloud'); await page.reload();
+  await page.waitForSelector('#algo');
+  await screenCheck(page, w, 'the start');
+  await page.click('#algo');
+  await page.click('.al-w[data-i="3"]'); await page.click('.al-w[data-i="5"]');
+  await page.clock.fastForward(61000);
+  await page.waitForFunction(() => /last word/.test(document.querySelector('.al-say').textContent));
+  await page.click('.al-w[data-i="89"]');
+  await screenCheck(page, w, 'a marked reading');
+  await page.click('#alnext'); await page.click('#algo');
+  await page.clock.fastForward(30000);
+  await page.click('#alstop');
+  await page.click('.al-w[data-i="44"]');
+  await page.click('#alnext');
+  const al = await page.evaluate(() => (JSON.parse(localStorage.getItem('lang-place:state')) || {}).aloud);
+  /* reading 1: 90 words, 2 marked, 60 s = 88 a minute; reading 2: 45 words in 30 s = 90 a minute; average 89 */
+  if (!al || al.wcpm !== 89 || al.acc !== 99) fail(w, 'expected 89 words correct per minute and 99% correct, got ' + JSON.stringify(al && { wcpm: al.wcpm, acc: al.acc }));
+  await screenCheck(page, w, 'the result');
+  await page.goto(base + '/placement/index.html#results');
+  await page.waitForSelector('.pl-start');
+  if (!(await page.evaluate(() => /89 words correct per minute/.test(document.querySelector('#app').textContent)))) fail(w, 'the result does not show on the starting points page');
   if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
   await ctx.close();
   return asked;

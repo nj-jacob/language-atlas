@@ -34,6 +34,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
 6. **The placement check** (in a full run, not with `--grade`):
    - every grade has at least one computer-marked practice skill in each of the 7 parts;
    - made-up children with known levels in each part (for example, secure up to Grade 2 in spelling but Grade 5 in word meanings) take the whole check on a phone screen, sometimes pressing "I'm not sure yet". Each must be placed at exactly their level, every part must link to a starting lesson that exists, and no screen may show an error, run off the side or show grown-up notes to the child.
+   - reading aloud: every grade has two passages of at least 100 words and its norms; two readings are marked like a grown-up would (with the clock fast-forwarded) and must give exactly the expected words correct per minute, shown on the starting points page;
    - the placement page sets no colours or fonts of its own.
 
 ## Running them yourself

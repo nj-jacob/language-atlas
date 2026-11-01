@@ -8,11 +8,14 @@
    Areas: a skill belongs to an area by its FIRST expectation code (see areaOf). Speaking (B1), and A1 and A3, are not
    marked by a computer, so they are not in the check. Open-ended writing is never auto-marked either.
 
-   How it adapts, in each area: start one grade below the school grade. Two right at a grade = secure there, so go up one
-   grade. Two not yet (wrong, or "I'm not sure yet") = go down one. It stops at the highest secure grade whose next grade is
-   not secure, at two grades above the school grade, or after 12 questions.
+   How it adapts, in each area: start one grade below the school grade. Three right out of four at a grade = secure there,
+   so go up one grade (asking for three, not two, means a lucky guess rarely counts). Two not yet (wrong, or "I'm not sure
+   yet") = go down one. It stops at the highest secure grade whose next grade is not secure, at two grades above the school
+   grade, or after 16 questions.
 
-   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last }   (see fresh() and start()) */
+   Reading aloud (aloud.js) is the part a computer cannot mark: a timed one-minute reading the grown-up marks.
+
+   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last, aloud }   (see fresh(), start() and aloud.js) */
 (function () {
   'use strict';
   var A = window.Atlas, $ = A.$, R = A.R, Q = A.Q;
@@ -29,7 +32,7 @@
     { id: 'writing', name: 'Planning and improving writing', short: 'Writing', strand: 'D' }
   ];
   var BY = {}; AREAS.forEach(function (a) { BY[a.id] = a; });
-  var LEVEL = 2, MAX_Q = 12;
+  var LEVEL = 2, MAX_Q = 16;
 
   /* Which area an expectation belongs to. Strand B's word codes are numbered differently in Grades 1, 2 to 3, and 4 to 8. */
   function areaOf(g, code) {
@@ -87,6 +90,7 @@
   /* ---------- the check ---------- */
   function load() { return A.load('state', null); }
   function save(st) { A.save('state', st); }
+  A.placement = { load: load, save: save }; /* for aloud.js */
   function fresh(grade) { return { v: 1, grade: grade, place: null, levels: null, history: [], last: null }; }
   function start(st, kind) {
     var top = Math.min(8, st.grade + 2), areas = {};
@@ -121,7 +125,7 @@
     P.used.push(q.at.g + '/' + q.at.sk.id); P.n++;
     if (ok) res.r++; else res.w++;
     st.place.log.push({ a: q.at.a, g: q.at.g, ch: q.at.ch.id, cht: q.at.ch.title, sk: q.at.sk.id, skn: q.at.sk.name, code: q.at.sk.code, ok: !!ok, given: given, right: Q.text(q), q: plain(q.q) });
-    function secure(l) { return P.res[l] && P.res[l].r >= 2; }
+    function secure(l) { return P.res[l] && P.res[l].r >= 3; }
     function notYet(l) { return P.res[l] && P.res[l].w >= 2; }
     function finish(lv) { P.done = true; P.lv = lv; return true; }
     if (secure(L)) {
@@ -198,11 +202,11 @@
     page(app, '<header class="chead"><span class="num">Placement check</span><h1>Find the right place to start</h1>' +
       '<p class="lede">It finds what you already know in each part of Language, so you start where it helps.</p></header>' +
       ladder(null) +
-      '<ul class="pl-facts"><li>About 40 questions in 7 parts. Stop after any part.</li><li>Some feel easy and some feel hard. That is how it works.</li>' +
+      '<ul class="pl-facts"><li>About 55 questions in 7 parts. Stop after any part.</li><li>Some feel easy and some feel hard. That is how it works.</li>' +
       '<li>No timer. If you don\'t know, press <b>I\'m not sure yet</b>.</li></ul>' +
       '<h2 class="pl-q">Grade at school this year</h2><div class="pl-gs" role="group" aria-label="Grade at school">' + btns + '</div>' +
       '<p class="pl-acts"><button type="button" class="btn" id="plgo"' + (g ? '' : ' disabled') + '>Start the check</button></p>' +
-      '<div class="note adult-only"><p><b>For parents and tutors.</b> Each part starts one grade below the school grade and moves up or down a grade after two answers. ' +
+      '<div class="note adult-only"><p><b>For parents and tutors.</b> Each part starts one grade below the school grade and moves up a grade after 3 right out of 4, or down after 2 misses. ' +
       'Speaking and open-ended writing are not in the check; the grade\'s activities cover them, marked by you.</p></div>');
     A.$$('.pl-g', app).forEach(function (b) {
       b.addEventListener('click', function () {
@@ -276,6 +280,9 @@
           return '<li data-strand="' + a.strand + '"><span class="pl-an">' + a.name + '</span><span class="pl-lv">Secure up to ' + gname(lv) + '</span>' +
             (s ? '<a class="pl-go" href="' + s.href + '">' + (s.done ? 'Keep going: ' : 'Start: ') + 'Grade ' + s.g + ' &middot; ' + s.ch.title + ' <span aria-hidden="true">&rsaquo;</span></a>' : '') + '</li>';
         }).join('') + '</ol>';
+      h += '<section class="sec cu" data-strand="C"><h2>Reading aloud</h2>' + (st.aloud
+        ? A.aloudSummary(st.aloud) + '<p class="adult-only">Grade ' + st.aloud.g + ' passages, ' + st.aloud.d + '. <a href="../grade' + st.aloud.g + '/#fluency">Fluency lessons for Grade ' + st.aloud.g + '</a></p><p><a href="#aloud">Do the reading again</a></p>'
+        : '<p>One minute, twice, with a grown-up. It shows how smoothly you read.</p><p><a class="btn alt" href="#aloud">Start reading aloud</a></p>') + '</section>';
       if (gp.length) {
         h += '<section class="sec cu adult-only"><h2>Also worth practising</h2><p>Missed in the check, at a grade that is otherwise secure.</p><ul class="plan">' + gp.map(function (x) {
           return '<li><a href="../grade' + x.g + '/#' + x.ch + '/practice/' + x.sk + '">' + x.skn + '</a> <span class="t2">(Grade ' + x.g + ', ' + x.cht + ', ' + x.code + ')</span></li>';

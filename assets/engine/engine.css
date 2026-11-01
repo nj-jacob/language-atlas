@@ -248,3 +248,10 @@ html.bigtext .opts{grid-template-columns:1fr}
 .pl-an{font-weight:800}
 .pl-lv{font-size:.9rem;color:var(--ink2)}
 .pl-go{font-weight:700;margin-top:4px}
+.al-text p{line-height:2}
+.al-w{font:inherit;color:var(--ink);background:none;border:0;border-radius:6px;padding:1px 2px;margin:0;cursor:pointer;min-height:auto}
+.al-w:hover{background:var(--tint)}
+.al-w.err{text-decoration:line-through;text-decoration-thickness:2px;background:color-mix(in srgb,var(--bad) 12%,var(--card))}
+.al-w.last{outline:2px solid var(--accent);outline-offset:1px}
+.al-w.after{opacity:.35}
+.al-say{min-height:1.5em;margin:8px 0}
