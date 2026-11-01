@@ -12,7 +12,7 @@
 (function () {
   'use strict';
   var AP = '’', OQ = '“', CQ = '”';
-  Atlas.texts = {
+  Atlas.passages({
     mitten: { pics: ['snow'], title: 'The Lost Mitten', kind: 'story', pov: 'third', purpose: 'to enjoy a story',
       lines: ['Mateo and his sister Leila walked home from school in the snow.', 'At the corner, Leila stopped. ' + OQ + 'My mitten is gone!' + CQ + ' she cried.',
         'Mateo looked back. Their footprints made a long trail behind them.', 'They followed the footprints all the way back to the park.',
@@ -193,22 +193,5 @@
       order: ['collected a tennis ball', 'dropped each ball', 'made a poster', 'a judge asked'],
       main: ['Omar and Hana test which ball bounces highest for the science fair.', 'The ping-pong ball bounced the lowest.', 'Science fairs happen at schools.'],
       predict: { stop: 'wrote down how high', right: 'They will find out which ball bounces highest.', wrong: ['They will play a game of tennis.', 'They will paint the balls.'], clue: 'which ball bounces highest' } }
-  };
-  /* the passage on a card, the way questions show it. upTo: a number of lines, or words from the last sentence to show.
-     opts (optional): { tap: true } lets the child tap each sentence (see Atlas.W.passage). */
-  Atlas.texts.show = function (t, upTo, opts) {
-    var lines = t.lines;
-    if (typeof upTo === 'number') lines = lines.slice(0, upTo);
-    else if (upTo) lines = lines.slice(0, lines.findIndex(function (l) { return l.indexOf(upTo) >= 0; }) + 1);
-    return Atlas.W.passage(t.title, lines, { pics: t.pics, tap: opts && opts.tap });
-  };
-  /* the sentences of a passage (no headings or paragraph breaks) */
-  Atlas.texts.body = function (t) { return t.lines.filter(function (l) { return l && l.charAt(0) !== '#'; }); };
-  Atlas.texts.words = function (t) { return Atlas.texts.body(t).join(' ').split(/\s+/).length; };
-  /* passages that have what a question needs. lv (optional): 1 gives short texts, 3 gives Grade 3 length, 2 gives any */
-  Atlas.texts.list = function (need, lv) {
-    var all = Object.keys(Atlas.texts).map(function (k) { return Atlas.texts[k]; }).filter(function (t) { return t && t.lines && t[need]; });
-    var fit = all.filter(function (t) { return lv === 1 ? Atlas.texts.words(t) < 100 : lv === 3 ? Atlas.texts.words(t) >= 100 : true; });
-    return fit.length ? fit : all;
-  };
+  }, { short: 100 });
 })();

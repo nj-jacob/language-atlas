@@ -20,7 +20,7 @@ Coverage is not enough: a child needs worked examples, lots of practice and ques
 
 A reading chapter can add `read: { texts: [passage, ...], show: function (t) -> html, ask: function (t) -> [question, ...] }`. The child picks a passage, reads it on its own screen, then answers its questions one at a time (a hint after a miss, then a second try) and sees a score. Keep sets to about 5 questions, mixing facts, a tap-the-sentence question and one or two others (main idea, order, kind of text).
 
-Passages live in `gradeN/texts.js`. Write them at grade length (Grade 3: 100 to 150 words for the long ones), in paragraphs: an empty line `''` starts a new paragraph, `'# '` a heading. Give each one `pics` (picture names for its band) and the facts, events, main idea and prediction its questions need.
+Passages live in `gradeN/texts.js`, which calls `Atlas.passages({ key: passage, ... }, { short: 100 })` once (in `words.js`). That sets `Atlas.texts` and adds the shared helpers: `show(t, upTo, { tap })`, `body(t)`, `words(t)` and `list(need, level)`, where level 1 gives passages under `short` words and level 3 the longer ones. Never copy these helpers into a grade. Write passages at grade length (Grade 3: 100 to 150 words for the long ones), in paragraphs: an empty line `''` starts a new paragraph, `'# '` a heading. Give each one `pics` (picture names for its band) and the facts, events, main idea and prediction its questions need.
 
 ## An idea (one screen)
 

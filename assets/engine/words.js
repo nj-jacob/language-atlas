@@ -12,6 +12,7 @@
                                                   tapped (data-hit = its place in lines), for "tap the sentence that tells you".
      Atlas.W.web('main idea', ['detail', ...])    the main idea as a roof over its details
      Atlas.W.chain(['event', ...], ['First', ...]) a story map: numbered cards in order, with optional labels
+     Atlas.passages(texts, { short: 100 })         a grade's passages and their helpers (show, body, words, list): see below
      Atlas.W.icon('not')                          a small picture cue: not, again, full, without, before, wrong, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
      Atlas.W.pic('sun')                           a picture cue for a word (Atlas.W.pics lists them all)
@@ -172,4 +173,29 @@
     soundNames: SOUNDS.slice(),
     step: function (pic, line) { return '<div class="wsum">' + pic + '</div>' + (line ? '<p>' + line + '</p>' : ''); }
   });
+  /* a grade's reading passages, with the helpers every reading chapter uses. Call once in gradeN/texts.js:
+       Atlas.passages({ key: passage, ... }, { short: 100 })   sets Atlas.texts to the passages and adds:
+     Atlas.texts.show(t, upTo, opts)  the passage on a card (W.passage, with its pics band). upTo: a number of lines, or words
+                                      from the last sentence to show; opts.tap lets the child tap each sentence
+     Atlas.texts.body(t)              its sentences (no headings or paragraph breaks)
+     Atlas.texts.words(t)             how many words it has
+     Atlas.texts.list(need, lv)       passages that have what a question needs; lv 1 gives short ones (under opts.short words),
+                                      lv 3 long ones, lv 2 any (any at all, if none fit) */
+  A.passages = function (texts, opts) {
+    var short = (opts && opts.short) || 100, T = (A.texts = texts);
+    T.show = function (t, upTo, o) {
+      var lines = t.lines;
+      if (typeof upTo === 'number') lines = lines.slice(0, upTo);
+      else if (upTo) lines = lines.slice(0, lines.findIndex(function (l) { return l.indexOf(upTo) >= 0; }) + 1);
+      return W.passage(t.title, lines, { pics: t.pics, tap: o && o.tap });
+    };
+    T.body = function (t) { return t.lines.filter(function (l) { return l && l.charAt(0) !== '#'; }); };
+    T.words = function (t) { return T.body(t).join(' ').split(/\s+/).length; };
+    T.list = function (need, lv) {
+      var all = Object.keys(T).map(function (k) { return T[k]; }).filter(function (t) { return t && t.lines && t[need]; });
+      var fit = all.filter(function (t) { return lv === 1 ? T.words(t) < short : lv === 3 ? T.words(t) >= short : true; });
+      return fit.length ? fit : all;
+    };
+    return T;
+  };
 })();
