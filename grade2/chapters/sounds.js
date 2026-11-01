@@ -106,7 +106,7 @@
         explain: W.syl(s), meta: { k: 'g2-count-sounds', word: w } });
   }
   function spellSounds(lv) {
-    var s = R.pick(lv > 1 ? by(function (n) { return n > 3; }) : SOUNDS), w = word(s), extra = R.pick(['m', 'z', 'v', 'j', 'w'].filter(function (x) { return s.indexOf(x) < 0; }));
+    var s = R.pick((lv > 1 ? by(function (n) { return n > 3; }) : SOUNDS).filter(function (x) { return x.every(function (p, i) { return x.indexOf(p) === i; }); })), w = word(s), extra = R.pick(['m', 'z', 'v', 'j', 'w'].filter(function (x) { return s.indexOf(x) < 0; }));
     var tiles = s.map(function (p) { return W.tile(p, 'syl'); }).concat([W.tile(extra, 'syl')]);
     return { q: 'Spell <b>' + w + '</b>. Tap the sounds in order.', type: 'build', parts: tiles, answer: s.map(function (p, i) { return i; }),
       hint: 'Say the word slowly. What is the first sound?', explain: W.syl(s), meta: { k: 'g2-spell-sounds', word: w } };
