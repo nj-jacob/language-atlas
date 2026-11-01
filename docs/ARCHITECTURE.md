@@ -8,9 +8,10 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | --- | --- |
 | `index.html` | Language home page: all grades. Atlas's Curriculum page reads its `href="gradeN/"` links to know which grades are ready, so link every ready grade that way |
 | `grade1/` … `grade8/` | One site per grade (see below) |
+| `placement/` | The placement check: finds where a student is in each part of Language, Grades 1 to 8 (see below) |
 | `assets/engine/` | **Shared by every grade**: the engine (see below) |
 | `assets/atlas-theme.css` | The one look for every page, matching Math Atlas |
-| `assets/atlas-header.js` | The shared header: "All grades", the grade's links, the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button; on a computer the header is one row and text size and grown-up view sit behind "Settings" |
+| `assets/atlas-header.js` | The shared header: "All grades", the grade's links (or the page's own, from an `atlas-nav` tag), the Math Atlas link, text size, grown-up view. On phones and tablets these sit behind one "Menu" button; on a computer the header is one row and text size and grown-up view sit behind "Settings" |
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
 | `assets/sounds/` | The 44 recorded letter sounds (one short mp3 each), played by the sound buttons in Grades 1 and 2 |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
@@ -68,6 +69,15 @@ Learning screens (an idea, or practising one skill) are calm on purpose: no chap
 | `#check-up`, `#check-up/all`, `#check-up/sentences` | Check-ups |
 | `#sentences/tasks`, `#sentences/tasks/<id>` | Activities with a grown-up, and one activity |
 | `#progress` | My progress |
+
+## The placement check (`placement/`)
+
+`placement/index.html` loads `atlas.js`, `qkit.js` and `words.js` from the engine, then `placement.js`. It works like Math Atlas's placement check:
+- **7 parts** (areas): sounds, spelling and word parts; word meanings; sentences and grammar; capitals and punctuation; reading for meaning; thinking about texts and media; planning and improving writing. A practice skill belongs to a part by its first expectation code (`areaOf` in `placement.js`). Speaking (B1), A1, A3 and open-ended writing are not in it: a computer does not mark them.
+- **The questions are the grades' own practice skills**, at level 2. Nothing is copied: when the check reaches a grade, it reads that grade's `index.html` for its scripts, runs them, keeps the chapters, and puts `Atlas.chapters` back. A grade's passages (`Atlas.texts`) are swapped in only while one of its questions is made. So keep each grade's chapters listed as `<script src>` tags, and a valid code on every skill.
+- **How it adapts**, in each part: start one grade below the school grade (never above Grade 8 or two grades above the school grade). Two right at a grade means secure there: go up a grade. Two "not yet" (wrong, or "I'm not sure yet") means go down a grade. It stops at the highest secure grade whose next grade is not secure, or after 12 questions.
+- **Results**: a ladder of secure grades for each part, and a link to the lesson to start with: in the next grade up, the chapter of the first skill missed there. Grown-up view adds the skills missed at grades that are otherwise secure, and every question with its answer.
+- Saved as `lang-place:state`. Inside Atlas the header loads Atlas's `sync.js` for this page too (`atlas-site` is `lplace`), so the result saves to the student's account.
 
 ## Saved progress
 

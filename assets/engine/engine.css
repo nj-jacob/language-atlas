@@ -222,3 +222,29 @@ html.bigtext .opts{grid-template-columns:1fr}
 .tk-b.qk-on{border-color:var(--accent);background:var(--tint)}
 .tk-now{font-weight:700;margin:4px 0 0}
 .psg b.psh{display:block;font-size:1rem;margin:10px 0 0;color:var(--strand)}
+
+/* ---------- placement check (placement/placement.js) ---------- */
+.pl{padding-top:14px;padding-bottom:20px}
+.pl-ladder{display:grid;gap:5px;margin:14px 0;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.pl-row{display:grid;grid-template-columns:minmax(0,1fr) repeat(8,minmax(16px,26px));gap:4px;align-items:center}
+.pl-row>span{font-size:.88rem;font-weight:700;line-height:1.2;color:var(--ink2);padding-right:6px}
+.pl-row.now>span{color:var(--ink)}
+.pl-row i{display:block;height:18px;border-radius:5px;border:1.5px solid color-mix(in srgb,var(--strand) 45%,var(--line2));background:var(--card)}
+.pl-row i.on{background:var(--strand);border-color:var(--strand)}
+.pl-row.now i{border-color:var(--strand)}
+.pl-head b{font-size:.75rem;text-align:center;color:var(--ink3)}
+.pl-facts{margin:10px 0;padding-left:1.2em}
+.pl-facts li{margin:.3em 0}
+.pl-q{font-size:1.1rem;margin:18px 0 8px}
+.pl-gs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;max-width:30em}
+.pl-g{font:inherit;font-weight:800;font-size:1.15rem;min-height:48px;border-radius:10px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink);cursor:pointer}
+.pl-g:hover{border-color:var(--accent)}
+.pl-g.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pl-acts{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:16px 0}
+.pl-stop{font-size:.92rem;color:var(--ink2)}
+.pl-wait{margin:30px 0;color:var(--ink2)}
+.pl-start{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+.pl-start li{display:grid;gap:2px;padding:10px 14px;background:var(--card);border:1px solid var(--line2);border-left:5px solid var(--strand);border-radius:12px}
+.pl-an{font-weight:800}
+.pl-lv{font-size:.9rem;color:var(--ink2)}
+.pl-go{font-weight:700;margin-top:4px}

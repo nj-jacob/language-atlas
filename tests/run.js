@@ -14,7 +14,9 @@
    5. Answering like a child: on the phone screen, every lesson is walked through, practice questions of every kind are answered
       right and sometimes wrong first, every chapter quiz scores full marks when answered right, every check-up is finished,
       and the results are saved where the progress page (and later the family page) reads them. Every activity with a grown-up
-      is opened, written in and marked, and the mark reaches the check-up map. */
+      is opened, written in and marked, and the mark reaches the check-up map.
+   6. The placement check: every grade has questions in every area, and children at made-up levels are placed at exactly
+      those levels, with a lesson to start each part, on a phone screen with no errors. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -56,6 +58,10 @@ function repoRules() {
     if (inEngine) continue;
     if (ENGINE.includes(path.basename(f)) || engineHash[hash(f)]) fail(r, 'is a copy of the shared engine. The one shared copy lives in assets/engine/.');
     for (const [e, head] of Object.entries(engineHead)) if (head.length > 30 && src.includes(head)) fail(r, 'contains a copy of assets/engine/' + e + '. Load the shared file instead.');
+  }
+  for (const f of walk(path.join(ROOT, 'placement'))) {
+    const r = rel(f), src = fs.readFileSync(f, 'utf8');
+    if (f.endsWith('.css') || /<style|font-family|#[0-9a-f]{3,8}\b(?![-\w])|rgba?\(|hsla?\(/i.test(src.replace(/href="#[\w/-]*"|content="#[^"]*"|'#\w+'/g, ''))) fail(r, 'sets its own colours, fonts or styles. Use the shared theme and engine.css.');
   }
   for (const g of ALL_GRADES) {
     const dir = path.join(ROOT, 'grade' + g), gfiles = walk(dir);
@@ -365,6 +371,60 @@ async function checkGrade(browser, base, g) {
   return { made: gen.made, routes: routes.length, ideas: ideas.length, answered, tasks: tasks.length, types: gen.types };
 }
 
+/* ---------- 6. the placement check ---------- */
+const AREAS = ['words', 'vocab', 'sentences', 'punct', 'reading', 'thinking', 'writing'];
+async function checkPlacement(browser, base) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'placement check';
+  await page.goto(base + '/placement/index.html');
+  await page.waitForSelector('.pl-g');
+  await screenCheck(page, where, 'the start screen');
+  /* every grade has at least one computer-marked skill in every area, or the check could not test that grade */
+  for (const g of ALL_GRADES) {
+    const have = await page.evaluate(g => Atlas.placementGrade(g).then(G => [...new Set(G.skills.map(x => x.a))]), g);
+    for (const a of AREAS) if (!have.includes(a)) fail(where, 'Grade ' + g + ' has no practice skill in the "' + a + '" area (see areaOf in placement/placement.js)');
+  }
+  /* children at made-up levels: right when the question's grade is at or below their level in that area, else wrong */
+  const kids = QUICK ? [[4, [2, 5, 3, 0, 4, 6, 8]]] : [[4, [2, 5, 3, 0, 4, 6, 8]], [1, [0, 1, 2, 3, 0, 1, 2]], [7, [8, 7, 6, 5, 4, 8, 3]]];
+  let asked = 0;
+  for (const [grade, lv] of kids) {
+    const want = {}; AREAS.forEach((a, i) => { want[a] = Math.min(lv[i], Math.min(8, grade + 2)); });
+    const w = where + ' (Grade ' + grade + ' child)';
+    await page.evaluate(() => localStorage.clear());
+    await page.goto(base + '/placement/index.html#home'); await page.reload();
+    await page.waitForSelector('.pl-g');
+    await page.click('.pl-g[data-g="' + grade + '"]'); await page.click('#plgo');
+    let n = 0, pauses = 0;
+    for (;;) {
+      await page.waitForFunction(() => document.querySelector('.qkbox, #plnext, .pl-start, #plagain'), null, { timeout: 15000 });
+      if (await page.$('.pl-start')) break;
+      if (await page.$('#plagain')) { fail(w, 'a question could not be made: "' + (await page.textContent('#app')).slice(0, 80) + '"'); break; }
+      if (await page.$('#plnext')) { if (!pauses++) await screenCheck(page, w, 'the screen between parts'); await page.click('#plnext'); continue; }
+      if (++n > 120) { fail(w, 'asked more than 120 questions'); break; }
+      if (n === 1) await screenCheck(page, w, 'a question');
+      const bad = await page.evaluate(want => Atlas._q.at.g > want[Atlas._q.at.a], want);
+      if (n % 9 === 0 && bad) await page.click('#plskip');
+      else await page.evaluate(bad => __answer(Atlas._q, document.querySelector('#app'), Atlas._qk, bad), bad);
+    }
+    asked += n;
+    const got = await page.evaluate(() => (JSON.parse(localStorage.getItem('lang-place:state')) || {}).levels);
+    for (const a of AREAS) if (!got || got[a] !== want[a]) fail(w, a + ' was placed at ' + (got ? got[a] : 'nothing') + ', not ' + want[a]);
+    const links = await page.evaluate(() => [...document.querySelectorAll('.pl-go')].map(a => a.getAttribute('href')));
+    if (links.length !== AREAS.length) fail(w, 'the results show ' + links.length + ' starting lessons, not ' + AREAS.length);
+    for (const h of links) {
+      const m = /^\.\.\/grade(\d)\/#([\w-]+)$/.exec(h);
+      if (!m || !fs.existsSync(path.join(ROOT, 'grade' + m[1], 'chapters', m[2] + '.js'))) fail(w, 'the starting lesson link ' + h + ' goes nowhere');
+    }
+    await screenCheck(page, w, 'the results');
+    await page.evaluate(() => Atlas.adult(true));
+    await screenCheck(page, w, 'the results in grown-up view');
+    await page.evaluate(() => Atlas.adult(false));
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+  return asked;
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -379,6 +439,9 @@ async function checkGrade(browser, base, g) {
         s.answered + ' practice questions answered on a phone screen, ' + s.tasks + ' activities marked. Types: ' + Object.entries(s.types).map(([k, v]) => k + ' ' + v).join(', ') + '. ' +
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
+  }
+  if (GRADES.length === ALL_GRADES.length) {
+    try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   await browser.close(); srv.close();
   log('');

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-01
+- Placement check (pilot, `placement/`): finds where a student is in 7 parts of Language, Grades 1 to 8, and links each part to the lesson to start with. Like Math's placement check, each part starts a grade below the school grade and moves up or down a grade after two answers. The questions are the grades' own practice skills, so every one is already answer-checked. Grown-up view shows every question and the skills worth practising. New check: made-up children at known levels must be placed exactly there.
+
 ## 2026-10-31
 - Letter sounds: Noel's 44 recorded sounds (`assets/sounds/`) now play from sound buttons in the Grade 1 and Grade 2 phonics lessons and questions (`Atlas.W.sound`, `Atlas.W.soundRow`). The checks make sure every button has its file and none sits inside an answer choice.
 - Full Grade 2: 14 chapters, 80 ideas, 30 practice skills and 34 activities with a grown-up, covering all 61 Grade 2 expectations in strands A, B, C and D (checked against the 2023 curriculum and the Language Foundations Continuum: soft c and g, uni-/bi-/tri-, mis-/pre-, -er/-or/-ness/-y, group nouns, -er/-est, similes and consonance, contents pages and charts). Seven original reading passages (`grade2/texts.js`). Linked from the home page.
