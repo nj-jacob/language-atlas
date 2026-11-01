@@ -27,7 +27,7 @@
     'wave splashed': 'water that rises and moves', 'wave to her friends': 'to move your hand to say hello' };
   const multiOf = s => MULTI[Object.keys(MULTI).find(k => text(s).includes(k))];
   V['g4-multi'] = q => H.marked(q) === multiOf(q.fig) ? '' : 'expected ' + multiOf(q.fig);
-  V['g4-multi-tf'] = (q, m) => (multiOf(m.s) === m.said) === q.answer && H.has(q.fig, text(m.s).slice(0, 12)) ? '' : 'true/false is wrong';
+  V['g4-multi-tf'] = (q, m) => (multiOf(m.s) === m.said) === q.answer && H.has(q.fig, H.strip(m.s).slice(0, 12)) ? '' : 'true/false is wrong';
   V['g4-multi-which'] = (q, m) => multiOf(H.marked(q)) === m.mean && q.options.filter(o => multiOf(o) === m.mean).length === 1 ? '' : 'expected the sentence where it means ' + m.mean;
   V['g4-multi-match'] = q => q.pairs.every(p => multiOf(p[0]) === text(p[1])) ? '' : 'a sentence is matched to the wrong meaning';
   const SUBJ = { habitat: ['natural home', 'science', 'pond is a habitat'], adaptation: ['helps a living thing survive', 'science', 'Thick fur'], predator: ['hunts other animals', 'science', 'owl is a predator'],
