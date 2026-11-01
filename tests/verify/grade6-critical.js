@@ -1,30 +1,71 @@
-/* Grade 6 answer checks: critical reading (grade6/chapters/critical.js). The checker decides "stated" by looking for the words in the passage,
-   and keeps its own key for messages, supporting details, sources, perspective and positions. */
+/* Grade 6 answer checks: critical reading (grade6/chapters/critical.js). The checker keeps its own key: which questions about each passage
+   are stated and which are worked out, each passage's message and topic, each opinion text's writer, aim, bias and missing voices,
+   and the supporting details, sources, fair sentences and positions. */
 (function () {
   const V = window.__verify, H = window.__H, text = s => H.strip(s).replace(/’/g, "'"), mk = q => text(H.marked(q) || '');
-  /* stated when the passage holds the statement's key words */
-  const KEYWORDS = { 'The tryouts were for basketball.': 'basketball tryouts', 'The narrator made three shots in a row.': 'made the next three', 'The narrator was nervous.': 'nervous',
-    'Coach Ahmed is kind.': 'kind', 'Uncle Ray carried the canoe.': 'lifted the canoe', 'The trail was muddy.': 'muddy trail', 'Tala was tired.': 'tired', 'Tala felt proud at the end.': 'proud' };
-  const passage = q => { const d = document.createElement('div'); d.innerHTML = q.fig || ''; const p = d.querySelector('.psg'); return p ? text(p.innerHTML) : ''; };
-  const isStated = (q, s) => passage(q).includes(KEYWORDS[s]);
-  V['g6-stated'] = (q, m) => text(q.tiles[q.answer]).startsWith(isStated(q, m.s) ? 'The text says' : 'I work it out') ? '' : 'wrong for ' + m.s;
-  V['g6-pick-inferred'] = q => H.sameSet(q.options.map((o, i) => (!isStated(q, text(o)) ? i : -1)).filter(i => i >= 0), q.answer) ? '' : 'the inferences are not the ones marked';
-  const CLUE = { 'The narrator was nervous.': 'got cold feet', 'Coach Ahmed is kind.': 'Everyone starts somewhere', 'Tala was tired.': 'straps dug into her shoulders', 'Tala felt proud at the end.': 'dropped the packs and laughed' };
-  V['g6-infer-clue'] = (q, m) => mk(q) === CLUE[m.s] && passage(q).includes(CLUE[m.s]) ? '' : 'expected ' + CLUE[m.s];
-  const THEME = { Tryouts: 'Being brave means trying', 'The Long Portage': 'Hard things can be worth', 'A Ramp for Everyone': 'Everyone should be able to enter' };
-  V['g6-theme'] = (q, m) => mk(q).startsWith(THEME[m.t]) ? '' : 'expected the message: ' + THEME[m.t];
-  const SUP = { 'Beavers change the land around them.': 'flood streams', 'Walking to school is good for students.': 'exercise', 'The ramp made the school fairer.': 'everyone can use', 'Recycling saves resources.': 'again and again' };
-  V['g6-supports'] = (q, m) => mk(q).includes(SUP[m.main]) && q.options.map(text).filter(o => o.includes(SUP[m.main])).length === 1 ? '' : 'expected the supporting detail';
-  /* reliable: experts, recent, or with sources listed */
-  const good = s => /scientists|government|hospital|historians/.test(s);
-  V['g6-reliable'] = q => { const fit = q.options.map(text).filter(good); return fit.length === 1 && mk(q) === fit[0] ? '' : 'expected the reliable source'; };
-  V['g6-reliable-tf'] = (q, m) => good(m.src) === q.answer ? '' : 'true/false is wrong for ' + m.src;
-  const REL = { 'a report on how beavers build dams': 'sticks', 'a poster about staying safe on lake ice': 'thick', 'a speech asking for a town skate park': 'parking lot' };
-  V['g6-relevant'] = (q, m) => mk(q).includes(REL[m.purpose]) ? '' : 'expected the relevant fact';
-  V['g6-whose-pov'] = q => /Posted by the Pine Ridge Ski Club/.test(passage(q)) && mk(q) === 'the ski club' ? '' : 'expected the ski club';
-  V['g6-bias-clue'] = q => /^(Every skier we asked|loud, smelly machines)$/.test(mk(q)) && passage(q).includes(mk(q)) ? '' : 'expected a loaded or one-sided phrase';
-  V['g6-missing'] = q => mk(q) === 'snowmobile riders' && !/snowmobile riders/i.test(passage(q)) ? '' : 'expected snowmobile riders';
-  V['g6-avoid-bias'] = q => /^Include what snowmobile riders think/.test(mk(q)) ? '' : 'expected including the other side';
-  const FOR = /should be able to join|worth the cost/;
-  V['g6-position'] = (q, m) => mk(q) === (FOR.test(m.s) ? 'for' : 'against') ? '' : 'the position is wrong for ' + m.s;
+  const FACTQ = ["Who carried the canoe?","How far away was the next lake?","What did Tala carry?","What were the tryouts for?","How many shots in a row did the narrator make?","What calls across the lake?","What made the rustle in the leaves?","How many signatures did the council collect?","Where was the ramp built?","When does lake ice shrink?","What does the ice do when the sun warms it?","What do polar bears mostly eat?","Where do black bears live?","How long do you wait before lifting the leaf out?","How long is the winter road open each year?","What did Kokum see on the ice ahead?","What did they bring home for Jonah's aunt?","How far south is the highway?","Who waved them across the ice?","What did the narrator push into each lemon?","Where did the narrator get the LED?","What colour did the LED glow?","How many lemons did the narrator use?","What did the judge like best?","What did Mei's family sell?","Why did Mei help run the stall alone with her mother?","What did the man use to tie the tent down?","When did they sell the last bun?","What did the man from the next stall sell?","What is the instructor's name?","What do you tap at the top?","What advice does the instructor call out?","How tall is the wall?","What colour is the hold that is just out of reach?","How do chimney swifts rest?","How much money did the class raise?","When did the tower go up?","How many swifts did volunteers count by August?","Who did the students write to?","What is the only food monarch caterpillars eat?","Where do Ontario monarchs fly in late summer?","How far do the monarchs fly?","Where do monarchs lay their eggs?","How many blades does a kayak paddle have?","What were the first kayaks made from?","Why can canoes carry lots of gear?","Which boat do many paddlers choose for rough water?","What wood are traditional sticks carved from?","When did Canada name lacrosse its national summer sport?","What do many Haudenosaunee people call lacrosse?","How many players could some games have long ago?","How wide is the entrance hole?","Why do you drill holes in the floor?","How high should you hang the box?","How many pieces do you cut?","How long is the lunch break now?","Where is the petition?","What do some teachers say?","How many free parking spaces did the team count?","What do trees do on hot days?","When does the town want to close the arena?","Until when do the families want the arena open?","What did Amir buy at the snack bar?","Who is Zainab?","Who finds the tickets?"];
+  const INFERQ = ["How does Tala feel halfway along the trail?","How does Tala feel at the end?","How does the narrator feel at the gym door?","What kind of person is Coach Ahmed?","How do you feel when you hear the rustle?","How do you feel once you see the chipmunk?","Why did the council collect signatures?","How does Jonah feel while they wait?","What does Kokum think of Jonah by the end?","Why do they wait for the crew?","How does the narrator feel when the bulb stays dark?","How has Dev changed by the end?","Who is the saved bun most likely for?","How does Mei feel when the line is long?","What kind of person is the man at the next stall?","How do you feel halfway up?","How do you feel about climbing at the end?","Why does the class share its counts with researchers?","Why did the flock need a new place to roost?","Why can only well-fed butterflies finish the trip?","Why is lacrosse called more than a sport?","Why should the roof hang over the front?","How does Zainab react to the lost tickets?","Why does Amir say Zainab should keep the tickets next time?"];
+  const THEME = {"The Long Portage":["Hard things can be worth finishing.","a canoe trip","she kept walking"],"Tryouts":["Being brave means trying even when you are nervous.","basketball tryouts","Everyone starts somewhere"],"A Ramp for Everyone":["Everyone should be able to enter a building the same way.","a new ramp at a school","Now everyone can use"],"The Winter Road":["Patience keeps people safe, and elders have knowledge worth learning.","a trip on a winter road","you can learn to read the ice"],"The Lemon Battery":["Mistakes can teach you more than easy success.","a science fair project","explaining my mistake"],"The Night Market":["Neighbours and families look after each other.","a night market stall","We help each other"],"The Climbing Wall":["Trying a new way can get you through something hard.","a climbing wall","suddenly the next hold is easy"],"Towers for Chimney Swifts":["Young people can make real change in their community.","chimney swifts","wrote to the town council"],"Why Monarchs Need Milkweed":["Small actions can help a whole species survive.","monarch butterflies","gives monarchs more places"],"Lacrosse: The Creator's Game":["A game can carry the culture and values of a people.","the sport of lacrosse","played to give thanks"]};
+  const VIEW = {"Snowmobiles Do Not Belong on Our Trails":{"who":"the ski club","thinks":"Snowmobiles should be banned from the trails.","missing":"snowmobile riders","bias":["Every skier we asked","loud, smelly machines"],"fix":"Include what snowmobile riders think, with facts."},"Give Us a Longer Lunch!":{"who":"Riya","thinks":"The lunch break should be longer.","missing":"parents and bus drivers","bias":["Everyone in my class agrees","Only a grumpy person"],"fix":"Ask parents and bus drivers too, and give facts instead of name-calling."},"Plant Trees, Not Parking":{"who":"the Elm Street Green Team","thinks":"The empty lot should become a small forest.","missing":"drivers and shop owners","bias":["Everyone on our street agrees","clearly does not care about nature"],"fix":"Ask drivers and shop owners what they need, and share the facts."},"Keep the Arena Open Late":{"who":"the hockey families","thinks":"The arena should stay open until 11 p.m.","missing":"figure skaters and arena workers","bias":["a disaster that ruins hockey for every child","Nobody uses the arena after dark"],"fix":"Ask figure skaters and arena workers, and use facts instead of big claims."}};
+  /* main idea: the details that support it */
+  const SUPPORT = { 'Beavers change the land around them.': ['flood streams', 'frogs and ducks'], 'Walking to school is good for students.': ['exercise', 'Fresh air'],
+    'The ramp made the school fairer.': ['same front door', 'no longer wait'], 'Recycling saves resources.': ['new cans', 'fewer trees'],
+    'Lacrosse matters deeply to many Haudenosaunee people.': ['give thanks', "Creator's Game"], 'Chimney swifts need our help.': ['losing places', 'threatened species'],
+    'Libraries offer more than books.': ['tools, games', 'homework help'], 'Monarchs depend on milkweed.': ['eat only milkweed', 'eggs only on milkweed'] };
+  const supports = (main, s) => (SUPPORT[main] || []).some(w => s.includes(w));
+  /* purpose: the fact that fits it */
+  const FITS = { 'a report on how beavers build dams': 'pile sticks', 'a poster about staying safe on lake ice': '10 cm thick', 'a speech asking for a town skate park': 'skate in the library',
+    'a report on how monarchs migrate': 'to Mexico', 'a speech asking for a school garden': 'food bank', 'a guide to packing for a canoe trip': 'waterproof barrel',
+    'a poster about saving water at home': 'shower', 'a report on the history of lacrosse': 'long before Europeans' };
+  /* what you need: the reliable source */
+  const GOOD = { 'a report on polar bear numbers': 'Arctic scientists', "facts about Ontario's lakes": 'Ontario government', 'how to treat a bee sting': 'hospital',
+    'the history of a treaty': 'historians', 'the date of a solar eclipse': 'Space Agency', 'how to care for a pet turtle': 'veterinarian', "today's weather warning": 'Environment Canada',
+    'how many people live in Toronto': 'Statistics Canada' };
+  const isGood = s => Object.values(GOOD).some(w => s.includes(w));
+  const CHECK = /^(Who made it|When was it|Does it show where|Do other reliable)/;
+  /* loaded words and claims about everyone */
+  const LOADED = /\b(ruin|smelly|grumpy|Everyone|hates|Every|ugly|waste|Nobody|disaster|rot|does not care)\b/;
+  /* reasons for each idea (the rest are against) */
+  const FOR = ['join every event', 'worth the cost', 'get the news too', 'every family belongs', 'see themselves', 'builds understanding', 'chance to learn', 'builds confidence', 'follow along', 'learning English'];
+  const isFor = s => FOR.some(w => s.includes(w));
+  const card = q => { const d = document.createElement('div'); d.innerHTML = q.pic || q.fig || ''; const p = d.querySelector('.psg'); return p ? { title: text(p.querySelector('.pt').innerHTML), all: text(p.innerHTML) } : null; };
+  const sent = q => { const d = document.createElement('div'); d.innerHTML = q.fig; return text(d.querySelector('.sent').innerHTML); };
+  const top = q => { const d = document.createElement('div'); d.innerHTML = q.fig; return text(d.querySelector('.ww-top').innerHTML); };
+  const legs = q => { const d = document.createElement('div'); d.innerHTML = q.fig; return [...d.querySelectorAll('.ww-legs span')].map(x => text(x.innerHTML)); };
+  const tapped = q => { const d = document.createElement('div'); d.innerHTML = q.pic; const n = d.querySelector('[data-hit="' + q.answer + '"]'); return n ? text(n.innerHTML) : ''; };
+  const tf = (q, right) => q.answer === right && q.why && q.why.answer === (right ? 0 : 1) ? '' : 'expected ' + right;
+  /* a statement is "question answer": stated when the question is a fact question, worked out when it is an inference question */
+  const isStated = s => FACTQ.some(f => s.startsWith(f)) && !INFERQ.some(f => s.startsWith(f));
+  const isInferred = s => INFERQ.some(f => s.startsWith(f));
+  const view = m => VIEW[text(m.t)];
+
+  V['g6-stated'] = q => { const s = sent(q); return (isStated(s) || isInferred(s)) && q.answer === (isStated(s) ? 0 : 1) ? '' : 'wrong for ' + s; };
+  V['g6-which-inferred'] = q => { const ok = q.options.map(o => isInferred(text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the one inference'; };
+  V['g6-pick-inferred'] = q => H.sameSet(q.options.map((o, i) => isInferred(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the inferences are not the ones marked';
+  V['g6-stated-tf'] = q => tf(q, isStated(sent(q)));
+  V['g6-theme'] = (q, m) => { const k = THEME[text(m.t)]; return k && mk(q) === k[0] ? '' : 'expected ' + (k && k[0]); };
+  V['g6-topic-message'] = (q, m) => { const k = THEME[text(m.t)], wantTopic = /the topic/.test(text(q.q)); return k && mk(q) === (wantTopic ? k[1] : k[0]) ? '' : 'expected the ' + (wantTopic ? 'topic' : 'message'); };
+  V['g6-theme-tap'] = (q, m) => { const k = THEME[text(m.t)]; return k && tapped(q).includes(k[2]) ? '' : 'the tapped sentence does not show the message'; };
+  V['g6-theme-tf'] = (q, m) => { const k = THEME[text(m.t)]; return k ? tf(q, sent(q) === k[0]) : 'no key'; };
+  V['g6-supports'] = q => { const main = top(q), ok = q.options.map(o => supports(main, text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the detail that supports it'; };
+  V['g6-not-support'] = q => { const main = top(q), ok = q.options.map(o => !supports(main, text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the detail that does not support it'; };
+  V['g6-relevant'] = (q, m) => { const w = FITS[text(m.purpose)], ok = q.options.map(o => !!w && text(o).includes(w)); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the fact that fits'; };
+  V['g6-support-tf'] = q => tf(q, supports(top(q), legs(q)[0]));
+  V['g6-reliable'] = q => { const ok = q.options.map(o => isGood(text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the reliable source'; };
+  V['g6-reliable-tf'] = q => tf(q, isGood(text(q.fig)));
+  V['g6-why-reliable'] = q => /expert|official|recent|up to date|sources|counts carefully/i.test(mk(q)) && q.options.filter(o => /expert|official|recent|up to date|sources|counts/i.test(text(o))).length === 1 ? '' : 'expected the reason about who made it or when';
+  V['g6-pick-checks'] = q => H.sameSet(q.options.map((o, i) => CHECK.test(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the useful checks are not the ones marked';
+  V['g6-whose-pov'] = (q, m) => { const v = view(m); return v && mk(q) === v.who && card(q).all.includes('Posted by') ? '' : 'expected ' + (v && v.who); };
+  V['g6-thinks'] = (q, m) => { const v = view(m); return v && mk(q) === v.thinks ? '' : 'expected ' + (v && v.thinks); };
+  V['g6-bias-clue'] = (q, m) => { const v = view(m), ok = q.options.map(o => !!v && v.bias.includes(text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the biased words'; };
+  V['g6-bias-tap'] = (q, m) => { const v = view(m), t = tapped(q); return v && v.bias.some(b => t.includes(b)) && LOADED.test(t) ? '' : 'the tapped sentence shows no bias'; };
+  V['g6-bias-tf'] = q => tf(q, LOADED.test(sent(q)));
+  V['g6-missing'] = (q, m) => { const v = view(m); return v && mk(q) === v.missing && !card(q).all.includes(v.missing) ? '' : 'expected ' + (v && v.missing); };
+  V['g6-avoid-bias'] = (q, m) => { const v = view(m); return v && mk(q) === v.fix ? '' : 'expected ' + (v && v.fix); };
+  V['g6-fair-words'] = q => { const ok = q.options.map(o => !LOADED.test(text(o))); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the sentence without loaded words'; };
+  V['g6-fair-tf'] = q => tf(q, !LOADED.test(sent(q)));
+  V['g6-position'] = q => { const d = document.createElement('div'); d.innerHTML = q.fig; const s = text(d.querySelector('.wmeans').innerHTML); return q.answer === (isFor(s) ? 0 : 1) ? '' : 'wrong side for ' + s; };
+  V['g6-which-side'] = q => { const want = /for<\/b>|\bfor\b the idea/.test(q.q), ok = q.options.map(o => isFor(text(o)) === want); return ok.filter(Boolean).length === 1 && ok[q.answer] ? '' : 'expected the one ' + (want ? 'for' : 'against'); };
+  V['g6-sort-sides'] = q => H.sameSet(q.options.map((o, i) => isFor(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the reasons for it are not the ones marked';
+  V['g6-message'] = q => /same way/.test(mk(q)) && card(q).all.includes('same front door') ? '' : 'expected the message about entering the same way';
 })();

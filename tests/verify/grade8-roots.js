@@ -4,7 +4,8 @@
   const V = window.__verify, H = window.__H, text = s => H.strip(s).replace(/’/g, "'"), mk = q => text(H.marked(q) || '');
   /* the checker's own roots: the letters, and a word its meaning must contain */
   const KEY = { port: 'carr', spect: 'look', scope: 'look', dict: 'say', struct: 'build', rupt: 'break', aud: 'hear', vis: 'see', ject: 'throw', script: 'writ', graph: 'writ',
-    tele: 'far', phone: 'sound', bio: 'life', geo: 'earth', thermo: 'heat', meter: 'measure', micro: 'small', photo: 'light', manu: 'hand' };
+    tele: 'far', phone: 'sound', bio: 'life', geo: 'earth', thermo: 'heat', meter: 'measure', micro: 'small', photo: 'light', manu: 'hand', tract: 'pull', form: 'shape', cred: 'believ',
+    auto: 'self', logy: 'stud', chrono: 'time', mega: 'large' };
   const rootsIn = w => Object.keys(KEY).filter(r => w.includes(r));
   /* a meaning fits a word when it has the meaning of every root in the word */
   const fits = (word, meaning) => { const rs = rootsIn(word); return rs.length > 0 && rs.every(r => meaning.includes(KEY[r])); };
@@ -16,7 +17,12 @@
   V['g8-root-match'] = q => q.pairs.every(p => { const r = text(p[0]); return KEY[r] && text(p[1]).startsWith(KEY[r]); }) ? '' : 'a root is matched to the wrong meaning';
   V['g8-root-family'] = (q, m) => { const t = q.tiles.map(text); return mk(q).includes(m.root) && onlyOne(t, x => rootsIn(x).some(r => KEY[r] === KEY[m.root])) ? '' : 'the word marked is not in the ' + m.root + ' family'; };
   V['g8-root-build'] = (q, m) => { const w = q.answer.map(i => text(q.parts[i])).join(''); return fits(w, m.mean) && rootsIn(w).length >= 2 ? '' : 'built "' + w + '" for "' + m.mean + '"'; };
-  V['g8-root-tf'] = (q, m) => (text(m.said).includes(KEY[m.root]) === q.answer) ? '' : 'true/false is wrong for ' + m.root + ' = ' + m.said;
+  V['g8-root-tf'] = (q, m) => (text(m.said).includes(KEY[m.root]) === q.answer) && q.why.answer === 0 ? '' : 'true/false is wrong for ' + m.root + ' = ' + m.said;
+  V['g8-root-words-match'] = q => q.pairs.every(p => fits(text(p[0]), text(p[1]))) && q.pairs.every(p => q.pairs.filter(o => fits(text(o[0]), text(p[1]))).length === 1) ? '' : 'a word is matched to the wrong meaning';
+  /* a family: the root's letters, carrying the root's meaning */
+  const inFam = (w, r) => w.includes(r) && rootsIn(w).some(x => KEY[x] === KEY[r]);
+  V['g8-root-odd'] = (q, m) => !inFam(mk(q), m.root) && q.options.map(text).filter(o => !inFam(o, m.root)).length === 1 ? '' : 'the odd one out is not the one marked';
+  V['g8-root-pick-family'] = (q, m) => H.sameSet(q.options.map((o, i) => inFam(text(o), m.root) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the ' + m.root + ' family is not the words marked';
 
   /* word jobs, from the suffix */
   const jobOf = w => /ly$/.test(w) ? 'adverb' : /ive$/.test(w) ? 'adjective' : /ion$/.test(w) ? 'noun' : 'verb';
@@ -29,10 +35,16 @@
   V['g8-suffix-job'] = (q, m) => mk(q) === jobOf(m.word) ? '' : m.word + ' is a ' + jobOf(m.word);
   V['g8-suffix-match'] = q => q.pairs.every(p => jobOf(text(p[0])) === text(p[1])) ? '' : 'a word is matched to the wrong job';
   V['g8-suffix-nouns'] = q => H.sameSet(q.options.map((o, i) => jobOf(text(o)) === 'noun' ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the nouns are not the ones marked';
+  V['g8-suffix-job-tf'] = (q, m) => q.answer === (jobOf(m.word) === m.said) && q.why.answer === 0 ? '' : m.word + ' is a ' + jobOf(m.word);
+  V['g8-suffix-fix'] = (q, m) => { const want = needs(text(m.frame)), o = q.options.map(text); return jobOf(mk(q)) === want && onlyOne(o, x => jobOf(x) === want) ? '' : 'the gap needs a ' + want; };
+  /* the word each sentence put in the gap */
+  const filled = (frame, s) => { const [a, b] = frame.split('___'); return s.startsWith(a) && s.endsWith(b) ? s.slice(a.length, s.length - b.length) : ''; };
+  V['g8-suffix-sentence'] = (q, m) => { const f = text(m.frame), want = needs(f), ok = s => jobOf(filled(f, s)) === want && filled(f, s) !== '';
+    return ok(mk(q)) && onlyOne(q.options.map(text), ok) ? '' : 'the sentence marked does not use ' + want; };
   V['g8-suffix-build'] = (q, m) => { const w = q.answer.map(i => text(q.parts[i])).join(''); return jobOf(w) === m.want ? '' : 'built ' + w + ', not a ' + m.want; };
 
   /* spelling: the checker's own rules */
-  const VOW = /^[aeiou]/, STRESS_END = new Set(['begin', 'admit', 'regret', 'refer', 'commit', 'forget', 'occur', 'permit']);
+  const VOW = /^[aeiou]/, STRESS_END = new Set(['begin', 'admit', 'regret', 'refer', 'commit', 'forget', 'occur', 'permit', 'control', 'prefer', 'upset', 'forbid']);
   const add = (b, s) => {
     if (/e$/.test(b) && VOW.test(s)) return b.slice(0, -1) + s;
     if (/[^aeiou]y$/.test(b) && !/^i/.test(s)) return b.slice(0, -1) + 'i' + s;
@@ -41,10 +53,23 @@
   };
   const inFor = b => /^[bmp]/.test(b) ? 'im' : /^l/.test(b) ? 'il' : /^r/.test(b) ? 'ir' : 'in';
   const GOOD = new Set();
-  [['create', 'ion'], ['hope', 'ing'], ['value', 'able'], ['amaze', 'ing'], ['excite', 'ment'], ['use', 'ful'], ['care', 'less'], ['manage', 'ment'], ['happy', 'ness'], ['beauty', 'ful'], ['carry', 'ed'],
-    ['busy', 'ly'], ['play', 'ful'], ['enjoy', 'ment'], ['study', 'ing'], ['begin', 'ing'], ['admit', 'ed'], ['regret', 'able'], ['refer', 'al'], ['visit', 'ed'], ['open', 'ing']].forEach(x => GOOD.add(add(x[0], x[1])));
+  [['create', 'ion'], ['hope', 'ing'], ['value', 'able'], ['amaze', 'ing'], ['excite', 'ment'], ['use', 'ful'], ['care', 'less'], ['manage', 'ment'], ['write', 'ing'], ['move', 'ment'],
+    ['nerve', 'ous'], ['adore', 'able'], ['achieve', 'ment'], ['close', 'ness'], ['complete', 'ly'], ['arrange', 'ment'], ['drive', 'er'], ['safe', 'ty'],
+    ['happy', 'ness'], ['beauty', 'ful'], ['carry', 'ed'], ['busy', 'ly'], ['play', 'ful'], ['enjoy', 'ment'], ['study', 'ing'], ['try', 'ed'], ['cry', 'ing'], ['angry', 'ly'], ['deny', 'al'],
+    ['pity', 'ful'], ['employ', 'er'], ['lazy', 'ness'], ['hurry', 'ing'], ['pay', 'ment'], ['delay', 'ed'], ['worry', 'ed'],
+    ['begin', 'ing'], ['admit', 'ed'], ['regret', 'able'], ['refer', 'al'], ['visit', 'ed'], ['open', 'ing'], ['forget', 'ing'], ['occur', 'ed'], ['permit', 'ed'], ['control', 'ed'],
+    ['prefer', 'ed'], ['limit', 'ed'], ['happen', 'ing'], ['edit', 'or'], ['offer', 'ing'], ['upset', 'ing'], ['forbid', 'en'], ['commit', 'ed'], ['budget', 'ed']].forEach(x => GOOD.add(add(x[0], x[1])));
   V['g8-spell'] = (q, m) => mk(q) === add(m.base, m.suf) ? '' : 'expected ' + add(m.base, m.suf);
   V['g8-spell-tf'] = (q, m) => (m.shown === add(m.base, m.suf)) === q.answer && /vowel|consonant|stress/.test(text(q.why.options[q.why.answer])) ? '' : 'true/false is wrong for ' + m.shown;
   V['g8-spell-pick'] = q => H.sameSet(q.options.map((o, i) => GOOD.has(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the right spellings are not the ones marked';
+  /* what happens to the base: e dropped or y changed (it no longer starts the word), or the last letter doubled */
+  const move = (b, s) => { const w = add(b, s); return /e$/.test(b) ? (w.startsWith(b) ? 'keep the e' : 'drop the e') : /y$/.test(b) ? (w.startsWith(b) ? 'keep the y' : 'change y to i')
+    : w.startsWith(b + b.slice(-1)) ? 'double the last letter' : 'just add it'; };
+  V['g8-spell-rule'] = (q, m) => mk(q) === move(m.base, m.suf) ? '' : 'expected ' + move(m.base, m.suf);
   V['g8-in-prefix'] = (q, m) => mk(q) === inFor(m.base) ? '' : 'expected ' + inFor(m.base) + '-';
+  const okIn = w => w.length > 2 && w === inFor(w.slice(2)) + w.slice(2);
+  V['g8-in-tf'] = (q, m) => q.answer === (m.shown === inFor(m.base) + m.base) && q.why.answer === 0 ? '' : 'true/false is wrong for ' + m.shown;
+  V['g8-in-pick'] = q => H.sameSet(q.options.map((o, i) => okIn(text(o)) ? i : -1).filter(i => i >= 0), q.answer) ? '' : 'the right spellings are not the ones marked';
+  V['g8-in-mean'] = (q, m) => mk(q) === 'not ' + m.base ? '' : 'expected not ' + m.base;
+  V['g8-in-match'] = q => q.pairs.every(p => inFor(text(p[0])) === text(p[1])) ? '' : 'a word is matched to the wrong prefix';
 })();

@@ -1,4 +1,5 @@
-/* Grade 1: letters and sounds (phonics: grapheme-phoneme correspondence).
+/* Grade 1: letters and sounds (phonics: grapheme-phoneme correspondence). A full chapter: every idea has two worked
+   examples, three questions together and five on your own, and its own practice skill asked in four or more ways.
    Ontario 2023 Language, Grade 1, B2.3: "identify, read, and spell most common grapheme-phoneme correspondences of
    consonants and vowels, with automaticity". Following the Language Foundations Continuum for Grade 1: short vowels,
    the digraphs sh, ch, th, wh and ck, silent e (VCe), the vowel teams ee, ai, ay and oa, and ar and or.
@@ -25,11 +26,14 @@
 
   /* long vowels: silent e, vowel teams, and vowels with r. [word, clue, a word with one letter different] */
   var SILENT = [['kite', 'it flies on a string', 'kit'], ['pine', 'a tree with needles', 'pin'], ['cape', 'a superhero wears it', 'cap'], ['tube', 'toothpaste comes in it', 'tub'],
-    ['cane', 'it helps someone walk', 'can'], ['note', 'a short letter', 'not'], ['cube', 'a box shape with six sides', 'cub'], ['hide', 'what you do in hide-and-seek', 'hid'], ['made', 'I ___ a card for Mom.', 'mad']];
+    ['cane', 'it helps someone walk', 'can'], ['note', 'a short letter', 'not'], ['cube', 'a box shape with six sides', 'cub'], ['hide', 'what you do in hide-and-seek', 'hid'], ['made', 'I ___ a card for Mom.', 'mad'],
+    ['tape', 'it is sticky', 'tap'], ['hope', 'to wish for something', 'hop'], ['bite', 'what you do to an apple', 'bit'], ['robe', 'you wear it after a bath', 'rob'],
+    ['slide', 'you go down it at the park', 'slid'], ['plane', 'it flies in the sky', 'plan']];
   var TEAMS = { ee: ['tree', 'bee', 'feet', 'seed', 'sheep', 'green'], ai: ['rain', 'tail', 'snail', 'paint', 'train'], ay: ['day', 'play', 'hay', 'tray'], oa: ['boat', 'coat', 'road', 'soap', 'goat'] };
   var TCLUES = [['boat', 'it floats on the lake'], ['tree', 'it has leaves and a trunk'], ['rain', 'it falls from the clouds'], ['feet', 'you stand on them'], ['coat', 'you wear it when it is cold'],
     ['tail', 'a dog wags it'], ['seed', 'a plant grows from it'], ['road', 'cars drive on it'], ['day', 'the opposite of night'], ['soap', 'you wash your hands with it']];
-  var RCLUES = [['car', 'it drives on the road'], ['star', 'it shines in the night sky'], ['farm', 'cows and pigs live there'], ['corn', 'a yellow vegetable on a cob'], ['fork', 'you eat with it'], ['horse', 'an animal you can ride']];
+  var RCLUES = [['car', 'it drives on the road'], ['star', 'it shines in the night sky'], ['farm', 'cows and pigs live there'], ['corn', 'a yellow vegetable on a cob'], ['fork', 'you eat with it'], ['horse', 'an animal you can ride'],
+    ['park', 'you play on the swings there'], ['jar', 'jam comes in it'], ['shark', 'a big fish with sharp teeth'], ['storm', 'lots of wind and rain'], ['card', 'you send it on a birthday'], ['short', 'the opposite of tall']];
   var teamOf = function (w) { return ['ee', 'ai', 'ay', 'oa', 'ar', 'or'].filter(function (t) { return w.indexOf(t) >= 0; })[0]; };
   function gapAt(w, part) { var at = w.indexOf(part); return '<span class="sent">' + w.slice(0, at) + W.gap() + w.slice(at + part.length) + '</span>'; }
 
@@ -108,28 +112,123 @@
       explain: W.tile(W.hl(c[0], c[0].indexOf(t), c[0].indexOf(t) + 2)), meta: { k: 'g1-fill-team', clue: c[1] } });
   }
 
+  /* ---------- more question makers ---------- */
+  var PICVC = CVC.filter(function (w) { return W.pics.indexOf(w) >= 0; });
+  function buildCvc(lv) {
+    var w = R.pick(PICVC), v = vowelOf(w), extra = R.some(VOWELS.filter(function (x) { return x !== v; }), lv > 1 ? 2 : 1), parts = w.split('').concat(extra);
+    return { q: 'Build the word.', fig: W.pic(w), type: 'build', parts: parts, answer: [0, 1, 2], hint: 'Say it slowly. Which vowel is in the middle?', explain: W.tile(W.hl(w, 1, 2)), meta: { k: 'g1-build-cvc', w: w } };
+  }
+  function vowelWord(lv) {
+    var g = R.pick(GAPS), w = g[1], v = vowelOf(w), at = w.indexOf(v), wrong = R.some(VOWELS.filter(function (x) { return x !== v; }), lv > 1 ? 2 : 1).map(function (x) { return w.slice(0, at) + x + w.slice(at + 1); });
+    return Q.one('Which word makes sense?', w, wrong, { fig: W.sent(g[0].replace('{' + w + '}', W.gap())), hint: 'Read the sentence with each word.',
+      explain: W.sent(g[0].replace('{' + w + '}', '<b>' + w + '</b>')), meta: { k: 'g1-vowel-word', word: w } });
+  }
+  function vowelFitTf(lv) {
+    var g = R.pick(GAPS), w = g[1], v = vowelOf(w), at = w.indexOf(v), right = R.int(0, 1) === 1, said = right ? w : w.slice(0, at) + R.pick(VOWELS.filter(function (x) { return x !== v; })) + w.slice(at + 1);
+    return { q: 'Does this sentence make sense?', fig: W.sent(g[0].replace('{' + w + '}', '<b>' + said + '</b>')), type: 'tf', answer: right,
+      why: { options: ['The word fits.', 'It needs a different vowel.'], answer: right ? 0 : 1 },
+      hint: 'Read the word slowly. Does it fit?', explain: W.sent(g[0].replace('{' + w + '}', '<b>' + w + '</b>')), meta: { k: 'g1-vowel-fit-tf', word: w, said: said } };
+  }
+  function gapPic(lv) {
+    var w = R.pick(PICVC), v = vowelOf(w);
+    return Q.tiles('Which vowel finishes the word?', v, R.some(VOWELS.filter(function (x) { return x !== v; }), lv > 1 ? 4 : 2), { fig: W.pic(w) + gapAt(w, v),
+      hint: 'Say the picture' + '’' + 's name slowly.', explain: W.tile(W.hl(w, 1, 2)), meta: { k: 'g1-gap-pic', w: w } });
+  }
+  function digraphTf() {
+    var w = R.pick(DWORDS), d = dOf(w), right = R.int(0, 1) === 1, said = right ? d : R.pick(DIGRAPHS.filter(function (x) { return x !== d; }));
+    return { q: Q.name() + ' says <b>' + w + '</b> has <b>' + said + '</b> in it.', fig: W.tile(w), type: 'tf', answer: right,
+      why: { options: ['Those two letters are in the word.', 'A different pair is in the word.'], answer: right ? 0 : 1 },
+      hint: 'Look for two letters side by side that make one sound.', explain: W.tile(W.hl(w, w.indexOf(d), w.indexOf(d) + 2)), meta: { k: 'g1-digraph-tf', word: w, said: said } };
+  }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function clueWord(lv) {
+    var c = R.pick(DCLUES), d = dOf(c[0]), wrong = DIGRAPHS.filter(function (x) { return x !== d && x !== 'ck'; }).map(function (x) { return c[0].replace(d, x); });
+    return Q.one('Which word fits? <i>' + cap(c[1]) + '.</i>', c[0], R.some(wrong, lv > 1 ? 2 : 1), { hint: 'Read each word. Which one fits the clue?',
+      explain: W.tile(W.hl(c[0], c[0].indexOf(d), c[0].indexOf(d) + 2)), meta: { k: 'g1-clue-word', clue: c[1] } });
+  }
+  function buildDigraph(lv) {
+    var c = R.pick(DCLUES.filter(function (x) { return x[0].length <= 5 && !/(.)\1/.test(x[0]); })), d = dOf(c[0]), at = c[0].indexOf(d), parts = [], ans = [];
+    for (var i = 0; i < c[0].length; i++) { if (i === at) { parts.push(d); i++; } else parts.push(c[0].charAt(i)); ans.push(ans.length); }
+    parts = parts.concat(R.some(DIGRAPHS.filter(function (x) { return x !== d; }), lv > 1 ? 2 : 1));
+    return { q: 'Build the word. <i>' + cap(c[1]) + '.</i>', type: 'build', parts: parts, answer: ans, hint: 'Which two letters make one sound in it?',
+      explain: W.tile(W.hl(c[0], at, at + 2)), meta: { k: 'g1-build-digraph', clue: c[1] } };
+  }
+  function clueTf() {
+    var c = R.pick(DCLUES), d = dOf(c[0]), right = R.int(0, 1) === 1, said = right ? c[0] : c[0].replace(d, R.pick(['sh', 'ch', 'th'].filter(function (x) { return x !== d; })));
+    return { q: '<i>' + cap(c[1]) + '.</i> ' + Q.name() + ' writes <b>' + said + '</b>.', type: 'tf', answer: right,
+      why: { options: ['The two-letter sound is right.', 'It needs a different two-letter sound.'], answer: right ? 0 : 1 },
+      hint: 'Say the word. Which two letters make that sound?', explain: W.tile(c[0]), meta: { k: 'g1-clue-tf', clue: c[1], said: said } };
+  }
+  function silentPick() {
+    var right = R.some(SILENT, 2).map(function (x) { return x[0]; }), wrong = R.some(SILENT.filter(function (x) { return right.indexOf(x[0]) < 0; }), 2).map(function (x) { return x[2]; });
+    return Q.all('Pick every word with a <b>silent e</b>.', right, wrong, { hint: 'Look for an e on the end.', explain: right.join(', ') + ': the vowel says its name.', meta: { k: 'g1-silent-pick' } });
+  }
+  function silentTf() {
+    var s = R.pick(SILENT), right = R.int(0, 1) === 1, said = right ? s[0] : R.pick(SILENT.filter(function (x) { return x !== s; }))[0];
+    return { q: W.tile(s[2]) + ' + e. ' + Q.name() + ' says it makes <b>' + said + '</b>.', type: 'tf', answer: right,
+      why: { options: ['Adding e makes that word.', 'Adding e makes a different word.'], answer: right ? 0 : 1 },
+      hint: 'Put e on the end.', explain: W.tile(s[2]) + ' + e = ' + W.tile(s[0]), meta: { k: 'g1-silent-tf', base: s[2], said: said } };
+  }
+  function teamPick() {
+    var t = R.pick(Object.keys(TEAMS)), right = R.some(TEAMS[t], 2), wrong = R.some(Object.keys(TEAMS).filter(function (x) { return x !== t; }).map(function (x) { return TEAMS[x]; }).reduce(function (a, b) { return a.concat(b); }, []), 2);
+    return Q.all('Pick every word with <b>' + t + '</b>.', right, wrong, { hint: 'Look for the two letters side by side.', explain: right.join(', ') + ' have ' + t + '.', meta: { k: 'g1-team-pick', t: t } });
+  }
+  function matchTeam() {
+    var ts = R.some(Object.keys(TEAMS), 3);
+    return { q: 'Match each word to its vowel team.', type: 'match', pairs: ts.map(function (t) { return [R.pick(TEAMS[t]), t]; }), hint: 'Find the two letters that go together.', explain: 'Two letters, one vowel sound.', meta: { k: 'g1-match-team' } };
+  }
+  function teamTf() {
+    var t = R.pick(Object.keys(TEAMS)), w = R.pick(TEAMS[t]), right = R.int(0, 1) === 1, said = right ? t : R.pick(Object.keys(TEAMS).filter(function (x) { return x !== t; }));
+    return { q: Q.name() + ' says <b>' + w + '</b> has the vowel team <b>' + said + '</b>.', fig: W.tile(w), type: 'tf', answer: right,
+      why: { options: ['Those letters are in the word.', 'A different team is in the word.'], answer: right ? 0 : 1 },
+      hint: 'Look for two vowels side by side, or ay.', explain: W.tile(W.hl(w, w.indexOf(t), w.indexOf(t) + 2)), meta: { k: 'g1-team-tf', word: w, said: said } };
+  }
+  function rWhich(lv) {
+    var t = R.pick(['ar', 'or']), right = R.pick(RCLUES.filter(function (c) { return teamOf(c[0]) === t; }))[0], wrong = R.some(RCLUES.filter(function (c) { return teamOf(c[0]) !== t; }), lv > 1 ? 2 : 1).map(function (c) { return c[0]; });
+    return Q.one('Which word has <b>' + t + '</b>, like ' + (t === 'ar' ? 'car' : 'fork') + '?', right, wrong, { hint: 'Look for the vowel and the r together.',
+      explain: W.tile(W.hl(right, right.indexOf(t), right.indexOf(t) + 2)), meta: { k: 'g1-r-which', t: t } });
+  }
+  function pickAr() {
+    var ar = R.some(RCLUES.filter(function (c) { return teamOf(c[0]) === 'ar'; }), 2), or = R.pick(RCLUES.filter(function (c) { return teamOf(c[0]) === 'or'; }));
+    var ws = R.shuffle(ar.concat([or])).map(function (c) { return c[0]; });
+    return Q.all('Pick every word with <b>ar</b>, like car.', ar.map(function (c) { return c[0]; }), [or[0], R.pick(TEAMS.ee)], { hint: 'Look for a and r together.', explain: ws.join(', '), meta: { k: 'g1-pick-ar' } });
+  }
+  function rTf() {
+    var c = R.pick(RCLUES), t = teamOf(c[0]), right = R.int(0, 1) === 1, said = right ? c[0] : c[0].replace(t, t === 'ar' ? 'or' : 'ar');
+    return { q: '<i>' + cap(c[1]) + '.</i> ' + Q.name() + ' writes <b>' + said + '</b>.', type: 'tf', answer: right,
+      why: { options: ['It is spelled right.', 'It needs the other vowel before the r.'], answer: right ? 0 : 1 },
+      hint: '<b>ar</b> as in car. <b>or</b> as in fork.', explain: W.tile(c[0]), meta: { k: 'g1-r-tf', clue: c[1], said: said } };
+  }
+
   Atlas.register('phonics', {
+    full: true,
     lessons: [{
       id: 'short', title: 'Short vowels', sub: 'a, e, i, o and u in short words.',
       concepts: [
-        { slug: 'vowels', title: 'Five vowels', exp: ['B2.3'], skill: 'short-vowels',
+        { slug: 'vowels', title: 'Five vowels', exp: ['B2.3'], skill: 'vowels',
           model: [
             step(W.tile('a') + W.tile('e') + W.tile('i') + W.tile('o') + W.tile('u'), 'Every word has at least one.'),
             step(W.pic('cat') + W.tile(W.hl('cat', 1, 2)), W.sound('a') + ' as in cat.'),
-            step(W.tile(W.hl('pig', 1, 2)) + W.tile(W.hl('dog', 1, 2)), W.sound('i') + ' as in pig. ' + W.sound('o') + ' as in dog.')
+            step(W.pic('bed') + W.tile(W.hl('bed', 1, 2)), W.sound('e') + ' as in bed.'),
+            step(W.pic('pig') + W.tile(W.hl('pig', 1, 2)), W.sound('i') + ' as in pig.'),
+            step(W.pic('dog') + W.tile(W.hl('dog', 1, 2)), W.sound('o') + ' as in dog.'),
+            step(W.pic('sun') + W.tile(W.hl('sun', 1, 2)), W.sound('u') + ' as in sun.')
           ],
-          guided: [function () { return whichVowel(1); }, function () { return whichVowel(1); }],
-          check: [function () { return whichVowel(1); }, function () { return sameVowel(1); }],
+          guided: [function () { return whichVowel(1); }, function () { return sameVowel(1); }, function () { return buildCvc(1); }],
+          check: [function () { return whichVowel(1); }, function () { return sameVowel(1); }, pickVowel, function () { return buildCvc(2); }, function () { return whichVowel(2); }],
           coach: '<p>Give each vowel an anchor word and say it with the sound: a, apple; e, egg; i, igloo; o, otter; u, up. Say the sound, not the name.</p>',
           mistake: '<p>Mixing up e and i (pen and pin). Exaggerate the mouth: /e/ is a wide, open smile; /i/ is a small smile.</p>' },
-        { slug: 'vowel-fit', title: 'Which vowel makes sense?', exp: ['B2.3'], skill: 'short-vowels',
+        { slug: 'vowel-fit', title: 'Which vowel makes sense?', exp: ['B2.3'], skill: 'vowel-fit',
           model: [
             step(W.sent('The <b>c</b>' + W.gap() + '<b>t</b> naps in the sun.'), 'Try each vowel.'),
             step(W.sent('cot? cut? <b>cat</b>!'), 'Only one makes sense.'),
-            step(W.sent('The c' + W.hl('a', 0, 1) + 't naps in the sun.'))
+            step(W.sent('The c' + W.hl('a', 0, 1) + 't naps in the sun.')),
+            step(W.sent('I sleep in my <b>b</b>' + W.gap() + '<b>d</b>.'), 'Again.'),
+            step(W.sent('bad? bud? <b>bed</b>!')),
+            step(W.sent('I sleep in my b' + W.hl('e', 0, 1) + 'd.'))
           ],
-          guided: [function () { return vowelGap(1); }, function () { return vowelGap(1); }],
-          check: [function () { return vowelGap(1); }, function () { return vowelGap(2); }],
+          guided: [function () { return vowelGap(1); }, function () { return vowelWord(1); }, function () { return gapPic(1); }],
+          check: [function () { return vowelGap(1); }, function () { return vowelWord(2); }, function () { return vowelFitTf(2); }, function () { return gapPic(2); }, function () { return vowelGap(2); }],
           coach: '<p>Write the word with a gap on paper. Let the child write each vowel in the gap, read the word, and decide if it makes sense.</p>',
           mistake: '<p>Picking a vowel without reading the whole sentence. Read the sentence aloud with each choice.</p>' }
       ]
@@ -141,63 +240,74 @@
             step(W.tile(W.hl('ship', 0, 2)), '<b>sh</b>: ' + W.sound('sh') + ', like hush.'),
             step(W.tile(W.hl('chin', 0, 2)), '<b>ch</b>: ' + W.sound('ch') + ', like a train.'),
             step(W.tile(W.hl('thin', 0, 2)) + W.tile(W.hl('whale', 0, 2)), '<b>th</b>: ' + W.sound('th') + ', tongue out. <b>wh</b>: ' + W.sound('wh', '/w/') + '.'),
-            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b>: ' + W.sound('ck', '/k/') + ', at the end.')
+            step(W.tile(W.hl('duck', 2, 4)), '<b>ck</b>: ' + W.sound('ck', '/k/') + ', at the end.'),
+            step(W.pic('fish') + W.tile(W.hl('fish', 2, 4)), 'At the end too: fi-<b>sh</b>.')
           ],
-          guided: [function () { return whichDigraph(1); }, function () { return whichDigraph(1); }],
-          check: [function () { return whichDigraph(1); }, function () { return fillDigraph(1); }],
+          guided: [function () { return whichDigraph(1); }, pickDigraph, digraphTf],
+          check: [function () { return whichDigraph(1); }, matchDigraph, pickDigraph, digraphTf, function () { return whichDigraph(2); }],
           coach: '<p>Write each pair on a card. Tape the two letters together so the child sees them as one sound. Read words with a finger under the pair.</p>',
           mistake: '<p>Reading sh as /s/ /h/. Cover the rest of the word and say the pair as one sound first.</p>' },
-        { slug: 'clue', title: 'Use the clue', exp: ['B2.3'], skill: 'digraphs',
+        { slug: 'clue', title: 'Use the clue', exp: ['B2.3'], skill: 'digraph-clue',
           model: [
             step(gapAt('fish', 'sh'), '<i>It swims in a lake.</i>'),
-            step(W.tile(W.hl('fish', 2, 4)), 'The word is fish: <b>sh</b>.')
+            step(W.tile(W.hl('fish', 2, 4)), 'The word is fish: <b>sh</b>.'),
+            step(gapAt('lunch', 'ch'), '<i>A meal in the middle of the day.</i>'),
+            step(W.tile(W.hl('lunch', 3, 5)), 'lun-<b>ch</b>: a short burst.')
           ],
-          guided: [function () { return fillDigraph(1); }, function () { return fillDigraph(1); }],
-          check: [function () { return fillDigraph(2); }, function () { return fillDigraph(2); }],
+          guided: [function () { return fillDigraph(1); }, function () { return clueWord(1); }, function () { return buildDigraph(1); }],
+          check: [function () { return fillDigraph(2); }, function () { return clueWord(2); }, clueTf, function () { return buildDigraph(2); }, function () { return fillDigraph(3); }],
           coach: '<p>Say the word aloud and stretch the two-letter sound: "fi-shhh". Ask which pair of letters makes that sound.</p>',
           mistake: '<p>Choosing ch for sh. Say both: /ch/ is a short burst, /sh/ is a long, quiet sound.</p>' }
       ]
     }, {
       id: 'long', title: 'Long vowels', sub: 'Silent e, vowel teams, and ar and or.',
       concepts: [
-        { slug: 'silent-e', title: 'Silent e', exp: ['B2.3'], skill: 'vowel-patterns',
+        { slug: 'silent-e', title: 'Silent e', exp: ['B2.3'], skill: 'silent-e',
           model: [
             step(W.tile('kit'), 'Short i.'),
             step(W.tile('kit') + W.tile('+ e'), 'Add e on the end.'),
-            step(W.pic('kite') + W.tile(W.hl('kite', 3, 4)), 'You do not hear the e. The i says its name.')
+            step(W.pic('kite') + W.tile(W.hl('kite', 3, 4)), 'You do not hear the e. The i says its name.'),
+            step(W.tile('cap') + W.tile('+ e'), 'Again, with a.'),
+            step(W.tile(W.hl('cape', 3, 4)), 'The a says its name: <b>cape</b>.')
           ],
-          guided: [function () { return addE(1); }, function () { return silentE(1); }],
-          check: [function () { return silentE(1); }, function () { return silentE(2); }],
+          guided: [function () { return addE(1); }, function () { return silentE(1); }, silentTf],
+          check: [function () { return silentE(1); }, function () { return addE(2); }, silentPick, silentTf, function () { return silentE(2); }],
           coach: '<p>Write pairs on cards (cap and cape, pin and pine). Read the first, then add the e and read again. Notice the vowel saying its name.</p>',
           mistake: '<p>Reading the e out loud ("kit-eh"). The e is silent; its job is to change the vowel.</p>' },
-        { slug: 'teams', title: 'Vowel teams', exp: ['B2.3'], skill: 'vowel-patterns',
+        { slug: 'teams', title: 'Vowel teams', exp: ['B2.3'], skill: 'teams',
           model: [
             step(W.pic('tree') + W.tile(W.hl('tree', 2, 4)), '<b>ee</b> says ' + W.sound('ee', '/ē/') + '.'),
+            step(W.pic('bee') + W.tile(W.hl('bee', 1, 3)), 'Same team.'),
             step(W.tile(W.hl('rain', 1, 3)) + W.tile(W.hl('day', 1, 3)), '<b>ai</b> and <b>ay</b> say ' + W.sound('ai', '/ā/') + '.'),
             step(W.tile(W.hl('boat', 1, 3)), '<b>oa</b> says ' + W.sound('oa', '/ō/') + '.')
           ],
           key: '<p>Two vowels together: the first one often says its name.</p>',
-          guided: [function () { return teamIn(1); }, function () { return fillTeam(1); }],
-          check: [function () { return teamIn(2); }, function () { return fillTeam(2); }],
+          guided: [function () { return teamIn(1); }, function () { return fillTeam(1); }, teamTf],
+          check: [function () { return teamIn(2); }, function () { return fillTeam(2); }, teamPick, matchTeam, function () { return fillTeam(3); }],
           coach: '<p>Sort word cards into piles: ee, ai, ay, oa. Read each pile aloud.</p>',
           mistake: '<p>Reading each vowel on its own (bo-at). Cover one vowel to show that the pair makes one sound.</p>' },
-        { slug: 'ar-or', title: 'ar and or', exp: ['B2.3'], skill: 'vowel-patterns',
+        { slug: 'ar-or', title: 'ar and or', exp: ['B2.3'], skill: 'ar-or',
           model: [
             step(W.tile(W.hl('car', 1, 3)), W.sound('ar', '<b>ar</b>') + ' as in car.'),
+            step(W.tile(W.hl('star', 2, 4)) + W.tile(W.hl('farm', 1, 3)), 'More words with it.'),
             step(W.tile(W.hl('fork', 1, 3)), W.sound('or', '<b>or</b>') + ' as in fork.'),
-            step(W.tile(W.hl('star', 2, 4)) + W.tile(W.hl('corn', 1, 3)))
+            step(W.tile(W.hl('corn', 1, 3)) + W.tile(W.hl('storm', 2, 4)))
           ],
           key: '<p>The r changes the sound of the vowel.</p>',
-          guided: [function () { return fillR(1); }, function () { return fillR(1); }],
-          check: [function () { return fillR(1); }, function () { return fillR(2); }],
+          guided: [function () { return fillR(1); }, function () { return rWhich(1); }, rTf],
+          check: [function () { return fillR(1); }, function () { return rWhich(2); }, pickAr, rTf, function () { return fillR(2); }],
           coach: '<p>Practise with a pirate "arrr" for ar, and a foghorn "orrr" for or.</p>',
           mistake: '<p>Spelling "car" as "cr". The vowel is still there: a, then r.</p>' }
       ]
     }],
     practice: [
-      { id: 'short-vowels', name: 'Short vowels', code: 'B2.3', gen: vowelGap },
+      { id: 'vowels', name: 'Five vowels', code: 'B2.3', gen: whichVowel },
+      { id: 'vowel-fit', name: 'Which vowel makes sense?', code: 'B2.3', gen: vowelGap },
       { id: 'digraphs', name: 'Two letters, one sound', code: 'B2.3', gen: whichDigraph },
-      { id: 'vowel-patterns', name: 'Long vowels', code: 'B2.3', gen: silentE }
+      { id: 'digraph-clue', name: 'Two-letter sounds: use the clue', code: 'B2.3', gen: fillDigraph },
+      { id: 'silent-e', name: 'Silent e', code: 'B2.3', gen: silentE },
+      { id: 'teams', name: 'Vowel teams', code: 'B2.3', gen: teamIn },
+      { id: 'ar-or', name: 'ar and or', code: 'B2.3', gen: fillR }
     ],
     tasks: [
       { id: 'sound-cards', title: 'Letter-sound cards', code: 'B2.3', pic: W.icon('read'), say: 'Say the sound for each card.',
@@ -207,8 +317,12 @@
   });
 
   Q.shapes('phonics', {
-    'short-vowels': [[1, 'same-vowel', sameVowel], [1, 'which-vowel', whichVowel], [2, 'pick', pickVowel]],
-    digraphs: [[1, 'fill', fillDigraph], [2, 'pick', pickDigraph], [2, 'match', matchDigraph]],
-    'vowel-patterns': [[1, 'add-e', addE], [1, 'team', teamIn], [1, 'fill-team', fillTeam], [2, 'ar-or', fillR]]
+    vowels: [[1, 'same-vowel', sameVowel], [1, 'build', buildCvc], [2, 'pick', pickVowel]],
+    'vowel-fit': [[1, 'word', vowelWord], [1, 'picture', gapPic], [2, 'tf', vowelFitTf]],
+    digraphs: [[2, 'pick', pickDigraph], [2, 'match', matchDigraph], [1, 'tf', digraphTf]],
+    'digraph-clue': [[1, 'word', clueWord], [1, 'build', buildDigraph], [2, 'tf', clueTf]],
+    'silent-e': [[1, 'add-e', addE], [2, 'pick', silentPick], [1, 'tf', silentTf]],
+    teams: [[1, 'fill', fillTeam], [2, 'pick', teamPick], [2, 'match', matchTeam], [1, 'tf', teamTf]],
+    'ar-or': [[1, 'which', rWhich], [2, 'pick', pickAr], [1, 'tf', rTf]]
   });
 })();
