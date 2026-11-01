@@ -110,8 +110,9 @@
   function scoop() {
     var p = R.pick(PHRASED.filter(function (x) { return x.length === 3; })), words = p.join(' ').split(' '), bad = [];
     words.forEach(function (w, i) { if (i > 0 && JOINS.indexOf(w.toLowerCase()) >= 0 && i < words.length - 1) bad.push(words.slice(i - 1, i + 1).join(' ')); });
-    var good = R.pick(p);
-    return Q.tiles('Which words go together in <b>one breath</b>?', good.replace(/[.,]$/, ''), R.some(bad.filter(function (b) { return good.indexOf(b) < 0; }), 2), {
+    function others(g) { return bad.filter(function (b) { return g.indexOf(b) < 0; }); }
+    var good = R.pick(p.filter(function (g) { return others(g).length > 0; }));
+    return Q.tiles('Which words go together in <b>one breath</b>?', good.replace(/[.,]$/, ''), R.some(others(good), 2), {
       fig: W.sent(p.join(' ')), hint: 'A small word like "the" goes with the word after it.', explain: W.sent(p.join(' / ')), meta: { k: 'g3-scoop' } });
   }
 
