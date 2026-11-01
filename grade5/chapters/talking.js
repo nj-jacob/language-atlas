@@ -22,7 +22,7 @@
     ['I started learning the guitar.', 'Why did you choose the guitar?', 'Is it hard?', 'Are you going to the dance?'],
     ['My family went ice fishing.', 'What did you do while you waited for a bite?', 'Was it cold?', 'Do you like hockey?'],
     ['I made a short film with my cousin.', 'How did you decide what it would be about?', 'Was it good?', 'Is lunch at noon?'],
-    ['We planted a garden at school.', 'Why did the class pick those plants?', 'Is it big?', 'Can we go outside?'],
+    ['We planted a garden at school.', 'Why did the class pick those plants?', 'Is it sunny there?', 'Can we go outside?'],
     ['I visited my aunt in Whitehorse.', 'What is life like there in winter?', 'Was it far?', 'Do you like soup?'],
     ['I learned to make dumplings.', 'How do you fold them so they stay closed?', 'Were they good?', 'Is it Friday?']];
   /* showing interest at the right time, and moves that only seem to */
