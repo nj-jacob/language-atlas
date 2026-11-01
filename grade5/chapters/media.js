@@ -29,7 +29,7 @@
   var BADPOST = ['a mean joke about a classmate', 'a rude comment on a stranger' + AP + 's video', 'a photo of a friend, posted without asking', 'an angry post in all capital letters'];
   var PRIVATE = ['your home address', 'your password', 'your birthday', 'your phone number', 'your school' + AP + 's name', 'your location right now', 'a photo of the front of your house'];
   var OKSHARE = ['your favourite book', 'what you think of a movie', 'a drawing of a dragon', 'your favourite sport', 'a joke you made up'];
-  var STRONG = ['Maple!Canoe7Jump', 'Purple+Moose42Sky', 'Snow*Fort9Pickle', 'Loon&Lake83Paddle', 'River$Toast5Kite'], WEAK = ['password', '12345', 'mydog', 'abc123', 'hockey', 'qwerty'];
+  var STRONG = ['Maple!Canoe7Jump', 'Purple+Moose42Sky', 'Snow*Fort9Pickle', 'Loon&Lake83Paddle', 'River$Toast5Kite'], WEAK = ['password', '1234', 'mydog', 'abc123', 'hockey', 'qwerty'];
   /* [a privacy problem, the safe choice, choices that are not] */
   var PRIV = [['A stranger in a game asks where you live.', 'Do not answer, and tell a grown-up.', ['Tell them your street.', 'Give them your school' + AP + 's name instead.']],
     ['A website asks for your birthday before you can play.', 'Ask a grown-up first.', ['Type it in.', 'Make up a fake one for every site.']],
