@@ -56,7 +56,7 @@
   /* [something you could share online, is it safe to share?] */
   var PRIV = [['your favourite colour', true], ['a book you liked', true], ['a drawing of a moose', true], ['your favourite sport', true],
     ['your home address', false], ['your full name and school', false], ['your password', false], ['your phone number', false]];
-  var STRONG = ['Maple!Trail-42', 'Blue#Canoe-19', 'Lake7Moose!Run', 'River&Fox-73', 'Snow9Owl#Hill', 'Pine-Cone!58'], WEAK = ['password', 'ava2015', 'qwerty', '123456', 'abcdef', 'myname'];
+  var STRONG = ['Maple!Trail-42', 'Blue#Canoe-19', 'Lake7Moose!Run', 'River&Fox-73', 'Snow9Owl#Hill', 'Pine-Cone!58'], WEAK = ['password', 'ava2015', 'qwerty', '1111', 'abcdef', 'myname'];
   function whatToDo(lv) {
     var s = R.pick(SAFE);
     return Q.one('What should you do?', s[1], s[2].slice(0, lv > 1 ? 2 : 1), { fig: W.means('screen', s[0]), prompt: 'Is it safe? Does a grown-up need to know?',
