@@ -167,7 +167,7 @@
       hint: 'It should mean the same thing.', explain: '<b>' + p[0] + '</b> = <b>' + right + '</b>', meta: { k: 'g1-same-pick', w: p[0] } });
   }
   function oppTf() {
-    var p = R.pick(OPP), right = R.int(0, 1) === 1, other = right ? p[1] : R.pick(SAME)[0];
+    var p = R.pick(OPP), right = R.int(0, 1) === 1, other = right ? p[1] : R.pick(SAME.filter(function (x) { return !OPP.some(function (o) { return o.indexOf(p[0]) >= 0 && o.indexOf(x[0]) >= 0; }); }))[0];
     return { q: Q.name() + ' says <b>' + p[0] + '</b> and <b>' + other + '</b> are opposites.', type: 'tf', answer: right,
       why: { options: ['They are as different as can be.', 'They are not opposites.'], answer: right ? 0 : 1 },
       hint: 'Are they at each end of the same line?', explain: 'The opposite of <b>' + p[0] + '</b> is <b>' + p[1] + '</b>.', meta: { k: 'g1-opp-tf', a: p[0], b: other } };
