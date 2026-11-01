@@ -5,6 +5,8 @@
      <meta name="atlas-root"  content="../">                       path back to the site's home page ("All grades")
      <meta name="atlas-brand" content="Grade 1 Language Atlas">    the name shown in the bar (leave out on the home page)
      <meta name="atlas-math"  content="grade1/">                   which Math Atlas page the sister link opens (optional)
+     <meta name="atlas-nav"   content="#home Start|#results Results">  the page's own links, if it is not a grade page (optional)
+   A page that is not a grade page but saves progress (the placement check) also sets atlas-site and atlas-prefix itself.
    Grade pages get the chapter links and the display buttons (text size, grown-up view). On phones and tablets these sit behind
    one "Menu" button, so a learning screen starts with the lesson, not the settings. On a computer the header is one row,
    and text size and grown-up view sit behind a small "Settings" button. The home page gets only the brand and the Math Atlas link.
@@ -14,7 +16,10 @@
 (function () {
   'use strict';
   function meta(n) { var m = document.querySelector('meta[name="' + n + '"]'); return m ? m.content : null; }
-  var brand = meta('atlas-brand'), root = meta('atlas-root') || './';
+  var brand = meta('atlas-brand'), root = meta('atlas-root') || './', ownNav = meta('atlas-nav');
+  var navLinks = ownNav
+    ? ownNav.split('|').map(function (l) { var at = l.indexOf(' '); return '<a href="' + l.slice(0, at) + '">' + l.slice(at + 1) + '</a>'; }).join('')
+    : '<a href="#home">Chapters</a><a href="#check-up">Check-up</a><a href="#progress">My progress</a>';
   /* the path to the Atlas home when this page is inside Atlas, else null */
   var hub = /\/language\//.test(location.pathname) ? root + '../' : null;
   var math = (hub || 'https://ontario-math-atlas.web.app/') + (meta('atlas-math') || '');
@@ -26,7 +31,7 @@
     ? '<a class="brand" href="#home"><i aria-hidden="true">L</i>' + brand + '</a>' +
       '<button type="button" class="menub" id="menub" aria-expanded="false" aria-controls="more">Menu</button>' +
       '<div class="more" id="more"><a class="athome" href="' + allGrades + '" aria-label="All grades: back to the list of Language grades"><span aria-hidden="true">&lsaquo;</span> All grades</a>' +
-      '<nav aria-label="Main"><a href="#home">Chapters</a><a href="#check-up">Check-up</a><a href="#progress">My progress</a></nav>' + sister +
+      '<nav aria-label="Main">' + navLinks + '</nav>' + sister +
       '<button type="button" class="setb" id="setb" aria-expanded="false" aria-controls="tools">Settings</button>' +
       '<div class="tools" id="tools" role="group" aria-label="Display settings"><button type="button" id="bigb" aria-pressed="false">Text: normal</button>' +
       '<button type="button" id="adultb" aria-pressed="false" title="Shows coaching notes, like common mistakes, for a parent or tutor">Grown-up view: off</button></div></div>'
@@ -47,16 +52,19 @@
   document.body.insertBefore(bar, document.body.firstChild);
   document.body.insertBefore(skip, bar);
 
-  /* inside Atlas, a grade page saves progress to the family account (Atlas's sync.js; grade N is stored as "lN") */
-  var g = hub && /\/grade(\d)\//.exec(location.pathname);
-  if (g) {
+  /* inside Atlas, a grade page saves progress to the family account (Atlas's sync.js; grade N is stored as "lN"),
+     and so does a page that names its own atlas-site (the placement check is "lplace") */
+  var g = hub && /\/grade(\d)\//.exec(location.pathname), own = hub && meta('atlas-site');
+  if (g || own) {
     /* the Sign in / account link goes in the Menu panel (phones) or the header row (computers), not on a row of its own */
     var acct = document.createElement('div');
     acct.id = 'acct'; acct.className = 'acct';
     bar.querySelector('#more').appendChild(acct);
     var add = function (tag, attrs) { var el = document.createElement(tag); for (var k in attrs) el.setAttribute(k, attrs[k]); document.head.appendChild(el); return el; };
-    add('meta', { name: 'atlas-site', content: 'l' + g[1] });
-    add('meta', { name: 'atlas-prefix', content: 'lang-g' + g[1] + ':' });
+    if (g) {
+      add('meta', { name: 'atlas-site', content: 'l' + g[1] });
+      add('meta', { name: 'atlas-prefix', content: 'lang-g' + g[1] + ':' });
+    }
     add('meta', { name: 'atlas-hub', content: hub });
     add('link', { rel: 'stylesheet', href: hub + 'assets/family.css' });
     add('script', { type: 'module', src: hub + 'assets/sync.js' });
