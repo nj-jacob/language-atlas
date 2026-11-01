@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-01
+- Placement check: the results keep the lesson to start with in each part, so the Atlas parent page can show a child's starting points, reading aloud and writing mark.
 - Placement check: a writing sample. The child writes on their own to a prompt for their grade, and the grown-up marks it on a four-level rubric (never the computer). The mark shows with the starting points, and levels 1 and 2 point to the grade's writing lessons.
 - Placement check (pilot, `placement/`): finds where a student is in 7 parts of Language, Grades 1 to 8, and links each part to the lesson to start with. Like Math's placement check, each part starts a grade below the school grade and moves up or down a grade after two answers. The questions are the grades' own practice skills, so every one is already answer-checked. Grown-up view shows every question and the skills worth practising. New check: made-up children at known levels must be placed exactly there.
 - Placement check, after Noel's review: a grade now counts as secure after 3 right out of 4 (not 2 out of 2), so lucky guesses rarely count. New reading-aloud check: two one-minute readings of original passages, marked by the grown-up, giving words correct per minute compared with the published Hasbrouck and Tindal norms.

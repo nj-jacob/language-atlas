@@ -15,7 +15,9 @@
 
    Reading aloud (aloud.js) and the writing sample (writing.js) are the parts a computer cannot mark: the grown-up marks them.
 
-   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last, aloud, writing }   (see fresh(), start(), aloud.js and writing.js) */
+   Saved (prefix lang-place:):  state { v, grade, place, levels, history, last, starts, aloud, writing }   (see fresh(), start(), aloud.js and writing.js)
+   starts: the lesson to start with in each area, [{ a, g, ch, t, done }], kept when the results page opens. Inside Atlas the
+   state is saved to the family account as "lplace", and the Atlas parent page shows it (math-atlas assets/langplace.js). */
 (function () {
   'use strict';
   var A = window.Atlas, $ = A.$, R = A.R, Q = A.Q;
@@ -273,6 +275,9 @@
     page(app, '<p class="pl-wait">Finding the lessons to start with…</p>');
     Promise.all(AREAS.map(function (a) { return startAt(st, a.id); })).then(function (starts) {
       var gp = gaps(st);
+      /* kept with the results so the Atlas parent page can link to the same lessons */
+      var keep = starts.map(function (s, i) { return s && { a: AREAS[i].id, g: s.g, ch: s.ch.id, t: plain(s.ch.title), done: s.done }; });
+      if (JSON.stringify(st.starts) !== JSON.stringify(keep)) { st.starts = keep; save(st); }
       var h = '<header class="chead"><span class="num">Results &middot; ' + st.last.d + '</span><h1>Your starting points</h1>' +
         '<p class="lede">Each row shows the grades that are secure. Start each part with the lesson beside it.</p></header>' + ladder(st.levels) +
         '<ol class="pl-start">' + AREAS.map(function (a, i) {
