@@ -20,8 +20,8 @@
     'Fewer milkweed plants grow.': 'There are fewer monarchs.', 'The corn grows tall.': 'The beans have something to climb.', 'The squash leaves shade the ground.': 'Fewer weeds grow.' };
   V['g4-cause'] = q => q.pairs.every(p => CAUSE[text(p[0])] === text(p[1])) ? '' : 'a cause is matched to the wrong effect';
   V['g4-effect'] = (q, m) => mk(q) === CAUSE[m.c] ? '' : 'expected ' + CAUSE[m.c];
-  const MAINS = ['Monarchs travel far and need milkweed, and people can help them.', 'Corn, beans and squash help each other grow when they are planted together.'];
-  V['g4-main-detail'] = (q, m) => mk(q) === (MAINS.includes(text(m.s)) ? 'main idea' : 'supporting detail') && (MAINS.includes(text(m.s)) || card(q).includes(text(m.s))) ? '' : 'wrong for ' + m.s;
+  /* a supporting detail is a sentence from the text; the main idea sums up the whole text, so it is not one of its sentences */
+  V['g4-main-detail'] = (q, m) => mk(q) === (card(q).includes(text(m.s)) ? 'supporting detail' : 'main idea') ? '' : 'wrong for ' + m.s;
   V['g4-thinks'] = q => mk(q) === 'Riverside Pool should stay open all summer.' && card(q).includes('Please keep Riverside Pool open') ? '' : 'expected what Omar asks for';
   /* missing: someone who has a say but is not heard in the letter (the letter speaks for kids and children) */
   V['g4-missing'] = q => { const ok = q.options.map(text).filter(o => !/kids|children/.test(o)); return ok.length === 1 && mk(q) === ok[0] ? '' : 'expected a voice the letter does not include'; };
