@@ -9,24 +9,44 @@
   'use strict';
   var R = Atlas.R, Q = Atlas.Q, W = Atlas.W, step = W.step;
 
-  var GOOD = ['Look at the person talking.', 'Keep my hands still.', 'Think about the words.', 'Wait until they finish.'];
-  var BAD = ['Talk to my friend at the same time.', 'Play with my shoelaces.', 'Look out the window.', 'Hum a song.'];
+  var GOOD = ['Look at the person talking.', 'Keep my hands still.', 'Think about the words.', 'Wait until they finish.', 'Nod to show I understand.', 'Picture what they say.'];
+  var BAD = ['Talk to my friend at the same time.', 'Play with my shoelaces.', 'Look out the window.', 'Hum a song.', 'Draw on my hand.', 'Turn around in my seat.'];
   /* what someone said, a question about it, and questions about something else */
   var ASKS = [['I got a new puppy.', 'What is its name?', ['Do you like pizza?', 'Is it raining?']], ['We went camping on the weekend.', 'Where did you camp?', ['What is your favourite colour?', 'Can I have a snack?']],
     ['My grandma is visiting from Winnipeg.', 'How long is she staying?', ['Do you have a bike?', 'What time is lunch?']], ['I made a card for my teacher.', 'What did you draw on it?', ['Is it Friday?', 'Can I go outside?']],
-    ['I lost my first tooth.', 'Did it hurt?', ['Do you like hockey?', 'What is for dinner?']]];
-  var STEPS = ['Before: think about what I know.', 'During: look and picture it.', 'After: tell it back.'];
+    ['I lost my first tooth.', 'Did it hurt?', ['Do you like hockey?', 'What is for dinner?']], ['We saw a moose on the road.', 'Was it big?', ['Do you have a cat?', 'Can I sit here?']],
+    ['My cousin taught me to make bannock.', 'How did you make it?', ['Is it snowing?', 'What is your name?']], ['I scored a goal at soccer.', 'How did you kick it in?', ['Do you like apples?', 'Where is the library?']],
+    ['We planted beans in our garden.', 'How tall are they now?', ['Do you have a sister?', 'Can we play tag?']], ['My dad fixed my bike.', 'What was broken?', ['Is it lunch time?', 'Do you like the rain?']]];
+  /* listening strategies, by when you use them */
+  var STRAT = { before: ['Think about what I know.', 'Look at the title and pictures.', 'Guess what it will be about.'],
+    during: ['Picture it in my head.', 'Look at the speaker.', 'Listen for the big idea.'],
+    after: ['Tell it back in order.', 'Say my favourite part.', 'Say what I learned.'] };
+  var WHENS = ['before', 'during', 'after'];
+  var LOST = [['If I do not understand, I ask a question.', true], ['If I miss a part, I say, "Can you say that again?"', true], ['If a word is new, I ask what it means.', true],
+    ['If I do not understand, I just stay quiet.', false], ['If I get lost, I stop listening.', false], ['If I miss a part, I make something up.', false]];
   /* [the question, an answer of the right size, too little, too much] */
   var SIZE = [['What colour is your coat?', 'It is blue.', 'Um.', 'It is blue and I got it at the store and the store had shoes and we had lunch and then we went home.'],
     ['What did you have for lunch?', 'I had a sandwich and an apple.', 'Food.', 'I had a sandwich, and my brother had a sandwich, and my cousin likes sandwiches, and we have a dog.'],
-    ['What is your favourite animal?', 'I like owls best.', 'Animals.', 'Owls, and also bears, and also fish, and my uncle has a fish, and he lives far away, and I visited him once.']];
-  var WHEN = ['when the speaker stops', 'when it is my turn', 'when I put up my hand and am asked'];
-  var NOTWHEN = ['while someone else is talking', 'whenever I think of something', 'in the middle of a story'];
+    ['What is your favourite animal?', 'I like owls best.', 'Animals.', 'Owls, and also bears, and also fish, and my uncle has a fish, and he lives far away, and I visited him once.'],
+    ['How did you get to school?', 'I walked with my mom.', 'Feet.', 'I walked with my mom and we saw a cat and the cat was orange and my friend has a cat and her cat is grey.'],
+    ['What did you build?', 'I built a tall block tower.', 'Stuff.', 'I built a tower and then it fell and then I built a house and then I built a car and then I had a snack and then I went outside.'],
+    ['What is your sister' + '’' + 's name?', 'Her name is Priya.', 'Her.', 'Her name is Priya and she is six and she likes to swim and she has a red bike and she lost a tooth and she has a friend.']];
+  var WHEN = ['when the speaker stops', 'when it is my turn', 'when I put up my hand and am asked', 'when someone asks me a question', 'when the talking stick comes to me'];
+  var NOTWHEN = ['while someone else is talking', 'whenever I think of something', 'in the middle of a story', 'when my friend is still answering', 'while the teacher is reading'];
+  var TURNS = [['Wait until the speaker stops.', true], ['Take turns talking.', true], ['Answer the question, then stop.', true], ['Talk over someone to be heard.', false],
+    ['Tell a long story when asked a short question.', false], ['Say whatever pops into my head, any time.', false]];
   /* [what the body does, what it shows] */
-  var BODY = [['a big smile and arms up high', 'excited'], ['a frown and crossed arms', 'angry'], ['head down and tears', 'sad'], ['wide eyes and hands over the mouth', 'surprised'], ['a yawn and droopy eyes', 'tired']];
-  var MOVES = [['a nod', 'yes'], ['shaking your head', 'no'], ['a wave', 'hello'], ['a shrug', 'I do not know'], ['a thumbs up', 'good']];
-  var VOICES = [['in the library', 'a quiet voice'], ['on the playground', 'a loud voice'], ['talking to a friend at the table', 'a talking voice']];
-  var CLEAR = [['Give me that.', 'Please pass me the red crayon.'], ['It was fun.', 'We built a snow fort in the park.'], ['Put it there.', 'Put the book on the shelf.'], ['I saw a thing.', 'I saw a fox in our yard.']];
+  var BODY = [['a big smile and arms up high', 'excited'], ['a frown and crossed arms', 'angry'], ['head down and tears', 'sad'], ['wide eyes and hands over the mouth', 'surprised'], ['a yawn and droopy eyes', 'tired'],
+    ['a soft smile and relaxed shoulders', 'calm'], ['shaking hands and a small voice', 'scared'], ['a grin and a thumbs up', 'proud']];
+  var MOVES = [['a nod', 'yes'], ['shaking your head', 'no'], ['a wave', 'hello'], ['a shrug', 'I do not know'], ['a thumbs up', 'good'], ['a finger on your lips', 'be quiet'], ['a hand held up flat', 'stop']];
+  var VOICE = { quiet: 'a quiet voice', loud: 'a loud voice', talk: 'a talking voice' };
+  var PLACES = [['in the library', 'quiet'], ['on the playground', 'loud'], ['talking to a friend at the table', 'talk'], ['when the baby is asleep', 'quiet'], ['calling a friend across the field', 'loud'],
+    ['telling Grandpa about your day', 'talk'], ['in a hospital waiting room', 'quiet'], ['cheering at a hockey game', 'loud'], ['asking the librarian for a book', 'quiet']];
+  /* [unclear, clear, the unclear word] */
+  var CLEAR = [['Give me that.', 'Please pass me the red crayon.', 'that'], ['Put it there.', 'Put the book on the shelf.', 'there'], ['I saw a thing.', 'I saw a fox in our yard.', 'thing'],
+    ['Can I have that?', 'Can I have the blue cup?', 'that'], ['Look at this.', 'Look at my shiny rock.', 'this'], ['The stuff fell.', 'The blocks fell.', 'stuff'],
+    ['Put them over there.', 'Put the boots by the door.', 'there'], ['I want the thing.', 'I want the green marker.', 'thing'], ['Where is that?', 'Where is my library book?', 'that'],
+    ['Hand me some stuff.', 'Hand me two pencils.', 'stuff']];
 
   /* ---------- question makers: listening ---------- */
   function goodListen() {
@@ -37,16 +57,36 @@
     return Q.one('Your friend says this. Which question is about what they said?', a[1], a[2].slice(0, lv > 1 ? 2 : 1), { fig: W.means('talk', a[0]),
       prompt: 'Which question goes with the friend' + '’' + 's words?', hint: 'A good question is about what the speaker just said.', explain: 'It asks about what your friend said.', meta: { k: 'g1-ask-about', said: a[0] } });
   }
-  function listenOrder() {
-    return { q: 'Put the listening steps in order.', type: 'order', items: STEPS.slice(), first: 'Before', last: 'After', hint: 'Before, during, after.', explain: 'Think, picture it, then tell it back.', meta: { k: 'g1-listen-order' } };
+  function listenTf() {
+    var right = R.int(0, 1) === 1, w = R.pick(right ? GOOD : BAD);
+    return { q: 'Is this good listening?', fig: W.means('listen', w), type: 'tf', answer: right, why: { options: ['It shows I am listening.', 'It stops me listening, or bothers the speaker.'], answer: right ? 0 : 1 },
+      hint: 'Does it help you hear and think about the words?', explain: right ? 'Yes: it shows you are listening.' : 'No: it gets in the way.', meta: { k: 'g1-listen-tf', w: w } };
   }
-  function lostTf() {
-    var right = R.int(0, 1) === 1, said = right ? 'If I do not understand, I ask a question.' : 'If I do not understand, I just stay quiet.';
-    return { q: Q.name() + ' says:', fig: W.sent(said), type: 'tf', answer: right, why: { options: ['Asking helps you understand.', 'Staying quiet helps you understand.'], answer: 0 },
-      hint: 'What helps you understand?', explain: 'When you do not understand, ask.', meta: { k: 'g1-lost-tf', said: said } };
+  function oddListen(lv) {
+    return Q.one('Which one is <b>not</b> good listening?', R.pick(BAD), R.some(GOOD, lv > 1 ? 3 : 2), { hint: 'Which one stops you hearing the words?', explain: 'Good listeners look, keep still and think.', meta: { k: 'g1-odd-listen' } });
   }
 
-  /* ---------- question makers: speaking ---------- */
+  /* ---------- question makers: before, during, after ---------- */
+  function stepWhen() {
+    var w = R.pick(WHENS), st = R.pick(STRAT[w]);
+    return Q.tiles('When do you do this?', w, WHENS.filter(function (x) { return x !== w; }), { fig: W.sent(st), hint: 'Before it starts, while you listen, or when it ends?',
+      explain: '<b>' + w.charAt(0).toUpperCase() + w.slice(1) + '</b>: ' + st, meta: { k: 'g1-step-when', st: st } });
+  }
+  function listenOrder() {
+    return { q: 'Put the listening steps in order.', type: 'order', items: WHENS.map(function (w) { var st = R.pick(STRAT[w]); return w.charAt(0).toUpperCase() + w.slice(1) + ': ' + st.charAt(0).toLowerCase() + st.slice(1); }),
+      hint: 'Before, during, after.', explain: 'Before, during, then after.', meta: { k: 'g1-listen-order' } };
+  }
+  function lostTf() {
+    var l = R.pick(LOST);
+    return { q: Q.name() + ' says:', fig: W.sent(l[0]), type: 'tf', answer: l[1], why: { options: ['Asking helps you understand.', 'Staying lost does not help.'], answer: l[1] ? 0 : 1 },
+      hint: 'What helps you understand?', explain: 'When you do not understand, ask.', meta: { k: 'g1-lost-tf', said: l[0] } };
+  }
+  function matchStep() {
+    return { q: 'Match each one to when you do it.', type: 'match', pairs: R.shuffle(WHENS).map(function (w) { return [R.pick(STRAT[w]), w]; }), hint: 'Before it starts, while you listen, or when it ends?',
+      explain: 'Think first, picture it, then tell it back.', meta: { k: 'g1-match-step' } };
+  }
+
+  /* ---------- question makers: taking turns ---------- */
   function whenTalk(lv) {
     return Q.one('When is a good time to talk in a group?', R.pick(WHEN), R.some(NOTWHEN, lv > 1 ? 2 : 1), { prompt: 'Think about taking turns.', hint: 'Wait for your turn.',
       explain: 'Take turns: talk when the speaker stops or when it is your turn.', meta: { k: 'g1-when-talk' } });
@@ -56,6 +96,18 @@
     return Q.one('Someone asks: <b>' + s[0] + '</b> Which answer says just enough?', s[1], s.slice(2, lv > 1 ? 4 : 3), { prompt: 'Not too little. Not too much.',
       hint: 'Answer the question, in a full sentence, then stop.', explain: '"' + s[1] + '" answers the question in one clear sentence.', meta: { k: 'g1-how-much', ask: s[0] } });
   }
+  function turnTf() {
+    var t = R.pick(TURNS);
+    return { q: 'Is this a good way to talk in a group?', fig: W.means('people', t[0]), type: 'tf', answer: t[1], why: { options: ['Everyone gets a turn to talk and be heard.', 'It takes away someone else' + '’' + 's turn.'], answer: t[1] ? 0 : 1 },
+      hint: 'Does everyone get a turn?', explain: t[1] ? 'Yes: it takes turns.' : 'No: everyone needs a turn.', meta: { k: 'g1-turn-tf', t: t[0] } };
+  }
+  function sizeTf() {
+    var s = R.pick(SIZE), i = R.int(1, 3);
+    return { q: 'Someone asks: <b>' + s[0] + '</b> Does this answer say just enough?', fig: W.sent(s[i]), type: 'tf', answer: i === 1,
+      why: { options: ['It answers in one clear sentence.', 'It says too little or too much.'], answer: i === 1 ? 0 : 1 }, hint: 'Not too little. Not too much.', explain: W.sent(s[1]), meta: { k: 'g1-size-tf', ask: s[0], said: s[i] } };
+  }
+
+  /* ---------- question makers: faces and hands ---------- */
   function feelsFrom(lv) {
     var b = R.pick(BODY);
     return Q.tiles('Someone has <b>' + b[0] + '</b>. How do they feel?', b[1], R.some(BODY.filter(function (x) { return x !== b; }), lv > 1 ? 3 : 2).map(function (x) { return x[1]; }), {
@@ -70,17 +122,36 @@
     var ms = R.some(MOVES, 3);
     return { q: 'Match each move to what it means.', type: 'match', pairs: ms.map(function (m) { return [m[0], m[1]]; }), hint: 'Try each move.', explain: 'Your body talks without words.', meta: { k: 'g1-match-move' } };
   }
-  function voiceFor() {
-    var v = R.pick(VOICES);
-    return Q.tiles('Which voice fits <b>' + v[0] + '</b>?', v[1], VOICES.filter(function (x) { return x !== v; }).map(function (x) { return x[1]; }), {
-      hint: 'Who needs to hear you? Who might you bother?', explain: v[0] + ': <b>' + v[1] + '</b>.', meta: { k: 'g1-voice-fits', where: v[0] } });
+  function bodyTf() {
+    var b = R.pick(BODY), said = R.pick([b, R.pick(BODY)]), right = said === b;
+    return { q: 'True or false?', fig: W.sent(b[0].charAt(0).toUpperCase() + b[0].slice(1) + ' shows someone feels <b>' + said[1] + '</b>.'), type: 'tf', answer: right,
+      why: { options: ['The face and body match that feeling.', 'The face and body show a different feeling.'], answer: right ? 0 : 1 }, hint: 'Make the face yourself.',
+      explain: b[0] + ': <b>' + b[1] + '</b>.', meta: { k: 'g1-body-tf', body: b[0], said: said[1] } };
   }
-  function clearer() {
-    var c = R.pick(CLEAR);
-    return Q.one('Which is <b>clearer</b>?', c[1], [c[0]], { prompt: 'Which one tells exactly what you mean?', hint: 'Name the thing, and say where.', explain: 'Exact words help the listener.', meta: { k: 'g1-clearer' } });
+
+  /* ---------- question makers: clear words and the right voice ---------- */
+  function clearer(lv) {
+    var c = R.pick(CLEAR), other = R.pick(CLEAR.filter(function (x) { return x !== c; }));
+    return Q.one('Which is <b>clearer</b>?', c[1], [c[0]].concat(lv > 1 ? [other[0]] : []), { prompt: 'Which one tells exactly what you mean?', hint: 'Name the thing, and say where.', explain: 'Exact words help the listener.', meta: { k: 'g1-clearer' } });
+  }
+  function voiceFor() {
+    var v = R.pick(PLACES);
+    return Q.tiles('Which voice fits <b>' + v[0] + '</b>?', VOICE[v[1]], Object.keys(VOICE).filter(function (x) { return x !== v[1]; }).map(function (x) { return VOICE[x]; }), {
+      hint: 'Who needs to hear you? Who might you bother?', explain: v[0] + ': <b>' + VOICE[v[1]] + '</b>.', meta: { k: 'g1-voice-fits', where: v[0] } });
+  }
+  function vagueTap() {
+    var c = R.pick(CLEAR), t = c[0].replace(/[.?!]/g, '').split(' ');
+    return { q: 'Tap the word that does not say exactly what you mean.', type: 'tap', tiles: t, answer: t.indexOf(c[2]), fig: W.sent(c[0]), hint: 'Which word could mean anything?',
+      explain: 'Clearer: ' + W.sent(c[1]), meta: { k: 'g1-vague-tap', s: c[0] } };
+  }
+  function clearTf() {
+    var c = R.pick(CLEAR), right = R.int(0, 1) === 1;
+    return { q: 'Does this say exactly what you mean?', fig: W.means('talk', c[right ? 1 : 0]), type: 'tf', answer: right,
+      why: { options: ['It names the thing.', 'It uses a word like "that" or "thing".'], answer: right ? 0 : 1 }, hint: 'Could the listener tell which thing?', explain: W.sent(c[1]), meta: { k: 'g1-clear-tf', said: c[right ? 1 : 0] } };
   }
 
   Atlas.register('talking', {
+    full: true,
     lessons: [{
       id: 'listen', title: 'Listening well', sub: 'Look, think, and ask about what you hear.',
       concepts: [
@@ -88,61 +159,70 @@
           model: [
             step(W.icon('listen'), 'Eyes on the person talking.'),
             step(W.icon('think'), 'Think about the words.'),
-            step(W.icon('talk'), 'When they finish, ask about what they said.')
+            step(W.means('talk', 'I got a new puppy.'), 'Your friend tells you something.'),
+            step(W.means('think', 'What is its name?'), 'Ask about what they said.')
           ],
-          guided: [goodListen, function () { return askAbout(1); }],
-          check: [goodListen, function () { return askAbout(2); }],
+          guided: [goodListen, function () { return askAbout(1); }, listenTf],
+          check: [goodListen, function () { return askAbout(2); }, function () { return oddListen(2); }, listenTf, function () { return askAbout(2); }],
           coach: '<p>Tell the child about your day in three sentences. Ask them to ask you one question about it.</p>',
           mistake: '<p>Asking about something else ("Can I have a snack?"). Say: "Ask me about what I just told you."</p>' },
-        { slug: 'steps', title: 'Before, during, after', exp: ['B1.2'], skill: 'listening',
+        { slug: 'steps', title: 'Before, during, after', exp: ['B1.2'], skill: 'listen-steps',
           model: [
             step(W.icon('think'), '<b>Before</b>: what do I know about it?'),
             step(W.icon('listen'), '<b>During</b>: look, and picture it.'),
-            step(W.icon('talk'), '<b>After</b>: tell it back. Not sure? Ask.')
+            step(W.icon('talk'), '<b>After</b>: tell it back.'),
+            step(W.means('think', 'Can you say that again?'), 'Missed a part? Ask.')
           ],
-          guided: [listenOrder, lostTf],
-          check: [lostTf, listenOrder],
+          guided: [stepWhen, listenOrder, lostTf],
+          check: [stepWhen, matchStep, lostTf, listenOrder, stepWhen],
           coach: '<p>Before a story, ask what the child knows about the topic. After, ask them to tell you what happened.</p>',
           mistake: '<p>Staying quiet when lost. Make "Can you say that again?" a normal thing to say.</p>' }
       ]
     }, {
       id: 'speak', title: 'Speaking clearly', sub: 'Take turns, say enough, and use your face and voice.',
       concepts: [
-        { slug: 'turns', title: 'Take turns', exp: ['B1.3'], skill: 'speaking',
+        { slug: 'turns', title: 'Take turns', exp: ['B1.3'], skill: 'turns',
           model: [
             step(W.icon('people'), 'One person talks. The others listen.'),
             step(W.icon('talk'), 'Wait until they stop.'),
+            step(W.means('think', 'What colour is your coat?'), 'Someone asks a short question.'),
             step(W.sent('It is blue.'), 'Answer what was asked, then stop.')
           ],
-          guided: [function () { return whenTalk(1); }, function () { return howMuch(1); }],
-          check: [function () { return whenTalk(2); }, function () { return howMuch(2); }],
+          guided: [function () { return whenTalk(1); }, function () { return howMuch(1); }, turnTf],
+          check: [function () { return whenTalk(2); }, function () { return howMuch(2); }, sizeTf, turnTf, function () { return howMuch(2); }],
           coach: '<p>Pass a "talking stone" at dinner. Only the person holding it talks.</p>',
           mistake: '<p>Telling a long story when a short answer was asked for. Ask: "What was the question?"</p>' },
-        { slug: 'body', title: 'Faces and hands talk too', exp: ['B1.4'], skill: 'speaking',
+        { slug: 'body', title: 'Faces and hands talk too', exp: ['B1.4'], skill: 'body-talk',
           model: [
             step(W.sent('a big smile and arms up high'), 'Excited.'),
-            step(W.sent('a nod'), 'Yes.'),
+            step(W.sent('a frown and crossed arms'), 'Angry.'),
+            step(W.sent('a nod'), 'Yes, without a word.'),
             step(W.icon('people'), 'Look at your listener while you talk.')
           ],
-          guided: [function () { return feelsFrom(1); }, moveMeans],
-          check: [function () { return feelsFrom(2); }, matchMove],
+          guided: [function () { return feelsFrom(1); }, moveMeans, bodyTf],
+          check: [function () { return feelsFrom(2); }, matchMove, bodyTf, moveMeans, function () { return feelsFrom(2); }],
           coach: '<p>Play "guess my feeling": make a face and body shape, and the child names the feeling. Swap.</p>',
           mistake: '<p>Looking at the floor while talking. Practise looking at the listener.</p>' },
-        { slug: 'words', title: 'Clear words', exp: ['B1.5'], skill: 'speaking',
+        { slug: 'words', title: 'Clear words', exp: ['B1.5', 'B1.4'], skill: 'clear-words',
           model: [
             step(W.sent('Give me that.'), 'Which thing?'),
-            step(W.sent('Please pass me the <b>red crayon</b>.'), 'Now I know.')
+            step(W.sent('Please pass me the <b>red crayon</b>.'), 'Now I know.'),
+            step(W.icon('read') + W.sent('in the library'), 'A quiet voice.'),
+            step(W.icon('people') + W.sent('on the playground'), 'A loud voice is fine.')
           ],
           key: '<p>Name the thing. Say it in a full sentence.</p>',
-          guided: [clearer, voiceFor],
-          check: [clearer, voiceFor],
+          guided: [function () { return clearer(1); }, vagueTap, voiceFor],
+          check: [function () { return clearer(2); }, voiceFor, clearTf, vagueTap, voiceFor],
           coach: '<p>Play "describe it": the child describes something in the room without naming it, and you guess.</p>',
           mistake: '<p>Using "that" and "thing". Ask: "Which thing? Tell me more."</p>' }
       ]
     }],
     practice: [
-      { id: 'listening', name: 'Listening well', code: 'B1.1, B1.2', gen: goodListen },
-      { id: 'speaking', name: 'Speaking clearly', code: 'B1.3, B1.4, B1.5', gen: howMuch }
+      { id: 'listening', name: 'Listening well', code: 'B1.1', gen: goodListen },
+      { id: 'listen-steps', name: 'Before, during, after', code: 'B1.2', gen: stepWhen },
+      { id: 'turns', name: 'Taking turns', code: 'B1.3', gen: whenTalk },
+      { id: 'body-talk', name: 'Faces and hands', code: 'B1.4', gen: feelsFrom },
+      { id: 'clear-words', name: 'Clear words', code: 'B1.5', gen: clearer }
     ],
     tasks: [
       { id: 'ask-me', title: 'Ask me a question', code: 'B1.1', pic: W.icon('listen'), say: 'Listen to your grown-up. Then ask a question about it.',
@@ -164,7 +244,10 @@
   });
 
   Q.shapes('talking', {
-    listening: [[1, 'ask-about', askAbout], [1, 'order', listenOrder], [1, 'lost', lostTf]],
-    speaking: [[1, 'when', whenTalk], [1, 'feels', feelsFrom], [1, 'move', moveMeans], [1, 'voice', voiceFor], [1, 'clearer', clearer], [2, 'match', matchMove]]
+    listening: [[1, 'ask about it', askAbout], [1, 'true or false', listenTf], [1, 'odd one out', oddListen]],
+    'listen-steps': [[1, 'order', listenOrder], [1, 'true or false', lostTf], [1, 'match', matchStep]],
+    turns: [[1, 'how much', howMuch], [1, 'true or false', turnTf], [1, 'just enough', sizeTf]],
+    'body-talk': [[1, 'moves', moveMeans], [1, 'match', matchMove], [1, 'true or false', bodyTf]],
+    'clear-words': [[1, 'voice', voiceFor], [1, 'tap', vagueTap], [1, 'true or false', clearTf]]
   });
 })();
