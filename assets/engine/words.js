@@ -6,7 +6,12 @@
      Atlas.W.sum([['un', 'prefix'], ['happy', 'base']])   un + happy = unhappy, as tiles
      Atlas.W.syl(['rab', 'bit'])                  a word split into syllables (beats)
      Atlas.W.gap()                                a blank to fill in a sentence
-     Atlas.W.passage('Title', ['Line one.', ...]) a short reading passage on a card ('# Heading' lines show as headings)
+     Atlas.W.passage('Title', ['Line one.', ...], opts) a reading passage on a card. '# Heading' lines show as headings; an empty
+                                                  line '' starts a new paragraph (sentences in a paragraph flow together).
+                                                  opts.pics: picture names for a band at the top; opts.tap: every sentence can be
+                                                  tapped (data-hit = its place in lines), for "tap the sentence that tells you".
+     Atlas.W.web('main idea', ['detail', ...])    the main idea as a roof over its details
+     Atlas.W.chain(['event', ...], ['First', ...]) a story map: numbered cards in order, with optional labels
      Atlas.W.icon('not')                          a small picture cue: not, again, full, without, before, wrong, listen, talk, read, write, lock, screen, people, think, star
      Atlas.W.means(icon, html)                    a meaning card: picture cue and a few words
      Atlas.W.pic('sun')                           a picture cue for a word (Atlas.W.pics lists them all)
@@ -74,7 +79,22 @@
     box: '<path d="M8 16l16-7 16 7v18l-16 7-16-7z"/><path d="M8 16l16 7 16-7M24 23v18"/>',
     key: '<circle cx="14" cy="24" r="7"/><circle cx="14" cy="24" r="2.5"/><path d="M21 24h20M35 24v6M40 24v5"/>',
     nest: '<path d="M7 26c0 8 8 13 17 13s17-5 17-13"/><path d="M7 26h34"/><path d="M10 31c5-2 9 1 14-1s9 1 14-1M13 36c4-1 8 1 11 0s7 1 11 0"/><ellipse cx="19" cy="22" rx="4" ry="5"/><ellipse cx="29" cy="22" rx="4" ry="5"/>',
-    van: '<path d="M5 33V15c0-2 1-3 3-3h22l8 8h3c1.5 0 2 1 2 2v11z"/><path d="M30 12v8h8M18 12v21"/><circle cx="14" cy="35" r="3.5"/><circle cx="34" cy="35" r="3.5"/>'
+    van: '<path d="M5 33V15c0-2 1-3 3-3h22l8 8h3c1.5 0 2 1 2 2v11z"/><path d="M30 12v8h8M18 12v21"/><circle cx="14" cy="35" r="3.5"/><circle cx="34" cy="35" r="3.5"/>',
+    canoe: '<path d="M4 25h40c-4 8-12 11-20 11S8 33 4 25z"/><path d="M33 7L21 33"/><path d="M21 33l-3 6 4 2 3-6"/>',
+    snow: '<path d="M24 5v38M7.5 14.5l33 19M7.5 33.5l33-19"/><path d="M19 8l5 5 5-5M19 40l5-5 5 5M7 21l7-2-2-7M41 27l-7 2 2 7M7 27l7 2-2 7M41 21l-7-2 2-7"/>',
+    leaf: '<path d="M24 5l3.5 8.5 6-3-1.5 9 7.5-1.5-3.5 6.5 5 3-11.5 3 1.5 6.5-7-3-7 3 1.5-6.5L7 27l5-3-3.5-6.5L16 19l-1.5-9 6 3z"/><path d="M24 33v11"/>',
+    book: '<path d="M24 13c-5-3-12-3-18-1v25c6-2 13-2 18 1 5-3 12-3 18-1V12c-6-2-13-2-18 1zM24 13v25"/><path d="M11 18c3-.7 6-.7 9 .5M11 24c3-.7 6-.7 9 .5M28 18.5c3-1.2 6-1.2 9-.5M28 24.5c3-1.2 6-1.2 9-.5"/>',
+    house: '<path d="M7 23L24 9l17 14"/><path d="M11 20v20h26V20"/><path d="M20 40V29h8v11"/><path d="M33 15V8h4v10"/>',
+    rain: '<path d="M14 30h21a7 7 0 0 0 1-14 10 10 0 0 0-19-2 8 8 0 0 0-3 16z"/><path d="M16 35l-2 5M24 35l-2 5M32 35l-2 5"/>',
+    ferry: '<path d="M5 29h38l-6 9H11z"/><path d="M12 29v-8h22v8M20 21v-6h7v6"/><path d="M16 25h2M22 25h2M28 25h2"/><path d="M3 43c4-2 6 2 10 0s6 2 10 0 6 2 10 0 6 2 10 0"/>',
+    hockey: '<path d="M31 5L19 36H8v4h14l13-34"/><ellipse cx="36" cy="38" rx="6" ry="2.6"/>',
+    goose: '<path d="M30 9c3-2 7-1 7 3l4 2-4 1c-1 3-3 5-3 9 0 7-6 13-15 13-6 0-11-3-12-8 6 1 11-1 14-5 3-4 5-9 9-15z"/><path d="M16 30c3 1 7 0 9-3M22 37v5M18 37v5"/>',
+    moose: '<path d="M14 8c0 6 4 9 10 9s10-3 10-9M10 10c0 3 2 5 4 5M38 10c0 3-2 5-4 5"/><path d="M20 17v9c0 5 2 9 4 9s4-4 4-9v-9"/><path d="M22 35v4h4v-4"/><circle cx="21.5" cy="22" r=".8" fill="currentColor"/><circle cx="26.5" cy="22" r=".8" fill="currentColor"/>',
+    plant: '<path d="M24 40V20"/><path d="M24 26c-8 0-12-5-12-11 7 0 12 4 12 11zM24 22c0-7 5-11 12-11 0 6-4 11-12 11z"/><path d="M14 40h20l-2 6H16z"/>',
+    sky: '<path d="M4 30c6-10 12-14 20-6s14 4 20-6"/><path d="M4 38c6-8 12-11 20-4s14 3 20-5"/><path d="M10 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1zM36 30l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z"/>',
+    letter: '<rect x="6" y="12" width="36" height="25" rx="2"/><path d="M6 14l18 13 18-13"/>',
+    angel: '<path d="M24 8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z"/><path d="M24 17c-10-3-16 2-17 9 6-2 10-2 13 1-2 5-5 9-9 14h26c-4-5-7-9-9-14 3-3 7-3 13-1-1-7-7-12-17-9z"/>',
+    science: '<path d="M19 6h10M21 6v12L10 38c-1 2 0 4 3 4h22c3 0 4-2 3-4L27 18V6"/><path d="M15 30h18"/><circle cx="21" cy="35" r="1.4" fill="currentColor"/><circle cx="27" cy="33" r="1" fill="currentColor"/>',
   };
   /* the 44 recorded sounds, and spellings that share a clip */
   var SOUNDS = 'b d f g h j k l m n p r s t v w wh y z sh ch th th-voiced ng zh a e i o u ai ee igh oa ue oo-short oo ow oy ar or er air ear'.split(' ');
@@ -119,8 +139,24 @@
     },
     syl: function (parts) { return '<span class="wsyl">' + parts.map(function (p) { return W.tile(p, 'syl'); }).join('<span class="wop" aria-hidden="true">&middot;</span>') + '</span>'; },
     gap: function () { return '<span class="wgap" aria-label="blank"></span>'; },
-    passage: function (title, lines) {
-      return '<div class="psg">' + (title ? '<b class="pt">' + title + '</b>' : '') + lines.map(function (l) { return l.charAt(0) === '#' ? '<b class="psh">' + l.slice(2) + '</b>' : '<p>' + l + '</p>'; }).join('') + '</div>';
+    passage: function (title, lines, opts) {
+      opts = opts || {};
+      var paras = lines.indexOf('') >= 0, out = '', open = false;
+      function sent(l, i) { return '<span class="ps"' + (opts.tap ? ' data-hit="' + i + '"' : '') + '>' + l + '</span>'; }
+      lines.forEach(function (l, i) {
+        if (l.charAt(0) === '#' || l === '') { if (open) { out += '</p>'; open = false; } if (l) out += '<b class="psh">' + l.slice(2) + '</b>'; return; }
+        if (!paras) { out += '<p>' + sent(l, i) + '</p>'; return; }
+        out += (open ? ' ' : '<p>') + sent(l, i); open = true;
+      });
+      if (open) out += '</p>';
+      var band = opts.pics && opts.pics.length ? '<div class="pband" aria-hidden="true">' + opts.pics.map(W.pic).join('') + '</div>' : '';
+      return '<div class="psg' + (opts.tap ? ' psg-tap' : '') + '">' + band + (title ? '<b class="pt">' + title + '</b>' : '') + out + '</div>';
+    },
+    web: function (main, details) {
+      return '<div class="wweb"><div class="ww-top">' + main + '</div><div class="ww-legs">' + details.map(function (d) { return '<span>' + d + '</span>'; }).join('') + '</div></div>';
+    },
+    chain: function (items, labels) {
+      return '<ol class="wchain">' + items.map(function (t, i) { return '<li>' + (labels && labels[i] ? '<b>' + labels[i] + '</b>' : '') + '<span>' + t + '</span></li>'; }).join('') + '</ol>';
     },
     icon: function (name) { return '<svg class="wicon" viewBox="0 0 32 32" aria-hidden="true">' + ICONS[name] + '</svg>'; },
     pic: function (name) {

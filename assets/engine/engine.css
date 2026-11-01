@@ -199,6 +199,31 @@ html.bigtext .opts{grid-template-columns:1fr}
 .psg{background:var(--card);border:1px solid var(--line2);border-left:5px solid var(--strand);border-radius:12px;padding:12px 16px;margin:8px 0;text-align:left;max-width:34em}
 .psg b.pt{display:block;font-family:var(--display);font-size:1.1rem;margin-bottom:4px}
 .psg p{margin:.35em 0;font-size:1.12rem;line-height:1.55}
+.psg .pband{display:flex;justify-content:center;gap:18px;margin:-12px -16px 10px;padding:12px 16px 8px;border-radius:0 11px 0 0;background:color-mix(in srgb,var(--strand) 9%,var(--card));color:var(--strand)}
+.psg .pband .wpic{width:56px;height:56px;color:inherit;margin:0}
+/* on a question screen the passage keeps to the top half, so the question and answers stay in view; it scrolls inside */
+.fig .psg,.qk-pic .psg{max-height:46vh;overflow-y:auto;overscroll-behavior:contain}
+.fig .wchain+.psg{max-height:30vh}
+.psg-tap .ps{cursor:pointer;border-radius:4px;padding:1px 2px;box-decoration-break:clone;-webkit-box-decoration-break:clone;background:linear-gradient(transparent 92%,var(--line2) 92%)}
+.psg-tap .ps:hover{background:var(--tint)}
+.psg-tap .ps.qk-yes{background:color-mix(in srgb,var(--good) 22%,var(--card));box-shadow:0 0 0 2px var(--good)}
+.psg-tap .ps.qk-no{background:color-mix(in srgb,var(--bad) 14%,var(--card));text-decoration:line-through}
+.qk-pic .psg{flex:1}
+/* on a question screen the picture band is slim, so the words get the room */
+.fig .psg .pband,.qk-pic .psg .pband{justify-content:flex-start;gap:8px;padding:6px 16px}
+.fig .psg .pband .wpic,.qk-pic .psg .pband .wpic{width:32px;height:32px}
+/* main idea and details (words.js W.web) */
+.wweb{display:grid;gap:0;max-width:30em;margin:6px auto;width:100%}
+.ww-top{position:relative;padding:12px 16px;border-radius:14px 14px 4px 4px;background:var(--strand);color:var(--accent-ink);font-weight:700;font-size:1.12rem;text-align:center}
+.ww-legs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;padding-top:14px;background:linear-gradient(var(--strand),var(--strand)) center 0/calc(100% - 3em) 3px no-repeat}
+.ww-legs span{position:relative;padding:8px 10px;border-radius:10px;border:1.5px solid var(--line2);background:var(--card);font-size:.98rem;text-align:center}
+.ww-legs span::before{content:"";position:absolute;left:50%;top:-14px;height:14px;border-left:3px solid var(--strand)}
+/* story map (words.js W.chain) */
+.wchain{list-style:none;counter-reset:wc;display:grid;gap:10px;max-width:30em;margin:6px auto;padding:0;width:100%}
+.wchain li{counter-increment:wc;position:relative;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line2);background:var(--card);font-size:1.08rem;text-align:left}
+.wchain li::before{content:counter(wc);flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--strand);color:var(--accent-ink);font-weight:700}
+.wchain li:not(:last-child)::after{content:"";position:absolute;left:26px;bottom:-11px;height:10px;border-left:3px solid var(--strand)}
+.wchain li b{flex:none;color:var(--strand);min-width:3.4em}
 .fig .psg{margin:8px auto}
 .wpics{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 
@@ -222,3 +247,13 @@ html.bigtext .opts{grid-template-columns:1fr}
 .tk-b.qk-on{border-color:var(--accent);background:var(--tint)}
 .tk-now{font-weight:700;margin:4px 0 0}
 .psg b.psh{display:block;font-size:1rem;margin:10px 0 0;color:var(--strand)}
+
+/* ---------- read and answer (practice.js) ---------- */
+.rd-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin:12px 0}
+.rd-item{display:flex;gap:12px;align-items:center;padding:10px 12px;border:1.5px solid var(--line2);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none}
+.rd-item:hover{border-color:var(--strand)}
+.rd-pic{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:12px;background:color-mix(in srgb,var(--strand) 9%,var(--card));color:var(--strand)}
+.rd-pic .wpic{width:40px;height:40px;color:inherit}
+.rd-t{display:grid;gap:2px}
+.rd-read .psg{max-width:none}
+.rd-end h2{margin-top:0}
