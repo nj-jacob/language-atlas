@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-01
+- Deeper Grade 3 "Reading for Meaning", the pilot for making every chapter a real study tool: 16 new original passages (23 in all, 9 of them at Grade 3 length, each with a picture), 8 practice skills instead of 3 (one per idea, each asked in 4 ways), two worked examples in every "Watch me", 3 "Together" and 5 "On your own" questions per idea, and new "Read and answer" sets (read a whole text, then answer 5 questions about it).
+- Engine: tap the sentence in the text, main idea and story map pictures (`Atlas.W.web`, `Atlas.W.chain`), passages in paragraphs with a picture band, 15 new line-art pictures, practice never repeats a question the child has just seen, and "Got it" needs 4 right first time when an idea has 5 "On your own" questions. A new check holds chapters marked `full: true` to the full standard. Passage helpers are shared in the engine (`Atlas.passages`), so every grade's `texts.js` uses one copy.
+
 ## 2026-10-31
 - Letter sounds: Noel's 44 recorded sounds (`assets/sounds/`) now play from sound buttons in the Grade 1 and Grade 2 phonics lessons and questions (`Atlas.W.sound`, `Atlas.W.soundRow`). The checks make sure every button has its file and none sits inside an answer choice.
 - Full Grade 2: 14 chapters, 80 ideas, 30 practice skills and 34 activities with a grown-up, covering all 61 Grade 2 expectations in strands A, B, C and D (checked against the 2023 curriculum and the Language Foundations Continuum: soft c and g, uni-/bi-/tri-, mis-/pre-, -er/-or/-ness/-y, group nouns, -er/-est, similes and consonance, contents pages and charts). Seven original reading passages (`grade2/texts.js`). Linked from the home page.

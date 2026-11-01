@@ -2,9 +2,25 @@
 
 `grade3/chapters/word-parts.js` is the worked example. Every chapter in `grade3/chapters/` follows the same pattern.
 
-**Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs. For words a child names by sound, use the line-art pictures: `Atlas.W.pic('sun')` (the list is `Atlas.W.pics`: sun, cat, dog, pig, fish, hat, bed, cup, bus, map, jet, fox, egg, bee, kite, moon, tree, apple, ball, box, key, nest, van). An unknown name stops the page with an error, so the checks catch it.
+**Show, don't tell.** The child should read very little. Each "Watch me" step is one picture and one short line (`Atlas.W.step`). Use word tiles, sentence strips, highlights and picture cues from `Atlas.W` (see `assets/engine/words.js`) rather than paragraphs. For words a child names by sound, use the line-art pictures: `Atlas.W.pic('sun')` (the list is `Atlas.W.pics`: sun, cat, dog, pig, fish, hat, bed, cup, bus, map, jet, fox, egg, bee, kite, moon, tree, apple, ball, box, key, nest, van, and for passages canoe, snow, leaf, book, house, rain, ferry, hockey, goose, moose, plant, sky, letter, angel, science). An unknown name stops the page with an error, so the checks catch it.
 
 **Letter sounds (phonics only).** `Atlas.W.sound('sh')` is a small button that plays the recorded sound and shows /sh/; give other text with `Atlas.W.sound('ee', '/ē/')`. `Atlas.W.soundRow(['f', 'r', 'o', 'g'])` shows a word as its sounds, one button per tile, for blending and counting. The 44 recorded sounds are `Atlas.W.soundNames` (files in `assets/sounds/`); c and ck play k, and ay plays ai. Put sound buttons in a "Watch me" line, a question's picture (`fig`), its `prompt` or its `steps`, never in an answer choice: a choice is a button already, and the checks fail if a sound button is inside one. No other read-aloud.
+
+## A full chapter: deep enough to study from
+
+Coverage is not enough: a child needs worked examples, lots of practice and questions that do not repeat. A chapter that meets this standard sets `full: true`, and the checks then hold it to it. `grade3/chapters/reading.js` is the worked example.
+
+- **Every idea:** two worked examples in "Watch me" (4 to 6 steps, each a picture and one line), 3 "Together" questions, 5 "On your own" questions. "Got it" needs 4 right on the first try.
+- **Every idea has its own practice skill**, asked in 4 or more ways, with levels that really step up (more choices, longer texts, harder shapes).
+- **Big question banks:** each skill can make 30 or more different questions. Practice never asks the one the child has just seen.
+- **Visual first:** pictures carry the idea. Passages have a picture band, the main idea is drawn as a roof over its details (`Atlas.W.web`), order as a story map (`Atlas.W.chain`), and the child taps the sentence in the text (a `tap` question whose `pic` is `Atlas.W.passage(title, lines, { tap: true })`).
+- **Reading chapters** add "Read and answer" sets and passages at grade length (see below).
+
+## Read and answer
+
+A reading chapter can add `read: { texts: [passage, ...], show: function (t) -> html, ask: function (t) -> [question, ...] }`. The child picks a passage, reads it on its own screen, then answers its questions one at a time (a hint after a miss, then a second try) and sees a score. Keep sets to about 5 questions, mixing facts, a tap-the-sentence question and one or two others (main idea, order, kind of text).
+
+Passages live in `gradeN/texts.js`, which calls `Atlas.passages({ key: passage, ... }, { short: 100 })` once (in `words.js`). That sets `Atlas.texts` and adds the shared helpers: `show(t, upTo, { tap })`, `body(t)`, `words(t)` and `list(need, level)`, where level 1 gives passages under `short` words and level 3 the longer ones. Never copy these helpers into a grade. Write passages at grade length (Grade 3: 100 to 150 words for the long ones), in paragraphs: an empty line `''` starts a new paragraph, `'# '` a heading. Give each one `pics` (picture names for its band) and the facts, events, main idea and prediction its questions need.
 
 ## An idea (one screen)
 
@@ -24,7 +40,7 @@
 
 How the steps behave:
 - **Together:** a wrong answer is corrected at once (the answer and why), then the **same** question is asked again, so the child ends on a right answer.
-- **On your own:** a wrong answer gets a hint and a second try; a second miss shows the answer and the steps. Two right on the first try marks the idea "Got it".
+- **On your own:** a wrong answer gets a hint and a second try; a second miss shows the answer and the steps. Right on the first try 4 times marks the idea "Got it" (2 for a short idea with fewer "On your own" questions). The screen shows the count.
 
 ## The question object
 
