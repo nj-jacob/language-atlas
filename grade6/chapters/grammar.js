@@ -235,7 +235,7 @@
             step(W.sent('My bike was stolen.'), 'Who did it? We do not know.'),
             step(W.sent('The school was built in 1952.'), 'Who built it does not matter here.'),
             step(W.sent('Mistakes were made.'), 'The writer hides who made them.'),
-            step(W.chain(['unknown', 'not important', 'hidden'], ['stolen', 'built', 'made']), 'Three reasons to leave out the doer.')
+            step(W.chain(['Who? Unknown.', 'Who? It does not matter.', 'Who? Hidden.'], ['stolen', 'built', 'made']), 'Three reasons to leave out the doer.')
           ],
           guided: [function () { return whyPassive(1); }, function () { return noDoer(1); }, whyTf],
           check: [function () { return whyPassive(2); }, whyMatch, whyTf, function () { return noDoer(2); }, function () { return whyPassive(2); }],

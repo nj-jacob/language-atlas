@@ -168,7 +168,7 @@
             step(W.sent('<b>Although</b> it was drizzling, we played outside.'), 'A surprise.'),
             step(W.sent('You cannot go <b>unless</b> you finish your chores.'), 'A condition.'),
             step(W.sent('We waited <b>until</b> the ferry arrived.'), 'A time.'),
-            step(W.chain(['because', 'although', 'unless', 'until'], ['why?', 'surprisingly', 'what if?', 'when?']), 'Ask the question the word answers.')
+            step(W.chain(['why?', 'surprisingly', 'what if?', 'when?'], ['because', 'although', 'unless', 'until']), 'Ask the question the word answers.')
           ],
           guided: [function () { return joinWord(1); }, function () { return shows(1); }, joinTf],
           check: [function () { return joinWord(2); }, pickComplex, function () { return shows(2); }, joinTf, function () { return joinWord(2); }],
