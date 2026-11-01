@@ -114,7 +114,7 @@
   function sufMeaning(lv, s0) {
     var s = suf(s0), b = R.pick(bases(s, lv)), wrong = [S[SOTHER[s]].mean(b), b + ' again'].filter(function (x, i) { return i > 0 || BOTH.indexOf(b) >= 0; });
     return Q.one('What does <b>' + b + s + '</b> mean?', S[s].mean(b), wrong.slice(0, lv > 1 ? 2 : 1), {
-      fig: lv > 1 ? W.tile(b + s) : W.sum(sparts(s, b)), prompt: 'Look at the end. Is it <b>&#8209;ful</b> or <b>&#8209;less</b>?', hint: '-ful means full of. -less means without.',
+      fig: lv > 1 ? W.tile(b + s) : W.sum(sparts(s, b)), prompt: 'Look at the end. Is it <b>‑ful</b> or <b>‑less</b>?', hint: '-ful means full of. -less means without.',
       explain: W.means(S[s].icon, '<b>-' + s + '</b> means <b>' + sufMeans(s) + '</b>'),
       steps: ['Cover <b>' + s + '</b>. The base word is <b>' + b + '</b>.', '<b>-' + s + '</b> means <b>' + sufMeans(s) + '</b>.', 'So <b>' + b + s + '</b> means <b>' + S[s].mean(b) + '</b>.'],
       meta: { k: 'g3-suf-meaning', word: b + s } });
