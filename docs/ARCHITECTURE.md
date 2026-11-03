@@ -15,7 +15,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `assets/icon.svg` | The site icon in browser tabs and bookmarks |
 | `assets/sounds/` | The 44 recorded letter sounds (one short mp3 each), played by the sound buttons in Grades 1 and 2 |
 | `tests/` | Automatic checks (see `CHECKS.md`) |
-| `.github/workflows/` | `checks.yml` runs the checks on pull requests. `publish.yml` runs them again on `main`, then asks math-atlas to publish (needs the `ATLAS_TOKEN` secret, see `SETUP.md`). |
+| `.github/workflows/` | `checks.yml` runs the checks on pull requests. `preview.yml` publishes each pull request to a 7-day test link (needs `FIREBASE_SERVICE_ACCOUNT` too). `publish.yml` runs them again on `main`, then asks math-atlas to publish (needs the `ATLAS_TOKEN` secret, see `SETUP.md`). |
 
 ## The engine (`assets/engine/`)
 
