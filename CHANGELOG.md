@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03
+- Safer publishing: every pull request now gets its own test link (posted on the pull request, works for 7 days) showing Atlas with that pull request's Language pages, to look at before it goes live. The checks run once per change instead of twice, which halves the check minutes. `SETUP.md` has the one-time key step.
+
 ## 2026-11-01
 - Placement check: the results keep the lesson to start with in each part, so the Atlas parent page can show a child's starting points, reading aloud and writing mark.
 - Placement check: a writing sample. The child writes on their own to a prompt for their grade, and the grown-up marks it on a four-level rubric (never the computer). The mark shows with the starting points, and levels 1 and 2 point to the grade's writing lessons.
