@@ -1,6 +1,6 @@
 /* Language Atlas tool box, shared by every grade: hands-on tools for free play, alone or with a grown-up (page #tools).
-   Needs atlas.js, words.js (sound clips) and wordbank.js (the words). No marks and no tasks: the child builds and explores.
-     #tools          the first tool          #tools/words    Word builder
+   Needs atlas.js, words.js (sound clips), wordbank.js (the words) and cardbank.js (the sentence cards). No marks and no tasks: the child builds and explores.
+     #tools          the first tool          #tools/words    Word builder          #tools/sentences    Sentence builder
    A tool fills the screen under a slim bar (back, the tool's name, Undo, Tools). The Tools menu shows the tools on shelves,
    one shelf per part of Language. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
 
@@ -11,13 +11,28 @@
      Beats   a longer word: tap between letters to cut it into beats (syllables). "Show the beats" marks where they go.
      Parts   prefixes, bases (and roots from Grade 7) and suffixes. Each part shows what it means; the word is spelled with the
              spelling rules (drop the e, double the last letter, y changes to i, add es), and its word family is listed.
-   Each grade gets the tiles and words for its grade and the grades before (wordbank.js says from which grade each shows). */
+   Each grade gets the tiles and words for its grade and the grades before (wordbank.js says from which grade each shows).
+
+   Sentence builder (#tools/sentences): word cards coloured by their job (who or what, does, where or when, how, joins, marks;
+   cardbank.js). Curriculum B3.1 (sentence types: simple, compound, complex; fragments and run-ons), B3.2 (active and passive
+   voice, Grade 6) and B3.3 (end marks, commas, semicolons). Tap a card in the tray to add it; tap a card in the sentence to pick it,
+   then move it, take it out, or tap a tray card to swap it. Under each sentence, ticks show who or what, does, a mark at the end,
+   and from Grade 3 whether it stands alone (one part can stand alone, none is crammed with two sentences).
+     Join two      joins two sentences with a joining word (a comma first for and, but, so, or from Grade 3; ; from Grade 7)
+     Split         the opposite: the joining word becomes a full stop
+     To the front  moves a where-or-when card, or a part starting with because, when, although ..., to the front with a comma
+                   (Grade 3+); pressed again it goes back to the end
+     Make it passive / active   Leo fed my dog <-> My dog was fed by Leo (Grade 6+)
+     Clauses       (Grade 3+, on from Grade 7) marks each clause: can stand alone, or cannot
+     Show jobs     off: plain cards, so a grown-up can ask what job each card does */
 (function () {
   'use strict';
   var A = window.Atlas, $ = A.$, $$ = A.$$;
-  var SHELVES = [['sounds', 'Sounds and letters']];
+  var SHELVES = [['sounds', 'Sounds and letters'], ['sent', 'Sentences']];
   var ICON_WORDS = '<rect x="3" y="12" width="13" height="20" rx="3" style="fill:var(--card);stroke:var(--ink);stroke-width:2"/><rect x="18" y="12" width="13" height="20" rx="3" style="fill:color-mix(in srgb,var(--hi) 35%,var(--card));stroke:var(--hi);stroke-width:2"/><rect x="33" y="12" width="13" height="20" rx="3" style="fill:var(--card);stroke:var(--ink);stroke-width:2"/><circle cx="9.5" cy="39" r="2.2" style="fill:var(--accent)"/><circle cx="24.5" cy="39" r="2.2" style="fill:var(--accent)"/><circle cx="39.5" cy="39" r="2.2" style="fill:var(--accent)"/>';
-  var TOOLS = [{ id: 'words', shelf: 'sounds', name: 'Word builder', icon: ICON_WORDS, make: wordBuilder }];
+  var ICON_SENT = '<rect x="2" y="16" width="14" height="14" rx="3" style="fill:color-mix(in srgb,var(--sb) 14%,var(--card));stroke:var(--sb);stroke-width:2"/><rect x="18" y="16" width="12" height="14" rx="3" style="fill:color-mix(in srgb,var(--sd) 14%,var(--card));stroke:var(--sd);stroke-width:2"/><rect x="32" y="16" width="14" height="14" rx="3" style="fill:color-mix(in srgb,var(--sa) 14%,var(--card));stroke:var(--sa);stroke-width:2"/><circle cx="44" cy="38" r="2.4" style="fill:var(--ink)"/>';
+  var TOOLS = [{ id: 'words', shelf: 'sounds', name: 'Word builder', icon: ICON_WORDS, make: wordBuilder },
+    { id: 'sentences', shelf: 'sent', name: 'Sentence builder', icon: ICON_SENT, make: sentenceBuilder }];
   var SVG_UNDO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 7L4 12l5 5M4 12h11a5 5 0 0 1 0 10h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var SVG_MENU = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
@@ -269,6 +284,249 @@
     return { undo: undo };
   }
 
+  /* ---------- the card bank, for this grade ---------- */
+  function cards(all) {
+    var B = A.cardbank, g = all ? 99 : A.grade, out = [];
+    B.jobs.forEach(function (j) {
+      B.cards[j[0]].split('|').forEach(function (x) {
+        var p = x.trim().split(':'), c = { t: p[0], j: j[0], g: +p[1] };
+        if (c.g > g) return;
+        if (p[2] === 'pl') c.pl = 1;
+        else if (j[0] === 'does' && p[2]) c.pp = p[2];
+        else if (p[2]) c.k = p[2];
+        out.push(c);
+      });
+    });
+    return out;
+  }
+  function sentence(s, list) {
+    return s.split('|').map(function (t) {
+      t = t.trim();
+      var c = list.filter(function (x) { return x.t === t; })[0];
+      if (!c) throw new Error('"' + t + '" is not a card');
+      return JSON.parse(JSON.stringify(c));
+    });
+  }
+  function examples(list) {
+    var E = A.cardbank.examples, out = [];
+    Object.keys(E).forEach(function (k) { if (+k <= A.grade) out = out.concat(E[k]); });
+    return out.map(function (s) { return sentence(s, list); });
+  }
+  function isEnd(c) { return c.j === 'mark' && /[.?!]/.test(c.t); }
+  function isJoin(c) { return c.j === 'join' || c.t === ';'; }
+
+  /* split a row of cards into sentences (an end mark closes one), and a sentence into clauses (a joining word or ; starts one) */
+  function sentences(row) {
+    var out = [], a = 0;
+    row.forEach(function (c, i) { if (isEnd(c)) { out.push({ a: a, b: i + 1 }); a = i + 1; } });
+    if (a < row.length) out.push({ a: a, b: row.length });
+    return out;
+  }
+  function clauses(row, s) {
+    var out = [], cur = null;
+    for (var i = s.a; i < s.b; i++) {
+      if (!cur || isJoin(row[i]) || (cur.sub && row[i - 1].t === ',')) { cur = { a: i, b: i, sub: row[i].k === 'sub' }; out.push(cur); }
+      cur.b = i + 1;
+    }
+    return out.map(function (cl) {
+      var who = 0, does = 0;
+      for (var i = cl.a; i < cl.b; i++) { if (row[i].j === 'who' && !row[i].by) who++; if (row[i].j === 'does') does++; }
+      cl.who = who > 0; cl.does = does > 0; cl.crammed = does > 1 && who > 1; cl.alone = cl.who && cl.does && !cl.sub && !cl.crammed;
+      return cl;
+    });
+  }
+  function check(row, s) {
+    var cl = clauses(row, s), last = row[s.b - 1];
+    return {
+      who: cl.every(function (c) { return c.who; }), does: cl.every(function (c) { return c.does; }), end: isEnd(last),
+      crammed: cl.some(function (c) { return c.crammed; }), alone: cl.some(function (c) { return c.alone; }) && cl.every(function (c) { return c.who && c.does && !c.crammed; })
+    };
+  }
+  /* how a card reads where it sits: a capital to start a sentence, "was fed" in a passive sentence, "by Leo" for who did it */
+  function says(row, i, first) {
+    var c = row[i], t = c.t;
+    if (c.pas) t = (row[i - 1] && row[i - 1].pl ? 'were ' : 'was ') + c.pp;
+    if (c.by) t = 'by ' + t;
+    return first ? t.charAt(0).toUpperCase() + t.slice(1) : t;
+  }
+  function read(row) {
+    var out = '', first = true;
+    row.forEach(function (c, i) {
+      out += (c.j === 'mark' || !out ? '' : ' ') + says(row, i, first && c.j !== 'mark');
+      first = c.j === 'mark' ? isEnd(c) || first : false;
+    });
+    return out;
+  }
+
+  /* ---------- the moves: each returns the new row, or null when it cannot be done here ---------- */
+  var MARK = function (t) { return { t: t, j: 'mark' }; };
+  function joinTwo(row, at, word, list) {
+    var S = sentences(row), n = 0;
+    S.forEach(function (s, k) { if (at >= s.a && at < s.b) n = k; });
+    if (n >= S.length - 1) n = 0;
+    var s1 = S[n], s2 = S[n + 1];
+    if (!s2 || !isEnd(row[s1.b - 1])) return null;
+    var c = word === ';' ? MARK(';') : list.filter(function (x) { return x.j === 'join' && x.t === word; })[0];
+    var mid = word !== ';' && c.k === 'co' && A.grade >= 3 ? [MARK(','), c] : [c];
+    return row.slice(0, s1.b - 1).concat(JSON.parse(JSON.stringify(mid)), row.slice(s2.a));
+  }
+  function inSent(row, i) { return sentences(row).filter(function (s) { return i >= s.a && i < s.b; })[0]; }
+  function split(row, at) {
+    var j = at >= 0 && isJoin(row[at]) ? at : -1;
+    if (j < 0) for (var i = 0; i < row.length && j < 0; i++) if (isJoin(row[i])) j = i;
+    if (j < 0) return null;
+    var s = inSent(row, j), r = row.slice();
+    if (j === s.a) {
+      for (var k = j + 1; k < s.b && row[k].t !== ','; k++);
+      if (k >= s.b) return null;
+      r[k] = MARK('.');
+      r.splice(j, 1);
+      return r;
+    }
+    if (row[j - 1].t === ',') r.splice(j - 1, 2, MARK('.'));
+    else r.splice(j, 1, MARK('.'));
+    return r;
+  }
+  /* the part to move: a where-or-when card, or a part that starts with because, when, although ... */
+  function part(row, i) {
+    if (row[i].j === 'where') return { a: i, b: i + 1 };
+    if (row[i].k !== 'sub') return null;
+    var s = inSent(row, i), b = i + 1;
+    while (b < s.b && !isJoin(row[b]) && row[b].j !== 'mark') b++;
+    return { a: i, b: b };
+  }
+  function movable(row, at) {
+    if (at >= 0) return part(row, at) ? at : -1;
+    var subs = [], wheres = [];
+    row.forEach(function (c, i) { if (c.k === 'sub') subs.push(i); else if (c.j === 'where') wheres.push(i); });
+    var all = subs.concat(wheres), back = all.filter(function (i) { return inSent(row, i).a !== i; });
+    return back.length ? back[0] : all.length ? all[0] : -1;
+  }
+  function front(row, at) {
+    var i = movable(row, at);
+    if (i < 0) return null;
+    var p = part(row, i), s = inSent(row, i), seg = row.slice(p.a, p.b), r = row.slice();
+    if (p.a === s.a) {
+      var drop = row[p.b] && row[p.b].t === ',' ? 1 : 0;
+      r.splice(p.a, seg.length + drop);
+      var end = s.b - seg.length - drop;
+      var at2 = isEnd(r[end - 1]) ? end - 1 : end;
+      return { row: r.slice(0, at2).concat(seg, r.slice(at2)), to: 'end', at: at2 };
+    }
+    var comma = row[p.a - 1].t === ',' ? 1 : 0;
+    r.splice(p.a - comma, seg.length + comma);
+    return { row: r.slice(0, s.a).concat(seg, [MARK(',')], r.slice(s.a)), to: 'front', at: s.a };
+  }
+  function voice(row, at) {
+    var S = at >= 0 ? [inSent(row, at)] : sentences(row);
+    for (var n = 0; n < S.length; n++) for (var i = S[n].a; i + 2 < S[n].b; i++) {
+      var a = row[i], v = row[i + 1], b = row[i + 2];
+      if (a.j !== 'who' || v.j !== 'does' || b.j !== 'who' || !v.pp || a.by) continue;
+      var r = row.slice(), A2 = JSON.parse(JSON.stringify(a)), B2 = JSON.parse(JSON.stringify(b)), V2 = JSON.parse(JSON.stringify(v));
+      if (!v.pas && !b.by) { V2.pas = 1; A2.by = 1; r.splice(i, 3, B2, V2, A2); return { row: r, to: 'passive' }; }
+      if (v.pas && b.by) { delete V2.pas; delete B2.by; r.splice(i, 3, B2, V2, A2); return { row: r, to: 'active' }; }
+    }
+    return null;
+  }
+
+  /* ---------- Sentence builder ---------- */
+  function sentenceBuilder(root, canUndo) {
+    var list = cards(), ex = examples(list), g = A.grade, history = [];
+    var jobs = A.cardbank.jobs.filter(function (j) { return list.some(function (c) { return c.j === j[0]; }); });
+    var E = A.cardbank.examples, start = g >= 7 ? E[7][0] : g >= 4 ? E[4][0] : g >= 3 ? E[3][0] : E[1][0];
+    var st = { tab: 'who', sel: -1, jobs: true, cl: g >= 7, joining: false, row: sentence(start, list) };
+    function change(fn) { history.push(JSON.stringify(st)); fn(); st.joining = false; canUndo(true); draw(); }
+    function undo() { if (!history.length) return; st = JSON.parse(history.pop()); st.joining = false; canUndo(history.length > 0); draw(); }
+
+    root.innerHTML = '<div class="wb sb"><div class="wb-tray" aria-label="Cards"></div><div class="wb-mat"><div class="sb-sw"></div><div class="wb-body sb-body"></div><div class="wb-do"></div></div></div>';
+    var tray = $('.wb-tray', root), body = $('.sb-body', root), act = $('.wb-do', root), sw = $('.sb-sw', root);
+    function card(c, attr, text, extra) {
+      return '<button type="button" class="sc sc-' + c.j + (c.k === 'co' || c.t === ';' ? ' sc-co' : '') + (extra || '') + '" ' + attr + '>' + esc(text) + '</button>';
+    }
+    function tick(ok, t) { return '<li class="' + (ok ? 'sb-ok' : '') + '"><i aria-hidden="true">' + (ok ? '&#10003;' : '') + '</i>' + t + '<span class="sr">' + (ok ? ': yes' : ': not yet') + '</span></li>'; }
+    function draw() {
+      var row = st.row, S = sentences(row);
+      sw.innerHTML = '<button type="button" class="sb-tg" data-tg="jobs" aria-pressed="' + st.jobs + '"><i aria-hidden="true"></i>Show jobs</button>' +
+        (g >= 3 ? '<button type="button" class="sb-tg" data-tg="cl" aria-pressed="' + st.cl + '"><i aria-hidden="true"></i>Clauses</button>' : '');
+      tray.innerHTML = '<div class="wb-tabs sb-tabs" role="tablist">' + jobs.map(function (j) {
+        return '<button type="button" role="tab" data-tab="' + j[0] + '" aria-selected="' + (st.tab === j[0]) + '">' + j[1] + '</button>';
+      }).join('') + '</div><div class="wb-list sb-list">' + list.map(function (c, i) {
+        return c.j === st.tab ? card(c, 'data-add="' + i + '"', c.t) : '';
+      }).join('') + '</div>';
+      root.firstChild.classList.toggle('sb-plain', !st.jobs);
+      body.innerHTML = row.length ? S.map(function (s) {
+        var cl = clauses(row, s), k = check(row, s), h = '';
+        cl.forEach(function (c) {
+          var inner = '';
+          for (var i = c.a; i < c.b; i++) {
+            var one = card(row[i], 'data-at="' + i + '" aria-pressed="' + (st.sel === i) + '"', says(row, i, i === s.a), st.sel === i ? ' sb-sel' : '');
+            /* a mark stays on the same line as the card before it */
+            inner += i + 1 < c.b && row[i + 1].j === 'mark' && row[i].j !== 'mark' ? '<span class="sb-pair">' + one : row[i].j === 'mark' && i > c.a && row[i - 1].j !== 'mark' ? one + '</span>' : one;
+          }
+          h += st.cl ? '<span class="sb-cl' + (c.alone ? ' sb-cl-ok' : '') + '"><span class="sb-cards">' + inner + '</span><small>' + (c.alone ? 'can stand alone' : 'cannot stand alone') + '</small></span>' : inner;
+        });
+        return '<div class="sb-sent"><div class="sb-cards sb-row">' + h + '</div><ul class="sb-ticks">' + tick(k.who, 'Who or what') + tick(k.does, 'Does') +
+          (g >= 3 ? tick(k.alone, 'Stands alone') : '') + tick(k.end, 'Mark at the end') + '</ul>' +
+          (g >= 3 && k.crammed ? '<p class="sb-hint">Two sentences are crammed together.</p>' : g >= 3 && k.who && k.does && !k.alone ? '<p class="sb-hint">It needs a part that can stand alone.</p>' : '') + '</div>';
+      }).join('') + (st.jobs ? '<p class="sb-key">' + jobs.filter(function (j) { return j[0] !== 'mark'; }).map(function (j) { return '<span><i class="sk-' + j[0] + '"></i>' + j[2] + '</span>'; }).join('') + '</p>' : '')
+        : '<p class="wb-empty">Tap a card to start.</p>';
+      var b = function (d, t, on, go) { return '<button type="button" class="wb-act' + (go ? ' wb-go' : '') + '" data-do="' + d + '"' + (on ? '' : ' disabled') + '>' + t + '</button>'; };
+      if (st.joining) {
+        act.innerHTML = '<span class="sb-with">Join with</span>' + list.filter(function (c) { return c.j === 'join'; }).map(function (c) {
+          return card(c, 'data-jw="' + esc(c.t) + '"', c.t);
+        }).join('') + (g >= 7 ? card(MARK(';'), 'data-jw=";"', ';') : '') + b('cancel', 'Cancel', true);
+        return;
+      }
+      var fr = g >= 3 ? front(row, st.sel) : null, vo = g >= 6 ? voice(row, st.sel) : null;
+      act.innerHTML = (st.sel >= 0 ? '<span class="sb-move">' + b('left', '&larr;<span class="sr"> Move left</span>', st.sel > 0) + b('right', '&rarr;<span class="sr"> Move right</span>', st.sel < row.length - 1) + b('out', 'Take out', true) + '</span>' : '') +
+        b('join', 'Join two', !!joinTwo(row, st.sel, 'and', list), true) + b('split', 'Split', !!split(row, st.sel)) +
+        (g >= 3 ? b('front', fr && fr.to === 'end' ? 'To the end' : 'To the front', !!fr) : '') +
+        (g >= 6 ? b('voice', vo && vo.to === 'active' ? 'Make it active' : 'Make it passive', !!vo) : '') +
+        b('mix', 'Mix it up', row.length > 2) + b('new', 'New sentence', true) + b('clear', 'Clear', row.length > 0);
+    }
+    function mix(row) {
+      var out = [];
+      sentences(row).forEach(function (s) {
+        var part = row.slice(s.a, s.b), end = isEnd(part[part.length - 1]) ? part.pop() : null, m = part;
+        for (var n = 0; n < 9 && m.length > 1 && m.map(txt).join('|') === part.map(txt).join('|'); n++) m = A.R.shuffle(part);
+        out = out.concat(m, end ? [end] : []);
+      });
+      return out;
+    }
+    function txt(c) { return c.t; }
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b || b.disabled) return;
+      var d = b.dataset, row = st.row;
+      if (d.tab) { st.tab = d.tab; draw(); }
+      else if (d.tg) { st[d.tg] = !st[d.tg]; draw(); }
+      else if (d.add) change(function () {
+        var c = JSON.parse(JSON.stringify(list[+d.add]));
+        if (st.sel >= 0) { row[st.sel] = c; st.sel = -1; } else if (row.length < 24) row.push(c);
+      });
+      else if (d.at) { st.sel = st.sel === +d.at ? -1 : +d.at; st.joining = false; draw(); }
+      else if (d.jw) change(function () { st.row = joinTwo(row, st.sel, d.jw, list); st.sel = -1; });
+      else if (d.do === 'cancel') { st.joining = false; draw(); }
+      else if (d.do === 'join') { st.joining = true; draw(); }
+      else if (d.do === 'left' || d.do === 'right') change(function () {
+        var to = st.sel + (d.do === 'left' ? -1 : 1), c = row.splice(st.sel, 1)[0];
+        row.splice(to, 0, c); st.sel = to;
+      });
+      else if (d.do === 'out') change(function () { row.splice(st.sel, 1); st.sel = -1; });
+      else if (d.do === 'split') change(function () { st.row = split(row, st.sel); st.sel = -1; });
+      else if (d.do === 'front') change(function () { var f = front(row, st.sel); st.row = f.row; st.sel = f.at; });
+      else if (d.do === 'voice') change(function () { st.row = voice(row, st.sel).row; st.sel = -1; });
+      else if (d.do === 'mix') change(function () { st.row = mix(row); st.sel = -1; });
+      else if (d.do === 'new') change(function () {
+        var now = read(row), o = ex.filter(function (x) { return read(x) !== now; });
+        st.row = JSON.parse(JSON.stringify(A.R.pick(o))); st.sel = -1;
+      });
+      else if (d.do === 'clear') change(function () { st.row = []; st.sel = -1; });
+    });
+    draw();
+    return { undo: undo };
+  }
+
   /* for the checks (tests/run.js): the spelling rules and the grade's word bank */
-  A.toolkit = { join: join, spell: spell, bank: bank, tools: TOOLS };
+  A.toolkit = { join: join, spell: spell, bank: bank, tools: TOOLS, cards: cards, sentence: sentence, sentences: sentences, check: check, read: read, joinTwo: joinTwo, split: split, front: front, voice: voice };
 })();
