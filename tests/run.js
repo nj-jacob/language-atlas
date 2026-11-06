@@ -18,7 +18,10 @@
    6. The placement check: every grade has questions in every area, and children at made-up levels are placed at exactly
       those levels, with a lesson to start each part, on a phone screen with no errors. Reading aloud: two timed readings,
       marked like a grown-up would, give the right words correct per minute. Writing sample: the writing and the grown-up's mark
-      are kept and shown, and nothing is marked until the grown-up marks it. */
+      are kept and shown, and nothing is marked until the grown-up marks it.
+   7. The tool box: every word in Word builder's word bank can be built from the letter tiles and sounded out, and every word made
+      of parts is spelled right by the spelling rules. On a phone, a child builds a word in each view, swaps a sound, blends and
+      undoes; then each view opens on an iPad and a laptop with no errors and nothing off the side. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -29,7 +32,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'tools.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -524,6 +527,82 @@ async function checkPlacement(browser, base) {
   return asked;
 }
 
+/* ---------- 7. the tool box (Word builder) ---------- */
+async function checkTools(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' tool box';
+  await page.goto(base + '/grade' + g + '/index.html#tools/words');
+  await page.waitForSelector('.wb-body');
+  /* the word bank: every word can be built and sounded out, and every word made of parts is spelled right by the rules */
+  for (const p of await page.evaluate(() => {
+    const out = [], B = Atlas.wordbank, tiles = B.tiles.map(t => t[0]), K = Atlas.toolkit;
+    for (const s of B.sounds) for (const x of s.split(' ')) {
+      const [t, c] = x.split(':');
+      if (!tiles.includes(t)) out.push('"' + s + '": "' + t + '" is not a letter tile');
+      try { Atlas.W.clip(c || t); } catch (e) { out.push('"' + s + '": ' + e.message); }
+    }
+    for (const b of Object.values(B.beats).join(' ').split(' ')) if (!/^[a-z]+(-[a-z]+)+$/.test(b)) out.push('beats: "' + b + '" is not a word cut into 2 or more beats');
+    for (const e of B.parts) {
+      const [ids, word] = e.split('='), parts = ids.split('+');
+      for (const id of parts) if (/^-|-$/.test(id) && !B.means[id]) out.push('"' + e + '": "' + id + '" has no meaning');
+      const j = K.join(parts).word;
+      if (j !== word) out.push('"' + e + '": the spelling rules make "' + j + '"');
+    }
+    const k = K.bank();
+    if (k.sounds.length < 20 || k.beats.length < 10 || k.parts.length < 10 || !k.suffixes.length) out.push('too few words for this grade');
+    return out;
+  })) fail(where, p);
+  await screenCheck(page, where, 'Word builder');
+  /* Sounds: build a word the bank knows, swap one sound, blend, undo */
+  await page.click('[data-v="sounds"]');
+  await page.click('[data-do="clear"]');
+  const sw = await page.evaluate(() => Atlas.R.pick(Atlas.toolkit.bank().sounds.filter(w => w.tiles.length > 2)));
+  for (const t of sw.tiles) {
+    const tab = /[aeiou]/.test(t) ? 'vow' : 'cons';
+    await page.click('[data-tab="' + tab + '"]');
+    await page.click('.wb-tray [data-add="' + t + '"]');
+  }
+  if ((await page.textContent('.wb-w')) !== sw.word || !/real word/.test(await page.textContent('.wb-is'))) fail(where, 'building ' + sw.tiles.join(' ') + ' does not show "' + sw.word + '" as a real word');
+  await page.click('[data-do="blend"]');
+  await page.click('[data-pick="0"]');
+  await page.click('[data-tab="cons"]');
+  await page.click('.wb-tray [data-add="' + (sw.tiles[0] === 'b' ? 'd' : 'b') + '"]');
+  if ((await page.textContent('.wb-w')).charAt(0) !== (sw.tiles[0] === 'b' ? 'd' : 'b')) fail(where, 'tapping a box and then a tile does not swap that sound');
+  await page.click('[data-a="undo"]');
+  if ((await page.textContent('.wb-w')) !== sw.word) fail(where, 'Undo does not bring back "' + sw.word + '"');
+  await screenCheck(page, where, 'Sounds');
+  /* Beats: cut, then show where the beats go */
+  await page.click('[data-v="beats"]');
+  await page.click('.wb-gap[data-gap="2"]');
+  if ((await page.locator('.wb-cut').count()) !== 1) fail(where, 'tapping between two letters does not cut the word');
+  await page.click('[data-do="show"]');
+  const beat = await page.evaluate(() => [document.querySelectorAll('.wb-here').length, document.querySelectorAll('.wb-beats span').length]);
+  if (beat[0] !== beat[1] - 1 || beat[1] < 2) fail(where, '"Show the beats" marks ' + beat[0] + ' cuts for ' + beat[1] + ' beats');
+  await screenCheck(page, where, 'Beats');
+  /* Parts: build a word from its parts, then open one from its family */
+  await page.click('[data-v="parts"]');
+  await page.click('[data-do="clear"]');
+  const pe = await page.evaluate(() => Atlas.R.pick(Atlas.toolkit.bank().parts.filter(e => e.ids.length > 1)));
+  for (const id of pe.ids) {
+    const tab = /-$/.test(id) ? 'pre' : /^-/.test(id) ? 'suf' : await page.evaluate(id => Atlas.wordbank.means[id] ? 'root' : 'base', id);
+    await page.click('[data-ptab="' + tab + '"]');
+    await page.click('.wb-tray [data-part="' + id + '"]');
+  }
+  if ((await page.textContent('.wb-w')) !== pe.word || !/real word/.test(await page.textContent('.wb-is'))) fail(where, 'building ' + pe.ids.join(' + ') + ' does not show "' + pe.word + '" as a real word');
+  await screenCheck(page, where, 'Parts');
+  await page.click('.wb-fam .wb-chip:not([aria-pressed])');
+  if (!/real word/.test(await page.textContent('.wb-is'))) fail(where, 'a word from the word family does not open as a real word');
+  /* the Tools menu, and the tool on an iPad and a laptop */
+  await page.click('[data-a="menu"]');
+  await page.click('.tb-x');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (const v of ['sounds', 'beats', 'parts']) { await page.click('[data-v="' + v + '"]'); await screenCheck(page, where, v + ' at ' + vp.width + ' px'); }
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -538,6 +617,7 @@ async function checkPlacement(browser, base) {
         s.answered + ' practice questions answered on a phone screen, ' + s.tasks + ' activities marked. Types: ' + Object.entries(s.types).map(([k, v]) => k + ' ' + v).join(', ') + '. ' +
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }

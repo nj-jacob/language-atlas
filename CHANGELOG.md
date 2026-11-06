@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-06
+- Tool box, first tool: **Word builder** (Tools in the header, `#tools`). One word in three linked views for free play, alone or with a grown-up: Sounds (tap letter tiles into sound boxes, swap one sound, Blend plays Noel's recorded sounds in order), Beats (tap between letters to cut a word into syllables, then show where the beats go) and Parts (prefixes, bases and suffixes with what each part means, the spelling rules and the word family; Greek and Latin roots from Grade 7). Each grade gets the tiles and words for its grade and the ones before. New check: every word in the word bank can be built and is spelled right by the rules, and Word builder is used like a child would on a phone, iPad and laptop.
+
 ## 2026-11-01
 - Placement check: the results keep the lesson to start with in each part, so the Atlas parent page can show a child's starting points, reading aloud and writing mark.
 - Placement check: a writing sample. The child writes on their own to a prompt for their grade, and the grown-up marks it on a four-level rubric (never the computer). The mark shows with the starting points, and levels 1 and 2 point to the grade's writing lessons.

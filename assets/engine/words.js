@@ -19,7 +19,9 @@
      Atlas.W.step(picture, line)                  one "Watch me" step: a picture, then one short line (leave the line out when the picture says it)
      Atlas.W.sound('sh')                          a button that plays a recorded letter sound, shown as /sh/ (Atlas.W.sound('ee', '/ē/') to show other text)
      Atlas.W.soundRow(['f', 'r', 'o', 'g'])       a word as its sounds: one sound button per tile (soundRow(list, labels) to show other text)
-     Atlas.W.soundNames                           the recorded sounds (assets/sounds/<name>.mp3). c and ck play k; ay plays ai.
+     Atlas.W.soundNames                           the recorded sounds (assets/sounds/<name>.mp3). c and ck play k; ay plays ai (SAME below)
+     Atlas.W.clip('ay')                           the recorded sound a spelling plays ('ai')
+     Atlas.W.playAll(['sh', 'i', 'p'], each, done) play sounds one after another (blending in Word builder)
    Sound buttons are for phonics only. Never put one inside an answer choice: a choice is a button already. */
 (function () {
   'use strict';
@@ -99,7 +101,8 @@
   };
   /* the 44 recorded sounds, and spellings that share a clip */
   var SOUNDS = 'b d f g h j k l m n p r s t v w wh y z sh ch th th-voiced ng zh a e i o u ai ee igh oa ue oo-short oo ow oy ar or er air ear'.split(' ');
-  var SAME = { c: 'k', ck: 'k', ay: 'ai' };
+  /* spellings that play another sound's clip (the usual sound; a word can name another, see wordbank.js) */
+  var SAME = { c: 'k', ck: 'k', ay: 'ai', ll: 'l', ss: 's', ff: 'f', tch: 'ch', ea: 'ee', ie: 'igh', ew: 'ue', ou: 'ow', oi: 'oy', ir: 'er', ur: 'er', aw: 'or' };
   var me = document.currentScript, SOUND_DIR = me ? me.src.replace(/engine\/words\.js(\?.*)?$/, 'sounds/') : '../assets/sounds/';
   var SPEAKER = '<svg class="wsnd-i" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h5l7-6v20l-7-6H6z" fill="currentColor"/><path d="M22 11c2 3 2 7 0 10M25.5 8c4 4.5 4 11.5 0 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
   function clip(name) {
@@ -111,23 +114,27 @@
     var n = clip(name);
     return '<button type="button" class="wsnd' + (cls ? ' ' + cls : '') + '" data-snd="' + n + '" aria-label="Play the sound ' + label.replace(/<[^>]*>/g, '') + '">' + SPEAKER + '<span>' + label + '</span></button>';
   }
-  /* one player for every sound button: a new tap stops the sound before */
-  var player = null, playing = null;
+  /* one player for every sound: a new sound stops the one before. The button that started it glows while it plays. */
+  var player = null, playing = null, after = null;
+  function stop() { if (playing) playing.classList.remove('wsnd-on'); playing = null; after = null; }
+  function play(name, b, done) {
+    if (!player) {
+      player = new Audio();
+      player.addEventListener('ended', function () { var d = after; stop(); if (d) d(); });
+    }
+    stop();
+    player.pause();
+    player.src = SOUND_DIR + clip(name) + '.mp3';
+    playing = b || null; after = done || null;
+    if (b) b.classList.add('wsnd-on');
+    var p = player.play();
+    if (p && p.catch) p.catch(function () { var d = after; stop(); if (d) d(); });
+  }
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.wsnd');
     if (!b) return;
     e.preventDefault();
-    if (!player) {
-      player = new Audio();
-      player.addEventListener('ended', function () { if (playing) playing.classList.remove('wsnd-on'); playing = null; });
-    }
-    if (playing) playing.classList.remove('wsnd-on');
-    player.pause();
-    player.src = SOUND_DIR + b.getAttribute('data-snd') + '.mp3';
-    playing = b;
-    b.classList.add('wsnd-on');
-    var p = player.play();
-    if (p && p.catch) p.catch(function () { b.classList.remove('wsnd-on'); });
+    play(b.getAttribute('data-snd'), b);
   });
 
   var W = (A.W = {
@@ -171,6 +178,16 @@
       return '<span class="wsyl">' + names.map(function (n, i) { return soundButton(n, labels ? labels[i] : n, 'wt wt-syl'); }).join('') + '</span>';
     },
     soundNames: SOUNDS.slice(),
+    clip: clip,
+    /* play sounds one after another: each(i) runs as sound i starts, done() after the last */
+    playAll: function (names, each, done) {
+      var i = 0;
+      (function next() {
+        if (i >= names.length) { if (done) done(); return; }
+        if (each) each(i);
+        play(names[i++], null, next);
+      })();
+    },
     step: function (pic, line) { return '<div class="wsum">' + pic + '</div>' + (line ? '<p>' + line + '</p>' : ''); }
   });
   /* a grade's reading passages, with the helpers every reading chapter uses. Call once in gradeN/texts.js:
