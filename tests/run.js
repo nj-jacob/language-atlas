@@ -582,7 +582,11 @@ async function checkTools(browser, base, g) {
   /* Parts: build a word from its parts, then open one from its family */
   await page.click('[data-v="parts"]');
   await page.click('[data-do="clear"]');
-  const pe = await page.evaluate(() => Atlas.R.pick(Atlas.toolkit.bank().parts.filter(e => e.ids.length > 1)));
+  const pe = await page.evaluate(() => {
+    /* a word with a word family (another word that shares its base), so the family can be opened too */
+    const all = Atlas.toolkit.bank().parts, base = e => e.ids.filter(id => !/^-|-$/.test(id));
+    return Atlas.R.pick(all.filter(e => e.ids.length > 1 && all.some(f => f !== e && base(f).some(b => base(e).includes(b)))));
+  });
   for (const id of pe.ids) {
     const tab = /-$/.test(id) ? 'pre' : /^-/.test(id) ? 'suf' : await page.evaluate(id => Atlas.wordbank.means[id] ? 'root' : 'base', id);
     await page.click('[data-ptab="' + tab + '"]');
