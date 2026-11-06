@@ -6,7 +6,8 @@
 
    Word builder: one word in three views, linked (a word built in one view opens in the others when the word bank knows it).
      Sounds  letter tiles in sound boxes. Tap a tile to add it; tap a box, then a tile, to swap one sound. Blend plays the
-             sounds in order (Noel's recorded clips) and shows the word.
+             sounds in order (Noel's recorded clips) and shows the word. A silent-e tile (a-e) puts its e after the next tile:
+             c, a-e, k spells cake, and the word shows the vowel and its e joined.
      Beats   a longer word: tap between letters to cut it into beats (syllables). "Show the beats" marks where they go.
      Parts   prefixes, bases (and roots from Grade 7) and suffixes. Each part shows what it means; the word is spelled with the
              spelling rules (drop the e, double the last letter, y changes to i, add es), and its word family is listed.
@@ -64,13 +65,30 @@
     return { word: word, rule: rule };
   }
 
+  /* ---------- sound tiles: spell a word from them ----------
+     A silent-e tile ('a_e') is one sound in two places: its vowel here, its e after the next tile (or at the end).
+     spell(tiles, true) marks the vowel and its e so the word can show them joined. */
+  function label(t) { return t.replace('_', '&ndash;'); }
+  function spell(tiles, mark) {
+    var out = '', e = 0;
+    tiles.forEach(function (t, i) {
+      var split = /^(\w)_e$/.exec(t);
+      if (split) { out += mark ? '<b class="wb-se">' + split[1] + '</b>' : split[1]; e = i + 1; return; }
+      out += t;
+      if (e && i === e) { out += mark ? '<b class="wb-se">e</b>' : 'e'; e = 0; }
+    });
+    if (e) out += mark ? '<b class="wb-se">e</b>' : 'e';
+    return out;
+  }
+
   /* ---------- the word bank, for this grade ---------- */
   function bank() {
     var B = A.wordbank, g = A.grade;
     var tiles = B.tiles.filter(function (t) { return t[1] <= g; }).map(function (t) { return t[0]; });
     var sounds = B.sounds.map(function (s) {
       var gs = s.split(' ');
-      return { word: gs.map(function (x) { return x.split(':')[0]; }).join(''), tiles: gs.map(function (x) { return x.split(':')[0]; }), clips: gs.map(function (x) { return x.split(':')[1] || x; }) };
+      var tiles = gs.map(function (x) { return x.split(':')[0]; });
+      return { word: spell(tiles), tiles: gs.map(function (x) { return x.split(':')[0]; }), clips: gs.map(function (x) { return x.split(':')[1] || x; }) };
     }).filter(function (w) { return w.tiles.every(function (t) { return tiles.indexOf(t) >= 0; }); });
     var beats = [];
     Object.keys(B.beats).forEach(function (k) { if (+k <= g) beats = beats.concat(B.beats[k].split(' ')); });
@@ -105,7 +123,7 @@
 
     /* the word showing now, so another view can open on the same word */
     function wordNow() {
-      if (st.view === 'sounds') return st.tiles.join('');
+      if (st.view === 'sounds') return spell(st.tiles);
       if (st.view === 'beats') return st.beat.replace(/-/g, '');
       return join(st.parts).word;
     }
@@ -128,21 +146,21 @@
 
     /* Sounds: letter tiles in sound boxes */
     function known() {
-      var w = st.tiles.join('');
+      var w = spell(st.tiles);
       return K.sounds.filter(function (s) { return s.word === w && s.tiles.join(' ') === st.tiles.join(' '); })[0] || null;
     }
     function drawSounds() {
       var cons = K.tiles.filter(function (t) { return !isVowel(t); }), vow = K.tiles.filter(isVowel);
       tray.innerHTML = '<div class="wb-tabs" role="tablist"><button type="button" role="tab" data-tab="cons" aria-selected="' + (st.tab === 'cons') + '">Consonants</button>' +
         '<button type="button" role="tab" data-tab="vow" aria-selected="' + (st.tab === 'vow') + '">Vowels</button></div><div class="wb-grid">' +
-        (st.tab === 'cons' ? cons : vow).map(function (t) { return '<button type="button" class="wb-tile' + (isVowel(t) ? ' wb-v' : '') + '" data-add="' + t + '">' + t + '</button>'; }).join('') + '</div>';
+        (st.tab === 'cons' ? cons : vow).map(function (t) { return '<button type="button" class="wb-tile' + (isVowel(t) ? ' wb-v' : '') + '" data-add="' + t + '">' + label(t) + '</button>'; }).join('') + '</div>';
       var k = known(), clips = st.tiles.map(function (t, i) { return k ? k.clips[i] : A.W.clip(t); });
-      var w = st.tiles.join(''), pic = A.W.pics.indexOf(w) >= 0 && k ? A.W.pic(w) : '';
+      var w = spell(st.tiles), pic = A.W.pics.indexOf(w) >= 0 && k ? A.W.pic(w) : '';
       body.innerHTML = '<div class="wb-boxes">' + st.tiles.map(function (t, i) {
-        return '<div class="wb-box"><button type="button" class="wb-tile wb-big' + (isVowel(t) ? ' wb-v' : '') + (st.sel === i ? ' wb-sel' : '') + '" data-pick="' + i + '" aria-pressed="' + (st.sel === i) + '">' + t + '</button>' +
-          A.W.sound(clips[i], '<span class="sr">' + t + '</span>') + '</div>';
+        return '<div class="wb-box"><button type="button" class="wb-tile wb-big' + (isVowel(t) ? ' wb-v' : '') + (st.sel === i ? ' wb-sel' : '') + '" data-pick="' + i + '" aria-pressed="' + (st.sel === i) + '">' + label(t) + '</button>' +
+          A.W.sound(clips[i], '<span class="sr">' + label(t) + '</span>') + '</div>';
       }).join('') + (st.tiles.length < 6 ? '<div class="wb-box"><span class="wb-slot" aria-hidden="true">+</span></div>' : '') + '</div>' +
-        (st.tiles.length ? '<div class="wb-word"><span class="wb-w">' + w + '</span>' + pic + '</div><p class="wb-is">' + (k ? 'a real word' : st.tiles.length > 1 ? 'a made-up word' : '') + '</p>' : '') +
+        (st.tiles.length ? '<div class="wb-word"><span class="wb-w">' + spell(st.tiles, true) + '</span>' + pic + '</div><p class="wb-is">' + (k ? 'a real word' : st.tiles.length > 1 ? 'a made-up word' : '') + '</p>' : '') +
         (st.trail.length > 1 ? '<p class="wb-trail">' + st.trail.map(function (t) { return '<span>' + t + '</span>'; }).join('<i aria-hidden="true">&rarr;</i>') + '</p>' : '');
       act.innerHTML = '<button type="button" class="wb-act wb-go" data-do="blend"' + (st.tiles.length ? '' : ' disabled') + '>Blend <span aria-hidden="true">&rarr;</span></button>' +
         '<button type="button" class="wb-act" data-do="out"' + (st.sel < 0 ? ' disabled' : '') + '>Take out</button>' +
@@ -150,7 +168,7 @@
     }
     function noteWord() {
       if (!known()) return;
-      var w = st.tiles.join('');
+      var w = spell(st.tiles);
       if (st.trail[st.trail.length - 1] !== w) st.trail = st.trail.concat(w).slice(-5);
     }
     function blend() {
@@ -246,11 +264,11 @@
       else if (d.do === 'join') change(function () { st.cuts = []; });
       else if (d.do === 'next') change(function () { var o = K.beats.filter(function (x) { return x !== st.beat; }); st.beat = A.R.pick(o); st.cuts = []; st.show = false; });
     });
-    st.trail = [st.tiles.join('')];
+    st.trail = [spell(st.tiles)];
     draw();
     return { undo: undo };
   }
 
   /* for the checks (tests/run.js): the spelling rules and the grade's word bank */
-  A.toolkit = { join: join, bank: bank, tools: TOOLS };
+  A.toolkit = { join: join, spell: spell, bank: bank, tools: TOOLS };
 })();

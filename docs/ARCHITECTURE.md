@@ -27,7 +27,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
 | `practice.js` | Adaptive practice (never the same question twice in a row), "Read and answer" sets, the chapter quiz and the check-up |
 | `tasks.js` | Activities with a grown-up: speaking, reading aloud, drafting and more, marked with a four-level rubric in grown-up view |
-| `tools.js` | The tool box (`#tools`): hands-on tools for free play, alone or with a grown-up, on shelves like Math's tool box. Today: **Word builder**, one word in three linked views: Sounds (letter tiles in sound boxes, swap one sound, blend with the recorded clips), Beats (cut a word into syllables) and Parts (prefixes, bases, roots from Grade 7, suffixes, with what each part means, the spelling rules and the word family). Nothing is marked. |
+| `tools.js` | The tool box (`#tools`): hands-on tools for free play, alone or with a grown-up, on shelves like Math's tool box. Today: **Word builder**, one word in three linked views: Sounds (letter tiles in sound boxes, including silent-e tiles such as a-e for cake; swap one sound, blend with the recorded clips), Beats (cut a word into syllables) and Parts (prefixes, bases, roots from Grade 7, suffixes, with what each part means, the spelling rules and the word family). Nothing is marked. |
 | `wordbank.js` | Word builder's words, written for this site: letter tiles, words split into sounds, words cut into beats, and words made of parts, each with the grade it starts in. A check builds every word again (see `CHECKS.md`). |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
 

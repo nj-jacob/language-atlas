@@ -3,7 +3,8 @@
      tiles   the letter tiles for the Sounds view: [spelling, first grade it shows in]. Each tile plays its sound (words.js names
              the recorded clip; ay plays ai, and so on).
      sounds  words split into sound tiles, one string per word: 'sh i p'. A tile written 'oo:oo-short' plays another clip in this
-             word (book), so the word sounds right when it is blended. Grade: the word's first tile set.
+             word (book), so the word sounds right when it is blended. A silent-e tile such as 'a_e' is one sound in two places:
+             'c a_e k' spells cake (the e goes after the next tile). A word shows in a grade when all its tiles do.
      beats   words split into syllables (beats) with '-', by the first grade they show in: { 1: 'rab-bit ...', ... }.
      parts   words made of parts with '+', and the word they spell after '='. A part is a prefix (ends in -), a suffix (starts with
              -), or a base or root (neither). Write 'er.more' to pick one meaning of a part. The checks build each word again
@@ -19,7 +20,7 @@
       ['b', 1], ['c', 1], ['d', 1], ['f', 1], ['g', 1], ['h', 1], ['j', 1], ['k', 1], ['l', 1], ['m', 1], ['n', 1], ['p', 1], ['r', 1],
       ['s', 1], ['t', 1], ['v', 1], ['w', 1], ['y', 1], ['z', 1], ['ck', 1], ['ll', 1], ['ss', 1], ['ff', 1],
       ['sh', 1], ['ch', 1], ['th', 1], ['wh', 1], ['ng', 1], ['tch', 2],
-      ['a', 1], ['e', 1], ['i', 1], ['o', 1], ['u', 1], ['ee', 1], ['oo', 1], ['ai', 1], ['oa', 1], ['igh', 1],
+      ['a', 1], ['e', 1], ['i', 1], ['o', 1], ['u', 1], ['ee', 1], ['oo', 1], ['ai', 1], ['oa', 1], ['igh', 1], ['a_e', 1], ['i_e', 1], ['o_e', 1], ['u_e', 1], ['e_e', 2],
       ['ay', 2], ['ea', 2], ['ie', 2], ['ue', 2], ['ew', 2], ['ow', 2], ['ou', 2], ['oy', 2], ['oi', 2],
       ['ar', 2], ['or', 2], ['er', 2], ['ir', 2], ['ur', 2], ['aw', 2], ['air', 2], ['ear', 2]
     ],
@@ -33,6 +34,8 @@
       'r ai n\n t ai l\n t r ai n\n s n ai l\n p ai n t\n b oa t\n c oa t\n r oa d\n s oa p\n g oa t\n t oa s t\n n igh t\n l igh t\n b r igh t\n h igh\n r igh t\n' +
       'p l ay\n d ay\n t r ay\n s t ay\n l ea f\n r ea d\n b ea ch\n t ie\n p ie\n b l ue\n g l ue\n n ew\n g r ew\n s n ow:oa\n g r ow:oa\n c ow\n n ow\n ow l\n t ow n\n ou t\n c l ou d\n sh ou t\n' +
       'b oy\n t oy\n c oi n\n s oi l\n oi l\n c ar\n s t ar\n p ar k\n f ar m\n sh ar k\n c or n\n f or k\n s t or m\n n or th\n f er n\n h er\n b ir d\n g ir l\n sh ir t\n t ur n\n b ur n\n f ur\n h ur t\n' +
+      'c a_e k\n m a_e k\n l a_e k\n g a_e t\n n a_e m\n s n a_e k\n p l a_e t\n b i_e k\n t i_e m\n k i_e t\n s l i_e d\n s m i_e l\n f i_e v\n' +
+      'h o_e m\n b o_e n\n r o_e p\n n o_e t\n s t o_e n\n c u_e b\n t u_e b\n f l u_e t\n m u_e l\n th e_e m\n' +
       's aw\n p aw\n d r aw\n h air\n ch air\n p air\n f air\n ear\n h ear\n n ear\n d ear\n c l ear\n m a tch\n c a tch\n s k y:igh\n f l y:igh\n m y:igh'
     ),
     beats: {

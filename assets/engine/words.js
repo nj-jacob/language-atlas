@@ -102,7 +102,8 @@
   /* the 44 recorded sounds, and spellings that share a clip */
   var SOUNDS = 'b d f g h j k l m n p r s t v w wh y z sh ch th th-voiced ng zh a e i o u ai ee igh oa ue oo-short oo ow oy ar or er air ear'.split(' ');
   /* spellings that play another sound's clip (the usual sound; a word can name another, see wordbank.js) */
-  var SAME = { c: 'k', ck: 'k', ay: 'ai', ll: 'l', ss: 's', ff: 'f', tch: 'ch', ea: 'ee', ie: 'igh', ew: 'ue', ou: 'ow', oi: 'oy', ir: 'er', ur: 'er', aw: 'or' };
+  var SAME = { c: 'k', ck: 'k', ay: 'ai', ll: 'l', ss: 's', ff: 'f', tch: 'ch', ea: 'ee', ie: 'igh', ew: 'ue', ou: 'ow', oi: 'oy', ir: 'er', ur: 'er', aw: 'or',
+    a_e: 'ai', e_e: 'ee', i_e: 'igh', o_e: 'oa', u_e: 'ue' };
   var me = document.currentScript, SOUND_DIR = me ? me.src.replace(/engine\/words\.js(\?.*)?$/, 'sounds/') : '../assets/sounds/';
   var SPEAKER = '<svg class="wsnd-i" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h5l7-6v20l-7-6H6z" fill="currentColor"/><path d="M22 11c2 3 2 7 0 10M25.5 8c4 4.5 4 11.5 0 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
   function clip(name) {
