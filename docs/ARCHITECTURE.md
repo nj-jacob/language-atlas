@@ -27,7 +27,8 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
 | `practice.js` | Adaptive practice (never the same question twice in a row), "Read and answer" sets, the chapter quiz and the check-up |
 | `tasks.js` | Activities with a grown-up: speaking, reading aloud, drafting and more, marked with a four-level rubric in grown-up view |
-| `tools.js` | The tool box (`#tools`): hands-on tools for free play, alone or with a grown-up, on shelves like Math's tool box. Today: **Word builder**, one word in three linked views: Sounds (letter tiles in sound boxes, including silent-e tiles such as a-e for cake; swap one sound, blend with the recorded clips), Beats (cut a word into syllables) and Parts (prefixes, bases, roots from Grade 7, suffixes, with what each part means, the spelling rules and the word family). Nothing is marked. |
+| `tools.js` | The tool box (`#tools`): hands-on tools for free play, alone or with a grown-up, on shelves like Math's tool box. Today: **Word builder**, one word in three linked views: Sounds (letter tiles in sound boxes, including silent-e tiles such as a-e for cake; swap one sound, blend with the recorded clips), Beats (cut a word into syllables) and Parts (prefixes, bases, roots from Grade 7, suffixes, with what each part means, the spelling rules and the word family). **Sentence builder**: word cards coloured by their job (who or what, does, where or when, how, joins, marks); move, swap, Join two, Split, To the front, Make it passive (Grade 6+), and Clauses, with ticks for a complete sentence. Nothing is marked. |
+| `cardbank.js` | Sentence builder's word cards, written for this site, by job and by the grade they start in, and ready sentences for "New sentence". A check builds every example and tries every move both ways (see `CHECKS.md`). |
 | `wordbank.js` | Word builder's words, written for this site: letter tiles, words split into sounds, words cut into beats, and words made of parts, each with the grade it starts in. A check builds every word again (see `CHECKS.md`). |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
 
@@ -35,7 +36,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 
 `gradeN/index.html` sets three `meta` tags for the header, loads `engine.css` then `atlas-theme.css`, then the scripts in this order:
 1. `../assets/atlas-header.js` (first thing in `<body>`)
-2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `tools.js`
+2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `cardbank.js`, `tools.js`
 3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
 4. `texts.js` (optional): reading passages shared by the grade's chapters
 5. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`

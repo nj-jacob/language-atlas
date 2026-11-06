@@ -41,6 +41,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - the placement page sets no colours or fonts of its own.
 7. **The tool box**, in every grade:
    - every word in Word builder's word bank (`assets/engine/wordbank.js`) uses only letter tiles that exist and sounds that were recorded; silent-e tiles spell words right (c, a-e, k is cake); every word cut into beats has 2 or more beats; every word made of parts is spelled exactly right when Word builder joins its parts with its spelling rules, and every prefix and suffix says what it means;
+   - every card in Sentence builder's card bank (`assets/engine/cardbank.js`) is there once; every example sentence uses only cards of its grade and passes every tick; moving a part to the front and back, making a sentence passive and back, and joining two sentences and splitting them again all give the sentence back; passive sentences say "was" or "were" correctly;
    - on a phone screen, a child builds a word from its sound tiles (it must show as a real word), swaps one sound, blends, and undoes; cuts a word into beats and shows where the beats go; builds a word from its parts and opens another from its word family; opens and closes the Tools menu;
    - each view opens again on an iPad (both ways round) and a laptop with no errors and nothing off the side.
 

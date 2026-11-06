@@ -32,7 +32,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'tools.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -608,6 +608,79 @@ async function checkTools(browser, base, g) {
   await ctx.close();
 }
 
+/* Sentence builder: the card bank, the moves (each can be undone by its opposite), then a walk through on a phone and other screens */
+async function checkSentences(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Sentence builder';
+  await page.goto(base + '/grade' + g + '/index.html#tools/sentences');
+  await page.waitForSelector('.sb-body');
+  for (const p of await page.evaluate(g => {
+    const out = [], B = Atlas.cardbank, K = Atlas.toolkit, all = K.cards(true), seen = {};
+    for (const c of all) {
+      if (seen[c.t]) out.push('the card "' + c.t + '" is in the bank twice');
+      seen[c.t] = 1;
+      if (!(c.g >= 1 && c.g <= 8)) out.push('the card "' + c.t + '" has no grade from 1 to 8');
+    }
+    for (const k of Object.keys(B.examples)) for (const e of B.examples[k]) {
+      let row;
+      try { row = K.sentence(e, all.filter(c => c.g <= +k)); } catch (x) { out.push('example "' + e + '" (grade ' + k + '): ' + x.message + ' by grade ' + k); continue; }
+      for (const s of K.sentences(row)) {
+        const t = K.check(row, s);
+        if (!t.who || !t.does || !t.alone || !t.end || t.crammed) out.push('example "' + e + '" does not pass every tick');
+      }
+      const same = (r, why) => { if (r && K.read(r) !== K.read(row)) out.push('example "' + e + '": ' + why + ' gives "' + K.read(r) + '"'); };
+      const f = K.front(row, -1);
+      if (f) {
+        const back = K.front(f.row, f.at), again = K.front(back.row, back.at).row;
+        if (K.read(again) !== K.read(f.row)) out.push('example "' + e + '": moving a part to the front, to the end and to the front again gives "' + K.read(again) + '"');
+      }
+      const v = K.voice(row, -1);
+      if (v) same(K.voice(v.row, -1).row, 'passive and back to active');
+      if (K.sentences(row).length === 2) for (const w of ['and', 'but', ';']) {
+        const j = K.joinTwo(row, -1, w, all);
+        if (j) same(K.split(j, -1), 'joining with "' + w + '" and splitting');
+      }
+    }
+    const fed = K.sentence('the kids | fed | a frog | .', all), p = K.voice(fed, -1).row;
+    if (K.read(p) !== 'A frog was fed by the kids.') out.push('passive of "the kids fed a frog" reads "' + K.read(p) + '"');
+    if (K.read(K.voice(K.sentence('Leo | fed | the kids | .', all), -1).row) !== 'The kids were fed by Leo.') out.push('passive with more than one does not say "were"');
+    return out;
+  }, g)) fail(where, p);
+  await screenCheck(page, where, 'Sentence builder');
+  /* build a sentence from the tray, move a card, join two sentences, undo */
+  await page.click('[data-do="clear"]');
+  const add = async (tab, i) => { await page.click('[data-tab="' + tab + '"]'); await page.locator('.sb-list .sc').nth(i).click(); };
+  await add('does', 0); await add('who', 0); await add('mark', 0);
+  await page.click('[data-at="1"]'); await page.click('[data-do="left"]'); await page.click('[data-at="0"]');
+  if ((await page.locator('.sb-ticks .sb-ok').count()) !== (g >= 3 ? 4 : 3)) fail(where, 'a who card, a does card and a full stop, in that order, do not pass every tick');
+  const one = await page.evaluate(() => document.querySelector('.sb-row').textContent);
+  await add('who', 1); await add('does', 1); await add('mark', 0);
+  await page.click('[data-do="join"]');
+  await page.click('[data-jw="and"]');
+  if ((await page.locator('.sb-sent').count()) !== 1 || !/and/.test(await page.textContent('.sb-row'))) fail(where, 'Join two with "and" does not make one sentence');
+  await page.click('[data-do="split"]');
+  if ((await page.locator('.sb-sent').count()) !== 2) fail(where, 'Split does not make two sentences again');
+  await screenCheck(page, where, 'two sentences');
+  await page.click('[data-a="undo"]'); await page.click('[data-a="undo"]');
+  if ((await page.locator('.sb-sent').count()) !== 2 || (await page.locator('.sb-row').first().textContent()) !== one) fail(where, 'Undo does not go back to the two sentences');
+  if (g >= 3) {
+    if ((await page.getAttribute('[data-tg="cl"]', 'aria-pressed')) !== 'true') await page.click('[data-tg="cl"]');
+    await page.click('[data-do="new"]');
+    if (!(await page.locator('.sb-cl').count())) fail(where, 'Clauses does not mark the clauses');
+    await screenCheck(page, where, 'clauses');
+  }
+  await page.click('[data-do="mix"]');
+  await page.click('[data-tg="jobs"]');
+  await screenCheck(page, where, 'mixed, jobs hidden');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    await page.click('[data-do="new"]');
+    await screenCheck(page, where, 'at ' + vp.width + ' px');
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -623,6 +696,7 @@ async function checkTools(browser, base, g) {
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
