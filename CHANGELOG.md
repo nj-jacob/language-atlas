@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-06
+- Word builder: silent-e words. New vowel tiles a-e, i-e, o-e, u-e (and e-e from Grade 2) put their e after the next letter, so c, a-e, k spells cake; the word shows the vowel and its e joined, and Blend plays the long vowel. 23 new words (cake, bike, home, cube, flute, theme and more).
 - Tool box, first tool: **Word builder** (Tools in the header, `#tools`). One word in three linked views for free play, alone or with a grown-up: Sounds (tap letter tiles into sound boxes, swap one sound, Blend plays Noel's recorded sounds in order), Beats (tap between letters to cut a word into syllables, then show where the beats go) and Parts (prefixes, bases and suffixes with what each part means, the spelling rules and the word family; Greek and Latin roots from Grade 7). Each grade gets the tiles and words for its grade and the ones before. New check: every word in the word bank can be built and is spelled right by the rules, and Word builder is used like a child would on a phone, iPad and laptop.
 
 ## 2026-11-01

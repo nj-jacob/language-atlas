@@ -541,6 +541,7 @@ async function checkTools(browser, base, g) {
       if (!tiles.includes(t)) out.push('"' + s + '": "' + t + '" is not a letter tile');
       try { Atlas.W.clip(c || t); } catch (e) { out.push('"' + s + '": ' + e.message); }
     }
+    for (const [t, w] of [['c a_e k', 'cake'], ['f l u_e t', 'flute'], ['th e_e m', 'theme'], ['h o_e m', 'home'], ['sh i p', 'ship']]) if (K.spell(t.split(' ')) !== w) out.push('the tiles ' + t + ' spell "' + K.spell(t.split(' ')) + '", not "' + w + '"');
     for (const b of Object.values(B.beats).join(' ').split(' ')) if (!/^[a-z]+(-[a-z]+)+$/.test(b)) out.push('beats: "' + b + '" is not a word cut into 2 or more beats');
     for (const e of B.parts) {
       const [ids, word] = e.split('='), parts = ids.split('+');
