@@ -27,13 +27,15 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `lesson.js` | Lessons, one idea per screen in three steps (Watch me, Together, On your own), the end of a lesson, and My progress |
 | `practice.js` | Adaptive practice (never the same question twice in a row), "Read and answer" sets, the chapter quiz and the check-up |
 | `tasks.js` | Activities with a grown-up: speaking, reading aloud, drafting and more, marked with a four-level rubric in grown-up view |
+| `tools.js` | The tool box (`#tools`): hands-on tools for free play, alone or with a grown-up, on shelves like Math's tool box. Today: **Word builder**, one word in three linked views: Sounds (letter tiles in sound boxes, swap one sound, blend with the recorded clips), Beats (cut a word into syllables) and Parts (prefixes, bases, roots from Grade 7, suffixes, with what each part means, the spelling rules and the word family). Nothing is marked. |
+| `wordbank.js` | Word builder's words, written for this site: letter tiles, words split into sounds, words cut into beats, and words made of parts, each with the grade it starts in. A check builds every word again (see `CHECKS.md`). |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
 
 ## One grade site
 
 `gradeN/index.html` sets three `meta` tags for the header, loads `engine.css` then `atlas-theme.css`, then the scripts in this order:
 1. `../assets/atlas-header.js` (first thing in `<body>`)
-2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`
+2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `tools.js`
 3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
 4. `texts.js` (optional): reading passages shared by the grade's chapters
 5. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`
@@ -72,6 +74,7 @@ Learning screens (an idea, or practising one skill) are calm on purpose: no chap
 | `#check-up`, `#check-up/all`, `#check-up/sentences` | Check-ups |
 | `#sentences/tasks`, `#sentences/tasks/<id>` | Activities with a grown-up, and one activity |
 | `#progress` | My progress |
+| `#tools`, `#tools/words` | The tool box: one tool fills the screen under a slim bar (back, the tool's name, Undo, Tools menu). Each grade gets the tiles and words for its grade and the grades before |
 
 ## The placement check (`placement/`)
 

@@ -11,7 +11,7 @@ Read this before changing anything. The owner, Noel, is not a developer, so thes
 
 ## Where things live
 See `docs/ARCHITECTURE.md`. In short:
-- `assets/engine/` holds the **one shared copy** of the engine: `atlas.js` (core and pages), `qkit.js` (answer types), `words.js` (word pictures), `lesson.js` (lessons and progress), `practice.js` (practice, quiz, check-up), `tasks.js` (activities marked by a grown-up) and `engine.css`. Never copy any of it into a grade folder. A check fails if you do.
+- `assets/engine/` holds the **one shared copy** of the engine: `atlas.js` (core and pages), `qkit.js` (answer types), `words.js` (word pictures), `lesson.js` (lessons and progress), `practice.js` (practice, quiz, check-up), `tasks.js` (activities marked by a grown-up), `tools.js` and `wordbank.js` (the tool box: Word builder and its words) and `engine.css`. Never copy any of it into a grade folder. A check fails if you do.
 - `assets/atlas-theme.css` is the one look, matching Math Atlas. No grade adds colours, fonts or style sheets. A check fails if one does.
 - `assets/atlas-header.js` draws the same header on every page ("All grades", the Math Atlas link, text size, grown-up view).
 - `gradeN/grade.js` lists the grade's chapters. `gradeN/chapters/<id>.js` holds one chapter: lessons, practice skills, question shapes, activities. `gradeN/texts.js` (optional) holds reading passages shared by that grade's chapters.

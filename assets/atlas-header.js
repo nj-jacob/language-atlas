@@ -19,7 +19,7 @@
   var brand = meta('atlas-brand'), root = meta('atlas-root') || './', ownNav = meta('atlas-nav');
   var navLinks = ownNav
     ? ownNav.split('|').map(function (l) { var at = l.indexOf(' '); return '<a href="' + l.slice(0, at) + '">' + l.slice(at + 1) + '</a>'; }).join('')
-    : '<a href="#home">Chapters</a><a href="#check-up">Check-up</a><a href="#progress">My progress</a>';
+    : '<a href="#home">Chapters</a><a href="#check-up">Check-up</a><a href="#progress">My progress</a><a href="#tools">Tools</a>';
   /* the path to the Atlas home when this page is inside Atlas, else null */
   var hub = /\/language\//.test(location.pathname) ? root + '../' : null;
   var math = (hub || 'https://ontario-math-atlas.web.app/') + (meta('atlas-math') || '');

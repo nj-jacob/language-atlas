@@ -39,6 +39,10 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - reading aloud: every grade has two passages of at least 100 words and its norms; two readings are marked like a grown-up would (with the clock fast-forwarded) and must give exactly the expected words correct per minute, shown on the starting points page;
    - writing sample: every grade has a prompt and a 4-level rubric; what the child writes is kept, nothing is marked until the grown-up taps a level, and the mark shows on the starting points page;
    - the placement page sets no colours or fonts of its own.
+7. **The tool box**, in every grade:
+   - every word in Word builder's word bank (`assets/engine/wordbank.js`) uses only letter tiles that exist and sounds that were recorded; every word cut into beats has 2 or more beats; every word made of parts is spelled exactly right when Word builder joins its parts with its spelling rules, and every prefix and suffix says what it means;
+   - on a phone screen, a child builds a word from its sound tiles (it must show as a real word), swaps one sound, blends, and undoes; cuts a word into beats and shows where the beats go; builds a word from its parts and opens another from its word family; opens and closes the Tools menu;
+   - each view opens again on an iPad (both ways round) and a laptop with no errors and nothing off the side.
 
 ## Running them yourself
 
