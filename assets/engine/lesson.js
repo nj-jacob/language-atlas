@@ -287,6 +287,11 @@
           return '<tr><td><a href="#' + m.id + '/tasks/' + t.id + '">' + t.title + '</a></td><td>' + t.code + '</td><td>' + A.tasks.result(t) + '</td></tr>';
         }).join('') + '</tbody></table></div>' : '') + '</details>';
     });
+    var reads = A.load('fluency', []);
+    if (reads.length) h += '<details class="pg-ch adult-only" open><summary><span>Reading fluency: one-minute reads</span><span class="t2">' + reads.length + (reads.length > 1 ? ' reads' : ' read') + '</span></summary>' +
+      '<div class="tbl"><table><thead><tr><th>Date</th><th>Passage</th><th>Words correct a minute</th><th>Accuracy</th></tr></thead><tbody>' + reads.slice().reverse().map(function (r) {
+        return '<tr><td>' + r.d + '</td><td>' + r.title + '</td><td>' + r.wcpm + '</td><td>' + r.acc + '%</td></tr>';
+      }).join('') + '</tbody></table></div></details>';
     app.innerHTML = h + '<div class="note"><p><b>For parents and tutors.</b> "Seen" means the idea was opened. "Got it" means 4 questions in "On your own" were right on the first try (2 for a short idea). ' +
       '"Mastered" means the matching practice skill reached the top level three times in a row.</p></div></div>';
   });

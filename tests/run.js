@@ -32,7 +32,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -657,6 +657,69 @@ async function checkTools(browser, base, g) {
   await ctx.close();
 }
 
+/* Reading window: every passage cut into phrases loses no word, and the tool is used like a child and a grown-up would */
+async function checkReader(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Reading window';
+  await page.goto(base + '/grade' + g + '/index.html#tools/read');
+  await page.waitForSelector('.rw-page');
+  for (const p of await page.evaluate(() => {
+    const out = [], T = Atlas.texts, cut = Atlas.toolkit.phrases;
+    const ids = Object.keys(T).filter(k => T[k] && T[k].lines);
+    if (ids.length < 10) out.push('only ' + ids.length + ' passages');
+    for (const k of ids) for (const l of T.body(T[k])) {
+      const ph = cut(l);
+      if (ph.join(' ') !== l.split(/\s+/).join(' ')) out.push('"' + l + '" cut into phrases loses words: ' + ph.join(' | '));
+      for (const x of ph) if (x.split(' ').length > 7) out.push('"' + x + '" is a phrase of more than 7 words');
+      for (const x of ph.slice(0, -1)) if (/^(the|a|an|my|your|our|their|its|to|of)$/i.test(x.split(' ').pop())) out.push('the phrase "' + x + '" ends on a little word');
+    }
+    return out;
+  })) fail(where, p);
+  /* Line: Next moves the window one sentence */
+  await page.click('[data-mode="line"]');
+  const first = await page.textContent('.rw-s.rw-now');
+  await page.click('[data-do="next"]');
+  if ((await page.textContent('.rw-s.rw-now')) === first || (await page.locator('.rw-s.rw-now').count()) !== 1) fail(where, 'Next does not move the line window to the next sentence');
+  await screenCheck(page, where, 'Line');
+  /* Phrase: one phrase lit, inside a scoop */
+  await page.click('[data-mode="phrase"]');
+  await page.click('[data-do="next"]');
+  if ((await page.locator('.rw-scoop.rw-now').count()) !== 1) fail(where, 'the phrase window does not light one phrase');
+  await screenCheck(page, where, 'Phrase');
+  /* a tricky word, read again, and Music */
+  await page.click('[data-mode="page"]');
+  const w = await page.locator('.rw-w').nth(3).getAttribute('data-w');
+  await page.locator('.rw-w').nth(3).click();
+  if (!(await page.locator('.rw-tk [data-un="' + w + '"]').count())) fail(where, 'tapping "' + w + '" does not add it to the tricky words');
+  await page.click('[data-do="again"]');
+  if ((await page.locator('.rw-reads i').count()) !== 2) fail(where, 'Read again does not count the second read');
+  if ((await page.getAttribute('[data-do="music"]', 'aria-pressed')) !== 'true') await page.click('[data-do="music"]');
+  if (!(await page.locator('.rw-m').count())) fail(where, 'Music shows no marks');
+  await page.click('[data-do="music"]');
+  if (await page.locator('.rw-m').count()) fail(where, 'Music off still shows marks');
+  await screenCheck(page, where, 'Page');
+  /* grown-up: a one-minute read, saved for My progress */
+  await page.evaluate(() => Atlas.adult(true));
+  await page.click('[data-do="clock"]');
+  await page.locator('.rw-w').nth(1).click();
+  await page.locator('.rw-w').nth(4).click();
+  await page.click('[data-do="stop"]');
+  await page.locator('.rw-w').nth(9).click();
+  const res = await page.evaluate(() => Atlas.load('fluency', []).pop());
+  if (!res || res.read !== 10 || res.miss !== 2 || res.acc !== 80) fail(where, 'the one-minute read saves ' + JSON.stringify(res) + ', not 10 words read with 2 misread (80%)');
+  await page.goto(base + '/grade' + g + '/index.html#progress');
+  await page.waitForSelector('.pg-sum');
+  if (!/one-minute reads/.test(await page.textContent('#app'))) fail(where, 'the one-minute read does not show on My progress in grown-up view');
+  await page.evaluate(() => Atlas.adult(false));
+  await page.goto(base + '/grade' + g + '/index.html#tools/read');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (const m of ['page', 'line', 'phrase']) { await page.click('[data-mode="' + m + '"]'); await screenCheck(page, where, m + ' at ' + vp.width + ' px'); }
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
 /* Sentence builder: the card bank, the moves (each can be undone by its opposite), then a walk through on a phone and other screens */
 async function checkSentences(browser, base, g) {
   const { ctx, page, errs } = await newPage(browser, base);
@@ -817,6 +880,7 @@ async function checkSounds(browser, base, g) {
     try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSounds(browser, url, g); log('Grade ' + g + ' tool box: Sound board checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sound board', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkReader(browser, url, g); log('Grade ' + g + ' tool box: Reading window checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Reading window', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
