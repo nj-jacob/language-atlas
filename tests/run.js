@@ -542,7 +542,38 @@ async function checkTools(browser, base, g) {
       try { Atlas.W.clip(c || t); } catch (e) { out.push('"' + s + '": ' + e.message); }
     }
     for (const [t, w] of [['c a_e k', 'cake'], ['f l u_e t', 'flute'], ['th e_e m', 'theme'], ['h o_e m', 'home'], ['sh i p', 'ship']]) if (K.spell(t.split(' ')) !== w) out.push('the tiles ' + t + ' spell "' + K.spell(t.split(' ')) + '", not "' + w + '"');
-    for (const b of Object.values(B.beats).join(' ').split(' ')) if (!/^[a-z]+(-[a-z]+)+$/.test(b)) out.push('beats: "' + b + '" is not a word cut into 2 or more beats');
+    /* Beats: each word is cut into 2 or more beats with one strong beat, and every beat has one vowel sound. Its syllable type is
+       worked out again here, another way, and the vowel sound it plays is a recorded clip. */
+    const typeOf = s => {
+      if (/(tion|sion|ture|cian)$/.test(s)) return 'end';
+      if (/^[^aeiouy]+le$/.test(s)) return 'le';
+      const t = s.replace(/qu/, 'q');
+      if (/(ar|or|er|ir|ur)/.test(t) && !/r[aeiouy]/.test(t.replace(/re$/, ''))) return 'r';
+      if (/(ai|ay|ee|ea|ey|ie|igh|oa|oe|oo|ou|ow|oi|oy|au|aw|ew|ue|ui)/.test(t)) return 'team';
+      if (/^[^aeiouy]*[aeiou][^aeiouy]e$/.test(t)) return 'silente';
+      return /[aeiouy]$/.test(t) ? 'open' : 'closed';
+    };
+    for (const x of Object.values(B.beats).join(' ').split(' ')) {
+      if (!/^[A-Za-z]+([-+][A-Za-z]+)+(=[a-z]+:[a-z-]+(,[a-z]+:[a-z-]+)*)?$/.test(x)) { out.push('beats: "' + x + '" is not a word cut into 2 or more beats'); continue; }
+      const parts = x.split('=')[0].split(/[-+]/), e = K.beatWord(x);
+      if (parts.filter(p => p === p.toUpperCase()).length !== 1 || parts.some(p => p !== p.toUpperCase() && p !== p.toLowerCase())) out.push('beats: "' + x + '" needs one strong beat in capitals');
+      if (e.parts.some(p => /^(many|none)$/.test(K.kindOf(p)))) out.push('beats: "' + x + '" has a beat without exactly one vowel sound');
+      for (const p of e.parts) {
+        const k = K.kindOf(p);
+        if (k !== typeOf(p)) out.push('beats: "' + p + '" in ' + e.w + ' is ' + k + ', but ' + typeOf(p) + ' worked out again');
+        const c = e.clips[p] || K.vowelOf(p, k);
+        if (!/^(le|end)$/.test(k) && !c) out.push('beats: "' + p + '" in ' + e.w + ' has no vowel sound to play');
+        if (c) try { Atlas.W.clip(c); } catch (err) { out.push('beats: "' + p + '": ' + err.message); }
+      }
+      for (const p of Object.keys(e.clips)) if (!e.parts.includes(p)) out.push('beats: "' + x + '" names a sound for "' + p + '", which is not one of its beats');
+    }
+    for (const [l, r, j, code] of [['rab', 'bit', '-', 'VC/CV'], ['ti', 'ger', '-', 'V/CV'], ['el', 'e', '-', 'VC/V'], ['tra', 'or', '-', 'V/V'], ['pump', 'kin', '-', 'VCC/CV'], ['ta', 'ble', '-', 'C+le'], ['sun', 'set', '+', 'word+word'], ['mos', 'qui', '-', 'VC/CV'], ['hock', 'ey', '-', 'VC/V'], ['ka', 'yak', '-', 'V/CV']]) {
+      const pt = K.pattern(l, r, j);
+      if (!pt || pt.code !== code) out.push('the cut ' + l + '|' + r + ' is ' + (pt && pt.code) + ', not ' + code);
+    }
+    for (const [p, k, c] of [['rab', 'closed', 'a'], ['ti', 'open', 'igh'], ['cake', 'silente', 'ai'], ['rain', 'team', 'ai'], ['car', 'r', 'ar'], ['ble', 'le', ''], ['tion', 'end', ''], ['gym', 'closed', 'i'], ['r', 'none', '']]) {
+      if (K.kindOf(p) !== k || (k !== 'none' && K.vowelOf(p, k) !== c)) out.push('"' + p + '" is ' + K.kindOf(p) + ' /' + K.vowelOf(p, K.kindOf(p)) + '/, not ' + k + ' /' + c + '/');
+    }
     for (const e of B.parts) {
       const [ids, word] = e.split('='), parts = ids.split('+');
       for (const id of parts) if (/^-|-$/.test(id) && !B.means[id]) out.push('"' + e + '": "' + id + '" has no meaning');
@@ -572,14 +603,32 @@ async function checkTools(browser, base, g) {
   await page.click('[data-a="undo"]');
   if ((await page.textContent('.wb-w')) !== sw.word) fail(where, 'Undo does not bring back "' + sw.word + '"');
   await screenCheck(page, where, 'Sounds');
-  /* Beats: cut, then show where the beats go */
+  /* Beats: pick a type, open a word with it, mark the vowels, cut it right, then show where the beats go */
   await page.click('[data-v="beats"]');
-  await page.click('.wb-gap[data-gap="2"]');
-  if ((await page.locator('.wb-cut').count()) !== 1) fail(where, 'tapping between two letters does not cut the word');
+  const kinds = await page.$$eval('[data-kind]', bs => bs.map(b => b.dataset.kind).filter(Boolean));
+  const kind = kinds[Math.floor(Math.random() * kinds.length)];
+  await page.click('[data-kind="' + kind + '"]');
+  const listed = await page.$$eval('[data-beat]', bs => bs.map(b => b.dataset.beat));
+  const be = await page.evaluate(([ws, k]) => {
+    const K = Atlas.toolkit, all = K.bank().beats.filter(b => ws.includes(b.w));
+    return { odd: all.filter(b => !b.parts.some(p => K.kindOf(p) === k)).map(b => b.w), e: Atlas.R.pick(all) };
+  }, [listed, kind]);
+  if (!listed.length || be.odd.length) fail(where, 'Find a type "' + kind + '" lists ' + (listed.length ? be.odd.join(', ') + ', with no beat of that type' : 'no words'));
+  await page.click('[data-beat="' + be.e.w + '"]');
+  await page.click('[data-do="marks"]');
+  const vs = await page.evaluate(e => [document.querySelectorAll('.wb-m-v').length, e.parts.reduce((n, p) => n + Atlas.toolkit.units(p).reduce((m, u) => m + u.v.length, 0), 0)], be.e);
+  if (vs[0] !== vs[1]) fail(where, '"Mark vowels" marks ' + vs[0] + ' vowel letters in ' + be.e.w + ', not ' + vs[1]);
+  let at = 0;
+  for (const p of be.e.parts.slice(0, -1)) await page.click('.wb-gap[data-gap="' + (at += p.length) + '"]');
+  if ((await page.locator('.wb-cut').count()) !== be.e.parts.length - 1) fail(where, 'tapping between two letters does not cut the word');
+  const sy = await page.evaluate(() => [[...document.querySelectorAll('.wb-sy b')].map(b => b.textContent), document.querySelectorAll('.wb-strong').length, document.querySelectorAll('.wb-pat b').length, document.querySelectorAll('.wb-k-many,.wb-k-none').length]);
+  if (sy[0].join('-') !== be.e.parts.join('-') || sy[3]) fail(where, 'cutting ' + be.e.w + ' right shows the beats ' + sy[0].join('-'));
+  if (g >= 2 && (sy[1] !== 1 || sy[2] !== be.e.parts.length - 1)) fail(where, be.e.w + ' cut right shows ' + sy[1] + ' strong beats and ' + sy[2] + ' patterns');
   await page.click('[data-do="show"]');
-  const beat = await page.evaluate(() => [document.querySelectorAll('.wb-here').length, document.querySelectorAll('.wb-beats span').length]);
-  if (beat[0] !== beat[1] - 1 || beat[1] < 2) fail(where, '"Show the beats" marks ' + beat[0] + ' cuts for ' + beat[1] + ' beats');
+  if ((await page.locator('.wb-here').count()) !== be.e.parts.length - 1) fail(where, '"Show the beats" does not mark the ' + (be.e.parts.length - 1) + ' cuts in ' + be.e.w);
   await screenCheck(page, where, 'Beats');
+  await page.click('[data-do="join"]');
+  if ((await page.locator('.wb-k-many').count()) !== 1) fail(where, 'Join up does not put ' + be.e.w + ' back in one piece');
   /* Parts: build a word from its parts, then open one from its family */
   await page.click('[data-v="parts"]');
   await page.click('[data-do="clear"]');

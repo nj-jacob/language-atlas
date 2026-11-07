@@ -5,7 +5,9 @@
      sounds  words split into sound tiles, one string per word: 'sh i p'. A tile written 'oo:oo-short' plays another clip in this
              word (book), so the word sounds right when it is blended. A silent-e tile such as 'a_e' is one sound in two places:
              'c a_e k' spells cake (the e goes after the next tile). A word shows in a grade when all its tiles do.
-     beats   words split into syllables (beats) with '-', by the first grade they show in: { 1: 'rab-bit ...', ... }.
+     beats   words split into syllables (beats), by the first grade they show in: { 1: 'RAB-bit ...', ... }. '-' cuts a word into
+             beats; '+' joins two words (sun+set). The strong beat is in capitals (ba-NA-na). Each beat's vowel plays the sound its
+             syllable type gives (tools.js); where the word says another, name it after '=': 'RAIN+bow=bow:oa'.
      parts   words made of parts with '+', and the word they spell after '='. A part is a prefix (ends in -), a suffix (starts with
              -), or a base or root (neither). Write 'er.more' to pick one meaning of a part. The checks build each word again
              from its parts with Word builder's spelling rules, so the two must agree.
@@ -39,11 +41,34 @@
       's aw\n p aw\n d r aw\n h air\n ch air\n p air\n f air\n ear\n h ear\n n ear\n d ear\n c l ear\n m a tch\n c a tch\n s k y:igh\n f l y:igh\n m y:igh'
     ),
     beats: {
-      1: 'rab-bit kit-ten mit-ten pic-nic sun-set nap-kin in-sect pump-kin bas-ket muf-fin pop-corn cup-cake rain-bow gar-den win-ter sum-mer ro-bot ti-ger pa-per spi-der',
-      2: 'ham-ster den-tist dol-phin mon-ster pen-cil ap-ple tur-tle ta-ble ea-gle pur-ple ca-noe ka-yak hock-ey to-ma-to ba-na-na but-ter-fly oc-to-pus kan-ga-roo',
-      3: 'el-e-phant um-brel-la to-bog-gan por-cu-pine ca-ri-bou cal-en-dar com-pu-ter hel-i-cop-ter mos-qui-to grand-moth-er',
-      4: 'wa-ter-mel-on cat-er-pil-lar al-li-ga-tor a-quar-i-um cel-e-bra-tion in-for-ma-tion tel-e-vi-sion hip-po-pot-a-mus',
-      6: 'ex-tra-or-di-nar-y re-spon-si-bil-i-ty en-vi-ron-ment com-mu-ni-ca-tion'
+      1: 'RAB-bit KIT-ten MIT-ten PIC-nic SUN+set NAP-kin IN-sect PUMP-kin BAS-ket MUF-fin POP+corn CUP+cake RAIN+bow=bow:oa GAR-den ' +
+        'WIN-ter SUM-mer RO-bot TI-ger PA-per SPI-der HOT+dog BATH+tub LAP+top LIP+stick BED+bug CAT+fish HAND+bag DUST+pan TEN-nis ' +
+        'PUP-pet GOB-lin MAG-net TRUM-pet PLAS-tic CAC-tus VEL-vet HEL-met MAS-cot BOT-tom HAP-pen DIN-ner LET-ter BUT-ton COT-ton ' +
+        'RIB-bon CAB-in WAG-on LEM-on SEV-en BA-by LA-dy PI-lot MU-sic SI-lent BA-con TU-lip ZE-ro PO-ny TI-ny CRA-zy LA-zy NA-vy ' +
+        'CO-zy E-ven O-pen MO-ment LI-on SUN+shine PAN+cake IN+side BED+time PINE+cone SNOW+flake=snow:oa DRIVE+way RAIN+coat MAIL+box ' +
+        'TEA+pot SEA+shell PEA+nut RAIN+drop SAIL+boat OAT+meal MON-key=mon:u SEE+saw TOOTH+brush CAR-pet FOR-est MAR-ket PAR-ty ' +
+        'PEP-per SIS-ter DOC-tor TUR-key BIRTH+day FARM-er COR-ner STAR+fish HAR-bour LIT-tle BUB-ble PUZ-zle CAN-dle',
+      2: 'HAM-ster DEN-tist DOL-phin MON-ster PEN-cil AP-ple TUR-tle TA-ble EA-gle PUR-ple ca-NOE=noe:oo KA-yak HOCK-ey to-MA-to ' +
+        'ba-NAN-a BUT-ter-fly=fly:igh OC-to-pus kan-ga-ROO BOT-tle SIM-ple NEE-dle BEE-tle MAR-ble CIR-cle TI-tle CRA-dle BU-gle ' +
+        'NOO-dle PUD-dle GIG-gle TWIN-kle SPAR-kle PEB-ble WAF-fle MID-dle PAD-dle RAT-tle STA-ple MA-ple TEA-cher SEA+weed ROAD+side ' +
+        'PLAY+ground OUT+side MOUN-tain FOUN-tain COW+boy AU-tumn STRAW+ber-ry JEW-el SNOW+board=snow:oa SNOW+man=snow:oa ' +
+        'WIN-dow=dow:oa YEL-low=low:oa PIL-low=low:oa SHAD-ow=ow:oa AL-pha-bet DIN-o-saur=saur:or AN-i-mal CAM-er-a va-CA-tion ' +
+        'fan-TAS-tic BI-cy-cle TEL-e-phone HAM-bur-ger GI-ant QUI-et DU-et PO-em DI-et',
+      3: 'EL-e-phant um-BREL-la to-BOG-gan POR-cu-pine CAR-i-bou=car:air,bou:oo CAL-en-dar com-PU-ter HEL-i-cop-ter mos-QUI-to=qui:ee ' +
+        'GRAND+moth-er=moth:u HOS-pi-tal FAM-i-ly CAR-pen-ter SKEL-e-ton pep-per-O-ni=ni:ee spa-GHET-ti=ti:ee BLUE+ber-ry ' +
+        'WOOD+peck-er=wood:oo-short SAT-ur-day no-VEM-ber oc-TO-ber sep-TEM-ber de-CEM-ber sas-KATCH-e-wan man-i-TO-ba ' +
+        'on-TAR-i-o=tar:air CAN-a-da al-BER-ta PIN+wheel CHIP-munk rac-COON BEA-ver LOB-ster OT-ter MUSK+rat BLUE+jay cre-ATE vi-o-LIN ' +
+        'RA-di-o',
+      4: 'WA-ter-mel-on=wa:o CAT-er-pil-lar AL-li-ga-tor ad-VEN-ture cel-e-BRA-tion in-for-MA-tion TEL-e-vi-sion hip-po-POT-a-mus ' +
+        'AC-tion NA-tion STA-tion MO-tion LO-tion FRAC-tion MIS-sion MAN-sion PIC-ture NA-ture FU-ture CAP-ture MIX-ture ' +
+        'de-CI-sion=ci:i ex-PLO-sion con-ver-SA-tion ed-u-CA-tion trans-por-TA-tion ad-DI-tion=di:i sub-TRAC-tion mul-ti-pli-CA-tion ' +
+        'AS-tro-naut ther-MOM-e-ter RE-cy-cle EN-er-gy HIS-to-ry CAL-cu-la-tor vol-CA-no tor-NA-do BLIZ-zard HUR-ri-cane mag-NET-ic',
+      5: 'ex-PER-i-ment CON-ti-nent pop-u-LA-tion vo-CAB-u-lar-y ge-OG-ra-phy ma-TE-ri-al TEM-per-a-ture im-mi-GRA-tion in-VES-ti-gate ' +
+        'de-MOC-ra-cy GOV-ern-ment=gov:u com-MU-ni-ty PHO-to-graph e-lec-TRIC-i-ty MI-cro-scope TEL-e-scope con-stel-LA-tion',
+      6: 'ex-tra-OR-di-nar-y re-spon-si-BIL-i-ty en-VI-ron-ment com-mu-ni-CA-tion op-por-TU-ni-ty per-son-AL-i-ty im-ag-i-NA-tion ' +
+        'or-gan-i-ZA-tion in-ter-NA-tion-al CAT-e-gor-y en-thu-si-AS-tic',
+      7: 'pho-to-SYN-the-sis bi-o-di-VER-si-ty=di:i in-fra-STRUC-ture e-co-SYS-tem',
+      8: 'sus-tain-a-BIL-i-ty con-sti-TU-tion-al ac-count-a-BIL-i-ty'
     },
     parts: list(
       'cat+-s=cats\n dog+-s=dogs\n hat+-s=hats\n box+-s=boxes\n bus+-s=buses\n fox+-s=foxes\n wish+-s=wishes\n' +
