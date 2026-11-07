@@ -285,6 +285,15 @@
        shows its pattern (VC/CV ...) and, once the cuts are right, the strong beat. */
     function beat() { return K.beats.filter(function (b) { return b.w === st.beat; })[0] || K.beats[0]; }
     function kindsOf(b) { return b.parts.map(kindOf); }
+    /* the vowel sounds of a word, found beat by beat (so li-on has two, though i and o sit side by side) */
+    function vowels(b) {
+      var out = [], off = 0;
+      b.parts.forEach(function (p) {
+        units(p).forEach(function (x) { out.push({ at: off + x.at, v: x.v, sil: x.sil ? off + p.length - 1 : 0 }); });
+        off += p.length;
+      });
+      return out;
+    }
     function drawBeats() {
       var E = beat(), w = E.w, right = [], at = 0;
       E.parts.forEach(function (p, i) { at += p.length; if (i < E.parts.length - 1) right.push(at); });
@@ -298,8 +307,8 @@
         return '<button type="button" class="wb-chip" data-beat="' + b.w + '"' + (b === E ? ' aria-pressed="true"' : '') + '>' + b.w + '</button>';
       }).join('') + '</div>';
       /* the vowels (v), the consonants between them (c) and a silent e, for "Mark vowels" */
-      var mark = [], u = units(w);
-      u.forEach(function (x) { for (var j = 0; j < x.v.length; j++) mark[x.at + j] = 'v'; if (x.sil) mark[w.length - 1] = 's'; });
+      var mark = [], u = vowels(E);
+      u.forEach(function (x) { for (var j = 0; j < x.v.length; j++) mark[x.at + j] = 'v'; if (x.sil) mark[x.sil] = 's'; });
       if (u.length) for (var c = u[0].at; c < u[u.length - 1].at; c++) if (!mark[c]) mark[c] = 'c';
       var piece = 0, h = '';
       for (var i = 0; i < w.length; i++) {
@@ -313,13 +322,16 @@
       /* the beats as cut now: one card each, with the cut's pattern between two cards */
       var bits = [], from = 0;
       cuts.concat(w.length).forEach(function (to) { bits.push(w.slice(from, to)); from = to; });
+      from = 0;
       var same = cuts.join() === right.join(), cards = '';
       bits.forEach(function (p, i) {
         if (i && g >= 2) {
           var pt = pattern(bits[i - 1], p, same ? E.joins[i - 1] : '-');
           cards += '<span class="wb-syg"><span class="wb-pat">' + (pt ? '<b>' + pt.code + '</b><small>' + pt.name + '</small>' : '') + '</span>';
         }
-        var k = kindOf(p), n = units(p).length, clip = k === 'many' || k === 'none' ? '' : (same && E.clips[p]) || vowelOf(p, k);
+        var at = from, n = u.filter(function (x) { return x.at >= at && x.at < at + p.length; }).length;
+        from += p.length;
+        var k = n === 1 ? kindOf(p) : n ? 'many' : 'none', clip = k === 'many' || k === 'none' ? '' : (same && E.clips[p]) || vowelOf(p, k);
         var stress = same && g >= 2 && bits.length > 1 ? (i === E.strong ? ' wb-strong' : ' wb-quiet') : '';
         cards += '<div class="wb-sy wb-k-' + k + stress + '">' + (stress === ' wb-strong' ? '<i class="wb-acc">strong beat</i>' : '') + '<b>' + p + '</b><small>' +
           (k === 'many' ? n + ' beats' : k === 'none' ? 'no vowel' : KINDS[k]) + '</small>' + (clip ? A.W.sound(clip) : '') + '</div>' + (i && g >= 2 ? '</span>' : '');

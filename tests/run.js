@@ -557,7 +557,7 @@ async function checkTools(browser, base, g) {
       if (!/^[A-Za-z]+([-+][A-Za-z]+)+(=[a-z]+:[a-z-]+(,[a-z]+:[a-z-]+)*)?$/.test(x)) { out.push('beats: "' + x + '" is not a word cut into 2 or more beats'); continue; }
       const parts = x.split('=')[0].split(/[-+]/), e = K.beatWord(x);
       if (parts.filter(p => p === p.toUpperCase()).length !== 1 || parts.some(p => p !== p.toUpperCase() && p !== p.toLowerCase())) out.push('beats: "' + x + '" needs one strong beat in capitals');
-      if (K.kindOf(e.w) !== 'many') out.push('beats: "' + e.w + '" does not count as more than one beat');
+      if (e.parts.some(p => /^(many|none)$/.test(K.kindOf(p)))) out.push('beats: "' + x + '" has a beat without exactly one vowel sound');
       for (const p of e.parts) {
         const k = K.kindOf(p);
         if (k !== typeOf(p)) out.push('beats: "' + p + '" in ' + e.w + ' is ' + k + ', but ' + typeOf(p) + ' worked out again');
@@ -616,7 +616,7 @@ async function checkTools(browser, base, g) {
   if (!listed.length || be.odd.length) fail(where, 'Find a type "' + kind + '" lists ' + (listed.length ? be.odd.join(', ') + ', with no beat of that type' : 'no words'));
   await page.click('[data-beat="' + be.e.w + '"]');
   await page.click('[data-do="marks"]');
-  const vs = await page.evaluate(w => [document.querySelectorAll('.wb-m-v').length, Atlas.toolkit.units(w).reduce((n, u) => n + u.v.length, 0)], be.e.w);
+  const vs = await page.evaluate(e => [document.querySelectorAll('.wb-m-v').length, e.parts.reduce((n, p) => n + Atlas.toolkit.units(p).reduce((m, u) => m + u.v.length, 0), 0)], be.e);
   if (vs[0] !== vs[1]) fail(where, '"Mark vowels" marks ' + vs[0] + ' vowel letters in ' + be.e.w + ', not ' + vs[1]);
   let at = 0;
   for (const p of be.e.parts.slice(0, -1)) await page.click('.wb-gap[data-gap="' + (at += p.length) + '"]');
