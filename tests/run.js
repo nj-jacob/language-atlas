@@ -781,8 +781,11 @@ async function checkMeaning(browser, base, g) {
     await page.setViewportSize(vp);
     await page.goto(base + '/grade' + g + '/index.html#tools/web'); await page.waitForSelector('.wn-web');
     await screenCheck(page, where, 'Word web at ' + vp.width + ' px');
-    const clash = await page.evaluate(() => { const c = [...document.querySelectorAll('.wn-cell,.wn-mid')].map(e => e.getBoundingClientRect()); for (let i = 0; i < c.length; i++) for (let j = i + 1; j < c.length; j++) { const a = c[i], b = c[j]; if (a.left < b.right - 2 && b.left < a.right - 2 && a.top < b.bottom - 2 && b.top < a.bottom - 2) return true; } return false; });
-    if (clash) fail(where, 'parts of the web overlap at ' + vp.width + ' px');
+    for (let i = 0; i < n; i++) {
+      await page.locator('.wnweb .wb-chip').nth(i).click();
+      const clash = await page.evaluate(() => { const c = [...document.querySelectorAll('.wn-cell,.wn-mid')].map(e => e.getBoundingClientRect()); for (let i = 0; i < c.length; i++) for (let j = i + 1; j < c.length; j++) { const a = c[i], b = c[j]; if (a.left < b.right - 2 && b.left < a.right - 2 && a.top < b.bottom - 2 && b.top < a.bottom - 2) return true; } return false; });
+      if (clash) fail(where, 'parts of the web for "' + (await page.textContent('.wn-w')) + '" overlap at ' + vp.width + ' px');
+    }
     await page.goto(base + '/grade' + g + '/index.html#tools/shades'); await page.waitForSelector('.ws-strip');
     await screenCheck(page, where, 'Word shades at ' + vp.width + ' px');
   }

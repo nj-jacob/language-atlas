@@ -77,8 +77,10 @@
 
   /* ---------- Word web ---------- */
   var PARTS = [['means', 'What it means'], ['like', 'Words like it'], ['opp', 'Opposites'], ['fam', 'Word family'], ['roots', 'Roots'], ['kin', 'Same root']];
-  /* where part i of n sits around the word (percent of the web): round from the top left */
-  function spot(i, n) { var a = Math.PI * 2 * i / n - Math.PI / 2 - Math.PI / n; return [(50 + 33 * Math.cos(a)).toFixed(1), (50 + 37 * Math.sin(a)).toFixed(1)]; }
+  /* where part i of n sits around the word (percent of the web): a row above the word and a row below it, so parts never meet */
+  var SPOTS = { tl: [18, 14], tc: [50, 14], tr: [82, 14], bl: [18, 86], bc: [50, 86], br: [82, 86] };
+  var LAYOUT = { 3: ['tl', 'tr', 'bc'], 4: ['tl', 'tr', 'br', 'bl'], 5: ['tl', 'tc', 'tr', 'br', 'bl'], 6: ['tl', 'tc', 'tr', 'br', 'bc', 'bl'] };
+  function spot(i, n) { return SPOTS[LAYOUT[n][i]]; }
   function wordWeb(root, canUndo) {
     var words = forGrade(B.web), st = { at: 0, cover: false, seen: [] }, history = [];
     function change(fn) { history.push(JSON.stringify(st)); fn(); canUndo(true); draw(); }
