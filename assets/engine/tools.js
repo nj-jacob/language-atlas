@@ -2,7 +2,9 @@
    Needs atlas.js, words.js (sound clips), wordbank.js (the words) and cardbank.js (the sentence cards). No marks and no tasks: the child builds and explores.
      #tools          the first tool          #tools/sounds   Sound board (soundboard.js adds it first)
      #tools/words    Word builder            #tools/sentences    Sentence builder
-     #tools/read     Reading window (reader.js adds it)
+     #tools/read     Reading window (reader.js adds it)   #tools/maps   Text maps (textmaps.js)
+     #tools/shades   Word shades         #tools/web      Word web (meaning.js adds both)
+     #tools/paragraph  Paragraph builder #tools/letters  Letter pad (writetools.js adds both)
    A tool fills the screen under a slim bar (back, the tool's name, Undo, Tools). The Tools menu shows the tools on shelves,
    one shelf per part of Language. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
 
@@ -35,7 +37,7 @@
 (function () {
   'use strict';
   var A = window.Atlas, $ = A.$, $$ = A.$$;
-  var SHELVES = [['sounds', 'Sounds and letters'], ['sent', 'Sentences'], ['read', 'Reading']];
+  var SHELVES = [['sounds', 'Sounds and letters'], ['mean', 'Words and meaning'], ['sent', 'Sentences'], ['read', 'Reading'], ['write', 'Writing']];
   var ICON_WORDS = '<rect x="3" y="12" width="13" height="20" rx="3" style="fill:var(--card);stroke:var(--ink);stroke-width:2"/><rect x="18" y="12" width="13" height="20" rx="3" style="fill:color-mix(in srgb,var(--hi) 35%,var(--card));stroke:var(--hi);stroke-width:2"/><rect x="33" y="12" width="13" height="20" rx="3" style="fill:var(--card);stroke:var(--ink);stroke-width:2"/><circle cx="9.5" cy="39" r="2.2" style="fill:var(--accent)"/><circle cx="24.5" cy="39" r="2.2" style="fill:var(--accent)"/><circle cx="39.5" cy="39" r="2.2" style="fill:var(--accent)"/>';
   var ICON_SENT = '<rect x="2" y="16" width="14" height="14" rx="3" style="fill:color-mix(in srgb,var(--sb) 14%,var(--card));stroke:var(--sb);stroke-width:2"/><rect x="18" y="16" width="12" height="14" rx="3" style="fill:color-mix(in srgb,var(--sd) 14%,var(--card));stroke:var(--sd);stroke-width:2"/><rect x="32" y="16" width="14" height="14" rx="3" style="fill:color-mix(in srgb,var(--sa) 14%,var(--card));stroke:var(--sa);stroke-width:2"/><circle cx="44" cy="38" r="2.4" style="fill:var(--ink)"/>';
   var TOOLS = [{ id: 'words', shelf: 'sounds', name: 'Word builder', icon: ICON_WORDS, make: wordBuilder },

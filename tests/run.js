@@ -32,7 +32,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -721,6 +721,238 @@ async function checkReader(browser, base, g) {
 }
 
 /* Sentence builder: the card bank, the moves (each can be undone by its opposite), then a walk through on a phone and other screens */
+/* ---------- Word shades and Word web (meaning.js) ---------- */
+async function checkMeaning(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Word shades and Word web';
+  await page.goto(base + '/grade' + g + '/index.html#tools/shades');
+  await page.waitForSelector('.ws-strip');
+  for (const p of await page.evaluate((g) => {
+    const out = [], B = Atlas.meaningbank, here = l => l.filter(x => x.g <= g && g <= x.to);
+    const sets = here(B.shades), web = here(B.web);
+    if (sets.length < 6) out.push('only ' + sets.length + ' Word shades sets');
+    if (web.length < 8) out.push('only ' + web.length + ' Word web words');
+    for (const s of B.shades) {
+      if (new Set(s.words).size !== s.words.length) out.push('Word shades set ' + s.words.join(', ') + ' has a word twice');
+      if (s.words.length < 3 || s.words.length > 5) out.push('Word shades set ' + s.words.join(', ') + ' needs 3 to 5 words');
+      if (s.frame.split('___').length !== 2) out.push('the sentence "' + s.frame + '" needs one ___');
+      if (s.feel && (s.words.length !== 3 || s.g < 7)) out.push('the feeling set ' + s.words.join(', ') + ' needs 3 words, from Grade 7');
+    }
+    for (const x of B.web) {
+      const forms = [x.w].concat(x.fam);
+      if (!forms.some(f => new RegExp('\\b' + f + '(e?d|s|ing)?\\b', 'i').test(x.ex))) out.push('the example for "' + x.w + '" does not use the word');
+      for (const f of x.fam) if (!f.toLowerCase().includes(x.w.slice(0, 3).toLowerCase())) out.push('"' + f + '" is not in the family of "' + x.w + '"');
+      for (const l of x.like) if (x.opp.includes(l)) out.push('"' + l + '" is both like and opposite to "' + x.w + '"');
+      if (x.roots && x.g < 7) out.push('"' + x.w + '" shows roots before Grade 7');
+      if (x.roots) for (const k of x.kin) if (!x.roots.some(r => r[0].length >= 3 && k.includes(r[0]))) out.push('"' + k + '" does not share a root with "' + x.w + '"');
+    }
+    return out;
+  }, g)) fail(where, p);
+  /* Word shades: put each card on the strip in the word list's order, undo one, then Show the order and Mix up */
+  const words = await page.evaluate((g) => Atlas.meaningbank.shades.filter(x => x.g <= g && g <= x.to)[0].words, g);
+  for (let i = 0; i < words.length; i++) { await page.click('.ws-pile [data-w="' + words[i] + '"]'); await page.locator('.ws-spot').nth(i).click(); }
+  const strip = await page.$$eval('.ws-spot', s => s.map(x => x.textContent.trim()));
+  if (strip.join() !== words.join()) fail(where, 'the strip shows ' + strip.join(', ') + ', not ' + words.join(', '));
+  if ((await page.textContent('.ws-blank')).trim() !== words[words.length - 1]) fail(where, 'the sentence does not use the last word moved');
+  await page.click('[data-a="undo"]');
+  if ((await page.locator('.ws-pile .ws-card').count()) !== 1) fail(where, 'Undo does not send the last word back');
+  await screenCheck(page, where, 'Word shades');
+  await page.click('[data-do="show"]');
+  if ((await page.$$eval('.ws-spot', s => s.map(x => x.textContent.trim()))).join() !== words.join()) fail(where, 'Show the order does not show the list order');
+  await page.click('[data-do="mix"]');
+  if ((await page.locator('.ws-pile .ws-card').count()) !== words.length) fail(where, 'Mix up does not put every word back');
+  /* Word web: each word shows its parts; Cover hides them until tapped */
+  await page.goto(base + '/grade' + g + '/index.html#tools/web');
+  await page.waitForSelector('.wn-web');
+  const n = await page.locator('.wnweb .wb-chip').count();
+  for (let i = 0; i < n; i++) {
+    await page.locator('.wnweb .wb-chip').nth(i).click();
+    const w = await page.textContent('.wn-w'), cells = await page.locator('.wn-cell').count();
+    if (cells < 3) fail(where, '"' + w + '" shows only ' + cells + ' parts');
+    if (!(await page.locator('.wn-ex b').count())) fail(where, 'the example for "' + w + '" does not show the word in bold');
+  }
+  await page.click('[data-do="cover"]');
+  const hid = await page.locator('.wn-hid').count();
+  if (!hid || hid !== (await page.locator('.wn-cell').count())) fail(where, 'Cover does not hide every part');
+  await page.locator('.wn-hid').first().click();
+  if ((await page.locator('.wn-hid').count()) !== hid - 1) fail(where, 'tapping a covered part does not show it');
+  await screenCheck(page, where, 'Word web');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    await page.goto(base + '/grade' + g + '/index.html#tools/web'); await page.waitForSelector('.wn-web');
+    await screenCheck(page, where, 'Word web at ' + vp.width + ' px');
+    for (let i = 0; i < n; i++) {
+      await page.locator('.wnweb .wb-chip').nth(i).click();
+      const clash = await page.evaluate(() => { const c = [...document.querySelectorAll('.wn-cell,.wn-mid')].map(e => e.getBoundingClientRect()); for (let i = 0; i < c.length; i++) for (let j = i + 1; j < c.length; j++) { const a = c[i], b = c[j]; if (a.left < b.right - 2 && b.left < a.right - 2 && a.top < b.bottom - 2 && b.top < a.bottom - 2) return true; } return false; });
+      if (clash) fail(where, 'parts of the web for "' + (await page.textContent('.wn-w')) + '" overlap at ' + vp.width + ' px');
+    }
+    await page.goto(base + '/grade' + g + '/index.html#tools/shades'); await page.waitForSelector('.ws-strip');
+    await screenCheck(page, where, 'Word shades at ' + vp.width + ' px');
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
+/* ---------- Text maps (textmaps.js) ---------- */
+async function checkMaps(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Text maps';
+  await page.goto(base + '/grade' + g + '/index.html#tools/maps');
+  await page.waitForSelector('.tm-shape');
+  const maps = await page.evaluate((g) => {
+    const out = [], M = Atlas.toolkit.maps, T = Atlas.mapbank;
+    for (const t of T) {
+      const m = M.find(x => x.id === t.map);
+      if (!m) { out.push('"' + t.title + '" is for a map that does not exist: ' + t.map); continue; }
+      for (const c of t.cards) if (!m.boxes.some(b => b[0] === c[0])) out.push('"' + t.title + '": the card "' + c[1] + '" is for a box the map does not have (' + c[0] + ')');
+      for (const b of m.boxes) if (!t.cards.some(c => c[0] === b[0])) out.push('"' + t.title + '": the ' + b[1] + ' box gets no card');
+      if (t.map === 'venn' && !(t.labels && t.labels.a && t.labels.b)) out.push('"' + t.title + '" does not name the two things it compares');
+    }
+    const here = M.filter(m => T.some(t => t.map === m.id && t.g <= g && g <= t.to)).map(m => m.id);
+    if (here.length < 3) out.push('only ' + here.length + ' maps');
+    return { out, here };
+  }, g);
+  for (const p of maps.out) fail(where, p);
+  for (let mi = 0; mi < maps.here.length; mi++) {
+    await page.locator('.tm-pick').nth(mi).click();
+    /* sort every card into its box, by tapping the card then the box */
+    const cards = await page.evaluate(([g, id]) => Atlas.mapbank.filter(t => t.map === id && t.g <= g && g <= t.to)[0].cards, [g, maps.here[mi]]);
+    for (let ci = 0; ci < cards.length; ci++) { await page.click('.tm-pile [data-card="' + ci + '"]'); await page.click('.tm-drop[data-box="' + cards[ci][0] + '"] .tm-lab'); }
+    if (await page.locator('.tm-pile .tm-card').count()) fail(where, maps.here[mi] + ': cards are left after sorting them all');
+    for (let ci = 0; ci < cards.length; ci++) if (!(await page.locator('.tm-drop[data-box="' + cards[ci][0] + '"] [data-card="' + ci + '"]').count())) fail(where, maps.here[mi] + ': "' + cards[ci][1] + '" is not in its box');
+    await screenCheck(page, where, maps.here[mi] + ' map');
+    await page.click('[data-do="mix"]');
+    await page.click('[data-do="show"]');
+    if (await page.locator('.tm-pile .tm-card').count()) fail(where, maps.here[mi] + ': Show the map leaves cards out');
+  }
+  /* Blank: what is typed is kept */
+  await page.locator('.tm-pick').nth(0).click();
+  await page.click('[data-t="-1"]');
+  await page.locator('.tm-in').first().fill('My own note');
+  await page.reload(); await page.waitForSelector('.tm-shape');
+  await page.click('[data-t="-1"]');
+  if ((await page.locator('.tm-in').first().inputValue()) !== 'My own note') fail(where, 'the blank map does not keep what was typed');
+  await screenCheck(page, where, 'blank map');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (let mi = 0; mi < maps.here.length; mi++) { await page.locator('.tm-pick').nth(mi).click(); await page.click('[data-do="show"]'); await screenCheck(page, where, maps.here[mi] + ' map at ' + vp.width + ' px'); }
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
+/* ---------- Paragraph builder and Letter pad (writetools.js) ---------- */
+async function checkWriting(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Paragraph builder and Letter pad';
+  await page.goto(base + '/grade' + g + '/index.html#tools/paragraph');
+  await page.waitForSelector('.pb-frame');
+  const P = await page.evaluate((g) => {
+    const out = [], W = Atlas.writebank, here = l => l.filter(x => x.g <= g && g <= x.to);
+    if (here(W.paras).length < 2) out.push('only ' + here(W.paras).length + ' paragraphs');
+    if (here(W.kernels).length < 3) out.push('only ' + here(W.kernels).length + ' sentences to stretch');
+    for (const p of W.paras) {
+      if (p.details.length !== 3) out.push('"' + p.title + '" needs 3 details');
+      for (const s of [p.topic, p.close, p.off].concat(p.details)) if (!/^[A-Z].*[.!?]$/.test(s)) out.push('"' + s + '" does not start with a capital and end with a mark');
+    }
+    for (const k of W.kernels) for (const w of ['because', 'but', 'so']) if (!k[w] || /[.!?]$/.test(k[w])) out.push('"' + k.k + '" needs an example ending for ' + w + ' (with no full stop)');
+    return { out, first: here(W.paras)[0] };
+  }, g);
+  for (const p of P.out) fail(where, p);
+  /* Build: Show me makes the paragraph with every tick; a joining word goes in front of the first detail */
+  await page.click('[data-do="show"]');
+  if ((await page.locator('.pb-ok').count()) !== 3) fail(where, 'Show me does not give all three ticks');
+  const want = [P.first.topic].concat(P.first.details, P.first.close).join(' ');
+  if ((await page.textContent('.pb-text')).trim() !== want) fail(where, 'the paragraph reads "' + (await page.textContent('.pb-text')).trim() + '"');
+  await page.click('[data-join="First"]');
+  await page.click('[data-slot="d1"] .pb-lab');
+  const d = P.first.details[0], lower = /^I\b/.test(d) ? d : d[0].toLowerCase() + d.slice(1);
+  if (!(await page.textContent('.pb-text')).includes('First, ' + lower)) fail(where, 'the joining word First does not go in front of the first detail');
+  /* the sentence that does not belong */
+  await page.click('.pb-pile [data-card="x"]');
+  await page.click('[data-slot="d2"] .pb-lab');
+  if (!(await page.locator('.pb-off').count()) || (await page.locator('.pb-ok').count()) === 3) fail(where, 'a sentence that does not belong still gets every tick');
+  await page.click('[data-a="undo"]');
+  if ((await page.locator('.pb-ok').count()) !== 3) fail(where, 'Undo does not take the sentence out again');
+  await screenCheck(page, where, 'Build');
+  /* Stretch: an ending is kept */
+  await page.click('[data-view="stretch"]');
+  await page.locator('.pb-in').first().fill('it was late');
+  await page.click('[data-do="ex"]');
+  if ((await page.locator('.pb-ex').count()) !== 3) fail(where, 'Show an example does not show an ending for because, but and so');
+  await screenCheck(page, where, 'Stretch');
+  await page.reload(); await page.waitForSelector('.pb-frame'); await page.click('[data-view="stretch"]');
+  if ((await page.locator('.pb-in').first().inputValue()) !== 'it was late') fail(where, 'Stretch does not keep what was typed');
+  /* Write: a starter goes in, and the paragraph shows what was written */
+  await page.click('[data-view="write"]');
+  await page.locator('[data-part="topic"]').first().click();
+  await page.keyboard.type('dogs are the best.');
+  if (!/dogs are the best/.test(await page.textContent('.pb-text'))) fail(where, 'Write does not show the paragraph being written');
+  await screenCheck(page, where, 'Write');
+
+  /* Letter pad: every letter sits on the right lines */
+  await page.goto(base + '/grade' + g + '/index.html#tools/letters');
+  await page.waitForSelector('.lp-svg');
+  for (const p of await page.evaluate((g) => {
+    const out = [], L = Atlas.toolkit.lines, NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('viewBox', '0 0 400 200'); svg.style.cssText = 'position:absolute;left:0;top:0;width:400px;height:200px'; document.body.appendChild(svg);
+    const box = s => { svg.innerHTML = s.map(d => '<path d="' + d + '"/>').join(''); const b = [...svg.querySelectorAll('path')].map(p => p.getBBox()); return { top: Math.min(...b.map(r => r.y)), bot: Math.max(...b.map(r => r.y + r.height)), left: Math.min(...b.map(r => r.x)), right: Math.max(...b.map(r => r.x + r.width)) }; };
+    for (const set of Atlas.writebank.letters.filter(s => s.from <= g && g <= s.to)) {
+      const keys = Object.keys(set.list), grouped = set.groups.map(x => x[1]).join(' ').split(' ');
+      if (grouped.length !== keys.length || keys.some(k => grouped.filter(x => x === k).length !== 1)) out.push(set.name + ': every letter must be in one group, once');
+      if (set.id === 'abc' && keys.some(k => !set.cues[k])) out.push('abc: every letter needs a way to say it');
+      for (const k of keys) {
+        const c = set.list[k], b = box(c.s), name = set.name + ' "' + k + '"';
+        if (b.left < -2 || b.right > c.w + 2) out.push(name + ' goes outside its width');
+        if (b.top < 4 || b.bot > L.ground + 6) out.push(name + ' goes outside the lines');
+        if (set.id === 'ABC' || set.id === '123') { if (b.top > L.sky + 4 || b.bot < L.grass - 4 || b.bot > L.grass + 5) out.push(name + ' should go from the sky line to the grass line'); continue; }
+        const tall = /[bdfhklt]/.test(k), down = set.id === 'cursive' ? /[fgjpqyz]/.test(k) : /[gjpqy]/.test(k);
+        if (tall && b.top > 30) out.push(name + ' should reach up toward the sky line');
+        if (!tall && b.top < 34) out.push(name + ' should stay under the plane line');
+        if (down && b.bot < L.ground - 20) out.push(name + ' should go down toward the ground line');
+        if (!down && (b.bot > L.grass + 5 || b.bot < L.grass - 5)) out.push(name + ' should sit on the grass line');
+        if (set.id === 'cursive') { const m = /^M([\d.]+),([\d.]+)/.exec(c.s[0]); if (Math.abs(+m[2] - L.grass) > 2) out.push(name + ' should start on the grass line, ready to join'); }
+      }
+    }
+    svg.remove();
+    return out;
+  }, g)) fail(where, p);
+  /* draw a stroke, undo it, draw again, clear; the three modes; Show me */
+  async function stroke() { const bx = await page.locator('.lp-svg').boundingBox(); await page.mouse.move(bx.x + bx.width * 0.6, bx.y + bx.height * 0.4); await page.mouse.down(); await page.mouse.move(bx.x + bx.width * 0.7, bx.y + bx.height * 0.6, { steps: 6 }); await page.mouse.up(); }
+  await page.click('[data-set="abc"]');
+  await page.click('[data-ch="a"]');
+  await stroke();
+  if ((await page.locator('.lp-ink polyline').count()) !== 1) fail(where, 'drawing on the lines leaves no ink');
+  await page.click('[data-a="undo"]');
+  if (await page.locator('.lp-ink polyline').count()) fail(where, 'Undo does not take back the stroke');
+  await stroke(); await page.click('[data-do="clear"]');
+  if (await page.locator('.lp-ink polyline').count()) fail(where, 'Clear does not wipe the ink');
+  if ((await page.locator('.lp-dots').count()) < 1 || (await page.locator('.lp-n').count()) !== 2) fail(where, 'Trace does not show "a" with 2 numbered starts and dotted copies');
+  await screenCheck(page, where, 'Letter pad, Trace');
+  await page.click('[data-mode="copy"]');
+  if (await page.locator('.lp-dots').count()) fail(where, 'Copy still shows dotted letters');
+  await page.click('[data-mode="memory"]');
+  if (await page.locator('.lp-model').count()) fail(where, 'Remember still shows the letter');
+  await page.click('[data-do="play"]');
+  if ((await page.locator('.lp-play path').count()) !== 2) fail(where, 'Show me does not draw the 2 strokes of "a"');
+  for (const s of await page.$$eval('[data-set]', b => b.map(x => x.getAttribute('data-set')))) {
+    await page.click('[data-set="' + s + '"]');
+    await screenCheck(page, where, 'Letter pad, ' + s);
+  }
+  if (g >= 3 && !(await page.locator('[data-set="cursive"]').count())) fail(where, 'cursive is missing from Grade 3 on');
+  if (g < 3 && (await page.locator('[data-set="cursive"]').count())) fail(where, 'cursive shows before Grade 3');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    await page.goto(base + '/grade' + g + '/index.html#tools/letters'); await page.waitForSelector('.lp-svg');
+    await screenCheck(page, where, 'Letter pad at ' + vp.width + ' px');
+    await page.goto(base + '/grade' + g + '/index.html#tools/paragraph'); await page.waitForSelector('.pb-frame');
+    await page.click('[data-do="show"]');
+    await screenCheck(page, where, 'Paragraph builder at ' + vp.width + ' px');
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
 async function checkSentences(browser, base, g) {
   const { ctx, page, errs } = await newPage(browser, base);
   const where = 'grade ' + g + ' Sentence builder';
@@ -881,6 +1113,9 @@ async function checkSounds(browser, base, g) {
     try { await checkSounds(browser, url, g); log('Grade ' + g + ' tool box: Sound board checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sound board', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkReader(browser, url, g); log('Grade ' + g + ' tool box: Reading window checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Reading window', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkMeaning(browser, url, g); log('Grade ' + g + ' tool box: Word shades and Word web checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Word shades and Word web', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkMaps(browser, url, g); log('Grade ' + g + ' tool box: Text maps checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Text maps', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkWriting(browser, url, g); log('Grade ' + g + ' tool box: Paragraph builder and Letter pad checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Paragraph builder and Letter pad', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }

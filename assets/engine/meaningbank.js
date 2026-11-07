@@ -1,0 +1,106 @@
+/* Language Atlas tool box: the words for Word shades and Word web (meaning.js). Shared by every grade. Original lists.
+   Atlas.meaningbank = { shades, web }.
+
+   shades: sets of words for one idea, from weakest to strongest (or, with feel: true, from sounds negative to sounds
+   positive: connotation, Grades 7 and 8).
+     { g: first grade, to: last grade, words: [weakest ... strongest], frame: a sentence with ___ where any of the words fits }
+   web: one word with what it means, words like it, its opposites, its word family and an example sentence. From Grade 7 a
+   word can have Greek or Latin roots (roots: [['port', 'carry']]) and kin (other words with the same root).
+     { w, g, to, part, means, like: [], opp: [], fam: [], ex, roots, kin } */
+(function () {
+  'use strict';
+  var shades = [
+    { g: 1, to: 3, words: ['tiny', 'small', 'big', 'huge'], frame: 'The dog was ___.' },
+    { g: 1, to: 3, words: ['freezing', 'cold', 'warm', 'hot'], frame: 'The water was ___.' },
+    { g: 1, to: 3, words: ['walk', 'jog', 'run', 'sprint'], frame: 'We ___ to the park.' },
+    { g: 1, to: 3, words: ['whisper', 'talk', 'shout'], frame: 'We ___ in the hall.' },
+    { g: 1, to: 3, words: ['fine', 'good', 'great', 'amazing'], frame: 'The show was ___.' },
+    { g: 1, to: 3, words: ['glad', 'happy', 'thrilled'], frame: 'I was ___ to see you.' },
+    { g: 2, to: 4, words: ['damp', 'wet', 'soaked'], frame: 'My socks were ___.' },
+    { g: 2, to: 4, words: ['dim', 'bright', 'dazzling'], frame: 'The light was ___.' },
+    { g: 2, to: 4, words: ['nibble', 'eat', 'gobble'], frame: 'The bear began to ___.' },
+    { g: 2, to: 4, words: ['sleepy', 'tired', 'exhausted'], frame: 'After the game, I was ___.' },
+    { g: 3, to: 5, words: ['like', 'love', 'adore'], frame: 'I ___ my cat.' },
+    { g: 3, to: 5, words: ['annoyed', 'angry', 'furious'], frame: 'Dad was ___.' },
+    { g: 3, to: 5, words: ['nervous', 'scared', 'terrified'], frame: 'The thunder made me ___.' },
+    { g: 3, to: 5, words: ['glance', 'look', 'stare'], frame: 'Do not ___ at the sun.' },
+    { g: 3, to: 5, words: ['silent', 'quiet', 'loud', 'deafening'], frame: 'The room was ___.' },
+    { g: 4, to: 6, words: ['chip', 'crack', 'break', 'shatter'], frame: 'The glass may ___.' },
+    { g: 4, to: 6, words: ['dull', 'interesting', 'fascinating'], frame: 'The book was ___.' },
+    { g: 4, to: 6, words: ['drizzle', 'rain', 'pour'], frame: 'It started to ___.' },
+    { g: 4, to: 6, words: ['breeze', 'gust', 'gale'], frame: 'A ___ blew across the lake.' },
+    { g: 4, to: 6, words: ['sniffle', 'cry', 'sob', 'wail'], frame: 'The baby began to ___.' },
+    { g: 4, to: 6, words: ['amusing', 'funny', 'hilarious'], frame: 'The joke was ___.' },
+    { g: 4, to: 6, words: ['dusty', 'dirty', 'filthy'], frame: 'The floor was ___.' },
+    { g: 5, to: 7, words: ['busy', 'crowded', 'packed'], frame: 'The bus was ___.' },
+    { g: 5, to: 7, words: ['dislike', 'hate', 'detest'], frame: 'I ___ cold soup.' },
+    { g: 5, to: 7, words: ['content', 'happy', 'overjoyed', 'ecstatic'], frame: 'She felt ___.' },
+    { g: 5, to: 7, words: ['tricky', 'hard', 'gruelling'], frame: 'The climb was ___.' },
+    { g: 6, to: 8, words: ['helpful', 'important', 'vital'], frame: 'Water is ___ for plants.' },
+    { g: 6, to: 8, words: ['peckish', 'hungry', 'ravenous'], frame: 'After the hike, I was ___.' },
+    { g: 6, to: 8, words: ['uneasy', 'worried', 'frantic'], frame: 'Mom felt ___ when the dog ran off.' },
+    { g: 7, to: 8, feel: true, words: ['stubborn', 'firm', 'determined'], frame: 'My sister is ___.' },
+    { g: 7, to: 8, feel: true, words: ['nosy', 'interested', 'curious'], frame: 'Our neighbour is very ___.' },
+    { g: 7, to: 8, feel: true, words: ['scrawny', 'thin', 'slender'], frame: 'The ___ boy ran past.' },
+    { g: 7, to: 8, feel: true, words: ['stingy', 'careful', 'thrifty'], frame: 'My uncle is ___ with money.' },
+    { g: 7, to: 8, feel: true, words: ['junk', 'used', 'vintage'], frame: 'The shop sells ___ furniture.' },
+    { g: 7, to: 8, feel: true, words: ['stench', 'smell', 'aroma'], frame: 'A strong ___ came from the kitchen.' },
+    { g: 7, to: 8, feel: true, words: ['smirk', 'smile', 'beam'], frame: 'She began to ___.' },
+    { g: 7, to: 8, feel: true, words: ['weird', 'unusual', 'unique'], frame: 'It was a ___ idea.' },
+    { g: 8, to: 8, feel: true, words: ['problem', 'challenge', 'opportunity'], frame: 'Moving schools was a ___.' },
+    { g: 8, to: 8, feel: true, words: ['childish', 'young', 'youthful'], frame: 'Her grandmother has a ___ laugh.' },
+    { g: 8, to: 8, feel: true, words: ['arrogant', 'proud', 'confident'], frame: 'The captain was ___.' }
+  ];
+
+  var web = [
+    { w: 'happy', g: 1, to: 3, part: 'describing word', means: 'feeling good', like: ['glad', 'cheerful'], opp: ['sad'], fam: ['happily', 'happiness', 'unhappy'], ex: 'Mia was happy to see the snow.' },
+    { w: 'big', g: 1, to: 3, part: 'describing word', means: 'large in size', like: ['large', 'huge'], opp: ['small', 'little'], fam: ['bigger', 'biggest'], ex: 'The moose has big antlers.' },
+    { w: 'fast', g: 1, to: 3, part: 'describing word', means: 'moving quickly', like: ['quick', 'speedy'], opp: ['slow'], fam: ['faster', 'fastest'], ex: 'The red fox is fast.' },
+    { w: 'kind', g: 1, to: 3, part: 'describing word', means: 'nice and caring to others', like: ['caring', 'gentle'], opp: ['mean'], fam: ['kindness', 'kindly', 'unkind'], ex: 'Jaden was kind to the new girl.' },
+    { w: 'shout', g: 1, to: 3, part: 'doing word', means: 'to say something very loudly', like: ['yell', 'call'], opp: ['whisper'], fam: ['shouted', 'shouting'], ex: 'Do not shout in the library.' },
+    { w: 'begin', g: 1, to: 3, part: 'doing word', means: 'to start', like: ['start'], opp: ['end', 'finish'], fam: ['began', 'beginning', 'beginner'], ex: 'Let us begin the story.' },
+    { w: 'quiet', g: 1, to: 3, part: 'describing word', means: 'making little or no sound', like: ['silent', 'calm'], opp: ['loud', 'noisy'], fam: ['quietly', 'quieter'], ex: 'The forest was quiet at night.' },
+    { w: 'friend', g: 1, to: 3, part: 'naming word', means: 'a person you like and trust', like: ['pal', 'buddy'], opp: ['enemy'], fam: ['friendly', 'friendship', 'unfriendly'], ex: 'My friend Aisha lives next door.' },
+    { w: 'brave', g: 2, to: 4, part: 'describing word', means: 'ready to do something hard or scary', like: ['bold', 'fearless'], opp: ['afraid', 'timid'], fam: ['bravely', 'bravery'], ex: 'The brave firefighter climbed the ladder.' },
+    { w: 'tidy', g: 2, to: 4, part: 'describing word', means: 'neat, with things put away', like: ['neat'], opp: ['messy'], fam: ['tidier', 'tidied', 'untidy'], ex: 'Sam keeps his room tidy.' },
+    { w: 'gentle', g: 2, to: 4, part: 'describing word', means: 'soft and careful', like: ['soft', 'kind'], opp: ['rough'], fam: ['gently', 'gentleness'], ex: 'Be gentle with the kitten.' },
+    { w: 'explore', g: 3, to: 5, part: 'doing word', means: 'to look around a place to learn about it', like: ['discover', 'search'], opp: [], fam: ['explorer', 'exploring', 'exploration'], ex: 'We explored the trail by the river.' },
+    { w: 'predict', g: 3, to: 5, part: 'doing word', means: 'to say what you think will happen', like: ['guess', 'expect'], opp: [], fam: ['prediction', 'predictable', 'unpredictable'], ex: 'I predict it will snow tonight.' },
+    { w: 'ancient', g: 3, to: 5, part: 'describing word', means: 'very, very old', like: ['old'], opp: ['modern', 'new'], fam: ['anciently'], ex: 'We saw ancient rocks on the shore of Lake Superior.' },
+    { w: 'generous', g: 4, to: 6, part: 'describing word', means: 'happy to share and give', like: ['giving', 'kind'], opp: ['selfish', 'stingy'], fam: ['generosity', 'generously'], ex: 'Our generous neighbour shared her maple syrup.' },
+    { w: 'enormous', g: 4, to: 6, part: 'describing word', means: 'very, very large', like: ['huge', 'giant', 'massive'], opp: ['tiny'], fam: ['enormously'], ex: 'An enormous wave hit the rocks.' },
+    { w: 'fragile', g: 4, to: 6, part: 'describing word', means: 'easy to break or harm', like: ['delicate', 'breakable'], opp: ['sturdy', 'strong'], fam: ['fragility'], ex: 'The bird eggs were fragile.' },
+    { w: 'observe', g: 4, to: 6, part: 'doing word', means: 'to watch carefully and notice', like: ['notice', 'watch'], opp: ['ignore'], fam: ['observation', 'observer', 'observant'], ex: 'We observed the tadpoles every morning.' },
+    { w: 'persuade', g: 4, to: 6, part: 'doing word', means: 'to get someone to agree by giving reasons', like: ['convince'], opp: ['discourage'], fam: ['persuasive', 'persuasion'], ex: 'Ella persuaded her class to plant a garden.' },
+    { w: 'migrate', g: 5, to: 7, part: 'doing word', means: 'to move to another place when the season changes', like: ['travel', 'move'], opp: ['stay'], fam: ['migration', 'migratory', 'migrating'], ex: 'Canada geese migrate south in the fall.' },
+    { w: 'cooperate', g: 5, to: 7, part: 'doing word', means: 'to work together', like: ['collaborate', 'team up'], opp: ['compete'], fam: ['cooperation', 'cooperative'], ex: 'The teams cooperated to clean the beach.' },
+    { w: 'reluctant', g: 5, to: 7, part: 'describing word', means: 'not wanting to do something', like: ['unwilling', 'hesitant'], opp: ['eager', 'willing'], fam: ['reluctantly', 'reluctance'], ex: 'Noah was reluctant to jump into the cold lake.' },
+    { w: 'survive', g: 5, to: 7, part: 'doing word', means: 'to stay alive or keep going through something hard', like: ['last', 'endure'], opp: [], fam: ['survival', 'survivor'], ex: 'Snowshoe hares survive the winter by turning white.' },
+    { w: 'abundant', g: 6, to: 8, part: 'describing word', means: 'more than enough', like: ['plentiful'], opp: ['scarce'], fam: ['abundance', 'abundantly'], ex: 'Blueberries are abundant in August.' },
+    { w: 'conclude', g: 6, to: 8, part: 'doing word', means: 'to end, or to decide after thinking', like: ['finish', 'decide'], opp: ['begin'], fam: ['conclusion', 'conclusive'], ex: 'The scientists concluded that the lake was healthy.' },
+    { w: 'resilient', g: 6, to: 8, part: 'describing word', means: 'able to bounce back after something hard', like: ['tough', 'strong'], opp: ['fragile'], fam: ['resilience'], ex: 'The resilient town rebuilt after the flood.' },
+    { w: 'transport', g: 7, to: 8, part: 'doing word', means: 'to carry from one place to another', like: ['carry', 'move'], opp: [], fam: ['transportation', 'transported', 'transporter'], ex: 'Trains transport wheat from the Prairies to the coast.',
+      roots: [['trans', 'across'], ['port', 'carry']], kin: ['portable', 'export', 'import', 'translate'] },
+    { w: 'contradict', g: 7, to: 8, part: 'doing word', means: 'to say the opposite of what someone said', like: ['deny', 'oppose'], opp: ['agree', 'confirm'], fam: ['contradiction', 'contradictory'], ex: 'The second witness contradicted the first.',
+      roots: [['contra', 'against'], ['dict', 'say']], kin: ['dictate', 'predict', 'verdict', 'dictionary'] },
+    { w: 'inspect', g: 7, to: 8, part: 'doing word', means: 'to look at something closely', like: ['examine', 'check'], opp: ['overlook'], fam: ['inspection', 'inspector'], ex: 'The mechanic inspected the brakes.',
+      roots: [['in', 'into'], ['spect', 'look']], kin: ['spectator', 'respect', 'spectacles'] },
+    { w: 'construct', g: 7, to: 8, part: 'doing word', means: 'to build or make', like: ['build', 'assemble'], opp: ['destroy'], fam: ['construction', 'constructive'], ex: 'They constructed a footbridge over the creek.',
+      roots: [['con', 'together'], ['struct', 'build']], kin: ['structure', 'instruct', 'destruction'] },
+    { w: 'telescope', g: 7, to: 8, part: 'naming word', means: 'a tool that makes far things look closer', like: ['spyglass'], opp: [], fam: ['telescopic'], ex: 'We saw Jupiter through the telescope.',
+      roots: [['tele', 'far'], ['scope', 'look at']], kin: ['telephone', 'television', 'microscope'] },
+    { w: 'biography', g: 7, to: 8, part: 'naming word', means: 'the true story of a person’s life, written by someone else', like: ['life story'], opp: [], fam: ['biographer', 'biographical'], ex: 'I read a biography of Terry Fox.',
+      roots: [['bio', 'life'], ['graph', 'write']], kin: ['autobiography', 'biology', 'autograph', 'paragraph'] },
+    { w: 'benevolent', g: 8, to: 8, part: 'describing word', means: 'kind and wanting to do good', like: ['kind', 'generous'], opp: ['cruel', 'malevolent'], fam: ['benevolence', 'benevolently'], ex: 'A benevolent donor paid for the new rink.',
+      roots: [['bene', 'good'], ['vol', 'wish']], kin: ['benefit', 'beneficial', 'volunteer'] },
+    { w: 'chronological', g: 8, to: 8, part: 'describing word', means: 'in the order things happened', like: ['in time order'], opp: [], fam: ['chronology', 'chronologically'], ex: 'List the events in chronological order.',
+      roots: [['chron', 'time'], ['log', 'study or word']], kin: ['chronic', 'chronicle', 'synchronize'] },
+    { w: 'empathy', g: 8, to: 8, part: 'naming word', means: 'understanding how someone else feels', like: ['compassion', 'understanding'], opp: ['indifference'], fam: ['empathize', 'empathetic'], ex: 'She showed empathy for the new student.',
+      roots: [['em', 'in'], ['path', 'feeling']], kin: ['sympathy', 'apathy', 'pathetic'] },
+    { w: 'eloquent', g: 8, to: 8, part: 'describing word', means: 'speaking or writing clearly and powerfully', like: ['articulate', 'expressive'], opp: ['tongue-tied'], fam: ['eloquence', 'eloquently'], ex: 'The Elder gave an eloquent speech at the gathering.',
+      roots: [['e', 'out'], ['loqu', 'speak']], kin: ['colloquial', 'loquacious'] },
+    { w: 'ambiguous', g: 8, to: 8, part: 'describing word', means: 'having more than one possible meaning', like: ['unclear', 'vague'], opp: ['clear', 'definite'], fam: ['ambiguity', 'ambiguously'], ex: 'The ending of the story was ambiguous.',
+      roots: [['ambi', 'both']], kin: ['ambidextrous', 'ambivalent'] }
+  ];
+  window.Atlas.meaningbank = { shades: shades, web: web };
+})();
