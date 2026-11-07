@@ -1,6 +1,7 @@
 /* Language Atlas tool box, shared by every grade: hands-on tools for free play, alone or with a grown-up (page #tools).
    Needs atlas.js, words.js (sound clips), wordbank.js (the words) and cardbank.js (the sentence cards). No marks and no tasks: the child builds and explores.
-     #tools          the first tool          #tools/words    Word builder          #tools/sentences    Sentence builder
+     #tools          the first tool          #tools/sounds   Sound board (soundboard.js adds it first)
+     #tools/words    Word builder            #tools/sentences    Sentence builder
    A tool fills the screen under a slim bar (back, the tool's name, Undo, Tools). The Tools menu shows the tools on shelves,
    one shelf per part of Language. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
 

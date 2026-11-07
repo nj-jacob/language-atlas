@@ -32,7 +32,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'engine.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -681,6 +681,76 @@ async function checkSentences(browser, base, g) {
   await ctx.close();
 }
 
+/* Sound board: the sound bank (every sound recorded, pictured and spelled), then a walk through on a phone and other screens */
+async function checkSounds(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' Sound board';
+  await page.goto(base + '/grade' + g + '/index.html#tools/sounds');
+  await page.waitForSelector('.sbd-stage');
+  for (const p of await page.evaluate(() => {
+    const out = [], B = Atlas.soundbank, K = Atlas.toolkit, W = Atlas.W, all = K.sounds(true), clips = all.map(s => s.clip);
+    for (const n of W.soundNames) if (clips.filter(c => c === n).length !== 1) out.push('the recorded sound "' + n + '" is on the board ' + clips.filter(c => c === n).length + ' times, not once');
+    for (const s of all) {
+      if (!W.soundNames.includes(s.clip)) out.push('/' + s.clip + '/ has no recording');
+      if (!W.pics.includes(s.key)) out.push('/' + s.clip + '/: no picture called "' + s.key + '"');
+      if (!s.vowel && (!B.places.some(p => p[0] === s.place) || !B.manners.some(m => m[0] === s.manner))) out.push('/' + s.clip + '/ has no place or manner on the wall');
+      if (!s.sp.length || s.sp[0].grade > 3) out.push('/' + s.clip + '/ has no spelling by Grade 3');
+      for (const x of s.sp) {
+        const marks = (x.marked.match(/<u>([^<]*)<\/u>/g) || []).map(m => m.replace(/<\/?u>/g, ''));
+        if (marks.join('_') !== x.g) out.push('/' + s.clip + '/: in "' + x.plain + '" the marked part is "' + marks.join('_') + '", not "' + x.g + '"');
+      }
+    }
+    for (const v of B.valley.map(v => v[0]).concat(B.slides, B.rvowels)) if (!all.some(s => s.vowel && s.clip === v)) out.push('the vowel "' + v + '" is not a vowel sound');
+    if (all.filter(s => s.vowel).length !== B.valley.length + B.slides.length + B.rvowels.length) out.push('every vowel must be in the valley, the slides or the vowels with r, once');
+    for (const d of B.decks) for (const c of d[1].split(' ')) if (!K.soundsOf(all, c).length) out.push('deck "' + d[0] + '": "' + c + '" is not a spelling of any sound');
+    for (const m of B.move) {
+      const t = m.split(' '), w = K.spell(t);
+      for (const x of t) if (!K.soundsOf(all, x).length) out.push('Move it "' + m + '": "' + x + '" is not a spelling of any sound');
+      if (!W.pics.includes(w)) out.push('Move it "' + m + '" spells "' + w + '", which has no picture');
+    }
+    return out;
+  })) fail(where, p);
+  await screenCheck(page, where, 'Wall');
+  /* Wall: tap a sound, then the vowels */
+  await page.click('.sw-list [data-s="g"]');
+  if (!/\/g\//.test(await page.textContent('.sw-det'))) fail(where, 'tapping /g/ does not show /g/');
+  await page.click('[data-tab="vow"]');
+  await page.click('.sv-valley [data-s="oa"]');
+  if (!/boat/.test(await page.textContent('.sw-det'))) fail(where, 'tapping /oa/ does not show its key word');
+  await screenCheck(page, where, 'Vowels');
+  /* Move it: one chip for each sound, then letters and change one sound */
+  await page.click('[data-v="move"]');
+  const n = await page.locator('.sm-box').count();
+  for (let i = 0; i < n; i++) await page.click('.sm-home .sm-chip >> nth=0');
+  if ((await page.locator('.sm-box .sm-chip').count()) !== n || (await page.locator('.sm-home .sm-chip').count())) fail(where, 'pushing every chip does not fill every box');
+  await page.click('[data-do="back"]');
+  if ((await page.locator('.sm-box .sm-chip').count()) !== n - 1) fail(where, 'Take back does not take one chip back');
+  await page.click('[data-do="change"]');
+  await page.click('.sm-tiles [data-swap="d"]');
+  if (!/→/.test(await page.textContent('.sm-mat'))) fail(where, 'changing one sound does not show the new word');
+  await page.click('[data-a="undo"]');
+  if (await page.locator('.wb-trail').count()) fail(where, 'Undo does not take back the changed sound');
+  await screenCheck(page, where, 'Move it');
+  /* Cards: flip, next, hear it first, my deck */
+  await page.click('[data-v="cards"]');
+  await page.click('[data-do="flip"]');
+  if (!(await page.locator('.sc-flipped').count())) fail(where, 'Flip does not turn the card');
+  await page.click('[data-do="next"]');
+  if (!/2 of/.test(await page.textContent('.sc-n'))) fail(where, 'Next does not show the second card');
+  await page.click('[data-do="mine"]');
+  if (!/My deck\s*1/.test(await page.textContent('.sc-decks'))) fail(where, 'Add to my deck does not add the card');
+  await page.click('[data-do="mine"]');
+  await page.click('[data-tg="hear"]');
+  if (!(await page.locator('.sc-front .sc-hear').count())) fail(where, 'Hear it first does not hide the spelling');
+  await screenCheck(page, where, 'Cards');
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (const v of ['wall', 'move', 'cards']) { await page.click('[data-v="' + v + '"]'); await screenCheck(page, where, v + ' at ' + vp.width + ' px'); }
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -696,6 +766,7 @@ async function checkSentences(browser, base, g) {
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { await checkSounds(browser, url, g); log('Grade ' + g + ' tool box: Sound board checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sound board', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
