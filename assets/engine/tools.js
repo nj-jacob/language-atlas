@@ -9,7 +9,12 @@
      Sounds  letter tiles in sound boxes. Tap a tile to add it; tap a box, then a tile, to swap one sound. Blend plays the
              sounds in order (Noel's recorded clips) and shows the word. A silent-e tile (a-e) puts its e after the next tile:
              c, a-e, k spells cake, and the word shows the vowel and its e joined.
-     Beats   a longer word: tap between letters to cut it into beats (syllables). "Show the beats" marks where they go.
+     Beats   a longer word: tap between letters to cut it into beats (syllables). Each beat shows its syllable type (closed,
+             open, silent e, vowel team, with r, consonant-le; an ending such as -tion from Grade 4) and plays the vowel sound
+             that type gives, so a wrong cut shows straight away (tig-er gives /i/, ti-ger gives /igh/). From Grade 2 each cut
+             shows its pattern (VC/CV rabbit, V/CV tiger, VC/V camel, V/V lion, three consonants ostrich, consonant-le, two
+             words) and, when the cuts are right, the strong beat. "Mark vowels" puts v over the vowels and c over the
+             consonants between them; "Show the beats" marks where the cuts go; "Find a type" lists the words with that type.
      Parts   prefixes, bases (and roots from Grade 7) and suffixes. Each part shows what it means; the word is spelled with the
              spelling rules (drop the e, double the last letter, y changes to i, add es), and its word family is listed.
    Each grade gets the tiles and words for its grade and the grades before (wordbank.js says from which grade each shows).
@@ -107,7 +112,7 @@
       return { word: spell(tiles), tiles: gs.map(function (x) { return x.split(':')[0]; }), clips: gs.map(function (x) { return x.split(':')[1] || x; }) };
     }).filter(function (w) { return w.tiles.every(function (t) { return tiles.indexOf(t) >= 0; }); });
     var beats = [];
-    Object.keys(B.beats).forEach(function (k) { if (+k <= g) beats = beats.concat(B.beats[k].split(' ')); });
+    Object.keys(B.beats).forEach(function (k) { if (+k <= g) beats = beats.concat(B.beats[k].split(' ').map(beatWord)); });
     function shows(id) { var m = B.means[id]; return !m || m[1] <= g; }
     var parts = B.parts.map(function (p) { var s = p.split('='); return { ids: s[0].split('+'), word: s[1] }; })
       .filter(function (e) { return e.ids.every(shows); });
@@ -124,6 +129,82 @@
   }
   function isVowel(t) { return /[aeiou]/.test(t); }
 
+  /* ---------- syllables (Beats): the six syllable types, the vowel sound each gives, and how a word splits ---------- */
+  var KINDS = { closed: 'Closed', open: 'Open', silente: 'Silent e', team: 'Vowel team', r: 'With r', le: 'Consonant-le', end: 'Ending' };
+  var SHORT = { a: 'a', e: 'e', i: 'i', o: 'o', u: 'u', y: 'i' }, LONG = { a: 'ai', e: 'ee', i: 'igh', o: 'oa', u: 'ue', y: 'ee' };
+  var TEAMS = { ai: 'ai', ay: 'ai', ee: 'ee', ea: 'ee', ey: 'ee', ie: 'igh', igh: 'igh', oa: 'oa', oe: 'oa', oo: 'oo', ou: 'ow', ow: 'ow', oi: 'oy', oy: 'oy', au: 'or', aw: 'or', ew: 'oo', ue: 'oo', ui: 'oo', ei: 'ai', eigh: 'ai' };
+  var RS = { ar: 'ar', or: 'or', er: 'er', ir: 'er', ur: 'er', air: 'air', are: 'air', ear: 'ear', eer: 'ear', oar: 'or', ore: 'or', our: 'or' };
+  var NAMES = { 'VC/CV': 'rabbit', 'V/CV': 'tiger', 'VC/V': 'camel', 'V/V': 'lion' };
+  /* 'BUT-ter-fly=fly:igh' -> { w: 'butterfly', parts: ['but','ter','fly'], joins: ['-','-'], strong: 0, clips: { fly: 'igh' } } */
+  function beatWord(x) {
+    var s = x.split('='), clips = {};
+    (s[1] || '').split(',').forEach(function (c) { if (c) { var kv = c.split(':'); clips[kv[0]] = kv[1]; } });
+    var parts = s[0].split(/[-+]/), strong = 0;
+    parts.forEach(function (p, i) { if (p !== p.toLowerCase()) strong = i; });
+    return { w: parts.join('').toLowerCase(), parts: parts.map(function (p) { return p.toLowerCase(); }), joins: s[0].replace(/[^-+]/g, '').split(''), strong: strong, clips: clips };
+  }
+  /* is the letter at i a vowel letter? (u after q is not; y is, unless a vowel follows it: gym, fly, but yak) */
+  function vAt(s, i) {
+    var c = s.charAt(i);
+    if (c === 'u' && s.charAt(i - 1) === 'q') return false;
+    return /[aeiou]/.test(c) || (c === 'y' && !/[aeiou]/.test(s.charAt(i + 1)));
+  }
+  /* the vowel sounds in a word or a beat: [{ at, v }]. A run of vowel letters is one sound (rain, boat), with w or y after it
+     (snow, key) and gh after i (night). A last e after one consonant is silent and marks the vowel before it (cake);
+     after a consonant and l it is the vowel of a -le beat (ta-ble). */
+  function units(s) {
+    var out = [], i = 0;
+    while (i < s.length) {
+      if (!vAt(s, i)) { i++; continue; }
+      var j = i + 1;
+      while (j < s.length && vAt(s, j)) j++;
+      if (/[wy]/.test(s.charAt(j)) && !/[aeiou]/.test(s.charAt(j + 1))) j++;
+      if (s.charAt(j - 1) === 'i' && s.substr(j, 2) === 'gh') j += 2;
+      out.push({ at: i, v: s.slice(i, j) });
+      i = j;
+    }
+    var last = out[out.length - 1];
+    if (out.length > 1 && last.v === 'e' && last.at === s.length - 1 && !vAt(s, last.at - 1) && !(s.charAt(last.at - 1) === 'l' && !vAt(s, last.at - 2))) {
+      out.pop();
+      out[out.length - 1].sil = true;
+    }
+    return out;
+  }
+  /* the syllable type of one beat, or 'none' (no vowel) or 'many' (more than one beat) */
+  function kindOf(p) {
+    var u = units(p);
+    if (u.length !== 1) return u.length ? 'many' : 'none';
+    if (/(tion|sion|ture|cian)$/.test(p)) return 'end';
+    if (/^[^aeiouy]+le$/.test(p)) return 'le';
+    var after = p.slice(u[0].at + u[0].v.length);
+    if (/^r(e?$|[^aeiouy])/.test(after)) return 'r';
+    if (u[0].v.length > 1) return 'team';
+    if (u[0].sil) return 'silente';
+    return after ? 'closed' : 'open';
+  }
+  /* the vowel sound a beat's type gives (the recorded clip), or '' when it has none to play */
+  function vowelOf(p, kind) {
+    var v = (units(p)[0] || {}).v;
+    if (kind === 'closed') return SHORT[v] || '';
+    if (kind === 'open' || kind === 'silente') return LONG[v] || '';
+    if (kind === 'team') return TEAMS[v] || '';
+    if (kind === 'r') { var m = /([aeiou]+)r(e?)$|([aeiou]+)r/.exec(p) || []; return RS[(m[1] || m[3]) + 'r' + (m[2] || '')] || RS[(m[1] || m[3] || '').slice(-1) + 'r'] || ''; }
+    return '';
+  }
+  /* how a word splits between two beats: letters for vowels (V) and consonant sounds (C) on each side of the cut */
+  function pattern(left, right, join) {
+    if (join === '+') return { code: 'word+word', name: 'two words' };
+    if (kindOf(right) === 'le') return { code: 'C+le', name: 'consonant-le' };
+    function count(s) { return (s.match(/tch|ch|sh|th|ph|wh|ck|ng|qu|[^aeiou]/g) || []).length; }
+    var ul = units(left), ur = units(right);
+    if (!ul.length || !ur.length) return null;
+    var l = ul[ul.length - 1], tail = left.slice(l.at + l.v.length);
+    if (kindOf(left) === 'r') tail = tail.replace(/^r/, '');
+    var a = count(tail), b = count(right.slice(0, ur[0].at));
+    var code = 'V' + new Array(a + 1).join('C') + '/' + new Array(b + 1).join('C') + 'V';
+    return { code: code, name: a + b >= 3 ? 'ostrich' : NAMES[code] || '' };
+  }
+
   /* ---------- Word builder ---------- */
   function wordBuilder(root, canUndo) {
     var K = bank(), g = A.grade, history = [];
@@ -131,7 +212,7 @@
     var st = {
       view: g <= 3 ? 'sounds' : 'parts', tab: 'cons', ptab: g >= 7 ? 'root' : 'base', sel: -1,
       tiles: ['sh', 'i', 'p'], trail: [],
-      beat: g <= 1 ? 'rab-bit' : g <= 3 ? 'but-ter-fly' : 'wa-ter-mel-on', cuts: [], show: false,
+      beat: g <= 1 ? 'rabbit' : g <= 3 ? 'butterfly' : 'watermelon', cuts: [], show: false, marks: false, kind: '',
       parts: g >= 7 ? ['bio', 'graph', '-y.thing'] : g >= 2 ? ['un-', 'help', '-ful'] : ['jump', '-ing']
     };
     function change(fn) { history.push(JSON.stringify(st)); fn(); canUndo(true); draw(); }
@@ -140,13 +221,13 @@
     /* the word showing now, so another view can open on the same word */
     function wordNow() {
       if (st.view === 'sounds') return spell(st.tiles);
-      if (st.view === 'beats') return st.beat.replace(/-/g, '');
+      if (st.view === 'beats') return st.beat;
       return join(st.parts).word;
     }
     function openOn(view, word) {
       st.view = view; st.sel = -1;
       if (view === 'sounds') { var s = K.sounds.filter(function (w) { return w.word === word; })[0]; if (s) st.tiles = s.tiles.slice(); }
-      if (view === 'beats') { var b = K.beats.filter(function (w) { return w.replace(/-/g, '') === word; })[0]; if (b) { st.beat = b; st.cuts = []; st.show = false; } }
+      if (view === 'beats' && K.beats.some(function (b) { return b.w === word; })) { st.beat = word; st.cuts = []; st.show = false; }
       if (view === 'parts') { var p = K.parts.filter(function (e) { return e.word === word; })[0]; if (p) st.parts = p.ids.slice(); }
     }
 
@@ -200,25 +281,55 @@
       });
     }
 
-    /* Beats: cut a word into syllables */
+    /* Beats: cut a word into syllables. Each beat shows its type and the vowel sound that type gives; from Grade 2 each cut
+       shows its pattern (VC/CV ...) and, once the cuts are right, the strong beat. */
+    function beat() { return K.beats.filter(function (b) { return b.w === st.beat; })[0] || K.beats[0]; }
+    function kindsOf(b) { return b.parts.map(kindOf); }
     function drawBeats() {
-      tray.innerHTML = '<p class="wb-lab">Words</p><div class="wb-list">' + K.beats.map(function (b) {
-        return '<button type="button" class="wb-chip" data-beat="' + b + '"' + (b === st.beat ? ' aria-pressed="true"' : '') + '>' + b.replace(/-/g, '') + '</button>';
+      var E = beat(), w = E.w, right = [], at = 0;
+      E.parts.forEach(function (p, i) { at += p.length; if (i < E.parts.length - 1) right.push(at); });
+      var cuts = st.cuts.slice().sort(function (x, y) { return x - y; });
+      var found = {};
+      K.beats.forEach(function (b) { kindsOf(b).forEach(function (k) { found[k] = 1; }); });
+      var list = K.beats.filter(function (b) { return !st.kind || kindsOf(b).indexOf(st.kind) >= 0; });
+      tray.innerHTML = '<p class="wb-lab">Find a type</p><div class="wb-kinds">' + [''].concat(Object.keys(KINDS).filter(function (k) { return found[k]; })).map(function (k) {
+        return '<button type="button" class="wb-chip wb-kc' + (k ? ' wb-k-' + k : '') + '" data-kind="' + k + '" aria-pressed="' + (st.kind === k) + '">' + (k ? '<i aria-hidden="true"></i>' + KINDS[k] : 'All') + '</button>';
+      }).join('') + '</div><p class="wb-lab">Words</p><div class="wb-list">' + list.map(function (b) {
+        return '<button type="button" class="wb-chip" data-beat="' + b.w + '"' + (b === E ? ' aria-pressed="true"' : '') + '>' + b.w + '</button>';
       }).join('') + '</div>';
-      var w = st.beat.replace(/-/g, ''), right = [], at = 0;
-      st.beat.split('-').forEach(function (p, i, all) { at += p.length; if (i < all.length - 1) right.push(at); });
+      /* the vowels (v), the consonants between them (c) and a silent e, for "Mark vowels" */
+      var mark = [], u = units(w);
+      u.forEach(function (x) { for (var j = 0; j < x.v.length; j++) mark[x.at + j] = 'v'; if (x.sil) mark[w.length - 1] = 's'; });
+      if (u.length) for (var c = u[0].at; c < u[u.length - 1].at; c++) if (!mark[c]) mark[c] = 'c';
       var piece = 0, h = '';
       for (var i = 0; i < w.length; i++) {
         if (i) {
-          var cut = st.cuts.indexOf(i) >= 0;
+          var cut = cuts.indexOf(i) >= 0;
           if (cut) piece++;
           h += '<button type="button" class="wb-gap wb-p' + (piece % 2) + (cut ? ' wb-cut' : '') + (st.show && right.indexOf(i) >= 0 ? ' wb-here' : '') + '" data-gap="' + i + '" aria-label="' + (cut ? 'Join' : 'Cut') + ' between ' + w.charAt(i - 1) + ' and ' + w.charAt(i) + '" aria-pressed="' + cut + '"></button>';
         }
-        h += '<span class="wb-l wb-p' + (piece % 2) + '">' + w.charAt(i) + '</span>';
+        h += '<span class="wb-l wb-p' + (piece % 2) + (st.marks && mark[i] ? ' wb-m-' + mark[i] : '') + '">' + w.charAt(i) + '</span>';
       }
-      body.innerHTML = '<div class="wb-cutw">' + h + '</div>' +
-        (st.show ? '<p class="wb-beats" aria-label="' + (right.length + 1) + ' beats">' + st.beat.split('-').map(function (p) { return '<span><i></i>' + p + '</span>'; }).join('') + '</p>' : '');
-      act.innerHTML = '<button type="button" class="wb-act wb-go" data-do="show" aria-pressed="' + st.show + '">' + (st.show ? 'Hide the beats' : 'Show the beats') + '</button>' +
+      /* the beats as cut now: one card each, with the cut's pattern between two cards */
+      var bits = [], from = 0;
+      cuts.concat(w.length).forEach(function (to) { bits.push(w.slice(from, to)); from = to; });
+      var same = cuts.join() === right.join(), cards = '';
+      bits.forEach(function (p, i) {
+        if (i && g >= 2) {
+          var pt = pattern(bits[i - 1], p, same ? E.joins[i - 1] : '-');
+          cards += '<span class="wb-syg"><span class="wb-pat">' + (pt ? '<b>' + pt.code + '</b><small>' + pt.name + '</small>' : '') + '</span>';
+        }
+        var k = kindOf(p), n = units(p).length, clip = k === 'many' || k === 'none' ? '' : (same && E.clips[p]) || vowelOf(p, k);
+        var stress = same && g >= 2 && bits.length > 1 ? (i === E.strong ? ' wb-strong' : ' wb-quiet') : '';
+        cards += '<div class="wb-sy wb-k-' + k + stress + '">' + (stress === ' wb-strong' ? '<i class="wb-acc">strong beat</i>' : '') + '<b>' + p + '</b><small>' +
+          (k === 'many' ? n + ' beats' : k === 'none' ? 'no vowel' : KINDS[k]) + '</small>' + (clip ? A.W.sound(clip) : '') + '</div>' + (i && g >= 2 ? '</span>' : '');
+      });
+      body.innerHTML = '<div class="wb-cutw' + (st.marks ? ' wb-marked' : '') + '">' + h + '</div><div class="wb-sys" aria-label="' + bits.length + (bits.length > 1 ? ' beats' : ' beat') + '">' + cards + '</div>' +
+        '<p class="sw-note adult-only wb-tip"><b>Grown-up:</b> ' + (g >= 2
+          ? 'Mark the vowels, find the consonants between them, cut, then read each beat by its type. If the word sounds wrong, flex: move the cut (ti-ger or tig-er) or try the other vowel sound. The quiet beats often say /uh/ (ba-NA-na).'
+          : 'Mark the vowels: each beat has one vowel sound. Cut, read each beat by its type, then read the whole word.') + '</p>';
+      act.innerHTML = '<button type="button" class="wb-act" data-do="marks" aria-pressed="' + st.marks + '">Mark vowels</button>' +
+        '<button type="button" class="wb-act wb-go" data-do="show" aria-pressed="' + st.show + '">' + (st.show ? 'Hide the beats' : 'Show the beats') + '</button>' +
         '<button type="button" class="wb-act" data-do="join"' + (st.cuts.length ? '' : ' disabled') + '>Join up</button>' +
         '<button type="button" class="wb-act" data-do="next">New word</button>';
     }
@@ -270,6 +381,8 @@
       else if (d.pick) { st.sel = st.sel === +d.pick ? -1 : +d.pick; draw(); }
       else if (d.gap) change(function () { var n = +d.gap, i = st.cuts.indexOf(n); if (i >= 0) st.cuts.splice(i, 1); else st.cuts.push(n); });
       else if (d.beat) change(function () { st.beat = d.beat; st.cuts = []; st.show = false; });
+      else if (d.kind !== undefined) change(function () { st.kind = d.kind; });
+      else if (d.do === 'marks') { st.marks = !st.marks; draw(); }
       else if (d.part) change(function () { addPart(d.part); });
       else if (d.drop) change(function () { st.parts = st.parts.filter(function (id) { return id !== d.drop; }); });
       else if (d.fam) change(function () { st.parts = d.fam.split('+'); });
@@ -278,7 +391,7 @@
       else if (d.do === 'clear') change(function () { if (st.view === 'sounds') { st.tiles = []; st.sel = -1; st.trail = []; } else st.parts = []; });
       else if (d.do === 'show') { st.show = !st.show; draw(); }
       else if (d.do === 'join') change(function () { st.cuts = []; });
-      else if (d.do === 'next') change(function () { var o = K.beats.filter(function (x) { return x !== st.beat; }); st.beat = A.R.pick(o); st.cuts = []; st.show = false; });
+      else if (d.do === 'next') change(function () { var o = K.beats.filter(function (x) { return x.w !== st.beat && (!st.kind || kindsOf(x).indexOf(st.kind) >= 0); }); st.beat = A.R.pick(o.length ? o : K.beats).w; st.cuts = []; st.show = false; });
     });
     st.trail = [spell(st.tiles)];
     draw();
@@ -529,5 +642,5 @@
   }
 
   /* for the checks (tests/run.js): the spelling rules and the grade's word bank */
-  A.toolkit = { join: join, spell: spell, bank: bank, tools: TOOLS, cards: cards, sentence: sentence, sentences: sentences, check: check, read: read, joinTwo: joinTwo, split: split, front: front, voice: voice };
+  A.toolkit = { kindOf: kindOf, vowelOf: vowelOf, pattern: pattern, units: units, beatWord: beatWord, join: join, spell: spell, bank: bank, tools: TOOLS, cards: cards, sentence: sentence, sentences: sentences, check: check, read: read, joinTwo: joinTwo, split: split, front: front, voice: voice };
 })();

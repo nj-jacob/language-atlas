@@ -5,7 +5,9 @@
      sounds  words split into sound tiles, one string per word: 'sh i p'. A tile written 'oo:oo-short' plays another clip in this
              word (book), so the word sounds right when it is blended. A silent-e tile such as 'a_e' is one sound in two places:
              'c a_e k' spells cake (the e goes after the next tile). A word shows in a grade when all its tiles do.
-     beats   words split into syllables (beats) with '-', by the first grade they show in: { 1: 'rab-bit ...', ... }.
+     beats   words split into syllables (beats), by the first grade they show in: { 1: 'RAB-bit ...', ... }. '-' cuts a word into
+             beats; '+' joins two words (sun+set). The strong beat is in capitals (ba-NA-na). Each beat's vowel plays the sound its
+             syllable type gives (tools.js); where the word says another, name it after '=': 'RAIN+bow=bow:oa'.
      parts   words made of parts with '+', and the word they spell after '='. A part is a prefix (ends in -), a suffix (starts with
              -), or a base or root (neither). Write 'er.more' to pick one meaning of a part. The checks build each word again
              from its parts with Word builder's spelling rules, so the two must agree.
@@ -39,11 +41,13 @@
       's aw\n p aw\n d r aw\n h air\n ch air\n p air\n f air\n ear\n h ear\n n ear\n d ear\n c l ear\n m a tch\n c a tch\n s k y:igh\n f l y:igh\n m y:igh'
     ),
     beats: {
-      1: 'rab-bit kit-ten mit-ten pic-nic sun-set nap-kin in-sect pump-kin bas-ket muf-fin pop-corn cup-cake rain-bow gar-den win-ter sum-mer ro-bot ti-ger pa-per spi-der',
-      2: 'ham-ster den-tist dol-phin mon-ster pen-cil ap-ple tur-tle ta-ble ea-gle pur-ple ca-noe ka-yak hock-ey to-ma-to ba-na-na but-ter-fly oc-to-pus kan-ga-roo',
-      3: 'el-e-phant um-brel-la to-bog-gan por-cu-pine ca-ri-bou cal-en-dar com-pu-ter hel-i-cop-ter mos-qui-to grand-moth-er',
-      4: 'wa-ter-mel-on cat-er-pil-lar al-li-ga-tor a-quar-i-um cel-e-bra-tion in-for-ma-tion tel-e-vi-sion hip-po-pot-a-mus',
-      6: 'ex-tra-or-di-nar-y re-spon-si-bil-i-ty en-vi-ron-ment com-mu-ni-ca-tion'
+      1: 'RAB-bit KIT-ten MIT-ten PIC-nic SUN+set NAP-kin IN-sect PUMP-kin BAS-ket MUF-fin POP+corn CUP+cake RAIN+bow=bow:oa GAR-den WIN-ter ' +
+        'SUM-mer RO-bot TI-ger PA-per SPI-der',
+      2: 'HAM-ster DEN-tist DOL-phin MON-ster PEN-cil AP-ple TUR-tle TA-ble EA-gle PUR-ple ca-NOE=noe:oo KA-yak HOCK-ey to-MA-to ba-NAN-a ' +
+        'BUT-ter-fly=fly:igh OC-to-pus kan-ga-ROO',
+      3: 'EL-e-phant um-BREL-la to-BOG-gan POR-cu-pine CAR-i-bou=car:air,bou:oo CAL-en-dar com-PU-ter HEL-i-cop-ter mos-QUI-to=qui:ee GRAND+moth-er=moth:u',
+      4: 'WA-ter-mel-on=wa:o CAT-er-pil-lar AL-li-ga-tor ad-VEN-ture cel-e-BRA-tion in-for-MA-tion TEL-e-vi-sion hip-po-POT-a-mus',
+      6: 'ex-tra-OR-di-nar-y re-spon-si-BIL-i-ty en-VI-ron-ment com-mu-ni-CA-tion'
     },
     parts: list(
       'cat+-s=cats\n dog+-s=dogs\n hat+-s=hats\n box+-s=boxes\n bus+-s=buses\n fox+-s=foxes\n wish+-s=wishes\n' +
