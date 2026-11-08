@@ -1,12 +1,13 @@
 /* Language Atlas tool box, shared by every grade: hands-on tools for free play, alone or with a grown-up (page #tools).
    Needs atlas.js, words.js (sound clips), wordbank.js (the words) and cardbank.js (the sentence cards). No marks and no tasks: the child builds and explores.
-     #tools          the first tool          #tools/sounds   Sound board (soundboard.js adds it first)
+     #tools          every tool, on shelves  #tools/sounds   Sound board (soundboard.js adds it first)
      #tools/words    Word builder            #tools/sentences    Sentence builder
      #tools/read     Reading window (reader.js adds it)   #tools/maps   Text maps (textmaps.js)
      #tools/shades   Word shades         #tools/web      Word web (meaning.js adds both)
      #tools/paragraph  Paragraph builder #tools/letters  Letter pad (writetools.js adds both)
-   A tool fills the screen under a slim bar (back, the tool's name, Undo, Tools). The Tools menu shows the tools on shelves,
-   one shelf per part of Language. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
+   A tool fills the screen under a slim bar (back to all tools, the tool's name, Undo, Tools). The Tools menu shows the tools on
+   the same shelves, one shelf per part of Language. A tool opened from the site's own Toolbox page (Math Atlas tools.html, which
+   sets atlas:toolbox in this tab's session storage) goes back there instead; A.toolkit.shelves lets that page draw these shelves. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
 
    Word builder: one word in three views, linked (a word built in one view opens in the others when the word bank knows it).
      Sounds  letter tiles in sound boxes. Tap a tile to add it; tap a box, then a tile, to swap one sound. Blend plays the
@@ -47,17 +48,30 @@
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
 
   /* ---------- the tool box page ---------- */
+  function shelves(href, cur) {
+    return SHELVES.map(function (s) {
+      var on = TOOLS.filter(function (t) { return t.shelf === s[0]; });
+      return on.length ? '<section class="tb-shelf"><h3><i class="tb-s-' + s[0] + '"></i>' + s[1] + '</h3><div class="tb-cards">' + on.map(function (t) {
+        return '<a class="tb-card" href="' + href(t.id) + '"' + (t.id === cur ? ' aria-current="page"' : '') + '><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">' + t.icon + '</svg><span>' + t.name + '</span></a>';
+      }).join('') + '</div></section>' : '';
+    }).join('');
+  }
+  function toolHref(id) { return '#tools/' + id; }
+  function fromBox(on) {
+    try { if (on === false) sessionStorage.removeItem('atlas:toolbox'); return sessionStorage.getItem('atlas:toolbox') === '1'; } catch (e) { return false; }
+  }
   A.page('tools', function (app, sub) {
-    var cur = TOOLS.filter(function (t) { return t.id === sub; })[0] || TOOLS[0];
+    var cur = TOOLS.filter(function (t) { return t.id === sub; })[0];
+    if (!cur) {
+      fromBox(false);
+      app.innerHTML = '<div class="wrap wide tb-all"><p class="crumb"><a href="#home">All chapters</a></p><header class="chead"><h1>Toolbox</h1>' +
+        '<p class="lede">Hands-on tools for sounds, words, sentences, reading and writing. Pick one.</p></header><div class="tb-list">' + shelves(toolHref) + '</div></div>';
+      return;
+    }
+    var back = fromBox() ? '<a class="tb-back" href="../../tools.html" aria-label="Back to the Toolbox">' : '<a class="tb-back" href="#tools" aria-label="Back to all tools">';
     var menu = '<dialog class="tb-menu" aria-labelledby="tbmh"><div class="tb-mh"><h2 id="tbmh">Tools</h2><span class="tb-g">Grade ' + A.grade + '</span>' +
-      '<button type="button" class="tb-x" aria-label="Close">&#10005;</button></div>' +
-      SHELVES.map(function (s) {
-        var on = TOOLS.filter(function (t) { return t.shelf === s[0]; });
-        return on.length ? '<section class="tb-shelf"><h3><i class="tb-s-' + s[0] + '"></i>' + s[1] + '</h3><div class="tb-cards">' + on.map(function (t) {
-          return '<a class="tb-card" href="#tools/' + t.id + '"' + (t === cur ? ' aria-current="page"' : '') + '><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">' + t.icon + '</svg><span>' + t.name + '</span></a>';
-        }).join('') + '</div></section>' : '';
-      }).join('') + '</dialog>';
-    app.innerHTML = '<div class="wrap wide tb"><div class="tb-bar"><a class="tb-back" href="#home" aria-label="Back to the chapters">&lsaquo;</a><h1>' + cur.name + '</h1><span class="tb-sp"></span>' +
+      '<button type="button" class="tb-x" aria-label="Close">&#10005;</button></div>' + shelves(toolHref, cur.id) + '</dialog>';
+    app.innerHTML = '<div class="wrap wide tb"><div class="tb-bar">' + back + '&lsaquo;</a><h1>' + cur.name + '</h1><span class="tb-sp"></span>' +
       '<button type="button" class="tb-b" data-a="undo" disabled>' + SVG_UNDO + '<span>Undo</span></button>' +
       '<button type="button" class="tb-b" data-a="menu" aria-haspopup="dialog">' + SVG_MENU + '<span>Tools</span></button></div>' +
       '<div class="tb-stage"></div>' + menu + '</div>';
@@ -657,5 +671,5 @@
   }
 
   /* for the checks (tests/run.js): the spelling rules and the grade's word bank */
-  A.toolkit = { kindOf: kindOf, vowelOf: vowelOf, pattern: pattern, units: units, beatWord: beatWord, join: join, spell: spell, bank: bank, tools: TOOLS, cards: cards, sentence: sentence, sentences: sentences, check: check, read: read, joinTwo: joinTwo, split: split, front: front, voice: voice };
+  A.toolkit = { shelves: shelves, kindOf: kindOf, vowelOf: vowelOf, pattern: pattern, units: units, beatWord: beatWord, join: join, spell: spell, bank: bank, tools: TOOLS, cards: cards, sentence: sentence, sentences: sentences, check: check, read: read, joinTwo: joinTwo, split: split, front: front, voice: voice };
 })();
