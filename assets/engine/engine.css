@@ -300,6 +300,7 @@ main:has(.tb){padding-top:12px;padding-bottom:16px}
 .tb-sp{flex:1}
 .tb-b{flex:none;display:flex;align-items:center;gap:8px;min-height:44px;min-width:44px;justify-content:center;padding:0 14px;border-radius:12px;border:1px solid var(--line2);background:var(--card);color:var(--ink2);font:inherit;font-weight:700;cursor:pointer}
 .tb-b:disabled{opacity:.4;cursor:default}
+.tb-list{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 22px;margin-top:18px}
 .tb-menu{width:min(760px,calc(100% - 32px));max-height:calc(100dvh - 48px);border:0;border-radius:24px;padding:22px 26px;background:var(--card);color:var(--ink);box-shadow:0 24px 60px rgba(19,32,57,.3)}
 .tb-menu::backdrop{background:rgba(19,32,57,.4)}
 .tb-mh{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -813,6 +814,7 @@ main:has(.tb){padding-top:12px;padding-bottom:16px}
   .tb-b span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .tb-b{padding:0 10px}
   .tb-menu{width:100%;max-width:100%;margin:auto 0 0;border-radius:22px 22px 0 0;padding:16px 14px}
+  .tb-list{padding:4px 14px}
   .tb-shelf{grid-template-columns:1fr;gap:8px;padding:10px 0}
   .tb-shelf h3{padding:0}
   .sbd-wall,.sbd-move,.sbd-cards{grid-template-columns:minmax(0,1fr);min-height:0}

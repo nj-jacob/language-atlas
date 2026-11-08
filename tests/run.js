@@ -653,6 +653,18 @@ async function checkTools(browser, base, g) {
     await page.setViewportSize(vp);
     for (const v of ['sounds', 'beats', 'parts']) { await page.click('[data-v="' + v + '"]'); await screenCheck(page, where, v + ' at ' + vp.width + ' px'); }
   }
+  /* Toolbox (#tools) lists every tool; a tool goes back to that list, or to the site's Toolbox page when it was opened from there */
+  await page.click('.tb-back');
+  await page.waitForSelector('.tb-all');
+  const all = await page.evaluate(() => ({ cards: document.querySelectorAll('.tb-all .tb-card').length, tools: Atlas.toolkit.tools.length }));
+  if (all.cards !== all.tools) fail(where, 'the Toolbox page shows ' + all.cards + ' of the ' + all.tools + ' tools');
+  for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) { await page.setViewportSize(vp); await screenCheck(page, where, 'Toolbox page at ' + vp.width + ' px'); }
+  await page.click('.tb-all .tb-card[href="#tools/sentences"]');
+  await page.waitForSelector('.tb-bar');
+  if ((await page.getAttribute('.tb-back', 'href')) !== '#tools') fail(where, 'a tool does not go back to the Toolbox page');
+  await page.evaluate(() => { sessionStorage.setItem('atlas:toolbox', '1'); location.hash = '#tools/words'; });
+  await page.waitForSelector('.wb-body');
+  if ((await page.getAttribute('.tb-back', 'href')) !== '../../tools.html') fail(where, 'a tool opened from the site\'s Toolbox page does not go back there');
   if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
   await ctx.close();
 }
