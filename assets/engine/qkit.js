@@ -283,13 +283,15 @@
   /* quick ways to make the common question types. more = the other fields (fig, hint, explain, steps, prompt, meta).
        Q.one(q, right, [wrong, ...], more)          pick one, options mixed up
        Q.tiles(q, right, [wrong, ...], more)        tap one tile, tiles mixed up
-       Q.all(q, [right, ...], [wrong, ...], more)   pick every answer that fits */
+       Q.all(q, [right, ...], [wrong, ...], more)   pick every answer that fits
+       Q.tf(q, right, whyTrue, whyFalse, more)      true or false, then why: why.options are [whyTrue, whyFalse] */
   function merge(q, more) { Object.keys(more || {}).forEach(function (k) { q[k] = more[k]; }); return q; }
   Q.one = function (q, right, wrong, more) { var o = A.R.mc(right, wrong); return merge({ q: q, type: 'mc', options: o.options, answer: o.answer }, more); };
   Q.tiles = function (q, right, wrong, more) {
     var t = shuffle([right].concat(wrong.filter(function (w, i) { return w !== right && wrong.indexOf(w) === i; })));
     return merge({ q: q, type: 'tap', tiles: t, answer: t.indexOf(right) }, more);
   };
+  Q.tf = function (q, right, whyTrue, whyFalse, more) { return merge({ q: q, type: 'tf', answer: right, why: { options: [whyTrue, whyFalse], answer: right ? 0 : 1 } }, more); };
   Q.all = function (q, right, wrong, more) {
     var o = shuffle(right.concat(wrong));
     return merge({ q: q, type: 'pick', options: o, answer: o.map(function (x, i) { return right.indexOf(x) >= 0 ? i : -1; }).filter(function (i) { return i >= 0; }) }, more);

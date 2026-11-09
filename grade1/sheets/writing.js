@@ -3,26 +3,23 @@
    publishing and presenting (D3.1 to D3.3) are the chapter's activities, printed as Activity sheets with the grown-up's rubric.
    Think questions marked by a computer are checked in tests/verify/grade1-writing.js; open ones go to the grown-up. */
 (function () {
-  var S = Atlas.sheets, W = Atlas.W;
+  var S = Atlas.sheets, Q = Atlas.Q, W = Atlas.W;
   if (!S) return;
-  function TF(q, fig, right, whyTrue, whyFalse, meta) {
-    return { q: q, fig: fig, type: 'tf', answer: right, why: { options: [whyTrue, whyFalse], answer: right ? 0 : 1 }, meta: meta };
-  }
 
   S.register('writing', { code: 'WT', ideas: {
     spaces: { goal: 'I can leave a space between words.', think: [
-      TF('Is this sentence easy to read?', W.sent('Icanrunfast.'), false, 'It has spaces between words.', 'It needs a finger space between each word: I can run fast.',
-        { k: 'g1-space-tf', shown: 'Icanrunfast.' }),
+      Q.tf('Is this sentence easy to read?', false, 'It has spaces between words.', 'It needs a finger space between each word: I can run fast.',
+        { fig: W.sent('Icanrunfast.'), meta: { k: 'g1-space-tf', shown: 'Icanrunfast.' } }),
       { q: 'Copy this with finger spaces: <b>We went to the park.</b>', lines: 1, key: 'We went to the park. (a space between each word)' },
       { q: 'Why do readers need spaces between words?', lines: 2, key: 'So they can see where one word ends and the next begins.' }] },
     voice: { goal: 'I can say what I think and feel when I write.', think: [
-      TF('Does this sentence show what the writer thinks or feels?', W.sent('I love my new kite.'), true, 'Love tells how the writer feels.', 'It only tells a fact.',
-        { k: 'g1-voice-tf', s: 'I love my new kite.' }),
+      Q.tf('Does this sentence show what the writer thinks or feels?', true, 'Love tells how the writer feels.', 'It only tells a fact.',
+        { fig: W.sent('I love my new kite.'), meta: { k: 'g1-voice-tf', s: 'I love my new kite.' } }),
       { q: 'Add a feeling: <b>We went to the pool.</b>', lines: 2, key: 'For example: We went to the pool. I felt happy when I jumped in.' },
       { q: 'Write what you think about rainy days. Start with "I think".', fig: W.pic('rain'), lines: 2, key: 'Any opinion with I think, for example: I think rainy days are cozy.' }] },
     'about-me': { goal: 'I can write about me, using I and my.', think: [
-      TF('Is this sentence written about me (using I or my)?', W.sent('She rode her bike.'), false, 'It uses I or my.', 'It uses she and her. About me: I rode my bike.',
-        { k: 'g1-pov-me-tf', s: 'She rode her bike.' }),
+      Q.tf('Is this sentence written about me (using I or my)?', false, 'It uses I or my.', 'It uses she and her. About me: I rode my bike.',
+        { fig: W.sent('She rode her bike.'), meta: { k: 'g1-pov-me-tf', s: 'She rode her bike.' } }),
       { q: 'Change it to be about you: <b>He lost his mitten.</b>', lines: 1, key: 'I lost my mitten.' },
       { q: 'Write two sentences about something you did today. Use I.', lines: 3, key: 'Two sentences with I (or my), each with a capital and an end mark.' }] },
     check: { goal: 'I can check my writing and fix it.', think: [
