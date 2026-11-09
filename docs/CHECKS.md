@@ -56,7 +56,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - in grown-up view the Worksheets tab and a sheet with its key open on a phone, an iPad and a laptop with no errors and nothing off the side; with grown-up view off, no sheet shows.
 
 9. **Reading passages**, in Grades 4 to 8 (`gradeN/passages.js`):
-   - every passage has a drawing across the top, a diagram, map or chart with a caption, 2 or 3 Words to know that are bold in the text, and a guide for the grown-up;
+   - every passage has a photo or drawing across the top (a photo has a credit, its file and small copy are in `assets/photos/`, and it is listed in `CREDITS.md`), a diagram, map or chart with a caption, 2 or 3 Words to know that are bold in the text, and a guide for the grown-up;
    - its length suits the grade (Grade 4: 250 to 420 words, rising to 320 to 560 in Grade 8);
    - it has 6 to 9 questions, 2 or more of them written answers, on 4 or more different expectations, each a real expectation of the grade; every choice question has its answer among 3 or 4 different choices, every "number them" list is printed out of order, every blank in a chart has an answer, and every written answer has a good answer and what to look for;
    - the front, the back and the answer key each fit on one page;

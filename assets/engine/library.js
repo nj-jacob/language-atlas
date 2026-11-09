@@ -9,7 +9,12 @@
      Atlas.library.add({ id, subject, form, title, deck, hero: { art, cap }, body: [...], words: [[word, meaning], ...], qs: [...] })
    id      'g5-potholes': the grade, then a short name. The sheet number is G5-P01 (the order in the file).
    subject one of SUBJECTS below. form: the text form (Report, Explanation, Diary, Letter to the editor ...).
-   hero    { art, tall, cap }: a drawing across the top of the front, SVG made of the line classes below in a 700 by tall box.
+   hero    { photo, credit, focus, art, side, tall, cap }: a picture across the top of the front, 700 by tall.
+           photo: a real photo in assets/photos/ (public domain, CC0, CC BY or CC BY-SA; assets/photos/CREDITS.md lists every one,
+           and thumbs/ has a small copy for the list); credit: its maker and licence, printed after the caption; focus: the part
+           of the photo to keep when it is cut to fit (CSS object-position, '50% 70%'). art: SVG made of the line classes below,
+           on its own, on top of the photo, or beside it with side: { w, view } (the drawing's width on the page out of 700, and
+           its own viewBox).
    body    in order: 'a paragraph (bold a glossary word with <b>)', { h: 'Subheading' }, { fig: art, tall, cap } (a 300 by tall box),
            { box: 'Did you know?', text: '...' }. The front has two columns; a figure or box sits in its column.
    plain   true: no large first letter (for a letter or other text that starts with a greeting).
@@ -98,6 +103,13 @@
   function foot(p, th, left) {
     return '<p class="ws-line ps-line"><span>' + left + '</span><span>' + P.code(p) + '</span></p>';
   }
+  function hero(p, full) {
+    var h = p.hero, img = h.photo ? '<img src="../assets/photos/' + (full ? '' : 'thumbs/') + h.photo + '" alt=""' + (full ? '' : ' loading="lazy"') + (h.focus ? ' style="object-position:' + h.focus + '"' : '') + '>' : '';
+    var pic = h.side ? '<div class="ps-split" style="--w:' + h.side.w + '"><div class="ps-pic">' + img + '</div><svg class="ps-art" viewBox="' + h.side.view + '" aria-hidden="true">' + HATCH + h.art + '</svg></div>'
+      : '<div class="ps-pic">' + img + (h.art ? art(h.art, 700, h.tall) : '') + '</div>';
+    return '<figure class="ps-hero' + (h.photo ? ' ps-photo' : '') + '" style="--tall:' + h.tall + '">' + pic +
+      (full ? '<figcaption>' + h.cap + (h.credit ? ' <span class="ps-credit">' + h.credit + '</span>' : '') + '</figcaption>' : '') + '</figure>';
+  }
   function front(p, th) {
     var body = p.body.map(function (b) {
       if (typeof b === 'string') return '<p>' + b + '</p>';
@@ -106,7 +118,7 @@
       return '<aside class="ps-box"><p class="ws-label">' + b.box + '</p><p>' + b.text + '</p></aside>';
     }).join('');
     return '<div class="ws-page ps-page ps-front">' + frame(th) + head(p, th) +
-      '<figure class="ps-hero">' + art(p.hero.art, 700, p.hero.tall) + '<figcaption>' + p.hero.cap + '</figcaption></figure>' +
+      hero(p, true) +
       '<div class="ps-text' + (p.plain ? ' ps-plain' : '') + '">' + body + '</div>' +
       '<footer class="ps-foot"><dl class="ps-words"><dt class="ws-label">Words to know</dt>' + p.words.map(function (w) { return '<div><dt>' + w[0] + '</dt><dd>' + w[1] + '</dd></div>'; }).join('') + '</dl>' +
       foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · ' + P.count(p) + ' words · Turn over for the questions') + '</footer></div>';
@@ -175,7 +187,7 @@
   /* ---------- the tool: the library, and one passage ---------- */
   function card(p) {
     var sub = P.subject(p.subject);
-    return '<a class="ps-card" href="#tools/passages/' + p.id + '" style="--acc:' + themeOf(p).acc + '">' + art(p.hero.art, 700, p.hero.tall) +
+    return '<a class="ps-card" href="#tools/passages/' + p.id + '" style="--acc:' + themeOf(p).acc + '">' + hero(p) +
       '<span class="ps-ck">' + sub[1] + ' · ' + p.form + '</span><b>' + p.title + '</b><span class="ps-cd">' + p.deck + '</span><span class="ps-cw">' + P.count(p) + ' words</span></a>';
   }
   function library(root, pick) {

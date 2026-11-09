@@ -13,19 +13,9 @@
     title: 'Who Fixes the Pothole?',
     deck: 'How three levels of government share the work of running Canada',
     hero: {
-      tall: 172,
-      cap: 'Every level of government has its own jobs, from printing money to filling the holes in your street.',
-      art: '<path class="k" d="M50 118 V72 H170 V118 M42 72 L110 50 L178 72 M96 50 V22 H124 V50 M96 22 L110 10 L124 22"/><circle class="k" cx="110" cy="36" r="7"/>' +
-        '<path class="t" d="M110 36 V31 M110 36 L114 38 M100 118 V96 H120 V118 M62 84 h14 v14 h-14 Z M144 84 h14 v14 h-14 Z"/>' +
-        '<path class="k" d="M262 118 V64 H438 V118 M254 64 H446 M318 64 Q350 24 382 64 M350 30 V14"/><path class="a" d="M350 14 h14 l-4 5 l4 5 h-14"/>' +
-        '<path class="t" d="M278 70 V112 M298 70 V112 M318 70 V112 M382 70 V112 M402 70 V112 M422 70 V112 M338 118 V92 Q350 82 362 92 V118"/>' +
-        '<path class="k" d="M522 118 V76 H678 V118 M584 76 V26 H616 V76 M584 26 L600 6 L616 26"/>' +
-        '<path class="t" d="M592 36 h16 v14 h-16 Z M538 86 h12 v20 h-12 Z M560 86 h12 v20 h-12 Z M628 86 h12 v20 h-12 Z M650 86 h12 v20 h-12 Z M592 118 V96 Q600 88 608 96 V118"/>' +
-        '<path class="k" d="M0 118 H700"/>' +
-        '<text class="lb" x="110" y="136" text-anchor="middle">Municipal</text><text class="lb" x="350" y="136" text-anchor="middle">Provincial</text><text class="lb" x="600" y="136" text-anchor="middle">Federal</text>' +
-        '<path class="k" d="M0 146 H700 M0 172 H700"/><path class="d" d="M0 159 H700"/>' +
-        '<ellipse class="h" cx="300" cy="164" rx="26" ry="5"/>' +
-        '<path class="a" d="M244 170 L250 150 L256 170 Z M241 170 H259 M346 170 L352 150 L358 170 Z M343 170 H361"/>'
+      photo: 'g5-pothole.jpg', credit: 'Photo: Miguel Tremblay, public domain, Wikimedia Commons', focus: '50% 56%',
+      tall: 215,
+      cap: 'A pothole in a Montréal street, with a glove for size. Whose job is it to fix?'
     },
     body: [
       'Thwump! Amara’s front wheel drops into a hole in the road, and she nearly tumbles over the handlebars. “Somebody should fix that,” she says. But who, exactly, is somebody?',

@@ -8,18 +8,9 @@
     title: 'The Beaver Engineers',
     deck: 'How one busy animal changes a whole wetland',
     hero: {
-      tall: 164,
-      cap: 'A beaver pond in northern Ontario. The dam holds back the stream, and the lodge sits safely in deep water.',
-      art: '<path class="t" d="M0 70 Q90 30 190 58 T400 46 T700 60"/>' +
-        D.spruce(28, 120, 80) + D.spruce(62, 118, 64) + D.spruce(96, 122, 72) + D.spruce(618, 116, 74) + D.spruce(652, 120, 86) + D.spruce(684, 118, 60) +
-        '<path class="k" d="M0 122 Q120 116 160 124 L520 124 Q600 118 700 122"/>' +
-        '<path class="h" d="M210 124 Q250 66 300 64 Q352 66 392 124 Z"/>' +
-        '<path class="k" d="M226 112 L262 88 M244 120 L300 78 M286 118 L336 82 M318 120 L360 96 M240 96 L300 106 M300 70 L330 114"/>' +
-        '<path class="k" d="M520 124 L538 102 L560 124 M532 112 L566 104 M548 96 L556 124 M562 102 L584 124 M572 98 L590 112"/>' +
-        '<path class="a" d="M586 124 Q600 140 597 160 M594 124 Q610 142 609 162"/>' +
-        D.ripple(130, 200, 140) + D.ripple(400, 510, 140) + D.ripple(240, 360, 158) +
-        '<path class="k" d="M444 150 q8 -9 18 -6 q8 3 6 10"/><circle class="dot" cx="461" cy="148" r="1.6"/>' +
-        '<path class="a" d="M444 154 L404 166 M444 154 L410 146"/>'
+      photo: 'g4-beaver-lodge.jpg', credit: 'Photo: Benfwilliamson, CC0, Wikimedia Commons', focus: '50% 62%',
+      tall: 210,
+      cap: 'A beaver lodge in a pond near Hinton, Alberta. When the beavers dammed the stream, the rising water drowned the trees.'
     },
     body: [
       'Walk along a stream in Ontario and you might find a strange wall of sticks and mud stretched across the water. No person built it. A beaver did. Beavers are the largest rodents in Canada, and they are also some of the best builders in nature.',

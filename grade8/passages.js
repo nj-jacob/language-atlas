@@ -2,12 +2,6 @@
 (function () {
   'use strict';
   var P = Atlas.library, D = P.draw;
-  function locker(x, open) {
-    var h = '<rect class="k" x="' + x + '" y="14" width="56" height="118" rx="2"/>';
-    if (open) return h + '<path class="k" d="M' + (x + 56) + ' 14 L' + (x + 84) + ' 22 V124 L' + (x + 56) + ' 132"/><path class="t" d="M' + x + ' 60 H' + (x + 56) + '"/>' +
-      '<rect class="a" x="' + (x + 18) + '" y="30" width="20" height="26" rx="3"/><path class="a" d="M' + (x + 25) + ' 51 h6"/>';
-    return h + '<path class="t" d="M' + (x + 14) + ' 26 h28 M' + (x + 14) + ' 31 h28 M' + (x + 14) + ' 36 h28 M' + (x + 46) + ' 72 v12"/>';
-  }
   function bar(i, pct, label) {
     var x = 56 + i * 60, h = pct * 2.4;
     return '<rect class="h" x="' + x + '" y="' + (140 - h) + '" width="38" height="' + h + '"/><text class="lb" x="' + (x + 19) + '" y="' + (134 - h) + '" text-anchor="middle">' + pct + '%</text>' +
@@ -19,9 +13,9 @@
     title: 'Lock Up the Phones',
     deck: 'A Grade 8 student makes her case before families vote',
     hero: {
-      tall: 140,
-      cap: 'Should phones stay in lockers from the first bell to the last? Families at one school are about to decide.',
-      art: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { return locker(18 + i * 68, i === 6); }).join('') + '<path class="k" d="M0 134 H700"/>'
+      photo: 'g8-lockers.jpg', credit: 'Photo: ChinaFlag, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Lockers in a school hallway in Markham, Ontario. Should phones stay in them from the first bell to the last?'
     },
     body: [
       '<i>To the Editor:</i>',

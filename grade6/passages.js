@@ -2,22 +2,22 @@
 (function () {
   'use strict';
   var P = Atlas.library, D = P.draw;
-  function cloud(x, y) { return '<path class="t" d="M' + x + ' ' + y + ' q4 -14 18 -10 q8 -12 22 -4 q14 -4 16 10 q10 2 8 10 h-62 q-8 -6 -2 -6 Z"/>'; }
 
   P.add({
     id: 'g6-wing', subject: 'science', form: 'Explanation',
     title: 'How a Wing Lifts',
     deck: 'The four forces that carry a plane, and the shape that makes it fly',
     hero: {
-      tall: 156,
-      cap: 'Four forces act on a plane in flight. To stay up, lift must balance weight; to move forward, thrust must beat drag.',
-      art: cloud(60, 48) + cloud(560, 40) + cloud(620, 128) +
+      photo: 'g6-floatplane.jpg', credit: 'Photo: D. Gordon E. Robertson, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 60%',
+      side: { w: 330, view: '0 0 330 200' },
+      tall: 200,
+      cap: 'A bush plane on floats at Temagami, Ontario. Four forces act on a plane in flight: to stay up, lift must balance weight; to move forward, thrust must beat drag.',
+      art: '<g transform="translate(165 100) scale(.62) translate(-367 -90)">' +
         '<path class="k" d="M262 96 Q252 96 252 90 Q252 82 268 80 L440 80 Q472 82 482 92 Q472 102 440 104 L276 104 Q264 104 262 96 Z"/>' +
         '<path class="k" d="M270 80 L254 46 L274 46 L298 80 M258 92 L230 88 L232 96 L262 98"/><path class="k" d="M326 98 Q370 92 420 98 Q370 108 326 104 Z"/>' +
-        '<path class="t" d="M452 84 Q466 86 470 92 L452 92 Z"/>' +
-        [306, 320, 334, 348, 362, 376, 390, 404, 418, 432].map(function (x) { return '<circle class="t" cx="' + x + '" cy="88" r="2.2"/>'; }).join('') +
-        D.arrow(370, 76, 370, 24, 'a') + D.arrow(370, 110, 370, 150, 'a') + D.arrow(486, 92, 572, 92, 'a') + D.arrow(226, 92, 150, 92, 'a') +
-        '<text class="lb" x="380" y="32">lift</text><text class="lb" x="380" y="148">weight</text><text class="lb" x="540" y="82">thrust</text><text class="lb" x="150" y="82">drag</text>'
+        '<path class="t" d="M452 84 Q466 86 470 92 L452 92 Z"/></g>' +
+        D.arrow(165, 82, 165, 18, 'a') + D.arrow(165, 118, 165, 182, 'a') + D.arrow(240, 101, 318, 101, 'a') + D.arrow(92, 101, 14, 101, 'a') +
+        '<text class="lb" x="175" y="26">lift</text><text class="lb" x="175" y="180">weight</text><text class="lb" x="318" y="90" text-anchor="end">thrust</text><text class="lb" x="14" y="90">drag</text>'
     },
     body: [
       'A large passenger jet can weigh more than 300&nbsp;000 kilograms at take-off, yet it rises into the sky as smoothly as a gull. There is no magic in it. A plane flies because four forces push and pull on it all the time.',

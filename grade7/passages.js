@@ -2,7 +2,6 @@
 (function () {
   'use strict';
   var P = Atlas.library, D = P.draw;
-  function paddler(x, y) { return '<circle class="k" cx="' + x + '" cy="' + y + '" r="5"/><path class="k" d="M' + x + ' ' + (y + 5) + ' V' + (y + 18) + ' M' + (x + 10) + ' ' + (y + 4) + ' L' + (x - 10) + ' ' + (y + 36) + '"/>'; }
   function place(x, y, name, dx, dy, end) { return '<circle class="dot" cx="' + x + '" cy="' + y + '" r="2.6"/><text class="n" x="' + (x + dx) + '" y="' + (y + dy) + '"' + (end ? ' text-anchor="end"' : '') + '>' + name + '</text>'; }
 
   P.add({
@@ -10,14 +9,9 @@
     title: 'The Paddle and the Portage',
     deck: 'From the diary of Étienne Brisebois, voyageur, 1794 (a made-up diary based on real journeys)',
     hero: {
-      tall: 150,
-      cap: 'A fur trade canoe on the Ottawa River. Large canoes carried about ten paddlers and as much as three tonnes of cargo.',
-      art: D.spruce(570, 86, 60) + D.spruce(600, 84, 74) + D.spruce(632, 88, 56) + D.spruce(664, 84, 70) +
-        '<path class="k" d="M520 90 Q560 80 600 86 T700 82"/><path class="t" d="M0 70 Q80 56 160 64 T330 60"/>' +
-        '<path class="k" d="M110 112 Q300 134 490 112 Q300 120 110 112 Z M110 112 Q100 92 116 86 M490 112 Q500 92 484 86"/>' +
-        [150, 196, 242, 288, 334, 380, 426].map(function (x) { return paddler(x, 84); }).join('') +
-        '<path class="a" d="M462 92 L482 72 M466 86 L478 96"/>' +
-        D.ripple(40, 140, 126) + D.ripple(200, 420, 138) + D.ripple(470, 640, 124) + D.ripple(60, 180, 146)
+      photo: 'g7-voyageurs-hopkins.jpg', credit: 'Painting: Frances Anne Hopkins, 1869, public domain, Library and Archives Canada', focus: '50% 55%',
+      tall: 190,
+      cap: '<i>Canoe Manned by Voyageurs Passing a Waterfall</i>, painted by Frances Anne Hopkins, who travelled with the canoes.'
     },
     body: [
       { h: 'May 8 · Lachine' },

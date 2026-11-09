@@ -1218,6 +1218,11 @@ async function checkPassages(browser, base, g) {
   if (!has) { fail(where, 'grade' + g + '/passages.js is missing'); await ctx.close(); return 0; }
   await page.goto(base + '/grade' + g + '/index.html#tools/passages');
   await page.waitForSelector('.ps-card');
+  const credits = fs.readFileSync(path.join(ROOT, 'assets', 'photos', 'CREDITS.md'), 'utf8');
+  for (const [id, photo] of await page.evaluate(() => Atlas.library.list.filter(p => p.hero && p.hero.photo).map(p => [p.id, p.hero.photo]))) {
+    for (const dir of ['', 'thumbs']) if (!fs.existsSync(path.join(ROOT, 'assets', 'photos', dir, photo))) fail(where, id + ': assets/photos/' + (dir ? dir + '/' : '') + photo + ' is missing');
+    if (!credits.includes('`' + photo + '`')) fail(where, id + ': ' + photo + ' is not listed in assets/photos/CREDITS.md');
+  }
   for (const p of await page.evaluate(([g, band]) => {
     const P = Atlas.library, out = [], seen = {};
     const expand = s => s.split(/,\s*/).flatMap(p => { const m = p.match(/^([A-D]\d)\.(\d+) to \1\.(\d+)$/); if (!m) return [p]; const r = []; for (let i = +m[2]; i <= +m[3]; i++) r.push(m[1] + '.' + i); return r; });
@@ -1234,7 +1239,10 @@ async function checkPassages(browser, base, g) {
       seen[p.id] = 1;
       if (!P.subject(p.subject)) out.push(w + 'unknown subject "' + p.subject + '"');
       ['form', 'title', 'deck'].forEach(k => { if (!p[k]) out.push(w + 'needs a ' + k); });
-      if (!p.hero || !p.hero.art || !p.hero.tall || !p.hero.cap) out.push(w + 'needs a drawing across the top (hero: art, tall, cap)');
+      const h = p.hero || {};
+      if (!(h.art || h.photo) || !h.tall || !h.cap) out.push(w + 'needs a photo or drawing across the top (hero: photo or art, tall, cap)');
+      if (h.photo && !h.credit) out.push(w + 'its photo needs a credit');
+      if (h.side && !(h.art && h.side.w > 0 && h.side.w < 700 && h.side.view)) out.push(w + 'a drawing beside the photo needs art and side: { w, view }');
       if (!p.body.some(b => b.fig && b.tall && b.cap)) out.push(w + 'needs a diagram, map or chart in the text (fig, tall, cap)');
       const text = p.body.map(b => typeof b === 'string' ? b : b.text || '').join(' ');
       if (!p.words || p.words.length < 2 || p.words.length > 3) out.push(w + 'needs 2 or 3 words to know');
