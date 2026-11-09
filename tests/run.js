@@ -21,7 +21,10 @@
       are kept and shown, and nothing is marked until the grown-up marks it.
    7. The tool box: every word in Word builder's word bank can be built from the letter tiles and sounded out, and every word made
       of parts is spelled right by the spelling rules. On a phone, a child builds a word in each view, swaps a sound, blends and
-      undoes; then each view opens on an iPad and a laptop with no errors and nothing off the side. */
+      undoes; then each view opens on an iPad and a laptop with no errors and nothing off the side.
+   8. Worksheets: every sheet of every chapter with worksheets, and its answer key, is drawn: nothing runs off the page, every
+      printed question's answer is worked out again by verify/*.js, every open question has a good answer for the grown-up, and
+      every expectation the chapter lists is on a sheet. The Worksheets tab and a sheet open on a phone, an iPad and a laptop. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
@@ -32,7 +35,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'engine.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'engine.css', 'sheets.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -1107,6 +1110,86 @@ async function checkSounds(browser, base, g) {
   await ctx.close();
 }
 
+/* ---------- printable worksheets ---------- */
+async function checkSheets(browser, base, g) {
+  const { ctx, page, errs } = await newPage(browser, base);
+  const where = 'grade ' + g + ' worksheets';
+  await page.goto(base + '/grade' + g + '/index.html#home');
+  await page.waitForFunction(() => window.Atlas && Object.keys(Atlas.chapters).length > 0, null, { timeout: 15000 });
+  const chapters = await page.evaluate(() => Object.keys(Atlas.sheets.chapters));
+  if (!chapters.length) { await ctx.close(); return null; }
+  const count = { sheets: 0, questions: 0 };
+  for (const chId of chapters) {
+    const t0 = Date.now();
+    const r = await page.evaluate(chId => {
+      const S = Atlas.sheets, out = [], n = { sheets: 0, questions: 0 }, ch = Atlas.chapters[chId], def = S.chapters[chId], w = chId + ' worksheets';
+      const expand = s => s.split(/,\s*/).flatMap(p => { const m = p.match(/^([A-D]\d)\.(\d+) to \1\.(\d+)$/); if (!m) return [p]; const r = []; for (let i = +m[2]; i <= +m[3]; i++) r.push(m[1] + '.' + i); return r; });
+      if (!ch) return { out: [w + ': there is no chapter called ' + chId], n };
+      if (!/^[A-Z]{2}$/.test(def.code || '')) out.push(w + ': needs a two-letter code for its sheet numbers');
+      Object.keys(S.chapters).forEach(o => { if (o !== chId && S.chapters[o].code === def.code) out.push(w + ': shares its code ' + def.code + ' with ' + o); });
+      const slugs = Atlas.lessons.flat(chId).map(c => c.slug);
+      Object.keys(def.ideas).forEach(sl => { if (!slugs.includes(sl)) out.push(w + ': "' + sl + '" is not an idea in the chapter'); });
+      slugs.forEach(sl => {
+        const d = def.ideas[sl];
+        if (!d || !d.goal) out.push(w + ' idea ' + sl + ': needs its "I can" line (goal)');
+        if (!d || !Array.isArray(d.think) || d.think.length < 2) out.push(w + ' idea ' + sl + ': needs 2 or more Think questions');
+      });
+      /* every expectation the chapter lists is on one of its sheets */
+      const on = S.codes(chId), meta = Atlas.meta.find(m => m.id === chId);
+      expand(meta.codes).forEach(c => { if (!on.includes(c)) out.push(w + ': no sheet covers ' + c + ', which the chapter lists'); });
+      const box = document.createElement('div');
+      box.className = 'ws-sheet';
+      box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
+      document.body.appendChild(box);
+      S.list(chId).forEach((s, i) => {
+        const th = S.themes[i % S.themes.length].id, sw = w + ' ' + s.kind + ' ' + s.id;
+        const a = S.render(box, chId, s.kind, s.id, th, false), aText = box.textContent;
+        const k = S.render(box, chId, s.kind, s.id, th, true, a.at), kText = box.textContent;
+        n.sheets++;
+        if (a.over) out.push(sw + ': runs off the page');
+        if (k.over) out.push(sw + ': its answer key runs off the page');
+        if (k.items.length !== a.items.length) out.push(sw + ': the answer key has ' + k.items.length + ' questions, the sheet ' + a.items.length);
+        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(aText + kText)) out.push(sw + ': shows undefined or NaN');
+        if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < 2) out.push(sw + ': fits only ' + a.items.length + ' question(s); a sheet needs 2 or more');
+        a.items.forEach(q => {
+          n.questions++;
+          if (q.type) window.__validate(q).forEach(e => out.push(sw + ': ' + e));
+          else if (!q.lines || !q.key || !q.q) out.push(sw + ': an open question needs q, lines and a good answer (key) for the grown-up');
+        });
+      });
+      box.remove();
+      return { out, n };
+    }, chId);
+    r.out.forEach(p => fail(where, p));
+    count.sheets += r.n.sheets; count.questions += r.n.questions;
+    log('  Grade ' + g + ' ' + chId + ' worksheets: ' + r.n.sheets + ' sheets in ' + Math.round((Date.now() - t0) / 1000) + 's');
+  }
+  /* the Worksheets tab and one sheet, in grown-up view, on a phone, an iPad and a laptop */
+  await page.evaluate(() => localStorage.setItem('atlas:adult', '1'));
+  await page.goto(base + '/grade' + g + '/index.html#' + chapters[0] + '/sheets');
+  await page.reload();
+  const first = await page.evaluate(ch => { const s = Atlas.sheets.list(ch)[0]; return s.id + '/' + s.kind; }, chapters[0]);
+  for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    await page.evaluate(h => { location.hash = h; }, chapters[0] + '/sheets');
+    await page.waitForSelector('.ws-list');
+    await screenCheck(page, where, 'the Worksheets tab at ' + vp.width + ' px');
+    await page.evaluate(h => { location.hash = h; }, chapters[0] + '/sheets/' + first);
+    await page.waitForSelector('.ws-sheet .ws-page');
+    await page.waitForTimeout(200);
+    const shown = await page.evaluate(() => [...document.querySelectorAll('.ws-sheet')].map(s => s.getBoundingClientRect().width));
+    if (shown.length !== 2 || shown.some(x => x < 300)) fail(where, 'a sheet and its key do not both show at ' + vp.width + ' px');
+    await screenCheck(page, where, 'a sheet at ' + vp.width + ' px');
+  }
+  await page.evaluate(() => localStorage.removeItem('atlas:adult'));
+  await page.reload();
+  await page.waitForTimeout(300);
+  if (await page.locator('.ws-sheet').first().isVisible()) fail(where, 'a worksheet shows with grown-up view off');
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+  return count;
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -1121,6 +1204,7 @@ async function checkSounds(browser, base, g) {
         s.answered + ' practice questions answered on a phone screen, ' + s.tasks + ' activities marked. Types: ' + Object.entries(s.types).map(([k, v]) => k + ' ' + v).join(', ') + '. ' +
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { const w = await checkSheets(browser, url, g); if (w) log('Grade ' + g + ' worksheets: ' + w.sheets + ' sheets and their answer keys drawn, ' + w.questions + ' questions checked.'); } catch (e) { fail('grade ' + g + ' worksheets', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSounds(browser, url, g); log('Grade ' + g + ' tool box: Sound board checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sound board', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
