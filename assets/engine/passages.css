@@ -1,0 +1,99 @@
+/* Language Atlas tool box: Reading passages (passages.js). The page itself is a worksheet page (sheets.css: .ws-sheet, .ws-page,
+   the theme's accent --acc and display face --face, printing); this adds the passage's own layout. Colours come from the theme. */
+
+/* ---------- the library ---------- */
+.ps-lib,.ps-one{display:flex;flex-direction:column;gap:14px;padding:4px 0 24px}
+.ps-lede{margin:0;color:var(--ink2);max-width:62ch}
+.ps-subs .ws-chip{padding:5px 16px}
+.ps-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.ps-card{--acc:var(--accent);display:flex;flex-direction:column;gap:4px;padding:12px 14px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.ps-card:hover,.ps-card:focus-visible{border-color:var(--accent)}
+.ps-card .ps-art{width:100%;height:auto;margin-bottom:6px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.ps-card b{font-family:var(--display);font-size:1.12rem;line-height:1.2}
+.ps-ck{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.ps-cd{color:var(--ink2);font-size:.92rem}
+.ps-cw{color:var(--ink3);font-size:.8rem;margin-top:auto;padding-top:4px}
+
+/* ---------- one passage on screen ---------- */
+.ps-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ps-all{font-weight:700}
+.ps-do{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.ps-do .ws-hint{flex-basis:100%;margin:0}
+
+/* ---------- line art ---------- */
+.ps-art{display:block;width:100%;height:auto;overflow:visible}
+.ps-art .a,.ps-art .k,.ps-art .t,.ps-art .d,.ps-art .h{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ps-art .a{stroke:var(--acc);stroke-width:2}
+.ps-art .k{stroke:var(--ink);stroke-width:1.6}
+.ps-art .t{stroke:var(--ink2);stroke-width:.8}
+.ps-art .d{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:4 4}
+.ps-art .h{fill:url(#ps-hatch);stroke:var(--acc);stroke-width:1.4}
+.ps-art .l,.ps-art .lb,.ps-art .n{font-family:var(--body);fill:var(--ink)}
+.ps-art .l{font-size:12px}
+.ps-art .lb{font-size:13px;font-weight:700}
+.ps-art .n{font-size:10.5px;fill:var(--ink2)}
+.ps-art .ac{fill:var(--acc)}
+.ps-art .dot{fill:var(--ink)}
+
+/* ---------- the printed page ---------- */
+.ps-page{padding:36px 52px 24px 60px}
+.ps-head{position:relative;padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
+.ps-head .ws-kick{padding-right:230px}
+.ps-name{position:absolute;right:0;top:0;width:210px}
+.ps-title{margin:6px 0 0;font-family:var(--face);font-size:32px;font-weight:700;line-height:1.08;color:var(--ink);letter-spacing:-.01em}
+.ps-back .ps-title{font-size:25px}
+.ps-deck{margin-top:3px!important;font-size:15px;font-style:italic;color:var(--ink2)}
+.ps-hero{margin:10px 0 2px}
+.ps-hero figcaption,.ps-fig figcaption{font-size:11.5px;line-height:1.35;color:var(--ink2);font-style:italic;margin-top:3px}
+.ps-text{flex:1;min-height:0;overflow:hidden;columns:2;column-gap:30px;column-fill:auto;column-rule:1px solid var(--line);padding-top:8px;font-size:13.6px;line-height:1.46}
+.ps-text p{margin:0 0 6px;hyphens:manual}
+.ps-text:not(.ps-plain) > p:first-child::first-letter{float:left;font-family:var(--face);font-weight:700;font-size:46px;line-height:.9;padding:3px 6px 0 0;color:var(--acc)}
+.ps-text h3{margin:8px 0 2px;font-family:var(--face);font-size:16px;line-height:1.2;color:var(--acc);break-after:avoid}
+.ps-text h3:first-child{margin-top:0}
+.ps-text b{font-weight:700}
+.ps-fig{margin:2px 0 8px;break-inside:avoid}
+.ps-box{margin:2px 0 8px;padding:6px 11px 7px;border:1.3px solid var(--acc);border-radius:10px;break-inside:avoid;font-size:12.6px;line-height:1.4}
+.ps-box .ws-label{margin:0 0 2px!important}
+.ps-box p{margin:0}
+.ps-foot{flex:none;padding-top:8px;border-top:1px solid var(--ink)}
+.ps-words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 22px;margin:0;font-size:11.5px;line-height:1.3}
+.ps-words > .ws-label{grid-column:1/-1;margin:0!important}
+.ps-words dt{display:inline;font-weight:700}
+.ps-words dt::after{content:' '}
+.ps-words dd{display:inline;margin:0;color:var(--ink2)}
+.ps-line{margin-top:6px!important}
+.ps-tip{font-size:12.5px;color:var(--ink2);font-style:italic}
+
+/* the back: questions */
+.ps-qs{flex:1;min-height:0;overflow:hidden;align-content:start;padding-top:6px}
+.ps-qs{row-gap:0}
+.ps-q{padding:8px 0 9px 28px}
+.ps-q .ws-qt{font-size:14px;line-height:1.35}
+.ps-opts{flex-direction:column;align-items:flex-start;gap:1px;margin-top:4px}
+.ps-opts .ws-opt{font-weight:400;padding:0 10px 0 3px;font-size:13.6px;line-height:1.32}
+.ps-q .ws-order{gap:2px;margin-top:4px;font-size:13.6px}
+.ps-q .ws-order .ws-box{width:21px;min-width:21px;height:21px}
+.ps-q .ws-lines{background:repeating-linear-gradient(transparent 0 27px,var(--line2) 27px 28px)}
+.ps-opts .ws-opt b{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border:1.2px solid var(--ink2);border-radius:50%;font-size:11px}
+.ps-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px;table-layout:fixed}
+.ps-table th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);padding:3px 8px;border-bottom:1.3px solid var(--ink)}
+.ps-table td{border:1px solid var(--line2);padding:5px 8px;vertical-align:top;height:32px;line-height:1.3}
+.ps-table td.ps-fill{background:#fff}
+
+/* the answer key */
+.ps-key .ps-qs{flex:none}
+.ps-guide{flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-content:end;padding:10px 0 12px;font-size:13px;line-height:1.45;color:var(--ink2)}
+.ps-guide .ws-label{margin:0 0 3px!important}
+.ps-ans{list-style:none;margin:0;padding:6px 0 0}
+.ps-ans .ws-q{padding-right:110px}
+.ps-kq{font-size:13px;color:var(--ink2)}
+.ps-ans .ws-ans{margin-top:3px!important;font-size:14px;line-height:1.4}
+.ps-ans .ws-ans i{font-style:normal;color:var(--ink2);font-weight:400}
+.ps-code{position:absolute;right:0;top:10px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--bad)}
+.ps-look{display:block;margin-top:3px;font-size:12.5px;font-weight:400;color:var(--ink2)}
+.ps-look b{color:var(--bad);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-right:4px}
+
+@media print{
+  html[data-ps-print="sheet"] .ws-sheet[data-side="key"],html[data-ps-print="key"] .ws-sheet:not([data-side="key"]){display:none!important}
+  html.ws-print .ps-bar,html.ws-print .ps-do{display:none!important}
+}

@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-09
+- Tool box, Grades 4 to 8: **Reading passages** (Tools, then Reading). A library of printable reading comprehension passages, written for this site, on topics from every subject. Each prints on one sheet, both sides: the passage with drawings, a diagram, map or chart and Words to know on the front, and its questions on the back; the answer key (grown-up view) prints on its own, with each answer's expectation and marks and what to teach before and after reading. Same Editorial look as the worksheets. Pilot: one passage for each grade (beavers, levels of government, how a wing lifts, a voyageur's diary, a letter to the editor about phones). New check: every passage, its questions and its key, and that all three pages fit.
 - Printable worksheets (grown-up view, a chapter's Worksheets tab), in Math Atlas's Editorial look. Each idea gets five sheets, from most help to least: Learn (Watch me, Together, On your own), Practise 1, 2 and 3, and Think; each activity with a grown-up prints with its rubric on the answer key, and each Read and answer passage prints as a Read sheet. Sheets use the site's own questions with a fixed seed, so they always print the same and every answer is checked like on the site. 6 themes, answer key as page 2, print or save as PDF. First chapter: Grade 3 Sentences. New check: every sheet and key is drawn, fits the page and has its answers checked, and every expectation of a chapter is on a sheet.
 
 ## 2026-11-08
