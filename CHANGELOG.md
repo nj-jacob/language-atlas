@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 - Grade 4 worksheets for all 15 chapters: 78 ideas, each with Learn, Practise 1 to 3 and Think (an "I can" goal and three reasoning questions written for paper, marked by a grown-up from a good answer), plus 31 activity sheets with their rubrics and 23 Read sheets: 444 sheets covering every Grade 4 expectation.
+- Worksheets for every Grade 7 chapter (14 chapters, 85 ideas): each idea's "I can" line and three Think questions written for paper, with a good answer for the grown-up on the key. Every Grade 7 expectation is on a sheet.
 - Grade 3 worksheets for every chapter (all 14, 73 ideas, 436 sheets): each idea has its "I can" line and three Think questions written for paper, and every Grade 3 expectation is on a sheet.
 - Grade 6 worksheets: all 14 chapters (83 ideas, 463 sheets with Activity and Read sheets), covering every Grade 6 expectation. Each idea has an "I can" line and Think questions written for paper (open answers the grown-up marks, with a good answer on the key).
 - Grade 8 worksheets: every chapter (14 chapters, 101 ideas, 549 sheets), covering all 59 Grade 8 expectations. Each idea has an "I can" goal and three Think questions written for paper, with a good answer on the key for the grown-up to mark.
