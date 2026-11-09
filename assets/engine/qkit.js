@@ -257,6 +257,8 @@
      A skill keeps one idea but asks it in different ways. list = [[minLevel, name, fn(lv)], ...].
      Shapes unlock with the level, so level 1 stays plain and pictorial. The last shape used is not repeated. */
   var lastShape = {};
+  /* forget the last shapes, so a printed worksheet (sheets.js) makes the same questions every time */
+  Q.resetShapes = function () { lastShape = {}; };
   Q.vary = function (id, lv, list) {
     var ok = list.filter(function (s) { return lv >= s[0] && (!s[3] || lv <= s[3]); });
     if (!ok.length) ok = [list[0]];

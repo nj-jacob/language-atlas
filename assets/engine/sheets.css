@@ -1,0 +1,159 @@
+/* Language Atlas worksheets (sheets.js): the Worksheets tab, the sheet itself, and printing.
+   The display faces are the worksheet themes' own (sheet-themes.js); everything else uses the theme's colours and fonts.
+   A sheet is laid out at full size, 816 by 1056 (US Letter at 96 per inch), and scaled to fit the screen (--s). */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans:wght@700&family=Playfair+Display:wght@700&family=Quicksand:wght@700&family=Roboto+Slab:wght@700&display=swap');
+
+/* ---------- the Worksheets tab ---------- */
+.ws-ui{display:flex;flex-direction:column;gap:12px;margin:18px 0}
+.ws-ui p{margin:0}
+.ws-lede,.ws-hint{color:var(--ink2);max-width:62ch}
+.ws-hint{font-size:.9rem}
+.ws-h{margin:0}
+.ws-themes{display:flex;flex-wrap:wrap;gap:8px}
+.ws-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:5px 14px 5px 8px;border:1px solid var(--line2);border-radius:99px;background:var(--card);color:var(--ink);font:inherit;font-size:.92rem;cursor:pointer}
+.ws-chip svg{width:28px;height:28px;flex:none}
+.ws-chip[aria-checked="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);font-weight:700}
+.ws-keyt{display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.ws-keyt input{width:22px;height:22px;accent-color:var(--accent)}
+.ws-lesson h2{font-size:1.15rem;margin:22px 0 8px}
+.ws-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ws-list li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.ws-idea{font-weight:700;min-width:0}
+.ws-kinds{display:flex;flex-wrap:wrap;gap:6px}
+.ws-k{display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;border:1px solid var(--line2);border-radius:99px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.ws-k:hover,.ws-k[aria-current="page"]{border-color:var(--accent);color:var(--accent)}
+.ws-k[aria-current="page"]{background:var(--tint)}
+html.adult .ws-child{display:none}
+html:not(.adult) .ws-adult{display:none!important}
+.ws-pages{display:flex;flex-direction:column;align-items:center;gap:24px;margin:8px 0 28px}
+.ws-sheet{--s:1;position:relative;width:100%;max-width:816px;aspect-ratio:816/1056;overflow:hidden;background:#fff;border-radius:3px;box-shadow:0 1px 2px rgba(19,32,57,.12),0 10px 28px rgba(19,32,57,.14)}
+.ws-sheet .ws-page{position:absolute;left:0;top:0;transform:scale(var(--s));transform-origin:0 0}
+
+/* ---------- the sheet ---------- */
+.ws-page{--acc:var(--accent);--face:var(--display);width:816px;height:1056px;display:flex;flex-direction:column;padding:40px 52px 26px 60px;box-sizing:border-box;background:#fff;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.4;text-align:left;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ws-page p{max-width:none;margin:0}
+.ws-frame{position:absolute;left:0;top:0;width:816px;height:1056px;pointer-events:none}
+.ws-head{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 200px;column-gap:28px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+.ws-kick{grid-column:1;display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.ws-kick svg{width:26px;height:26px;flex:none}
+.ws-title{grid-column:1;margin-top:8px;font-family:var(--face);font-size:30px;font-weight:700;line-height:1.12;color:var(--ink)}
+.ws-goal{grid-column:1;margin-top:5px!important;font-style:italic;color:var(--ink2)}
+.ws-name{grid-column:2;grid-row:1/span 3;display:grid;grid-template-columns:auto 1fr;align-items:end;gap:14px 8px;align-self:start;font-size:11px;color:var(--ink2);padding-top:4px}
+.ws-name i{border-bottom:1px solid var(--ink2);height:14px}
+.ws-key .ws-head{grid-template-columns:1fr}
+.ws-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding-top:10px}
+.ws-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:6px 0 4px!important}
+.ws-band{padding-bottom:10px;border-bottom:1px solid var(--line2)}
+.ws-steps{list-style:none;counter-reset:st;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 18px}
+.ws-steps li{counter-increment:st;position:relative;padding-left:22px;font-size:12.5px;line-height:1.35;min-width:0}
+.ws-steps li::before{content:counter(st);position:absolute;left:0;top:2px;font-family:var(--face);font-weight:700;font-size:15px;color:var(--acc)}
+.ws-steps li .wsum{justify-content:flex-start;margin:0 0 2px}
+.ws-steps li p{color:var(--ink2)}
+.ws-tip{margin-top:8px!important;font-size:13px;color:var(--ink2)}
+.ws-tip b{color:var(--acc);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-right:6px}
+.ws-psg{padding:6px 0 10px;border-bottom:1px solid var(--line2)}
+.ws-sec{display:flex;flex-direction:column}
+.ws-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:34px}
+.ws-q{position:relative;min-width:0;padding:10px 0 12px 28px;border-top:1px solid var(--line)}
+.ws-wide{grid-column:1/-1}
+.ws-n{position:absolute;left:0;top:7px;font-family:var(--face);font-weight:700;font-size:21px;line-height:1;color:var(--acc)}
+.ws-qt{font-size:15px}
+.ws-more{color:var(--ink2);font-style:italic}
+.ws-cue{font-size:12.5px;font-style:italic;color:var(--ink2);margin-top:2px!important}
+.ws-fig{margin:6px 0 4px}
+.ws-opts{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-top:6px}
+.ws-opt{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border:1.6px solid transparent;border-radius:999px;font-weight:700}
+.ws-part{display:inline-flex;padding:1px 10px;border:1.5px solid var(--line2);border-radius:8px;font-weight:700}
+.ws-why{margin-top:6px!important;font-size:13px;color:var(--ink2)}
+.ws-row{margin-top:8px!important}
+.ws-blank{display:inline-block;position:relative;min-width:150px;height:22px;border-bottom:1.3px solid var(--ink);vertical-align:bottom;text-align:center}
+.ws-blank.ws-short{min-width:48px}
+.ws-blank.ws-word{min-width:190px}
+.ws-blank.ws-box{min-width:24px;width:24px;height:24px;border:1.3px solid var(--ink);border-radius:4px;flex:none}
+.ws-order{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ws-order li{display:flex;align-items:center;gap:10px}
+.ws-match{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 30px;margin-top:6px}
+.ws-match ol,.ws-match ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.ws-match ol li{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.ws-match ul li{display:flex;gap:10px}
+.ws-match ul b{color:var(--acc)}
+.ws-lines{position:relative;margin-top:6px;background:repeating-linear-gradient(transparent 0 29px,var(--line2) 29px 30px)}
+.ws-task{display:flex;align-items:center;gap:16px;padding:6px 0 10px}
+.ws-tpic .wicon{width:52px;height:52px;color:var(--acc)}
+.ws-task p{font-size:17px;font-weight:700}
+.ws-fill{flex:1;min-height:60px;background:repeating-linear-gradient(transparent 0 33px,var(--line2) 33px 34px)}
+.ws-run ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.ws-coach{margin-top:8px;color:var(--ink2);font-size:13.5px}
+.ws-rubric table{width:100%;border-collapse:collapse;margin-top:4px}
+.ws-rubric th,.ws-rubric td{border:1px solid var(--line2);padding:8px 10px;text-align:left;vertical-align:top;font-size:14px;background:#fff}
+.ws-rubric th{width:118px;font-family:var(--body)}
+.ws-rubric .ws-tick{width:46px}
+.ws-foot{flex:none;height:86px;display:flex;flex-wrap:wrap;align-content:space-between;gap:4px 24px;padding-top:10px;border-top:1px solid var(--ink)}
+.ws-watch{flex:1;min-width:0;font-size:12px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ws-watch p:last-child{color:var(--ink2)}
+.ws-score{width:150px;font-size:12px}
+.ws-feel{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;font-size:12px;color:var(--ink2)}
+.ws-feel b{color:var(--ink)}
+.ws-feel span{display:inline-flex;align-items:center;gap:6px}
+.ws-feel i{width:11px;height:11px;border:1px solid var(--ink2);border-radius:50%}
+.ws-line{flex-basis:100%;display:flex;justify-content:space-between;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:4px!important}
+
+/* the site's word pictures, sized for paper */
+.ws-page .sent{font-size:16px;padding:2px 10px;margin:2px 0;border-radius:8px;display:inline-block;width:auto;max-width:100%;text-align:left}
+.ws-page .fig .sent,.ws-page .ws-fig .sent{display:block;width:fit-content;margin:3px 0}
+.ws-page .wt{min-height:0;padding:1px 10px;font-size:16px;border-width:1.5px;border-radius:8px}
+.ws-page .wsum{justify-content:flex-start;gap:6px;margin:3px 0}
+.ws-page .wpic{width:44px;height:44px}
+.ws-page .wicon{width:24px;height:24px}
+.ws-page .wmeans{font-size:14px;padding:4px 10px;border-radius:8px}
+.ws-page .wsnd{min-height:0;padding:0 8px;margin:0 1px;border-width:1.5px;font-size:15px;pointer-events:none}
+.ws-page .wsnd-i{display:none}
+.ws-page .wgap{min-width:2.6em;border-bottom-width:2px}
+.ws-page .psg{max-width:none;max-height:none;overflow:visible;margin:4px 0;padding:8px 14px;border-radius:8px;border-left-width:3px}
+.ws-page .psg p{font-size:14px;line-height:1.5}
+.ws-page .psg b.pt{font-size:16px}
+.ws-page .psg .pband{margin:-8px -14px 6px;padding:6px 14px 4px;justify-content:flex-start}
+.ws-page .psg .pband .wpic{width:30px;height:30px}
+.ws-numbered .psg{counter-reset:ps}
+.ws-numbered .ps{counter-increment:ps}
+.ws-numbered .ps::before{content:counter(ps);font-size:9px;font-weight:700;color:var(--acc);vertical-align:super;margin-right:2px}
+.ws-page .wchain{gap:5px;max-width:none;margin:4px 0}
+.ws-page .wchain li{padding:3px 8px;font-size:13.5px;border-radius:8px}
+.ws-page .wchain li::before{width:20px;height:20px;font-size:12px}
+.ws-page .wchain li:not(:last-child)::after{left:17px;bottom:-6px;height:5px}
+.ws-page .wweb{margin:4px 0;max-width:none}
+.ws-page .ww-top{padding:5px 10px;font-size:14px;border-radius:8px 8px 3px 3px}
+.ws-page .ww-legs span{padding:4px 6px;font-size:13px}
+.ws-page .ws-pic .psg-tap .ps{background:none;cursor:default}
+.ws-page .ws-steps .sent{font-size:14px;padding:1px 8px}
+.ws-page .ws-steps .wt{font-size:14px}
+.ws-page .ws-steps .ww-top{font-size:12.5px;padding:3px 8px}
+.ws-page .ws-steps .ww-legs{padding-top:8px}
+.ws-page .ws-steps .ww-legs span{font-size:11.5px;padding:2px 4px}
+.ws-page .ws-steps svg:not(.wpic):not(.wicon){width:auto;max-width:100%;max-height:64px}
+.ws-page .ws-fig svg:not(.wpic):not(.wicon),.ws-page .ws-pic svg:not(.wpic):not(.wicon){width:auto;max-width:100%;max-height:96px}
+.ws-page .psg{columns:2;column-gap:30px}
+.ws-page .psg .pband,.ws-page .psg b.pt{column-span:all}
+.ws-page .ws-q .psg .pband{display:inline-flex;margin:0 10px 0 0;padding:0;background:none;vertical-align:middle}
+.ws-page .ws-q .psg .pband .wpic{width:22px;height:22px}
+.ws-page .ws-q .psg b.pt{display:inline}
+
+/* the answer key: answers in red */
+.ws-key .ws-ans{color:var(--bad);font-weight:700}
+.ws-key .ws-blank .ws-ans{position:absolute;left:0;right:0;bottom:1px;font-size:14px;line-height:1.1}
+.ws-key .ws-lines .ws-ans{position:absolute;left:4px;right:4px;top:6px;font-size:13px;line-height:30px}
+.ws-key .ws-opt.ws-on{border-color:var(--bad)}
+.ws-key [data-hit].ws-on{outline:2px solid var(--bad);outline-offset:1px;border-radius:4px}
+.ws-key svg [data-hit].ws-on{outline:none;stroke:var(--bad)}
+.ws-key .ws-foot .ws-label{color:var(--bad)}
+
+@media print{
+  @page{size:letter;margin:0}
+  html.ws-print body{background:#fff!important;padding:0!important;margin:0!important}
+  html.ws-print body > :not(main),html.ws-print .ws-ui,html.ws-print .crumb,html.ws-print .chead,html.ws-print .jump,html.ws-print .ws-child,html.ws-print .pn{display:none!important}
+  html.ws-print main,html.ws-print main .wrap{padding:0!important;margin:0!important;max-width:none!important}
+  html.ws-print .ws-pages{display:block;margin:0}
+  html.ws-print .ws-sheet{width:8.5in;height:11in;max-width:none;aspect-ratio:auto;box-shadow:none;border-radius:0;break-inside:avoid}
+  html.ws-print .ws-sheet .ws-page{transform:none}
+  html.ws-print .ws-sheet ~ .ws-sheet{break-before:page;page-break-before:always}
+}
