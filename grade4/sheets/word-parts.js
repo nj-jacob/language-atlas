@@ -5,7 +5,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('word-parts', { code: 'WP', ideas: {
     dis: { goal: 'I can read and spell words with dis-, which means not.', think: [

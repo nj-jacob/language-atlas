@@ -4,11 +4,11 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('meanings', { code: 'WM', ideas: {
     context: { goal: 'I can use clues in the sentence to work out a new word.', think: [
-      L('"The trail was so steep that we had to clamber up on our hands and feet." What does clamber mean? Which words told you?', 'Climb with hands and feet. Clues: steep, hands and feet.', 3),
+      L('"The trail was so steep that we had to clamber up on our hands and feet." What does clamber mean? Which words told you?', 'Climb with hands and feet. Clues: steep, hands and feet.', 5),
       L('Write a sentence with a clue that shows what drowsy means.', 'For example: After the long drive I felt drowsy and my eyes kept closing.'),
       L('What can you do when the sentence has no clue?', 'Read the sentences around it, look at word parts, or look it up.') ] },
     shades: { goal: 'I can pick the exact word for what I mean.', think: [

@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-09
+- Grade 4 worksheets for all 15 chapters: 78 ideas, each with Learn, Practise 1 to 3 and Think (an "I can" goal and three reasoning questions written for paper, marked by a grown-up from a good answer), plus 31 activity sheets with their rubrics and 23 Read sheets: 444 sheets covering every Grade 4 expectation.
 - Printable worksheets (grown-up view, a chapter's Worksheets tab), in Math Atlas's Editorial look. Each idea gets five sheets, from most help to least: Learn (Watch me, Together, On your own), Practise 1, 2 and 3, and Think; each activity with a grown-up prints with its rubric on the answer key, and each Read and answer passage prints as a Read sheet. Sheets use the site's own questions with a fixed seed, so they always print the same and every answer is checked like on the site. 6 themes, answer key as page 2, print or save as PDF. First chapter: Grade 3 Sentences. New check: every sheet and key is drawn, fits the page and has its answers checked, and every expectation of a chapter is on a sheet.
 
 ## 2026-11-08

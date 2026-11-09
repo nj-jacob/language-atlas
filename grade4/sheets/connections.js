@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('connections', { code: 'CN', ideas: {
     skills: { goal: 'I can name the skills I use when I learn.', think: [

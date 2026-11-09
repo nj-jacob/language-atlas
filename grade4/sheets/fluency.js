@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('fluency', { code: 'FL', ideas: {
     pace: { goal: 'I can set my pace to fit the text.', think: [
@@ -16,11 +16,11 @@
       L('Why does a comma tell you to pause?', 'It ends a phrase, so the words before it go together.'),
       L('Why does reading in phrases help you understand?', 'Words that go together carry one idea, so you hear the meaning.') ] },
     purpose: { goal: 'I can let the purpose of the text guide my voice.', think: [
-      L('How should a news report sound? How should a scary story sound?', 'News: clear and steady. Scary story: slower, quieter, with pauses.', 3),
+      L('How should a news report sound? How should a scary story sound?', 'News: clear and steady. Scary story: slower, quieter, with pauses.', 5),
       L('Write one line from a story and tell how you would read it.', 'Any line with a fitting voice, for example excited, sad or calm.'),
       L('Why do you read a poem differently from a science page?', 'A poem is for feeling and sound; a science page is for facts.') ] },
     stress: { goal: 'I can stress the word that matters.', think: [
-      L('Say "I did not take the canoe" two ways, stressing a different word. How does the meaning change?', 'Stress I: someone else did. Stress canoe: I took something else.', 3),
+      L('Say "I did not take the canoe" two ways, stressing a different word. How does the meaning change?', 'Stress I: someone else did. Stress canoe: I took something else.', 5),
       L('Which word would you stress in "Stop! The ice is thin"? Why?', 'Stop, or thin: they carry the warning.'),
       L('How do bold or italic words tell you what to stress?', 'The writer marks the word to say it louder or stronger.') ] }
   } });

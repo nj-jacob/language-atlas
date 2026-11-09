@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('reading', { code: 'RE', ideas: {
     find: { goal: 'I can find an answer in the text.', think: [
@@ -12,7 +12,7 @@
       L('Why should you go back to the text instead of guessing?', 'The answer is there, so you can prove it.'),
       L('Write a question about a book you read, and where the answer is.', 'Any question with the page or part named.') ] },
     'main-details': { goal: 'I can find the main idea and the details that support it.', think: [
-      L('Main idea: "Snowshoe hares are built for winter." Write two supporting details.', 'For example: their fur turns white; their big back feet keep them on top of the snow.', 3),
+      L('Main idea: "Snowshoe hares are built for winter." Write two supporting details.', 'For example: their fur turns white; their big back feet keep them on top of the snow.', 5),
       L('How is the main idea different from a detail?', 'The main idea is what the whole part is about; details tell more about it.'),
       L('Where do you often find the main idea in a paragraph?', 'Often in the first or last sentence.') ] },
     sequence: { goal: 'I can retell events in order.', think: [
@@ -20,7 +20,7 @@
       L('Why does order matter when you retell a story?', 'Events cause other events, so the story only makes sense in order.'),
       L('Retell your morning in three steps.', 'Three steps in order with order words.') ] },
     conclude: { goal: 'I can draw a conclusion from clues.', think: [
-      L('"Jun wiped his forehead and gulped his water." What can you conclude? What clues tell you?', 'He is hot or tired. Clues: wiping his forehead, gulping water.', 3),
+      L('"Jun wiped his forehead and gulped his water." What can you conclude? What clues tell you?', 'He is hot or tired. Clues: wiping his forehead, gulping water.', 5),
       L('How is a conclusion different from a guess?', 'A conclusion uses clues from the text plus what you know.'),
       L('Write two clues that show a character is nervous.', 'For example: her hands shook; she bit her lip.') ] },
     predict: { goal: 'I can predict, then check.', think: [

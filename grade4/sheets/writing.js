@@ -5,11 +5,11 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('writing', { code: 'WR', ideas: {
     tone: { goal: 'I can fit my tone to the form.', think: [
-      L('Write one line for a thank-you note and one line for a lost-dog poster.', 'Warm and grateful; clear and urgent.', 3),
+      L('Write one line for a thank-you note and one line for a lost-dog poster.', 'Warm and grateful; clear and urgent.', 5),
       L('Why should a letter to a mayor sound polite?', 'It is formal, and a respectful tone helps the reader listen.'),
       L('Change the tone to calm: "This is the WORST day EVER!!!"', 'For example: Today did not go the way I hoped.') ] },
     'pov-fair': { goal: 'I can choose a point of view and be fair.', think: [

@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('spelling', { code: 'SP', ideas: {
     'drop-e': { goal: 'I can drop the e before an ending that starts with a vowel.', think: [
@@ -14,7 +14,7 @@
     double: { goal: 'I can double the last letter of a short word before a vowel ending.', think: [
       L('Why does hop + -ing double the p?', 'One short vowel and one last consonant: double it before a vowel ending.'),
       L('Why does jump + -ing not double?', 'Jump ends in two consonants, so there is nothing to double.'),
-      L('What would hoping mean if you meant hopping? Why does the rule matter?', 'Hoping is wishing; hopping is jumping. Doubling keeps the short vowel sound.', 3) ] },
+      L('What would hoping mean if you meant hopping? Why does the rule matter?', 'Hoping is wishing; hopping is jumping. Doubling keeps the short vowel sound.', 5) ] },
     'y-to-i': { goal: 'I can change y to i before an ending.', think: [
       L('Why is it happier, not happyer?', 'Consonant + y: change y to i before the ending.'),
       L('Why does play + -ed stay played?', 'A vowel comes before the y, so the y stays.'),

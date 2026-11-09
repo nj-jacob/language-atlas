@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('craft', { code: 'CR', ideas: {
     type: { goal: 'I can tell why words are in bold or italics, or are links.', think: [
@@ -14,7 +14,7 @@
     spatial: { goal: 'I can read a diagram in order.', think: [
       L('How do arrows help you read a life-cycle diagram?', 'They show the order: which stage comes next.'),
       L('Why are labels on a diagram short?', 'They name the part; the picture shows the rest.'),
-      L('Draw a 3-step diagram of making toast, with arrows.', 'Three labelled steps with arrows in order.', 4) ] },
+      L('Draw a 3-step diagram of making toast, with arrows.', 'Three labelled steps with arrows in order.', 6) ] },
     graphs: { goal: 'I can explain how pictures and graphs add meaning.', think: [
       L('Why might a writer add a graph to a text about rainfall?', 'It shows the amounts at a glance and lets you compare.'),
       L('What does a caption do?', 'It tells what the picture shows.'),

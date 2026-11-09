@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('sentences', { code: 'SE', ideas: {
     compound: { goal: 'I can join two sentences with a comma and a joining word.', think: [
@@ -12,7 +12,7 @@
       L('Why does a compound sentence need a comma before and, but or so?', 'The comma shows where one complete sentence ends and the next begins.'),
       L('Write a compound sentence about your weekend.', 'Two complete sentences joined with a comma and and, but, or or so.') ] },
     'join-word': { goal: 'I can choose the joining word that fits.', think: [
-      L('Explain the difference: "It rained, so we stayed in." and "It rained, but we went out."', 'So shows a result. But shows something you would not expect.', 3),
+      L('Explain the difference: "It rained, so we stayed in." and "It rained, but we went out."', 'So shows a result. But shows something you would not expect.', 5),
       L('Finish it two ways: "The bus was late, ..." with so, then with but.', 'For example: so we walked; but we were still on time.'),
       L('When would you use or?', 'When there is a choice between two things.') ] },
     dependent: { goal: 'I can tell that a dependent clause cannot stand alone.', think: [

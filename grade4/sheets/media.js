@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('media', { code: 'MD', ideas: {
     footprint: { goal: 'I can post only what I will be proud of.', think: [
@@ -30,7 +30,7 @@
     message: { goal: 'I can tell who a text is for and why.', think: [
       L('A cartoon ad plays during a kids\' show. Who is it for? Why?', 'Children: it shows when children watch.'),
       L('Name the purpose of a poster for a lost cat.', 'To ask people to look for the cat and call.'),
-      L('How would a bike-helmet poster change for teens and for parents?', 'Different pictures and words that matter to each audience.', 3) ] },
+      L('How would a bike-helmet poster change for teens and for parents?', 'Different pictures and words that matter to each audience.', 5) ] },
     design: { goal: 'I can design to solve a real problem.', think: [
       L('Name a real problem at school you could help solve with a poster or video.', 'For example: litter at recess; a noisy library.'),
       L('Why test your design with real people?', 'To see if it works and how to make it better.'),

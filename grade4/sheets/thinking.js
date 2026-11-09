@@ -4,11 +4,11 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('thinking', { code: 'TH', ideas: {
     local: { goal: 'I can use clues to work out what is not said.', think: [
-      L('"Priya hid the drawing behind her back and her cheeks turned red." What is not said? What tells you?', 'She is embarrassed or does not want it seen. Clues: hiding it, red cheeks.', 3),
+      L('"Priya hid the drawing behind her back and her cheeks turned red." What is not said? What tells you?', 'She is embarrassed or does not want it seen. Clues: hiding it, red cheeks.', 5),
       L('Write two clues that show it is very cold outside, without saying cold.', 'For example: breath made clouds; the snow squeaked.'),
       L('How do you check an inference?', 'Find clues in the text that prove it.') ] },
     global: { goal: 'I can find the big message of a text.', think: [
@@ -26,7 +26,7 @@
     perspective: { goal: 'I can tell whose view a text gives, and whose is missing.', think: [
       L('A text about a new highway gives only the drivers\' view. Whose view is missing?', 'For example: people who live nearby, or the animals whose land is used.'),
       L('Why is it important to hear more than one view?', 'You get the whole picture and can be fair.'),
-      L('Retell a story event from another character\'s view.', 'Any retelling in that character\'s voice.', 3) ] },
+      L('Retell a story event from another character\'s view.', 'Any retelling in that character\'s voice.', 5) ] },
     bias: { goal: 'I can spot bias.', think: [
       L('"Cats are the only good pets." Is this fair? Explain.', 'No. It shows only one side and calls it the only answer.'),
       L('What words can be a sign of bias?', 'For example: always, never, only, best, worst.'),

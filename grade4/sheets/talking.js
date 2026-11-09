@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('talking', { code: 'TA', ideas: {
     'ask-more': { goal: 'I can ask a question that gets more.', think: [
@@ -20,7 +20,7 @@
       L('Name two ways your body shows you are listening.', 'For example: face the speaker, nod, keep still.'),
       L('Why ask a question instead of guessing what someone meant?', 'You get the right meaning and the speaker feels heard.') ] },
     audience: { goal: 'I can fit my words to my listener.', think: [
-      L('How would you tell a five-year-old about recycling? How would you tell your teacher?', 'Simple words and short sentences for the child; more detail and exact words for the teacher.', 3),
+      L('How would you tell a five-year-old about recycling? How would you tell your teacher?', 'Simple words and short sentences for the child; more detail and exact words for the teacher.', 5),
       L('Why do you speak differently to a friend and to a principal?', 'The listener and the purpose are different, so the words change.'),
       L('Write one sentence inviting an Elder to your class.', 'A polite, respectful invitation.') ] },
     restate: { goal: 'I can say it again in my own words.', think: [

@@ -4,7 +4,7 @@
 (function () {
   var S = Atlas.sheets;
   if (!S) return;
-  function L(q, key, n) { return { q: q, lines: n || 2, key: key }; }
+  function L(q, key, n) { return { q: q, lines: n || 4, key: key }; }
 
   S.register('grammar', { code: 'GR', ideas: {
     relative: { goal: 'I can use who for people and which for things.', think: [
@@ -16,7 +16,7 @@
       L('Why is it its, not it\'s, in "The dog wagged its tail"?', 'Its tells whose. It\'s means it is.'),
       L('Write two sentences with my and their.', 'Any two correct sentences.') ] },
     perfect: { goal: 'I can use has, have and had with the helper form.', think: [
-      L('Explain: "She has walked" and "She had walked before lunch."', 'Has walked: done, up to now. Had walked: done before another past time.', 3),
+      L('Explain: "She has walked" and "She had walked before lunch."', 'Has walked: done, up to now. Had walked: done before another past time.', 5),
       L('Fix it: "We have went to the market."', 'We have gone to the market.'),
       L('Write a sentence with had and a time word.', 'For example: I had finished my snack before the game began.') ] },
     commands: { goal: 'I can write commands and questions.', think: [
