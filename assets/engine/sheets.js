@@ -60,7 +60,9 @@
     d.innerHTML = (q.fig || '') + (q.type === 'tap' && q.pic ? q.pic : '');
     /* a question about two texts has two passage cards: they go together */
     var ps = $$('.psg', d);
-    return ps.length ? { key: ps.map(function (p) { return strip(p.innerHTML); }).join(' | '), html: ps.map(function (p) { return p.outerHTML.replace(/ data-hit="\d+"/g, '').replace(' psg-tap', ''); }).join('') } : null;
+    /* a passage with a part marked for this question is its own passage: the shared copy at the top would not show the mark */
+    var marks = $$('.psg mark', d).map(function (m) { return strip(m.innerHTML); }).join(' / ');
+    return ps.length ? { key: ps.map(function (p) { return strip(p.innerHTML); }).join(' | ') + (marks ? ' [marked: ' + marks + ']' : ''), html: ps.map(function (p) { return p.outerHTML.replace(/ data-hit="\d+"/g, '').replace(' psg-tap', ''); }).join('') } : null;
   }
   /* the question without its passage; a sentence to tap in the passage becomes "write its number" */
   function paperize(q, passage) {
@@ -133,7 +135,10 @@
       if (kind === 'learn') {
         /* a passage in the "Watch me" steps is printed once, before them, and the questions are about it too when they can be */
         var inSteps = null, seen = {};
-        out.steps = c.model.map(function (st) { var p = passageOf({ fig: st }); if (p) { inSteps = inSteps || p; return paperize({ fig: st }, p).fig || 'Read the text.'; } return st; });
+        /* a second text in the steps would not fit too: the steps stop before it */
+        var cut = -1;
+        out.steps = c.model.map(function (st, i) { var p = passageOf({ fig: st }); if (p) { if (inSteps && p.key !== inSteps.key && cut < 0) cut = i; inSteps = inSteps || p; return paperize({ fig: st }, p).fig || 'Read the text.'; } return st; });
+        if (cut > 0) out.steps = out.steps.slice(0, cut);
         /* on screen a picture can grow one step at a time; on paper only its last, whole step is printed */
         var pics = out.steps.map(function (st) { var d = document.createElement('div'); d.innerHTML = st; var w = d.querySelector('.wsum'); return w ? strip(w.innerHTML) : ''; });
         out.steps = out.steps.filter(function (st, i) { return !(pics[i] && pics[i + 1] && pics[i + 1] !== pics[i] && pics[i + 1].indexOf(pics[i]) === 0); });
@@ -152,8 +157,10 @@
         if (want) {
           /* with the steps' passage at the top, questions about other passages are left out, and the idea's skill tops them up */
           var same = function (q) { var p = passageOf(q); return !p || p.key === want; };
-          tq = tq.filter(same); oq = oq.filter(same);
-          for (var t = 0; sk && t < 60 && oq.length < 5; t++) { var x = sk.gen(1 + t % 2); if (same(x) && !seen[sig(x)]) { seen[sig(x)] = 1; oq.push(x); } }
+          var ft = tq.filter(same), fo = oq.filter(same);
+          for (var t = 0; sk && t < 60 && fo.length < 5; t++) { var x = sk.gen(1 + t % 2); if (same(x) && !seen[sig(x)]) { seen[sig(x)] = 1; fo.push(x); } }
+          /* when no question is about the steps' text, the questions keep their own texts */
+          if (ft.length + fo.length) { tq = ft; oq = fo; }
         }
         var tog = onePassage(tq, want, 9), own = onePassage(oq, want, 9);
         out.passage = inSteps || tog.passage || own.passage;
@@ -290,14 +297,27 @@
     return h + '<p class="ws-line"><span>Language Atlas · Grade ' + A.grade + ' · ' + esc(th.name) + '</span><span>' + code + '</span></p></footer>';
   }
   function over(el) { return el.scrollHeight > el.clientHeight + 1; }
+  /* the free height left at the bottom of the page body */
+  var ROOM = 150;
+  function room(bd) {
+    var last = bd.lastElementChild, b = bd.getBoundingClientRect();
+    return last ? b.bottom - last.getBoundingClientRect().bottom : b.height;
+  }
   /* Draw one sheet into el (a .ws-sheet box). The questions fill the page in order and stop when it is full; a question that does
      not fit is left out. use: which questions to draw (the student page's 'at', for its answer key).
      Returns the questions drawn (items), where they are in the sheet's groups (at), and whether anything runs off the page (over). */
   S.render = function (el, chId, kind, id, themeId, key, use) {
     var th = S.themeById(themeId), sh = prepare(S.sheet(chId, kind, id), 'g' + A.grade + ':' + chId + ':' + kind + ':' + id), code = S.code(chId, kind, id, th);
-    el.innerHTML = '<div class="ws-page' + (key ? ' ws-key' : '') + '" style="--acc:' + th.acc + ';--face:' + th.font.replace(/"/g, "'") + '">' + (th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : '') +
-      head(sh, chId, th, key) + '<div class="ws-body">' + band(sh) + (sh.task ? task(sh.task, key) : '') + '</div>' + foot(sh, th, key, sh.groups.length, code) + '</div>';
-    var page = $('.ws-page', el), bd = $('.ws-body', page), n = 1, drawn = [], at = [];
+    var page, bd;
+    /* long "Watch me" steps leave room for questions: the last steps are left off until there is room */
+    for (;;) {
+      el.innerHTML = '<div class="ws-page' + (key ? ' ws-key' : '') + '" style="--acc:' + th.acc + ';--face:' + th.font.replace(/"/g, "'") + '">' + (th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : '') +
+        head(sh, chId, th, key) + '<div class="ws-body">' + band(sh) + (sh.task ? task(sh.task, key) : '') + '</div>' + foot(sh, th, key, sh.groups.length, code) + '</div>';
+      page = $('.ws-page', el); bd = $('.ws-body', page);
+      if (!sh.steps || sh.steps.length < 2 || room(bd) >= ROOM) break;
+      sh.steps.pop();
+    }
+    var n = 1, drawn = [], at = [];
     sh.groups.forEach(function (g, gi) {
       var sec = document.createElement('section');
       sec.className = 'ws-sec';
