@@ -354,7 +354,7 @@
   }
   /* a sheet is drawn at full size (816 by 1056, US Letter at 96 per inch) and scaled to fit the screen */
   function fit() { $$('.ws-sheet').forEach(function (s) { s.style.setProperty('--s', s.clientWidth / 816); }); }
-  /* the tool box's Reading passages (passages.js) print with the same look */
+  /* the tool box's Reading passages (library.js) print with the same look */
   S.fit = fit;
   S.fonts = fonts;
   window.addEventListener('resize', fit);

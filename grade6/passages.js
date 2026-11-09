@@ -1,4 +1,4 @@
-/* Grade 6 reading passages for the tool box (assets/engine/passages.js). Written for this site. */
+/* Grade 6 reading passages for the tool box (assets/engine/library.js). Written for this site. */
 (function () {
   'use strict';
   var P = Atlas.library, D = P.draw;

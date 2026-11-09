@@ -1,4 +1,4 @@
-/* Language Atlas tool box: Reading passages (passages.js). The page itself is a worksheet page (sheets.css: .ws-sheet, .ws-page,
+/* Language Atlas tool box: Reading passages (library.js). The page itself is a worksheet page (sheets.css: .ws-sheet, .ws-page,
    the theme's accent --acc and display face --face, printing); this adds the passage's own layout. Colours come from the theme. */
 
 /* ---------- the library ---------- */
@@ -45,7 +45,7 @@
 .ps-deck{margin-top:3px!important;font-size:15px;font-style:italic;color:var(--ink2)}
 .ps-hero{margin:10px 0 2px}
 .ps-hero figcaption,.ps-fig figcaption{font-size:11.5px;line-height:1.35;color:var(--ink2);font-style:italic;margin-top:3px}
-.ps-text{flex:1;min-height:0;overflow:hidden;columns:2;column-gap:30px;column-fill:auto;column-rule:1px solid var(--line);padding-top:8px;font-size:13.6px;line-height:1.46}
+.ps-text{flex:1;min-height:0;overflow:hidden;columns:2;column-gap:30px;column-fill:auto;column-rule:1px solid var(--line);padding-top:8px;font-size:calc(13.6px * var(--z, 1));line-height:1.46}
 .ps-text p{margin:0 0 6px;hyphens:manual}
 .ps-text:not(.ps-plain) > p:first-child::first-letter{float:left;font-family:var(--face);font-weight:700;font-size:46px;line-height:.9;padding:3px 6px 0 0;color:var(--acc)}
 .ps-text h3{margin:8px 0 2px;font-family:var(--face);font-size:16px;line-height:1.2;color:var(--acc);break-after:avoid}
@@ -67,17 +67,17 @@
 /* the back: questions */
 .ps-qs{flex:1;min-height:0;overflow:hidden;align-content:start;padding-top:6px}
 .ps-qs{row-gap:0}
-.ps-q{padding:8px 0 9px 28px}
-.ps-q .ws-qt{font-size:14px;line-height:1.35}
+.ps-q{padding:calc(8px * var(--z, 1)) 0 calc(9px * var(--z, 1)) 28px}
+.ps-q .ws-qt{font-size:calc(14px * var(--z, 1));line-height:1.35}
 .ps-opts{flex-direction:column;align-items:flex-start;gap:1px;margin-top:4px}
-.ps-opts .ws-opt{font-weight:400;padding:0 10px 0 3px;font-size:13.6px;line-height:1.32}
-.ps-q .ws-order{gap:2px;margin-top:4px;font-size:13.6px}
+.ps-opts .ws-opt{font-weight:400;padding:0 10px 0 3px;font-size:calc(13.6px * var(--z, 1));line-height:1.32}
+.ps-q .ws-order{gap:2px;margin-top:4px;font-size:calc(13.6px * var(--z, 1))}
 .ps-q .ws-order .ws-box{width:21px;min-width:21px;height:21px}
-.ps-q .ws-lines{background:repeating-linear-gradient(transparent 0 27px,var(--line2) 27px 28px)}
+.ps-q .ws-lines{height:calc(var(--n) * 28px * var(--z, 1));background:repeating-linear-gradient(transparent 0 calc(28px * var(--z, 1) - 1px),var(--line2) calc(28px * var(--z, 1) - 1px) calc(28px * var(--z, 1)))}
 .ps-opts .ws-opt b{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border:1.2px solid var(--ink2);border-radius:50%;font-size:11px}
-.ps-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px;table-layout:fixed}
+.ps-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:calc(13px * var(--z, 1));table-layout:fixed}
 .ps-table th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);padding:3px 8px;border-bottom:1.3px solid var(--ink)}
-.ps-table td{border:1px solid var(--line2);padding:5px 8px;vertical-align:top;height:32px;line-height:1.3}
+.ps-table td{border:1px solid var(--line2);padding:5px 8px;vertical-align:top;height:calc(32px * var(--z, 1));line-height:1.3}
 .ps-table td.ps-fill{background:#fff}
 
 /* the answer key */

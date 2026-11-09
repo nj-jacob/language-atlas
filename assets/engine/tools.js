@@ -5,7 +5,7 @@
      #tools/read     Reading window (reader.js adds it)   #tools/maps   Text maps (textmaps.js)
      #tools/shades   Word shades         #tools/web      Word web (meaning.js adds both)
      #tools/paragraph  Paragraph builder #tools/letters  Letter pad (writetools.js adds both)
-     #tools/passages   Reading passages, Grades 4 to 8 (passages.js)
+     #tools/passages   Reading passages, Grades 4 to 8 (library.js)
    A tool fills the screen under a slim bar (back to all tools, the tool's name, Undo, Tools). The Tools menu shows the tools on
    the same shelves, one shelf per part of Language. A tool opened from the site's own Toolbox page (Math Atlas tools.html, which
    sets atlas:toolbox in this tab's session storage) goes back there instead; A.toolkit.shelves lets that page draw these shelves. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder):

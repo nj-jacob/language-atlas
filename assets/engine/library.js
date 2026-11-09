@@ -5,7 +5,7 @@
    Nothing is marked on screen: the child answers on paper and the grown-up marks with the key.
 
    The passages are written for this site, about 100 for each grade, on topics from every subject. A grade's passages are in
-   gradeN/library.js, loaded only when the tool opens:
+   gradeN/passages.js, loaded only when the tool opens:
      Atlas.library.add({ id, subject, form, title, deck, hero: { art, cap }, body: [...], words: [[word, meaning], ...], qs: [...] })
    id      'g5-potholes': the grade, then a short name. The sheet number is G5-P01 (the order in the file).
    subject one of SUBJECTS below. form: the text form (Report, Explanation, Diary, Letter to the editor ...).
@@ -79,7 +79,7 @@
   P.load = function () {
     loading = loading || new Promise(function (ok) {
       var s = document.createElement('script');
-      s.src = 'library.js';
+      s.src = 'passages.js';
       s.onload = ok;
       s.onerror = ok;
       document.head.appendChild(s);
@@ -114,7 +114,7 @@
   function question(q, i) {
     var h = '<p class="ws-qt">' + q.q + '</p>';
     if (q.k === 'choice') h += '<div class="ws-opts ps-opts">' + q.opts.map(function (o, j) { return '<span class="ws-opt"><b>' + LETTERS[j] + '</b> ' + o + '</span>'; }).join('') + '</div>';
-    if (q.k === 'lines') h += '<div class="ws-lines" style="height:' + q.n * 28 + 'px"></div>';
+    if (q.k === 'lines') h += '<div class="ws-lines" style="--n:' + q.n + '"></div>';
     if (q.k === 'table') {
       h += '<table class="ps-table"><thead><tr>' + q.cols.map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr></thead><tbody>' + q.rows.map(function (r) {
         return '<tr>' + r.map(function (c) { return c === null ? '<td class="ps-fill"></td>' : '<td>' + c + '</td>'; }).join('') + '</tr>';
@@ -134,7 +134,7 @@
     if (q.k === 'order') return 'From the top: ' + q.show.map(function (k) { return '<b>' + (k + 1) + '</b>'; }).join(', ');
     if (q.k === 'table') {
       var out = [];
-      q.rows.forEach(function (r, ri) { r.forEach(function (c, ci) { if (c === null) out.push('<i>' + q.cols[ci] + ':</i> ' + q.a[ri][ci]); }); });
+      q.rows.forEach(function (r, ri) { var given = r.filter(function (c) { return c !== null; })[0]; r.forEach(function (c, ci) { if (c === null) out.push('<i>' + (given || q.cols[ci]) + ' &rarr;</i> ' + q.a[ri][ci]); }); });
       return out.join('<br>');
     }
     return q.a + (q.look ? '<span class="ps-look"><b>Look for</b> ' + q.look + '</span>' : '');
@@ -155,15 +155,21 @@
   P.codes = codes;
   function themeOf(p) { return S.themeById(P.subject(p.subject)[2]); }
 
-  /* Draw one page of a passage ('front', 'back' or 'key') into el, a .ws-sheet box. Returns whether anything runs off the page. */
+  /* Draw one page of a passage ('front', 'back' or 'key') into el, a .ws-sheet box. When the text does not quite fit (a font
+     that has not loaded is wider), it is set a little smaller (--z), down to 88%. Returns whether anything still runs off the page. */
+  var ZOOM = [1, 0.97, 0.94, 0.91, 0.88];
   P.render = function (el, p, side) {
     var th = themeOf(p);
     el.innerHTML = (side === 'front' ? front : side === 'back' ? back : key)(p, th);
-    var pg = el.firstChild;
+    var pg = el.firstChild, box = $(side === 'front' ? '.ps-text' : side === 'back' ? '.ps-qs' : '.ps-guide', pg), over;
     pg.style.setProperty('--acc', th.acc);
     pg.style.setProperty('--face', th.font);
-    var box = $(side === 'front' ? '.ps-text' : side === 'back' ? '.ps-qs' : '.ps-guide', pg);
-    return { over: box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1 };
+    for (var i = 0; i < ZOOM.length; i++) {
+      pg.style.setProperty('--z', ZOOM[i]);
+      over = box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1;
+      if (!over) break;
+    }
+    return { over: over, z: ZOOM[i] || ZOOM[ZOOM.length - 1] };
   };
 
   /* ---------- the tool: the library, and one passage ---------- */

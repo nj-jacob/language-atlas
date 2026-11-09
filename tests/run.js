@@ -39,7 +39,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'passages.js', 'engine.css', 'sheets.css', 'passages.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'engine.css', 'sheets.css', 'library.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -663,8 +663,8 @@ async function checkTools(browser, base, g) {
   /* Toolbox (#tools) lists every tool; a tool goes back to that list, or to the site's Toolbox page when it was opened from there */
   await page.click('.tb-back');
   await page.waitForSelector('.tb-all');
-  const all = await page.evaluate(() => ({ cards: document.querySelectorAll('.tb-all .tb-card').length, tools: Atlas.toolkit.tools.length }));
-  if (all.cards !== all.tools) fail(where, 'the Toolbox page shows ' + all.cards + ' of the ' + all.tools + ' tools');
+  const all = await page.evaluate(() => ({ cards: document.querySelectorAll('.tb-all .tb-card').length, tools: Atlas.toolkit.tools.filter(t => !(t.from > Atlas.grade)).length }));
+  if (all.cards !== all.tools) fail(where, 'the Toolbox page shows ' + all.cards + ' of the ' + all.tools + ' tools for this grade');
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) { await page.setViewportSize(vp); await screenCheck(page, where, 'Toolbox page at ' + vp.width + ' px'); }
   await page.click('.tb-all .tb-card[href="#tools/sentences"]');
   await page.waitForSelector('.tb-bar');
@@ -1199,23 +1199,23 @@ async function checkSheets(browser, base, g) {
   return count;
 }
 
-/* ---------- Reading passages (passages.js, gradeN/library.js) ---------- */
+/* ---------- Reading passages (library.js, gradeN/passages.js) ---------- */
 const PASSAGE_WORDS = { 4: [250, 420], 5: [270, 450], 6: [290, 480], 7: [310, 520], 8: [320, 560] };
 async function checkPassages(browser, base, g) {
   const { ctx, page, errs } = await newPage(browser, base);
   const where = 'grade ' + g + ' Reading passages';
-  const has = fs.existsSync(path.join(ROOT, 'grade' + g, 'library.js'));
+  const has = fs.existsSync(path.join(ROOT, 'grade' + g, 'passages.js'));
   await page.goto(base + '/grade' + g + '/index.html#tools');
   await page.waitForSelector('.tb-card');
   const card = await page.locator('.tb-card[href="#tools/passages"]').count();
   if (g < 4) {
     if (card) fail(where, 'the tool shows before Grade 4');
-    if (has) fail(where, 'grade' + g + '/library.js exists, but the tool starts in Grade 4');
+    if (has) fail(where, 'grade' + g + '/passages.js exists, but the tool starts in Grade 4');
     await ctx.close();
     return 0;
   }
   if (!card) fail(where, 'the tool is not on the Toolbox page');
-  if (!has) { fail(where, 'grade' + g + '/library.js is missing'); await ctx.close(); return 0; }
+  if (!has) { fail(where, 'grade' + g + '/passages.js is missing'); await ctx.close(); return 0; }
   await page.goto(base + '/grade' + g + '/index.html#tools/passages');
   await page.waitForSelector('.ps-card');
   for (const p of await page.evaluate(([g, band]) => {
@@ -1315,7 +1315,7 @@ async function checkPassages(browser, base, g) {
         (problems.length - before ? (problems.length - before) + ' problems.' : 'All good.'));
     } catch (e) { fail('grade ' + g, 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { const w = await checkSheets(browser, url, g); if (w) log('Grade ' + g + ' worksheets: ' + w.sheets + ' sheets and their answer keys drawn, ' + w.questions + ' questions checked.'); } catch (e) { fail('grade ' + g + ' worksheets', 'the check itself stopped: ' + e.message.split('\n')[0]); }
-    try { const n = await checkPassages(browser, url, g); if (n) log('Grade ' + g + ' tool box: ' + n + ' reading passages drawn front, back and answer key, and checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Reading passages', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { const n = await checkPassages(browser, url, g); if (n) log('Grade ' + g + ' tool box: ' + n + ' reading passage(s) drawn front, back and answer key, and checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Reading passages', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkTools(browser, url, g); log('Grade ' + g + ' tool box: Word builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' tool box', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSounds(browser, url, g); log('Grade ' + g + ' tool box: Sound board checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sound board', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkSentences(browser, url, g); log('Grade ' + g + ' tool box: Sentence builder checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Sentence builder', 'the check itself stopped: ' + e.message.split('\n')[0]); }
