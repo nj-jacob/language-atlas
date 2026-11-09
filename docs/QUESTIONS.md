@@ -113,10 +113,6 @@ Open-ended writing is never auto-marked. It goes to the grown-up with a simple r
 
 Every question here also prints on a worksheet (see "Printable worksheets" in `ARCHITECTURE.md`), so write questions that make sense on paper too: say "Tap" or "Pick" (paper says "Circle"), and keep a question's passage in its `fig` or `pic` (`Atlas.texts.show`), so a sheet can print it once at the top. A grade's `gradeN/sheets/<chapter>.js` adds each idea's "I can" line (`goal`) and its Think questions: questions from this kit (with `meta.k` and an answer check), or open questions `{ q, fig, lines: 3, key: 'a good answer' }` for the grown-up to mark.
 
-## Worksheets
-
-Every question here also prints on a worksheet (see "Printable worksheets" in `ARCHITECTURE.md`), so write questions that make sense on paper too: say "Tap" or "Pick" (paper says "Circle"), and keep a question's passage in its `fig` or `pic` (`Atlas.texts.show`), so a sheet can print it once at the top. A grade's `gradeN/sheets/<chapter>.js` adds each idea's "I can" line (`goal`) and its Think questions: questions from this kit (with `meta.k` and an answer check), or open questions `{ q, fig, lines: 3, key: 'a good answer' }` for the grown-up to mark.
-
 ## Activities with a grown-up
 
 Some expectations cannot be marked by a computer: speaking, listening, reading aloud, drafting, handwriting, presenting, and talking about identity and culture. Add them to the chapter as `tasks`:
