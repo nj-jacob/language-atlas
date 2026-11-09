@@ -30,3 +30,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-snow-fort.jpg` | A snow fort in a front yard | Andrew Wiseman | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Snow_Fort_2009.jpg |
 | `g4-terry-fox.jpg` | The Terry Fox statue on Wellington Street, Ottawa | Robert Linsdell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Terry_Fox_Statue,_Wellington_St,_Ottawa_(491753)_(9447495349).jpg |
 | `g4-chickadee-feeder.jpg` | A black-capped chickadee at a bird feeder, Guelph, Ontario | Patty O'Hearn Kickham | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chickadee_at_the_big_feeder_(295601964).jpg |
+| `g4-bike-gears.jpg` | Bicycle gears and chain | 5 Cent Dollar | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bike_gears_and_chain.jpg |
+| `g4-prism.jpg` | Light spreading into colours through a prism | Kelvinsong | CC0 | https://commons.wikimedia.org/wiki/File:Prism_flat_rainbow_(cropped).jpg |
+| `g4-monarchs.jpg` | Monarch butterflies roosting during migration | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Monarch_butterflies_roosting_(51549997038).jpg |
+| `g4-zebra-mussels.jpg` | Zebra mussels | U.S. Geological Survey | Public domain | https://commons.wikimedia.org/wiki/File:Dreissena_polymorpha3.jpg |
+| `g4-bumblebee.jpg` | A bumblebee collecting pollen on a dahlia | Marco Nürnberger | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bumblebee_collecting_pollen_on_a_red_Dahlia_flower_in_Stadtpark_Nürnberg.jpg |
+| `g4-big-nickel.jpg` | The Big Nickel, Sudbury, Ontario | Jason Zhang | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Big_Nickel_at_Sudbury.jpg |
+| `g4-great-wall.jpg` | The Great Wall of China at Badaling | CEphoto, Uwe Aranas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Badaling_China_Great-Wall-of-China-01.jpg |
+| `g4-chichen-itza.jpg` | El Castillo pyramid, Chichén Itzá, Mexico | Daniel Schwen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg |
+| `g4-norse-sculpture.jpg` | Sculpture of Norse travellers above L'Anse aux Meadows, Newfoundland and Labrador | Gordon Leggett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:2022-08-27_04_Silhouette_sculpture_of_Norsemen_above_L'Anse_aux_Meadows,_NFL_CAN.jpg |
+| `g4-birchbark-canoe.jpg` | The bow of a birchbark canoe | Thomas Quine | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Birchbark_canoe_(41280266061).jpg |
+| `g4-iqaluit.jpg` | Iqaluit, Nunavut, on Frobisher Bay | Quintin Soloviev | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Iqaluit,_Nunavut.jpg |
+| `g4-hand-washing.jpg` | Washing hands with soap | Beat Ruest | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Washing_hands_with_soap_(1).jpg |
+| `g4-shadow-puppet.jpg` | A Thai shadow puppet performer | Steve Evans | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Thai_Shadow_Puppets_(2077443428).jpg |
+| `g4-wind-turbines.jpg` | Wind turbines in Bruce County, Ontario | Magnolia677 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Wind_turbines_in_Bruce_County,_Ontario,_Canada.jpg |
+| `g4-caribou.jpg` | Caribou migrating across the tundra, Alaska | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Caribou_migration_(48750344298).jpg |
+| `g4-grain-elevator.jpg` | Grain elevator in Saskatchewan | Janusz Sobolewski | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Grain_elevator_in_Saskatchewan.jpg |
+| `g4-fruit-vegetables.jpg` | Sliced vegetables and fruit on plates | TudorTulok | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Vegetables_and_Fruits_served_sliced_on_various_plates.jpg |
+| `g4-zoetrope.jpg` | A zoetrope in a museum | Auckland Museum | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Zoetrope_(AM_2001.6.1-1).jpg |
+| `g4-science-fair.jpg` | A school science fair | U.S. Navy | Public domain | https://commons.wikimedia.org/wiki/File:Science_fair_at_Campostella_Elementary_School_DVIDS360966.jpg |
+| `g4-outdoor-rink.jpg` | An outdoor skating rink in Fort Simpson | Fort Simpson Chamber of Commerce | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Outdoor_Skating_Rink_(6455055263).jpg |

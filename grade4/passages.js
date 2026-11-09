@@ -1015,4 +1015,994 @@
         a: 'It helps birds find food in winter, and you can watch and learn about them.', look: 'the purpose of the procedure in the child’s own words' }
     ]
   });
+
+  P.add({
+    id: 'g4-gears', subject: 'science', form: 'Explanation',
+    title: 'Teeth That Turn',
+    deck: 'How gears change speed, force and direction',
+    hero: {
+      photo: 'g4-bike-gears.jpg', credit: 'Photo: 5 Cent Dollar, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The gears and chain on a bicycle. The rider shifts the chain to a bigger or smaller gear.'
+    },
+    body: [
+      'Look inside a bicycle, a clock or a hand-crank egg beater, and you will find wheels with teeth around their edges. These wheels are called <b>gears</b>. When the teeth of two gears fit together, turning one gear makes the other one turn too.',
+      { h: 'Opposite directions' },
+      'When two gears touch, they turn in opposite directions. If the first gear turns clockwise, the second turns counterclockwise. Add a third gear, and it turns the same way as the first. Engineers use this to make machine parts spin exactly the way they need.',
+      { h: 'Big and small' },
+      'Gears can also change speed. Picture a big gear with 40 teeth turning a small gear with 10 teeth. Each time the big gear turns once, 40 teeth pass by. The small gear must turn four times to match them. So a big gear turning a small gear makes it spin faster. It works the other way too. A small gear turning a big gear makes it turn more slowly, but with more <b>force</b>.',
+      { fig: '<circle class="k" cx="90" cy="76" r="52"/><circle class="t" cx="90" cy="76" r="14"/><circle class="dot" cx="90" cy="76" r="4"/>' +
+          '<circle class="k" cx="166" cy="76" r="15"/><circle class="dot" cx="166" cy="76" r="3"/>' +
+          '<path class="k" d="' + Array.apply(null, Array(40)).map(function (_, i) { var a = i * Math.PI / 20; return 'M' + (90 + 52 * Math.cos(a)).toFixed(1) + ' ' + (76 + 52 * Math.sin(a)).toFixed(1) + ' L' + (90 + 58 * Math.cos(a)).toFixed(1) + ' ' + (76 + 58 * Math.sin(a)).toFixed(1); }).join(' ') +
+            Array.apply(null, Array(10)).map(function (_, i) { var a = i * Math.PI / 5 + 0.3; return ' M' + (166 + 15 * Math.cos(a)).toFixed(1) + ' ' + (76 + 15 * Math.sin(a)).toFixed(1) + ' L' + (166 + 21 * Math.cos(a)).toFixed(1) + ' ' + (76 + 21 * Math.sin(a)).toFixed(1); }).join('') + '"/>' +
+          '<path class="a" d="M52 22 A66 66 0 0 1 124 18"/>' + D.arrow(116, 14, 126, 20, 'a') + '<path class="a" d="M190 56 A30 30 0 0 0 146 54"/>' + D.arrow(152, 50, 144, 57, 'a') +
+          '<text class="lb" x="90" y="152" text-anchor="middle">40 teeth</text><text class="lb" x="166" y="118" text-anchor="middle">10 teeth</text>' +
+          '<text class="n" x="292" y="72" text-anchor="end">1 turn of the</text><text class="n" x="292" y="86" text-anchor="end">big gear = 4 turns</text><text class="n" x="292" y="100" text-anchor="end">of the small gear</text>',
+        tall: 160, cap: 'The gears turn in opposite directions. The small gear spins four times faster.' },
+      { h: 'Gears on a bike' },
+      'On a bicycle, a chain connects the gear at the pedals to a set of gears on the back wheel. Riding up a steep hill, you shift to a big gear at the back. Each push on the pedals turns the wheel only a little, but it is easier. On a flat road, you shift to a small gear at the back. Pedalling is harder, but each turn carries you farther, so you go faster.',
+      { box: 'Did you know?', text: 'Old clocks have dozens of gears inside. The gears are chosen so that the minute hand turns exactly 12 times while the hour hand turns once.' },
+      'Gears let a machine trade speed for force, or force for speed. That is why they are in cars, drills, blenders and wind-up toys.'
+    ],
+    guide: { before: 'If you have a bike, turn it upside down and turn the pedals slowly while the child watches the gears. Teach <b>gear</b> and <b>force</b>. Count the teeth in the diagram together.',
+      after: 'Which gear would you use to ride up a big hill, and why? Where else at home do you think gears are hiding?' },
+    words: [['gears', 'wheels with teeth that fit together and turn each other'], ['force', 'a push or a pull']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Bikes have chains.', 'Gears are toothed wheels that change the speed, force and direction of movement.', 'Clocks are old.', 'Hills are steep.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how many times does the small gear turn when the big gear turns once?',
+        opts: ['1', '4', '10', '40'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Gear A turns clockwise. Gear B touches it. Which way does B turn?',
+        opts: ['clockwise', 'counterclockwise', 'it does not turn'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart about bike gears.', cols: ['Where you ride', 'Gear at the back', 'What it feels like'],
+        rows: [['up a steep hill', null, null], ['on a flat road', 'a small gear', null]],
+        a: [[null, 'a big gear', 'easier to pedal, but slower'], [null, null, 'harder to pedal, but faster']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Counter</b>clockwise means the opposite way to a clock. What does <b>counter-</b> mean?',
+        opts: ['against or opposite', 'with', 'twice'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Where would you look to find out how gears are used on bikes?',
+        opts: ['under “Gears on a bike”', 'under “Opposite directions”', 'in Words to know'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'A big gear with 30 teeth turns a small gear with 10 teeth. How many times does the small gear turn for one turn of the big one? Explain.',
+        a: 'Three times. Thirty teeth pass by when the big gear turns once, and the small gear has 10 teeth, so it must turn 3 times.', look: 'the answer 3 with reasoning about matching teeth' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'Write one sentence that sums up what gears do.',
+        a: 'Gears trade speed for force, or force for speed, and can change the direction something turns.', look: 'a single clear summary of the main idea' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-rainbows', subject: 'science', form: 'Explanation',
+    title: 'Hidden Colours',
+    deck: 'How a prism, a raindrop and sunlight make a rainbow',
+    hero: {
+      photo: 'g4-prism.jpg', credit: 'Photo: Kelvinsong, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Light passes through a glass prism and spreads into a band of colours.'
+    },
+    body: [
+      'Sunlight looks white, or almost no colour at all. But hidden inside it is every colour of the rainbow. In 1666, the scientist Isaac Newton showed this with a simple wedge of glass called a <b>prism</b>.',
+      { h: 'Light bends' },
+      'Light travels in straight lines, but when it passes from air into glass or water, it changes speed and bends. Each colour bends by a slightly different amount. Violet light bends the most, and red light bends the least. So when white light goes through a prism, the colours spread apart into a band called a <b>spectrum</b>: red, orange, yellow, green, blue and violet.',
+      { fig: '<path class="k" d="M110 130 L160 30 L210 130 Z"/><path class="k" d="M10 92 L134 80"/>' +
+          '<path class="a" d="M186 88 L290 64"/><path class="k" d="M186 92 L290 82"/><path class="t" d="M186 96 L290 100"/><path class="d" d="M186 100 L290 118"/>' +
+          '<text class="n" x="10" y="76">white light</text><text class="n" x="292" y="60" text-anchor="end">red</text><text class="n" x="292" y="130" text-anchor="end">violet</text>' +
+          '<text class="n" x="160" y="146" text-anchor="middle">prism</text>',
+        tall: 150, cap: 'Each colour bends by a different amount, so white light spreads into a spectrum.' },
+      { h: 'A sky full of prisms' },
+      'A rainbow forms the same way, but with millions of raindrops instead of one prism. Sunlight enters each drop, bends, bounces off the back of the drop and bends again as it comes out. The colours spread apart, and we see them as a curved band across the sky.',
+      { box: 'Rainbow tips', text: 'To see a rainbow, stand with the sun behind you and the rain in front of you. Rainbows are most common in the late afternoon after a summer shower, when the sun is low.' },
+      { h: 'Make your own' },
+      'You can make a rainbow on a sunny day. Fill a clear glass with water and set it on a sunny windowsill, with a sheet of white paper on the floor below. Move the paper until a small spectrum appears. You can also spray a fine mist from a garden hose with your back to the sun.',
+      'Every rainbow you see is sunlight showing its hidden colours. If you are lucky, you may spot a second, fainter rainbow outside the first one. Look closely: its colours are in the opposite order.'
+    ],
+    guide: { before: 'If you have a glass of water or a CD, make a small spectrum on the wall before reading. Teach <b>prism</b> and <b>spectrum</b>. Trace the light through the prism diagram with a finger.',
+      after: 'Why do you think rainbows always appear on the side of the sky away from the sun? Plan a test you could do with a hose.' },
+    words: [['prism', 'a clear wedge of glass that bends light'], ['spectrum', 'the band of colours that white light spreads into']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Isaac Newton lived long ago.', 'White light holds all the colours, and bending it in a prism or raindrop spreads them out.', 'Rainbows happen in summer.', 'Glass is clear.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which colour bends the most?',
+        opts: ['red', 'green', 'violet'], a: 2 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Where should the sun be when you look for a rainbow?',
+        opts: ['in front of you', 'behind you', 'right above you'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps to show how a raindrop makes a rainbow.',
+        items: ['Sunlight enters the raindrop.', 'The light bends.', 'It bounces off the back of the drop.', 'It bends again as it comes out, and the colours spread.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Compare a prism and a rainbow.', cols: ['', 'Prism', 'Rainbow'],
+        rows: [['What bends the light', 'a wedge of glass', null], ['How many', null, 'millions']],
+        a: [[null, null, 'raindrops'], [null, 'one', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>rain</b>bow is a bow in the rain. Which word is also made of two words?',
+        opts: ['sunlight', 'violet', 'prism'], a: 0 },
+      { k: 'lines', code: 'C1.2', n: 2, q: 'Why does the text include the part “Make your own”?',
+        a: 'So readers can try the science themselves and see how water splits sunlight into colours.', look: 'the purpose of a hands-on section' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'A rainbow appears after a storm in the late afternoon. Use the text to explain why the time of day matters.',
+        a: 'In the late afternoon the sun is low, so it can be behind you while the rain is in front of you, which is when you see a rainbow.', look: 'connects the low sun to the position needed to see a rainbow' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-monarchs', subject: 'science', form: 'Report',
+    title: 'The Great Monarch Journey',
+    deck: 'How a butterfly the weight of a paper clip flies to Mexico',
+    hero: {
+      photo: 'g4-monarchs.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Monarch butterflies rest together in a tree during their fall migration.'
+    },
+    body: [
+      'In late summer, orange and black butterflies gather along the north shore of Lake Erie, at places like Point Pelee. They are monarchs, and they are about to begin one of the longest journeys of any insect. Some will fly more than 4000 kilometres to the mountains of central Mexico.',
+      { h: 'One plant, one caterpillar' },
+      'A monarch starts life as a tiny egg on a milkweed plant. When the caterpillar hatches, it eats only milkweed leaves. Milkweed contains a poison that does not hurt the caterpillar, but it makes the caterpillar and the butterfly taste bad to birds. After about two weeks, the caterpillar forms a green case called a chrysalis. Inside, its body changes completely. This change is called <b>metamorphosis</b>.',
+      { fig: '<circle class="t" cx="150" cy="80" r="56"/>' +
+          '<circle class="k" cx="150" cy="22" r="5"/><path class="k" d="M196 70 q8 -10 16 0 q8 10 16 0 q8 -10 16 0" transform="translate(-6 8)"/>' +
+          '<path class="k" d="M150 122 q-8 6 -8 16 q0 10 8 14 q8 -4 8 -14 q0 -10 -8 -16 Z"/><path class="k" d="M96 74 q-16 -18 -26 -4 q4 14 26 8 q-20 4 -22 18 q10 8 22 -10 Z M96 76 q16 -18 26 -4 q-4 14 -26 8"/>' +
+          D.arrow(176, 30, 200, 52, 'a') + D.arrow(200, 112, 176, 132, 'a') + D.arrow(124, 132, 104, 108, 'a') + D.arrow(104, 50, 124, 28, 'a') +
+          '<text class="n" x="162" y="16">egg</text><text class="n" x="248" y="66" text-anchor="end">caterpillar</text><text class="n" x="166" y="150">chrysalis</text><text class="n" x="20" y="116">butterfly</text>',
+        tall: 156, cap: 'The life cycle of a monarch butterfly.' },
+      { h: 'The super generation' },
+      'Most monarchs live only two to six weeks. But the butterflies that hatch at the end of summer are different. They live for up to eight months. These are the ones that fly south. They ride the wind and stop to sip nectar from flowers. In Mexico, millions of them cling together in fir trees and wait out the winter. In spring, they fly north, lay eggs on milkweed and die. Their great-grandchildren return to Canada.',
+      { box: 'Did you know?', text: 'No monarch that arrives in Mexico has ever been there before. Scientists are still studying how they find the same forests every year.' },
+      'Monarchs are now an <b>endangered</b> species in Canada, because milkweed and wild flowers are disappearing. Planting milkweed in a garden or schoolyard gives them a place to lay their eggs. Scientists also ask volunteers to count monarchs and report what they see, so they can track how the butterflies are doing from year to year.'
+    ],
+    guide: { before: 'Find southern Ontario and central Mexico on a map and estimate the distance. Teach <b>metamorphosis</b> and <b>endangered</b>. Trace the life cycle diagram in order.',
+      after: 'How could your school or family help monarchs? Would you plant milkweed? Where?' },
+    words: [['metamorphosis', 'a complete change of body shape as an animal grows'], ['endangered', 'at risk of dying out']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is this text mostly about?',
+        opts: ['Point Pelee', 'the life and long migration of monarch butterflies', 'how birds eat insects', 'fir trees in Mexico'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the stages of the life cycle.',
+        items: ['egg', 'caterpillar', 'chrysalis', 'butterfly'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do birds avoid eating monarchs?',
+        opts: ['Monarchs are too fast.', 'Milkweed makes monarchs taste bad.', 'Monarchs hide in trees.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Compare the two kinds of monarchs.', cols: ['', 'Most monarchs', 'The super generation'],
+        rows: [['How long they live', null, null], ['What they do', 'live and lay eggs in summer', null]],
+        a: [[null, 'two to six weeks', 'up to eight months'], [null, null, 'fly to Mexico for the winter']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Meta</b>morphosis means a change of shape. Which word means “to change into something else”?',
+        opts: ['transform', 'transport', 'translate'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the text have a “Did you know?” box?',
+        opts: ['to share a surprising extra fact', 'to give the main idea', 'to list the steps'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why are monarchs endangered? What can people do to help? Use the text.',
+        a: 'Milkweed and wild flowers are disappearing, so monarchs have fewer places to lay eggs and feed. People can plant milkweed in gardens and schoolyards.', look: 'the cause (loss of milkweed) and a solution from the text' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'The text says the monarch is “the weight of a paper clip.” What does this help you understand about the journey?',
+        a: 'It shows how tiny and light the monarch is, so flying 4000 kilometres is amazing.', look: 'links the small weight to how impressive the journey is' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-zebra-mussels', subject: 'science', form: 'Report',
+    title: 'Small Shells, Big Trouble',
+    deck: 'How a tiny invader changed the Great Lakes',
+    hero: {
+      photo: 'g4-zebra-mussels.jpg', credit: 'Photo: U.S. Geological Survey, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A zebra mussel up close. Its striped shell is about the size of a fingernail.'
+    },
+    body: [
+      'In 1988, scientists found a strange little shellfish in Lake St. Clair, between Lake Huron and Lake Erie. It had a striped shell, about the size of a fingernail. It was a zebra mussel, and it did not belong there.',
+      { h: 'A stowaway' },
+      'Zebra mussels come from lakes and rivers near the Black Sea and the Caspian Sea, far away in Europe and Asia. Scientists think they arrived in the water carried by large ships. A ship takes water into tanks to keep it steady, then pumps the water out at its next stop. Baby mussels, too small to see, rode across the ocean in that water.',
+      { fig: '<path class="k" d="M20 70 H120 L110 92 H30 Z M60 70 V54 H84 V70"/><rect class="h" x="40" y="76" width="60" height="10"/>' + D.ripple(4, 136, 98) +
+          D.arrow(140, 70, 196, 70, 'a') +
+          '<path class="k" d="M190 70 H290 L280 92 H200 Z M230 70 V54 H254 V70"/>' + D.ripple(174, 296, 98) + D.arrow(240, 92, 240, 116, 'a') + '<path class="d" d="M232 120 h16"/>' +
+          '<text class="n" x="70" y="122" text-anchor="middle">fills its tanks</text><text class="n" x="70" y="134" text-anchor="middle">in Europe</text>' +
+          '<text class="n" x="246" y="136" text-anchor="middle">empties them in</text><text class="n" x="246" y="148" text-anchor="middle">the Great Lakes</text>',
+        tall: 152, cap: 'Baby mussels can ride across the ocean in a ship’s tanks.' },
+      { h: 'Spreading fast' },
+      'With no natural enemies in the Great Lakes, zebra mussels spread quickly. One female can release up to a million eggs in a year. The mussels stick to anything hard: rocks, docks, boats and even other animals. They crowd so thickly inside water pipes that towns and power plants have to clean them out at great cost.',
+      { h: 'Changing the lake' },
+      'Each mussel can <b>filter</b> about a litre of water a day, eating the tiny living things in it. The water becomes clearer, but the fish that eat those tiny living things go hungry. A plant or animal that arrives in a new place and harms it is called an <b>invasive species</b>.',
+      { box: 'Clean, drain, dry', text: 'Boaters can stop invaders from spreading. Clean plants and mud off the boat, drain all the water, and let everything dry before going to another lake.' },
+      'Once an invasive species is settled, it is almost impossible to remove. The best plan is to stop it from arriving in the first place. Today, ships must change the water in their tanks out at sea, far from shore, before they enter the Great Lakes.'
+    ],
+    guide: { before: 'Find Lake St. Clair on a map of the Great Lakes. Teach <b>invasive species</b> and <b>stowaway</b>. Follow the ship diagram from left to right.',
+      after: 'Clearer water sounds good. Why can it be a problem? What other invasive species have you heard of?' },
+    words: [['invasive species', 'a plant or animal that spreads in a new place and harms it'], ['filter', 'to clean a liquid by passing it through something that traps bits']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Zebra mussels have stripes.', 'Zebra mussels arrived by accident and have harmed the Great Lakes.', 'Ships are large.', 'Boaters like to fish.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How did baby mussels cross the ocean?',
+        opts: ['by swimming', 'in water inside a ship’s tanks', 'on birds'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>stowaway</b> hides on a ship to travel. Why is the heading “A stowaway”?',
+        opts: ['The mussels travelled hidden in a ship.', 'The mussels are pirates.', 'The ship was lost.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['Mussels crowd inside water pipes.', null], ['Mussels filter tiny living things from the water.', null], [null, 'Mussels spread quickly.']],
+        a: [[null, 'Towns and power plants must clean them out at great cost.'], [null, 'Fish that eat those tiny things go hungry.'], ['There are no natural enemies, and each female lays many eggs.', null]] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do boaters drain all the water from their boats?',
+        opts: ['to make the boat lighter', 'so they do not carry baby mussels to another lake', 'to clean the motor'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why is “invasive species” in bold?',
+        opts: ['It is in Words to know.', 'It is the title.', 'It is a name.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The water got clearer. A swimmer and a fish might feel differently about this. Explain both points of view.',
+        a: 'A swimmer might like the clear water because it looks clean. A fish might be hungry because the tiny living things it eats are gone.', look: 'two points of view, each with a reason from the text' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'In one or two sentences, what is the best way to deal with invasive species?',
+        a: 'Stop them from arriving in the first place, for example by cleaning, draining and drying boats.', look: 'prevention, with a detail from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bees', subject: 'science', form: 'Report',
+    title: 'Busy Bees, Full Plates',
+    deck: 'Why so much of our food depends on pollinators',
+    hero: {
+      photo: 'g4-bumblebee.jpg', credit: 'Photo: Marco Nürnberger, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 190,
+      cap: 'A bumblebee covered in yellow pollen collects food from a flower.'
+    },
+    body: [
+      'Think about your favourite fruits and vegetables: apples, blueberries, pumpkins, tomatoes. Most of them would not exist without a small, buzzing helper. About one out of every three bites of food we eat depends on animals called <b>pollinators</b>, and the most important pollinators are bees.',
+      { h: 'Moving pollen' },
+      'Before a plant can make fruit and seeds, a yellow powder called <b>pollen</b> must move from one flower to another of the same kind. Plants cannot walk, so they need help. Flowers offer sweet nectar to bees. While a bee drinks, pollen sticks to the hairs on its body. When the bee visits the next flower, some of that pollen rubs off. Now the flower can make seeds, and a fruit grows around them.',
+      { fig: '<path class="k" d="M150 140 V70"/><path class="k" d="M150 70 Q110 66 96 34 Q130 40 150 70 Q190 66 204 34 Q170 40 150 70"/>' +
+          '<path class="a" d="M140 64 V36 M160 64 V36"/><circle class="ac" cx="140" cy="34" r="3"/><circle class="ac" cx="160" cy="34" r="3"/><path class="k" d="M150 66 V26"/><circle class="k" cx="150" cy="24" r="4"/>' +
+          '<ellipse class="k" cx="60" cy="40" rx="18" ry="11"/><path class="t" d="M54 30 v20 M62 30 v20"/><path class="k" d="M48 34 q-6 -14 6 -14 M66 32 q4 -14 12 -8"/>' +
+          D.arrow(80, 40, 128, 32, 'd') +
+          D.label(196, 100, 'pollen', 162, 36) + D.label(176, 12, 'where pollen lands', 154, 22) + D.label(10, 86, 'bee carries pollen', 58, 52),
+        tall: 148, cap: 'A bee carries pollen from flower to flower.' },
+      { h: 'Bumblebees are special' },
+      'Bumblebees have a special trick. On some plants, such as tomatoes and blueberries, the pollen is locked inside. A bumblebee grabs the flower and buzzes its flight muscles very fast. The shaking shakes the pollen loose. Honeybees cannot do this.',
+      { box: 'Did you know?', text: 'Canada has more than 800 kinds of wild bees. Most of them live alone, not in hives, and many nest in tiny holes in the ground.' },
+      { h: 'Helping the helpers' },
+      'Many bees are in trouble, because they are losing the wild flowers they need, and some sprays used on crops can harm them. You can help by planting flowers that bloom from spring to fall, leaving a patch of bare ground for ground-nesting bees, and never swatting a bee that is busy working. Most bees only sting if they are squeezed or their nest is attacked. If you stay calm and still, a bee will usually fly away on its own.'
+    ],
+    guide: { before: 'Look at a flower together and find the yellow pollen. Teach <b>pollen</b> and <b>pollinator</b>. Trace the bee’s path in the diagram.',
+      after: 'Which foods in your kitchen might need bees? What could your family or class plant to help them?' },
+    words: [['pollinators', 'animals that carry pollen from flower to flower'], ['pollen', 'a yellow powder made by flowers']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Bumblebees buzz.', 'Bees carry pollen that plants need to make much of our food.', 'Canada has many bees.', 'Tomatoes are red.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['A bee drinks nectar from a flower.', 'Pollen sticks to its hairs.', 'The bee visits the next flower.', 'Pollen rubs off, and the flower can make seeds.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the dotted arrow show?',
+        opts: ['the bee carrying pollen to the flower', 'the wind', 'rain falling'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do flowers make sweet nectar?',
+        opts: ['to attract bees that carry their pollen', 'to feed people', 'to stay warm'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>-or</b> mean in <b>pollinator</b>, <b>actor</b> and <b>visitor</b>?',
+        opts: ['a person or thing that does something', 'more than one', 'in the past'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'List three ways to help bees.', cols: ['Way to help', 'How it helps'],
+        rows: [['plant flowers that bloom from spring to fall', null], ['leave a patch of bare ground', null], [null, 'the bee can keep working']],
+        a: [[null, 'bees have food all season'], [null, 'ground-nesting bees have a place to nest'], ['never swat a busy bee', null]] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What makes bumblebees special? Use details from the text.',
+        a: 'They can buzz their flight muscles to shake loose pollen that is locked inside flowers like tomatoes and blueberries. Honeybees cannot do this.', look: 'buzz pollination explained with an example' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'What might happen to our food if there were far fewer bees?',
+        a: 'Many fruits and vegetables would not get pollinated, so there would be less food, and it would cost more.', look: 'an inference linking fewer bees to less food' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-sudbury', subject: 'science', form: 'Report',
+    title: 'Treasure from the Sky',
+    deck: 'How a giant crash long ago made Sudbury a mining city',
+    hero: {
+      photo: 'g4-big-nickel.jpg', credit: 'Photo: Jason Zhang, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'The Big Nickel in Sudbury, Ontario, is a giant copy of a Canadian five-cent coin. It is about 9 metres tall.'
+    },
+    body: [
+      'About 1.8 billion years ago, a rock from space, several kilometres wide, slammed into the land where Sudbury, Ontario, is today. The crash was so powerful that it melted rock deep under the ground and left a huge oval hollow called a basin. Over time, the melted rock cooled and hardened. It left behind something very valuable: <b>minerals</b> full of metal.',
+      { h: 'Rocks and minerals' },
+      'Minerals are the natural building blocks of rocks. Some minerals contain metals such as nickel, copper, gold and silver. When there is enough metal in a rock to be worth digging up, the rock is called <b>ore</b>. The Sudbury Basin holds some of the richest nickel ore in the world.',
+      { fig: '<path class="k" d="M10 40 H290"/><path class="h" d="M60 40 Q150 140 240 40"/><path class="t" d="M80 40 Q150 120 220 40"/>' +
+          '<path class="k" d="M150 40 V12 M140 12 H160"/><path class="d" d="M150 40 V100"/><rect class="k" x="144" y="100" width="12" height="10"/>' +
+          D.label(196, 128, 'ore with nickel and copper', 200, 70) + D.label(4, 70, 'the basin', 72, 52) + D.label(170, 20, 'mine shaft', 152, 30),
+        tall: 140, cap: 'A side view of the Sudbury Basin. Miners dig deep shafts to reach the ore.' },
+      { h: 'Digging deep' },
+      'Miners in Sudbury travel down shafts more than two kilometres deep to reach the ore. The rock is blasted, crushed and melted to separate the metal. Nickel is used to make stainless steel for things like spoons, sinks and parts for cars. It is also in the batteries of many electric cars.',
+      { box: 'Did you know?', text: 'The Canadian nickel, our five-cent coin, was once made mostly of nickel. Today, it is made mostly of steel with a thin coating of nickel.' },
+      { h: 'Healing the land' },
+      'For many years, smoke from the smelters, the factories that melt the ore, killed the trees and plants around Sudbury. The hills were bare and black. Since the 1970s, people have worked to bring the land back to life. Volunteers, including thousands of students, have planted millions of trees. Today, green forests are growing again where the land was once bare.',
+      { h: 'A school for astronauts' },
+      'In 1971 and 1972, astronauts training to walk on the moon came to Sudbury. Geologists showed them rocks shattered by the ancient crash. On the moon, which is covered in craters, the astronauts used what they had learned to choose the most interesting rocks to bring home.'
+    ],
+    guide: { before: 'Find Sudbury on a map of Ontario. Teach <b>mineral</b> and <b>ore</b>. Look at a coin together and talk about what metals might be inside it.',
+      after: 'Mining gives us useful metals but can harm the land. How did Sudbury try to fix the harm? What else could a mining town do?' },
+    words: [['minerals', 'natural solids that make up rocks'], ['ore', 'rock with enough metal in it to be worth mining']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Big Nickel is tall.', 'A crash from space left rich ore, and Sudbury became a mining city that is now healing its land.', 'Nickel is in coins.', 'Students plant trees.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['A rock from space hits the land.', 'Melted rock cools and hardens into ore.', 'Miners dig the ore.', 'People plant millions of trees.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is the ore?',
+        opts: ['deep in the basin', 'at the top of the shaft', 'in the sky'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['A space rock melts rock deep underground.', null], ['Smoke comes from the smelters.', null], [null, 'Forests grow again.']],
+        a: [[null, 'Minerals full of metal form.'], [null, 'Trees and plants die, and the hills are bare.'], ['Volunteers plant millions of trees.', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>smelter</b> smelts ore. What does <b>-er</b> mean in smelter?',
+        opts: ['a thing that does a job', 'more', 'in the past'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the giant coin in Sudbury a nickel?',
+        opts: ['Sudbury is famous for nickel mining.', 'Nickels are the biggest coins.', 'It was cheap to build.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the text in two or three sentences.',
+        a: 'A rock from space crashed near Sudbury long ago and left ore rich in nickel. Miners dig it up to make useful things, and people are now planting trees to heal the land.', look: 'the main events and the idea of healing the land' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'A miner and a person who loves forests might feel differently about mining. Explain both points of view.',
+        a: 'The miner might be proud of the useful metals and good jobs. The forest lover might worry about the smoke that killed the trees.', look: 'two points of view, each with a reason from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-great-wall', subject: 'history', form: 'Report',
+    title: 'The Wall That Took Centuries',
+    deck: 'How ancient China built the longest structure on Earth',
+    hero: {
+      photo: 'g4-great-wall.jpg', credit: 'Photo: CEphoto, Uwe Aranas, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Great Wall at Badaling, near Beijing, winds along the tops of the mountains.'
+    },
+    body: [
+      'The Great Wall of China is not one wall. It is many walls, built and rebuilt over about 2000 years. Put together, all its pieces stretch more than 20 000 kilometres, about the distance from Canada to Australia and halfway back. It is the longest structure people have ever built.',
+      { h: 'Why build a wall?' },
+      'Long ago, China was made up of separate states, and many had their own walls. In 221 BCE, a ruler named Qin Shi Huang united the states into one <b>empire</b>. He ordered workers to join some of the walls together to protect the north from attacks by horse riders. Later rulers kept building, repairing and adding to the wall for centuries.',
+      { h: 'How it was built' },
+      'Workers used whatever was close by. In the dry west, they pounded layers of earth until they were as hard as stone. In the mountains, they cut blocks of stone. Later walls were made of bricks held together with a mortar that, some scientists believe, contained sticky rice. Huge numbers of soldiers, farmers and prisoners did the heavy work, and the work was dangerous.',
+      { fig: '<path class="k" d="M30 140 V60 H110 V140 M30 60 V48 H40 V60 M52 60 V48 H62 V60 M74 60 V48 H84 V60 M96 60 V48 H106 V60"/><path class="h" d="M30 100 H110 V140 H30 Z"/>' +
+          '<path class="k" d="M180 140 V40 H260 V140 M196 40 V20 H244 V40 M214 140 V112 H226 V140"/><path class="t" d="M196 70 H206 V82 H196 Z M234 70 H244 V82 H234 Z"/><path class="d" d="M220 20 V4"/>' +
+          D.label(120, 120, 'pounded earth', 108, 116) + D.label(130, 56, 'battlements', 100, 52) + D.label(130, 86, 'walkway', 100, 62) +
+          '<text class="lb" x="70" y="158" text-anchor="middle">the wall</text><text class="lb" x="220" y="158" text-anchor="middle">a watchtower</text>',
+        tall: 162, cap: 'Parts of the wall. Soldiers walked along the top and kept watch from the towers.' },
+      { h: 'Messages of smoke' },
+      'Along the wall stood thousands of watchtowers. When soldiers saw enemies coming, they lit fires on the towers. By day, the smoke could be seen from far away. By night, the flames could. Each tower passed the <b>signal</b> to the next, so a warning could travel hundreds of kilometres in a few hours.',
+      { box: 'Did you know?', text: 'Many people believe you can see the Great Wall from space with your eyes alone. Astronauts say you cannot. It is very long, but it is too narrow.' },
+      'Today, the Great Wall is a World Heritage Site, protected so that people can visit and learn from it for centuries to come.'
+    ],
+    guide: { before: 'Find China on a globe and point out how far it is from Canada. Teach <b>empire</b> and <b>signal</b>. Explain that BCE means years before the year 1.',
+      after: 'The wall took huge effort and many lives to build. Do you think it was worth it? What other ways could people have kept their land safe?' },
+    words: [['empire', 'a large area ruled by one ruler'], ['signal', 'a sign or message sent to warn or tell others something']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['China is far away.', 'The Great Wall was built over many centuries to protect China and is the longest structure ever built.', 'Astronauts visit China.', 'Rice is sticky.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the top of the wall used for?',
+        opts: ['a walkway for soldiers', 'growing food', 'storing rice'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did workers use different materials in different places?',
+        opts: ['They used whatever was close by.', 'They liked variety.', 'The emperor chose randomly.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps to show how a warning travelled along the wall.',
+        items: ['Soldiers see enemies coming.', 'They light a fire on their tower.', 'The next tower sees the smoke or flames.', 'That tower lights its own fire.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Where', 'What the wall was made of'],
+        rows: [['the dry west', null], ['the mountains', null], ['later walls', null]],
+        a: [[null, 'pounded earth'], [null, 'blocks of stone'], [null, 'bricks and mortar']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Watch</b>tower is made of two words. What does it mean?',
+        opts: ['a tower for keeping watch', 'a tower with a clock', 'a small tower'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'The text says 20 000 kilometres is “the distance from Canada to Australia and halfway back.” How does this comparison help you?',
+        a: 'It helps me picture how long the wall is, because 20 000 kilometres is too big to imagine.', look: 'explains that the comparison makes a huge number easier to picture' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think the Great Wall is protected as a World Heritage Site today?',
+        a: 'Because it is very old and important to history, and people want to keep it safe so others can visit and learn from it.', look: 'a reason linked to history and learning' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-maya', subject: 'history', form: 'Report',
+    title: 'Stairs to the Sky',
+    deck: 'The Maya, their pyramid calendar, and a number for nothing',
+    hero: {
+      photo: 'g4-chichen-itza.jpg', credit: 'Photo: Daniel Schwen, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'El Castillo, a pyramid in the ancient Maya city of Chichén Itzá, in Mexico.'
+    },
+    body: [
+      'Deep in the forests of southern Mexico and Central America, stone pyramids rise above the trees. They were built by the Maya, a people who have lived in this region for thousands of years. Their great cities were busiest from about 250 to 900 CE, and millions of Maya people still live there today.',
+      { h: 'A pyramid that keeps time' },
+      'One of the most famous Maya pyramids is El Castillo in the city of Chichén Itzá. It has four sides, and each side has a staircase of 91 steps. Add the four staircases together and include the platform on top, and you get 365, the number of days in a year. The pyramid was built as a temple, and its design is a kind of <b>calendar</b>.',
+      { h: 'The serpent of light' },
+      'Twice a year, in March and September, day and night are almost the same length. On these days, as the sun sets, the shadows of the pyramid’s steps make a wavy pattern of light down the side of the northern staircase. It looks like a giant snake slithering down to the stone snake head at the bottom.',
+      { fig: '<circle class="dot" cx="20" cy="30" r="5"/><circle class="dot" cx="40" cy="30" r="5"/><circle class="dot" cx="60" cy="30" r="5"/>' +
+          '<rect class="k" x="100" y="42" width="40" height="8" rx="3"/><circle class="dot" cx="112" cy="30" r="5"/><circle class="dot" cx="128" cy="30" r="5"/>' +
+          '<rect class="k" x="180" y="22" width="40" height="8" rx="3"/><rect class="k" x="180" y="36" width="40" height="8" rx="3"/><circle class="dot" cx="200" cy="12" r="5"/>' +
+          '<ellipse class="k" cx="262" cy="34" rx="22" ry="12"/><path class="t" d="M246 34 Q262 26 278 34 M246 38 Q262 30 278 38"/>' +
+          '<text class="lb" x="40" y="74" text-anchor="middle">3</text><text class="lb" x="120" y="74" text-anchor="middle">7</text><text class="lb" x="200" y="74" text-anchor="middle">11</text><text class="lb" x="262" y="74" text-anchor="middle">0</text>' +
+          '<text class="n" x="150" y="100" text-anchor="middle">A dot means 1. A bar means 5. A shell means zero.</text>',
+        tall: 108, cap: 'Maya numbers were written with dots, bars and a shell.' },
+      { h: 'Counting with zero' },
+      'The Maya were skilled astronomers and mathematicians. They wrote numbers with dots for ones and bars for fives. They also had a symbol for <b>zero</b>, shaped like a shell. Using zero, they could write very large numbers and track the movements of the sun, the moon and the planet Venus over hundreds of years. Very few early peoples used zero.',
+      { box: 'Did you know?', text: 'The Maya made a drink from the seeds of the cacao tree. Cacao is what chocolate is made from.' },
+      { h: 'Farmers and players' },
+      'Most Maya were farmers who grew corn, beans, squash and chili peppers. Corn was so important that an old Maya story says the first people were made from corn dough. Many cities also had a stone court for a ball game. Players kept a heavy rubber ball in the air using only their hips, knees and elbows. Chichén Itzá has one of the largest ball courts ever built.'
+    ],
+    guide: { before: 'Find Mexico and Central America on a map. Teach <b>calendar</b> and <b>astronomer</b>. Practise writing a few numbers with dots and bars before reading.',
+      after: 'Why would a calendar be important to farmers? How do you keep track of the days of the year?' },
+    words: [['calendar', 'a way of keeping track of days, months and years'], ['zero', 'the number that stands for nothing']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Maya drank cacao.', 'The ancient Maya were skilled builders, astronomers and mathematicians.', 'Pyramids have stairs.', 'Snakes live in Mexico.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How would the Maya write 6?',
+        opts: ['one bar and one dot', 'six bars', 'one shell'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How is El Castillo like a calendar?',
+        opts: ['Its steps add up to 365, the days in a year.', 'It has pictures of months.', 'It is very old.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Show how the steps add up to 365.', cols: ['Part', 'Number of steps'],
+        rows: [['one staircase', '91'], ['four staircases', null], ['the platform on top', null], ['total', '365']],
+        a: [[null, null], [null, '364'], [null, '1'], [null, null]] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which heading tells you about the shadow snake?',
+        opts: ['The serpent of light', 'Counting with zero', 'A pyramid that keeps time'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>astro</b>nomer studies stars. Which word with <b>astro-</b> names someone who travels to space?',
+        opts: ['astronaut', 'asteroid', 'disaster'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why was having a zero so useful to the Maya? Use the text.',
+        a: 'With zero they could write very large numbers, which helped them track the sun, the moon and Venus over hundreds of years.', look: 'large numbers and long-term tracking of the sky' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'The text says millions of Maya people still live there today. Why might the writer include this?',
+        a: 'To show that the Maya are not only a people of the past. Their culture continues today.', look: 'recognizes the writer is showing the Maya as a living people' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-norse', subject: 'history', form: 'Report',
+    title: 'Visitors from the Sea',
+    deck: 'The Norse settlement at L’Anse aux Meadows, a thousand years ago',
+    hero: {
+      photo: 'g4-norse-sculpture.jpg', credit: 'Photo: Gordon Leggett, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 200,
+      cap: 'A metal sculpture of Norse travellers stands on a hill above L’Anse aux Meadows, Newfoundland and Labrador.'
+    },
+    body: [
+      'About a thousand years ago, wooden ships with square sails crossed the cold North Atlantic Ocean. On board were Norse people from Greenland and Iceland. They landed on the northern tip of Newfoundland and built a small <b>settlement</b>. It was almost 500 years before Columbus sailed.',
+      { h: 'Found by chance' },
+      'For centuries, the Norse sagas, old stories told aloud and later written down, described a land to the west called Vinland. Many people thought the stories were only legends. Then, in 1960, explorers Helge Ingstad and Anne Stine Ingstad followed a local man to a set of grassy bumps near the village of L’Anse aux Meadows. When they dug, they found the remains of Norse buildings.',
+      { h: 'Life at the settlement' },
+      '<b>Archaeologists</b> found eight buildings with thick walls made of strips of grass and earth, called sod, over a wooden frame. Sod kept the buildings warm in the wind. Inside were fire pits, a workshop for making iron nails, and places to repair ships. They also found a bronze pin for fastening a cloak and a spindle whorl, a stone weight used to spin wool into yarn.',
+      { fig: '<path class="k" d="M20 120 Q20 60 150 56 Q280 60 280 120 Z"/><path class="h" d="M30 120 Q30 72 150 68 Q270 72 270 120"/><rect class="k" x="138" y="96" width="24" height="24"/><path class="d" d="M150 56 V36"/>' +
+          D.label(196, 30, 'smoke hole', 152, 46) + D.label(10, 30, 'thick sod walls and roof', 60, 80) + D.label(170, 140, 'door', 152, 110),
+        tall: 146, cap: 'A Norse sod house. Rebuilt houses at the site show how they looked.' },
+      { h: 'A short stay' },
+      'The Norse did not stay long, perhaps only a few years. The settlement was very far from home, and there were not many of them. The sagas also tell of meetings with the people who already lived in the land, which sometimes led to conflict. Scientists studying tree rings in wood cut by the Norse have shown that they were there in the year 1021.',
+      { box: 'Did you know?', text: 'L’Anse aux Meadows was one of the first places in the world to be named a World Heritage Site, in 1978. It is the only known Norse site in North America.' },
+      'Today, visitors can walk through rebuilt sod houses and imagine life at the edge of the known world.'
+    ],
+    guide: { before: 'Find Greenland, Iceland and Newfoundland on a map, and trace the route across the ocean. Teach <b>archaeologist</b> and <b>settlement</b>. Explain that a saga is a long story from long ago.',
+      after: 'How do archaeologists learn about people who lived long ago? Which clue from the site do you find most interesting, and why?' },
+    words: [['settlement', 'a place where people build homes to live'], ['archaeologists', 'scientists who dig up and study things left by people long ago']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Columbus sailed in 1492.', 'The Norse built a settlement in Newfoundland about a thousand years ago, and its remains were found in 1960.', 'Sod keeps houses warm.', 'Sagas are long stories.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['The Norse sail to Newfoundland.', 'Sagas tell of a land called Vinland.', 'The Ingstads find the remains.', 'The site becomes a World Heritage Site.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the house made of?',
+        opts: ['stone blocks', 'thick sod over a frame', 'bricks'], a: 1 },
+      { k: 'table', code: 'C3.2', q: 'Each object tells us something. Fill in the chart.', cols: ['Object found', 'What it tells us'],
+        rows: [['a workshop for iron nails', null], ['a spindle whorl', null], ['places to repair ships', null]],
+        a: [[null, 'They made iron nails, maybe for ships or buildings.'], [null, 'Someone spun wool into yarn.'], [null, 'They fixed their ships to sail home.']] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did the Norse not stay long?',
+        opts: ['It was far from home and there were few of them.', 'They did not like the weather.', 'Their ships sank.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Re</b>built houses show how they looked. What does <b>rebuilt</b> mean?',
+        opts: ['built again', 'never built', 'built badly'], a: 0 },
+      { k: 'lines', code: 'C1.2', n: 2, q: 'How is a saga different from a report like this one?',
+        a: 'A saga is an old story told aloud and later written down, and it may include legend. A report gives facts that people have checked.', look: 'a clear difference in form and purpose' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text mentions “the people who already lived in the land.” Whose point of view is missing from the sagas? Why does that matter?',
+        a: 'The point of view of the Indigenous people who lived there is missing. The sagas only tell the Norse side, so we do not know how the meetings felt to them.', look: 'identifies the Indigenous perspective as missing and explains why it matters' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-birchbark-canoe', subject: 'social', form: 'Explanation',
+    title: 'Made from the Forest',
+    deck: 'How First Nations builders make a birchbark canoe',
+    hero: {
+      photo: 'g4-birchbark-canoe.jpg', credit: 'Photo: Thomas Quine, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The bow, or front end, of a birchbark canoe, sewn with spruce root and sealed with gum.'
+    },
+    body: [
+      'For thousands of years, First Nations such as the Anishinaabe, the Mi’kmaq and the Wolastoqiyik travelled the lakes and rivers of eastern Canada in canoes made of birchbark. These canoes were light, fast and strong, and every part came from the forest.',
+      { h: 'Gifts of the trees' },
+      'The skin of the canoe is bark from the paper birch tree. In early summer, the bark peels off in large, smooth sheets without killing the tree. The bark is waterproof and bends without cracking. Long, thin strips of white cedar make the ribs and the frame. Roots of the black spruce are split into strong cords, called <b>watap</b>, to sew the pieces together. Finally, the seams are sealed with gum from spruce or pine trees, mixed with fat and charcoal, so no water can leak in.',
+      { fig: '<path class="k" d="M10 60 Q150 110 290 60 Q150 86 10 60 Z"/><path class="k" d="M10 60 Q4 44 16 40 M290 60 Q296 44 284 40"/>' +
+          '<path class="t" d="M60 70 Q64 84 66 92 M100 76 Q104 92 104 100 M150 80 V104 M200 76 Q196 92 196 100 M240 70 Q236 84 234 92"/><path class="a" d="M150 64 Q150 74 150 80"/>' +
+          D.label(60, 136, 'cedar ribs', 104, 98) + D.label(186, 136, 'birchbark skin', 200, 92) + D.label(10, 22, 'sewn with spruce root', 16, 42) + D.label(196, 22, 'seams sealed with gum', 284, 46),
+        tall: 146, cap: 'Parts of a birchbark canoe.' },
+      { h: 'Built for portages' },
+      'A birchbark canoe could carry a family and their belongings, yet it was light enough for one or two people to carry on their shoulders. That mattered, because travellers often had to <b>portage</b>, carrying their canoes over land around rapids and waterfalls or from one lake to the next. Later, the fur traders learned to build and use these canoes too.',
+      { box: 'Did you know?', text: 'Some Anishinaabe builders still make birchbark canoes today. They teach young people the skills, so the knowledge is passed on to the next generation.' },
+      'Building a canoe can take a skilled builder many weeks. The bark and the cedar are soaked or splashed with hot water so they bend without breaking. The canoe is shaped on the ground inside a row of wooden stakes before the ribs are pushed into place.',
+      'A birchbark canoe shows deep knowledge of the land: which trees to use, when to gather them, and how to shape them into something that can carry people safely across the water.'
+    ],
+    guide: { before: 'Look at the photo closely and find the stitches. Teach <b>portage</b> and <b>watap</b>. Talk about how people travelled before roads.',
+      after: 'Why do you think it is important for builders to teach young people these skills today? What skill would you like to learn from an elder?' },
+    words: [['watap', 'cords made from split spruce roots, used for sewing'], ['portage', 'carrying a canoe over land between waters']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Birch trees are white.', 'First Nations builders make strong, light canoes entirely from forest materials.', 'Fur traders used canoes.', 'Rapids are dangerous.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Part of the canoe', 'Made from'],
+        rows: [['the skin', null], ['the ribs and frame', null], ['the cords for sewing', null], ['the seal on the seams', null]],
+        a: [[null, 'birchbark'], [null, 'white cedar'], [null, 'black spruce roots (watap)'], [null, 'spruce or pine gum mixed with fat and charcoal']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where are the cedar ribs?',
+        opts: ['inside the canoe', 'on the outside', 'at the ends only'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was it important that the canoe was light?',
+        opts: ['It had to be carried over portages.', 'It went faster in the wind.', 'It floated higher.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Water</b>proof means water cannot get through. What does <b>sound</b>proof mean?',
+        opts: ['sound cannot get through', 'very loud', 'makes music'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'This text explains how something is made. Which word best names this kind of text?',
+        opts: ['explanation', 'poem', 'diary'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The last paragraph says the canoe shows “deep knowledge of the land.” Give two examples of this knowledge from the text.',
+        a: 'Builders know to peel birchbark in early summer without killing the tree, and that spruce roots make strong cords for sewing.', look: 'two specific examples from the text' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why do you think the writer included the “Did you know?” box?',
+        a: 'To show that the tradition is still alive today and that First Nations builders are passing it on.', look: 'recognizes the writer is showing a living tradition' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-iqaluit', subject: 'geography', form: 'Report',
+    title: 'A Capital in the Arctic',
+    deck: 'Life in Iqaluit, the capital city of Nunavut',
+    hero: {
+      photo: 'g4-iqaluit.jpg', credit: 'Photo: Quintin Soloviev, CC BY 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 200,
+      cap: 'Iqaluit, Nunavut, on the shore of Frobisher Bay. Many buildings stand on posts above the frozen ground.'
+    },
+    body: [
+      'Iqaluit is the capital city of Nunavut, Canada’s newest territory. It sits on Baffin Island, at the end of a long bay. About 7400 people live there, and most of them are Inuit. In Inuktitut, the name Iqaluit means “place of many fish.”',
+      { h: 'No road in' },
+      'You cannot drive to Iqaluit from the rest of Canada. There are no roads that connect it to any other city. People arrive by plane. Most food, fuel, cars and building supplies come once a year by ship, during the few summer months when the sea ice melts. This is called the <b>sealift</b>. Because everything must be flown or shipped in, food in Iqaluit costs much more than in the south.',
+      { h: 'Building on frozen ground' },
+      'Just below the surface, the ground in Iqaluit stays frozen all year. This frozen ground is called <b>permafrost</b>. If a warm building sat right on top of it, the heat would melt the ice in the ground, and the building would sink and tilt. So many buildings stand on posts, with cold air flowing underneath.',
+      { fig: '<path class="k" d="M10 130 H290"/>' +
+          '<rect class="h" x="40" y="25" width="30" height="105"/><rect class="k" x="76" y="55" width="30" height="75"/>' +
+          '<rect class="h" x="170" y="110" width="30" height="20"/><rect class="k" x="206" y="85" width="30" height="45"/>' +
+          '<text class="n" x="55" y="20" text-anchor="middle">21 h</text><text class="n" x="91" y="50" text-anchor="middle">15 h</text><text class="n" x="185" y="105" text-anchor="middle">4 h</text><text class="n" x="221" y="80" text-anchor="middle">9 h</text>' +
+          '<text class="lb" x="73" y="148" text-anchor="middle">June</text><text class="lb" x="203" y="148" text-anchor="middle">December</text>' +
+          '<rect class="h" x="200" y="14" width="10" height="10"/><text class="n" x="216" y="23">Iqaluit</text><rect class="k" x="200" y="32" width="10" height="10"/><text class="n" x="216" y="41">Toronto</text>',
+        tall: 154, cap: 'Hours of daylight on the longest and shortest days of the year.' },
+      { h: 'Light and dark' },
+      'Iqaluit is far north, so daylight changes a lot through the year. In June, the sun shines for about 21 hours a day, and it never gets fully dark. In December, there are only about 4 hours of daylight. People enjoy the long summer days for boating, fishing and camping on the land.',
+      { box: 'Did you know?', text: 'Nunavut became a territory on April 1, 1999. Its name means “our land” in Inuktitut, one of its official languages.' },
+      { h: 'Food from the land' },
+      'Many families hunt seals and caribou and fish for Arctic char, as Inuit have done for thousands of years. This food is called country food. It is healthy, it costs less than food shipped from the south, and sharing it with family and neighbours is an important part of Inuit life.'
+    ],
+    guide: { before: 'Find Iqaluit, Baffin Island and Toronto on a map of Canada. Teach <b>permafrost</b> and <b>sealift</b>. Show how to read the two pairs of bars on the chart.',
+      after: 'What would you like and dislike about living with 21 hours of daylight in summer and 4 in winter? How would your day change?' },
+    words: [['permafrost', 'ground that stays frozen all year'], ['sealift', 'the yearly delivery of supplies by ship']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Iqaluit means “place of many fish.”', 'Iqaluit is an Arctic capital where the cold, the distance and the light shape daily life.', 'Food is expensive.', 'Ships arrive in summer.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How many hours of daylight does Iqaluit have in December?',
+        opts: ['about 4', 'about 9', 'about 21'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Which city has more daylight in June?',
+        opts: ['Iqaluit', 'Toronto', 'They are the same.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['There are no roads to Iqaluit.', null], ['A warm building sits on permafrost.', null], [null, 'Food costs much more than in the south.']],
+        a: [[null, 'People arrive by plane, and supplies come by ship.'], [null, 'The ground melts, and the building sinks and tilts.'], ['Everything must be flown or shipped in.', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Perma</b>frost stays frozen. What does <b>perma-</b> (as in permanent) mean?',
+        opts: ['lasting', 'melting', 'thin'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the sealift happen only in summer?',
+        opts: ['The sea ice melts then.', 'Ships are on holiday.', 'People are home.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do buildings on posts stay steady on permafrost? Use the text.',
+        a: 'Cold air flows under the building, so its heat does not melt the frozen ground, and the building does not sink or tilt.', look: 'cold air underneath keeps the permafrost frozen' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'The text says people enjoy summer “on the land.” Predict two things a family might do on a summer weekend in Iqaluit.',
+        a: 'They might go boating and fishing, or camp out on the land in the long daylight.', look: 'two predictions supported by the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-hand-washing', subject: 'health', form: 'Procedure',
+    title: 'Twenty Seconds of Soap',
+    deck: 'Why washing your hands works, and how to do it well',
+    hero: {
+      photo: 'g4-hand-washing.jpg', credit: 'Photo: Beat Ruest, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Soap and running water wash germs off your hands.'
+    },
+    body: [
+      'Your hands touch hundreds of things every day: doorknobs, desks, pencils, phones and your own face. Each touch can pick up <b>germs</b>, tiny living things too small to see. Most germs are harmless, but some can make you sick with colds, the flu or an upset stomach.',
+      { h: 'How soap works' },
+      'Water alone rinses off dirt, but many germs stick to the oils on your skin. Soap is special. One end of each soap <b>particle</b> grabs onto oil and grease, and the other end grabs onto water. When you scrub, the soap pulls the oil, and the germs stuck in it, off your skin. Then the water carries them down the drain. Some germs are even broken apart by soap.',
+      { h: 'Five steps' },
+      'Wet your hands with clean water. Add soap. Scrub every part for at least 20 seconds: palms, backs, between your fingers, under your nails and your thumbs. Rinse well under running water. Dry your hands with a clean towel or let them air dry.',
+      { fig: [['wet', 0], ['soap', 1], ['scrub 20 s', 2], ['rinse', 3], ['dry', 4]].map(function (s) { var x = 10 + s[1] * 58;
+          return '<rect class="k" x="' + x + '" y="20" width="48" height="48" rx="8"/><text class="lb" x="' + (x + 24) + '" y="49" text-anchor="middle">' + (s[1] + 1) + '</text><text class="n" x="' + (x + 24) + '" y="86" text-anchor="middle">' + s[0] + '</text>'; }).join('') +
+          D.arrow(58, 44, 68, 44, 'a') + D.arrow(116, 44, 126, 44, 'a') + D.arrow(174, 44, 184, 44, 'a') + D.arrow(232, 44, 242, 44, 'a'),
+        tall: 96, cap: 'The five steps of hand washing.' },
+      { box: 'Timer trick', text: 'Twenty seconds is longer than most people think. Hum “Happy Birthday” from beginning to end twice, and you are done.' },
+      { h: 'When to wash' },
+      'Wash your hands before you eat or help cook, after you use the washroom, after you blow your nose, cough or sneeze, after you play outside and after you touch animals. When soap and water are not nearby, hand sanitizer is a good backup, but washing is best when your hands are dirty.',
+      'Clean hands are one of the simplest ways to keep yourself, your family and your classmates healthy. It costs almost nothing and takes only twenty seconds.',
+      { box: 'From the past', text: 'In the 1840s, a doctor named Ignaz Semmelweis noticed that fewer patients got sick when doctors washed their hands. At first, many doctors did not believe him. Today, hand washing is one of the first rules in every hospital.' }
+    ],
+    guide: { before: 'Ask the child how long they usually wash their hands, then time it. Teach <b>germs</b> and <b>particle</b>. If you can, rub a little cooking oil on your hands and try washing it off with water alone, then with soap.',
+      after: 'Make a short poster for your washroom showing the five steps. What would make people more likely to follow them?' },
+    words: [['germs', 'tiny living things that can make you sick'], ['particle', 'a very small piece of something']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Germs are tiny.', 'Washing with soap for 20 seconds removes germs and keeps people healthy.', 'Sanitizer is a backup.', 'Hands touch many things.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['Wet your hands.', 'Add soap.', 'Scrub for 20 seconds.', 'Rinse, then dry.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is water alone not enough?',
+        opts: ['Many germs stick to the oils on your skin.', 'Water is too cold.', 'Water makes germs grow.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'List four times to wash your hands.', cols: ['When', 'Why'],
+        rows: [['before you eat', null], ['after the washroom', null], [null, 'germs from your nose may be on your hands'], [null, 'animals can carry germs']],
+        a: [[null, 'germs on your hands could get into your mouth'], [null, 'germs from the washroom could spread'], ['after you blow your nose, cough or sneeze', null], ['after you touch animals', null]] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which part of the text is a procedure?',
+        opts: ['Five steps', 'How soap works', 'the title'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Harm</b>less means without harm. What does <b>-less</b> mean?',
+        opts: ['without', 'full of', 'again'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how soap removes germs. Use the text.',
+        a: 'One end of the soap grabs oil and the other end grabs water. Scrubbing pulls the oil and the germs in it off your skin, and the water washes them away.', look: 'both ends of the soap particle and the rinse' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The last sentence says hand washing “costs almost nothing.” Why do you think the writer ends this way?',
+        a: 'To convince readers that washing hands is easy and worth doing, because it is cheap and quick but keeps people healthy.', look: 'the writer’s purpose: to persuade readers it is easy and worthwhile' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-shadow-puppets', subject: 'arts', form: 'Explanation',
+    title: 'Stories in Shadow',
+    deck: 'How shadow puppets turn light and darkness into theatre',
+    hero: {
+      photo: 'g4-shadow-puppet.jpg', credit: 'Photo: Steve Evans, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 210,
+      cap: 'A shadow puppet from Thailand, cut from leather. Light shines through its tiny holes to show the details.'
+    },
+    body: [
+      'Long before movies, people in many parts of Asia told stories with light and shadow. Performers sat behind a white cloth screen with a lamp or fire behind them. They held up flat puppets, and the audience on the other side watched the puppets’ shadows dance across the screen.',
+      { h: 'How a shadow forms' },
+      'Light travels in straight lines. When something blocks the light, it leaves a dark shape behind it, called a <b>shadow</b>. Objects that block all light, such as wood or thick leather, are <b>opaque</b>. They make dark shadows. Objects that let some light through, such as thin coloured paper, make softer, coloured shadows.',
+      { fig: '<circle class="a" cx="30" cy="80" r="12"/><path class="a" d="M30 62 V56 M30 98 V104 M12 80 H6 M48 80 H54"/>' +
+          '<path class="t" d="M40 76 L270 20 M40 84 L270 140"/><rect class="h" x="110" y="64" width="10" height="34"/><rect class="k" x="270" y="10" width="8" height="140"/>' +
+          '<path class="k" d="M262 46 V116"/><path class="t" d="M262 46 L120 64 M262 116 L120 98"/>' +
+          D.label(80, 136, 'puppet', 115, 98) + D.label(180, 10, 'screen', 270, 20) + D.label(166, 136, 'shadow', 262, 100) + '<text class="n" x="14" y="124">lamp</text>',
+        tall: 150, cap: 'Moving the puppet closer to the lamp makes its shadow bigger.' },
+      { h: 'Bigger and smaller' },
+      'Shadow puppeteers use a clever trick. When they move a puppet closer to the lamp, it blocks more of the light, and its shadow grows huge on the screen. When they move it closer to the screen, the shadow shrinks and becomes sharper. A puppeteer can make a giant appear to stomp toward the audience just by moving one hand.',
+      { h: 'Made with care' },
+      'Traditional puppets in Thailand and Indonesia are cut from animal hide that is scraped thin and dried. Artists punch tiny holes and patterns into the hide, so dots of light shine through to show eyes, jewellery and clothing. Some puppets have arms on sticks so they can move. One show can go on for hours, often with live music.',
+      { box: 'Try it', text: 'Cut a character from black paper and tape it to a straw. Shine a flashlight on a wall in a dark room. Move your puppet closer to the light, then farther away. What happens to the shadow?' }
+    ],
+    guide: { before: 'Make a hand shadow on a wall with a lamp before reading. Teach <b>shadow</b> and <b>opaque</b>. Follow the light lines in the diagram from the lamp to the screen.',
+      after: 'What story would you tell with shadow puppets? Which characters would be big and which small, and how would you make them that way?' },
+    words: [['shadow', 'a dark shape made when something blocks light'], ['opaque', 'not letting any light through']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Puppets are made of leather.', 'Shadow puppet theatre uses light and shadow to tell stories.', 'Movies are new.', 'Lamps are bright.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where must the puppet be to make a big shadow?',
+        opts: ['close to the lamp', 'close to the screen', 'behind the screen'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do artists punch holes in the puppets?',
+        opts: ['so light shines through to show details', 'to make them lighter to hold', 'to hang them up'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Material', 'Kind of shadow'],
+        rows: [['thick leather', null], ['thin coloured paper', null]],
+        a: [[null, 'a dark shadow (it is opaque)'], [null, 'a softer, coloured shadow']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>puppeteer</b> works puppets. What does <b>-eer</b> mean, as in <b>engineer</b>?',
+        opts: ['a person who works with something', 'a small thing', 'not'], a: 0 },
+      { k: 'choice', code: 'C2.3', half: true, q: 'In the “Try it” box, what will happen when the paper puppet moves away from the light?',
+        opts: ['The shadow gets smaller.', 'The shadow gets bigger.', 'The shadow turns red.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how a puppeteer can make a giant stomp toward the audience. Use the text.',
+        a: 'The puppeteer moves the puppet closer to the lamp, so it blocks more light and the shadow grows bigger, as if the giant is coming closer.', look: 'moving toward the light makes the shadow grow' },
+      { k: 'lines', code: 'C1.2', n: 2, q: 'How is a shadow puppet show like a movie? Give one way.',
+        a: 'Both show moving pictures on a screen while an audience watches, often with music.', look: 'a reasonable similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-wind-turbines', subject: 'tech', form: 'Explanation',
+    title: 'Catching the Wind',
+    deck: 'How a wind turbine turns moving air into electricity',
+    hero: {
+      photo: 'g4-wind-turbines.jpg', credit: 'Photo: Magnolia677, CC BY 4.0, Wikimedia Commons', focus: '50% 22%',
+      tall: 190,
+      cap: 'Wind turbines stand among farm fields in Bruce County, Ontario.'
+    },
+    body: [
+      'Drive along the shores of Lake Huron, and you may see giant white towers with three long blades turning slowly in the breeze. They are wind turbines. Each one is a machine that catches the wind and turns its energy into electricity for homes, schools and farms.',
+      { h: 'From wind to wire' },
+      'Moving air has energy. When the wind blows, it pushes on the turbine’s blades, which are shaped a little like airplane wings. The blades spin a shaft inside the box at the top, called the nacelle. Gears inside make the shaft turn much faster. The fast-spinning shaft turns a <b>generator</b>, which makes electricity. Cables carry the electricity down the tower and out to the power lines.',
+      { fig: '<path class="k" d="M114 150 L118 66 H126 L130 150"/><rect class="k" x="116" y="52" width="40" height="14" rx="4"/><circle class="k" cx="116" cy="59" r="5"/>' +
+          '<path class="k" d="M114 55 L108 4 L120 54 M112 62 L66 88 L114 66 M120 63 L152 104 L117 64"/><path class="d" d="M122 70 V150"/>' +
+          D.label(168, 30, 'nacelle: gears', 150, 54) + '<text class="l" x="168" y="44">and generator</text>' + D.label(10, 40, 'blades', 104, 24) + D.label(170, 104, 'tower', 128, 110) + D.label(150, 146, 'cable', 124, 138),
+        tall: 156, cap: 'The main parts of a wind turbine.' },
+      { h: 'Tall for a reason' },
+      'Wind turbines are tall because the wind blows faster and more steadily high above the ground, where there are no trees or buildings to slow it down. A large turbine tower can be as tall as a 30-storey building, and each blade can be longer than a hockey rink is wide.',
+      { box: 'Did you know?', text: 'Wind is a <b>renewable</b> energy source, because it will never run out. Turbines also make electricity without burning fuel, so they do not release smoke into the air.' },
+      { h: 'Good points and problems' },
+      'Wind power has many benefits, but it is not perfect. The wind does not blow all the time, so other power sources are needed on calm days. Some people do not like how the turbines look or sound. Turbines also need to be placed carefully, away from places where many birds and bats fly. Engineers keep working to make them better.'
+    ],
+    guide: { before: 'Make a paper pinwheel and blow on it, or watch a fan, before reading. Teach <b>generator</b> and <b>renewable</b>. Point to each part of the turbine in the diagram.',
+      after: 'Would you want a wind turbine near your home? Think about the good points and the problems before you decide.' },
+    words: [['generator', 'a machine that turns movement into electricity'], ['renewable', 'able to be replaced naturally, so it does not run out']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Turbines are white.', 'Wind turbines turn the energy of moving air into electricity.', 'Lake Huron is windy.', 'Birds fly high.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['The wind pushes the blades.', 'The blades spin a shaft.', 'Gears make the shaft spin faster.', 'The generator makes electricity.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is the generator?',
+        opts: ['in the nacelle at the top', 'at the bottom of the tower', 'in the blades'], a: 0 },
+      { k: 'table', code: 'C3.5', q: 'Fill in the chart.', cols: ['Good points of wind power', 'Problems with wind power'],
+        rows: [[null, null], [null, null]],
+        a: [['It will never run out.', 'The wind does not blow all the time.'], ['It does not make smoke.', 'Some people dislike the look or sound, and it can harm birds and bats.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are turbines built so tall?',
+        opts: ['The wind is faster and steadier higher up.', 'So people can see them.', 'To be near the clouds.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Re</b>newable energy can be made again and again. Which word also uses <b>re-</b> to mean “again”?',
+        opts: ['recharge', 'real', 'ready'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Is the writer for or against wind power, or fair to both sides? How can you tell?',
+        a: 'The writer is mostly fair. The text explains the benefits but also gives a section on problems, and says engineers keep working to make turbines better.', look: 'a judgement about balance with evidence from the text' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'What do you predict would happen to a turbine’s electricity on a calm day? Why?',
+        a: 'It would make little or no electricity, because there would be no wind to push the blades.', look: 'a prediction linked to the need for wind' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-counting-caribou', subject: 'math', form: 'Explanation',
+    title: 'How Many Caribou?',
+    deck: 'How scientists count a herd too big to count one by one',
+    hero: {
+      photo: 'g4-caribou.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Caribou migrate across the tundra. Some herds cross between Alaska and Yukon.'
+    },
+    body: [
+      'Caribou travel across the northern <b>tundra</b> in huge herds. Some herds have more than a hundred thousand animals. Scientists, wildlife managers and Indigenous communities need to know how big each herd is, to see if it is healthy or shrinking. But how do you count animals that are always moving and spread over many kilometres?',
+      { h: 'Counting from the air' },
+      'In early summer, many caribou gather close together. Scientists fly over the herd in a small plane and take photographs straight down. Back in the office, they look at the photos carefully. They cannot count every animal in one go, so they use a smart math trick to make an <b>estimate</b>, an answer that is close but not exact.',
+      { h: 'Using a grid' },
+      'First, they lay a grid of equal squares over a photo. Next, they choose a square that looks typical, not the most crowded and not the emptiest, and count every caribou in it. Then they multiply that number by the number of squares that have caribou in them. If one square holds 12 caribou and there are 20 squares like it, the estimate is 12 times 20, or 240 caribou in that photo.',
+      { fig: [0, 1, 2, 3, 4].map(function (c) { return [0, 1, 2, 3].map(function (r) { return '<rect class="' + (c === 1 && r === 1 ? 'a' : 't') + '" x="' + (40 + c * 44) + '" y="' + (10 + r * 30) + '" width="44" height="30"/>'; }).join(''); }).join('') +
+          [[48, 18], [60, 26], [72, 16], [92, 32], [100, 20], [110, 30], [56, 48], [68, 58], [96, 52], [102, 62], [114, 46], [84, 46], [94, 58], [140, 22], [160, 30], [150, 50], [176, 60], [200, 24], [220, 40], [190, 76], [60, 86], [130, 92], [160, 104], [220, 100], [240, 70]].map(function (p) { return '<circle class="dot" cx="' + p[0] + '" cy="' + p[1] + '" r="2.2"/>'; }).join('') +
+          '<text class="n" x="150" y="146" text-anchor="middle">Count one square, then multiply by the number of squares.</text>',
+        tall: 152, cap: 'A grid laid over a photo of caribou. The coloured square is the one being counted.' },
+      { box: 'Did you know?', text: 'Inuit, Dene and Gwich’in hunters have watched caribou for thousands of years. Their knowledge of where herds travel helps scientists plan where to fly.' },
+      { h: 'Why it matters' },
+      'Counting the same herd every few years shows whether it is growing or shrinking. Some caribou herds in Canada have become much smaller. Knowing the numbers helps communities and governments decide how to protect the caribou, so herds will still cross the tundra for generations to come. For many Indigenous communities, caribou have always meant food, clothing and tools, so a healthy herd matters to their way of life.'
+    ],
+    guide: { before: 'Scatter a handful of dried beans on a sheet of paper divided into squares and try the estimate method together. Teach <b>estimate</b> and <b>tundra</b>.',
+      after: 'When else might people need to estimate instead of counting exactly? Think about crowds, trees or jelly beans in a jar.' },
+    words: [['estimate', 'an answer that is close but not exact'], ['tundra', 'cold, treeless land in the far north']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Caribou live in herds.', 'Scientists estimate the size of caribou herds using photos and a grid.', 'Planes fly over the tundra.', 'Hunters watch caribou.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps for estimating a herd.',
+        items: ['Take photos from a plane.', 'Lay a grid over a photo.', 'Count the caribou in one typical square.', 'Multiply by the number of squares with caribou.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do scientists choose a square that is not the most crowded?',
+        opts: ['to get a fair estimate', 'to make counting faster', 'because crowded squares are blurry'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Use the grid method. Fill in the chart.', cols: ['Caribou in one square', 'Squares with caribou', 'Estimate'],
+        rows: [['12', '20', '240'], ['10', '30', null], ['15', null, '150']],
+        a: [[null, null, null], [null, null, '300'], [null, '10', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>estimate</b> is close but not exact. Which word means “not exact”?',
+        opts: ['inexact', 'exactly', 'exacting'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, the coloured square is …',
+        opts: ['the square being counted', 'the most crowded square', 'an empty square'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is an estimate good enough for a caribou herd? Use details from the text.',
+        a: 'The herd is huge and always moving, so counting every animal is almost impossible. A close answer still shows whether the herd is growing or shrinking.', look: 'the size and movement of the herd and the purpose of the count' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer include Inuit, Dene and Gwich’in knowledge in the text?',
+        a: 'To show that Indigenous knowledge of caribou is important and helps scientists know where to look.', look: 'values Indigenous knowledge as part of the science' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-prairies', subject: 'geography', form: 'Report',
+    title: 'Canada’s Breadbasket',
+    deck: 'How the flat, open Prairies grow food for the world',
+    hero: {
+      photo: 'g4-grain-elevator.jpg', credit: 'Photo: Janusz Sobolewski, CC BY 2.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 190,
+      cap: 'A grain elevator in Saskatchewan at dusk. Grain is stored here before it travels by train.'
+    },
+    body: [
+      'Picture land so flat that you can watch a storm coming from an hour away. Fields of wheat and canola stretch to the horizon, and the sky seems to go on forever. This is the Prairies, a <b>region</b> that covers much of Alberta, Saskatchewan and Manitoba.',
+      { h: 'A land made for farming' },
+      'Long ago, huge sheets of ice called glaciers covered this land. When they melted, they left behind flat ground and deep, dark soil. For thousands of years, prairie grasses grew and died, adding rich material to the soil each year. Today, that soil makes the Prairies one of the best places in the world to grow grain. The summers are warm and sunny, with just enough rain.',
+      { fig: '<path class="k" d="M10 120 H290"/><rect class="k" x="40" y="40" width="40" height="80"/><path class="k" d="M36 40 L60 20 L84 40"/><rect class="k" x="50" y="100" width="20" height="20"/>' +
+          D.arrow(90, 100, 140, 100, 'a') + '<path class="k" d="M150 90 H230 V110 H150 Z"/><circle class="k" cx="166" cy="114" r="6"/><circle class="k" cx="214" cy="114" r="6"/>' +
+          D.arrow(240, 100, 286, 100, 'a') + '<path class="k" d="M260 70 L286 70 L280 82 H264 Z"/>' +
+          '<text class="n" x="60" y="138" text-anchor="middle">elevator</text><text class="n" x="190" y="138" text-anchor="middle">train</text><text class="n" x="274" y="138" text-anchor="middle">ship</text>' +
+          '<text class="n" x="20" y="20">farm</text>' + D.arrow(30, 26, 40, 40, 'k'),
+        tall: 146, cap: 'Grain travels from the farm to the elevator, then by train and ship.' },
+      { h: 'From field to table' },
+      'Prairie farmers grow wheat, canola, oats, barley, lentils and more. At harvest time in late summer, giant machines called combines cut the plants and separate the grain. Trucks carry it to tall buildings called grain elevators, where it is stored. Trains then carry the grain to ports, where ships take it around the world. Canada is one of the world’s biggest <b>exporters</b> of wheat.',
+      { box: 'Did you know?', text: 'The bread, pasta and breakfast cereal in your kitchen may well have started as wheat on a prairie farm.' },
+      { h: 'Before the farms' },
+      'The Prairies were not always farmland. For thousands of years, huge herds of bison grazed the grasslands. Plains Cree, Blackfoot, Métis and other peoples lived here and depended on the bison for food, clothing and shelter. When settlers arrived in the late 1800s, the bison had almost disappeared, and the grassland was ploughed into farms.'
+    ],
+    guide: { before: 'Find Alberta, Saskatchewan and Manitoba on a map of Canada. Teach <b>region</b> and <b>exporter</b>. Follow the grain’s journey in the diagram.',
+      after: 'Think of three foods you ate today. Which might have come from the Prairies? What would happen if there was a drought there?' },
+    words: [['region', 'a large area with features in common'], ['exporters', 'people or countries that sell goods to other countries']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Prairies are flat.', 'The Prairies’ rich soil and climate make them a great place to grow grain for Canada and the world.', 'Trains carry grain.', 'Glaciers melted.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the grain’s journey.',
+        items: ['farm', 'elevator', 'train', 'ship'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is prairie soil so rich?',
+        opts: ['Grasses grew and died there for thousands of years.', 'It is sandy.', 'It rains every day.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Long ago', 'Today'],
+        rows: [['bison grazed the grasslands', null], [null, 'farmers grow food to sell']],
+        a: [[null, 'farms grow wheat, canola and other crops'], ['peoples such as the Plains Cree and Blackfoot depended on the bison', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Ex</b>porters send goods <b>out</b> of a country. What do <b>im</b>porters do?',
+        opts: ['bring goods in', 'grow goods', 'store goods'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: '“You can watch a storm coming from an hour away.” This helps you picture …',
+        opts: ['how flat and open the land is', 'how often it storms', 'how fast storms move'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how the Prairies became good farmland.',
+        a: 'Glaciers left flat land and deep soil. Prairie grasses grew and died for thousands of years, making the soil rich, and the warm summers help crops grow.', look: 'the glaciers, the grasses and the climate' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The last section tells about the land before farms. Why is it important to include this part?',
+        a: 'It reminds readers that Indigenous peoples lived on the Prairies long before the farms, and the land was changed when settlers came.', look: 'recognizes the Indigenous history and the change to the land' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-healthy-plate', subject: 'health', form: 'Explanation',
+    title: 'Half a Plate of Colour',
+    deck: 'How Canada’s food guide helps you build a healthy meal',
+    hero: {
+      photo: 'g4-fruit-vegetables.jpg', credit: 'Photo: TudorTulok, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Celery, cucumber, peppers and fruit make a colourful snack tray.'
+    },
+    body: [
+      'What should be on your plate? Canada’s food guide gives a simple answer with a picture of a plate. It does not tell you exactly what to eat. Instead, it shows how much of your plate each kind of food should fill.',
+      { h: 'Fill half with vegetables and fruit' },
+      'Half of the plate is <b>vegetables</b> and fruit. They give your body vitamins, minerals and fibre, which helps you digest food. Different colours of vegetables and fruit have different nutrients, so try to eat many colours: orange carrots, green broccoli, red peppers, purple berries.',
+      { fig: '<circle class="k" cx="110" cy="76" r="62"/><path class="k" d="M110 14 V138 M110 76 H172"/><path class="h" d="M110 14 A62 62 0 0 0 110 138 Z"/>' +
+          '<circle class="k" cx="226" cy="40" r="14"/><path class="t" d="M216 30 h20 v20 h-20"/>' +
+          '<text class="n" x="76" y="80" text-anchor="middle">vegetables</text><text class="n" x="76" y="92" text-anchor="middle">and fruit</text>' +
+          '<text class="n" x="140" y="48" text-anchor="middle">whole</text><text class="n" x="140" y="60" text-anchor="middle">grains</text>' +
+          '<text class="n" x="140" y="100" text-anchor="middle">protein</text><text class="n" x="140" y="112" text-anchor="middle">foods</text><text class="n" x="226" y="70" text-anchor="middle">water</text>',
+        tall: 146, cap: 'The healthy plate: half vegetables and fruit, a quarter whole grains, a quarter protein foods, and water to drink.' },
+      { h: 'A quarter of grains' },
+      'One quarter of the plate is whole grains, such as brown rice, oatmeal or whole wheat bread. A whole grain still has all its parts, including the outer layer. Whole grains give you lasting energy and more fibre than white bread or white rice.',
+      { h: 'A quarter of protein' },
+      'The last quarter is <b>protein</b> foods, which help your muscles grow and repair. Protein comes from beans, lentils, nuts, tofu, eggs, fish, chicken, meat, milk and yogurt. The guide suggests eating plant proteins, such as beans and lentils, more often.',
+      { box: 'Make water your drink', text: 'The best drink with a meal is water. Juice and pop have a lot of sugar. Milk and unsweetened fortified soy drinks are healthy choices too.' },
+      'The food guide also says that how you eat matters. Eating with family or friends, cooking together and taking time to enjoy your food are all part of healthy eating. So is noticing when you are hungry and when you feel full, and stopping when you have had enough.'
+    ],
+    guide: { before: 'Look at a dinner plate together and divide it into halves and quarters with your finger. Teach <b>protein</b> and <b>nutrient</b>. Read the plate diagram together.',
+      after: 'Plan a lunch that follows the plate. Which part of the plate is easiest for you to fill? Which is hardest?' },
+    words: [['vegetables', 'plants or parts of plants that we eat'], ['protein', 'a nutrient that builds and repairs muscles']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Juice has sugar.', 'Canada’s food guide shows how to fill a healthy plate.', 'Carrots are orange.', 'Brown rice is a grain.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the plate diagram. Fill in the chart.', cols: ['Part of the plate', 'How much', 'One example'],
+        rows: [['vegetables and fruit', null, null], ['whole grains', null, null], ['protein foods', null, null]],
+        a: [[null, 'half', 'carrots, broccoli or berries'], [null, 'a quarter', 'brown rice, oatmeal or whole wheat bread'], [null, 'a quarter', 'beans, eggs, fish or yogurt']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should you eat many colours of vegetables and fruit?',
+        opts: ['Different colours have different nutrients.', 'They look nice.', 'They cost less.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Which drink does the guide suggest most?',
+        opts: ['juice', 'pop', 'water'], a: 2 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Un</b>sweetened means …',
+        opts: ['not sweetened', 'very sweet', 'sweetened again'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why are the headings “half”, “a quarter” and “a quarter”?',
+        opts: ['They tell how much of the plate each food fills.', 'They are page numbers.', 'They are times of day.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Maya’s dinner is pasta with a little sauce and nothing else. What would you add to make it match the healthy plate? Explain.',
+        a: 'I would add vegetables like a salad or broccoli to fill half the plate, and a protein like beans or chicken. I would also use whole wheat pasta.', look: 'adds vegetables/fruit and protein, using the plate proportions' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The title is “Half a Plate of Colour.” Why is this a good title?',
+        a: 'Half the plate should be vegetables and fruit, which are many colours, so the title sums up the most important idea.', look: 'links the title to the main advice' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-zoetrope', subject: 'arts', form: 'Explanation',
+    title: 'Pictures That Move',
+    deck: 'How a spinning drum from 1834 explains every cartoon you watch',
+    hero: {
+      photo: 'g4-zoetrope.jpg', credit: 'Photo: Auckland Museum, CC BY 4.0, Wikimedia Commons', focus: '50% 28%',
+      side: { w: 440, view: '0 0 440 200' },
+      tall: 200,
+      cap: 'An old zoetrope in a museum, and how one works: you look through a slit at the drawings on the far side.',
+      art: '<path class="k" d="M150 50 V150 M390 50 V150 M150 150 A120 22 0 0 0 390 150"/><ellipse class="k" cx="270" cy="50" rx="120" ry="22"/>' +
+        [178, 222, 270, 318, 362].map(function (x) { return '<rect class="h" x="' + (x - 4) + '" y="62" width="8" height="30"/>'; }).join('') +
+        '<circle class="a" cx="250" cy="44" r="5"/><circle class="a" cx="290" cy="40" r="5"/>' +
+        '<path class="d" d="M48 78 L178 76 L280 44"/><path class="k" d="M30 78 Q44 66 58 78 Q44 90 30 78 Z"/><circle class="dot" cx="45" cy="78" r="3"/>' +
+        D.arrow(220, 184, 320, 184) + D.label(10, 112, 'your eye', 40, 84) + D.label(300, 14, 'drawings inside', 290, 40) + D.label(180, 126, 'slits', 222, 92) + '<text class="n" x="270" y="198" text-anchor="middle">it spins</text>'
+    },
+    body: [
+      'Every cartoon, video game and movie you have ever watched is really a trick. Nothing on the screen actually moves. You are seeing many still pictures, one after another, so quickly that your brain blends them into motion.',
+      { h: 'A spinning drum' },
+      'In 1834, a British inventor named William Horner made a toy that showed this trick. It was a round drum, open at the top, with thin slits cut in its sides. Inside, around the bottom of the drum, was a paper strip with a series of drawings, each one a little different from the last. It was later named the <b>zoetrope</b>, from Greek words meaning “wheel of life.”',
+      { fig: [0, 1, 2, 3, 4, 5].map(function (i) { var x = 14 + i * 46, y = 60 - [0, 14, 22, 14, 0, -6][i];
+          return '<rect class="t" x="' + (x - 4) + '" y="20" width="44" height="90"/><circle class="k" cx="' + (x + 18) + '" cy="' + y + '" r="9"/><path class="k" d="M' + (x + 6) + ' 108 Q' + (x + 18) + ' ' + (y + 16) + ' ' + (x + 30) + ' 108"/>'; }).join('') +
+          '<text class="n" x="150" y="130" text-anchor="middle">Each drawing is a little different from the one before.</text>',
+        tall: 138, cap: 'A strip of drawings of a bouncing ball, like the ones inside a zoetrope.' },
+      { h: 'How it works' },
+      'When you spin the drum and look through the slits, you see one drawing, then a flash of darkness, then the next drawing. The slits work like a camera’s shutter, showing each picture for a split second. Your eyes and brain hold on to each picture for a moment, so the pictures blend together. A ball seems to bounce, or a horse seems to gallop.',
+      { box: 'Make a flip book', text: 'Draw a stick figure on the corner of a small notepad. On each next page, draw it again, moving its arm a tiny bit. Flip the pages quickly with your thumb and watch it wave.' },
+      { h: 'From toys to movies' },
+      'Movies use the same idea. A film shows 24 pictures, called frames, every second. A cartoon is made of thousands of drawings or computer images. <b>Animation</b> is the art of making still pictures seem to move, and it all started with simple spinning toys.'
+    ],
+    guide: { before: 'If you can, make a quick flip book with a sticky-note pad before reading. Teach <b>animation</b> and <b>frame</b>. Look at how the ball changes from drawing to drawing in the diagram.',
+      after: 'If you made a short animation, what would it show? How many drawings would you need for one second of movie?' },
+    words: [['zoetrope', 'a spinning drum that makes drawings seem to move'], ['animation', 'making still pictures seem to move']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['William Horner was British.', 'Moving pictures are really still pictures shown very quickly, an idea shown by the zoetrope.', 'Movies are long.', 'Flip books are fun.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the ball do from drawing to drawing?',
+        opts: ['rises, then falls', 'gets bigger', 'stays still'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'What would happen if the zoetrope had no slits?',
+        opts: ['The drawings would blur together.', 'It would spin faster.', 'It would be louder.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps to show how a zoetrope works.',
+        items: ['You spin the drum.', 'You look through a slit and see one drawing.', 'Darkness flashes, then the next drawing appears.', 'Your brain blends the pictures into motion.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Movies show 24 frames each second. Fill in the chart.', cols: ['Seconds of movie', 'Frames needed'],
+        rows: [['1', '24'], ['2', null], ['10', null]],
+        a: [[null, null], [null, '48'], [null, '240']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Zoetrope</b> comes from Greek words for “life” and “wheel.” Which word with <b>zoo-</b> or <b>zo-</b> is about animal life?',
+        opts: ['zoology', 'zone', 'zero'], a: 0 },
+      { k: 'lines', code: 'C1.2', n: 2, q: 'How are the steps in the “Make a flip book” box written? Why?',
+        a: 'They are short instructions in order, telling the reader what to do, so the reader can follow them.', look: 'recognizes procedural form and its purpose' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The text says every movie is “really a trick.” Explain the trick in your own words.',
+        a: 'Nothing on the screen moves. Many still pictures are shown so quickly that our brain blends them into motion.', look: 'still pictures shown quickly and blended by the brain' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-science-fair', subject: 'story', form: 'Short story',
+    title: 'The Sinking Boat',
+    deck: 'Amira’s experiment fails the night before the science fair',
+    hero: {
+      photo: 'g4-science-fair.jpg', credit: 'Photo: U.S. Navy, public domain, Wikimedia Commons', focus: '50% 30%',
+      side: { w: 420, view: '0 0 420 190' },
+      tall: 190,
+      cap: 'A student explains her project to a judge at a school science fair, and how to test a foil boat.',
+      art: '<rect class="h" x="20" y="96" width="380" height="70"/><path class="a" d="M20 96 H400"/><path class="k" d="M20 40 V166 H400 V40"/>' +
+        '<path class="k" d="M130 70 L150 110 H270 L290 70 Z"/>' +
+        [[170, 96], [186, 96], [202, 96], [218, 96], [234, 96], [250, 96], [178, 86], [194, 86], [210, 86], [226, 86], [242, 86]].map(function (c) { return '<ellipse class="k" cx="' + c[0] + '" cy="' + c[1] + '" rx="7" ry="3"/>'; }).join('') +
+        D.label(300, 30, 'pennies', 230, 84) + D.label(310, 70, 'foil boat', 284, 78) + D.label(30, 186, 'water in the sink', 60, 130) + D.arrow(210, 18, 210, 70) + '<text class="n" x="120" y="22">add one at a time</text>'
+    },
+    body: [
+      'Amira had a plan for the science fair. She would build a boat out of aluminum foil and find out how many pennies it could hold before it sank. She called her project “How Much Can a Boat Carry?” and wrote her <b>hypothesis</b> in her neatest printing: A boat with high sides will hold the most pennies.',
+      { h: 'The night before' },
+      'The night before the fair, Amira tested her boat in the kitchen sink. She folded the foil into a tall, narrow boat with high sides, just like her drawing. Her little brother, Sami, dropped in the pennies one by one. Ten. Eleven. Twelve. On the thirteenth penny, the boat tipped over and sank.',
+      '“It’s ruined,” Amira groaned. “My hypothesis was wrong.”',
+      'Her dad looked up from the stove. “Is it ruined,” he asked, “or did you just learn something?”',
+      { fig: '<path class="k" d="M20 60 L30 120 H80 L90 60"/><path class="a" d="M10 100 H100"/><text class="lb" x="55" y="140" text-anchor="middle">tall and narrow</text><text class="n" x="55" y="154" text-anchor="middle">sank at 13</text>' +
+          '<path class="k" d="M150 96 L160 120 H270 L280 96"/><path class="a" d="M140 108 H290"/><text class="lb" x="215" y="140" text-anchor="middle">wide and flat</text><text class="n" x="215" y="154" text-anchor="middle">held 61</text>',
+        tall: 160, cap: 'Amira’s two boats, seen from the side.' },
+      { h: 'Trying again' },
+      'Amira thought about it. The tall boat had tipped because all the pennies were stacked in a narrow space. What if the boat were wide and flat instead, so the weight could spread out? She tore off a fresh sheet of foil and folded a shallow boat as wide as a dinner plate. Sami counted again. Twenty. Forty. Sixty-one pennies before the water finally poured over the edge.',
+      { h: 'The fair' },
+      'At the science fair, Amira set both boats on her table, the crumpled tall one and the wide one. When the judge asked about her <b>results</b>, Amira did not hide her mistake. “My hypothesis was wrong,” she said, “and that is how I found the answer.”',
+      'The judge smiled and wrote something on her clipboard. Amira did not win first prize, but she walked home feeling like a real scientist.'
+    ],
+    guide: { before: 'Fold a small foil boat and float it in a bowl before reading. Teach <b>hypothesis</b> and <b>results</b>. Ask: what do you think happens when an experiment does not go as planned?',
+      after: 'Tell about a time something went wrong and you learned from it. Why do scientists say a wrong hypothesis is still useful?' },
+    words: [['hypothesis', 'a guess that a scientist tests'], ['results', 'what you find out from an experiment']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells this story?',
+        opts: ['Amira, using “I”', 'a narrator outside the story, using “she”', 'Sami', 'the judge'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part of the story', 'What happens'],
+        rows: [['Problem', null], ['Turning point', null], ['Solution', null]],
+        a: [[null, 'Amira’s tall boat sinks the night before the fair, and her hypothesis is wrong.'], [null, 'Her dad asks if she learned something, and she thinks about why the boat tipped.'], [null, 'She builds a wide, flat boat that holds 61 pennies and shows both boats at the fair.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How many more pennies did the wide boat hold?',
+        opts: ['13', '48', '61'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does Amira feel when the first boat sinks?',
+        opts: ['proud', 'upset', 'sleepy'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the wide boat hold more pennies?',
+        opts: ['The weight could spread out.', 'It was made of stronger foil.', 'Sami counted faster.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Amira <b>re</b>tested her idea. What does <b>retested</b> mean?',
+        opts: ['tested again', 'never tested', 'tested badly'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What lesson does this story teach? Use details from the story.',
+        a: 'A mistake can help you learn. Amira’s first boat sank, but it helped her find the answer, and she felt like a real scientist.', look: 'a lesson about learning from mistakes, with a detail' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Amira did not win first prize. Predict what she might do at next year’s science fair.',
+        a: 'She might try another experiment and not be afraid if her hypothesis is wrong, because she learned that mistakes help.', look: 'a prediction based on how Amira changed' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-backyard-rink', subject: 'story', form: 'Diary',
+    title: 'Flooding the Rink',
+    deck: 'A week of building an outdoor rink with Grandpa',
+    hero: {
+      photo: 'g4-outdoor-rink.jpg', credit: 'Photo: Fort Simpson Chamber of Commerce, CC BY 2.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 190,
+      cap: 'Fresh ice on a cold, sunny day in Fort Simpson, Northwest Territories.'
+    },
+    plain: true,
+    body: [
+      '<b>Saturday, December 2</b>',
+      'Grandpa says it is finally cold enough. Today the temperature was minus 18, so we started our rink in the backyard. First we stamped down the snow with our boots until it was flat and hard. It took all morning. My legs feel like noodles.',
+      '<b>Sunday, December 3</b>',
+      'We built banks of snow around the edges, like a frame, to hold the water in. Then Grandpa showed me how to spray a thin layer of water over the packed snow. “Thin layers,” he said. “<b>Patience</b> makes good ice.” I wanted to dump a whole bucket, but he said thick water freezes slowly and gets bumpy.',
+      { fig: '<path class="k" d="M10 120 H290"/><rect class="h" x="10" y="100" width="280" height="20"/><path class="k" d="M10 100 Q10 80 30 80 V100 M290 100 Q290 80 270 80 V100"/>' +
+          '<path class="a" d="M30 94 H270"/><path class="t" d="M30 88 H270 M30 82 H270"/>' +
+          D.label(110, 50, 'thin layers of ice', 150, 86) + D.label(10, 150, 'packed snow', 100, 110) + D.label(220, 50, 'snow bank', 280, 84),
+        tall: 156, cap: 'A side view of the rink. Each night adds another thin layer of ice.' },
+      '<b>Tuesday, December 5</b>',
+      'Every night after supper, we go out with the hose and add another layer. The water steams in the cold air. Grandpa says each layer is about as thin as a coin. I counted, and we have done six layers so far. The ice is starting to look like glass.',
+      '<b>Thursday, December 7</b>',
+      'Disaster! A warm wind came this afternoon, and the ice got soft and slushy in one corner. I almost cried. Grandpa just shrugged. “The weather is the boss,” he said. Tonight it got cold again, so we scraped off the slush and flooded that corner three times.',
+      '<b>Saturday, December 9</b>',
+      'Today was the best day. The ice was smooth and hard, and I skated until my toes were frozen. My cousins came over, and we played <b>shinny</b> until the streetlights came on. Grandpa watched from the back step with his hot chocolate. He said, “Good ice takes a week. Good memories take a lifetime.” I think he is right.'
+    ],
+    guide: { before: 'Ask whether the child has skated outdoors. Teach <b>diary</b> and <b>patience</b>. Point out that each entry starts with a date in bold. Look at the side view of the rink.',
+      after: 'Grandpa says “<b>Patience</b> makes good ice.” What else takes patience to do well? Tell about something you worked on over many days.' },
+    words: [['patience', 'being able to wait calmly'], ['shinny', 'a friendly game of hockey with no teams set up ahead of time']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text is a diary. How can you tell?',
+        opts: ['It has dated entries written by one person about their days.', 'It has steps to follow.', 'It rhymes.', 'It has a map.'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['They stamp down the snow.', 'They build snow banks.', 'A warm wind makes slush.', 'They play shinny.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what holds the water in?',
+        opts: ['snow banks', 'a wooden fence', 'the house'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“My legs feel like noodles.” What does this mean?',
+        opts: ['The writer’s legs are very tired.', 'The writer ate noodles.', 'The writer’s legs are long.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Grandpa spray thin layers?',
+        opts: ['Thin layers freeze fast and smooth.', 'The hose is small.', 'He wants to save water.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['A warm wind comes.', null], ['They add a layer every night.', null]],
+        a: [[null, 'The ice gets soft and slushy in one corner.'], [null, 'The ice gets thicker and looks like glass.']] },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'The diary is written in the first person, with “I.” How does this help you understand the writer’s feelings? Give an example.',
+        a: 'We hear the writer’s own thoughts, like “I almost cried” when the ice got slushy, so we know exactly how they felt.', look: 'an example of feelings shown through first person' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'What does Grandpa mean by “Good memories take a lifetime”?',
+        a: 'The rink took a week to build, but the fun times with family will be remembered forever.', look: 'an interpretation about lasting memories' }
+    ]
+  });
 })();
