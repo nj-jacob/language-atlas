@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-09
+- Grade 2 worksheets: every chapter (14 chapters, 80 ideas) gets printable sheets in grown-up view (chapter, then Worksheets): Learn, Practise 1 to 3 and Think for each idea, plus its activities and reading passages. Each idea has an "I can" goal and three Think questions written for it, marked by a grown-up with a model answer on the key. Every Grade 2 expectation is on a sheet.
+
 ## 2026-11-08
 - Toolbox: the Toolbox link (now called Toolbox, like Math) opens a page with every tool on its shelves instead of the first tool; a tool's back button returns to that page, or to the site's own Toolbox page when it was opened from there. The site's Toolbox page (in Math Atlas) draws the same shelves.
 
