@@ -1150,7 +1150,9 @@ async function checkSheets(browser, base, g) {
         if (k.over) out.push(sw + ': its answer key runs off the page');
         if (k.items.length !== a.items.length) out.push(sw + ': the answer key has ' + k.items.length + ' questions, the sheet ' + a.items.length);
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(aText + kText)) out.push(sw + ': shows undefined or NaN');
-        const least = s.kind === 'learn' ? 1 : 2; /* Learn teaches with its Watch me steps too */
+        /* Learn teaches with its Watch me steps too; two texts to compare fill most of a page */
+        const twoTexts = a.sheet.passage && (a.sheet.passage.html.match(/class="psg/g) || []).length > 1;
+        const least = s.kind === 'learn' || twoTexts ? 1 : 2;
         if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < least) out.push(sw + ': fits only ' + a.items.length + ' question(s); this sheet needs ' + least + ' or more');
         a.items.forEach(q => {
           n.questions++;
