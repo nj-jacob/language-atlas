@@ -382,7 +382,7 @@
       'Builders choose stones that balance well together, without any glue or mortar. Some inuksuit are a single tall stone. Others are stacked high. An inuksuk shaped like a person, with legs and arms, has its own name: inunnguaq. Many inuksuit have stood for hundreds of years.',
       { box: 'Did you know?', text: 'An inuksuk appears on the flag of Nunavut, the territory created in 1999. It stands for the guidance of the land and the people who came before.' },
       { h: 'Respecting the land' },
-      'Inuksuit are part of the knowledge that Inuit <b>elders</b> pass on to younger people. Because they carry real messages, people should never knock one down or build one where it might confuse a traveller. Today, you may see inuksuit in parks across Canada. The ones on the land in the Arctic still do the job they were built for.'
+      'Inuksuit are part of the knowledge that Inuit <b>elders</b> pass on to younger people. Because they carry real messages, people should never knock one down or build one where it might confuse a traveller. Today, you may see inuksuit in parks across Canada. The ones on the land in the Arctic still do the job they were built for. Some have been guiding people for longer than anyone can remember, and travellers still stop to read their messages.'
     ],
     guide: { before: 'Find Nunavut on a map of Canada. Explain that Inuit are the people of the Arctic. Teach <b>inuksuk</b> (plural inuksuit) and say the word together. Ask how you would find your way without signs or trees.',
       after: 'Why is it important not to build an inuksuk just for fun on the land in the North? What signs or markers help people find their way where you live?' },
@@ -423,15 +423,16 @@
       'Every summer, heavy rain fell in the mountains far to the south. The water rushed north and the Nile overflowed its banks. For weeks, the land beside the river was underwater. When the water went down, it left behind a layer of thick, black mud called <b>silt</b>. Silt is full of nutrients, so crops grow well in it.',
       { fig: '<rect class="k" x="10" y="30" width="93" height="40"/><rect class="h" x="103" y="30" width="94" height="40"/><rect class="k" x="197" y="30" width="93" height="40"/>' +
           '<text class="lb" x="56" y="55" text-anchor="middle">flood</text><text class="lb" x="150" y="55" text-anchor="middle">growing</text><text class="lb" x="244" y="55" text-anchor="middle">harvest</text>' +
-          '<text class="n" x="56" y="88" text-anchor="middle">July to October</text><text class="n" x="150" y="88" text-anchor="middle">November to February</text><text class="n" x="244" y="88" text-anchor="middle">March to June</text>' +
+          '<text class="n" x="56" y="86" text-anchor="middle">July to</text><text class="n" x="56" y="98" text-anchor="middle">October</text><text class="n" x="150" y="86" text-anchor="middle">November to</text><text class="n" x="150" y="98" text-anchor="middle">February</text><text class="n" x="244" y="86" text-anchor="middle">March to</text><text class="n" x="244" y="98" text-anchor="middle">June</text>' +
           D.ripple(16, 100, 22) + '<path class="k" d="M140 26 V12 M140 18 L132 12 M140 16 L148 10 M162 26 V14 M162 20 L154 14"/>',
-        tall: 100, cap: 'The farming year in ancient Egypt had three seasons.' },
+        tall: 106, cap: 'The farming year in ancient Egypt had three seasons.' },
       { h: 'Three seasons' },
       'The Egyptians planned their year around the river. During the flood season, farmers could not work their fields, so many helped build temples and pyramids. As the water went down, they planted wheat, barley and flax in the wet silt. In the spring, they harvested the crops before the hot, dry summer. Then the flood came again.',
       { box: 'Did you know?', text: 'The Egyptians called their country Kemet, “the black land,” after the dark silt. They called the desert “the red land.”' },
       { h: 'Measuring the river' },
       'The size of the flood mattered. Too little water meant a poor harvest and hunger. Too much water could wash away villages. Egyptians built stone stairways into the river, called nilometers, with marks to measure how high the water rose. Officials used the marks to predict the harvest and decide how much <b>tax</b> each farmer would pay in grain.',
-      'An ancient Greek writer called Egypt “the gift of the Nile.” Without the river, there would have been only desert.'
+      'An ancient Greek writer called Egypt “the gift of the Nile.” Without the river, there would have been only desert.',
+      'Today, a large dam at Aswan controls the Nile, so the river no longer floods each year. Farmers use fertilizer instead of silt, and canals carry water to their fields all year long.'
     ],
     guide: { before: 'Find Egypt and the Nile on a map or globe. Show the photo and point out the green strip in the desert. Teach <b>silt</b> and <b>tax</b>. Ask what plants need to grow.',
       after: 'How do farmers in Canada depend on the weather? Do we still depend on rivers today? Think of drinking water, electricity and travel.' },
@@ -480,7 +481,7 @@
       { h: 'Going to scribe school' },
       'Learning cuneiform took years, because there were hundreds of signs to remember. Boys, and some girls, went to a school called the “tablet house.” They copied signs over and over. Teachers could be strict, and students who made mistakes might be punished.',
       { box: 'Did you know?', text: 'Clay tablets last a very long time. When a library burned, its clay tablets were baked hard, so they survived. Hundreds of thousands have been found.' },
-      'Soon, scribes wrote more than lists. They wrote laws, letters, stories and the oldest poems we know. Writing let people remember the past and send ideas far away.'
+      'Soon, scribes wrote more than lists. They wrote laws, letters, stories and the oldest poems we know. Writing let people remember the past and send ideas far away. Today, experts can read cuneiform, and the tablets tell us about the lives, jobs and even the jokes of people who lived 5000 years ago.'
     ],
     guide: { before: 'Find Iraq, the Tigris and the Euphrates on a map. Teach <b>scribe</b> and <b>cuneiform</b>. If you can, press the end of a popsicle stick into play dough to make wedges.',
       after: 'Writing began as a way to keep track of things people traded. What do you use writing for? What would be hard if no one could write?' },
@@ -526,7 +527,7 @@
           '<path class="a" d="M196 64 Q190 100 198 136"/>' +
           '<text class="n" x="38" y="16" text-anchor="middle">Superior</text><text class="n" x="38" y="46" text-anchor="middle">183 m</text>' +
           '<text class="n" x="110" y="40" text-anchor="middle">Michigan and Huron</text><text class="n" x="110" y="72" text-anchor="middle">176 m</text>' +
-          '<text class="n" x="172" y="46" text-anchor="middle">Erie</text><text class="n" x="172" y="76" text-anchor="middle">174 m</text>' +
+          '<text class="n" x="174" y="78" text-anchor="middle">Erie</text><text class="n" x="174" y="90" text-anchor="middle">174 m</text>' +
           '<text class="n" x="226" y="124" text-anchor="middle">Ontario</text><text class="n" x="228" y="160" text-anchor="middle">75 m</text>' +
           D.label(130, 112, 'Niagara Falls', 192, 100) + '<text class="n" x="292" y="138" text-anchor="end">to the ocean</text>',
         tall: 168, cap: 'A side view of the lakes, showing their height above the sea. The steps are not drawn to scale.' },
@@ -555,6 +556,463 @@
         a: 'Each lake is lower than the one before, so water steps down from one to the next like going down stairs.', look: 'explains the comparison using the different heights of the lakes' },
       { k: 'lines', code: 'C3.5', n: 3, q: 'Why must Canada and the United States work together to protect the lakes? Use details from the text.',
         a: 'Both countries share the lakes, and what goes into one lake flows downstream to the others, so neither country can keep the water clean alone.', look: 'a reason that uses the connected flow of water and the shared lakes' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-sleep', subject: 'health', form: 'Explanation',
+    title: 'Why Your Brain Needs Sleep',
+    deck: 'What happens while you sleep, and how much sleep you need',
+    hero: {
+      photo: 'g4-sleeping-child.jpg', credit: 'Photo: Alessandro Zangrilli, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 190,
+      cap: 'Sleep is not wasted time. While you rest, your body and brain are busy.'
+    },
+    body: [
+      'You spend about one third of your life asleep. That might sound like a lot of time doing nothing. In fact, your body and brain do some of their most important work while you sleep.',
+      { h: 'A busy night' },
+      'While you sleep, your body repairs muscles and grows. Your brain sorts through everything you learned during the day and stores the important parts as <b>memories</b>. That is why a good night’s sleep after studying spelling words helps you remember them the next day. Sleep also helps your body fight germs, so you get sick less often.',
+      { h: 'How much is enough?' },
+      'People need different amounts of sleep at different ages. Canadian guidelines say that children from 5 to 13 years old need 9 to 11 hours of sleep every night. Teenagers need a little less, and adults need 7 to 9 hours.',
+      { fig: '<path class="k" d="M70 14 V128 H292"/>' +
+          [0, 2, 4, 6, 8, 10, 12, 14].map(function (h) { return '<path class="t" d="M' + (70 + h * 15) + ' 128 v4"/><text class="n" x="' + (70 + h * 15) + '" y="144" text-anchor="middle">' + h + '</text>'; }).join('') +
+          '<rect class="h" x="220" y="22" width="45" height="16"/><rect class="h" x="205" y="50" width="30" height="16"/><rect class="h" x="190" y="78" width="30" height="16"/><rect class="h" x="175" y="106" width="30" height="16"/>' +
+          '<text class="n" x="64" y="34" text-anchor="end">ages 3 to 4</text><text class="n" x="64" y="62" text-anchor="end">ages 5 to 13</text><text class="n" x="64" y="90" text-anchor="end">ages 14 to 17</text><text class="n" x="64" y="118" text-anchor="end">adults</text>' +
+          '<text class="n" x="292" y="158" text-anchor="end">hours of sleep each night</text>',
+        tall: 162, cap: 'How much sleep people need at different ages. The bars show the healthy range.' },
+      { h: 'When sleep is short' },
+      'Without enough sleep, it is harder to pay attention, solve problems and stay calm. Small things can feel very upsetting. Tired people also make more mistakes, from spelling to sports.',
+      { box: 'Tips for a good sleep', text: 'Go to bed and wake up at about the same time every day. Put screens away an hour before bed, because their light tells your brain it is still daytime. Keep your room cool, dark and quiet.' },
+      'A bedtime <b>routine</b> helps, too. Doing the same calm things each night, such as a bath, a book and lights out, tells your body that it is time to rest. Sleep is not a waste of time. It is how you get ready for tomorrow.'
+    ],
+    guide: { before: 'Ask the child what time they usually fall asleep and wake up, and work out together how many hours that is. Teach <b>memories</b> and <b>routine</b>. Show how to read the bar chart from the age to the bar.',
+      after: 'What is one thing you could change to sleep better? Would a family screen-free hour before bed work in your home?' },
+    words: [['memories', 'things your brain remembers'], ['routine', 'the same steps done in the same order every time']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Adults need 7 to 9 hours of sleep.', 'Sleep does important work for your body and brain, so you need enough of it.', 'Screens are bad.', 'Spelling is hard.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How much sleep does a 10-year-old need?',
+        opts: ['7 to 9 hours', '9 to 11 hours', '10 to 13 hours'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should screens be put away before bed?',
+        opts: ['Their light tells your brain it is still daytime.', 'They are too loud.', 'They use too much power.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['What sleep does', 'How it helps you'],
+        rows: [['repairs muscles', null], ['sorts what you learned', null], [null, 'you get sick less often']],
+        a: [[null, 'your body grows and stays strong'], [null, 'you remember the important parts'], ['helps your body fight germs', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Sleep helps you <b>re</b>member. Which word with <b>re-</b> means “build again”?',
+        opts: ['rebuild', 'reason', 'ready'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why is “Tips for a good sleep” in a box?',
+        opts: ['It gives advice the reader can use.', 'It is a story.', 'It is a joke.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the text in two or three sentences.',
+        a: 'Your body and brain do important work while you sleep, like growing and storing memories. Children 5 to 13 need 9 to 11 hours a night, and a routine helps.', look: 'the main idea and two details, in the child’s own words' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Sam went to bed very late. The next day he forgot his lunch and got upset over a small thing. Use the text to explain why.',
+        a: 'Without enough sleep it is harder to pay attention and stay calm, so Sam forgot things and small things felt upsetting.', look: 'connects Sam’s day to the effects of short sleep in the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-helmet', subject: 'health', form: 'Explanation',
+    title: 'Two, V, One',
+    deck: 'How a bike helmet protects your brain, and how to check that it fits',
+    hero: {
+      photo: 'g4-bike-helmet.jpg', credit: 'Photo: Aaron Montoya, U.S. Air Force, public domain, Wikimedia Commons', focus: '50% 30%',
+      tall: 200,
+      cap: 'A grown-up checks the fit of a child’s helmet at a bicycle safety day.'
+    },
+    body: [
+      'Your brain controls everything you do: thinking, moving, seeing and feeling. A broken arm can heal in a few weeks, but a brain <b>injury</b> may take months to heal, and some injuries never fully heal. That is why a helmet is the most important thing you wear on a bike.',
+      { h: 'How a helmet works' },
+      'A bike helmet has a hard, smooth shell on the outside and thick foam on the inside. If you fall and hit your head, the foam crushes a little. Crushing soaks up the force of the <b>impact</b>, so less of it reaches your head. The smooth shell helps the helmet slide along the ground instead of twisting your neck.',
+      { h: 'The 2V1 check' },
+      'A helmet only protects you if it fits. Safety experts in Canada use a quick check called 2V1. Two: there should be two fingers’ width between your eyebrows and the helmet. V: the side straps should make a V shape just under each ear. One: you should fit only one finger between the chin strap and your chin.',
+      { fig: '<path class="k" d="M90 70 Q90 18 150 18 Q210 18 210 70 Z"/><path class="t" d="M110 36 Q150 26 190 36"/>' +
+          '<circle class="k" cx="150" cy="96" r="34"/><path class="k" d="M128 86 h10 M162 86 h10"/><path class="t" d="M142 112 Q150 116 158 112"/>' +
+          '<path class="a" d="M118 70 L126 104 L134 70 M182 70 L174 104 L166 70 M126 104 Q150 140 174 104"/>' +
+          '<path class="d" d="M120 72 V84 M126 72 V84"/>' +
+          D.label(10, 70, '2 fingers', 122, 78) + D.label(10, 112, 'V under the ear', 126, 100) + D.label(226, 140, '1 finger', 160, 132) + D.label(10, 26, 'shell and foam', 104, 44),
+        tall: 152, cap: 'The 2V1 check: two fingers, a V under each ear, and one finger under the strap.' },
+      { box: 'Did you know?', text: 'In Ontario, cyclists under 18 must wear a bike helmet by law. A helmet that has been in a crash should be replaced, even if it looks fine, because its foam is already crushed.' },
+      'Wear your helmet every time, even for a short ride. Most falls happen close to home, often at low speeds. It takes only a few seconds to buckle up.',
+      { h: 'Choosing a helmet' },
+      'Look for a sticker inside that shows the helmet meets a safety standard. Choose one that fits snugly without any pads squeezing. It should sit level on your head, not tipped back like a hat. Bike helmets are made for bikes. For skiing or hockey, you need a helmet made for that sport, because each one is tested for different kinds of falls.'
+    ],
+    guide: { before: 'If you have a helmet, try the 2V1 check together as you read. Teach <b>impact</b> and <b>injury</b>. Point to each part of the diagram.',
+      after: 'Some people say helmets look silly or messy their hair. What would you say to a friend who will not wear one?' },
+    words: [['impact', 'the force of one thing hitting another'], ['injury', 'harm or damage to the body']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Helmets are hard.', 'A helmet that fits well protects your brain when you fall.', 'Ontario has many laws.', 'Most falls happen near home.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the diagram and the text. Fill in the 2V1 check.', cols: ['Part', 'What to check'],
+        rows: [['2', null], ['V', null], ['1', null]],
+        a: [[null, 'two fingers between your eyebrows and the helmet'], [null, 'the straps make a V just under each ear'], [null, 'one finger between the chin strap and your chin']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the foam crush a little?',
+        opts: ['It is cheap.', 'Crushing soaks up the force of the impact.', 'It makes the helmet lighter.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'A helmet hit the road in a crash but looks fine. What should you do?',
+        opts: ['keep using it', 'replace it', 'paint it'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>un-</b> mean in <b>un</b>safe and <b>un</b>buckled?',
+        opts: ['not, or the opposite of', 'again', 'before'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why is the title “Two, V, One”?',
+        opts: ['It names the fit check the text teaches.', 'It is a race.', 'It counts the riders.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Who wrote this text, a helmet seller or a safety expert? What makes you think so?',
+        a: 'A safety expert, because the writer wants you to stay safe and explains how to check the fit, not where to buy a helmet.', look: 'a reasonable view of the writer’s purpose with evidence from the text' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why a brain injury is more serious than a broken arm. Use the text.',
+        a: 'A broken arm heals in a few weeks, but a brain injury can take months and may never fully heal. The brain controls everything we do.', look: 'the comparison of healing time and the role of the brain' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-jack-pine', subject: 'arts', form: 'Report',
+    title: 'The Jack Pine',
+    deck: 'How Tom Thomson painted one of Canada’s best-known pictures',
+    hero: {
+      photo: 'g4-jack-pine.jpg', credit: 'Painting: Tom Thomson, public domain, National Gallery of Canada', focus: '50% 40%',
+      side: { w: 370, view: '0 0 310 160' },
+      tall: 250,
+      cap: '<i>The Jack Pine</i>, painted by Tom Thomson in the winter of 1916 to 1917, and its design: flat bands across, with one tree reaching up through them.',
+      art: '<rect class="k" x="40" y="10" width="220" height="140"/><path class="t" d="M40 56 H260 M40 74 Q120 66 180 74 T260 72 M40 96 H260"/>' +
+        '<path class="a" d="M150 150 Q146 100 156 40 M154 60 L120 54 M155 80 L190 70 M152 100 L118 96 M156 44 L176 34"/>' +
+        '<text class="n" x="268" y="36">sky</text><text class="n" x="268" y="68">hills</text><text class="n" x="268" y="88">lake</text><text class="n" x="268" y="124">shore</text>' +
+        '<text class="n" x="4" y="100">tree</text><path class="t" d="M30 98 L146 98"/>'
+    },
+    body: [
+      'A lonely pine tree leans over a lake. Behind it, bands of purple hills and a glowing yellow sky stretch away. This painting, <i>The Jack Pine</i>, is one of the best-known pictures in Canada. It hangs in the National Gallery of Canada in Ottawa.',
+      { h: 'An artist of the North' },
+      'Tom Thomson grew up on a farm near Owen Sound, Ontario. He worked as an artist who designed ads, but he loved the wild. Each spring, he paddled into Algonquin Park, where he worked as a fishing guide and a fire ranger. He painted the lakes, rivers and forests in every season.',
+      { h: 'From sketch to canvas' },
+      'Outdoors, Thomson often painted a quick, small picture, called a <b>sketch</b>, on a small wooden board. He made a sketch of this jack pine at Grand Lake in Algonquin Park. Later, in a shack behind an artists’ studio in Toronto, he used the sketch to paint a much larger picture on canvas.',
+      { fig: '<rect class="h" x="160" y="14" width="126" height="115"/><rect class="k" x="40" y="110" width="24" height="19"/><path class="k" d="M10 129 H296"/>' +
+          D.label(14, 96, 'sketch', 46, 110) + '<text class="n" x="52" y="146" text-anchor="middle">about 22 by 27 cm</text>' +
+          '<text class="lb" x="223" y="74" text-anchor="middle">canvas</text><text class="n" x="223" y="146" text-anchor="middle">about 128 by 140 cm</text>',
+        tall: 152, cap: 'The sketch and the finished painting, drawn to the same scale.' },
+      { h: 'Looking closely' },
+      'The painting is made of flat bands of colour stacked one above another: shore, lake, hills and sky. The tree cuts up through all of them. Thomson outlined the branches in dark paint and used short, thick strokes. The bright sky makes the dark tree stand out. The way an artist arranges the parts of a picture is called its <b>composition</b>. Some people think the tree looks lonely. Others think it looks brave, standing firm in the wind. Each viewer can decide.',
+      { box: 'Did you know?', text: 'Thomson died in 1917, on Canoe Lake. A few years later, his artist friends formed the Group of Seven. They kept painting the Canadian wilderness in bold new ways.' }
+    ],
+    guide: { before: 'Look at the painting together for a full minute without talking, then share three things you noticed. Teach <b>sketch</b> and <b>composition</b>. Find Algonquin Park on a map of Ontario.',
+      after: 'Thomson painted places that mattered to him. What place would you paint? What colours and shapes would you use?' },
+    words: [['sketch', 'a quick, simple drawing or painting'], ['composition', 'the way the parts of a picture are arranged']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is this text mostly about?',
+        opts: ['Algonquin Park', 'how Tom Thomson made <i>The Jack Pine</i> and what makes it special', 'the Group of Seven', 'how to paint a lake'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['Thomson grows up near Owen Sound.', 'He paddles into Algonquin Park.', 'He sketches the jack pine at Grand Lake.', 'He paints the large picture in Toronto.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what goes across the bands of colour?',
+        opts: ['the lake', 'the tree', 'the sky'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Compare a sketch and the finished painting.', cols: ['', 'Sketch', 'Painting'],
+        rows: [['Where it was made', null, 'in a shack in Toronto'], ['Size', null, null]],
+        a: [[null, 'outdoors, at Grand Lake', null], [null, 'small, on a wooden board', 'much larger, on canvas']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Thomson make quick sketches outdoors?',
+        opts: ['He had no studio.', 'He could catch what he saw before the light and weather changed.', 'He did not like painting.'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>ranger</b> looks after a park. What does the ending <b>-er</b> in ranger and painter mean?',
+        opts: ['a person who does something', 'more than one', 'in the past'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The writer calls the tree “lonely.” What feeling does this word give the painting?',
+        a: 'It makes the tree seem alone and a little sad or quiet, standing by itself by the lake.', look: 'a feeling (alone, quiet, sad) linked to the word lonely' },
+      { k: 'lines', code: 'C1.4', n: 3, q: 'Look at the painting. Describe one thing you notice and how it makes you feel.',
+        a: 'The sky glows yellow behind the dark tree. It makes me feel calm, like the end of a day.', look: 'a detail from the painting and a personal response connected to it' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-orchestra', subject: 'arts', form: 'Explanation',
+    title: 'Meet the Orchestra',
+    deck: 'Four families of instruments, and the person who leads them',
+    hero: {
+      photo: 'g4-orchestra.jpg', credit: 'Photo: Reg Natarajan, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 180,
+      cap: 'The Toronto Symphony Orchestra on stage. Around 90 musicians play together.'
+    },
+    body: [
+      'Imagine almost a hundred people playing music at the same time, with no one getting lost. That is a symphony orchestra. Its instruments are sorted into four groups, called families. Instruments in a family make their sound in a similar way.',
+      { h: 'Strings' },
+      'The string family is the largest. Violins, violas, cellos and double basses all make sound when a bow or a finger makes their strings vibrate. The smaller the instrument, the higher its sound. Strings sit at the front of the stage, closest to the audience.',
+      { h: 'Woodwinds and brass' },
+      'Woodwinds, such as flutes, clarinets, oboes and bassoons, are played by blowing air across a hole or through a thin reed. Brass instruments, such as trumpets, horns, trombones and the tuba, are played by buzzing the lips into a metal mouthpiece. Brass can play very loudly, so these players sit farther back.',
+      { fig: '<path class="k" d="M10 140 Q150 -6 290 140"/><path class="t" d="M50 140 Q150 30 250 140 M84 140 Q150 66 216 140 M116 140 Q150 104 184 140"/>' +
+          '<circle class="a" cx="150" cy="150" r="5"/><path class="k" d="M10 140 H290"/>' +
+          '<text class="n" x="150" y="136" text-anchor="middle">strings</text><text class="n" x="150" y="117" text-anchor="middle">woodwinds</text><text class="n" x="150" y="98" text-anchor="middle">brass</text><text class="n" x="150" y="80" text-anchor="middle">percussion</text>' +
+          D.label(196, 164, 'conductor', 155, 150) + '<text class="n" x="20" y="164">audience this way</text>',
+        tall: 170, cap: 'A common seating plan. The louder families sit farther from the audience.' },
+      { h: 'Percussion' },
+      'The percussion family includes every instrument you hit, shake or scrape: drums, cymbals, the xylophone and even the triangle. Percussion players keep the beat and add excitement. One player may switch between several instruments in a single piece.',
+      { box: 'Did you know?', text: 'Before a concert, the oboe plays one note, an A. Every other musician tunes to that note, so the whole orchestra plays in tune.' },
+      { h: 'The conductor' },
+      'In front of everyone stands the <b>conductor</b>. The conductor does not play an instrument. Instead, with a thin stick called a baton, the conductor shows the speed of the music, cues each <b>section</b> when to come in, and signals when to play louder or softer. Every musician watches the conductor, so that one hundred players sound like one.'
+    ],
+    guide: { before: 'If you can, play a short orchestra piece and listen for different instruments. Teach <b>conductor</b> and <b>section</b>. Read the seating plan from front to back.',
+      after: 'Which instrument family would you like to play in, and why? How is an orchestra like a team?' },
+    words: [['conductor', 'the leader who directs an orchestra'], ['section', 'a group of players with the same kind of instrument']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'How is this explanation organized?',
+        opts: ['in time order, like a story', 'in parts, one for each instrument family and the conductor', 'as a list of steps', 'as questions and answers'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Family', 'How the sound is made', 'One instrument'],
+        rows: [['strings', null, null], ['woodwinds', 'blowing across a hole or through a reed', null], [null, 'buzzing the lips into a mouthpiece', null], ['percussion', null, null]],
+        a: [[null, 'a bow or finger makes the strings vibrate', 'violin, viola, cello or double bass'], [null, null, 'flute, clarinet, oboe or bassoon'], ['brass', null, 'trumpet, horn, trombone or tuba'], [null, 'hitting, shaking or scraping', 'drum, cymbal, xylophone or triangle']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the seating plan. Which family sits closest to the audience?',
+        opts: ['percussion', 'brass', 'strings'], a: 2 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the brass players sit farther back?',
+        opts: ['They are tall.', 'They can play very loudly.', 'They arrive late.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Which would have the lowest sound?',
+        opts: ['a violin', 'a cello', 'a double bass'], a: 2 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Percussion</b> instruments are hit. A <b>percussionist</b> is …',
+        opts: ['a person who plays them', 'a kind of drum', 'a loud noise'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What are three jobs of the conductor?',
+        a: 'The conductor shows the speed of the music, cues each section when to come in, and signals when to play louder or softer.', look: 'three jobs from the last paragraph' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The text ends: “one hundred players sound like one.” What does the writer mean?',
+        a: 'All the players play together so well, following the conductor, that it sounds like one big instrument.', look: 'the idea of playing together as a single group' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bridges', subject: 'tech', form: 'Explanation',
+    title: 'The Strength of Triangles',
+    deck: 'Why engineers build bridges out of three-sided shapes',
+    hero: {
+      photo: 'g4-quebec-bridge.jpg', credit: 'Photo: Martin St-Amant, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 200,
+      cap: 'The Quebec Bridge over the St. Lawrence River. Its steel frame is made of thousands of triangles.'
+    },
+    body: [
+      'Look closely at a crane, a tower or a big steel bridge, and you will see the same shape again and again: the triangle. Engineers use triangles because no other simple shape is as strong and stiff for its weight.',
+      { h: 'Squares wobble, triangles hold' },
+      'Make a square out of four straws joined at the corners with pins. Push on one corner, and the square leans over into a squashed diamond. Now make a triangle with three straws. Push on a corner, and it keeps its shape. The only way to change a triangle is to bend or break one of its sides. A shape that holds its form like this is called <b>rigid</b>.',
+      { fig: '<path class="k" d="M20 120 H100 V40 H20 Z"/><path class="d" d="M20 120 H100 L120 40 H40 Z"/>' + D.arrow(4, 40, 30, 40, 'a') +
+          '<path class="k" d="M180 120 H280 L230 40 Z"/>' + D.arrow(204, 26, 226, 40, 'a') +
+          '<text class="lb" x="60" y="146" text-anchor="middle">square: leans</text><text class="lb" x="230" y="146" text-anchor="middle">triangle: holds</text>',
+        tall: 152, cap: 'Push on the corner of each shape. The dashed square shows where it leans.' },
+      { h: 'Building with triangles' },
+      'A frame made of many triangles joined together is called a <b>truss</b>. When a heavy truck rolls across a truss bridge, its weight presses down on the triangles. Some parts of each triangle get squeezed, and some get pulled, but the shape does not change. The force is shared across the whole frame, so no single piece carries it all.',
+      { box: 'Try it', text: 'Build a square and a triangle from straws and pipe cleaners. Push gently on each one. Then add one straw across the square from corner to corner. What happens, and why?' },
+      { h: 'A Canadian giant' },
+      'The Quebec Bridge crosses the St. Lawrence River near Québec City. Finished in 1917, it is a truss bridge built from steel triangles. Its middle span is 549 metres long, the longest of its kind in the world. More than a hundred years later, trains and cars still cross it every day.',
+      'Next time you cross a bridge, look for the triangles. They are doing the heavy lifting.'
+    ],
+    guide: { before: 'Make a square and a triangle from straws or strips of paper with paper fasteners at the corners, and push on them together. Teach <b>rigid</b> and <b>truss</b>.',
+      after: 'Where else do you see triangles in buildings, furniture or playgrounds? Why do you think they are there?' },
+    words: [['rigid', 'stiff; keeps its shape'], ['truss', 'a frame made of triangles joined together']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Quebec Bridge is long.', 'Triangles are strong shapes, so engineers use them to build bridges and towers.', 'Squares are bad shapes.', 'Trucks are heavy.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the dashed lines show?',
+        opts: ['where the square leans when pushed', 'a second triangle', 'a bridge'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'In the “Try it” box, what happens when you add a straw across the square?',
+        opts: ['It makes two triangles, so the shape holds.', 'It falls apart.', 'It becomes a circle.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the two shapes.', cols: ['', 'Square', 'Triangle'],
+        rows: [['When you push a corner', null, null], ['Rigid?', null, 'yes']],
+        a: [[null, 'it leans into a diamond', 'it keeps its shape'], [null, 'no', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Tri</b>angle has three sides. What else has three of something?',
+        opts: ['a tricycle', 'a bicycle', 'a unicycle'], a: 0 },
+      { k: 'choice', code: 'C2.4', half: true, q: 'You are not sure what <b>truss</b> means. What is the best thing to do?',
+        opts: ['Check Words to know at the bottom of the page.', 'Skip the rest.', 'Guess any meaning.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why a truss bridge does not bend when a heavy truck crosses it.',
+        a: 'The truck’s weight presses on the triangles, but triangles keep their shape. The force is shared across the whole frame, so no one piece carries it all.', look: 'triangles hold their shape and the force is shared' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'The last sentence says the triangles are “doing the heavy lifting.” Predict what would happen to a bridge built with squares instead.',
+        a: 'It would lean and wobble when something heavy crossed, and it could collapse.', look: 'a prediction based on squares not being rigid' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-maple', subject: 'math', form: 'Explanation',
+    title: 'Forty to One',
+    deck: 'The math of turning maple sap into syrup',
+    hero: {
+      photo: 'g4-sap-buckets.jpg', credit: 'Photo: public domain, Wikimedia Commons', focus: '50% 55%',
+      tall: 200,
+      cap: 'Buckets collect sap from maple trees in early spring.'
+    },
+    body: [
+      'Every spring, when the snow begins to melt, maple trees start to wake up. Sugar that the tree stored in its roots all winter rises up the trunk in a clear, watery liquid called <b>sap</b>. With a lot of work and a little math, sap becomes maple syrup.',
+      { h: 'The sugar season' },
+      'Sap flows best when nights are below freezing and days are above freezing. In much of Ontario and Quebec, that happens for about four to six weeks in March and April. Long before Europeans arrived, the Anishinaabe, the Haudenosaunee and other First Nations collected sap and boiled it down to make maple sugar. Many families still gather for the sugar season today.',
+      { h: 'Boiling it down' },
+      'Fresh sap tastes like water with a hint of sweetness. It is only about 2 parts sugar in every 100. To make syrup, sugar makers boil the sap for hours. As the sap boils, the water <b>evaporate</b>s and rises away as steam, but the sugar stays behind. They keep boiling until the liquid is thick, golden and sweet.',
+      { fig: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (c) { return [0, 1, 2, 3].map(function (r) { return '<rect class="k" x="' + (10 + c * 17) + '" y="' + (16 + r * 26) + '" width="11" height="18" rx="2"/>'; }).join(''); }).join('') +
+          D.arrow(186, 60, 222, 60, 'a') + '<rect class="h" x="240" y="44" width="22" height="34" rx="3"/>' +
+          '<text class="lb" x="92" y="134" text-anchor="middle">40 litres of sap</text><text class="lb" x="251" y="134" text-anchor="middle">1 litre of syrup</text>' +
+          '<text class="n" x="204" y="48" text-anchor="middle">boil</text>',
+        tall: 142, cap: 'Each small jar is one litre. It takes about 40 litres of sap to make 1 litre of syrup.' },
+      { h: 'The magic number' },
+      'Sugar makers use a rule of thumb: about 40 litres of sap make 1 litre of syrup. So 2 litres of syrup need about 80 litres of sap, and 10 litres of syrup need about 400 litres. One tap on a large maple gives about 40 litres of sap in a season. That means one tree gives enough for about one litre of syrup.',
+      { box: 'Did you know?', text: 'Canada makes about three quarters of all the maple syrup in the world. Most of it comes from Quebec.' },
+      { h: 'Grades of syrup' },
+      'Syrup made early in the season is usually light and golden, with a gentle taste. Syrup made later is darker, with a stronger taste. In Canada, syrup is sorted by colour into grades, from golden to very dark. All of it is made the same way, with patience, heat and about forty litres of sap.'
+    ],
+    guide: { before: 'Show a bottle of maple syrup and ask how it is made. Teach <b>sap</b> and <b>evaporate</b>. Count the jars in the diagram together, by tens.',
+      after: 'Why do you think real maple syrup costs more than other syrups? Use the 40 to 1 rule in your answer.' },
+    words: [['sap', 'the watery liquid that carries food inside a tree'], ['evaporate', 'to change from a liquid into a gas']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Trees wake up in spring.', 'Maple syrup is made by boiling down a lot of sap, about 40 litres for each litre of syrup.', 'Quebec makes syrup.', 'Sap tastes like water.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Use the 40 to 1 rule. Fill in the chart.', cols: ['Syrup', 'Sap needed'],
+        rows: [['1 litre', '40 litres'], ['3 litres', null], [null, '200 litres']],
+        a: [[null, null], [null, '120 litres'], ['5 litres', null]] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how many jars of sap are shown?',
+        opts: ['10', '40', '100'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do sugar makers boil the sap for hours?',
+        opts: ['to make the water evaporate, leaving the sugar', 'to cool it', 'to add colour'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps to show how sap becomes syrup.',
+        items: ['Sugar rises up the trunk in the sap.', 'Sap is collected in buckets.', 'The sap is boiled and the water evaporates.', 'The syrup is thick, golden and sweet.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>E</b>vaporate means the water goes <b>out</b> as steam. Which word with <b>e-</b> or <b>ex-</b> means “go out”?',
+        opts: ['exit', 'enter', 'under'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'A family has 4 maple trees with one tap each. About how much syrup can they make? Show how you know.',
+        a: 'About 4 litres. Each tap gives about 40 litres of sap, which makes about 1 litre of syrup, so 4 trees make about 4 litres.', look: 'the answer 4 litres with the steps from the text' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer mention the Anishinaabe and Haudenosaunee?',
+        a: 'To show that First Nations made maple sugar long before Europeans arrived, so readers know where this tradition comes from.', look: 'recognizes the writer is giving credit to First Nations for the tradition' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-snow-fort', subject: 'story', form: 'Short story',
+    title: 'The Fort on Maple Street',
+    deck: 'Two builders, one pile of snow, and two very different plans',
+    hero: {
+      photo: 'g4-snow-fort.jpg', credit: 'Photo: Andrew Wiseman, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 70%',
+      tall: 190,
+      cap: 'After a big storm, the snowbanks are perfect for building.'
+    },
+    body: [
+      'The storm dumped forty centimetres of snow on Maple Street overnight. By nine o’clock, my neighbour Mateo was standing at the end of my driveway with two shovels and a big grin.',
+      '“Fort,” he said. That was all he needed to say.',
+      { h: 'Two plans' },
+      'We started digging right away, but it took about five minutes to have our first argument. I wanted a tall tower with a lookout window. Mateo wanted long, low walls so we could have the biggest fort on the street. “Towers fall over,” he said. “Walls are boring,” I said. We each built our own part, and we didn’t talk much.',
+      { fig: '<rect class="k" x="20" y="30" width="180" height="90"/><path class="d" d="M100 120 V100 H120 V120"/><circle class="k" cx="240" cy="60" r="30"/><path class="t" d="M200 60 H210"/>' +
+          '<path class="a" d="M236 34 h10"/>' + D.label(30, 20, 'long walls (Mateo)', 60, 30) + D.label(196, 112, 'tower (me)', 240, 90) + D.label(122, 142, 'door', 110, 120) + D.label(250, 14, 'lookout', 241, 32),
+        tall: 150, cap: 'The plan I drew in my notebook that night.' },
+      { h: 'The crash' },
+      'By lunchtime, my tower was as tall as my shoulders. I was carving the window when the whole thing slumped sideways and crashed down on top of Mateo’s wall. Snow went everywhere. For a second we just stared at the mess. The wind whistled across the yard as if it were laughing at us.',
+      'Then Mateo started to laugh, and so did I.',
+      { h: 'Building together' },
+      '“Your tower was too skinny,” Mateo said. “It needs thick walls at the bottom.” He was right. We decided to <b>compromise</b>. Mateo’s long walls would go around the outside, and a short, wide tower would stand in one corner. We packed snow into my sister’s recycling bin, flipped it over and made solid blocks. Block by block, the fort grew <b>sturdy</b> and strong.',
+      'By the time the streetlights came on, we had a fort with long walls, a door and a tower with a lookout window. It was not my plan, and it was not Mateo’s plan. It was better than both.'
+    ],
+    guide: { before: 'Ask whether the child has ever had to share a building project with someone. Teach <b>compromise</b> and <b>sturdy</b>. Read the title and look at the plan, then predict what might go wrong.',
+      after: 'When is it better to compromise, and when is it better to keep your own idea? Talk about a time you had to work something out with a friend.' },
+    words: [['compromise', 'to settle a disagreement by each side giving up a little'], ['sturdy', 'strong and hard to knock down']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells this story?',
+        opts: ['Mateo', 'a narrator who is one of the builders, using “I”', 'a narrator who is not in the story', 'the narrator’s sister'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part of the story', 'What happens'],
+        rows: [['Problem', null], ['Turning point', null], ['Solution', null]],
+        a: [[null, 'The two friends want to build different forts and argue.'], [null, 'The tower crashes onto the wall, and they both laugh.'], [null, 'They compromise: long walls and a short, wide tower, built from solid blocks.']] },
+      { k: 'choice', code: 'C3.1', half: true, q: '“The wind whistled … as if it were laughing at us.” This gives the wind …',
+        opts: ['the actions of a person', 'a colour', 'a smell'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How do the friends feel while they build separate parts?',
+        opts: ['cheerful', 'a little annoyed with each other', 'scared'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the plan. Whose idea was the tower?',
+        opts: ['the narrator’s', 'Mateo’s', 'the sister’s'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In “sturdy and strong,” which word means almost the same as <b>sturdy</b>?',
+        opts: ['strong', 'tall', 'cold'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'After the tower crashed, what did you predict would happen? Was your prediction right?',
+        a: 'I predicted they would have a big fight, but they laughed and then worked together.', look: 'a prediction based on the story and whether it was confirmed' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'The narrator says the fort was “better than both” plans. What lesson does the story teach? Use details.',
+        a: 'Working together can make something better than one person’s idea. Mateo’s walls and the narrator’s tower together made a great fort.', look: 'a lesson about cooperation or compromise, with a detail from the story' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-terry-fox', subject: 'history', form: 'Biography',
+    title: 'The Marathon of Hope',
+    deck: 'How one young man ran across Canada for cancer research',
+    hero: {
+      photo: 'g4-terry-fox.jpg', credit: 'Photo: Robert Linsdell, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      side: { w: 420, view: '0 0 420 200' },
+      tall: 200,
+      cap: 'The statue of Terry Fox in Ottawa, and the route he ran in 1980.',
+      art: '<path class="a" d="M400 70 Q330 90 270 96 Q200 100 150 112"/><path class="d" d="M150 112 Q90 120 20 104"/>' +
+        '<circle class="dot" cx="400" cy="70" r="4"/><circle class="dot" cx="150" cy="112" r="4"/><circle class="t" cx="20" cy="104" r="4"/>' +
+        '<text class="lb" x="400" y="54" text-anchor="end">St. John’s</text><text class="n" x="400" y="40" text-anchor="end">April 12</text>' +
+        '<text class="lb" x="150" y="140" text-anchor="middle">Thunder Bay</text><text class="n" x="150" y="154" text-anchor="middle">September 1</text>' +
+        '<text class="n" x="20" y="124">Victoria</text><text class="n" x="280" y="128" text-anchor="middle">5373 km in 143 days</text>' +
+        '<text class="n" x="70" y="92" text-anchor="middle">the rest of the plan</text>'
+    },
+    body: [
+      'On April 12, 1980, a curly-haired young man dipped his artificial leg into the Atlantic Ocean at St. John’s, Newfoundland. Then he started to run west. His name was Terry Fox, and he planned to run all the way across Canada.',
+      { h: 'Why he ran' },
+      'Terry grew up in Port Coquitlam, British Columbia, and loved basketball. When he was 18, doctors found cancer in his right leg, and they had to remove the leg above the knee. In the hospital, he saw many people, including children, fighting cancer. He decided to raise money for <b>research</b> to find better treatments. He called his run the Marathon of Hope.',
+      { h: 'A marathon every day' },
+      'A marathon is a race of about 42 kilometres. Terry ran about that far almost every day, through rain, snow, heat and strong winds. Because of his artificial leg, he ran with a hop and a step, a style that became famous. At first, few people noticed. By the time he reached Ontario, crowds lined the roads to cheer him on.',
+      { fig: '<path class="k" d="M40 14 V120 H290"/><rect class="h" x="70" y="96" width="50" height="24"/><rect class="h" x="170" y="20" width="50" height="100"/>' +
+          '<text class="lb" x="95" y="90" text-anchor="middle">$1.7 million</text><text class="lb" x="195" y="14" text-anchor="middle">$24 million</text>' +
+          '<text class="n" x="95" y="136" text-anchor="middle">September 1980</text><text class="n" x="195" y="136" text-anchor="middle">February 1981</text>',
+        tall: 142, cap: 'Money raised for cancer research by the Marathon of Hope.' },
+      { h: 'The run ends' },
+      'On September 1, near Thunder Bay, Ontario, Terry had to stop. The cancer had spread to his lungs. He had run 5373 kilometres in 143 days. He died the next summer, at age 22. But his goal came true: Canadians gave more than $24 million, one dollar for every person in the country.',
+      { box: 'Did you know?', text: 'Every September, people in Canada and around the world take part in the Terry Fox Run. It has raised more than $850 million for cancer research.' },
+      'Terry never asked for money for himself. When people called him a hero, he said he was just doing what he could. He showed that one person’s <b>determination</b> can inspire a whole country. Today, schools, roads, a mountain and even a ship are named after him.'
+    ],
+    guide: { before: 'Find St. John’s and Thunder Bay on a map of Canada and talk about how far that is. Teach <b>research</b> and <b>determination</b>. Explain that this is a true story about a real person.',
+      after: 'Terry Fox chose a goal that helped other people. What is a goal you could set to help others in your school or community?' },
+    words: [['research', 'careful study to find out new things'], ['determination', 'not giving up, even when something is hard']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text is a biography. What does a biography do?',
+        opts: ['tells the true story of a real person’s life', 'gives steps to follow', 'tells a made-up story', 'tries to sell something'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['Doctors find cancer in Terry’s leg.', 'Terry starts running at St. John’s.', 'Crowds cheer him in Ontario.', 'He stops near Thunder Bay.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the route. What does the dashed line show?',
+        opts: ['the part Terry ran', 'the part he planned but could not run', 'a river'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart with numbers from the text.', cols: ['Fact', 'Number'],
+        rows: [['kilometres Terry ran', null], ['days he ran', null], ['dollars raised by February 1981', null]],
+        a: [[null, '5373'], [null, '143'], [null, 'more than $24 million']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the bar graph. When was more money raised?',
+        opts: ['by September 1980', 'by February 1981', 'the same'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Determin</b>ation comes from <b>determine</b>. What does <b>-ation</b> do to the word?',
+        opts: ['makes it a noun (a thing or quality)', 'makes it mean “not”', 'makes it past tense'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think crowds started cheering by the time Terry reached Ontario? Use clues from the text.',
+        a: 'More people had heard about his run by then, and they admired how he kept running a marathon every day with an artificial leg.', look: 'an inference about growing news and admiration, with a text clue' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The last sentence says Terry “can inspire a whole country.” Do you agree? Give a reason from the text.',
+        a: 'Yes. Canadians gave more than $24 million, and people still run every September, so his example still inspires people.', look: 'an opinion supported by a detail from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bird-feeder', subject: 'science', form: 'Procedure',
+    title: 'A Pine Cone Bird Feeder',
+    deck: 'Help winter birds, and watch who comes to visit',
+    hero: {
+      photo: 'g4-chickadee-feeder.jpg', credit: 'Photo: Patty O’Hearn Kickham, CC BY 2.0, Wikimedia Commons', focus: '60% 40%',
+      tall: 190,
+      cap: 'A black-capped chickadee picks seeds from a feeder in Guelph, Ontario.'
+    },
+    body: [
+      'In winter, food is hard for birds to find. Snow covers the seeds on the ground, and the insects are gone. Many birds, such as chickadees, nuthatches and juncos, stay in Ontario all winter. A simple feeder can help them, and it gives you a chance to watch them up close.',
+      { h: 'Materials' },
+      'Gather your <b>materials</b>. You need a large, open pine cone, a piece of string about 50 centimetres long, a spoon, a paper plate, about half a cup of vegetable shortening and one cup of birdseed. Shortening is better than peanut butter if anyone at your school has a nut <b>allergy</b>.',
+      { h: 'Steps' },
+      '1. Tie the string tightly around the top of the pine cone, under the top scales. Leave a long end for hanging.',
+      '2. Use the spoon to spread shortening all over the cone. Push it deep between the scales.',
+      '3. Pour the birdseed onto the plate. Roll the cone in the seeds until it is completely covered.',
+      { fig: '<path class="k" d="M30 40 Q20 70 40 100 Q60 70 50 40 Z M40 40 V14"/><path class="t" d="M28 58 h22 M30 74 h20 M34 88 h12"/>' +
+          '<path class="k" d="M130 40 Q120 70 140 100 Q160 70 150 40 Z"/><path class="a" d="M160 50 L184 34"/><ellipse class="k" cx="190" cy="30" rx="10" ry="5"/>' +
+          '<ellipse class="k" cx="250" cy="96" rx="40" ry="10"/><path class="k" d="M240 84 Q232 60 250 44 Q268 60 260 84"/>' + '<path class="t" d="M226 96 h4 M240 100 h4 M262 94 h4 M274 98 h4"/>' +
+          '<text class="lb" x="40" y="128" text-anchor="middle">1 tie</text><text class="lb" x="150" y="128" text-anchor="middle">2 spread</text><text class="lb" x="250" y="128" text-anchor="middle">3 roll</text>',
+        tall: 136, cap: 'The first three steps.' },
+      '4. Hang the feeder from a branch where you can see it from a window, but where squirrels and cats cannot easily reach it.',
+      { box: 'Be a scientist', text: 'Keep a bird journal. Each day, write the date, the weather and the birds you see. Which bird visits most often? Do more birds come on cold days?' },
+      'It may take a few days for the birds to find your feeder. Be patient. Once they do, they will come back again and again. Replace the cone when it is empty, and keep feeding until spring.',
+      { h: 'Who might visit?' },
+      'Black-capped chickadees are small and bold, with a black cap and bib. They often grab one seed and fly off to eat it on a branch. Red-breasted and white-breasted nuthatches walk headfirst down tree trunks. Dark-eyed juncos are grey with white bellies, and they like to pick up fallen seeds on the ground under the feeder. Blue jays are big, loud and bright blue. Try to learn one new bird each week.'
+    ],
+    guide: { before: 'Read the title and the headings first, and ask what kind of text this is. Teach <b>materials</b> and <b>allergy</b>. If you can, gather the materials and make the feeder after reading.',
+      after: 'Which birds came to your feeder? What did your journal show? What could you change to attract more birds?' },
+    words: [['materials', 'the things you need to make something'], ['allergy', 'when the body reacts badly to something, such as a food']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'What kind of text is this?',
+        opts: ['a story', 'a procedure that tells how to make something', 'a poem', 'a letter'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why are the steps numbered?',
+        opts: ['to show the order to do them', 'to count the birds', 'to make the page pretty'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the text suggest shortening instead of peanut butter?',
+        opts: ['It is cheaper.', 'Some people have nut allergies.', 'Birds do not like peanuts.'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps in order.',
+        items: ['Tie the string around the cone.', 'Spread shortening on the cone.', 'Roll the cone in birdseed.', 'Hang the feeder from a branch.'], show: [3, 1, 0, 2] },
+      { k: 'table', code: 'C3.3', q: 'List the materials.', cols: ['Material', 'What it is for'],
+        rows: [['pine cone', null], ['shortening', null], [null, 'to hang the feeder']],
+        a: [[null, 'to hold the food'], [null, 'to make the seeds stick'], ['string', null]] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>re-</b> mean in “<b>re</b>place the cone”?',
+        opts: ['again or back', 'not', 'before'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Which step is NOT shown in the diagram?',
+        opts: ['tie', 'roll', 'hang'], a: 2 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why should the feeder be hung where squirrels and cats cannot easily reach it?',
+        a: 'Squirrels would eat the birds’ food, and cats could catch the birds while they eat.', look: 'reasons for both squirrels (food) and cats (danger to birds)' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'In one or two sentences, tell why someone should make this feeder.',
+        a: 'It helps birds find food in winter, and you can watch and learn about them.', look: 'the purpose of the procedure in the child’s own words' }
     ]
   });
 })();

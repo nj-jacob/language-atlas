@@ -21,3 +21,12 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-nile.jpg` | The green Nile valley through the desert, seen from space | NASA (MODIS) | Public domain | https://commons.wikimedia.org/wiki/File:Gorgeous_Green_along_the_Nile_River_(MODIS).jpg |
 | `g4-clay-tablet.jpg` | A clay tablet with cuneiform writing | Unknown scribe (Letterform Archive) | Public domain | https://commons.wikimedia.org/wiki/File:Cuneiform_Akkadian_clay_tablet_1.jpg |
 | `g4-great-lakes.jpg` | The Great Lakes seen from space | SeaWiFS Project, NASA | Public domain | https://commons.wikimedia.org/wiki/File:Great_Lakes_from_space.jpg |
+| `g4-sleeping-child.jpg` | A child asleep | Alessandro Zangrilli | Public domain | https://commons.wikimedia.org/wiki/File:A_child_sleeping.jpg |
+| `g4-bike-helmet.jpg` | A grown-up checks a child's bike helmet at a bicycle safety day | Aaron Montoya, U.S. Air Force | Public domain | https://commons.wikimedia.org/wiki/File:Children_test_their_riding_skills_at_Bicycle_Rodeo_130807-F-ZB149-783.jpg |
+| `g4-jack-pine.jpg` | The Jack Pine, painting by Tom Thomson, 1916-1917 (National Gallery of Canada) | Tom Thomson | Public domain | https://commons.wikimedia.org/wiki/File:Tom_Thomson_-_The_Jack_Pine_1916.jpg |
+| `g4-orchestra.jpg` | The Toronto Symphony Orchestra on stage | Reg Natarajan | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Toronto_Symphony_Orchestra_(28669869797).jpg |
+| `g4-quebec-bridge.jpg` | The Quebec Bridge over the St. Lawrence River at night | Martin St-Amant | Public domain | https://commons.wikimedia.org/wiki/File:Quebec_Bridge_-_Pont_de_Québec.jpg |
+| `g4-sap-buckets.jpg` | Buckets collecting sap on maple trees | Unknown (U.S. government) | Public domain | https://commons.wikimedia.org/wiki/File:Sap_buckets_on_maple_trees.jpg |
+| `g4-snow-fort.jpg` | A snow fort in a front yard | Andrew Wiseman | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Snow_Fort_2009.jpg |
+| `g4-terry-fox.jpg` | The Terry Fox statue on Wellington Street, Ottawa | Robert Linsdell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Terry_Fox_Statue,_Wellington_St,_Ottawa_(491753)_(9447495349).jpg |
+| `g4-chickadee-feeder.jpg` | A black-capped chickadee at a bird feeder, Guelph, Ontario | Patty O'Hearn Kickham | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chickadee_at_the_big_feeder_(295601964).jpg |
