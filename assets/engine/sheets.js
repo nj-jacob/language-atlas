@@ -139,6 +139,8 @@
         var cut = -1;
         out.steps = c.model.map(function (st, i) { var p = passageOf({ fig: st }); if (p) { if (inSteps && p.key !== inSteps.key && cut < 0) cut = i; inSteps = inSteps || p; return paperize({ fig: st }, p).fig || 'Read the text.'; } return st; });
         if (cut > 0) out.steps = out.steps.slice(0, cut);
+        /* a grade's sheets file can print fewer steps, when the later ones are about something the sheet does not show */
+        if (mine.steps) out.steps = out.steps.slice(0, mine.steps);
         /* on screen a picture can grow one step at a time; on paper only its last, whole step is printed */
         var pics = out.steps.map(function (st) { var d = document.createElement('div'); d.innerHTML = st; var w = d.querySelector('.wsum'); return w ? strip(w.innerHTML) : ''; });
         out.steps = out.steps.filter(function (st, i) { return !(pics[i] && pics[i + 1] && pics[i + 1] !== pics[i] && pics[i + 1].indexOf(pics[i]) === 0); });
