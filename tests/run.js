@@ -1150,10 +1150,11 @@ async function checkSheets(browser, base, g) {
         if (k.over) out.push(sw + ': its answer key runs off the page');
         if (k.items.length !== a.items.length) out.push(sw + ': the answer key has ' + k.items.length + ' questions, the sheet ' + a.items.length);
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(aText + kText)) out.push(sw + ': shows undefined or NaN');
-        if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < 2) out.push(sw + ': fits only ' + a.items.length + ' question(s); a sheet needs 2 or more');
+        const least = s.kind === 'learn' ? 1 : 2; /* Learn teaches with its Watch me steps too */
+        if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < least) out.push(sw + ': fits only ' + a.items.length + ' question(s); this sheet needs ' + least + ' or more');
         a.items.forEach(q => {
           n.questions++;
-          if (q.type) window.__validate(q).forEach(e => out.push(sw + ': ' + e));
+          if (q.type) window.__validate(q.asked || q).forEach(e => out.push(sw + ': ' + e));
           else if (!q.lines || !q.key || !q.q) out.push(sw + ': an open question needs q, lines and a good answer (key) for the grown-up');
         });
       });

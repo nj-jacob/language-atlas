@@ -58,13 +58,16 @@
   function passageOf(q) {
     var d = document.createElement('div');
     d.innerHTML = (q.fig || '') + (q.type === 'tap' && q.pic ? q.pic : '');
-    var p = d.querySelector('.psg');
-    return p ? { key: strip(p.innerHTML), html: p.outerHTML.replace(/ data-hit="\d+"/g, '').replace(' psg-tap', '') } : null;
+    /* a question about two texts has two passage cards: they go together */
+    var ps = $$('.psg', d);
+    return ps.length ? { key: ps.map(function (p) { return strip(p.innerHTML); }).join(' | '), html: ps.map(function (p) { return p.outerHTML.replace(/ data-hit="\d+"/g, '').replace(' psg-tap', ''); }).join('') } : null;
   }
   /* the question without its passage; a sentence to tap in the passage becomes "write its number" */
   function paperize(q, passage) {
     var c = {};
     Object.keys(q).forEach(function (k) { c[k] = q[k]; });
+    /* the question as the site asks it, with its passage, for the answer checks (tests/run.js) */
+    Object.defineProperty(c, 'asked', { value: q });
     if (!passage) return c;
     var d = document.createElement('div');
     d.innerHTML = c.fig || '';
@@ -123,7 +126,7 @@
         return { kind: kind, title: t.title, goal: strip(t.say), task: t, codes: [t.code], groups: [] };
       }
       if (kind === 'read') {
-        var p = ch.read.texts[+id - 1], r = onePassage(ch.read.ask(p).map(function (q) { if (!q.fig) q.fig = ch.read.show(p); return q; }));
+        var p = ch.read.texts[+id - 1], r = onePassage(ch.read.ask(p).map(function (q) { if (!q.fig && !passageOf(q)) q.fig = ch.read.show(p); return q; }));
         return { kind: kind, title: p.title, goal: 'Read, then answer.', passage: r.passage, groups: [{ items: r.items }], codes: codesOf(r.items) };
       }
       var c = idea(chId, id), mine = def.ideas[id] || {}, sk = skillOf(chId, c.skill), out = { kind: kind, title: c.title, goal: mine.goal || '', idea: c, codes: c.exp.slice() };
@@ -131,6 +134,9 @@
         /* a passage in the "Watch me" steps is printed once, before them, and the questions are about it too when they can be */
         var inSteps = null, seen = {};
         out.steps = c.model.map(function (st) { var p = passageOf({ fig: st }); if (p) { inSteps = inSteps || p; return paperize({ fig: st }, p).fig || 'Read the text.'; } return st; });
+        /* on screen a picture can grow one step at a time; on paper only its last, whole step is printed */
+        var pics = out.steps.map(function (st) { var d = document.createElement('div'); d.innerHTML = st; var w = d.querySelector('.wsum'); return w ? strip(w.innerHTML) : ''; });
+        out.steps = out.steps.filter(function (st, i) { return !(pics[i] && pics[i + 1] && pics[i + 1] !== pics[i] && pics[i + 1].indexOf(pics[i]) === 0); });
         var want = inSteps && inSteps.key;
         /* each question maker is tried until it makes a new question (about the steps' passage, when they have one) */
         function about(f) {
@@ -142,7 +148,14 @@
           }
           return null;
         }
-        var tog = onePassage(c.guided.map(about).filter(Boolean), want, 9), own = onePassage(c.check.map(about).filter(Boolean), want, 9);
+        var tq = c.guided.map(about).filter(Boolean), oq = c.check.map(about).filter(Boolean);
+        if (want) {
+          /* with the steps' passage at the top, questions about other passages are left out, and the idea's skill tops them up */
+          var same = function (q) { var p = passageOf(q); return !p || p.key === want; };
+          tq = tq.filter(same); oq = oq.filter(same);
+          for (var t = 0; sk && t < 60 && oq.length < 5; t++) { var x = sk.gen(1 + t % 2); if (same(x) && !seen[sig(x)]) { seen[sig(x)] = 1; oq.push(x); } }
+        }
+        var tog = onePassage(tq, want, 9), own = onePassage(oq, want, 9);
         out.passage = inSteps || tog.passage || own.passage;
         out.passageFirst = !!inSteps;
         out.tip = c.key || '';

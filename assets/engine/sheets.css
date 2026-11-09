@@ -45,10 +45,10 @@ html:not(.adult) .ws-adult{display:none!important}
 .ws-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:6px 0 4px!important}
 .ws-band{padding-bottom:10px;border-bottom:1px solid var(--line2)}
 .ws-steps{list-style:none;counter-reset:st;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 18px}
-.ws-steps li{counter-increment:st;position:relative;padding-left:22px;font-size:12.5px;line-height:1.35;min-width:0}
-.ws-steps li::before{content:counter(st);position:absolute;left:0;top:2px;font-family:var(--face);font-weight:700;font-size:15px;color:var(--acc)}
-.ws-steps li .wsum{justify-content:flex-start;margin:0 0 2px}
-.ws-steps li p{color:var(--ink2)}
+.ws-steps > li{counter-increment:st;position:relative;padding-left:22px;font-size:12.5px;line-height:1.35;min-width:0}
+.ws-steps > li::before{content:counter(st);position:absolute;left:0;top:2px;font-family:var(--face);font-weight:700;font-size:15px;color:var(--acc)}
+.ws-steps > li > .wsum{justify-content:flex-start;margin:0 0 2px}
+.ws-steps > li > p{color:var(--ink2)}
 .ws-tip{margin-top:8px!important;font-size:13px;color:var(--ink2)}
 .ws-tip b{color:var(--acc);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-right:6px}
 .ws-psg{padding:6px 0 10px;border-bottom:1px solid var(--line2)}
