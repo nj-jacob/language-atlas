@@ -139,6 +139,8 @@
         var cut = -1;
         out.steps = c.model.map(function (st, i) { var p = passageOf({ fig: st }); if (p) { if (inSteps && p.key !== inSteps.key && cut < 0) cut = i; inSteps = inSteps || p; return paperize({ fig: st }, p).fig || 'Read the text.'; } return st; });
         if (cut > 0) out.steps = out.steps.slice(0, cut);
+        /* a grade's sheets file can print fewer steps, when the later ones are about something the sheet does not show */
+        if (mine.steps) out.steps = out.steps.slice(0, mine.steps);
         /* on screen a picture can grow one step at a time; on paper only its last, whole step is printed */
         var pics = out.steps.map(function (st) { var d = document.createElement('div'); d.innerHTML = st; var w = d.querySelector('.wsum'); return w ? strip(w.innerHTML) : ''; });
         out.steps = out.steps.filter(function (st, i) { return !(pics[i] && pics[i + 1] && pics[i + 1] !== pics[i] && pics[i + 1].indexOf(pics[i]) === 0); });
@@ -297,45 +299,40 @@
     return h + '<p class="ws-line"><span>Language Atlas · Grade ' + A.grade + ' · ' + esc(th.name) + '</span><span>' + code + '</span></p></footer>';
   }
   function over(el) { return el.scrollHeight > el.clientHeight + 1; }
-  /* the free height left at the bottom of the page body */
-  var ROOM = 150;
-  function room(bd) {
-    var last = bd.lastElementChild, b = bd.getBoundingClientRect();
-    return last ? b.bottom - last.getBoundingClientRect().bottom : b.height;
-  }
   /* Draw one sheet into el (a .ws-sheet box). The questions fill the page in order and stop when it is full; a question that does
      not fit is left out. use: which questions to draw (the student page's 'at', for its answer key).
      Returns the questions drawn (items), where they are in the sheet's groups (at), and whether anything runs off the page (over). */
   S.render = function (el, chId, kind, id, themeId, key, use) {
     var th = S.themeById(themeId), sh = prepare(S.sheet(chId, kind, id), 'g' + A.grade + ':' + chId + ':' + kind + ':' + id), code = S.code(chId, kind, id, th);
-    var page, bd;
-    /* long "Watch me" steps leave room for questions: the last steps are left off until there is room */
+    /* the answer key prints the same steps as its sheet */
+    if (use && sh.steps && use.steps != null) sh.steps = sh.steps.slice(0, use.steps);
     for (;;) {
       el.innerHTML = '<div class="ws-page' + (key ? ' ws-key' : '') + '" style="--acc:' + th.acc + ';--face:' + th.font.replace(/"/g, "'") + '">' + (th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : '') +
         head(sh, chId, th, key) + '<div class="ws-body">' + band(sh) + (sh.task ? task(sh.task, key) : '') + '</div>' + foot(sh, th, key, sh.groups.length, code) + '</div>';
-      page = $('.ws-page', el); bd = $('.ws-body', page);
-      if (!sh.steps || sh.steps.length < 2 || room(bd) >= ROOM) break;
+      var page = $('.ws-page', el), bd = $('.ws-body', page), n = 1, drawn = [], at = [];
+      sh.groups.forEach(function (g, gi) {
+        var sec = document.createElement('section');
+        sec.className = 'ws-sec';
+        sec.innerHTML = (g.label ? '<p class="ws-label">' + g.label + '</p>' : '') + '<div class="ws-grid"></div>';
+        bd.appendChild(sec);
+        var grid = $('.ws-grid', sec), any = false;
+        g.items.forEach(function (q, ii) {
+          if (use && use.indexOf(gi + ':' + ii) < 0) return;
+          if (!use && drawn.length >= MOST) return;
+          var box = document.createElement('div');
+          box.innerHTML = item(q, n, key, g.cue);
+          var it = box.firstChild;
+          grid.appendChild(it);
+          if (!use && over(bd)) { grid.removeChild(it); return; }
+          drawn.push(q); at.push(gi + ':' + ii); n++; any = true;
+        });
+        if (!any) bd.removeChild(sec);
+      });
+      /* long "Watch me" steps leave room for questions: the last steps are left off until a question fits */
+      if (use || drawn.length || !sh.steps || sh.steps.length < 2 || !sh.groups.some(function (g) { return g.items.length; })) break;
       sh.steps.pop();
     }
-    var n = 1, drawn = [], at = [];
-    sh.groups.forEach(function (g, gi) {
-      var sec = document.createElement('section');
-      sec.className = 'ws-sec';
-      sec.innerHTML = (g.label ? '<p class="ws-label">' + g.label + '</p>' : '') + '<div class="ws-grid"></div>';
-      bd.appendChild(sec);
-      var grid = $('.ws-grid', sec), any = false;
-      g.items.forEach(function (q, ii) {
-        if (use && use.indexOf(gi + ':' + ii) < 0) return;
-        if (!use && drawn.length >= MOST) return;
-        var box = document.createElement('div');
-        box.innerHTML = item(q, n, key, g.cue);
-        var it = box.firstChild;
-        grid.appendChild(it);
-        if (!use && over(bd)) { grid.removeChild(it); return; }
-        drawn.push(q); at.push(gi + ':' + ii); n++; any = true;
-      });
-      if (!any) bd.removeChild(sec);
-    });
+    if (sh.steps) at.steps = sh.steps.length;
     var marked = drawn.filter(function (q) { return q.type; }).length, of = $('.ws-of', page);
     if (of) { if (marked) of.textContent = marked; else of.parentNode.parentNode.removeChild(of.parentNode); }
     page.setAttribute('data-code', code);

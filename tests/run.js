@@ -1152,7 +1152,9 @@ async function checkSheets(browser, base, g) {
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(aText + kText)) out.push(sw + ': shows undefined or NaN');
         /* Learn teaches with its Watch me steps too; two texts to compare fill most of a page */
         const twoTexts = a.sheet.passage && (a.sheet.passage.html.match(/class="psg/g) || []).length > 1;
-        const least = s.kind === 'learn' || twoTexts ? 1 : 2;
+        /* a Learn sheet whose questions all need two whole texts has no room for one under its steps: those are on Practise */
+        const allTwo = s.kind === 'learn' && a.sheet.groups.some(g => g.items.length) && a.sheet.groups.every(g => g.items.every(q => ((q.fig || '') + (q.pic || '')).split('class="psg').length > 2));
+        const least = allTwo ? 0 : s.kind === 'learn' || twoTexts ? 1 : 2;
         if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < least) out.push(sw + ': fits only ' + a.items.length + ' question(s); this sheet needs ' + least + ' or more');
         a.items.forEach(q => {
           n.questions++;
