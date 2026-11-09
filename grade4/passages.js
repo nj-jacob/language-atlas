@@ -2005,4 +2005,986 @@
         a: 'The rink took a week to build, but the fun times with family will be remembered forever.', look: 'an interpretation about lasting memories' }
     ]
   });
+
+  P.add({
+    id: 'g4-burgess-shale', subject: 'science', form: 'Report',
+    title: 'Animals in Stone',
+    deck: 'The Burgess Shale and the strange sea creatures it kept for 500 million years',
+    hero: {
+      photo: 'g4-burgess-shale.jpg', credit: 'Photo: Edna Winti, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Trilobite fossils in a slab of Burgess Shale, Yoho National Park, British Columbia.'
+    },
+    body: [
+      'High in the Rocky Mountains of British Columbia, in Yoho National Park, there is a layer of dark rock called the Burgess Shale. Inside it are some of the most amazing <b>fossils</b> on Earth. They show animals that lived in the sea more than 500 million years ago, long before there were dinosaurs, trees or even fish with jaws.',
+      { h: 'How a fossil forms' },
+      'Long ago, this part of the mountains was the bottom of a warm, shallow sea. Every so often, an underwater mudslide buried the animals living there. The mud was so fine and so low in oxygen that the soft bodies did not rot away. Over millions of years, more layers piled on top and pressed the mud into rock called <b>shale</b>. Much later, the land was pushed up to form mountains.',
+      { fig: '<rect class="k" x="20" y="10" width="200" height="30"/><rect class="h" x="20" y="40" width="200" height="30"/><rect class="k" x="20" y="70" width="200" height="30"/><rect class="h" x="20" y="100" width="200" height="30"/>' +
+          '<ellipse class="a" cx="120" cy="85" rx="18" ry="9"/><path class="a" d="M106 85 H134 M112 78 V92 M120 76 V94 M128 78 V92"/>' +
+          D.label(234, 29, 'newest layer') + D.label(234, 119, 'oldest layer') + D.label(234, 74, 'fossil', 138, 84),
+        tall: 140, cap: 'Layers of shale are like pages in a book. The deeper the layer, the older it is.' },
+      'Most fossils show only hard parts, such as shells and bones. The Burgess Shale is special because it also kept soft parts, such as legs, gills and even guts. That is why scientists from around the world come to study it.',
+      { h: 'Strange creatures' },
+      'Some Burgess Shale animals look like nothing alive today. Opabinia had five eyes and a long nose with a claw at the end. Hallucigenia was a worm with spikes on its back and legs on its belly. When scientists first studied it, they drew it upside down! The most common fossils are trilobites, animals with hard shells divided into three parts.',
+      { box: 'Did you know?', text: 'A geologist named Charles Walcott found the Burgess Shale in 1909. He collected more than 65 000 fossils there. Today, you can visit the fossil beds only with a guide, to keep them safe.' }
+    ],
+    guide: { before: 'Press a shell or leaf into play dough to make a “fossil.” Teach <b>fossil</b> and <b>shale</b>. Stack a few books and ask which one was put down first.',
+      after: 'If an animal from today became a fossil, what parts would be kept? What could a scientist in the far future learn from it?' },
+    words: [['fossils', 'the remains or marks of living things from long ago, kept in rock'], ['shale', 'a rock made from layers of fine mud pressed together']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Mountains are tall.', 'The Burgess Shale holds rare fossils of sea animals from more than 500 million years ago.', 'Trilobites have three parts.', 'Charles Walcott liked hiking.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['Animals live in a shallow sea.', 'A mudslide buries them.', 'Layers press the mud into shale.', 'The land is pushed up into mountains.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is the oldest layer?',
+        opts: ['at the bottom', 'at the top', 'in the middle'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the soft bodies not rot away?',
+        opts: ['The mud was fine and had little oxygen.', 'The water was very cold.', 'Scientists froze them.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Geo</b>logist starts with geo-, which means “earth.” What does a geologist study?',
+        opts: ['rocks and the earth', 'stars and planets', 'birds'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart about two strange animals.', cols: ['Animal', 'What was strange about it'],
+        rows: [['Opabinia', null], ['Hallucigenia', null]],
+        a: [[null, 'It had five eyes and a long nose with a claw at the end.'], [null, 'It had spikes on its back, and scientists first drew it upside down.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is the Burgess Shale more important to scientists than most fossil sites? Use details from the text.',
+        a: 'It kept soft parts such as legs, gills and guts, not just shells and bones, so scientists can learn more about how the animals looked and lived.', look: 'soft parts were kept, with a detail' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why do you think visitors can go to the fossil beds only with a guide?',
+        a: 'To protect the fossils, so people do not damage them or take them away.', look: 'protecting the site' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-spring-peepers', subject: 'science', form: 'Explanation',
+    title: 'The Loudest Little Frog',
+    deck: 'How a frog the size of a paper clip fills a spring night with sound',
+    hero: {
+      photo: 'g4-spring-peeper.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 200,
+      cap: 'A male spring peeper calling. The bubble under his chin is his vocal sac.'
+    },
+    body: [
+      'On a warm night in early spring, walk near a pond or marsh almost anywhere in eastern Canada and you may hear a chorus of high, sharp peeps. It sounds like hundreds of tiny whistles. The singers are spring peepers, frogs about as long as a paper clip.',
+      { h: 'A wetland home' },
+      'Spring peepers live in <b>wetlands</b>, such as marshes, swamps and ponds, and in the woods around them. A wetland gives them everything they need: water for laying eggs, plants to hide in, and plenty of insects to eat. Peepers have sticky pads on their toes, so they can climb grasses and shrubs. Look closely at one, and you might see a dark X on its back.',
+      { h: 'How they peep' },
+      'Only the males sing. A male gulps air and then pushes it out of his lungs into a <b>vocal sac</b>, a stretchy pouch under his chin. The sac blows up like a bubble gum balloon and makes the peep much louder. Each male is saying, “Here I am!” to the females. A chorus can be heard more than a kilometre away.',
+      { fig: '<circle class="k" cx="54" cy="26" r="5"/><circle class="k" cx="66" cy="26" r="5"/><circle class="k" cx="60" cy="36" r="5"/>' +
+          '<ellipse class="k" cx="236" cy="30" rx="8" ry="6"/><path class="k" d="M244 30 Q254 24 264 32"/>' +
+          '<ellipse class="k" cx="244" cy="112" rx="9" ry="7"/><path class="k" d="M253 112 L262 114 M237 117 L230 124 M251 117 L258 124"/>' +
+          '<ellipse class="a" cx="60" cy="112" rx="13" ry="9"/><path class="k" d="M49 118 L38 128 M71 118 L82 128 M51 106 L44 100 M69 106 L76 100"/>' +
+          D.arrow(90, 30, 210, 30) + D.arrow(276, 44, 276, 100) + D.arrow(220, 112, 100, 112) + D.arrow(24, 100, 24, 40) +
+          '<text class="n" x="60" y="58" text-anchor="middle">eggs</text><text class="n" x="240" y="58" text-anchor="middle">tadpole</text><text class="n" x="244" y="142" text-anchor="middle">froglet</text><text class="n" x="60" y="146" text-anchor="middle">adult</text>' +
+          '<text class="l" x="150" y="22" text-anchor="middle">about a week</text><text class="l" x="160" y="104" text-anchor="middle">2 to 3 months</text>',
+        tall: 150, cap: 'The life cycle of a spring peeper.' },
+      'After mating, a female lays hundreds of eggs, one at a time, on underwater plants. In about a week, tadpoles hatch. They swim and eat algae for two or three months, then grow legs, lose their tails and hop onto land as tiny froglets.',
+      { box: 'Frozen frogs', text: 'In winter, spring peepers hide under logs and leaves. Their bodies can partly freeze! A kind of sugar in their blood protects them, and in spring they thaw out and hop away.' },
+      'When wetlands are drained to build roads or houses, peepers lose their homes. Protecting wetlands helps peepers and many other animals. You can help too: when you visit a wetland, stay on the trails, and never take frogs or eggs home.'
+    ],
+    guide: { before: 'If you can, listen to a recording of spring peepers, or visit a pond on a spring evening. Teach <b>wetland</b> and <b>vocal sac</b>. Follow the arrows of the life cycle together.',
+      after: 'Is there a wetland near where you live? What animals might live there? What could people do to protect it?' },
+    words: [['wetlands', 'land that is covered with shallow water for much of the year'], ['vocal sac', 'a stretchy pouch under a frog’s chin that makes its call louder']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Frogs are green.', 'Spring peepers are tiny wetland frogs with a loud call and an interesting life.', 'Ponds freeze in winter.', 'Tadpoles eat algae.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the stages in order.',
+        items: ['eggs', 'tadpole', 'froglet', 'adult'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the males sing?',
+        opts: ['to call to the females', 'to scare away birds', 'to find insects'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The sac “blows up like a bubble gum balloon.” This comparison is a …',
+        opts: ['simile', 'rhyme', 'question'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A frog<b>let</b> is a small frog. What is a pig<b>let</b>?',
+        opts: ['a small pig', 'a large pig', 'a pig pen'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How does a wetland meet the needs of spring peepers?', cols: ['Need', 'How the wetland meets it'],
+        rows: [['a place to lay eggs', null], ['a place to hide', null], ['food', null]],
+        a: [[null, 'water with underwater plants'], [null, 'plants, grasses and shrubs'], [null, 'plenty of insects']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How does a spring peeper survive a Canadian winter? Use details from the text.',
+        a: 'It hides under logs and leaves, and its body can partly freeze. A sugar in its blood protects it until it thaws in spring.', look: 'the hiding place and the sugar that protects it' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'What does the writer want readers to think about wetlands? How can you tell?',
+        a: 'The writer wants us to protect wetlands. The last paragraph says that draining them takes away the homes of peepers and other animals.', look: 'the writer’s message, with evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bats', subject: 'science', form: 'Explanation',
+    title: 'Seeing with Sound',
+    deck: 'How bats use echoes to catch insects in the dark',
+    hero: {
+      photo: 'g4-little-brown-bat.jpg', credit: 'Photo: Don Pfritzer, U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 230,
+      cap: 'A scientist gently spreads the wings of a little brown bat to study it.'
+    },
+    body: [
+      'As the sun goes down on a summer evening, small dark shapes swoop and zigzag over lakes and backyards. They are not birds. They are bats, the only mammals that can truly fly. One of the most common bats in Canada is the little brown bat, which weighs about as much as two loonies.',
+      { h: 'Hunting in the dark' },
+      'Bats hunt flying insects at night, when it is too dark to see well. So how do they find a tiny mosquito in the air? They use sound. A bat makes very high squeaks, too high for people to hear. The sound travels out, hits an insect and bounces back as an <b>echo</b>. The bat’s big ears catch the echo. From how long the echo takes to come back, the bat can tell how far away the insect is and which way it is flying. Using echoes to find things is called <b>echolocation</b>.',
+      { fig: '<path class="k" d="M20 70 Q30 56 40 66 Q50 56 60 70 Q50 64 40 76 Q30 64 20 70 Z"/>' +
+          '<path class="a" d="M80 52 Q90 70 80 88 M110 42 Q124 70 110 98 M140 32 Q158 70 140 108"/>' +
+          '<path class="d" d="M220 52 Q210 70 220 88 M196 58 Q188 70 196 82"/>' +
+          '<path class="k" d="M250 70 L236 58 L238 82 Z M250 70 L264 58 L262 82 Z"/>' +
+          D.label(10, 30, 'bat', 38, 64) + D.label(232, 30, 'insect', 250, 60) + D.label(60, 134, 'squeaks go out', 110, 98) + D.label(176, 134, 'echo comes back', 196, 82),
+        tall: 140, cap: 'Echolocation: the squeak goes out, and the echo comes back.' },
+      'As a bat closes in, it squeaks faster and faster, up to 200 times a second, until it snaps up its meal. One little brown bat can eat hundreds of insects in a single night, including many mosquitoes.',
+      { box: 'Did you know?', text: 'Some moths can hear bat squeaks. When they do, they dive or tumble toward the ground to escape!' },
+      { h: 'Bats in trouble' },
+      'Many bats in Canada sleep through the winter in caves. In recent years, a disease called white-nose syndrome has killed millions of them. Scientists are working to stop it. People can help by never disturbing bats in caves and by putting up bat boxes where bats can rest in summer.',
+      'Bats help plants too. In warm parts of the world, some bats drink nectar from flowers and carry pollen from one flower to the next, just as bees do. Without these bats, plants such as wild bananas and agave would have a hard time making seeds.',
+      'Next time you see a bat at dusk, watch how it twists and turns in the air. It is not flying blind. It is listening to the night.'
+    ],
+    guide: { before: 'Play Marco Polo, or clap in a large empty room and listen for the echo. Teach <b>echo</b> and <b>echolocation</b>. Trace the sound out and back in the diagram.',
+      after: 'Many people are afraid of bats. After reading, how do you feel about them? What would you tell a friend who thinks bats are scary?' },
+    words: [['echo', 'a sound that bounces back off something'], ['echolocation', 'finding things by listening for echoes']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Bats are mammals.', 'Bats use echoes to find insects in the dark, and they need our help.', 'Moths can hear.', 'Mosquitoes bite.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps of echolocation in order.',
+        items: ['The bat squeaks.', 'The sound hits an insect.', 'An echo bounces back.', 'The bat’s ears catch the echo.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the dashed lines show?',
+        opts: ['the echo coming back', 'the bat’s path', 'the wind'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a bat squeak faster as it gets close?',
+        opts: ['to know exactly where the insect is', 'to scare the insect', 'because it is tired'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Echo</b>location joins two words. What does <b>location</b> mean?',
+        opts: ['where something is', 'how loud something is', 'how fast something is'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['A moth hears a bat squeak.', null], ['White-nose syndrome spreads in caves.', null]],
+        a: [[null, 'The moth dives or tumbles toward the ground to escape.'], [null, 'Millions of bats have died.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why might a camper or a farmer be glad to have bats nearby? Use details from the text.',
+        a: 'One bat can eat hundreds of insects in a night, including many mosquitoes, so there are fewer bugs to bite people or harm crops.', look: 'links bats eating insects to a benefit for people' },
+      { k: 'lines', code: 'C1.3', n: 2, q: 'Why did the writer put the fact about moths in a box?',
+        a: 'It is an extra, surprising fact that is not part of the main explanation, so the box makes it stand out.', look: 'the box holds an extra fact' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-food-chain', subject: 'science', form: 'Explanation',
+    title: 'Who Eats Whom?',
+    deck: 'How energy passes from the sun to an owl, one meal at a time',
+    hero: {
+      photo: 'g4-great-horned-owl.jpg', credit: 'Photo: Paul Danese, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 230,
+      cap: 'A great horned owl rests in a tree during the day. It hunts mostly at night.'
+    },
+    body: [
+      'Every living thing needs energy to grow, move and stay alive. Plants get their energy from sunlight. Animals get theirs by eating plants or other animals. A <b>food chain</b> shows how energy passes from one living thing to the next.',
+      { h: 'A forest food chain' },
+      'Picture a forest in Ontario. Grasses and wildflowers grow in a sunny clearing and drop their seeds. A deer mouse nibbles the seeds. At night, a great horned owl swoops down silently and catches the mouse. So the food chain goes: sun, seeds, mouse, owl. Each arrow in a food chain means “is eaten by.”',
+      { fig: '<circle class="a" cx="30" cy="50" r="14"/><path class="a" d="M30 28 V22 M30 72 V78 M8 50 H2 M52 50 H58"/>' +
+          '<ellipse class="k" cx="98" cy="50" rx="4" ry="6"/><ellipse class="k" cx="108" cy="44" rx="4" ry="6"/><ellipse class="k" cx="112" cy="56" rx="4" ry="6"/>' +
+          '<ellipse class="k" cx="178" cy="54" rx="16" ry="10"/><circle class="k" cx="192" cy="44" r="5"/><path class="k" d="M162 56 Q152 60 150 70"/>' +
+          '<ellipse class="h" cx="262" cy="52" rx="16" ry="22"/><circle class="k" cx="256" cy="44" r="5"/><circle class="k" cx="268" cy="44" r="5"/><path class="k" d="M250 32 L253 22 L258 32 M274 32 L271 22 L266 32"/>' +
+          D.arrow(62, 50, 86, 50) + D.arrow(124, 50, 146, 50) + D.arrow(208, 50, 238, 50) +
+          '<text class="n" x="30" y="100" text-anchor="middle">sun</text><text class="n" x="105" y="100" text-anchor="middle">seeds</text><text class="n" x="178" y="100" text-anchor="middle">deer mouse</text><text class="n" x="262" y="100" text-anchor="middle">owl</text>' +
+          '<text class="l" x="105" y="116" text-anchor="middle">producer</text><text class="l" x="178" y="116" text-anchor="middle">consumer</text><text class="l" x="262" y="116" text-anchor="middle">consumer</text>',
+        tall: 126, cap: 'A forest food chain. Each arrow means “is eaten by.”' },
+      'Plants are called <b>producers</b>, because they make their own food from sunlight. Animals are consumers, because they eat, or consume, other living things. The mouse eats plants, so it is a plant eater. The owl eats animals, so it is a meat eater, or predator.',
+      { h: 'Silent hunters' },
+      'Great horned owls are built for hunting. Their soft, fringed feathers let them fly without a sound. Their huge eyes see well in dim light, and their sharp ears can find a mouse moving under the snow. They swallow small prey whole. Later, they cough up a pellet of the bones and fur they could not digest.',
+      'Scientists can open an owl pellet to find out what the owl has been eating. Tiny skulls, jaw bones and leg bones show which animals were part of its meals. It is a bit like solving a mystery, and it helps scientists learn about the whole food chain in a forest.',
+      'Most living things are part of many food chains at once. A mouse is eaten by owls, foxes and snakes, and an owl eats mice, rabbits and even skunks! When food chains connect like this, they form a food web.',
+      { box: 'Break the chain', text: 'If the mice in a forest disappeared, the owls would have less to eat. If the owls disappeared, there could be too many mice, and they might eat too many seeds. Every link in the chain matters.' }
+    ],
+    guide: { before: 'Make a paper chain with four links and write sun, seeds, mouse and owl on them. Teach <b>food chain</b> and <b>producer</b>. Explain that the arrow means “is eaten by.”',
+      after: 'Make a food chain from something you ate today. Start with the sun. Which links are producers and which are consumers?' },
+    words: [['food chain', 'the order in which living things eat each other, passing on energy'], ['producers', 'living things, such as plants, that make their own food']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Owls are birds.', 'A food chain shows how energy passes from one living thing to another.', 'Mice eat seeds.', 'The sun is hot.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the food chain in order.',
+        items: ['sun', 'seeds', 'deer mouse', 'owl'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'In a food chain, what does each arrow mean?',
+        opts: ['is eaten by', 'is bigger than', 'lives near'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are plants called producers?',
+        opts: ['They make their own food from sunlight.', 'They eat animals.', 'They grow very tall.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Consume</b> means “eat.” A consum<b>er</b> is …',
+        opts: ['one who eats', 'one who grows', 'one who sleeps'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How is the owl built for hunting? Fill in the chart.', cols: ['Body part', 'How it helps'],
+        rows: [['soft, fringed feathers', null], ['huge eyes', null], ['sharp ears', null]],
+        a: [[null, 'It can fly without a sound.'], [null, 'It can see in dim light.'], [null, 'It can find a mouse moving under the snow.']] },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what would happen to the forest if all the owls disappeared. Use the text.',
+        a: 'There could be too many mice. They might eat too many seeds, so fewer new plants would grow.', look: 'a chain of effects taken from the text' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'In one or two sentences, summarize what a food chain is.',
+        a: 'A food chain shows how energy moves from the sun to plants, and then to the animals that eat them.', look: 'a short summary with the sun, plants and animals' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-spirit-bear', subject: 'geography', form: 'Report',
+    title: 'The Spirit Bear',
+    deck: 'A rare white bear and the rainforest it calls home',
+    hero: {
+      photo: 'g4-spirit-bear.jpg', credit: 'Photo: Jon Rawlinson, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A spirit bear in the Great Bear Rainforest. It is a black bear with white fur.'
+    },
+    body: [
+      'On the rainy north coast of British Columbia lies one of the largest <b>temperate</b> rainforests left on Earth. It is called the Great Bear Rainforest. Here, giant red cedars and Sitka spruce grow taller than a 20-storey building, and moss covers almost everything. And here, if you are very lucky, you might see a white bear.',
+      { h: 'A white black bear' },
+      'The spirit bear, or Kermode bear, is not a polar bear. It is a black bear with white or cream fur. Both of its parents must carry a special <b>gene</b>, a tiny instruction inside the body, for white fur. Its brothers or sisters may be black. Only a few hundred spirit bears live in the world, almost all of them on a few islands in this rainforest.',
+      { h: 'Salmon feed the forest' },
+      'Every fall, salmon swim up the rainforest rivers. Bears catch the fish and often carry them into the woods to eat. The leftover bits rot and add nutrients to the soil, which helps the giant trees grow. In this way, the salmon, the bears and the forest are all connected.',
+      { fig: '<rect class="h" x="0" y="112" width="300" height="22"/>' +
+          '<path class="a" d="M50 123 Q62 115 74 123 Q62 131 50 123 Z M74 123 L82 117 V129 Z"/>' +
+          '<ellipse class="k" cx="150" cy="78" rx="26" ry="14"/><circle class="k" cx="176" cy="66" r="8"/><path class="k" d="M132 90 V104 M144 92 V104 M158 92 V104 M168 90 V104"/>' +
+          '<path class="k" d="M252 22 L230 72 H274 Z M252 72 V108"/>' +
+          D.arrow(84, 112, 120, 90) + D.arrow(186, 70, 222, 60) +
+          '<text class="n" x="66" y="150" text-anchor="middle">salmon swim upriver</text><text class="n" x="150" y="50" text-anchor="middle">bears catch them</text><text class="n" x="240" y="150" text-anchor="middle">leftovers feed the trees</text>',
+        tall: 156, cap: 'Salmon, bears and trees are connected.' },
+      { box: 'Keeping a secret', text: 'The Kitasoo/Xai’xais and Gitga’at First Nations have lived alongside spirit bears for thousands of years. For a long time, they did not tell outsiders about the white bears, to protect them from hunters.' },
+      'In 2016, First Nations, the government of British Columbia and other groups agreed to protect most of the Great Bear Rainforest from logging. Today, people come from all over the world to see the spirit bear, and many local guides are First Nations people who know the land best.'
+    ],
+    guide: { before: 'Find the north coast of British Columbia on a map. Teach <b>temperate</b> and <b>gene</b>. Explain that a rainforest does not have to be hot; this one is cool and very wet.',
+      after: 'Why do you think people work so hard to protect one rare bear? How does protecting the bear also protect the forest?' },
+    words: [['temperate', 'not too hot and not too cold'], ['gene', 'a tiny instruction inside a living thing that decides features like fur colour']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Bears eat fish.', 'The spirit bear is a rare white black bear that lives in the Great Bear Rainforest.', 'Cedars are tall.', 'It rains a lot in British Columbia.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can a spirit bear have black brothers and sisters?',
+        opts: ['Not every cub gets the white-fur gene from both parents.', 'Black cubs are older.', 'The cubs live in different places.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the bears bring to the forest?',
+        opts: ['salmon', 'water', 'seeds'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Show how salmon, bears and trees are connected.', cols: ['Step', 'What happens'],
+        rows: [['1', null], ['2', null], ['3', null]],
+        a: [[null, 'Salmon swim up the rivers.'], [null, 'Bears catch the salmon and carry them into the woods.'], [null, 'The leftovers rot and help the trees grow.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Out</b>siders are people from …',
+        opts: ['outside the group', 'inside the house', 'the far future'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What does the heading “Salmon feed the forest” do?',
+        opts: ['It tells what that part is about.', 'It gives a fun fact.', 'It names the photographer.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why did the First Nations keep the white bears a secret?',
+        a: 'To protect the bears from hunters who might want to kill a rare white bear.', look: 'protection from hunters' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why does the writer say that many guides are First Nations people? What does this show?',
+        a: 'It shows that First Nations people know the land best and still help take care of the bears and the forest today.', look: 'respect for First Nations knowledge and their role today' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-fundy-tides', subject: 'geography', form: 'Report',
+    title: 'The Highest Tides on Earth',
+    deck: 'Why the Bay of Fundy fills and empties like a giant bathtub',
+    hero: {
+      photo: 'g4-hopewell-rocks.jpg', credit: 'Photo: Moneira Salic, CC BY 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'Visitors walk on the ocean floor at the Hopewell Rocks, New Brunswick, at low tide.'
+    },
+    body: [
+      'Twice a day, the water in the Bay of Fundy, between New Brunswick and Nova Scotia, rises and falls more than anywhere else on Earth. In some places, the difference between low <b>tide</b> and high tide is about 16 metres. That is as tall as a four-storey building!',
+      { h: 'Why the tides are so high' },
+      'Tides are caused mostly by the pull of the Moon. As Earth spins, the ocean bulges toward the Moon, and the water level along the coast rises and falls. In most places, the change is only a metre or two. The Bay of Fundy is different because of its shape. It is long and narrow, and it gets shallower toward the end, like a funnel. When the tide comes in, about 100 billion tonnes of seawater are squeezed into the bay. The water has nowhere to go but up.',
+      { fig: '<path class="k" d="M0 140 H300"/><path class="k" d="M126 140 L134 82 Q118 62 112 40 H188 Q182 62 166 82 L174 140 Z"/>' +
+          '<path class="t" d="M120 40 L128 22 L136 40 M150 40 L158 18 L166 40 M172 40 L178 26 L184 40"/>' +
+          '<path class="a" d="M10 66 H100 M200 66 H290"/><path class="d" d="M10 132 H100 M200 132 H290"/>' +
+          '<text class="l" x="10" y="60">high tide</text><text class="l" x="10" y="126">low tide</text>' +
+          D.arrow(250, 100, 250, 70) + D.arrow(250, 100, 250, 128) + '<text class="n" x="258" y="104">16 m</text>',
+        tall: 146, cap: 'A sea stack at high tide and at low tide.' },
+      { h: 'Walking on the ocean floor' },
+      'At the Hopewell Rocks in New Brunswick, the tides have carved tall rock towers called <b>sea stacks</b>. Some have trees growing on top and look like giant flowerpots. At low tide, visitors climb down stairs and walk on the muddy ocean floor between the rocks. About six hours later, the same spot is under water, and people explore it by kayak instead.',
+      { box: 'Stay safe', text: 'The tide comes in quickly. Visitors must check the tide times and leave the ocean floor well before the water returns.' },
+      'The tides also shape life in the bay. The mud flats are full of tiny animals called mud shrimp. Each summer, hundreds of thousands of shorebirds stop here to feast on them before flying all the way to South America.',
+      { h: 'Power from the tides' },
+      'All that moving water carries a lot of energy. Engineers have tested ways to use the tides of the Bay of Fundy to make electricity. At Annapolis Royal in Nova Scotia, a tidal power station worked for more than 30 years. Scientists are still studying how to use tidal power without harming fish and other sea life.'
+    ],
+    guide: { before: 'Find the Bay of Fundy on a map and notice its funnel shape. Teach <b>tide</b> and <b>sea stack</b>. If you can, pour water into a funnel and watch it rise in the narrow part.',
+      after: 'Would you rather visit the Hopewell Rocks at low tide or at high tide? What would you see and do?' },
+    words: [['tide', 'the rising and falling of the sea, about twice a day'], ['sea stacks', 'tall towers of rock left standing in the sea']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['New Brunswick has rocks.', 'The Bay of Fundy has the highest tides on Earth because of its shape.', 'Shorebirds fly south.', 'Kayaks are fun.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How much higher is high tide than low tide?',
+        opts: ['about 16 metres', 'about 2 metres', 'about 100 metres'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are the tides in the Bay of Fundy so high?',
+        opts: ['The bay is long, narrow and shaped like a funnel.', 'The water is very cold.', 'It rains a lot there.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“The water has nowhere to go but up.” What does this mean?',
+        opts: ['The water is squeezed, so it has to rise.', 'The water flies into the sky.', 'The water stops moving.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Sea</b>water is a compound word. Which word is also a compound word?',
+        opts: ['shorebird', 'muddy', 'visitor'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the same spot at the Hopewell Rocks.', cols: ['', 'At low tide', 'At high tide'],
+        rows: [['What covers the ground', null, null], ['How people explore', null, null]],
+        a: [[null, 'mud', 'seawater'], [null, 'They walk on the ocean floor.', 'They paddle kayaks.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why must visitors check the tide times? Use details from the text.',
+        a: 'The tide comes in quickly, and the ocean floor is under water about six hours later, so people could be trapped by the water.', look: 'speed of the tide and the danger of being trapped' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what might happen to the shorebirds if the mud shrimp disappeared.',
+        a: 'They would not have enough food to give them energy for the long flight to South America, so many might not make it.', look: 'a prediction that links food to the long flight' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-canadian-shield', subject: 'geography', form: 'Explanation',
+    title: 'Canada’s Rocky Shield',
+    deck: 'How ancient rock and moving ice shaped half of Canada',
+    hero: {
+      photo: 'g4-canadian-shield.jpg', credit: 'Photo: Oaktree b, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 65%',
+      tall: 230,
+      cap: 'Bare rock, pine trees and clear water on Georgian Bay, Ontario: the Canadian Shield.'
+    },
+    body: [
+      'Look at a map of Canada, and you will see a huge area shaped like a horseshoe wrapped around Hudson Bay. This is the Canadian Shield. It covers about half of the country, from northern Saskatchewan to Labrador, and it includes much of northern Ontario and Quebec.',
+      { h: 'Very old rock' },
+      'The Shield is made of some of the oldest rock on Earth. Some of it is about four billion years old. Long ago, there were tall mountains here, but wind, water and ice slowly wore them down. Then, during the last ice age, giant <b>glaciers</b>, thick sheets of ice, slid over the land. They scraped away the soil and scratched the bare rock. When the ice melted, it left behind thousands of lakes in the hollows it had dug.',
+      { fig: '<path class="k" d="M0 120 Q35 112 70 120 T140 120"/><path class="h" d="M0 60 H110 Q136 80 128 114 H0 Z"/>' + D.arrow(20, 44, 110, 44) +
+          '<text class="l" x="20" y="36">the glacier moves</text>' +
+          '<path class="k" d="M160 120 H192 Q230 152 268 120 H300"/><path class="h" d="M196 124 Q230 146 264 124 Z"/>' +
+          '<path class="k" d="M172 120 L178 94 L184 120 M278 120 L284 90 L290 120"/>' +
+          '<text class="n" x="66" y="150" text-anchor="middle">1. Ice scrapes the rock.</text><text class="n" x="230" y="162" text-anchor="middle">2. A lake fills the hollow.</text>',
+        tall: 166, cap: 'How glaciers left thousands of lakes on the Shield.' },
+      { h: 'Living on the Shield' },
+      'The Shield is not good for farming, because the soil is thin and rocky. But it is rich in other ways. Its forests provide wood, its fast rivers make electricity, and its rock holds <b>minerals</b> such as nickel, gold and copper. Towns like Sudbury and Timmins grew up around mines. Mining has brought jobs, but it has also caused problems. In the past, smoke from smelters harmed the land around some mining towns. Today, mines must follow rules to protect the water, air and wildlife, and some damaged areas have been replanted with trees.',
+      { box: 'Did you know?', text: 'Many paintings by the Group of Seven, a famous group of Canadian artists, show the rocky lakes and windswept pines of the Shield.' },
+      'For thousands of years, First Nations such as the Anishinaabe and the Cree have lived on the Shield. They travelled its lakes and rivers by canoe, and they still hunt, fish and gather there today. Many people from cities visit the Shield too, to canoe, camp and enjoy its wild beauty.'
+    ],
+    guide: { before: 'Find Hudson Bay on a map of Canada and trace the horseshoe shape around it. Teach <b>glacier</b> and <b>mineral</b>. Look at the photo: what do you notice about the ground?',
+      after: 'Would you rather live on the Canadian Shield or on the flat Prairies? Give two reasons.' },
+    words: [['glaciers', 'huge, thick sheets of ice that move slowly over land'], ['minerals', 'useful materials found in rock, such as gold or nickel']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Hudson Bay is cold.', 'The Canadian Shield is a huge area of ancient rock, shaped by glaciers and rich in resources.', 'Sudbury has a mine.', 'Pine trees grow on rock.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the events in order.',
+        items: ['A glacier slides over the land.', 'It scrapes away soil and digs hollows.', 'The ice melts.', 'Lakes fill the hollows.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the Shield not good for farming?',
+        opts: ['The soil is thin and rocky.', 'It is too hot.', 'There is no water.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How do people use the Shield? Fill in the chart.', cols: ['Resource', 'How people use it'],
+        rows: [['forests', null], ['fast rivers', null], ['rock', null]],
+        a: [[null, 'for wood'], [null, 'to make electricity'], [null, 'to mine minerals such as nickel, gold and copper']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Rock<b>y</b> means “full of rocks.” What does sand<b>y</b> mean?',
+        opts: ['full of sand', 'without sand', 'a kind of sand'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'This text tells how the Shield formed and how people use it. What kind of text is it?',
+        opts: ['an explanation', 'a diary', 'a poem'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why are there so many lakes on the Shield?',
+        a: 'Glaciers dug hollows in the rock, and when the ice melted, water filled the hollows.', look: 'glaciers dug hollows that filled with water' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text says the Shield is “not good for farming” but “rich in other ways.” Do you agree? Explain with details.',
+        a: 'Yes. The soil is thin, but the Shield has forests for wood, rivers for electricity, minerals for mining and beautiful places to canoe and camp.', look: 'an opinion supported with two details' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-timbuktu', subject: 'history', form: 'Report',
+    title: 'The City of Gold and Books',
+    deck: 'Timbuktu, a great city of the Mali Empire 700 years ago',
+    hero: {
+      photo: 'g4-timbuktu.jpg', credit: 'Photo: Ondřej Havelka, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 230,
+      cap: 'The Djinguereber Mosque in Timbuktu, Mali. Its walls are made of mud bricks.'
+    },
+    body: [
+      'About 700 years ago, one of the richest kingdoms in the world was in West Africa. It was the Mali Empire, and one of its greatest cities was Timbuktu, near the edge of the Sahara Desert.',
+      { h: 'A city of trade' },
+      'Timbuktu grew rich from trade. Camel <b>caravans</b>, long lines of camels carrying goods, crossed the desert from the north with salt, cloth and books. Boats came along the Niger River from the south with gold, ivory and grain. Traders met in Timbuktu to buy and sell. Salt was so valuable that it was sometimes traded for gold!',
+      { fig: '<rect class="h" x="0" y="0" width="300" height="54"/><text class="lb" x="10" y="18">Sahara Desert</text>' +
+          '<path class="a" d="M10 118 Q100 82 150 92 Q210 102 290 140"/><circle class="k" cx="150" cy="80" r="6"/>' +
+          D.arrow(150, 26, 150, 70) + '<text class="n" x="158" y="40">salt, cloth, books</text>' +
+          D.arrow(230, 136, 162, 88) + '<text class="n" x="170" y="150">gold, ivory, grain</text>' +
+          '<text class="l" x="138" y="76" text-anchor="end">Timbuktu</text><text class="l" x="10" y="134">Niger River</text>',
+        tall: 156, cap: 'Goods came to Timbuktu across the desert and along the river.' },
+      { h: 'The richest king' },
+      'Mali’s most famous ruler was Mansa Musa. In 1324, he made a long journey to the city of Mecca. He brought so much gold and gave so much away that people talked about him for hundreds of years. When he came home, he ordered a great mosque to be built in Timbuktu. The Djinguereber Mosque, made of mud bricks and wood, still stands today. Each year, people in the city help to cover its walls with fresh mud to keep it strong.',
+      { h: 'A city of learning' },
+      'Timbuktu was also a centre of learning. Scholars came from far away to study mathematics, medicine, astronomy and law. Families copied and collected thousands of handwritten books called <b>manuscripts</b>, and they have protected them for hundreds of years. The manuscripts are written mostly in Arabic. They include books about the stars, recipes for medicines, poems, letters and even advice on how to settle arguments fairly. They show that West Africa was home to great writers and thinkers long ago.',
+      { box: 'Saving the books', text: 'In 2012, during a war, librarians in Timbuktu secretly packed hundreds of thousands of manuscripts into boxes and carried them to safety.' },
+      'Today, Timbuktu is a small, quiet town at the edge of the desert. But its old mosques and its manuscripts still remind the world of the great empire that once traded gold and salt across the Sahara.'
+    ],
+    guide: { before: 'Find Mali, the Sahara Desert and the Niger River on a map or globe. Teach <b>caravan</b> and <b>manuscript</b>. Talk about why salt was so valuable before fridges.',
+      after: 'The librarians risked their safety to save old books. What is something from the past that you think is worth protecting? Why?' },
+    words: [['caravans', 'groups of traders travelling together with their animals'], ['manuscripts', 'books or papers written by hand']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Camels cross deserts.', 'Timbuktu was a rich trading city and a great centre of learning in the Mali Empire.', 'Salt is white.', 'Mansa Musa went to Mecca.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. What came to Timbuktu from the north?',
+        opts: ['salt, cloth and books', 'gold, ivory and grain', 'fish'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Timbuktu become rich?',
+        opts: ['Traders met there to buy and sell.', 'It had the biggest farms.', 'It was beside the ocean.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Timbuktu was a city of trade and a city of learning. Give two details for each.', cols: ['City of trade', 'City of learning'],
+        rows: [[null, null], [null, null]],
+        a: [['Camel caravans brought salt, cloth and books.', 'Scholars studied mathematics, medicine and law.'], ['Boats brought gold, ivory and grain.', 'Families collected thousands of manuscripts.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Manu</b>script has a part that means “hand.” Which word also has <b>manu</b>, meaning “hand”?',
+        opts: ['manual', 'many', 'menu'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do people put fresh mud on the mosque each year?',
+        opts: ['to keep it strong', 'to change its colour', 'to make it taller'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think the librarians took such a big risk to save the manuscripts?',
+        a: 'The manuscripts are hundreds of years old and hold the history and knowledge of the people. If they were lost, that knowledge would be gone forever.', look: 'the value of the books as history and knowledge' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'In one or two sentences, summarize why Timbuktu was important.',
+        a: 'Timbuktu was a rich trading city in the Mali Empire and a famous centre of learning, full of scholars and books.', look: 'both trade and learning' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-olympia', subject: 'history', form: 'Report',
+    title: 'The First Olympic Games',
+    deck: 'Races, wrestling and olive crowns in ancient Greece',
+    hero: {
+      photo: 'g4-olympia.jpg', credit: 'Photo: dronepicr, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 230,
+      cap: 'The ancient stadium at Olympia, Greece, as it looks today. Fans sat on the grassy slopes.'
+    },
+    body: [
+      'More than 2 700 years ago, athletes from all over ancient Greece travelled to a place called Olympia. They came to race, wrestle and throw in a festival to honour Zeus, the king of the Greek gods. These were the first Olympic Games. People say they began in 776 BCE, and they were held every four years for more than a thousand years.',
+      { h: 'One race at first' },
+      'At first, there was only one event: a sprint of about 192 metres, the length of the stadium. Later, the Games added longer races, wrestling, boxing, chariot races and the <b>pentathlon</b>, a contest of five events: running, jumping, wrestling, and throwing the discus and the javelin.',
+      { fig: '<rect class="h" x="10" y="14" width="280" height="22"/><rect class="k" x="10" y="36" width="280" height="40"/><rect class="h" x="10" y="76" width="280" height="22"/>' +
+          '<path class="a" d="M24 36 V76 M276 36 V76"/><text class="n" x="150" y="61" text-anchor="middle">track: about 192 metres</text>' +
+          D.label(14, 124, 'start', 24, 70) + D.label(250, 124, 'finish', 276, 70) + D.label(100, 124, 'grassy slopes for fans', 150, 90),
+        tall: 130, cap: 'A plan of the stadium at Olympia, seen from above.' },
+      { h: 'A time of peace' },
+      'The Greek city-states often fought one another. But before each Games, messengers announced a <b>truce</b>, a promise not to fight. This let athletes and fans travel safely to Olympia. Up to 45 000 people sat on the grassy slopes around the stadium to watch.',
+      'Winners did not get medals. Instead, each winner received a crown made of olive leaves, cut from a sacred tree at Olympia. Back home, winners were treated as heroes. Only men who spoke Greek and were not enslaved could take part, and married women were not even allowed to watch.',
+      'Athletes trained for months before the Games, and runners raced barefoot on the sandy track. Judges watched closely, and anyone caught cheating had to pay a fine. The money was used to make bronze statues of Zeus, which lined the path into the stadium, with the cheaters’ names carved on them for everyone to see.',
+      { box: 'The Games return', text: 'The ancient Games ended about 1 600 years ago. In 1896, the modern Olympic Games began in Athens, Greece. Canada has hosted them three times: in Montréal, Calgary and Vancouver.' },
+      'Before every Olympic Games, a flame is still lit at Olympia, using the sun’s rays and a curved mirror. Then runners carry it, torch to torch, all the way to the city where the Games will be held.'
+    ],
+    guide: { before: 'Ask what the child knows about the Olympic Games today. Teach <b>pentathlon</b> and <b>truce</b>. Find Greece on a map.',
+      after: 'How are the ancient Games and today’s Games alike? How are they different? Which would you rather watch?' },
+    words: [['pentathlon', 'a contest made up of five different events'], ['truce', 'an agreement to stop fighting for a time']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Zeus was a Greek god.', 'The first Olympic Games were held in ancient Greece, in honour of Zeus.', 'Olive trees grow in Greece.', 'Canada hosted the Games.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How long was the first race?',
+        opts: ['about 192 metres', 'about 45 metres', 'about 2 700 metres'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Penta</b> means five. How many sides does a <b>penta</b>gon have?',
+        opts: ['five', 'four', 'six'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was the truce important?',
+        opts: ['It let people travel safely to Olympia.', 'It made the races faster.', 'It gave winners a prize.'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which heading tells you where to read about the truce?',
+        opts: ['A time of peace', 'One race at first', 'The Games return'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the ancient Games with the Games today.', cols: ['', 'Ancient Games', 'Games today'],
+        rows: [['Prize for winners', null, null], ['Who can take part', null, null]],
+        a: [[null, 'a crown of olive leaves', 'medals'], [null, 'only Greek-speaking men who were not enslaved', 'women and men from countries all over the world']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Who could not take part in the ancient Games? Do you think this was fair? Explain.',
+        a: 'Women, enslaved people and people who did not speak Greek could not take part. It was not fair, because everyone should have a chance to compete.', look: 'names who was left out and gives a reasoned opinion' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think an olive crown meant so much to the winners?',
+        a: 'It came from a sacred tree at Olympia and showed everyone that they were a champion, so they were treated as heroes.', look: 'the meaning of the crown, not its value in money' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-silk-road', subject: 'history', form: 'Report',
+    title: 'Along the Silk Road',
+    deck: 'How silk, paper and ideas travelled across Asia',
+    hero: {
+      photo: 'g4-tang-camel.jpg', credit: 'Photo: Wikipedia Loves Art participant Opal_Art_Seekers_4, CC BY 2.5, Wikimedia Commons', focus: '50% 40%',
+      tall: 230,
+      cap: 'A pottery camel and its handler from China, made about 1 300 years ago. Look at the bundles on its back.'
+    },
+    body: [
+      'For more than a thousand years, a web of <b>trade</b> routes stretched across Asia, linking China to the Middle East and Europe. Today we call it the Silk Road. It was not one road but many paths over mountains, deserts and grasslands.',
+      { h: 'Silk and more' },
+      'China was famous for silk, a smooth, shiny cloth made from the cocoons of silkworms. For a long time, only the Chinese knew how to make it, and they kept the method a secret. People far to the west paid high prices for silk. Traders also carried tea, paper, spices, glass, horses and jewels along the routes.',
+      { fig: '<path class="t" d="M120 58 L132 36 L144 58 L156 30 L168 58"/><rect class="h" x="196" y="80" width="64" height="24"/>' +
+          '<path class="k" d="M30 90 Q80 60 130 76 T220 72 Q250 68 280 82"/>' +
+          '<circle class="dot" cx="30" cy="90" r="4"/><circle class="dot" cx="130" cy="76" r="4"/><circle class="dot" cx="220" cy="72" r="4"/><circle class="dot" cx="280" cy="82" r="4"/>' +
+          '<text class="n" x="10" y="112">the west</text><text class="n" x="290" y="104" text-anchor="end">China</text>' +
+          '<text class="l" x="144" y="24" text-anchor="middle">mountains</text><text class="l" x="228" y="120" text-anchor="middle">desert</text>' +
+          D.label(40, 140, 'stopping places', 130, 80),
+        tall: 146, cap: 'One of the many Silk Road routes, from China to the west.' },
+      { h: 'Ships of the desert' },
+      'Few traders travelled the whole way. Instead, goods passed from trader to trader, city to city, like a long relay race. Many traders crossed the deserts with Bactrian camels, which have two humps. These camels can go many days without water, carry heavy loads and survive both hot days and freezing nights. Travellers rested at roadside inns called <b>caravanserais</b>, where people and animals could find water, food and shelter.',
+      { h: 'Trading ideas' },
+      'The Silk Road carried more than goods. Travellers shared ideas, languages, music, stories and religions. Papermaking spread from China to the west. New foods, such as grapes, travelled east. Sadly, diseases travelled too.',
+      'One famous traveller was Xuanzang, a Buddhist monk from China who walked the Silk Road about 1 400 years ago. His journey to India and back took about 17 years. He carried home hundreds of books and wrote about the places and people he saw, which helped people in China learn about lands far away.',
+      { box: 'Look closely', text: 'The pottery camel in the photo was made to be placed in a tomb. Artists in China made many camels like it, which shows how important camels were to trade.' }
+    ],
+    guide: { before: 'Find China, the Middle East and Europe on a globe and trace a path between them. Teach <b>trade</b> and <b>caravanserai</b>. If you have something made of silk, let the child feel it.',
+      after: 'Today, how do goods from far away get to your home? How is that like the Silk Road? How is it different?' },
+    words: [['trade', 'buying, selling or swapping goods'], ['caravanserais', 'roadside inns where traders and their animals rested']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Camels have two humps.', 'The Silk Road was a web of routes that carried goods and ideas across Asia.', 'Silk is shiny.', 'Grapes travelled east.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did people in the west pay high prices for silk?',
+        opts: ['Only the Chinese knew how to make it.', 'It was very heavy.', 'It was made of gold.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. What did this route cross?',
+        opts: ['mountains and a desert', 'an ocean', 'an ice field'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What travelled along the Silk Road? Give two of each.', cols: ['Goods', 'Ideas'],
+        rows: [[null, null], [null, null]],
+        a: [['silk, tea, paper or spices', 'languages or music'], ['glass, horses or jewels', 'stories or religions']] },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Goods passed along “like a long relay race.” This means …',
+        opts: ['each trader carried goods part of the way', 'traders raced each other', 'the camels ran fast'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Silkworm, papermaking and grasslands are all …',
+        opts: ['compound words', 'words with prefixes', 'names of places'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why were Bactrian camels good for crossing the desert? Give two reasons from the text.',
+        a: 'They can go many days without water and carry heavy loads. They can also survive hot days and freezing nights.', look: 'two reasons from the text' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'The writer says, “Sadly, diseases travelled too.” Why do you think the writer included this?',
+        a: 'To show that the Silk Road brought bad things as well as good things, so readers get a fair picture.', look: 'a balanced picture of good and bad' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-recycling', subject: 'tech', form: 'Explanation',
+    title: 'Where Does Recycling Go?',
+    deck: 'How a jumble from your blue bin is sorted and made into something new',
+    hero: {
+      photo: 'g4-recycling.jpg', credit: 'Photo: City of Greenville, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 240,
+      cap: 'Bales of sorted recycling at a sorting plant, ready to be sold to factories.'
+    },
+    body: [
+      'Every week, families across Canada put out blue bins full of cans, bottles, boxes and newspapers. A truck takes it all away. But where does it go, and how does a jumble of old containers become something new?',
+      { h: 'At the sorting plant' },
+      'The truck delivers the recycling to a <b>sorting</b> plant. Everything is dumped onto moving belts, and machines and workers separate it into groups. Spinning screens let flat paper slide off one way while bottles and cans roll another. A strong magnet lifts out steel cans. Another machine uses spinning magnets to push aluminum cans off the belt. Cameras and puffs of air pick out different kinds of plastic. Workers pull out things that do not belong, such as plastic bags, which tangle the machines.',
+      { fig: '<rect class="k" x="6" y="44" width="46" height="40" rx="4"/><text class="n" x="29" y="100" text-anchor="middle">bin</text>' + D.arrow(54, 64, 74, 84) +
+          '<path class="k" d="M70 90 H290 M70 104 H290"/>' + [80, 110, 140, 170, 200, 230, 260].map(function (x) { return '<circle class="t" cx="' + x + '" cy="97" r="5"/>'; }).join('') +
+          '<path class="a" d="M128 34 V54 Q140 70 152 54 V34"/><text class="n" x="140" y="26" text-anchor="middle">magnet pulls steel</text>' +
+          '<path class="d" d="M206 126 L210 108 M216 126 L218 108 M226 126 L226 108"/><text class="n" x="216" y="140" text-anchor="middle">air puffs sort plastic</text>' +
+          '<rect class="h" x="262" y="54" width="32" height="30"/><text class="n" x="278" y="46" text-anchor="middle">bales</text>',
+        tall: 146, cap: 'Inside a sorting plant. Each material is pulled out in a different way.' },
+      { h: 'Bales and new things' },
+      'Each sorted material is squashed into giant blocks called <b>bales</b>, like the ones in the photo. The bales are sold to factories that turn them into new products. Old paper becomes new boxes and egg cartons. Aluminum cans are melted and made into new cans, sometimes in as little as two months. Plastic bottles can become fleece jackets, carpets or new bottles. Glass jars are crushed and melted to make new jars.',
+      { box: 'Clean and empty', text: 'Rinse containers before you put them in the bin. Food and liquids can spoil a whole bale of paper.' },
+      'Recycling saves energy and resources. Making a can from recycled aluminum uses much less energy than making one from new metal dug out of the ground. But the best choice is to make less waste in the first place: reduce, reuse, then recycle.',
+      'Not everything can be recycled in every town. Each city has its own list of what goes in the blue bin, because each sorting plant has different machines. Check your city’s list, and when you are not sure, ask. Putting the wrong things in the bin can make a whole load harder to recycle.'
+    ],
+    guide: { before: 'Look in your own recycling bin together and sort what you find into paper, metal and plastic. Teach <b>sort</b> and <b>bale</b>. Use a fridge magnet to test which cans are steel.',
+      after: 'What is one way your family could make less waste? Think of something you could reuse instead of throwing away.' },
+    words: [['sorting', 'putting things into groups that belong together'], ['bales', 'large blocks of material pressed tightly together']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Trucks are loud.', 'Recycling is sorted at a plant, pressed into bales and made into new things.', 'Magnets pick up steel.', 'Paper is flat.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['Families fill their blue bins.', 'A truck takes the recycling to a sorting plant.', 'Machines and workers sort it.', 'Each material is pressed into bales.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what pulls out steel cans?',
+        opts: ['a magnet', 'puffs of air', 'a worker'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How is each thing pulled out? Fill in the chart.', cols: ['Thing', 'How it is pulled out'],
+        rows: [['steel cans', null], ['aluminum cans', null], ['plastic bags', null]],
+        a: [[null, 'A strong magnet lifts them out.'], [null, 'Spinning magnets push them off the belt.'], [null, 'Workers pull them out by hand.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should you rinse containers?',
+        opts: ['Food and liquids can spoil a bale of paper.', 'To make them shiny.', 'So they weigh more.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Recycl<b>able</b> means “able to be recycled.” What does wash<b>able</b> mean?',
+        opts: ['able to be washed', 'already washed', 'never washed'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The writer says the best choice is “to make less waste in the first place.” Why might this be better than recycling?',
+        a: 'Recycling still uses trucks, machines and energy. If we make less waste, we save even more energy and resources.', look: 'recycling still uses energy, so making less waste saves more' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what would happen at the plant if many people put plastic bags in their blue bins.',
+        a: 'The bags would tangle the machines, so workers would have to stop and clear them, and sorting would slow down.', look: 'a prediction based on the bags tangling machines' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-longer-recess', subject: 'health', form: 'Opinion',
+    title: 'Give Us Ten More Minutes',
+    deck: 'A Grade 4 student makes the case for a longer recess',
+    hero: {
+      photo: 'g4-playground.jpg', credit: 'Photo: Hameltion, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 240,
+      cap: 'A climbing wall in a school playground, waiting for recess.'
+    },
+    body: [
+      'By the time the recess bell rings, many students have been sitting for two hours. Then, after only fifteen minutes outside, the bell rings again. I think recess should be at least 25 minutes long. Our school day has five hours of lessons but only fifteen minutes of free play in the morning. Here are three reasons why that should change.',
+      { h: 'Moving helps us learn' },
+      'First, our bodies and brains need to move. Doctors say children should be active for at least 60 minutes every day. Running, climbing and jumping get blood and oxygen flowing to the brain. When students come back from active play, many find it easier to sit still and pay attention. Being outside helps too. Fresh air and daylight can lift our mood, and climbing and running build strong muscles and bones.',
+      { fig: '<text class="n" x="0" y="30">now</text><rect class="t" x="70" y="18" width="38" height="16"/><text class="n" x="114" y="30">15 min</text>' +
+          '<text class="n" x="0" y="62">my idea</text><rect class="h" x="70" y="50" width="62" height="16"/><text class="n" x="138" y="62">25 min</text>' +
+          '<text class="n" x="0" y="94">daily goal</text><rect class="k" x="70" y="82" width="150" height="16"/><text class="n" x="226" y="94">60 min</text>' +
+          '<path class="k" d="M70 10 V104"/>',
+        tall: 110, cap: 'Minutes of recess now, the writer’s idea, and the daily activity goal for children.' },
+      { h: 'Recess builds friendships' },
+      'Second, recess is when we learn to get along. On the playground, we make up games, take turns, share equipment and solve arguments without a teacher telling us what to do. These are important life skills. Fifteen minutes is barely enough time to choose teams before the game is over. A longer recess would also give us time to invite someone new to join in.',
+      { h: 'A break for our minds' },
+      'Third, everyone needs a break. Adults take breaks at work to stretch, chat or get fresh air. Children need breaks too. A longer recess gives our minds time to rest, so we come back <b>refreshed</b> and ready to learn.',
+      'Some people worry that a longer recess means less time for learning. But a few extra minutes outside could make the rest of the day more <b>productive</b>, because rested students get more done. Please give students ten more minutes to play. Our brains, our bodies and our friendships will thank you.',
+      { box: 'Did you know?', text: 'Canada’s activity guidelines say that children and teens should get at least 60 minutes of heart-pumping activity every day.' }
+    ],
+    guide: { before: 'Ask: how long is recess at your school? Is it long enough? Teach <b>refreshed</b> and <b>productive</b>. Explain that an opinion piece tries to persuade the reader.',
+      after: 'Do you agree with the writer? What is one more reason you could add, for or against a longer recess?' },
+    words: [['refreshed', 'feeling rested and full of energy again'], ['productive', 'getting a lot of good work done']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This is an opinion piece. How can you tell?',
+        opts: ['The writer gives an opinion and reasons to persuade the reader.', 'It tells a made-up story.', 'It gives steps to follow.', 'It rhymes.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the writer’s reasons.', cols: ['Reason', 'One detail that supports it'],
+        rows: [['Moving helps us learn.', null], ['Recess builds friendships.', null], ['Everyone needs a break.', null]],
+        a: [[null, 'Active play sends blood and oxygen to the brain, so students pay attention better.'], [null, 'We take turns, share and solve arguments ourselves.'], [null, 'Adults take breaks at work, and a break lets our minds rest.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the bar graph. How many more minutes does the writer want?',
+        opts: ['10', '25', '60'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Words like “First,” “Second” and “Third” help the reader …',
+        opts: ['follow the reasons in order', 'find the photo', 'learn new words'], a: 0 },
+      { k: 'choice', code: 'C3.5', half: true, q: 'Who is the writer most likely trying to persuade?',
+        opts: ['the people who decide how long recess is', 'doctors', 'little children'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Re</b>freshed means fresh again. Which prefix means “again”?',
+        opts: ['re-', 'un-', 'dis-'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the writer say fifteen minutes is “barely enough time to choose teams”?',
+        a: 'To show that 15 minutes is too short for a real game, which supports the idea that recess should be longer.', look: 'links the detail to the writer’s opinion' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The writer mentions what “some people worry” about. Why is it smart to include the other side?',
+        a: 'It shows the writer has thought about the other side and can answer it. That makes the argument stronger and more fair.', look: 'answering the other side makes the argument stronger' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-ice-safety', subject: 'health', form: 'Explanation',
+    title: 'Is the Ice Safe?',
+    deck: 'How to check the ice, and what to do if it breaks',
+    hero: {
+      photo: 'g4-thin-ice.jpg', credit: 'Photo: Nolabob, CC0, Wikimedia Commons', focus: '50% 60%',
+      tall: 240,
+      cap: 'A sign warns of thin ice at the edge of a partly frozen pond.'
+    },
+    body: [
+      'In winter, frozen ponds, lakes and rivers can be wonderful places to skate, play hockey or go ice fishing. But every year in Canada, people fall through ice that looks solid. Knowing how to check the ice, and what to do if you fall in, can save a life.',
+      { h: 'Check before you step' },
+      'Ice is not the same <b>thickness</b> everywhere. It is thinner near the shore, over moving water, and near docks, rocks and plants. Never go onto ice alone. Always ask an adult to check it first, or skate on a rink that is tested and marked safe. Look at the colour, too. Clear blue ice is the strongest. White ice is weaker, and grey ice is unsafe because it has water in it. Even thick ice can be weak in early winter or in spring, when it starts to melt. If you see cracks, open water or slushy spots, stay off.',
+      { fig: '<path class="k" d="M10 120 H290"/><rect class="h" x="30" y="60" width="50" height="60"/><rect class="h" x="125" y="40" width="50" height="80"/><rect class="h" x="220" y="20" width="50" height="100"/>' +
+          '<text class="lb" x="55" y="54" text-anchor="middle">15 cm</text><text class="lb" x="150" y="34" text-anchor="middle">20 cm</text><text class="lb" x="245" y="14" text-anchor="middle">25 cm</text>' +
+          '<text class="n" x="55" y="136" text-anchor="middle">one person</text><text class="n" x="150" y="136" text-anchor="middle">a group skating</text><text class="n" x="245" y="136" text-anchor="middle">a snowmobile</text>',
+        tall: 142, cap: 'How thick clear, solid ice should be (Canadian Red Cross guide).' },
+      { h: 'If you fall through' },
+      'If you fall in, stay calm and keep your head above water. Turn back toward the direction you came from, because that ice held you before. Put your arms on the ice and kick your legs hard, like a swimmer, to slide yourself out onto your stomach. Then roll away from the hole, staying flat to spread out your weight. Do not stand up until you reach thick ice or land.',
+      { box: 'Never run onto the ice', text: 'If someone else falls in, do not go near the hole. Call 911 and reach out with a long branch, rope or hockey stick from the shore.' },
+      'Cold water cools your body much faster than cold air. If your body gets too cold, you can get <b>hypothermia</b>, a dangerous drop in body temperature. Get out quickly, then go somewhere warm and change into dry clothes. Remember: when in doubt, stay out!',
+      'Before you go out on the ice, tell an adult where you are going and when you will be back. Wear a helmet when you skate, and dress in warm layers.'
+    ],
+    guide: { before: 'Ask where the child skates in winter, and who checks the ice. Teach <b>thickness</b> and <b>hypothermia</b>. Use a ruler to show 15 cm.',
+      after: 'Practise the steps for getting out of the water, lying on the floor. Then talk about how to help someone else safely.' },
+    words: [['thickness', 'how thick something is, from top to bottom'], ['hypothermia', 'a dangerous drop in body temperature']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Hockey is fun.', 'Knowing how to check ice and what to do if you fall in can keep you safe.', 'Ice is blue.', 'Ponds freeze in winter.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How thick should the ice be for a group to skate?',
+        opts: ['20 cm', '15 cm', '25 cm'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should you turn back the way you came?',
+        opts: ['That ice held you before.', 'It is closer to the net.', 'The water is warmer there.'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps for getting out.',
+        items: ['Stay calm and turn back the way you came.', 'Put your arms on the ice and kick.', 'Slide out onto your stomach.', 'Roll away from the hole.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Un</b>safe means not safe. What does <b>un</b>tested mean?',
+        opts: ['not tested', 'tested twice', 'tested well'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What does the colour of ice tell you? Fill in the chart.', cols: ['Colour of ice', 'How safe it is'],
+        rows: [['clear blue', null], ['white', null], ['grey', null]],
+        a: [[null, 'the strongest'], [null, 'weaker'], [null, 'unsafe, because it has water in it']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why should you never run onto the ice to help someone who fell in?',
+        a: 'The ice near the hole is already broken or thin, so you could fall in too. It is safer to call 911 and reach out with a stick or rope from the shore.', look: 'the danger of thin ice and the safer way to help' },
+      { k: 'lines', code: 'C1.3', n: 2, q: 'How does the heading “If you fall through” help a reader?',
+        a: 'It helps a reader quickly find the steps to follow in an emergency.', look: 'headings help readers find information fast' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bus-schedule', subject: 'math', form: 'Explanation',
+    title: 'Catching the Bus',
+    deck: 'How to read a bus schedule and work out how long a trip takes',
+    hero: {
+      photo: 'g4-city-bus.jpg', credit: 'Photo: Mx0268, CC BY 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 240,
+      cap: 'A city bus on route 13 in Ottawa.'
+    },
+    body: [
+      'Maya and her grandmother want to take the bus from their apartment to the public library. Maya’s robot club starts there at 10:30 on Saturday morning, and she does not want to be late. How can they figure out which bus to catch? They use a bus <b>schedule</b>.',
+      { h: 'Reading the schedule' },
+      'A bus schedule is a table. Each column is a stop, and each row is one bus trip. You read across a row to see when that bus reaches each stop. Maya finds her stop, Elm Street, in the first column. The library stop is in the last column.',
+      { fig: '<rect class="k" x="10" y="10" width="280" height="96"/><path class="k" d="M10 34 H290"/><path class="t" d="M10 58 H290 M10 82 H290 M103 10 V106 M196 10 V106"/>' +
+          '<text class="lb" x="56" y="26" text-anchor="middle">Elm Street</text><text class="lb" x="150" y="26" text-anchor="middle">Market Square</text><text class="lb" x="243" y="26" text-anchor="middle">Library</text>' +
+          [['9:40', '9:52', '10:05'], ['10:00', '10:12', '10:25'], ['10:20', '10:32', '10:45']].map(function (r, i) { return r.map(function (t, j) { return '<text class="n" x="' + [56, 150, 243][j] + '" y="' + (50 + i * 24) + '" text-anchor="middle">' + t + '</text>'; }).join(''); }).join(''),
+        tall: 112, cap: 'The route 7 bus schedule for Saturday morning.' },
+      'Maya looks down the Elm Street column. A bus leaves at 9:40, another at 10:00 and another at 10:20. The buses come every 20 minutes. How often a bus comes is called its <b>frequency</b>. Some routes have buses every 10 minutes on weekdays but only every 30 minutes on weekends, so it is important to read the schedule for the right day.',
+      { h: 'Working out the time' },
+      'If they catch the 10:00 bus, it reaches the library at 10:25. Maya counts on from 10:00: 10 minutes to 10:10, 10 more to 10:20, and 5 more to 10:25. The trip takes 25 minutes. That is the elapsed time, the time that passes from start to finish. Arriving at 10:25 would leave only 5 minutes to find the club room.',
+      'The 10:20 bus would be too late, since it does not arrive until 10:45. The 9:40 bus would get them there at 10:05, with lots of time to spare.',
+      { box: 'Plan for delays', text: 'Buses can be late because of traffic or snow. It is smart to catch a bus that gives you a few extra minutes.' },
+      'Grandma smiles. “Let’s take the 9:40,” she says. “Then we can pick out some books before your club starts.”',
+      'On the bus, Maya watches the stops go by: Elm Street, Market Square, then the library. They step off at 10:05, right on time.'
+    ],
+    guide: { before: 'Look at a real bus, train or TV schedule together. Teach <b>schedule</b> and <b>frequency</b>. Practise counting on in minutes from one time to another.',
+      after: 'Plan a trip using the schedule: if the club started at 10:15, which bus should Maya take? Explain how you know.' },
+    words: [['schedule', 'a table that shows when things will happen'], ['frequency', 'how often something happens']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Buses are big.', 'A bus schedule helps you plan a trip by showing when each bus reaches each stop.', 'The library opens at 10.', 'Grandma likes books.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the schedule. Fill in the chart.', cols: ['Bus leaves Elm Street', 'Arrives at the library', 'Trip time'],
+        rows: [['9:40', null, null], ['10:20', null, null]],
+        a: [[null, '10:05', '25 minutes'], [null, '10:45', '25 minutes']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the schedule. When does the 10:00 bus reach Market Square?',
+        opts: ['10:12', '10:25', '9:52'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the 10:20 bus a bad choice?',
+        opts: ['It arrives after the club starts.', 'It is too crowded.', 'It does not stop at Elm Street.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Frequen</b>cy means how often. Which word means “happening often”?',
+        opts: ['frequent', 'late', 'early'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the text show the times in a table?',
+        opts: ['A table shows many times in rows and columns, so they are easy to find.', 'A table tells a story.', 'A table shows the bus.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does Grandma choose the 9:40 bus instead of the 10:00 bus? Use details from the text.',
+        a: 'The 9:40 bus arrives at 10:05, so they have time to pick out books, and they will still be on time if the bus is late.', look: 'extra time for books and for delays' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'If Maya and Grandma miss the 9:40 bus, what should they do? Explain.',
+        a: 'They should catch the 10:00 bus. It reaches the library at 10:25, which is still before the club starts at 10:30.', look: 'uses the schedule to choose the next bus' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-school-garden', subject: 'math', form: 'Explanation',
+    title: 'Planning a School Garden',
+    deck: 'How one class used perimeter and area to grow a garden',
+    hero: {
+      photo: 'g4-school-garden.jpg', credit: 'Photo: Libby Kokes, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 78%',
+      tall: 240,
+      cap: 'Raised garden beds full of vegetables in front of a school.'
+    },
+    body: [
+      'The Grade 4 class at Lakeview Public School wants to build a vegetable garden. The principal says they can use a sunny space by the front door. The class has to plan carefully. How big should the garden beds be? How much wood do they need for the sides? How many plants will fit?',
+      { h: 'Going around: perimeter' },
+      'The students decide to build two raised beds, each 3 metres long and 1 metre wide. To find how much wood they need for the sides of one bed, they measure all the way around it. That distance is the <b>perimeter</b>. They add the four sides: 3 + 1 + 3 + 1 = 8 metres. For two beds, they need 16 metres of boards.',
+      { fig: '<rect class="k" x="60" y="40" width="180" height="60"/><path class="t" d="M120 40 V100 M180 40 V100"/>' +
+          '<text class="l" x="90" y="75" text-anchor="middle">1 m²</text><text class="l" x="150" y="75" text-anchor="middle">1 m²</text><text class="l" x="210" y="75" text-anchor="middle">1 m²</text>' +
+          '<text class="n" x="150" y="32" text-anchor="middle">3 m</text><text class="n" x="150" y="118" text-anchor="middle">3 m</text><text class="n" x="54" y="75" text-anchor="end">1 m</text><text class="n" x="246" y="75">1 m</text>',
+        tall: 126, cap: 'One garden bed, drawn from above. Each square is 1 square metre.' },
+      { h: 'Covering the inside: area' },
+      'Next, they need to know how much space there is for planting. That is the <b>area</b>, the amount of surface inside a shape. They draw the bed on grid paper, with each square standing for 1 square metre. The bed covers 3 squares, so its area is 3 square metres. Both beds together have 6 square metres for planting. To fill the beds, the class also needs soil. Each bed is about one-third of a metre deep, so it holds about 1 cubic metre of soil.',
+      'The seed packets help with the rest. One packet says to plant 9 lettuce plants in each square metre. If the class uses one whole bed for lettuce, they can grow 3 × 9 = 27 lettuce plants! In the second bed, they plant carrots and beans. Carrots grow close together, but beans need more room, so the class plants fewer bean plants in each square metre.',
+      { box: 'Why raised beds?', text: 'Raised beds warm up faster in spring, drain well after rain and are easy to reach without stepping on the soil.' },
+      'In June, the class picks its first salad. Some vegetables go home with families, and some go to a local food bank. Planning with math helped the garden grow. Next year, the class wants to add a third bed for strawberries, and they have already started measuring.'
+    ],
+    guide: { before: 'Walk around the edge of a rug or table together, then lay sheets of paper over it. Teach <b>perimeter</b> (around) and <b>area</b> (covering). Count the squares in the diagram.',
+      after: 'Design your own garden bed on grid paper. What is its perimeter? What is its area? What would you plant?' },
+    words: [['perimeter', 'the distance all the way around a shape'], ['area', 'the amount of surface a shape covers']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Lettuce is green.', 'A class used perimeter and area to plan a school garden.', 'Schools have principals.', 'Wood comes from trees.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What is the perimeter of one bed?',
+        opts: ['8 metres', '3 metres', '4 metres'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What is the area of one bed?',
+        opts: ['3 square metres', '8 square metres', '1 square metre'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Another bed is 2 metres long and 2 metres wide. Fill in the chart.', cols: ['Perimeter', 'Area', 'Lettuce plants (9 per square metre)'],
+        rows: [[null, null, null]],
+        a: [['8 metres', '4 square metres', '36']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the students need to know the perimeter?',
+        opts: ['to know how much wood to buy for the sides', 'to know how much water to use', 'to count the seeds'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Peri</b>meter has a part that means “around.” Which word also has <b>peri</b>-?',
+        opts: ['periscope', 'perfect', 'person'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why are raised beds a good choice for a school garden? Give two reasons.',
+        a: 'They warm up faster in spring and drain well after rain. They are also easy to reach without stepping on the soil.', look: 'two reasons from the box' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer end with “Planning with math helped the garden grow”?',
+        a: 'To show that the math was useful: perimeter told them how much wood to buy, and area told them how much they could plant.', look: 'connects the ending to perimeter and area' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-pottery', subject: 'arts', form: 'Explanation',
+    title: 'From Mud to Mug',
+    deck: 'How potters turn soft clay into something hard as stone',
+    hero: {
+      photo: 'g4-pottery-wheel.jpg', credit: 'Photo: Drbones1950, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 75%',
+      tall: 230,
+      cap: 'A potter shapes wet clay on a spinning wheel.'
+    },
+    body: [
+      'Pottery is one of the oldest crafts in the world. People have been shaping clay into bowls, cups and jars for more than 20 000 years. Clay is a special kind of soft, fine earth. When it is wet, it can be squished, rolled and shaped. When it is heated in a fire, it turns hard as stone.',
+      { h: 'Three ways to shape clay' },
+      'There are three main ways to build a pot by hand. To make a pinch pot, you push your thumb into a ball of clay and pinch the sides thinner as you turn it. To make a coil pot, you roll long snakes of clay and stack them in circles, smoothing them together. To make a slab pot, you roll the clay flat, like cookie dough, cut out pieces and join them. Many Indigenous potters in North America built beautiful coil pots long before the potter’s wheel arrived.',
+      { fig: '<path class="k" d="M24 70 Q24 112 50 112 Q76 112 76 70 Q50 80 24 70 Z"/>' +
+          '<path class="k" d="M128 60 Q120 86 128 112 H172 Q180 86 172 60"/><path class="t" d="M127 102 H173 M125 92 H175 M125 82 H175 M126 72 H174"/>' +
+          '<path class="k" d="M222 66 H278 V112 H222 Z M222 66 L232 56 H288 L278 66 M288 56 V102 L278 112"/>' +
+          '<text class="n" x="50" y="134" text-anchor="middle">pinch pot</text><text class="n" x="150" y="134" text-anchor="middle">coil pot</text><text class="n" x="254" y="134" text-anchor="middle">slab pot</text>',
+        tall: 140, cap: 'Three kinds of pots that are built by hand.' },
+      { h: 'On the wheel' },
+      'A potter’s wheel is a spinning plate. The potter places a lump of wet clay in the middle and pushes on it with wet hands until it is perfectly round and even. This is called <b>centring</b>. Then the potter presses down into the middle to open it up and slowly pulls the walls upward as the wheel spins. It takes a lot of practice, and many pots wobble and collapse at first.',
+      { h: 'Into the fire' },
+      'After a pot is shaped, it dries for several days. Then it goes into a <b>kiln</b>, a special oven that gets hotter than 1 000 °C. The heat changes the clay forever, so it can never turn soft again. Many potters then paint the pot with a glaze, a coating that melts into a smooth, shiny, glass-like layer in a second firing.',
+      'Potters in different places have their own styles. Some make thin, delicate cups. Others make big, sturdy pots for cooking or storing food. Look at the dishes in your kitchen. Many of them were made the same way, with clay, heat and glaze, but by machines in a factory instead of by hand.',
+      { box: 'Try it', text: 'Air-dry clay from a craft store lets you make a pinch pot at home. No kiln is needed: it hardens on its own in a day or two.' }
+    ],
+    guide: { before: 'If you can, give the child a ball of play dough or clay to pinch while you read. Teach <b>centring</b> and <b>kiln</b>. Look at the photo: what is the potter doing with her hands?',
+      after: 'Make a pinch pot or a coil pot together. Which way of building do you like best? Why?' },
+    words: [['centring', 'pushing clay on the wheel until it is round and even in the middle'], ['kiln', 'a very hot oven for hardening clay']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Clay is wet.', 'Potters shape soft clay by hand or on a wheel, then fire it until it is hard.', 'Kilns are hot.', 'Mugs hold drinks.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Three ways to build a pot by hand. Fill in the chart.', cols: ['Kind of pot', 'How to make it'],
+        rows: [['pinch pot', null], ['coil pot', null], ['slab pot', null]],
+        a: [[null, 'Push a thumb into a ball of clay and pinch the sides.'], [null, 'Stack long snakes of clay in circles and smooth them.'], [null, 'Roll the clay flat, cut out pieces and join them.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which pot is made of stacked snakes of clay?',
+        opts: ['the coil pot', 'the pinch pot', 'the slab pot'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps for making a pot on the wheel.',
+        items: ['Centre the clay.', 'Open up the middle.', 'Pull the walls up.', 'Dry and fire the pot.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the writer say clay is rolled “like cookie dough”?',
+        opts: ['to help readers picture it', 'because clay is food', 'to make a rhyme'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Glass<b>-like</b> means “like glass.” What does child<b>-like</b> mean?',
+        opts: ['like a child', 'a child’s toy', 'not a child'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think many pots wobble and collapse when a potter is learning? Use the text.',
+        a: 'Using the wheel takes a lot of practice. If the clay is not centred, or the walls are pulled up too fast, the pot can wobble and fall.', look: 'centring and practice' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer mention Indigenous potters in North America?',
+        a: 'To show that Indigenous people were skilled potters who made beautiful coil pots long before the wheel arrived.', look: 'recognizes Indigenous skill and history' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-paper-cranes', subject: 'arts', form: 'Explanation',
+    title: 'A Thousand Paper Cranes',
+    deck: 'The art of origami, from one square of paper',
+    hero: {
+      photo: 'g4-paper-cranes.jpg', credit: 'Photo: Laitche, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'Two origami cranes, each folded from one square of paper.'
+    },
+    body: [
+      '<b>Origami</b> is the Japanese art of folding paper. With just one square sheet and no scissors or glue, an origami artist can make a frog, a flower, a box or a bird. The most famous origami model of all is the crane.',
+      { h: 'A bird with meaning' },
+      'In Japan, the crane is a <b>symbol</b> of long life and good luck. An old tradition says that a person who folds one thousand paper cranes may have a wish granted. Today, strings of a thousand cranes are given as gifts at weddings, to people who are sick, and as a sign of hope for peace. Schools around the world, including many in Canada, fold cranes together to send messages of peace.',
+      { h: 'Folding is like math' },
+      'Every fold in origami follows exact steps. You fold corners to corners and edges to edges, making triangles, squares and diamonds. Folding a square along its diagonal makes two triangles. Folding along the other diagonal makes four. Origami artists use patterns of folds, called crease patterns, to plan new models. Engineers even use origami ideas to fold huge solar panels small enough to fit in a rocket, so they can unfold in space.',
+      { fig: '<rect class="k" x="20" y="16" width="70" height="70"/><path class="d" d="M20 16 L90 86"/>' +
+          '<path class="k" d="M120 16 L190 86 H120 Z"/>' +
+          '<rect class="k" x="220" y="16" width="70" height="70"/><path class="d" d="M220 16 L290 86 M290 16 L220 86"/>' +
+          '<text class="n" x="55" y="106" text-anchor="middle">1. one diagonal</text><text class="n" x="155" y="106" text-anchor="middle">2. two triangles</text><text class="n" x="255" y="106" text-anchor="middle">3. four triangles</text>',
+        tall: 114, cap: 'Folding a square along its diagonals. The dashed lines are folds.' },
+      { h: 'Getting started' },
+      'Before you try a crane, practise simple models, such as a cup or a jumping frog. Use thin, square paper, and make every crease sharp by running your fingernail along it. Go slowly and follow each step. If a fold goes wrong, unfold it and try again. Patience is part of the art. Your first crane might take half an hour. With practice, you may fold one in a few minutes.',
+      { box: 'Did you know?', text: 'Paper was once rare and costly. Long ago, folded paper was used mostly in ceremonies, before origami became a pastime that anyone could enjoy.' },
+      'Once you can fold one crane, try making a string of them. It may take a long time to reach a thousand, but every single crane is a small work of art.'
+    ],
+    guide: { before: 'Have a few squares of paper ready. Teach <b>origami</b> and <b>symbol</b>. Fold a square along both diagonals together, like the diagram.',
+      after: 'Fold a simple model together, such as a cup. What was the hardest step? What would you like to fold next?' },
+    words: [['origami', 'the Japanese art of folding paper into shapes'], ['symbol', 'something that stands for an idea, like a heart for love']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Paper is thin.', 'Origami is the art of folding paper, and the crane is its most famous model.', 'Cranes are birds.', 'Japan is in Asia.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do people give strings of a thousand cranes?',
+        opts: ['as a sign of luck, long life or hope for peace', 'to sell them', 'to use as scrap paper'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Folding a square along both diagonals makes …',
+        opts: ['4 triangles', '2 squares', '8 circles'], a: 0 },
+      { k: 'table', code: 'C3.2', q: 'Fill in the chart of folding tips.', cols: ['Tip', 'Why it helps'],
+        rows: [['Make every crease sharp.', null], ['Go slowly and follow each step.', null]],
+        a: [[null, 'Sharp creases keep the model neat and exact.'], [null, 'You make fewer mistakes.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Un</b>fold means to open a fold. What does <b>un</b>tie mean?',
+        opts: ['open a knot', 'tie again', 'tie tightly'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which heading tells where to find advice for beginners?',
+        opts: ['Getting started', 'A bird with meaning', 'Folding is like math'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How is origami like math? Give two details from the text.',
+        a: 'Folds follow exact steps and make triangles, squares and diamonds. Artists also plan new models with crease patterns.', look: 'two details about shapes or planning' },
+      { k: 'lines', code: 'C3.1', n: 2, q: 'The writer says, “Patience is part of the art.” What does this mean?',
+        a: 'Origami takes time and care, and you have to keep trying when a fold goes wrong.', look: 'connects patience to taking time and trying again' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-roberta-bondar', subject: 'science', form: 'Biography',
+    title: 'A Doctor in Space',
+    deck: 'Roberta Bondar, the first Canadian woman in space',
+    hero: {
+      photo: 'g4-roberta-bondar.jpg', credit: 'Photo: NASA, public domain, Wikimedia Commons', focus: '50% 25%',
+      tall: 230,
+      cap: 'Roberta Bondar in her orange flight suit before her mission in 1992.'
+    },
+    body: [
+      'On January 22, 1992, the space shuttle Discovery roared into the sky from Florida. On board was Roberta Bondar, a doctor and scientist from Sault Ste. Marie, Ontario. She was about to become the first Canadian woman to travel to space.',
+      { h: 'A curious kid' },
+      'As a child, Roberta loved science. She built model rockets, collected bugs and did experiments in a small lab in her basement. She dreamed of exploring space, even though there were no Canadian astronauts yet. She studied hard and became a <b>neurologist</b>, a doctor who studies the brain and nerves. She also earned her pilot’s licence.',
+      { fig: '<path class="k" d="M20 60 H285"/>' + [[30, '1945', 'born', 84], [170, '1983', 'chosen', 84], [215, '1992', 'space flight', 104], [265, 'later', 'nature photos', 84]].map(function (e) { return '<circle class="dot" cx="' + e[0] + '" cy="60" r="4"/><text class="lb" x="' + e[0] + '" y="48" text-anchor="middle">' + e[1] + '</text><text class="n" x="' + e[0] + '" y="' + e[3] + '" text-anchor="middle">' + e[2] + '</text>'; }).join(''),
+        tall: 112, cap: 'A timeline of Roberta Bondar’s life.' },
+      { h: 'Eight days in orbit' },
+      'In 1983, Canada chose its first six astronauts, and Roberta Bondar was one of them. She trained for years. On her mission, she spent eight days in <b>orbit</b>, circling Earth again and again. She did more than 40 experiments. Many studied how the human body changes without gravity. In space, astronauts float, their faces puff up, and their muscles and bones get weaker because they do not have to work as hard. She also studied plants, fruit flies and frog eggs to see how they grew without gravity. Her work helped scientists plan for longer trips in space.',
+      { h: 'Seeing Earth' },
+      'Looking down at Earth changed how she thought about our planet. She could see how thin the layer of air is that keeps everything alive. After her flight, she became a nature photographer, taking pictures of Canada’s national parks to help people care for the environment.',
+      { box: 'Did you know?', text: 'A school in Ottawa and a park in her hometown of Sault Ste. Marie are named after Roberta Bondar.' },
+      'Roberta Bondar showed that a curious kid with big dreams can grow up to reach the stars, and then come home to care for the Earth.'
+    ],
+    guide: { before: 'Find Sault Ste. Marie on a map of Ontario. Teach <b>neurologist</b> and <b>orbit</b>. Ask: what would you want to study if you went to space?',
+      after: 'Roberta Bondar built rockets and did experiments as a kid. What do you love doing now that could lead to a job one day?' },
+    words: [['neurologist', 'a doctor who studies the brain and nerves'], ['orbit', 'the curved path of something going around a planet']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Florida has rockets.', 'Roberta Bondar, a doctor and scientist, became the first Canadian woman in space.', 'Space is cold.', 'Astronauts float.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the timeline. Number the events in order.',
+        items: ['Roberta Bondar is born.', 'She is chosen as an astronaut.', 'She flies into space.', 'She photographs national parks.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'This text tells about a real person’s life. It is a …',
+        opts: ['biography', 'fable', 'diary'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do astronauts’ muscles get weaker in space?',
+        opts: ['They do not have to work as hard without gravity.', 'They do not eat.', 'They sleep too much.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The ending <b>-ologist</b> means “one who studies.” What does a bi<b>ologist</b> study?',
+        opts: ['living things', 'rocks', 'numbers'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How did Roberta Bondar prepare for her dream?', cols: ['As a child', 'As an adult'],
+        rows: [[null, null]],
+        a: [['She built model rockets and did experiments.', 'She became a doctor, earned her pilot’s licence and trained as an astronaut.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did going to space change Roberta Bondar? Use details from the text.',
+        a: 'Seeing how thin Earth’s layer of air is made her care more about the planet, so she became a nature photographer to help people care for the environment.', look: 'what she saw and what she did afterward' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why do you think the writer included details about her childhood?',
+        a: 'To show that her dream started when she was young, and that curious kids can grow up to do big things.', look: 'a message for young readers' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-new-kid', subject: 'story', form: 'Short story',
+    title: 'The Seat by the Window',
+    deck: 'A new girl on the school bus, and the drawing that starts a friendship',
+    hero: {
+      photo: 'g4-school-bus.jpg', credit: 'Photo: Crisco 1492, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'A school bus in Windsor, Ontario.'
+    },
+    body: [
+      'The new girl got on the bus on a Monday in October. She wore a purple jacket that was too big for her, and she held a sketchbook against her chest like a shield. She sat in the seat by the window, two rows in front of me, and stared out at the grey Windsor streets.',
+      '“Her name is Oksana,” my sister whispered. “She’s a <b>newcomer</b> from Ukraine. She doesn’t speak much English yet.”',
+      { h: 'Monday to Thursday' },
+      'All week, Oksana sat alone. Kids talked and laughed around her, but nobody sat beside her. I wanted to, but what would I say? What if she did not understand me? What if everyone stared?',
+      'On Thursday, the bus hit a bump, and her <b>sketchbook</b> slid into the aisle. It fell open at my feet. Inside was a drawing of a sunflower so real I almost expected it to smell. I picked it up and handed it back.',
+      '“Wow,” I said, pointing at the flower. “Beautiful.” She smiled for the first time.',
+      'That night at dinner, I asked my mom how to say hello in Ukrainian. She found it on her phone. “Pryvit,” I practised, over and over, until my sister told me to stop.',
+      { fig: [[20, [[1, 'O', ''], [3, 'me', '']], 'Monday'], [170, [[1, 'O', 'me']], 'Friday']].map(function (p) {
+            var x = p[0], s = '<rect class="k" x="' + x + '" y="18" width="110" height="116" rx="8"/><text class="l" x="' + (x + 55) + '" y="12" text-anchor="middle">front</text>';
+            for (var r = 0; r < 5; r++) s += '<rect class="t" x="' + (x + 6) + '" y="' + (26 + r * 21) + '" width="44" height="15"/><rect class="t" x="' + (x + 60) + '" y="' + (26 + r * 21) + '" width="44" height="15"/>';
+            p[1].forEach(function (q) { var y = 37 + q[0] * 21; s += '<text class="lb" x="' + (x + 17) + '" y="' + y + '" text-anchor="middle">' + q[1] + '</text>' + (q[2] ? '<text class="lb" x="' + (x + 39) + '" y="' + y + '" text-anchor="middle">' + q[2] + '</text>' : ''); });
+            return s + '<text class="n" x="' + (x + 55) + '" y="150" text-anchor="middle">' + p[2] + '</text>';
+          }).join(''),
+        tall: 154, cap: 'Where they sat on the bus. O is Oksana.' },
+      { h: 'Friday' },
+      'That night, I drew the best hockey player I could. The next morning, I took a deep breath, walked down the aisle and sat in the seat beside her. “Pryvit,” I said. Her eyes went wide. Then I held out my drawing. Oksana laughed, not in a mean way, and pointed at the skates. Then she took my pencil and fixed them, so they looked like real skates.',
+      'We did not talk much. We did not have to. By the time the bus reached school, we had drawn a whole team. As we got off, she tapped her chest, then mine. “Druh,” she said. Later, I looked it up. It means “friend.”'
+    ],
+    guide: { before: 'Ask: have you ever been new somewhere? How did it feel? Teach <b>newcomer</b> and <b>sketchbook</b>. Find Ukraine and Windsor on a map.',
+      after: 'What could you do to help a new student feel welcome? Why do you think it took courage for the narrator to sit beside Oksana?' },
+    words: [['newcomer', 'someone who has just arrived in a new place'], ['sketchbook', 'a book of blank pages for drawing']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells this story?',
+        opts: ['Oksana', 'a student on the bus, using “I”', 'the bus driver', 'the narrator’s sister'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part of the story', 'What happens'],
+        rows: [['Problem', null], ['Turning point', null], ['Solution', null]],
+        a: [[null, 'Oksana sits alone, and the narrator is afraid to talk to her.'], [null, 'Her sketchbook falls open, and the narrator sees her drawing.'], [null, 'The narrator sits with her, and they draw together and become friends.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does the narrator sit on Friday?',
+        opts: ['beside Oksana', 'at the back', 'two rows behind her'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'She held her sketchbook “like a shield.” This shows she felt …',
+        opts: ['nervous', 'angry', 'sleepy'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the narrator wait until Friday to sit with her?',
+        opts: ['He was worried about what to say and what others would think.', 'He was sick.', 'The bus was full.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Beauti<b>ful</b> means “full of beauty.” What does help<b>ful</b> mean?',
+        opts: ['full of help', 'without help', 'helping again'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did drawing help Oksana and the narrator become friends? Use details from the story.',
+        a: 'They did not share a language, but they both liked to draw. The narrator showed her a hockey player, she fixed the skates, and they drew a whole team together.', look: 'drawing as a shared language, with details' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what might happen on the bus the next week.',
+        a: 'They will probably sit together again, draw more, and teach each other words in English and Ukrainian.', look: 'a prediction based on the new friendship' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-camp-letter', subject: 'story', form: 'Letter',
+    title: 'Dear Nana',
+    deck: 'A letter home from a first canoe trip',
+    hero: {
+      photo: 'g4-canoe-lake.jpg', credit: 'Photo: Paul LaRocque, CC BY 3.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 220,
+      cap: 'A canoe pulled up on the shore of a quiet lake.'
+    },
+    plain: true,
+    body: [
+      '<b>July 14</b>',
+      'Dear Nana,',
+      'I have been at Camp Tall Pines for six days, and I have SO much to tell you. On the first night, I felt <b>homesick</b>. I lay in my bunk, listened to the frogs and missed your cooking. But my cabin counsellor, Aiyana, sat with me and told me stories until I fell asleep. Since then, I have been too busy to be sad!',
+      'Yesterday we went on our first canoe trip. I sat in the stern, which is the back of the canoe, so I had to steer. At first, we went in circles, and my partner, Lucie, laughed so hard she nearly dropped her paddle. Then Aiyana taught me the <b>J-stroke</b>. You pull the paddle back and then turn it out at the end, like the letter J. It keeps the canoe going straight. By lunch, we were gliding across the lake.',
+      { fig: '<path class="k" d="M40 70 Q150 40 260 70 Q150 100 40 70 Z"/><path class="a" d="M130 100 H76 Q60 100 60 114"/>' + D.arrow(62, 108, 60, 118, 'a') +
+          D.arrow(190, 22, 270, 22) + '<text class="n" x="182" y="26" text-anchor="end">the canoe moves this way</text>' +
+          D.label(10, 46, 'stern', 52, 68) + D.label(150, 136, 'the paddle makes a J', 92, 100),
+        tall: 142, cap: 'The J-stroke, seen from above. The paddler sits at the stern.' },
+      'In the afternoon, we had to portage. That means we carried everything over a trail to the next lake. Two counsellors carried the canoe, and we carried the packs. The mosquitoes were terrible, but at the end of the trail, there was a lake as smooth as glass.',
+      'That night, we heard loons calling across the water. It sounded like someone laughing and crying at the same time. Aiyana says a loon can dive as deep as a 20-storey building is tall!',
+      'Today we took our swim test. I passed, so now I can swim out to the raft with the older kids. Tomorrow we are learning to build a campfire and cook bannock on a stick.',
+      'I can’t wait to show you the J-stroke when I get home. Maybe we can rent a canoe at the park!',
+      'Love,<br>Jasmine',
+      'P.S. Please give my cat a hug from me.'
+    ],
+    guide: { before: 'Look at the parts of a friendly letter: date, greeting, body, closing and P.S. Teach <b>homesick</b> and <b>J-stroke</b>. Ask whether the child has been away from home overnight.',
+      after: 'Write a short letter to someone you miss. Tell them about something new you learned, and add a P.S.' },
+    words: [['homesick', 'sad because you miss your home and family'], ['J-stroke', 'a paddle stroke shaped like the letter J that keeps a canoe going straight']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text is a friendly letter. How can you tell?',
+        opts: ['It has a date, a greeting, a closing and a P.S.', 'It has steps to follow.', 'It has a table.', 'It is a poem.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the canoe go in circles at first?',
+        opts: ['Jasmine did not know how to steer yet.', 'The wind was strong.', 'Lucie paddled backward.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what shape does the paddle make?',
+        opts: ['the letter J', 'a circle', 'a straight line'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How did Jasmine’s feelings change? Fill in the chart.', cols: ['When', 'How she felt', 'Why'],
+        rows: [['the first night', null, null], ['on the canoe trip', null, null]],
+        a: [[null, 'homesick', 'She missed home and Nana’s cooking.'], [null, 'proud and happy', 'She learned the J-stroke and glided across the lake.']] },
+      { k: 'choice', code: 'C3.1', half: true, q: '“A lake as smooth as glass” is a …',
+        opts: ['simile', 'question', 'list'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A counsell<b>or</b> is someone who counsels. What is an act<b>or</b>?',
+        opts: ['someone who acts', 'a kind of play', 'an action'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'How does Jasmine’s writing sound like she is talking to her grandmother? Give two examples.',
+        a: 'She writes “SO much” in capital letters to show excitement, and she asks Nana to rent a canoe with her. She also adds a P.S. about hugging her cat.', look: 'two examples of a friendly, chatty voice' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what Jasmine will do when she gets home.',
+        a: 'She will show Nana the J-stroke and maybe go canoeing with her at the park.', look: 'a prediction based on the letter' }
+    ]
+  });
 })();

@@ -50,3 +50,22 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-zoetrope.jpg` | A zoetrope in a museum | Auckland Museum | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Zoetrope_(AM_2001.6.1-1).jpg |
 | `g4-science-fair.jpg` | A school science fair | U.S. Navy | Public domain | https://commons.wikimedia.org/wiki/File:Science_fair_at_Campostella_Elementary_School_DVIDS360966.jpg |
 | `g4-outdoor-rink.jpg` | An outdoor skating rink in Fort Simpson | Fort Simpson Chamber of Commerce | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Outdoor_Skating_Rink_(6455055263).jpg |
+| `g4-burgess-shale.jpg` | Trilobite fossils in Burgess Shale rock, Yoho National Park | Edna Winti | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Trilobite_fossils,_Burgess_Shale,_Yoho_National_Park.jpg |
+| `g4-spring-peeper.jpg` | A spring peeper calling, its throat puffed out | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Spring_Peeper_(49749992523).jpg |
+| `g4-hopewell-rocks.jpg` | The Hopewell Rocks at low tide, Bay of Fundy | Moneira Salic | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Hopewell_Rocks_low_tide_with_tourists_2007.jpg |
+| `g4-little-brown-bat.jpg` | A little brown bat with its wings spread | Don Pfritzer, U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Little_Brown_Bat_FWS.jpg |
+| `g4-roberta-bondar.jpg` | Roberta Bondar in her flight suit, 1991 | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Roberta_Bondar_NASA.jpg |
+| `g4-spirit-bear.jpg` | A spirit bear in the Great Bear Rainforest | Jon Rawlinson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ursus_americanus_kermodei,_Great_Bear_Rainforest_1.jpg |
+| `g4-pottery-wheel.jpg` | A potter shaping clay on a wheel | Drbones1950 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Throwing_clay_on_a_pottery_wheel.jpg |
+| `g4-timbuktu.jpg` | The Djinguereber Mosque in Timbuktu, Mali | Ondřej Havelka | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Djinguereber_Mosque,_Timbuktu,_Mali.jpg |
+| `g4-olympia.jpg` | The ancient stadium at Olympia, Greece | dronepicr | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ancient_Olympia_Stadium_in_Greece_(51224128585).jpg |
+| `g4-tang-camel.jpg` | A Tang dynasty pottery camel carrying goods | Wikipedia Loves Art participant Opal_Art_Seekers_4 | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:WLA_vanda_Tang_Camel.jpg |
+| `g4-recycling.jpg` | Bales of sorted recycling | City of Greenville | Public domain | https://commons.wikimedia.org/wiki/File:Greenville_Public_Works,_ECVC_Recycling_Sorting_facility_-_20.jpg |
+| `g4-playground.jpg` | A climbing wall in a school playground | Hameltion | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Carrboro_Elementary_School_playground_08.jpg |
+| `g4-thin-ice.jpg` | A thin ice warning sign by a pond | Nolabob | CC0 | https://commons.wikimedia.org/wiki/File:Thin_Ice_DTR.jpg |
+| `g4-city-bus.jpg` | An OC Transpo bus on route 13 in Ottawa | Mx0268 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:OC_Transpo_Bus_on_route_13_Tunney's_Pasture.jpg |
+| `g4-school-bus.jpg` | A school bus in Windsor, Ontario | Crisco 1492 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:School_bus_parked_outside_McDonald's,_Windsor,_Ontario,_2025-06-03.jpg |
+| `g4-canoe-lake.jpg` | A canoe on the shore of Porcupine Lake | Paul LaRocque | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Paddling_Porcupine_Lake_-_panoramio.jpg |
+| `g4-paper-cranes.jpg` | Two origami paper cranes | Laitche | Public domain | https://commons.wikimedia.org/wiki/File:Cranes_made_by_Origami_paper.jpg |
+| `g4-school-garden.jpg` | Raised garden beds in front of a school | Libby Kokes | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Raised_Beds_Out_Front_of_School.jpg |
+| `g4-great-horned-owl.jpg` | A great horned owl on a branch | Paul Danese | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20260808_great_horned_owl_cedar_hill_cemetery_PD03701.jpg |
