@@ -14,7 +14,7 @@
             guided: [function () -> question, ...], check: [function () -> question, ...],
             coach: html, mistake: html }
    Routes: #chapter (lesson list), #chapter/learn/idea (step 1), #chapter/learn/idea/2, #chapter/learn/idea/3, #chapter/done/lesson (end of a lesson).
-   #chapter/tasks is drawn by tasks.js (activities with a grown-up). #chapter/read and #chapter/read/<n> (read and answer) by practice.js.
+   #chapter/tasks is drawn by tasks.js (activities with a grown-up). #chapter/sheets by sheets.js (printable worksheets, grown-up view). #chapter/read and #chapter/read/<n> (read and answer) by practice.js.
    Saved (prefix lang-gN:): cn:<grade-chapter-idea> { seen, watched, together, n, ok, got, t }.
    An idea is "Mastered" when its practice skill is secure. */
 (function () {
@@ -75,13 +75,14 @@
   L.chapter = function (app, id, sub) {
     var ch = prep(id), ctx = A.chapterHead(id), parts = (sub || '').split('/'), tab = parts[0] || 'learn';
     var h = '<div class="wrap chapter" data-strand="' + ctx.m.strand + '"><p class="crumb"><a href="#home">All chapters</a></p>' + ctx.head +
-      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id]].concat(ch.read ? [['read', 'Read and answer', '#' + id + '/read']] : []).concat([['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']]).concat(ch.tasks ? [['tasks', 'With a grown-up', '#' + id + '/tasks']] : []).map(function (t) {
-        return '<a href="' + t[2] + '"' + (tab === t[0] ? ' aria-current="page"' : '') + '>' + t[1] + '</a>';
+      '<nav class="jump" aria-label="In this chapter">' + [['learn', 'Lessons', '#' + id]].concat(ch.read ? [['read', 'Read and answer', '#' + id + '/read']] : []).concat([['practice', 'Practise', '#' + id + '/practice'], ['quiz', 'Chapter quiz', '#' + id + '/quiz']]).concat(ch.tasks ? [['tasks', 'With a grown-up', '#' + id + '/tasks']] : []).concat(A.sheets && A.sheets.has(id) ? [['sheets', 'Worksheets', '#' + id + '/sheets', 'ws-adult']] : []).map(function (t) {
+        return '<a href="' + t[2] + '"' + (t[3] ? ' class="' + t[3] + '"' : '') + (tab === t[0] ? ' aria-current="page"' : '') + '>' + t[1] + '</a>';
       }).join('') + '<a href="#check-up/' + id + '">Check-up</a></nav>';
     /* an idea gets the whole screen: only a link back to its chapter above it */
     if (tab === 'learn' && parts[1]) return concept(app, id, parts[1], +parts[2] || 1, ctx.m);
     if (tab === 'done') return lessonEnd(app, id, parts[1]);
     if (tab === 'tasks') return A.tasks.page(app, id, parts[1], h);
+    if (tab === 'sheets' && A.sheets && A.sheets.has(id)) return A.sheets.view(app, id, parts.slice(1), h);
     if (tab === 'read' && ch.read && parts[1]) {
       app.innerHTML = '<div class="wrap chapter focus" data-strand="' + ctx.m.strand + '"><div class="quiz prac" id="read"></div></div>';
       return A.readSet($('#read', app), id, ch, +parts[1]);
