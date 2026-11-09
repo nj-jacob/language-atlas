@@ -36,7 +36,7 @@
   var $ = A.$, $$ = A.$$, S = A.sheets;
   var P = (A.library = { list: [] });
   var SUBJECTS = (P.subjects = [['science', 'Science', 'FO'], ['social', 'Social studies', 'LB'], ['history', 'History', 'LK'], ['geography', 'Geography', 'LK'],
-    ['arts', 'The arts', 'GD'], ['health', 'Health', 'SN'], ['tech', 'Technology', 'SK'], ['math', 'Math', 'SK']]);
+    ['arts', 'The arts', 'GD'], ['health', 'Health', 'SN'], ['tech', 'Technology', 'SK'], ['math', 'Math', 'SK'], ['story', 'Stories', 'GD']]);
   var LETTERS = 'ABCDEFGH';
   var HATCH = '<defs><pattern id="ps-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="t"/></pattern></defs>';
 
@@ -69,7 +69,7 @@
 
   P.add = function (p) { p.n = P.list.length + 1; P.list.push(p); };
   P.subject = function (id) { return SUBJECTS.filter(function (s) { return s[0] === id; })[0]; };
-  P.code = function (p) { return 'G' + A.grade + '-P' + ('0' + p.n).slice(-2); };
+  P.code = function (p) { return 'G' + A.grade + '-P' + (p.n < 10 ? '0' : '') + p.n; };
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function strip(h) { return String(h).replace(/<[^>]+>/g, ' '); }
   /* the words of the passage itself: paragraphs, subheadings and boxes (not captions or the glossary) */

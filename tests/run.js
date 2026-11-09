@@ -1203,6 +1203,11 @@ async function checkSheets(browser, base, g) {
 const PASSAGE_WORDS = { 4: [250, 420], 5: [270, 450], 6: [290, 480], 7: [310, 520], 8: [320, 560] };
 async function checkPassages(browser, base, g) {
   const { ctx, page, errs } = await newPage(browser, base);
+  /* pages must fit with the site's real fonts, so serve them from tests/fonts in place of Google Fonts */
+  await ctx.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, r => {
+    const css = r.request().url().includes('googleapis.com/css');
+    r.fulfill({ path: path.join(__dirname, 'fonts', css ? 'fonts.css' : path.basename(new URL(r.request().url()).pathname)), contentType: css ? 'text/css' : 'font/woff2' });
+  });
   const where = 'grade ' + g + ' Reading passages';
   const has = fs.existsSync(path.join(ROOT, 'grade' + g, 'passages.js'));
   await page.goto(base + '/grade' + g + '/index.html#tools');
@@ -1218,6 +1223,7 @@ async function checkPassages(browser, base, g) {
   if (!has) { fail(where, 'grade' + g + '/passages.js is missing'); await ctx.close(); return 0; }
   await page.goto(base + '/grade' + g + '/index.html#tools/passages');
   await page.waitForSelector('.ps-card');
+  await page.evaluate(() => Promise.all([...document.fonts].map(f => f.load())));
   const credits = fs.readFileSync(path.join(ROOT, 'assets', 'photos', 'CREDITS.md'), 'utf8');
   for (const [id, photo] of await page.evaluate(() => Atlas.library.list.filter(p => p.hero && p.hero.photo).map(p => [p.id, p.hero.photo]))) {
     for (const dir of ['', 'thumbs']) if (!fs.existsSync(path.join(ROOT, 'assets', 'photos', dir, photo))) fail(where, id + ': assets/photos/' + (dir ? dir + '/' : '') + photo + ' is missing');
