@@ -36,17 +36,19 @@ Plain web pages with no build step: what is in this repository is exactly what t
 | `soundbank.js` | The Sound board's sounds: place and manner, voiced or quiet, key word, spellings by grade, the vowel valley, the card decks and the Move it words. A check builds it all again (see `CHECKS.md`). |
 | `cardbank.js` | Sentence builder's word cards, written for this site, by job and by the grade they start in, and ready sentences for "New sentence". A check builds every example and tries every move both ways (see `CHECKS.md`). |
 | `wordbank.js` | Word builder's words, written for this site: letter tiles, words split into sounds, words cut into beats (with the strong beat and any vowel sound that breaks the rule), and words made of parts, each with the grade it starts in. A check builds every word again (see `CHECKS.md`). |
+| `sheets.js`, `sheet-themes.js`, `sheets.css` | **Printable worksheets** (see below): the Worksheets tab, made from a chapter's own lessons, practice and activities; 6 themes; the sheet's look and printing. Only `sheets.css` and the themes add their own display faces and accent colours, for paper. |
 | `engine.css` | Layout for all of the above. Colours and fonts come only from the theme. |
 
 ## One grade site
 
 `gradeN/index.html` sets three `meta` tags for the header, loads `engine.css` then `atlas-theme.css`, then the scripts in this order:
 1. `../assets/atlas-header.js` (first thing in `<body>`)
-2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `cardbank.js`, `tools.js`, `soundbank.js`, `soundboard.js`, `reader.js`, `meaningbank.js`, `meaning.js`, `mapbank.js`, `textmaps.js`, `writebank.js`, `writetools.js`
+2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `cardbank.js`, `tools.js`, `soundbank.js`, `soundboard.js`, `reader.js`, `meaningbank.js`, `meaning.js`, `mapbank.js`, `textmaps.js`, `writebank.js`, `writetools.js`, `sheets.js`, `sheet-themes.js` (and `sheets.css` after `engine.css`)
 3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
 4. `texts.js` (optional): reading passages shared by the grade's chapters
 5. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`
-6. `<script>Atlas.start();</script>`
+6. `sheets/<id>.js` (optional): the chapter's worksheets, `Atlas.sheets.register(id, { code, ideas })` (see below)
+7. `<script>Atlas.start();</script>`
 
 ## A chapter
 
@@ -78,10 +80,21 @@ Learning screens (an idea, or practising one skill) are calm on purpose: no chap
 | `#sentences/practice/cap-end` | Practising one skill: the question gets the screen, with one link back to the skills |
 | `#sentences/quiz` | Chapter quiz |
 | `#reading/read`, `#reading/read/3` | Read and answer (a chapter with `read`): the list of passages, shortest first; one passage on its own screen, then its questions one at a time, then the score |
+| `#sentences/sheets`, `#sentences/sheets/kinds/p2`, `/task/<id>`, `/read/<n>` | Worksheets (grown-up view): the list, then one sheet with its answer key and Print |
 | `#check-up`, `#check-up/all`, `#check-up/sentences` | Check-ups |
 | `#sentences/tasks`, `#sentences/tasks/<id>` | Activities with a grown-up, and one activity |
 | `#progress` | My progress |
 | `#tools`, `#tools/words` | The tool box: `#tools` lists every tool on its shelves; `#tools/words` and the like fill the screen with one tool under a slim bar (back to all tools, the tool's name, Undo, Tools menu). A tool opened from the site's own Toolbox page (`tools.html` in Math Atlas) goes back there. Each grade gets the tiles and words for its grade and the grades before |
+
+## Printable worksheets
+
+Grown-ups (grown-up view only) get a **Worksheets** tab on a chapter whose grade has `gradeN/sheets/<chapter>.js`. Each idea has five sheets, from most help to least: **Learn** (its "Watch me" steps, its "Together" questions with their thinking cue, its "On your own" questions), **Practise 1, 2 and 3** (its practice skill at levels 1, 2 and 3, in every way it asks) and **Think** (questions written for paper). Each activity with a grown-up prints as an **Activity** sheet (picture, line for the child, the text, lines to write on; its key has the steps to run it and the four-level rubric), and each "Read and answer" passage as a **Read** sheet. Each sheet prints in 6 themes, with or without its answer key as page 2.
+- **Nothing is written twice.** The sheets ask the site's own questions, made with a fixed seed for each sheet (`Q.resetShapes` and a seeded `Math.random` while a sheet is made), so a sheet always prints the same. Change a chapter's questions and its sheets change with it.
+- **On paper**: pick one, tap and pick all become "circle", put in order "number them in order", match "write the letter", build a word "write the word", true or false "circle True or False" (and Why?). A sheet keeps to one passage when 3 or more of its questions are about it: it is printed once at the top, in two columns, with its sentences numbered, and "tap the sentence" becomes "write its number". Other passages stay with their question. Sound buttons print as their /sh/ label.
+- **Filling the page**: a sheet is drawn at full size (816 by 1056, US Letter) as HTML, and questions are added in order until the page is full; a question that does not fit is left out (the next may fit). The answer key draws exactly the same questions (`S.render(..., key, at)`). On screen the page is scaled to fit; printing gives one page per sheet.
+- **The look** is Math's Editorial look (Noel's choice): the chapter and kind in small spaced capitals with the theme's mark, a large title in the theme's face, the "I can" line, Name and Date, questions in two columns with their numbers in the margin and hairlines between rows, short lines to write on, and a "How did it feel?" check-in. The key puts the answers in red, the idea's common mistake (Watch for), the Ontario codes and a score line at the foot. Themes (`sheet-themes.js`) change only the face, one accent colour, the mark and a light ornament at the page edge; the paper is always white.
+- **A grade's sheets file** (`gradeN/sheets/<chapter>.js`) adds only what paper needs: `Atlas.sheets.register('sentences', { code: 'SE', ideas: { kinds: { goal: 'I can ...', think: [question, ...] } } })`. `code` is two letters for the sheet number (G3-SE-01-P2-LK: grade, chapter, idea, kind, theme). Every idea needs a `goal` and 2 or more Think questions: a question from `qkit.js` (with `meta.k` and an answer check, as on the site) or an open question `{ q, fig, lines: 3, key: 'a good answer' }` that the grown-up marks. `grade3/sheets/sentences.js` is the worked example. An idea can also set `steps: 3` to print only its first 3 "Watch me" steps, when the later ones are about a text the sheet does not show. The steps stop on their own before a second text, and the last steps are left off until a question fits under them.
+- The chosen theme and key switch are kept in this browser (`atlas:sheet-theme`, `atlas:sheet-key`). The checks draw every sheet (see `CHECKS.md`).
 
 ## The placement check (`placement/`)
 
