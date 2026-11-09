@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 - Grade 3 worksheets for every chapter (all 14, 73 ideas, 436 sheets): each idea has its "I can" line and three Think questions written for paper, and every Grade 3 expectation is on a sheet.
+- Grade 6 worksheets: all 14 chapters (83 ideas, 463 sheets with Activity and Read sheets), covering every Grade 6 expectation. Each idea has an "I can" line and Think questions written for paper (open answers the grown-up marks, with a good answer on the key).
 - Grade 8 worksheets: every chapter (14 chapters, 101 ideas, 549 sheets), covering all 59 Grade 8 expectations. Each idea has an "I can" goal and three Think questions written for paper, with a good answer on the key for the grown-up to mark.
 - Grade 5 worksheets for all 14 chapters: 74 ideas with five sheets each (Learn, Practise 1 to 3, Think), plus the activity and Read sheets, 409 sheets in all, covering every Grade 5 expectation. Each idea has its own "I can" line and three Think questions written for this site, marked by a grown-up with a good answer on the key.
 - Grade 1 worksheets, every chapter (15 chapters, 86 ideas, 481 sheets): an "I can" line and three Think questions for each idea (reasoning about sounds, letters, words, sentences, texts and media; claims to judge true or false with a reason, and open questions with a good answer on the key). Learn and Practise come from the lessons; activities and passages print with them, so every Grade 1 expectation is on a sheet. New quick maker `Atlas.Q.tf` for true-or-false-then-why questions.
