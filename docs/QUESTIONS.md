@@ -107,7 +107,7 @@ Open-ended writing is never auto-marked. It goes to the grown-up with a simple r
 
 ## Quick question makers
 
-`Atlas.Q.one(q, right, [wrong...], more)` makes a pick-one question, `Atlas.Q.tiles(...)` a tap-a-tile question, and `Atlas.Q.all(q, [right...], [wrong...], more)` a pick-every-answer question. `more` holds the other fields (`fig`, `hint`, `explain`, `steps`, `prompt`, `meta`).
+`Atlas.Q.one(q, right, [wrong...], more)` makes a pick-one question, `Atlas.Q.tiles(...)` a tap-a-tile question, `Atlas.Q.all(q, [right...], [wrong...], more)` a pick-every-answer question, and `Atlas.Q.tf(q, right, whyTrue, whyFalse, more)` a true-or-false question with its two reasons (the first is why it is true). `more` holds the other fields (`fig`, `hint`, `explain`, `steps`, `prompt`, `meta`).
 
 ## Worksheets
 
