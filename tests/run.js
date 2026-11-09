@@ -1153,7 +1153,7 @@ async function checkSheets(browser, base, g) {
         if (s.kind !== 'task' && s.kind !== 'think' && a.items.length < 2) out.push(sw + ': fits only ' + a.items.length + ' question(s); a sheet needs 2 or more');
         a.items.forEach(q => {
           n.questions++;
-          if (q.type) window.__validate(q).forEach(e => out.push(sw + ': ' + e));
+          if (q.type) window.__validate(q.asked || q).forEach(e => out.push(sw + ': ' + e));
           else if (!q.lines || !q.key || !q.q) out.push(sw + ': an open question needs q, lines and a good answer (key) for the grown-up');
         });
       });

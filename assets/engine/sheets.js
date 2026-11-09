@@ -66,6 +66,7 @@
     var c = {};
     Object.keys(q).forEach(function (k) { c[k] = q[k]; });
     if (!passage) return c;
+    Object.defineProperty(c, 'asked', { value: q }); /* the question as the site asks it, with its passage, for the answer checks */
     var d = document.createElement('div');
     d.innerHTML = c.fig || '';
     $$('.psg', d).forEach(function (p) { p.parentNode.removeChild(p); });
