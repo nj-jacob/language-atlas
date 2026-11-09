@@ -275,7 +275,7 @@
   function band(sh) {
     var h = '', psg = sh.passage ? '<section class="ws-psg' + (sh.groups.some(function (g) { return g.items.some(function (q) { return q.num; }); }) ? ' ws-numbered' : '') + '">' + sh.passage.html + '</section>' : '';
     if (sh.passageFirst) h += psg;
-    if (sh.steps) h += '<section class="ws-band"><p class="ws-label">Watch me</p><ol class="ws-steps">' + sh.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+    if (sh.steps && (sh.steps.length || sh.tip)) h += '<section class="ws-band">' + (sh.steps.length ? '<p class="ws-label">Watch me</p><ol class="ws-steps">' + sh.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' : '') +
       (sh.tip ? '<p class="ws-tip"><b>Remember</b> ' + sh.tip + '</p>' : '') + '</section>';
     if (!sh.passageFirst) h += psg;
     return h;
@@ -329,7 +329,7 @@
         if (!any) bd.removeChild(sec);
       });
       /* long "Watch me" steps leave room for questions: the last steps are left off until a question fits */
-      if (use || drawn.length || !sh.steps || sh.steps.length < 2 || !sh.groups.some(function (g) { return g.items.length; })) break;
+      if (use || drawn.length || !sh.steps || !sh.steps.length || !sh.groups.some(function (g) { return g.items.length; })) break;
       sh.steps.pop();
     }
     if (sh.steps) at.steps = sh.steps.length;
