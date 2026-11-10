@@ -2934,4 +2934,987 @@
     ]
   });
 
+  P.add({
+    id: 'g5-insulin', subject: 'science', form: 'Report',
+    title: 'The Toronto Discovery',
+    deck: 'How a team in Toronto found a way to treat diabetes, and why it still matters today',
+    hero: {
+      photo: 'g5-banting-best.jpg', credit: 'CREDIT', focus: '50% 40%',
+      tall: 220,
+      cap: 'Frederick Banting (right) and Charles Best on the roof of the medical building at the University of Toronto, 1921.'
+    },
+    body: [
+      'Before 1922, a child who was told they had type 1 diabetes had very little hope. Doctors could only put them on a strict diet that made them weak and thin. Most lived for only a year or two. Then a team at the University of Toronto made a discovery that changed medicine around the world.',
+      { h: 'Sugar and the body' },
+      'Your body runs on a sugar called glucose. It comes from the food you eat and travels in your blood to every cell. But glucose cannot get into most cells on its own. It needs a helper called <b>insulin</b>, which is made by an organ behind your stomach called the <b>pancreas</b>.',
+      { fig: steps(10, [['food', 'eaten'], ['glucose', 'in the blood'], ['insulin', 'opens the cell'], ['energy', 'for the cell']], 64) +
+          '<text class="n" x="150" y="90" text-anchor="middle">Without insulin, glucose stays in the blood and the cells starve.</text>',
+        tall: 100, cap: 'How insulin helps the body use food for energy.' },
+      'In type 1 diabetes, the pancreas stops making insulin. Glucose builds up in the blood, while the cells go hungry.',
+      { h: 'The experiment' },
+      'In 1921, a young doctor named Frederick Banting had an idea. Maybe he could take insulin from the pancreas of an animal and give it to a person. Professor John Macleod gave him a laboratory, and a student named Charles Best became his assistant. They worked through a hot summer, testing their extract on dogs. Later, a chemist named James Collip found a way to make the extract pure and safe.',
+      'In January 1922, they gave insulin to Leonard Thompson, a 14-year-old boy who was very ill at Toronto General Hospital. Within days, the sugar in his blood dropped, and he grew stronger. News spread quickly. Soon, parents from far away were bringing their children to Toronto.',
+      { box: 'A gift to the world', text: 'Banting, Best and Collip sold the rights to insulin to the University of Toronto for one dollar each. They wanted it to be cheap enough for everyone who needed it.' },
+      'Not everyone believed in the work at first. Some scientists had tried similar experiments and failed. The team faced long nights, failed tests and arguments about who deserved credit. But they kept careful notes, learned from each mistake and tried again.',
+      'In 1923, Banting and Macleod won the Nobel Prize in medicine. Banting shared his prize money with Best, and Macleod shared his with Collip. Insulin does not cure diabetes, but today millions of people around the world use it every day to live long, healthy lives.'
+    ],
+    guide: { before: 'Find Toronto on a map. Explain that the pancreas is an organ, and that diabetes means the body cannot use sugar properly. Teach <b>insulin</b>, <b>pancreas</b> and <b>extract</b>.',
+      after: 'Why do you think the team sold insulin for one dollar? What does that tell you about them?' },
+    words: [['insulin', 'a substance that helps cells take in sugar'], ['pancreas', 'an organ that makes insulin']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Dogs helped with science.', 'A Toronto team discovered how to use insulin to treat diabetes, saving millions of lives.', 'Diabetes is caused by sugar.', 'The Nobel Prize is important.'], a: 1 },
+      { k: 'order', code: 'C1.4', q: 'Number the steps in the diagram from 1 to 4.',
+        items: ['You eat food.', 'Glucose travels in the blood.', 'Insulin opens the cell.', 'The cell gets energy.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did children with type 1 diabetes become ill?',
+        opts: ['Their pancreas stopped making insulin.', 'They ate too much.', 'They had a cold.', 'Their blood had no sugar.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Insulin does not cure diabetes, <b>but</b> millions use it.” What does <b>but</b> show?',
+        opts: ['a contrast', 'a time order', 'a reason', 'an example'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in what each person did.', cols: ['Person', 'What they did'],
+        rows: [['Frederick Banting', null], ['Charles Best', null], ['James Collip', null]],
+        a: [[null, 'had the idea to take insulin from an animal’s pancreas'], [null, 'was Banting’s student assistant'], [null, 'made the extract pure and safe']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What do the actions in the “A gift to the world” box tell you about the team’s values? Use evidence.',
+        a: 'They cared more about helping people than about getting rich. They sold insulin for one dollar each so everyone could afford it.', look: 'names a value and supports it with the one-dollar sale' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about diabetes, medicine or the body? How did it help you read?',
+        a: 'I knew my grandmother checks her blood sugar. That helped me understand why glucose in the blood matters.', look: 'names prior knowledge and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-aluminum', subject: 'science', form: 'Explanation',
+    title: 'The Can That Comes Back',
+    deck: 'Why an aluminum can can be recycled again and again, and what changes when it melts',
+    hero: {
+      photo: 'g5-crushed-cans.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'Crushed aluminum cans pressed into a block, ready to be melted down.'
+    },
+    body: [
+      'Think about the last drink can you held. It was light, thin and strong enough to hold a fizzy drink under pressure. That can is made of <b>aluminum</b>, a metal that can be recycled over and over without wearing out. The can you toss in the blue bin today could be back on a store shelf in about two months.',
+      { h: 'From bin to block' },
+      'At a recycling plant, cans are sorted from other materials. Magnets pull out steel cans. Aluminum is not magnetic, so a different machine pushes it off the belt. The cans are crushed into blocks, then shredded into small pieces and cleaned.',
+      { fig: steps(6, [['sort', 'by metal'], ['crush', 'into blocks'], ['melt', '660 °C'], ['roll', 'into sheets'], ['new can', '']], 50),
+        tall: 60, cap: 'The journey of a recycled can.' },
+      { h: 'A physical change' },
+      'Next, the pieces go into a furnace. Aluminum melts at about 660 °C. The solid metal becomes a shiny liquid. This is a <b>physical change</b>: the aluminum changes state, but it is still aluminum. When it cools, it turns back into a solid. Workers pour it into moulds to make large bars, which are rolled into thin sheets. The sheets are cut and pressed into new cans.',
+      'A chemical change is different. When wood burns, it turns into ash, smoke and gases. You cannot turn ash back into wood. Because melting aluminum is a physical change, the metal can be melted and shaped again and again.',
+      { box: 'Did you know?', text: 'Making a can from recycled aluminum uses about 95% less energy than making one from new metal dug out of the ground.' },
+      { h: 'Why it matters' },
+      'New aluminum comes from a rock called bauxite. Digging it up and turning it into metal takes huge amounts of energy and leaves scars on the land. Recycling saves that energy and protects the land. Quebec and British Columbia have large aluminum plants that use electricity from rivers. Still, the cleanest can is one made from a can that already exists.',
+      'Not every can makes it back. Cans that end up in the garbage are buried in landfills, where the metal is wasted. That is why many provinces pay a small deposit on drink cans. You pay a few cents extra when you buy the drink, and you get the money back when you return the empty can.',
+      'So the next time you finish a drink, rinse the can and put it in the right bin. It is not garbage. It is a can waiting to come back.'
+    ],
+    guide: { before: 'Show an aluminum can and a steel can and test them with a fridge magnet. Review solids and liquids. Teach <b>physical change</b> and <b>chemical change</b>.',
+      after: 'Name another physical change you have seen at home. Can it be reversed?' },
+    words: [['aluminum', 'a light, strong metal'], ['physical change', 'a change in form or state that does not make a new substance']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Cans are light.', 'Aluminum cans can be recycled again and again because melting is a physical change, which saves energy.', 'Quebec makes aluminum.', 'Wood burns.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How are aluminum cans separated from steel cans?',
+        opts: ['Magnets pull out the steel.', 'By colour', 'By weight', 'By hand only'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what happens right after the cans are melted?',
+        opts: ['They are rolled into sheets.', 'They are sorted.', 'They are crushed.', 'They are sold.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Sort each change.', cols: ['Change', 'Physical or chemical?'],
+        rows: [['Aluminum melts.', null], ['Wood burns.', null], ['Liquid metal cools into a bar.', null]],
+        a: [[null, 'physical'], [null, 'chemical'], [null, 'physical']] },
+      { k: 'choice', code: 'C1.6', half: true, q: 'The last line says the can is “waiting to come back.” This is …',
+        opts: ['personification', 'a fact', 'a heading', 'a list'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Aluminum melts at about 660 °C.” What does °C mean?',
+        opts: ['degrees Celsius', 'centimetres', 'cans', 'cups'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Explain why aluminum can be recycled “over and over.” Use the words physical change.',
+        a: 'Melting is a physical change, so the aluminum stays aluminum. It can be melted and shaped into new cans again and again.', look: 'links physical change to endless recycling' },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'How could your class or family use what you learned? Give one action and a reason.',
+        a: 'We could set up a bin just for cans in our classroom. Recycling them saves energy and keeps them out of the garbage.', look: 'a realistic action with a reason from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-hadfield', subject: 'tech', form: 'Biography',
+    title: 'A Farm Boy in Space',
+    deck: 'Chris Hadfield dreamed of space as a boy in Ontario, and the Canadarm helped get him there',
+    hero: {
+      photo: 'g5-hadfield.jpg', credit: 'CREDIT', focus: '50% 35%',
+      tall: 230,
+      cap: 'Chris Hadfield on board the International Space Station in 2013.'
+    },
+    body: [
+      'In July 1969, a nine-year-old boy named Chris Hadfield sat in front of a small black-and-white television on a farm near Milton, Ontario. He watched two astronauts walk on the Moon. That night, he decided that he would become an astronaut too. At the time, Canada did not even have astronauts. That did not stop him.',
+      { h: 'Building a dream' },
+      'Chris knew that a dream needs a plan. He studied hard, learned to fly gliders as a teenager, and joined the Canadian air force. He became an engineer and a test pilot, flying new jets to see how they behaved. In 1992, the Canadian Space Agency chose him as one of four new astronauts out of more than 5000 people who applied.',
+      { fig: '<path class="k" d="M20 150 H280"/><rect class="k" x="40" y="140" width="40" height="10"/>' +
+          '<path class="a" d="M60 140 L110 70 L190 50 L240 90"/><circle class="k" cx="110" cy="70" r="6"/><circle class="k" cx="190" cy="50" r="6"/>' +
+          '<path class="k" d="M240 90 l-8 12 M240 90 l10 10"/>' +
+          D.label(20, 175, 'base', 60, 150) + D.label(85, 40, 'shoulder joint', 110, 64) + D.label(180, 25, 'elbow joint', 190, 44) + D.label(236, 128, 'hand', 242, 100),
+        tall: 180, cap: 'The Canadarm moves like a human arm, with joints that bend and turn.' },
+      { h: 'Canada’s arm' },
+      'Canada had become famous in space for a robot arm. The first <b>Canadarm</b> flew on the American space shuttle in 1981. Astronauts used it to grab satellites and move heavy cargo. In 2001, Chris helped install a larger arm, Canadarm2, on the International Space Station. During that mission, he became the first Canadian to walk in space.',
+      { h: 'Commander Hadfield' },
+      'In 2013, Chris became the first Canadian to command the space station. For five months, he led the crew, ran experiments and fixed equipment. He also shared his life in space with millions of people on Earth. He posted photographs of Canadian cities at night, showed how to wash your hands when water floats, and sang a song while drifting in the station.',
+      'Living in space is not easy. Without gravity, muscles and bones grow weaker, so astronauts exercise for about two hours every day. Food floats away if you are not careful, and you sleep in a bag tied to the wall.',
+      'Today, Chris visits schools and talks about <b>perseverance</b>: keeping going even when a goal seems far away. He likes to say that a big dream is reached one small step at a time, by doing the next thing well.'
+    ],
+    guide: { before: 'Explain that the International Space Station circles Earth with astronauts from many countries. Teach <b>Canadarm</b>, <b>commander</b> and <b>perseverance</b>.',
+      after: 'What is one goal you have? What is the next small step you could take toward it?' },
+    words: [['Canadarm', 'a robot arm built in Canada for use in space'], ['perseverance', 'keeping on even when something is hard']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Space is dark.', 'Chris Hadfield planned and worked for years to become a Canadian astronaut and commander.', 'Gliders are fun.', 'Milton is a farm town.'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number these events in time order.',
+        items: ['Chris watches the Moon landing.', 'Chris becomes an astronaut.', 'Chris walks in space.', 'Chris commands the space station.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram compare the Canadarm to?',
+        opts: ['a human arm', 'a crane', 'a bird', 'a ladder'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the author mention that Canada had no astronauts in 1969?',
+        opts: ['to show how big Chris’s dream was', 'to blame Canada', 'to explain the Moon', 'to describe the farm'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Commander</b> comes from <i>command</i>. What does a commander do?',
+        opts: ['leads', 'cooks', 'cleans', 'builds'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the author start with a boy watching TV?',
+        opts: ['to show where the dream began', 'to describe old TVs', 'to talk about farms', 'to list astronauts'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Find two pieces of evidence that Chris showed perseverance.',
+        a: 'He studied hard and became a pilot and engineer even though Canada had no astronauts. He was picked out of more than 5000 people.', look: 'two specific details linked to perseverance' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'From the title, what did you predict? How did your prediction change as you read?',
+        a: 'I thought it would be about a farmer who flew a rocket. Then I learned he became an astronaut through years of work.', look: 'states a prediction and how it was confirmed or changed' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-tricky-graphs', subject: 'math', form: 'Explanation',
+    title: 'Graphs That Fool You',
+    deck: 'The same numbers can tell different stories. Here is how to spot a graph that is trying to trick you',
+    hero: {
+      photo: 'g5-bar-graph.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Graphs are everywhere: in news stories, ads and reports. Not all of them are fair.'
+    },
+    body: [
+      'Graphs help us see numbers at a glance. A tall bar means more, a short bar means less. But because we read graphs so quickly, a graph can also fool us. Some graphs are made to mislead on purpose, and some are just made carelessly. A smart reader checks before believing.',
+      { h: 'Look at the scale' },
+      'Two juice companies, Sunny and Zest, ask 100 people which juice they like best. Sunny gets 52 votes and Zest gets 48. That is almost a tie. Now look at Sunny’s ad.',
+      { fig: '<path class="k" d="M30 10 V140 H140"/><rect class="a" x="50" y="20" width="30" height="120"/><rect class="k" x="95" y="110" width="30" height="30"/>' +
+          '<text class="n" x="26" y="24" text-anchor="end">52</text><text class="n" x="26" y="140" text-anchor="end">47</text>' +
+          '<text class="n" x="65" y="156" text-anchor="middle">Sunny</text><text class="n" x="110" y="156" text-anchor="middle">Zest</text>' +
+          '<path class="k" d="M180 10 V140 H290"/><rect class="a" x="200" y="73" width="30" height="67"/><rect class="k" x="245" y="78" width="30" height="62"/>' +
+          '<text class="n" x="176" y="24" text-anchor="end">100</text><text class="n" x="176" y="140" text-anchor="end">0</text>' +
+          '<text class="n" x="215" y="156" text-anchor="middle">Sunny</text><text class="n" x="260" y="156" text-anchor="middle">Zest</text>' +
+          '<text class="lb" x="85" y="176" text-anchor="middle">Sunny’s ad</text><text class="lb" x="235" y="176" text-anchor="middle">a fair graph</text>',
+        tall: 182, cap: 'The same votes, shown two ways.' },
+      'In the ad, Sunny’s bar looks four times as tall as Zest’s. The trick is the <b>scale</b>, the numbers along the side. The ad’s scale starts at 47 instead of 0, so a small difference looks huge. In the fair graph, the scale starts at 0, and you can see the votes are nearly equal.',
+      { h: 'Other tricks to watch for' },
+      'Why does this work? Our eyes compare the heights of the bars, not the numbers beside them. Most people never look at the scale at all. Sunny’s ad does not lie about the votes. Every number on it is true. It simply shows the numbers in a way that makes your eyes believe something false. That is what makes a misleading graph so tricky to catch.',
+      'Missing labels: if a graph has no numbers on the side, you cannot tell how big the differences really are.',
+      'Picture graphs: if one bottle picture is twice as tall and also twice as wide, it looks four times bigger, even though the number only doubled.',
+      'Cherry-picking: a graph might show only the three best months of sales and leave out the rest of the year.',
+      { box: 'Check a graph', text: 'Read the title. Read the labels. Find where the scale starts. Ask who made the graph and why.' },
+      'Before you share a graph with others, ask a friend to read it. If they get the wrong idea, fix it. Graphs are powerful tools. When you make your own, start the scale at zero, label everything and show all the <b>data</b>. That way, your graph tells the truth.'
+    ],
+    guide: { before: 'Review bar graphs, scale and axis. Draw two bars with a scale starting at 0. Teach <b>scale</b>, <b>data</b> and <b>mislead</b>.',
+      after: 'Look for a graph in a flyer or news story. Is it fair? How can you tell?' },
+    words: [['scale', 'the numbers along the side of a graph'], ['data', 'facts and numbers collected to learn something']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Juice is healthy.', 'Graphs can mislead, so readers should check scales, labels and who made them.', 'Sunny is the best juice.', 'Graphs are always fair.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In Sunny’s ad, where does the scale start?',
+        opts: ['47', '0', '52', '100'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How many more votes did Sunny get than Zest?',
+        opts: ['4', '52', '48', '100'], a: 0 },
+      { k: 'choice', code: 'A2.4', half: true, q: 'Why does Sunny’s ad start the scale at 47?',
+        opts: ['to make Sunny look more popular', 'to save space', 'to be fair to Zest'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why is the advice in a box?',
+        opts: ['to make the checklist easy to find and use', 'because it is a story', 'to hide it', 'because it is less important'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Name each trick.', cols: ['What the graph does', 'Trick'],
+        rows: [['Shows only the best months', null], ['Has no numbers on the side', null], ['Starts the scale above zero', null]],
+        a: [[null, 'cherry-picking'], [null, 'missing labels'], [null, 'changing the scale']] },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'A graph shows Team A with a bar twice as tall as Team B’s. What should you check before you believe it, and why?',
+        a: 'I should check where the scale starts. If it does not start at zero, the difference could be much smaller than it looks.', look: 'applies the scale check with a reason' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'What did you do to understand the two graphs? How did it help?',
+        a: 'I read the numbers on the side of each graph and compared them. That showed me why the bars looked so different.', look: 'names a strategy and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-ad-tricks', subject: 'arts', form: 'Media text',
+    title: 'What the Ad Wants',
+    deck: 'Ads are made to make you want things. Learn the tricks, and you get to decide',
+    hero: {
+      photo: 'g5-billboards.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'Signs and screens in a busy city. Each one was designed to catch your eye.'
+    },
+    body: [
+      'You see hundreds of advertisements every week: on the bus, on cereal boxes, before videos and inside games. Every ad has one job. It wants you to do something, usually to buy something. Ads are made by skilled people who know how to grab attention. Knowing their tricks helps you think for yourself.',
+      { h: 'Five common techniques' },
+      { fig: [['Bandwagon', '“Everyone has one!”'], ['Famous face', 'a star uses it'], ['Big promise', '“the best ever”'], ['Hurry!', '“only today”'], ['Happy scene', 'smiles and fun']].map(function (t, i) {
+          var y = 6 + i * 34; return '<rect class="k" x="10" y="' + y + '" width="110" height="26" rx="4"/><text class="lb" x="65" y="' + (y + 17) + '" text-anchor="middle">' + t[0] + '</text><text class="n" x="132" y="' + (y + 17) + '">' + t[1] + '</text>'; }).join(''),
+        tall: 176, cap: 'Five common advertising techniques.' },
+      'The bandwagon <b>technique</b> makes you feel left out if you do not join in. A famous face, such as an athlete or a singer, makes you think the product will make you more like them. A big promise uses words like “best” and “amazing” that cannot be proved. A hurry message tells you to buy now before it is too late. A happy scene shows people laughing and having fun, so you link the product with feeling good.',
+      { h: 'Look at the details' },
+      'Ad makers choose every detail with care: bright colours, upbeat music, close-up shots of food that has been styled to look perfect. Sometimes the toy in the ad looks bigger than it really is, or the batteries are sold separately. Small print at the bottom of the screen may hold important facts.',
+      { box: 'Ask yourself', text: 'Who made this ad? What do they want me to do? What are they not telling me? Do I really need this?' },
+      { h: 'You decide' },
+      'Some ads do not even look like ads. A video star might open a new toy and seem surprised, but the company may have paid for the video. In Canada, paid posts are supposed to be labelled with words such as “ad” or “sponsored.” Look for those words, because they tell you someone is being paid to show you the product.',
+      'Ads are not all bad. They can tell us about new books, events or ways to stay safe. A public service ad might remind people to wear seatbelts. The goal is not to ignore ads, but to be a <b>critical</b> viewer, someone who notices the techniques and thinks before acting. When you know how an ad works, you are the one in charge.'
+    ],
+    guide: { before: 'Look at a real ad together. Teach <b>technique</b>, <b>bandwagon</b> and <b>critical</b>. Explain that “media” means ways of sharing messages with many people.',
+      after: 'Find an ad at home. Which technique does it use? Who is its audience?' },
+    words: [['technique', 'a way of doing something'], ['critical', 'thinking carefully before believing or acting']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ads are always lies.', 'Ads use techniques to persuade, and knowing them helps you decide for yourself.', 'Famous people are rich.', 'Toys are small.'], a: 1 },
+      { k: 'table', code: 'A2.4', q: 'Name the technique each ad uses.', cols: ['Ad', 'Technique'],
+        rows: [['“Sale ends tonight!”', null], ['A hockey star drinks the juice.', null], ['“All the kids in your class have one!”', null]],
+        a: [[null, 'hurry'], [null, 'famous face'], [null, 'bandwagon']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might a toy in an ad look bigger than it is?',
+        opts: ['The ad makers want it to seem more exciting.', 'The camera is broken.', 'Toys grow.', 'It is a mistake.'], a: 0 },
+      { k: 'choice', code: 'A2.3', half: true, q: 'Who is the main audience for an ad shown during a cartoon?',
+        opts: ['children', 'farmers', 'grandparents', 'doctors'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The word <b>critical</b> in this text means …',
+        opts: ['thinking carefully', 'being mean', 'very sick', 'very loud'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What does the “Ask yourself” box give the reader?',
+        opts: ['questions to use on any ad', 'a story', 'prices', 'a map'], a: 0 },
+      { k: 'lines', code: 'A2.5', n: 3, q: 'Plan your own short ad for a public library. Name the technique you would use and why.',
+        a: 'I would use a happy scene of a family reading together, so people link the library with feeling good and calm.', look: 'chooses a technique and explains why it suits the purpose' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Ads often show only some kinds of people. Why does it matter who is shown in ads?',
+        a: 'If ads only show some people, others may feel left out. Showing many kinds of people tells everyone they belong.', look: 'connects who is shown to inclusion' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-stop-motion', subject: 'arts', form: 'How-to',
+    title: 'Making Clay Come Alive',
+    deck: 'Stop-motion animation turns tiny movements into a moving film. You can make one at home',
+    hero: {
+      photo: 'g5-stop-motion.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'An animator moves a model a tiny bit between photographs.'
+    },
+    body: [
+      'Have you ever watched a clay character walk, blink and wave, and wondered how it was made? The answer is patience. In <b>stop-motion animation</b>, an artist takes a photo, moves the model a tiny bit, takes another photo, and repeats this hundreds of times. When the photos are played quickly, one after another, your brain sees smooth movement.',
+      { h: 'A Canadian tradition' },
+      'Canada has a proud history of animation. The National Film Board of Canada, or NFB, has made animated films since the 1940s. One of its artists, Norman McLaren, made a famous short film called <i>Neighbours</i> in 1952. He filmed real actors one frame at a time, so they seemed to slide and fly. It won an Academy Award. Animators across Canada still experiment with clay, paper, sand and even pinheads.',
+      { fig: [0, 1, 2, 3].map(function (i) {
+          var x = 8 + i * 74; return '<rect class="k" x="' + x + '" y="10" width="64" height="64" rx="4"/><circle class="a" cx="' + (x + 14 + i * 12) + '" cy="52" r="10"/>' +
+            '<text class="n" x="' + (x + 32) + '" y="92" text-anchor="middle">frame ' + (i + 1) + '</text>'; }).join('') +
+          '<text class="n" x="150" y="114" text-anchor="middle">The ball moves a little in each frame.</text>',
+        tall: 120, cap: 'Four frames of a rolling ball.' },
+      { h: 'Make your own' },
+      'Before you start, think small. A professional film can take months, with a team of artists moving puppets for just a few seconds of film each day. Your first film should be only a few seconds long. You need a phone or tablet, a free stop-motion app, modelling clay and a steady surface, such as a table pushed against a wall.',
+      '1. Plan a short story with a beginning, middle and end. Keep it simple: a ball rolls, bumps a block and stops.',
+      '2. Fix your camera in place. If it moves, your film will jump.',
+      '3. Take one photo, called a <b>frame</b>. Move the clay a few millimetres. Take another photo. Small moves make smooth motion. Big moves make fast, jerky motion.',
+      '4. Keep going. Most stop-motion films show about 12 frames each second, so a 10-second film needs about 120 photos.',
+      '5. Play it back. Add sound, such as a bump or a whoosh, to bring it to life.',
+      { box: 'Tip', text: 'Use a small piece of tape to mark where your camera and set go. Then nothing moves by accident.' },
+      'Your first film might be short and a little shaky. That is fine. Every animator started with a first frame.'
+    ],
+    guide: { before: 'If you can, watch a short NFB animation together (nfb.ca). Teach <b>frame</b>, <b>animation</b> and <b>animator</b>.',
+      after: 'Plan a five-second film. What will move, and how many frames will you need?' },
+    words: [['stop-motion animation', 'a film made from many photos of objects moved a little at a time'], ['frame', 'one picture in a film']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Clay is fun.', 'Stop-motion films are made from many photos of small moves, and you can make one yourself.', 'The NFB is in Canada.', 'Tape is useful.'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps from 1 to 4.',
+        items: ['Plan a short story.', 'Fix the camera in place.', 'Take a photo and move the clay.', 'Play the film back.'], show: [2, 3, 0, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why must the camera stay still?',
+        opts: ['so the film does not jump', 'so the clay stays warm', 'to save battery', 'to make sound'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['a ball moving a little in each frame', 'four different balls', 'a camera', 'a clay person'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the author number the steps?',
+        opts: ['so you can follow them in order', 'to count pages', 'to show prices', 'because they are a list of facts'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“Take another photo.” What kind of sentence is this?',
+        opts: ['a command', 'a question', 'an exclamation', 'a statement of fact'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'You want a 5-second film at 12 frames a second. How many photos do you need? Show how you know.',
+        a: '60 photos, because 12 × 5 = 60.', look: 'uses the 12 frames a second fact to calculate 60' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Was any part of the text hard to understand? What did you do to fix it?',
+        a: 'I did not understand how photos become movement. I looked at the diagram and reread the first paragraph.', look: 'names a confusing part and a fix-up strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-jingle-dress', subject: 'arts', form: 'Report',
+    title: 'The Healing Sound',
+    deck: 'The jingle dress dance began with the Anishinaabe and is now danced at powwows across North America',
+    hero: {
+      photo: 'g5-jingle-dress.jpg', credit: 'CREDIT', focus: '50% 40%',
+      tall: 230,
+      cap: 'A jingle dress dancer at a powwow. The cones on her dress ring with each step.'
+    },
+    body: [
+      'At a powwow, the drum begins and a group of dancers steps into the circle. Their dresses are covered in rows of small metal cones. With every light step, the cones touch and ring, making a sound like gentle rain. This is the <b>jingle dress</b> dance, and for many Anishinaabe people, it is a dance of healing and prayer.',
+      { h: 'How it began' },
+      'Anishinaabe (Ojibwe) communities in what is now northern Ontario and Minnesota share stories about how the dance began, about a hundred years ago. In one story, a young girl was very sick. Her father, or in some tellings her grandfather, had a dream. In the dream, he was shown how to make a special dress, how the dance should be done and what songs to sing. The family made the dress, the girl danced, and she became well. Different communities tell the story in their own ways, and each version is respected.',
+      { fig: '<path class="k" d="M90 6 L70 26 L60 116 H120 L110 26 Z"/>' +
+          [40, 60, 80, 100].map(function (y, r) { var out = ''; for (var x = 70 - r * 2; x < 112 + r * 2; x += 9) out += '<path class="a" d="M' + x + ' ' + y + ' l4 11 h-8 z"/>'; return out; }).join('') +
+          D.label(150, 46, 'rows of cones', 118, 46) + D.label(150, 96, 'they ring as she steps', 124, 104),
+        tall: 122, cap: 'A jingle dress has rows of metal cones sewn on.' },
+      { h: 'The dress and the dance' },
+      'The cones were first made by rolling up the lids of tobacco tins. Many dancers today still roll their own. A dress may have hundreds of cones, and some makers sew on 365, one for each day of the year. Making a dress takes many weeks, and families often help.',
+      'The steps are light and close to the ground. Dancers never cross their feet or turn in a full circle backward. The movements stay smooth so that the cones ring together. Many dancers say that when they dance, they are praying for someone who is ill or going through a hard time.',
+      { box: 'Respect at a powwow', text: 'Listen to the announcer. Ask before taking photos. Never touch a dancer’s regalia, the special clothing they wear to dance.' },
+      'Jingle dress dancing is now one of the main dance styles at powwows. Dancers of all ages, from small girls to grandmothers, enter the circle together. Young dancers learn the steps, songs and teachings from older women in their families and communities.',
+      'In 2020, when the world faced a pandemic, many jingle dress dancers shared their dances online to send healing to people everywhere. A <b>tradition</b> that began with one family’s hope still reaches out to others.'
+    ],
+    guide: { before: 'Explain that a powwow is a gathering of First Nations people with dancing, drumming and visiting, and that many are open to visitors. Teach <b>regalia</b>, <b>tradition</b> and <b>Anishinaabe</b> (ah-nish-ih-NAH-bay).',
+      after: 'Why do you think stories about how the dance began are told in more than one way? Why does that matter?' },
+    words: [['jingle dress', 'a dress with metal cones that ring when the dancer moves'], ['tradition', 'a belief or way of doing things passed down over time']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Powwows are loud.', 'The jingle dress dance is an Anishinaabe tradition of healing that is still danced today.', 'Cones are made of tin.', 'Dresses take weeks to make.'], a: 1 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which detail shows that the dance has a spiritual purpose?',
+        opts: ['Dancers pray for people who are ill.', 'The cones are metal.', 'It happens at powwows.', 'Families help make dresses.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The cones make “a sound like gentle rain.” This is …',
+        opts: ['a simile', 'a heading', 'a fact', 'a question'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do some makers sew on 365 cones?',
+        opts: ['one for each day of the year', 'because cones are cheap', 'to make it heavy', 'to make it quiet'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>regalia</b> mean in the box?',
+        opts: ['special clothing worn to dance', 'a kind of drum', 'a song', 'a powwow'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Question', 'Answer from the text'],
+        rows: [['Who began the dance?', null], ['What were the first cones made from?', null], ['Why did dancers share dances online in 2020?', null]],
+        a: [[null, 'Anishinaabe (Ojibwe) people'], [null, 'rolled-up lids of tobacco tins'], [null, 'to send healing during the pandemic']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The author says “each version is respected.” Why do you think the author included this?',
+        a: 'To show that communities tell the story differently and that no one version is the only right one. It shows respect for each community.', look: 'explains the author’s respect for different community versions' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a tradition in your family or community. How is it like or unlike the jingle dress dance?',
+        a: 'My family lights candles for people we miss. Like the dance, it is a way to care for others and is passed down.', look: 'a personal connection with a clear comparison' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-lacrosse', subject: 'history', form: 'Report',
+    title: 'The Creator’s Game',
+    deck: 'Long before hockey, lacrosse was played across this land. Its story begins with First Nations',
+    hero: {
+      photo: 'g5-lacrosse.jpg', credit: 'CREDIT', focus: '50% 45%',
+      tall: 220,
+      cap: 'Players race for the ball in a lacrosse game.'
+    },
+    body: [
+      'Lacrosse is one of the oldest team sports in North America. Players use a stick with a net at one end to catch, carry and throw a small ball, trying to score in the other team’s goal. Today it is Canada’s national summer sport. But the game was played here for hundreds of years before Canada existed.',
+      { fig: '<path class="k" d="M40 150 L200 30"/><path class="k" d="M200 30 Q240 0 260 30 Q270 60 230 70 L200 30"/>' +
+          '<path class="t" d="M210 38 L250 30 M214 48 L256 44 M220 58 L248 58 M222 34 L232 64 M236 28 L240 66"/>' +
+          D.label(150, 140, 'handle: hickory') + D.label(196, 96, 'pocket: woven hide') + D.label(112, 24, 'bent hook'),
+        tall: 150, cap: 'A traditional wooden lacrosse stick.' },
+      { h: 'A game with meaning' },
+      'Many First Nations played versions of the game, including the Haudenosaunee, the Anishinaabe and the Wendat. The Haudenosaunee call it the Creator’s Game. For them, it was not only a sport. It was played to give thanks, to heal the sick and to settle disagreements between communities. Games could have hundreds of players and last for days, on fields that stretched for kilometres.',
+      'Sticks were carved from hickory wood. The wood was steamed and bent into a hook, and the pocket was woven from strips of deer hide. A skilled stick maker was greatly respected. Some families in Haudenosaunee communities still make sticks by hand today.',
+      { h: 'A new name' },
+      'When French settlers saw the game in the 1600s, they named it after the curved stick, which reminded them of a bishop’s staff, called a crosse. The name stuck. In the 1800s, a Montreal dentist named William George Beers wrote rules for the game, and clubs spread across Canada. Haudenosaunee teams played and toured, and people came to watch. In 1876, a team of Kanien’kehá:ka (Mohawk) players from Kahnawà:ke sailed to Britain with a Montreal club and played in front of Queen Victoria.',
+      { box: 'Canada’s two national sports', text: 'In 1994, a law named lacrosse Canada’s national summer sport and hockey its national winter sport.' },
+      { h: 'Still playing' },
+      'Lacrosse is played in two main ways. Field lacrosse is played outdoors on a large grass field. Box lacrosse, which was invented in Canada in the 1930s, is played inside hockey rinks in summer, when the ice is gone.',
+      'Today, the Haudenosaunee Nationals compete against countries from around the world, travelling on their own <b>Haudenosaunee</b> passports. When they play, they carry on a game their <b>ancestors</b> gave to the world.'
+    ],
+    guide: { before: 'Find the Six Nations of the Grand River and Akwesasne on a map. Teach <b>Haudenosaunee</b> (ho-deh-no-SHOW-nee), <b>ancestors</b> and <b>national</b>.',
+      after: 'Why might it matter to the Haudenosaunee to play as their own nation?' },
+    words: [['Haudenosaunee', 'a confederacy of six First Nations, also called the Six Nations'], ['ancestors', 'family members who lived long ago']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Hockey is popular.', 'Lacrosse began with First Nations, had deep meaning, and is still played today.', 'Sticks are made of wood.', 'Beers was a dentist.'], a: 1 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which detail shows the game’s cultural meaning?',
+        opts: ['It was played to give thanks and heal.', 'It uses a ball.', 'Clubs spread across Canada.', 'It is played in summer.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the French call the game la crosse?',
+        opts: ['The stick looked like a bishop’s staff.', 'It was played in France.', 'The ball was a cross.', 'The players were cross.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the pocket made of?',
+        opts: ['woven hide', 'hickory', 'metal', 'plastic'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is <i>Creator’s Game</i> written with capital letters?',
+        opts: ['It is a proper name.', 'It starts a sentence.', 'It is a question.', 'It is a heading.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the game then and now.', cols: ['', 'Long ago', 'Today'],
+        rows: [['Players', 'hundreds', null], ['Sticks', null, 'many made in factories, some by hand']],
+        a: [[null, null, 'ten a side on the field'], [null, 'hand-carved hickory and hide', null]] },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Why do you think lacrosse became a national sport of Canada? Use details.',
+        a: 'It was played here for hundreds of years by First Nations and spread across the country in the 1800s, so it is part of Canada’s history.', look: 'a conclusion supported by details about its long history' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which part of this text did you picture most clearly? What helped you picture it?',
+        a: 'I pictured the game with hundreds of players across a huge field. The numbers and the word kilometres helped me imagine it.', look: 'names an image and the words that helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-snowshoes', subject: 'tech', form: 'Explanation',
+    title: 'Walking on Top of the Snow',
+    deck: 'Snowshoes were designed by First Nations and Inuit long ago. The science behind them is all about pressure',
+    hero: {
+      photo: 'g5-snowshoes.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 220,
+      cap: 'Traditional snowshoes with wooden frames and woven webbing.'
+    },
+    body: [
+      'Try walking through deep, fresh snow in your boots. With every step, you sink up to your knees. You tire quickly. Now strap on a pair of snowshoes. Suddenly, you float on top of the snow. How can a wider shoe make such a difference?',
+      { h: 'Spreading the force' },
+      'Your body pushes down on the ground with a force called your weight. When you stand in boots, all that force presses on a small area, the bottom of your boots. The snow cannot hold it up, so you sink. A snowshoe spreads the same force over a much larger area. Each part of the snow carries less of the push. Scientists call the push on each part of an area <b>pressure</b>. Bigger area, less pressure.',
+      { fig: '<path class="d" d="M10 120 H290"/><rect class="k" x="40" y="96" width="30" height="40"/><path class="a" d="M55 40 V90"/><path class="a" d="M48 80 L55 92 L62 80"/>' +
+          '<ellipse class="k" cx="200" cy="114" rx="70" ry="10"/><path class="a" d="M200 40 V96"/><path class="a" d="M193 86 L200 98 L207 86"/>' +
+          D.label(20, 156, 'boot: small area, sinks') + D.label(150, 156, 'snowshoe: large area, floats') + D.label(80, 30, 'same weight'),
+        tall: 162, cap: 'The same weight on a small area and on a large area.' },
+      { h: 'Designs for different land' },
+      'Indigenous peoples across the North have made snowshoes for thousands of years, and they designed them to fit the land. In thick forest, round “bear paw” snowshoes turn easily between trees. On open land and frozen lakes, long, narrow snowshoes with a tail glide in a straight line and keep the walker on top of deep, powdery snow. The front is often turned up so it does not dig into the snow.',
+      'Frames were made from ash or birch wood, steamed and bent into shape. The webbing was woven from thin strips of rawhide called babiche. The pattern of the weave let snow fall through, so it did not pile up on top.',
+      { box: 'Did you know?', text: 'Snowshoes let people hunt, trap and travel all winter. Early French traders learned to make and use them from First Nations.' },
+      'Modern snowshoes often use aluminum frames and plastic decks, but the idea has not changed. The same science also explains why tractors have wide tires and why a skier does not sink. Long ago, Indigenous <b>engineers</b> solved a hard problem with a simple, brilliant design.'
+    ],
+    guide: { before: 'Press a pencil point and then a pencil’s flat end into play dough. Which sinks more? Teach <b>force</b>, <b>area</b> and <b>pressure</b>.',
+      after: 'Where else do people spread out force so they do not sink or break something?' },
+    words: [['pressure', 'how much force pushes on each part of an area'], ['engineers', 'people who design ways to solve problems']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Snow is cold.', 'Snowshoes spread weight over a large area to lower pressure, a design created by Indigenous peoples.', 'Bear paws are round.', 'Tractors have wide tires.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what stays the same for the boot and the snowshoe?',
+        opts: ['the weight', 'the area', 'how far they sink', 'the shape'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why would a hunter in thick forest choose bear paw snowshoes?',
+        opts: ['They turn easily between trees.', 'They are longest.', 'They glide on lakes.', 'They are made of plastic.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Part', 'Traditional material'],
+        rows: [['Frame', null], ['Webbing', null]], a: [[null, 'ash or birch wood'], [null, 'babiche (rawhide strips)']] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which text feature explains why the boot sinks most clearly?',
+        opts: ['the diagram', 'the title', 'the box', 'the caption of the photo'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Bigger area, less pressure.” What is missing that makes this a fragment?',
+        opts: ['a verb', 'a noun', 'a comma', 'a capital'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Use the idea of pressure to explain why a knife cuts better when it is sharp.',
+        a: 'A sharp edge is a very small area, so the same push makes a lot of pressure, and it cuts easily.', look: 'applies area and pressure to a new example' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The author calls Indigenous snowshoe makers “engineers.” Do you agree? Give evidence.',
+        a: 'Yes. They designed different snowshoes for forest and open land and solved the problem of snow piling up with the weave.', look: 'takes a position and supports it with design details' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-forest-fire', subject: 'geography', form: 'Report',
+    title: 'Fire in the Forest',
+    deck: 'Wildfires are part of the boreal forest’s life cycle, but bigger and more frequent fires bring new challenges',
+    hero: {
+      photo: 'g5-forest-fire.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'A wildfire burning in a Canadian forest. Smoke can travel hundreds of kilometres.'
+    },
+    body: [
+      'Canada’s <b>boreal forest</b> is a huge band of evergreen trees that stretches from Yukon to Newfoundland and Labrador. It is home to moose, caribou, lynx and billions of birds. It is also a forest that has burned and regrown for thousands of years.',
+      { h: 'Fire as part of the cycle' },
+      'Some fire is natural and even helpful. Jack pine trees have cones sealed shut with a sticky resin. Only the heat of a fire melts the resin and lets the seeds fall out. After a fire, sunlight reaches the ground, ashes add nutrients to the soil, and new plants spring up. Within a few years, fireweed covers the burned land in pink flowers, and young trees begin to grow.',
+      { fig: '<circle class="t" cx="150" cy="90" r="62"/>' + D.arrow(206, 64, 206, 70, 'a') + D.arrow(94, 116, 94, 110, 'a') +
+          [[150, 20, 'old forest'], [244, 94, 'fire'], [150, 172, 'seeds and fireweed'], [56, 94, 'young trees']].map(function (t) { return '<text class="lb" x="' + t[0] + '" y="' + t[1] + '" text-anchor="middle">' + t[2] + '</text>'; }).join(''),
+        tall: 180, cap: 'A natural fire cycle in the boreal forest.' },
+      { h: 'A changing pattern' },
+      'Lightning starts about half of Canada’s wildfires. People start the rest, often by accident, with campfires, cigarettes or sparks from machines. In recent years, hotter summers and longer dry spells have made fires larger and more frequent. In 2023, Canada had its worst fire season on record. More than 15 million hectares burned, and smoke drifted as far as Europe.',
+      'Fires now threaten towns as well as trees. In 2016, a fire forced about 88 000 people to leave Fort McMurray, Alberta. In 2023, the entire city of Yellowknife was <b>evacuated</b>. Many First Nations communities have had to leave their homes again and again.',
+      { box: 'Firesmart at the cottage', text: 'Keep campfires small and drown them with water. Clear dry leaves away from buildings. Check for fire bans before you light any fire.' },
+      { h: 'Working together' },
+      'Firefighters from across Canada and other countries fight large fires from the ground and the air. Some First Nations are bringing back cultural burning: setting small, careful fires in cool seasons to clear dry brush, a practice their ancestors used for generations. Combined with science, this knowledge can help the forest stay healthy and keep communities safer. Fire will always be part of the boreal forest. The goal is not to stop every fire, but to live with fire wisely.'
+    ],
+    guide: { before: 'Find the boreal forest, Fort McMurray and Yellowknife on a map. Teach <b>boreal</b>, <b>evacuate</b> and <b>resin</b>.',
+      after: 'How can a fire be both helpful and harmful? What could your family do to be firesmart?' },
+    words: [['boreal forest', 'the large northern forest of evergreen trees'], ['evacuated', 'moved people away from danger']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Moose live in forests.', 'Fire is a natural part of the boreal forest, but bigger fires now bring new dangers.', 'Fireweed is pink.', 'Lightning is bright.'], a: 1 },
+      { k: 'order', code: 'C1.4', q: 'Number the stages of the fire cycle in the diagram, starting with old forest.',
+        items: ['old forest', 'fire', 'seeds and fireweed', 'young trees'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does fire help jack pines?',
+        opts: ['It melts resin so seeds fall out.', 'It kills insects.', 'It makes the trees taller.', 'It waters the soil.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>firefighter</b>, what does the suffix <b>-er</b> mean?',
+        opts: ['a person who', 'more', 'not', 'again'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the causes and effects.', cols: ['Cause', 'Effect'],
+        rows: [['hotter summers and dry spells', null], [null, 'Yellowknife was evacuated.']],
+        a: [[null, 'larger and more frequent fires'], ['a wildfire came close to the city', null]] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How does the author show that Indigenous knowledge can help? Give evidence.',
+        a: 'The author explains cultural burning, small careful fires their ancestors used, and says that with science it can keep forests healthy.', look: 'names cultural burning and the author’s point about it' },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Write one way you or your family could prevent a forest fire. Why does it work?',
+        a: 'Drown our campfire with water before we leave, so no hot coals can start a fire later.', look: 'a realistic prevention step with a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-blood', subject: 'health', form: 'Explanation',
+    title: 'A Gift That Flows',
+    deck: 'What your blood does every second, and how donated blood saves lives',
+    hero: {
+      photo: 'g5-blood-bags.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'Bags of donated blood, labelled and ready for hospitals.'
+    },
+    body: [
+      'Right now, about three litres of blood are racing through your body. An adult has about five litres. The heart pumps blood through tubes called blood vessels. If you laid all of an adult’s blood vessels end to end, they would stretch about 100 000 kilometres. That is more than twice around the Earth.',
+      { h: 'What is in blood?' },
+      'Blood looks like a simple red liquid, but it is made of several parts, each with its own job.',
+      { fig: [['red blood cells', 'carry oxygen'], ['white blood cells', 'fight germs'], ['platelets', 'stop bleeding'], ['plasma', 'carries it all']].map(function (p, i) {
+          var y = 8 + i * 34; return '<circle class="' + (i === 0 ? 'a' : 'k') + '" cx="22" cy="' + (y + 12) + '" r="' + (i === 2 ? 5 : 10) + '"/><text class="lb" x="44" y="' + (y + 16) + '">' + p[0] + '</text><text class="n" x="170" y="' + (y + 16) + '">' + p[1] + '</text>'; }).join(''),
+        tall: 142, cap: 'The four main parts of blood.' },
+      '<b>Plasma</b> is the yellowish liquid part. It carries food, water and the blood cells. Red blood cells pick up oxygen in your lungs and drop it off everywhere else. White blood cells hunt down germs. Platelets are tiny pieces of cells that stick together to plug a cut and stop the bleeding.',
+      { h: 'When the body needs help' },
+      'Sometimes people lose a lot of blood in an accident or during an operation. People with some illnesses, such as certain cancers, need blood often. Blood cannot be made in a factory. The only place it comes from is other people.',
+      'In Canada, healthy people aged 17 and older can <b>donate</b> blood. A donor sits in a comfortable chair while a nurse collects about half a litre from a vein in the arm. It takes about 10 minutes. The donor’s body makes new plasma within a day or two and new red blood cells within a few weeks.',
+      { box: 'Did you know?', text: 'Donated blood is split into its parts. Red cells, plasma and platelets can go to different patients, so one donation can help more than one person.' },
+      { h: 'Matching blood' },
+      'Not all blood is the same. There are different blood types, named with letters: A, B, AB and O. A patient must receive a type that matches, or their body will attack the new blood. Type O negative can be given to almost anyone, so it is always in high demand.',
+      'You are too young to donate now, but you can still help. You can encourage the adults in your life to give. You can also take care of your own blood by eating foods rich in iron, such as beans, spinach and meat, which help your body build healthy red blood cells. One hour of someone’s time could mean another family gets more time together.'
+    ],
+    guide: { before: 'Look at the veins on the inside of your wrist. Teach <b>plasma</b>, <b>donate</b> and <b>oxygen</b>. Remind the child that the heart and lungs work together.',
+      after: 'Why is blood donation sometimes called “the gift of life”? Who do you know who could donate?' },
+    words: [['plasma', 'the liquid part of blood'], ['donate', 'to give something to help others']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Blood is red.', 'Blood has parts with important jobs, and donated blood saves lives.', 'Nurses are kind.', 'The heart is a pump.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the diagram to fill in the chart.', cols: ['Part of blood', 'Job'],
+        rows: [['red blood cells', null], [null, 'fight germs'], ['platelets', null]],
+        a: [[null, 'carry oxygen'], ['white blood cells', null], [null, 'stop bleeding']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is type O negative always needed?',
+        opts: ['It can be given to almost anyone.', 'It is the rarest.', 'It is the reddest.', 'It lasts forever.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why must people donate blood?',
+        opts: ['Blood cannot be made in a factory.', 'Hospitals sell it.', 'It is too cold.', 'It helps the donor.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is there a space in 100 000?',
+        opts: ['Canadian style groups big numbers in threes.', 'It is two numbers.', 'It is a mistake.', 'It shows money.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Which comparison helps you picture the length of the blood vessels?',
+        opts: ['more than twice around the Earth', 'about 10 minutes', 'half a litre', 'a comfortable chair'], a: 0 },
+      { k: 'lines', code: 'A2.2', n: 3, q: 'Write a short message to an adult encouraging them to donate. Use one fact from the text.',
+        a: 'Please think about donating blood. It only takes about 10 minutes, and your one donation can help more than one patient.', look: 'a persuasive message that uses an accurate fact' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'What new question do you have about blood after reading? Where could you find the answer?',
+        a: 'How do they know which blood type a person has? I could ask a nurse or look on the Canadian Blood Services website.', look: 'a genuine question and a sensible source' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-bus-route', subject: 'social', form: 'Story',
+    title: 'Route 12',
+    deck: 'When the city plans to cut her grandmother’s bus route, Leila learns how local government works',
+    hero: {
+      photo: 'g5-city-bus.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 220,
+      cap: 'A city bus at a stop. Local governments plan and pay for most public transit.'
+    },
+    body: [
+      'Every Saturday, Leila and her grandmother, Teta, took the Route 12 bus to the market. Teta did not drive. The bus stopped right outside her apartment, and the driver always waited while she climbed the steps with her cane.',
+      'One Saturday, a notice was taped to the bus shelter. <i>The city is reviewing Route 12. It may be cancelled next year because few riders use it. Share your views at City Hall on March 3.</i>',
+      '“Cancelled?” Teta said quietly. “How will I get to the doctor?”',
+      { h: 'Who decides?' },
+      'At school, Leila asked her teacher, Mr. Okafor, who makes decisions about buses. He drew a chart on the board.',
+      { fig: level(4, 284, 'Federal government', 'passports, the army, money') + level(62, 230, 'Provincial government', 'schools, hospitals, highways') + level(120, 176, 'Municipal government', 'buses, parks, garbage, libraries'),
+        tall: 176, cap: 'Mr. Okafor’s chart: three levels of government.' },
+      '“Buses belong to the <b>municipal</b> government, the city,” he explained. “The mayor and city councillors make those choices. Each <b>councillor</b> represents one area of the city, called a ward. Their job is to listen to the people who live there.”',
+      { h: 'Getting ready' },
+      'Leila got to work. She counted how many people got on at Teta’s stop each morning for a week. She talked to neighbours: a man who used a wheelchair, a teenager who rode to her job, a family without a car. She wrote down their stories. She looked up her ward councillor, Councillor Tremblay, and sent her an email.',
+      'On March 3, Leila and Teta sat in the big council room. When it was her turn, Leila’s hands shook, but her voice was steady. She shared her numbers and her neighbours’ stories. “Fewer people ride Route 12,” she said, “but the people who do have no other way to get around.”',
+      { h: 'The vote' },
+      'Two weeks later, the council voted. Route 12 would stay, but buses would come every 40 minutes instead of every 20. It was not everything Leila wanted. But Teta squeezed her hand.',
+      '“You spoke up,” Teta said. “And they listened. That is how a city should work.”'
+    ],
+    guide: { before: 'Explain the three levels of government with examples from your own area. Find your own city councillor online. Teach <b>municipal</b>, <b>councillor</b> and <b>ward</b>.',
+      after: 'Was the council’s decision fair? What else could Leila do next?' },
+    words: [['municipal', 'having to do with a city or town'], ['councillor', 'a person elected to a city or town council']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the story?',
+        opts: ['Buses are slow.', 'Leila uses facts and stories to speak to her city council and helps save a bus route.', 'Teta likes the market.', 'Mr. Okafor draws charts.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which level of government runs hospitals?',
+        opts: ['provincial', 'municipal', 'federal', 'none'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the city want to cancel Route 12?',
+        opts: ['Few riders used it.', 'The bus broke.', 'Teta complained.', 'It was too fast.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Leila used the word <b>councillor</b> correctly. Its root word is …',
+        opts: ['council', 'counsel', 'count', 'cell'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the author include the notice in italics?',
+        opts: ['to show the exact words on the sign', 'to show Teta speaking', 'because it is a title', 'to make it funny'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in what Leila did to prepare.', cols: ['Step', 'What Leila did'],
+        rows: [['1', null], ['2', null], ['3', null]],
+        a: [[null, 'counted riders at Teta’s stop'], [null, 'talked to neighbours and wrote their stories'], [null, 'emailed her ward councillor']] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Leila says the riders “have no other way to get around.” Why does this matter when a city makes decisions?',
+        a: 'A city should serve everyone, including people who cannot drive, like Teta and the man in a wheelchair. Cutting the route would leave them out.', look: 'connects the decision to fairness and inclusion' },
+      { k: 'lines', code: 'B1.4', n: 3, q: 'Leila’s hands shook, but her voice was steady. What advice would you give someone speaking to a council?',
+        a: 'Practise your speech, bring facts and stories, look at the councillors and speak slowly and clearly.', look: 'two or more realistic speaking strategies' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-lunch-table', subject: 'story', form: 'Short story',
+    title: 'The Empty Seat',
+    deck: 'Ethan and Mateo have been best friends forever. Then a new kid joins the lunch table',
+    hero: {
+      photo: 'g5-cafeteria.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A school lunch room. Where you sit can feel like a big deal.'
+    },
+    body: [
+      'Ethan and Mateo had sat together at lunch every day since Grade 1. Same table, same end, same two seats by the window. They traded crackers, argued about hockey and laughed so hard that once milk came out of Mateo’s nose.',
+      'Then Priya arrived in October. She had moved from Brampton and knew no one. On her third day, Mateo waved her over to their table.',
+      '“She likes hockey too,” Mateo told Ethan. “She plays goalie.”',
+      'Ethan said nothing. He watched Priya sit in the seat by the window, his seat, and felt something hot and tight in his chest.',
+      { h: 'The silent week' },
+      'For a week, Ethan sat at the far end of the table and ate in silence. Mateo and Priya talked about saves and slapshots. When Mateo asked if Ethan was okay, Ethan shrugged. “Fine,” he said, though he was not.',
+      { fig: '<path class="k" d="M20 110 Q80 110 110 70 Q130 30 150 22 Q170 30 190 70 Q220 110 280 110"/>' +
+          [[30, 110, 'new kid', 'middle', 0, 18], [104, 80, 'silence', 'end', -10, 4], [150, 22, 'argument', 'middle', 0, -8], [196, 80, 'apology', 'start', 10, 4], [270, 110, 'three friends', 'middle', 0, 18]].map(function (t) { return '<circle class="a" cx="' + t[0] + '" cy="' + t[1] + '" r="4"/><text class="n" x="' + (t[0] + t[4]) + '" y="' + (t[1] + t[5]) + '" text-anchor="' + t[3] + '">' + t[2] + '</text>'; }).join(''),
+        tall: 134, cap: 'The plot of the story rises to a turning point.' },
+      'On Friday, Mateo found him by the bike racks. “What is going on with you?”',
+      '“You <b>replaced</b> me,” Ethan said. The words came out louder than he meant.',
+      'Mateo stared. “Replaced you? I wanted you to like her too. She was alone. Remember how you felt at hockey camp, when you didn’t know anyone?”',
+      'Ethan did remember. He remembered eating alone on the first day, until a boy with a gap in his teeth sat down beside him. That boy had been Mateo.',
+      { h: 'Making room' },
+      'On Monday, Ethan walked into the lunch room and sat across from Priya. He took a deep breath. “Sorry I’ve been weird,” he said. “I guess I was <b>jealous</b>.”',
+      'Priya shrugged and smiled. “I get it. I miss my old friends too.” She slid a cracker across the table. “Want one?”',
+      'At practice that week, Priya showed Ethan how a goalie watches the shooter’s eyes, not the stick. Ethan showed her the trick shot he and Mateo had invented in Grade 3. Mateo just grinned and said, “See? I told you.”',
+      'After that, they took turns sitting by the window. A friendship, Ethan decided, was not like a seat. There was always room for one more.'
+    ],
+    guide: { before: 'Talk about a time someone felt left out. Teach <b>jealous</b>, <b>turning point</b> and <b>apology</b>.',
+      after: 'What could Ethan have done differently in the first week? What makes an apology a good one?' },
+    words: [['jealous', 'upset because you fear losing someone or something to another person'], ['replaced', 'put someone or something in the place of another']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the story?',
+        opts: ['Hockey is fun.', 'Ethan learns that a friendship can make room for a new friend.', 'Priya plays goalie.', 'Lunch is noisy.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the plot line, which event is the turning point?',
+        opts: ['the argument', 'the new kid', 'the silence', 'three friends'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“Something hot and tight in his chest” shows that Ethan feels …',
+        opts: ['jealous and upset', 'hungry', 'sick with a cold', 'excited'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Mateo invite Priya to sit with them?',
+        opts: ['She was alone.', 'Ethan asked him to.', 'She had crackers.', 'The teacher told him.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'The story is told by a narrator outside the story who knows Ethan’s feelings. This is …',
+        opts: ['third person', 'first person', 'a letter', 'a diary'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What is the theme or lesson of the story? Use the last line as evidence.',
+        a: 'Friendship can grow to include new people. The last line says “there was always room for one more.”', look: 'states a theme and uses the last line' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Have you ever felt like Ethan, or like Priya? How does your experience help you understand the story?',
+        a: 'I was the new kid once and felt alone like Priya. It helped me see why Mateo invited her.', look: 'a personal connection that deepens understanding of a character' },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What could you do at your school to help a new student feel included?',
+        a: 'Invite them to sit with my group and show them around the school.', look: 'a kind, realistic action' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-wheelchair-race', subject: 'story', form: 'Short story',
+    title: 'Faster Than Yesterday',
+    deck: 'Amira trains all spring for her first wheelchair race. Winning is not her only goal',
+    hero: {
+      photo: 'g5-wheelchair-racer.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'A racing wheelchair has three wheels and is built for speed.'
+    },
+    body: [
+      'The racing chair was not like Amira’s everyday wheelchair. It was long and low, with two big back wheels tilted inward and a small wheel out front. When she first sat in it, crouched forward with her knees tucked under her, it felt like sitting in a rocket.',
+      '“Push on the rims like you’re punching,” said Coach Julien. “Short and sharp. Then let your hands swing back.”',
+      'Her first try, she wobbled and nearly tipped into the grass. Her second try, she bumped the curb. On her third try, she flew down the track so fast that the wind made her eyes water. She laughed out loud.',
+      { h: 'Training' },
+      'All spring, Amira trained three times a week. Her arms ached. Her hands <b>blistered</b>, so she learned to wear padded gloves. She kept a notebook of her times for 400 metres, one lap of the track.',
+      { fig: '<path class="k" d="M30 10 V130 H290"/>' + [[1, 150], [2, 141], [3, 143], [4, 132], [5, 126], [6, 119]].map(function (p, i) {
+          var x = 30 + p[0] * 40, y = 130 - (160 - p[1]) * 3; return '<rect class="' + (i === 5 ? 'a' : 'k') + '" x="' + (x - 12) + '" y="' + y + '" width="24" height="' + (130 - y) + '"/><text class="n" x="' + x + '" y="' + (y - 4) + '" text-anchor="middle">' + p[1] + '</text><text class="n" x="' + x + '" y="146" text-anchor="middle">wk ' + p[0] + '</text>'; }).join('') +
+          '<text class="n" x="26" y="20" text-anchor="end">sec</text>',
+        tall: 152, cap: 'Amira’s 400 m times, in seconds, over six weeks.' },
+      'Some weeks her time got worse. Week 3 was slower than week 2, and she nearly quit. But Coach Julien pointed at her notebook. “Look at the whole page, not one line,” he said. “You are getting faster.”',
+      { h: 'Race day' },
+      'The provincial meet was in June. Amira lined up beside five other racers. One of them, a girl named Jo, had won last year. Amira’s heart thumped.',
+      'The starter fired. Amira pushed hard and short, hard and short. Jo pulled ahead at the curve. Amira dug in on the straightaway, arms burning, and crossed the line in second place.',
+      'She checked the board. 1:56. One hundred sixteen seconds, three faster than her best.',
+      'Jo rolled over and held out a fist. “Nice finish,” she said. “Next year, you’ll catch me.”',
+      'Her mother ran down from the stands, waving the notebook over her head. Coach Julien was right behind her. “Week one, 150 seconds,” he said. “Today, 116. Do you know how far you have come?”',
+      'Amira bumped her fist. She was not disappointed. She had not come to beat Jo. She had come to beat the girl in her notebook, and she had. She was <b>determined</b> to keep going.'
+    ],
+    guide: { before: 'Explain that wheelchair racing is a Paralympic sport. Teach <b>determined</b>, <b>rim</b> and <b>provincial</b>.',
+      after: 'Why was Amira not disappointed with second place? What goal could you track over time?' },
+    words: [['blistered', 'got sore bubbles of skin from rubbing'], ['determined', 'having made a firm decision to keep trying']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the story?',
+        opts: ['Racing chairs have three wheels.', 'Amira trains hard and races to beat her own best time.', 'Jo always wins.', 'Gloves prevent blisters.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. In which week was Amira slower than the week before?',
+        opts: ['week 3', 'week 2', 'week 5', 'week 6'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: '“It felt like sitting in a rocket.” This simile shows the chair is …',
+        opts: ['fast and exciting', 'heavy', 'old', 'broken'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'What did the coach mean by “Look at the whole page, not one line”?',
+        opts: ['Look at the overall trend.', 'Read more books.', 'Write neater.', 'Turn the page.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“Short and sharp.” Why is this a sentence fragment?',
+        opts: ['It has no subject or verb.', 'It is too long.', 'It has no capital.', 'It is a question.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'How much faster was Amira on race day than in week 1? Show your thinking.',
+        a: 'In week 1 she took 150 seconds. On race day she took 116 seconds. 150 − 116 = 34 seconds faster.', look: 'uses the graph and the race time to subtract correctly' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Jo says, “Next year, you’ll catch me.” What does this show about Jo’s character?',
+        a: 'Jo is a good sport. She is kind and respects Amira as a racer.', look: 'names a trait and links it to Jo’s words' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Before the race, did you predict Amira would win? What clue made you think so?',
+        a: 'I predicted she would come second because Jo had won last year and seemed strong.', look: 'a prediction with a clue from the story' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-heron-fable', subject: 'story', form: 'Fable',
+    title: 'The Heron and the Muskrat',
+    deck: 'A proud heron and a patient muskrat learn who is really wise in this original fable',
+    hero: {
+      photo: 'g5-heron.jpg', credit: 'CREDIT', focus: '50% 40%',
+      tall: 220,
+      cap: 'A great blue heron stands still in a marsh, waiting for a fish.'
+    },
+    body: [
+      'At the edge of a wide marsh lived a great blue heron who believed he was the wisest creature in the world. He stood on one leg for hours, perfectly still, and the other animals assumed he was thinking deep thoughts. The heron did nothing to correct them.',
+      'In the same marsh lived a muskrat, small and brown and always busy. All summer, she gathered reeds and cattails and mud. Bit by bit, she built a round <b>lodge</b> in the shallow water.',
+      '“Why do you work so hard?” the heron asked one day, looking down his long beak. “Look at me. I stand still, and food comes to me. That is wisdom.”',
+      '“Winter is coming,” said the muskrat, and kept working.',
+      { fig: '<path class="d" d="M10 120 H290"/>' + D.ripple(14, 286, 128, 't') +
+          '<path class="k" d="M160 120 Q200 50 240 120"/><path class="t" d="M170 110 L230 110 M176 96 L224 96 M186 82 L214 82"/>' +
+          '<path class="k" d="M60 120 V70 M60 70 L70 40 M70 40 Q78 30 92 36"/>' +
+          D.label(20, 30, 'heron') + D.label(150, 30, 'muskrat lodge: reeds and mud'),
+        tall: 140, cap: 'A muskrat lodge rises above the water of the marsh.' },
+      { h: 'The first frost' },
+      'The heron laughed. “Winter is a long way off. Besides, I am too clever to be caught by the cold.”',
+      'Autumn came. The leaves turned red and gold and fell into the water. The other herons flew south, calling to him to join them. But the heron was enjoying the quiet. “I will leave when I decide,” he said.',
+      'One morning, he woke to find the marsh edged with ice. The fish had gone deep. His feet were stiff and cold. Snow began to fall, thick and fast, and the wind swept across the frozen reeds.',
+      'From inside her warm lodge, the muskrat heard him shivering. She poked her head out of the snow. “There is room for you to rest out of the wind tonight,” she said. “Tomorrow, fly south while you still can.”',
+      { h: 'The lesson' },
+      'All night the wind howled, and the snow piled higher. The heron listened to it from the shelter of the lodge, feeling small for the first time in his life. He thought about all the hours he had spent standing still, admiring himself, while the muskrat worked.',
+      'The heron, <b>humbled</b>, crouched in the shelter of the lodge. In the morning, he spread his great wings and flew south. He never again mistook standing still for being wise.',
+      { box: 'Moral', text: 'Looking wise is not the same as being wise. Prepare today for tomorrow.' }
+    ],
+    guide: { before: 'Explain that a fable is a short story, usually with animals, that teaches a lesson called a moral. Teach <b>humbled</b>, <b>lodge</b> and <b>moral</b>.',
+      after: 'Which other stories you know have a similar lesson? How is this fable like or unlike them?' },
+    words: [['lodge', 'a muskrat’s or beaver’s home of sticks, reeds and mud'], ['humbled', 'made to feel less proud']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the moral of the fable?',
+        opts: ['Herons are tall.', 'Looking wise is not the same as being wise; prepare for the future.', 'Muskrats like mud.', 'Winter is cold.'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which features show this text is a fable?',
+        opts: ['animal characters and a moral', 'headings and a chart', 'a date and a greeting', 'rhyme and rhythm'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the other animals think the heron was wise?',
+        opts: ['He stood still for hours.', 'He read books.', 'He built a lodge.', 'He gave advice.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the two characters.', cols: ['', 'Heron', 'Muskrat'],
+        rows: [['What they did all summer', null, null], ['One word to describe them', null, null]],
+        a: [[null, 'stood still and boasted', 'built a lodge'], [null, 'proud', 'hard-working (or kind)']] },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>humbled</b>, what does the ending <b>-ed</b> tell you?',
+        opts: ['It already happened.', 'It will happen.', 'It means more than one.', 'It means not.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: '“Looking down his long beak” suggests the heron feels …',
+        opts: ['better than the muskrat', 'scared', 'sleepy', 'lost'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Was the muskrat kind to help the heron after he laughed at her? Explain.',
+        a: 'Yes. She could have ignored him, but she gave him shelter and good advice, which shows kindness and forgiveness.', look: 'a judgment supported by the muskrat’s actions' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Why do you think people have told fables for thousands of years?',
+        a: 'Fables teach lessons in a short, memorable way, so people of all ages can remember and share them.', look: 'a thoughtful purpose for fables' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-library-letter', subject: 'social', form: 'Letter to the editor',
+    title: 'Keep Our Library Open',
+    deck: 'A Grade 5 student writes to the local newspaper about a plan to cut library hours',
+    plain: true,
+    hero: {
+      photo: 'g5-library.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A public library reading room. Libraries are run by local governments.'
+    },
+    body: [
+      'To the <b>Editor</b>,',
+      'My name is Kiran Dhillon, and I am in Grade 5 at Maple Ridge Public School. Last week, I read in your newspaper that the town council wants to close the Elm Street library branch on Saturdays and Sundays to save money. I am writing to ask the council to change its mind.',
+      'First, weekends are the only time many families can visit. My parents both work during the week. On Saturdays, we walk to the library together. My little brother goes to story time, my mother uses the computers to look for a better job, and I borrow a stack of books. If the library closes on weekends, all of that stops.',
+      { fig: '<path class="k" d="M30 10 V130 H290"/>' + [['Mon', 40], ['Tue', 46], ['Wed', 52], ['Thu', 48], ['Fri', 60], ['Sat', 120], ['Sun', 96]].map(function (d, i) {
+          var x = 50 + i * 36, h = d[1] * 0.9; return '<rect class="' + (i > 4 ? 'a' : 'k') + '" x="' + (x - 11) + '" y="' + (130 - h) + '" width="22" height="' + h + '"/><text class="n" x="' + x + '" y="' + (126 - h) + '" text-anchor="middle">' + d[1] + '</text><text class="n" x="' + x + '" y="146" text-anchor="middle">' + d[0] + '</text>'; }).join(''),
+        tall: 152, cap: 'Average visitors each hour at the Elm Street branch (town report).' },
+      'Second, the town’s own report shows that weekends are the busiest days. The graph above shows that more than twice as many people visit each hour on Saturday as on Monday. Closing on the busiest days does not make sense.',
+      'Third, the library is more than books. It is a warm, safe place where anyone can go for free. Seniors read the newspaper there. Teenagers do homework. Newcomers to Canada practise English in conversation groups. Not everyone has a computer or internet at home, but everyone can use the library.',
+      'Some people say the town must save money, and I understand that. But there are other ways. The library could close earlier on Mondays, when it is quietest. Volunteers could help with some jobs. Families could also hold a fundraiser.',
+      'I asked the librarian, Ms. Ferreira, what she thinks. She told me that on Saturday mornings there is often a line at the door before the library even opens. She said people come for books, but they also come to see each other. For some seniors who live alone, it is the only place they visit all week.',
+      'A library is one of the few places that is open to everyone, rich or poor, young or old. Please keep the Elm Street branch open on weekends. I hope the council will listen to the people it <b>represents</b>.',
+      'Sincerely,<br>Kiran Dhillon, age 10'
+    ],
+    guide: { before: 'Explain that a letter to the editor is an opinion sent to a newspaper for others to read. Teach <b>editor</b>, <b>represents</b> and <b>opinion</b>.',
+      after: 'Which of Kiran’s reasons is strongest? What would you write about in a letter to the editor?' },
+    words: [['editor', 'the person in charge of what goes into a newspaper'], ['represents', 'speaks or acts for other people']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is Kiran’s main opinion?',
+        opts: ['Libraries are old.', 'The Elm Street library should stay open on weekends.', 'The council should save money.', 'Kiran likes story time.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'List Kiran’s three reasons.', cols: ['Reason', 'In your own words'],
+        rows: [['First', null], ['Second', null], ['Third', null]],
+        a: [[null, 'Weekends are the only time many families can go.'], [null, 'Weekends are the busiest days.'], [null, 'The library is a free, safe place for everyone.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. Which day is the quietest?',
+        opts: ['Monday', 'Saturday', 'Friday', 'Sunday'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does Kiran use the words First, Second and Third?',
+        opts: ['to make the reasons easy to follow', 'to count books', 'to show the days', 'to end the letter'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does Kiran mention the people who say the town must save money?',
+        opts: ['to answer the other side fairly', 'to agree with the council', 'to change the topic', 'to make a joke'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'In a letter, which part comes right before the writer’s name?',
+        opts: ['the closing, Sincerely', 'the greeting', 'the date', 'the first reason'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Kiran says the library is “open to everyone.” Which groups of people does Kiran name? Why does this matter?',
+        a: 'Seniors, teenagers, newcomers and people without computers. It shows the library helps people who might be left out otherwise.', look: 'names groups and links them to fairness or inclusion' },
+      { k: 'lines', code: 'A2.6', n: 3, q: 'Is Kiran’s letter convincing? Explain what makes it strong or weak.',
+        a: 'Yes. Kiran uses a personal story, numbers from the town’s report and offers other ways to save money.', look: 'evaluates the letter with specific features' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sugar-bush', subject: 'science', form: 'Interview',
+    title: 'Sweet Science in the Sugar Bush',
+    deck: 'A maple syrup maker explains how sap becomes syrup, and why spring weather matters',
+    hero: {
+      photo: 'g5-maple-taps.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'Sap drips from a tap into a bucket on a maple tree in early spring.'
+    },
+    body: [
+      'Every March, Rose Peltier taps 600 maple trees on her family’s land near Wiikwemkoong on Manitoulin Island. We talked with her in her sugar shack, where steam rose from a long metal pan.',
+      { h: 'When does sap start to run?' },
+      '“It all depends on the weather. You need nights below freezing and days above freezing. When it warms up in the day, pressure builds inside the tree and pushes the <b>sap</b> out through the tap. At night, the tree pulls water up from the roots. That freeze and thaw is what makes it run. The season only lasts four to six weeks.”',
+      { h: 'What does sap taste like?' },
+      '“Like water with a hint of sugar. It is about 98% water. That’s why it takes about 40 litres of sap to make just one litre of syrup.”',
+      { fig: '<rect class="k" x="20" y="20" width="110" height="110" rx="4"/>' + [0, 1, 2, 3].map(function (r) { var o = ''; for (var c = 0; c < 10; c++) o += '<circle class="t" cx="' + (31 + c * 10) + '" cy="' + (36 + r * 26) + '" r="4"/>'; return o; }).join('') +
+          D.arrow(144, 75, 196, 75, 'a') + '<rect class="a" x="210" y="62" width="26" height="26" rx="3"/>' +
+          D.label(20, 150, '40 L of sap') + D.label(200, 110, '1 L of syrup') + D.label(150, 64, 'boil'),
+        tall: 156, cap: 'Most of the sap boils away as steam.' },
+      { h: 'How do you turn it into syrup?' },
+      '“We boil it. As the sap boils, the water <b>evaporates</b> and turns into steam, and the sugar stays behind. The sap gets thicker and darker and sweeter. When it reaches 104 °C, about 4 degrees above boiling water, it’s syrup. If you keep boiling, you can make maple taffy or sugar.”',
+      { h: 'Who first made maple syrup?' },
+      '“Our people did. The Anishinaabe and other First Nations were making maple sugar long before Europeans came. They cut the bark, caught the sap in birchbark containers and boiled it with hot stones. Maple sugar was an important food that could be stored all year. My grandmother taught me the teachings and the songs that go with the sugar bush. I teach them to my grandchildren now.”',
+      { h: 'Is the season changing?' },
+      '“Yes. Springs are unpredictable now. Some years the sap runs early, in February. Some years a warm spell ends the season fast. We pay close attention to the trees. They tell us when it’s time.”',
+      { h: 'What do you love most about it?' },
+      '“The smell of the steam, and the first taste of the year. Everyone in the family comes to help, from the little ones carrying buckets to the elders at the fire. It brings us together after a long winter.”'
+    ],
+    guide: { before: 'Explain that an interview is a conversation where one person asks questions and another answers. Review evaporation. Teach <b>sap</b>, <b>evaporates</b> and <b>sugar bush</b>.',
+      after: 'If you could ask Rose one more question, what would it be?' },
+    words: [['sap', 'the watery liquid inside a tree'], ['evaporates', 'changes from a liquid into a gas']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the interview mostly about?',
+        opts: ['Manitoulin Island', 'how maple syrup is made, its history and how weather affects it', 'buckets', 'steam engines'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'In this interview, what are the headings?',
+        opts: ['the interviewer’s questions', 'Rose’s answers', 'captions', 'the title'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does sap need freezing nights and warm days?',
+        opts: ['The freeze and thaw make it flow.', 'Cold sap is sweeter.', 'The tree sleeps at night.', 'Warm days melt the buckets.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How much sap makes 2 L of syrup?',
+        opts: ['80 L', '40 L', '20 L', '42 L'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Unpredictable</b> means not predictable. What does <b>un-</b> mean?',
+        opts: ['not', 'again', 'before', 'very'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps from sap to syrup.',
+        items: ['Tap the tree.', 'Collect the sap.', 'Boil the sap so water evaporates.', 'Stop at 104 °C.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How does Rose keep her family’s traditions alive? Use details.',
+        a: 'She learned teachings and songs of the sugar bush from her grandmother and now teaches them to her grandchildren.', look: 'names passing down teachings and songs' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Is evaporation a physical or chemical change? Explain using the interview.',
+        a: 'Physical. Water changes from a liquid to steam, and the sugar stays sugar. Nothing new is made.', look: 'identifies physical change and explains with the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-water-body', subject: 'health', form: 'Explanation',
+    title: 'Your Body Runs on Water',
+    deck: 'Why water matters to every part of you, and how to tell when you need more',
+    hero: {
+      photo: 'g5-water-bottle.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'A refillable water bottle. Water is the best drink when you are thirsty.'
+    },
+    body: [
+      'More than half of your body is water. It is in your blood, your muscles, your brain and even your bones. You could live for weeks without food, but only a few days without water. Every system in your body needs it to work.',
+      { h: 'What water does' },
+      'Water carries <b>nutrients</b> and oxygen in your blood to every cell. It helps your stomach and intestines digest food. It cushions your joints and protects your brain and spinal cord. It also keeps you cool. When you get hot, you sweat. As the sweat evaporates from your skin, it carries heat away.',
+      { fig: '<path class="k" d="M150 10 Q120 50 120 70 A30 30 0 0 0 180 70 Q180 50 150 10 Z"/>' +
+          [[20, 30, 'carries nutrients'], [20, 80, 'helps digestion'], [20, 130, 'cushions joints'], [200, 30, 'cools by sweating'], [200, 80, 'protects the brain'], [200, 130, 'removes waste']].map(function (l) { return '<text class="n" x="' + l[0] + '" y="' + l[1] + '">' + l[2] + '</text>'; }).join(''),
+        tall: 140, cap: 'Six jobs water does in your body.' },
+      'Water also helps remove waste. Your kidneys filter your blood and send the waste out of your body in urine.',
+      { h: 'Losing water' },
+      'Your body loses water all day long: when you sweat, when you go to the bathroom and even when you breathe out. You need to replace it. If you do not, you can become <b>dehydrated</b>. You may feel tired, grumpy or dizzy, or get a headache. It becomes harder to think clearly and to play sports well.',
+      { box: 'Check your colour', text: 'Pale yellow urine usually means you are drinking enough. Dark yellow means your body needs more water.' },
+      { h: 'How much is enough?' },
+      'Children your age need about six to eight cups of fluid a day. You need more on hot days and when you are active. Some of your water comes from food. Watermelon, cucumbers, oranges and soup are full of it. Plain tap water is safe in most of Canada, costs almost nothing and makes no garbage.',
+      'The best drinks are water and milk. Juice, pop and sports drinks often contain lots of sugar. Drinks with caffeine, such as energy drinks, are not recommended for children.',
+      'An easy habit: carry a refillable water bottle. Drink before you feel very thirsty, because thirst is a sign that your body is already a little low. Have a drink with each meal and snack, and before, during and after exercise. Your brain and body will thank you.'
+    ],
+    guide: { before: 'Explain that systems in the body work together. Teach <b>dehydrated</b>, <b>nutrients</b> and <b>kidneys</b>.',
+      after: 'How much water did you drink yesterday? What is one habit that would help you drink more?' },
+    words: [['nutrients', 'parts of food the body needs to grow and stay healthy'], ['dehydrated', 'not having enough water in the body']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Juice is sweet.', 'Water has many jobs in the body, so we need to drink enough every day.', 'Cucumbers are green.', 'Sweat is wet.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does sweating cool you down?',
+        opts: ['Sweat evaporates and carries heat away.', 'Sweat is cold.', 'It makes you rest.', 'It opens your eyes.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Which job in the diagram is also explained in the paragraph right after it?',
+        opts: ['removes waste', 'cushions joints', 'helps digestion', 'carries nutrients'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Sign', 'What it means'],
+        rows: [['Dark yellow urine', null], ['Feeling dizzy and grumpy', null], ['Pale yellow urine', null]],
+        a: [[null, 'need more water'], [null, 'may be dehydrated'], [null, 'drinking enough']] },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>dehydrated</b>, the prefix <b>de-</b> means …',
+        opts: ['remove or take away', 'again', 'before', 'with'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'The author writes “Your brain and body will thank you.” This is …',
+        opts: ['personification', 'a fact', 'a list', 'a question'], a: 0 },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Plan one change to help you drink enough water on a hockey or soccer day.',
+        a: 'I will fill my bottle before I leave and drink before, during and after the game.', look: 'a specific plan linked to advice in the text' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Why do you think energy drinks are not recommended for children? Use the text and what you know.',
+        a: 'They have caffeine and often sugar, which are not healthy for children, and water hydrates better.', look: 'a reasoned conclusion that combines the text and prior knowledge' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-suspension-bridge', subject: 'tech', form: 'Explanation',
+    title: 'Hanging by a Thread',
+    deck: 'How a suspension bridge holds up a road with cables, towers and a balance of forces',
+    hero: {
+      photo: 'g5-lions-gate.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Lions Gate Bridge in Vancouver, opened in 1938, crosses the entrance to the harbour.'
+    },
+    body: [
+      'How do you cross a wide, deep river where ships need to pass underneath? You cannot build pillars in the middle of the water every few metres. For long spans, engineers often choose a <b>suspension bridge</b>, a bridge whose road hangs from cables.',
+      { h: 'The parts' },
+      'A suspension bridge has two tall towers. Huge main cables are draped over the tops of the towers, from one shore to the other. The ends of the cables are buried deep in giant blocks of concrete on land, called anchorages. Thinner cables, called hangers, drop straight down from the main cables and hold up the road, which is called the deck.',
+      { fig: '<path class="d" d="M0 140 H300"/>' + D.ripple(70, 230, 146, 't') +
+          '<path class="k" d="M80 30 V140 M220 30 V140"/><path class="a" d="M10 110 L80 30 Q150 110 220 30 L290 110"/><path class="k" d="M10 104 H290"/>' +
+          [95, 115, 185, 205].map(function (x) { var y = 30 + 40 * (1 - Math.pow((x - 150) / 70, 2)); return '<path class="t" d="M' + x + ' ' + y + ' V104"/>'; }).join('') +
+          '<rect class="k" x="0" y="108" width="20" height="16"/><rect class="k" x="280" y="108" width="20" height="16"/>' +
+          D.label(84, 18, 'tower') + D.label(122, 50, 'main cable') + D.label(130, 98, 'deck') + D.label(0, 136, 'anchorage'),
+        tall: 152, cap: 'The parts of a suspension bridge.' },
+      { h: 'Pushes and pulls' },
+      'Every structure must handle forces. The weight of the deck and the cars pulls down on the hangers. The hangers pull down on the main cables. This stretching force is called <b>tension</b>. Steel cables are very strong in tension, like a rope in a tug of war.',
+      'The main cables press down hard on the tops of the towers. This squeezing force is called compression. The towers are built of steel or concrete, which are strong in compression. Finally, the ends of the cables pull inward on the anchorages, which are heavy enough to hold them in place.',
+      { box: 'Try it', text: 'Hold a string between two chairs and hang a small bag from the middle. Feel how the string pulls on the chairs. That pull is tension.' },
+      { h: 'Learning from mistakes' },
+      'Engineers also have to think about wind. In 1940, a suspension bridge in the United States twisted in strong wind until it fell into the water. Since then, engineers test models in wind tunnels and design decks that let wind pass through. In Canada, bridges must also handle ice, snow and very cold temperatures, which make steel shrink. In summer, the same steel grows a little longer in the heat. Special joints in the deck, with metal teeth that fit together like fingers, let the bridge stretch and shrink safely.'
+    ],
+    guide: { before: 'Pull on a rope (tension) and squeeze a sponge (compression). Teach <b>suspension</b>, <b>tension</b> and <b>compression</b>.',
+      after: 'Name another structure that uses tension or compression. How does it stay up?' },
+    words: [['suspension bridge', 'a bridge whose road hangs from cables'], ['tension', 'a pulling or stretching force']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Vancouver has bridges.', 'A suspension bridge hangs its deck from cables and balances tension and compression.', 'Wind is strong.', 'Steel is shiny.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the diagram and text to fill in the chart.', cols: ['Part', 'Job'],
+        rows: [['tower', null], [null, 'holds up the deck'], ['anchorage', null]],
+        a: [[null, 'holds up the main cables'], ['hangers', null], [null, 'holds the ends of the main cables']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Which force squeezes the towers?',
+        opts: ['compression', 'tension', 'friction', 'magnetism'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why choose a suspension bridge for a wide river?',
+        opts: ['It needs no pillars in the middle.', 'It is cheapest.', 'It is shortest.', 'It floats.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Cables are “like a rope in a tug of war.” What does this help you understand?',
+        opts: ['tension', 'colour', 'weight', 'height'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“The ends of the cables are buried deep.” Who or what is the subject?',
+        opts: ['The ends of the cables', 'buried', 'deep', 'are'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What did engineers learn from the 1940 bridge collapse? How did it change bridges?',
+        a: 'They learned wind can twist a bridge. Now they test models in wind tunnels and design decks that let wind through.', look: 'the lesson learned and the change in design' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which part of the text was hardest to picture? What helped you understand it?',
+        a: 'I could not picture the anchorages. The diagram and the “Try it” box helped me see how the cables pull.', look: 'names a hard part and a helpful strategy or feature' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-cod', subject: 'history', form: 'Report',
+    title: 'The Fish That Built a Nation',
+    deck: 'Cod drew Europeans across the Atlantic for 500 years, until the fish almost disappeared',
+    hero: {
+      photo: 'g5-cod-drying.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 200,
+      cap: 'Salted cod drying on wooden racks called flakes, in Newfoundland.'
+    },
+    body: [
+      'In 1497, an Italian sailor working for England, Giovanni Caboto, known in English as John Cabot, sailed west across the Atlantic. He landed somewhere on the coast of what is now Newfoundland or Cape Breton. When his crew returned to England, they told an amazing story. The sea was so full of fish that they could catch them by lowering baskets over the side of the ship.',
+      'The fish was cod, and it would shape the history of the east coast for the next 500 years.',
+      { h: 'The Grand Banks' },
+      'Off the coast of Newfoundland lie the Grand Banks, a huge area where the ocean is shallow. Cold water from the Arctic meets warm water from the south, which helps tiny sea life grow. Small fish feed on it, and cod feed on the small fish. For centuries, it was one of the richest fishing grounds on Earth.',
+      { fig: '<path class="k" d="M20 30 Q60 20 80 50 Q90 90 70 120 Q50 140 30 130"/>' + '<ellipse class="h" cx="190" cy="90" rx="70" ry="38"/>' +
+          D.arrow(280, 20, 220, 60, 'a') + D.arrow(280, 150, 230, 116, 'a') +
+          D.label(18, 152, 'Newfoundland') + D.label(150, 94, 'Grand Banks') + D.label(208, 16, 'cold current') + D.label(196, 166, 'warm current'),
+        tall: 170, cap: 'Cold and warm currents meet over the shallow Grand Banks.' },
+      { h: 'Salt and sun' },
+      'Fishing crews from Portugal, Spain, France and England crossed the ocean each summer. Many dried their catch on shore. They split the cod, salted it and laid it on wooden racks to dry in the sun and wind. Dried salt cod lasted for months and was shipped around the world. Settlements grew up in coves along the coast where families fished, salted and dried cod. Children helped too, turning the fish on the flakes and covering them when it rained.',
+      { h: 'The collapse' },
+      'In the 1900s, giant factory ships with huge nets arrived. They caught more fish in an hour than an old fishing boat caught in a season. Cod were taken faster than they could reproduce. By 1992, the cod had almost vanished, and the Government of Canada closed the <b>fishery</b>. About 30 000 people lost their jobs overnight.',
+      { box: 'A slow recovery', text: 'More than 30 years later, cod numbers are growing again, but slowly. Scientists still watch them closely.' },
+      'The story of the cod is a warning. Even something that seems endless can run out if we take too much. Today, fisheries try to be <b>sustainable</b>, catching only as many fish as nature can replace.'
+    ],
+    guide: { before: 'Find Newfoundland and the Grand Banks on a map. Teach <b>fishery</b>, <b>reproduce</b> and <b>sustainable</b>.',
+      after: 'What other resources could run out if people take too much? What can be done?' },
+    words: [['fishery', 'a place or business where fish are caught'], ['sustainable', 'able to continue without using up a resource']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Cabot was Italian.', 'Cod shaped the east coast for centuries, until overfishing nearly wiped them out.', 'Salt is useful.', 'Ships are big.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. Why are the Grand Banks good for fish?',
+        opts: ['Cold and warm currents meet there.', 'They are deep.', 'They are on land.', 'There are no currents.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did fishers salt and dry the cod?',
+        opts: ['so it would last for months', 'to make it taste sweet', 'to make it heavy', 'to sell it fresh'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the causes and effects.', cols: ['Cause', 'Effect'],
+        rows: [['Factory ships caught huge numbers of cod.', null], ['The fishery closed in 1992.', null]],
+        a: [[null, 'Cod were taken faster than they could reproduce and almost vanished.'], [null, 'About 30 000 people lost their jobs.']] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the author begin with the baskets story?',
+        opts: ['to show how many cod there once were', 'to describe baskets', 'to talk about England', 'to explain salt'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The word <b>fishery</b> is built from …',
+        opts: ['fish + -ery (a place or business)', 'fish + -er (a person)', 'fi + shery', 'fishy + ry'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The author calls the cod story “a warning.” What is the warning?',
+        a: 'Even resources that seem endless can run out if we take too much, so we must use them in a sustainable way.', look: 'states the warning in their own words' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'How did you keep track of the events over 500 years? What strategy did you use?',
+        a: 'I used the headings and looked for dates like 1497 and 1992 to make a timeline in my head.', look: 'names a strategy for following time order' }
+    ]
+  });
+
 })();
