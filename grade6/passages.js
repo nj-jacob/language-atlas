@@ -2887,4 +2887,913 @@
         a: 'Yes. The safety reason, because I did not know children burn e-waste and breathe toxic smoke.', look: 'opinion and a reason' }
     ]
   });
+
+  P.add({
+    id: 'g6-ash-borer', subject: 'science', form: 'Report',
+    title: 'A Small Green Invader',
+    deck: 'How a beetle the size of a grain of rice killed millions of trees',
+    hero: {
+      photo: 'g6-emerald-ash-borer.jpg', credit: 'Photo: ShenandoahNPS, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'An emerald ash borer. The adult beetle is about as long as a grain of rice.'
+    },
+    body: [
+      'In 2002, people in Windsor, Ontario, and Detroit, Michigan, noticed that their ash trees were dying. The leaves at the tops thinned out. Long cracks opened in the bark. Within a few years, whole streets of trees were dead. The cause was a shiny green beetle that no one in North America had ever seen before: the emerald ash borer.',
+      { fig: G.flow(['Adult lays eggs in cracks in the bark.', 'Larvae tunnel just under the bark.', 'Tunnels cut off the tree’s water and food.', 'New adults chew out of D-shaped holes.'], { top: 2, bh: 26, gap: 12, hl: 2 }),
+        tall: 146, cap: 'The life cycle of the emerald ash borer, and how it kills a tree.' },
+      { h: 'A stowaway from Asia' },
+      'The emerald ash borer is native to eastern Asia. Scientists think it arrived hidden in wooden packing crates on cargo ships. In Asia, ash trees have defences against it, and birds, wasps and diseases keep it in check. In North America, none of those controls existed. It was an <b>invasive species</b> with nothing to stop it.',
+      { h: 'How it kills' },
+      'The adult beetle does little harm. The danger is its <b>larvae</b>, the young that hatch from its eggs. They tunnel through the thin layer just under the bark, eating as they go. This layer carries water up from the roots and food down from the leaves. When enough tunnels cross it, the tree starves. Most infested trees die within a few years.',
+      'The beetle can fly only a few kilometres on its own. People spread it much farther by moving firewood from place to place. Today, it has killed hundreds of millions of ash trees across North America.',
+      { box: 'Buy it where you burn it', text: 'Moving firewood can carry hidden pests. Buy firewood near where you will use it.' },
+      { h: 'More than trees' },
+      'The loss reaches beyond forests. Ash trees shaded city streets and gave homes to birds and insects. For the Haudenosaunee, Anishinaabe and other Indigenous Peoples, black ash wood has been used for generations to weave baskets. Basket makers now worry that the trees, and the knowledge of how to use them, could disappear.',
+      'People are fighting back. Some valuable trees are protected with an injection made from the seeds of the neem tree, developed in part by Canadian scientists. Researchers have released tiny wasps from Asia that attack the beetle’s eggs and larvae. Seed banks are saving ash seeds so that forests can be <b>replanted</b> one day.'
+    ],
+    guide: { before: 'Find Windsor, Ontario, on a map. Look for ash trees in your neighbourhood if you can. Teach <b>invasive species</b>, <b>larvae</b> and <b>replanted</b>.',
+      after: 'Ask: why did the beetle spread so quickly in North America but not in Asia? Talk about how moving firewood can spread pests.' },
+    words: [['invasive species', 'a living thing from somewhere else that spreads and causes harm'], ['larvae', 'the young of some insects, which look like worms'], ['replanted', 'planted again']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the stages in order.',
+        items: ['Adult lays eggs in the bark.', 'Larvae tunnel under the bark.', 'Tunnels cut off the tree’s water.', 'New adults chew out of the tree.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Larvae</b> are …',
+        opts: ['the young of some insects', 'kinds of trees', 'adult beetles'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How do people spread the beetle?',
+        opts: ['by moving firewood', 'by planting ash', 'by watering trees'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why does the beetle cause much more harm in North America than in Asia?',
+        a: 'In Asia, ash trees have defences, and birds, wasps and diseases control it. In North America, nothing stopped it.', look: 'controls in Asia; none here' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why do Indigenous basket makers worry about the emerald ash borer?',
+        a: 'They use black ash to weave baskets, so if the trees die, the tradition and knowledge could be lost.', look: 'baskets; tradition could be lost' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart.', cols: ['Way people fight back', 'How it helps'],
+        rows: [['Injection from neem seeds', null], ['Tiny wasps from Asia', null], ['Seed banks', null]],
+        a: [[null, 'Protects valuable trees.'], [null, 'Attack the beetle’s eggs and larvae.'], [null, 'Save seeds so forests can be replanted.']] },
+      { k: 'lines', code: 'A2.6', n: 2, q: 'Write a short sign for a campground that would persuade people not to bring firewood from home.',
+        a: 'Stop the bug! Buy firewood here: wood from home can hide beetles that kill trees.', look: 'short, clear, gives a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-batteries', subject: 'science', form: 'Explanation',
+    title: 'Power in Your Pocket',
+    deck: 'How a battery turns chemicals into electricity',
+    hero: {
+      photo: 'g6-batteries.jpg', credit: 'Photo: Multicherry, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'AA batteries. Each one stores chemical energy until it is placed in a circuit.'
+    },
+    body: [
+      'Flashlights, remote controls, phones, watches and toys all run on batteries. A battery is a small, portable store of energy. But it does not hold electricity the way a bottle holds water. Instead, it holds chemicals that can make electricity when the battery is connected into a <b>circuit</b>.',
+      { fig: '<rect class="k" x="20" y="50" width="70" height="34" rx="4"/><rect class="k" x="90" y="60" width="8" height="14"/>' + G.T(40, 72, '−', 'lb', 'middle') + G.T(76, 72, '+', 'lb', 'middle') +
+          '<path class="k" d="M98 67 H191 M209 67 H240 V130 H10 V67 H20"/>' + G.bulb(200, 67) + G.T(200, 52, 'bulb', 'l', 'middle') +
+          D.arrow(80, 130, 120, 130, 'a') + G.T(100, 146, 'electrons flow', 'n', 'middle') + G.T(55, 44, 'battery', 'l', 'middle'),
+        tall: 150, cap: 'A simple circuit. Electrons leave the negative end, pass through the bulb and return to the positive end.' },
+      { h: 'A pile of metal' },
+      'In 1800, an Italian scientist named Alessandro Volta built the first battery. He stacked discs of zinc and copper, separated by pieces of cardboard soaked in salt water. When he touched wires to the top and bottom of the pile, he felt a small shock. Chemical reactions between the metals and the salt water were pushing electrons through the wire. The unit of electrical push, the volt, is named after him.',
+      { h: 'How a battery works' },
+      'Every battery has two ends, called terminals: a negative end, marked with a minus sign, and a positive end, marked with a plus sign. Inside, chemicals react and build up extra electrons at the negative end. When a wire connects the two ends through a bulb or a motor, the electrons flow through the wire toward the positive end. Along the way, they do work: lighting the bulb or turning the motor. The battery has changed <b>chemical energy</b> into electrical energy.',
+      'As the chemicals are used up, the battery runs down. In a rechargeable battery, electricity from a charger pushes the reaction backward, storing energy again. The batteries in phones and electric cars can be recharged hundreds of times.',
+      { box: 'Try it', text: 'Push a copper coin and a galvanized nail into a lemon. Connect several lemons with wires and you can light a tiny LED.' },
+      { h: 'Using batteries wisely' },
+      'Batteries contain metals and chemicals that can harm soil and water, and some can start fires if they are crushed. Never throw them in the garbage. Take them to a battery drop-off box, often found at hardware stores and libraries, so their materials can be <b>recovered</b> and used again.'
+    ],
+    guide: { before: 'Look at a battery and find the + and − ends. Teach <b>circuit</b>, <b>chemical energy</b> and <b>recovered</b>.',
+      after: 'Try the lemon battery if you can. Count the battery-powered things in your home.' },
+    words: [['circuit', 'a complete path that electricity flows around'], ['chemical energy', 'energy stored in substances, released when they react'], ['recovered', 'taken back to be used again']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where do electrons leave the battery?',
+        opts: ['the negative end', 'the positive end', 'the bulb'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>circuit</b> is …',
+        opts: ['a complete path for electricity', 'a kind of battery', 'a metal disc'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain what happens when a wire connects the two ends of a battery through a bulb.',
+        a: 'Electrons flow from the negative end through the wire and the bulb to the positive end, and the bulb lights.', look: 'flow from − to +, bulb lights' },
+      { k: 'choice', code: 'C3.3', q: 'What energy change happens in a battery?',
+        opts: ['chemical energy to electrical energy', 'heat to sound', 'light to chemical', 'sound to light'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict: what would happen to the bulb if you cut the wire? Why?',
+        a: 'The bulb would go out, because the circuit would not be complete and electrons could not flow.', look: 'goes out; path broken' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is compound: two complete ideas joined by <i>and</i>?',
+        opts: ['As the chemicals are used up, the battery runs down.', 'He felt a small shock.', 'Batteries contain metals and chemicals that can harm soil and water, and some can start fires if they are crushed.', 'Never throw them in the garbage.'], a: 2 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Name a device you use that runs on a battery. Is it rechargeable? How do you know?',
+        a: 'My tablet. Yes, because I plug it into a charger at night.', look: 'device and evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-geese', subject: 'science', form: 'Explanation',
+    title: 'Why Geese Fly in a V',
+    deck: 'How a flock shares the work of flying',
+    hero: {
+      photo: 'g6-geese-v.jpg', credit: 'Photo: John Benson, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Canada geese flying in a V. Each bird flies slightly behind and to the side of the one ahead.'
+    },
+    body: [
+      'Every spring and fall, you may hear honking high overhead and look up to see a long, wavering V of Canada geese. They are migrating, flying hundreds or even thousands of kilometres between their nesting grounds and the places where they spend the winter. Why do they fly in that shape?',
+      { fig: [[150, 26], [120, 50], [180, 50], [90, 74], [210, 74], [60, 98], [240, 98]].map(function (p, i) {
+            return '<path class="' + (i === 0 ? 'a' : 'k') + '" d="M' + (p[0] - 14) + ' ' + (p[1] + 4) + ' L' + p[0] + ' ' + (p[1] - 6) + ' L' + (p[0] + 14) + ' ' + (p[1] + 4) + ' L' + p[0] + ' ' + p[1] + ' Z"/>'; }).join('') +
+          '<path class="d" d="M136 30 Q128 40 120 42 M164 30 Q172 40 180 42"/>' + G.T(150, 10, 'leader', 'l', 'middle') +
+          G.T(54, 40, 'rising air', 'n', 'end') + D.arrow(56, 36, 110, 44, 't') + G.T(150, 126, 'direction of flight ↑', 'n', 'middle'),
+        tall: 132, cap: 'Behind each wingtip, air swirls upward. The bird behind rides on that rising air.' },
+      { h: 'Riding the swirl' },
+      'When a bird flaps its wings, it pushes air down. That creates lift and holds the bird up. But at the tip of each wing, some air swirls around and rises upward just behind and beside the bird. A goose flying in the right spot behind another can catch that rising air, called <b>upwash</b>. The upwash gives it a little free lift, so it needs to flap less hard.',
+      'Scientists have tested this idea. When they fitted birds with tiny tracking devices, they found that the birds placed themselves exactly where the rising air was strongest. They even timed their wing beats to match the bird in front, like rowers pulling oars together. Flying this way can save a lot of energy on a long journey.',
+      'Young geese learn the routes by flying with their parents. A family stays together through its first migration, stopping at the same lakes and fields to rest and feed. By the time a young goose is grown, it knows the way and can lead others.',
+      { h: 'Taking turns' },
+      'The bird at the front of the V has the hardest job, because there is no rising air in front of it to help. So geese take turns. When the leader tires, it drops back into the line, and another goose moves up to take its place. In this way, the work is shared across the whole flock. The V also lets each bird see the others clearly, which helps them stay together and avoid collisions.',
+      { box: 'Honking', text: 'Scientists think geese honk in flight to stay in contact and to keep the flock together.' },
+      { h: 'Learning from birds' },
+      'Engineers have studied geese to save fuel. In tests, airplanes flying in a careful V-shape, one behind and to the side of another, have used less fuel. Cyclists in a race do something similar, taking turns at the front of a group. Nature often finds clever ways to work together, and people can <b>imitate</b> them. Teamwork, it turns out, is good <b>physics</b> too.'
+    ],
+    guide: { before: 'Ask: have you ever seen geese flying in a V? Teach <b>upwash</b>, <b>imitate</b> and <b>physics</b> (the science of forces and motion).',
+      after: 'Watch a flock in the fall if you can. Talk about other places where people take turns to share hard work.' },
+    words: [['upwash', 'air that swirls upward behind a bird’s wingtip'], ['imitate', 'to copy'], ['physics', 'the science of forces, energy and motion']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does each goose fly?',
+        opts: ['behind and to the side of the one ahead', 'directly behind the leader', 'in front of the leader'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>imitate</b> is to …',
+        opts: ['copy', 'fly', 'honk'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how flying in a V saves energy for geese.',
+        a: 'Air swirls upward behind each wingtip. A goose behind rides on that rising air, so it does not have to flap as hard.', look: 'rising air; less flapping' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'Why do geese take turns at the front?',
+        a: 'The leader works hardest because it has no rising air to help, so taking turns shares the work.', look: 'leader works hardest; share' },
+      { k: 'choice', code: 'C1.5', q: 'The author compares geese timing their wing beats to …',
+        opts: ['rowers pulling oars together', 'cars on a highway', 'a clock ticking', 'children on a slide'], a: 0 },
+      { k: 'choice', code: 'B3.2', q: 'In “Engineers have studied geese,” what is the verb?',
+        opts: ['have studied', 'Engineers', 'geese', 'studied geese'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What does the author mean by “Teamwork … is good physics too”?',
+        a: 'Working together, like geese in a V, uses the laws of air and motion to save energy.', look: 'teamwork uses science to save energy' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-curiosity', subject: 'science', form: 'Report',
+    title: 'A Robot Geologist on Mars',
+    deck: 'How the Curiosity rover landed, and what it found',
+    hero: {
+      photo: 'g6-curiosity.jpg', credit: 'Photo: semeion.photo, Public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'The Curiosity rover on Mars, in a self-portrait made from many photos taken by its robotic arm.'
+    },
+    body: [
+      'On August 6, 2012, scientists at NASA held their breath. A robot the size of a small car was plunging through the thin air of Mars at more than 20&nbsp;000 kilometres an hour. Radio signals take several minutes to travel between Mars and Earth, so no one could steer it. Everything had to happen on its own, in about seven minutes.',
+      { fig: G.flow(['A heat shield slows the capsule in the air.', 'A huge parachute opens.', 'Rockets slow the descent.', 'A “sky crane” lowers the rover on cables.'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 146, cap: 'The landing steps, from the top of the Martian atmosphere to the ground.' },
+      { h: 'Seven minutes' },
+      'First, a heat shield took the blazing heat of entering the atmosphere. Then a parachute burst open. Next, rockets fired to slow the fall. Finally, a rocket-powered “sky crane” hovered above the ground and lowered the rover gently on cables. When the message “touchdown confirmed” reached Earth, the control room erupted in cheers. Curiosity was safe in Gale Crater.',
+      { h: 'A laboratory on wheels' },
+      'Curiosity is a <b>rover</b>: a robot vehicle that drives across another world. It has six wheels, 17 cameras, a robotic arm with a drill and a laser that can zap rocks to study what they are made of. Instead of solar panels, it is powered by heat from a small nuclear power source, so it can work through dusty seasons. One of its tools, a spectrometer that measures the chemicals in rocks, was built in Canada.',
+      { h: 'Clues to the past' },
+      'Mars today is cold and dry. But Curiosity found rounded pebbles like those in a riverbed, and layers of mud that formed at the bottom of an ancient lake. It drilled into rocks and found the <b>elements</b> that living things need, such as carbon, nitrogen and oxygen. Billions of years ago, Gale Crater could have been a place where tiny life might have survived. Curiosity has not found life, but it showed that Mars was once more like Earth.',
+      { box: 'Still rolling', text: 'Curiosity was built to work for two years. More than a decade later, it is still exploring.' },
+      'The rover has climbed partway up a mountain in the middle of the crater, reading the mountain’s rock layers like the pages of a history book. Each layer tells scientists more about how Mars changed from a wetter world to the dusty planet we see today.'
+    ],
+    guide: { before: 'Find Mars in a picture of the solar system. Teach <b>rover</b> and <b>elements</b>, and the word geologist (a scientist who studies rocks).',
+      after: 'Ask: why couldn’t scientists steer Curiosity during landing? Look at real photos from Curiosity on NASA’s website.' },
+    words: [['rover', 'a robot vehicle that drives across another world'], ['elements', 'the basic substances that everything is made of, such as carbon and oxygen']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the landing steps.',
+        items: ['A heat shield slows the capsule.', 'A parachute opens.', 'Rockets slow the descent.', 'A sky crane lowers the rover.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why could no one steer Curiosity during landing?',
+        opts: ['Signals take minutes to reach Mars.', 'It had no wheels.', 'It was too dark.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>rover</b> is …',
+        opts: ['a robot vehicle on another world', 'a kind of rocket', 'a crater'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What evidence shows that Mars once had water? Give two details.',
+        a: 'Rounded pebbles like those in a riverbed, and layers of mud from an ancient lake.', look: 'pebbles; lake mud' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The rover reads rock layers “like the pages of a history book.” What does this comparison mean?',
+        a: 'Each layer shows a different time in the past, so reading them in order tells the story of Mars.', look: 'layers show time, in order' },
+      { k: 'choice', code: 'C1.1', q: 'In “so it can work through dusty seasons,” what does “it” refer to?',
+        opts: ['Curiosity', 'the nuclear power source', 'Canada', 'the laser'], a: 0 },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'Which helped you most to picture the landing: the diagram or the paragraph? Why?',
+        a: 'The diagram, because it shows each step in a box in order.', look: 'a choice and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-tomatosphere', subject: 'science', form: 'Report',
+    title: 'Seeds from Space',
+    deck: 'How Canadian students tested seeds that travelled to space',
+    hero: {
+      photo: 'g6-tomato-seedlings.jpg', credit: 'Photo: Dwight Sipler from Stow, MA, USA, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'Tomato seedlings. Students compare how many seeds sprout, and how quickly.'
+    },
+    body: [
+      'One day, astronauts travelling to Mars will need to grow their own food. A trip there and back could take more than two years, far too long to carry every meal. But would seeds still grow after a long journey through space? Since 2001, Canadian students have helped scientists find out.',
+      { fig: G.T(4, 10, 'One class’s results: seeds that sprouted (out of 50)', 'n') +
+          G.bars([['Packet A', 41, '41'], ['Packet B', 39, '39']], 50, { x0: 72, top: 24, gap: 32, pad: 30 }) +
+          G.T(4, 102, 'Later, they learned which packet went to space.', 'l'),
+        tall: 108, cap: 'An example of results from one class. The two packets grew about the same.' },
+      { h: 'A blind test' },
+      'In a program called Tomatosphere, classes across Canada receive two packets of tomato seeds, labelled only with letters. One packet has travelled to space, or has been kept in conditions like those in space. The other has stayed on Earth. The students do not know which is which. This is called a <b>blind test</b>. It keeps their expectations from affecting the results, even by accident.',
+      { h: 'Running the experiment' },
+      'Students plant the seeds in trays of soil and keep both trays in the same place, with the same light, water and temperature. Every day, they check and count how many seeds have <b>germinated</b>, or sprouted. They record their data in a table. After a few weeks, they send their results to the scientists, who combine data from thousands of classrooms.',
+      'Students also measure how tall the seedlings grow and notice whether the leaves look healthy. Some classes take photos every day to compare the trays. Careful records matter: if a student forgets to water one tray, the test is no longer fair, and the results cannot be trusted.',
+      'Only then are the students told which packet went to space. Some classes find that the space seeds sprouted a little faster. Others find the opposite. When thousands of results are combined, the differences mostly disappear: the seeds from space grow about as well as seeds from Earth.',
+      { box: 'Why so many classes?', text: 'One class might get unusual results by chance. Data from thousands of classes gives a much more reliable answer.' },
+      { h: 'Real science' },
+      'The program teaches the same steps that real scientists use: ask a question, make a prediction, run a fair test, collect data, and share the results. More than three million Canadian students have taken part. Their careful counting has helped plan how future astronauts might farm on the Moon or Mars. Not bad for a few packets of tomato seeds and a sunny classroom window.'
+    ],
+    guide: { before: 'If possible, sprout a few seeds in a damp paper towel. Teach <b>germinated</b> and <b>blind test</b>.',
+      after: 'Ask: why did the students not know which packet went to space? Plan a small fair test of your own with seeds.' },
+    words: [['blind test', 'a test where people do not know which item is which'], ['germinated', 'began to sprout and grow']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How many seeds from packet A sprouted?',
+        opts: ['41', '39', '50'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A seed that has <b>germinated</b> has …',
+        opts: ['sprouted', 'gone to space', 'dried up'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why don’t students know which packet went to space?',
+        a: 'It is a blind test, so their expectations cannot affect how they treat the seeds or count them.', look: 'blind test; expectations' },
+      { k: 'order', code: 'C1.3', q: 'Number the steps of the experiment in order.',
+        items: ['Plant both packets in trays.', 'Count the sprouts every day.', 'Send the results to scientists.', 'Learn which packet went to space.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do scientists combine data from thousands of classes instead of trusting one?',
+        a: 'One class might get unusual results by chance; many results together give a more reliable answer.', look: 'chance; more reliable' },
+      { k: 'choice', code: 'C2.2', q: 'Who would find this text most useful?',
+        opts: ['a class planning a seed experiment', 'someone buying a car', 'a person learning to swim', 'a chef baking bread'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'What did this passage teach you about how scientists make sure results are fair?',
+        a: 'They keep everything the same, use blind tests and collect lots of data.', look: 'fair test ideas' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-dinosaur-park', subject: 'science', form: 'Report',
+    title: 'Where Dinosaurs Lie',
+    deck: 'Alberta’s badlands, and how bones become fossils',
+    hero: {
+      photo: 'g6-dinosaur-park.jpg', credit: 'Photo: Hirgax, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The badlands of Dinosaur Provincial Park, Alberta. Rain and wind keep uncovering fossils in the soft rock.'
+    },
+    body: [
+      'In southeastern Alberta, the flat prairie suddenly drops away into a maze of bare, striped hills and deep gullies. These are the badlands of Dinosaur Provincial Park. Hardly anything grows on the steep slopes. Yet this dry, rocky place holds one of the richest collections of dinosaur <b>fossils</b> in the world.',
+      { fig: G.flow(['A dinosaur dies near a river.', 'Mud and sand quickly bury the bones.', ['Over millions of years, minerals', 'slowly replace the bone.']], { top: 2, bh: 30, gap: 12, hl: 2 }) +
+          G.flow(['Erosion uncovers the fossil.'], { top: 128, bh: 26 }),
+        tall: 156, cap: 'How a bone becomes a fossil. Only a tiny fraction of animals are ever preserved.' },
+      { h: 'A warm, green world' },
+      'About 76 million years ago, this land looked nothing like it does today. It was a warm, swampy coastal plain beside a shallow sea that stretched across the middle of North America. Rivers wound through forests of ferns and tall trees. Duck-billed dinosaurs grazed in herds, horned dinosaurs browsed the plants, and fierce tyrannosaurs hunted them. Turtles, crocodiles, fish and small mammals lived there too. It was an area of great <b>biodiversity</b>.',
+      { h: 'From bone to stone' },
+      'When animals died near the rivers, floods sometimes buried their bodies quickly in mud and sand. Over millions of years, more layers piled on top and pressed the mud into rock. Water seeping through the ground carried minerals into the bones, which slowly hardened into stone. That is a fossil: the remains or traces of a living thing, preserved in rock.',
+      { h: 'Uncovered by ice and water' },
+      'For a long time, the fossils were hidden deep underground. Then, at the end of the last ice age, about 13&nbsp;000 years ago, rushing meltwater from melting glaciers carved deep valleys into the soft rock. Rain, wind and frost still wear the hills away a little each year. This <b>erosion</b> keeps exposing new bones, so scientists return every summer to search.',
+      { box: 'World Heritage', text: 'Fossils of more than 50 kinds of dinosaurs have been found in the park. It became a UNESCO World Heritage Site in 1979.' },
+      'Hundreds of skeletons from the park are now in museums around the world, including the Royal Tyrrell Museum in nearby Drumheller. Each new find helps scientists understand how ancient ecosystems worked, and how life on Earth has changed over time. Visitors are welcome to look, but collecting fossils without permission is against the law.'
+    ],
+    guide: { before: 'Find Drumheller and Brooks, Alberta, on a map. Teach <b>fossils</b>, <b>biodiversity</b> and <b>erosion</b>.',
+      after: 'Make a quick “fossil” by pressing a shell or leaf into clay. Ask: why are fossils so rare?' },
+    words: [['fossils', 'remains or traces of ancient living things, preserved in rock'], ['biodiversity', 'the variety of living things in a place'], ['erosion', 'the slow wearing away of rock and soil by water, wind or ice']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps from dinosaur to fossil.',
+        items: ['A dinosaur dies near a river.', 'Mud and sand bury the bones.', 'Minerals replace the bone.', 'Erosion uncovers the fossil.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Erosion</b> is …',
+        opts: ['the wearing away of rock', 'a kind of dinosaur', 'a museum'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What carved the valleys of the badlands?',
+        opts: ['meltwater from glaciers', 'dinosaurs', 'farmers'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the land then and now.', cols: ['Feature', '76 million years ago', 'Today'],
+        rows: [['Climate', null, null], ['Plants', null, null]],
+        a: [[null, 'warm and swampy', 'dry'], [null, 'ferns and tall trees', 'hardly anything on the slopes']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do scientists return to the park every summer?',
+        a: 'Erosion keeps wearing the hills away and exposing new bones, so there are new fossils to find each year.', look: 'erosion exposes new fossils' },
+      { k: 'choice', code: 'C1.3', q: 'How is the section “From bone to stone” organized?',
+        opts: ['as a sequence of steps', 'as a comparison of two animals', 'as a problem and solution', 'as a list of museums'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Have you seen a fossil or a dinosaur skeleton? What did it help you understand?',
+        a: 'At the museum I saw a huge skeleton, and it showed me how big dinosaurs really were.', look: 'an experience and what it showed' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-malala', subject: 'social', form: 'Biography',
+    title: 'One Girl, One Pen',
+    deck: 'Malala Yousafzai and the right of every girl to go to school',
+    hero: {
+      photo: 'g6-malala.jpg', credit: 'Photo: DFID - UK Department for International Development, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 220,
+      cap: 'Malala Yousafzai in 2015. She was made an honorary Canadian citizen in 2017.'
+    },
+    body: [
+      'Malala Yousafzai grew up in the Swat Valley of Pakistan, a green region of mountains and rivers. Her father ran a school, and Malala loved learning. But when she was 11 years old, an armed group called the Taliban took control of the valley. They began closing and destroying schools for girls.',
+      { fig: G.time([['1997', 'Born in the Swat Valley, Pakistan'], ['2009', 'Writes an online diary about school'], ['2012', 'Attacked on her school bus'], ['2014', 'Nobel Peace Prize, at age 17'], ['2017', 'Honorary Canadian citizen']], { x: 50, top: 12, gap: 26, hl: 3 }),
+        tall: 124, cap: 'Key moments in Malala’s life.' },
+      { h: 'Speaking up' },
+      'Malala refused to stay silent. Using a pen name to stay safe, she wrote an online diary describing what it was like to be a girl who might lose the chance to learn. Later, she spoke on television and in interviews, saying that girls had a <b>right</b> to education. Her voice became known across Pakistan.',
+      'This made her a target. In October 2012, when she was 15, a gunman stopped her school bus and shot her. She was badly hurt and flown to a hospital in England. Many people feared she would not survive.',
+      'Messages of support poured in from around the world. Children sent cards. Leaders spoke out against the attack. In Pakistan, people marched in the streets carrying signs with her name. After months of operations and therapy, Malala slowly learned to walk and speak clearly again.',
+      { h: 'A louder voice' },
+      'Malala recovered. Instead of making her quiet, the attack made her voice heard around the world. On her 16th birthday, she spoke at the United Nations. “One child, one teacher, one book and one pen can change the world,” she said. With her father, she started a fund that supports girls’ education in many countries.',
+      'In 2014, at age 17, she became the youngest person ever to win the Nobel Peace Prize. In 2017, Canada made her an honorary citizen, and she spoke to Parliament in Ottawa.',
+      { box: 'Still a problem', text: 'Around the world, millions of girls are still out of school because of poverty, war or rules that keep them home.' },
+      { h: 'Why it matters' },
+      'When girls go to school, they usually earn more as adults, stay healthier and raise healthier children. Whole communities benefit. That is why the United Nations lists education as a human right for every child. Malala’s story shows that one young person can help <b>advocate</b> for change, speaking up for others who cannot always speak for themselves.'
+    ],
+    guide: { before: 'Find Pakistan on a map. Teach <b>right</b> (something every person should have), <b>advocate</b> and the word honorary.',
+      after: 'Ask: what does Malala’s quote mean to you? Talk about why education is a right, not a privilege.' },
+    words: [['right', 'something every person should be able to have or do'], ['advocate', 'to speak up publicly for a cause or for others']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. How old was Malala when she won the Nobel Peace Prize?',
+        opts: ['17', '15', '11'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>advocate</b> is to …',
+        opts: ['speak up for a cause', 'stay silent', 'travel far'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did Malala use a pen name for her diary?',
+        a: 'To stay safe, because speaking up for girls’ education was dangerous where the Taliban had control.', look: 'safety; danger' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Explain Malala’s words: “One child, one teacher, one book and one pen can change the world.”',
+        a: 'Education is powerful; even one person who learns can make a big difference.', look: 'education and one person’s power' },
+      { k: 'choice', code: 'C3.3', q: 'According to the text, how do communities benefit when girls go to school?',
+        opts: ['Girls earn more and families are healthier.', 'Schools close sooner.', 'Fewer teachers are needed.', 'Books become cheaper.'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why are quotation marks used around Malala’s words at the UN?',
+        opts: ['They show her exact words.', 'They show a title.', 'They show a list.', 'They show a question.'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'What is one thing you could speak up about at your school or in your community?',
+        a: 'More books in our library in different languages.', look: 'a cause' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-lemon-creek', subject: 'history', form: 'Report',
+    title: 'Taken from the Coast',
+    deck: 'Japanese Canadians in the Second World War, and the long road to an apology',
+    hero: {
+      photo: 'g6-lemon-creek.jpg', credit: 'Photo: Unknown, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Lemon Creek internment camp in the interior of British Columbia, where Japanese Canadian families were sent.'
+    },
+    body: [
+      'In 1941, about 22&nbsp;000 people of Japanese ancestry lived in British Columbia, most of them along the coast. They ran fishing boats, farms and shops. Most were born in Canada or had become Canadian citizens. Then, on December 7, 1941, Japan attacked the United States at Pearl Harbor, and Canada went to war with Japan. Within weeks, their lives were turned upside down.',
+      { fig: G.time([['1941', 'Japan attacks Pearl Harbor'], ['1942', 'Families removed from the coast'], ['1943', 'Their property is sold'], ['1949', 'Right to vote; may return to coast'], ['1988', 'Apology and redress']], { x: 50, top: 12, gap: 26, hl: 1 }),
+        tall: 124, cap: 'The removal of Japanese Canadians, and the redress that came decades later.' },
+      { h: 'Forced to leave' },
+      'The Canadian government said, without evidence, that Japanese Canadians might help the enemy. In 1942, it ordered all of them to leave the coast. Fishing boats were taken away. Families were given little warning and could bring only what they could carry. Many were first held in barns at a fairground in Vancouver. Then they were sent to crowded camps in remote mountain towns, or to work on sugar beet farms on the Prairies.',
+      'The camps were not prisons with walls, but people could not leave. Some families lived in tents or in thin wooden shacks through cold mountain winters. Fathers were often separated from their families. No Japanese Canadian was ever charged with helping the enemy.',
+      { h: 'Losing everything' },
+      'In 1943, the government sold the homes, farms, boats and belongings that families had left behind, without their permission. The money was used to pay for the camps. After the war ended, Japanese Canadians were told to move east of the Rocky Mountains or go to Japan, a country many had never seen. Only in 1949 were they allowed to vote and to return to the coast.',
+      { box: 'A child in the camps', text: 'Raymond Moriyama was a boy in the camps. He grew up to be a famous architect who designed the Ontario Science Centre.' },
+      { h: 'Redress' },
+      'Japanese Canadians spent decades asking the government to admit that it had done wrong. In 1988, Prime Minister Brian Mulroney made a formal apology in the House of Commons. The government also offered <b>redress</b>: money for each survivor and funds for the community. The story is now taught as a warning about what can happen when fear and <b>prejudice</b> take away people’s rights.'
+    ],
+    guide: { before: 'Find Vancouver and the interior of British Columbia on a map. Teach <b>prejudice</b> and <b>redress</b>. This is a hard history; read it calmly.',
+      after: 'Ask: why do you think it took so long for the government to apologize? How can people stand up against prejudice today?' },
+    words: [['prejudice', 'an unfair opinion about people formed without knowing them, often because of their race'], ['redress', 'making up for a wrong, often with an apology and payment']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When were Japanese Canadians allowed to vote?',
+        opts: ['1949', '1942', '1988'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Redress</b> means …',
+        opts: ['making up for a wrong', 'getting dressed again', 'moving to the coast'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Give two examples of how Japanese Canadians were treated unfairly.',
+        a: 'They were forced to leave the coast and live in camps, and their homes and boats were sold without permission.', look: 'two examples' },
+      { k: 'choice', code: 'C3.2', q: 'Why does the author include “No Japanese Canadian was ever charged with helping the enemy”?',
+        opts: ['to show the government’s fears were not based on evidence', 'to describe the camps', 'to explain Pearl Harbor', 'to list jobs'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Fill in the cause and effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['Japan attacked Pearl Harbor.', null], [null, 'In 1988, the government apologized and offered redress.']],
+        a: [[null, 'Japanese Canadians were ordered to leave the coast.'], ['Japanese Canadians asked for justice for decades.', null]] },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What warning does the author say this story gives?',
+        a: 'Fear and prejudice can take away people’s rights.', look: 'fear, prejudice, rights' },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'How has this text changed what you think about how Canada treated people during wars?',
+        a: 'I thought Canada always treated people fairly, but this shows citizens lost their rights because of fear.', look: 'a change in thinking' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-birchtown', subject: 'history', form: 'Report',
+    title: 'The Promise of Birchtown',
+    deck: 'Black Loyalists who came to Nova Scotia looking for freedom and land',
+    hero: {
+      photo: 'g6-birchtown.jpg', credit: 'Photo: Madereugeneandrew, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A heritage trail sign at Birchtown, Nova Scotia, once the largest free Black community in North America.'
+    },
+    body: [
+      'In 1783, the American Revolution ended. The thirteen colonies had won independence from Britain. Among the thousands of people who left the new United States were about 3&nbsp;000 Black <b>Loyalists</b>. Many had escaped slavery and fought for the British, who had promised them freedom and land in return. Now British ships carried them north to Nova Scotia.',
+      { fig: '<path class="k" d="M20 20 H120 V110 H20 Z"/>' + G.T(70, 60, 'New York', 'lb', 'middle') + G.T(70, 76, '1783', 'n', 'middle') +
+          D.arrow(124, 64, 176, 64, 'a') + '<path class="k" d="M180 20 H280 V110 H180 Z"/>' + G.T(230, 52, 'Birchtown,', 'lb', 'middle') + G.T(230, 68, 'Nova Scotia', 'lb', 'middle') + G.T(230, 84, '1783–1784', 'n', 'middle') +
+          D.arrow(230, 114, 230, 136, 'a') + G.T(230, 150, 'Some leave for Sierra Leone, 1792', 'l', 'middle'),
+        tall: 156, cap: 'The Black Loyalists’ journeys.' },
+      { h: 'A hard beginning' },
+      'About 1&nbsp;500 Black Loyalists settled at Birchtown, near the town of Shelburne. For a short time, it was the largest community of free Black people in North America. But the promise of land was only partly kept. White Loyalists received their land first, and the best of it. Many Black families waited years for land, received small, rocky lots, or got none at all.',
+      'The first winter was brutal. Some families survived by building pit houses: holes dug into the ground and covered with a roof of logs and branches. To earn money, many worked for low wages in Shelburne, building roads and houses. In 1784, white soldiers angry about losing jobs attacked Black residents and destroyed their homes. It was one of the first race riots in North America.',
+      { h: 'A new journey' },
+      'Life stayed hard. In 1792, a Black Loyalist named Thomas Peters travelled to London to complain about the broken promises. As a result, nearly 1&nbsp;200 Black Loyalists left Nova Scotia on 15 ships for Sierra Leone, in West Africa. There, they helped found the city of Freetown.',
+      { box: 'A record of names', text: 'British officers kept a ledger listing each Black Loyalist who sailed from New York. Today, families use it to trace their ancestors.' },
+      { h: 'Remembered' },
+      'Others stayed in Nova Scotia, and their descendants still live there today. In 2015, the Black Loyalist Heritage Centre opened at Birchtown. Its museum tells the story of people who were promised freedom, faced <b>discrimination</b> and still built communities, churches and schools. Their <b>resilience</b> is an important part of Canada’s history.'
+    ],
+    guide: { before: 'Find New York, Nova Scotia and Sierra Leone on a map. Teach <b>Loyalists</b>, <b>discrimination</b> and <b>resilience</b>.',
+      after: 'Ask: how were the promises to Black Loyalists broken? Why is it important to remember stories like this?' },
+    words: [['Loyalists', 'people who stayed loyal to Britain during the American Revolution'], ['discrimination', 'unfair treatment of people because of who they are'], ['resilience', 'the strength to keep going after hard times']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where did some Black Loyalists go in 1792?',
+        opts: ['Sierra Leone', 'New York', 'London'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Resilience</b> is …',
+        opts: ['the strength to keep going', 'a type of house', 'a ship'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain how the promise of land was broken.',
+        a: 'White Loyalists got land first and the best of it; many Black families waited years, got rocky lots or none at all.', look: 'waited; poor land; none' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'What was a pit house, and why did families build them?',
+        a: 'A hole dug into the ground with a roof of logs and branches; they needed shelter to survive the first winter.', look: 'what it was and why' },
+      { k: 'choice', code: 'C1.3', q: 'Which cause led to the 1792 journey to Sierra Leone?',
+        opts: ['Thomas Peters complained in London about broken promises.', 'A storm destroyed Birchtown.', 'The museum opened.', 'Soldiers found gold.'], a: 0 },
+      { k: 'choice', code: 'C2.2', q: 'Why might a Black Nova Scotian family visit the Heritage Centre?',
+        opts: ['to learn about and trace their ancestors', 'to buy a ship', 'to fish', 'to see dinosaurs'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What does the author want readers to understand about the Black Loyalists?',
+        a: 'They faced broken promises and discrimination but still built communities, and their story matters.', look: 'hardship and resilience' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-nunavut', subject: 'social', form: 'Report',
+    title: 'Our Land: Nunavut',
+    deck: 'How Canada’s newest territory was created, and how it governs',
+    hero: {
+      photo: 'g6-nunavut-assembly.jpg', credit: 'Photo: ADialla, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Legislative Assembly of Nunavut in Iqaluit, where the territory’s laws are made.'
+    },
+    body: [
+      'On April 1, 1999, the map of Canada changed. A huge area of the Northwest Territories became a new territory called Nunavut, which means “our land” in Inuktitut. It was the first major change to Canada’s map since Newfoundland joined in 1949.',
+      { fig: G.T(4, 10, 'Area in square kilometres', 'n') +
+          G.bars([['Nunavut', 2093, '2 093 190'], ['Quebec', 1542, '1 542 056'], ['Ontario', 1076, '1 076 395']], 2093, { x0: 70, top: 22, gap: 28, pad: 66, hl: 0 }),
+        tall: 104, cap: 'Nunavut is Canada’s largest province or territory, about one-fifth of the country.' },
+      { h: 'A long negotiation' },
+      'Inuit have lived in the Arctic for thousands of years. But for most of Canada’s history, decisions about their land were made in faraway capitals. Starting in the 1970s, Inuit leaders began <b>negotiating</b> with the Canadian government for the right to own and manage their land. After about 20 years of talks, they signed the Nunavut Land Claims Agreement in 1993. It gave Inuit ownership of a large part of the land and created the new territory six years later.',
+      { h: 'A different kind of government' },
+      'About 40&nbsp;000 people live in Nunavut, and most of them are Inuit. The capital is Iqaluit, on Baffin Island. Nunavut’s government works differently from most others in Canada. There are no political parties. Instead, members are elected as individuals and make decisions by <b>consensus</b>: they discuss an issue until most can agree, rather than voting along party lines. This reflects the Inuit tradition of working things out together.',
+      'Meetings of the Legislative Assembly are held in Inuktitut, English and other languages, with interpreters so everyone can follow. Inside the building, the members sit in a circle rather than facing each other in two rows, as they do in Ottawa. The seats are covered in sealskin.',
+      'Inuit knowledge and values, called Inuit Qaujimajatuqangit, guide the government’s work. These include respecting others, serving the community, making decisions through discussion, and caring for the land, animals and environment.',
+      { box: 'Three languages', text: 'Nunavut’s official languages are Inuktut (Inuktitut and Inuinnaqtun), English and French.' },
+      { h: 'Challenges and strengths' },
+      'Nunavut faces real challenges. There are no roads linking most of its 25 communities, so food and supplies arrive by plane or by ship in summer, and prices are very high. Housing is scarce. But the territory also has a young, growing population, strong traditions and a government that speaks its people’s language. For many Inuit, Nunavut means having a real voice in their own future.'
+    ],
+    guide: { before: 'Find Nunavut, Iqaluit and Baffin Island on a map. Teach <b>negotiating</b> and <b>consensus</b>.',
+      after: 'Try making a family decision by consensus. Ask: how is it different from voting?' },
+    words: [['negotiating', 'discussing to reach an agreement'], ['consensus', 'agreement reached by most people after discussion']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which is largest?',
+        opts: ['Nunavut', 'Quebec', 'Ontario'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A decision by <b>consensus</b> is made …',
+        opts: ['by discussing until most agree', 'by one leader alone', 'by flipping a coin'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How is Nunavut’s government different from most others in Canada?',
+        a: 'There are no political parties; members make decisions by consensus after discussion.', look: 'no parties; consensus' },
+      { k: 'order', code: 'C1.3', q: 'Number the events in order.',
+        items: ['Inuit leaders begin negotiating.', 'The Land Claims Agreement is signed.', 'Nunavut becomes a territory.'], show: [2, 0, 1] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two Inuit values that guide Nunavut’s government.',
+        a: 'Respecting others and caring for the land, animals and environment.', look: 'two values from the text' },
+      { k: 'choice', code: 'C3.2', q: 'Why are prices so high in most Nunavut communities?',
+        opts: ['Supplies must come by plane or ship.', 'There are too many stores.', 'People do not like shopping.', 'There are many roads.'], a: 0 },
+      { k: 'lines', code: 'C1.1', n: 2, q: 'In the last sentence, what does “their own future” refer to? Explain.',
+        a: 'The future of Inuit, because Nunavut lets them make decisions about their land and lives.', look: 'Inuit’s future' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-kenojuak', subject: 'arts', form: 'Biography',
+    title: 'The Artist of Kinngait',
+    deck: 'Kenojuak Ashevak, the Inuit artist whose owl flew around the world',
+    hero: {
+      photo: 'g6-kenojuak.jpg', credit: 'Photo: Judith Eglington, CC BY 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'Kenojuak Ashevak with some of her prints.'
+    },
+    body: [
+      'Kenojuak Ashevak was born in 1927 in a camp on the south coast of Baffin Island. She grew up living on the land, travelling by dog team and sleeping in igloos in winter and sealskin tents in summer. Her grandmother taught her to sew and to work with sealskin. No one guessed that this girl would one day become one of Canada’s most famous artists.',
+      { fig: G.flow(['The artist draws a design on paper.', 'A printmaker carves it into a flat stone.', 'Ink is rolled onto the raised parts.', 'Paper is pressed on, then peeled away.'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 146, cap: 'How a stonecut print is made at Kinngait.' },
+      { h: 'Drawing a new life' },
+      'In the 1950s, Kenojuak spent three years in a hospital in Quebec City, far from home, being treated for tuberculosis. There she made beadwork and crafts to pass the time. When she returned north, she settled with her family in Kinngait, also called Cape Dorset. A new art co-operative there was experimenting with printmaking, and Kenojuak began to draw.',
+      'Her drawings were bold and joyful. She drew birds, owls, fish, seals and people, often with long, flowing shapes that seemed to grow out of one another. She once said she did not try to show animals exactly as they looked. She wanted to make something beautiful.',
+      { h: 'The Enchanted Owl' },
+      'In 1960, Kenojuak created a print called The Enchanted Owl. It shows an owl with tail feathers that fan out in bright red and black, like a burst of flame. The print became famous across Canada and was later shown on a postage stamp. Copies have sold for many thousands of dollars.',
+      { box: 'A co-operative', text: 'In a co-operative, members share the work and the profits. The Kinngait studio is owned by the community.' },
+      { h: 'A lasting legacy' },
+      'Kenojuak made thousands of drawings and hundreds of prints over more than 50 years. She designed a stained-glass window for a chapel in Oakville, Ontario, and her work hangs in galleries around the world. She received the Order of Canada, the country’s highest honour for its citizens.',
+      'Kenojuak died in 2013, but her <b>legacy</b> lives on. Kinngait is now known as one of the most important centres of art in Canada, and new generations of Inuit artists, including members of her own family, continue to draw and make <b>prints</b>. Her work showed the world the beauty of Inuit life and imagination.'
+    ],
+    guide: { before: 'Find Baffin Island and Kinngait (Cape Dorset) on a map. Teach <b>prints</b>, <b>legacy</b> and co-operative. If you can, look at The Enchanted Owl online together.',
+      after: 'Try a simple print: draw on a foam tray with a pencil, roll on paint and press paper on top.' },
+    words: [['prints', 'pictures made by pressing paper onto an inked surface, so many copies can be made'], ['legacy', 'something a person leaves behind for future generations']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps for making a stonecut print.',
+        items: ['The artist draws a design.', 'A printmaker carves the stone.', 'Ink is rolled onto the stone.', 'Paper is pressed on and peeled away.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An artist’s <b>legacy</b> is …',
+        opts: ['what they leave for the future', 'their first drawing', 'a kind of ink'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The owl’s feathers fan out “like a burst of flame.” This is a …',
+        opts: ['simile', 'list', 'question'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did Kenojuak’s time in the hospital help lead her to art?',
+        a: 'She made beadwork and crafts there, which helped her develop skills she used when she began to draw.', look: 'crafts in hospital; skills' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What did Kenojuak’s art show the world about Inuit life?',
+        a: 'It showed the beauty of Inuit life and imagination, with animals and people from the North.', look: 'beauty; animals; imagination' },
+      { k: 'choice', code: 'C1.2', q: 'What makes this text a biography?',
+        opts: ['It tells a real person’s life in time order.', 'It gives steps to follow.', 'It argues an opinion.', 'It is a poem.'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Kenojuak drew animals in her own way, not exactly as they looked. How would you draw your favourite animal?',
+        a: 'I would draw a fox with a tail made of swirling leaves.', look: 'a creative idea' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-oscar-peterson', subject: 'arts', form: 'Biography',
+    title: 'The Maharaja of the Keyboard',
+    deck: 'Oscar Peterson, the Montreal pianist who amazed the jazz world',
+    hero: {
+      photo: 'g6-oscar-peterson.jpg', credit: 'Photo: Jeangagnon, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'A statue of Oscar Peterson outside the National Arts Centre in Ottawa. Visitors can sit beside him at the piano.'
+    },
+    body: [
+      'In the 1930s, in a Montreal neighbourhood called Little Burgundy, a boy named Oscar Peterson practised the piano for hours every day. His father, a railway porter, insisted that all five of his children learn music. Oscar had first played the trumpet, but after a serious illness damaged his lungs, he switched to the piano. It was a lucky change for music lovers everywhere.',
+      { fig: G.time([['1925', 'Born in Montreal'], ['1949', 'Plays at Carnegie Hall, New York'], ['1962', 'Composes “Hymn to Freedom”'], ['1993', 'Has a stroke, then returns to play'], ['2010', 'Statue unveiled in Ottawa']], { x: 50, top: 12, gap: 26, hl: 1 }),
+        tall: 124, cap: 'Key moments in Oscar Peterson’s life.' },
+      { h: 'Speed and swing' },
+      'Oscar studied classical piano, but he fell in love with jazz, a kind of music that grew from African American communities and that leaves room for players to <b>improvise</b>, or make up music on the spot. As a teenager, he won a national talent contest and began playing on the radio. By his twenties, he was known across Canada.',
+      'In 1949, he was invited to play at Carnegie Hall in New York, one of the most famous concert halls in the world. The audience was stunned by his speed, his power and the way his music seemed to swing. Soon he was touring the world with his trio, a group of three musicians. Another musician gave him a nickname: the Maharaja of the Keyboard, meaning a king of the piano.',
+      { h: 'A hymn for freedom' },
+      'As a Black musician, Oscar faced racism, especially when touring in the United States, where he was sometimes refused service in hotels and restaurants. In 1962, he wrote a piece called “Hymn to Freedom.” Its calm, hopeful melody became an <b>anthem</b> for the civil rights movement, which fought for equal rights for Black Americans.',
+      { box: 'Eight Grammy Awards', text: 'Oscar Peterson won eight Grammy Awards and recorded more than 200 albums.' },
+      { h: 'Never giving up' },
+      'In 1993, Oscar had a stroke that weakened his left hand. Many people, including his doctors, thought his career was over. But he worked hard, learned to play mostly with his right hand, and returned to the stage. He also taught young musicians and helped start a jazz school in Toronto. Today his music, and his story of talent, practice and courage, still inspires players around the world.'
+    ],
+    guide: { before: 'Find Montreal on a map. If possible, listen to a short clip of “Hymn to Freedom.” Teach <b>improvise</b> and <b>anthem</b>.',
+      after: 'Clap a simple rhythm, then try to improvise a new one in answer. Ask: what did Oscar do when things got hard?' },
+    words: [['improvise', 'to make up music or words on the spot'], ['anthem', 'a song that stands for a group or a cause']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did Oscar play at Carnegie Hall?',
+        opts: ['1949', '1925', '1962'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>improvise</b> is to …',
+        opts: ['make up music on the spot', 'read music', 'stop playing'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author call Oscar’s switch to the piano “a lucky change”?',
+        a: 'He became one of the greatest jazz pianists, so the world gained wonderful music.', look: 'became a great pianist' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did Oscar’s experience of racism connect to “Hymn to Freedom”?',
+        a: 'He faced racism on tour, and he wrote a hopeful song that became an anthem for equal rights.', look: 'racism; song for equal rights' },
+      { k: 'choice', code: 'C3.3', q: 'What did Oscar do after his stroke?',
+        opts: ['He learned to play mostly with his right hand and returned to the stage.', 'He stopped music forever.', 'He switched to trumpet.', 'He moved to Carnegie Hall.'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why is “Hymn to Freedom” in quotation marks?',
+        opts: ['It is the title of a piece of music.', 'Someone is speaking.', 'It is a list.', 'It is a heading.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What lesson can readers learn from Oscar Peterson’s life?',
+        a: 'Talent grows with practice, and courage helps you keep going after setbacks.', look: 'practice and courage' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-mean-median', subject: 'math', form: 'Explanation',
+    title: 'What Was a Typical Day?',
+    deck: 'Using mean, median and mode to describe a week of weather',
+    hero: {
+      photo: 'g6-thermometer.jpg', credit: 'Photo: Naoag, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'An outdoor thermometer. Readings taken every day can be turned into data.'
+    },
+    body: [
+      'Priya’s class recorded the high temperature outside their school every day for a week in May. At the end of the week, their teacher asked: “What was a typical temperature this week?” That sounds like a simple question, but there is more than one way to answer it.',
+      { fig: G.T(4, 10, 'Daily high temperature (°C)', 'n') +
+          G.cols([['Mon', 14], ['Tue', 17], ['Wed', 11], ['Thu', 20], ['Fri', 17], ['Sat', 23], ['Sun', 10]], 23, { base: 118, h: 88, x0: 4, hl: 5 }),
+        tall: 136, cap: 'Priya’s class’s data for one week.' },
+      { h: 'The mean' },
+      'The <b>mean</b> is what most people call the average. To find it, add all the values and divide by how many there are. The seven temperatures add up to 14 + 17 + 11 + 20 + 17 + 23 + 10 = 112. Then 112 ÷ 7 = 16. The mean high temperature was 16 °C. You can think of the mean as sharing the total equally, as if every day had the same temperature.',
+      { h: 'The median' },
+      'The <b>median</b> is the middle value when the data is put in order. Priya ordered the temperatures from lowest to highest: 10, 11, 14, 17, 17, 20, 23. With seven values, the middle one is the fourth: 17. So the median is 17 °C. If there were an even number of values, the median would be halfway between the two middle ones.',
+      { h: 'The mode and the range' },
+      'The <b>mode</b> is the value that appears most often. Here, 17 appears twice, so the mode is 17 °C. The range tells how spread out the data is: the highest value minus the lowest. The range is 23 − 10 = 13 degrees.',
+      { box: 'Which is best?', text: 'One very unusual value can pull the mean up or down. The median is not affected as much.' },
+      { h: 'Choosing a measure' },
+      'Each measure tells a slightly different story. Suppose a freak heat wave made Sunday 45 °C instead of 10 °C. The mean would jump to 21 °C, warmer than five of the seven days. But the median would still be 17 °C. When data has an extreme value, the median often gives a better picture of a typical day. Weather reporters, sports writers and scientists all choose their measure carefully, and good readers ask which one they are using.',
+      'Priya’s class decided to report all three measures on their class weather board. Over the next month, they noticed something interesting: as the weather warmed up, the mean, the median and the mode all crept higher, week by week. The numbers told the story of spring arriving, one degree at a time.'
+    ],
+    guide: { before: 'Record the temperature for a few days, or use a weather app. Teach <b>mean</b>, <b>median</b> and <b>mode</b>.',
+      after: 'Find the mean, median and mode of your own data. Ask: which one best describes a typical day?' },
+    words: [['mean', 'the total shared equally: add the values and divide by how many'], ['median', 'the middle value when data is in order'], ['mode', 'the value that appears most often']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which day was warmest?',
+        opts: ['Saturday', 'Thursday', 'Monday'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The <b>median</b> is …',
+        opts: ['the middle value in order', 'the most common value', 'the total'], a: 0 },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart for Priya’s data.', cols: ['Measure', 'How to find it', 'Value'],
+        rows: [['Mean', null, '16 °C'], ['Median', 'the middle value in order', null], ['Range', null, null]],
+        a: [[null, 'add the values and divide by 7', null], [null, null, '17 °C'], [null, 'highest minus lowest', '13 degrees']] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why would the median give a better picture than the mean if Sunday were 45 °C?',
+        a: 'One extreme value pulls the mean up to 21 °C, but the median stays 17 °C, closer to most days.', look: 'extreme value affects mean, not median' },
+      { k: 'choice', code: 'C3.3', q: 'Five test scores are 6, 7, 7, 8, 9. What is the mode?',
+        opts: ['7', '8', '6', '9'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 2, q: 'How do the headings help you use this explanation?',
+        a: 'Each heading names one measure, so I can find the part I need quickly.', look: 'each heading = one measure' },
+      { k: 'lines', code: 'A2.3', n: 2, q: 'An ad says “Our town has an average of 20 sunny days a month!” What question should you ask?',
+        a: 'Which average is it: the mean or the median? Is there an extreme month changing it?', look: 'which measure; extreme values' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-trip-budget', subject: 'math', form: 'Explanation',
+    title: 'Paying for the Class Trip',
+    deck: 'How a Grade 6 class planned a budget, raised money and made choices',
+    hero: {
+      photo: 'g6-school-bus.jpg', credit: 'Photo: QUOI Media Group, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A yellow school bus. Renting one for a day was the biggest cost of the trip.'
+    },
+    body: [
+      'Mr. Okafor’s Grade 6 class of 24 students wanted to visit a science centre. Their teacher agreed, on one condition: the class had to plan the <b>budget</b> themselves. A budget is a plan for how money will be earned and spent. The class soon learned that planning a trip takes more than choosing where to go.',
+      { fig: G.T(4, 10, 'Planned costs for the trip', 'n') +
+          G.bars([['Bus', 480, '$480'], ['Admission', 288, '$288'], ['Snacks', 72, '$72']], 480, { x0: 72, top: 22, gap: 28, pad: 46, hl: 0 }) +
+          G.T(4, 116, 'Total: $840', 'lb'),
+        tall: 124, cap: 'The class’s list of expenses.' },
+      { h: 'Listing the costs' },
+      'First, the students listed every <b>expense</b>, or cost. A school bus for the day cost $480. Admission was $12 for each student, so 24 × $12 = $288. They also wanted a snack for each person, at $3 each: 24 × $3 = $72. In total, the trip would cost $480 + $288 + $72 = $840.',
+      'Some costs, like the bus, are fixed: the bus costs $480 whether 10 students go or 24. Other costs, like admission and snacks, change with the number of people. Dividing the total by 24, each student would need to pay $35.',
+      { h: 'Raising money' },
+      'Not every family could afford $35, and the class wanted everyone to go. So they planned a bake sale. They borrowed baking pans, asked families for donations of ingredients and made posters. The sale raised $312. Subtracting from the total, $840 − $312 = $528 was still needed. That worked out to $22 per student.',
+      { box: 'Needs and wants', text: 'A need is something you must have. A want is something nice to have. The bus was a need. Were the snacks?' },
+      { h: 'Making trade-offs' },
+      'The class still hoped to bring the cost down. They discussed choices, called <b>trade-offs</b>: giving up one thing to get another. One group suggested packing snacks from home instead of buying them. That would save $72. Another suggested a closer museum with a cheaper bus, but most students really wanted the science centre. In the end, they voted to bring their own snacks. The new cost per student was $456 ÷ 24 = $19.',
+      'On the day of the trip, all 24 students climbed onto the bus. The trip was a success, and so was the budget. As one student said, “Now I know why my parents always talk about money at the grocery store.”'
+    ],
+    guide: { before: 'Ask: what is the difference between a need and a want? Teach <b>budget</b>, <b>expense</b> and <b>trade-off</b>. Have a calculator ready to check the math.',
+      after: 'Plan a small budget for a family outing together. List the costs and one trade-off you could make.' },
+    words: [['budget', 'a plan for earning and spending money'], ['expense', 'money spent on something'], ['trade-offs', 'giving up one thing to get another']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. What was the largest expense?',
+        opts: ['the bus', 'admission', 'snacks'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>trade-off</b> is …',
+        opts: ['giving up one thing to get another', 'a kind of bus', 'a bake sale'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the difference between a fixed cost and a cost that changes. Use an example from the text.',
+        a: 'A fixed cost stays the same, like the $480 bus. Admission changes with the number of students.', look: 'fixed vs changing, with examples' },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Step', 'Amount'],
+        rows: [['Total cost of trip', null], ['Money from bake sale', null], ['Still needed', null]],
+        a: [[null, '$840'], [null, '$312'], [null, '$528']] },
+      { k: 'choice', code: 'C3.2', q: 'Why did the class hold a bake sale?',
+        opts: ['so every student could afford to go', 'to buy a bus', 'because the teacher was hungry', 'to visit a closer museum'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The class chose to pack snacks instead of going to a closer museum. Do you agree? Why?',
+        a: 'Yes, because it saved money without giving up the trip most students wanted.', look: 'opinion with a reason' },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Describe a time you had to make a trade-off with money or time.',
+        a: 'I skipped buying a snack so I could save for a new book.', look: 'a real trade-off' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-autumn-poems', subject: 'story', form: 'Poems',
+    title: 'Three Poems for Fall',
+    deck: 'A haiku, a cinquain and a free-verse poem, and how each one works',
+    hero: {
+      photo: 'g6-maple-leaves.jpg', credit: 'Photo: Vincent Pham, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'Red maple leaves in Algonquin Park, Ontario.'
+    },
+    body: [
+      'Poets choose a form the way builders choose a frame. Some forms have strict rules about lines and syllables. Others have no rules at all. Here are three short poems about fall, each written in a different form.',
+      { h: 'Haiku' },
+      '<i>Red leaf lets go now. / It spins once, then twice, then rests / on the cold, dark pond.</i>',
+      { fig: G.T(4, 12, 'Haiku: count the syllables', 'n') +
+          [['Red / leaf / lets / go / now', '5'], ['It / spins / once / then / twice / then / rests', '7'], ['on / the / cold / dark / pond', '5']].map(function (r, i) { return G.T(10, 38 + i * 28, r[0], 'l') + G.T(286, 38 + i * 28, r[1], 'lb', 'end'); }).join('') +
+          '<path class="d" d="M10 112 H290"/>' + G.T(286, 128, '17 syllables', 'n', 'end'),
+        tall: 134, cap: 'A haiku has three lines of 5, 7 and 5 syllables.' },
+      'A haiku is a very old form from Japan. It has three lines of five, seven and five <b>syllables</b>. Haiku usually describe one small moment in nature. They do not explain; they show, and let the reader feel the rest.',
+      { h: 'Cinquain' },
+      '<i>Geese / Loud, restless / Calling, rising, leaving / They stitch the grey sky / South</i>',
+      'A cinquain has five lines. This kind uses a pattern of words: a one-word subject, two describing words, three action words, a short phrase, and a final word that sums it up. The geese “stitch the grey sky,” as if they were a needle and thread. Giving geese the action of a person sewing is a kind of <b>imagery</b> that helps readers picture the line of birds.',
+      { h: 'Free verse' },
+      '<i>On the last warm day / Grandma and I rake the yard / into one giant, crackling hill. / She says she is too old for jumping. / Then she jumps. / For a moment we are both / lost in the leaves, / laughing, / the same age.</i>',
+      'Free verse has no fixed rhyme, rhythm or line length. The poet decides where each line breaks. Here, “Then she jumps.” sits alone on its own line to surprise the reader, and the short line “laughing,” slows us down.',
+      { box: 'Try it', text: 'Write a haiku about something you see out a window right now. Count the syllables on your fingers.' },
+      'Each form fits a different purpose. A haiku captures a single image. A cinquain builds to one strong word. Free verse can tell a small story. Which form would you choose for your own fall poem?',
+      'Whatever the form, good poems share some things. They use exact words: “crackling hill” instead of “big pile.” They appeal to the senses, so readers can see, hear and feel the moment. And they leave something unsaid, trusting the reader to fill in the feeling.'
+    ],
+    guide: { before: 'Clap the syllables of a few words together. Teach <b>syllables</b>, <b>imagery</b> and the word form. Read each poem aloud slowly.',
+      after: 'Write a haiku or cinquain together about the season outside your window.' },
+    words: [['syllables', 'the beats in a word; “maple” has two'], ['imagery', 'words that help the reader see, hear or feel something']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How many syllables are in a haiku?',
+        opts: ['17', '15', '5'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which form has no fixed rhyme or line length?',
+        opts: ['free verse', 'haiku', 'cinquain'], a: 0 },
+      { k: 'table', code: 'C1.2', q: 'Fill in the chart.', cols: ['Form', 'Its pattern'],
+        rows: [['Haiku', null], ['Cinquain', null], ['Free verse', null]],
+        a: [[null, 'three lines of 5, 7 and 5 syllables'], [null, 'five lines: subject, two describing words, three action words, a phrase, one word'], [null, 'no fixed rhyme, rhythm or line length']] },
+      { k: 'lines', code: 'C3.1', n: 2, q: 'What does “They stitch the grey sky” help you picture?',
+        a: 'A long line of geese moving across the sky like a thread being sewn.', look: 'line of geese like thread' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Why does the poet put “Then she jumps.” on its own line?',
+        a: 'To surprise the reader and make that moment stand out, since Grandma said she was too old.', look: 'surprise; emphasis' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What does the free-verse poem mean by “the same age”?',
+        a: 'For a moment, Grandma and the child play like children together, so age does not matter.', look: 'they feel young together' },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'Which poem did you like best? What made it work for you?',
+        a: 'The free verse, because it told a funny, warm story about Grandma.', look: 'a choice and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-cupola', subject: 'story', form: 'Science fiction',
+    title: 'Sixteen Sunrises',
+    deck: 'A girl growing up on a space station, and the one place she wants to see',
+    hero: {
+      photo: 'g6-cupola.jpg', credit: 'Photo: NASA, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'An astronaut looks down at Earth from the cupola, the window room of the International Space Station.'
+    },
+    body: [
+      'The year was 2085, and Mira was the only twelve-year-old in orbit. She lived with her parents on Halcyon Station, 400 kilometres above Earth, where they studied how plants grow without gravity. Every morning, Mira floated through three modules and pulled herself into the cupola: a round room with seven windows, facing the planet below.',
+      { fig: '<circle class="h" cx="150" cy="66" r="38"/><circle class="d" cx="150" cy="66" r="56"/>' +
+          '<rect class="a" x="201" y="42" width="14" height="10"/>' + G.T(222, 40, 'Halcyon', 'l') +
+          G.T(40, 20, 'sunlight', 'lb', 'middle') + D.arrow(60, 24, 96, 40, 't') +
+          G.T(150, 70, 'Earth', 'lb', 'middle') + G.T(150, 136, 'One orbit: about 90 minutes', 'n', 'middle'),
+        tall: 140, cap: 'The station circles Earth about 16 times a day, so Mira sees 16 sunrises.' },
+      '“Sunrise number four,” she whispered, as a thin blue line glowed along the curve of the Earth. Up here, the station circled the planet every 90 minutes. That meant sixteen sunrises and sixteen sunsets every day.',
+      'Below, the coast of British Columbia slid past, then the jagged Rockies, then the flat Prairies like a quilt of brown and gold. Mira knew this map by heart. Every day it passed, beautiful and unreachable.',
+      { h: 'The Great Lakes' },
+      'Her grandmother lived in a small town on the shore of Lake Huron. Mira had been born on the station and had never set foot on the ground. She had never felt rain, or wind, or grass under her feet. On video calls, Grandma described the smell of the lake in summer and the crunch of snow under boots. Mira tried to imagine it. She couldn’t.',
+      '“Look for my porch light tonight,” Grandma had joked. Mira laughed then. Now, as the station crossed into darkness, she searched anyway. The Great Lakes were black shapes outlined by golden threads of cities. Somewhere along that dark shore, one tiny light was Grandma’s.',
+      { h: 'A promise' },
+      'Mira’s mother drifted into the cupola holding a small pot. Inside, a pea plant had finally sprouted, its curly tendrils reaching in every direction, confused about which way was up.',
+      '“Next year,” her mother said quietly, “we’re going down. All of us. Your body will feel heavy, and the air will feel strange.”',
+      'Mira looked at the pea shoot, then at the glittering lakes. Her heart <b>soared</b>. Sixteen sunrises a day were wonderful. But she would trade every one of them for a single <b>ordinary</b> morning on the shore of Lake Huron, with her feet on the ground and Grandma beside her.'
+    ],
+    guide: { before: 'Look at a photo of Earth from space together. Teach <b>soared</b> and <b>ordinary</b>. Explain that science fiction mixes real science with an imagined future.',
+      after: 'Ask: what does Mira want most? What ordinary thing in your life would you miss if you lived in space?' },
+    words: [['soared', 'rose high; here, felt very happy'], ['ordinary', 'normal, everyday']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How long does one orbit take?',
+        opts: ['about 90 minutes', 'one day', 'one week'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'What makes this story science fiction?',
+        opts: ['It is set in an imagined future with real science.', 'It is a true report.', 'It has rhymes.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does Mira search for Grandma’s light, even though she laughed at the joke?',
+        a: 'She misses Grandma and wants to feel close to her, even if she knows she cannot really see one light.', look: 'misses Grandma; wants closeness' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The Prairies look “like a quilt of brown and gold.” What does this simile help you picture?',
+        a: 'Square fields of different colours side by side, like patches on a quilt.', look: 'patches of fields' },
+      { k: 'choice', code: 'C3.1', q: 'Why are the pea tendrils “confused about which way was up”?',
+        opts: ['There is no gravity to show plants which way is up.', 'The plant is sick.', 'It is dark.', 'Mira turned the pot.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What is the theme, or big idea, of the story?',
+        a: 'Home and family matter more than amazing sights; ordinary things can be precious.', look: 'home, family, ordinary is precious' },
+      { k: 'choice', code: 'B3.3', q: 'Why does a colon come before “a round room with seven windows”?',
+        opts: ['It introduces an explanation of the cupola.', 'It ends the story.', 'It starts a list of names.', 'It shows a question.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g6-home-child', subject: 'history', form: 'Letter (historical fiction)',
+    title: 'Dear Nellie',
+    deck: 'A letter from a British Home Child on an Ontario farm, 1910',
+    plain: true,
+    hero: {
+      photo: 'g6-home-children.jpg', credit: 'Photo: ΙΣΧΣΝΙΚΑ-888, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A plaque in Ottawa remembers the British Home Children sent to Canada.'
+    },
+    body: [
+      'Near Owen Sound, Ontario. March 3, 1910.',
+      'Dear Nellie,',
+      'I hope this letter finds you well at the Home in London, and that Matron lets you read it yourself. It has taken me four months to save the stamp, so I will write small to fit everything.',
+      'The ship took eleven days to cross the ocean. Most of the boys were sick the whole way, but I was not, and I watched the waves for hours. From Quebec, we rode a train for two days. Then we were sent out one by one. A farmer named Mr. Cole met me at the station and took me to his farm in a sleigh.',
+      { fig: G.T(4, 12, 'My day on the farm', 'n') +
+          [['5:00', 'Milk the cows'], ['6:30', 'Breakfast, feed the pigs'], ['8:00', 'School (only in winter)'], ['4:00', 'Chop wood, carry water'], ['7:00', 'Supper, then bed in the loft']].map(function (r, i) { return G.T(56, 36 + i * 22, r[0], 'lb', 'end') + G.T(68, 36 + i * 22, r[1], 'l'); }).join(''),
+        tall: 138, cap: 'Thomas’s daily schedule, as he described it.' },
+      'I will not tell you a fib, Nell. The work is hard. My hands are cracked from the cold, and I sleep in the <b>loft</b> over the kitchen, where frost grows on the nails in the roof. Mr. Cole does not say much, and I am not allowed to eat with the family on Sundays when visitors come. Some days I feel like a hired tool, not a boy. I cried the first week, though I would not admit it to anyone but you.',
+      'But it is not all bad. Mrs. Cole knits me socks, and she lets me go to school in winter. I am learning fractions and the names of all the provinces. There is a horse named Duke who is gentle with me, and when I brush him I talk to him about home. The snow here is deeper than any I ever saw, and the stars are so bright they look close enough to touch. On Sundays, I am allowed to walk to church in the village, where the minister’s wife gives me a biscuit and asks after my family.',
+      { box: 'From history', text: 'From 1869 to 1948, about 100&nbsp;000 children, like Thomas, were sent from Britain to work on Canadian farms and in homes.' },
+      'Nellie, I have been promised wages when I turn 18, and I will save every penny. When I have enough, I will send for you, and we will have a farm of our own, with a horse like Duke. That is my <b>vow</b>, and I will not break it.',
+      'Be brave. Keep this letter. Write to me if Matron allows it, care of Mr. A. Cole, R.R. 2, Owen Sound, Ontario, Canada.',
+      'Your loving brother,',
+      'Thomas'
+    ],
+    guide: { before: 'Find London, England, and Owen Sound, Ontario, on a map. Explain that many British Home Children were orphans or from poor families, and that this letter is fiction based on real experiences. Teach <b>vow</b> and the word Matron (the woman in charge of a children’s home).',
+      after: 'Ask: how do you think Thomas really feels? What clues show it? Some Canadian families can trace their ancestors to Home Children.' },
+    words: [['vow', 'a serious promise'], ['loft', 'a space under a roof, often used for storage or sleeping']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the schedule. What does Thomas do at 5:00?',
+        opts: ['milks the cows', 'goes to school', 'eats supper'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is a letter?',
+        opts: ['a greeting and a closing with a name', 'numbered steps', 'a chart of data'], a: 0 },
+      { k: 'table', code: 'C3.2', q: 'Fill in the chart.', cols: ['Hard parts of Thomas’s life', 'Good parts of Thomas’s life'],
+        rows: [[null, null], [null, null]],
+        a: [['His hands crack from the cold.', 'Mrs. Cole knits him socks.'], ['He cannot eat with the family when visitors come.', 'He goes to school and has Duke the horse.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What does “Some days I feel like a hired tool, not a boy” tell you about Thomas’s feelings?',
+        a: 'He feels used for work and not cared for as a child, which makes him sad.', look: 'used, not cared for' },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'Why do you think Thomas says he would not admit crying to anyone but Nellie?',
+        a: 'He wants to seem brave, but he trusts his sister and can be honest with her.', look: 'wants to seem brave; trusts her' },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a comma after “Dear Nellie”?',
+        opts: ['It follows the greeting in a letter.', 'It joins two sentences.', 'It shows a list.', 'It ends a question.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Based on this letter, how were many Home Children treated? What do you think of it?',
+        a: 'Many worked hard and were treated like workers, not family. I think it was unfair because they were children.', look: 'how treated; an opinion' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-calm', subject: 'health', form: 'Explanation',
+    title: 'Calm in the Storm',
+    deck: 'What stress does to your body, and simple ways to settle it',
+    hero: {
+      photo: 'g6-forest-trail.jpg', credit: 'Photo: Thomas Metaxas, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A forest trail. Time in nature is one of the ways people calm their bodies and minds.'
+    },
+    body: [
+      'Your heart pounds. Your hands feel sweaty. Your breathing is quick and shallow, and your stomach feels tight. Maybe you are about to give a speech, or you had an argument with a friend. These are signs of <b>stress</b>, your body’s reaction to a challenge or a threat. Everyone feels it sometimes.',
+      { fig: '<rect class="k" x="90" y="16" width="120" height="120"/>' +
+          G.T(150, 10, 'Breathe in: 4', 'l', 'middle') + G.T(218, 80, 'Hold: 4', 'l') + G.T(150, 152, 'Breathe out: 4', 'l', 'middle') + G.T(82, 80, 'Hold: 4', 'l', 'end') +
+          D.arrow(96, 16, 204, 16, 'a') + D.arrow(210, 22, 210, 130, 'a') + D.arrow(204, 136, 96, 136, 'a') + D.arrow(90, 130, 90, 22, 'a') + G.T(150, 80, 'box', 'lb', 'middle') + G.T(150, 94, 'breathing', 'lb', 'middle'),
+        tall: 158, cap: 'Box breathing: trace the sides of a square, counting to four on each side.' },
+      { h: 'An ancient alarm' },
+      'Stress begins in your brain. When it senses danger, it sends out chemical messengers called hormones. They make your heart beat faster and your muscles get ready to act. Long ago, this “fight or flight” response helped people escape from wild animals. Today, the same alarm can go off before a test or a game, even though there is no real danger.',
+      'A little stress can be helpful: it can sharpen your focus and give you energy. But stress that lasts a long time can make it hard to sleep, eat or concentrate. That is why it helps to have <b>strategies</b>, ways to calm your body when the alarm keeps ringing.',
+      { h: 'Strategies that work' },
+      'Slow breathing is one of the fastest. Breathing deeply and slowly sends a message to your brain that you are safe, which slows your heart. Try box breathing: breathe in for four counts, hold for four, breathe out for four, hold for four, and repeat.',
+      'Moving your body helps too. A walk, a bike ride or a game of tag uses up the energy that stress creates. Time in nature is especially good. Studies show that spending time among trees and green spaces can lower stress. Some Canadian doctors even write “prescriptions” for patients to spend time in parks.',
+      { box: 'Talk it out', text: 'Telling a trusted adult or friend how you feel can make a problem feel smaller. You do not have to handle hard feelings alone.' },
+      'Other strategies include getting enough sleep, writing your worries in a journal, listening to calm music, or naming five things you can see and hear right now. Different strategies work for different people, so try a few and notice which ones help you. Being <b>resilient</b> does not mean never feeling stressed. It means knowing how to bounce back.'
+    ],
+    guide: { before: 'Ask: where in your body do you feel it when you are nervous? Teach <b>stress</b>, <b>strategies</b> and <b>resilient</b>. Try box breathing together.',
+      after: 'Make a list of three calming strategies the child could use. If stress or worry ever feels too big, talk to a doctor or school counsellor.' },
+    words: [['stress', 'the body’s reaction to a challenge or threat'], ['strategies', 'plans or ways of doing something'], ['resilient', 'able to recover after hard times']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. In box breathing, how long do you hold?',
+        opts: ['four counts', 'one count', 'ten counts'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Being <b>resilient</b> means …',
+        opts: ['able to bounce back', 'never feeling stress', 'very fast'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What happens in your body during “fight or flight”?',
+        a: 'The brain sends hormones; your heart beats faster and your muscles get ready to act.', look: 'hormones; heart; muscles' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'How can a little stress be helpful?',
+        a: 'It can sharpen your focus and give you energy.', look: 'focus and energy' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart.', cols: ['Strategy', 'Why it helps'],
+        rows: [['Slow breathing', null], ['Moving your body', null], ['Talking it out', null]],
+        a: [[null, 'Tells your brain you are safe and slows your heart.'], [null, 'Uses up the energy stress creates.'], [null, 'Makes a problem feel smaller.']] },
+      { k: 'choice', code: 'C1.5', q: 'The author calls stress an “alarm.” Why?',
+        opts: ['It warns the body and gets it ready to act.', 'It makes a ringing sound.', 'It wakes you every morning.', 'It is loud.'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'Which strategy will you try first? Why do you think it will work for you?',
+        a: 'Box breathing, because I can do it anywhere, even in class.', look: 'a strategy and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-port', subject: 'social', form: 'Report',
+    title: 'Canada’s Gateway to Asia',
+    deck: 'How the Port of Vancouver connects Canada to the world',
+    hero: {
+      photo: 'g6-vancouver-port.jpg', credit: 'Photo: Dietmar Rabich, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Container cranes at the Port of Vancouver, Canada’s largest port.'
+    },
+    body: [
+      'Look at the labels on your shoes, your phone or your favourite toy. Many say “Made in China,” “Made in Vietnam” or “Made in Korea.” How did they get from a factory across the Pacific Ocean to a store near you? Many of them came through the Port of Vancouver, Canada’s busiest port.',
+      { fig: G.flow(['A factory in Asia fills a container.', 'A ship crosses the Pacific (2 weeks).', 'Cranes in Vancouver unload it.', 'A train carries it east to stores.'], { top: 2, bh: 26, gap: 12, hl: 2 }),
+        tall: 146, cap: 'The journey of a shipping container.' },
+      { h: 'Boxes that changed the world' },
+      'Most goods today travel in steel shipping containers, giant boxes about the size of a school bus. Because every container is built to the same standard size, it can be lifted from a ship onto a train or a truck without ever being unpacked. Giant cranes at the port can move a container in about two minutes. A large ship can carry thousands of them.',
+      { h: 'Trade goes both ways' },
+      'Trade is the buying and selling of goods between countries. Goods that come into Canada are called <b>imports</b>; goods that Canada sells to other countries are called <b>exports</b>. Through Vancouver, Canada imports electronics, clothing, furniture and toys. It exports grain from the Prairies, potash used to make fertilizer, wood products, and coal. Ships that arrive full of televisions may leave full of wheat.',
+      'Each year, the port handles goods worth hundreds of billions of dollars. Thousands of people work there: crane operators, truck drivers, ship pilots, customs officers and many more. Farmers on the Prairies and factory workers in Ontario depend on the port to reach customers overseas.',
+      { box: 'Interdependent', text: 'Countries depend on one another for goods they cannot easily make or grow themselves.' },
+      { h: 'Challenges' },
+      'A busy port has costs as well as benefits. Ships and trucks burn fuel that pollutes the air and water. The port sits on the traditional territory of the Musqueam, Squamish and Tsleil-Waututh Nations, who have raised concerns about its effects on fish, wildlife and their lands. When a strike, a flood or a storm closes the port, store shelves across Canada can empty within weeks. Canadians are working to make trade <b>sustainable</b>: good for the economy, for people and for the environment.'
+    ],
+    guide: { before: 'Read the “Made in” labels on a few things at home. Find Vancouver and China on a map. Teach <b>imports</b>, <b>exports</b> and <b>sustainable</b>.',
+      after: 'Make a two-column list of things your family buys that are imports and things Canada exports.' },
+    words: [['imports', 'goods brought into a country to sell'], ['exports', 'goods sent out of a country to sell'], ['sustainable', 'able to continue without harming people or the environment']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps of a container’s journey.',
+        items: ['A factory packs goods into a container.', 'A ship crosses the Pacific.', 'Cranes lift the container off the ship.', 'A train carries it east.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Ex-</i> means out. <b>Exports</b> are goods that …',
+        opts: ['go out of a country', 'come into a country', 'stay in one city'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why can containers move without being unpacked?',
+        opts: ['They are all a standard size.', 'They are made of wood.', 'They float.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart with examples from the text.', cols: ['Imports through Vancouver', 'Exports through Vancouver'],
+        rows: [[null, null], [null, null]],
+        a: [['electronics', 'grain'], ['clothing', 'potash']] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why have the Musqueam, Squamish and Tsleil-Waututh Nations raised concerns about the port?',
+        a: 'The port is on their traditional territory, and it affects fish, wildlife and their lands.', look: 'their territory; effects on nature' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Does the author show only the benefits of the port? Explain.',
+        a: 'No. The author shows benefits like jobs and trade, and also costs like pollution and effects on First Nations.', look: 'both benefits and costs' },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Name something you own that was probably imported. How do you know?',
+        a: 'My headphones; the label says Made in China.', look: 'an item and evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-shadd', subject: 'history', form: 'Biography',
+    title: 'Mary Ann Shadd’s Newspaper',
+    deck: 'The teacher and journalist who urged Black Americans to find freedom in Canada',
+    hero: {
+      photo: 'g6-shadd.jpg', credit: 'Photo: BiblioArchives / LibraryArchives, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 220,
+      cap: 'Mary Ann Shadd Cary, teacher, newspaper publisher and lawyer.'
+    },
+    body: [
+      'In 1850, the United States passed a harsh new law. Under the Fugitive Slave Act, people who had escaped slavery could be captured anywhere in the country, even in states where slavery was banned, and sent back to their enslavers. Free Black people were in danger too, because some were kidnapped and falsely claimed as escaped. Thousands fled north to Canada.',
+      { fig: G.time([['1823', 'Born to a free Black family in Delaware'], ['1851', 'Moves to Windsor, Canada West'], ['1853', 'Starts The Provincial Freeman'], ['1863', 'Recruits soldiers in the US Civil War'], ['1883', 'Earns a law degree, age 60']], { x: 50, top: 12, gap: 26, hl: 2 }),
+        tall: 124, cap: 'Key moments in Mary Ann Shadd’s life.' },
+      { h: 'A teacher in Canada West' },
+      'One of those who came was Mary Ann Shadd. She had been born free in Delaware in 1823, into a family that helped people escape slavery. In 1851, she moved to Windsor, in what is now Ontario, then called Canada West. There she opened a school that welcomed all children, Black and white. She believed that education was the key to freedom and equality.',
+      'Shadd also wrote a booklet urging Black Americans to move to Canada. It described the land, the weather, the jobs and the laws, which did not allow slavery. She wanted people to know they could build good lives there.',
+      { h: 'The Provincial Freeman' },
+      'In 1853, Shadd started a newspaper called The Provincial Freeman. She became one of the first women in North America to publish and edit a newspaper. In its pages, she spoke out against slavery and <b>segregation</b>, encouraged Black settlers to be independent, and argued that women deserved equal rights. Some readers objected to a woman running a newspaper. Shadd answered with a famous motto: “Self-reliance is the true road to independence.”',
+      { box: 'A bold voice', text: 'To avoid criticism, Shadd sometimes listed men as editors. But everyone knew whose voice was in the paper.' },
+      { h: 'A lifetime of firsts' },
+      'Later, Shadd returned to the United States. During the Civil War, she recruited Black soldiers to fight against slavery. At age 60, she earned a law degree, becoming one of the first Black women lawyers in the country. She also fought for women’s right to vote. In 1994, Canada named her a Person of National Historic Significance. Her <b>courage</b> and her words helped build a stronger Black community in Canada.'
+    ],
+    guide: { before: 'Find Windsor and Chatham, Ontario, and Delaware on a map. Explain what slavery was, simply and honestly. Teach <b>segregation</b>, <b>courage</b> and the word motto.',
+      after: 'Ask: what does “Self-reliance is the true road to independence” mean? Why was a newspaper a powerful tool in the 1850s?' },
+    words: [['segregation', 'keeping people apart because of their race'], ['courage', 'bravery to do what is right even when it is hard']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did Shadd start her newspaper?',
+        opts: ['1853', '1851', '1883'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Courage</b> is …',
+        opts: ['bravery to do what is right', 'a kind of newspaper', 'a law'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why did thousands of Black people flee to Canada after 1850?',
+        a: 'The Fugitive Slave Act let people who escaped slavery be captured anywhere in the US, and free Black people were kidnapped.', look: 'the new law; danger' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What does Shadd’s school, which welcomed all children, show about her beliefs?',
+        a: 'She believed in equality and that education was the key to freedom for everyone.', look: 'equality; education' },
+      { k: 'choice', code: 'C3.6', q: 'What does “Self-reliance is the true road to independence” mean?',
+        opts: ['Depending on yourself leads to freedom.', 'Roads lead to cities.', 'Newspapers are expensive.', 'Travel is dangerous.'], a: 0 },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence has a relative clause (a part that begins with <i>who</i>, <i>which</i> or <i>that</i>)?',
+        opts: ['She was born into a family that helped people escape slavery.', 'Thousands fled north.', 'She also fought for women’s right to vote.', 'In 1853, Shadd started a newspaper.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did Shadd stand up for more than one group of people? Give two examples.',
+        a: 'She spoke against slavery for Black people, and she argued for women’s equal rights and the vote.', look: 'Black people and women' }
+    ]
+  });
 })();

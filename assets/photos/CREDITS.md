@@ -145,6 +145,26 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g6-point-pelee.jpg` | The marsh boardwalk at Point Pelee National Park, Ontario | Ken Lund from Reno, Nevada, USA | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marsh_Boardwalk,_Point_Pelee_National_Park,_Leamington,_Ontario,_Canada_(21783820521).jpg |
 | `g6-webb-mirror.jpg` | An engineer with mirror segments of the James Webb Space Telescope | NASA/MSFC/David Higginbotham | Public domain | https://commons.wikimedia.org/wiki/File:James_Webb_Primary_Mirror.jpg |
 | `g6-e-waste.jpg` | Old computers collected for recycling | Tom Worthington | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Computers_for_Recycling_in_Steel_Mesh_Pallets.jpg |
+| `g6-emerald-ash-borer.jpg` | An emerald ash borer beetle | ShenandoahNPS | Public domain | https://commons.wikimedia.org/wiki/File:Emerald_Ash_Borer_(45568489611).jpg |
+| `g6-batteries.jpg` | AA alkaline batteries | Multicherry | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Golden_Power_Power_Plus_AA_alkaline_batteries.jpg |
+| `g6-geese-v.jpg` | Canada geese flying in a V formation | John Benson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:CanadianGeeseFlyingInVFormation.jpg |
+| `g6-curiosity.jpg` | The Curiosity rover on Mars, a self-portrait | semeion.photo | Public domain | https://commons.wikimedia.org/wiki/File:Curiosity_rover_selfie_at_Namib_Dune_Sol_1128_(53678107023).jpg |
+| `g6-tomato-seedlings.jpg` | Tomato seedlings | Dwight Sipler from Stow, MA, USA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tomato_seedlings_(464346184).jpg |
+| `g6-dinosaur-park.jpg` | Badlands in Dinosaur Provincial Park, Alberta | Hirgax | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Badlands_in_Dinosaur_Provincial_Park,_Alberta.jpg |
+| `g6-malala.jpg` | Malala Yousafzai, 2015 | DFID - UK Department for International Development | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Malala_Yousafzai_2015.jpg |
+| `g6-lemon-creek.jpg` | The Lemon Creek internment camp, British Columbia | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:View_of_the_Lemon_Creek_Internment_Camp,_British_Columbia,_the_second_camp_to_which_the_Moriyamas_were_sent_(I0020991).tif |
+| `g6-birchtown.jpg` | A heritage trail sign at Birchtown, Nova Scotia | Madereugeneandrew | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Birchtown,_Nova_Scotia.jpg |
+| `g6-nunavut-assembly.jpg` | The Legislative Assembly of Nunavut, Iqaluit | ADialla | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Legislative_Assembly_of_Nunavut.jpg |
+| `g6-kenojuak.jpg` | Kenojuak Ashevak with her prints | Judith Eglington | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Kenojuak_Ashevak_e011367900.jpg |
+| `g6-oscar-peterson.jpg` | The statue of Oscar Peterson, Ottawa | Jeangagnon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oscar_Peterson_-_Ottawa_-_01.jpg |
+| `g6-thermometer.jpg` | An outdoor thermometer | Naoag | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Thermometer_an_einem_Stadl.jpg |
+| `g6-school-bus.jpg` | A yellow school bus | QUOI Media Group | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:A_yellow_school_stock_bus.jpg |
+| `g6-maple-leaves.jpg` | Red maple leaves, Algonquin Park | Vincent Pham | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_Maple_Leaf_at_Algonquin_Park.jpg |
+| `g6-cupola.jpg` | An astronaut looks at Earth from the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ESA_astronaut_Sophie_Adenot_looks_at_the_Earth_below_from_the_cupola_(iss075e0121412).jpg |
+| `g6-home-children.jpg` | A plaque about the Home Children, Ottawa | ΙΣΧΣΝΙΚΑ-888 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Home_Children_-_St._George's_Home,_Ottawa,_Ontario.jpg |
+| `g6-forest-trail.jpg` | A forest hiking trail | Thomas Metaxas | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Forest_Hiking_Trail.jpg |
+| `g6-vancouver-port.jpg` | Container terminal in the Port of Vancouver | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Vancouver_Centerm_Terminal_--_2022_--_2151.jpg |
+| `g6-shadd.jpg` | Portrait of Mary Ann Shadd Cary | BiblioArchives / LibraryArchives | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Mary_Ann_Shadd_Cary.jpg |
 | `g6-water-pump.jpg` | Children collecting water at a hand pump in a village in Ghana | Kwameghana(Bright Kwame Ayisi) | CC0 | https://commons.wikimedia.org/wiki/File:A_group_of_children_collecting_water_at_a_pipe_well.jpg |
 | `g6-solar-farm.jpg` | Solar panels on a farm in Grimsby, Ontario | Dave Lauretti from Burlington, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_farm_(13313377243).jpg |
 | `g6-canoe-lake.jpg` | The dock at Canoe Lake, Algonquin Park, Ontario | Markabq | Public domain | https://commons.wikimedia.org/wiki/File:CanoeLake.JPG |
