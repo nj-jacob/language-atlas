@@ -55,7 +55,14 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - every idea has its "I can" line and 2 or more Think questions, every idea named in the sheets file is in the chapter, each chapter has its own two-letter code, and every expectation the chapter lists is on one of its sheets;
    - in grown-up view the Worksheets tab and a sheet with its key open on a phone, an iPad and a laptop with no errors and nothing off the side; with grown-up view off, no sheet shows.
 
-9. **Decodable readers** (the tool box's printable phonics stories, checked once, in Grade 1):
+9. **Reading passages**, in Grades 4 to 8 (`gradeN/passages.js`):
+   - every passage has a photo or drawing across the top (a photo has a credit, its file and small copy are in `assets/photos/`, and it is listed in `CREDITS.md`), a diagram, map or chart with a caption, 2 or 3 Words to know that are bold in the text, and a guide for the grown-up;
+   - its length suits the grade (Grade 4: 250 to 420 words, rising to 320 to 560 in Grade 8);
+   - it has 6 to 9 questions, 2 or more of them written answers, on 4 or more different expectations, each a real expectation of the grade; every choice question has its answer among 3 or 4 different choices, every "number them" list is printed out of order, every blank in a chart has an answer, and every written answer has a good answer and what to look for;
+   - the front, the back and the answer key each fit on one page, measured with the site's real fonts (`tests/fonts`, served in place of Google Fonts, so the result is the same on every computer);
+   - once a grade has 100 passages, their questions together reach every reading expectation: B2.1, B2.2, B3.1 to B3.3, C1.1 to C1.6, C2.1 to C2.7, C3.1 to C3.6 and C3.8 (B2.3, reading aloud, is on every answer key; C1.7 and C3.7 need texts by First Nations, Métis and Inuit creators, so they are taught with real books, not these passages);
+   - the list and a passage open on a phone, an iPad and a laptop with no errors and nothing off the side; the answer key shows only in grown-up view. In Grades 1 to 3 the tool is not on the Toolbox page.
+10. **Decodable readers** (the tool box's printable phonics stories, checked once, in Grade 1):
    - every word of every title, story and question can be sounded out with the phonics steps taught up to that page, or is a heart word taught by then. `tests/decodable.js` works this out again on its own: it splits each word into its spelling units (sh, ck, a_e, igh ...) and endings (-s, -ed, -ing ...) and finds the first step that teaches all of them. Words that look regular but are not (was, of, said, come) always count as heart words. To try a word: `node decodable.js x --word cake`;
    - the pages are in teaching order; each has 8 or more warm-up words that all use its new spelling, a story with 5 or more different words that use it, and 3 questions with an Ontario code and an answer;
    - every page and its grown-up page fit on the paper; the tool opens on a phone, an iPad and a laptop with no errors, and the grown-up page stays hidden with grown-up view off.
