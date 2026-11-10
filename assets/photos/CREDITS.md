@@ -188,3 +188,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g8-stress.jpg` | A student studying alone in a library | University of Illinois Library | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Student_Studying_in_ACES_Library_(11056201595).jpg |
 | `g8-chemainus.jpg` | A street in Chemainus, British Columbia, with a large mural of a face painted on a building | Blake Handley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:2018_06_24c_Chemainus_Lunch_Stop_29_(29264469168).jpg |
 | `g8-receipt.jpg` | A grocery store receipt | Grandmaster Huon | CC0 | https://commons.wikimedia.org/wiki/File:Grocery_Store_Receipt_in_Vienna.jpg |
+| `g4-firefly.jpg` | A firefly glowing in flight | art farmer | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Photinus_pyralis_Firefly_glowing.jpg |
+| `g4-sand-dunes.jpg` | Sand dune at Sandbanks Provincial Park, Ontario | Mhsheikholeslami | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sandbanks_Provincial_Park-_Sand_Dunes-Ontario.jpg |
+| `g4-clouds.jpg` | Cumulus clouds in a blue sky | Lance Vanlewen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:White_Cumulus_Clouds_against_Blue_Sky_(4).jpg |
+| `g4-mohenjo-daro.jpg` | Ruins of Mohenjo-daro, Pakistan | Saqib Qayyum | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg |
+| `g4-pont-du-gard.jpg` | The Pont du Gard aqueduct bridge, France | Benh Lieu Song | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pont_du_Gard_BLS.jpg |
+| `g4-steelpan.jpg` | Steel band at Carnival, Trinidad and Tobago | Kip1234 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Steelpan_Instruments_at_Trinidad_and_Tobago_Carnival.jpg |
+| `g4-zamboni.jpg` | Ice resurfacer at an arena in Guelph, Ontario | Gogerr | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:An_Zamboni_Ice_Resurfacer_in_Guelph.jpg |
+| `g4-cn-tower.jpg` | The CN Tower and Toronto skyline at dusk | Jchmrt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg |
+| `g4-chickadee.jpg` | Black-capped chickadee on a bird feeder | Rhododendrites | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Black-capped_chickadee_(33729).jpg |
+| `g4-red-squirrel.jpg` | Red squirrel eating a mushroom | Rhododendrites | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_squirrel_eating_a_mushroom_(80727).jpg |
+| `g4-polar-bear.jpg` | Polar bear near Churchill, Manitoba | TravelingOtter | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Polar_Bear_-_Churchill,_Manitoba_(40585701364).jpg |
+| `g4-earthworm.jpg` | Earthworm (Aporrectodea rosea) on soil | Jochem Kühnen | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Aporrectodea_rosea_(Gelderland,_Netherlands).jpg |
+| `g4-apple-orchard.jpg` | Apple orchard in Clarington, Ontario | Dillan Payne | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Apple_Orchard_in_Clarington,_September_10_2025_(02).jpg |
+| `g4-kente.jpg` | Kente cloth from the Volta Region, Ghana | Warmglow | CC0 | https://commons.wikimedia.org/wiki/File:Different_Kente_cloth,_Tafi,_Volta_region.jpg |
+| `g4-ladybug.jpg` | Ladybug eating aphids | Star61 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ladybug_preys_on_aphids.jpg |
+| `g4-machu-picchu.jpg` | Machu Picchu at sunrise, Peru | Allard Schmidt | Public domain | https://commons.wikimedia.org/wiki/File:Peru_Machu_Picchu_Sunrise.jpg |
+| `g4-bike-lane.jpg` | Cyclist in a protected bike lane | DimiTalen | CC0 | https://commons.wikimedia.org/wiki/File:Female_cyclist_on_N_Dearborn_Street_bike_lane,_Chicago,_2025.jpg |
+| `g4-dragon-boat.jpg` | Dragon boat crew paddling in Toronto | John Vetterli | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Dragon_Boaters_2_(174187450).jpg |
+| `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
+| `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |

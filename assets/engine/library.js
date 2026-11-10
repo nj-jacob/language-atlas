@@ -1,5 +1,6 @@
 /* Language Atlas tool box: Reading passages (#tools/passages), printable reading comprehension, Grades 4 to 8.
-   Needs atlas.js, tools.js and sheets.js (the worksheets' themes, look and printing; sheets.css). It adds itself to the tool box.
+   Needs atlas.js and tools.js; drawing a passage also needs sheets.js (the worksheets' themes, look and printing; sheets.css). It adds
+   itself to the tool box, so the site's Toolbox page lists it for Grades 4 to 8.
    Each passage prints as one sheet of paper, both sides: the front is the passage with its pictures, diagrams and charts,
    the back is its questions. The answer key (grown-up view) is a third page, printed on its own.
    Nothing is marked on screen: the child answers on paper and the grown-up marks with the key.
@@ -35,7 +36,8 @@
 (function () {
   'use strict';
   var A = window.Atlas;
-  if (!A || !A.toolkit || !A.sheets) return;
+  /* sheets.js is needed only to draw a passage, so the site's Toolbox page (Math Atlas tools.html) can list the tool without it */
+  if (!A || !A.toolkit) return;
   var $ = A.$, $$ = A.$$, S = A.sheets;
   var P = (A.library = { list: [] });
   var SUBJECTS = (P.subjects = [['science', 'Science', 'FO'], ['social', 'Social studies', 'LB'], ['history', 'History', 'LK'], ['geography', 'Geography', 'LK'],

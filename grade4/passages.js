@@ -3967,4 +3967,987 @@
         a: 'Example: When a storm knocked out our power, our neighbours shared their generator and food. Like in the ice storm, people took care of each other.', look: 'a connection to their community or another text, linked back to the story' }
     ]
   });
+
+  P.add({
+    id: 'g4-fireflies', subject: 'science', form: 'Explanation',
+    title: 'Little Lights in the Dark',
+    deck: 'How fireflies make their own light, and what they are saying with it',
+    hero: {
+      photo: 'g4-firefly.jpg', credit: 'Photo: art farmer, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 78%',
+      tall: 230,
+      cap: 'A firefly in flight. The pale green glow comes from the end of its body.'
+    },
+    body: [
+      'On a warm June night, look across a field or the edge of a forest in southern Ontario, and you may see tiny lights blinking on and off above the grass. They are not sparks or stars. They are fireflies, and they are making their own light.',
+      { h: 'Not a fly at all' },
+      'Despite their name, fireflies are not flies. Each one is a kind of <b>beetle</b>, an insect with a hard pair of front wings that cover and protect the soft back wings it flies with.',
+      { h: 'Making light' },
+      'A firefly’s light comes from the end of its <b>abdomen</b>, the back part of its body. Inside are special cells that mix chemicals with oxygen from the air. When they mix, they give off light. Light made by a living thing is called <b>bioluminescence</b>. It is a cold light: almost none of the energy is lost as heat. An old light bulb is different. It gets too hot to touch.',
+      { fig: '<path class="k" d="M60 112 H290"/><path class="t" d="M60 108 V116 M117 108 V116 M175 108 V116 M232 108 V116 M290 108 V116"/>' +
+          '<text class="n" x="60" y="130" text-anchor="middle">0 s</text><text class="n" x="175" y="130" text-anchor="middle">5 s</text><text class="n" x="290" y="130" text-anchor="middle">10 s</text>' +
+          '<text class="lb" x="0" y="44">Kind A</text><path class="d" d="M60 40 H290"/><path class="a" style="stroke-width:7" d="M62 40 h10 M177 40 h10"/>' +
+          '<text class="lb" x="0" y="84">Kind B</text><path class="d" d="M60 80 H290"/><path class="a" style="stroke-width:7" d="M85 80 h6 M99 80 h6 M200 80 h6 M214 80 h6"/>' +
+          '<text class="n" x="150" y="14" text-anchor="middle">thick marks show when each kind flashes</text>',
+        tall: 136, cap: 'Two kinds of fireflies flash in different patterns. Time goes from left to right.' },
+      { h: 'Talking in flashes' },
+      'Fireflies flash to find a mate. Each kind has its own pattern, like a secret code. In one common kind, a male flies low over the grass and flashes once every few seconds, swooping upward as he glows. A female waiting in the grass answers with a flash of her own, about two seconds later. They keep signalling back and forth until he finds her.',
+      'Young fireflies, called larvae, live on the ground and in rotting logs. They glow too. Their light warns hungry animals to stay away, because fireflies taste bitter and can make a predator sick.',
+      { h: 'Fewer lights?' },
+      'In some places, people are seeing fewer fireflies than before. Bright outdoor lights make it hard for fireflies to see each other’s signals. Sprays that kill insects and the loss of fields and wetlands harm them too. Turning off porch lights on summer nights and leaving a patch of long grass can help. Some scientists ask families to count the fireflies in their backyards and share what they see. Every count helps them learn where fireflies need help.',
+      { box: 'Try it', text: 'On a summer night, watch one firefly and count the seconds between its flashes. Does it keep the same beat?' }
+    ],
+    guide: { before: 'Turn off the lights and compare a flashlight with a glow stick: one gets warm, one does not. Teach <b>beetle</b>, <b>abdomen</b> and <b>bioluminescence</b> (bio = life, lumin = light).',
+      after: 'Fireflies “talk” with light. What other ways do animals send messages to each other?' },
+    words: [['beetle', 'an insect with hard front wings that cover its back wings'], ['abdomen', 'the back part of an insect’s body'], ['bioluminescence', 'light made by a living thing']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Fireflies live in Ontario.', 'Fireflies are beetles that make cold light and use it to send signals.', 'Light bulbs get hot.', 'Larvae live in logs.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How does Kind B flash?',
+        opts: ['two quick flashes, then dark', 'one long flash every 5 seconds', 'it never flashes'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“They keep signalling back and forth until he finds her.” Who are <b>they</b>?',
+        opts: ['the male and the female', 'the larvae', 'people with flashlights'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['Bright outdoor lights shine at night.', null], ['A larva glows on the ground.', null]],
+        a: [[null, 'Fireflies cannot see each other’s signals.'], [null, 'Hungry animals stay away because fireflies taste bitter.']] },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Bio</b> means “life.” Bioluminescence is light made by …',
+        opts: ['living things', 'the Sun', 'electricity'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “A female waiting in the grass answers with a flash,” which word is the verb that tells what she does?',
+        opts: ['female', 'answers', 'grass'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the writer call a firefly’s glow a “cold light”?',
+        a: 'Almost none of its energy is lost as heat, so it does not get hot like an old light bulb.', look: 'little or no heat, compared with a bulb' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of another thing that makes light, such as a candle, the Sun or a flashlight. How is it like a firefly, and how is it different?',
+        a: 'Example: A candle makes light like a firefly, but a candle is hot and burns, while a firefly’s light is cold and made by its body.', look: 'one way alike and one way different' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-sand-dunes', subject: 'geography', form: 'Report',
+    title: 'Mountains of Sand',
+    deck: 'How wind and waves built the dunes at Sandbanks, and why grass holds them in place',
+    hero: {
+      photo: 'g4-sand-dunes.jpg', credit: 'Photo: Mhsheikholeslami, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 205,
+      cap: 'A sand dune at Sandbanks Provincial Park, Ontario. Look for the tiny person climbing to the top.'
+    },
+    body: [
+      'Most people think of sand dunes in hot deserts. But some of the most surprising dunes in the world are in Ontario, on the shore of Lake Ontario. At Sandbanks Provincial Park, in Prince Edward County, hills of pale sand rise higher than the trees around them.',
+      { h: 'Rock becomes sand' },
+      'Every grain of sand was once part of a rock. Over thousands of years, water, ice and wind wore rocks down into smaller and smaller pieces. This slow breaking down is called <b>weathering</b>. When glaciers melted at the end of the last ice age, they left behind huge amounts of sand and gravel. Waves on Lake Ontario washed the sand along the shore and piled it up on the beaches.',
+      { h: 'Wind on the move' },
+      'Then the wind took over. Strong winds blow across the lake toward the shore. When the beach sand dries, the wind lifts the tiny grains and bounces them inland. On a windy day at the beach, you can feel it happen as grains of sand sting your legs. Moving rock and soil from one place to another is called <b>erosion</b>. Wherever the wind slows down, behind a bush or a log, the sand drops and piles up. Little by little, the piles grow into dunes.',
+      { fig: '<path class="k" d="M0 120 H40 Q60 118 80 112 Q130 50 170 40 Q190 38 200 60 L230 120 H300"/><path class="t" d="M0 126 Q20 122 40 126 T80 126"/>' +
+          D.arrow(10, 50, 70, 50, 'a') + D.arrow(10, 70, 70, 70, 'a') + D.arrow(90, 90, 140, 62, 'a') +
+          '<path class="t" d="M130 60 v-8 M136 56 v-10 M142 52 v-9 M180 42 v-8"/>' +
+          D.label(4, 30, 'wind off the lake') + D.label(8, 146, 'beach', 30, 122) + D.label(200, 30, 'grass holds sand', 182, 38) + D.label(150, 146, 'sand slides down', 222, 100),
+        tall: 152, cap: 'Wind pushes sand up the gentle side of a dune. It slides down the steep side. Not to scale.' },
+      'A dune is not still. The wind pushes sand up its gentle side, and the sand tumbles down its steep side.',
+      { h: 'Grass to the rescue' },
+      'The best way to stop a dune from wandering is with plants. Beach grass grows long roots that spread under the sand like a net. The roots hold the grains in place, and the leaves slow the wind.',
+      'That is why the park asks visitors to stay on the boardwalks and marked paths. Trampling the grass lets the wind start moving the sand again. Beach grass is tough, though. When blowing sand buries it, it simply grows taller and pushes up through the new layer.',
+      { box: 'Did you know?', text: 'The dunes at Sandbanks formed on a strip of land between the lake and a bay. Dunes like these are rare on fresh water.' }
+    ],
+    guide: { before: 'Blow gently across a tray of dry sand through a straw, then put a few blades of grass in it and blow again. Teach <b>weathering</b> and <b>erosion</b>. Find Prince Edward County on a map of Ontario.',
+      after: 'What other things can wind or water move? Have you seen erosion near your home, school or a park?' },
+    words: [['weathering', 'the slow breaking down of rock into smaller pieces'], ['erosion', 'the moving of rock, sand or soil by wind, water or ice']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Deserts are hot.', 'Wind and waves built the Sandbanks dunes, and grass helps hold them in place.', 'Glaciers are made of ice.', 'Visitors like boardwalks.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in the order they happened.',
+        items: ['Rocks are weathered into sand.', 'Glaciers leave sand behind.', 'Waves pile sand on the beach.', 'Wind blows the sand into dunes.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which way does the sand slide down?',
+        opts: ['down the steep side', 'up toward the lake', 'under the beach'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“The roots hold the grains in place, and the leaves slow the wind.” This is a compound sentence because it …',
+        opts: ['joins two sentences with “and”', 'asks a question', 'has only one verb'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>trampling</b> the grass mean?',
+        opts: ['stepping on it hard', 'watering it', 'planting it'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the park ask people to stay on the boardwalks? Use details from the text.',
+        a: 'Trampling the grass damages it. Without grass roots to hold the sand and leaves to slow the wind, the wind starts moving the sand again.', look: 'links walking on grass to the sand moving again' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how a dune forms in two or three sentences.',
+        a: 'Rocks are weathered into sand, and waves pile it on the beach. The wind blows dry sand inland, and it drops where the wind slows down. The piles grow into dunes.', look: 'the main steps in order, in their own words' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-clouds', subject: 'science', form: 'Poem and explanation',
+    title: 'Reading the Sky',
+    deck: 'A poem about clouds, then the science of how they form',
+    hero: {
+      photo: 'g4-clouds.jpg', credit: 'Photo: Lance Vanlewen, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'Puffy cumulus clouds drift across a blue summer sky.'
+    },
+    body: [
+      { box: 'Cloud Watching', text: 'I lie on the grass with my hands behind my head.<br>A whale swims by, then a bear, then a bed.<br>They stretch and they puff, they drift and they twist,<br>then quietly melt into silvery mist.<br>The sky is a page that keeps turning all day,<br>and the wind is the reader that blows them away.' },
+      'The poem above is about cumulus clouds, the puffy white clouds that look like cotton balls. They are only one kind of cloud. Scientists sort clouds by their shape and how high they float, and each kind can tell you something about the weather.',
+      { h: 'How a cloud forms' },
+      'Clouds are made of water, but not the kind you can see in a puddle. When the Sun warms lakes, rivers and even wet grass, some of the water turns into an invisible gas called water vapour. This change is called <b>evaporation</b>. Warm air carries the water vapour up into the sky.',
+      'High above the ground, the air is much colder. The water vapour cools and turns back into tiny drops of water, or into ice crystals if it is cold enough. This change is called <b>condensation</b>. Billions of these drops crowd together, and we see them as a cloud. You can see condensation at home, too: it is the fog that forms on a bathroom mirror after a hot shower.',
+      { fig: '<path class="k" d="M8 40 Q30 24 66 32 M14 54 Q38 40 70 48 M20 66 Q40 58 60 62"/>' +
+          '<path class="k" d="M80 72 H145 Q152 62 142 58 H86 Q76 60 80 72 Z"/>' +
+          '<path class="k" d="M150 84 Q146 66 164 66 Q170 50 186 56 Q204 48 208 68 Q218 72 212 84 Z"/>' +
+          '<path class="k" d="M236 104 Q228 88 244 80 Q238 62 254 54 L240 26 H298 L284 54 Q298 66 290 82 Q300 94 292 104 Z"/><path class="t" d="M250 110 l-4 10 M266 110 l-4 10 M282 110 l-4 10"/>' +
+          '<text class="lb" x="36" y="134" text-anchor="middle">cirrus</text><text class="lb" x="108" y="152" text-anchor="middle">stratus</text>' +
+          '<text class="lb" x="178" y="134" text-anchor="middle">cumulus</text><text class="lb" x="300" y="152" text-anchor="end">cumulonimbus</text>',
+        tall: 158, cap: 'Four kinds of clouds: high icy wisps, a grey sheet, puffy heaps and a tall storm tower. Not to scale.' },
+      { h: 'Clouds and weather' },
+      'Thin, wispy cirrus clouds float very high, where the air is so cold that they are made of ice. Flat, grey stratus clouds can cover the whole sky and bring drizzle. Cumulus clouds usually mean fair weather. But if a cumulus cloud keeps growing taller and darker, it can become a cumulonimbus, a thunderstorm cloud. When the drops in a cloud join together and grow too heavy to float, they fall as rain or snow.',
+      'Next time you are outside, look up. Is the sky full of high, thin wisps, a flat grey blanket or puffy towers? Like the poet, you can read the sky, and you might even predict the weather before the forecast does.'
+    ],
+    guide: { before: 'Read the poem aloud together first, then go outside and look at the sky. Breathe on a cold mirror to show condensation. Teach <b>evaporation</b> and <b>condensation</b>.',
+      after: 'Look at today’s clouds. What kind are they? What weather do you predict?' },
+    words: [['evaporation', 'when water changes into a gas called water vapour'], ['condensation', 'when water vapour cools and changes back into drops of water']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text has two parts. What are they?',
+        opts: ['a poem, then an explanation', 'a letter, then a story', 'a recipe, then a map', 'two poems'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'In the poem, which words rhyme?',
+        opts: ['head and bed', 'whale and bear', 'sky and page'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“The wind is the reader that blows them away.” The poet gives the wind a person’s action. This is called …',
+        opts: ['personification', 'a fact', 'a question'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Which clouds are tall storm clouds?',
+        opts: ['cumulonimbus', 'cirrus', 'stratus'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Water vapour is called <b>invisible</b>. What does invisible mean?',
+        opts: ['cannot be seen', 'very heavy', 'very cold'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps in the order they happen.',
+        items: ['The Sun warms a lake.', 'Water evaporates into water vapour.', 'The vapour rises and cools.', 'Tiny drops form a cloud.', 'Heavy drops fall as rain.'], show: [3, 1, 4, 0, 2] },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why are cirrus clouds made of ice?',
+        a: 'They float very high, where the air is so cold that the water freezes into ice crystals.', look: 'high up, very cold air' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The poem and the explanation are both about clouds. How is the poem’s language different from the explanation’s?',
+        a: 'The poem uses rhyme and pictures in your mind, like a whale and a bear, to share a feeling. The explanation uses facts and science words like condensation to teach.', look: 'poem: rhyme, imagery, feelings; explanation: facts, science words' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-mohenjo-daro', subject: 'history', form: 'Report',
+    title: 'A City with Drains',
+    deck: 'Mohenjo-daro, a well-planned city built more than 4 500 years ago',
+    hero: {
+      photo: 'g4-mohenjo-daro.jpg', credit: 'Photo: Saqib Qayyum, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 205,
+      cap: 'The ruins of Mohenjo-daro, in Pakistan. The walls are made of baked brick.'
+    },
+    body: [
+      'About 4 500 years ago, beside the Indus River in what is now Pakistan, thousands of people lived in one of the best-planned cities in the ancient world. Today we call it Mohenjo-daro. Its people belonged to the Indus Valley <b>civilization</b>, a large society with cities, farms, trade and writing.',
+      { h: 'Streets in straight lines' },
+      'Many ancient towns grew in a jumble, with houses squeezed in wherever there was room. Mohenjo-daro was different. Its main streets ran in straight lines, north to south and east to west, and crossed each other like the lines on graph paper. Smaller lanes led off the main streets to the houses. This tells <b>archaeologists</b>, scientists who study the past by digging up what people left behind, that the city was carefully planned before it was built.',
+      { fig: '<rect class="k" x="10" y="10" width="280" height="130"/><path class="a" d="M100 10 V140 M200 10 V140 M10 75 H290"/>' +
+          '<path class="t" d="M40 10 V75 M150 75 V140 M250 10 V75 M10 40 H100 M200 110 H290"/><path class="d" d="M100 10 V140"/>' +
+          '<rect class="h" x="210" y="20" width="30" height="20"/>' +
+          D.label(4, 158, 'lane', 40, 60) + D.label(256, 158, 'bath', 225, 40) + D.label(60, 176, 'main street with a covered drain', 100, 120),
+        tall: 182, cap: 'A simple plan of part of the city. The main streets cross like a grid.' },
+      { h: 'Clean water, clean streets' },
+      'The city’s builders cared a great deal about water. Many houses had their own well and a small bathroom with a floor made of brick. Dirty water flowed out of each house through a clay pipe into a drain that ran along the street. The street drains were covered with bricks and had openings where workers could reach in to clean them. Few cities in the world had anything like this until thousands of years later.',
+      { h: 'The Great Bath' },
+      'Near the middle of the city stood a large, sunken pool called the Great Bath. Its bricks were fitted tightly and sealed with a black, sticky tar so the water could not leak out. No one knows exactly how it was used, but many experts think it was a special place for washing during ceremonies.',
+      { box: 'A mystery', text: 'The people of Mohenjo-daro wrote with small symbols on clay seals. No one has learned to read their writing yet.' },
+      'Bricks of the same size were used all over the city, and in other Indus cities too. This shows that people shared rules for building, even across long distances.'
+    ],
+    guide: { before: 'Find Pakistan and the Indus River on a world map. Show a picture of a street grid. Teach <b>civilization</b> and <b>archaeologist</b>.',
+      after: 'How are the drains in Mohenjo-daro like the sewers under your street? Why do cities need clean water?' },
+    words: [['civilization', 'a large society with cities, rules, trade and often writing'], ['archaeologists', 'scientists who study the past by digging up things people left behind']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Mohenjo-daro was a carefully planned ancient city with clean water and drains.', 'Pakistan is in Asia.', 'Bricks are heavy.', 'No one can read Indus writing.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the plan. How do the main streets meet?',
+        opts: ['They cross like a grid.', 'They go in circles.', 'They never meet.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do experts think the city was planned before it was built?',
+        opts: ['The streets run in straight lines.', 'It is very old.', 'It is near a river.'], a: 0 },
+      { k: 'table', code: 'C3.4', q: 'What do these parts of the city tell us about how its people lived? Fill in the chart.', cols: ['Part of the city', 'What it tells us'],
+        rows: [['wells and bathrooms in houses', null], ['bricks of the same size', null]],
+        a: [[null, 'They cared about clean water and washing.'], [null, 'They shared rules for building, even in other cities.']] },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “Dirty water flowed out of each house,” which word is an adjective that describes water?',
+        opts: ['Dirty', 'flowed', 'house'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why is “A mystery” in a box?',
+        opts: ['It is an extra fact set apart from the rest.', 'It is the main idea.', 'It is the title.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The Great Bath was sealed with tar. What does this tell you about its builders? Use details from the text.',
+        a: 'They were skilled and careful. They fitted the bricks tightly and used tar so the water would not leak out.', look: 'skill or care, with the tar or tight bricks as evidence' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think about your town or city. Name one way it is like Mohenjo-daro and one way it is different.',
+        a: 'Example: My town has drains under the streets, like Mohenjo-daro. But our streets are made of asphalt, not brick.', look: 'one likeness and one difference, linked to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-pont-du-gard', subject: 'history', form: 'Explanation',
+    title: 'A Bridge for Water',
+    deck: 'How the Romans carried water 50 kilometres to a thirsty city',
+    hero: {
+      photo: 'g4-pont-du-gard.jpg', credit: 'Photo: Benh Lieu Song, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Pont du Gard in southern France. Water once flowed along a channel on the very top.'
+    },
+    body: [
+      'About 2 000 years ago, the Roman city of Nîmes, in what is now southern France, was growing fast. Its people needed water for drinking, for fountains and for the public baths. The nearest good spring was about 50 kilometres away. So the Romans built an <b>aqueduct</b>, a long channel that carried water from the spring to the city.',
+      { h: 'Downhill all the way' },
+      'The Romans had no electric pumps. Their aqueducts worked using only <b>gravity</b>, the force that pulls things down toward Earth. The channel had to slope gently downhill for the whole trip. If it was too steep, the rushing water would wear away the channel. If it was too flat, the water would stop. Over its whole length, the aqueduct to Nîmes dropped only about as much as the height of a four-storey building.',
+      { fig: '<path class="k" d="M10 30 Q40 30 60 40 L290 70"/><path class="k" d="M10 36 Q40 36 60 46 L290 76"/>' +
+          '<path class="t" d="M0 140 Q60 90 120 130 Q180 160 240 120 Q270 100 300 110"/>' +
+          D.arrow(70, 52, 140, 60, 'a') + D.arrow(170, 66, 240, 74, 'a') +
+          D.label(4, 18, 'spring') + D.label(250, 106, 'Nîmes', 288, 76) + D.label(110, 18, 'the channel slopes gently down', 150, 60),
+        tall: 150, cap: 'The aqueduct sloped gently from the spring to the city. Not to scale.' },
+      { h: 'Crossing a valley' },
+      'Most of the aqueduct ran along the ground or in tunnels. But near the town of Remoulins, a deep river valley was in the way. To cross it, the Romans built the Pont du Gard, a bridge almost 50 metres high, as tall as a 16-storey building. It has three rows of stone <b>arches</b>, one on top of another. The water flowed in a covered channel along the very top.',
+      'An arch is a strong shape. The weight of the stones above pushes down and outward along the curve, and the stones press tightly against each other. Many of the Pont du Gard’s huge stones were cut so carefully that they fit together without any mortar to hold them.',
+      'When the water reached Nîmes, it flowed into a round stone tank. From there, lead pipes carried it to fountains, public baths and the homes of rich families. Most people filled their jugs at the fountains on the street.',
+      { box: 'Did you know?', text: 'The Pont du Gard has stood for about 2 000 years. Today it is a World Heritage Site, and people still walk across its lowest level.' }
+    ],
+    guide: { before: 'Tip a long piece of eavestrough or a ruler with a groove, and roll water or a marble down it at different slopes. Teach <b>aqueduct</b>, <b>gravity</b> and <b>arch</b>.',
+      after: 'Where does the water in your home come from? How does it get to you?' },
+    words: [['aqueduct', 'a long channel or bridge that carries water'], ['gravity', 'the force that pulls things down toward Earth'], ['arches', 'curved shapes that hold up weight above an opening']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['France is in Europe.', 'The Romans used gravity and strong arches to carry water to Nîmes.', 'Bridges are tall.', 'Baths need water.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Which way does the water flow?',
+        opts: ['from the spring down to Nîmes', 'from Nîmes up to the spring', 'in a circle'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the channel have to slope just a little?',
+        opts: ['Too steep wears it away; too flat stops the water.', 'The Romans liked flat land.', 'To make it look nice.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Aqua</b> means “water.” Which word also has to do with water?',
+        opts: ['aquarium', 'airport', 'autumn'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why does <b>Roman</b> start with a capital letter in “the Roman city of Nîmes”?',
+        opts: ['It is a describing word made from the name Rome.', 'It is a verb.', 'It ends the sentence.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What problem did each solve? Fill in the chart.', cols: ['Problem', 'Roman solution'],
+        rows: [['No pumps to move the water', null], ['A deep river valley was in the way', null]],
+        a: [[null, 'They used gravity and a channel that sloped gently downhill.'], [null, 'They built the Pont du Gard, a bridge with three rows of arches.']] },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think the Pont du Gard is still standing after 2 000 years?',
+        a: 'Arches are a strong shape, and the stones were cut so carefully that they press tightly together.', look: 'the strength of arches or careful stonework' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The text says the bridge is “as tall as a 16-storey building.” How does a comparison like this help you understand a number such as 50 metres?',
+        a: 'It is hard to picture 50 metres. Picturing a tall building I have seen helps me imagine how high the bridge really is.', look: 'the comparison helps them picture the size' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-steelpan', subject: 'arts', form: 'Explanation',
+    title: 'Music from an Oil Drum',
+    deck: 'How the steelpan was invented in Trinidad, and how it makes its notes',
+    hero: {
+      photo: 'g4-steelpan.jpg', credit: 'Photo: Kip1234, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A steel band plays at Carnival in Trinidad and Tobago.'
+    },
+    body: [
+      'Imagine taking an empty metal oil drum, the kind used to ship fuel, and turning it into an instrument that can play a sweet, ringing melody. That is exactly what musicians in Trinidad and Tobago did in the 1930s and 1940s. The steelpan, or pan, is now the national instrument of the country, and steel bands play it around the world.',
+      { h: 'Born at Carnival' },
+      'In Trinidad, Carnival is a huge festival of music, dancing and colourful costumes. For many years, people played music by beating bamboo sticks and anything else that made a good sound, such as biscuit tins and paint cans. Players noticed that a dented metal surface could ring with different notes. They began hammering old oil drums on purpose to create notes, and the steelpan was born.',
+      { h: 'Shaping the notes' },
+      'Making a pan takes great skill. First, the top of the drum is hammered down into a bowl shape. Then the pan maker marks out a set of oval areas, one for each note, and hammers each one until it rings at exactly the right <b>pitch</b>. Large notes near the rim make low sounds. Small notes near the middle make high sounds. Finally, the pan is heated over a fire and carefully tuned, note by note.',
+      { fig: '<circle class="k" cx="150" cy="80" r="70"/><ellipse class="k" cx="150" cy="80" rx="14" ry="10"/><ellipse class="k" cx="150" cy="54" rx="12" ry="9"/><ellipse class="k" cx="176" cy="80" rx="12" ry="9"/>' +
+          '<ellipse class="a" cx="150" cy="28" rx="20" ry="12"/><ellipse class="a" cx="200" cy="56" rx="18" ry="13"/><ellipse class="a" cx="100" cy="56" rx="18" ry="13"/><ellipse class="a" cx="200" cy="110" rx="18" ry="13"/><ellipse class="a" cx="100" cy="110" rx="18" ry="13"/><ellipse class="a" cx="150" cy="132" rx="20" ry="12"/>' +
+          D.label(2, 14, 'large notes: low', 90, 50) + D.label(4, 150, 'small notes: high', 140, 80),
+        tall: 156, cap: 'Looking down at the top of a pan. Each oval is one note.' },
+      'A player strikes the notes with two short sticks tipped with rubber. When a note is struck, it <b>vibrates</b>, shaking back and forth very fast, and the air carries the sound to your ears. A full steel band has pans of many sizes, from small high “tenor” pans to big “bass” pans made from whole drums.',
+      'Today, pan music is taught in schools across the Caribbean and in Canada. Some steel bands have more than a hundred players. They play calypso, the lively music of Trinidad, but also pop songs and even classical music. Before a big competition, a band may practise one piece for months, until every note is just right.',
+      { box: 'Did you know?', text: 'Steel bands play every summer at the Toronto Caribbean Carnival, one of the biggest festivals of its kind in North America.' }
+    ],
+    guide: { before: 'Find Trinidad and Tobago on a map. If you can, play a recording of a steel band. Tap a metal pot lid and a small spoon to hear low and high sounds. Teach <b>pitch</b> and <b>vibrate</b>.',
+      after: 'The steelpan was made from something people threw away. What could you make music with from things in your recycling bin?' },
+    words: [['pitch', 'how high or low a sound is'], ['vibrates', 'shakes back and forth very fast']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Oil drums carry fuel.', 'Musicians in Trinidad turned oil drums into the steelpan, which plays notes of different pitches.', 'Carnival has costumes.', 'Bass pans are big.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where are the low notes?',
+        opts: ['near the rim', 'in the very middle', 'under the pan'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why would a pan maker hammer a note again after testing it?',
+        opts: ['to get exactly the right pitch', 'to make it bigger', 'to clean it'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps for making a pan in order.',
+        items: ['Hammer the top into a bowl.', 'Mark out the notes.', 'Hammer each note.', 'Heat and tune the pan.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.1', half: true, q: '“Players noticed that a dented metal surface could ring.” Who are the players?',
+        opts: ['musicians at Carnival', 'sports teams', 'oil companies'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>melody</b> is …',
+        opts: ['a tune made of notes', 'a kind of drum', 'a festival'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why is the steelpan an important part of the culture of Trinidad and Tobago? Use details from the text.',
+        a: 'It was invented there by local musicians at Carnival, and now it is the national instrument. Steel bands still play it at Carnival.', look: 'invented there, national instrument, Carnival' },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'Did picturing the sounds in your head help you understand this text? Explain.',
+        a: 'Example: Yes. When I imagined a big note and a small note, I could “hear” that big ones are low and small ones are high.', look: 'tells whether visualizing helped and how' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-zamboni', subject: 'tech', form: 'Explanation',
+    title: 'The Ice Machine',
+    deck: 'How an ice resurfacer makes a scratched rink smooth again in minutes',
+    hero: {
+      photo: 'g4-zamboni.jpg', credit: 'Photo: Gogerr, CC BY-SA 4.0, Wikimedia Commons', focus: '40% 70%',
+      tall: 240,
+      cap: 'An ice resurfacer cleans the rink at an arena in Guelph, Ontario.'
+    },
+    body: [
+      'After an hour of hockey or skating, a rink is covered in scratches, grooves and loose snow. Then a big machine rolls slowly onto the ice, drives around in an oval, and leaves the rink shining like glass. It is an ice <b>resurfacer</b>, and many Canadians call it a Zamboni, after the man who invented the first one.',
+      { h: 'A better way' },
+      'Frank Zamboni ran a skating rink in California. In the 1940s, cleaning the ice took several workers more than an hour. They scraped it, swept away the shavings, sprayed it with water and waited for it to freeze. Zamboni spent years building and testing machines, and in 1949 he finished one that could do all of those jobs at once, with just one driver.',
+      { h: 'How it works' },
+      'Underneath the back of the machine is a long, sharp blade, like a giant pencil sharpener blade. As the machine drives, the blade shaves a very thin layer off the top of the ice. A turning screw, called an <b>auger</b>, scoops up the shavings and carries them into a large tank at the front. The driver sits on top and steers slowly, so each lap overlaps the one before and no strip of ice is missed.',
+      { fig: '<rect class="k" x="40" y="30" width="200" height="70" rx="8"/><circle class="k" cx="80" cy="110" r="14"/><circle class="k" cx="200" cy="110" r="14"/>' +
+          '<path class="k" d="M240 116 H290"/><path class="a" d="M250 100 L270 118"/><path class="d" d="M0 124 H300"/><path class="t" d="M248 110 h30 M246 104 h28"/>' +
+          '<path class="t" d="M60 40 h70 v40 h-70 Z"/>' +
+          D.arrow(240, 60, 140, 60, 'a') +
+          D.label(60, 20, 'snow tank') + D.label(130, 150, 'blade shaves the ice', 256, 114) + D.label(212, 18, 'water and towel', 284, 117) + D.label(150, 52, 'auger', 200, 60),
+        tall: 156, cap: 'Inside an ice resurfacer. The machine moves to the left, so its back is on the right. Not to scale.' },
+      'Next, the machine washes the ice and a rubber squeegee pulls away the dirty water. Last, a pipe at the very back lays down a thin layer of warm water, and a soft towel drags behind to spread it evenly. The warm water melts into the tiny grooves and freezes into a new, smooth surface in a few minutes.',
+      { box: 'Try it', text: 'Watch a resurfacer at an arena. Time how long it takes to do the whole rink.' },
+      'Today, resurfacers clean rinks all over the world, from small town arenas to the Olympics. Many newer machines run on batteries instead of gas, which keeps the air inside arenas cleaner for players and fans.'
+    ],
+    guide: { before: 'If you can, watch a resurfacer at a local arena or a short video of one. Teach <b>resurfacer</b> (re = again, surface = top) and <b>auger</b>; a pencil sharpener and a screw help show both.',
+      after: 'Frank Zamboni tested his machine for years before it worked. What have you kept trying until you got it right?' },
+    words: [['resurfacer', 'a machine that makes a new, smooth top on the ice'], ['auger', 'a turning screw that moves material along']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Hockey is fun.', 'An ice resurfacer shaves, cleans and floods the ice to make it smooth, and one driver can do it all.', 'California is warm.', 'Towels are soft.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the machine’s jobs in order.',
+        items: ['shave the ice', 'carry shavings to the tank', 'wash and squeegee', 'spread warm water'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where are the shavings carried?',
+        opts: ['into the snow tank', 'out the back', 'under the wheels'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Re</b>surfacer: re- means “again.” Which word means “make again”?',
+        opts: ['remake', 'unmake', 'maker'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“The machine washes the ice, and a squeegee pulls away the water.” Which word joins the two parts?',
+        opts: ['and', 'the', 'away'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare cleaning the ice before and after Zamboni’s invention.', cols: ['Before 1949', 'After 1949'],
+        rows: [['several workers', null], ['more than an hour', null]],
+        a: [[null, 'one driver'], [null, 'a few minutes']] },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the machine use warm water instead of cold?',
+        a: 'Warm water melts into the tiny grooves, so it fills them before it freezes into a smooth surface.', look: 'melts into grooves, freezes smooth' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about rinks or arenas before reading? How did it help you understand the text?',
+        a: 'Example: I have seen the resurfacer go around between periods at a hockey game, so I could picture it driving in an oval.', look: 'something they knew before and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-cn-tower', subject: 'tech', form: 'Report',
+    title: 'Reaching for the Sky',
+    deck: 'Why Toronto built the CN Tower, and how it stays standing',
+    hero: {
+      photo: 'g4-cn-tower.jpg', credit: 'Photo: Jchmrt, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 225,
+      cap: 'The CN Tower rises above the Toronto skyline at dusk, seen across Lake Ontario.'
+    },
+    body: [
+      'For more than 30 years, the tallest free-standing structure on Earth was in Canada. The CN Tower in Toronto stands 553 metres tall, as high as about 180 storeys. When it opened in 1976, nothing built by people anywhere in the world was taller.',
+      { h: 'Why build it?' },
+      'By the 1970s, Toronto had many new skyscrapers. They were so tall that they blocked television and radio signals from older, shorter antennas. The city needed an antenna higher than everything around it. The CN Tower was the answer. Its tall antenna still sends signals to millions of people.',
+      { h: 'Building it' },
+      'The tower is made mostly of <b>concrete</b>, a mix of cement, sand, stone and water that dries as hard as rock. Workers poured concrete into a mould that slowly climbed upward as each layer hardened. They worked day and night, and the tower grew a few metres every day.',
+      'The antenna on top was too heavy and too high for a crane. So it was lifted up in many pieces by a giant helicopter, one piece at a time.',
+      { fig: '<path class="k" d="M150 10 V40"/><path class="k" d="M144 40 H156 L160 70 H140 Z"/><ellipse class="k" cx="150" cy="76" rx="22" ry="7"/><path class="k" d="M142 82 L130 160 M158 82 L170 160 M150 82 V160"/>' +
+          '<path class="k" d="M100 160 L130 160 M170 160 L200 160"/><path class="t" d="M120 166 L180 166 L150 172 Z"/>' +
+          D.label(190, 24, 'antenna', 152, 24) + D.label(200, 80, 'LookOut', 172, 76) + D.label(10, 130, 'three legs in a Y', 136, 130),
+        tall: 176, cap: 'The tower’s shape. Seen from above, its base is shaped like the letter Y. Not to scale.' },
+      { h: 'Standing strong' },
+      'How does such a tall, thin tower stay up in strong winds? The secret is its shape. The bottom is a wide Y with three legs. A Y shape is <b>stable</b>, meaning it does not tip over easily, because it pushes back against wind from every direction. The tower’s base also sits on a huge concrete foundation sunk deep into the ground. Even in the strongest storms, the top sways only a little.',
+      'Today, more than a million people visit the tower every year. Glass-fronted elevators carry them to the LookOut level in about a minute. There, they can stand on a glass floor and look straight down more than 300 metres.',
+      { box: 'Did you know?', text: 'Lightning strikes the CN Tower dozens of times a year. Copper strips carry the electricity safely into the ground.' }
+    ],
+    guide: { before: 'Build a tall tower with paper cups or blocks and try to blow it over, then try a wider base. Teach <b>concrete</b> and <b>stable</b>. Find Toronto on a map.',
+      after: 'If you could build a tall tower in your town, what would it be for? How would you make it stable?' },
+    words: [['concrete', 'a mix of cement, sand, stone and water that dries very hard'], ['stable', 'steady and not likely to tip over']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Toronto has skyscrapers.', 'The CN Tower was built to send signals over tall buildings, and its shape keeps it standing.', 'Helicopters can lift things.', 'Lightning is bright.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What shape is the base, seen from above?',
+        opts: ['the letter Y', 'a square', 'a circle'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was the antenna lifted by helicopter?',
+        opts: ['It was too heavy and high for a crane.', 'Helicopters are cheaper.', 'The workers were tired.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Problem', 'Solution'],
+        rows: [['Skyscrapers blocked TV and radio signals.', null], ['Strong winds push on a tall tower.', null]],
+        a: [[null, 'Build an antenna higher than everything, the CN Tower.'], [null, 'Give it a wide Y-shaped base and a deep foundation.']] },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “Workers poured concrete into a mould,” which word is the verb?',
+        opts: ['Workers', 'poured', 'mould'], a: 1 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Who would find this text most useful?',
+        opts: ['a student learning about tall structures', 'someone looking for a bedtime story', 'someone baking bread'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the top of the tower sway only a little, even in storms?',
+        a: 'Its wide Y-shaped base pushes back against wind from every direction, and it sits on a deep concrete foundation.', look: 'the Y base or deep foundation' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The text says the tower is 553 metres tall. How could you check whether a fact like this is true?',
+        a: 'I could look it up in another book or on the CN Tower’s own website, or ask a librarian. If two good sources agree, I can trust it more.', look: 'checks another reliable source' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bird-count', subject: 'math', form: 'Report',
+    title: 'Counting Birds in Winter',
+    deck: 'How families help scientists by counting the birds at their feeders',
+    hero: {
+      photo: 'g4-chickadee.jpg', credit: 'Photo: Rhododendrites, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'A black-capped chickadee perches on a bird feeder.'
+    },
+    body: [
+      'How many chickadees live in your neighbourhood? Are there more blue jays this winter than last winter? Scientists want to know, but they cannot be everywhere at once. So every winter, thousands of people across Canada help by counting birds. People who help scientists collect information like this are called <b>citizen scientists</b>.',
+      { h: 'How a count works' },
+      'One kind of count happens at home. A family chooses a few days, watches their bird feeder for a set amount of time, and writes down each kind of bird they see. They keep a <b>tally</b>, making one mark for each bird and crossing every group of four with a fifth mark, so the marks are easy to count in fives.',
+      'There is one important rule. You count only the largest number of each kind that you see at one time. If three chickadees are at the feeder, then two fly away and one comes back, you write 3, not 4. That way, you do not count the same bird twice.',
+      { fig: '<text class="l" x="0" y="28">black-capped chickadee</text><text class="l" x="0" y="54">blue jay</text><text class="l" x="0" y="80">downy woodpecker</text><text class="l" x="0" y="106">northern cardinal</text>' +
+          '<path class="a" d="M170 30 v-16 M177 30 v-16 M184 30 v-16 M191 30 v-16 M167 28 l28 -14 M204 30 v-16 M170 56 v-16 M177 56 v-16 M184 56 v-16 M170 82 v-16 M177 82 v-16 M170 108 v-16 M177 108 v-16 M184 108 v-16 M191 108 v-16"/>',
+        tall: 120, cap: 'The Okafor family’s tally, Sudbury, one Saturday.' },
+      { fig: '<path class="k" d="M60 10 V130 H290"/><path class="t" d="M56 110 H290 M56 90 H290 M56 70 H290 M56 50 H290 M56 30 H290 M56 10 H290" style="opacity:.35"/>' +
+          '<text class="n" x="50" y="114" text-anchor="end">1</text><text class="n" x="50" y="94" text-anchor="end">2</text><text class="n" x="50" y="74" text-anchor="end">3</text><text class="n" x="50" y="54" text-anchor="end">4</text><text class="n" x="50" y="34" text-anchor="end">5</text><text class="n" x="50" y="14" text-anchor="end">6</text>' +
+          '<rect class="a" x="72" y="10" width="36" height="120"/><rect class="a" x="128" y="70" width="36" height="60"/><rect class="a" x="184" y="90" width="36" height="40"/><rect class="a" x="240" y="50" width="36" height="80"/>' +
+          '<text class="n" x="90" y="146" text-anchor="middle">chickadee</text><text class="n" x="146" y="146" text-anchor="middle">jay</text><text class="n" x="202" y="146" text-anchor="middle">woodpecker</text><text class="n" x="258" y="146" text-anchor="middle">cardinal</text>',
+        tall: 152, cap: 'The same count shown as a bar graph. Each bar shows one kind of bird.' },
+      { h: 'Why it matters' },
+      'When the counts from thousands of homes are put together, scientists can see patterns. They can tell which birds are becoming more common, which are disappearing, and how birds move when winters get warmer. For example, counts have shown that northern cardinals now live much farther north in Ontario and Quebec than they did 50 years ago. One family’s count is small. All the counts together give a big picture.',
+      'Anyone can take part, and you do not need to be an expert. A bird guide, a pencil and a sharp eye are enough. Counting also helps you notice more. After a few weeks, many young counters can name every bird at their feeder by its colours, its size and even its call.'
+    ],
+    guide: { before: 'Practise making tally marks in groups of five. If you have a window with a view of trees or a feeder, count birds together for ten minutes. Teach <b>tally</b>.',
+      after: 'What could your family count to learn something about your neighbourhood? How would you show the results?' },
+    words: [['tally', 'marks made to keep count, often in groups of five'], ['citizen scientists', 'people who help scientists by collecting information']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Chickadees are small.', 'Families count birds in winter, and their counts help scientists see patterns.', 'Sudbury is in Ontario.', 'Bar graphs have bars.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the bar graph. Which bird did the family see most?',
+        opts: ['chickadee', 'blue jay', 'cardinal'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the tally. How many cardinals did the family count?',
+        opts: ['4', '3', '6'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Three chickadees visit, two leave, then one returns. What do you record?',
+        opts: ['3', '4', '6'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why does <b>Okafor</b> start with a capital letter?',
+        opts: ['It is a family’s name.', 'It is a kind of bird.', 'It is a verb.'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 2, q: 'The count is shown two ways: as a tally and as a bar graph. Why is the bar graph helpful?',
+        a: 'You can see at a glance which bird was seen most and least by comparing the heights of the bars.', look: 'easy to compare at a glance' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The text says, “One family’s count is small. All the counts together give a big picture.” What does this mean?',
+        a: 'One count only shows one yard. When thousands of counts are put together, scientists can see patterns across the whole country.', look: 'many counts together show patterns' },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Why might a family read this text?',
+        a: 'To learn how to count birds at their own feeder and help scientists.', look: 'a real purpose for reading it' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-squirrel-fable', subject: 'story', form: 'Fable',
+    title: 'Red Squirrel’s Treasure',
+    deck: 'A fable about saving, sharing and a long, cold winter',
+    hero: {
+      photo: 'g4-red-squirrel.jpg', credit: 'Photo: Rhododendrites, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 35%',
+      tall: 225,
+      cap: 'A red squirrel nibbles a mushroom. Red squirrels store food for the winter.'
+    },
+    body: [
+      'In a forest of spruce and birch, there lived a red squirrel who loved to collect. All autumn, she raced up and down the trees, chattering to herself. She stuffed cones into hollow logs. She tucked mushrooms into the forks of branches to dry. She buried seeds under moss and stones, until she had more than a hundred hiding places.',
+      '“Why do you need so much?” asked Chickadee, who was hanging upside down on a twig.',
+      '“Winter is long,” said Red Squirrel, without stopping. “A smart squirrel never has enough.”',
+      { h: 'The first snow' },
+      'Then the snow came, deep and white. Red Squirrel curled up in her nest, warm and full. One grey morning, she heard a tiny, weak voice outside. It was Chickadee, puffed up against the cold.',
+      '“The seeds are all buried under the snow,” said Chickadee. “Could you spare a few?”',
+      'Red Squirrel looked at her <b>treasure</b>. She thought about how long winter was. “I am sorry,” she said, “but I need it all.” Chickadee flew away without a word, and the forest was silent again. Red Squirrel told herself she had done the smart thing, but she did not sleep well that night.',
+      { fig: '<path class="k" d="M10 120 H290"/>' + D.spruce(40, 120, 90) + D.spruce(250, 120, 100) +
+          '<rect class="k" x="100" y="104" width="60" height="16" rx="8"/><circle class="a" cx="116" cy="112" r="3"/><circle class="a" cx="128" cy="112" r="3"/>' +
+          '<path class="k" d="M190 120 q6 -12 12 0 Z"/><path class="a" d="M196 116 l2 2"/><path class="k" d="M64 60 l14 -6"/><circle class="a" cx="72" cy="56" r="3"/>' +
+          D.label(20, 162, 'cones in a hollow log', 130, 106) + D.label(172, 162, 'seeds under a stone', 196, 114) + D.label(86, 40, 'mushroom on a branch', 72, 54),
+        tall: 170, cap: 'A few of Red Squirrel’s hiding places.' },
+      { h: 'Spring' },
+      'Winter went on and on. Red Squirrel ate and ate, but when spring came, she found that she had forgotten more than half of her hiding places. Many of the seeds had already <b>sprouted</b> into tiny trees. Her treasure had been more than she could ever use.',
+      'Just then, Chickadee landed on a branch nearby, thin but alive. Neighbours at the edge of the forest had kept a feeder full of seeds all winter long, and they had shared with every bird that came.',
+      'Red Squirrel’s whiskers drooped. “I kept too much,” she said quietly, “and gave too little.”',
+      { box: 'The moral of this fable', text: 'What you share is worth more than what you hide away.' }
+    ],
+    guide: { before: 'Explain that a fable is a short story, often with animals that talk, that teaches a lesson called a moral. Teach <b>fable</b> and <b>moral</b>. Real red squirrels do store hundreds of cones.',
+      after: 'Was Red Squirrel wrong to save food? When is saving wise, and when is sharing better?' },
+    words: [['treasure', 'a store of valuable things'], ['sprouted', 'began to grow from a seed']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This story is a <b>fable</b>. Which clue tells you?',
+        opts: ['The animals talk, and the story ends with a moral.', 'It has facts and a bar graph.', 'It is a true story about the writer.', 'It is written as a letter.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The squirrel and the chickadee talk and have feelings like people. This is called …',
+        opts: ['anthropomorphism', 'a fact', 'a heading'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who tells this story?',
+        opts: ['a narrator outside the story', 'Red Squirrel', 'Chickadee'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part', 'What happens'],
+        rows: [['Beginning', null], ['Problem', null], ['Ending', null]],
+        a: [[null, 'Red Squirrel stores food in more than a hundred hiding places.'], [null, 'Chickadee is hungry, but Red Squirrel will not share.'], [null, 'In spring, Red Squirrel has more than she used and feels sorry she did not share.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were some seeds sprouting in spring?',
+        opts: ['She forgot where she buried them.', 'Chickadee planted them.', 'She watered them.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“She thought about how long winter was.” Who is <b>she</b>?',
+        opts: ['Red Squirrel', 'Chickadee', 'a neighbour'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did Red Squirrel change from the beginning to the end? Use details from the story.',
+        a: 'At first she thought she could never have enough and would not share. At the end, her whiskers drooped and she said she kept too much and gave too little.', look: 'beginning and end, with a detail for each' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Tell about a time you or someone you know shared something. How does it connect to the moral?',
+        a: 'Example: My friend shared her lunch when I forgot mine. Sharing made us both happy, just like the moral says sharing is worth more than hiding things away.', look: 'a real example linked to the moral' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-polar-bears', subject: 'geography', form: 'Diary',
+    title: 'Waiting for the Ice',
+    deck: 'A diary from a trip to see the polar bears of Churchill, Manitoba',
+    hero: {
+      photo: 'g4-polar-bear.jpg', credit: 'Photo: TravelingOtter, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 205,
+      cap: 'A polar bear walks over rocks near Churchill, Manitoba, waiting for Hudson Bay to freeze.'
+    },
+    body: [
+      { h: 'Monday, October 27' },
+      'Mom and I finally made it to Churchill! There are no roads here from the south, so we came the last part of the way by plane. Churchill is a small town on the shore of Hudson Bay, and every autumn, hundreds of polar bears gather nearby. Our guide, Ruth, says they are waiting for the bay to freeze.',
+      { h: 'Tuesday, October 28' },
+      'Today we rode across the <b>tundra</b> in a giant bus with huge tires, called a tundra buggy. The land was flat, rocky and covered in low, orange plants. No trees can grow this far north. Then I saw it: a polar bear, walking slowly toward us. It was so close I could see its black nose and hear it sniff the air!',
+      'Ruth explained that polar bears hunt seals from the <b>sea ice</b>. In summer, when the ice on Hudson Bay melts, the bears must come ashore. They can barely find food on land, so they live off their thick layer of fat for months. Now they are hungry, and they are waiting for the ice to come back.',
+      { fig: '<path class="k" d="M60 20 Q30 60 50 110 Q70 150 130 150 Q190 150 220 120 Q250 80 230 40 Q200 10 140 14 Q100 12 60 20 Z"/>' +
+          '<path class="t" d="M0 10 Q30 40 40 80 Q46 130 110 160 M300 20 Q260 60 262 110 Q262 140 240 160"/>' +
+          '<circle class="a" cx="64" cy="122" r="5"/>' + D.label(110, 92, 'Hudson Bay') + D.label(4, 160, 'Churchill', 60, 126) +
+          '<path class="d" d="M80 40 Q110 30 150 40"/>' + D.label(160, 30, 'ice forms early here', 116, 34),
+        tall: 168, cap: 'A simple map of Hudson Bay. Churchill is on its west shore. Not to scale.' },
+      { h: 'Wednesday, October 29' },
+      'I asked Ruth why the bears gather here. She said that the ice often forms early near Churchill, so the bears can get out onto it sooner. She also said that the ice is melting earlier in spring and freezing later in autumn than it used to, because Earth is getting warmer. That means the bears have to wait longer without food. I felt worried for them.',
+      'Ruth told me that in Inuktitut, the language of the Inuit, a polar bear is called nanuq. Inuit have lived alongside polar bears for thousands of years and know them better than anyone.',
+      { h: 'Thursday, October 30' },
+      'Last day. We saw a mother bear and two cubs. The cubs wrestled in the snow like puppies. I hope the ice comes soon.'
+    ],
+    plain: true,
+    guide: { before: 'Find Churchill and Hudson Bay on a map of Canada. Explain what a diary is and that this one is invented, but its facts are real. Teach <b>tundra</b> and <b>sea ice</b>.',
+      after: 'Why might the writer feel worried for the bears? What could people do to help?' },
+    words: [['tundra', 'a cold, flat, treeless land in the far north'], ['sea ice', 'ocean water that has frozen and floats']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text is a <b>diary</b>. Which clue tells you?',
+        opts: ['It has dated entries about the writer’s own days.', 'It has a list of steps.', 'It ends with a moral.', 'It is a poem that rhymes.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'The diary is written in the first person. What does that mean?',
+        opts: ['The writer tells about herself, using I and me.', 'The bears tell the story.', 'Ruth tells the story.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. Where is Churchill?',
+        opts: ['on the west shore of Hudson Bay', 'in the middle of the bay', 'on the east shore'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['The ice on Hudson Bay melts in summer.', null], ['The ice melts earlier and freezes later.', null]],
+        a: [[null, 'The bears must come ashore, where they can barely find food.'], [null, 'The bears have to wait longer without food.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The bears <b>gather</b> near Churchill. Gather means …',
+        opts: ['come together', 'run away', 'fall asleep'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can no trees grow on the tundra?',
+        opts: ['It is too cold and far north.', 'The bears eat them.', 'It rains too much.'], a: 0 },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'The diary lets you hear the writer’s own thoughts and feelings. What is one good thing and one hard thing about telling it this way?',
+        a: 'Good: you feel her excitement and worry, like when the bear came close. Hard: you only learn what she saw and was told.', look: 'one advantage and one disadvantage of first person' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the writer say Inuit “know them better than anyone”?',
+        a: 'Inuit have lived alongside polar bears in the North for thousands of years.', look: 'thousands of years living with the bears' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-earthworms', subject: 'science', form: 'Report',
+    title: 'Underground Helpers',
+    deck: 'How earthworms build healthy soil, and why some forests do not want them',
+    hero: {
+      photo: 'g4-earthworm.jpg', credit: 'Photo: Jochem Kühnen, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 205,
+      cap: 'An earthworm on damp soil. The pale band near its head is called the saddle.'
+    },
+    body: [
+      'Dig into a garden after a rain, and you will probably find an earthworm wriggling out of the way. Earthworms have no eyes, no legs and no bones, but they are some of the most important animals in the soil.',
+      { h: 'Life in the dark' },
+      'An earthworm’s body is made of many rings, called segments. On most segments are tiny bristles that grip the soil, so the worm can push forward or hold tight. Earthworms do not have lungs. They breathe through their skin, which must stay damp. That is why they stay underground on sunny days.',
+      { h: 'Soil builders' },
+      'Earthworms eat soil and bits of dead leaves and roots. As the food passes through their bodies, it is broken down. What comes out the other end is called a <b>casting</b>, a tiny pile of very rich soil full of <b>nutrients</b>, the things plants need to grow. Earthworms are <b>decomposers</b>: they help turn dead plants back into soil.',
+      { fig: '<path class="k" d="M0 30 H300"/><path class="t" d="M0 30 Q20 24 40 30 M120 30 Q140 22 160 30"/>' +
+          '<path class="k" d="M60 30 Q70 70 50 100 Q40 130 70 150"/><path class="k" d="M200 30 Q190 60 220 90 Q240 110 230 150"/>' +
+          '<path class="a" d="M60 30 q-6 -10 6 -14 q10 2 4 14"/><path class="a" d="M70 150 q10 -6 20 0"/>' +
+          D.arrow(110, 56, 70, 66, 't') + D.arrow(260, 56, 210, 66, 't') +
+          D.label(84, 12, 'casting', 66, 20) + D.label(120, 62, 'air and water enter tunnels') + D.label(100, 150, 'earthworm', 86, 150),
+        tall: 160, cap: 'Earthworm tunnels let air and water into the soil. Not to scale.' },
+      'Their tunnels help too. Air and rainwater flow down the tunnels to plant roots, and roots grow more easily through loose soil.',
+      { h: 'A surprise in the forest' },
+      'Here is something that surprises many people. Most of the earthworms in Canada did not live here before Europeans arrived. Long ago, glaciers covered much of the country, and the worms disappeared. Later, worms arrived from Europe, hidden in soil on ships and in the roots of plants. In some northern forests, these new worms now eat the thick layer of fallen leaves on the forest floor so fast that wildflowers and young trees struggle to grow.',
+      { box: 'Did you know?', text: 'Fishers sometimes dump leftover worms in the woods. Scientists ask people to throw extra bait worms in the garbage instead.' }
+    ],
+    guide: { before: 'If you can, look for earthworms together after a rain and feel how damp they are (wash hands after). Teach <b>casting</b>, <b>nutrients</b> and <b>decomposer</b>.',
+      after: 'Earthworms help gardens but can harm some forests. Can an animal be both helpful and harmful? How?' },
+    words: [['casting', 'the rich soil an earthworm leaves behind'], ['nutrients', 'things in food and soil that living things need to grow'], ['decomposers', 'living things that break down dead plants and animals']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Earthworms have no eyes.', 'Earthworms build healthy soil, but in some forests they cause problems.', 'Glaciers were cold.', 'Fishers use bait.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What goes down the tunnels?',
+        opts: ['air and water', 'rocks', 'sunlight'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do earthworms stay underground on sunny days?',
+        opts: ['Their skin must stay damp.', 'They are cold.', 'They are sleeping.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“They breathe through their skin.” Who are <b>they</b>?',
+        opts: ['earthworms', 'lungs', 'gardeners'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: 'Which sentence is a compound sentence?',
+        opts: ['Earthworms have no eyes, but they can sense light.', 'Earthworms eat soil.', 'Look for worms.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['How earthworms help gardens', 'How earthworms harm some forests'],
+        rows: [[null, null]],
+        a: [['They make rich castings and tunnels for air and water.', 'They eat fallen leaves so fast that wildflowers and young trees struggle.']] },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you know about earthworms before reading? What surprised you?',
+        a: 'Example: I knew worms come out after rain. I was surprised that most earthworms in Canada came from Europe.', look: 'something they knew and something new' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do scientists ask people not to dump bait worms in the woods?',
+        a: 'The worms could spread into forests and eat the fallen leaves that wildflowers and young trees need.', look: 'links dumping worms to harm in forests' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-apple-orchard', subject: 'science', form: 'Explanation',
+    title: 'From Blossom to Apple',
+    deck: 'How bees, blossoms and a little help from farmers grow Ontario’s apples',
+    hero: {
+      photo: 'g4-apple-orchard.jpg', credit: 'Photo: Dillan Payne, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 225,
+      cap: 'Rows of apple trees in an orchard in Clarington, Ontario, in September.'
+    },
+    body: [
+      'Every crunchy apple in your lunch bag began as a pale pink flower. In an <b>orchard</b>, a farm of fruit trees, thousands of these blossoms open in May. What happens in the next few weeks decides how many apples the farmer will pick in the fall.',
+      { h: 'Bees at work' },
+      'Inside each apple blossom is a yellow dust called pollen. For an apple to grow, pollen must be carried to the middle of a blossom. This is called <b>pollination</b>. Wind cannot do the job well, so apple trees need insects, especially bees.',
+      'When a bee visits a blossom to drink its sweet nectar, pollen sticks to its fuzzy body. At the next flower, some of that pollen rubs off. There is a catch, though. Most apple trees need pollen from a different kind of apple tree. So farmers plant several kinds in the same orchard, or add crab apple trees among the rows.',
+      { fig: '<circle class="k" cx="90" cy="70" r="14"/><path class="k" d="M90 56 Q70 20 90 10 Q110 20 90 56 M104 70 Q140 50 150 70 Q140 90 104 70 M90 84 Q70 120 90 130 Q110 120 90 84 M76 70 Q40 50 30 70 Q40 90 76 70"/>' +
+          '<path class="t" d="M90 70 l-6 -8 M90 70 l6 -8 M90 70 l8 4 M90 70 l-8 4"/><circle class="dot" cx="84" cy="62" r="2"/><circle class="dot" cx="96" cy="62" r="2"/>' +
+          '<ellipse class="k" cx="220" cy="54" rx="22" ry="12"/><path class="t" d="M206 48 Q200 34 212 36 M228 46 Q236 32 244 40"/><path class="d" d="M198 60 Q150 90 106 74"/>' +
+          D.label(170, 110, 'a bee carries pollen', 196, 62) + D.label(10, 150, 'pollen on the stamens', 84, 64),
+        tall: 156, cap: 'A bee carries pollen from flower to flower. Not to scale.' },
+      'Many orchards in Ontario rent hives of honeybees during blossom time. Beekeepers drive the hives in at night, when the bees are inside, and take them away again when the blossoms fall.',
+      { h: 'Growing the fruit' },
+      'After a blossom is pollinated, its petals drop off. The base of the flower begins to swell. All summer, it grows bigger and sweeter, until it becomes an apple with seeds in its core. Pickers harvest the apples in September and October.',
+      'Growers also thin the fruit. If a branch holds too many small apples, they pick some off early so the rest can grow big and sweet. At harvest, apples are picked by hand, because a bruised apple spoils quickly. Some are sold fresh, and others are pressed into juice or baked into pies.',
+      { box: 'A Canadian apple', text: 'The McIntosh apple began with one tree found by John McIntosh on his farm in Dundela, Ontario, in 1811.' }
+    ],
+    guide: { before: 'Cut an apple across its middle to show the star of seeds. If you can, look at a flower and find its pollen. Teach <b>orchard</b> and <b>pollination</b>.',
+      after: 'What would happen to apples if there were no bees? What other foods need pollinators?' },
+    words: [['orchard', 'a farm where fruit trees are grown'], ['pollination', 'moving pollen to the middle of a flower so fruit and seeds can grow']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Apples are red.', 'Bees carry pollen between blossoms, and pollinated blossoms grow into apples.', 'Ontario has farms.', 'Beekeepers drive at night.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['A blossom opens.', 'A bee brings pollen.', 'The petals drop off.', 'The base swells into an apple.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the dashed line show?',
+        opts: ['the bee’s path to the flower', 'the wind', 'a branch'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do farmers plant different kinds of apple trees together?',
+        opts: ['Most apple trees need pollen from another kind.', 'They look nicer.', 'To confuse the bees.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why does <b>McIntosh</b> start with a capital letter?',
+        opts: ['It is named after a person.', 'It is a verb.', 'It is a small word.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do beekeepers move the hives at night?',
+        a: 'At night the bees are inside the hive, so none are left behind or lost.', look: 'bees are all inside' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'To answer the last question, did you find the answer in the text, or did you have to think it through? Explain what you did.',
+        a: 'The text says the bees are inside at night, but not why that matters. I had to put that fact together with what I know: if you moved the hive in the day, many bees would be out flying.', look: 'tells whether the answer was stated or inferred, and how' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-kente', subject: 'arts', form: 'Explanation',
+    title: 'Cloth That Speaks',
+    deck: 'How kente cloth is woven in Ghana, and what its colours and patterns mean',
+    hero: {
+      photo: 'g4-kente.jpg', credit: 'Photo: Warmglow, CC0, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'Kente cloth in many patterns, from the Volta Region of Ghana.'
+    },
+    body: [
+      'Bright gold, deep green, bold red and blue zigzags: kente cloth is one of the most famous fabrics in the world. It comes from Ghana, a country in West Africa. For hundreds of years, the Asante and Ewe peoples of Ghana have woven kente for kings, queens and important celebrations.',
+      { h: 'Woven in strips' },
+      'Kente is made on a <b>loom</b>, a wooden frame for weaving thread into cloth. A kente loom is very narrow. It makes a long strip of cloth only about as wide as your hand. The weaver sits at the loom and works the pedals with their feet to lift and lower the threads, while their hands pass a small wooden tool full of thread back and forth.',
+      'One strip is not enough to wear. So the weaver makes many strips and sews them together, edge to edge. When the strips are joined, the small blocks of pattern line up like the squares on a checkerboard and make a much bigger design.',
+      { fig: '<rect class="k" x="20" y="10" width="40" height="130"/><rect class="k" x="60" y="10" width="40" height="130"/><rect class="k" x="100" y="10" width="40" height="130"/>' +
+          '<rect class="h" x="20" y="10" width="40" height="26"/><rect class="h" x="60" y="62" width="40" height="26"/><rect class="h" x="100" y="10" width="40" height="26"/><rect class="h" x="20" y="114" width="40" height="26"/><rect class="h" x="100" y="114" width="40" height="26"/>' +
+          '<path class="a" d="M24 62 l8 12 l8 -12 l8 12 l8 -12 M104 62 l8 12 l8 -12 l8 12 l8 -12 M64 36 l8 12 l8 -12 l8 12 l8 -12 M64 88 l8 12 l8 -12 l8 12 l8 -12"/>' +
+          D.label(170, 30, 'one strip', 120, 30) + D.label(170, 80, 'strips sewn together', 100, 80) + D.label(170, 130, 'blocks make a bigger', 140, 128) + '<text class="l" x="170" y="146">pattern</text>',
+        tall: 156, cap: 'Three narrow strips sewn side by side. The blocks line up to make the design.' },
+      { h: 'Colours with meaning' },
+      'In kente, colours are not just chosen because they look nice. Each one has a meaning. Gold stands for wealth and royalty. Green stands for growth and a good harvest. Blue stands for peace and love. Patterns have names too, and some are named after sayings, proverbs or people from history.',
+      { h: 'Kente today' },
+      'People in Ghana still wear kente at weddings, festivals and other important events. Around the world, many people of African <b>heritage</b> wear kente to show pride in their history. In Canada and the United States, some students wear a kente stole, a strip of kente around the neck, when they graduate.',
+      { box: 'Did you know?', text: 'Learning to weave kente well can take years. Many weavers learn from a parent or grandparent.' }
+    ],
+    guide: { before: 'Find Ghana on a world map. Weave strips of coloured paper over and under to show how weaving works. Teach <b>loom</b> and <b>heritage</b>.',
+      after: 'Are there clothes, colours or objects that are special in your family or culture? What do they mean?' },
+    words: [['loom', 'a frame for weaving thread into cloth'], ['heritage', 'the history, traditions and culture passed down in a family or group']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ghana is in Africa.', 'Kente is woven in strips in Ghana, and its colours and patterns have meaning.', 'Gold is shiny.', 'Students graduate.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How is a big kente design made?',
+        opts: ['by sewing narrow strips together', 'by painting one big cloth', 'by cutting a circle'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a weaver need to make many strips?',
+        opts: ['One strip is too narrow to wear.', 'Strips break easily.', 'Kings like strips.'], a: 0 },
+      { k: 'table', code: 'C3.4', q: 'What does each colour stand for in kente?', cols: ['Colour', 'Meaning'],
+        rows: [['gold', null], ['green', null], ['blue', null]],
+        a: [[null, 'wealth and royalty'], [null, 'growth and a good harvest'], [null, 'peace and love']] },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why do <b>Asante</b> and <b>Ewe</b> start with capital letters?',
+        opts: ['They are the names of peoples.', 'They are colours.', 'They start the paragraph.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“It makes a long strip of cloth.” What does <b>it</b> refer to?',
+        opts: ['a kente loom', 'the weaver’s foot', 'Ghana'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why do people wear kente at weddings and graduations, even far from Ghana? Use details from the text.',
+        a: 'Kente is worn at important events, and many people of African heritage wear it to show pride in their history.', look: 'important events and pride in heritage' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a special piece of clothing in your own family or culture. How is it like kente?',
+        a: 'Example: My grandmother wears a sari at weddings. Like kente, it has colours and patterns that are special in our culture.', look: 'a real example compared with kente' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-ladybugs', subject: 'science', form: 'Report',
+    title: 'The Gardener’s Friend',
+    deck: 'Why ladybugs are welcome in gardens, and why some kinds are disappearing',
+    hero: {
+      photo: 'g4-ladybug.jpg', credit: 'Photo: Star61, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 225,
+      cap: 'A ladybug climbs a stem covered with tiny green aphids, its favourite food.'
+    },
+    body: [
+      'Gardeners smile when they see a ladybug. That small red beetle with black spots is a hungry hunter, and its favourite food is one of the garden’s worst pests.',
+      { h: 'Aphid eaters' },
+      'Aphids are tiny, soft insects, often green, that cluster on stems and leaves. They poke their mouths into a plant and suck out its sweet juices. A plant covered in aphids can wilt, curl up and stop growing. Ladybugs are <b>predators</b> of aphids: they hunt and eat them. One ladybug can eat dozens of aphids in a single day.',
+      'This makes ladybugs part of a food chain. The plant makes food from sunlight. The aphid eats the plant. The ladybug eats the aphid. And a bird may eat the ladybug, if it dares.',
+      { fig: '<path class="k" d="M20 120 V60 M20 90 q-14 -6 -16 -20 M20 76 q14 -6 16 -20"/><ellipse class="k" cx="100" cy="90" rx="10" ry="6"/><ellipse class="k" cx="180" cy="90" rx="16" ry="12"/><path class="k" d="M180 78 V102"/><circle class="a" cx="172" cy="86" r="2"/><circle class="a" cx="188" cy="94" r="2"/>' +
+          '<path class="k" d="M250 92 q14 -18 34 -8 l10 -4 l-6 8 q-8 18 -32 14 Z"/>' +
+          D.arrow(40, 90, 84, 90, 'a') + D.arrow(116, 90, 160, 90, 'a') + D.arrow(200, 90, 244, 90, 'a') +
+          '<text class="lb" x="20" y="140" text-anchor="middle">plant</text><text class="lb" x="100" y="140" text-anchor="middle">aphid</text><text class="lb" x="180" y="140" text-anchor="middle">ladybug</text><text class="lb" x="268" y="140" text-anchor="middle">bird</text>' +
+          '<text class="n" x="150" y="30" text-anchor="middle">each arrow means “is eaten by”</text>',
+        tall: 150, cap: 'A food chain in the garden.' },
+      { h: 'Warning colours' },
+      'Why doesn’t every bird gobble up ladybugs? Their bright colours are a warning. When a ladybug is attacked, it oozes a yellow, bad-tasting liquid from its legs. Birds that try one quickly learn to leave the red-and-black beetles alone.',
+      { h: 'Growing up' },
+      'A ladybug starts as a tiny yellow egg laid near a group of aphids. It hatches into a larva that looks like a little spiky alligator. The larva eats aphids too, even more than the adult. Then it becomes a <b>pupa</b>, resting on a leaf while its body changes. A week or so later, an adult ladybug crawls out.',
+      'Some ladybugs that once lived all over Canada, such as the nine-spotted ladybug, have become very rare. Ladybugs from other parts of the world have spread here and now take their food and space. Scientists ask young people to photograph ladybugs and send in the pictures, to help find where the rare kinds still live. If you spot a ladybug, take its picture, but leave it where it is. It has work to do.'
+    ],
+    guide: { before: 'If you can, look for ladybugs or aphids on garden plants. Draw a food chain together with arrows. Teach <b>predator</b> and <b>pupa</b>.',
+      after: 'Why might a gardener choose ladybugs instead of sprays to get rid of aphids?' },
+    words: [['predators', 'animals that hunt and eat other animals'], ['pupa', 'the resting stage when an insect’s body changes into an adult']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ladybugs are red.', 'Ladybugs help gardens by eating aphids, and some native kinds are now rare.', 'Birds eat insects.', 'Aphids are green.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the food chain. What eats the ladybug?',
+        opts: ['a bird', 'an aphid', 'a plant'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do birds learn to leave ladybugs alone?',
+        opts: ['Ladybugs taste bad.', 'Ladybugs are too fast.', 'Birds cannot see red.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the stages of a ladybug’s life in order.',
+        items: ['egg', 'larva', 'pupa', 'adult'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “That small red beetle,” which words are adjectives?',
+        opts: ['small and red', 'That and beetle', 'beetle only'], a: 0 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Who would find this text most useful?',
+        opts: ['a gardener with aphids on their plants', 'someone fixing a car', 'someone planning a birthday party'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is a ladybug larva on a rose bush good news for a gardener?',
+        a: 'The larva eats aphids, even more than an adult ladybug, so it helps keep aphids from harming the plant.', look: 'larva eats many aphids' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Scientists ask young people to send ladybug photos. Why is it good to include everyone, even kids, in science?',
+        a: 'Scientists cannot look everywhere. When many people help, including kids, they find more ladybugs and learn where the rare kinds live.', look: 'many helpers find more, with a link to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-machu-picchu', subject: 'history', form: 'Report',
+    title: 'City in the Clouds',
+    deck: 'How the Inca built Machu Picchu high in the Andes Mountains',
+    hero: {
+      photo: 'g4-machu-picchu.jpg', credit: 'Photo: Allard Schmidt, public domain, Wikimedia Commons', focus: '50% 62%',
+      tall: 230,
+      cap: 'Machu Picchu, in Peru, sits on a mountain ridge. Mist rises from the valleys below.'
+    },
+    body: [
+      'High in the Andes Mountains of Peru, on a narrow ridge between two peaks, stand the stone ruins of Machu Picchu. The site is about 2 400 metres above the sea. Clouds often drift below it. About 550 years ago, it was a royal estate of the Inca, the largest <b>empire</b> in the Americas at the time.',
+      { h: 'An empire in the mountains' },
+      'The Inca Empire stretched for thousands of kilometres along western South America. Its rulers built roads over mountains and rope bridges over deep gorges, so messengers could run from place to place. Machu Picchu was probably built around the 1450s for an Inca ruler named Pachacuti, as a place to stay and to hold religious ceremonies.',
+      { h: 'Stones that fit' },
+      'Inca builders were masters of stone. They cut granite blocks so carefully that the blocks fit together without any mortar. In some walls, you cannot slide a knife blade between two stones. This kind of wall can shift a little when the ground shakes and then settle back into place, so many walls have stood through earthquakes for more than 500 years.',
+      { fig: '<path class="k" d="M10 150 L60 150 L60 130 L110 130 L110 110 L160 110 L160 90 L210 90 L210 70 L260 70 L260 50 L300 50"/>' +
+          '<path class="t" d="M10 150 L10 160 H300 V50"/><path class="t" d="M62 128 h46 M112 108 h46 M162 88 h46 M212 68 h46" style="stroke-dasharray:2 3"/>' +
+          D.label(100, 30, 'flat terraces for crops', 180, 86) + D.label(146, 150, 'stone walls hold the soil', 110, 122),
+        tall: 166, cap: 'Terraces turn a steep slope into flat steps. Not to scale.' },
+      { h: 'Farming on a mountain' },
+      'How do you grow food on a steep mountain? The Inca built <b>terraces</b>, flat steps cut into the hillside and held up by stone walls. The terraces gave them flat ground for crops such as corn and potatoes. Under the soil, layers of gravel and sand let rainwater drain away, so heavy rains did not wash the mountain down. Hundreds of these terraces are still there today, and their walls still hold the soil in place.',
+      { box: 'Who found it?', text: 'In 1911, an explorer from the United States brought Machu Picchu to the world’s attention. But local Quechua farmers knew about it all along, and some were living there.' }
+    ],
+    guide: { before: 'Find Peru and the Andes on a world map. Pile books into steps to show terraces. Teach <b>empire</b> and <b>terrace</b>.',
+      after: 'The box says local farmers “knew about it all along.” Why does it matter who gets credit for finding a place?' },
+    words: [['empire', 'many lands and peoples ruled by one ruler or government'], ['terraces', 'flat steps cut into a hillside for farming']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Peru has mountains.', 'The Inca built Machu Picchu with strong stone walls and terraces high in the Andes.', 'Potatoes grow well.', 'Clouds drift.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What do the stone walls do?',
+        opts: ['hold the soil in flat steps', 'keep animals out', 'carry water uphill'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why have Inca walls lasted through earthquakes?',
+        opts: ['They can shift and settle back.', 'They are glued.', 'There are no earthquakes in Peru.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What problem did each Inca idea solve?', cols: ['Problem', 'Inca solution'],
+        rows: [['steep slopes with no flat ground', null], ['heavy rain washing soil away', null]],
+        a: [[null, 'They built terraces, flat steps held up by stone walls.'], [null, 'Layers of gravel and sand let the water drain away.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Masters</b> of stone means the builders were …',
+        opts: ['very skilled with stone', 'owners of mountains', 'teachers'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“Clouds often drift below it.” What kind of sentence is this?',
+        opts: ['a statement', 'a question', 'a command'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Some books say an explorer “discovered” Machu Picchu in 1911. What does the box tell you about that idea?',
+        a: 'It was not really a discovery, because local Quechua farmers knew about it all along and some lived there. The explorer only made it famous around the world.', look: 'notices whose view is left out' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think the Inca built roads and rope bridges?',
+        a: 'So messengers and people could travel quickly across a huge empire full of mountains and gorges.', look: 'travel and messages across the empire' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-bike-lanes', subject: 'social', form: 'Letter',
+    title: 'Please Paint Us a Lane',
+    deck: 'A student writes to town council asking for a safe bike lane to school',
+    hero: {
+      photo: 'g4-bike-lane.jpg', credit: 'Photo: DimiTalen, CC0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A cyclist rides in a painted, protected bike lane in a city. A curb keeps cars out of the lane.'
+    },
+    body: [
+      'Dear Mayor Tran and members of <b>council</b>,',
+      'My name is Mateo, and I am in Grade 4 at Maple Ridge Public School. I am writing to ask you to build a protected bike lane on Elm Street, from the library to our school.',
+      'Right now, Elm Street has two busy lanes of cars and no space for bikes. Many of us would love to ride to school, but our parents say it is too dangerous. A <b>protected</b> bike lane has a curb or posts between the bikes and the cars. That way, drivers and cyclists each have their own space.',
+      { fig: '<path class="k" d="M70 10 V130 H290"/><text class="n" x="64" y="134" text-anchor="end">0</text><text class="n" x="64" y="74" text-anchor="end">6</text><text class="n" x="64" y="14" text-anchor="end">12</text>' +
+          '<path class="t" d="M66 70 H290 M66 10 H290" style="opacity:.35"/>' +
+          '<rect class="a" x="84" y="10" width="34" height="120"/><rect class="a" x="138" y="50" width="34" height="80"/><rect class="a" x="192" y="80" width="34" height="50"/><rect class="a" x="246" y="110" width="34" height="20"/>' +
+          '<text class="n" x="101" y="148" text-anchor="middle">car</text><text class="n" x="155" y="148" text-anchor="middle">walk</text><text class="n" x="209" y="148" text-anchor="middle">bus</text><text class="n" x="263" y="148" text-anchor="middle">bike</text>' +
+          '<text class="l" x="0" y="40">students</text>',
+        tall: 154, cap: 'How students in Mateo’s class get to school. 11 of the students who come by car said they would ride a bike if there were a safe lane.' },
+      'I have three reasons. First, a bike lane would make our street safer. When bikes and cars share one lane, accidents can happen. Second, riding is good for us. Kids need at least 60 minutes of activity every day, and riding to school and back is a great start. Third, fewer cars would mean less traffic and cleaner air around the school. In my class, 12 students come by car, and 11 of them told me they would ride a bike if there were a safe lane.',
+      'I know some people worry that a bike lane will take away parking spaces. But most of Elm Street has driveways, and the school has its own parking lot. I think a safe way to school is more important than a few parking spots.',
+      'Other towns have already done this. When a town builds a safe bike lane, more people usually start riding, and many parents feel better about letting their children ride too. Our town could be next.',
+      'Mayor Tran, please visit Elm Street at 8:30 in the morning and see how many cars stop and go in front of our school. Then imagine kids riding safely beside them instead.',
+      'Thank you for reading my letter. I hope you will vote yes.',
+      'Sincerely,<br>Mateo Silva'
+    ],
+    plain: true,
+    guide: { before: 'Talk about how your family gets to school or work. Explain what town council is and that anyone, even a child, can write to it. Teach <b>persuade</b> and <b>council</b>.',
+      after: 'Do you agree with Mateo? What would you ask your town council to change, and why?' },
+    words: [['council', 'a group of people elected to make decisions for a town or city'], ['protected', 'kept safe from harm']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'What is Mateo trying to do in this letter?',
+        opts: ['persuade council to build a bike lane', 'tell a funny story', 'explain how bikes work', 'invite the mayor to a party'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the bar graph. How do most students get to school?',
+        opts: ['by car', 'by bike', 'by bus'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'In “Mayor Tran, please visit Elm Street,” why is there a comma after <b>Mayor Tran</b>?',
+        opts: ['Mateo is speaking directly to her.', 'It is the end of the sentence.', 'It is a list.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in Mateo’s three reasons.', cols: ['Reason', 'Detail'],
+        rows: [['First', null], ['Second', null], ['Third', null]],
+        a: [[null, 'A bike lane would make the street safer.'], [null, 'Riding is good for kids’ health and activity.'], [null, 'Fewer cars mean less traffic and cleaner air.']] },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Please visit Elm Street.” This sentence gives a polite command. The verb is …',
+        opts: ['visit', 'Please', 'Street'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Mateo ask the mayor to come at 8:30 in the morning?',
+        opts: ['That is when the street is busiest near the school.', 'The mayor is free then.', 'It is lunchtime.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Mateo writes about what “some people worry” about. Why is it smart for him to mention the other side?',
+        a: 'It shows he has thought about other people’s worries, and he can answer them: there are driveways and a school parking lot. That makes his letter more convincing.', look: 'answers the other side to persuade' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'How did you decide whether Mateo’s reasons are good ones? What did you check?',
+        a: 'I checked whether he gave facts to back up each reason. He used his class survey and the 60-minute activity rule, so his reasons are strong.', look: 'names a way of checking (facts, examples, graph)' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-dragon-boat', subject: 'story', form: 'Short story',
+    title: 'Paddles Up!',
+    deck: 'A new paddler finds her place on a dragon boat team',
+    hero: {
+      photo: 'g4-dragon-boat.jpg', credit: 'Photo: John Vetterli, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 62%',
+      tall: 220,
+      cap: 'A dragon boat crew in Toronto paddles together. A drummer at the front keeps the beat.'
+    },
+    body: [
+      'The boat was long and narrow, with a carved dragon head at the front and a tail at the back. Ten pairs of paddlers sat side by side. I sat in the second row, gripping my paddle so hard my <b>knuckles</b> turned white.',
+      '“Paddles up!” called Coach Chen. Twenty paddles rose into the air at once.',
+      'I had joined the youth team at the community centre in June. The big race was at the Toronto dragon boat festival in August, and I still could not keep time with the others. My paddle splashed in too early or too late, and the boat wobbled.',
+      { h: 'Watching Jordan' },
+      'In the seat beside me sat Jordan. On land, Jordan used a wheelchair. At the dock, Coach and two teammates helped him slide onto a padded bench in the boat, and his chair waited on the dock until we came back. In the boat, Jordan was the strongest paddler on the team. At the back, our <b>steerer</b>, Ms. Okoye, guided us with a long oar.',
+      '“Don’t listen to the drum so hard,” Jordan told me after another wobbly practice. “Watch the paddle in front of you. When it goes in, yours goes in.”',
+      { fig: '<path class="k" d="M20 70 Q20 50 40 50 H260 Q290 50 296 40 L300 60 Q290 90 260 90 H40 Q20 90 20 70 Z"/><path class="k" d="M260 50 q20 -24 34 -14"/>' +
+          '<circle class="a" cx="266" cy="70" r="5"/><circle class="k" cx="32" cy="70" r="4"/>' +
+          '<path class="t" d="M70 60 h10 M70 80 h10 M100 60 h10 M100 80 h10 M130 60 h10 M130 80 h10 M160 60 h10 M160 80 h10 M190 60 h10 M190 80 h10 M220 60 h10 M220 80 h10"/>' +
+          D.label(298, 116, 'drummer at the front', 266, 76, 'end') + D.label(4, 116, 'steerer at the back', 32, 76) + D.label(90, 28, 'paddlers sit in pairs', 140, 58),
+        tall: 124, cap: 'A dragon boat seen from above. Not to scale.' },
+      'So I watched. I watched the paddle in front of me dip and pull, dip and pull. My arms began to move with it. By the end of July, I could feel the whole boat moving as one, like a single animal breathing.',
+      { h: 'Race day' },
+      'On race day, the lake sparkled. Coach told us that dragon boat racing began in China more than 2 000 years ago, and that people still race at festivals all over the world. Then the horn sounded. The drum boomed. Jordan and I dipped and pulled, dipped and pulled, perfectly together.',
+      'We did not win. We came third. But when we crossed the finish line, Jordan held his paddle up and grinned at me. “Told you,” he said.',
+      'I grinned back. Our boat was a team of twenty different people, and for two minutes we had been one dragon.'
+    ],
+    guide: { before: 'Explain that dragon boat racing began in China and is now raced around the world, including at festivals in Toronto. Teach <b>steerer</b> and <b>in time</b> (moving together at the same moment).',
+      after: 'How did Jordan help the narrator? Have you ever helped a teammate or been helped by one?' },
+    words: [['steerer', 'the person at the back who guides the boat'], ['knuckles', 'the joints where your fingers bend']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells this story?',
+        opts: ['a new paddler on the team, using I', 'Jordan', 'Coach Chen', 'a narrator outside the story'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part', 'What happens'],
+        rows: [['Problem', null], ['How it is solved', null], ['Ending', null]],
+        a: [[null, 'The narrator cannot keep time with the other paddlers.'], [null, 'Jordan tells her to watch the paddle in front of her, and she learns to paddle in time.'], [null, 'The team comes third, but they paddle as one.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does the drummer sit?',
+        opts: ['at the front', 'at the back', 'in the water'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The boat moved “like a single animal breathing.” This means the team …',
+        opts: ['moved together smoothly', 'was tired', 'was noisy'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“His chair waited on the dock.” Whose chair?',
+        opts: ['Jordan’s', 'Coach Chen’s', 'the narrator’s'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'She gripped her paddle so hard her <b>knuckles</b> turned white. This shows she was …',
+        opts: ['nervous', 'sleepy', 'bored'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What does the story show about including people with different abilities on a team? Use details from the story.',
+        a: 'Jordan uses a wheelchair on land, but with a bench in the boat he is the strongest paddler, and he helps the narrator learn. Including everyone made the team better.', look: 'inclusion message backed by details about Jordan' },
+      { k: 'lines', code: 'C3.4', n: 2, q: 'What does the text tell you about where dragon boat racing comes from?',
+        a: 'It began in China more than 2 000 years ago, and people still race at festivals around the world.', look: 'China, 2 000 years, festivals' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-pulse', subject: 'health', form: 'Procedure',
+    title: 'Listen to Your Heart',
+    deck: 'Find your pulse, then see what one minute of skipping does to it',
+    hero: {
+      photo: 'g4-skipping.jpg', credit: 'Photo: Maksym Kozlenko, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 240,
+      cap: 'Two girls skip rope in a park. Skipping makes the heart beat faster.'
+    },
+    body: [
+      'Your heart is a muscle about the size of your fist. Day and night, it squeezes and relaxes, pumping blood through your body. The blood carries oxygen from your lungs to every part of you. Each squeeze is one heartbeat. You can feel the beats yourself, and you can see how exercise changes them.',
+      { h: 'You will need' },
+      'a clock or timer with a second hand, a pencil, a skipping rope (or a safe space to jog on the spot)',
+      { h: 'Steps' },
+      '1. Sit quietly for two minutes. Do not talk or move around.',
+      '2. Find your <b>pulse</b>. Turn one hand palm up. Place two fingers of your other hand on the thumb side of your wrist, just below your palm. Press gently until you feel a small tap, tap, tap. (You can also find it on the side of your neck.) Do not use your thumb, because it has a pulse of its own.',
+      '3. Count the beats for 15 seconds. Multiply by 4. This is your <b>resting heart rate</b>: how many times your heart beats in one minute while you rest. Write it down.',
+      '4. Skip rope for one full minute.',
+      '5. Right away, find your pulse again. Count for 15 seconds and multiply by 4. Write it down.',
+      '6. Rest for three minutes, then count once more.',
+      { fig: '<path class="k" d="M60 10 V130 H290"/><text class="n" x="54" y="134" text-anchor="end">0</text><text class="n" x="54" y="74" text-anchor="end">80</text><text class="n" x="54" y="14" text-anchor="end">160</text>' +
+          '<path class="t" d="M56 70 H290 M56 10 H290" style="opacity:.35"/>' +
+          '<rect class="a" x="80" y="88" width="44" height="42"/><rect class="a" x="150" y="25" width="44" height="105"/><rect class="a" x="220" y="78" width="44" height="52"/>' +
+          '<text class="n" x="102" y="148" text-anchor="middle">resting</text><text class="n" x="172" y="148" text-anchor="middle">skipping</text><text class="n" x="242" y="148" text-anchor="middle">3 min later</text>' +
+          '<text class="n" x="102" y="82" text-anchor="middle">84</text><text class="n" x="172" y="19" text-anchor="middle">140</text><text class="n" x="242" y="72" text-anchor="middle">104</text>',
+        tall: 154, cap: 'One student’s results, in beats per minute.' },
+      { h: 'What happened?' },
+      'When you skip, your muscles work hard and need more oxygen. Your heart beats faster to send them more blood. When you rest, it slows down again. A strong, healthy heart slows down quickly after exercise. Being active every day helps make your heart stronger. Athletes who train often usually have a lower resting heart rate, because a strong heart pumps more blood with each beat. Try this activity again after a month of skipping or running every day, and compare your results.',
+      { box: 'Safety', text: 'Stop if you feel dizzy or have pain in your chest, and tell an adult.' }
+    ],
+    plain: true,
+    guide: { before: 'Practise finding a pulse together before reading; it can take a few tries. Teach <b>pulse</b> and <b>resting heart rate</b>. A child’s resting rate is usually about 70 to 110 beats a minute.',
+      after: 'What other activities might make your heart beat fast? Try one and compare.' },
+    words: [['pulse', 'the beat you can feel as your heart pumps blood'], ['resting heart rate', 'how many times your heart beats in one minute while you rest']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'This text is a procedure. How can you tell?',
+        opts: ['It has a list of things you need and numbered steps.', 'It rhymes.', 'It is a story with characters.', 'It is a letter.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. When was the student’s heart rate highest?',
+        opts: ['right after skipping', 'at rest', 'after three minutes’ rest'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'You count 21 beats in 15 seconds. What is the rate for one minute?',
+        opts: ['84', '21', '36'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Count the beats for 15 seconds.” This sentence is a command. Which word is the verb?',
+        opts: ['Count', 'beats', 'seconds'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should you not use your thumb to feel a pulse?',
+        opts: ['Your thumb has its own pulse.', 'Your thumb is too short.', 'It tickles.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why your heart beats faster when you skip. Use the words <b>muscles</b>, <b>oxygen</b> and <b>blood</b>.',
+        a: 'When you skip, your muscles work hard and need more oxygen. Your heart beats faster to pump more blood, which carries the oxygen to them.', look: 'muscles need oxygen, heart pumps more blood' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Step 2 has many small parts. What could you do if you could not find your pulse the first time?',
+        a: 'Reread step 2 slowly and do one part at a time: palm up, two fingers on the thumb side, press gently. I could also try the side of my neck.', look: 'rereading slowly or trying the other place' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-icebergs', subject: 'geography', form: 'Report',
+    title: 'Iceberg Alley',
+    deck: 'Why giant icebergs drift past Newfoundland every spring',
+    hero: {
+      photo: 'g4-iceberg.jpg', credit: 'Photo: Natalie Lucier, CC BY 2.0, Wikimedia Commons', focus: '60% 60%',
+      tall: 225,
+      cap: 'An iceberg floats off the coast of Newfoundland. Much more of it is hidden under the water.'
+    },
+    body: [
+      'Every spring, people in Newfoundland and Labrador gather on cliffs and wharves to watch huge white mountains float past. Some are as big as a shopping mall. They are icebergs, and the stretch of ocean where they drift is called Iceberg Alley.',
+      { h: 'A long journey' },
+      'Most of these icebergs begin far to the north, in Greenland. There, enormous rivers of ice called <b>glaciers</b> creep slowly toward the sea. When a glacier reaches the water, huge chunks crack off its front edge and crash into the ocean. Then an ocean <b>current</b>, a river of moving water inside the sea, carries them south along the coast of Labrador. The trip can take two or three years. Many icebergs melt along the way, but hundreds reach Newfoundland.',
+      { h: 'Ancient ice' },
+      'An iceberg is not frozen sea water. It is made of snow that fell on Greenland thousands of years ago. Year after year, new snow piled on top and pressed the old snow into hard, clear ice. Some of the ice in an iceberg may be more than 10 000 years old. People in Newfoundland collect small pieces of it to make very pure drinking water.',
+      { fig: '<path class="a" d="M0 50 H300"/><path class="k" d="M120 50 L136 24 L150 30 L164 12 L178 50"/>' +
+          '<path class="k" d="M120 50 Q70 90 96 130 Q130 172 190 150 Q240 120 210 80 Q200 60 178 50"/>' +
+          D.label(298, 22, 'about 1 part above', 168, 30, 'end') + D.label(298, 172, 'about 9 parts below', 200, 140, 'end') + D.label(4, 40, 'sea level'),
+        tall: 176, cap: 'Most of an iceberg is hidden under the water. Not to scale.' },
+      { h: 'Danger below' },
+      'The part of an iceberg you can see is only its tip. About nine-tenths of it is under the water, where it cannot be seen. That makes icebergs dangerous for ships. In 1912, the ship Titanic hit an iceberg south of Newfoundland and sank. Since then, ships and planes have kept watch for icebergs and warned sailors where they are. Today, satellites high above Earth also take pictures of the ocean to help find icebergs, even in thick fog.',
+      { box: 'Did you know?', text: 'Small floating chunks of ice are called bergy bits. Even smaller ones are called growlers, because of the sound they make as they bob in the waves.' }
+    ],
+    guide: { before: 'Float an ice cube in a clear glass of water and look at how much is under the surface. Find Greenland, Labrador and Newfoundland on a map. Teach <b>glacier</b> and <b>current</b>.',
+      after: 'Why do people travel to see icebergs? Would you like to see one? What would you look for?' },
+    words: [['glaciers', 'huge, slow-moving rivers of ice on land'], ['current', 'a river of moving water inside the ocean']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Greenland is cold.', 'Icebergs break off Greenland’s glaciers and drift to Newfoundland, where they are beautiful but dangerous.', 'The Titanic was a ship.', 'Ice floats.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['Snow piles up and turns to ice.', 'A glacier creeps to the sea.', 'A chunk cracks off.', 'A current carries it south.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How much of an iceberg is under water?',
+        opts: ['about 9 parts out of 10', 'about half', 'none of it'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is iceberg water very pure?',
+        opts: ['It is made of snow that fell long ago.', 'It is salty.', 'It is boiled.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“There, enormous rivers of ice creep slowly toward the sea.” Where is <b>there</b>?',
+        opts: ['Greenland', 'Newfoundland', 'a shopping mall'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['Most of an iceberg is hidden under water.', null], ['The Titanic sank in 1912.', null]],
+        a: [[null, 'Icebergs are dangerous for ships.'], [null, 'Ships and planes now watch for icebergs and warn sailors.']] },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict: if a spring were very warm, would more or fewer icebergs reach Newfoundland? Explain.',
+        a: 'Fewer, because more of them would melt along the long journey south.', look: 'fewer, with melting as the reason' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'The text says an iceberg can be “as big as a shopping mall.” How did picturing something you know help you understand its size?',
+        a: 'Example: I pictured the mall near my house floating in the sea. That helped me see how huge an iceberg really is.', look: 'visualizing with something familiar' }
+    ]
+  });
 })();
