@@ -12,10 +12,15 @@ const fs = require('fs'), path = require('path'), vm = require('vm');
 
 const CONS = 'b c d f g h j k l m n p r s t v w x y z'.split(' ');
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+/* the consonant sounds that get a page of their own (qu is on the short vowel review page) */
+const CONSONANT_STEPS = 'b c d f g h j k l m n p r s t v w x y z'.split(' ').map(c => ['cons-' + c, []]);
 /* the steps, in teaching order, and what each one teaches */
 const STEPS = [
   ['short-a', ['a'].concat(CONS)], ['short-i', ['i']], ['short-o', ['o']], ['short-u', ['u']], ['short-e', ['e']],
-  ['short-mix', ['qu']], ['sh', ['sh']], ['ch', ['ch']], ['th', ['th']], ['wh', ['wh']], ['ck', ['ck']],
+  ['short-mix', ['qu']],
+  /* one page for each consonant sound, once all five short vowels are known (they review sounds taught with short a) */
+  ...CONSONANT_STEPS,
+  ['sh', ['sh']], ['ch', ['ch']], ['th', ['th']], ['wh', ['wh']], ['ck', ['ck']],
   ['floss', ['ff', 'll', 'ss', 'zz']], ['all', ['all']], ['ng', ['ang', 'ing', 'ong', 'ung']], ['nk', ['ank', 'ink', 'onk', 'unk']],
   ['plural-s', ['+s']], ['blend-start', ['blend-start']], ['blend-end', ['blend-end']], ['blend-three', ['blend-three']],
   ['oll-ull', ['oll', 'ull']], ['suffix-ed', ['+ed']], ['suffix-ing', ['+ing']], ['suffix-es', ['+es']], ['tch', ['tch']], ['dge', ['dge']],
@@ -54,6 +59,7 @@ const SPECIAL_UNITS = new Set(Object.values(SPECIAL));
 const UNITS = [].concat(...STEPS.map(s => s[1])).filter(u => /^[a-z]+$/.test(u) && !CONS.includes(u) && !VOWELS.includes(u) && !SPECIAL_UNITS.has(u) && u !== 'open');
 /* steps that review earlier units (no new unit to find): their warm-up words must use the units they name */
 const REVIEW = { 'short-mix': ['a', 'e', 'i', 'o', 'u'], 'oo-book': ['oo'] };
+CONSONANT_STEPS.forEach(s => { REVIEW[s[0]] = [s[0].slice(5)]; });
 /* a step about longer words: its target words have 3 or more syllables */
 const SYLLABLES = { 'long-words': 3 };
 
