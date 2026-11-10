@@ -127,4 +127,24 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g6-mclaren.jpg` | Norman McLaren drawing on film at the National Film Board, 1944 | Jack Long/National Film Board of Canada | Public domain | https://commons.wikimedia.org/wiki/File:Norman_McLaren_drawing_on_film_-_1944.jpg |
 | `g6-winnipeg-forks.jpg` | The Forks, Winnipeg, Manitoba | Robert Linsdell from St. Andrews, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:The_Forks,_Winnipeg_(390110)_(9441803657).jpg |
 | `g6-phone-cameras.jpg` | Two people taking photos with their smartphones | U.S. Fish and Wildlife Service Headquarters | Public domain | https://commons.wikimedia.org/wiki/File:Smartphone_cameras_on_refuge_(7029496999).jpg |
+| `g6-bumblebee.jpg` | A bumblebee covered in pollen on a prairie dock flower | U.S. Fish and Wildlife Service - Midwest Region | Public domain | https://commons.wikimedia.org/wiki/File:Bumblebee_covered_in_pollen_(51432998921).jpg |
+| `g6-spirit-bear.jpg` | A spirit bear (Kermode bear) near Klemtu, British Columbia | Maximilian Helm from Dresden, Deutschland | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ursus_americanus_kermodei,_Spirit_Bear_Lodge,_Klemtu,_BC_1.jpg |
+| `g6-static.jpg` | Hair pulled toward a rubbed balloon by static electricity | MikeRun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Attractive-electric-force-between-hair-and-balloon.jpg |
+| `g6-bondar.jpg` | Official portrait of astronaut Roberta Bondar, 1991 | JSC/NASA | Public domain | https://commons.wikimedia.org/wiki/File:Roberta_Bondar.jpg |
+| `g6-aurora.jpg` | The northern lights over Yellowknife, Northwest Territories | raymond22112376 | Public domain | https://commons.wikimedia.org/wiki/File:2018_Aurora_Yellowknife_Canada.jpg |
+| `g6-paper-plane.jpg` | A folded white paper airplane | Arthurfan828 | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:White_paper_airplane.jpg |
+| `g6-peacekeeping.jpg` | Reconciliation: The Peacekeeping Monument, Ottawa | Pierre André Leclercq | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Reconciliation-_The_Peacekeeping_Monument,_Ottawa_(02-10-2017).jpg |
+| `g6-desmond.jpg` | Viola Desmond, Halifax, Nova Scotia | Unknown authorUnknown author | Public domain | https://commons.wikimedia.org/wiki/File:Viola_Desmond.jpg |
+| `g6-africville.jpg` | The rebuilt Seaview African United Baptist Church at Africville, Halifax | Dennis G. Jarvis | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Halifax_NS-01332_-_Seaview_African_United_Baptist_Church_(28445808013).jpg |
+| `g6-vegreville-church.jpg` | Ukrainian Orthodox Church of St. Vladimir, Vegreville, Alberta | TobyEditor | CC0 | https://commons.wikimedia.org/wiki/File:Ukrainian_Orthodox_Church,_Vegreville_02.jpg |
+| `g6-every-child.jpg` | An Every Child Matters sign for Orange Shirt Day | Taymaz Valley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Every_Child_Matters.jpg |
+| `g6-handwashing.jpg` | Washing hands with soap and water | Sgt. Grace L. Waladkewics | Public domain | https://commons.wikimedia.org/wiki/File:Washing_hands_(cropped).jpg |
+| `g6-dice.jpg` | A throw of two dice | JonRichfield | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_throw_of_two_dice_as_in_the_game_of_hazard_IMG_1705s.jpg |
+| `g6-haida-poles.jpg` | Poles at the Haida Heritage Centre, Skidegate, Haida Gwaii | Karen Neoh | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:TotemPoles-HaidaHeritageCentre.jpg |
+| `g6-monarch.jpg` | A monarch butterfly | Thomas Bresson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Danaus_plexippus_(7).jpg |
+| `g6-point-pelee.jpg` | The marsh boardwalk at Point Pelee National Park, Ontario | Ken Lund from Reno, Nevada, USA | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marsh_Boardwalk,_Point_Pelee_National_Park,_Leamington,_Ontario,_Canada_(21783820521).jpg |
+| `g6-webb-mirror.jpg` | An engineer with mirror segments of the James Webb Space Telescope | NASA/MSFC/David Higginbotham | Public domain | https://commons.wikimedia.org/wiki/File:James_Webb_Primary_Mirror.jpg |
+| `g6-e-waste.jpg` | Old computers collected for recycling | Tom Worthington | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Computers_for_Recycling_in_Steel_Mesh_Pallets.jpg |
 | `g6-water-pump.jpg` | Children collecting water at a hand pump in a village in Ghana | Kwameghana(Bright Kwame Ayisi) | CC0 | https://commons.wikimedia.org/wiki/File:A_group_of_children_collecting_water_at_a_pipe_well.jpg |
+| `g6-solar-farm.jpg` | Solar panels on a farm in Grimsby, Ontario | Dave Lauretti from Burlington, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_farm_(13313377243).jpg |
+| `g6-canoe-lake.jpg` | The dock at Canoe Lake, Algonquin Park, Ontario | Markabq | Public domain | https://commons.wikimedia.org/wiki/File:CanoeLake.JPG |

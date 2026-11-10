@@ -1961,4 +1961,930 @@
         a: '“Would I be fine with a stranger seeing it?” because it makes me think about who is really looking.', look: 'a question and a reason' }
     ]
   });
+
+  P.add({
+    id: 'g6-pollinators', subject: 'science', form: 'Report',
+    title: 'Busy, Fuzzy and Needed',
+    deck: 'Why bees and other pollinators matter, and why many of them are in trouble',
+    hero: {
+      photo: 'g6-bumblebee.jpg', credit: 'Photo: U.S. Fish and Wildlife Service - Midwest Region, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A bumblebee dusted with pollen. Every hair on its body can carry pollen to the next flower.'
+    },
+    body: [
+      'Think about your lunch: an apple, some cucumber slices, a few blueberries. Every one of those foods exists because an animal carried pollen from one flower to another. Scientists estimate that about one out of every three bites of food we eat depends on these animals, called <b>pollinators</b>.',
+      { fig: G.flow(['A bee drinks a flower’s nectar.', 'Pollen sticks to its hairy body.', 'It visits a flower of the same kind.', 'Pollen rubs off: seeds can form.'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 152, cap: 'How a bee pollinates a flower, without even trying.' },
+      { h: 'How pollination works' },
+      'Flowers make a sweet liquid called nectar, and bees feed on it. As a bee pushes into a flower, a fine yellow powder called pollen sticks to its fuzzy body. When it visits the next flower, some of that pollen rubs off. Once a flower has received pollen from another flower of the same kind, it can make seeds, and often fruit around them.',
+      'Bees are not the only pollinators. Butterflies, moths, beetles, flies and hummingbirds pollinate too. But bees do the most work. Canada has more than 800 kinds of wild bees, and most of them live alone, not in hives. Bumblebees can even shake pollen loose by buzzing their flight muscles, which helps tomatoes and blueberries grow.',
+      'Each kind of pollinator has its favourite flowers. Hummingbirds visit red, tube-shaped blossoms that fit their long beaks. Moths visit pale flowers that open at night and smell sweet in the dark. Some plants depend on just one kind of insect, so if that insect disappears, the plant may disappear too.',
+      { h: 'Pollinators in trouble' },
+      'In many places, the number of wild bees is falling. They are losing the meadows and wildflowers they need for food and nesting. Some pesticides, chemicals sprayed to kill insects, also harm bees. Diseases and a changing climate add to the danger. The rusty-patched bumblebee was once common in southern Ontario. It has not been seen in Canada since 2009, and it is now listed as <b>endangered</b>.',
+      { box: 'Did you know?', text: 'Most wild bees in Canada are gentle and rarely sting. Many are smaller than a grain of rice.' },
+      { h: 'How people can help' },
+      'Anyone can help pollinators. Plant native flowers, such as milkweed, wild bergamot and goldenrod, that bloom at different times from spring to fall. Leave a patch of bare ground or a few hollow stems where bees can nest. Avoid spraying pesticides. Even a small balcony garden can be a stopping place for a hungry bee.'
+    ],
+    guide: { before: 'Look closely at a flower together and find the pollen. Teach <b>pollinator</b> (one who pollinates) and <b>endangered</b>.',
+      after: 'Make a list of foods in your kitchen that need pollinators. Talk about one thing your family could plant or do.' },
+    words: [['pollinators', 'animals that carry pollen from flower to flower'], ['endangered', 'in danger of disappearing forever']],
+    qs: [
+      { k: 'order', code: 'C1.3', q: 'Number the steps of pollination in order.',
+        items: ['A bee visits a flower for nectar.', 'Pollen sticks to the bee’s body.', 'Pollen rubs off on another flower.', 'The flower can make seeds and fruit.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.1', half: true, q: 'The suffix <i>-or</i> means “one who.” A <b>pollinator</b> is …',
+        opts: ['one who pollinates', 'a kind of pollen', 'a flower part'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Which is NOT a reason wild bees are in trouble?',
+        opts: ['too many wildflowers', 'pesticides', 'loss of meadows'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author begin with your lunch instead of with bees?',
+        a: 'To show that pollinators matter to the reader’s own life, so the reader cares about the problem.', look: 'connects to the reader’s life' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart.', cols: ['Problem for bees', 'One way to help'],
+        rows: [['Loss of wildflowers', null], ['Pesticides', null], ['No place to nest', null]],
+        a: [[null, 'Plant native flowers.'], [null, 'Avoid spraying pesticides.'], [null, 'Leave bare ground or hollow stems.']] },
+      { k: 'choice', code: 'B3.2', q: 'In “Bumblebees can even shake pollen loose,” which word is a verb?',
+        opts: ['shake', 'pollen', 'loose', 'even'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'Write the main idea of the passage in one sentence.',
+        a: 'Pollinators like bees are needed for much of our food, they are in trouble, and people can help them.', look: 'needed, in trouble, we can help' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-spirit-bear', subject: 'science', form: 'Report',
+    title: 'The Spirit Bear’s Forest',
+    deck: 'A rare white bear, a rainforest fed by salmon, and the Nations who protect it',
+    hero: {
+      photo: 'g6-spirit-bear.jpg', credit: 'Photo: Maximilian Helm from Dresden, Deutschland, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A spirit bear in the Great Bear Rainforest, near Klemtu, British Columbia.'
+    },
+    body: [
+      'Along the coast of British Columbia lies one of the largest temperate rainforests left on Earth: the Great Bear Rainforest. Cedar and spruce trees there can live for more than 1&nbsp;000 years. And in its misty valleys walks one of the rarest animals in Canada, a black bear with creamy white fur.',
+      { fig: '<circle class="k" cx="150" cy="78" r="58"/>' +
+          G.T(150, 16, 'Salmon swim up the river', 'l', 'middle') + G.T(262, 74, 'Bears catch', 'l', 'middle') + G.T(262, 88, 'and carry them', 'l', 'middle') +
+          G.T(150, 152, 'Leftovers feed the soil', 'l', 'middle') + G.T(38, 74, 'Trees grow and', 'l', 'middle') + G.T(38, 88, 'shade the river', 'l', 'middle') +
+          D.arrow(196, 42, 206, 54, 'a') + D.arrow(204, 118, 192, 126, 'a') + D.arrow(104, 126, 94, 116, 'a') + D.arrow(94, 42, 104, 34, 'a') +
+          G.T(150, 82, 'a cycle', 'lb', 'middle'),
+        tall: 158, cap: 'Salmon, bears and trees depend on one another.' },
+      { h: 'A white black bear' },
+      'This is the spirit bear, also called the Kermode bear. It is not a polar bear or an albino. It is a black bear that carries a rare form of a <b>gene</b>, a tiny instruction inside its cells. When a cub gets this gene from both its mother and its father, it is born white. On a few islands, as many as one bear in ten is white. The Kitasoo/Xai’xais people call it moksgm’ol.',
+      'For generations, the Coastal First Nations did not speak of the white bears to outsiders, to keep them safe from hunters.',
+      'Today, Indigenous guides from Klemtu lead small groups of visitors to watch the bears from a respectful distance. The money from these visits supports the community, and it gives people a reason to protect the bears rather than hunt them. A living spirit bear, the guides say, is worth far more than one that is gone.',
+      { h: 'A forest fed by fish' },
+      'Every fall, millions of salmon swim up the rivers to lay their eggs. Bears catch them and often carry them into the forest to eat. The leftovers rot and feed the soil, and scientists have found ocean nutrients from salmon inside the trees themselves. The trees, in turn, shade the rivers and keep them cool for the next generation of salmon. Each part of the <b>ecosystem</b> depends on the others.',
+      { h: 'Protecting it together' },
+      'In the 1990s, logging companies planned to cut large parts of the forest. First Nations, environmental groups, companies and the government of British Columbia argued for years. Finally, in 2016, they reached an agreement: most of the forest, about 85 percent, is now protected from logging. First Nations guardians patrol the land and waters and share in deciding its future.',
+      { box: 'Think about it', text: 'Removing one part of an ecosystem, such as the salmon, can change everything else.' }
+    ],
+    guide: { before: 'Find the central and northern coast of British Columbia on a map. Teach <b>gene</b> and <b>ecosystem</b>.',
+      after: 'Draw another cycle in nature you know about. Talk about why the First Nations kept the white bears secret.' },
+    words: [['gene', 'a tiny instruction inside a living thing’s cells that passes from parents to young'], ['ecosystem', 'living things and their surroundings, all depending on one another']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What do the leftover salmon do?',
+        opts: ['feed the soil', 'cool the river', 'catch the bears'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'A cub is born white when it …',
+        opts: ['gets the gene from both parents', 'lives in snow', 'eats only salmon'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how salmon help the trees grow.',
+        a: 'Bears carry salmon into the forest, and the leftovers rot and feed the soil, so the trees get ocean nutrients.', look: 'bears carry, leftovers feed soil' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why did the Coastal First Nations keep the white bears secret? What does this tell you about their values?',
+        a: 'To protect the bears from hunters; it shows they care about and protect the animals and land.', look: 'protect bears; caring for the land' },
+      { k: 'choice', code: 'C3.5', q: 'Which groups had a say in the 2016 agreement?',
+        opts: ['First Nations, environmental groups, companies and the province', 'only logging companies', 'only tourists', 'only scientists'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a colon in “they reached an agreement: most of the forest … is now protected”?',
+        opts: ['It introduces what the agreement was.', 'It ends a question.', 'It shows a list of names.', 'It joins two titles.'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'The text says the spirit bear is “not a polar bear or an albino.” Why might a reader need that sentence?',
+        a: 'Because readers might think a white bear is a polar bear or an albino, so it clears up a confusion.', look: 'fixes a likely mistake' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-static', subject: 'science', form: 'Explanation',
+    title: 'Shocking Science',
+    deck: 'Why a balloon sticks to the wall and a doorknob bites back in winter',
+    hero: {
+      photo: 'g6-static.jpg', credit: 'Photo: MikeRun, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'After a balloon is rubbed on hair, the hair reaches toward it.'
+    },
+    body: [
+      'Rub a balloon on your hair and hold it up. Strands of hair rise to meet it. Press the balloon against a wall, and it may stay there. You have just made <b>static electricity</b>: electric charge that builds up in one place instead of flowing.',
+      { fig: '<ellipse class="k" cx="80" cy="60" rx="46" ry="52"/><path class="k" d="M80 112 L74 122 H86 Z"/>' +
+          [[60, 40], [92, 36], [70, 66], [100, 70], [76, 92]].map(function (p) { return G.T(p[0], p[1], '−', 'lb', 'middle'); }).join('') +
+          '<path class="k" d="M180 120 Q200 30 240 20 Q260 30 280 120"/>' +
+          [[204, 70], [228, 46], [256, 60], [266, 96], [216, 100]].map(function (p) { return G.T(p[0], p[1], '+', 'lb', 'middle'); }).join('') +
+          D.arrow(176, 64, 132, 64, 'a') + G.T(80, 138, 'extra electrons', 'l', 'middle') + G.T(230, 138, 'lost electrons', 'l', 'middle'),
+        tall: 144, cap: 'Rubbing moves electrons from hair to balloon. Opposite charges pull together.' },
+      { h: 'Tiny charges' },
+      'Everything is made of tiny particles called atoms. Atoms contain even tinier particles with electric charges. <b>Electrons</b> have a negative charge, and protons have a positive charge. Usually the two balance out. But when two materials rub together, electrons can be pulled from one to the other.',
+      'When you rub a balloon on your hair, electrons move from your hair onto the balloon. Now the balloon has extra electrons, so it has a negative charge. Your hair has lost some, so it has a positive charge. Opposite charges <b>attract</b>, or pull toward each other, so your hair reaches for the balloon. Charges that are the same repel, or push away. That is why each strand of charged hair tries to move away from the others and stands on end.',
+      'You can test this yourself. Rub two balloons on your hair and hang them side by side on strings. Both have extra electrons now, so both are negative. Watch what happens as they swing close together. Then hold a rubbed balloon near a thin stream of water from a tap, and watch the water bend toward it.',
+      { h: 'Winter shocks' },
+      'Static is strongest when the air is dry, as it is indoors during a Canadian winter. Shuffle across a carpet in socks and you collect extra electrons. Touch a metal doorknob, and they jump across in a tiny spark with a snap you can feel. In humid summer air, the charge leaks away into the water in the air before it can build up.',
+      { box: 'Big static', text: 'Lightning is static electricity on a giant scale. Charges build up inside a storm cloud until they leap to the ground.' },
+      'Static is not just a nuisance. Photocopiers and laser printers use it to make toner powder stick to paper. Some air filters use it to trap dust. Painters of cars use it to help paint cling evenly to the metal.'
+    ],
+    guide: { before: 'Try it: rub a balloon on hair or a wool sweater and hold it near small bits of paper. Teach <b>electrons</b>, <b>attract</b> and the word static (staying still).',
+      after: 'Ask: why do you get more shocks in winter? Find something at home that uses static on purpose.' },
+    words: [['static electricity', 'electric charge that builds up instead of flowing'], ['electrons', 'tiny particles with a negative charge'], ['attract', 'pull toward']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. After rubbing, the balloon has …',
+        opts: ['extra electrons', 'no charge', 'lost electrons'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The opposite of <b>attract</b> in this passage is …',
+        opts: ['repel', 'rub', 'charge'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why your hair rises toward a rubbed balloon.',
+        a: 'Electrons move from the hair to the balloon, so the balloon is negative and the hair is positive. Opposite charges attract.', look: 'electrons move; opposite charges attract' },
+      { k: 'choice', code: 'C2.3', q: 'Predict: two balloons are both rubbed on hair and hung side by side. What will they do?',
+        opts: ['push away from each other', 'pull together', 'pop', 'nothing'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'Why do people get more shocks in winter than in summer?',
+        a: 'Winter air indoors is dry, so charge builds up; in humid summer air, it leaks away.', look: 'dry air vs humid air' },
+      { k: 'choice', code: 'C1.3', q: 'The section “Winter shocks” is organized mainly as …',
+        opts: ['cause and effect', 'a list of dates', 'a story with characters', 'a comparison of two animals'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Describe a time you felt or saw static electricity. What caused it?',
+        a: 'I got a shock from a car door after sliding across the seat in winter.', look: 'a real example and a cause' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-solar', subject: 'science', form: 'Report',
+    title: 'Power from the Sun',
+    deck: 'How solar panels make electricity, and what they can and cannot do',
+    hero: {
+      photo: 'g6-solar-farm.jpg', credit: 'Photo: Dave Lauretti from Burlington, Canada, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Solar panels on a farm field in Grimsby, Ontario.'
+    },
+    body: [
+      'In fields across Ontario, rows of dark blue panels tilt toward the sky. They make no noise, burn no fuel and have no moving parts. Yet together they make enough electricity for thousands of homes. These are solar farms, and they turn sunlight straight into electricity.',
+      { fig: G.flow(['Sunlight hits the solar cells.', 'The cells make direct current (DC).', 'An inverter changes DC to AC.', 'Power lines carry it to homes.'], { top: 2, bh: 26, gap: 12, hl: 0 }),
+        tall: 146, cap: 'From sunshine to your light switch.' },
+      { h: 'How a panel works' },
+      'Each panel is made of many small solar cells, usually built from a material called silicon. When light strikes a cell, it knocks electrons loose, and the moving electrons form an electric current. Panels make direct current, which flows in one direction. A machine called an inverter changes it into alternating current, the kind used in Canadian homes.',
+      { h: 'Renewable energy' },
+      'Sunlight is a <b>renewable</b> energy source: it will not run out, and using it does not use it up. Coal, oil and natural gas are non-renewable. They took millions of years to form, and burning them releases gases that trap heat and warm the planet. Solar panels release no such gases while they work.',
+      { h: 'The trade-offs' },
+      'Solar power has limits too. Panels make electricity only when the sun is up, and much less on cloudy days and in winter, when days are short. To have power at night, the energy must be stored in batteries or come from other sources. Large solar farms also need a lot of land, and making the panels uses energy and materials. When panels wear out after 25 years or more, they must be recycled properly.',
+      'People also disagree about where solar farms should go. Some farmers welcome the extra income from renting a field. Others worry that good farmland, which is needed to grow food, is being covered with panels. One answer is to put panels on rooftops, parking lots and old industrial land instead.',
+      { box: 'Check the angle', text: 'In Ontario, panels tilt toward the south to catch the most sun. The farther north you go, the steeper the tilt.' },
+      'Most experts agree that no single source can power everything. Many communities now use a <b>mix</b>: solar, wind and water power working together, each covering for the others. Some remote northern communities that once relied only on diesel fuel now add solar panels to cut costs and pollution.'
+    ],
+    guide: { before: 'Ask: where does the electricity in our home come from? Teach <b>renewable</b> (re- means again) and <b>mix</b>.',
+      after: 'Make a two-column list of the good points and limits of solar power. Which matters most for your community?' },
+    words: [['renewable', 'able to be replaced naturally; it will not run out'], ['mix', 'a combination of different things working together']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps in order.',
+        items: ['Sunlight hits the solar cells.', 'The cells make direct current.', 'An inverter changes DC to AC.', 'Power lines carry electricity to homes.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Non-</i> means not. A <b>non-renewable</b> source …',
+        opts: ['can run out', 'never runs out', 'is the sun'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why do panels make less power in winter?',
+        opts: ['The days are shorter.', 'Panels freeze solid.', 'There is no silicon.'], a: 0 },
+      { k: 'table', code: 'C3.5', q: 'Fill in the chart with details from the text.', cols: ['Good points of solar power', 'Limits of solar power'],
+        rows: [[null, null], [null, null]],
+        a: [['It will not run out.', 'It works only when the sun is up.'], ['It releases no heat-trapping gases while working.', 'Large farms need a lot of land.']] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do many communities use a mix of energy sources instead of solar alone?',
+        a: 'Because solar does not work at night or on cloudy days, other sources like wind and water can cover for it.', look: 'solar has gaps; others cover' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is complex: a main idea plus a part that begins with <i>when</i> and cannot stand alone?',
+        opts: ['When light strikes a cell, it knocks electrons loose.', 'Solar power has limits too.', 'They make no noise.', 'Sunlight is renewable.'], a: 0 },
+      { k: 'lines', code: 'A2.3', n: 2, q: 'An ad says, “Solar panels solve all our energy problems!” Is this claim fair? Use the text.',
+        a: 'No. The text shows solar has limits, like not working at night, so it cannot solve every problem.', look: 'not fair; a limit as evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-bondar', subject: 'science', form: 'Biography',
+    title: 'Roberta Bondar in Orbit',
+    deck: 'Canada’s first woman in space, a doctor who studied the body without gravity',
+    hero: {
+      photo: 'g6-bondar.jpg', credit: 'Photo: JSC/NASA, Public domain, Wikimedia Commons', focus: '50% 25%',
+      tall: 220,
+      cap: 'Roberta Bondar in her orange launch suit before her space flight.'
+    },
+    body: [
+      'On January 22, 1992, the space shuttle Discovery roared off its launch pad in Florida. Strapped inside was Roberta Bondar, a doctor and scientist from Sault Ste. Marie, Ontario. Minutes later, she became the first Canadian woman in space.',
+      { fig: G.time([['1945', 'Born in Sault Ste. Marie, Ontario'], ['1977', 'Becomes a doctor'], ['1983', 'Chosen as one of the first six astronauts'], ['1992', 'Eight days in space on Discovery'], ['Later', 'Photographs Canada’s national parks']], { x: 50, top: 12, gap: 26, hl: 3 }),
+        tall: 122, cap: 'Key moments in Roberta Bondar’s life.' },
+      { h: 'A curious child' },
+      'As a girl, Bondar built model rockets, collected insects and set up a laboratory in her basement. She loved science and dreamed of space at a time when almost all astronauts were men. She studied zoology, then medicine, and became a <b>neurologist</b>, a doctor who treats the brain and nerves.',
+      'In 1983, Canada chose its first six astronauts from more than 4&nbsp;000 people who applied. Bondar was one of them. She then trained for nine years before her chance to fly came.',
+      'Training was hard work. Astronauts practise every task again and again until it becomes automatic. They float in special aircraft that dive to create a few seconds of weightlessness, and they rehearse emergencies, such as fire or a leak, in full-size models of the shuttle. Bondar also had to plan her experiments down to the minute.',
+      { h: 'Experiments in orbit' },
+      'For eight days, Discovery circled Earth about every 90 minutes. Bondar and the crew ran dozens of experiments. Many looked at how the body changes in <b>microgravity</b>, where everything floats. Without gravity, the inner ear, which helps people balance, gets confused. Fluids in the body shift up toward the head, so astronauts’ faces look puffy. Bondar studied these changes, and her work helped doctors understand problems that patients on Earth face too.',
+      { box: 'In her words', text: 'Bondar has said that seeing Earth from space made her feel how fragile and precious the planet is.' },
+      { h: 'A new view' },
+      'After her flight, Bondar led research teams for years. She also became a photographer, travelling to every national park in Canada to capture its landscapes. Seeing Earth from space, she says, changed how she looked at the ground beneath her feet. Today, schools and a park in Sault Ste. Marie carry her name, and young scientists, especially girls, see in her story that the sky is not the limit.'
+    ],
+    guide: { before: 'Find Sault Ste. Marie on a map. Teach <b>neurologist</b> (neuro = nerve) and <b>microgravity</b> (micro = very small).',
+      after: 'Ask: what did Bondar do as a child that helped her later? What could you start now?' },
+    words: [['neurologist', 'a doctor who treats the brain and nerves'], ['microgravity', 'a state where gravity feels very weak, so things float']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. How many years passed between being chosen and flying?',
+        opts: ['9', '6', '15'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Micro-</i> means very small. <b>Microgravity</b> is …',
+        opts: ['very weak gravity', 'very strong gravity', 'a tiny planet'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Name two ways the body changes in microgravity.',
+        a: 'The inner ear gets confused, so balance is hard, and fluids shift up toward the head, so faces look puffy.', look: 'two changes from the text' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What qualities helped Bondar become an astronaut? Use details as evidence.',
+        a: 'Curiosity, because she built rockets and collected insects as a child, and patience, because she trained for nine years.', look: 'two qualities with evidence' },
+      { k: 'choice', code: 'C1.2', q: 'What makes this text a biography?',
+        opts: ['It tells the true story of a real person’s life.', 'It gives steps to follow.', 'It argues for an opinion.', 'It is told by an animal.'], a: 0 },
+      { k: 'choice', code: 'C3.6', q: 'What does the author mean by “the sky is not the limit”?',
+        opts: ['People can reach farther than they think.', 'The sky is very low.', 'Space is closed to visitors.', 'Clouds block rockets.'], a: 0 },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'Which helped you more to follow Bondar’s life: the time line or the paragraphs? Why?',
+        a: 'The time line, because I could see all the dates in order at a glance.', look: 'a choice and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-aurora', subject: 'science', form: 'Explanation',
+    title: 'Lights in the Night Sky',
+    deck: 'What makes the northern lights glow, dance and change colour',
+    hero: {
+      photo: 'g6-aurora.jpg', credit: 'Photo: raymond22112376, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The northern lights over Yellowknife, Northwest Territories.'
+    },
+    body: [
+      'On a clear winter night in Yellowknife, a pale green ribbon appears above the trees. It brightens, ripples like a curtain in the wind, then splits into waves of green and purple that sweep across the whole sky. These are the northern lights, or <b>aurora</b> borealis, and they are one of the most beautiful sights on Earth.',
+      { fig: '<circle class="h" cx="34" cy="74" r="28"/>' + G.T(34, 120, 'Sun', 'lb', 'middle') +
+          [50, 64, 78, 92].map(function (y) { return D.arrow(70, y + 2, 168, y + 2, 't'); }).join('') + G.T(118, 46, 'solar wind', 'l', 'middle') +
+          '<circle class="k" cx="236" cy="74" r="30"/><path class="d" d="M236 44 C176 10 176 138 236 104 M236 44 C296 10 296 138 236 104"/>' +
+          '<path class="a" d="M222 46 Q236 38 250 46 L246 52 Q236 46 226 52 Z"/>' + G.T(236, 30, 'aurora', 'lb', 'middle') + G.T(236, 128, 'Earth', 'lb', 'middle'),
+        tall: 136, cap: 'Earth’s magnetic field guides particles from the Sun toward the poles.' },
+      { h: 'A wind from the Sun' },
+      'The Sun does not only give off light and heat. It also throws out a steady stream of tiny charged particles, called the solar wind. Most of these particles never reach us, because Earth is surrounded by an invisible magnetic field that pushes them aside. But near the North and South poles, the field curves down toward the ground, and some particles slip in.',
+      'About 100 to 300 kilometres above the ground, the particles crash into gases in the <b>atmosphere</b>, the layer of air around Earth. Each crash gives the gas a burst of energy, and the gas lets that energy out as light. Billions of these tiny flashes together make the glowing curtains we see.',
+      { h: 'Why the colours change' },
+      'Different gases glow in different colours. Oxygen gives off the common green light, and, very high up, a deep red. Nitrogen glows blue and purple, often along the lower edges of the curtains. When the Sun is especially active, more particles arrive, and the lights can spread far south, sometimes all the way to Toronto.',
+      { box: 'At the other end', text: 'Near the South Pole, the same thing happens. Those lights are called the aurora australis, or southern lights.' },
+      { h: 'Stories and names' },
+      'People of the North watched the lights for thousands of years before scientists explained them. Many Indigenous Peoples have their own names and stories for them. In Inuktitut, the lights are called aqsarniit. Some families still teach children to treat the lights with respect and quiet.',
+      'Today, visitors travel from around the world to Yellowknife, which sits under a band where the lights appear on most clear nights from late August to April. Scientists there and across Canada use cameras and satellites to <b>predict</b> when the next big display will come.'
+    ],
+    guide: { before: 'Ask: have you ever seen the northern lights, or photos of them? Teach <b>aurora</b>, <b>atmosphere</b> and <b>predict</b>.',
+      after: 'Use a magnet and iron filings, or a picture of them, to show how a magnetic field curves toward its poles.' },
+    words: [['aurora', 'glowing light in the sky near the poles'], ['atmosphere', 'the layer of air around Earth'], ['predict', 'to say what will happen before it does']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does the aurora appear?',
+        opts: ['near Earth’s poles', 'at the equator', 'on the Sun'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The <b>atmosphere</b> is …',
+        opts: ['the layer of air around Earth', 'a magnet', 'the solar wind'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number the events in order.',
+        items: ['The Sun sends out charged particles.', 'Near the poles, some particles slip past the magnetic field.', 'Particles crash into gases in the atmosphere.', 'The gas lets out energy as light.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Gas', 'Colour of light'],
+        rows: [['Oxygen', null], ['Nitrogen', null]],
+        a: [[null, 'green, and red very high up'], [null, 'blue and purple']] },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Find a comparison the author uses to describe the lights in the first paragraph. Why is it helpful?',
+        a: '“Like a curtain in the wind.” It helps readers picture how the lights ripple and move.', look: 'the simile and what it helps you picture' },
+      { k: 'lines', code: 'C3.4', n: 2, q: 'What does the section “Stories and names” add to the scientific explanation?',
+        a: 'It shows that Indigenous Peoples knew and respected the lights long before scientists explained them.', look: 'Indigenous knowledge and respect' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'In two or three sentences, summarize what causes the northern lights.',
+        a: 'Charged particles from the Sun are guided by Earth’s magnetic field toward the poles. They hit gases high in the air, and the gases glow.', look: 'particles, magnetic field, gases glow' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-paper-plane', subject: 'science', form: 'Procedure',
+    title: 'Build a Better Glider',
+    deck: 'Fold a paper airplane, then run a fair test to make it fly farther',
+    hero: {
+      photo: 'g6-paper-plane.jpg', credit: 'Photo: Arthurfan828, CC BY 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A simple paper airplane. Small changes to its shape can make a big difference.'
+    },
+    body: [
+      'A paper airplane is a <b>glider</b>: it has no engine, so once it leaves your hand, it slowly loses height as it moves forward. The same forces that act on a real plane act on it: lift, weight, thrust and drag. Follow these steps to build one, then test it like a scientist.',
+      { fig: '<rect class="k" x="6" y="10" width="80" height="104"/><path class="d" d="M46 10 V114"/><path class="h" d="M6 10 L46 50 L86 10 Z"/>' + G.T(46, 132, '1', 'lb', 'middle') +
+          '<path class="k" d="M106 114 V50 L146 10 L186 50 V114 Z"/><path class="d" d="M146 10 V114"/><path class="h" d="M146 10 L106 74 V50 Z M146 10 L186 74 V50 Z"/>' + G.T(146, 132, '2', 'lb', 'middle') +
+          '<path class="k" d="M206 70 L292 60 L206 50 Z"/><path class="a" d="M206 70 L292 60 L230 86 Z"/>' + G.T(250, 132, '3', 'lb', 'middle'),
+        tall: 138, cap: 'Fold the top corners to the centre, fold again, then fold in half and fold down the wings.' },
+      { h: 'What you need' },
+      'One sheet of letter-size paper, a ruler, a measuring tape and a clear space, such as a gym or a hallway.',
+      { h: 'Steps' },
+      '1. Fold the paper in half the long way, crease it firmly, then open it again. 2. Fold the two top corners in so they meet at the centre crease, making a point. 3. Fold the new slanted edges in to the centre crease again. 4. Fold the whole plane in half along the first crease, with the folds on the outside. 5. Fold each side down to make a wing, lining up the wing edge with the bottom of the body. 6. Hold the plane underneath, near the front, and throw it gently and level.',
+      { h: 'Test it fairly' },
+      'Now ask a question: does adding a paper clip to the nose make the plane fly farther? To find out, you need a <b>fair test</b>. Change only one thing, the <b>variable</b> you are testing, and keep everything else the same: the same plane, the same thrower, the same spot and the same strength of throw.',
+      'Throw the plane five times without the clip and measure each distance. Then add the clip and throw five more times. Find the average of each set. Repeating the throws matters, because one lucky or unlucky throw could fool you.',
+      { box: 'Safety', text: 'Never throw a plane toward a person’s face. Collect your planes after testing.' },
+      { h: 'What to look for' },
+      'A small weight at the front often keeps the plane from tipping up and stalling, so it glides farther. But too much weight makes it dive. Record your results in a table and decide: was your prediction right? What would you test next: wing size, paper type or the angle of the wing tips?',
+      'Engineers who design real aircraft work the same way. They build a model, test it in a wind tunnel, change one thing and test again. Each small change teaches them something. Your hallway may not be a wind tunnel, but your method can be just as careful.'
+    ],
+    guide: { before: 'Gather paper, paper clips and a measuring tape. Teach <b>glider</b>, <b>fair test</b> and <b>variable</b>.',
+      after: 'Do the test together and record the results in a table. Talk about what to change next, one thing at a time.' },
+    words: [['glider', 'an aircraft with no engine'], ['fair test', 'an experiment where only one thing changes'], ['variable', 'the one thing that is changed in a test']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What tells you this text is a procedure?',
+        opts: ['numbered steps and a list of things you need', 'characters and a problem', 'rhyming lines'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'Most steps begin with a command verb. Which is one?',
+        opts: ['Fold', 'Paper', 'Clear'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number the steps for the fair test in order.',
+        items: ['Throw five times without the clip and measure.', 'Add the paper clip and throw five more times.', 'Find the average of each set.', 'Decide if your prediction was right.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why must you keep the thrower, the spot and the strength of the throw the same?',
+        a: 'So that only the paper clip changes, and you know the clip caused any difference in distance.', look: 'only one variable changes' },
+      { k: 'choice', code: 'C3.2', q: 'Why does the author say to throw five times instead of once?',
+        opts: ['One lucky or unlucky throw could fool you.', 'Paper planes break after one throw.', 'It is more fun.', 'The ruler is short.'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict: what will happen if you add five paper clips to the nose? Use the text.',
+        a: 'It will probably dive, because the text says too much weight makes the plane dive.', look: 'dives; reason from text' },
+      { k: 'lines', code: 'C1.4', n: 2, q: 'How does the diagram help you follow the steps?',
+        a: 'It shows what the folds look like, so I can check my plane matches.', look: 'shows the shape of folds' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-peacekeeping', subject: 'social', form: 'Report',
+    title: 'Keeping the Peace',
+    deck: 'How a Canadian idea sent soldiers in blue helmets to calm conflicts',
+    hero: {
+      photo: 'g6-peacekeeping.jpg', credit: 'Photo: Pierre André Leclercq, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Reconciliation: The Peacekeeping Monument in Ottawa honours Canadians who served on peacekeeping missions.'
+    },
+    body: [
+      'In 1956, a crisis broke out in Egypt over the Suez Canal, a waterway that ships use to travel between Europe and Asia. Britain, France and Israel sent forces into Egypt. The Soviet Union threatened to step in. Many people feared a much larger war.',
+      { fig: G.time([['1956', 'Suez Crisis; Pearson proposes a UN force'], ['1957', 'Pearson wins the Nobel Peace Prize'], ['1964', 'Peacekeepers go to Cyprus for 29 years'], ['1988', 'All UN peacekeepers win the Nobel Prize'], ['1992', 'The Peacekeeping Monument opens']], { x: 50, top: 12, gap: 27, hl: 0 }),
+        tall: 128, cap: 'Key moments for Canada and peacekeeping.' },
+      { h: 'Pearson’s idea' },
+      'Lester B. Pearson, a Canadian <b>diplomat</b> who would later become prime minister, came up with a plan. At the United Nations, he proposed sending an international force to stand between the armies. Its soldiers would not fight to win. They would keep the two sides apart while leaders talked. The United Nations agreed, and the first large peacekeeping force was born. In 1957, Pearson won the Nobel Peace Prize.',
+      { h: 'Blue helmets' },
+      '<b>Peacekeepers</b> wear blue helmets or blue berets so that everyone can see they belong to the United Nations and are not on either side. Their jobs include watching ceasefire lines, clearing land mines, protecting people who are fleeing and helping to hold fair elections. They go only where the countries involved agree to let them in.',
+      'Since 1956, more than 125&nbsp;000 Canadians have served on peacekeeping missions in places such as Cyprus, the Middle East, Africa and the Balkans. The work is often dangerous, and more than 120 Canadian peacekeepers have died while serving.',
+      { box: 'A long mission', text: 'Canadian peacekeepers served in Cyprus for 29 years, keeping two communities on the island apart.' },
+      { h: 'Peacekeeping today' },
+      'Many Canadians see peacekeeping as part of their country’s identity. Yet today, Canada sends far fewer peacekeepers than it once did. Some people argue that Canada should return to its role as a leading peacekeeper. Others say modern conflicts are more complicated and need different kinds of help, such as aid, training and diplomacy, the work of solving problems by talking.',
+      'Whatever their view, most people agree that the goal Pearson set is still worth pursuing: when a conflict starts, give people a chance to stop fighting and start talking.'
+    ],
+    guide: { before: 'Find Egypt, the Suez Canal and Cyprus on a map. Teach <b>peacekeepers</b> and <b>diplomat</b>.',
+      after: 'Talk about how people at school or at home “keep the peace” in a disagreement. How is that like peacekeeping?' },
+    words: [['peacekeepers', 'soldiers from many countries who keep two sides in a conflict apart'], ['diplomat', 'a person who represents a country and works out problems with other countries']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did Pearson win the Nobel Peace Prize?',
+        opts: ['1957', '1956', '1988'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why do peacekeepers wear blue?',
+        opts: ['to show they belong to the UN', 'to hide at sea', 'to look like the sky'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How was a peacekeeping force different from an ordinary army?',
+        a: 'It did not fight to win; it stood between the two sides to keep them apart while leaders talked.', look: 'keeps sides apart, does not fight to win' },
+      { k: 'table', code: 'C3.5', q: 'Fill in the chart with the two views in the text.', cols: ['View', 'Reason'],
+        rows: [['Canada should return to leading peacekeeping.', null], [null, 'Modern conflicts are more complicated.']],
+        a: [[null, 'Peacekeeping is part of Canada’s identity.'], ['Canada should give other kinds of help.', null]] },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence has a relative clause (a part beginning with <i>who</i> that describes a noun)?',
+        opts: ['Lester B. Pearson, a diplomat who would later become prime minister, came up with a plan.', 'The United Nations agreed.', 'Many people feared a war.', 'The work is dangerous.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What lesson from Pearson’s idea does the author think still matters today?',
+        a: 'When a conflict starts, people should get a chance to stop fighting and start talking.', look: 'stop fighting, start talking' },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Have you ever helped two people stop arguing? How was it like peacekeeping?',
+        a: 'I stood between my brothers and asked each to explain, so they talked instead of fighting.', look: 'an event and a link' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-desmond', subject: 'history', form: 'Biography',
+    title: 'Viola Desmond Takes a Seat',
+    deck: 'A businesswoman who refused to move, and the long road to justice',
+    hero: {
+      photo: 'g6-desmond.jpg', credit: 'Photo: Unknown authorUnknown author, Public domain, Wikimedia Commons', focus: '50% 25%',
+      tall: 220,
+      cap: 'Viola Desmond in Halifax, Nova Scotia.'
+    },
+    body: [
+      'On the evening of November 8, 1946, Viola Desmond’s car broke down in New Glasgow, Nova Scotia. While she waited for it to be repaired, she decided to see a movie at the Roseland Theatre. She bought a ticket and took a seat on the main floor, near the screen, because she could not see well from far away.',
+      { fig: '<rect class="k" x="40" y="6" width="220" height="16"/>' + G.T(150, 18, 'screen', 'n', 'middle') +
+          '<rect class="h" x="40" y="34" width="220" height="62"/>' + G.T(150, 70, 'main floor: white people only', 'lb', 'middle') +
+          '<rect class="k" x="40" y="104" width="220" height="30"/>' + G.T(150, 123, 'balcony: Black people', 'l', 'middle') +
+          '<circle class="a" cx="80" cy="50" r="6"/>' + G.T(92, 54, 'Viola’s seat', 'n'),
+        tall: 140, cap: 'How the Roseland Theatre was segregated in 1946 (simplified).' },
+      'The theatre staff told her to move. Black customers, they said, had to sit in the balcony. Desmond, who was Black, offered to pay the difference in price, but they refused to take it. She stayed in her seat. A police officer dragged her out, injuring her, and she spent the night in jail.',
+      { h: 'A one-cent crime' },
+      'In court the next morning, Desmond was not charged with breaking a rule about seats. Instead, she was charged with not paying a one-cent tax: the difference between the tax on a balcony ticket and a main-floor ticket. She was found guilty and fined. No lawyer was there to help her. The real reason, everyone knew, was the colour of her skin.',
+      { h: 'Speaking up' },
+      'Desmond was a successful businesswoman. She ran a beauty salon and a school that trained Black women to become beauticians, at a time when other schools would not accept them. With the support of her church and the Nova Scotia Association for the Advancement of Coloured People, she <b>appealed</b> her case to a higher court. She lost, but her story spread and helped push Nova Scotia to end <b>segregation</b> laws in 1954.',
+      { box: 'Long overdue', text: 'In 2010, Nova Scotia granted Desmond a free pardon, saying she had done nothing wrong. The government also apologized.' },
+      { h: 'Remembered' },
+      'Desmond died in 1965, long before her pardon. Her younger sister, Wanda Robson, spent years telling her story in schools. In 2018, Viola Desmond’s face appeared on Canada’s ten-dollar bill. She was the first Canadian woman to appear alone on a regularly circulating bank note. Her quiet act of refusing to move is now taught as a key moment in Canada’s fight for civil rights.'
+    ],
+    guide: { before: 'Find New Glasgow and Halifax on a map. Teach <b>segregation</b> and <b>appealed</b>. Look at a ten-dollar bill if you have one.',
+      after: 'Talk about why the one-cent charge was unfair. Ask: why do you think it took so long for the government to say she did nothing wrong?' },
+    words: [['segregation', 'keeping people apart because of their race'], ['appealed', 'asked a higher court to change a decision']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where did Viola sit?',
+        opts: ['on the main floor', 'in the balcony', 'by the door'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>appeal</b> a case is to …',
+        opts: ['ask a higher court to change it', 'pay a fine', 'buy a ticket'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author say the charge was a “one-cent crime”? What was the real reason she was charged?',
+        a: 'The charge was about one cent of tax, which was tiny; the real reason was that she was Black and sat in the white section.', look: 'tiny charge; real reason racism' },
+      { k: 'table', code: 'C1.3', q: 'Fill in the cause and effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['Desmond would not move to the balcony.', null], [null, 'Nova Scotia ended segregation laws in 1954.']],
+        a: [[null, 'She was dragged out and jailed overnight.'], ['Her story spread after her appeal.', null]] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does Desmond’s beauty school tell you about her as a person?',
+        a: 'She helped other Black women succeed when others would not accept them, so she cared about her community.', look: 'a quality with evidence' },
+      { k: 'choice', code: 'C1.6', q: 'Whose point of view is missing from this text?',
+        opts: ['the theatre staff', 'Viola Desmond', 'the author', 'her sister'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Viola Desmond is often compared with Rosa Parks in the United States. What do you know that connects them?',
+        a: 'Both refused to give up a seat because of segregation, and both became symbols of civil rights.', look: 'a connection' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-africville', subject: 'history', form: 'Report',
+    title: 'Remembering Africville',
+    deck: 'A Black community in Halifax, its loss and the fight to be remembered',
+    hero: {
+      photo: 'g6-africville.jpg', credit: 'Photo: Dennis G. Jarvis, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A copy of Africville’s Seaview church, rebuilt in 2011, now a museum.'
+    },
+    body: [
+      'On the shore of the Bedford Basin, at the north end of Halifax, a small white church stands on a green hill above the water. It is a copy of a church that once stood at the heart of a community called Africville. For more than a century, Black families lived, worked, worshipped and raised children there.',
+      { fig: G.time([['1840s', 'Black families settle on the Bedford Basin'], ['1849', 'The first church is founded'], ['1960s', 'The city moves residents out'], ['1967', 'The church is torn down at night'], ['2010', 'The City of Halifax apologizes'], ['2011', 'The church is rebuilt as a museum']], { x: 50, top: 12, gap: 24, hl: 4 }),
+        tall: 138, cap: 'The story of Africville.' },
+      { h: 'A close community' },
+      'Many of the first families were descendants of Black Loyalists and of refugees who escaped slavery in the United States. They fished, farmed, worked on the docks and in the city. The church was the centre of community life, with Sunday services, weddings, choirs and picnics. Neighbours helped one another, and children played on the shore.',
+      { h: 'Left out' },
+      'Africville residents paid taxes to the city, but they did not get the same services as other Halifax neighbourhoods. There was no running water, no sewers and no paved roads. Instead, the city placed things that no other neighbourhood wanted nearby: a prison, a hospital for contagious diseases and, later, the city dump. This was <b>racism</b>: treating people unfairly because of their race.',
+      { h: 'Moved out' },
+      'In the 1960s, the city decided to tear Africville down, saying it would clear a slum. About 400 residents were moved out. Some received little money for their homes; some had their belongings moved in city garbage trucks. Their homes were bulldozed. In 1967, the church was torn down in the middle of the night. People lost not only houses, but a whole community.',
+      { box: 'Never forgotten', text: 'Former residents and their families hold a reunion at the site every summer, keeping the community’s memory alive.' },
+      { h: 'An apology' },
+      'For decades, former residents and their children protested and asked for justice. In 2010, the City of Halifax made a formal apology. The church was rebuilt as a museum on the site, which had already been named a national historic site in 1996. The story of Africville is now taught so that Canadians can understand the harm done and work toward a fairer future. Remembering is a way to <b>honour</b> the people who lived there.'
+    ],
+    guide: { before: 'Find Halifax and the Bedford Basin on a map. Teach <b>racism</b>, <b>honour</b> and the word Loyalist. This is a hard history; talk about it calmly and answer questions honestly.',
+      after: 'Ask: why do you think former residents kept holding reunions? Why does an apology matter?' },
+    words: [['racism', 'treating people unfairly because of their race'], ['honour', 'to show great respect for']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did Halifax apologize?',
+        opts: ['2010', '1967', '1849'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Which service did Africville NOT have?',
+        opts: ['running water', 'a church', 'neighbours'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The author says people lost “not only houses, but a whole community.” What does this mean?',
+        a: 'They lost their neighbours, their church and the life they shared, not just buildings.', look: 'community life was lost' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Give two examples of how Africville was treated unfairly.',
+        a: 'Residents paid taxes but had no running water or sewers, and the city put a dump and a prison nearby.', look: 'two examples' },
+      { k: 'choice', code: 'C1.3', q: 'How is most of this text organized?',
+        opts: ['in time order, from the past to today', 'as steps to follow', 'as a list of animals', 'as a set of questions'], a: 0 },
+      { k: 'choice', code: 'C2.2', q: 'Why would a teacher choose this text for a unit on communities in Canada?',
+        opts: ['It shows how a community was built, harmed and remembered.', 'It explains how to build a church.', 'It lists Halifax restaurants.', 'It is a funny story.'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'How did reading this text change what you know about Canada’s history?',
+        a: 'I did not know Black communities in Canada were treated this way. It shows Canada has unfair parts in its history too.', look: 'a change in thinking' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-prairie-domes', subject: 'history', form: 'Report',
+    title: 'Domes on the Prairies',
+    deck: 'How Ukrainian settlers built homes, farms and churches on the Canadian Prairies',
+    hero: {
+      photo: 'g6-vegreville-church.jpg', credit: 'Photo: TobyEditor, CC0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'A Ukrainian Orthodox church in Vegreville, Alberta. Its domes rise above the flat land around it.'
+    },
+    body: [
+      'Drive across the Prairies of Alberta, Saskatchewan or Manitoba, and you may see a surprising sight: a small church topped with shining, onion-shaped domes, standing alone among the wheat fields. These churches were built by Ukrainian settlers, who began arriving in Canada more than 130 years ago.',
+      { fig: G.time([['1891', 'The first two Ukrainian settlers arrive'], ['1896', 'Canada advertises free farmland in Europe'], ['1914', 'Wartime: thousands are interned in camps'], ['1975', 'A giant pysanka is built in Vegreville'], ['Today', 'About 1.3 million Ukrainian Canadians']], { x: 50, top: 12, gap: 26, hl: 1 }),
+        tall: 124, cap: 'Key moments for Ukrainian Canadians.' },
+      { h: 'Free land' },
+      'In the 1890s, Canada wanted farmers to settle the West. The government sent advertisements to Europe offering 160 acres of land, called a <b>homestead</b>, for a fee of just ten dollars. To many poor farmers in western Ukraine, where land was scarce, this sounded like a dream. Between 1891 and 1914, about 170&nbsp;000 Ukrainians came to Canada.',
+      { h: 'A hard start' },
+      'Settlers often arrived with little more than a trunk of clothes, seeds and tools. Many chose land with trees, like the farms they had left behind. Their first homes were often a burdei, a shelter dug partly into the ground and roofed with sod. Later, they built cottages of logs plastered with clay and painted white. Families cleared trees and stones by hand and planted their first crops. Winters were long, and some years, early frost destroyed the harvest.',
+      'Life was also hard in other ways. Some Canadians treated the newcomers with suspicion because of their language and customs. During the First World War, about 8&nbsp;500 people, most of them Ukrainian, were labelled “enemy aliens” and held in <b>internment</b> camps, even though they had done nothing wrong. Canada officially recognized this injustice in 2005.',
+      { h: 'Keeping traditions' },
+      'Ukrainian settlers held on to their language, songs, dances and food. They built churches in the style of home, with domes and painted icons inside. Families decorated pysanky, eggs covered with fine patterns made with wax and dye. Today, perogies, or varenyky, are served across Canada, and Ukrainian dance groups perform in cities from Winnipeg to Edmonton.',
+      { box: 'A giant egg', text: 'Vegreville, Alberta, built a giant pysanka in 1975. It is more than nine metres tall and made of more than 2&nbsp;000 aluminum tiles.' },
+      'The story of Ukrainian settlers is one of many that make up Canada’s <b>multicultural</b> identity: people from many places, each adding their own traditions to a shared country.'
+    ],
+    guide: { before: 'Find Ukraine, Alberta and Manitoba on a map. Teach <b>homestead</b>, <b>internment</b> and <b>multicultural</b>.',
+      after: 'Ask: what traditions has your family kept from another place, or started here? How do they show up in your home?' },
+    words: [['homestead', 'land given to a settler to farm and live on'], ['internment', 'holding people in camps, often during a war'], ['multicultural', 'made up of many cultures']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did Canada advertise free land in Europe?',
+        opts: ['1896', '1891', '1914'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Multi-</i> means many. <b>Multicultural</b> means …',
+        opts: ['made up of many cultures', 'made of one culture', 'very old'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why did so many Ukrainian farmers decide to come to Canada?',
+        a: 'Land was scarce in western Ukraine, and Canada offered 160 acres for only ten dollars.', look: 'land scarce at home; cheap land here' },
+      { k: 'table', code: 'C3.4', q: 'Fill in the chart.', cols: ['Challenge settlers faced', 'Detail from the text'],
+        rows: [['Hard work on the land', null], ['Unfair treatment', null]],
+        a: [[null, 'They cleared trees and stones by hand; early frost destroyed crops.'], [null, 'During the war, about 8 500 people were held in internment camps.']] },
+      { k: 'choice', code: 'B3.3', q: 'Why are commas used in “perogies, or varenyky, are served across Canada”?',
+        opts: ['to set off another name for perogies', 'to separate items in a list', 'to end the sentence', 'to show a question'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'Why does the author include the internment camps in a story about settlers?',
+        a: 'To show the whole story, including the unfair parts, so readers understand what settlers really faced.', look: 'whole truth, not just good parts' },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'What tradition from your family or community would you keep if you moved to a new country? Why?',
+        a: 'Making tamales at New Year, because it brings everyone together.', look: 'a tradition and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-orange-shirt', subject: 'history', form: 'Report',
+    title: 'Why We Wear Orange',
+    deck: 'Phyllis Webstad’s orange shirt, residential schools and the work of reconciliation',
+    hero: {
+      photo: 'g6-every-child.jpg', credit: 'Photo: Taymaz Valley, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'An Every Child Matters sign. On September 30, many Canadians wear orange.'
+    },
+    body: [
+      'In 1973, a six-year-old girl named Phyllis Webstad was getting ready for her first day of school. Her grandmother, who did not have much money, bought her a shiny new orange shirt. Phyllis loved it. She wore it proudly to St. Joseph Mission, a residential school near Williams Lake, British Columbia.',
+      { fig: G.time([['1800s', 'The first residential schools open'], ['1973', 'Phyllis’s shirt is taken away'], ['1996', 'The last residential school closes'], ['2013', 'The first Orange Shirt Day'], ['2015', 'Truth and Reconciliation report'], ['2021', 'The first national day, September 30']], { x: 50, top: 12, gap: 24, hl: 1 }),
+        tall: 138, cap: 'Residential schools and Orange Shirt Day.' },
+      'When she arrived, the staff took her clothes away, including her new orange shirt. She never got it back. For Phyllis, the colour orange came to mean the feeling that no one cared and that she did not matter.',
+      { h: 'Residential schools' },
+      'For more than 100 years, the Canadian government and churches ran <b>residential schools</b> for First Nations, Inuit and Métis children. More than 150&nbsp;000 children were taken from their families and sent to these schools, often far from home. Many were punished for speaking their own languages. Many were hungry, lonely or hurt, and thousands of children died. The goal was to make the children give up their cultures. The last school closed in 1996.',
+      'The harm did not end when the schools closed. Many <b>survivors</b> struggled for years, and the loss of language and family connection affected their children and grandchildren too.',
+      { h: 'An orange shirt becomes a symbol' },
+      'In 2013, Phyllis Webstad, now a grown woman, shared her story at a gathering in Williams Lake. People there decided to wear orange every September 30, the time of year when children were taken to the schools. The idea spread across the country. Since 2021, September 30 has also been the National Day for Truth and Reconciliation.',
+      { box: 'Every Child Matters', text: 'The words on orange shirts remind everyone that every child, everywhere, deserves to be cared for and respected.' },
+      { h: 'Truth, then reconciliation' },
+      '<b>Reconciliation</b> means repairing a relationship that has been damaged. It begins with truth: learning what happened and listening to survivors. In 2015, the Truth and Reconciliation Commission published 94 Calls to Action, steps that governments, schools and all Canadians can take. Wearing orange is one small step. Learning, listening and acting are the rest.'
+    ],
+    guide: { before: 'This is a serious topic. Read it together and go slowly. Teach <b>residential school</b>, <b>survivor</b> and <b>reconciliation</b>. Let the child ask questions and answer honestly and simply.',
+      after: 'Ask: why do you think Phyllis chose to share her story? Talk about one thing your family could do to learn more, such as reading a book by an Indigenous author.' },
+    words: [['residential schools', 'boarding schools that took Indigenous children away from their families'], ['survivors', 'people who lived through something terrible'], ['reconciliation', 'repairing a relationship that has been damaged']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did the last residential school close?',
+        opts: ['1996', '1973', '2013'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Reconciliation</b> means …',
+        opts: ['repairing a damaged relationship', 'buying a new shirt', 'closing a school'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did the colour orange come to mean “no one cared” for Phyllis?',
+        a: 'Her orange shirt, a gift from her grandmother, was taken away and never given back, which made her feel she did not matter.', look: 'shirt taken; felt she did not matter' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What harm did residential schools do? Give two examples from the text.',
+        a: 'Children were taken from their families and punished for speaking their languages; many were hungry or hurt.', look: 'two examples' },
+      { k: 'choice', code: 'C3.1', q: 'In this text, the orange shirt is a symbol. What does it stand for today?',
+        opts: ['remembering children who were harmed and caring for every child', 'a sports team', 'the start of fall', 'a school uniform'], a: 0 },
+      { k: 'choice', code: 'C1.3', q: 'The last section says reconciliation “begins with truth.” What comes first?',
+        opts: ['learning what happened and listening to survivors', 'wearing orange only', 'building new schools', 'forgetting the past'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'How did reading this passage change your understanding of September 30?',
+        a: 'I learned that orange shirts honour children who were taken from their families, not just a colour for fall.', look: 'a change in understanding' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-handwashing', subject: 'health', form: 'Explanation',
+    title: 'Twenty Seconds of Soap',
+    deck: 'How a doctor’s discovery and a clever molecule keep germs away',
+    hero: {
+      photo: 'g6-handwashing.jpg', credit: 'Photo: Sgt. Grace L. Waladkewics, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Washing with soap and running water for 20 seconds removes most germs from your hands.'
+    },
+    body: [
+      'Your hands touch hundreds of things every day: doorknobs, phones, pencils, pets and food. Along the way, they pick up <b>microbes</b>, tiny living things too small to see. Most are harmless, but some can make you sick. Washing your hands with soap is one of the simplest and most powerful ways to stay healthy.',
+      { fig: '<circle class="a" cx="60" cy="40" r="10"/><path class="k" d="M70 40 H140"/>' + G.T(60, 22, 'head: loves water', 'n', 'middle') + G.T(140, 30, 'tail: loves oil', 'n', 'middle') +
+          '<circle class="h" cx="230" cy="68" r="24"/>' + G.T(230, 72, 'germ', 'lb', 'middle') +
+          [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { var a = i * Math.PI / 4, x1 = 230 + Math.cos(a) * 28, y1 = 68 + Math.sin(a) * 28, x2 = 230 + Math.cos(a) * 50, y2 = 68 + Math.sin(a) * 50;
+            return '<path class="k" d="M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' L' + x2.toFixed(1) + ' ' + y2.toFixed(1) + '"/><circle class="a" cx="' + x2.toFixed(1) + '" cy="' + y2.toFixed(1) + '" r="5"/>'; }).join('') +
+          G.T(60, 80, 'one soap', 'l', 'middle') + G.T(60, 94, 'molecule', 'l', 'middle') + G.T(150, 144, 'Tails grab the germ; heads let water rinse it away.', 'n', 'middle'),
+        tall: 152, cap: 'Soap molecules surround a germ and lift it off the skin.' },
+      { h: 'A doctor nobody believed' },
+      'In the 1840s, many mothers in a Vienna hospital were dying of a fever soon after giving birth. A doctor named Ignaz Semmelweis noticed that doctors often went straight from working with sick patients to helping mothers, without washing. He ordered everyone to wash their hands in a cleaning solution, and the number of deaths dropped sharply. Yet many doctors refused to believe him. It took years before scientists proved that germs spread disease and handwashing became normal.',
+      { h: 'How soap works' },
+      'Many germs are wrapped in a thin, oily layer, and water alone slides right off oil. Soap is made of tiny particles called <b>molecules</b> that have two ends. One end is attracted to water, and the other end is attracted to oil. When you scrub, the oily ends dig into germs and dirt and break them apart. Then the water-loving ends let the running water carry everything away.',
+      { h: 'Doing it right' },
+      'Wet your hands, add soap and scrub every part: palms, backs, between your fingers, under your nails and around your thumbs. Keep scrubbing for at least 20 seconds, about as long as it takes to hum “Happy Birthday” twice. Rinse under running water and dry with a clean towel. Wash before eating, after using the washroom, after blowing your nose and after touching animals.',
+      { box: 'Try this', text: 'Rub a little cooking oil and cinnamon on your hands. Rinse with water only, then with soap. Which removes more?' },
+      'Hand sanitizer can help when there is no sink nearby, but it does not work well on dirty or greasy hands. When you can, soap and water are still the best <b>defence</b>.'
+    ],
+    guide: { before: 'Try the oil and cinnamon test together. Teach <b>microbes</b> (micro = small, bio = life), <b>molecules</b> and <b>defence</b>.',
+      after: 'Time a 20-second wash together. Ask: why were doctors slow to believe Semmelweis?' },
+    words: [['microbes', 'tiny living things too small to see'], ['molecules', 'the tiny particles that a substance is made of'], ['defence', 'protection against attack or harm']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Which end of soap grabs the germ?',
+        opts: ['the oil-loving tail', 'the water-loving head', 'neither end'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Micro-</i> means small. <b>Microbes</b> are …',
+        opts: ['tiny living things', 'large animals', 'kinds of soap'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why soap removes germs better than water alone.',
+        a: 'Germs have an oily layer that water slides off. Soap’s oil-loving ends break them apart, and its water-loving ends let water rinse them away.', look: 'oily layer; two ends of soap' },
+      { k: 'order', code: 'C1.3', q: 'Number the steps of a good handwash.',
+        items: ['Wet your hands and add soap.', 'Scrub every part for 20 seconds.', 'Rinse under running water.', 'Dry with a clean towel.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think many doctors refused to believe Semmelweis?',
+        a: 'Germs are too small to see, and scientists had not yet proved they spread disease, so his idea seemed strange.', look: 'germs unseen; not yet proved' },
+      { k: 'choice', code: 'B3.2', q: 'In “Scrub every part,” the word <b>scrub</b> is …',
+        opts: ['a verb giving a command', 'a noun', 'an adjective', 'a pronoun'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'Which part of the passage did you need to reread? What helped you understand it?',
+        a: 'How soap works; the diagram helped me see the two ends.', look: 'a part and a strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-dice', subject: 'math', form: 'Explanation',
+    title: 'Is the Game Fair?',
+    deck: 'Two dice, eleven sums and the math of probability',
+    hero: {
+      photo: 'g6-dice.jpg', credit: 'Photo: JonRichfield, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A roll of two dice. There are 36 different ways the two dice can land.'
+    },
+    body: [
+      'Amira and Jonah invent a game with two dice. They roll both and add the numbers. If the sum is 6, 7 or 8, Amira scores a point. If the sum is anything else, Jonah does. Jonah grins: he has eight sums, and Amira has only three. Surely he will win. But after 30 rolls, Amira is far ahead. What happened?',
+      { fig: G.T(4, 10, 'Number of ways to roll each sum with two dice', 'n') +
+          G.cols([['2', 1], ['3', 2], ['4', 3], ['5', 4], ['6', 5], ['7', 6], ['8', 5], ['9', 4], ['10', 3], ['11', 2], ['12', 1]], 6, { base: 124, h: 92, x0: 4, hl: 5 }),
+        tall: 142, cap: 'The sum 7 can be made 6 ways; 2 and 12 only 1 way each.' },
+      { h: 'Counting the ways' },
+      'The answer is <b>probability</b>: how likely something is to happen. Each die has six faces, so two dice can land in 6 × 6 = 36 different ways. But the sums are not equally likely. There is only one way to roll a sum of 2: a 1 and a 1. There are six ways to roll a 7: 1 and 6, 2 and 5, 3 and 4, 4 and 3, 5 and 2, and 6 and 1.',
+      'Look at the chart. Amira’s sums, 6, 7 and 8, can be made 5 + 6 + 5 = 16 ways. Jonah’s eight sums together can be made only 36 − 16 = 20 ways. So Jonah should win slightly more often, 20 out of 36, but not nearly as much as he thought.',
+      { h: 'Expected and actual' },
+      'The probability of an <b>outcome</b> can be written as a fraction: the number of ways it can happen, out of all possible ways. The chance of rolling 7 is 6 out of 36, or 1 out of 6. This is the theoretical probability, what should happen in the long run.',
+      'But 30 rolls is not the long run. In a short game, luck plays a big part, and results can be far from what the math predicts. That is why Amira won, even though the odds were slightly against her. If they rolled 3&nbsp;600 times, Jonah would almost certainly come out ahead.',
+      { box: 'Fair or not?', text: 'A game is fair when each player has the same probability of winning. Is Amira and Jonah’s game fair? How could you change it?' },
+      'Probability helps people make decisions every day. Weather forecasters give the chance of rain. Doctors weigh the chances that a treatment will work. Game designers use it to make games fun and fair.',
+      'You can test probability yourself. Roll two dice 36 times and tally each sum. Then do it again, and again. Each set of 36 rolls will look a little different. But add all your tallies together, and the shape of your results will slowly grow more like the chart: low at the ends and tallest in the middle, at 7. The more you roll, the closer you get to the math.'
+    ],
+    guide: { before: 'Roll two dice 20 times together and tally the sums. Teach <b>probability</b> and <b>outcome</b>.',
+      after: 'Change the rules to make the game fair, then test it with 36 rolls.' },
+    words: [['probability', 'how likely something is to happen'], ['outcome', 'a possible result']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which sum can be rolled the most ways?',
+        opts: ['7', '12', '2'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How many different ways can two dice land?',
+        opts: ['36', '12', '11'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why was Jonah wrong to think he would win easily?',
+        a: 'The sums are not equally likely. Amira’s three sums can be made 16 ways, and Jonah’s eight sums only 20 ways.', look: 'sums not equally likely; 16 vs 20' },
+      { k: 'table', code: 'C1.4', q: 'Use the chart. Fill in the probability of each sum.', cols: ['Sum', 'Ways', 'Probability'],
+        rows: [['2', null, null], ['7', null, null], ['10', null, null]],
+        a: [[null, '1', '1 out of 36'], [null, '6', '6 out of 36'], [null, '3', '3 out of 36']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Amira won the game even though the odds were slightly against her. How can that be?',
+        a: 'In a short game of 30 rolls, luck plays a big part, so results can be different from what the math predicts.', look: 'short game; luck' },
+      { k: 'choice', code: 'C1.3', q: 'How does the author organize the passage?',
+        opts: ['a puzzle at the start, then an explanation', 'a list of dates', 'a set of instructions', 'a poem'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'Summarize what theoretical probability means.',
+        a: 'It is how often something should happen in the long run: the ways it can happen out of all possible ways.', look: 'ways out of all ways; in the long run' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-drifting-canoe', subject: 'story', form: 'Mystery story',
+    title: 'The Drifting Canoe',
+    deck: 'A canoe vanishes from the dock at dawn, and Ines follows the clues',
+    hero: {
+      photo: 'g6-canoe-lake.jpg', credit: 'Photo: Markabq, Public domain, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'The dock at Canoe Lake in Algonquin Park, Ontario.'
+    },
+    body: [
+      'The scream came from the dock just after sunrise. Ines tumbled out of the cabin in her pyjamas and found her cousin Leo pointing at the water. The red canoe, which had been tied to the dock the night before, was gone.',
+      '“Someone stole it!” Leo cried. “Probably those campers across the bay.”',
+      'Ines was not so sure. She crouched beside the dock post. A short end of rope still hung from it, and the rope was not cut. Its end was smooth and loose, as if a knot had simply slipped undone.',
+      { fig: '<path class="k" d="M10 120 Q60 112 110 124 Q160 136 200 120 V150 H10 Z"/>' + G.T(40, 142, 'shore', 'n') +
+          '<rect class="k" x="80" y="100" width="14" height="22"/>' + G.T(98, 96, 'dock', 'l') +
+          '<path class="d" d="M88 100 Q150 60 238 30"/><path class="a" d="M230 26 L260 22 L254 34 Z"/>' + G.T(236, 50, 'canoe found', 'l') +
+          D.arrow(30, 96, 30, 20, 't') + G.T(38, 60, 'wind', 'lb') + G.T(270, 14, 'N ↑', 'lb'),
+        tall: 156, cap: 'Where the canoe was tied and where it was found.' },
+      'She looked at the lake. All night, a strong wind had blown from the south, from the dock toward the far shore. The campers’ site was to the west. If someone had paddled the canoe away, they would have needed the paddles. Ines checked the shed. Both paddles hung on their hooks, dry.',
+      '“A thief without paddles?” she said. “That would be a strange thief.”',
+      'Leo’s face went a little pink. “Maybe they brought their own.”',
+      { h: 'The far shore' },
+      'Ines grabbed binoculars and scanned the bay. There, wedged against the rocks on the north shore, exactly where the wind would push it, sat a small red shape. The canoe was not stolen. It had <b>drifted</b>.',
+      'Uncle Rafi drove them around the bay in the motorboat. The canoe was scratched but fine. On the ride back, Leo stared at the water for a long time.',
+      '“I tied it last night,” he finally said. “I was in a hurry to get to the campfire. I think I just wrapped the rope around the post a few times.” He swallowed. “I’m sorry I blamed the campers.”',
+      { box: 'A sailor’s knot', text: 'A cleat hitch or a bowline holds tight in wind and waves. A few loose wraps do not.' },
+      'Uncle Rafi nodded. “Thank you for telling the truth. That takes more courage than tying a good knot.” That afternoon, he taught both of them a bowline. Leo practised it until he could tie it with his eyes closed. Ines watched the <b>evidence</b> of the morning, a tidy knot on the post, and smiled.'
+    ],
+    guide: { before: 'Ask: what does a detective do? Teach <b>drifted</b> and <b>evidence</b>. Tell the child to watch for clues as they read.',
+      after: 'Talk about why Leo first blamed the campers. Practise tying a knot together.' },
+    words: [['drifted', 'was carried slowly by wind or water'], ['evidence', 'facts or clues that show what is true']],
+    qs: [
+      { k: 'table', code: 'C3.2', q: 'Fill in the chart with Ines’s clues.', cols: ['Clue', 'What it tells Ines'],
+        rows: [['The rope is not cut.', null], ['The paddles are still in the shed.', null], ['The wind blew toward the north shore.', null]],
+        a: [[null, 'The knot slipped; no one cut it.'], [null, 'No one paddled it away.'], [null, 'The wind pushed the canoe there.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. Where was the canoe found?',
+        opts: ['across the bay, downwind', 'at the dock', 'at the campers’ site'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'What makes this story a mystery?',
+        opts: ['A puzzle is solved using clues.', 'It has a recipe.', 'It gives facts about lakes.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does Leo’s face go “a little pink” when Ines talks about the paddles?',
+        a: 'He is starting to realize the canoe drifted because of his knot, and he feels embarrassed.', look: 'he guesses it was his fault' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What lesson does Uncle Rafi teach? Do you agree with him? Why?',
+        a: 'Telling the truth takes courage. I agree, because admitting a mistake is harder than hiding it.', look: 'the lesson and an opinion with a reason' },
+      { k: 'choice', code: 'B3.3', q: 'Why are there quotation marks around “A thief without paddles?”',
+        opts: ['They show the exact words Ines says.', 'They show a title.', 'They show a list.', 'They show a heading.'], a: 0 },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'The story follows Ines. How might it be different if Leo told it?',
+        a: 'We would know from the start that he worried about his knot, so the mystery would be less of a surprise.', look: 'his secret worry; less mystery' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'When did you first guess what really happened? Which clue helped?',
+        a: 'When the paddles were still in the shed, because no thief would leave them.', look: 'a moment and a clue' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-haida-poles', subject: 'arts', form: 'Report',
+    title: 'Stories in Cedar',
+    deck: 'Haida poles, the families they honour and the artists who brought them back',
+    hero: {
+      photo: 'g6-haida-poles.jpg', credit: 'Photo: Karen Neoh, CC BY 2.0, Wikimedia Commons', focus: '50% 35%',
+      tall: 220,
+      cap: 'Poles stand in front of the Haida Heritage Centre at Kay Llnagaay, Skidegate, Haida Gwaii.'
+    },
+    body: [
+      'On the islands of Haida Gwaii, off the north coast of British Columbia, tall carved poles stand facing the sea. Each one is carved from a single giant cedar tree. Each one tells a story, and none of them is just a decoration. For the Haida Nation, these poles are a way of recording history, honouring people and showing who a family is.',
+      { fig: '<rect class="k" x="120" y="4" width="60" height="140"/><path class="k" d="M120 50 H180 M120 98 H180"/>' +
+          '<path class="h" d="M134 16 L150 36 L166 16 Z"/><circle class="k" cx="150" cy="70" r="12"/><path class="k" d="M136 110 Q150 132 164 110"/>' +
+          G.T(196, 28, 'top crest: often a', 'l') + G.T(196, 42, 'family’s guardian', 'l') + G.T(196, 76, 'a figure from', 'l') + G.T(196, 90, 'a family story', 'l') +
+          G.T(196, 118, 'base: often the', 'l') + G.T(196, 132, 'most important crest', 'l') +
+          G.T(104, 74, 'read from', 'l', 'end') + G.T(104, 88, 'the bottom up', 'l', 'end'),
+        tall: 148, cap: 'A simple diagram of how figures are stacked on a pole. Every pole is different.' },
+      { h: 'Crests and stories' },
+      'The figures on a pole are called <b>crests</b>. A crest is an animal or being, such as Raven, Eagle, Bear, Killer Whale or Frog, that belongs to a family and is passed down through generations. Crests show a family’s history and its rights. A pole may tell how an ancestor met a supernatural being, or record an important event. Only the family and the carver know the full meaning of every figure.',
+      'There are different kinds of poles. House frontal poles stand at the front of a family’s home, sometimes with a doorway carved through the base. Memorial poles honour a chief or a respected person who has died. Raising a new pole is marked with a potlatch, a great feast where guests witness the event, share food and receive gifts.',
+      { h: 'Silenced and revived' },
+      'In 1884, the Canadian government banned the potlatch. Without potlatches, poles could not be raised in the proper way. Disease had also killed most of the Haida people, and many villages were left empty. Collectors took poles to museums around the world. For decades, few new poles were carved.',
+      'Then, in 1969, a young Haida artist named Robert Davidson carved a pole and raised it in Old Massett, his home village. It was the first pole raised there in almost 90 years. Elders sang songs they had not sung in decades. Davidson and the artist Bill Reid helped spark a <b>revival</b> of Haida art that continues today.',
+      { box: 'Respect', text: 'Poles are not meant to last forever. When an old pole falls, some families let it return to the forest floor.' },
+      'Today, Haida carvers train apprentices, and new poles are raised with feasts and songs. In 2013, hundreds of people gathered at a remote island to raise the Gwaii Haanas Legacy Pole, the first pole raised there in 130 years.'
+    ],
+    guide: { before: 'Find Haida Gwaii on a map. Teach <b>crests</b>, <b>revival</b> and potlatch. Explain that the stories on poles belong to Haida families.',
+      after: 'Ask: why might carving and raising a pole matter so much after the ban? Look at photos of Haida art from the Haida Heritage Centre website.' },
+    words: [['crests', 'animals or beings that belong to a family and show its history'], ['revival', 'bringing something back into use or life']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Which way is a pole often read?',
+        opts: ['from the bottom up', 'from left to right', 'from the top down'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>crest</b> on a pole is …',
+        opts: ['a figure that belongs to a family', 'a kind of tree', 'a feast'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Fill in the cause and effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['The potlatch was banned in 1884.', null], ['Robert Davidson raised a pole in 1969.', null]],
+        a: [[null, 'Poles could not be raised in the proper way, and few were carved.'], [null, 'It helped spark a revival of Haida art.']] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What do Haida poles show about what is important to Haida families?',
+        a: 'Family history, ancestors and honouring people matter, because poles record crests, stories and people who have died.', look: 'family, history, honour' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think Elders sang songs they had not sung in decades when the 1969 pole was raised?',
+        a: 'The pole brought back a tradition they thought was lost, so they could finally celebrate it again.', look: 'tradition returned; joy' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence has a part beginning with <i>where</i> that tells more about a noun?',
+        opts: ['Raising a pole is marked with a potlatch, a great feast where guests witness the event.', 'Each one tells a story.', 'Disease killed many people.', 'Poles are not meant to last forever.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'The author says “none of them is just a decoration.” What is the author’s message?',
+        a: 'Haida poles carry history and meaning, so they should be respected, not seen as decorations.', look: 'meaning and respect' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-monarch', subject: 'science', form: 'Report',
+    title: 'The Great Monarch Journey',
+    deck: 'How a butterfly that weighs less than a paper clip flies to Mexico and back',
+    hero: {
+      photo: 'g6-monarch.jpg', credit: 'Photo: Thomas Bresson, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A monarch butterfly. Its bright orange wings warn birds that it tastes bad.'
+    },
+    body: [
+      'Every fall, monarch butterflies leave southern Canada and begin one of the most amazing journeys in the animal world. They fly as far as 4&nbsp;000 kilometres to a few mountain forests in central Mexico. Each butterfly weighs about half a gram, less than a paper clip, and it has never made the trip before.',
+      { fig: G.flow(['Egg, laid on a milkweed leaf', 'Caterpillar eats milkweed and grows', 'Chrysalis: the body is rebuilt', 'Adult butterfly'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 146, cap: 'A monarch’s life cycle takes about a month.' },
+      { h: 'A journey across generations' },
+      'In spring, monarchs leave Mexico and fly north. But no single butterfly makes the whole round trip. Most monarchs live only two to six weeks. They lay eggs on the way, and their children continue north. Over the summer, three or four <b>generations</b> are born, each moving a little farther, until monarchs reach Ontario, Quebec and the Prairies.',
+      'The last generation of summer is different. These butterflies do not lay eggs right away. Instead, they live up to eight months, long enough to fly all the way south, spend the winter in Mexico and begin the trip north again in spring. Scientists believe they find their way using the position of the Sun and Earth’s magnetic field.',
+      { h: 'Milkweed and poison' },
+      'Monarch caterpillars eat only one kind of plant: milkweed. Milkweed contains a poison that does not hurt the caterpillar but stays in its body as it becomes a butterfly. A bird that eats a monarch gets sick and learns to avoid that bright orange pattern. The colour is a warning, a kind of <b>adaptation</b> that helps the butterfly survive.',
+      { h: 'In danger' },
+      'The number of monarchs reaching Mexico has dropped sharply since the 1990s. Milkweed has been cleared from farm fields and roadsides. Some forests where they spend the winter have been cut. Storms and droughts, which are becoming more common as the climate changes, kill many on the journey. In 2023, Canada listed the monarch as <b>endangered</b>.',
+      { box: 'Tagging', text: 'Volunteers put tiny stickers on monarchs’ wings. When tagged butterflies are found in Mexico, scientists learn more about their routes.' },
+      'People are helping. Families, schools and towns plant milkweed and wildflowers to create waystations, places where monarchs can feed and lay eggs. Every patch of milkweed is a stepping stone on the long road south.'
+    ],
+    guide: { before: 'Find southern Ontario and central Mexico on a map and estimate the distance. Teach <b>generations</b>, <b>adaptation</b> and <b>endangered</b>.',
+      after: 'Look for milkweed in a park or field. Talk about where a monarch waystation could go near you.' },
+    words: [['generations', 'parents, then children, then grandchildren, and so on'], ['adaptation', 'a feature that helps a living thing survive'], ['endangered', 'in danger of disappearing forever']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the stages of the life cycle.',
+        items: ['Egg', 'Caterpillar', 'Chrysalis', 'Adult butterfly'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why do birds avoid monarchs?',
+        opts: ['Monarchs taste bad and make birds sick.', 'Monarchs are too fast.', 'Monarchs bite.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>adaptation</b> is …',
+        opts: ['a feature that helps a living thing survive', 'a long trip', 'a kind of tag'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How is the last generation of summer different from the others?',
+        a: 'It does not lay eggs right away and lives up to eight months, long enough to fly to Mexico and back north.', look: 'lives longer; makes the journey' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart.', cols: ['Threat to monarchs', 'What people do to help'],
+        rows: [['Milkweed is cleared.', null], ['Scientists need to learn the routes.', null]],
+        a: [[null, 'Plant milkweed and wildflowers as waystations.'], [null, 'Volunteers tag butterflies’ wings.']] },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The author calls each patch of milkweed “a stepping stone on the long road south.” What does this mean?',
+        a: 'Each patch is a place to stop and feed along the way, helping monarchs get across the long journey.', look: 'stopping places along the way' },
+      { k: 'lines', code: 'C2.1', n: 2, q: 'What did you already know about butterflies or migration? How did it help you?',
+        a: 'I knew geese fly south, so I understood that monarchs also go somewhere warm for winter.', look: 'prior knowledge and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-point-pelee', subject: 'science', form: 'Report',
+    title: 'Nature’s Sponges',
+    deck: 'Why wetlands like the marsh at Point Pelee are among the most valuable places on Earth',
+    hero: {
+      photo: 'g6-point-pelee.jpg', credit: 'Photo: Ken Lund from Reno, Nevada, USA, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The marsh boardwalk at Point Pelee National Park, at the southern tip of mainland Canada.'
+    },
+    body: [
+      'At the southern tip of Ontario, a long point of land reaches into Lake Erie. Most of Point Pelee National Park is not forest or beach, but marsh: shallow water filled with cattails, water lilies, turtles, frogs and birds. A wooden boardwalk lets visitors walk right through it. To some people, a marsh looks like a soggy waste of space. Scientists see one of the most valuable <b>habitats</b> on Earth.',
+      { fig: G.T(4, 10, 'Southern Ontario wetlands since settlement (estimate)', 'n') +
+          G.bars([['Lost', 72, '72%'], ['Remaining', 28, '28%']], 72, { x0: 82, top: 24, gap: 34, pad: 40, hl: 0 }) +
+          G.T(4, 112, 'Most were drained for farms, roads and towns.', 'l'),
+        tall: 118, cap: 'About seven out of ten wetlands in southern Ontario have been lost.' },
+      { h: 'What a wetland does' },
+      'Wetlands act like giant sponges. When heavy rain falls or snow melts, they soak up water and release it slowly, which helps prevent floods downstream. In dry summers, the water they stored slowly feeds streams and wells.',
+      'Wetlands also clean water. As water moves slowly through the plants, mud settles out, and plants and tiny living things take up extra nutrients and some pollution. Water that leaves a healthy marsh is often cleaner than the water that entered it.',
+      'Most of all, wetlands are full of life. Fish lay eggs among the reeds. Ducks, herons and red-winged blackbirds nest there. Turtles bask on logs. Many species that are at risk in Ontario depend on wetlands. Point Pelee is also a resting stop for migrating birds and monarch butterflies, which gather there before crossing the lake.',
+      { h: 'Disappearing wetlands' },
+      'For many years, people saw wetlands as useless land. They drained them to make farm fields, roads and towns. In southern Ontario, about 72 percent of the wetlands that existed before European settlement are gone. When a wetland is drained, the flooding gets worse, the water gets dirtier and the animals that lived there lose their homes.',
+      { box: 'Did you know?', text: 'Wetlands store large amounts of carbon in their wet soil, which helps slow climate change.' },
+      { h: 'Protecting what is left' },
+      'Today, Ontario has rules to protect many important wetlands, and groups work to <b>restore</b> drained ones by blocking ditches and replanting native plants. Visitors can help too: stay on boardwalks and trails, never release pets or aquarium plants into the wild, and support parks that protect these watery worlds.'
+    ],
+    guide: { before: 'Soak a sponge, then squeeze it slowly to show how a wetland stores and releases water. Teach <b>habitat</b> and <b>restore</b>.',
+      after: 'Find the nearest wetland, conservation area or marsh to your home on a map. Plan a visit if you can.' },
+    words: [['habitats', 'places where plants and animals naturally live'], ['restore', 'to bring back to how it was before']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. What share of southern Ontario’s wetlands remain?',
+        opts: ['about 28%', 'about 72%', 'all of them'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Re-</i> means again. To <b>restore</b> a wetland is to …',
+        opts: ['bring it back again', 'drain it', 'build a road on it'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['What a wetland does', 'How it helps'],
+        rows: [['Soaks up water like a sponge', null], ['Slows water down', null], ['Gives animals a home', null]],
+        a: [[null, 'It helps prevent floods.'], [null, 'Mud settles out and the water gets cleaner.'], [null, 'Fish, birds and turtles can live and nest there.']] },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'Why does the author compare wetlands to sponges?',
+        a: 'Because like a sponge, a wetland soaks up water and lets it out slowly. The comparison makes the idea easy to picture.', look: 'soaks up, releases slowly' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The author says some people see a marsh as “a soggy waste of space.” Why does the author include this view?',
+        a: 'To show the opposite view, then prove it wrong with facts about how valuable wetlands are.', look: 'shows a view, then argues against it' },
+      { k: 'choice', code: 'C2.3', q: 'Predict: a town drains a large wetland to build houses. What will most likely happen?',
+        opts: ['Floods downstream get worse.', 'More ducks will nest.', 'The water gets cleaner.', 'Nothing will change.'], a: 0 },
+      { k: 'lines', code: 'A2.6', n: 2, q: 'Write one short message for a park sign that would persuade visitors to stay on the boardwalk.',
+        a: 'Stay on the boardwalk: one step off can crush a turtle nest.', look: 'short, clear, persuasive' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-webb', subject: 'science', form: 'Report',
+    title: 'A Golden Eye in Space',
+    deck: 'The James Webb Space Telescope, and the Canadian tools that help it see',
+    hero: {
+      photo: 'g6-webb-mirror.jpg', credit: 'Photo: NASA/MSFC/David Higginbotham, Public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'An engineer looks over gold-coated mirror segments of the James Webb Space Telescope before launch.'
+    },
+    body: [
+      'On December 25, 2021, a rocket blasted off from French Guiana, in South America, carrying the largest and most powerful space telescope ever built. The James Webb Space Telescope was a joint project of space agencies from the United States, Europe and Canada. Its job: to look farther into space, and further back in time, than any telescope before it.',
+      { fig: G.T(4, 10, 'Width of the main mirror (metres)', 'n') +
+          G.cols([['Hubble', 2.4, '2.4 m'], ['Webb', 6.5, '6.5 m'], [['a Grade 6', 'student'], 1.5, '1.5 m']], 6.5, { base: 118, h: 90, x0: 20, hl: 1 }),
+        tall: 146, cap: 'A larger mirror collects more light, so the telescope can see fainter objects.' },
+      { h: 'A mirror made of gold' },
+      'A telescope collects light with a mirror, and a bigger mirror collects more light. Webb’s main mirror is 6.5 metres wide, almost three times as wide as the famous Hubble Space Telescope. It was too big to fit inside a rocket, so engineers built it from 18 six-sided pieces that folded up like a flower bud for launch and opened in space. Each piece is coated with a thin layer of gold, which reflects <b>infrared</b> light especially well.',
+      { h: 'Seeing heat' },
+      'Infrared light is invisible to our eyes, but we can feel it as heat. Light from the most distant galaxies has been travelling for more than 13 billion years. On the way, it has been stretched into infrared. To catch this faint heat, Webb must be extremely cold. A sunshield as big as a tennis court, made of five thin layers, blocks the heat from the Sun, Earth and Moon. Webb works about 1.5 million kilometres from Earth, four times farther than the Moon.',
+      { h: 'Canada’s part' },
+      'Canada built two important parts of Webb. The Fine Guidance Sensor helps the telescope point at a target and hold perfectly steady, like a photographer keeping a camera still. A science <b>instrument</b> called NIRISS studies the light from planets around other stars, looking for clues about their air. In return, Canadian astronomers receive a share of the telescope’s observing time.',
+      { box: 'Looking back', text: 'Because light takes time to travel, when Webb looks at a distant galaxy, it sees the galaxy as it was billions of years ago.' },
+      'Webb has already sent back sharp images of glowing star nurseries, colliding galaxies and planets far from our solar system. Each picture raises new questions, which is exactly what a great telescope should do.'
+    ],
+    guide: { before: 'Ask: why do you think a telescope is sent into space instead of kept on the ground? Teach <b>infrared</b> (infra = below), <b>instrument</b> and the word galaxy.',
+      after: 'Look at some of Webb’s images on the Canadian Space Agency website together. Pick one and describe it.' },
+    words: [['infrared', 'light we cannot see but can feel as heat'], ['instrument', 'a tool for measuring or studying something']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. About how many times wider is Webb’s mirror than Hubble’s?',
+        opts: ['almost 3 times', '10 times', 'the same'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Infrared</b> light is light we …',
+        opts: ['cannot see but feel as heat', 'see as red', 'hear'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How did engineers fit such a large mirror inside a rocket?',
+        a: 'They built it from 18 pieces that folded up like a flower bud and opened once in space.', look: '18 pieces, folded, opened in space' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why does Webb need a huge sunshield?',
+        a: 'Webb must be very cold to catch faint infrared heat, so the shield blocks heat from the Sun, Earth and Moon.', look: 'stay cold to see faint heat' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart about Canada’s part.', cols: ['Canadian part', 'What it does'],
+        rows: [['Fine Guidance Sensor', null], ['NIRISS', null]],
+        a: [[null, 'Points the telescope and holds it steady.'], [null, 'Studies light from planets around other stars.']] },
+      { k: 'choice', code: 'C3.2', q: 'What does the author mean by “further back in time”?',
+        opts: ['Webb sees distant things as they were long ago.', 'Webb travels into the past.', 'Webb is an old telescope.', 'Webb shows dinosaurs.'], a: 0 },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Who might want to read this report, and why?',
+        a: 'A student interested in space, because it explains how Webb works and Canada’s part in it.', look: 'a reader and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-e-waste', subject: 'tech', form: 'Opinion essay',
+    title: 'Fix It First',
+    deck: 'An opinion: what to do with old phones, tablets and laptops',
+    plain: true,
+    hero: {
+      photo: 'g6-e-waste.jpg', credit: 'Photo: Tom Worthington, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Old computers collected for recycling. Each one holds metals that can be used again.'
+    },
+    body: [
+      'Open a kitchen drawer in almost any Canadian home, and you may find a tangle of old phones, chargers and earbuds. We replace our devices often, sometimes every two or three years. I believe that before we throw out or replace an electronic device, we should try to fix it, and when it truly cannot be used, we should recycle it properly.',
+      { fig: G.flow(['Old device dropped off at a depot', 'Taken apart by hand and machine', 'Metals and plastics sorted', 'Materials used to make new things'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 146, cap: 'What happens to a device at a proper recycling centre.' },
+      { h: 'Treasure in the trash' },
+      'My first reason is that old electronics contain valuable materials. A phone holds small amounts of gold, silver and copper, along with rare metals that are hard to dig out of the ground. Mining these metals uses huge amounts of energy and water and can damage forests and rivers. When devices are recycled, these metals can be recovered and used again.',
+      { h: 'Danger in the dump' },
+      'My second reason is safety. <b>Electronic waste</b>, or e-waste, also contains harmful substances such as lead and mercury. In a landfill, these can leak into soil and water. Batteries thrown in the garbage can even start fires in garbage trucks. Sadly, a lot of e-waste around the world is not recycled properly. Some is shipped to poorer countries, where people, including children, burn it to collect the metals, breathing toxic smoke.',
+      'In Canada, every province has places where people can drop off old electronics for free. Yet many devices never get there. They sit forgotten in drawers or end up in the garbage because people do not know where to take them, or simply do not bother.',
+      { h: 'The best device is the one you have' },
+      'My third reason is that fixing a device is even better than recycling it. Replacing a cracked screen or a worn-out battery can give a phone years more life. Some people argue that repairs cost too much and new devices work better. That can be true. But many repairs are cheaper than buying new, and some companies now sell parts and guides so people can fix their own devices. Many people are calling for a “right to repair” so that this becomes easier everywhere.',
+      { box: 'What you can do', text: 'Keep a box for old devices and batteries. Take them to an electronics recycling depot, not the garbage.' },
+      'In conclusion, our devices are not really garbage. They are full of treasure and risk. If we fix first and recycle last, we protect people and the planet and save money too. Next time a screen cracks, ask: can this be <b>repaired</b>?'
+    ],
+    guide: { before: 'Look for old devices or batteries at home. Teach <b>electronic waste</b> and <b>repaired</b>. Point out that this is an opinion essay: watch for the writer’s reasons.',
+      after: 'Find your nearest electronics recycling depot. Ask: do you agree with the writer? What is your strongest reason?' },
+    words: [['electronic waste', 'old or broken devices such as phones, computers and batteries'], ['repaired', 'fixed so it works again']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What makes this text an opinion essay?',
+        opts: ['The writer states a belief and gives reasons.', 'It tells a made-up story.', 'It gives a recipe.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What happens right after a device is taken apart?',
+        opts: ['Metals and plastics are sorted.', 'It is thrown out.', 'It is sold again.'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Fill in the writer’s three reasons.', cols: ['Reason', 'One detail that supports it'],
+        rows: [[null, null], [null, null], [null, null]],
+        a: [['Devices hold valuable materials.', 'A phone holds gold, silver and copper.'], ['E-waste is dangerous.', 'Lead and mercury can leak into soil and water.'], ['Fixing is better than replacing.', 'A new battery can give a phone years more life.']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The writer mentions people who say repairs cost too much. Why include the other side?',
+        a: 'To show the writer has thought about it and to answer it, which makes the argument stronger.', look: 'answers the other side; stronger argument' },
+      { k: 'choice', code: 'A2.3', q: 'Which question would best help you check the writer’s claim that “many repairs are cheaper than buying new”?',
+        opts: ['How much does a repair cost compared with a new device?', 'What colour is the phone?', 'Who invented phones?', 'How old is the writer?'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why does “right to repair” have quotation marks?',
+        opts: ['It is a special phrase people use.', 'It is a title of a book.', 'Someone is shouting.', 'It is a question.'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'Did the writer persuade you? Which reason was strongest for you, and why?',
+        a: 'Yes. The safety reason, because I did not know children burn e-waste and breathe toxic smoke.', look: 'opinion and a reason' }
+    ]
+  });
 })();
