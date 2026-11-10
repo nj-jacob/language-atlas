@@ -30,7 +30,7 @@
   /* the sheets' look is needed only to draw a page (the site's Toolbox page loads this file just for its shelf card) */
   var $ = A.$, $$ = A.$$, S = function () { return A.sheets; };
   var D = (A.decodable = { list: [] });
-  var BANDS = (D.bands = [['K', 'Kindergarten', 'LK'], ['1', 'Grade 1', 'FO'], ['2', 'Grade 2', 'SK']]);
+  var BANDS = (D.bands = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2']]);
   /* the same expectation in Grade 1 and in Grade 2 (the numbers changed between grades) */
   var CODES = { 'B2.4': 'B2.1', 'B2.5': 'B2.2', 'B2.6': 'B2.3', 'B2.8': 'B2.5' };
   var LETTERS = 'ABCD';
@@ -187,7 +187,7 @@
   }
   function page(p, th) {
     var hs = hearts(p);
-    return '<div class="ws-page dc-page dc-b' + p.band + '">' + frame(th) + head(p, th) +
+    return '<div class="ws-page dc-page dc-b' + p.band + '">' + head(p, th) +
       '<section class="dc-top"><div class="dc-sound"><p class="ws-label">Sound</p><p class="dc-focus' + (p.focus.length > 2 ? ' dc-many' : '') + '">' + p.focus.map(esc).join(' ') + '</p><p class="dc-key">' + marked(p.key, p) + '</p></div>' +
       '<div class="dc-warm"><p class="ws-label">Warm up · tap and blend</p><ul class="dc-words">' + p.words.map(function (w) { return '<li>' + marked(w, p) + '</li>'; }).join('') + '</ul></div></section>' +
       (hs.length ? '<p class="dc-hearts"><span class="ws-label">Heart words</span>' + hs.map(function (h) { return '<span class="dc-hw' + (h.fresh ? ' dc-new' : '') + '">' + HEART + esc(h.w) + '</span>'; }).join('') + '</p>' : '') +
@@ -210,7 +210,7 @@
     '<b>Spell it.</b> Finish with the dictation below: hearing the sounds and writing them makes the reading stick.'];
   function key(p, th) {
     var cs = D.codes(p);
-    return '<div class="ws-page dc-page dc-keyp ws-key">' + frame(th) + head(p, th, 'For the grown-up') +
+    return '<div class="ws-page dc-page dc-keyp ws-key">' + head(p, th, 'For the grown-up') +
       '<section class="dc-kblock"><p class="ws-label">The rule</p><p>' + p.tip + '</p></section>' +
       '<section class="dc-kblock"><p class="ws-label">Teach the page (about 15 minutes)</p><ol class="dc-steps">' + STEPS.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></section>' +
       '<section class="dc-kblock"><p class="ws-label">Answers</p><ol class="dc-ans">' + p.qs.map(function (q) {
@@ -222,8 +222,9 @@
       'If the child is stuck on the warm-up words, go back a page before reading the story.</p></section>' +
       '<footer class="dc-foot">' + foot(p, 'Ontario Grade 1: ' + cs.g1.join(', ') + ' · Grade 2: ' + cs.g2.join(', ')) + '</footer></div>';
   }
-  function frame(th) { return th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : ''; }
-  function themeOf(p) { return S().themeById(D.band(p)[2]); }
+  /* one plain, calm look for every page (Noel): the site's own accent and face, an open book, no ornaments at the edges */
+  var PLAIN = { acc: 'var(--accent)', font: 'var(--display)', mark: '<path d="M8 16 Q18 12 28 17 Q38 12 48 16 V44 Q38 40 28 45 Q18 40 8 44 Z M28 17 V45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>' };
+  function themeOf() { return PLAIN; }
   /* Draw the page ('page' or 'key') into el, a .ws-sheet box. A long story is set a little smaller, down to 80%.
      Returns whether anything still runs off the page. */
   var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8];
