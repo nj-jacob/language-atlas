@@ -2987,4 +2987,984 @@
         a: 'She will show Nana the J-stroke and maybe go canoeing with her at the park.', look: 'a prediction based on the letter' }
     ]
   });
+
+  P.add({
+    id: 'g4-northern-lights', subject: 'science', form: 'Explanation',
+    title: 'Curtains of Light',
+    deck: 'What makes the northern lights glow and dance',
+    hero: {
+      photo: 'g4-northern-lights.jpg', credit: 'Photo: raymond22112376, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 230,
+      cap: 'The northern lights glow green above a lit tent near Yellowknife, Northwest Territories.'
+    },
+    body: [
+      'On a clear winter night in northern Canada, the sky can suddenly come alive. Ribbons of green, and sometimes pink or purple, ripple and dance above the trees. These are the northern lights, also called the aurora borealis. Yellowknife, in the Northwest Territories, is one of the best places on Earth to see them.',
+      { h: 'A gift from the Sun' },
+      'The northern lights begin 150 million kilometres away, at the Sun. The Sun is always sending out a stream of tiny, charged bits called the <b>solar wind</b>. When the solar wind reaches Earth, most of it is pushed away by Earth’s <b>magnetic field</b>, an invisible shield around our planet. But near the North and South Poles, the field dips down toward the ground, and some of the charged bits slip into the air.',
+      'High in the sky, these bits crash into gases in the air. Each crash makes the gas glow, a bit like the glowing tube of a neon sign. Oxygen gives off green or red light. Nitrogen gives off blue or purple light.',
+      { fig: '<circle class="a" cx="30" cy="76" r="22"/>' + D.arrow(60, 62, 150, 68) + D.arrow(60, 76, 150, 76) + D.arrow(60, 90, 150, 84) +
+          '<circle class="k" cx="220" cy="76" r="30"/><path class="t" d="M220 46 Q150 76 220 106 M220 46 Q290 76 220 106"/>' +
+          '<path class="h" d="M204 40 Q220 26 236 40 L231 47 Q220 38 209 47 Z"/>' + D.label(250, 28, 'glow', 234, 40) +
+          '<text class="l" x="105" y="54" text-anchor="middle">solar wind</text><text class="n" x="30" y="118" text-anchor="middle">Sun</text><text class="n" x="220" y="124" text-anchor="middle">Earth</text>',
+        tall: 132, cap: 'The solar wind reaches Earth, and the air glows near the pole. Not to scale.' },
+      { h: 'Stories in the sky' },
+      'People have told stories about the northern lights for thousands of years. Some Inuit stories say the lights are the spirits of people who have died, playing a game of ball across the sky. Many Cree people call the lights the dance of the spirits. Some stories warn children not to whistle at the lights.',
+      { box: 'Did you know?', text: 'The same kind of lights shine near the South Pole too. There, they are called the aurora australis, or southern lights.' },
+      'To see the northern lights, you need a dark, clear night far from city lights. Dress warmly, be patient and look north. Scientists can even predict when the lights will be strong, a bit like a weather forecast.'
+    ],
+    guide: { before: 'Show the child the North Pole and Yellowknife on a globe. Teach <b>solar wind</b> and <b>magnetic field</b>. If you have a magnet, sprinkle a little pepper or iron filings on paper above it to see a field.',
+      after: 'Science explains how the lights happen, and stories tell what they mean to people. Why are both kinds of knowledge valuable?' },
+    words: [['solar wind', 'a stream of tiny charged bits that flows out from the Sun'], ['magnetic field', 'an invisible area of force around a magnet or a planet']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Yellowknife is cold.', 'The northern lights glow when bits from the Sun crash into gases in the air near the poles.', 'Oxygen is a gas.', 'Stories are old.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in order.',
+        items: ['The Sun sends out the solar wind.', 'The solar wind reaches Earth.', 'Charged bits slip in near the poles.', 'They crash into gases, which glow.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where does the air glow?',
+        opts: ['near the pole', 'at the middle of Earth', 'on the Sun'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Gas', 'Colour of light'],
+        rows: [['oxygen', null], ['nitrogen', null]],
+        a: [[null, 'green or red'], [null, 'blue or purple']] },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The gas glows “a bit like the glowing tube of a neon sign.” This comparison helps you …',
+        opts: ['picture how the gas glows', 'know the size of the Sun', 'hear the lights'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Solar</b> means “of the Sun.” What is a <b>solar</b> panel?',
+        opts: ['a panel that uses sunlight', 'a panel for the Moon', 'a panel made of ice'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text gives a science explanation and also Indigenous stories about the lights. Why do you think the writer included both?',
+        a: 'To show that there are different ways of understanding the lights: science explains how they happen, and stories show what they mean to people.', look: 'values both science and Indigenous stories' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why is it hard to see the northern lights in a big city?',
+        a: 'City lights make the sky too bright, so you need a dark night far from the city.', look: 'light from the city' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-niagara-erosion', subject: 'science', form: 'Explanation',
+    title: 'The Falls on the Move',
+    deck: 'How water is slowly pushing Niagara Falls upstream',
+    hero: {
+      photo: 'g4-niagara-falls.jpg', credit: 'Photo: Helen Filatova, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 230,
+      cap: 'The Horseshoe Falls at Niagara Falls, Ontario, seen from above.'
+    },
+    body: [
+      'Every second, more than an Olympic swimming pool of water pours over Niagara Falls. The water roars over the edge and crashes into the river below. But here is a surprise: Niagara Falls is moving. Over thousands of years, it has crept upstream, toward Lake Erie.',
+      { h: 'How the falls wear away' },
+      'The rock at Niagara Falls is in layers. On top is a hard rock called dolostone. Underneath are softer layers of shale and sandstone. The falling water swirls at the bottom and washes away the soft rock underneath. Without support, chunks of the hard top layer break off and fall. Then the edge of the falls is a little farther upstream. This wearing away of rock by water, wind or ice is called <b>erosion</b>.',
+      { fig: '<rect class="h" x="0" y="40" width="180" height="20"/><path class="k" d="M0 60 H150 Q140 95 150 130 H0"/><path class="t" d="M0 84 H143 M0 108 H143"/><path class="k" d="M150 130 H300"/>' +
+          '<path class="a" d="M100 36 H178 Q196 42 202 128 M184 46 Q198 70 196 128"/><path class="a" d="M166 120 q10 -14 20 0 q-10 10 -20 0"/>' +
+          '<rect class="k" x="210" y="92" width="14" height="10" transform="rotate(20 217 97)"/>' +
+          '<text class="l" x="10" y="32">hard rock</text><text class="l" x="10" y="100">soft rock</text>' + D.label(236, 60, 'water', 200, 62) + D.label(236, 86, 'falling chunk', 220, 94) + D.label(210, 150, 'swirling water', 176, 122),
+        tall: 156, cap: 'A side view of the falls. The soft rock is washed away from under the hard rock.' },
+      { h: 'A gorge is born' },
+      'About 12 500 years ago, the falls were near what is now Queenston, Ontario. Since then, they have moved about 11 kilometres. They left behind a deep, narrow valley with steep sides, called a <b>gorge</b>. You can walk along the edge of the Niagara Gorge today and see the rock layers in its walls.',
+      { h: 'Slowing it down' },
+      'In the past, the Horseshoe Falls wore back about a metre every year. Today, people have slowed the erosion. Much of the river’s water is sent through huge tunnels to power stations that make electricity, especially at night, when fewer tourists are watching. With less water going over the edge, the falls now move only about 30 centimetres every ten years.',
+      { box: 'Did you know?', text: 'Niagara Falls is really three waterfalls: the Horseshoe Falls, the American Falls and the small Bridal Veil Falls. The Horseshoe Falls is shared by Canada and the United States.' },
+      'Erosion happens everywhere, not just at Niagara. Rivers carve valleys, waves wear down cliffs and wind shapes rock. Most of the time it is so slow that we cannot see it happen. Niagara Falls is one of the few places where people can measure erosion in their own lifetimes.'
+    ],
+    guide: { before: 'Find Lake Erie, Lake Ontario and the Niagara River on a map. Teach <b>erosion</b> and <b>gorge</b>. Build a sand hill on a tray and pour water down it to watch erosion.',
+      after: 'Should people slow down the erosion at Niagara Falls, or let nature take its course? Give a reason.' },
+    words: [['erosion', 'the slow wearing away of rock or soil by water, wind or ice'], ['gorge', 'a deep, narrow valley with steep rocky sides']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Niagara Falls is loud.', 'Erosion is slowly moving Niagara Falls upstream.', 'Lake Erie is big.', 'Tourists visit at night.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps of erosion.',
+        items: ['Falling water swirls at the bottom.', 'It washes away the soft rock.', 'The hard top layer has no support.', 'A chunk breaks off.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the soft rock wear away first?',
+        opts: ['Water washes it away more easily.', 'It is on top.', 'It is warmer.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the falls in the past and today.', cols: ['', 'In the past', 'Today'],
+        rows: [['How fast the falls wear back', null, null], ['How much water goes over', null, null]],
+        a: [[null, 'about a metre a year', 'about 30 cm every ten years'], [null, 'all of the river', 'less, because some goes to power stations']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Up</b>stream means toward where a river comes from. What does <b>down</b>stream mean?',
+        opts: ['toward where the river goes', 'under the water', 'across the river'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What is one effect of sending water through tunnels?',
+        opts: ['The falls erode more slowly.', 'The falls get louder.', 'The gorge gets wider.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do power stations take more water at night? Use the text.',
+        a: 'Fewer tourists are watching at night, so less water can go over the falls without disappointing visitors, and the stations can make more electricity.', look: 'fewer tourists at night, more electricity' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what would happen if all the river’s water went over the falls again.',
+        a: 'The falls would wear back faster again, maybe about a metre a year.', look: 'faster erosion, with a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-salmon', subject: 'science', form: 'Explanation',
+    title: 'The Long Way Home',
+    deck: 'How salmon travel from a stream to the ocean and back again',
+    hero: {
+      photo: 'g4-salmon.jpg', credit: 'Photo: Marvina Munch, U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'Sockeye salmon leap up a waterfall on their way upstream.'
+    },
+    body: [
+      'Every fall, some rivers in British Columbia turn red. Millions of sockeye salmon, their bodies bright red and their heads green, are swimming upstream. They are going home to the very stream where they hatched, years before. It is one of the greatest journeys in the animal world.',
+      { h: 'From egg to ocean' },
+      'A salmon’s life begins as a pink egg, buried in the gravel of a cold, clear stream. In spring, a tiny fish hatches with a sac of yolk still attached to its belly for food. Soon it becomes a <b>fry</b> and swims out of the gravel. After a year or so, it swims downstream to the ocean. In the salty sea, it eats and grows for about two years.',
+      { fig: '<path class="a" d="M10 40 Q80 50 120 80 T216 116"/><rect class="h" x="216" y="100" width="84" height="40"/>' +
+          '<path class="d" d="M250 92 Q150 10 30 24"/>' + D.arrow(46, 22, 30, 24) +
+          '<text class="n" x="12" y="62">1. eggs</text><text class="n" x="96" y="106">2. fry</text><text class="n" x="296" y="156" text-anchor="end">3. grows in the ocean</text><text class="l" x="150" y="40" text-anchor="middle">4. adults swim home</text>',
+        tall: 160, cap: 'The life cycle of a sockeye salmon, from stream to ocean and back.' },
+      { h: 'Finding the way home' },
+      'Then something amazing happens. The adult salmon swim back toward the coast and find the mouth of their own river. Scientists think they use Earth’s magnetic field to find the right part of the coast. Then they follow the smell of their home stream, which they remembered when they were young.',
+      'The trip upstream is hard. Salmon stop eating once they enter fresh water. They swim against strong currents and leap up rapids and small waterfalls. Bears, eagles and people try to catch them. Where dams block the way, people build <b>fish ladders</b>, sets of small pools like steps, so the salmon can climb past.',
+      { box: 'Did you know?', text: 'Some salmon swim more than 1 000 kilometres upstream to get home.' },
+      'When they finally reach their stream, the females dig nests in the gravel with their tails and lay their eggs. Then the adult salmon die, and the cycle begins again. Even after they die, salmon keep giving. Their bodies feed eagles, bears and tiny stream creatures, and add nutrients to the soil along the riverbanks.'
+    ],
+    guide: { before: 'Trace a river from the mountains to the ocean on a map of British Columbia. Teach <b>fry</b> and <b>fish ladder</b>. Follow the life cycle in the diagram with your finger.',
+      after: 'Salmon find their way home by smell. What smells remind you of home? How do people protect rivers so salmon can come back?' },
+    words: [['fry', 'a young fish that has just begun to swim on its own'], ['fish ladders', 'steps of small pools that help fish swim past a dam']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Salmon are red.', 'Salmon travel from their home stream to the ocean and back again to lay eggs.', 'Bears eat fish.', 'Rivers have dams.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the life cycle in order.',
+        items: ['an egg in the gravel', 'a fry in the stream', 'an adult in the ocean', 'a salmon swimming upstream'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where does the salmon grow into an adult?',
+        opts: ['in the ocean', 'in the gravel', 'in a lake'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How do salmon find their home stream?',
+        opts: ['They follow its smell.', 'They follow other fish.', 'They follow the birds.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Fresh</b>water joins two words. What is freshwater?',
+        opts: ['water that is not salty', 'water that is very cold', 'water from a tap'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart about the trip upstream.', cols: ['Problem', 'How salmon get past it'],
+        rows: [['strong currents and rapids', null], ['dams', null]],
+        a: [[null, 'They swim hard and leap up rapids and small waterfalls.'], [null, 'They climb fish ladders that people build.']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is the journey home so hard for salmon? Give two details.',
+        a: 'They stop eating in fresh water and swim against strong currents. Bears, eagles and people also try to catch them.', look: 'two details from the text' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'The writer calls it “one of the greatest journeys in the animal world.” Do you agree? Why?',
+        a: 'Yes. Salmon travel from a stream to the ocean and back, sometimes more than 1 000 kilometres, and find their way by smell.', look: 'an opinion supported by details' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-snowflakes', subject: 'math', form: 'Explanation',
+    title: 'No Two Alike',
+    deck: 'Snowflakes, a patient photographer and lines of symmetry',
+    hero: {
+      photo: 'g4-snowflakes.jpg', credit: 'Photo: Wilson Bentley, public domain, Wikimedia Commons', focus: '50% 30%',
+      tall: 230,
+      cap: 'Snowflakes photographed by Wilson Bentley more than 100 years ago.'
+    },
+    body: [
+      'In 1885, a young farmer in Vermont named Wilson Bentley did something no one had done before. He attached a camera to a microscope and took a photograph of a single snowflake. He caught each flake on black velvet and worked fast, in an unheated shed, before it could melt. Over the next 46 years, he photographed more than 5 000 of them. His photos, like the ones above, amazed the world.',
+      { h: 'Six sides' },
+      'Look closely at Bentley’s snowflakes. Every one has six arms or six sides. That is because of the way water freezes. When water turns to ice, its tiny particles link together in a pattern of six-sided rings, called hexagons. As a snowflake grows, more ice builds on, and the six-sided pattern grows with it. Some snowflakes look like stars with feathery arms. Others look like flat plates or tiny needles.',
+      { h: 'Lines of symmetry' },
+      'Snowflakes are a great way to learn about <b>symmetry</b>. A shape has a <b>line of symmetry</b> if you can fold it along a line and the two halves match exactly, like a mirror image. A perfect snowflake has six lines of symmetry. Three of them go through opposite arms, and three go between the arms.',
+      { fig: '<path class="d" d="M150 10 V130 M98 40 L202 100 M98 100 L202 40 M84 70 H216 M115 10 L185 130 M185 10 L115 130"/>' +
+          '<path class="k" d="M150 20 V120 M107 45 L193 95 M107 95 L193 45"/>' +
+          '<path class="k" d="M150 36 L140 28 M150 36 L160 28 M150 104 L140 112 M150 104 L160 112 M121 53 L120 41 M121 53 L110 58 M179 87 L180 99 M179 87 L190 82 M121 87 L110 82 M121 87 L120 99 M179 53 L190 58 M179 53 L180 41"/>' +
+          D.label(222, 34, 'through arms', 202, 40) + D.label(222, 74, 'between arms', 216, 70),
+        tall: 140, cap: 'The six lines of symmetry of a perfect snowflake. The dashed lines are the lines of symmetry.' },
+      'Real snowflakes are not always perfect. As a snowflake falls, it tumbles through air that is warmer, colder, wetter or drier, and each change makes it grow a little differently. That is why people say no two snowflakes are alike.',
+      { box: 'Try it', text: 'Fold a circle of paper in half, then into thirds, like a cone. Cut small shapes along the edges and unfold it. Your paper snowflake will have lines of symmetry too.' },
+      'Symmetry is everywhere in nature: in butterfly wings, leaves, flowers and even your own face. Once you start looking, you will find it all around you.'
+    ],
+    guide: { before: 'Fold a paper heart or butterfly shape in half and cut it to show one line of symmetry. Teach <b>symmetry</b> and <b>line of symmetry</b>. Hold a small mirror on the diagram’s lines.',
+      after: 'Go on a symmetry hunt at home or outside. Find three things with one line of symmetry and one with more than one.' },
+    words: [['symmetry', 'when one half of a shape matches the other half'], ['line of symmetry', 'a line that splits a shape into two matching halves']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Vermont has snow.', 'Snowflakes have six-sided symmetry, and each one grows a little differently.', 'Cameras are old.', 'Butterflies have wings.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How many lines of symmetry does a perfect snowflake have?',
+        opts: ['6', '2', '12'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do snowflakes have six sides?',
+        opts: ['Water freezes in six-sided rings.', 'The wind cuts them.', 'They fall from six clouds.'], a: 0 },
+      { k: 'table', code: 'C3.2', q: 'How many lines of symmetry? Fill in the chart.', cols: ['Shape', 'Lines of symmetry'],
+        rows: [['a perfect snowflake', null], ['a butterfly', null], ['a square', null]],
+        a: [[null, '6'], [null, '1'], [null, '4']] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why are no two snowflakes alike?',
+        opts: ['Each one falls through different air as it grows.', 'They melt too fast.', 'Bentley drew them by hand.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Micro</b> means very small. A <b>micro</b>scope helps you see …',
+        opts: ['very small things', 'faraway stars', 'sounds'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did Wilson Bentley help people learn about snowflakes?',
+        a: 'He was the first to photograph a single snowflake, and he took more than 5 000 photos, so people could see their shapes up close.', look: 'his first photo and his many photos' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'In one or two sentences, summarize why snowflakes are symmetrical.',
+        a: 'Water freezes in six-sided rings, so snowflakes grow six arms with six lines of symmetry.', look: 'the six-sided pattern and symmetry' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-seaway', subject: 'geography', form: 'Explanation',
+    title: 'Stairs for Ships',
+    deck: 'How the St. Lawrence Seaway lifts ships into the heart of the continent',
+    hero: {
+      photo: 'g4-seaway-lock.jpg', credit: 'Photo: U.S. Navy, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'A ship waits inside a lock on the St. Lawrence Seaway, between high concrete walls.'
+    },
+    body: [
+      'Imagine trying to sail a ship from the Atlantic Ocean all the way to Thunder Bay, in the middle of the continent. Along the way, the water climbs higher and higher. Lake Superior is about 180 metres higher than the ocean, which is taller than a 50-storey building. And the Niagara River has a giant waterfall in the way! How can a ship climb a waterfall?',
+      { h: 'A water staircase' },
+      'The answer is the St. Lawrence Seaway, which opened in 1959. It is a system of rivers, lakes, canals and <b>locks</b> that lets large ships travel between the Atlantic Ocean and the Great Lakes. Canada and the United States built it and run it together. To get around Niagara Falls, ships use the Welland Canal in Ontario, which has eight locks of its own.',
+      { h: 'How a lock works' },
+      'A lock is like a giant concrete box with watertight gates at each end. When a ship going upstream sails into the lock, the gates behind it close. <b>Valves</b> open, and water from the higher part of the river flows into the lock. No pumps are needed, because water flows downhill on its own. As the water rises, the ship floats up with it. When the water in the lock is level with the river ahead, the front gates open, and the ship sails on. A ship going downstream does the same thing in reverse.',
+      { fig: '<path class="k" d="M0 130 H200 V110 H300"/><path class="a" d="M0 100 H96 M204 60 H300"/><rect class="h" x="104" y="60" width="92" height="70"/>' +
+          '<rect class="k" x="96" y="30" width="8" height="100"/><rect class="k" x="196" y="30" width="8" height="80"/>' +
+          '<path class="k" d="M120 52 H180 L172 64 H128 Z M140 52 V40 H160 V52"/>' + D.arrow(112, 116, 112, 72) +
+          '<text class="n" x="48" y="92" text-anchor="middle">lower river</text><text class="n" x="252" y="52" text-anchor="middle">upper river</text>' +
+          D.label(10, 22, 'back gate', 98, 36) + D.label(220, 22, 'front gate', 202, 36),
+        tall: 140, cap: 'A ship in a lock. The water has risen to the level of the upper river.' },
+      { h: 'Ships of the lakes' },
+      'The Seaway is busy from spring until the lakes freeze in winter. Long ships called lakers carry grain from the Prairies, iron ore for making steel, salt for winter roads and many other goods. The longest lakers are more than three hockey rinks long, and they fit into the locks with only a few metres to spare.',
+      { box: 'Did you know?', text: 'Ships pay a fee, called a toll, to use the Seaway. The money helps pay to run and repair the locks.' },
+      'Building the Seaway changed the land, too. To make the river deep enough, engineers built dams that flooded several villages along the St. Lawrence in Ontario. About 6 500 people had to move to new homes. Today, these places are remembered as the Lost Villages.'
+    ],
+    guide: { before: 'Trace the route from the Atlantic Ocean, up the St. Lawrence River, to Lake Superior on a map. Teach <b>lock</b> and <b>valve</b>. Float a toy boat in a sink and add water to watch it rise.',
+      after: 'Why do you think it is cheaper to move grain or salt by ship than by truck? What would happen if the Seaway closed?' },
+    words: [['locks', 'sections of a canal with gates, where the water level is raised or lowered to move boats'], ['valves', 'parts that open and close to control the flow of water']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Lake Superior is big.', 'The St. Lawrence Seaway uses locks to lift ships between the ocean and the Great Lakes.', 'Ships carry salt.', 'Niagara Falls is high.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps for a ship going up.',
+        items: ['The ship sails into the lock.', 'The gates behind it close.', 'Water flows in, and the ship rises.', 'The front gates open.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are no pumps needed to fill a lock?',
+        opts: ['Water flows downhill on its own.', 'The ship pushes the water.', 'Rain fills it.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What do lakers carry? Fill in the chart.', cols: ['Goods', 'Used for'],
+        rows: [['grain', null], ['iron ore', null], ['salt', null]],
+        a: [[null, 'food, from the Prairies'], [null, 'making steel'], [null, 'winter roads']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Water</b>tight means water cannot get in. What does <b>air</b>tight mean?',
+        opts: ['air cannot get in', 'full of air', 'light as air'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the writer call the Seaway “a water staircase”?',
+        opts: ['Locks lift ships step by step, like stairs.', 'It has real stairs.', 'It is made of wood.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think Canada and the United States built the Seaway together?',
+        a: 'The Great Lakes and the St. Lawrence are shared by both countries, and both use the Seaway to ship goods, so working together made sense.', look: 'shared waters and shared use' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'In your own words, explain how a ship goes down through a lock.',
+        a: 'The ship sails in, the gates close behind it, water drains out to the lower river, the ship sinks with the water, and the front gates open.', look: 'the steps in reverse' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-rideau-canal', subject: 'history', form: 'Report',
+    title: 'Skating to Work',
+    deck: 'How a canal built for war became the world’s longest skating path',
+    hero: {
+      photo: 'g4-rideau-skateway.jpg', credit: 'Photo: Ahunt, CC0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'Skaters crowd the frozen Rideau Canal in downtown Ottawa.'
+    },
+    body: [
+      'Every winter in Ottawa, a canal in the middle of the city freezes over and becomes a skating path almost 8 kilometres long. It is called the Rideau Canal Skateway. On a cold morning, you might see people skating to work with briefcases, students skating to school, and families gliding along with hot chocolate.',
+      { h: 'A canal built for war' },
+      'The Rideau Canal was not built for skating. After the War of 1812, Britain worried that the United States might attack again. The main supply route, the St. Lawrence River, ran right along the American border. So the British decided to build a safer <b>canal</b>, away from the border, from Kingston to the place that is now Ottawa.',
+      'Lieutenant-Colonel John By was put in charge. From 1826 to 1832, thousands of workers, many of them Irish and French-Canadian, dug channels, built dams and constructed locks, mostly by hand, with shovels, picks and horses. The work was dangerous. Many workers became sick with malaria, a disease spread by mosquitoes in the swamps, and hundreds died.',
+      { fig: '<circle class="dot" cx="150" cy="20" r="4"/><circle class="dot" cx="190" cy="124" r="4"/>' +
+          '<path class="a" d="M150 22 Q118 52 140 72 T188 120"/><path class="k" d="M192 124 Q240 108 296 66"/><path class="d" d="M184 142 Q240 126 296 88"/>' +
+          '<text class="lb" x="160" y="24">Ottawa</text><text class="lb" x="182" y="128" text-anchor="end">Kingston</text>' +
+          D.label(20, 70, 'Rideau Canal', 128, 60) + '<text class="l" x="296" y="58" text-anchor="end">St. Lawrence River</text><text class="l" x="238" y="150">US border</text>',
+        tall: 156, cap: 'The canal gave a safer route, away from the border.' },
+      { h: 'From war route to winter fun' },
+      'In the end, the attack never came. Instead, the canal was used for shipping lumber and goods, and later for pleasure boats. In 2007, the Rideau Canal became a <b>World Heritage Site</b>, a place protected because it is important to the whole world.',
+      'The canal runs through the traditional lands of the Algonquin Anishinaabe people, who travelled these waters by canoe long before the canal was built.',
+      { box: 'Skateway facts', text: 'The Skateway opened in 1971. Workers flood the ice at night to keep it smooth, and they check its thickness every day.' },
+      'Today, the Skateway is a big part of Winterlude, Ottawa’s winter festival, held every February. Visitors skate past ice sculptures, snow slides and food stands, all on a canal that was once built to keep soldiers safe.'
+    ],
+    guide: { before: 'Find Ottawa, Kingston and the St. Lawrence River on a map of Ontario. Teach <b>canal</b> and <b>World Heritage Site</b>. Talk about why a border could be dangerous in a war.',
+      after: 'The canal was built for war but is now used for fun. Can you think of something else that is now used in a different way than it was built for?' },
+    words: [['canal', 'a waterway dug by people for boats to travel on'], ['World Heritage Site', 'a place protected because it is important to the whole world']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ottawa is cold.', 'The Rideau Canal was built as a safe war route and is now a famous skating path.', 'John By was a soldier.', 'Mosquitoes spread disease.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. Which city is at the south end of the canal?',
+        opts: ['Kingston', 'Ottawa', 'Montréal'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Britain want a route away from the St. Lawrence?',
+        opts: ['The river ran along the American border.', 'The river was too cold.', 'The river was too short.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['The War of 1812 ends.', 'Workers build the canal.', 'The Skateway opens.', 'The canal becomes a World Heritage Site.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'How has the canal been used? Fill in the chart.', cols: ['In the past', 'Today'],
+        rows: [[null, null]],
+        a: [['as a safe supply route, then for shipping lumber and goods', 'for pleasure boats in summer and skating in winter']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A work<b>er</b> is someone who works. What is a skat<b>er</b>?',
+        opts: ['someone who skates', 'a kind of skate', 'a skating rink'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What caused many workers to die?',
+        opts: ['malaria spread by mosquitoes', 'the cold winter', 'falling ice'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think the writer mentions the Algonquin Anishinaabe people?',
+        a: 'To remind readers that Indigenous people lived on and travelled these waters long before the canal was built.', look: 'recognizes Indigenous people as the first users of the land and water' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'The writer says, “the attack never came.” How was the canal useful anyway?',
+        a: 'It was used to ship lumber and goods, then for pleasure boats, and now thousands of people skate on it in winter.', look: 'other uses from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-rocky-mountains', subject: 'geography', form: 'Report',
+    title: 'Where Mountains Touch the Sky',
+    deck: 'How the Rocky Mountains formed, and why their lakes are so blue',
+    hero: {
+      photo: 'g4-moraine-lake.jpg', credit: 'Photo: Scruffdog1, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'Moraine Lake in Banff National Park, Alberta, below the snowy peaks of the Rockies.'
+    },
+    body: [
+      'In western Canada, the Rocky Mountains rise like a jagged wall along the border between Alberta and British Columbia. Their peaks are covered with snow even in summer. Below them lie forests, rushing rivers and lakes so blue they look painted.',
+      { h: 'How the mountains formed' },
+      'The Rockies began forming about 80 million years ago. The surface of the Earth is broken into giant pieces called plates, which move very slowly, about as fast as your fingernails grow. Off the west coast, two plates pushed against each other. Over millions of years, the pushing squeezed and folded the rock layers and piled them up into mountains, the way a rug wrinkles when you push it from one end.',
+      { fig: '<path class="h" d="M10 80 H130 V96 H10 Z"/><path class="k" d="M10 64 H130 M10 80 H130 M10 96 H130"/>' +
+          '<path class="k" d="M170 110 Q200 110 215 70 Q230 30 245 70 Q260 110 290 110 M170 126 Q200 126 215 86 Q230 46 245 86 Q260 126 290 126"/>' +
+          D.arrow(150, 118, 168, 118) + D.arrow(300, 118, 292, 118) +
+          '<text class="n" x="70" y="122" text-anchor="middle">1. flat rock layers</text><text class="n" x="230" y="150" text-anchor="middle">2. pushed and folded</text>',
+        tall: 156, cap: 'When plates push together, flat rock layers fold up into mountains.' },
+      { h: 'Why the lakes are so blue' },
+      'Many lakes in the Rockies, like Moraine Lake in the photo, are a bright turquoise colour. The colour comes from glaciers. As a glacier slides, it grinds rock into a powder so fine that it is called <b>rock flour</b>. Meltwater carries the rock flour into the lakes, where it floats and reflects the blue and green parts of sunlight.',
+      { h: 'A protected place' },
+      'In 1885, Banff became Canada’s first <b>national park</b>, a place protected so that people can enjoy nature without harming it. Elk, bighorn sheep, grizzly bears and mountain goats live in the park. To keep animals safe, Banff built wide bridges covered in trees and grass over the highway. Animals cross on these wildlife bridges instead of running into traffic.',
+      { box: 'Did you know?', text: 'The Stoney Nakoda, Blackfoot and Ktunaxa peoples have lived in and travelled through these mountains for thousands of years.' },
+      'The glaciers that feed these lakes are shrinking as the climate warms. Scientists measure them every year to see how fast they are melting, and how that might change the rivers that flow from the mountains.'
+    ],
+    guide: { before: 'Find Alberta, British Columbia and Banff on a map. Teach <b>rock flour</b> and <b>national park</b>. Push a towel from both ends on a table to show how rock folds.',
+      after: 'Have you visited a national or provincial park? What rules help protect animals there? Why do they matter?' },
+    words: [['rock flour', 'rock ground into a very fine powder by a glacier'], ['national park', 'land the country protects so that nature stays wild']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Banff has elk.', 'The Rocky Mountains formed when plates pushed together, and their lakes and wildlife are protected.', 'Snow is white.', 'Glaciers are cold.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What happens to the rock layers when plates push?',
+        opts: ['They fold and pile up.', 'They melt.', 'They turn blue.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Rock folds “the way a rug wrinkles.” This comparison helps you …',
+        opts: ['picture how mountains formed', 'know how old a rug is', 'measure a mountain'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps that make a lake turquoise.',
+        items: ['A glacier slides over rock.', 'It grinds the rock into rock flour.', 'Meltwater carries the flour into the lake.', 'The flour reflects blue and green light.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.2', q: 'How does the park keep animals safe?', cols: ['Problem', 'Solution'],
+        rows: [['Animals could run into traffic on the highway.', null]],
+        a: [[null, 'Wildlife bridges covered in trees and grass let them cross over the road.']] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How fast do the Earth’s plates move?',
+        opts: ['about as fast as fingernails grow', 'as fast as a car', 'not at all'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Melt</b>water is water from melting ice. What is <b>rain</b>water?',
+        opts: ['water from rain', 'water that makes rain', 'water in a river'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think Canada protects places like Banff as national parks?',
+        a: 'So that nature and animals stay safe, and so people in the future can still enjoy the mountains, lakes and wildlife.', look: 'protection now and for the future' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why might an animal use a wildlife bridge instead of crossing the road?',
+        a: 'The bridge is covered with trees and grass, so it feels like the forest, and there are no cars on it.', look: 'feels natural and is safe' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-snow-house', subject: 'social', form: 'Explanation',
+    title: 'Building with Snow',
+    deck: 'How Inuit builders make a warm house out of snow',
+    hero: {
+      photo: 'g4-igloo.jpg', credit: 'Photo: Canadian Museum of History, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Inuinnait men build a snow house on the sea ice, early 1900s.'
+    },
+    body: [
+      'For thousands of years, Inuit in the Arctic have built shelters out of the most common material around them: snow. In Inuktitut, the word iglu simply means house. A snow house for winter travel and hunting can be put up in an hour or two by skilled builders.',
+      { h: 'The right snow' },
+      'Not just any snow will do. Builders look for snow that the wind has packed hard, so it can be cut into firm blocks. To test it, they push a long, thin probe into the snow to feel its layers. Then, with a long snow knife, they cut blocks about the size of a big suitcase.',
+      { h: 'A spiral of blocks' },
+      'The builder stands inside a circle and places the first row of blocks around it. The tops of the blocks are trimmed on a slant, so the next row climbs upward in a spiral, leaning inward a little more with each row. Each block is shaped to rest against the ones beside it. Finally, a last block is lowered into the top like a key. The blocks freeze together, and the dome becomes strong enough for a person to stand on.',
+      { fig: '<path class="k" d="M40 120 Q40 26 150 26 Q260 26 260 120"/><path class="k" d="M0 110 H40 M0 140 H60 V120 H260"/>' +
+          '<rect class="h" x="170" y="96" width="86" height="24"/><path class="t" d="M146 18 V30 M154 18 V30"/>' +
+          D.label(180, 14, 'air hole', 154, 24) + D.label(52, 14, 'snow blocks', 66, 58) +
+          '<text class="n" x="213" y="88" text-anchor="middle">warm sleeping platform</text><text class="n" x="8" y="156">cold air stays low, in the tunnel</text>',
+        tall: 162, cap: 'Inside a snow house. Warm air rises, and cold air sinks.' },
+      { h: 'Warm inside' },
+      'Snow is full of tiny air pockets, which make it a good <b>insulator</b>. It keeps heat in and cold out. The entrance is a low tunnel, dug lower than the floor. Cold air sinks and stays in the tunnel, while warm air rises to the sleeping platform. A stone lamp called a <b>qulliq</b>, which burns oil from seals, gives light and heat. A small hole near the top lets fresh air in. Even when it is minus 40 °C outside, it can be near freezing or warmer inside.',
+      { box: 'Today', text: 'Most Inuit now live in wooden houses, but many still know how to build snow houses. Elders teach young people the skill, and snow houses are still built on long hunting trips.' }
+    ],
+    guide: { before: 'Find Nunavut and the Arctic on a map. Teach <b>insulator</b> and <b>qulliq</b>. Ask: why might a house made of snow keep you warm?',
+      after: 'Elders teach young people how to build snow houses. What is a skill an older person in your life could teach you?' },
+    words: [['insulator', 'a material that keeps heat from passing through'], ['qulliq', 'a stone lamp that burns seal oil for light and heat']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Snow is cold.', 'Inuit builders use hard-packed snow to build strong, warm houses.', 'Seals live in the Arctic.', 'Knives are sharp.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, why is the tunnel lower than the floor?',
+        opts: ['Cold air sinks and stays in it.', 'It is easier to dig.', 'To hide from animals.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is snow a good insulator?',
+        opts: ['It is full of tiny air pockets.', 'It is white.', 'It is heavy.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps for building a snow house.',
+        items: ['Test the snow.', 'Cut the blocks.', 'Build the rows in a spiral.', 'Lower the last block into the top.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'How does each part help? Fill in the chart.', cols: ['Part', 'How it helps'],
+        rows: [['raised sleeping platform', null], ['small hole near the top', null], ['qulliq', null]],
+        a: [[null, 'Warm air rises, so it is the warmest place.'], [null, 'It lets fresh air in.'], [null, 'It gives light and heat.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The ending <b>-or</b> can mean “a thing that does something.” An insulat<b>or</b> is …',
+        opts: ['a thing that insulates', 'a kind of snow', 'a cold place'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The last block goes in “like a key.” This means it …',
+        opts: ['locks the dome together', 'opens a door', 'is made of metal'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do builders need snow that the wind has packed hard?',
+        a: 'Hard-packed snow can be cut into firm blocks that hold their shape and freeze together into a strong dome.', look: 'firm blocks that hold their shape' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why is it important that Elders teach young people to build snow houses?',
+        a: 'So the knowledge is not lost, young people can stay safe on hunting trips, and the culture stays strong.', look: 'safety and keeping knowledge and culture alive' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-pyramids', subject: 'history', form: 'Report',
+    title: 'Mountains Made by Hand',
+    deck: 'Who built the pyramids of Egypt, and how',
+    hero: {
+      photo: 'g4-pyramids.jpg', credit: 'Photo: Ricardo Liberato, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'The pyramids of Giza, near Cairo, Egypt. The Great Pyramid is at the back.'
+    },
+    body: [
+      'On the edge of the desert near Cairo, Egypt, three giant pyramids rise from the sand. The biggest, the Great Pyramid, was built about 4 500 years ago for a king, or <b>pharaoh</b>, named Khufu. When it was finished, it stood about 146 metres tall. For almost 4 000 years, it was the tallest building made by people anywhere on Earth.',
+      { h: 'A home for the afterlife' },
+      'The ancient Egyptians believed that life continued after death. A pharaoh’s body was carefully preserved as a <b>mummy</b> and placed in a tomb with food, furniture, jewels and other things he might need in the next life. The pyramids were giant tombs, built to protect the pharaohs’ bodies and treasures forever.',
+      { h: 'How was it built?' },
+      'The Great Pyramid is made of about 2.3 million stone blocks. Many weigh more than a car. Workers cut the blocks with copper tools and dragged them on wooden sleds. Pouring water on the sand in front of a sled made it easier to pull. Most experts think workers built long ramps of mud brick and rubble to drag the blocks higher and higher.',
+      { fig: '<path class="h" d="M60 130 L150 30 L240 130 Z"/><path class="k" d="M60 130 L150 30 L240 130 Z M0 130 H300"/><path class="k" d="M300 130 L196 84"/>' +
+          '<rect class="k" x="244" y="100" width="16" height="10" transform="rotate(-24 252 105)"/><circle class="k" cx="234" cy="96" r="3"/><circle class="k" cx="224" cy="92" r="3"/>' +
+          '<path class="d" d="M30 30 H150"/>' + D.arrow(40, 80, 40, 34) + D.arrow(40, 80, 40, 126) + '<text class="n" x="4" y="84">146 m</text>' +
+          D.label(268, 76, 'ramp', 276, 118) + D.label(150, 152, 'a stone block on a sled', 250, 108),
+        tall: 158, cap: 'One idea of how blocks were dragged up a ramp. Not to scale.' },
+      'For a long time, people thought the pyramids were built by enslaved people. But archaeologists have found the remains of the workers’ village nearby, with bakeries, houses and graves. Most workers were skilled builders and farmers who were paid in bread, beer and other goods. They worked in teams and took pride in their work.',
+      'Inside the Great Pyramid, narrow passages lead to a room called the King’s Chamber, built of huge granite blocks. Robbers broke into the pyramids long ago and took most of the treasures.',
+      { box: 'Did you know?', text: 'The sides of the Great Pyramid line up almost perfectly with north, south, east and west. The builders probably used the stars to find the directions.' }
+    ],
+    guide: { before: 'Find Egypt and the Nile on a map. Teach <b>pharaoh</b> and <b>mummy</b>. Try dragging a heavy book on a tray across a table, then across a wet tray.',
+      after: 'Why do you think people today are still so amazed by the pyramids? What question would you ask an archaeologist?' },
+    words: [['pharaoh', 'a king of ancient Egypt'], ['mummy', 'a body that has been dried and wrapped to keep it from decaying']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Egypt is hot.', 'The pyramids were giant tombs built by skilled workers about 4 500 years ago.', 'Copper is a metal.', 'Sleds slide on snow.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were the pyramids built?',
+        opts: ['as tombs to protect the pharaohs', 'as houses for workers', 'as places to store grain'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what helped workers drag blocks higher?',
+        opts: ['a ramp', 'a crane', 'a truck'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps for moving a block.',
+        items: ['Cut the block with copper tools.', 'Load it onto a wooden sled.', 'Pour water on the sand.', 'Drag it up the ramp.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.2', q: 'What did archaeologists find? Fill in the chart.', cols: ['Clue', 'What it tells us'],
+        rows: [['a village with bakeries and houses', null], ['workers’ graves near the pyramids', null]],
+        a: [[null, 'The workers lived nearby and were fed.'], [null, 'The workers were respected and buried with care.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did workers pour water on the sand?',
+        opts: ['It made the sled easier to pull.', 'To cool their feet.', 'To clean the blocks.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Ancient</b> means very old. Which word means the opposite?',
+        opts: ['modern', 'old', 'tall'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How did archaeologists change what people believed about who built the pyramids?',
+        a: 'People thought enslaved people built them, but the workers’ village with bakeries, houses and graves showed that most workers were paid, skilled builders and farmers.', look: 'old belief, new evidence, new understanding' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think the pyramids have lasted 4 500 years?',
+        a: 'They are made of millions of huge, heavy stone blocks, and the dry desert does not wear them away quickly.', look: 'strong materials and dry climate' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-tenochtitlan', subject: 'history', form: 'Report',
+    title: 'A City on a Lake',
+    deck: 'Tenochtitlan, the great island city of the Mexica',
+    hero: {
+      photo: 'g4-tenochtitlan.jpg', credit: 'Photo: Steve Cadman, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A museum model of the centre of Tenochtitlan, with the Great Temple at the back.'
+    },
+    body: [
+      'About 700 years ago, a people called the Mexica, often known as the Aztecs, were looking for a new home in the Valley of Mexico. Their story says their god told them to settle where they saw an eagle sitting on a cactus, eating a snake. They found that sign on a small, swampy island in Lake Texcoco. There, in 1325, they began building a city called Tenochtitlan.',
+      { h: 'Building on water' },
+      'Building on a lake was not easy, but the Mexica were clever engineers. They connected the island to the shore with three long <b>causeways</b>, raised roads built across the water. Some causeways had bridges that could be removed to keep enemies out. A stone channel called an aqueduct carried fresh drinking water from springs on the mainland.',
+      { fig: '<rect class="h" x="10" y="10" width="280" height="130" rx="30"/><circle class="k" cx="150" cy="76" r="30"/>' +
+          '<path class="k" d="M120 76 H20 M150 46 V14 M150 106 V136"/><path class="d" d="M170 52 Q230 30 286 26"/>' +
+          '<rect class="t" x="186" y="84" width="14" height="8"/><rect class="t" x="204" y="84" width="14" height="8"/><rect class="t" x="186" y="96" width="14" height="8"/><rect class="t" x="204" y="96" width="14" height="8"/>' +
+          '<text class="lb" x="150" y="80" text-anchor="middle">city</text>' + D.label(20, 66, 'causeway', 60, 76) + D.label(226, 120, 'chinampas', 210, 100) + D.label(214, 52, 'aqueduct', 236, 38),
+        tall: 150, cap: 'A simple map of Tenochtitlan on Lake Texcoco. Not to scale.' },
+      { h: 'Floating gardens' },
+      'To grow food, the Mexica built <b>chinampas</b>. These were long, narrow fields made by piling mud and plants from the lake bottom inside fences of woven sticks. Willow trees planted at the edges held the soil in place. Farmers grew corn, beans, squash, peppers and flowers on them. Canals between the chinampas worked like streets, and people travelled by canoe.',
+      { h: 'A busy capital' },
+      'Tenochtitlan grew into one of the largest cities in the world, with perhaps 200 000 people. At its centre stood the Great Temple, a pyramid with two shrines on top. Nearby was a huge market where tens of thousands of people came to trade cacao beans, cotton cloth, feathers, pottery and food. Children went to school to learn history, songs and skills for work. Mexica scholars kept records in folding books painted with pictures and symbols. When Spanish visitors first saw the city, they were amazed by how large, clean and well organized it was.',
+      { box: 'Then and now', text: 'Spanish soldiers arrived in 1519 and conquered the city two years later. Today, Mexico City stands on the same spot. Most of the lake was drained long ago, but chinampas still grow flowers and vegetables in Xochimilco, at the south edge of the city.' }
+    ],
+    guide: { before: 'Find Mexico City on a map. Teach <b>causeway</b> and <b>chinampa</b>. Point out the eagle on the Mexican flag and connect it to the story.',
+      after: 'Which idea of the Mexica engineers do you think was the cleverest? Why?' },
+    words: [['causeways', 'raised roads built across water or wet land'], ['chinampas', 'farm fields built up from mud in a lake']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Eagles eat snakes.', 'The Mexica built a great city on a lake, with causeways and floating gardens.', 'Mexico is hot.', 'Corn is a plant.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the map. What brought fresh water to the city?',
+        opts: ['an aqueduct', 'a causeway', 'a chinampa'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did some causeways have bridges that could be removed?',
+        opts: ['to keep enemies out', 'to let boats sail under', 'to clean them'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How did the Mexica solve each problem?', cols: ['Problem', 'Solution'],
+        rows: [['getting from the island to the shore', null], ['finding drinking water', null], ['growing food', null]],
+        a: [[null, 'They built causeways.'], [null, 'An aqueduct carried water from springs.'], [null, 'They built chinampas in the lake.']] },
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['The Mexica see the eagle on a cactus.', 'They begin building Tenochtitlan.', 'Spanish soldiers arrive.', 'Mexico City stands on the same spot.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Main</b>land joins two words. It means …',
+        opts: ['the main part of the land, not an island', 'a land of rain', 'a busy road'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“Canals between the chinampas worked like streets.” This means people …',
+        opts: ['travelled along the canals', 'walked on water', 'planted in the canals'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think the writer calls the Mexica “clever engineers”? Give two examples.',
+        a: 'They built causeways across the lake to reach the shore, and they built chinampas so they could farm on water.', look: 'two examples of building solutions' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer tell us chinampas are still used today?',
+        a: 'To show that the Mexica way of farming still works and is still part of life in Mexico City.', look: 'a link between the past and the present' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-castles', subject: 'history', form: 'Report',
+    title: 'Inside the Castle Walls',
+    deck: 'How castles in the Middle Ages kept people safe',
+    hero: {
+      photo: 'g4-castle.jpg', credit: 'Photo: JKMMX, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'Pembroke Castle in Wales, built more than 800 years ago, beside a river.'
+    },
+    body: [
+      'About a thousand years ago, in the time we call the Middle Ages, kings and nobles in Europe built strong stone castles. A castle was both a home and a fortress. It protected the lord, his family, his soldiers and the people who worked for him, and it showed everyone how powerful he was.',
+      { h: 'Built to keep enemies out' },
+      'Many castles were surrounded by a <b>moat</b>, a deep ditch filled with water. To cross it, visitors used a drawbridge, which could be pulled up in an attack. Behind it was a heavy iron gate called a portcullis that slid down to block the entrance. Thick outer walls, called curtain walls, ran between tall towers. Soldiers on top could shoot arrows through narrow openings while staying safe behind the stone.',
+      { fig: '<path class="h" d="M0 120 H60 V136 H0 Z"/><path class="k" d="M0 120 H60 M60 120 V136 H0"/>' +
+          '<rect class="k" x="60" y="56" width="26" height="64"/><path class="k" d="M60 56 V48 H66 V56 M73 56 V48 H79 V56"/><path class="k" d="M86 72 H140 V120 M86 120 H300"/>' +
+          '<rect class="h" x="160" y="36" width="70" height="84"/><path class="k" d="M160 36 V28 H170 V36 M180 36 V28 H190 V36 M200 36 V28 H210 V36 M220 36 V28 H230 V36"/>' +
+          '<path class="t" d="M60 120 L30 108"/>' +
+          D.label(8, 152, 'moat', 30, 128) + D.label(4, 26, 'drawbridge', 40, 112) + D.label(100, 26, 'tower', 74, 52) + D.label(96, 152, 'curtain wall', 112, 100) + D.label(236, 24, 'keep', 220, 40),
+        tall: 158, cap: 'The main parts of a castle, seen from the side. Not to scale.' },
+      'In the middle stood the <b>keep</b>, the strongest tower of all. If enemies broke through the outer walls, everyone could retreat into the keep. It stored food and water so people could survive a long attack.',
+      { h: 'Daily life' },
+      'Life in a castle was busy, and often cold, dark and smoky. Fires burned in big fireplaces, but stone walls held the chill. The lord and lady ate in the great hall, while cooks, blacksmiths, grooms, guards and servants worked all day. Children of nobles learned to ride, read and, for some boys, train to become knights.',
+      { box: 'The end of castles', text: 'When armies began to use cannons in the 1400s, even thick stone walls could be smashed. Over time, castles became homes, museums and ruins instead of fortresses.' },
+      'Pembroke Castle, in the photo, was built more than 800 years ago. A future king of England, Henry VII, was born there in 1457. Today, visitors climb its towers and imagine life inside the walls.'
+    ],
+    guide: { before: 'Ask what the child already knows about castles and knights. Teach <b>moat</b> and <b>keep</b>. Look at the diagram and trace the path an enemy would have to take.',
+      after: 'If you were designing a castle, what would you add to keep it safe? What would you add to make it more comfortable?' },
+    words: [['moat', 'a deep, wide ditch filled with water around a castle'], ['keep', 'the strongest tower in the middle of a castle']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Castles are old.', 'Castles in the Middle Ages were strong homes built to protect people from attack.', 'Knights rode horses.', 'Wales has rivers.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'How did each part protect the castle?', cols: ['Part', 'How it helped'],
+        rows: [['moat', null], ['portcullis', null], ['keep', null]],
+        a: [[null, 'Enemies had to cross deep water.'], [null, 'It slid down to block the entrance.'], [null, 'People could retreat there, with food and water.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is beside the moat?',
+        opts: ['the drawbridge', 'the keep', 'the great hall'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did castles stop being useful as fortresses?',
+        opts: ['Cannons could smash the walls.', 'People stopped liking stone.', 'The moats dried up.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Draw</b>bridge: draw can mean “pull.” A drawbridge is a bridge that …',
+        opts: ['can be pulled up', 'has pictures on it', 'is very long'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What is the box “The end of castles” about?',
+        opts: ['how cannons changed castles', 'how to build a moat', 'a king’s birthday'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why was life in a castle often uncomfortable? Use details from the text.',
+        a: 'Castles were cold, dark and smoky. The stone walls held the chill even with big fires burning.', look: 'cold, dark, smoky, with a detail' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'The text says a castle “showed everyone how powerful he was.” What does this tell you about lords?',
+        a: 'Lords wanted people to see their wealth and power, so a big castle was a way to show off as well as to stay safe.', look: 'power and status, not just safety' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-three-sisters', subject: 'social', form: 'Explanation',
+    title: 'The Three Sisters',
+    deck: 'Why corn, beans and squash grow best together',
+    hero: {
+      photo: 'g4-three-sisters.jpg', credit: 'Photo: U.S. National Park Service, public domain, Wikimedia Commons', focus: '50% 60%',
+      tall: 220,
+      cap: 'A Three Sisters garden of corn, beans and squash beside a log cabin.'
+    },
+    body: [
+      'Long before Europeans arrived, many First Nations in what is now Ontario and Quebec, including the Haudenosaunee and the Wendat, were skilled farmers. Their most important crops were corn, beans and squash. They planted them together in the same small hills of soil and called them the Three Sisters, because the plants help each other grow, like sisters in a family.',
+      { h: 'How the sisters help each other' },
+      'Each sister has a job. Corn grows tall and straight, so it gives the beans a pole to climb. Beans wind around the corn stalks to reach the sunlight. They also do something amazing for the soil: they add <b>nutrients</b> that corn and squash need. Squash spreads its huge, prickly leaves across the ground. The leaves shade the soil so it stays damp, block weeds from growing, and make hungry animals think twice.',
+      { fig: '<path class="k" d="M30 134 Q150 104 270 134"/><path class="k" d="M150 120 V20 M150 60 L128 44 M150 80 L172 64 M150 100 L130 86"/><path class="a" d="M146 116 Q160 104 146 92 Q134 80 150 68 Q164 56 150 44 Q138 34 150 24"/>' +
+          '<path class="h" d="M60 128 Q80 108 104 124 Q84 136 60 128 Z M196 124 Q220 106 242 128 Q218 136 196 124 Z"/>' +
+          D.label(186, 22, 'corn: a pole', 152, 30) + D.label(6, 60, 'beans: feed the soil', 146, 80) + D.label(196, 98, 'squash: shades', 218, 120),
+        tall: 144, cap: 'The Three Sisters growing in one hill of soil.' },
+      'This way of growing different plants side by side so they help each other is called <b>companion planting</b>. Farmers who planted the Three Sisters could grow more food in less space, year after year, without wearing out the soil.',
+      { h: 'Good food together' },
+      'The Three Sisters are healthy together on the plate, too. Corn gives energy, beans give protein, and squash gives vitamins. Corn soup and corn bread made with beans were important foods. The dried crops could be stored through the long winter.',
+      { box: 'Still growing', text: 'Many Haudenosaunee families and schools still plant Three Sisters gardens today, and the seeds of old varieties are saved and shared from year to year.' },
+      'The Three Sisters show how careful observation of nature can lead to smart solutions. Some farmers and gardeners today are learning from this Indigenous knowledge.'
+    ],
+    guide: { before: 'Look at a bean seed, a corn kernel and a squash seed if you have them. Teach <b>nutrients</b> and <b>companion planting</b>. Point to each sister in the diagram.',
+      after: 'Who in your life helps you, and how do you help them? How are people in a family or a class like the Three Sisters?' },
+    words: [['nutrients', 'things in soil or food that help living things grow'], ['companion planting', 'growing plants together so they help each other']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Corn is tall.', 'Corn, beans and squash help each other grow when planted together.', 'Squash is prickly.', 'Soup is good.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'What is each sister’s job? Fill in the chart.', cols: ['Sister', 'How it helps'],
+        rows: [['corn', null], ['beans', null], ['squash', null]],
+        a: [[null, 'It gives the beans a pole to climb.'], [null, 'It adds nutrients to the soil.'], [null, 'Its leaves shade the soil, keep it damp and block weeds.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which plant climbs the corn?',
+        opts: ['beans', 'squash', 'weeds'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why are the plants called sisters?',
+        opts: ['They help each other, like a family.', 'They look the same.', 'They are the same age.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might animals stay away from the garden?',
+        opts: ['The squash leaves are prickly.', 'The corn is loud.', 'The beans are bitter.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>com</b>panion is a friend who goes with you. Planting <b>com</b>panions are plants that …',
+        opts: ['grow together and help each other', 'grow alone', 'grow far apart'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did the Three Sisters help First Nations farmers? Give two details.',
+        a: 'They could grow more food in less space without wearing out the soil, and the dried crops could be stored all winter.', look: 'two benefits from the text' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'The last paragraph says people today are learning from this knowledge. What is the writer’s message?',
+        a: 'Indigenous knowledge about farming is valuable and still useful today.', look: 'respect for Indigenous knowledge' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-healthy-teeth', subject: 'health', form: 'Explanation',
+    title: 'Strong Teeth for Life',
+    deck: 'What causes cavities, and how to stop them',
+    hero: {
+      photo: 'g4-brushing-teeth.jpg', credit: 'Photo: Emmitt J. Hawks, U.S. Navy, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'Children learn how to brush their teeth properly at a health clinic.'
+    },
+    body: [
+      'Around the age of six, something big starts happening in your mouth. Your baby teeth begin to fall out, and your adult teeth push through. By the time you are a teenager, you will have up to 32 adult teeth. These are the only teeth you will ever get, so they need to last for the rest of your life.',
+      { h: 'Inside a tooth' },
+      'The outside of a tooth is covered in <b>enamel</b>, the hardest material in your whole body. It is even harder than bone. Under the enamel is a softer layer called dentin. In the centre is the pulp, which holds nerves and blood vessels. That is why a deep cavity can hurt so much.',
+      { fig: '<path class="k" d="M110 20 Q150 6 190 20 Q206 50 194 76 L184 136 Q176 146 170 126 L160 90 H140 L130 126 Q124 146 116 136 L106 76 Q94 50 110 20 Z"/>' +
+          '<path class="t" d="M118 30 Q150 20 182 30 Q192 52 182 70 L176 120 M124 120 L118 70 Q108 52 118 30"/><path class="h" d="M136 40 Q150 34 164 40 L160 86 H140 Z"/><path class="a" d="M80 80 Q150 70 220 80"/>' +
+          D.label(214, 26, 'enamel', 192, 30) + D.label(214, 52, 'dentin', 180, 50) + D.label(10, 40, 'pulp', 140, 56) + D.label(230, 96, 'gum', 214, 80) + D.label(10, 130, 'root', 116, 126),
+        tall: 148, cap: 'The parts of a tooth.' },
+      { h: 'How cavities form' },
+      'Your mouth is home to millions of tiny bacteria. Some of them form a sticky film on your teeth called <b>plaque</b>. When you eat or drink something sugary, the bacteria in plaque eat the sugar too, and they make acid. The acid slowly dissolves the enamel and makes a hole called a cavity. Sipping juice or pop all day is especially hard on teeth, because the acid attacks again and again.',
+      { h: 'Keeping teeth healthy' },
+      'You can stop most cavities before they start. Brush for two minutes, twice a day, with a small amount of fluoride toothpaste. Fluoride makes enamel stronger. Brush along the gums, where plaque hides. Floss once a day to clean between your teeth, where a brush cannot reach. Drink water between meals, and save sweets for mealtimes.',
+      { box: 'Visit the dentist', text: 'A dentist or dental hygienist can find small problems before they get big, clean off hard plaque and check that your adult teeth are coming in well.' },
+      'If you play hockey or other contact sports, wear a mouthguard to protect your teeth from hits.'
+    ],
+    guide: { before: 'Ask the child to count their teeth with their tongue. Teach <b>enamel</b> and <b>plaque</b>. Look at the parts of a tooth in the diagram.',
+      after: 'Make a plan for your teeth: when will you brush, and how will you remember to floss? Time two minutes of brushing together.' },
+    words: [['enamel', 'the hard, shiny outer layer of a tooth'], ['plaque', 'a sticky film of bacteria that forms on teeth']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Teeth are white.', 'Plaque and sugar cause cavities, but brushing, flossing and dentist visits keep teeth healthy.', 'Dentists are friendly.', 'Babies have teeth.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which part is in the centre of the tooth?',
+        opts: ['the pulp', 'the enamel', 'the gum'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps of how a cavity forms.',
+        items: ['Plaque forms on the teeth.', 'You eat something sugary.', 'Bacteria make acid.', 'The acid makes a hole in the enamel.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Habit', 'Why it helps'],
+        rows: [['brushing with fluoride toothpaste', null], ['flossing', null], ['drinking water between meals', null]],
+        a: [[null, 'It removes plaque, and fluoride makes enamel stronger.'], [null, 'It cleans between teeth, where a brush cannot reach.'], [null, 'It does not feed the bacteria with sugar.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is sipping pop all day hard on teeth?',
+        opts: ['The acid attacks again and again.', 'Pop is cold.', 'Pop has bubbles.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Mouth</b>guard joins two words. What does a mouthguard do?',
+        opts: ['protects your mouth', 'cleans your mouth', 'opens your mouth'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the writer say your adult teeth “need to last for the rest of your life”?',
+        a: 'Adult teeth are the only teeth you will ever get. If they are damaged or lost, they do not grow back.', look: 'adult teeth are not replaced' },
+      { k: 'lines', code: 'C1.3', n: 2, q: 'How do the headings help you read this text?',
+        a: 'They split the text into parts, so I know where to find how cavities form and how to keep teeth healthy.', look: 'headings organize the information' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-mosaics', subject: 'arts', form: 'Explanation',
+    title: 'Pictures from Pieces',
+    deck: 'How artists make mosaics from thousands of tiny tiles',
+    hero: {
+      photo: 'g4-mosaic.jpg', credit: 'Photo: 14GTR, CC0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'Dolphins in an ancient mosaic from Halicarnassus, now in the British Museum in London.'
+    },
+    body: [
+      'Look closely at the dolphins in the photo. They are not painted. They are made of thousands of tiny pieces of coloured stone, pressed into a floor almost 2 000 years ago. A picture or pattern made this way is called a mosaic.',
+      { h: 'Tiny tiles' },
+      'The small pieces in a mosaic are called <b>tesserae</b>. Each one is usually a cube about as big as the tip of your finger. Artists in ancient Greece and Rome cut tesserae from stone and marble in many natural colours: white, black, cream, red and grey. Later, artists added pieces of coloured glass, and some even used glass with a thin layer of real gold inside, so their mosaics would sparkle in candlelight.',
+      { fig: (function () {
+            var fish = ['0000000000', '0001100000', '0111111001', '1111111111', '0111111001', '0001100000', '0000000000'], s = '';
+            fish.forEach(function (row, r) { row.split('').forEach(function (c, i) { s += '<rect class="' + (c === '1' ? 'h' : 't') + '" x="' + (60 + i * 18) + '" y="' + (6 + r * 18) + '" width="16" height="16"/>'; }); });
+            return s + D.label(250, 30, 'tessera', 240, 60) + D.label(250, 110, 'grout lines', 241, 104);
+          })(),
+        tall: 132, cap: 'A simple fish made of square tesserae. The thin gaps are filled with grout.' },
+      { h: 'How a mosaic is made' },
+      'First, the artist draws the design. Next, a layer of wet mortar, a kind of cement, is spread on the floor or wall, one small part at a time. The artist presses the tesserae into the mortar, one by one, following the lines of the design. Pieces are often set in curving rows that follow the shape, which makes animals and people look like they are moving. When everything is dry, the gaps between the pieces are filled with <b>grout</b> to hold them tight and keep out water.',
+      { h: 'Made to last' },
+      'Because they are made of stone and glass, mosaics can last for thousands of years. Floors that were walked on by Romans can still be seen today. Many ancient mosaics show daily life, animals, sea creatures and stories, so they teach us how people lived long ago.',
+      { box: 'Try it', text: 'Cut coloured paper into small squares and glue them onto a drawing to make your own paper mosaic. Leave a tiny gap between each piece.' },
+      'Today, artists still make mosaics in parks, schools, subway stations and swimming pools around the world.'
+    ],
+    guide: { before: 'Look closely at the photo and find single tesserae. Teach <b>tesserae</b> and <b>grout</b>. Ask: why might someone choose stone instead of paint for a floor?',
+      after: 'Design a small mosaic on grid paper by colouring squares. What picture will you make? Which colours will you choose?' },
+    words: [['tesserae', 'the small pieces of stone or glass used in a mosaic'], ['grout', 'a paste that fills the gaps between tiles and hardens']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Dolphins swim fast.', 'Mosaics are long-lasting pictures made from many tiny pieces of stone or glass.', 'Romans had floors.', 'Glue is sticky.'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps for making a mosaic.',
+        items: ['Draw the design.', 'Spread wet mortar.', 'Press in the tesserae.', 'Fill the gaps with grout.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what fills the thin gaps?',
+        opts: ['grout', 'paint', 'glue'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did some artists use glass with gold inside?',
+        opts: ['so mosaics would sparkle in candlelight', 'to make them heavier', 'to make them cheaper'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Material', 'Used for'],
+        rows: [['tesserae', null], ['mortar', null], ['grout', null]],
+        a: [[null, 'making the picture'], [null, 'holding the pieces to the floor or wall'], [null, 'filling the gaps and keeping out water']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Sub</b>way means a way under the ground. <b>Sub</b> means “under.” A <b>sub</b>marine goes …',
+        opts: ['under the sea', 'over the sea', 'beside the sea'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can mosaics last so long?',
+        opts: ['They are made of stone and glass.', 'They are kept in boxes.', 'They are painted every year.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How do ancient mosaics help us learn about the past? Use the text.',
+        a: 'They show daily life, animals, sea creatures and stories, so we can see what people cared about and how they lived long ago.', look: 'what mosaics show and what that teaches' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The writer begins with “Look closely at the dolphins in the photo.” Why is this a good way to begin?',
+        a: 'It gets the reader to look and wonder, and then surprises them by saying the dolphins are made of stone, not paint.', look: 'the opening draws the reader in' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-guitar', subject: 'arts', form: 'Explanation',
+    title: 'How a Guitar Sings',
+    deck: 'Strings, frets and a hollow body: the science of a guitar’s sound',
+    hero: {
+      photo: 'g4-guitar.jpg', credit: 'Photo: Wilfredo Rafael Rodriguez Hernandez, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A musician plucks the strings of a guitar. The holes in its body let the sound out.'
+    },
+    body: [
+      'Pluck a guitar string, and a sound rings out. Press your finger on the string in a different place and pluck again, and the sound changes. A guitar may look simple, but every part of it is designed to make and shape sound.',
+      { h: 'Strings that shake' },
+      'All sound is made by things that <b>vibrate</b>, or shake back and forth very quickly. When you pluck a guitar string, it vibrates hundreds of times every second. The string pushes on the air around it, and the air carries the vibrations to your ears as sound waves.',
+      'Each string makes a different <b>pitch</b>, how high or low a sound is. Three things change the pitch. Thin strings vibrate faster and make higher notes than thick strings. Tight strings make higher notes than loose ones. And short strings make higher notes than long ones. A guitar player tightens or loosens the strings with the tuning pegs to get each one just right.',
+      { fig: '<path class="k" d="M10 76 Q10 40 50 46 Q74 30 96 50 Q120 40 120 76 Q120 112 96 102 Q74 122 50 106 Q10 112 10 76 Z"/><circle class="h" cx="70" cy="76" r="14"/>' +
+          '<rect class="k" x="120" y="68" width="140" height="16"/><path class="t" d="M150 68 V84 M176 68 V84 M200 68 V84 M222 68 V84 M242 68 V84"/><rect class="k" x="260" y="62" width="34" height="28" rx="4"/>' +
+          '<path class="t" d="M30 72 H270 M30 80 H270"/>' +
+          D.label(84, 28, 'sound hole', 74, 64) + D.label(150, 120, 'frets on the neck', 176, 84) + D.label(232, 30, 'tuning pegs', 276, 62) + D.label(10, 130, 'hollow body', 40, 100),
+        tall: 136, cap: 'The main parts of an acoustic guitar.' },
+      { h: 'Frets change the length' },
+      'Along the neck of the guitar are thin metal bars called frets. When a player presses a string down just behind a fret, only part of the string can vibrate. The shorter part vibrates faster, so the note is higher. Moving from fret to fret is like climbing up a musical staircase.',
+      { h: 'A hollow body' },
+      'A string by itself is quiet. The guitar’s hollow wooden body makes it louder. The vibrating strings shake the thin top of the guitar, and the air inside the body starts vibrating too. The sound bounces around inside and comes out through the sound hole, much louder and richer.',
+      { box: 'Try it', text: 'Stretch a rubber band around an open box. Pluck it. Then stretch it tighter and pluck again. Which sound is higher?' }
+    ],
+    guide: { before: 'If you have any stringed instrument, or a rubber band and a box, let the child pluck it. Teach <b>vibrate</b> and <b>pitch</b>. Touch your throat while humming to feel vibration.',
+      after: 'Think of another instrument. How does it make sound vibrate? How does the player make the pitch higher or lower?' },
+    words: [['vibrate', 'to shake back and forth very quickly'], ['pitch', 'how high or low a sound is']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Guitars are wooden.', 'A guitar makes sound with vibrating strings, and its parts change the pitch and make it louder.', 'Music is fun.', 'Rubber bands stretch.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'What makes a higher note? Fill in the chart.', cols: ['Higher note', 'Lower note'],
+        rows: [['thin string', null], ['tight string', null], ['short string', null]],
+        a: [[null, 'thick string'], [null, 'loose string'], [null, 'long string']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where are the frets?',
+        opts: ['on the neck', 'on the body', 'inside the sound hole'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does pressing a string behind a fret make a higher note?',
+        opts: ['The part that vibrates is shorter.', 'The string gets thicker.', 'The guitar gets louder.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Moving from fret to fret is “like climbing up a musical staircase.” This means the notes …',
+        opts: ['go higher step by step', 'get quieter', 'stop'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Sound<b>s</b> and string<b>s</b> end in -s. What does the -s show?',
+        opts: ['more than one', 'something that happened before', 'a person who does something'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does a guitar need a hollow body? Use details from the text.',
+        a: 'A string alone is quiet. The strings shake the thin top, the air inside vibrates, and the sound comes out the sound hole much louder.', look: 'the hollow body makes the sound louder' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'In the “Try it” box, which sound will be higher? Explain why.',
+        a: 'The tighter rubber band will make the higher sound, because tight strings vibrate faster.', look: 'a prediction linked to tightness' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-lighthouses', subject: 'tech', form: 'Explanation',
+    title: 'Light on the Rocks',
+    deck: 'How lighthouses guide ships safely past dangerous coasts',
+    hero: {
+      photo: 'g4-lighthouse.jpg', credit: 'Photo: Michel Rathwell, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'The lighthouse at Peggys Cove, Nova Scotia, stands on smooth granite rock beside the sea.'
+    },
+    body: [
+      'Canada has the longest coastline in the world. Along it are rocks, reefs and sandbars that can rip open the bottom of a ship. Before modern electronics, a sailor at night or in fog had very little to warn them of danger. That is why hundreds of lighthouses were built along Canada’s coasts and the shores of the Great Lakes.',
+      { h: 'A bright beam' },
+      'At the top of a lighthouse is a powerful lamp. Around it is a giant glass <b>lens</b> made of many rings of curved glass. A lamp alone would spread its light in every direction, and most of it would be wasted. The lens bends the light into one strong, narrow beam that can be seen more than 30 kilometres out at sea. In many lighthouses, the lens turns, so the beam sweeps around like the hand of a clock.',
+      { fig: '<path class="k" d="M40 140 L52 40 H76 L88 140 Z"/><rect class="k" x="48" y="22" width="32" height="18"/><path class="k" d="M44 22 L64 6 L84 22"/><circle class="a" cx="64" cy="31" r="5"/>' +
+          '<path class="h" d="M80 24 L290 6 V56 L80 38 Z"/><path class="a" d="M80 31 H290"/>' +
+          '<path class="k" d="M0 140 H130 Q150 128 170 140 H300"/>' +
+          D.label(110, 84, 'the lens turns the light into a beam', 82, 36) + D.label(100, 112, 'tower', 80, 110) + D.label(10, 14, 'lamp', 58, 30),
+        tall: 146, cap: 'A lighthouse sends out a narrow beam of light. Not to scale.' },
+      { h: 'Every light is different' },
+      'If every lighthouse flashed the same way, sailors could not tell which one they were looking at. So each lighthouse has its own pattern. One might flash once every five seconds, while another flashes twice, then stays dark. Sailors look up the pattern on their charts to know exactly where they are. In the daytime, the colour and stripes of the tower help too.',
+      { h: 'Keepers and their families' },
+      'For more than a hundred years, lighthouse keepers lived beside the lights, often on lonely islands. They kept the lamp burning all night, cleaned the lens and sounded a foghorn when fog rolled in. Today, almost all Canadian lighthouses are automatic, and ships use GPS and radar. But lighthouses are still a <b>beacon</b> of safety, and many have become museums.',
+      { box: 'Did you know?', text: 'The lighthouse at Peggys Cove was built in 1915. It is one of the most photographed lighthouses in Canada.' }
+    ],
+    guide: { before: 'Shine a flashlight in a dark room, then through a magnifying glass, and compare the light. Teach <b>lens</b> and <b>beacon</b>. Find Nova Scotia on a map.',
+      after: 'Would you like to be a lighthouse keeper? What would be the best and the hardest parts of the job?' },
+    words: [['lens', 'a curved piece of glass that bends light'], ['beacon', 'a light or signal that warns or guides people']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Nova Scotia has rocks.', 'Lighthouses use bright beams and special patterns to guide ships safely.', 'Fog is grey.', 'GPS is new.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what turns the light into a beam?',
+        opts: ['the lens', 'the tower', 'the rocks'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does each lighthouse have its own flash pattern?',
+        opts: ['so sailors know which lighthouse they see', 'to look pretty', 'to save power'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Then', 'Now'],
+        rows: [['Keepers lived beside the lights.', null], ['Sailors used lighthouses to find their way.', null]],
+        a: [[null, 'Lighthouses are automatic.'], [null, 'Ships also use GPS and radar.']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Light</b>house joins two words. Which word also joins two words?',
+        opts: ['coastline', 'sailor', 'flashes'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The beam sweeps around “like the hand of a clock.” This shows it …',
+        opts: ['turns in a circle', 'tells the time', 'stays still'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did lighthouse keepers have such an important job? Use details from the text.',
+        a: 'They kept the lamp burning all night and sounded the foghorn, so ships would not hit rocks in the dark or in fog.', look: 'their tasks and why they kept ships safe' },
+      { k: 'lines', code: 'C3.5', n: 2, q: 'Why do you think people still care for old lighthouses, even though ships have GPS?',
+        a: 'They are part of Canada’s history, they are beautiful, and they still help as a backup beacon of safety.', look: 'history, beauty or safety' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-road-salt', subject: 'tech', form: 'Explanation',
+    title: 'Why Salt Melts Ice',
+    deck: 'How winter road crews keep streets safe, and what it costs nature',
+    hero: {
+      photo: 'g4-salt-truck.jpg', credit: 'Photo: Michael Pereckas, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'Workers load a truck with salt to spread on snowy streets.'
+    },
+    body: [
+      'After a winter storm, trucks rumble through the streets of Canadian towns, spraying salt onto the roads. Within an hour, icy roads turn wet and slushy, and cars can drive safely again. But how does salt melt ice, when it is still below zero outside?',
+      { h: 'Changing the freezing point' },
+      'Pure water freezes at 0 °C. That temperature is called its <b>freezing point</b>. When salt mixes with water, the salt gets in the way of the water particles as they try to link together into ice. The salty water has to get much colder before it can freeze. So when salt lands on ice, it mixes with the thin layer of water on top and makes salt water. That salt water can stay liquid even when it is colder than 0 °C, so the ice melts.',
+      { fig: '<path class="k" d="M30 70 H290"/>' + [-20, -15, -10, -5, 0, 5].map(function (t) { var x = 50 + (t + 20) * 9.6; return '<path class="k" d="M' + x + ' 64 V76"/><text class="n" x="' + x + '" y="92" text-anchor="middle">' + (t < 0 ? '−' + (-t) : t) + '</text>'; }).join('') +
+          '<circle class="a" cx="242" cy="70" r="6"/><circle class="h" cx="146" cy="70" r="6"/>' +
+          D.label(208, 30, 'pure water freezes', 242, 62) + D.label(40, 30, 'salty water freezes', 146, 62) + '<text class="l" x="170" y="114" text-anchor="middle">temperature in °C</text>',
+        tall: 120, cap: 'Salt water freezes at a lower temperature than pure water.' },
+      { h: 'When salt stops working' },
+      'Road salt works well down to about minus 10 °C. When it is colder than that, salt melts ice very slowly. Then road crews spread sand or gravel instead, which does not melt the ice but gives tires something to grip. Before a storm, some cities spray roads with <b>brine</b>, a mix of salt and water, so ice cannot stick to the road in the first place.',
+      { h: 'The cost of salt' },
+      'Salt keeps people safe, but it causes problems too. It makes cars, bridges and parking garages rust. When the snow melts, salty water runs into streams, lakes and soil. Too much salt can harm fish, frogs and plants along the roadside, and it can sting dogs’ paws. Many cities are now trying to use only as much salt as they need, at exactly the right time.',
+      { box: 'Did you know?', text: 'In some places, road crews add beet juice to their brine. It helps the salt work at colder temperatures, so they can use less of it.' }
+    ],
+    guide: { before: 'Put two ice cubes on two plates. Sprinkle salt on one and watch together while you read. Teach <b>freezing point</b> and <b>brine</b>.',
+      after: 'Should cities use less salt? What could families do instead on their own driveways and sidewalks?' },
+    words: [['freezing point', 'the temperature at which a liquid turns into a solid'], ['brine', 'water with a lot of salt mixed in']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Trucks are loud.', 'Salt melts ice by lowering water’s freezing point, but it can harm nature.', 'Winter is cold.', 'Sand is brown.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the number line. At what temperature does pure water freeze?',
+        opts: ['0 °C', '−10 °C', '5 °C'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do crews use sand when it is very cold?',
+        opts: ['Salt works too slowly, and sand gives tires grip.', 'Sand melts ice faster.', 'Sand is warmer.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Good things about road salt', 'Problems with road salt'],
+        rows: [[null, null], [null, null]],
+        a: [['It melts ice so cars can drive safely.', 'It makes cars and bridges rust.'], ['It works quickly, within an hour.', 'It harms fish, frogs, plants and dogs’ paws.']] },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps of how salt melts ice.',
+        items: ['Salt lands on the ice.', 'It mixes with the thin layer of water.', 'Salty water forms.', 'The salty water stays liquid, and the ice melts.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Road<b>side</b> means the side of the road. What does river<b>side</b> mean?',
+        opts: ['the side of a river', 'a river that is wide', 'inside a river'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Is the writer for road salt, against it, or fair to both sides? How can you tell?',
+        a: 'The writer is fair to both sides. The text explains how salt keeps people safe but also has a section on the problems it causes.', look: 'a judgement about balance with evidence' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does spraying brine before a storm help?',
+        a: 'The salty layer stops ice from sticking to the road, so it is easier to clear.', look: 'stops ice from sticking' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-below-zero', subject: 'math', form: 'Explanation',
+    title: 'Below Zero',
+    deck: 'How to read a thermometer when it is colder than zero',
+    hero: {
+      photo: 'g4-thermometer.jpg', credit: 'Photo: August Geyler, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'An outdoor thermometer covered in frost. The needle points below zero.'
+    },
+    body: [
+      'In much of Canada, winter mornings can be bitterly cold. The radio might say, “It is minus 15 this morning in Winnipeg.” What does minus 15 mean, and how is it different from 15?',
+      { h: 'Reading a thermometer' },
+      'In Canada, we measure temperature in degrees <b>Celsius</b>, written °C. On the Celsius scale, water freezes at 0 °C and boils at 100 °C. A thermometer is a bit like a number line standing on its end. Warmer temperatures are higher up. Colder temperatures are lower down.',
+      'When the temperature drops below zero, we use <b>negative numbers</b>. They are written with a minus sign in front, like −15 °C, and we say “minus 15.” The bigger the number after the minus sign, the colder it is. So −20 °C is colder than −5 °C, even though 20 is bigger than 5.',
+      { fig: '<rect class="k" x="40" y="10" width="20" height="120" rx="10"/><circle class="k" cx="50" cy="138" r="12"/><rect class="h" x="44" y="100" width="12" height="34"/>' +
+          [10, 5, 0, -5, -10, -15, -20].map(function (t, i) { var y = 20 + i * 16; return '<path class="k" d="M60 ' + y + ' H70"/><text class="n" x="76" y="' + (y + 4) + '">' + (t < 0 ? '−' + (-t) : t) + ' °C</text>'; }).join('') +
+          D.label(130, 56, 'Monday afternoon: 0 °C', 112, 52) + D.label(130, 104, 'Monday morning: −15 °C', 116, 100) + D.label(130, 122, 'Tuesday morning: −20 °C', 116, 118),
+        tall: 152, cap: 'A Celsius thermometer, like a number line standing up.' },
+      { h: 'How much did it change?' },
+      'Suppose it is −15 °C on Monday morning and 0 °C by the afternoon. How much warmer did it get? Count up the thermometer from −15 to 0: that is 15 degrees. If it goes from −5 °C to 3 °C, count 5 degrees up to zero, then 3 more. That is a rise of 8 degrees. When you cross zero, it helps to stop at zero and count in two parts.',
+      'Temperatures can drop, too. If it is 4 °C at noon and −6 °C at midnight, count down 4 degrees to zero, then 6 more. The temperature fell 10 degrees.',
+      { box: 'Wind chill', text: 'On a windy day, it can feel much colder than the thermometer shows. Weather reports give a wind chill number, such as −30, to tell you how cold it will feel on your skin.' },
+      'Knowing how to read the temperature helps you dress for the weather. Below −25, with wind, uncovered skin can freeze in minutes, so wear a hat, mittens and a scarf. The coldest temperature ever recorded in Canada was −63 °C, in Snag, Yukon, in 1947!'
+    ],
+    guide: { before: 'Look at a real thermometer or a weather app together. Teach <b>Celsius</b> and <b>negative number</b>. Draw a number line from −20 to 10 on paper.',
+      after: 'Check the temperature each morning for a week and record it. Which day was the coldest? How much did it change from the coldest day to the warmest?' },
+    words: [['Celsius', 'the scale we use in Canada to measure temperature'], ['negative numbers', 'numbers less than zero, written with a minus sign']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Winnipeg is cold.', 'Temperatures below zero are negative numbers, and you can count on a thermometer to find changes.', 'Water boils at 100 °C.', 'Wear a hat.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the thermometer. Which morning was colder?',
+        opts: ['Tuesday', 'Monday', 'They were the same.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Which temperature is the warmest?',
+        opts: ['−5 °C', '−10 °C', '−20 °C'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'How much did the temperature rise? Fill in the chart.', cols: ['Start', 'End', 'Rise'],
+        rows: [['−15 °C', '0 °C', null], ['−5 °C', '3 °C', null], ['−10 °C', '2 °C', null]],
+        a: [[null, null, '15 degrees'], [null, null, '8 degrees'], [null, null, '12 degrees']] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What does the box “Wind chill” explain?',
+        opts: ['how cold it feels on a windy day', 'how to read a thermometer', 'when water boils'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Un</b>covered skin is skin that is …',
+        opts: ['not covered', 'covered twice', 'covered well'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is −20 °C colder than −5 °C, even though 20 is bigger than 5? Use the text.',
+        a: 'Below zero, the bigger the number after the minus sign, the farther below zero it is, so it is colder. On a thermometer, −20 is lower down.', look: 'farther below zero means colder' },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'The text says to “stop at zero and count in two parts.” How does this strategy help you?',
+        a: 'It breaks a hard question into two easy counts, one up to zero and one from zero, so I do not make mistakes.', look: 'explains the strategy in their own words' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-corn-maze', subject: 'story', form: 'Short story',
+    title: 'Lost in the Corn',
+    deck: 'Two siblings, one corn maze, and a smart way out',
+    hero: {
+      photo: 'g4-corn-maze.jpg', credit: 'Photo: Hugho226, CC0, Wikimedia Commons', focus: '50% 60%',
+      tall: 220,
+      cap: 'A narrow path between tall walls of corn in a corn maze.'
+    },
+    body: [
+      'The sign at the entrance said, “Average time: 30 minutes.” Ama looked at her little brother, Kofi, who was already running ahead. “Wait for me!” she called, and plunged into the corn after him.',
+      'At first it was fun. The paths twisted left and right, and the corn rose high above their heads, rustling in the October wind. They laughed when they hit a dead end, turned around and laughed again at the next one.',
+      { h: 'Going in circles' },
+      'After a while, Kofi stopped laughing. “We passed that broken stalk before,” he said. “We’re going in circles.” Every path looked the same: green walls, a strip of blue sky, and dirt under their boots. Kofi’s lip began to shake. “What if we never get out?”',
+      'Ama’s heart was pounding too, but she took a deep breath. She remembered something her uncle had told her about <b>mazes</b>. “Put your right hand on the wall,” he had said, “and never let go. Keep following the right side, and you will find the way out.”',
+      { fig: '<rect class="k" x="40" y="10" width="220" height="130"/><path class="k" d="M40 60 H120 M160 10 V80 M200 50 H260 M90 100 H200 V140 M120 60 V100"/><path class="t" d="M40 120 H10 M260 30 H290"/>' +
+          '<path class="d" d="M50 124 H70 V80 H140 V30 H180 V40 H230 V30 H280"/>' +
+          '<text class="n" x="10" y="114">in</text><text class="n" x="266" y="22">out</text>',
+        tall: 150, cap: 'A small maze. The dashed line follows the right-hand wall to the exit.' },
+      { h: 'Right hand on the wall' },
+      '“Hold my left hand,” Ama told Kofi. She reached out with her right hand and brushed the corn leaves beside her. They walked slowly, turning whenever the right wall turned. It felt like the long way, and twice it took them into dead ends, but she did not let go. Then Kofi pointed. Above the corn, a red barn roof peeked out. It was a <b>landmark</b> she remembered seeing near the exit.',
+      'Three turns later, the corn opened up. There was the exit, the barn and their parents waving from a picnic table.',
+      '“Forty-two minutes,” said Dad, checking his watch. “Only twelve minutes slower than average.”',
+      'Kofi grinned. “Ama got us out. She’s a maze genius.” Ama just smiled. She did not tell him how scared she had been.'
+    ],
+    guide: { before: 'Draw a simple maze on paper and try it together. Teach <b>maze</b> and <b>landmark</b>. Ask: what would you do if you got lost?',
+      after: 'Ama stayed calm even though she was scared. When is a time you stayed calm when things were hard? What helped you?' },
+    words: [['mazes', 'puzzles made of twisting paths with only one way out'], ['landmark', 'something easy to see that helps you know where you are']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells this story?',
+        opts: ['Ama, using “I”', 'a narrator outside the story, using “she” and “he”', 'Kofi', 'Dad'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the story map.', cols: ['Part of the story', 'What happens'],
+        rows: [['Problem', null], ['Turning point', null], ['Solution', null]],
+        a: [[null, 'Ama and Kofi get lost in the corn maze and go in circles.'], [null, 'Ama remembers her uncle’s advice about keeping her right hand on the wall.'], [null, 'They follow the right side, spot the barn roof and find the exit.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the dashed line show?',
+        opts: ['the path along the right-hand wall', 'the shortest path', 'a dead end'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How did the red barn roof help?',
+        opts: ['It was a landmark near the exit.', 'It showed the time.', 'It blocked the wind.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How much longer than average did they take?',
+        opts: ['12 minutes', '42 minutes', '30 minutes'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Dead end</b> means a path that …',
+        opts: ['does not go anywhere', 'is very long', 'leads outside'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How do you know Ama was scared, even though she acted calm? Use details from the story.',
+        a: 'Her heart was pounding and she took a deep breath. At the end, she did not tell Kofi how scared she had been.', look: 'two clues about her hidden feelings' },
+      { k: 'lines', code: 'C3.1', n: 2, q: 'Kofi calls Ama “a maze genius.” What does this show about how he feels about her?',
+        a: 'He is proud of her and thankful that she got them out.', look: 'pride or gratitude' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-ice-storm', subject: 'story', form: 'Short story',
+    title: 'The Week the Ice Came',
+    deck: 'A grandmother remembers the great ice storm of 1998',
+    hero: {
+      photo: 'g4-ice-storm.jpg', credit: 'Photo: J. Jensenius, NOAA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Trees and power lines bend under a thick coat of ice after the ice storm of January 1998.'
+    },
+    body: [
+      'The power went out during supper, right in the middle of my spaghetti. The house went dark and quiet, and the fridge stopped humming. Outside, rain tapped on the windows. “Freezing rain,” said Grandma, lighting a candle. “It reminds me of the ice storm.”',
+      '“What ice storm?” I asked.',
+      'Grandma pulled her chair closer to the candle. “January 1998,” she said. “I lived on a farm near Cornwall then. It rained for five days, but it was so cold that every drop froze the moment it touched anything.”',
+      { fig: '<rect class="t" x="10" y="10" width="280" height="36"/><rect class="h" x="10" y="46" width="280" height="40"/><rect class="t" x="10" y="86" width="280" height="40"/><path class="k" d="M10 132 H290"/>' +
+          '<text class="n" x="24" y="32">cold air: snow falls</text><text class="lb" x="24" y="70">warm air: the snow melts into rain</text><text class="n" x="24" y="110">cold air near the ground</text>' +
+          '<text class="l" x="150" y="148" text-anchor="middle">The rain freezes when it lands.</text>',
+        tall: 152, cap: 'How freezing rain forms. Not to scale.' },
+      { h: 'Glass everywhere' },
+      '“In the morning, the whole world was made of glass,” she went on. “Every branch, every fence and every wire was coated in ice, thick as my wrist. Trees cracked like gunshots all night long as branches snapped under the weight. Then the big steel towers that carried the power lines crumpled like paper. Millions of people had no electricity, some of us for weeks.”',
+      '“Weeks?” I said. “How did you stay warm?”',
+      { h: 'Neighbours helping neighbours' },
+      '“We had a wood stove, thank goodness. The neighbours down the road had none, so they came to stay with us. Eleven people and three dogs in one farmhouse!” Grandma laughed. “We cooked on the stove and played cards by lamplight. Your grandpa and the other farmers shared a <b>generator</b> to keep the cows milked. Soldiers came from all over Canada to help clear the roads and fix the lines.”',
+      'She was quiet for a moment. “It was hard,” she said. “But I have never seen people take care of each other like that.”',
+      'Just then, the lights flickered back on. The fridge hummed. I was almost sorry. I wanted to hear more about the week the world turned to glass, and about the <b>freezing rain</b> that brought everyone together.'
+    ],
+    guide: { before: 'Find Cornwall, Ontario, on a map. Teach <b>freezing rain</b> and <b>generator</b>. Look at the diagram and talk about how rain can freeze when it lands.',
+      after: 'Ask an older person in your family to tell you about a big storm or event they remember. What questions would you ask them?' },
+    words: [['freezing rain', 'rain that freezes as soon as it touches the cold ground or other surfaces'], ['generator', 'a machine that makes electricity from fuel']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'Who tells most of the story about the ice storm?',
+        opts: ['Grandma, in her own words', 'a soldier', 'the farmer next door', 'a news reporter'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does the snow melt into rain?',
+        opts: ['in the warm air layer', 'on the ground', 'in the top cold layer'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“The whole world was made of glass.” What does Grandma mean?',
+        opts: ['Everything was coated in shiny, clear ice.', 'Everything broke.', 'People built glass houses.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
+        rows: [['Freezing rain fell for five days.', null], ['The power towers crumpled.', null], ['The neighbours had no wood stove.', null]],
+        a: [[null, 'Everything was coated in thick ice.'], [null, 'Millions of people had no electricity.'], [null, 'They came to stay at Grandma’s farm.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the farmers need a generator?',
+        opts: ['to keep the cows milked without power', 'to melt the ice', 'to watch TV'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Lamp</b>light is light from a lamp. What is <b>candle</b>light?',
+        opts: ['light from a candle', 'a kind of candle', 'a light that is off'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Grandma says, “I have never seen people take care of each other like that.” Give two examples from the story.',
+        a: 'The neighbours came to stay at Grandma’s house, and the farmers shared a generator. Soldiers also came to clear roads and fix the lines.', look: 'two examples of people helping' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'Why was the narrator “almost sorry” when the power came back on?',
+        a: 'Because Grandma would stop telling her story, and the narrator wanted to hear more.', look: 'wanting the story to continue' }
+    ]
+  });
 })();

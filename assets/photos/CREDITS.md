@@ -69,3 +69,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-paper-cranes.jpg` | Two origami paper cranes | Laitche | Public domain | https://commons.wikimedia.org/wiki/File:Cranes_made_by_Origami_paper.jpg |
 | `g4-school-garden.jpg` | Raised garden beds in front of a school | Libby Kokes | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Raised_Beds_Out_Front_of_School.jpg |
 | `g4-great-horned-owl.jpg` | A great horned owl on a branch | Paul Danese | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20260808_great_horned_owl_cedar_hill_cemetery_PD03701.jpg |
+| `g4-northern-lights.jpg` | The northern lights over a tent near Yellowknife | raymond22112376 | Public domain | https://commons.wikimedia.org/wiki/File:2018_Aurora_Yellowknife_Canada.jpg |
+| `g4-niagara-falls.jpg` | The Horseshoe Falls at Niagara Falls | Helen Filatova | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Niagara-Falls-Horseshoe-Falls-view.jpg |
+| `g4-salmon.jpg` | Sockeye salmon leaping up a waterfall | Marvina Munch, U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Adult_sockeye_salmon_encounter_a_waterfall_on_their_way_up_river_to_spawn.jpg |
+| `g4-snowflakes.jpg` | Snowflakes photographed by Wilson Bentley | Wilson Bentley | Public domain | https://commons.wikimedia.org/wiki/File:SnowflakesWilsonBentley.jpg |
+| `g4-seaway-lock.jpg` | A ship inside a lock on the St. Lawrence Seaway | U.S. Navy | Public domain | https://commons.wikimedia.org/wiki/File:Flickr_-_Official_U.S._Navy_Imagery_-_USS_Fort_Worth_transits_the_St._Lawrence_Seaway_lock_system..jpg |
+| `g4-rideau-skateway.jpg` | Skaters on the Rideau Canal in Ottawa | Ahunt | CC0 | https://commons.wikimedia.org/wiki/File:Rideau_Canal_-_Skaters_on_the_Rideau_Canal_2032.jpg |
+| `g4-moraine-lake.jpg` | Moraine Lake in Banff National Park | Scruffdog1 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Picture_perfect_Moraine_Lake.jpg |
+| `g4-igloo.jpg` | Inuinnait men building a snow house, early 1900s | Canadian Museum of History | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Copper_Inuit_building_an_igloo_(37011).jpg |
+| `g4-pyramids.jpg` | The pyramids of Giza, Egypt | Ricardo Liberato | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg |
+| `g4-tenochtitlan.jpg` | A model of the centre of Tenochtitlan | Steve Cadman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Model_of_Tenochtitlan-RZ.jpg |
+| `g4-castle.jpg` | Pembroke Castle in Wales | JKMMX | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pembroke_Castle_-_June_2011.jpg |
+| `g4-three-sisters.jpg` | A Three Sisters garden of corn, beans and squash | U.S. National Park Service | Public domain | https://commons.wikimedia.org/wiki/File:The_Three_Sisters_(corn,_beans_and_squash)_Garden_is_located_in_the_Monument's_Ojibwe_Village_(2cc4c514-1dd8-b71b-0b53-7de19382adff).jpg |
+| `g4-brushing-teeth.jpg` | Children learning how to brush their teeth | Emmitt J. Hawks, U.S. Navy | Public domain | https://commons.wikimedia.org/wiki/File:US_Navy_080829-N-9774H-068_Interior_Communications_Electrician_3rd_Class_James_Thomas_teaches_children_how_to_properly_brush_their_teeth.jpg |
+| `g4-mosaic.jpg` | An ancient mosaic of dolphins from Halicarnassus | 14GTR | CC0 | https://commons.wikimedia.org/wiki/File:Mosaic_of_dolphins_from_Halicarnassus,_British_Museum_02.jpg |
+| `g4-guitar.jpg` | A hand playing the strings of a guitar | Wilfredo Rafael Rodriguez Hernandez | CC0 | https://commons.wikimedia.org/wiki/File:Man_playing_an_acoustic_brazilian_guitar_(Violão)_on_Marco_Zero_Square,_Refice,_Pernambuco,_Brazil.jpg |
+| `g4-lighthouse.jpg` | The lighthouse at Peggys Cove, Nova Scotia | Michel Rathwell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Peggys_Cove_Lighthouse_(39030979315).jpg |
+| `g4-salt-truck.jpg` | Workers spreading salt from a truck in winter | Michael Pereckas | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Salt_truck_Milwaukee.jpg |
+| `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
+| `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
+| `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
