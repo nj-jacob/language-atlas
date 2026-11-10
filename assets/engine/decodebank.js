@@ -1452,9 +1452,9 @@ Atlas.decodable.add({
   heart: ['double', 'trouble'],
   words: ['table', 'apple', 'little', 'puddle', 'candle', 'bubble', 'turtle', 'purple', 'simple', 'giggle', 'needle', 'eagle', 'maple', 'bottle'],
   title: 'The Little Turtle',
-  text: ['After a big rain, Lucy and her little brother Sam went for a walk by the pond. Their boots made a big splash in every puddle.',
+  text: ['After a big rain, Lucy and her little brother Sam went for a walk by the pond.',
     'In one puddle, Sam saw a little turtle. It had a dark shell with yellow lines on it. "It is in trouble," said Sam. "It is too far from the pond."',
-    'Lucy did not grab it. She held the turtle by the sides of its shell, nice and still. She set it down by the pond. The turtle sat. Then it gave a little wiggle and slid in.',
+    'Lucy did not grab it. She held the turtle by the sides of its shell. She set it down by the pond. The turtle sat. Then it gave a little wiggle and slid in.',
     'Sam began to giggle. A line of little bubbles came up, and then the pond was still. At home, Lucy and Sam sat at the table with apple slices and drew the little turtle.'],
   pic: ['cloud', 'pond', 'rock'],
   qs: [

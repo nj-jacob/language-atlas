@@ -225,9 +225,9 @@
   /* one plain, calm look for every page (Noel): the site's own accent and face, an open book, no ornaments at the edges */
   var PLAIN = { acc: 'var(--accent)', font: 'var(--display)', mark: '<path d="M8 16 Q18 12 28 17 Q38 12 48 16 V44 Q38 40 28 45 Q18 40 8 44 Z M28 17 V45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>' };
   function themeOf() { return PLAIN; }
-  /* Draw the page ('page' or 'key') into el, a .ws-sheet box. A long story is set a little smaller, down to 80%.
+  /* Draw the page ('page' or 'key') into el, a .ws-sheet box. A long story is set a little smaller, down to 77%.
      Returns whether anything still runs off the page. */
-  var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8];
+  var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8, 0.77];
   D.render = function (el, p, side) {
     var th = themeOf(p);
     el.innerHTML = (side === 'key' ? key : page)(p, th);
