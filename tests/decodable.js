@@ -11,45 +11,75 @@
 const fs = require('fs'), path = require('path'), vm = require('vm');
 
 const CONS = 'b c d f g h j k l m n p r s t v w x y z'.split(' ');
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 /* the steps, in teaching order, and what each one teaches */
 const STEPS = [
   ['short-a', ['a'].concat(CONS)], ['short-i', ['i']], ['short-o', ['o']], ['short-u', ['u']], ['short-e', ['e']],
   ['short-mix', ['qu']], ['sh', ['sh']], ['ch', ['ch']], ['th', ['th']], ['wh', ['wh']], ['ck', ['ck']],
   ['floss', ['ff', 'll', 'ss', 'zz']], ['all', ['all']], ['ng', ['ang', 'ing', 'ong', 'ung']], ['nk', ['ank', 'ink', 'onk', 'unk']],
   ['plural-s', ['+s']], ['blend-start', ['blend-start']], ['blend-end', ['blend-end']], ['blend-three', ['blend-three']],
-  ['suffix-ed', ['+ed']], ['suffix-ing', ['+ing']], ['suffix-es', ['+es']], ['tch', ['tch']], ['dge', ['dge']],
+  ['oll-ull', ['oll', 'ull']], ['suffix-ed', ['+ed']], ['suffix-ing', ['+ing']], ['suffix-es', ['+es']], ['tch', ['tch']], ['dge', ['dge']],
   ['two-closed', ['two-syllables']], ['a-e', ['a_e']], ['i-e', ['i_e']], ['o-e', ['o_e']], ['u-e', ['u_e', 'e_e']],
-  ['open', ['open']], ['y-vowel', ['y-vowel']], ['soft-cg', ['soft-c', 'soft-g']],
-  ['ar', ['ar']], ['or', ['or', 'ore']], ['er-ir-ur', ['er', 'ir', 'ur']],
-  ['ai-ay', ['ai', 'ay']], ['ee-ea', ['ee', 'ea', 'ey']], ['oa-ow', ['oa', 'ow', 'oe']], ['igh-ie', ['igh', 'ie']],
-  ['oo-moon', ['oo']], ['oo-book', ['oo-book']], ['ou-ow', ['ou']], ['oi-oy', ['oi', 'oy']], ['au-aw', ['au', 'aw']], ['ew-ue', ['ew', 'ue']],
-  ['cle', ['-le']], ['kind-old', ['ind', 'ild', 'old', 'olt']], ['silent', ['kn', 'wr', 'gn', 'mb']],
-  ['prefix', ['un+', 're+']], ['suffix-more', ['+er', '+est', '+ful', '+less', '+ly']]
+  ['open', ['open']], ['y-vowel', ['y-vowel']], ['soft-cg', ['soft-c', 'soft-g']], ['ph', ['ph']],
+  ['ar', ['ar']], ['or', ['or', 'ore']], ['er-ir-ur', ['er', 'ir', 'ur']], ['air-are', ['air', 'are', 'ear-air']],
+  ['ai-ay', ['ai', 'ay']], ['ee-ea', ['ee', 'ea', 'ey']], ['ea-bread', ['ea-short']], ['oa-ow', ['oa', 'ow', 'oe']], ['igh-ie', ['igh', 'ie']],
+  ['oo-moon', ['oo']], ['oo-book', ['oo-book']], ['ou-ow', ['ou']], ['oi-oy', ['oi', 'oy']], ['au-aw', ['au', 'aw', 'augh']], ['ew-ue', ['ew', 'ue', 'ui']],
+  ['cle', ['-le']], ['kind-old', ['ind', 'ild', 'old', 'olt', 'ost']], ['silent', ['kn', 'wr', 'gn', 'mb']],
+  ['prefix', ['un+', 're+', 'dis+', 'in+']], ['suffix-more', ['+er', '+est', '+ful', '+less', '+ly']], ['y-to-i', ['y-i']],
+  /* Grade 2: the less common spellings, and more prefixes and suffixes */
+  ['er-spellings', ['ar-er', 'or-er', 'our-er']], ['ei-eigh', ['eigh', 'ei', 'ey-a']], ['ou-ough', ['ou-soup', 'ough']],
+  ['ch-gh', ['ch-sh', 'ch-k', 'gh']], ['tion', ['tion', 'sion']], ['affix-more', ['mis+', 'pre+', '+ness', '+ish', '+able']],
+  /* Grade 3: longer words, the schwa, and Grade 3 prefixes and suffixes */
+  ['schwa', ['schwa']], ['long-words', ['long-words']],
+  ['prefix-g3', ['over+', 'under+', 'sub+', 'mid+', 'non+', 'trans+', 'inter+', 'anti+', 'post+']], ['suffix-g3', ['+ic', '+al', '+ous', '+ive']]
 ];
+/* words with a schwa (the unstressed "uh" in about, sofa, Canada): they can be read the regular way too, but count for the schwa step */
+const SCHWA = new Set(('about ago alone along around away awake asleep ahead across afraid adult banana sofa panda extra Canada camera zebra tuba ' +
+  'pasta soda comma gorilla vanilla koala agenda tundra canoe parka Alberta Manitoba Nova Ontario').toLowerCase().split(' '));
+/* words whose spelling is read a less common way (bread, roll, school ...): they are read only that way, from the step that teaches it */
+const SPECIAL = {};
+Object.entries({
+  oll: 'roll toll poll troll stroll scroll', ull: 'full pull bull',
+  'ea-short': 'head bread dead ready heavy feather weather leather sweater breakfast instead spread thread health breath sweat deaf great break steak',
+  ui: 'fruit suit juice bruise cruise suitcase', 'ear-air': 'bear pear wear swear', ost: 'most post host almost poster postcard',
+  'ar-er': 'dollar collar cellar cedar polar solar lunar', 'or-er': 'doctor actor visitor tractor sailor motor mirror editor inventor',
+  'our-er': 'colour harbour favour flavour labour rumour humour vapour armour odour',
+  ei: 'vein rein reindeer veil beige', 'ey-a': 'grey prey they obey hey whey convey survey',
+  'ou-soup': 'soup group youth coupon caribou toucan',
+  'ch-sh': 'chef machine chalet parachute brochure chute', 'ch-k': 'school chorus echo stomach ache anchor character chemist chord scheme orchestra mechanic',
+  gh: 'ghost ghoul spaghetti'
+}).forEach(([u, ws]) => ws.split(' ').forEach(w => { SPECIAL[w] = u; }));
+/* the spelling units a word is split into (the less common readings above come only from their own words) */
+const SPECIAL_UNITS = new Set(Object.values(SPECIAL));
+const UNITS = [].concat(...STEPS.map(s => s[1])).filter(u => /^[a-z]+$/.test(u) && !CONS.includes(u) && !VOWELS.includes(u) && !SPECIAL_UNITS.has(u) && u !== 'open');
 /* steps that review earlier units (no new unit to find): their warm-up words must use the units they name */
 const REVIEW = { 'short-mix': ['a', 'e', 'i', 'o', 'u'], 'oo-book': ['oo'] };
-const VOWELS = ['a', 'e', 'i', 'o', 'u'];
-const UNITS = [].concat(...STEPS.map(s => s[1])).filter(u => /^[a-z]+$/.test(u) && !CONS.includes(u) && !VOWELS.includes(u));
+/* a step about longer words: its target words have 3 or more syllables */
+const SYLLABLES = { 'long-words': 3 };
+
 /* units that sound a vowel (a syllable each) */
 const VOWEL_UNITS = new Set(['a', 'e', 'i', 'o', 'u', 'all', 'ang', 'ing', 'ong', 'ung', 'ank', 'ink', 'onk', 'unk', 'ar', 'or', 'ore', 'er', 'ir', 'ur',
-  'ai', 'ay', 'ee', 'ea', 'ey', 'oa', 'ow', 'oe', 'igh', 'ie', 'oo', 'ou', 'oi', 'oy', 'au', 'aw', 'ew', 'ue', 'ind', 'ild', 'old', 'olt']);
+  'ai', 'ay', 'ee', 'ea', 'ey', 'oa', 'ow', 'oe', 'igh', 'ie', 'oo', 'ou', 'oi', 'oy', 'au', 'aw', 'ew', 'ue', 'ind', 'ild', 'old', 'olt',
+  'augh', 'air', 'are', 'eigh', 'ough', 'tion', 'sion']);
 const CLE = /(b|c|d|f|g|k|p|t|z)le$/;
 
 /* split a word (no endings) into units, longest first. Returns the units and the rules it needs, or null. */
 function units(w) {
+  if (SPECIAL[w]) return { out: [SPECIAL[w]], need: new Set() };
   const out = [], need = new Set();
   let s = w, tail = null;
   if (CLE.test(s) && s.length > 3) { tail = s.slice(-3); s = s.slice(0, -3); need.add('-le'); }
   let i = 0;
   while (i < s.length) {
     let u = null;
-    for (const len of [3, 2]) {
+    for (const len of [4, 3, 2]) {
       const c = s.slice(i, i + len);
       if (!UNITS.includes(c)) continue;
       if (c === 'gn' && i > 0) continue;
       if (c === 'mb' && i + 2 < s.length) continue;
       if ((c === 'kn' || c === 'wr') && i > 0) continue;
-      if (c === 'ore' && i + 3 < s.length) continue;
+      if ((c === 'ore' || c === 'are') && i + 3 < s.length) continue;
+      if (c === 'ough' && s[i + 4] !== 't') continue;
       if (c === 'ie' && i + 2 < s.length) continue;
       if ((c === 'ff' || c === 'll' || c === 'ss' || c === 'zz') && i + 2 < s.length) continue;
       u = c; break;
@@ -87,7 +117,7 @@ function units(w) {
   const vs = out.map(isV), count = vs.filter(Boolean).length;
   if (!count) return null;
   /* two vowel units side by side do not make sense here (lion, poem): leave such words out */
-  for (let k = 1; k < out.length; k++) if (vs[k] && vs[k - 1] && !CLE.test(out[k]) && /[aeiouy]$/.test(out[k - 1].replace(/_e$/, 'e'))) return null;
+  for (let k = 1; k < out.length; k++) if (vs[k] && vs[k - 1] && /^[aeiouy]/.test(out[k]) && /[aeiouy]$/.test(out[k - 1].replace(/_e$/, 'e'))) return null;
   if (count > 1) need.add('two-syllables');
   /* a lone vowel letter ending a word or a syllable before -le: open syllable */
   if (VOWELS.includes(out[out.length - 1]) || (tail && VOWELS.includes(out[out.length - 2]))) need.add('open');
@@ -100,19 +130,22 @@ function units(w) {
   return { out, need };
 }
 /* every reading of a word: as it is, or a base with endings taken off (hopping: hop; baking: bake; boxes: box) */
-const SUFFIX = ['s', 'es', 'ed', 'ing', 'er', 'est', 'ful', 'less', 'ly'];
+const SUFFIX = ['s', 'es', 'ed', 'ing', 'er', 'est', 'ful', 'less', 'ly', 'ness', 'ish', 'able', 'ic', 'al', 'ous', 'ive'];
 function readings(w, depth) {
   const all = [];
   const u = units(w);
   if (u) all.push({ base: w, out: u.out, need: u.need });
+  if (SCHWA.has(w)) all.push({ base: w, out: ['schwa'], need: new Set() });
   if (depth > 2) return all;
-  for (const p of ['un', 're']) if (w.startsWith(p) && w.length > p.length + 2) readings(w.slice(p.length), depth + 1).forEach(r => all.push({ ...r, need: new Set([...r.need, p + '+']) }));
+  for (const p of ['un', 're', 'dis', 'in', 'mis', 'pre', 'over', 'under', 'sub', 'mid', 'non', 'trans', 'inter', 'anti', 'post']) if (w.startsWith(p) && w.length > p.length + 2) readings(w.slice(p.length), depth + 1).forEach(r => all.push({ ...r, need: new Set([...r.need, p + '+']) }));
   if (w.endsWith("'s")) readings(w.slice(0, -2), depth + 1).forEach(r => all.push({ ...r, need: new Set([...r.need, '+s']) }));
   for (const sf of SUFFIX) {
     if (!w.endsWith(sf) || w.length < sf.length + 2) continue;
     const stem = w.slice(0, -sf.length), bases = [stem];
+    /* y changes to i before an ending (cries, tried, happier, happily) */
+    if (/i$/.test(stem) && sf !== 'ing' && sf !== 's') readings(stem.slice(0, -1) + 'y', depth + 1).forEach(r => all.push({ ...r, need: new Set([...r.need, '+' + sf, 'y-i']) }));
     if (/([bdgmnprt])\1$/.test(stem)) bases.push(stem.slice(0, -1));
-    if (/^(ed|ing|er|est)$/.test(sf)) bases.push(stem + 'e');
+    if (/^(ed|ing|er|est|able|ous|ive|al)$/.test(sf)) bases.push(stem + 'e');
     if (sf === 'es' && !/(s|x|z|ch|sh)$/.test(stem)) continue;
     if (sf === 's' && /(s|x|z|ch|sh)$/.test(stem)) continue;
     for (const b of bases) readings(b, depth + 1).forEach(r => all.push({ ...r, need: new Set([...r.need, '+' + sf]) }));
@@ -123,12 +156,12 @@ const STEP_OF = {};
 STEPS.forEach((s, i) => s[1].forEach(u => { STEP_OF[u] = i; }));
 /* the step at which a word becomes decodable (and the units and rules of that reading), or null */
 /* words that look regular but are not sounded out the regular way: they must be taught as heart words */
-const IRREGULAR = new Set(('a the i of to do two who into onto was put push pull full bull son ton won from come some done gone none one once give have live love glove ' +
-  'dove shove move prove lose whose what where there here were are said says they their your you could would should friend does any many again against been ' +
-  'both buy eye laugh great break steak bear pear wear head bread dead ready heart earth learn early search heard water want wash watch wasp swan swap squash ' +
+const IRREGULAR = new Set(('a the i of to do two who into onto was put push son ton won from come some done gone none one once give have live love glove ' +
+  'dove shove move prove lose whose what where there here were are said says their your you could would should friend does any many again against been ' +
+  'both buy eye laugh heart earth learn early search heard water want wash watch wasp swan swap squash ' +
   'war warm word work world worm walk talk chalk salt also always almost half calf door floor blood flood pretty busy women sugar sure people only other mother ' +
-  'brother another nothing month money honey front wolf island listen often four pour young touch country cousin double trouble soup group through grey obey ' +
-  'shoe goes says ski pizza father whole hour our oven open over most post ghost even every very').split(' '));
+  'brother another nothing month money honey front wolf island listen often four pour young touch country cousin double trouble through ' +
+  'shoe goes says ski pizza father whole hour our oven open over even every very').split(' '));
 /* every way the word can be sounded out: the step it needs and the units and rules it uses */
 function ways(word) {
   const w = word.toLowerCase();
@@ -144,6 +177,11 @@ function words(text) {
 /* words a question may use besides the page's own (a grown-up reads the question with the child) */
 const ASK = new Set('circle draw write number yes no who what where why how did does do the a is was in to and it of on for picture words word true not first next last order sentence story'.split(' '));
 
+/* about how many syllables a word has: groups of vowel letters, less a silent e at the end (cake 1, Canada 3, little 2) */
+function syllables(w) {
+  const lw = w.toLowerCase(), n = (lw.match(/[aeiouy]+/g) || []).length;
+  return Math.max(1, n - (/[^aeiouyl]e$|[^aeiouy]es$/.test(lw) && !/le$/.test(lw) ? 1 : 0));
+}
 /* the pages, from assets/engine/decodebank.js (or, while writing, from a folder of one file per page, in name order) */
 function load(root, dir) {
   const list = [];
@@ -197,7 +235,9 @@ function checkStory(p, si, at, heart, problems) {
   const ok = (w, extra) => { const lw = w.toLowerCase(); if (heart.has(lw) || (extra && extra.has(lw))) return true; const r = when(w); return r && r.at <= at; };
   const kind = p.blend, later = kind ? KINDS.slice(KINDS.indexOf(kind) + 1) : [];
   if (kind && !KINDS.includes(kind)) problems.push(where + ': blend must be l, r or s');
-  const target = w => ways(w).some(r => r.at <= at && r.used.some(u => (review || fresh).includes(u))) && (!kind || blendKind(w) === kind);
+  const long = SYLLABLES[p.id];
+  const target = long ? w => ok(w) && syllables(w) >= long
+    : w => ways(w).some(r => r.at <= at && r.used.some(u => (review || fresh).includes(u))) && (!kind || blendKind(w) === kind);
   if (!Array.isArray(p.words) || p.words.length < 8) problems.push(where + ': needs 8 or more warm-up words');
   (p.words || []).forEach(w => { if (!target(w)) problems.push(where + ': warm-up word "' + w + '" ' + (ok(w) ? 'does not use this step\'s ' + (review ? 'sounds' : 'new spelling') : 'cannot be sounded out yet')); });
   const text = [p.title].concat(p.text).join(' ');
