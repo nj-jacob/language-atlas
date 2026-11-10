@@ -258,6 +258,846 @@ Atlas.decodable.more('short-mix', {
   ]
 });
 Atlas.decodable.add({
+  id: 'cons-b', band: 'K', name: 'Consonant b', focus: ['b'], key: 'bat', mark: 'b',
+  heart: [],
+  words: ['bat', 'tab', 'cub', 'bib', 'bed', 'bug', 'big', 'bun', 'rib', 'job', 'web', 'tub', 'cab', 'sob'],
+  title: 'Ben and the Big Bug',
+  text: ['Ben got in bed. A big bug sat on the bed. Ben did not sob. He had a job to do.',
+    'Ben got a tub. He put the tub on the bug. The bug is in the tub!',
+    'Dad and Ben set the bug on a bud. Ben got in bed. The bug did not!'],
+  pic: ['bed', 'bug', 'flower'],
+  qs: [
+    { k: 'yn', q: 'Ben was mad at the bug.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'What did Ben put on the bug?', opts: ['a tub', 'a bag', 'a bun'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['A bug sat on the bed.', 'Ben put the tub on the bug.', 'The bug sat on a bud.'], show: [2, 0, 1], code: 'C3.3' }
+  ],
+  tip: '/b/ is a quick pop of the lips with the voice on: keep it short, not "buh". b and d are often mixed up: make a "bed" with two fists, thumbs up, and the left hand is the b. In a mirror, the child can watch the lips press together and pop open.'
+});
+Atlas.decodable.more('cons-b', {
+  words: ['bus', 'bag', 'bet', 'bin', 'rub', 'bat', 'tab', 'cab', 'bud', 'but', 'bit'],
+  title: 'Bev and the Bun',
+  text: ['Bev and Deb got on a big bus. Bev had a bag. In the bag was a bat and a bun.',
+    'Deb had a bag, but it had no bun in it. Deb was sad.',
+    'Bev got the bun. She cut it in two. "You can have a bit," said Bev. Deb and Bev sat on the bus and had the bun.'],
+  pic: ['sun', 'bus', 'bag'],
+  qs: [
+    { k: 'choice', q: 'What was in the bag?', opts: ['a bat and a bun', 'a cat and a cup', 'a bed'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why was Deb sad?', opts: ['Deb had no bun.', 'The bus was big.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Bev and Deb on the bus.', a: 'Two girls sitting on a bus, sharing a bun. Ask the child what Bev did with the bun.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-b', {
+  words: ['cub', 'bed', 'big', 'bob', 'rub', 'bit', 'but', 'web', 'sob', 'bug', 'tub'],
+  title: 'Bob the Big Cub',
+  text: ['Bob is a cub. Mom and Bob had a bed in a den. Mom had a nap, but Bob did not.',
+    'Bob got up. He dug at the den. Bob got a big bug, but it bit him! Bob did not sob.',
+    'Bob ran to his bed in the den. Mom and Bob had a hug. Bob had a big, big nap.'],
+  pic: ['hill', 'bear', 'bug'],
+  qs: [
+    { k: 'choice', q: 'What bit Bob?', opts: ['a bug', 'a cub', 'a dog'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The bug was not fun for Bob.', a: true, code: 'C3.2' },
+    { k: 'write', q: 'Who do you hug?', a: 'Any person or pet, for example: I hug Mom.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-c', band: 'K', name: 'Consonant c /k/', focus: ['c'], key: 'cat', mark: 'c',
+  heart: [],
+  words: ['cat', 'cap', 'can', 'cab', 'cot', 'cob', 'cod', 'cop', 'cut', 'cup', 'cub', 'cog'],
+  title: 'Cub in the Cap',
+  text: ['Cam had a red cap. He set it on his cot. Cam got his cup and ran to the bus.',
+    'Cal sat on the bus. "Cam, you have no cap!" said Cal. Cam ran to get it.',
+    'The cap was on the cot. Cub the cat was in it! Cub had a nap in the cap. "Cub can have it," said Cam.'],
+  pic: ['bus', 'bed', 'cat', 'hat'],
+  qs: [
+    { k: 'yn', q: 'Cam put the cap on his cot.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Who had a nap in the cap?', opts: ['Cal', 'Cub the cat', 'Cam'], a: 1, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Cub in the cap.', a: 'A cat curled up in a red cap on a cot. Ask the child who Cub is.', code: 'C1.4' }
+  ],
+  tip: 'Here c says /k/: a quiet puff of air from the back of the mouth, voice off, not "kuh". It sounds the same as k, so spelling cat as kat is a good sound guess, not a reading error (c says /k/ before a, o and u; c before e and i comes later). Hold a hand in front of the mouth to feel the puff.'
+});
+Atlas.decodable.more('cons-c', {
+  words: ['cod', 'cup', 'can', 'cut', 'cot', 'cap', 'cob', 'cub', 'cat', 'cop'],
+  title: 'Cal and the Cod',
+  text: ['Pop and Cal sat in the sun. Cal had a rod and a cap. Pop had a cup.',
+    'Tug, tug! Cal got a cod! It was big and wet. Pop and Cal got it in.',
+    'Pop cut up the cod. Cub the cat sat up. Pop and Cal had hot cod. Cub got a bit!'],
+  pic: ['sun', 'fish', 'cat', 'pot'],
+  qs: [
+    { k: 'choice', q: 'What did Cal get?', opts: ['a cod', 'a cup', 'a cat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Cub the cat got no cod.', a: false, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Pop and Cal sat in the sun.', 'Cal got a cod.', 'Pop cut up the cod.'], show: [1, 2, 0], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-c', {
+  words: ['cub', 'can', 'cob', 'cap', 'cup', 'cot', 'cut', 'cat', 'cab', 'cod', 'cop'],
+  title: 'A Cub at the Can',
+  text: ['It was hot. Mac sat on a cot in the sun. Mac had a cap on. Dad had a cup.',
+    'Mac sat up. A cub was in the big can! It dug and dug. It got a cob and a bit of cod.',
+    'Dad and Mac sat in the van. The cub had the cob and ran. Dad put a big lid on the can.'],
+  pic: ['sun', 'bear', 'van'],
+  qs: [
+    { k: 'choice', q: 'What did the cub get?', opts: ['a cob', 'a cap', 'a cup'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Dad did not run at the cub.', a: true, code: 'C1.1' },
+    { k: 'write', q: 'Why did Dad put a lid on the can?', a: 'So the cub (or a bear) can not get in again.', code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-d', band: 'K', name: 'Consonant d', focus: ['d'], key: 'dog', mark: 'd',
+  heart: [],
+  words: ['dad', 'dog', 'dig', 'dug', 'den', 'dot', 'mud', 'red', 'lid', 'kid', 'hid', 'sad', 'bed', 'nod', 'dip'],
+  title: 'Dot the Mud Dog',
+  text: ['Dan had a red dog. The dog was Dot. Dot dug and dug in the mud.',
+    'Dot ran in and hid on the bed. Mud got on the bed, the rug and Dad!',
+    'Dad did not get mad. Dan and Dad got a tub. Dot had a dip in the tub. Dot is a red dog, not a mud dog!'],
+  pic: ['dog', 'bed'],
+  qs: [
+    { k: 'yn', q: 'Dot dug in the mud.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Dot get a dip in the tub?', opts: ['Dot was a mud dog.', 'Dot was hot.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Dot in the tub.', a: 'A red dog in a tub of water. Ask the child why Dot needed a bath.', code: 'C1.4' }
+  ],
+  tip: '/d/ is a quick tap of the tongue just behind the top teeth, voice on: keep it short, not "duh". b and d are the classic mix-up: d starts with a c, then the tall stick. With a hand on the throat, d buzzes and t does not.'
+});
+Atlas.decodable.more('cons-d', {
+  words: ['bud', 'dig', 'pod', 'red', 'mud', 'did', 'sad', 'dot', 'pad', 'fed', 'den'],
+  title: 'Ted and the Red Bud',
+  text: ['Ted and Dad dug in the mud. Ted put a pod in the pit. Ted did a pat on the mud.',
+    'Ted got the mud wet. He sat and sat. No bud. Ted was sad.',
+    'Ted got up at six. He ran to the mud. It had a red bud! "Look, Dad!" said Ted.'],
+  pic: ['sun', 'flower'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Ted put a pod in the mud.', 'Ted was sad.', 'Ted had a red bud.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'yn', q: 'Ted did not get a bud.', a: false, code: 'C1.1' },
+    { k: 'write', q: 'What can you put in the mud?', a: 'Any sensible answer, for example: a seed, a bulb, a pod.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.more('cons-d', {
+  words: ['den', 'dim', 'bed', 'fed', 'dog', 'dug', 'rod', 'did', 'lid', 'kid', 'mad'],
+  title: 'The Dim Den',
+  text: ['Dev and Ned had a rug. Dev put the rug on the bed and a box. It was a den!',
+    'Dev and Ned got in the den. It was dim. Nan fed Dev and Ned a bun.',
+    'Bud the dog dug at the rug. Bud ran in, and the rug sat on Dev, Ned and Bud! Dev and Ned did not get mad.'],
+  pic: ['bed', 'box', 'dog'],
+  qs: [
+    { k: 'choice', q: 'Who fed Dev and Ned?', opts: ['Nan', 'Bud', 'Dad'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Dev and Ned had fun in the den.', a: true, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Dev and Ned in the den.', a: 'Two boys under a rug draped over a bed and a box, maybe with Bud the dog. Ask the child what the den was made of.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-f', band: 'K', name: 'Consonant f', focus: ['f'], key: 'fox', mark: 'f',
+  heart: [],
+  words: ['fox', 'fan', 'fig', 'fun', 'fed', 'fog', 'fit', 'fat', 'fin', 'fix', 'fib', 'if'],
+  title: 'Fin and the Fox',
+  text: ['Fin and Dad sit on a log in the fog. Fin has a big fig in a bag.',
+    'Look! A red fox is in the fog. It is not fat.',
+    'Fin put the fig on the log. The fox got the fig and ran to a den. "If the fox is fed, it can nap," said Dad.'],
+  pic: ['log', 'fox', 'bag'],
+  qs: [
+    { k: 'yn', q: 'The fox is fat.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What did the fox get?', opts: ['a hat', 'a fig', 'a bag'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Fin is mad at the fox.', a: false, code: 'C3.2' }
+  ],
+  tip: '/f/ is a soft stream of air: top teeth rest on the bottom lip and the air blows out. Hold it ("fff") and do not add "uh". F and v are made the same way, but v buzzes: put a hand on the throat to feel the difference.'
+});
+Atlas.decodable.more('cons-f', {
+  words: ['fan', 'fix', 'fat', 'fed', 'fun', 'fin', 'fit', 'fig', 'fog', 'if'],
+  title: 'Fix the Fan',
+  text: ['It is hot. Fen and Mom sit in the hut. The fat cat is hot. The fan is not on.',
+    '"I can fix it," said Mom. Mom got a pin and a rag. Fen fed the cat.',
+    'Mom hit the fan. It is on! Fen, Mom and the fat cat sit at the fan. It is fun.'],
+  pic: ['hut', 'cat'],
+  qs: [
+    { k: 'yn', q: 'The cat is hot.', a: true, code: 'C3.2' },
+    { k: 'choice', q: 'Who can fix the fan?', opts: ['Fen', 'Mom', 'the cat'], a: 1, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the cat at the fan.', a: 'A fat cat sitting by a fan, maybe with Fen and Mom. Ask the child why the cat is happy now.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-f', {
+  words: ['fog', 'fun', 'fed', 'fat', 'fox', 'fit', 'fig', 'fix', 'fan', 'fin', 'if'],
+  title: 'A Fox in the Fog',
+  text: ['Raf and Mom sit at the hut. Mom has a pot of fig jam.',
+    'In the fog, a fox got to the hut. It dug in the bag and got the fig jam! "Fox! You can not have the jam!" said Raf.',
+    'The fox hid in the fog. Mom got a lid to fit the pot. "It is a fat, fed fox!" said Mom.'],
+  pic: ['hut', 'fox', 'pot'],
+  qs: [
+    { k: 'choice', q: 'What did the fox get?', opts: ['fig jam', 'a fan', 'a hat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Mom got a lid to fit the pot.', a: true, code: 'C1.1' },
+    { k: 'write', q: 'Did you see a fox? Where?', a: 'Any answer about the child\'s own life, e.g. "I did. It ran in the park." Write it for the child if needed.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-g', band: 'K', name: 'Consonant g /g/', focus: ['g'], key: 'gum', mark: 'g',
+  heart: [],
+  words: ['gum', 'got', 'gap', 'gas', 'get', 'gut', 'dog', 'big', 'bug', 'leg', 'rag', 'tug', 'dig', 'log'],
+  title: 'Peg Dug in the Mud',
+  text: ['Gus has a big dog. The dog is Peg. Peg can dig and dig.',
+    'Peg dug in the mud at the log. Peg got a rag and a big bug. Peg is a mud dog!',
+    'Gus got a tub. Peg did not get in. Gus had to tug and tug. Peg is in the tub! Gus got wet, but Peg got a hug.'],
+  pic: ['dog', 'log', 'bug'],
+  qs: [
+    { k: 'choice', q: 'What did Peg get in the mud?', opts: ['a cup and a hat', 'a rag and a bug', 'a pot'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Peg had fun in the mud.', a: true, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Peg in the mud.', a: 'A big dog digging in mud by a log, maybe with a rag or a bug. Ask the child what Gus did next.', code: 'C1.4' }
+  ],
+  tip: '/g/ is a quick, short sound from the back of the throat: say "g", not "guh". G and k are made in the same spot, but g buzzes: put a hand on the throat to feel it. In these words g always says /g/ as in gum, never /j/.'
+});
+Atlas.decodable.more('cons-g', {
+  words: ['jog', 'fog', 'tug', 'wag', 'hug', 'leg', 'big', 'gap', 'got', 'get', 'mug'],
+  title: 'Meg and Bug Jog',
+  text: ['Meg and Bug jog in the fog. Bug is a big dog. Bug can tug and tug.',
+    'Bug ran to a log. Meg hit the log and sat in the mud. Bug ran to Meg. Wag, wag, wag!',
+    'Meg got up. "I am not mad, Bug," said Meg. Meg and Bug had a big hug.'],
+  pic: ['dog', 'log', 'cloud'],
+  qs: [
+    { k: 'yn', q: 'Bug is a cat.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Where did Meg sit?', opts: ['in the mud', 'on a bed', 'in a van'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Meg and Bug jog.', 'Meg sat in the mud.', 'Meg had a hug for Bug.'], show: [1, 2, 0], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-g', {
+  words: ['pig', 'dug', 'gap', 'bog', 'fig', 'got', 'hug', 'gas', 'big', 'peg', 'rug', 'gum'],
+  title: 'Gil and the Big Pig',
+  text: ['Gil and his dad have a big pig. The pig is in a pen.',
+    'The pig dug a big gap in the pen. Look! It is in the bog!',
+    'Gil got a fig. "Pig, pig! Get the fig!" said Gil. The pig ran to Gil and got the fig. Dad put the pig in the pen and a log in the gap.'],
+  pic: ['pig', 'log', 'pond'],
+  qs: [
+    { k: 'yn', q: 'The pig dug a gap in the pen.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the pig run to Gil?', opts: ['to get a nap', 'to get the fig', 'to dig'], a: 1, code: 'C3.2' },
+    { k: 'choice', q: 'What did Dad put in the gap?', opts: ['a log', 'a rug', 'a mug'], a: 0, code: 'C1.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-h', band: 'K', name: 'Consonant h', focus: ['h'], key: 'hat', mark: 'h',
+  heart: [],
+  words: ['hat', 'hen', 'hot', 'hut', 'had', 'him', 'hop', 'hug', 'hid', 'hum', 'hip', 'ham'],
+  title: 'Hal and the Hen',
+  text: ['Hal has a red hen. It is hot. The hen is not in the hut.',
+    'Hal had a look. Is the hen in the pen? No. Is the hen at the tub? No.',
+    'Mom has a big hat on a peg. Hal had a look in the hat. The hen is in it! "The hen can have the hat," said Mom.'],
+  pic: ['hut', 'hat', 'hen'],
+  qs: [
+    { k: 'yn', q: 'The hen is in the hut.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Where did the hen sit?', opts: ['in a hat', 'in a tub', 'in a pen'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the hen in the hat.', a: 'A hen sitting inside a big hat. Ask the child why the hen hid there (it was hot, the hat is a shady spot).', code: 'C1.4' }
+  ],
+  tip: '/h/ is just a puff of breath with an open mouth, like fogging up a mirror. Keep it quiet and short: "h", not "huh". Hold a hand in front of the mouth to feel the puff; children sometimes drop it, so check that hat is not read as at.'
+});
+Atlas.decodable.more('cons-h', {
+  words: ['hot', 'hid', 'hat', 'hum', 'him', 'hit', 'hut', 'had', 'hop', 'hen', 'hug'],
+  title: 'Hot, Hot, Hot!',
+  text: ['Pam hid a red hat in the den. "Get the hat, Jin!" said Pam.',
+    'Jin had a look in the tub. "Not hot," said Pam. Jin got to the box. He hit his hip! "Hot, hot, hot!"',
+    'The hat is on the cat! The cat had a nap in the hat.'],
+  pic: ['box', 'cat', 'hat'],
+  qs: [
+    { k: 'yn', q: 'Pam hid a hat.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Where is the hat?', opts: ['in the tub', 'on the cat', 'on Jin'], a: 1, code: 'C1.1' },
+    { k: 'write', q: 'Where can you put a hat?', a: 'Any place in the child\'s own home, e.g. "in my bed". Write it for the child if needed.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.more('cons-h', {
+  words: ['hut', 'hat', 'hop', 'hum', 'hit', 'had', 'his', 'hot', 'him', 'hip', 'hen', 'hug'],
+  title: 'The Hat on the Hut',
+  text: ['Ben and his mom have a hut. Ben has a red hat. It is a hot hat.',
+    'Ben had fun. He hit the hat up, up, up. It is on the hut! Ben can not get it.',
+    'Mom got a big net. Mom had to hum and tug. The net hit the hat. Ben had his hat! "Have a hot bun," said Mom.'],
+  pic: ['hut', 'hat', 'sun'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Ben hit the hat up.', 'Mom got a net.', 'Ben had his hat.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'yn', q: 'Ben can get the hat.', a: false, code: 'C1.1' },
+    { k: 'yn', q: 'Mom is mad at Ben.', a: false, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-j', band: 'K', name: 'Consonant j', focus: ['j'], key: 'jam', mark: 'j',
+  heart: [],
+  words: ['jam', 'jet', 'jog', 'jug', 'jig', 'job', 'jab', 'jot', 'jut', 'Jen', 'Jim'],
+  title: 'Jen and the Jam Jug',
+  text: ['Jen and Jim jog to the hut. Jen has a job. Jen can get the big jug of jam.',
+    'Jen got a bun. Jen put jam on it. Jim had a bun and jam. Yum! Jim did a jig.',
+    'Look! A jet is up in the sun. Jen and Jim sit to see it. Jim has jam on his lip!'],
+  pic: ['sun', 'plane', 'hut', 'jar'],
+  qs: [
+    { k: 'choice', q: 'What is in the jug?', opts: ['jam', 'mud', 'a bug'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Jim had fun.', a: true, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Jim and the jam on his lip.', a: 'A boy with a smear of jam on his lip, maybe a bun or the jug. Ask the child what Jim did after his bun (a jig).', code: 'C1.4' }
+  ],
+  tip: '/j/ is a quick, crisp sound: say it short, not "juh". In these words j only comes at the start. Put a hand on the throat: /j/ buzzes and /ch/ (later) does not, which helps if the child mixes them up.'
+});
+Atlas.decodable.more('cons-j', {
+  words: ['jog', 'jet', 'jab', 'job', 'jug', 'jot', 'jut', 'jam', 'Jan', 'Jon'],
+  title: 'Jet Got the Jam',
+  text: ['Jan and Jon have a pup. The pup is Jet. Jet can run and jog.',
+    'Dad set a jug of jam on a rug. Jet got in the jam!',
+    '"Jet! Quit it!" said Jan. Jet did not quit. Jon got a tub. A pup in a tub is a big job! Jet did a jig in the tub.'],
+  pic: ['dog', 'jar', 'house'],
+  qs: [
+    { k: 'yn', q: 'Jet is a pup.', a: true, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Dad set the jam on a rug.', 'Jet had the jam.', 'Jet got in a tub.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'Why did Jet get in a tub?', opts: ['Jet had jam on him.', 'Jet was hot.', 'Jet had a nap.'], a: 0, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.more('cons-j', {
+  words: ['jab', 'jig', 'Jed', 'jot', 'jet', 'jog', 'Jin', 'jam', 'job', 'jug'],
+  title: 'Jin and Jed Jet Up',
+  text: ['It was wet. Jin and Jed sat in the den. Jed got a big box. "It can be a jet!" said Jin.',
+    'Jin cut a lid. Jed got a pen to jot a map. It is a big job!',
+    'Mom got a bun and a jug of jam. Jin, Jed and Mom sat in the jet. "Up!" said Jed. Jin did a jig!'],
+  pic: ['house', 'box', 'map', 'jar'],
+  qs: [
+    { k: 'choice', q: 'What is the jet?', opts: ['a big box', 'a bus', 'a hut'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Jin and Jed had fun.', a: true, code: 'C3.2' },
+    { k: 'write', q: 'What can a box be? Write it.', a: 'Any idea: a jet, a bus, a den, a bed. Help the child sound out the word.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-k', band: 'K', name: 'Consonant k', focus: ['k'], key: 'kit', mark: 'k',
+  heart: [],
+  words: ['kit', 'kid', 'kin', 'keg', 'yak', 'Kim', 'Ken', 'Kip', 'Kat', 'Kev'],
+  title: 'Kim and the Kit',
+  text: ['Kim, Kip and Kat sit on a log. The sun is hot.',
+    'Look! A fox kit is at a den. "A kit is a kid fox," said Kip.',
+    'The kit has kin in the den. Kim can see the kit and the kin nap. Kat and Kip did not yap. Ken, the man at the hut, said, "Let the kit nap."'],
+  pic: ['sun', 'log', 'fox', 'hut'],
+  qs: [
+    { k: 'yn', q: 'A kit is a kid fox.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Kat and Kip not yap?', opts: ['The kit had a nap.', 'Kat and Kip had a nap.', 'It was wet.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the fox kit in the den.', a: 'A small red and tan fox curled up in a hole or den. Ask the child who else was in the den (its kin).', code: 'C1.4' }
+  ],
+  tip: '/k/ is made at the back of the mouth with a quick puff of air: say it short, not "kuh". The letter k and the letter c (cat) can make the same sound; here every word uses k. If the child says /g/ (gut for kit), have them hold a hand in front of the mouth to feel the puff that /k/ has.'
+});
+Atlas.decodable.more('cons-k', {
+  words: ['Kip', 'kid', 'Kat', 'yak', 'kit', 'Ken', 'kin', 'Kim', 'keg', 'Kev'],
+  title: 'Kat and the Yak',
+  text: ['Kat, Kip and Kim got on a bus to see a yak. Kip had a kit: a pen, a pad and a map.',
+    'Ken is the man at the yak pen. The big red yak sat in the mud.',
+    'Kip did a yak on the pad. "It is a yak, not a pig!" said Kat. Kim had a nap on the bus.'],
+  pic: ['bus', 'bag', 'pen'],
+  qs: [
+    { k: 'choice', q: 'What did Kip have in the kit?', opts: ['a pen, a pad and a map', 'a cup and a bun', 'a hat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The yak is big and red.', a: true, code: 'C1.1' },
+    { k: 'write', q: 'Kat, Kip and Kim see a yak. What can you see? Write it.', a: 'Any animal the child has seen: a cat, a dog, a hen, a fox. Help the child sound out the word.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.more('cons-k', {
+  words: ['kid', 'kit', 'Kev', 'Kim', 'Ken', 'kin', 'Kip', 'Kat', 'yak', 'keg'],
+  title: 'Kev and the Red Kit',
+  text: ['Kev and Kim sat on a log at the hut. Kip and Kat sat in the sun.',
+    'Kev got up on the log and hit his leg. It had a cut! "Get the red kit!" said Kim. Kim ran to Ken.',
+    'Ken got the kit and put a pad on the cut. "You are a big kid," said Ken. Kev did not sob.'],
+  pic: ['sun', 'hut', 'log', 'bag'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Kev hit his leg.', 'Kim ran to Ken.', 'Ken put a pad on the cut.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'yn', q: 'Kev had a cut on his leg.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Kim run to Ken?', opts: ['Ken had the kit.', 'Ken had a bun.', 'Kim was mad.'], a: 0, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-l', band: 'K', name: 'Consonant l', focus: ['l'], key: 'log', mark: 'l',
+  heart: [],
+  words: ['log', 'lid', 'lip', 'lot', 'lap', 'leg', 'let', 'lug', 'lit', 'pal', 'gel', 'Mel', 'Lin'],
+  title: 'Lin and Len Lug a Pot',
+  text: ['Lin and Len lug a big pot to a log. The pot has a lid.',
+    'Len got the lid up. It is dal! Mom had a lot of dal in the pot. Lin and Len sat on the log and had dal. Yum!',
+    'Len set the lid on the pot. Lin and Len sat in the sun. Len had dal on his lip!'],
+  pic: ['sun', 'pot', 'log'],
+  qs: [
+    { k: 'choice', q: 'What is in the pot?', opts: ['dal', 'jam', 'mud'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The pot is not big.', a: false, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Lin and Len lug a pot.', 'Len got the lid up.', 'Len set the lid on the pot.'], show: [2, 0, 1], code: 'C3.3' }
+  ],
+  tip: '/l/ is a sound you can hold: the tongue tip rests behind the top teeth (lllog). Hold it, then say the rest of the word. Some children say /w/ or /y/ for /l/ (wog for log); let the child watch your tongue in a mirror and copy it. Dal is a lentil stew.'
+});
+Atlas.decodable.more('cons-l', {
+  words: ['lap', 'leg', 'lid', 'Mel', 'lot', 'pal', 'let', 'log', 'gel', 'Val', 'lug'],
+  title: 'Mel, Val and the Bug',
+  text: ['Mel has a pal, Val. Val has a pet bug in a tub. The tub has a lid.',
+    'Mel did not put the lid on. The bug ran up a log!',
+    '"Get it!" said Val. The bug sat on the leg of Val. Val got the bug, and Mel put the lid on. Mel and Val had a lot of fun.'],
+  pic: ['log', 'bug', 'cup'],
+  qs: [
+    { k: 'yn', q: 'Mel put the lid on the tub.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'Where did the bug sit?', opts: ['on the leg of Val', 'on a hat', 'in a pot'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the bug on the log.', a: 'A small bug on a log, maybe with a tub nearby. Ask the child what the bug did next.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-l', {
+  words: ['lit', 'lap', 'Hal', 'led', 'lug', 'pal', 'lip', 'lab', 'Sal', 'leg'],
+  title: 'Hal and Sal the Lab',
+  text: ['Hal has a pal. It is Sal, a big tan lab.',
+    'Hal and Sal go up to the bog. Sal led Hal. Sal got in the mud! Sal had mud on a leg and a lip.',
+    'Hal got Sal up. Mom let Hal and Sal in. Hal sat in the den. Sal got up on his lap. A big lab on a lap!'],
+  pic: ['dog', 'house', 'bed'],
+  qs: [
+    { k: 'choice', q: 'What is Sal?', opts: ['a lab', 'a cat', 'a hen'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Sal is a big dog.', a: true, code: 'C3.2' },
+    { k: 'choice', q: 'Hal, Sal and ...', opts: ['pal', 'log', 'lid'], a: 0, code: 'C3.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-m', band: 'K', name: 'Consonant m', focus: ['m'], key: 'map', mark: 'm',
+  heart: [],
+  words: ['map', 'mat', 'mix', 'mop', 'mug', 'met', 'mud', 'ham', 'jam', 'dim', 'hum', 'gum'],
+  title: 'Max in the Mud',
+  text: ['Mom and Max go on a run. Mom has a map. Max has a red mug.',
+    'Max sat in the mud. Mud is on his leg. Mud is on the map! Is Mom mad? Mom is not mad.',
+    'Mom and Max sit on a mat in the sun. "Mud is fun!" said Max. Mom and Max hum.'],
+  pic: ['sun', 'map', 'cup'],
+  qs: [
+    { k: 'choice', q: 'What is on the map?', opts: ['mud', 'jam', 'a bug'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Mom is mad at Max.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Max in the mud.', a: 'Max sitting in mud, perhaps with mud on his leg and the map. Ask the child what Mom did.', code: 'C1.4' }
+  ],
+  tip: '/m/ is a hum you can hold: lips closed, sound through the nose (mmm, not "muh"). It is often mixed up with n (map read as nap). Have the child put a finger on closed lips and hum, or sky-write m with its two humps.'
+});
+Atlas.decodable.more('cons-m', {
+  words: ['man', 'mix', 'mom', 'ram', 'ham', 'dam', 'met', 'him', 'mop', 'rim', 'sum'],
+  title: 'Mop and the Ham',
+  text: ['Mom and Min get a ham. Mom set the ham in a pan on a mat.',
+    'Mop the dog met the ham. Mop sat and had the ham! Min and Mom did not see him.',
+    '"Mop!" said Mom. Mom is mad. Min and Mom had jam on a bun. Mop had a nap on the mat.'],
+  pic: ['pan', 'dog'],
+  qs: [
+    { k: 'choice', q: 'Who had the ham?', opts: ['Mop', 'Min', 'Mom'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Mom is mad at Mop.', a: true, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Mom set the ham in a pan.', 'Mop had the ham.', 'Mop had a nap.'], show: [2, 0, 1], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-m', {
+  words: ['gum', 'hum', 'dim', 'sum', 'mud', 'mug', 'mat', 'rim', 'jam', 'met', 'mad'],
+  title: 'Tim, Mom and a Fox',
+  text: ['It is dim in the hut. Mom and Tim sit on a mat and hum.',
+    'Yip, yip! Tim got up. Is it a man? It is not a man. It is a big red fox!',
+    '"Mom, a fox!" said Tim. Mom got up, and the fox ran. Mom and Tim sat on the mat. Tim had his bun and jam. Yum!'],
+  pic: ['hut', 'fox'],
+  qs: [
+    { k: 'choice', q: 'What is at the hut?', opts: ['a man', 'a fox', 'a pup'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Tim and Mom got mad at the fox.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the fox at the hut.', a: 'A red fox outside a small hut or cabin. Ask the child what the fox did when Mom got up.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-n', band: 'K', name: 'Consonant n', focus: ['n'], key: 'net', mark: 'n',
+  heart: [],
+  words: ['net', 'nap', 'nut', 'nod', 'nip', 'not', 'can', 'ten', 'pin', 'sun', 'van', 'hen', 'fun', 'den'],
+  title: 'Nan and the Net',
+  text: ['Nan and Ben go to the bog. It is hot. Nan has a net.',
+    'Nan can dip the net in. Is it a bug? It is not a bug. Nan got a tin can in the net!',
+    'Ben got a lid in his net. Nan and Ben put the can and the lid in a bin. "It is a fun bog!" said Ben.'],
+  pic: ['sun', 'pond', 'net'],
+  qs: [
+    { k: 'choice', q: 'What did Nan get in the net?', opts: ['a bug', 'a tin can', 'a hen'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Ben got a lid.', a: true, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Nan and the net.', a: 'Nan holding a net with a tin can in it, perhaps with Ben and a bin. Ask the child where the can went.', code: 'C1.4' }
+  ],
+  tip: '/n/ is a hum through the nose with the tongue tip up behind the top teeth (nnn, not "nuh"). It is often mixed up with m (net and met). Have the child touch the side of the nose to feel the buzz, then say n and m in a mirror: lips open for n, closed for m.'
+});
+Atlas.decodable.more('cons-n', {
+  words: ['nut', 'nod', 'nip', 'hen', 'pen', 'win', 'bun', 'ran', 'den', 'tan', 'pin'],
+  title: 'Ned and the Hen',
+  text: ['Ned has a tan hen in a pen. The hen is not big.',
+    'The hen ran! It ran to the den, and it ran to the bin. Ned ran and ran.',
+    'Ned got a bun. Ned set a bit of bun in the pen. The hen ran in! The hen had a nap in the sun.'],
+  pic: ['sun', 'house', 'hen'],
+  qs: [
+    { k: 'choice', q: 'What did Ned set in the pen?', opts: ['a bun', 'a net', 'a nut'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The hen is big.', a: false, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['The hen ran.', 'Ned got a bun.', 'The hen had a nap.'], show: [1, 2, 0], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-n', {
+  words: ['nap', 'nod', 'not', 'net', 'man', 'pen', 'sun', 'van', 'run', 'can', 'tan', 'ten'],
+  title: 'Jin and the Tan Pup',
+  text: ['Nan and Jin get in the tan van. "Can we get a pup?" said Jin. Nan did a big nod.',
+    'A man had a pen. A big pup ran in the pen. A tan pup sat and did not run. It had a nap.',
+    '"Can I get the tan pup?" said Jin. "Yes," said Nan. Jin and the pup had a nap in the van.'],
+  pic: ['van', 'dog'],
+  qs: [
+    { k: 'yn', q: 'Jin got the big pup.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Where did Jin and the pup nap?', opts: ['in the van', 'in the pen', 'in a box'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw a pet.', a: 'Any pet the child has or would like. Ask the child to tell you its name and how to care for it.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-p', band: 'K', name: 'Consonant p', focus: ['p'], key: 'pig', mark: 'p',
+  heart: [],
+  words: ['pig', 'pan', 'pen', 'pot', 'pup', 'pat', 'pin', 'pet', 'cap', 'map', 'tip', 'hop', 'cup', 'top'],
+  title: 'Pip the Pig',
+  text: ['Pam has a pet pig. The pig is Pip. Pip is big, and Pip can hop.',
+    'Pip got in a pit of mud. Pip got mud on Pam, and Pip got mud on Pop. Pop is not mad.',
+    'Pam and Pop put Pip in a tub. Pam and Pop pat and rub Pip. Pip is a pig in a tub!'],
+  pic: ['sun', 'pig'],
+  qs: [
+    { k: 'yn', q: 'Pop is mad at Pip.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'What did Pip get in?', opts: ['a pot', 'a pit of mud', 'a pan'], a: 1, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Pip in the tub.', a: 'A pig in a tub, perhaps with Pam and Pop beside it. Ask the child why Pip needed a tub.', code: 'C1.4' }
+  ],
+  tip: '/p/ is a quiet puff of air from closed lips, with no voice (p, not "puh"). It is often mixed up with b (same lips, but b uses the voice) and, in print, with q and d. Hold a hand or a tissue in front of the mouth: p makes it move.'
+});
+Atlas.decodable.more('cons-p', {
+  words: ['pan', 'pen', 'pit', 'pet', 'pop', 'pup', 'cap', 'lap', 'sip', 'top', 'cup'],
+  title: 'The Pup and the Pop',
+  text: ['Peg has a cup of pop. Peg had a sip and set it on the bed.',
+    'The pup got up on the bed. It hit the cup! The pop is on the bed, and the pup can lap it up.',
+    '"Pup!" said Peg, but Peg did not get mad. Peg got a rag. The pup had a nap on the mat.'],
+  pic: ['bed', 'dog', 'cup'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Peg had a sip.', 'The pup hit the cup.', 'Peg got a rag.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'What did the pup hit?', opts: ['the cup', 'the bed', 'a pan'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Peg is mad at the pup.', a: false, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.more('cons-p', {
+  words: ['pop', 'pin', 'pad', 'pet', 'pal', 'up', 'sip', 'tap', 'map', 'nap', 'hop', 'top'],
+  title: 'Pat, Pop and the Pup',
+  text: ['Pat and Pop sit on a mat. Pop has a bun and a pot of jam.',
+    'A pup ran up to the mat. The pup put a pad up on Pat.',
+    '"Can the pup have a bit of bun?" said Pat. "Yes," said Pop. A man ran up. "Pip, you bad pup!" said the man. Pip got a bit of bun and a pat.'],
+  pic: ['dog', 'pot'],
+  qs: [
+    { k: 'choice', q: 'What did the pup put up on Pat?', opts: ['a pad', 'a cup', 'a pot'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Pop said the pup can have a bit of bun.', a: true, code: 'C1.1' },
+    { k: 'draw', q: 'Draw a pet you can pat.', a: 'Any pet or friendly animal. Ask the child how to pat a dog gently and to ask the owner first.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-r', band: 'K', name: 'Consonant r', focus: ['r'], key: 'red', mark: 'r',
+  heart: [],
+  words: ['red', 'rug', 'rat', 'rip', 'rob', 'run', 'rag', 'rib', 'rod', 'rub', 'ram', 'rim'],
+  title: 'Rex and the Red Rug',
+  text: ['Ron has a red rug. Rex the dog can nap on it. Rex is a big dog.',
+    'Rap, rap! A rat ran in. Rex got up and ran at the rat. Rip! The rug got a rip.',
+    'The rat hid in a log. Mom got a red rag and can fix the rip. Rex had a nap on the red rug.'],
+  pic: ['dog', 'log'],
+  qs: [
+    { k: 'choice', q: 'What ran in?', opts: ['a pig', 'a rat', 'a fox'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Rex is a cat.', a: false, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Rex on the red rug.', a: 'A big dog lying on a red rug, maybe with a rip in it. Ask the child where the rat went.', code: 'C1.4' }
+  ],
+  tip: 'The letter r says /r/ as in red: round the lips a little and growl softly, without adding "uh" (not "ruh"). Children often say /w/ for /r/, which is normal at this age; just model it again. Try a growly dog sound in front of a mirror to see the lips.'
+});
+Atlas.decodable.more('cons-r', {
+  words: ['ram', 'rub', 'rot', 'run', 'rib', 'red', 'rid', 'rim', 'rap', 'rut', 'Ros'],
+  title: 'Ros and the Ram',
+  text: ['Ros and Dad go to see a ram. Ros can rub the big ram.',
+    'Dad has a red hat on. The ram got the hat and ran! "Run, ram, run!" said Ros.',
+    'The ram let go of the hat. The rim had a rip. "The ram can have it," said Dad. Ros and Dad sat and had a bun.'],
+  pic: ['hat', 'log'],
+  qs: [
+    { k: 'yn', q: 'The ram got the hat.', a: true, code: 'C1.1' },
+    { k: 'yn', q: 'Dad is mad at the ram.', a: false, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Ros can rub the ram.', 'The ram ran.', 'Ros and Dad had a bun.'], show: [2, 0, 1], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-r', {
+  words: ['rag', 'rap', 'rot', 'rub', 'ram', 'rim', 'rug', 'red', 'rat', 'run', 'Raj'],
+  title: 'Raj and the Red Tin',
+  text: ['Raj and Kim dig in red mud. Rap! Raj hit the rim of a tin.',
+    'Raj and Kim tug at the lid. Pop! In the tin is a rag. In the rag is a red gem.',
+    'Raj can rub the gem. "Can we have it?" said Kim. "No. A kid can get it," said Raj. Raj and Kim ran to dig it in.'],
+  pic: ['box', 'rock'],
+  qs: [
+    { k: 'choice', q: 'What is in the rag?', opts: ['a red gem', 'a bun', 'a rat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Raj and Kim dig the gem in the mud.', a: true, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the red gem in the rag.', a: 'A red gem on a rag, maybe in a red tin. Ask the child why Raj put it back.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-s', band: 'K', name: 'Consonant s', focus: ['s'], key: 'sun', mark: 's',
+  heart: [],
+  words: ['sun', 'sat', 'sip', 'bus', 'sob', 'set', 'yes', 'sad', 'gas', 'sub', 'six', 'us'],
+  title: 'Sam on the Bus',
+  text: ['Sam and Mom sit on a bus. The sun is hot. Sam has a sip of pop.',
+    'Sam can not see the red bag! Is it on the bus? No. Sam is sad and has a sob.',
+    'A man has a red bag on his lap. "Is it the bag you had?" said the man. "Yes!" said Sam. Sam is not sad.'],
+  pic: ['sun', 'bus', 'bag'],
+  qs: [
+    { k: 'choice', q: 'What is the bag?', opts: ['red', 'tan', 'big'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The man is mad at Sam.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Sam and Mom on the bus.', a: 'Sam and Mom sitting on a bus, with the sun and a red bag. Ask the child how Sam felt at the start and at the end.', code: 'C1.4' }
+  ],
+  tip: 'The letter s says /s/ as in sun: a long snake hiss you can hold, with teeth close together (not "suh"). Watch for s written backwards, and note that in is, has and his the s says /z/; that is fine to point out but not to teach yet. Let the child trace a big s in the air while hissing.'
+});
+Atlas.decodable.more('cons-s', {
+  words: ['sub', 'sit', 'sad', 'set', 'Sid', 'sun', 'bus', 'sob', 'yes', 'sum', 'Gus'],
+  title: 'Sid and the Sub',
+  text: ['Sid has a big sub. Sid sat on a log in the sun.',
+    'A pup sat at the log. The pup had a sad look. It did not quit.',
+    '"Sit," said Sid. The pup sat. "Yes, you can have a bit." Sid set a bit of the sub on the log. Sid and the pup sat in the sun.'],
+  pic: ['sun', 'dog', 'log'],
+  qs: [
+    { k: 'yn', q: 'Sid has a big sub.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the pup sit at the log?', opts: ['to get a nap', 'to get a bit of the sub', 'to dig'], a: 1, code: 'C3.2' },
+    { k: 'draw', q: 'Draw you and a pet in the sun.', a: 'The child with a pet, real or wished for, in the sun. Ask what they would share with it.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.more('cons-s', {
+  words: ['sat', 'sun', 'sip', 'Sal', 'six', 'set', 'yes', 'sad', 'us', 'sub', 'Gus'],
+  title: 'Sal, Gus and the Bug',
+  text: ['Sal, Gus and Mom sit on a rug in the sun. Mom has a bun, a fig and a jug of pop.',
+    'A big bug sat on the bun. Sal is sad. "Get it, Gus!" said Sal. Gus set a cup on the bug.',
+    '"Let it go," said Mom. Gus let the bug go. Sal, Gus and Mom had a sip and a bun. Yes!'],
+  pic: ['sun', 'bug', 'cup'],
+  qs: [
+    { k: 'choice', q: 'What sat on the bun?', opts: ['a cat', 'a bug', 'a hen'], a: 1, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['A bug sat on the bun.', 'Gus set a cup on the bug.', 'Gus let the bug go.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'yn', q: 'Mom is mad at the bug.', a: false, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-t', band: 'K', name: 'Consonant t', focus: ['t'], key: 'top', mark: 't',
+  heart: [],
+  words: ['top', 'tub', 'ten', 'tin', 'tap', 'tug', 'cat', 'wet', 'pit', 'hot', 'nut', 'set', 'Tom'],
+  title: 'Tip in the Tub',
+  text: ['Tom has a pup, Tip. Tip got in the mud. Tip is a mud pup!',
+    'Tom set a tub in the sun. Tip got in the tub. Tom got a rag. Rub, rub, rub!',
+    'Tip did not sit. Tip hit the tub, got up and ran. Tip ran to the mud pit! Tom is wet, and Tip is a mud pup.'],
+  pic: ['sun', 'dog', 'pot'],
+  qs: [
+    { k: 'choice', q: 'Tip is a...', opts: ['pup', 'cat', 'pig'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Tip got in the mud.', 'Tip got in the tub.', 'Tip ran to the mud pit.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'yn', q: 'Tip is a mud pup at the last.', a: true, code: 'C3.2' }
+  ],
+  tip: 'The letter t says /t/ as in top: a quick tap of the tongue behind the top teeth, with a puff of air and no voice (not "tuh"). Watch for t mixed up with d, which is made the same way but with the voice on. Hold a tissue in front of the mouth: /t/ makes it flutter.'
+});
+Atlas.decodable.more('cons-t', {
+  words: ['tap', 'top', 'Tam', 'pot', 'mat', 'hit', 'Kit', 'tot', 'got', 'tip', 'sat'],
+  title: 'Tam and the Top',
+  text: ['Tam and Kit sit on a mat. Tam has a red top. It can go and go.',
+    'Tut the cat sat at the mat. Tap! Tut hit the top. It hit a pot and got in it.',
+    'Look! Tut is in the pot, on top of the top. "Tut, get up," said Kit. Tut did not get up. It is a cat pot!'],
+  pic: ['cat', 'pot'],
+  qs: [
+    { k: 'yn', q: 'Tut is a dog.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What did Tut hit?', opts: ['the top', 'the pot', 'Kit'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Tut in the pot.', a: 'A cat curled up in a pot, maybe with a red top. Ask the child why Tut did not get up.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-t', {
+  words: ['top', 'tin', 'cot', 'hut', 'hot', 'set', 'tub', 'sat', 'Tim', 'ten', 'lit', 'bit'],
+  title: 'Tim and Tam at the Top',
+  text: ['Tim, Tam and Dad go up, up, up. It is hot. Tim has a tin cup of pop.',
+    'At the top is a hut. Tam and Dad set up a cot in it. Tim got a hot bun.',
+    'Tim, Tam and Dad sit and see the red sun set. "It is fun at the top," said Tam. Tim had a nap on the cot.'],
+  pic: ['sun', 'hill', 'hut', 'cup'],
+  qs: [
+    { k: 'choice', q: 'What is at the top?', opts: ['a hut', 'a bus', 'a van'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Tam is sad at the top.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'What did Tim have a nap on?', opts: ['a rug', 'a log', 'the cot'], a: 2, code: 'C1.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-v', band: 'K', name: 'Consonant v', focus: ['v'], key: 'van', mark: 'v',
+  heart: [],
+  words: ['van', 'vet', 'vat', 'vim', 'rev', 'vex', 'Viv', 'Val', 'Vic', 'Vin'],
+  title: 'Viv the Vet',
+  text: ['Viv is a vet. She has a big red van. Rev, rev! Viv can get to a sad pet.',
+    'Val had a pup, Vic. Vic had a cut on his leg. Val ran to get Viv.',
+    'Viv and the van got to Val. Viv put a pad on the cut. Vic got up and ran to Val!'],
+  pic: ['house', 'van', 'dog'],
+  qs: [
+    { k: 'yn', q: 'Viv is a vet.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What did Vic have on his leg?', opts: ['a cut', 'a bug', 'a hat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Viv can fix a pet.', a: true, code: 'C3.2' }
+  ],
+  tip: '/v/ is a buzz you can hold (vvv): the top teeth rest on the bottom lip and the voice hums. It is often mixed up with f, the same mouth shape with the voice off: a hand on the throat feels v buzz and f stay quiet. Short words almost never end in v (have needs an e), so v usually comes first.'
+});
+Atlas.decodable.more('cons-v', {
+  words: ['vat', 'van', 'Val', 'Vin', 'vet', 'Dev', 'Bev', 'rev', 'vim', 'Viv'],
+  title: 'Sap in a Vat',
+  text: ['Val, Vin and Dad got in the van. Rev, rev! The van got to a big hut.',
+    'In the hut, Dev had a big vat. The vat had hot sap in it. Dev let Val and Vin mix it.',
+    'The hot sap got tan. Dev let Val have a bit. "Yum!" said Val. "Can I have a vat of it?"'],
+  pic: ['van', 'hut', 'maple'],
+  qs: [
+    { k: 'choice', q: 'What was in the vat?', opts: ['hot sap', 'mud', 'a cup'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Val had fun at the hut.', a: true, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Val and Vin got in the van.', 'Val and Vin mix the sap.', 'Val had a bit of sap.'], show: [2, 0, 1], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.more('cons-v', {
+  words: ['vet', 'van', 'Liv', 'Kev', 'vat', 'Bev', 'vim', 'rev', 'Vic', 'Val'],
+  title: 'The Vet Van',
+  text: ['Bev and Kev had a hen. It was sad. Kev ran to get the vet.',
+    'Liv the vet had a red van. The van got in the mud. Rev, rev! The van sat in the mud.',
+    'Liv ran to the hen. She fed the hen a bit of mix. The hen got up! "The van can sit in the mud," said Liv.'],
+  pic: ['house', 'hen', 'van'],
+  qs: [
+    { k: 'yn', q: 'The van got in the mud.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Kev run to get the vet?', opts: ['The hen was sad.', 'The van was in the mud.'], a: 0, code: 'C3.2' },
+    { k: 'write', q: 'Do you have a pet? What is it?', a: 'Any answer, for example: I have a cat.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-w', band: 'K', name: 'Consonant w', focus: ['w'], key: 'web', mark: 'w',
+  heart: [],
+  words: ['web', 'wet', 'wag', 'win', 'wig', 'wax', 'wok', 'wed', 'wit'],
+  title: 'Wiz and the Wet Web',
+  text: ['It was wet. Wes and his dog, Wiz, sat in the hut. Wes had a nap, and Wiz did not.',
+    'Wiz ran to the pen. A big wet web was on the pen. A bug sat in the web.',
+    'Wiz had a yap. "We can look at the web, but do not get it, Wiz," said Wes. Wiz sat and did a big wag.'],
+  pic: ['hut', 'dog', 'web', 'bug'],
+  qs: [
+    { k: 'yn', q: 'Wiz is a dog.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What is in the web?', opts: ['a cat', 'a bug', 'a hat'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Wes is mad at Wiz.', a: false, code: 'C3.2' }
+  ],
+  tip: '/w/ starts with the lips pushed into a small round circle, then they open fast: say "w", not "wuh" or "double-u". It can be mixed up with r (wed and red) and v. Use a mirror so the child can see round lips for w.'
+});
+Atlas.decodable.more('cons-w', {
+  words: ['wig', 'wet', 'win', 'web', 'wag', 'wok', 'wax', 'wed', 'wit', 'Win'],
+  title: 'A Wet Wig',
+  text: ['Win and Wil have a big red wig. Win put on the wig. Win had fun!',
+    'Bud the dog got the wig. Bud ran to the tub. The wig got wet! Win and Wil are sad.',
+    'Mom got a fan. The wig is not wet. Win put on the wig, and Bud did a big wag.'],
+  pic: ['dog', 'hat'],
+  qs: [
+    { k: 'choice', q: 'What did Win have?', opts: ['a red wig', 'a red hat', 'a red cup'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Bud got the wig wet.', a: true, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Win in the wig.', a: 'A child in a big red wig. Ask the child how Mom fixed the wet wig.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-w', {
+  words: ['wok', 'wet', 'wag', 'web', 'win', 'wig', 'wax', 'wed', 'wit'],
+  title: 'Wen and the Wok',
+  text: ['Wen and Dad sit at the hut. Dad has a big wok. Wen put ham in the wok.',
+    'A wet dog ran up and sat at the wok. "Can the dog have a bit?" said Wen. "Yes," said Dad.',
+    'The dog got a bit of ham. It did a big wag. "You are Wim," said Wen. Wim had a nap at the hut.'],
+  pic: ['hut', 'pot', 'dog'],
+  qs: [
+    { k: 'choice', q: 'What is in the wok?', opts: ['ham', 'jam', 'a bug'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Dad is mad at the dog.', a: false, code: 'C3.2' },
+    { k: 'write', q: 'What do you have in a wok?', a: 'Any food from the child\'s own life, e.g. "rice" or "egg". Write it for the child if needed.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-x', band: 'K', name: 'Consonant x /ks/', focus: ['x'], key: 'box', mark: 'x',
+  heart: [],
+  words: ['box', 'fox', 'ox', 'six', 'fix', 'mix', 'wax', 'sax', 'tux', 'Max', 'Rex'],
+  title: 'A Fox in a Box',
+  text: ['Rex is six. Rex and Max have a big box. The box has a rip. Max can fix it.',
+    'Look! A red fox sat in the box. "Is it an ox?" said Rex. "No, it is a fox!" said Max. "A fox in a box!"',
+    'The fox had a nap in the box. It got up and ran to a den.'],
+  pic: ['box', 'fox', 'spruce'],
+  qs: [
+    { k: 'yn', q: 'Rex is six.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What sat in the box?', opts: ['an ox', 'a fox', 'a cat'], a: 1, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the fox in the box.', a: 'A red fox curled up in a big box. Ask the child why Rex said ox (fox and ox sound alike).', code: 'C1.4' }
+  ],
+  tip: 'The letter x says two sounds together, /ks/, like the end of box. In short words x comes at the end, so the child reads the vowel and then /ks/: b-o-ks. Watch for x read as its letter name ("ex") or as /z/; have the child tap two fingers for the two sounds.'
+});
+Atlas.decodable.more('cons-x', {
+  words: ['fix', 'box', 'ox', 'sax', 'six', 'Dex', 'wax', 'fox', 'mix', 'tux'],
+  title: 'Dex and His Sax',
+  text: ['Dex is six. Dex has a red sax. Dex and Dad have a gig at the hut.',
+    'Dad put on a tux. Dex put a tux on his pup, Rex. Rex got a rip in it. Dad can fix it.',
+    'Dex sat on a box and had a go on the sax. Rex did a yip. It is a fun mix!'],
+  pic: ['hut', 'box', 'dog'],
+  qs: [
+    { k: 'choice', q: 'What did Dex sit on?', opts: ['a box', 'a log', 'a bed'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Rex is a cat.', a: false, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Rex in a tux.', a: 'A pup dressed in a little suit (a tux), maybe sitting up next to Dex and his sax.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-x', {
+  words: ['wax', 'box', 'six', 'fix', 'mix', 'fox', 'tux', 'ox', 'Max', 'Rex'],
+  title: 'Tex the Ox',
+  text: ['Nan has a big red ox. The ox is Tex. Max is six. Max and Nan fed Tex in the pen.',
+    'Tex got in the mud. "Get up, Tex!" said Max. Tex sat and sat. Rex, the dog, did a yap.',
+    'Nan had a fix: a yam in a box. Up got Tex! Tex had the yam, and Max had mud up to his hip.'],
+  pic: ['house', 'box', 'dog'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Tex got in the mud.', 'Nan got a box.', 'Tex got up.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'Why did Tex get up?', opts: ['Tex can get the yam.', 'Tex was hot.', 'Rex did a yap.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Max got mud on him.', a: true, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-y', band: 'K', name: 'Consonant y /y/', focus: ['y'], key: 'yes', mark: 'y',
+  heart: [],
+  words: ['yes', 'yet', 'yak', 'yam', 'yap', 'yip', 'yum', 'yup'],
+  title: 'Yip, Yap, Yum',
+  text: ['Yan has a pup. The pup can yip and yap. Yip! Yap! Yip!',
+    'Mom has a hot yam in a pan. "Yum!" said Yan. "Can the pup have a bit?" "Not yet," said Mom. "It is hot."',
+    'The pup sat, and it did not yap. "Yes," said Mom. "Yup!" said Yan. The pup had a bit of yam. Yum!'],
+  pic: ['dog', 'pan'],
+  qs: [
+    { k: 'yn', q: 'The pup can yap.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What did Mom have in the pan?', opts: ['a yam', 'a bun', 'a nut'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the pup and the yam.', a: 'A small dog with a yam, perhaps sitting nicely. Ask the child why Mom said not yet.', code: 'C1.4' }
+  ],
+  tip: '/y/ is a quick glide with the middle of the tongue pressed high, as at the start of yes (not "yuh"). Here y only starts words; later it also says /ee/ and /i/ (happy, my), so keep to /y/ for now. Children often swap y with j or w: say yet and jet in a mirror and feel where the tongue goes.'
+});
+Atlas.decodable.more('cons-y', {
+  words: ['yak', 'yes', 'yip', 'yum', 'yet', 'yam', 'yap', 'yup'],
+  title: 'Yaz and the Yak',
+  text: ['Yaz and Dad go to see a yak. The yak is in a pen at a hut.',
+    '"Can I pet the yak?" said Yaz. "Not yet," said Dad. The yak got up and ran to Yaz.',
+    '"Yes, you can pet it," said Dad. Yaz can pat the yak. It did not yip. It did not yap. "Yup, a yak is fun!" said Yaz.'],
+  pic: ['sun', 'hut'],
+  qs: [
+    { k: 'choice', q: 'Where is the yak?', opts: ['in a pen', 'in a bed', 'in a van'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The yak is mad at Yaz.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Yaz and the yak.', a: 'A child beside a big shaggy animal in a pen. Ask the child what Dad said first.', code: 'C1.4' }
+  ]
+});
+Atlas.decodable.more('cons-y', {
+  words: ['yum', 'yap', 'yes', 'yip', 'yet', 'yam', 'yak', 'yup'],
+  title: 'Not Yet, Yin',
+  text: ['Yin is in bed. Yin is hot and sad. The pup sat on the bed.',
+    '"Can you get up yet?" said Mom. "Not yet," said Yin. Mom got Yin a cup of hot yam. "Yum," said Yin.',
+    'Yin had a nap. The pup did not yip. "Can you run yet?" said Mom. "Yes! Yup!" said Yin. Yin and the pup ran in the sun.'],
+  pic: ['bed', 'dog', 'cup'],
+  qs: [
+    { k: 'order', q: 'Number the story in order.', items: ['Yin is in bed.', 'Yin had a hot yam.', 'Yin and the pup ran.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'yn', q: 'Yin is hot and sad.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Who got Yin a cup of yam?', opts: ['Mom', 'the pup', 'Dad'], a: 0, code: 'C1.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'cons-z', band: 'K', name: 'Consonant z', focus: ['z'], key: 'zip', mark: 'z',
+  heart: [],
+  words: ['zip', 'zap', 'zig', 'zag', 'zed', 'fez', 'quiz', 'Liz', 'Zak', 'Roz'],
+  title: 'Zak and the Zip',
+  text: ['Zak has a big red bag. It has a zed on it and a zip. Zip, zip!',
+    'Zak has a quiz. Zak set a pen in the bag. Zak had a tug, but the zip did not zip up.',
+    'Liz can fix it. Liz got the zip to go zig and zag, and zip! "Yes!" said Zak. Zak and Liz ran to the bus.'],
+  pic: ['bag', 'pen', 'bus'],
+  qs: [
+    { k: 'yn', q: 'The zip did not zip up.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Who got the zip to go?', opts: ['Zak', 'Liz', 'Mom'], a: 1, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the bag of Zak.', a: 'A big red bag with a zipper and a Z on it. Ask the child how Liz helped.', code: 'C1.4' }
+  ],
+  tip: 'The letter z says /z/ as in zip: a buzzing bee sound you can hold, made like /s/ but with the voice on (not "zuh"). Watch for z mixed up with s. Put a hand on the throat: /z/ buzzes and /s/ does not. In Canada the letter is called zed.'
+});
+Atlas.decodable.more('cons-z', {
+  words: ['zig', 'zag', 'zip', 'zap', 'fez', 'Zed', 'Roz', 'quiz', 'Liz', 'zed'],
+  title: 'Zed and the Zig Zag Bug',
+  text: ['Roz and Zed sit on a log in the sun. Zed has a red fez on.',
+    'A bug can zig and zag. Zip! It sat on the fez. Zed did not see it.',
+    '"Zed, a bug is on the fez!" said Roz. Zed got up. Zap! The bug can zig and zag, up to the sun. Zed and Roz sat and had fun.'],
+  pic: ['sun', 'bug', 'hat', 'log'],
+  qs: [
+    { k: 'yn', q: 'Zed has a red hat on.', a: true, code: 'C1.4' },
+    { k: 'choice', q: 'What did the bug sit on?', opts: ['the log', 'the fez', 'Roz'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Roz is mad at Zed.', a: false, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.more('cons-z', {
+  words: ['quiz', 'zip', 'zag', 'zed', 'zig', 'Zak', 'Liz', 'zap', 'Zeb', 'fez'],
+  title: 'A Quiz in the Van',
+  text: ['Liz and Zak sit in the van. Zeb the dog can nap in it. Mom has a quiz.',
+    '"It can zip," said Mom. "A bag!" said Zak. "It can zig and zag." "A bug!" said Liz.',
+    '"It has a zig and a zag. It is in Liz and Zak." "A zed!" said Liz and Zak. "Yes! Ten of ten!" said Mom. Zeb had a yap.'],
+  pic: ['van', 'dog', 'bag', 'bug'],
+  qs: [
+    { k: 'choice', q: 'What can zig and zag?', opts: ['a bag', 'a bug', 'a van'], a: 1, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Mom has a quiz.', 'Zak said a bag can zip.', 'Liz and Zak got ten of ten.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'yn', q: 'Mom is mad.', a: false, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
   id: 'sh', band: 'K', name: 'Digraph sh', focus: ['sh'], key: 'ship', mark: 'sh',
   heart: ['what', 'who', 'there'],
   words: ['ship', 'shop', 'shed', 'shut', 'shin', 'shot', 'fish', 'dish', 'wish', 'rush', 'hush', 'cash', 'mash', 'dash', 'gush'],
