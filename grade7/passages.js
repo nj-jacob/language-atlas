@@ -1968,4 +1968,985 @@
     ]
   });
 
+  P.add({
+    id: 'g7-pollinators', subject: 'science', form: 'Report',
+    title: 'The Workers Who Feed Us',
+    deck: 'Why bees and other pollinators matter, and why many are in trouble',
+    hero: {
+      photo: 'g7-bumblebee.jpg', credit: 'Photo: Waitblock, CC BY-SA 4.0, Wikimedia Commons', focus: '25% 60%',
+      tall: 200,
+      cap: 'A bumblebee gathering pollen. As it moves from flower to flower, it carries pollen with it.'
+    },
+    body: [
+      'Take a bite of an apple, a strawberry or a blueberry muffin, and you are eating something that depended on an animal. Many plants cannot make fruit or seeds unless pollen is moved from one flower to another. Wind does this job for some plants, such as corn and wheat. For many others, the job is done by animals called <b>pollinators</b>: bees, butterflies, moths, flies, beetles and even hummingbirds.',
+      { h: 'How pollination works' },
+      'A flower makes a sweet liquid called nectar to attract visitors. When a bee lands to drink, grains of pollen from the flower’s anthers stick to the hairs on its body. At the next flower, some of those grains rub off onto the stigma. This is <b>pollination</b>. It allows the plant to make seeds, and often the fruit around them. The bee gets food, and the plant gets help to reproduce. Both benefit, a relationship called mutualism.',
+      { fig: '<path class="k" d="M60 150 V90"/><path class="k" d="M60 90 Q30 60 40 40 Q60 56 60 90 Q90 60 80 40 Q60 56 60 90"/><path class="t" d="M52 64 V44 M68 64 V44"/><circle class="dot" cx="52" cy="42" r="3"/><circle class="dot" cx="68" cy="42" r="3"/>' +
+          '<path class="k" d="M240 150 V90"/><path class="k" d="M240 90 Q210 60 220 40 Q240 56 240 90 Q270 60 260 40 Q240 56 240 90"/><path class="t" d="M240 70 V42"/><circle class="t" cx="240" cy="40" r="4"/>' +
+          '<ellipse class="k" cx="150" cy="40" rx="14" ry="9"/><path class="t" d="M142 32 q-8 -14 4 -12 M156 32 q8 -14 -4 -12"/>' + D.arrow(80, 50, 130, 42, 'a') + D.arrow(166, 42, 228, 42, 'a') +
+          '<circle class="dot" cx="146" cy="48" r="2"/><circle class="dot" cx="154" cy="48" r="2"/>' +
+          D.label(4, 170, 'anthers make pollen', 52, 46) + D.label(184, 170, 'stigma receives pollen', 240, 44) + '<text class="n" x="150" y="70" text-anchor="middle">pollen on the bee</text>',
+        tall: 176, cap: 'A bee carries pollen from the anthers of one flower to the stigma of another.' },
+      { h: 'Small animals, big job' },
+      'Around the world, about three quarters of the main kinds of food crops depend at least partly on pollinators. Canada has more than 800 species of native bees. Most live alone, not in hives, and many nest in tiny holes in the ground or in hollow plant stems. Bumblebees can even shake pollen loose by vibrating their flight muscles, which helps tomatoes and blueberries. Honeybees, brought to North America from Europe, live in hives kept by beekeepers, but native bees are often better at pollinating local plants.',
+      { box: 'Missing in Ontario', text: 'The rusty-patched bumble bee was once common in southern Ontario. It has not been seen in Canada since 2009 and is listed as endangered.' },
+      { h: 'Why they are declining' },
+      'Many pollinators are disappearing. Fields of a single crop and paved-over land leave fewer wildflowers to feed on. Some pesticides harm bees even in small amounts. Diseases spread from managed honeybees, and a changing climate can make flowers bloom before the insects that need them are active.',
+      'Everyone can help. Planting native wildflowers, leaving some dead stems and bare ground for nests, and avoiding pesticides in gardens all make a difference. A balcony with a few pots of native plants can become a stop on a pollinator’s journey.'
+    ],
+    guide: { before: 'Look closely at a real flower and find the pollen. Teach <b>pollinator</b>, <b>pollination</b> and <b>mutualism</b>. Name three foods from breakfast that need pollinators.',
+      after: 'What could your family or school do in one season to help pollinators? Make a small plan.' },
+    words: [['pollinators', 'animals that carry pollen from flower to flower'], ['pollination', 'moving pollen to a flower’s stigma so it can make seeds']],
+    qs: [
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps of pollination.',
+        items: ['A bee drinks nectar from a flower.', 'Pollen sticks to the bee’s hairs.', 'The bee flies to another flower.', 'Pollen rubs off onto the stigma.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In <b>mutualism</b>, …',
+        opts: ['both living things benefit', 'one harms the other', 'neither benefits', 'only the plant benefits'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'The report explains causes of decline and ways to help. Fill in the chart.', cols: ['Cause of decline', 'One way to help'],
+        rows: [['fewer wildflowers', null], ['pesticides', null], ['no places to nest', null]],
+        a: [[null, 'plant native wildflowers'], [null, 'avoid pesticides in gardens'], [null, 'leave dead stems and bare ground']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why could a change in climate cause problems even if flowers and bees are both still around?',
+        a: 'Flowers might bloom earlier, before the insects are active. Then the bees miss the food, and the flowers miss being pollinated.', look: 'the idea of timing being out of step' },
+      { k: 'choice', code: 'C2.1', half: true, q: 'Which prior knowledge would help you most with this report?',
+        opts: ['knowing the parts of a flower', 'knowing how to swim', 'knowing hockey rules', 'knowing a recipe for soup'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: 'Which sentence is compound (two independent clauses)?',
+        opts: ['The bee gets food, and the plant gets help to reproduce.', 'Everyone can help.', 'Many pollinators are disappearing.', 'Take a bite of an apple.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the report in two or three sentences.',
+        a: 'Pollinators like bees carry pollen between flowers so plants can make seeds and fruit, including much of our food. Many are declining because of habitat loss, pesticides, disease and climate change, but people can help by planting native flowers.', look: 'the role of pollinators, why they are declining and how to help' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what might happen to a blueberry farm if there were very few bees nearby. Explain your thinking.',
+        a: 'Fewer flowers would be pollinated, so the bushes would make fewer berries. The farmer might have to rent hives of bees to get a good crop.', look: 'a prediction based on the text (less pollination, fewer berries)' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-algonquin-wolf', subject: 'science', form: 'Explanation',
+    title: 'Howls in the Night',
+    deck: 'The Algonquin wolf, its prey and the balance of a forest ecosystem',
+    hero: {
+      photo: 'g7-eastern-wolf.jpg', credit: 'Photo: Quinten Wiegersma, CC BY 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'An eastern wolf, also called the Algonquin wolf, in Algonquin Provincial Park. It is smaller than a grey wolf and larger than a coyote.'
+    },
+    body: [
+      'On August evenings in Algonquin Park, crowds of people stand silently by the side of a highway. A park naturalist cups their hands and lets out a long, wavering howl. Everyone holds their breath. Then, from somewhere deep in the dark forest, the wolves answer. These public wolf howls have taken place since 1963, and over 100 000 people have joined them.',
+      { h: 'A wolf of its own' },
+      'The wolves of Algonquin are not grey wolves or coyotes, though they are related to both. Scientists call them eastern wolves, or Algonquin wolves. They live mainly in and around Algonquin Park and a few other parts of central Ontario and Quebec. Only a few hundred adults remain, and the species is listed as threatened in Canada.',
+      { fig: '<path class="k" d="M30 150 H290 M30 150 V20"/><path class="a" d="M30 60 Q70 30 110 60 Q150 100 190 60 Q230 30 270 60"/><path class="k" stroke-dasharray="5 4" d="M30 120 Q70 120 110 96 Q150 70 190 96 Q230 124 270 100"/>' +
+          '<text class="lb" x="280" y="56">deer</text><text class="lb" x="280" y="104">wolves</text><text class="n" x="160" y="166" text-anchor="middle">years →</text><text class="n" x="26" y="16" text-anchor="end">number</text>',
+        tall: 172, cap: 'A simplified pattern of predator and prey numbers over time. When deer are many, wolves increase; then deer fall, and so do wolves.' },
+      { h: 'Predator and prey' },
+      'Algonquin wolves hunt white-tailed deer, moose and, in summer, beavers. A wolf is a <b>predator</b>, an animal that hunts others for food, and the animals it hunts are its <b>prey</b>. The numbers of predators and prey are linked. When deer are plentiful, wolf packs raise more pups. As more wolves hunt, deer numbers fall. With less food, fewer wolf pups survive, and deer begin to recover. The populations rise and fall in a slow, linked pattern.',
+      { box: 'Why predators matter', text: 'Without predators, deer and moose can grow so numerous that they eat young trees faster than the forest can replace them. Predators help keep the whole ecosystem in balance.' },
+      { h: 'Protecting the wolves' },
+      'For years, wolves that stepped outside the park boundary in winter, following deer, could be legally hunted or trapped. Researchers found that this was a major cause of death. In 2001, Ontario banned hunting and trapping wolves in the townships around the park. Today, the province also protects the eastern wolf in other parts of its range. Biologists track packs with radio collars to learn where they travel and what they need to survive.',
+      'Wolves have often been feared and misunderstood. The Algonquin wolf howls are a chance to hear one of Ontario’s rarest animals and to understand its place in the forest.'
+    ],
+    guide: { before: 'Find Algonquin Park on a map of Ontario. Teach <b>predator</b>, <b>prey</b> and <b>population</b>. Show how to follow each line on the graph separately, then together.',
+      after: 'Some people fear wolves, and others want to protect them. How could a farmer near the park and a wolf biologist find common ground?' },
+    words: [['predator', 'an animal that hunts other animals for food'], ['prey', 'an animal that is hunted for food']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'On the graph, what usually happens after deer numbers rise?',
+        opts: ['Wolf numbers rise.', 'Wolf numbers fall.', 'Both stay the same.', 'Deer disappear.'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'The paragraph under “Predator and prey” is mostly organized as …',
+        opts: ['a cycle of causes and effects', 'a list of facts in no order', 'a story with a villain', 'a comparison of two parks'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did wolves leave the safety of the park in winter, and why was that dangerous for them?',
+        a: 'They followed the deer, which moved outside the park in winter. Outside the boundary, wolves could be legally hunted or trapped.', look: 'the link between following prey and being hunted outside the park' },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What is the main idea of the box “Why predators matter”?',
+        opts: ['Predators help keep the forest ecosystem in balance.', 'Deer are dangerous.', 'Young trees grow fast.', 'Moose are predators.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“A wolf is a <b>predator</b>.” What is <b>a predator</b> in this sentence?',
+        opts: ['a predicate noun renaming “a wolf”', 'the verb', 'an adjective', 'the subject'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The graph has two lines that rise and fall. What strategy would help you read it correctly?',
+        a: 'I would follow one line with my finger at a time, then compare where each one peaks. Reading the caption first also helps.', look: 'a sensible graph-reading strategy' },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Which purpose would this text suit best?',
+        opts: ['a science project on predator-prey relationships', 'a guide to camping recipes', 'a mystery story', 'a hockey report'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why does the author begin with crowds waiting in silence?',
+        opts: ['to build suspense and draw the reader in', 'to explain the rules of the park', 'to describe the highway', 'to list the animals'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The last paragraph says wolves are often “feared and misunderstood.” How does this text try to change that view?',
+        a: 'It explains that wolves are a rare, threatened species that keeps the forest healthy, and it shows people enjoying their howls instead of fearing them.', look: 'how the text presents wolves positively, with a detail' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-bicycle-frame', subject: 'science', form: 'Explanation',
+    title: 'Two Triangles and a Rider',
+    deck: 'How the shape and materials of a bicycle frame help it carry a load',
+    hero: {
+      photo: 'g7-bike-frame.jpg', credit: 'Photo: 4300streetcar, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A steel bicycle frame being built, held in a jig. Look closely and you can find two triangles joined together.'
+    },
+    body: [
+      'A bicycle frame has a tough job. It must hold up a rider who may weigh many times more than the bike, survive bumps, potholes and curbs, and still be light enough to pedal up a hill. Since the 1890s, most bicycles have used the same basic solution: the diamond frame. Its shape is no accident.',
+      { h: 'Built from triangles' },
+      'The diamond frame is really two triangles joined along one side. The front triangle is made by the top tube, the down tube and the seat tube. The rear triangle is made by the seat tube, the seat stays and the chain stays. Triangles are <b>rigid</b>: they cannot change shape unless a side bends or breaks. So when the rider sits down and pushes on the pedals, the frame keeps its shape.',
+      { fig: '<circle class="t" cx="60" cy="120" r="40"/><circle class="t" cx="240" cy="120" r="40"/>' +
+          '<path class="k" d="M60 120 L120 120 L104 50 Z M104 50 L204 50 L120 120 M204 50 L240 120 M204 50 L198 34 M104 50 L100 36 M92 36 H112"/>' +
+          D.label(130, 20, 'top tube', 160, 50) + D.label(206, 98, 'down tube', 162, 86) + D.label(10, 20, 'seat tube', 110, 84) +
+          D.label(10, 172, 'chain stay', 90, 120) + D.label(150, 172, 'seat stay', 82, 86) +
+          '<text class="lb" x="78" y="104">rear</text><text class="lb" x="152" y="72">front</text>',
+        tall: 176, cap: 'A diamond frame: a front triangle and a rear triangle share the seat tube.' },
+      { h: 'Pushes and pulls' },
+      'As the rider sits, their weight pushes down on the seat tube, squeezing it. This force is called compression. At the same time, other tubes are being pulled and stretched, a force called tension. When the rider pedals hard, the forces change many times each second. A good frame spreads these forces through all its tubes so no single part takes too much.',
+      { h: 'Hollow and strong' },
+      'Why are the tubes hollow? A hollow tube is almost as stiff as a solid rod of the same width, but it is much lighter. That is why the frame can be strong without being heavy. Designers choose the <b>material</b> to match the purpose. Steel is strong, cheap and easy to repair, which suits commuter and touring bikes. Aluminum is lighter. Carbon fibre is lighter still and very stiff, so racers use it, but it is expensive and can crack if it is hit hard.',
+      { box: 'Try it', text: 'Roll a sheet of paper into a tube and stand a light book on it. Then fold another sheet flat and try again. Which holds the weight?' },
+      'Some frames break the rules for a reason. A step-through frame drops the top tube so riders can get on easily. A cargo bike stretches its frame to carry children or groceries. Each design trades a little strength or lightness for something else the rider needs. Form, as engineers say, follows function.'
+    ],
+    guide: { before: 'Look at a real bicycle and find the two triangles. Review <b>compression</b> and <b>tension</b> (squeezing and stretching). Do the paper-tube test in the box together.',
+      after: 'If you designed a bike for a city with many hills, what material and frame shape would you choose? Why?' },
+    words: [['rigid', 'stiff; keeps its shape'], ['material', 'what something is made of']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Which tube is part of both triangles?',
+        opts: ['the seat tube', 'the top tube', 'the down tube', 'the chain stay'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are bicycle tubes hollow?',
+        opts: ['They are almost as stiff as solid rods but much lighter.', 'To hold water.', 'They are cheaper to paint.', 'To make noise.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Match each material to its strengths and its best use. Fill in the chart.', cols: ['Material', 'Strength', 'Best use'],
+        rows: [['steel', 'strong, cheap, easy to repair', null], ['carbon fibre', null, 'racing bikes'], ['aluminum', null, 'bikes that need to be lighter than steel']],
+        a: [[null, null, 'commuter and touring bikes'], [null, 'very light and stiff', null], [null, 'lighter than steel', null]] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is an explanation?',
+        opts: ['It explains how and why a frame works.', 'It tells a story with characters.', 'It gives the writer’s opinion only.', 'It has rhyming lines.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '“Form follows function” means …',
+        opts: ['the shape is chosen to suit the job', 'a form must be filled in', 'all bikes look the same', 'function is not important'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'A step-through frame has no high top tube. What does it gain, and what might it give up?',
+        a: 'It gains being easy to get on and off. Without the full front triangle, it may give up a little stiffness or need heavier tubes to stay strong.', look: 'one gain and one likely trade-off, based on triangles' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which part of the text did you need to reread or check with the diagram? What did you understand afterward?',
+        a: 'I reread the part naming the tubes in each triangle and traced them on the diagram. Afterward I understood that the seat tube belongs to both.', look: 'a specific part, the strategy used and what became clear' },
+      { k: 'choice', code: 'C2.7', q: 'Which strategy would best help you understand the “Try it” box?',
+        opts: ['actually doing the paper test and seeing the result', 'skipping it', 'memorizing it word for word', 'reading only the first sentence'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-rebellions', subject: 'history', form: 'Report',
+    title: 'Rebels in the Snow',
+    deck: 'The Rebellions of 1837 and 1838, and the fight for a government that answers to the people',
+    hero: {
+      photo: 'g7-montgomery.jpg', credit: 'Image: unknown artist, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An old engraving of the clash at Montgomery’s Tavern, north of Toronto, in December 1837.'
+    },
+    body: [
+      'In the 1830s, Upper Canada and Lower Canada each had an elected assembly, but the assemblies had little real power. The governor, sent from Britain, made the important decisions, guided by small groups of wealthy, well-connected advisers. In Upper Canada, critics called this group the Family Compact. In Lower Canada, it was the Château Clique. Many ordinary people felt shut out of decisions about roads, land, schools and taxes. Farmers complained that the best land went to friends of the powerful, while their own roads stayed muddy and impassable.',
+      { fig: '<path class="k" d="M150 10 V160"/>' +
+          '<text class="lb" x="75" y="20" text-anchor="middle">Lower Canada</text><text class="lb" x="225" y="20" text-anchor="middle">Upper Canada</text>' +
+          [['Nov 1837', 'Patriotes win', 'at Saint-Denis', 48], ['Nov–Dec 1837', 'defeats at Saint-Charles', 'and Saint-Eustache', 98], ['1838', 'second uprising', 'crushed', 140]].map(function (r) { return '<text class="n" x="75" y="' + r[3] + '" text-anchor="middle">' + r[0] + '</text><text class="l" x="75" y="' + (r[3] + 12) + '" text-anchor="middle">' + r[1] + '</text><text class="l" x="75" y="' + (r[3] + 24) + '" text-anchor="middle">' + r[2] + '</text>'; }).join('') +
+          [['Dec 1837', 'rebels march', 'to Montgomery’s Tavern', 48], ['Dec 1837', 'scattered in', 'less than an hour', 98], ['1838', 'raids from the', 'United States fail', 140]].map(function (r) { return '<text class="n" x="225" y="' + r[3] + '" text-anchor="middle">' + r[0] + '</text><text class="l" x="225" y="' + (r[3] + 12) + '" text-anchor="middle">' + r[1] + '</text><text class="l" x="225" y="' + (r[3] + 24) + '" text-anchor="middle">' + r[2] + '</text>'; }).join(''),
+        tall: 170, cap: 'The rebellions in the two colonies, side by side.' },
+      { h: 'Calls for change' },
+      'Reformers wanted a government that had to answer to the elected assembly, a system called <b>responsible government</b>. In Lower Canada, Louis-Joseph Papineau led the Patriotes, who also wanted to protect the rights of French-speaking Canadiens. In Upper Canada, the fiery newspaper editor William Lyon Mackenzie attacked the Family Compact in print. When peaceful protest seemed to fail, some reformers turned to <b>rebellion</b>.',
+      { h: 'The uprisings' },
+      'In November 1837, fighting broke out near Montréal. The Patriotes won a battle at Saint-Denis, but British troops defeated them at Saint-Charles and Saint-Eustache. In December, Mackenzie led several hundred poorly armed farmers down Yonge Street toward Toronto. Loyal militia scattered them near Montgomery’s Tavern in less than an hour. Mackenzie escaped to the United States. Two rebel leaders, Samuel Lount and Peter Matthews, were hanged in Toronto.',
+      { box: 'Did you know?', text: 'Some of the rebels in Upper Canada were later sent as prisoners to Australia, on the other side of the world.' },
+      { h: 'Lost battles, won argument' },
+      'The rebels lost, but Britain could not ignore what had happened. It sent Lord Durham to find out why. His 1839 report recommended responsible government and joining the two colonies into one. The second idea was meant partly to make French Canadians a minority, which angered many. In 1841, the colonies were united as the Province of Canada. In 1848, reformers Robert Baldwin and Louis-Hippolyte LaFontaine, an English and a French Canadian working together, finally won responsible government, peacefully.'
+    ],
+    guide: { before: 'Find Toronto and Montréal on a map and explain Upper and Lower Canada. Teach <b>responsible government</b> and <b>rebellion</b>. Compare it to a class where the teacher must listen to the class council.',
+      after: 'The rebels lost the fighting, but their main goal was achieved later without violence. What does this suggest about different ways of making change?' },
+    words: [['responsible government', 'a government that must have the support of the elected assembly'], ['rebellion', 'an armed fight against the people in power']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What did reformers in both colonies want most?',
+        opts: ['a government that had to answer to the elected assembly', 'to join the United States', 'to remove all taxes', 'a new governor from France'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'The report compares the two colonies. Fill in the chart.', cols: ['', 'Lower Canada', 'Upper Canada'],
+        rows: [['Name for the ruling group', 'Château Clique', null], ['Reform leader', null, 'William Lyon Mackenzie'], ['Result of the 1837 uprising', null, null]],
+        a: [[null, null, 'Family Compact'], [null, 'Louis-Joseph Papineau', null], [null, 'a win at Saint-Denis, then defeat', 'scattered in less than an hour']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'How is the chart of the uprisings organized?',
+        opts: ['two columns, one for each colony, in time order', 'by the number of soldiers', 'in alphabetical order', 'by distance from Britain'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Re</b>former and <b>re</b>bellion both start with re-. Which word uses <b>re-</b> to mean “again”?',
+        opts: ['rebuild', 'reason', 'ready', 'reptile'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 4, q: 'Lord Durham wanted to make French Canadians a minority. How might a Canadien in Lower Canada have felt about his report? Why?',
+        a: 'Angry and worried. Even though the report suggested responsible government, it also aimed to weaken French Canadians’ language and culture by making them a minority.', look: 'a feeling with a reason tied to the plan to make them a minority' },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who is the narrator of this report?',
+        opts: ['an outside narrator using the third person', 'Mackenzie, in the first person', 'Papineau, in the first person', 'a rebel prisoner'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is there a comma after “Robert Baldwin and Louis-Hippolyte LaFontaine”?',
+        opts: ['to set off extra information about them', 'to end a list of dates', 'to show a quotation', 'to show a pause in a poem'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the heading “Lost battles, won argument.” Use evidence from the text.',
+        a: 'The rebels lost the fighting in 1837 and 1838. But their main argument for responsible government won: Durham recommended it, and it was achieved in 1848.', look: 'both parts of the heading explained with evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-cascadia', subject: 'geography', form: 'Report',
+    title: 'The Night the Coast Dropped',
+    deck: 'How First Nations stories, dead trees and Japanese records solved the mystery of a giant earthquake',
+    hero: {
+      photo: 'g7-tsunami-sign.jpg', credit: 'Photo: Mimigu, CC BY 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A tsunami hazard zone sign in Bamfield, on the west coast of Vancouver Island, close to Pachena Bay.'
+    },
+    body: [
+      'On a winter night in January 1700, the ground along the Pacific coast of North America shook violently for several minutes. Whole stretches of shoreline dropped by a metre or more. Within half an hour, a huge wave swept over the beaches. No one wrote it down in a book at the time, but it was not forgotten. For three centuries, scientists did not know it had happened. Then, piece by piece, the evidence came together.',
+      { h: 'A plate slips under' },
+      'Off the coast of British Columbia, a small <b>tectonic plate</b>, the Juan de Fuca Plate, is slowly sliding beneath the North American Plate. This is called a <b>subduction zone</b>. The plates do not slide smoothly. They lock together, and pressure builds for hundreds of years. When the lock finally breaks, the edge of the continent snaps back, lifting the sea floor and setting off a tsunami.',
+      { fig: '<path class="t" d="M10 52 H130"/>' + D.ripple(14, 126, 46, 't') +
+          '<path class="k" d="M10 70 L180 102 L290 150"/><path class="k" d="M130 52 Q170 40 210 44 T290 40"/><path class="k" d="M130 52 L180 102"/>' +
+          D.arrow(60, 84, 110, 94, 'a') + D.arrow(250, 70, 215, 72, 'a') +
+          '<path class="d" d="M168 82 l8 6 l-6 4 l8 6"/>' +
+          '<text class="l" x="20" y="96">Juan de Fuca Plate</text><text class="l" x="210" y="62">North American Plate</text>' +
+          '<text class="n" x="40" y="36">Pacific Ocean</text><text class="n" x="190" y="126">plates lock here</text>',
+        tall: 150, cap: 'A subduction zone. The ocean plate slides under the continent and the two plates catch, then suddenly slip.' },
+      { h: 'Three kinds of evidence' },
+      'The first clue came from the land. Along rivers in Washington State and British Columbia, scientists found <b>ghost forests</b>: dead red cedars standing in salt marshes. The land had dropped suddenly, and salt water had killed the trees. Their tree rings showed they all died between 1699 and 1700.',
+      'The second clue came from across the ocean. Japanese villages kept careful records, and they described a tsunami that arrived in January 1700 with no earthquake felt in Japan. Scientists used the wave’s timing to work backward. The quake must have struck the Cascadia coast on the evening of January 26, 1700.',
+      { box: 'Oral history as evidence', text: 'Stories passed down by the Huu-ay-aht and other Nuu-chah-nulth peoples tell of a winter night when the ground shook and the sea swept away a village at Pachena Bay. The stories matched the scientific evidence closely.' },
+      { h: 'Getting ready' },
+      'Scientists now know that Cascadia has had giant earthquakes many times, roughly every 500 years on average. Another will happen, though no one can say when. Coastal towns in British Columbia now post tsunami route signs, practise drills and teach students what to do: drop, cover and hold on until the shaking stops, then move to high ground right away.'
+    ],
+    guide: { before: 'Push two books together on a table until one slips under the other to show <b>subduction</b>. Teach <b>tectonic plate</b> and <b>ghost forest</b>. Find Vancouver Island and Japan on a map.',
+      after: 'Scientists used stories, trees and old records. Why is it stronger to have three kinds of evidence instead of one?' },
+    words: [['tectonic plate', 'one of the giant slabs of rock that make up Earth’s outer layer'], ['subduction zone', 'a place where one plate slides beneath another'], ['ghost forests', 'dead trees still standing where the land suddenly dropped']],
+    qs: [
+      { k: 'table', code: 'C1.3', q: 'The report gives three kinds of evidence. Fill in the chart.', cols: ['Evidence', 'Where it came from', 'What it showed'],
+        rows: [['ghost forests', null, 'the land dropped between 1699 and 1700'], ['Japanese records', 'villages in Japan', null], ['oral history', null, null]],
+        a: [[null, 'rivers in Washington and B.C.', null], [null, null, 'a tsunami arrived in January 1700 with no quake felt'], [null, 'Huu-ay-aht and other Nuu-chah-nulth peoples', 'the ground shook and the sea swept away a village']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram help you understand?',
+        opts: ['how one plate slides under another and gets stuck', 'how tsunamis reach Japan', 'how trees grow rings', 'where Pachena Bay is'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the red cedars die?',
+        opts: ['The land dropped and salt water flooded their roots.', 'They were cut down.', 'A fire burned them.', 'They were too old.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In a <b>ghost forest</b>, what does the word <b>ghost</b> suggest?',
+        opts: ['The trees are dead but still standing, like a reminder of the past.', 'The forest is haunted.', 'The trees are white.', 'Nobody can see the forest.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'The report says “No one wrote it down in a book at the time, but it was not forgotten.” Whose point of view does this sentence make room for?',
+        opts: ['First Nations people who remembered it through oral history', 'Japanese scientists', 'tourists on Vancouver Island', 'the trees'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The paragraph about Japanese records says scientists “worked backward.” If this idea confused you, what could you do to understand it? Explain.',
+        a: 'I could reread the paragraph slowly and picture it: the wave took a certain number of hours to cross the ocean, so subtracting that time from when it reached Japan tells you when the quake happened.', look: 'a fix-up strategy and a correct explanation of working backward' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think the author put the oral history in a separate box? What message does it send about Indigenous knowledge?',
+        a: 'It makes it stand out so readers do not miss it. It shows that Indigenous oral history is real evidence that agreed with the science.', look: 'a reason for the box and the message about Indigenous knowledge' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what a student in a coastal B.C. town should do if strong shaking starts at school. Use the text.',
+        a: 'Drop, cover and hold on until the shaking stops, then follow the tsunami route signs to high ground right away, without waiting for a warning.', look: 'both steps from the text: protect during shaking, then go to high ground' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-stress-brain', subject: 'health', form: 'Explanation',
+    title: 'Your Brain on Alarm',
+    deck: 'What stress does to your body, and how to turn the alarm down',
+    hero: {
+      photo: 'g7-brain-model.jpg', credit: 'Photo: YVC Biology Department, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A model of the human brain. Deep inside, small regions work like an alarm system.'
+    },
+    body: [
+      'Imagine you are about to give a speech to your class. Your heart pounds, your hands get sweaty and your mouth feels dry. Your thoughts race, or your mind goes completely blank. Nothing is actually attacking you, yet your body is acting as if it is in danger. That is <b>stress</b>, and it starts in your brain.',
+      { h: 'The alarm' },
+      'Deep in the brain is a small, almond-shaped part called the <b>amygdala</b>. Its job is to notice danger. When it senses a threat, it sends a signal that tells your adrenal glands, which sit on top of your kidneys, to release <b>hormones</b> such as adrenaline. These chemical messengers travel through your blood and get your body ready to act.',
+      { fig: [['brain senses danger', 'amygdala'], ['hormones released', 'adrenaline'], ['body gets ready', 'heart, lungs, muscles']].map(function (r, i) {
+            var x = 14 + i * 98; return '<rect class="k" x="' + x + '" y="40" width="80" height="50"/><text class="n" x="' + (x + 40) + '" y="60" text-anchor="middle">' + r[0] + '</text><text class="l" x="' + (x + 40) + '" y="78" text-anchor="middle">' + r[1] + '</text>' +
+              (i < 2 ? D.arrow(x + 82, 65, x + 96, 65, 'a') : ''); }).join('') +
+          '<text class="lb" x="150" y="26" text-anchor="middle">The stress response</text>' +
+          '<text class="n" x="150" y="118" text-anchor="middle">faster heartbeat · quicker breathing · tense muscles</text>',
+        tall: 130, cap: 'The stress response happens in a few seconds.' },
+      'Your heart beats faster to pump more blood to your muscles. You breathe more quickly to take in oxygen. Your muscles tense. This is called the fight, flight or freeze response. Thousands of years ago, it helped people escape predators. A little stress can still help you today, by giving you energy before a race or focus before a test.',
+      { h: 'When the alarm will not switch off' },
+      'Problems start when stress lasts for weeks. The front part of your brain, which plans and makes careful choices, works less well when the alarm is ringing. Long-term stress can disturb sleep, cause headaches and stomach aches, and make it easier to catch colds. It can also make people feel tired, grumpy or worried all the time, even when nothing is wrong.',
+      { box: 'Try this', text: 'Breathe in slowly through your nose for a count of four. Breathe out through your mouth for a count of six. A long, slow breath out tells your body the danger has passed.' },
+      { h: 'Turning it down' },
+      'You cannot remove all stress, but you can help your body reset. Slow breathing calms the heart. Exercise uses up the extra energy. Enough sleep helps the thinking part of your brain stay in charge. Breaking a big job into small steps makes it feel less threatening. Most important of all, talk to someone you trust. Saying a worry out loud often shrinks it. A parent, teacher, coach or counsellor can help you find a plan, and needing help is never a sign of weakness. Everyone’s alarm rings sometimes.'
+    ],
+    guide: { before: 'Ask when the child last felt their heart pound. Teach <b>amygdala</b> and <b>hormones</b>. Try the breathing box together before reading.',
+      after: 'Which strategy for turning down stress would work best for you? When could you use it this week?' },
+    words: [['amygdala', 'a small part of the brain that notices danger'], ['hormones', 'chemical messengers carried in the blood']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps of the stress response in order.',
+        items: ['The amygdala senses a threat.', 'It signals the adrenal glands.', 'Hormones such as adrenaline are released.', 'The heart beats faster and muscles tense.'], show: [3, 0, 2, 1] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is an explanation?',
+        opts: ['It tells how and why something happens, step by step.', 'It has characters and a plot.', 'It tries to sell a product.', 'It rhymes.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What do the arrows in the diagram show?',
+        opts: ['that one step causes the next', 'the direction of the blood', 'how big each part is', 'where the brain is'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author start by describing a class speech?',
+        opts: ['to connect stress to a situation readers know', 'to teach how to give a speech', 'to prove speeches are dangerous', 'to describe the amygdala'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Your thoughts race, or your mind goes completely blank.” What does the word <b>or</b> tell you?',
+        opts: ['Either one thing or the other can happen.', 'Both always happen.', 'The second idea causes the first.', 'The sentence is a question.'], a: 0 },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Think of a time you felt stressed. Which body changes from the text did you notice? How does your experience help you understand the text?',
+        a: 'Before a hockey tryout my heart pounded and my hands shook. Now I know the adrenaline was getting my muscles ready, which helps me understand the stress response.', look: 'a personal example linked to the body changes in the text' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'The author says a little stress can help, but long-term stress causes harm. Explain both sides using the text.',
+        a: 'A little stress gives energy before a race or focus for a test. Stress that lasts for weeks disturbs sleep, causes aches, makes it easier to get sick and makes it harder to think carefully.', look: 'one benefit and one harm, each from the text' },
+      { k: 'lines', code: 'B1.1', n: 3, q: 'A friend tells you they are stressed about a test. Name two things a good listener does, and explain why they help.',
+        a: 'Look at them and let them finish without interrupting, then repeat back what you heard. It shows you care and helps them feel understood, which can shrink the worry.', look: 'two listening behaviours with a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-budget', subject: 'math', form: 'Explanation',
+    title: 'Where Does the Money Go?',
+    deck: 'How Mateo used a budget to reach his goal faster',
+    hero: {
+      photo: 'g7-coins.jpg', credit: 'Photo: Katherine Ridgley, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Stacks of Canadian coins. Small amounts add up quickly, both when you spend and when you save.'
+    },
+    body: [
+      'Mateo, who lives in Thunder Bay, wanted a used mountain bike that cost $180 and a helmet that cost $45. That was $225 in total. He earned money walking his neighbours’ dogs and helping at his aunt’s bakery on Saturdays, about $80 a month altogether. Somehow, though, the money always seemed to disappear. At the end of each month he could never say where it had gone.',
+      { fig: '<text class="lb" x="10" y="22">Plan A: $80 a month</text>' +
+          '<rect class="h" x="10" y="30" width="140" height="24"/><rect class="k" x="150" y="30" width="98" height="24"/><rect class="t" x="248" y="30" width="42" height="24"/>' +
+          '<text class="n" x="80" y="68" text-anchor="middle">save $40</text><text class="n" x="199" y="68" text-anchor="middle">spend $28</text><text class="n" x="269" y="68" text-anchor="middle">give $12</text>' +
+          '<text class="lb" x="10" y="98">Plan B: $80 a month</text>' +
+          '<rect class="h" x="10" y="106" width="210" height="24"/><rect class="k" x="220" y="106" width="28" height="24"/><rect class="t" x="248" y="106" width="42" height="24"/>' +
+          '<text class="n" x="115" y="144" text-anchor="middle">save $60</text><text class="n" x="244" y="144" text-anchor="end">spend $8</text><text class="n" x="252" y="144">give $12</text>',
+        tall: 152, cap: 'Two ways Mateo could divide his $80 a month. Each bar is drawn to scale.' },
+      { h: 'Making a plan' },
+      'Mateo’s aunt showed him how to make a <b>budget</b>, a plan for how money will be earned, spent and saved. First he listed his <b>income</b>, the money coming in. Then he tracked every dollar he spent for one month, writing each one in a notebook, from a $3 hot chocolate to a $15 video game. He was surprised: $22 had gone on snacks and $10 on in-game purchases he barely remembered.',
+      { h: 'Needs and wants' },
+      'Next, Mateo sorted his spending into <b>needs</b> and wants. A need is something you must have, like a bus pass to get to school. A want is something nice but not necessary, like a third bag of chips in a week. Mateo’s parents covered his needs, so most of his spending was on wants.',
+      'His first plan, Plan A, divided his $80 into saving $40, spending $28 and giving $12 to the food bank. At $40 a month, the bike would take 6 months, since 5 months would only bring him to $200. He did not want to wait that long. By then the snow would be falling, and the best riding weather would be over.',
+      { box: 'Pay yourself first', text: 'Many people move their savings out of their account as soon as they are paid, before they spend anything. Money that is already put aside is harder to waste.' },
+      { h: 'Plan B' },
+      'So Mateo cut his snacks and stopped the in-game purchases. In Plan B he saved $60 a month and kept giving $12. Now he would reach $225 in only 4 months. He kept a chart on his bedroom wall and filled it in each month. In late spring, he rode his new bike to the bakery. His aunt asked if the plan had been hard. Mateo shrugged. He missed the snacks for about a week, he said, but seeing the chart fill up felt better than any bag of chips.'
+    ],
+    guide: { before: 'Teach <b>budget</b>, <b>income</b> and <b>needs</b>. Ask the child to list three needs and three wants. Have a calculator ready.',
+      after: 'If you had $80 a month, how would you divide it? Make a quick plan together with saving, spending and giving.' },
+    words: [['budget', 'a plan for earning, spending and saving money'], ['income', 'money that comes in'], ['needs', 'things a person must have']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the bars, which part grew from Plan A to Plan B?',
+        opts: ['saving', 'spending', 'giving', 'none of them'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Mateo track his spending for a month?',
+        opts: ['to find out where his money was going', 'to impress his aunt', 'to pay the food bank', 'to buy the bike right away'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart. Show what part of $80 each amount is, as a percent.', cols: ['Plan', 'Save', 'Spend', 'Give'],
+        rows: [['Plan A', '$40 = 50%', null, null], ['Plan B', null, '$8 = 10%', null]],
+        a: [[null, null, '$28 = 35%', '$12 = 15%'], [null, '$60 = 75%', null, '$12 = 15%']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Saving $40 a month, why does the bike take 6 months and not 5?',
+        opts: ['After 5 months he has only $200, which is less than $225.', 'The bakery closes for a month.', 'The price goes up.', 'He gives $40 away.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '“The money always seemed to <b>disappear</b>.” What does the author mean?',
+        opts: ['It was spent without Mateo noticing.', 'It was stolen.', 'It turned invisible.', 'It was lost in the snow.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Sort these into needs and wants: a bus pass to school, in-game purchases, winter boots, a third bag of chips. Explain one choice.',
+        a: 'Needs: bus pass, winter boots. Wants: in-game purchases, a third bag of chips. Winter boots are a need because you must stay warm and safe outside.', look: 'a correct sort and a reason for one item' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Explain the “pay yourself first” idea in your own words, and why it works.',
+        a: 'Put your savings aside as soon as you get paid, before you spend. It works because money you cannot see is harder to waste on wants.', look: 'a paraphrase and the reason it works' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict how long the bike would take if Mateo saved only $25 a month. Show your thinking.',
+        a: '9 months. After 8 months he would have $200, which is not enough, and after 9 months he would have $225.', look: '9 months, with multiplication or repeated addition shown' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-lawren-harris', subject: 'arts', form: 'Biography',
+    title: 'Painting the Light',
+    deck: 'Lawren Harris and his journey from city streets to icy mountains',
+    hero: {
+      photo: 'g7-harris-superior.jpg', credit: 'Painting: Lawren Harris, 1926, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'North Shore, Lake Superior, painted by Lawren Harris in 1926. A broken tree stump stands in a beam of light.'
+    },
+    body: [
+      'Lawren Harris was born in Brantford, Ontario, in 1885, into one of the richest families in the country. He did not need to earn a living, so he could have done anything. He chose to paint. As a young man he studied art in Germany, then came home determined to create a new kind of Canadian art that looked nothing like the gentle European landscapes in Toronto’s galleries.',
+      { h: 'The Group of Seven' },
+      'Harris used his wealth to help other painters. In 1914, he paid for a building in Toronto with studios for artists, including his friend Tom Thomson. After the First World War, Harris and six other painters formed the Group of Seven. In 1920 they held their first <b>exhibition</b>. Critics called some of their bold, bright paintings rough and ugly. Within a few years, though, many Canadians saw them as the look of their country.',
+      { fig: '<text class="lb" x="70" y="18" text-anchor="middle">detailed</text><text class="lb" x="225" y="18" text-anchor="middle">simplified</text>' +
+          '<path class="k" d="M70 140 V60 M70 80 l-18 -14 M70 74 l16 -16 M70 96 l-22 -8 M70 104 l20 -10 M52 66 l-6 -10 M86 58 l4 -12 M48 88 l-8 4"/>' +
+          '<path class="t" d="M20 140 q20 -6 40 0 t40 0 t30 0"/><path class="d" d="M30 130 l6 -4 M100 132 l8 -3 M90 126 l4 -4"/>' +
+          '<path class="k" d="M225 140 V66 L210 46 M225 80 L248 60"/><path class="k" d="M175 140 H285"/>' +
+          '<path class="d" d="M260 26 L230 70 M276 30 L238 74"/>' +
+          D.label(110, 160, 'small shapes, many lines', 70, 120) + D.label(190, 60, 'a beam of light', 248, 40),
+        tall: 168, cap: 'Harris learned to leave out detail. Fewer, bolder shapes make the light and the mood stronger.' },
+      { h: 'Simpler and simpler' },
+      'In the 1920s, Harris painted the bare, rocky north shore of Lake Superior. He left out small details and painted smooth hills, flat water and huge skies. Light often streams in from above, as if the land were glowing. Later he painted the Rocky Mountains and, in 1930, the Arctic, after travelling north on a supply ship. Each painting was simpler than the one before. By the end of his life in Vancouver, Harris was painting <b>abstract</b> art, with no landscape at all. Some viewers were puzzled, but Harris saw it as the natural next step on a long journey.',
+      { box: 'Another view', text: 'The Group of Seven often painted the North as an empty wilderness. Today, many people point out that this land was, and is, home to Anishinaabe, Cree and Inuit peoples, who are missing from the paintings.' },
+      { h: 'Why it still matters' },
+      'Harris believed painting could show more than what the eye sees. He wanted his art to make people feel peace and wonder. Today his paintings hang in the National Gallery and the Art Gallery of Ontario, and they remain some of the most famous images of Canada. Visitors often stand in front of them for a long time, quietly. That is exactly what Harris hoped for. He wanted people to slow down, look closely and feel something larger than themselves.'
+    ],
+    guide: { before: 'Look at the hero painting together for one full minute before reading. Teach <b>abstract</b> and <b>exhibition</b>.',
+      after: 'How does the painting make you feel? Which detail creates that feeling?' },
+    words: [['abstract', 'art that uses shapes and colours instead of showing real things'], ['exhibition', 'a public show of art']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'How did Harris help other artists?',
+        opts: ['He paid for a building with studios for them.', 'He sold their paintings in Germany.', 'He taught at a school in Brantford.', 'He bought them supply ships.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram compare?',
+        opts: ['a detailed drawing and a simplified one', 'two different trees', 'summer and winter', 'Harris and Thomson'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number these events in Harris’s life in order.',
+        items: ['He studies art in Germany.', 'He pays for a studio building in Toronto.', 'The Group of Seven holds its first exhibition.', 'He travels to the Arctic.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a biography?',
+        opts: ['It tells the important events of a real person’s life in order.', 'It gives instructions.', 'It is told by the painter himself.', 'It has a made-up ending.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Lawren Harris was born in Brantford, Ontario, in 1885.” Why is there a comma after <b>Ontario</b>?',
+        opts: ['to separate the place from the year', 'to end the sentence', 'to show a list of cities', 'to join two sentences'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Read “Another view.” Whose perspective is missing from many Group of Seven paintings? Why does it matter?',
+        a: 'The Anishinaabe, Cree and Inuit peoples who lived on the land. It matters because the paintings make the North look empty, which leaves out the people whose home it is.', look: 'the missing peoples and why leaving them out matters' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Look at the painting at the top of the page. Describe one thing you notice and connect it to what the text says about Harris’s style.',
+        a: 'The stump is lit by a beam of light from the sky. That matches the text: light streams in from above and he left out small details.', look: 'a detail from the painting linked to the text' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Early critics called the paintings rough and ugly, but later they became famous. What does this suggest about how people judge new art?',
+        a: 'People often dislike new things at first because they are different. Over time they get used to the new style and can see its value.', look: 'a thoughtful generalization about first reactions to new art' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-feeds', subject: 'tech', form: 'Explanation',
+    title: 'Who Chooses What You See?',
+    deck: 'How recommendation algorithms build your feed, and how to stay in charge',
+    hero: {
+      photo: 'g7-smartphone.jpg', credit: 'Photo: Océanos y dados, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Scrolling through a phone. Each post on the screen was chosen by a computer program.'
+    },
+    body: [
+      'Open a video app, and a stream of clips begins: a skateboard trick, a cooking hack, a funny cat. It feels random, but it is not. Every video was picked for you by an <b>algorithm</b>, a set of step-by-step instructions that a computer follows. Its main goal is simple: keep you watching for as long as possible, because more watching means more ads seen and more money for the company.',
+      { h: 'How the algorithm learns' },
+      'The algorithm watches what you do. It notices which videos you finish, which ones you skip within a second, which ones you like, share or comment on, and even which ones you watch twice. It compares you with millions of other users who behaved the same way, then guesses what will hold your attention next. Every swipe is a piece of data that teaches it more about you.',
+      { fig: '' +
+          [[150, 22, 'you watch'], [228, 86, 'it records'], [150, 156, 'it predicts'], [72, 86, 'it shows more']].map(function (r) { return '<rect class="t" x="' + (r[0] - 42) + '" y="' + (r[1] - 12) + '" width="84" height="22"/><text class="n" x="' + r[0] + '" y="' + (r[1] + 3) + '" text-anchor="middle">' + r[2] + '</text>'; }).join('') +
+          D.arrow(196, 26, 232, 70, 'a') + D.arrow(232, 100, 196, 146, 'a') + D.arrow(104, 146, 68, 100, 'a') + D.arrow(68, 72, 104, 26, 'a'),
+        tall: 172, cap: 'The feedback loop. Each time around, the feed fits your past choices more closely.' },
+      { h: 'The bubble' },
+      'This loop can be helpful. If you love guitar, you will find great lessons. But it can also trap you in a <b>filter bubble</b>, where you mostly see things that match what you already watch and believe. Different views slowly disappear from your screen, and it can start to seem as if everyone thinks the way you do. Because angry or shocking videos often keep people watching, algorithms may also push more of them, even when they are not true.',
+      { box: 'Check yourself', text: 'After scrolling, ask: How do I feel right now? How long was I on? Did I choose what I watched, or did the feed choose for me?' },
+      { h: 'Taking back control' },
+      'You cannot see inside the algorithm, but you can steer it. Search for what you actually want instead of only scrolling. Use the “not interested” button on videos that make you feel bad. Follow people with different views and interests. Many apps let you see why a video was shown, or even reset your recommendations. Your feed should work for you, not the other way around. Most of all, remember that the feed is designed to be hard to put down. Setting a timer or keeping your phone out of your bedroom at night are choices that put you, not the program, in charge.'
+    ],
+    guide: { before: 'If the child uses video apps, open one together and talk about why each video might have appeared. Teach <b>algorithm</b> and <b>filter bubble</b>.',
+      after: 'Is your feed a good reflection of who you are? What would you change about it?' },
+    words: [['algorithm', 'a set of step-by-step instructions a computer follows'], ['filter bubble', 'a situation where you mostly see things that match what you already like and believe']],
+    qs: [
+      { k: 'choice', code: 'A2.2', half: true, q: 'What is the main goal of a video app’s algorithm?',
+        opts: ['to keep you watching as long as possible', 'to teach you new skills', 'to show only true videos', 'to save your battery'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Why is the diagram drawn as a circle?',
+        opts: ['The steps repeat over and over in a loop.', 'Phones are round.', 'It shows a timer.', 'It shows the ad money.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might algorithms push angry or shocking videos?',
+        opts: ['Those videos often keep people watching.', 'They are always true.', 'Users ask for them.', 'They are shorter.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does the word <b>steer</b> mean in “you can steer it”?',
+        opts: ['guide it in the direction you want', 'break it', 'turn it off', 'hide from it'], a: 0 },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'How can a filter bubble change what a person believes? Explain using the text.',
+        a: 'If you only see videos that match what you already think, different views disappear, so you may think everyone agrees with you and your beliefs get stronger without being questioned.', look: 'how seeing only matching content shapes beliefs' },
+      { k: 'lines', code: 'A2.1', n: 3, q: 'Choose two tips from “Taking back control.” Explain how each one puts you in charge.',
+        a: 'Searching for what I want means I choose, not the feed. Keeping my phone out of my bedroom at night means the feed cannot keep me up scrolling.', look: 'two tips and how each gives the user control' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The author says the loop “can be helpful.” Do you think the helpful side is bigger than the harmful side? Give a reason.',
+        a: 'No. Finding guitar lessons is nice, but losing different views and seeing more shocking videos can change how people think, which is more serious.', look: 'a clear opinion weighing help against harm, with a reason' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence gives a command?',
+        opts: ['Search for what you actually want instead of only scrolling.', 'The algorithm watches what you do.', 'This loop can be helpful.', 'It feels random, but it is not.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-missing-map', subject: 'story', form: 'Mystery', plain: true,
+    title: 'The Missing Map',
+    deck: 'A short mystery. Read carefully: every clue you need is in the story.',
+    hero: {
+      photo: 'g7-old-map.jpg', credit: 'Map: Johnson and Ward, 1862, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An old map of Ontario and Quebec from 1862. Paper this old is fragile and must be protected from damp and light.'
+    },
+    body: [
+      'The glass case was empty. Yesterday it had held the pride of the little museum in Perth, Ontario: a map of the town drawn by hand in 1834, the ink faded to brown. Now there was only a pale rectangle on the green cloth where it had lain.',
+      '“The case wasn’t broken,” said Ms. Mensah, the <b>curator</b>, who had just returned from a trip to Ottawa. “It was locked. Only Mr. Doucet and I have keys.”',
+      'I had come with my class for a field trip, but the tour had stopped. While the adults talked, I looked around. That is what my grandmother calls being nosy, and what I call being a good observer.',
+      { fig: '<path class="k" d="M180 60 V20 H20 V140 H180 V96 M180 60 H290 M180 96 H290"/>' +
+          '<rect class="h" x="80" y="64" width="44" height="28"/><text class="n" x="102" y="56" text-anchor="middle">empty case</text>' +
+          '<circle class="dot" cx="26" cy="40" r="4"/>' + D.label(40, 34, 'dial: 72%', 30, 40, 'start') +
+          '<path class="a" d="M132 96 q4 4 8 0"/>' + D.label(96, 128, 'white thread', 134, 100, 'start') +
+          '<path class="k" d="M262 60 V96 M270 60 V96 M278 60 V96"/><text class="n" x="270" y="112" text-anchor="middle">stairs</text>' +
+          D.ripple(222, 254, 84, 't') + '<text class="n" x="238" y="112" text-anchor="middle">wet</text>' +
+          '<circle class="k" cx="200" cy="78" r="8"/><text class="n" x="200" y="52" text-anchor="middle">fan</text>' +
+          '<text class="lb" x="236" y="140" text-anchor="middle">hall</text>',
+        tall: 160, cap: 'The narrator’s sketch of the museum room and hall, showing where each clue was found.' },
+      { h: 'The clues' },
+      'The air in the room felt heavy and damp, like a basement. Beside the case, a small dial on the wall read 72%. A card under it said, in neat handwriting: <i>Humidity above 60%: move paper items to the vault at once.</i> On the floor near the case lay a tiny white thread, the kind that comes from a cotton glove. Down the hall I could hear a fan roaring, and the floor near the stairs was wet.',
+      'Then there was Kyle, a visitor from the day before. Mr. Doucet said Kyle had asked three times how much the map was worth. Everyone turned to look at the guest book where Kyle had signed his name.',
+      { box: 'Stop and think', text: 'Before you read on, decide who you think took the map, and why. Which clues support your idea?' },
+      { h: 'The answer' },
+      '“Mr. Doucet,” I said, “was there a leak last night?”',
+      'He blinked. “A pipe burst in the basement. I was up half the night with buckets.”',
+      '“So the <b>humidity</b> went way up,” I said, pointing at the dial. “And someone followed the rule on that card, wearing cotton gloves so the oils from their hands wouldn’t harm the paper.” I held up the thread.',
+      'Mr. Doucet’s face went red, then he laughed. “I moved it to the vault myself! I meant to leave a note, but then the water started pouring in.” He hurried downstairs and came back holding a flat grey box. Inside, safe and dry, lay the map.',
+      'Kyle, it turned out, was just curious. Not every question is a clue.'
+    ],
+    guide: { before: 'Explain that a mystery gives clues so the reader can solve it. Teach <b>curator</b> and <b>humidity</b>. Stop at the box and have the child make a prediction before reading the ending.',
+      after: 'Which clue mattered most? Which detail was put there to mislead you?' },
+    words: [['curator', 'the person in charge of a museum’s collection'], ['humidity', 'the amount of water vapour in the air']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What feature of a mystery does the “Stop and think” box use?',
+        opts: ['It invites the reader to solve the puzzle before the answer.', 'It gives the moral of the story.', 'It lists the characters.', 'It explains a science fact.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who tells this story?',
+        opts: ['a student on a field trip, using “I”', 'Ms. Mensah', 'Mr. Doucet', 'an outside narrator who knows everything'], a: 0 },
+      { k: 'table', code: 'C3.4', q: 'Explain what each clue meant.', cols: ['Clue', 'What it meant'],
+        rows: [['the dial read 72%', null], ['a white cotton thread', null], ['the wet floor and the roaring fan', null], ['the case was locked, not broken', null]],
+        a: [[null, 'The air was too damp, so the rule said to move the map.'], [null, 'Someone wore cotton gloves to handle the map carefully.'], [null, 'There was a leak, which made the air damp.'], [null, 'Someone with a key took it.']] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Kyle’s questions about the map’s value are a <b>red herring</b>. What is a red herring?',
+        opts: ['a clue that leads readers to the wrong answer', 'the most important clue', 'the solution', 'a kind of map'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is the sentence on the card written in italics?',
+        opts: ['to show the exact words written on the card', 'to show someone is shouting', 'to show it is the title', 'to show it is a foreign language'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Stop at the box. What was your prediction before reading the ending? Was it correct? Which clue changed your thinking, if any?',
+        a: 'At first I thought Kyle took it, because he asked about the value. Then I noticed the thread and the card, so I predicted someone moved it to the vault.', look: 'a stated prediction and a clue that confirmed or changed it' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which sentence did you need to reread to solve the mystery? What did rereading help you notice?',
+        a: 'I reread the card under the dial. It helped me notice that the map was supposed to be moved when the humidity was high.', look: 'a specific sentence and what rereading revealed' },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What is the message of the last line, “Not every question is a clue”?',
+        a: 'We should not judge someone as guilty just because they seem curious or suspicious. We need real evidence.', look: 'the idea of not jumping to conclusions about people' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-boreal-forestry', subject: 'geography', form: 'Report',
+    title: 'Harvesting the Northern Forest',
+    deck: 'How Ontario’s boreal forest can supply wood and stay healthy',
+    hero: {
+      photo: 'g7-taiga.jpg', credit: 'Photo: peupleloup, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The boreal forest stretches across northern Canada in a broad band of spruce, pine, poplar, lakes and wetlands.'
+    },
+    body: [
+      'A broad band of forest stretches across Canada, from Yukon to Newfoundland and Labrador. This is the <b>boreal forest</b>, and it covers more than half of Ontario. Black spruce, jack pine, poplar and birch grow among countless lakes, rivers and bogs. Moose, lynx, wolves and woodland caribou live here, and billions of birds nest here each summer.',
+      { h: 'A working forest' },
+      'The boreal forest is also a source of jobs. Trees are harvested to make lumber for houses, paper, cardboard boxes and even clothing fibres. Many northern towns, such as Hearst and Kapuskasing, grew up around sawmills and paper mills. The challenge is to cut trees without destroying the forest that people, animals and the climate depend on. This is called <b>sustainable</b> forestry.',
+      { fig: [['year 0', 0], ['year 5', 1], ['year 30', 2], ['year 70', 3]].map(function (r, i) {
+            var x = 20 + i * 72, h = [0, 12, 34, 60][i]; return '<path class="k" d="M' + x + ' 130 H' + (x + 56) + '"/>' +
+              (h ? [0, 1, 2].map(function (j) { return D.spruce(x + 12 + j * 16, 130, h); }).join('') : '<path class="d" d="M' + (x + 8) + ' 126 h8 M' + (x + 26) + ' 127 h10 M' + (x + 42) + ' 125 h6"/>') +
+              '<text class="n" x="' + (x + 28) + '" y="148" text-anchor="middle">' + r[0] + '</text>'; }).join('') +
+          D.arrow(30, 22, 270, 22, 'a') + '<text class="l" x="150" y="40" text-anchor="middle">a harvested area grows back</text>',
+        tall: 156, cap: 'After harvest, new trees are planted or allowed to seed. It takes many decades for a forest to grow back.' },
+      { h: 'Rules for cutting' },
+      'In Ontario, companies may cut trees on public land only with an approved forest management plan. The plan says where and how much can be harvested, and how the forest will grow back. After a harvest, workers plant seedlings or leave trees that will drop seeds. Every year, tree planters in Ontario put tens of millions of seedlings in the ground. Areas near rivers and lakes are left uncut to protect fish and water. Forest scientists check the cut areas years later to make sure young trees are growing back well.',
+      { box: 'Caribou need space', text: 'Woodland caribou avoid roads and recently cut areas, where wolves can hunt more easily. Protecting large, unbroken stretches of older forest is key to their survival.' },
+      { h: 'Who decides?' },
+      'Most of the boreal forest is also the homeland of First Nations, including Cree, Oji-Cree and Anishinaabe communities. For a long time, decisions about logging were made far away, without them. Today, some First Nations, such as Pikangikum in northwestern Ontario, lead the planning for their own lands, deciding which areas to protect, which to harvest and how. Many people believe this partnership is the best path to a forest that lasts, because the people who live on the land see the forest every day and plan for their grandchildren.'
+    ],
+    guide: { before: 'Find Hearst, Kapuskasing and Pikangikum on a map of Ontario. Teach <b>boreal forest</b> and <b>sustainable</b>. Look around the room for things made from wood or paper.',
+      after: 'Why should the people who live in a forest have a say in how it is used?' },
+    words: [['boreal forest', 'the northern forest of spruce, pine and other trees that circles the top of the world'], ['sustainable', 'able to continue for a long time without causing lasting harm']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What is sustainable forestry?',
+        opts: ['cutting trees without destroying the forest people and animals depend on', 'cutting every tree at once', 'never cutting any trees', 'planting only one kind of tree'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['how a harvested area slowly grows back over decades', 'how fast caribou grow', 'how paper is made', 'the map of Ontario'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are areas near rivers and lakes left uncut?',
+        opts: ['to protect fish and water', 'because trees there are too small', 'because the trucks cannot reach them', 'for tourists'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Sustainable</b> is made from <b>sustain</b> + <b>-able</b>. What does <b>-able</b> mean?',
+        opts: ['can be done', 'not', 'full of', 'before'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why is it hard for woodland caribou to survive in areas with many roads and cut forests?',
+        a: 'Caribou avoid roads and cut areas, and wolves can hunt them more easily there, so they need large stretches of older forest to stay safe.', look: 'both reasons: caribou avoid these areas and wolves hunt more easily' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How has the way decisions are made about the forest changed over time?',
+        a: 'Decisions were once made far away without First Nations. Now some First Nations, such as Pikangikum, lead the planning for their own lands.', look: 'the change from outside control to First Nations leadership' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the report in two or three sentences.',
+        a: 'Ontario’s boreal forest is home to many animals and provides jobs. Sustainable forestry uses rules and replanting so the forest lasts. First Nations increasingly lead decisions about their lands.', look: 'the forest’s value, sustainable rules and First Nations leadership' },
+      { k: 'choice', code: 'C2.2', q: 'Which reader would find this report most useful?',
+        opts: ['a student researching how forests are managed in Ontario', 'someone looking for a recipe', 'a person learning to swim', 'a tourist looking for hotels in Toronto'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-greenhouse-effect', subject: 'science', form: 'Explanation',
+    title: 'A Blanket Around the Planet',
+    deck: 'How the greenhouse effect keeps Earth warm, and why it is getting stronger',
+    hero: {
+      photo: 'g7-atmosphere.jpg', credit: 'Photo: NASA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Earth’s atmosphere and the Moon, seen from the International Space Station. The thin blue layer keeps our planet warm.'
+    },
+    body: [
+      'Seen from space, the <b>atmosphere</b> looks as thin as the skin on an apple. Yet this layer of gases does something remarkable. Without it, Earth’s average temperature would be about −18 °C, colder than a January night in Winnipeg, all year round. Instead, the average is about 15 °C. The difference comes from the greenhouse effect.',
+      { h: 'Light in, heat out' },
+      'Sunlight passes easily through the atmosphere and warms the land and oceans. The warm Earth then gives off energy of its own, as invisible infrared radiation, or heat. Some of this heat escapes to space. But certain gases in the air, called <b>greenhouse gases</b>, absorb much of it and send it back in all directions, including back toward the ground. Water vapour, carbon dioxide and methane are the most important ones.',
+      { fig: '<path class="k" d="M10 140 H290"/><path class="t" d="M10 62 H290"/><text class="n" x="14" y="56">greenhouse gases</text>' +
+          '<circle class="k" cx="270" cy="24" r="12"/>' + D.arrow(258, 34, 215, 136, 'a') +
+          '<path class="d" d="M100 136 L115 62"/>' + D.arrow(115, 62, 125, 18, 'a') + '<text class="l" x="132" y="24">some heat escapes</text>' +
+          '<path class="d" d="M150 136 L165 66"/>' + D.arrow(165, 66, 185, 134, 'a') +
+          '<text class="lb" x="40" y="160" text-anchor="middle">Earth</text><text class="l" x="160" y="160" text-anchor="middle">heat sent back</text><text class="l" x="258" y="160" text-anchor="middle">sunlight in</text>',
+        tall: 168, cap: 'Sunlight passes in. Greenhouse gases trap some of the heat Earth gives off and send it back down.' },
+      'This works a little like a blanket on a cold night. A blanket does not make heat, but it slows down how fast your body’s heat escapes, so you stay warm.',
+      { h: 'Turning up the effect' },
+      'For thousands of years, the amount of carbon dioxide in the air stayed fairly steady. Then, starting in the 1800s, people began burning huge amounts of coal, oil and gas to run factories, heat homes and power cars. Burning these fossil fuels releases carbon dioxide. Since then, carbon dioxide in the air has risen by about 50%. Cutting down forests adds even more, because trees take carbon dioxide out of the air.',
+      { box: 'A thicker blanket', text: 'More greenhouse gas means more heat is held in. Earth’s average temperature has already risen by more than 1 °C since the late 1800s. Canada’s North is warming about three times faster.' },
+      'A degree may not sound like much, but it changes a lot. Ice melts, sea levels rise, and heat waves, droughts and wildfires grow more common. Scientists agree that cutting greenhouse gas pollution, through cleaner energy, efficient buildings and protecting forests, can slow the warming. Many Canadian cities and towns already have plans to cut their pollution, and young people across the country are pushing for faster action.'
+    ],
+    guide: { before: 'Sit in a sunny car or by a window and notice how warm it gets. Teach <b>atmosphere</b> and <b>greenhouse gases</b>. Explain that infrared is a kind of light we cannot see.',
+      after: 'What is one change your family or school could make to burn less fossil fuel?' },
+    words: [['atmosphere', 'the layer of gases around Earth'], ['greenhouse gases', 'gases that trap heat in the atmosphere']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps of the greenhouse effect in order.',
+        items: ['Sunlight passes through the atmosphere.', 'The land and oceans warm up.', 'Earth gives off heat.', 'Greenhouse gases send some heat back down.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what happens to some of the heat Earth gives off?',
+        opts: ['It escapes to space.', 'It turns into sunlight.', 'It becomes a cloud.', 'It goes underground.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author compare the atmosphere to a blanket?',
+        opts: ['A blanket slows heat from escaping, like greenhouse gases do.', 'Both are made of cotton.', 'Both are blue.', 'A blanket makes its own heat.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does cutting down forests add to the problem?',
+        opts: ['Trees take carbon dioxide out of the air.', 'Trees make sunlight.', 'Trees are greenhouse gases.', 'Forests are cold.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Without the atmosphere, the average would be about −18 °C. What does <b>average</b> mean here?',
+        opts: ['a typical value found by combining many temperatures', 'the highest temperature', 'the coldest night', 'a guess'], a: 0 },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about climate change before reading? What new idea did this text add?',
+        a: 'I knew the world is getting warmer. I learned that the greenhouse effect is natural and keeps Earth livable, but burning fossil fuels makes it stronger.', look: 'prior knowledge and one new idea from the text' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Is the greenhouse effect good or bad? Explain why the answer is “both.”',
+        a: 'It is good because without it Earth would be about −18 °C. It becomes a problem when extra greenhouse gases make it stronger, causing warming, melting ice and more wildfires.', look: 'the natural benefit and the harm of a stronger effect' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which part of this text was hardest to understand? What did you do to make sense of it?',
+        a: 'The part about infrared heat was hard. I looked at the arrows in the diagram and thought about the blanket comparison, and then it made sense.', look: 'a hard part named and a strategy that helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-red-river', subject: 'history', form: 'Report',
+    title: 'Pemmican and Power',
+    deck: 'How a fight over food at Red River led to the Battle of Seven Oaks in 1816',
+    hero: {
+      photo: 'g7-red-river-cart.jpg', credit: 'Photo: Viola-Ness, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'A Red River cart. Made entirely of wood and rawhide, carts like this carried goods for hundreds of kilometres across the prairie.'
+    },
+    body: [
+      'In the early 1800s, where the Red and Assiniboine rivers meet, in what is now Winnipeg, a new people had grown strong. The <b>Métis</b>, descendants of First Nations women and European fur traders, had their own language, Michif, their own customs and their own way of life. Each summer and fall they rode out on great bison hunts, organized with strict rules and elected captains.',
+      { h: 'Food for the fur trade' },
+      'From the bison, Métis women made <b>pemmican</b>: dried meat pounded into powder and mixed with melted fat, sometimes with berries. It was light, full of energy and kept for years. The North West Company, a fur-trading company based in Montréal, depended on it. Its canoe crews ate pemmican as they paddled thousands of kilometres to the far northwest. Without it, the fur trade could not run.',
+      { fig: '<path class="k" d="M20 60 H280"/>' + [[34, '1812', 'settlers', 'arrive'], [116, '1814', 'Pemmican', 'Proclamation'], [198, '1816', 'Battle of', 'Seven Oaks'], [268, '1821', 'companies', 'join']].map(function (r) { return '<circle class="dot" cx="' + r[0] + '" cy="60" r="5"/><text class="lb" x="' + r[0] + '" y="44" text-anchor="middle">' + r[1] + '</text><text class="l" x="' + r[0] + '" y="82" text-anchor="middle">' + r[2] + '</text><text class="l" x="' + r[0] + '" y="96" text-anchor="middle">' + r[3] + '</text>'; }).join(''),
+        tall: 110, cap: 'Key events at Red River.' },
+      { h: 'A colony in the way' },
+      'In 1812, Lord Selkirk, a Scottish noble with a large share in the rival Hudson’s Bay Company, sent poor Scottish farmers to start a farming colony at Red River. The settlers struggled through hard winters. In 1814, their governor, Miles Macdonell, issued the Pemmican Proclamation, which banned anyone from taking pemmican out of the colony. To the Métis and the North West Company, it was an attack on their livelihood and on Métis rights to the land and its resources.',
+      { box: 'The Red River cart', text: 'Métis carts were built entirely from wood and rawhide, so they could be fixed on the trail. Their ungreased wooden axles screeched so loudly they could be heard kilometres away.' },
+      { h: 'Seven Oaks' },
+      'Tensions grew. On June 19, 1816, a group of Métis led by the young Cuthbert Grant was moving pemmican past the colony. The new governor, Robert Semple, came out with about 25 armed men to stop them. No one knows for sure who fired first. In a few minutes, Semple and about 20 of his men were dead, along with one Métis man. For the Métis, Seven Oaks became a symbol of their strength as a nation. A Métis singer, Pierre Falcon, wrote a song about it that is still sung. In 1821, the two fur companies joined into one, ending the violent rivalry. Today, many Métis people remember Seven Oaks each June, and the story is told from both sides at the site, now a park in Winnipeg.'
+    ],
+    guide: { before: 'Find Winnipeg and the Red and Assiniboine rivers on a map. Teach <b>Métis</b> and <b>pemmican</b>. Explain that the two fur companies were rivals.',
+      after: 'The two sides saw Seven Oaks very differently. How could the same event mean such different things to different people?' },
+    words: [['Métis', 'a distinct Indigenous people descended from First Nations and European ancestors'], ['pemmican', 'dried meat pounded and mixed with fat']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why was pemmican so important to the North West Company?',
+        opts: ['Its canoe crews needed it as food on long journeys.', 'It was sold in Scotland.', 'It was used to grease carts.', 'It was traded for bison.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the timeline help you see?',
+        opts: ['the order of events, from the colony to the companies joining', 'how far Red River is from Montréal', 'how pemmican is made', 'who fired first'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why did the Métis see the Pemmican Proclamation as an attack?',
+        a: 'Making and selling pemmican was their livelihood, and the ban tried to control the land and resources they had rights to.', look: 'livelihood and rights to land and resources' },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why could Red River carts be fixed on the trail?',
+        opts: ['They were made only of wood and rawhide.', 'They carried spare metal parts.', 'They had rubber tires.', 'They were very small.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>livelihood</b> mean?',
+        opts: ['the way a person earns a living', 'a long life', 'a kind of food', 'a lively song'], a: 0 },
+      { k: 'lines', code: 'C1.6', n: 3, q: '“No one knows for sure who fired first.” Why do you think the author included this sentence?',
+        a: 'To be fair to both sides. Each side told a different story, and the author does not want to blame one side without proof.', look: 'the idea of fairness and uncertain evidence' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How does the Battle of Seven Oaks still matter to Métis people today? Use the text.',
+        a: 'It became a symbol of their strength as a nation, and Pierre Falcon’s song about it is still sung.', look: 'the symbol of nationhood and the song' },
+      { k: 'choice', code: 'B3.2', q: 'In “The settlers struggled through hard winters,” what is the subject?',
+        opts: ['The settlers', 'struggled', 'hard winters', 'through'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-food-labels', subject: 'health', form: 'Explanation',
+    title: 'Reading the Box',
+    deck: 'How to use a Nutrition Facts table to compare foods',
+    hero: {
+      photo: 'g7-cereal-aisle.jpg', credit: 'Photo: Vauxford, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A cereal aisle. Two boxes can look alike on the front and be very different inside.'
+    },
+    body: [
+      'The front of a cereal box is designed to sell. It might show a smiling athlete, bright colours and words like “natural” or “made with whole grains.” The side of the box is different. There, by law, every packaged food in Canada must print a <b>Nutrition Facts table</b> and a list of ingredients. These tell you what is really inside. Learning to read them is a skill you will use for the rest of your life, every time you shop, pack a lunch or choose a snack.',
+      { h: 'Start at the top' },
+      'The first line gives the <b>serving size</b>, such as “¾ cup (30 g).” Every number below is for that amount only. If you pour a bowl twice as big, you need to double everything. Below that are the calories, the amount of energy in one serving, and then nutrients such as fat, sodium, fibre, sugars and protein. Look closely: some small packages, like a bag of chips or a bottle of juice, contain two or even three servings, even though most people finish them in one sitting.',
+      { fig: '<rect class="k" x="70" y="8" width="160" height="148"/>' +
+          '<text class="lb" x="78" y="26">Nutrition Facts</text><text class="n" x="78" y="40">Per ¾ cup (30 g)</text><path class="k" d="M78 46 H222"/>' +
+          [['Calories 120', '', 60], ['Fat 2 g', '3 %', 76], ['Sodium 200 mg', '9 %', 92], ['Fibre 4 g', '14 %', 108], ['Sugars 9 g', '9 %', 124], ['Protein 3 g', '', 140]].map(function (r) { return '<text class="n" x="78" y="' + r[2] + '">' + r[0] + '</text><text class="n" x="222" y="' + r[2] + '" text-anchor="end">' + r[1] + '</text>'; }).join('') +
+          D.label(4, 30, 'serving size', 74, 38, 'start') + D.label(236, 52, '% Daily Value', 214, 64, 'start'),
+        tall: 160, cap: 'A simplified Nutrition Facts table. Every number is for one serving.' },
+      { h: 'The 5–15 rule' },
+      'On the right side is the <b>% Daily Value</b>. It tells you whether a serving has a little or a lot of a nutrient, compared with what a person needs in a whole day. A quick rule: 5% or less is a little, and 15% or more is a lot. You want a lot of helpful nutrients, like fibre, calcium and iron. You want only a little sodium, sugars and saturated fat, because too much of them over time can harm your heart and teeth. Use the rule to compare two foods side by side. If one cereal has 2% fibre and another has 15%, the second is the better choice for fibre, even if the boxes look alike.',
+      { box: 'A new symbol', text: 'Many packaged foods in Canada now carry a black-and-white magnifying-glass symbol on the front. It warns when a food is high in saturated fat, sugars or sodium.' },
+      { h: 'Check the ingredients' },
+      'The ingredient list is written in order by weight, from most to least. If sugar is near the start, there is a lot of it. Watch for its other names too: glucose, honey, syrup and many words ending in -ose. Reading labels takes only a minute, and it lets you, not the picture on the front, decide what goes in your bowl. No single food is “good” or “bad.” What matters most is the pattern of what you eat over days and weeks.'
+    ],
+    guide: { before: 'Bring two cereal or granola bar boxes to the table. Teach <b>serving size</b> and <b>% Daily Value</b>. Find the table on each box before reading.',
+      after: 'Compare your two boxes using the 5–15 rule. Which would you choose, and why?' },
+    words: [['serving size', 'the amount of food that the numbers on the label describe'], ['% Daily Value', 'how much of a day’s nutrient needs one serving gives']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why should you check the serving size first?',
+        opts: ['All the other numbers are for that amount only.', 'It is the biggest number.', 'It shows the price.', 'It tells you the calories.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the table in the diagram. Which nutrient has a lot, using the 5–15 rule?',
+        opts: ['fibre (14 %)', 'fat (3 %)', 'sodium (9 %)', 'none of them'], a: 3 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'If you eat two servings of the cereal in the diagram, how much sugar do you get?',
+        opts: ['18 g', '9 g', '4.5 g', '30 g'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'How is the section “Start at the top” organized?',
+        opts: ['in the order you read the table, from top to bottom', 'from most to least healthy', 'as a story', 'as questions and answers'], a: 0 },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'The front of a box shows “a smiling athlete” and the word “natural.” How are these meant to influence you? Why check the side?',
+        a: 'They make the food seem healthy and active so you want to buy it. The side shows the real facts, so you can see if it is actually healthy.', look: 'the persuasive purpose and the value of the facts table' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Fibre is 14 %. Is that a little or a lot? Explain how you checked your thinking using the text.',
+        a: 'It is close to a lot but not quite, because 15 % or more is a lot. I went back to the 5–15 rule to check.', look: 'a correct judgment and returning to the rule to check' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Sugar is the third ingredient in one granola bar and the eighth in another. What can you conclude? Use the text.',
+        a: 'The first bar has more sugar, because ingredients are listed from most to least by weight.', look: 'the first bar has more sugar, with the order-by-weight reason' },
+      { k: 'choice', code: 'B2.1', q: 'Glucose, fructose and sucrose are all sugars. What clue in the words tells you so?',
+        opts: ['They end in -ose.', 'They start with s.', 'They are long words.', 'They have the letter c.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-pi', subject: 'math', form: 'Explanation',
+    title: 'The Number That Never Ends',
+    deck: 'How people discovered π, the secret inside every circle',
+    hero: {
+      photo: 'g7-pi-day.jpg', credit: 'Photo: Marnie Briggs, NSF, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A Pi Day celebration. Every year on March 14 (3/14), people celebrate the number π.'
+    },
+    body: [
+      'Find something round: a can, a plate, a bicycle wheel. Wrap a string around it to measure the distance around, called the <b>circumference</b>. Then measure straight across the middle, through the centre. This is the <b>diameter</b>. Now divide the circumference by the diameter. Whatever circle you choose, from a coin to a Ferris wheel, you will get a number just a little more than 3.',
+      { fig: '<circle class="k" cx="60" cy="56" r="44"/><path class="a" d="M16 56 H104"/><text class="l" x="60" y="50" text-anchor="middle">diameter</text>' +
+          '<path class="h" d="M10 150 H286"/>' + [10, 98, 186, 274].map(function (x) { return '<path class="k" d="M' + x + ' 142 V158"/>'; }).join('') +
+          '<text class="n" x="54" y="172" text-anchor="middle">1 diameter</text><text class="n" x="142" y="172" text-anchor="middle">2</text><text class="n" x="230" y="172" text-anchor="middle">3</text><text class="n" x="290" y="136" text-anchor="end">a bit more</text>' +
+          '<text class="l" x="10" y="132">the circumference, unrolled</text>',
+        tall: 178, cap: 'Unrolled, a circle’s circumference is just over 3 diameters long.' },
+      { h: 'The same every time' },
+      'That number is called pi, written with the Greek letter π. It is about 3.14. This means the distance around any circle is always about 3.14 times the distance across it. People noticed this thousands of years ago. Builders in ancient Egypt and Babylon used values close to 3, and a Babylonian clay tablet gives a value of about 3.125. Their measurements were careful, but measuring with string and rulers can only take you so far. To find π more exactly, someone needed a better method.',
+      { h: 'Squeezing the circle' },
+      'About 2 250 years ago, the Greek mathematician Archimedes found a clever way to get closer. He drew a six-sided shape inside a circle and another outside it. The circle’s circumference had to be somewhere between their perimeters, which were easy to calculate. Then he doubled the number of sides, again and again, up to 96. The shapes hugged the circle more tightly each time. He proved that π was between 3 10/71 and 3 1/7, or about 3.14.',
+      { box: 'Did you know?', text: 'Using computers, people have calculated π to more than 100 trillion digits. For almost any real calculation, though, a few digits are plenty.' },
+      { h: 'A number with no end' },
+      'In the 1700s, mathematicians proved something surprising. The digits of π go on forever, and they never fall into a repeating pattern. Numbers like this are called <b>irrational</b>. You can never write π exactly as a fraction or decimal, so we round it: 3.14 or 22/7 for most work. Even so, π is everywhere: in wheels and pipes, in the orbits of planets, and in the ripples spreading across a pond. Engineers use it to design tunnels and water pipes, and scientists use it to measure the size of distant planets. One simple ratio turns up all over the universe.'
+    ],
+    guide: { before: 'Gather three round objects, a string and a ruler. Measure and divide together before reading. Teach <b>circumference</b>, <b>diameter</b> and <b>irrational</b>.',
+      after: 'Your measurements probably did not give exactly 3.14. Why not?' },
+    words: [['circumference', 'the distance around a circle'], ['diameter', 'the distance across a circle through its centre'], ['irrational', 'a number whose digits go on forever without repeating']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['The circumference is just over 3 diameters long.', 'A circle has 3 sides.', 'The diameter is longer than the circumference.', 'π is exactly 3.'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'A wheel has a diameter of 50 cm. About how far does it roll in one turn?',
+        opts: ['157 cm', '50 cm', '100 cm', '25 cm'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number these events in the story of π in order.',
+        items: ['Builders in Babylon use values close to 3.', 'Archimedes uses shapes with 96 sides.', 'Mathematicians prove the digits never repeat.', 'Computers calculate trillions of digits.'], show: [2, 3, 0, 1] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain how Archimedes “squeezed” the circle to find π.',
+        a: 'He drew shapes inside and outside the circle. The circumference had to be between their perimeters. Doubling the sides made the shapes hug the circle, so the range got smaller.', look: 'inside and outside shapes, and more sides narrowing the range' },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Irrational</b> means “not a ratio.” What does the prefix <b>ir-</b> mean?',
+        opts: ['not', 'again', 'before', 'very'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In the heading “Squeezing the circle,” what does <b>squeezing</b> suggest?',
+        opts: ['closing in on the answer from both sides', 'crushing a circle', 'making the circle smaller', 'drawing a square'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Name two places outside of math class where you have seen circles. Why might someone there need π?',
+        a: 'A bike wheel and a round pizza. A bike maker needs π to know how far the wheel rolls, and a pizza shop needs it to work out the size of a pizza box.', look: 'two real places and a sensible use of π' },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'Did measuring a real object first help you understand π? Explain.',
+        a: 'Yes. When I wrapped a string around a can and divided, I got about 3, so I could see the rule was true.', look: 'a reflection linked to the hands-on activity' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-stratford', subject: 'arts', form: 'Report',
+    title: 'A Stage in a Tent',
+    deck: 'How a small railway town became home to one of the world’s great theatres',
+    hero: {
+      photo: 'g7-stratford.jpg', credit: 'Photo: Chris Woodrich, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Festival Theatre in Stratford, Ontario. Its round roof recalls the tent where the festival began.'
+    },
+    body: [
+      'In the early 1950s, Stratford, Ontario, was a quiet railway town whose jobs were disappearing. The town shared its name with Stratford-upon-Avon in England, the birthplace of William Shakespeare. A local journalist, Tom Patterson, had a bold dream: a Shakespeare festival in a town with no theatre company, no theatre and very little money.',
+      { h: 'Building a dream' },
+      'Many people laughed, but Patterson kept going. He convinced the famous British director Tyrone Guthrie to come, and Guthrie brought the star actor Alec Guinness. Volunteers raised money door to door. With no time or money for a building, the festival opened in July 1953 under a giant canvas tent. Rain drummed on the roof, and trains sometimes whistled during the plays, but the first season was a huge success.',
+      { fig: '<text class="lb" x="70" y="18" text-anchor="middle">proscenium stage</text><text class="lb" x="225" y="18" text-anchor="middle">thrust stage</text>' +
+          '<rect class="h" x="30" y="32" width="80" height="40"/><path class="k" d="M24 72 H116"/>' +
+          [0, 1, 2].map(function (r) { return '<path class="t" d="M' + (24 + r * 0) + ' ' + (92 + r * 18) + ' H116"/>'; }).join('') +
+          '<rect class="h" x="200" y="32" width="50" height="20"/><path class="h" d="M195 52 H255 L245 96 H205 Z"/>' +
+          [0, 1, 2].map(function (r) { return '<path class="t" d="M' + (180 - r * 14) + ' ' + (44 + r * 6) + ' L' + (192 - r * 14) + ' ' + (104 + r * 14) + ' H' + (258 + r * 14) + ' L' + (270 + r * 14) + ' ' + (44 + r * 6) + '"/>'; }).join('') +
+          '<text class="n" x="70" y="160" text-anchor="middle">audience on one side</text><text class="n" x="225" y="160" text-anchor="middle">audience on three sides</text>',
+        tall: 170, cap: 'Seen from above. On a thrust stage, the audience wraps around the actors.' },
+      { h: 'A new kind of stage' },
+      'Guthrie and the designer Tanya Moiseiwitsch created a <b>thrust stage</b>. In most theatres, the audience sits in front of a stage framed like a picture, called a <b>proscenium</b>. A thrust stage instead juts out into the audience, which sits around it on three sides. Actors are surrounded by people, and no seat is far from the action. There is almost no scenery, so the audience must use their imagination, guided by the words, costumes and movement.',
+      { box: 'Did you know?', text: 'In the Festival Theatre, no seat is more than about 20 m from the stage, even though it holds about 1 800 people.' },
+      { h: 'From tent to festival' },
+      'In 1957 the tent was replaced by the permanent Festival Theatre, its roof shaped to remember the tent. Today the festival runs from spring to fall in four theatres, with musicals and new Canadian plays as well as Shakespeare. Hundreds of thousands of visitors come each year, and the town’s shops, restaurants and hotels depend on them. A dream that many people laughed at changed the future of an entire town. Many famous Canadian actors got their start on the Stratford stage, and school groups from across Ontario still travel there to see Shakespeare come alive.'
+    ],
+    guide: { before: 'Explain who Shakespeare was. Teach <b>thrust stage</b> and <b>proscenium</b>. Arrange chairs on three sides of a rug to make a thrust stage.',
+      after: 'Would you rather watch a play on a thrust stage or a proscenium stage? Why?' },
+    words: [['thrust stage', 'a stage that juts out so the audience sits on three sides'], ['proscenium', 'a stage framed like a picture, with the audience in front']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did Tom Patterson want a festival in Stratford?',
+        opts: ['The town needed new life, and it shared a name with Shakespeare’s birthplace.', 'He owned a theatre there.', 'The town was very rich.', 'Shakespeare lived there.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram compare?',
+        opts: ['where the audience sits for two kinds of stages', 'the size of two towns', 'two kinds of tents', 'actors and directors'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A thrust stage <b>juts out</b> into the audience. What does <b>juts out</b> mean?',
+        opts: ['sticks out', 'falls down', 'is hidden', 'moves around'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a thrust stage use almost no scenery?',
+        opts: ['The audience sits on three sides, so big scenery would block views.', 'There was no money for scenery.', 'Shakespeare banned it.', 'It was raining.'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the two kinds of stages.', cols: ['', 'Proscenium', 'Thrust'],
+        rows: [['Where the audience sits', 'in front', null], ['Scenery', null, 'almost none']],
+        a: [[null, null, 'on three sides'], [null, 'framed like a picture, with scenery', null]] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did the festival change the town of Stratford? Use evidence from the text.',
+        a: 'It turned a quiet town with disappearing jobs into a place visited by hundreds of thousands of people each year, and shops, restaurants and hotels depend on them.', look: 'before and after, with evidence' },
+      { k: 'lines', code: 'C3.8', n: 3, q: '“Many people laughed, but Patterson kept going.” What lesson about big ideas does this story teach? Do you agree?',
+        a: 'Big ideas can work if you keep going even when others doubt you. I agree, but it also took help from many volunteers.', look: 'a lesson and a personal response with a reason' },
+      { k: 'lines', code: 'B1.1', n: 2, q: 'Watching a play with no scenery, what must the audience listen for to imagine the setting?',
+        a: 'The words the actors say about where they are, and clues in their voices and movements.', look: 'listening to the words and voices for setting clues' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-canadarm', subject: 'tech', form: 'Report',
+    title: 'Canada’s Arm in Space',
+    deck: 'How Canadian engineers built the robot arms that help astronauts work in orbit',
+    hero: {
+      photo: 'g7-canadarm2.jpg', credit: 'Photo: NASA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Canadarm2 on the International Space Station, with Earth far below.'
+    },
+    body: [
+      'In 1981, the space shuttle Columbia opened its cargo bay doors in orbit, and a long white arm unfolded. It was the first Canadarm, built by engineers in Toronto and Montréal. Over 30 years, it flew on 90 missions. It launched satellites, caught broken ones so astronauts could fix them, and helped build the International Space Station. A Canadian invention had become one of the most famous tools in space.',
+      { h: 'Moving in weightlessness' },
+      'Moving things in space is harder than it sounds. A satellite may weigh nothing, but it still has <b>mass</b>, so once it starts moving, it keeps going. A robot arm must start and stop very gently, or the object could crash into the spacecraft. The arm was controlled by an astronaut at a window, using two hand controllers and watching through cameras.',
+      { fig: '<rect class="h" x="14" y="128" width="272" height="16"/>' +
+          '<path class="k" d="M40 128 L80 64 L170 44 L230 92"/>' +
+          [[40, 128], [80, 64], [170, 44], [230, 92]].map(function (p) { return '<circle class="dot" cx="' + p[0] + '" cy="' + p[1] + '" r="5"/>'; }).join('') +
+          '<rect class="k" x="222" y="92" width="16" height="12"/><rect class="t" x="214" y="104" width="32" height="24"/>' +
+          D.label(110, 22, 'joints let it bend', 80, 64) + D.label(256, 62, 'hand', 236, 96, 'start') +
+          '<text class="n" x="150" y="160" text-anchor="middle">station truss</text>',
+        tall: 166, cap: 'Canadarm2 has a hand at each end. It can grip a fixture, let go with the other end and move along the station.' },
+      { h: 'Canadarm2' },
+      'In 2001, Canadarm2 arrived at the space station. Canadian astronaut Chris Hadfield went on a spacewalk to help install it. It is 17.6 m long and has seven <b>joints</b>, like a human shoulder, elbow and wrist. Unlike its older sibling, it has a hand at each end. It can grip a fixture on the station, let go with its other end and flip itself along, like an inchworm.',
+      'Canadarm2 does some of the station’s most delicate jobs. When an uncrewed cargo ship arrives with food, water and experiments, the arm reaches out and grabs it, then guides it to a docking port. This is called a “cosmic catch.” Since 2008, it has had help from Dextre, a two-armed robot that can do small repairs, such as changing batteries, so astronauts do not have to risk a spacewalk.',
+      { box: 'Remote control', text: 'Many of Canadarm2’s moves are now controlled by teams on the ground, including at the Canadian Space Agency near Montréal. This frees astronauts for science.' },
+      { h: 'Next stop: the Moon' },
+      'Canada is now building Canadarm3, a smart robot arm for a small space station that will circle the Moon. It will be able to carry out some tasks on its own, without a human at the controls, because messages to and from the Moon take time. The Canadarm even appears on Canada’s $5 bill, a reminder of how much a mid-sized country can add to exploring space.'
+    ],
+    guide: { before: 'Use a grabber tool or tongs to pick up a light ball slowly. Teach <b>mass</b> and <b>joints</b>. Bend your arm and count your own joints from shoulder to wrist.',
+      after: 'Why do you think Canada chose to build robot arms, instead of rockets, to take part in space exploration?' },
+    words: [['mass', 'the amount of matter in an object'], ['joints', 'places where two parts meet and can bend or turn']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Name one job the first Canadarm did.',
+        opts: ['It launched and caught satellites.', 'It launched the shuttle.', 'It grew plants in space.', 'It cooked for astronauts.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why must a robot arm in space move gently?',
+        opts: ['Objects have mass and keep moving, so they could crash.', 'Space is very cold.', 'The arm is made of glass.', 'Astronauts are sleeping.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram help you understand?',
+        opts: ['how joints and a gripping end let the arm move and hold on', 'how the shuttle lands', 'how big the Moon is', 'how a $5 bill is made'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The author says Canadarm2 moves “like an inchworm.” What does this comparison show?',
+        opts: ['It moves by gripping with one end, then the other.', 'It is green.', 'It is very slow and small.', 'It eats leaves.'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the two arms.', cols: ['', 'Canadarm', 'Canadarm2'],
+        rows: [['Where it worked', 'on the space shuttle', null], ['Hands', null, 'one at each end'], ['Years', null, null]],
+        a: [[null, null, 'on the International Space Station'], [null, 'one end only', null], [null, 'from 1981, for about 30 years', 'since 2001']] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why will Canadarm3 need to do some tasks on its own?',
+        a: 'Messages to and from the Moon take time, so a person on Earth cannot react instantly. The arm must sometimes decide for itself.', look: 'the delay in messages and the need to act without a human' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how Canada’s robot arms have changed from 1981 to today.',
+        a: 'The first arm worked on the shuttle. Canadarm2 can move along the station and catch cargo ships, with help from Dextre. Canadarm3 will work near the Moon and do some tasks by itself.', look: 'the three arms and how each improved' },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Who would want to read this report, and why?',
+        a: 'A student interested in space or robots, to learn how Canada helps explore space.', look: 'a reasonable reader and purpose' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-athabasca-glacier', subject: 'geography', form: 'Report',
+    title: 'A River of Ice in Retreat',
+    deck: 'What the Athabasca Glacier can teach us about a warming world',
+    hero: {
+      photo: 'g7-athabasca.jpg', credit: 'Photo: Ethan Sahagun, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Athabasca Glacier flows down from the Columbia Icefield in Jasper National Park, Alberta.'
+    },
+    body: [
+      'Along the Icefields Parkway in the Rocky Mountains of Alberta, visitors can walk right up to a <b>glacier</b>. The Athabasca Glacier is a tongue of ice about 6 km long, flowing slowly down from the Columbia Icefield, one of the largest areas of ice in the Rockies. In places the ice is as thick as a 90-storey building is tall.',
+      { h: 'How a glacier forms' },
+      'A glacier begins as snow. In high, cold places, more snow falls each winter than melts each summer. Year after year, the layers pile up. The weight of the snow above squeezes the snow below, pressing out the air, until it turns into dense, blue ice. When the ice is thick enough, gravity makes it flow downhill, very slowly, like extremely thick syrup. The Athabasca Glacier moves a few metres each year.',
+      { fig: '<path class="k" d="M10 40 L290 130"/><path class="t" d="M10 40 L130 79 Q70 40 10 24 Z"/><path class="d" d="M10 24 Q140 50 265 122"/>' +
+          [[130, 79, 'today'], [170, 91, '2000'], [215, 106, '1950'], [265, 122, '1890']].map(function (r) { return '<circle class="dot" cx="' + r[0] + '" cy="' + r[1] + '" r="3"/><text class="n" x="' + r[0] + '" y="' + (r[1] + 18) + '" text-anchor="middle">' + r[2] + '</text>'; }).join('') +
+          D.arrow(240, 84, 150, 58, 'a') + '<text class="l" x="210" y="50" text-anchor="middle">the toe moves back</text>' +
+          '<text class="l" x="14" y="14">ice from the icefield</text>',
+        tall: 150, cap: 'Simplified view of how the toe, the end of the glacier, has moved back up the valley. Not to scale.' },
+      { h: 'Losing ground' },
+      'Even though the ice still flows downhill, the end of the glacier, called the <b>toe</b>, is moving back up the valley. That is because the ice is melting faster than it can flow forward. Since about 1890, the toe has retreated about 1.5 km. Along the walking trail, signs mark where the ice reached in different years. The signs from long ago stand in empty, rocky ground, a long walk from today’s ice. The glacier is also getting thinner, losing several metres of thickness in some years.',
+      { box: 'Water for three oceans', text: 'Meltwater from the Columbia Icefield flows into rivers that reach the Pacific, the Arctic and, through Hudson Bay, the Atlantic.' },
+      { h: 'Why it matters' },
+      'Glaciers are like frozen water banks. In hot, dry summers, their slow melt keeps rivers flowing for fish, farms and towns downstream. As glaciers shrink, there will be a short-term rush of meltwater, but then less water in late summer. Scientists study glaciers like the Athabasca closely because they respond to temperature changes in a way everyone can see. At the current rate, scientists warn that much of the glacier could disappear within this century. For now, visitors can still stand on its edge, feel the cold air flowing off the ice and hear meltwater trickling beneath their feet.'
+    ],
+    guide: { before: 'Make a snowball and squeeze it into ice to show how a <b>glacier</b> forms. Teach <b>toe</b> and <b>retreated</b>. Find the Columbia Icefield on a map.',
+      after: 'How might shrinking glaciers affect people who live far away from the mountains?' },
+    words: [['glacier', 'a large mass of ice that moves slowly over land'], ['toe', 'the lower end of a glacier']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps of how a glacier forms.',
+        items: ['More snow falls than melts.', 'Layers pile up year after year.', 'The weight squeezes the snow into ice.', 'Gravity makes the thick ice flow downhill.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What do the year labels in the diagram show?',
+        opts: ['where the toe was at different times', 'how thick the ice was', 'how many visitors came', 'when it snowed'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the toe moving back even though the ice flows downhill?',
+        opts: ['The ice is melting faster than it can flow forward.', 'The glacier is flowing uphill.', 'Tourists take ice away.', 'The trail is moving.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author call glaciers “frozen water banks”?',
+        opts: ['They store water and release it slowly when it is needed.', 'They keep money.', 'They are near riverbanks.', 'They are made of snow.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The toe has <b>retreated</b> about 1.5 km. What does <b>retreated</b> mean?',
+        opts: ['moved back', 'grown', 'frozen', 'broken'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain why shrinking glaciers could mean less water in late summer for towns downstream.',
+        a: 'Glaciers melt slowly all summer and keep rivers flowing. When they are smaller, there is less ice left to melt, so rivers get lower in late summer.', look: 'the steady melt and less ice later' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what a visitor might see at the Athabasca Glacier in 50 years. Use the text to support your prediction.',
+        a: 'The toe will be even farther up the valley and the ice much thinner, because it is retreating and losing thickness each year. Much of it may be gone.', look: 'a prediction supported by retreat and thinning' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The trail signs show where the ice used to be. Why might seeing them in person be more convincing than reading numbers?',
+        a: 'Walking from the old signs to the ice lets you feel the distance yourself. It turns a number into something real you can see.', look: 'how direct experience makes evidence more convincing' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-henson', subject: 'history', form: 'Biography',
+    title: 'From Chains to Dawn',
+    deck: 'Josiah Henson escaped slavery and helped build a free community in Upper Canada',
+    hero: {
+      photo: 'g7-henson.jpg', credit: 'Photo: unknown photographer, public domain, Wikimedia Commons', focus: '50% 25%',
+      tall: 200,
+      cap: 'Josiah Henson in later life. His story was read around the world.'
+    },
+    body: [
+      'Josiah Henson was born into slavery in Maryland, in the United States, in 1789. As a small child, he watched his family being sold to different owners. As a young man, he worked so hard that his owner made him overseer of the farm, but his labour never earned him his freedom. When he saved money to buy himself, his owner cheated him and planned to sell him far away to the South.',
+      { fig: '<path class="k" d="M20 150 C70 120 100 140 140 100 S220 60 280 30"/>' +
+          '<circle class="dot" cx="20" cy="150" r="5"/><circle class="dot" cx="200" cy="72" r="5"/><circle class="dot" cx="280" cy="30" r="5"/>' +
+          '<path class="d" d="M170 20 V160"/><text class="n" x="176" y="150">border</text>' +
+          '<text class="l" x="24" y="138">Maryland</text><text class="l" x="200" y="92" text-anchor="middle">Niagara River</text><text class="l" x="276" y="52" text-anchor="end">Dawn Settlement</text>' +
+          '<text class="lb" x="80" y="30" text-anchor="middle">United States</text><text class="lb" x="236" y="130" text-anchor="middle">Upper Canada</text>',
+        tall: 166, cap: 'A simplified sketch of Henson’s journey. It is a diagram, not a map.' },
+      { h: 'The escape' },
+      'In 1830, Henson decided to run. With his wife, Nancy, and their four children, he travelled north through forests at night, hiding by day. He carried the two youngest children on his back in a sack. They were helped by people along the <b>Underground Railroad</b>, a secret network of people and safe houses that helped freedom seekers. After about six weeks, they crossed the Niagara River into Upper Canada, where the law would not send people who had escaped slavery back to their owners. Henson later said he threw himself on the ground and kissed it.',
+      { h: 'Building a community' },
+      'In Upper Canada, Henson worked on farms and became a preacher. He believed that freedom also needed land, jobs and schools. In 1841, he and others founded the <b>Dawn Settlement</b> near Dresden, Ontario. It had a school, the British American Institute, where Black children and adults learned to read, write and work a trade. Settlers farmed, and a sawmill cut black walnut lumber that was sold as far away as England.',
+      { box: 'A famous book', text: 'Henson published the story of his life in 1849. Harriet Beecher Stowe read it, and it helped inspire her novel <i>Uncle Tom’s Cabin</i>, one of the most widely read books of the 1800s.' },
+      { h: 'A lasting legacy' },
+      'Henson returned to the United States several times, risking capture, to guide others to freedom. Historians believe he helped well over a hundred people escape. In 1877, he met Queen Victoria. He died in Dresden in 1883. Today his home is part of the Josiah Henson Museum of African-Canadian History, where visitors learn about Black Canadians who built new lives in freedom.'
+    ],
+    guide: { before: 'Explain that slavery was legal in the United States until 1865, while people who reached Upper Canada could not be returned to slavery. Teach <b>Underground Railroad</b>. Find Dresden, Ontario, on a map.',
+      after: 'Henson could have kept his own freedom safe. Why do you think he kept going back to help others?' },
+    words: [['Underground Railroad', 'a secret network that helped enslaved people escape to freedom'], ['Dawn Settlement', 'a community for freedom seekers founded near Dresden, Ontario']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did Henson decide to escape in 1830?',
+        opts: ['His owner cheated him and planned to sell him to the South.', 'He wanted to see Niagara Falls.', 'He was given his freedom.', 'He was invited to Canada.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Why does the caption say the sketch is “a diagram, not a map”?',
+        opts: ['It shows the journey in a simple way, not exact places and distances.', 'It has no labels.', 'It is drawn wrong.', 'It shows the future.'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number these events in Henson’s life in order.',
+        items: ['He escapes with his family.', 'He founds the Dawn Settlement.', 'He publishes the story of his life.', 'He meets Queen Victoria.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Henson’s owner made him <b>overseer</b> of the farm. What does <b>overseer</b> mean?',
+        opts: ['a person who directs the work of others', 'a person who owns a farm', 'a sailor', 'a teacher'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a biography?',
+        opts: ['It tells the life of a real person in time order.', 'It gives steps for a task.', 'It is written as a poem.', 'It argues for an opinion.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Henson believed freedom needed “land, jobs and schools.” How did the Dawn Settlement provide each one?',
+        a: 'Settlers farmed land, the sawmill gave jobs, and the British American Institute was a school where people learned to read, write and work a trade.', look: 'all three linked to the settlement' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What qualities did Henson show? Give two, with evidence from the text.',
+        a: 'Courage: he escaped and went back to help others, risking capture. Leadership: he founded a settlement and school.', look: 'two qualities, each with evidence' },
+      { k: 'lines', code: 'C3.7', n: 2, q: 'How does Henson’s story still reach people today?',
+        a: 'Visitors to the museum in Dresden learn about him and other Black Canadians, and his life story inspired a famous novel.', look: 'the museum or the book as a lasting influence' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-station-nine', subject: 'story', form: 'Science fiction', plain: true,
+    title: 'Station Nine',
+    deck: 'A story set on the Moon. Watch for the small details that hint at what is coming.',
+    hero: {
+      photo: 'g7-moon-surface.jpg', credit: 'Photo: Eugene A. Cernan, NASA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A huge boulder on the Moon, photographed by Apollo 17 astronauts in 1972. The sky is black even in daytime.'
+    },
+    body: [
+      'On the morning of the storm, the lights in the greenhouse flickered twice. Ama noticed, the way she noticed everything on Station Nine, but she was busy picking lettuce for breakfast and thought nothing of it.',
+      'She had lived on the Moon for eight months, since her mother had taken a job as an engineer at the research base. There were forty-one people, three greenhouses and one rule that every child learned on the first day: when the siren sounds, go to the Shelter. The Shelter was a small room at the centre of the base, buried under three metres of Moon dust. It was the only place safe from a <b>solar storm</b>, when the Sun hurls out dangerous radiation.',
+      { fig: '<rect class="k" x="10" y="20" width="70" height="40"/><text class="n" x="45" y="44" text-anchor="middle">greenhouses</text>' +
+          '<rect class="h" x="120" y="50" width="60" height="40"/><text class="lb" x="150" y="106" text-anchor="middle">Shelter</text>' +
+          '<rect class="k" x="218" y="96" width="78" height="40"/><text class="n" x="257" y="120" text-anchor="middle">robotics lab</text>' +
+          '<path class="k" d="M80 40 H150 V50 M218 116 H200 V70 H180"/>' + D.arrow(216, 128, 204, 128, 'a') + D.arrow(204, 128, 204, 76, 'a') + D.arrow(204, 76, 184, 76, 'a') +
+          '<text class="n" x="150" y="150" text-anchor="middle">green arrows mark the way</text>',
+        tall: 156, cap: 'Part of Station Nine. The Shelter is at the centre of the base.' },
+      { h: 'Warnings' },
+      'At school that morning, the class was supposed to practise the Shelter drill. Ama had done it so many times that she knew it was boring, and she asked to stay behind to finish her robotics project. Ms. Okafor sighed but said yes.',
+      'At lunch, old Mr. Bérubé, who ran the radio, sat staring at his screen. “The Sun has a big dark spot today,” he said to no one in particular. “Big as twenty Earths.” He did not touch his soup.',
+      { box: 'Stop and think', text: 'The author has placed several clues. What do you predict will happen? Which details make you think so?' },
+      { h: 'The siren' },
+      'The siren started at 14:06. Ama was alone in the robotics lab at the far end of the base. For a moment she froze. She had never walked the route on her own, and the corridors all looked the same. Then she remembered the green arrows painted near the floor, the ones Ms. Okafor always pointed out during drills. Ama had rolled her eyes at them every time.',
+      'She ran, following the arrows left, then right, then down a ramp. The <b>airlock</b> door to the Shelter was closing. A hand reached out and pulled her in. It was Mr. Bérubé.',
+      '“The flare came early,” he said. “You have exactly four minutes to spare.” Ama sat down on the floor, breathing hard, while the screens showed waves of radiation washing over the empty grey plain outside.',
+      'Ten hours later, the all-clear sounded. The next week, when the class practised the drill, Ama was the first one at the door.'
+    ],
+    guide: { before: 'Explain that <b>foreshadowing</b> means hints about what will happen later. Teach <b>solar storm</b> and <b>airlock</b>. Stop at the box and make a prediction together.',
+      after: 'Why do you think the author had Ama skip the drill? What would the story lose without that detail?' },
+    words: [['solar storm', 'a burst of energy and dangerous radiation from the Sun'], ['airlock', 'a sealed room with doors that keeps air in']],
+    qs: [
+      { k: 'table', code: 'C1.5', q: 'Foreshadowing gives hints about what will happen. Explain what each hint suggests.', cols: ['Hint', 'What it suggests'],
+        rows: [['The greenhouse lights flicker twice.', null], ['Ama skips the drill.', null], ['Mr. Bérubé does not touch his soup.', null]],
+        a: [[null, 'Something is wrong with the Sun or the power.'], [null, 'She may not know the route when it matters.'], [null, 'He is worried about the sunspot and a storm.']] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature makes this story science fiction?',
+        opts: ['It is set in the future on a base on the Moon.', 'It has a talking animal.', 'It happened long ago.', 'It is a true report.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'From whose point of view do we mostly see the story?',
+        opts: ['Ama’s', 'Mr. Bérubé’s', 'Ms. Okafor’s', 'Ama’s mother’s'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Stop at the box. What did you predict? Which clues led to your prediction?',
+        a: 'I predicted a solar storm would hit while Ama was alone, because the lights flickered, she skipped the drill and Mr. Bérubé was worried about the sunspot.', look: 'a prediction tied to at least two clues' },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the green arrows matter so much?',
+        opts: ['They showed Ama the way to the Shelter when she was alone.', 'They were her robotics project.', 'They pointed to the greenhouse.', 'They turned off the siren.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“She ran, following the arrows left, then right, then down a ramp.” Why does the author use a list of short phrases here?',
+        opts: ['to make the action feel fast and urgent', 'to slow the story down', 'to describe the Moon', 'to introduce a new character'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'How does Ama change from the beginning to the end of the story? What causes the change?',
+        a: 'At first she thinks drills are boring and skips one. After nearly being caught in the storm, she understands why they matter and is first at the door.', look: 'the change in attitude and the event that caused it' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a drill you have practised at school. How does this story change how you think about it?',
+        a: 'We do fire drills, and they can feel silly. The story reminds me that practising means you know what to do without thinking when it is real.', look: 'a personal connection to a real drill' }
+    ]
+  });
+
 })();

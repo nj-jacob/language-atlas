@@ -140,3 +140,13 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-canadarm2.jpg` | Canadarm2 on the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Canadarm2_during_Expedition_62_(ISS062-E-055099).jpg |
 | `g7-athabasca.jpg` | The Athabasca Glacier | Ethan Sahagun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Athabasca_Glacier_on_the_Columbia_Icefield.jpg |
 | `g7-henson.jpg` | Josiah Henson | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:Josiah_Henson_bw.jpg |
+| `g7-tsunami-sign.jpg` | A tsunami hazard zone sign in Bamfield, British Columbia | Mimigu | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Bamfield_Tsunami_Hazard_Zone_sign.jpg |
+| `g7-smartphone.jpg` | A person using a smartphone | Océanos y dados | CC0 | https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg |
+| `g7-old-map.jpg` | An 1862 map of Ontario and Quebec | Johnson and Ward | Public domain | https://commons.wikimedia.org/wiki/File:1862_Johnson_Map_of_Ontario_and_Quebec,_Canada_-_Geographicus_-_QuebecOntario-johnson-1862.jpg |
+| `g7-cereal-aisle.jpg` | A supermarket cereal aisle | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g7-stratford.jpg` | The Festival Theatre in Stratford, Ontario | Chris Woodrich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Festival_Theatre,_Stratford,_Ontario,_2025-08-04_04.jpg |
+| `g7-moon-surface.jpg` | Harrison Schmitt beside a boulder on the Moon, Apollo 17 | Eugene A. Cernan, NASA | Public domain | https://commons.wikimedia.org/wiki/File:Moon-apollo17-schmitt_boulder.jpg |
+| `g7-taiga.jpg` | Boreal forest (taiga) in Canada | peupleloup | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Taiga_Landscape_in_Canada.jpg |
+| `g7-red-river-cart.jpg` | A Red River cart in Pembina Hall | Viola-Ness | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_River_cart_Pembina_Hall.jpg |
+| `g7-bumblebee.jpg` | A bumblebee on flowers | Waitblock | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bumblebee_on_flowers.jpg |
+| `g7-eastern-wolf.jpg` | An eastern wolf in Algonquin Provincial Park | Quinten Wiegersma | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Eastern_wolf_Algonquin_Provincial_Park.jpeg |
