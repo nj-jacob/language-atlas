@@ -19,6 +19,11 @@
 .dc-all{font-weight:700}
 .dc-do{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .dc-do .ws-hint{flex-basis:100%;margin:0}
+.dc-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.dc-tabs a{display:flex;flex-direction:column;justify-content:center;min-height:52px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.dc-tabs a span{font-size:.78rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em}
+.dc-tabs a[aria-current]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dc-tabs a:hover,.dc-tabs a:focus-visible{border-color:var(--accent)}
 
 /* ---------- the picture ---------- */
 .dc-art{display:block;width:100%;height:auto;overflow:visible}
@@ -85,6 +90,6 @@
 
 @media print{
   html[data-dc-print="page"] .ws-sheet[data-side="key"],html[data-dc-print="key"] .ws-sheet:not([data-side="key"]){display:none!important}
-  html.ws-print .dc-bar,html.ws-print .dc-do,html.ws-print .tb-bar{display:none!important}
+  html.ws-print .dc-bar,html.ws-print .dc-tabs,html.ws-print .dc-do,html.ws-print .tb-bar{display:none!important}
   html.ws-print .dc-one,html.ws-print .tb{padding:0;gap:0}
 }

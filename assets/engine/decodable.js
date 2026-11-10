@@ -1,4 +1,4 @@
-/* Language Atlas tool box: Decodable readers (#tools/decodable), one printable page for each phonics step, Kindergarten to Grade 2.
+/* Language Atlas tool box: Decodable readers (#tools/decodable), printable stories for each phonics step (3 a step), Kindergarten to Grade 2.
    Needs atlas.js and tools.js; drawing a page also needs sheets.js (the worksheets' themes, fonts and printing; sheets.css). It adds itself to the tool box.
    The steps follow a structured literacy (Orton-Gillingham) order: short vowels, digraphs, FLOSS, glued sounds, endings, blends,
    silent e, syllable types, r-controlled vowels, vowel teams, then prefixes and suffixes. Each page has the step's sound,
@@ -23,7 +23,11 @@
             { k: 'draw', q, a: 'what to look for', code }       draw in a box
             { k: 'write', q, a: 'an answer', code }             write a word or a short sentence
    tip    for the grown-up: the rule in plain words, and what to watch for.
-   hunt   (optional) the word hunt under the story, when "Underline every word with" + the focus does not say it well. */
+   hunt   (optional) the word hunt under the story, when "Underline every word with" + the focus does not say it well.
+   More stories for a step come after it, with the same step's sound, rule and heart words:
+     Atlas.decodable.more(id, { title, text, pic, qs, words })
+   A story may also give its own words (warm-up), name, focus, key, mark, hunt and tip, and blend ('l', 'r' or 's': a story about one kind
+   of blend at the start). #tools/decodable/<id> opens a step's first story, #tools/decodable/<id>/2 its second. */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -130,8 +134,19 @@
     return '<svg class="dc-art" viewBox="0 0 700 150" aria-hidden="true"><path class="t" d="M0 146 H700"/>' + out + '</svg>';
   };
 
-  D.add = function (p) { p.n = D.list.length + 1; D.list.push(p); };
-  D.code = function (p) { return 'DR-' + (p.n < 10 ? '0' : '') + p.n; };
+  /* a step is its first story; its other stories share everything they do not give themselves */
+  D.add = function (p) { p.n = D.list.length + 1; p.s = 1; p.stories = [p]; D.list.push(p); };
+  D.more = function (id, s) {
+    var step = D.list.filter(function (x) { return x.id === id; })[0];
+    if (!step) return;
+    var p = Object.create(step);
+    Object.keys(s).forEach(function (f) { p[f] = s[f]; });
+    p.s = step.stories.length + 1;
+    step.stories.push(p);
+  };
+  /* every story, in teaching order */
+  D.all = function () { return [].concat.apply([], D.list.map(function (p) { return p.stories; })); };
+  D.code = function (p) { return 'DR-' + (p.n < 10 ? '0' : '') + p.n + (p.s > 1 ? 'abcdef'[p.s - 1] : ''); };
   D.band = function (p) { return BANDS.filter(function (b) { return b[0] === p.band; })[0]; };
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   /* the letters of the step's spelling, in the accent colour (warm-up words and key word only: the story is plain, so the child decodes it) */
@@ -172,7 +187,7 @@
   var HEART = '<svg class="dc-heart" viewBox="0 0 20 18" aria-hidden="true"><path d="M10 16 C4 11 1 8 1 5 C1 2 3 1 5 1 C7 1 9 2 10 4 C11 2 13 1 15 1 C17 1 19 2 19 5 C19 8 16 11 10 16 Z"/></svg>';
   function head(p, th, kind) {
     var b = D.band(p);
-    return '<header class="dc-head"><p class="ws-kick"><svg viewBox="0 0 56 56" aria-hidden="true">' + th.mark + '</svg>Decodable reader · ' + esc(p.name) + (kind ? ' · ' + kind : '') + '</p>' +
+    return '<header class="dc-head"><p class="ws-kick"><svg viewBox="0 0 56 56" aria-hidden="true">' + th.mark + '</svg>Decodable reader · ' + esc(p.name) + (p.stories.length > 1 ? ' · Story ' + p.s : '') + (kind ? ' · ' + kind : '') + '</p>' +
       (kind ? '' : '<div class="ws-name dc-name"><span>Name</span><i></i><span>Date</span><i></i></div>') +
       '<h2 class="dc-title">' + esc(p.title) + '</h2></header>';
   }
@@ -252,21 +267,25 @@
   /* ---------- the tool: every step, and one page ---------- */
   function card(p) {
     return '<a class="dc-card" href="#tools/decodable/' + p.id + '" style="--acc:' + themeOf(p).acc + '"><span class="dc-cn">' + p.n + '</span>' +
-      '<span class="dc-cf">' + p.focus.map(esc).join(' ') + '</span><span class="dc-cm"><b>' + esc(p.name) + '</b><span>' + esc(p.title) + '</span></span></a>';
+      '<span class="dc-cf">' + p.focus.map(esc).join(' ') + '</span><span class="dc-cm"><b>' + esc(p.name) + '</b><span>' + (p.stories.length > 1 ? p.stories.length + ' stories' : esc(p.title)) + '</span></span></a>';
   }
   function steps(root) {
-    root.innerHTML = '<div class="dc-lib"><p class="dc-lede">' + D.list.length + ' short stories, one for each phonics step, in teaching order. Every word can be sounded out with the steps before it, ' +
+    root.innerHTML = '<div class="dc-lib"><p class="dc-lede">' + D.all().length + ' short stories for ' + D.list.length + ' phonics steps, in teaching order. Every word can be sounded out with the steps before it, ' +
       'plus a few heart words. Each prints on one page; turn on grown-up view for the answers and how to teach it.</p>' +
       BANDS.map(function (b) {
         var here = D.list.filter(function (p) { return p.band === b[0]; });
         return here.length ? '<section class="dc-band"><h2>' + b[1] + '</h2><div class="dc-cards">' + here.map(card).join('') + '</div></section>' : '';
       }).join('') + '</div>';
   }
+  function href(p) { return '#tools/decodable/' + p.id + (p.s > 1 ? '/' + p.s : ''); }
   function one(root, p) {
-    var i = D.list.indexOf(p), prev = D.list[i - 1], next = D.list[i + 1];
+    var all = D.all(), i = all.indexOf(p), prev = all[i - 1], next = all[i + 1];
     root.innerHTML = '<div class="dc-one"><div class="dc-bar"><a class="dc-all" href="#tools/decodable">All steps</a><span class="tb-sp"></span>' +
-      (prev ? '<a class="ws-k" href="#tools/decodable/' + prev.id + '" aria-label="Previous step">&lsaquo; Back</a>' : '') +
-      (next ? '<a class="ws-k" href="#tools/decodable/' + next.id + '" aria-label="Next step">Next &rsaquo;</a>' : '') + '</div>' +
+      (prev ? '<a class="ws-k" href="' + href(prev) + '" aria-label="Previous story">&lsaquo; Back</a>' : '') +
+      (next ? '<a class="ws-k" href="' + href(next) + '" aria-label="Next story">Next &rsaquo;</a>' : '') + '</div>' +
+      (p.stories.length > 1 ? '<nav class="dc-tabs" aria-label="Stories for this step">' + p.stories.map(function (x) {
+        return '<a href="' + href(x) + '"' + (x === p ? ' aria-current="page"' : '') + '><span>Story ' + x.s + '</span>' + esc(x.title) + '</a>';
+      }).join('') + '</nav>' : '') +
       '<div class="dc-do"><button type="button" class="btn" data-print="page">Print the story</button>' +
       '<button type="button" class="btn alt ws-adult" data-print="key">Print the grown-up page</button>' +
       '<p class="ws-hint">On an iPad, tap Print, then Share, then Save to Files to keep a PDF.</p></div>' +
@@ -287,7 +306,8 @@
   function tool(root, canUndo, rest) {
     root.innerHTML = '<p class="loading">Loading the stories…</p>';
     D.load().then(function () {
-      var p = D.list.filter(function (x) { return x.id === rest; })[0];
+      var bits = (rest || '').split('/'), step = D.list.filter(function (x) { return x.id === bits[0]; })[0];
+      var p = step && (step.stories[(parseInt(bits[1], 10) || 1) - 1] || step);
       if (p) return one(root, p);
       steps(root);
     });
