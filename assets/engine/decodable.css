@@ -85,4 +85,5 @@
 @media print{
   html[data-dc-print="page"] .ws-sheet[data-side="key"],html[data-dc-print="key"] .ws-sheet:not([data-side="key"]){display:none!important}
   html.ws-print .dc-bar,html.ws-print .dc-do,html.ws-print .tb-bar{display:none!important}
+  html.ws-print .dc-one,html.ws-print .tb{padding:0;gap:0}
 }
