@@ -3796,4 +3796,916 @@
         a: 'She spoke against slavery for Black people, and she argued for women’s equal rights and the vote.', look: 'Black people and women' }
     ]
   });
+
+  P.add({
+    id: 'g6-bats', subject: 'science', form: 'Report',
+    title: 'Silent Caves',
+    deck: 'How a fungus endangered Canada’s most common bat',
+    hero: {
+      photo: 'g6-little-brown-bat.jpg', credit: 'Photo: Moriarty Marvin, U.S. Fish and Wildlife Service, Public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A little brown bat in a cave. It weighs less than two loonies.'
+    },
+    body: [
+      'On a summer evening, as the sun goes down, small dark shapes swoop and flutter over ponds and fields. They are bats, and they are hunting. A single little brown bat can catch hundreds of insects in one night, including mosquitoes and moths that damage crops. For years, the little brown bat was the most common bat in Canada. Then, suddenly, the caves went quiet.',
+      { fig: G.flow(['The fungus grows on a sleeping bat’s skin.', 'The bat wakes up again and again.', 'Each waking burns its stored fat.', 'The bat starves before spring.'], { top: 2, bh: 26, gap: 12, hl: 3 }),
+        tall: 146, cap: 'How white-nose syndrome kills hibernating bats.' },
+      { h: 'A white fuzz' },
+      'In 2006, cave explorers in New York State noticed bats with a strange white fuzz on their noses and wings. Many were dead. Scientists discovered that the fuzz was a <b>fungus</b> that grows in cold, damp places. It had probably been carried from Europe on a visitor’s boots or gear. The disease it causes was named white-nose syndrome. By 2010, it had reached Ontario and Quebec.',
+      { h: 'Why it is deadly' },
+      'In winter, bats <b>hibernate</b>: they hang in caves and old mines in a deep sleep, their heartbeat slowing almost to a stop. They live on fat they stored up in the fall, and they have just enough to last until spring. The fungus irritates their skin and wakes them up again and again. Every time a bat wakes, it burns precious fat. Many run out of energy and starve before the insects return.',
+      'In some caves, more than nine out of ten bats died. In 2014, the little brown bat was listed as endangered in Canada.',
+      { box: 'Echolocation', text: 'Bats find insects in the dark by making high sounds and listening for the echoes that bounce back.' },
+      { h: 'Helping bats recover' },
+      'Scientists are searching for treatments, such as helpful bacteria that slow the fungus. Many caves are now closed to visitors in winter, and cavers clean their gear carefully to avoid spreading spores. Some bats in a few places have survived the disease, and scientists are studying why.',
+      'People can help too. A bat house mounted on a sunny wall gives mothers a warm, safe place to raise their pups in summer. Leaving old trees standing and avoiding insect sprays helps bats find food and shelter. Bats are not scary pests; they are valuable neighbours, and they need our help to make a comeback.'
+    ],
+    guide: { before: 'Ask: what do you know about bats? Teach <b>fungus</b>, <b>hibernate</b> and the word syndrome (a set of signs of a disease).',
+      after: 'Look up plans for a simple bat house. Talk about why one disease could change a whole ecosystem.' },
+    words: [['fungus', 'a living thing such as mould or a mushroom that grows on other things'], ['hibernate', 'to spend the winter in a deep sleep']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps.',
+        items: ['The fungus grows on the bat’s skin.', 'The bat wakes up again and again.', 'Each waking burns its fat.', 'The bat starves before spring.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>hibernate</b> is to …',
+        opts: ['spend winter in a deep sleep', 'hunt at night', 'fly south'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How did the fungus probably reach North America?',
+        opts: ['on a visitor’s boots or gear', 'on birds', 'in the rain'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why waking up in winter is so dangerous for a bat.',
+        a: 'A bat has only enough stored fat to last until spring. Each waking burns fat, so it can starve.', look: 'limited fat; waking burns it' },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict: what might happen to insects in an area where most bats have died?',
+        a: 'There may be more mosquitoes and moths, because fewer bats are eating them.', look: 'more insects; fewer predators' },
+      { k: 'choice', code: 'C3.5', q: 'Which sentence shows the author’s opinion about bats?',
+        opts: ['Bats are not scary pests; they are valuable neighbours.', 'In 2006, cave explorers noticed bats.', 'By 2010, it reached Ontario.', 'Bats hang in caves.'], a: 0 },
+      { k: 'lines', code: 'C2.1', n: 2, q: 'What did you already know about bats before reading? Did this passage change your view?',
+        a: 'I thought bats were scary, but now I know they eat insects and need help.', look: 'prior idea and change' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-coral', subject: 'science', form: 'Report',
+    title: 'Cities Under the Sea',
+    deck: 'Why coral reefs are full of life, and why they turn white',
+    hero: {
+      photo: 'g6-coral-reef.jpg', credit: 'Photo: Jerry Reid, Public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A coral reef off the coast of Florida.'
+    },
+    body: [
+      'Coral reefs cover less than one percent of the ocean floor. Yet about a quarter of all the kinds of animals that live in the sea depend on them. Fish, crabs, sea turtles, sharks, sponges and octopuses all find food and shelter among the reef’s branches and caves. Scientists sometimes call reefs the rainforests of the sea.',
+      { fig: '<circle class="k" cx="80" cy="56" r="40"/>' + [0, 1, 2, 3, 4, 5].map(function (i) { var a = i * Math.PI / 3; return '<circle class="h" cx="' + (80 + Math.cos(a) * 20).toFixed(1) + '" cy="' + (56 + Math.sin(a) * 20).toFixed(1) + '" r="6"/>'; }).join('') +
+          G.T(80, 112, 'healthy coral:', 'lb', 'middle') + G.T(80, 126, 'algae inside', 'l', 'middle') +
+          D.arrow(128, 56, 176, 56, 'a') + G.T(152, 46, 'too warm', 'n', 'middle') +
+          '<circle class="k" cx="224" cy="56" r="40"/>' + G.T(224, 112, 'bleached coral:', 'lb', 'middle') + G.T(224, 126, 'algae gone', 'l', 'middle'),
+        tall: 132, cap: 'When water gets too warm, coral pushes out the algae that feed it, and turns white.' },
+      { h: 'Animals, not rocks' },
+      'Coral may look like rock or plants, but a coral reef is built by animals. Each coral is a colony of tiny animals called polyps, each one smaller than a pencil eraser. Polyps build hard skeletons of limestone around themselves. Over hundreds or thousands of years, millions of these skeletons pile up into a reef.',
+      'Inside the polyps live tiny <b>algae</b>, plant-like living things that make food from sunlight. The algae share their food with the coral and give it its bright colours. In return, the coral gives the algae a safe home. This kind of partnership, where both living things benefit, is called <b>symbiosis</b>.',
+      { h: 'Bleaching' },
+      'Corals are very sensitive to temperature. When ocean water stays even a degree or two warmer than usual for several weeks, the stressed coral pushes out its algae. Without them, the coral turns ghostly white. This is called bleaching. Bleached coral is not dead yet, but it is starving. If the water cools soon, the algae can return. If not, the coral dies.',
+      { box: 'Canada’s reefs', text: 'Canada has cold-water corals off Nova Scotia and rare glass sponge reefs off British Columbia, found nowhere else on Earth.' },
+      { h: 'Reefs at risk' },
+      'As the climate warms, bleaching is happening more often. Pollution, overfishing and damage from boat anchors add to the harm. Many countries are protecting reefs as marine parks, where fishing and anchoring are limited, and scientists are growing young corals in nurseries and planting them on damaged reefs. Cutting the gases that warm the planet is the most important way to help. What happens to reefs affects millions of people who depend on them for food, jobs and protection from storms.'
+    ],
+    guide: { before: 'Look at photos of a coral reef together. Teach <b>algae</b>, <b>symbiosis</b> (sym = together, bio = life) and the word colony.',
+      after: 'Ask: why is a reef like a city? Talk about another partnership in nature where both sides benefit.' },
+    words: [['algae', 'tiny plant-like living things that make food from sunlight'], ['symbiosis', 'a partnership where two living things help each other']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What causes coral to bleach?',
+        opts: ['water that is too warm', 'too many fish', 'cold water'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Sym-</i> means together and <i>bio</i> means life. <b>Symbiosis</b> means …',
+        opts: ['living together and helping each other', 'living alone', 'a kind of rock'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart about the partnership.', cols: ['Partner', 'What it gives the other'],
+        rows: [['Algae', null], ['Coral', null]],
+        a: [[null, 'food and colour'], [null, 'a safe home']] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Is bleached coral dead? Explain.',
+        a: 'Not yet. It is starving without its algae. If the water cools soon the algae can return; if not, it dies.', look: 'not yet; can recover if water cools' },
+      { k: 'choice', code: 'C3.1', q: 'Reefs are called “the rainforests of the sea.” This means reefs …',
+        opts: ['are full of many kinds of life', 'have trees', 'get lots of rain', 'are on land'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'The text says coral “may look like rock or plants.” How did the next sentences help you understand what coral really is?',
+        a: 'They explained that coral is a colony of tiny animals called polyps that build skeletons.', look: 'animals; polyps' },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'According to the author, what is the most important way to help reefs?',
+        a: 'Cutting the gases that warm the planet.', look: 'reduce warming gases' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-manicouagan', subject: 'science', form: 'Report',
+    title: 'The Eye of Quebec',
+    deck: 'A giant ring of water left by a rock from space',
+    hero: {
+      photo: 'g6-manicouagan.jpg', credit: 'Photo: Copernicus Sentinel-2, ESA, CC BY-SA 3.0 igo, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Manicouagan Reservoir in Quebec, seen by a satellite. The ring is about 70 kilometres across.'
+    },
+    body: [
+      'Astronauts passing over northern Quebec often take photos of a strange shape below: a perfect ring of water, about 70 kilometres across, with a large island in the middle. It looks like a giant eye staring up into space. This is the Manicouagan Reservoir, and its shape is the scar of a disaster that happened long before the dinosaurs ruled the Earth.',
+      { fig: G.flow(['An asteroid about 5 km wide strikes.', 'The blast digs a crater and melts rock.', 'Glaciers grind the land for millions of years.', 'A dam floods the ring, making a lake.'], { top: 2, bh: 26, gap: 12, hl: 0 }),
+        tall: 146, cap: 'How the Manicouagan ring formed, from impact to reservoir.' },
+      { h: 'A rock from space' },
+      'About 214 million years ago, an <b>asteroid</b> about five kilometres wide slammed into the area at tremendous speed. The impact released more energy than all the bombs ever made by humans. It blasted out a crater about 100 kilometres wide and melted the rock beneath it. The ground in the centre rebounded upward, like the splash in the middle when a drop hits water.',
+      { h: 'Shaped by ice and people' },
+      'Over millions of years, the crater changed. Thick glaciers moved across it during the ice ages, grinding away the land. The hard, melted rock in the centre wore away more slowly than the rock around it, leaving a high central area and a low ring around it. Water filled parts of the ring, creating two curved lakes.',
+      'Then, in the 1960s, Hydro-Québec built the huge Daniel-Johnson Dam nearby to produce electricity. The dam flooded the ring, joining the lakes into one circular reservoir. The centre became René-Levasseur Island, one of the largest lake islands in the world.',
+      { box: 'Impact craters', text: 'Earth has about 200 known impact craters. Many are hidden by erosion, forests or water. The Moon’s craters are easy to see because it has no wind or rain.' },
+      'Visitors to the area can still find clues to the impact. Some rocks near the centre are made of shattered pieces of older rock that were melted and welded together by the blast. Geologists collect these rocks to measure their age and to learn how hot and how powerful the impact was.',
+      { h: 'A record in rock' },
+      'Scientists study craters like Manicouagan to learn how often large rocks from space hit Earth and what they do to life. Today, space agencies track <b>asteroids</b> that pass near our planet. In 2022, a NASA spacecraft deliberately crashed into a small asteroid to test whether its path could be changed. It worked. One day, that knowledge could <b>protect</b> our planet from another impact.'
+    ],
+    guide: { before: 'Drop a marble into a tray of flour and look at the crater. Teach <b>asteroid</b>, <b>protect</b> and the word reservoir (a lake that stores water, often made by a dam).',
+      after: 'Find Manicouagan on a map of Quebec. Look at a satellite photo together and find the island.' },
+    words: [['asteroid', 'a rocky object that travels around the Sun'], ['protect', 'to keep safe from harm']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the events in order.',
+        items: ['Glaciers grind the land.', 'An asteroid strikes.', 'A dam floods the ring.', 'The blast digs a crater.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why does the centre stand higher than the ring?',
+        opts: ['Its hard rock wore away more slowly.', 'People built it up.', 'It is a volcano.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>asteroid</b> is …',
+        opts: ['a rocky object that travels around the Sun', 'a dam', 'a glacier'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How did people help shape the reservoir we see today?',
+        a: 'Hydro-Québec built a dam that flooded the ring, joining two lakes into one circle.', look: 'dam flooded the ring' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The author compares the centre rebounding to “the splash in the middle when a drop hits water.” Why is this helpful?',
+        a: 'It helps readers picture how the ground bounced up in the middle after the hit.', look: 'helps picture the bounce' },
+      { k: 'choice', code: 'C2.2', q: 'Why might a reader choose this passage?',
+        opts: ['to learn how a crater on Earth formed', 'to learn to fish', 'to plan a garden', 'to read a poem'], a: 0 },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'What helped you most to understand how the ring formed: the diagram, the photo or the text? Why?',
+        a: 'The diagram, because it showed the four steps in order.', look: 'a choice and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-drones', subject: 'tech', form: 'Explanation',
+    title: 'Four Rotors, One Drone',
+    deck: 'How a quadcopter flies, and the rules for flying one safely',
+    hero: {
+      photo: 'g6-drone.jpg', credit: 'Photo: Josh Sorenson, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A quadcopter drone in flight. Its four rotors work together to lift, turn and steer it.'
+    },
+    body: [
+      'A drone hovers in the air, perfectly still, then zips sideways, climbs, spins and lands gently on a patio. It has no wings and no pilot on board. How does it do it? Most small drones are <b>quadcopters</b>: aircraft with four spinning rotors.',
+      { fig: '<rect class="k" x="130" y="50" width="40" height="40" rx="6"/><path class="k" d="M130 50 L90 20 M170 50 L210 20 M130 90 L90 120 M170 90 L210 120"/>' +
+          [[90, 20, '↻'], [210, 20, '↺'], [90, 120, '↺'], [210, 120, '↻']].map(function (r) { return '<circle class="t" cx="' + r[0] + '" cy="' + r[1] + '" r="18"/>' + G.T(r[0], r[1] + 6, r[2], 'lb', 'middle'); }).join('') +
+          G.T(150, 74, 'body', 'n', 'middle') + G.T(20, 74, 'front ↑', 'n') + G.T(150, 152, 'Opposite rotors spin the same way.', 'n', 'middle'),
+        tall: 158, cap: 'Two rotors spin clockwise and two spin counter-clockwise, so the drone does not twist.' },
+      { h: 'Lift and balance' },
+      'Each rotor is a small propeller. As it spins, its angled blades push air downward, and the air pushes the drone up. This upward force is called thrust. When the four rotors together push up with more force than the drone’s weight, it climbs. When they push with exactly the same force as its weight, it hovers.',
+      'But a spinning rotor also tries to twist the drone in the opposite direction. That is why two rotors spin clockwise and two spin counter-clockwise. Their twists cancel each other out, and the drone stays steady.',
+      { h: 'Steering without a steering wheel' },
+      'To move, the drone changes the speed of its rotors. To fly forward, the back rotors speed up and the front rotors slow down. The drone tilts forward, and some of its thrust now pushes it ahead. To turn, it speeds up one pair of rotors that spin the same way, and the drone rotates. A tiny computer inside makes hundreds of adjustments every second, using <b>sensors</b> that feel tilt and speed.',
+      { box: 'Know the rules', text: 'In Canada, drones over 250 grams must be registered, and pilots need a certificate. Fly below 122 metres, keep the drone in sight and stay far from airports.' },
+      { h: 'Useful flyers' },
+      'Drones are more than toys. Search-and-rescue teams use drones with heat cameras to find lost hikers at night. Farmers fly them over fields to spot thirsty crops. In some remote northern communities, drones have been tested for delivering medical supplies. Scientists use them to count whales, check bridges and map forests after fires.',
+      'With these benefits come responsibilities. Drones can invade people’s <b>privacy</b>, disturb wildlife or get in the way of aircraft. A good pilot always asks: is it safe, is it legal and is it respectful?'
+    ],
+    guide: { before: 'Spin a toy propeller or a paper helicopter. Teach <b>quadcopter</b> (quad = four), <b>sensors</b> and <b>privacy</b>.',
+      after: 'Ask: which use of drones surprised you most? Talk about why drone rules exist.' },
+    words: [['quadcopters', 'aircraft lifted by four spinning rotors'], ['sensors', 'devices that detect things such as tilt, speed or heat'], ['privacy', 'the right to keep things about yourself to yourself']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How many rotors spin clockwise?',
+        opts: ['two', 'four', 'one'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Quad-</i> means four. A <b>quadcopter</b> has …',
+        opts: ['four rotors', 'four wings', 'four pilots'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why do two rotors spin one way and two the other way?',
+        a: 'A spinning rotor tries to twist the drone. Opposite spins cancel the twists, so the drone stays steady.', look: 'twists cancel; steady' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how a drone flies forward.',
+        a: 'The back rotors speed up and the front ones slow down, so it tilts forward and some thrust pushes it ahead.', look: 'back faster; tilts; thrust forward' },
+      { k: 'table', code: 'C2.6', q: 'Fill in the chart with uses from the text.', cols: ['Who uses drones', 'What for'],
+        rows: [['Search-and-rescue teams', null], ['Farmers', null], ['Scientists', null]],
+        a: [[null, 'to find lost hikers with heat cameras'], [null, 'to spot thirsty crops'], [null, 'to count whales or map forests']] },
+      { k: 'choice', code: 'B3.2', q: 'In “the drone tilts forward,” the word <b>forward</b> tells …',
+        opts: ['which way the drone tilts', 'who tilts', 'when it tilts', 'what colour it is'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why does the author end with three questions a good pilot asks?',
+        a: 'To show that drones have benefits but also responsibilities, and to make readers think about flying safely and respectfully.', look: 'responsibilities; makes reader think' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-tardigrades', subject: 'science', form: 'Report',
+    title: 'The Toughest Animal on Earth',
+    deck: 'Tiny water bears that can survive being dried out, frozen and sent to space',
+    hero: {
+      photo: 'g6-tardigrade.jpg', credit: 'Photo: DSparrow14, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A tardigrade seen under a microscope. In real life, it is smaller than the dot on this i.'
+    },
+    body: [
+      'Scoop up a clump of damp moss from a tree trunk or a sidewalk crack, soak it in water and look at it under a microscope. You might see a plump little creature with eight stubby legs, lumbering along like a tiny bear. This is a tardigrade, also called a water bear. It may be the toughest animal on Earth.',
+      { fig: G.T(4, 10, 'What tardigrades have survived in experiments', 'n') +
+          [['Drying out', 'for about 10 years'], ['Freezing', 'close to −272 °C'], ['Heating', 'up to about 150 °C, briefly'], ['Outer space', 'about 10 days']].map(function (r, i) { return G.T(10, 34 + i * 24, r[0], 'lb') + G.T(110, 34 + i * 24, r[1], 'l'); }).join(''),
+        tall: 116, cap: 'Tardigrades can survive these conditions only in their dried-up, tun state.' },
+      { h: 'Small but everywhere' },
+      'Tardigrades are <b>microscopic</b>: most are less than half a millimetre long, too small to see without a microscope. Scientists have described more than 1&nbsp;000 kinds. They live in moss, leaf litter, soil, lakes and the deep ocean, from the tops of mountains to Antarctic ice. They eat by piercing plant cells or tiny animals with sharp mouthparts and sucking out the insides.',
+      { h: 'The tun trick' },
+      'When their home dries out, tardigrades do something amazing. They pull in their legs and head, curl into a dry little ball called a tun, and replace much of the water in their bodies with special sugars and proteins. Their <b>metabolism</b>, the chemical activity that keeps them alive, slows to almost nothing. In this state, they can wait for years. Add water, and within hours they uncurl and walk away.',
+      'In the tun state, tardigrades have survived temperatures colder than anywhere on Earth and hotter than boiling water. In 2007, scientists sent dried tardigrades into space on a satellite. They spent ten days exposed to the vacuum and radiation of space. When they came back to Earth and were given water, some revived and even laid eggs.',
+      { box: 'Not invincible', text: 'Active tardigrades are fragile. Their super-survival works only when they are dried out, and only for limited times.' },
+      { h: 'What we can learn' },
+      'Scientists study tardigrades to find out how cells can survive without water. One day, their tricks might help store vaccines without refrigeration, protect astronauts from radiation or keep crops alive in droughts. Not bad for a creature you could fit hundreds of on a fingernail.',
+      'You do not need a laboratory to find one. Many students have found tardigrades in moss from their own schoolyards, using an inexpensive microscope, a little patience and a dish of water. Look for a slow, chubby shape climbing over the bits of plant. Once you spot your first water bear, you may never look at moss the same way again.'
+    ],
+    guide: { before: 'If you have a microscope or magnifier, look at damp moss. Teach <b>microscopic</b>, <b>metabolism</b> and the word revive.',
+      after: 'Ask: which of the tardigrade’s survival records surprised you most? Why might scientists want to copy their tricks?' },
+    words: [['microscopic', 'so small it can only be seen with a microscope'], ['metabolism', 'the chemical activity in a living thing that keeps it alive']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How long have tardigrades survived in space?',
+        opts: ['about 10 days', 'about 10 years', 'one hour'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<i>Micro-</i> means very small. <b>Microscopic</b> means …',
+        opts: ['too small to see without a microscope', 'very large', 'very old'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number the steps of the tun trick.',
+        items: ['Its home dries out.', 'It curls into a tun.', 'Water returns.', 'The tardigrade uncurls and walks away.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How does the tun state help tardigrades survive?',
+        a: 'They replace water with sugars and proteins and slow their metabolism almost to nothing, so they can wait for years.', look: 'replace water; slow metabolism' },
+      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the author include the box “Not invincible”?',
+        a: 'To show that tardigrades are only super-tough when dried out, so readers do not think they can survive anything.', look: 'limits of survival' },
+      { k: 'choice', code: 'C3.3', q: 'How might tardigrades help people one day?',
+        opts: ['by helping store vaccines without refrigeration', 'by pulling sleds', 'by making honey', 'by cleaning moss'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'What is another animal you know that survives harsh conditions? How?',
+        a: 'Wood frogs freeze solid in winter and thaw in spring.', look: 'an animal and a strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-new-france', subject: 'history', form: 'Report',
+    title: 'Life in New France',
+    deck: 'Long, narrow farms, a river highway and a French colony that shaped Canada',
+    hero: {
+      photo: 'g6-place-royale.jpg', credit: 'Photo: Wilfredor, CC0, Wikimedia Commons', focus: '50% 55%',
+      tall: 220,
+      cap: 'Place Royale in Quebec City, near where Samuel de Champlain built his first trading post in 1608.'
+    },
+    body: [
+      'In 1608, the French explorer Samuel de Champlain built a wooden fort and trading post on the shore of the St. Lawrence River, at a place the Indigenous people called Kebec, meaning “where the river narrows.” It became Quebec City, the heart of a French colony called New France. For the next 150 years, French settlers farmed, traded and built communities along the river.',
+      { fig: '<path class="t" d="M4 128 Q150 112 296 128"/>' + G.T(150, 146, 'St. Lawrence River', 'lb', 'middle') +
+          [0, 1, 2, 3, 4, 5].map(function (i) { var x = 14 + i * 46; return '<rect class="' + (i === 2 ? 'h' : 'k') + '" x="' + x + '" y="12" width="40" height="104"/>'; }).join('') +
+          G.T(126, 8, 'one habitant’s farm', 'n') + D.arrow(140, 12, 140, 28, 't'),
+        tall: 152, cap: 'Farms were long and narrow so that every family had a piece of the river.' },
+      { h: 'A river highway' },
+      'In New France, there were almost no roads. The St. Lawrence River was the highway. People travelled by canoe and boat in summer, and by sleigh on the ice in winter. Fur traders paddled far inland to trade with First Nations, especially the Wendat and the Anishinaabe, who supplied beaver furs in exchange for metal tools, kettles and cloth.',
+      { h: 'Long, narrow farms' },
+      'The king of France granted large pieces of land, called seigneuries, to landowners called seigneurs. The seigneurs divided the land among farming families, called <b>habitants</b>. The farms were long and narrow, stretching back from the river. That way, every family had a small piece of riverbank for travel, fishing and water, as well as fields and forest behind. Seen from above, the land looked like a row of ribbons. You can still see this pattern along the St. Lawrence today.',
+      'Habitants worked hard. They cleared forests, grew wheat, peas and vegetables, and raised cows and pigs. They paid the seigneur a small rent, often in grain or chickens, and used his mill to grind their flour. Most families were large, with many children to help on the farm.',
+      { box: 'The King’s Daughters', text: 'Between 1663 and 1673, about 800 young women came from France to settle and start families. Millions of people today descend from them.' },
+      { h: 'A lasting legacy' },
+      'In 1763, after a war between Britain and France, New France came under British rule. But the habitants did not disappear. In 1774, Britain passed a law allowing them to keep their language, their religion and their system of laws. Today, the French language and culture of Quebec, and of francophone communities across Canada, carry on the <b>heritage</b> of New France.'
+    ],
+    guide: { before: 'Find Quebec City and the St. Lawrence River on a map. Teach <b>habitants</b>, <b>heritage</b> and the word seigneur.',
+      after: 'Ask: why were farms long and narrow? Find francophone communities in Ontario on a map.' },
+    words: [['habitants', 'farming families in New France'], ['heritage', 'traditions passed down from the past']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What did every farm touch?',
+        opts: ['the river', 'a road', 'a city'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Habitants</b> were …',
+        opts: ['farming families', 'kings', 'fur traders from Britain'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why were the farms in New France long and narrow?',
+        a: 'So every family had a piece of riverbank for travel, fishing and water, plus fields and forest behind.', look: 'river access for every family' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'Why was the river called a highway?',
+        a: 'There were almost no roads, so people travelled on it by canoe, boat or sleigh.', look: 'no roads; travelled on river' },
+      { k: 'choice', code: 'C3.4', q: 'What did First Nations traders receive in exchange for furs?',
+        opts: ['metal tools, kettles and cloth', 'land', 'farms', 'horses'], a: 0 },
+      { k: 'choice', code: 'C1.5', q: 'The land looked “like a row of ribbons.” This comparison helps you picture …',
+        opts: ['long, thin strips side by side', 'round fields', 'mountains', 'a city'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'What French words or places do you know in Canada? How might they connect to New France?',
+        a: 'Detroit and Sault Ste. Marie have French names because French explorers and traders went there.', look: 'a French name and a link' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-treaty-9', subject: 'history', form: 'Report',
+    title: 'Two Views of One Treaty',
+    deck: 'Treaty 9 in northern Ontario, and why the spoken promises matter',
+    hero: {
+      photo: 'g6-treaty-9.jpg', credit: 'Photo: Government of Canada, Public domain, Wikimedia Commons', focus: '50% 30%',
+      tall: 220,
+      cap: 'The written text of the James Bay Treaty, also called Treaty 9.'
+    },
+    body: [
+      'In the summer of 1905, a group of officials set out by canoe from northern Ontario. They paddled for weeks, from one Cree and Anishinaabe community to the next, along rivers flowing toward James Bay. They carried a written document and money to pay at each stop. Their task was to sign a <b>treaty</b>, an agreement between nations, with the people who had lived on this land for thousands of years.',
+      { fig: '<rect class="k" x="6" y="6" width="138" height="128" rx="6"/><rect class="k" x="156" y="6" width="138" height="128" rx="6"/>' +
+          G.T(75, 24, 'The written text', 'lb', 'middle') + G.T(225, 24, 'What many', 'lb', 'middle') + G.T(225, 38, 'Elders remember', 'lb', 'middle') +
+          [['land given up', 'forever'], ['hunting may be limited', 'by government'], ['$8, then $4 a year']].map(function (r, i) { return G.T(16, 50 + i * 32, '• ' + r[0], 'l') + (r[1] ? G.T(24, 63 + i * 32, r[1], 'l') : ''); }).join('') +
+          [['land would be shared'], ['hunting and fishing', 'would never change'], ['a lasting friendship']].map(function (r, i) { return G.T(166, 58 + i * 26, '• ' + r[0], 'l') + (r[1] ? G.T(174, 71 + i * 26, r[1], 'l') : ''); }).join(''),
+        tall: 140, cap: 'The written treaty and the spoken promises did not match.' },
+      { h: 'What the paper said' },
+      'The written treaty said that the First Nations would “cede, release, surrender and yield up” a huge area of northern Ontario to the government. In return, each person would receive eight dollars at signing and four dollars every year after. Communities would get reserves, small areas of land set aside for them, as well as schools. The paper also said that hunting and fishing could be limited by future government rules.',
+      { h: 'What people heard' },
+      'But the treaty was written in English, and few of the people signing could read it. It was explained to them out loud, through interpreters. Many First Nations Elders say that what their ancestors heard was very different. They understood that they would share the land, not give it away, and that their way of life on the land would never be taken from them. One commissioner’s own diary suggests that promises were made that were not in the written text.',
+      { box: 'Oral history', text: 'Many First Nations keep their history through stories passed carefully from Elders to young people. This oral history is an important record of the treaties.' },
+      { h: 'Why it matters today' },
+      'Today, Treaty 9 covers about two-thirds of Ontario’s land. When governments or companies want to build mines, roads or dams in the North, the meaning of the treaty becomes very important. Courts in Canada have ruled that treaties must be read the way the First Nations would have understood them, and that governments must keep their promises honourably.',
+      'Treaties are not just old documents. They are living agreements that set out how people should share the land. As many people say, “We are all treaty people,” and each of us has a part in the <b>relationship</b>.'
+    ],
+    guide: { before: 'Find James Bay and northern Ontario on a map. Teach <b>treaty</b>, <b>relationship</b>, cede and oral history. Ask: whose land do you live on?',
+      after: 'Find out which treaty covers the land where you live. Talk about why it matters when a written agreement and a spoken one do not match.' },
+    words: [['treaty', 'a formal agreement between nations'], ['relationship', 'the way people or groups are connected and treat each other']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What did many Elders say about the land?',
+        opts: ['It would be shared.', 'It was given up forever.', 'It was sold for $8.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>treaty</b> is …',
+        opts: ['a formal agreement between nations', 'a canoe trip', 'a kind of map'], a: 0 },
+      { k: 'table', code: 'C3.5', q: 'Compare the two views.', cols: ['Topic', 'Written text', 'Many Elders’ memory'],
+        rows: [['Land', null, null], ['Hunting and fishing', null, null]],
+        a: [[null, 'given up forever', 'shared'], [null, 'could be limited by government', 'would never change']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why might the people signing have understood the treaty differently from the written words?',
+        a: 'It was written in English, few could read it, and it was explained out loud through interpreters.', look: 'English; could not read; interpreters' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why does oral history matter in understanding Treaty 9?',
+        a: 'Elders’ stories record what the First Nations heard and agreed to, which may not be in the written text.', look: 'records what people understood' },
+      { k: 'choice', code: 'C3.6', q: 'What does “We are all treaty people” mean?',
+        opts: ['Everyone living on treaty land shares in the agreement.', 'Only lawyers read treaties.', 'Treaties are old and forgotten.', 'Only First Nations need treaties.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The title is “Two Views of One Treaty.” Whose voices does the author include? Whose might still be missing?',
+        a: 'The written treaty, Elders’ memories and the courts; the voices of the officials themselves are mostly missing.', look: 'voices included and missing' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-winter-road', subject: 'social', form: 'Report',
+    title: 'Roads Made of Ice',
+    deck: 'How winter roads connect northern Ontario communities, and why they are in trouble',
+    hero: {
+      photo: 'g6-winter-road.jpg', credit: 'Photo: Rev40, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Vehicles crossing the frozen Albany River on a winter road in northern Ontario.'
+    },
+    body: [
+      'For most of the year, more than 30 First Nations communities in Ontario’s Far North cannot be reached by road. Everything they need, from food to fuel to building supplies, must arrive by plane, which is very expensive. But for a few weeks each winter, something remarkable happens. Frozen lakes, rivers and swamps become a network of roads made of ice and packed snow.',
+      { fig: G.T(4, 10, 'Clear ice needed (approximate safety guide)', 'n') +
+          G.bars([['Person walking', 15, '15 cm'], ['Snowmobile', 20, '20 cm'], ['Car', 30, '30 cm'], ['Loaded truck', 100, 'about 1 m']], 100, { x0: 98, top: 22, gap: 24, pad: 54, hl: 3 }),
+        tall: 120, cap: 'Heavier loads need much thicker ice. Never go on ice without checking with local experts.' },
+      { h: 'Building a road of ice' },
+      'Building a winter road takes skill. In December, crews from the communities plow the snow off lakes and swamps so the cold can reach the ice and thicken it. Sometimes they pump water onto the surface to build it up layer by layer. They drill holes to measure the thickness. Only when the ice is thick enough can trucks carrying heavy loads cross safely. The roads usually open in late January and close by late March.',
+      { h: 'A lifeline' },
+      'Ontario has more than 3&nbsp;000 kilometres of winter roads. During their short season, trucks deliver a whole year’s worth of fuel, building materials for new houses, and bulky goods such as furniture and vehicles. Families drive out to visit relatives, shop in bigger towns and attend sports tournaments. For many communities, the winter road is a <b>lifeline</b>.',
+      { box: 'Slow and steady', text: 'Trucks on ice roads drive slowly. Speeding creates waves under the ice that can crack it.' },
+      { h: 'A shrinking season' },
+      'As the climate warms, winters in the North are getting shorter and milder. Some years, the ice is too thin to open the roads until February, and they must close early when warm spells arrive. Trucks have broken through the ice. When a road cannot open, communities must fly in supplies at a much higher cost, and building projects are delayed.',
+      'Many First Nations leaders are calling for all-season roads, built on solid land, that would connect their communities year-round. Others worry about the effects of new roads on the land and animals. Communities are working with governments to decide how to stay <b>connected</b> in a changing climate.'
+    ],
+    guide: { before: 'Find the Far North of Ontario and the Albany River on a map. Teach <b>lifeline</b> and <b>connected</b>. Stress that ice safety must be checked by experts.',
+      after: 'Ask: how would your life change if your town could be reached by road for only two months a year?' },
+    words: [['lifeline', 'something people depend on to survive'], ['connected', 'joined or linked to other places or people']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. About how thick must ice be for a loaded truck?',
+        opts: ['about 1 m', '15 cm', '30 cm'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>lifeline</b> is …',
+        opts: ['something people depend on', 'a fishing line', 'a road sign'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why do crews plow snow off the ice before building a road?',
+        a: 'So the cold can reach the ice and make it thicker.', look: 'cold reaches ice; thickens' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how a warming climate affects winter roads.',
+        a: 'Shorter, milder winters mean thinner ice, so roads open later and close earlier, and supplies must be flown in at higher cost.', look: 'thinner ice; shorter season; higher cost' },
+      { k: 'table', code: 'C3.5', q: 'Fill in the chart.', cols: ['View about all-season roads', 'Reason'],
+        rows: [['Some want them.', null], ['Some worry about them.', null]],
+        a: [[null, 'They would connect communities year-round.'], [null, 'They could harm the land and animals.']] },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is complex: a main idea plus a part beginning with <i>when</i> that cannot stand alone?',
+        opts: ['When a road cannot open, communities must fly in supplies.', 'Trucks drive slowly.', 'Ontario has many roads.', 'Building a road takes skill.'], a: 0 },
+      { k: 'lines', code: 'C2.1', n: 2, q: 'What did you already know about ice safety? How did it help you understand this passage?',
+        a: 'I knew thin ice can crack, so I understood why trucks need thick ice.', look: 'prior knowledge and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-tessellations', subject: 'math', form: 'Explanation',
+    title: 'Tiles That Never End',
+    deck: 'Which shapes fit together with no gaps, and why',
+    hero: {
+      photo: 'g6-tessellation.jpg', credit: 'Photo: Basile Morin, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 210,
+      cap: 'A tessellation made from one shape, the word “Yes,” turned and repeated with no gaps.'
+    },
+    body: [
+      'Look at a tiled floor, a brick wall or a honeycomb. Each one is made of shapes that fit together perfectly, with no gaps and no overlaps, and could go on forever in every direction. A pattern like this is called a <b>tessellation</b>.',
+      { fig: '<path class="k" d="M10 20 H50 V60 H10 Z M50 20 H90 V60 H50 Z M10 60 H50 V100 H10 Z M50 60 H90 V100 H50 Z"/><circle class="a" cx="50" cy="60" r="4"/>' + G.T(50, 120, '4 × 90° = 360°', 'n', 'middle') +
+          '<path class="k" d="M150 60 L170 25 L190 60 L170 95 Z M150 60 L130 25 L170 25 M150 60 L130 95 L170 95 M150 60 L110 60 L130 25 M110 60 L130 95"/><circle class="a" cx="150" cy="60" r="4"/>' + G.T(150, 120, '6 × 60° = 360°', 'n', 'middle') +
+          '<path class="k" d="M230 30 L255 22 L270 45 L255 66 L230 58 Z M230 58 L255 66 L250 92 L222 96 L210 72 Z"/>' + G.T(250, 120, '3 × 108° = 324°', 'n', 'middle') + G.T(250, 134, 'gap!', 'lb', 'middle'),
+        tall: 140, cap: 'At each corner, the angles must add up to exactly 360°. Squares and triangles do; regular pentagons do not.' },
+      { h: 'The 360° rule' },
+      'Why do some shapes tessellate and others do not? Look at any point where corners meet. The angles around that point must add up to exactly 360 degrees, a full turn. A square has 90° angles, and four squares fit around a point: 4 × 90° = 360°. An equilateral triangle has 60° angles, and six fit: 6 × 60° = 360°. A regular hexagon has 120° angles, and three fit: 3 × 120° = 360°.',
+      'A regular pentagon has angles of 108°. Three pentagons make 324°, leaving a gap. Four would make 432°, too much to fit. So regular pentagons cannot tessellate on their own.',
+      { h: 'Moving shapes' },
+      'Tessellations are built using <b>transformations</b>, ways of moving a shape without changing its size or shape. A translation slides a shape. A reflection flips it over a line, like a mirror image. A rotation turns it around a point. The word tessellation in the photo uses rotations: each copy of the word is turned to fit snugly against its neighbours.',
+      { box: 'Nature’s choice', text: 'Bees build hexagon cells. Hexagons tessellate and use the least wax to hold the most honey.' },
+      { h: 'Artists and tiles' },
+      'People have made tessellations for thousands of years. Builders in ancient Rome made floors from tiny tiles. Artists in the Islamic world created breathtaking patterns of stars and polygons on palaces and mosques. Quilt makers sew squares and triangles into repeating designs. In the 1900s, the Dutch artist M. C. Escher turned tessellations into birds, fish and lizards that interlock like puzzle pieces.',
+      'You can make your own. Start with a square of card. Cut a shape out of one side and tape it to the opposite side. Trace it again and again, sliding it each time, and watch your new shape tile the page.'
+    ],
+    guide: { before: 'Gather pattern blocks or paper shapes. Teach <b>tessellation</b>, <b>transformations</b> and the words translation, reflection and rotation.',
+      after: 'Make a tessellation using the cut-and-tape method. Check the 360° rule at a corner.' },
+    words: [['tessellation', 'a pattern of shapes that fit together with no gaps or overlaps'], ['transformations', 'ways of moving a shape: sliding, flipping or turning']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Why don’t regular pentagons tessellate?',
+        opts: ['Their angles leave a gap.', 'They are too big.', 'They have no corners.'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How many regular hexagons fit around one point?',
+        opts: ['3', '4', '6'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Shape', 'Angle', 'How many fit around a point'],
+        rows: [['Square', '90°', null], ['Equilateral triangle', null, '6'], ['Regular hexagon', '120°', null]],
+        a: [[null, null, '4'], [null, '60°', null], [null, null, '3']] },
+      { k: 'choice', code: 'B2.2', q: 'A <b>reflection</b> moves a shape by …',
+        opts: ['flipping it over a line', 'sliding it', 'turning it around a point', 'making it bigger'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think bees build hexagons instead of circles?',
+        a: 'Hexagons tessellate with no gaps and use the least wax, but circles would leave gaps.', look: 'no gaps; less wax' },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'Which part of the 360° rule did you find hardest? What did you do to understand it?',
+        a: 'Why pentagons do not fit; I looked at the diagram and added the angles.', look: 'a part and a strategy' },
+      { k: 'lines', code: 'C2.5', n: 2, q: 'Where have you seen a tessellation in your home or community?',
+        a: 'The bathroom floor has hexagon tiles.', look: 'a real example' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-sugar', subject: 'health', form: 'Media article',
+    title: 'How Much Sugar Is in That?',
+    deck: 'Reading labels to find the sugar hidden in drinks',
+    hero: {
+      photo: 'g6-soft-drink-sugar.jpg', credit: 'Photo: SSgt Nathanel Callon, Public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'Sugar pouring out of a soft-drink can shows how much sugar one drink can hold.'
+    },
+    body: [
+      'It is a hot afternoon, and you are thirsty. In the store fridge, the choices glow in bright colours: cola, iced tea, sports drinks, juice, chocolate milk, water. The ads promise energy, fun or a “natural” taste. But how much sugar is really inside? The answer is printed on every bottle, if you know where to look.',
+      { fig: G.T(4, 10, 'Sugar in some drinks (approximate, grams)', 'n') +
+          G.bars([['Cola, 355 mL', 39, '39 g'], ['Iced tea, 500 mL', 40, '40 g'], ['Juice, 250 mL', 22, '22 g'], ['Water', 0, '0 g']], 40, { x0: 112, top: 22, gap: 24, pad: 36, hl: 0 }),
+        tall: 120, cap: 'Amounts vary by brand. Always check the label.' },
+      { h: 'Reading the label' },
+      'Every packaged drink in Canada has a Nutrition Facts table. Near the bottom, it lists sugars in grams. To picture what that means, divide by four, because a teaspoon of sugar weighs about four grams. A can of cola with 39 grams of sugar holds about ten teaspoons. Imagine spooning ten teaspoons of sugar into a glass of water and drinking it.',
+      'The label also shows the % Daily Value. This tells you how much of a whole day’s suggested limit is in one serving. Five percent or less is a little; 15 percent or more is a lot. Many soft drinks have 40 percent or more of a day’s sugar in one can.',
+      { h: 'Why it matters' },
+      'Your body uses sugar for energy, but too much added sugar can lead to tooth decay and other health problems over time. Sugary drinks are especially easy to overdo, because liquid sugar does not make you feel full. Canada’s food guide says to make water your drink of choice.',
+      { box: 'Read the fine print', text: 'Words such as glucose, fructose, syrup and dextrose on an ingredient list are all kinds of sugar.' },
+      { h: 'The ads and the facts' },
+      'Drink companies spend huge amounts on advertising. Ads may show athletes, bright fruit or smiling friends. A label may say “made with real fruit” or “vitamin-enhanced.” These messages are designed to make a drink seem healthy or exciting. They are not lies, but they may not tell the whole story. A <b>critical</b> reader looks past the picture and checks the numbers.',
+      'Next time you choose a drink, flip the bottle and read the label. You may find that plain water, milk, or water with a slice of lemon is the smartest choice of all. Making an <b>informed</b> choice means you decide, not the advertisement.'
+    ],
+    guide: { before: 'Bring two or three drink containers and find the Nutrition Facts table together. Teach <b>critical</b>, <b>informed</b> and the phrase % Daily Value.',
+      after: 'Measure out the teaspoons of sugar in one drink using real sugar. Ask: what did the ad want you to believe?' },
+    words: [['critical', 'thinking carefully and questioning, not just accepting'], ['informed', 'having the facts you need']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which drink has no sugar?',
+        opts: ['water', 'orange juice', 'cola'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'About how many grams are in one teaspoon of sugar?',
+        opts: ['4', '10', '39'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'An iced tea has 40 grams of sugar. About how many teaspoons is that? Show your thinking.',
+        a: '40 ÷ 4 = 10, so about 10 teaspoons.', look: 'divide by 4; about 10' },
+      { k: 'choice', code: 'A2.4', q: 'A drink label says “made with real fruit.” What should a critical reader do?',
+        opts: ['check the sugar in the Nutrition Facts table', 'believe it is healthy', 'buy two', 'ignore the label'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why might a drink company show athletes in its ads?',
+        a: 'To make the drink seem healthy and exciting, so people want to buy it.', look: 'seem healthy; sell more' },
+      { k: 'choice', code: 'C1.2', q: 'This text helps readers understand advertising and labels. It is mainly a …',
+        opts: ['media article', 'poem', 'story', 'letter'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 2, q: 'Will this passage change how you choose a drink? Explain.',
+        a: 'Yes. I will check the sugar on the label before I buy.', look: 'a change and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-red-fox', subject: 'story', form: 'Fable',
+    title: 'The Fox and the Frozen Pond',
+    deck: 'An original fable about pride, patience and listening to others',
+    hero: {
+      photo: 'g6-red-fox.jpg', credit: 'Photo: In india travel, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A red fox hunting in deep snow.'
+    },
+    body: [
+      'At the edge of a northern forest, where the spruce trees leaned under their coats of snow, lived a red fox named Ember. She was the quickest hunter in the valley, and she knew it. Her tail flashed like a flame across the white fields, and the other animals stepped aside when she passed.',
+      { fig: G.flow(['Ember boasts', 'Ember ignores the warnings', 'The ice cracks', 'Ember learns to listen'], { top: 6, bh: 24, gap: 10, hl: 2 }),
+        tall: 140, cap: 'The fable’s plot, from beginning to lesson.' },
+      { h: 'A warning' },
+      'One grey morning in late March, Ember spotted a fat hare on the far side of the pond. The quickest path was straight across the ice. A raven perched on a dead pine called down to her. “The ice is soft, little fire. The sun has been warm for three days. Go around.”',
+      'Ember laughed. “Around? That would take all morning. I have crossed this pond a hundred times.”',
+      'An old muskrat poked his head from a hole near the shore. “The raven is right,” he said quietly. “Listen. You can hear the ice groaning.”',
+      'But Ember did not listen. She was too <b>proud</b> to take advice from a bird and a muskrat. She trotted onto the pond with her head held high.',
+      { h: 'The crack' },
+      'Halfway across, the ice gave a loud crack, like a branch snapping. Ember froze. Dark water seeped up around her paws. Very slowly, she lay flat on her belly to spread out her weight, just as her mother had once taught her, and crept back the way she had come. When she reached the shore, she was shivering, wet and humbled. The hare, of course, was long gone.',
+      'The raven said nothing. The muskrat simply nodded. Ember sat in the snow for a long time, watching the dark patch of water where she had nearly gone through.',
+      { box: 'What is a fable?', text: 'A fable is a short story, often with animal characters, that teaches a lesson called a moral.' },
+      'From that day on, Ember still hunted with speed, but she learned to pause. She listened to the creaks of the ice and the calls of the raven. Many springs later, when a young fox boasted about racing across the thawing river, Ember was the one who said, “Wait. Listen first.” And the young fox, seeing the grey in her <b>wise</b> old face, listened.'
+    ],
+    guide: { before: 'Teach <b>proud</b>, <b>wise</b> and the word moral. Ask: what do you know about fables?',
+      after: 'Ask: what is the moral? Have the reader write a one-sentence moral of their own.' },
+    words: [['proud', 'thinking very highly of yourself'], ['wise', 'having good sense from experience']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'This story is a fable because it …',
+        opts: ['uses animals to teach a lesson', 'gives facts about foxes', 'is a poem'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>proud</b> fox thinks …',
+        opts: ['very highly of herself', 'she is slow', 'she is lost'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: 'The raven calls Ember “little fire.” Why?',
+        opts: ['Her red tail looks like a flame.', 'She is warm.', 'She started a fire.', 'She is very small.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did Ember not listen to the raven and the muskrat?',
+        a: 'She was too proud to take advice from smaller animals and believed she knew best.', look: 'pride' },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'What did Ember do to get back to shore safely?',
+        a: 'She lay flat on her belly to spread out her weight and crept back.', look: 'lay flat; crept back' },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'What is the moral of this fable? Write it in one sentence.',
+        a: 'Listen to the advice of others before you act.', look: 'a lesson about listening' },
+      { k: 'choice', code: 'C1.5', q: 'Why does the author end with Ember warning a young fox?',
+        opts: ['to show she has truly changed', 'to start a new story', 'to describe the river', 'to make the story funny'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g6-beekeeper', subject: 'science', form: 'Interview',
+    title: 'Talking with a Beekeeper',
+    deck: 'An imagined interview about honeybees, hives and why pollinators need our help',
+    hero: {
+      photo: 'g6-beekeeper.jpg', credit: 'Photo: Ich, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'A beekeeper lifts a frame from a hive to check on the bees.'
+    },
+    body: [
+      'Rosa Martel keeps 40 hives of honeybees on a farm near Peterborough, Ontario. She is an imagined character, but the facts she shares are real. We asked her what it is like to work with more than a million bees.',
+      { fig: G.cols([['Queen', 1, '1'], ['Drones', 3, 'hundreds'], ['Workers', 100, 'tens of thousands']], 100, { base: 112, h: 92, x0: 30, hl: 2 }),
+        tall: 132, cap: 'In a summer hive, almost every bee is a female worker.' },
+      { h: 'How did you become a beekeeper?' },
+      '“When I was your age, my neighbour had two hives. He let me help, wearing a big white suit. The first time I held a frame full of buzzing bees, I was terrified. By the end of the summer, I was hooked.”',
+      { h: 'Who lives in a hive?' },
+      '“Each hive is a <b>colony</b>, a big family working together. There is one queen, who lays up to 2&nbsp;000 eggs a day. There are a few hundred drones, the males. And there are tens of thousands of workers, all female. Workers do everything else: they clean, guard the door, build wax comb, feed the young and fly out to collect nectar and pollen.”',
+      { h: 'Why are bees important?' },
+      '“As bees move from flower to flower, they carry pollen. That helps plants make fruit and seeds. In Ontario, apples, blueberries, cherries and pumpkins all depend on pollinators. Without bees, our grocery stores would look very different.”',
+      { box: 'Did you know?', text: 'Honeybees are not native to Canada. Settlers brought them from Europe. Canada also has more than 800 kinds of wild, native bees.' },
+      { h: 'What problems do bees face?' },
+      '“Some winters, I lose many hives. Bees face tiny mites that spread disease, some pesticides, and a loss of wildflowers. When fields are all one crop, bees do not get a <b>varied</b> diet, and that weakens them.”',
+      { h: 'What can young people do?' },
+      '“Plant native flowers, like goldenrod and wild bergamot. Leave a corner of the yard a little wild. And when a bee lands near you, stay calm. She is just working.”',
+      'Rosa also checks her hives every week in summer. She looks for eggs to make sure the queen is healthy, and for signs of disease. In autumn, she leaves plenty of honey in each hive so the bees can eat through the long Ontario winter.',
+      'We thanked Rosa and left with a jar of golden honey and a new respect for the busy insects in the hive.'
+    ],
+    guide: { before: 'Teach <b>colony</b>, <b>varied</b> and pollinator. Point out that the speaker is imagined but the facts are real.',
+      after: 'Ask: what question would you add to this interview? Plant or find a native flower.' },
+    words: [['colony', 'a group of animals living and working together'], ['varied', 'of many different kinds']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'How can you tell this is an interview?',
+        opts: ['questions as headings, answers in quotes', 'a list of steps', 'rhyming lines'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>colony</b> is …',
+        opts: ['a group living together', 'one bee', 'a kind of flower'], a: 0 },
+      { k: 'choice', code: 'C1.4', q: 'Use the chart. Which bees are there the most of?',
+        opts: ['workers', 'drones', 'the queen', 'all the same'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Name three jobs that worker bees do.',
+        a: 'Clean, guard the door, build comb, feed the young, collect nectar and pollen (any three).', look: 'any three jobs' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why would a field of only one crop be bad for bees?',
+        a: 'Bees would not get a varied diet, so they would be weaker and less healthy.', look: 'no varied diet; weaker' },
+      { k: 'choice', code: 'B3.3', q: 'Why are Rosa’s answers inside quotation marks?',
+        opts: ['They are her exact spoken words.', 'They are titles.', 'They are questions.', 'They are not true.'], a: 0 },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Why does the writer say Rosa is imagined? Why might a reader need to know that?',
+        a: 'So readers know the person is invented, even though the facts are real, and do not think she is a real beekeeper.', look: 'honesty about the source' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-petitclerc', subject: 'health', form: 'Biography',
+    title: 'Chantal Petitclerc',
+    deck: 'From a farm accident to 14 Paralympic gold medals and the Senate of Canada',
+    hero: {
+      photo: 'g6-petitclerc.jpg', credit: 'Photo: Lëa-Kim Châteauneuf, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 220,
+      cap: 'Chantal Petitclerc in 2017, the year after she was named to the Senate of Canada.'
+    },
+    body: [
+      'Chantal Petitclerc was born in 1969 in Saint-Marc-des-Carrières, a small town in Quebec. When she was 13, a heavy barn door fell on her, injuring her spine. She would never walk again. Many people expected her life to become smaller. Instead, it became much bigger.',
+      { fig: G.time([['1982', 'Spinal injury at 13'], ['1992', 'First Paralympic medals'], ['2004', 'Five gold in Athens'], ['2008', 'Five gold in Beijing'], ['2016', 'Named to the Senate']], { x: 60, top: 12, gap: 24, hl: 2 }),
+        tall: 128, cap: 'Some key moments in Chantal Petitclerc’s life.' },
+      { h: 'Finding the pool, then the track' },
+      'At first, a teacher encouraged Chantal to try swimming. It made her stronger and showed her what her body could do. A few years later, a coach saw her and suggested wheelchair racing. Her first racing chair was homemade and heavy, and she lost her early races badly. But she loved the speed, and she trained hard.',
+      'Training was not easy. Chantal pushed her chair for hours in all kinds of weather, lifted weights and studied videos of her races to find tiny ways to go faster. She also had to travel far from home to compete, often with little money. Each small improvement kept her going.',
+      { h: 'A champion' },
+      'Wheelchair racers push the rims of their wheels with gloved hands, reaching speeds of over 30 kilometres per hour. It takes huge strength, careful <b>technique</b> and years of practice. Chantal mastered all three. Over five Paralympic Games, she won 21 medals, 14 of them gold. At the 2004 Athens Games and again in Beijing in 2008, she won every race she entered.',
+      { box: 'Paralympics', text: 'The Paralympic Games are top international games for athletes with disabilities, held right after the Olympics.' },
+      { h: 'A voice for others' },
+      'After retiring from racing, Chantal coached young athletes, including Canada’s Paralympic team as its chef de mission. She spoke at schools about setting goals and working through setbacks. In 2016, she was appointed to the Senate of Canada, where she helps review the country’s laws. She became the first Paralympian to serve there.',
+      'Chantal has often said that her wheelchair is not a limit but a tool. She believes sport can help everyone, with or without a disability, feel strong and capable. Her story shows the power of <b>determination</b>, and of people who believe in you when you are just starting out.'
+    ],
+    guide: { before: 'Teach <b>technique</b>, <b>determination</b> and the word Paralympic. Ask: what does it take to become a champion?',
+      after: 'Ask: who encouraged Chantal? Who encourages you? Talk about ways to make sport open to everyone.' },
+    words: [['technique', 'a skilled way of doing something'], ['determination', 'refusing to give up on a goal']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did she join the Senate?',
+        opts: ['2016', '2004', '1992'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>Para</b>lympic, “para” here means …',
+        opts: ['beside or alongside', 'under', 'against'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 2, q: 'Which sport did Chantal try first, and who encouraged her?',
+        a: 'Swimming, encouraged by a teacher.', look: 'swimming; a teacher' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'She lost her early races badly. What does it tell you about her that she kept going?',
+        a: 'She was determined and loved the sport, so she did not give up when it was hard.', look: 'determined; did not give up' },
+      { k: 'choice', code: 'C1.3', q: 'How is most of this biography organized?',
+        opts: ['in time order', 'problem and solution', 'compare and contrast', 'as a list of steps'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: '“Her wheelchair is not a limit but a tool” means …',
+        opts: ['it helps her do things', 'it is broken', 'she uses it to fix things', 'she does not need it'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'What did you learn from Chantal’s story that you could use when something is hard for you?',
+        a: 'Keep practising after a loss, and accept help from people who believe in you.', look: 'a personal lesson' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-ev-charging', subject: 'science', form: 'Explanation',
+    title: 'Plugging In a Car',
+    deck: 'How electric vehicles store and use energy, and where that energy comes from',
+    hero: {
+      photo: 'g6-ev-charging.jpg', credit: 'Photo: Dillan Payne, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A public charging station for electric vehicles in Bowmanville, Ontario.'
+    },
+    body: [
+      'Most cars on Canadian roads burn gasoline. But more and more, you will see cars plugged into posts in parking lots, like phones on a charger. These are electric vehicles, or EVs. Instead of a gas tank, they carry a large battery, and instead of an engine, they use an electric motor.',
+      { fig: G.flow(['Power station', 'Power lines', 'Charger and battery', 'Electric motor turns wheels'], { top: 6, bh: 24, gap: 10, hl: 2 }),
+        tall: 140, cap: 'Energy travels from a power station to the wheels.' },
+      { h: 'Changing energy from one form to another' },
+      'Energy cannot be made or destroyed, but it can change form. In a power station, energy from falling water, wind, sunlight or a nuclear reaction is changed into electrical energy. Wires carry it to the charger. In the car, the battery stores the energy as chemical energy. When you press the pedal, the battery sends electricity to the motor, which changes it into motion, called mechanical energy.',
+      'A gas engine wastes a lot of energy as heat. Only about a quarter of the energy in gasoline actually moves the car. An electric motor is far more <b>efficient</b>: most of the energy from the battery turns the wheels.',
+      { box: 'Braking to charge', text: 'When an EV slows down, its motor can work backward like a generator, sending some energy back into the battery.' },
+      { h: 'Where does the electricity come from?' },
+      'An EV is only as clean as the electricity that charges it. In Ontario, most electricity comes from nuclear and water power, which give off very little carbon dioxide. In places that burn coal or natural gas to make electricity, charging an EV still causes pollution, just at the power station instead of the tailpipe.',
+      { h: 'Challenges' },
+      'EVs have challenges too. Batteries need minerals such as lithium and nickel, which must be mined, and mining affects the land. In cold Canadian winters, batteries hold less charge, so drivers cannot go as far. Charging takes longer than filling a tank, and in some rural and northern areas, chargers are still far apart.',
+      'Engineers are working on batteries that charge faster and last longer, and on ways to recycle old ones. Choosing how we move is part of a much bigger question: how can we use energy in ways that are <b>sustainable</b>, so that future generations have what they need?'
+    ],
+    guide: { before: 'Teach <b>efficient</b>, <b>sustainable</b>, chemical energy and mechanical energy.',
+      after: 'Ask: what forms of energy can you name? Trace the energy that powers a light in your home.' },
+    words: [['efficient', 'wasting little energy, time or effort'], ['sustainable', 'able to continue without using up what future people need']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Use the diagram. Number the steps from 1 to 4.',
+        items: ['power station', 'power lines', 'battery', 'motor turns the wheels'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', q: 'An <b>efficient</b> motor …',
+        opts: ['wastes little energy', 'is very loud', 'uses gasoline', 'is very old'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Name the form of energy at each point.', cols: ['Where', 'Form of energy'],
+        rows: [['In the charger and wires', null], ['Stored in the battery', null], ['The turning wheels', null]],
+        a: [[null, 'electrical'], [null, 'chemical'], [null, 'mechanical (motion)']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author say an EV is “only as clean as the electricity that charges it”?',
+        a: 'If the electricity comes from burning coal or gas, there is still pollution, just at the power station.', look: 'pollution at power station' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Is this passage balanced? Give one benefit and one challenge of EVs from the text.',
+        a: 'Yes. Benefit: more efficient. Challenge: mining for battery minerals or shorter range in cold.', look: 'one benefit and one challenge' },
+      { k: 'choice', code: 'B3.2', q: 'In “the battery sends electricity to the motor,” what is the verb?',
+        opts: ['sends', 'battery', 'motor', 'electricity'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g6-sea-ice', subject: 'geography', form: 'Report',
+    title: 'Where the Ice Meets the Sea',
+    deck: 'Why Arctic sea ice matters to Inuit, animals and the whole planet',
+    hero: {
+      photo: 'g6-sea-ice-edge.jpg', credit: 'Photo: Doc Searls from Santa Barbara, USA, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The edge of the sea ice, called the floe edge, in Nunavut.'
+    },
+    body: [
+      'Every winter, the ocean around Canada’s Arctic freezes into a vast white plain. In spring, the ice breaks up, and in late summer it reaches its smallest size. This yearly rhythm has shaped life in the North for thousands of years. But the rhythm is changing.',
+      { fig: G.cols([['1980s', 7, 'about 7'], ['2000s', 5.5, 'about 5.5'], ['2010s', 4.5, 'about 4.5']], 8, { base: 112, h: 92, x0: 40, hl: 2 }),
+        tall: 132, cap: 'Average area of Arctic sea ice each September, in millions of square kilometres (rounded).' },
+      { h: 'Ice as a highway and a home' },
+      'For Inuit, sea ice is not empty. It is land to travel on, by snowmobile or dog team, from one community to another. It is where hunters wait by breathing holes for seals and where families camp in spring. Inuit have a rich vocabulary for ice, with words for new ice, thin ice, ice that is safe and ice that is dangerous. This knowledge is passed from Elders to young people.',
+      'Animals depend on the ice too. Polar bears hunt seals from it. Ringed seals raise their pups in snow dens on top of it. Tiny algae grow on its underside, feeding small animals that feed fish, seals and whales.',
+      { box: 'The floe edge', text: 'Where the ice meets open water, the floe edge, is one of the richest places in the Arctic for wildlife.' },
+      { h: 'A warming Arctic' },
+      'The Arctic is warming about three to four times faster than the planet as a whole. As the chart shows, there is much less ice in late summer than there was 40 years ago. Ice forms later in autumn and breaks up earlier in spring. It is also thinner.',
+      'This has serious effects. Hunters fall through ice that was safe in their grandparents’ time. Polar bears must swim farther and go hungry longer. There is also a <b>feedback</b> loop: white ice reflects sunlight, but dark ocean water absorbs it, so less ice means more warming, which means even less ice.',
+      { h: 'Watching and adapting' },
+      'Inuit communities are leading the way in tracking these changes. In some places, hunters use GPS devices and share ice reports online, combining modern tools with traditional knowledge. Scientists now work alongside Inuit experts, because no one understands the ice better than those who live with it. Their <b>observations</b> help the whole world understand a changing planet.'
+    ],
+    guide: { before: 'Find Nunavut and the Arctic Ocean on a map. Teach <b>feedback</b>, <b>observations</b> and floe edge.',
+      after: 'Ask: why are Inuit observations important to scientists? Talk about ways your family can save energy.' },
+    words: [['feedback', 'when a result causes more of the same thing'], ['observations', 'things noticed by watching carefully']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. What happened to sea ice from the 1980s to the 2010s?',
+        opts: ['It shrank.', 'It grew.', 'It stayed the same.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Observations</b> are things …',
+        opts: ['noticed by watching', 'invented', 'forgotten'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two ways sea ice is important to Inuit.',
+        a: 'Travelling between communities; hunting seals; camping in spring (any two).', look: 'any two uses' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the feedback loop in your own words.',
+        a: 'Less white ice means dark water absorbs more sunlight, which warms the Arctic and melts more ice.', look: 'less ice → more warming → less ice' },
+      { k: 'choice', code: 'C3.2', q: 'Inuit have many words for different kinds of ice. This suggests …',
+        opts: ['ice knowledge is very important to them', 'they do not use ice', 'all ice is the same', 'ice is only for fun'], a: 0 },
+      { k: 'choice', code: 'C2.3', q: 'If the Arctic keeps warming, what will most likely happen to polar bears?',
+        opts: ['They will have a harder time hunting.', 'They will have more food.', 'They will move south to cities.', 'Nothing will change.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the passage in two sentences.',
+        a: 'Sea ice is vital to Inuit and Arctic animals. It is shrinking fast as the Arctic warms, and Inuit and scientists are tracking the change together.', look: 'importance + shrinking + response' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-snowshoes', subject: 'tech', form: 'Explanation',
+    title: 'Walking on Top of Snow',
+    deck: 'How Indigenous snowshoe designs solve a winter problem with science',
+    hero: {
+      photo: 'g6-snowshoes.jpg', credit: 'Photo: Daderot, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Snowshoes made in Canada between 1840 and 1870, now at the Bata Shoe Museum in Toronto.'
+    },
+    body: [
+      'Try walking through deep, fresh snow in ordinary boots. With every step, you sink to your knees, and soon you are exhausted. For thousands of years, Indigenous peoples across northern North America solved this problem with a brilliant <b>invention</b>: the snowshoe.',
+      { fig: '<rect class="k" x="20" y="40" width="40" height="20" rx="4"/>' + D.arrow(40, 70, 40, 112, 't') + G.T(40, 30, 'boot', 'lb', 'middle') + G.T(40, 128, 'sinks deep', 'n', 'middle') +
+          '<ellipse class="h" cx="200" cy="50" rx="80" ry="22"/>' + D.arrow(150, 76, 150, 92, 't') + D.arrow(200, 76, 200, 92, 't') + D.arrow(250, 76, 250, 92, 't') +
+          G.T(200, 30, 'snowshoe', 'lb', 'middle') + G.T(200, 112, 'weight spread out: stays on top', 'n', 'middle'),
+        tall: 136, cap: 'The same weight, spread over a bigger area, presses less on each part of the snow.' },
+      { h: 'The science of spreading out' },
+      'A snowshoe works because of <b>pressure</b>, which is how much force pushes on each part of a surface. Your weight stays the same whether you wear boots or snowshoes. But a boot pushes all that weight onto a small area, so it presses hard and sinks. A snowshoe spreads the same weight over an area several times larger. Each bit of snow carries less weight, so you stay near the top.',
+      { h: 'Frames, webbing and shape' },
+      'Traditional snowshoes are made from a bent wooden frame, often ash or birch, steamed so it can curve without breaking. The inside is woven with strips of rawhide, called babiche, in a tight web. The web holds the snow up while letting loose powder fall through, so snow does not pile on top and make the shoe heavy.',
+      'Different nations designed different shapes for different conditions. In open, flat country with deep powder, long, narrow snowshoes with an upturned toe glide well. In thick forests, short, round “bear paw” snowshoes turn easily between trees. The shape is matched to the land.',
+      { box: 'A family skill', text: 'Making snowshoes takes many days. In many communities, the skill is still taught from Elders to young people.' },
+      { h: 'From survival to sport' },
+      'Snowshoes made winter travel and hunting possible. Without them, following caribou or moose across deep snow would have been nearly impossible. European fur traders quickly learned to use and value them. Without Indigenous snowshoes, and the people who taught their use, the fur trade could not have reached so far into the North.',
+      'Today, many snowshoes have aluminum frames and plastic decks, but they still use the same idea. People snowshoe for fun, for exercise and to explore quiet winter forests. Each time they do, they are using knowledge that Indigenous designers developed long ago.'
+    ],
+    guide: { before: 'Teach <b>invention</b>, <b>pressure</b> and the word babiche. Ask: why is it hard to walk in deep snow?',
+      after: 'Test it: press a pencil point and then a flat eraser into modelling clay with the same push. Which sinks deeper?' },
+    words: [['invention', 'a new thing someone designs and makes'], ['pressure', 'how much force pushes on each part of a surface']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Why does the boot sink?',
+        opts: ['Its weight is on a small area.', 'It is heavier.', 'The snow is wet.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Pressure</b> is …',
+        opts: ['force on each part of a surface', 'a kind of snow', 'a type of wood'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain in your own words how a snowshoe keeps you on top of the snow.',
+        a: 'It spreads your weight over a bigger area, so each part of the snow carries less and you do not sink.', look: 'spreads weight; less pressure' },
+      { k: 'table', code: 'C1.3', q: 'Compare the two snowshoe shapes.', cols: ['Shape', 'Best place to use it'],
+        rows: [['Long and narrow', null], ['Short and round (bear paw)', null]],
+        a: [[null, 'open, flat country with deep powder'], [null, 'thick forests']] },
+      { k: 'choice', code: 'C1.1', q: 'In “The web holds the snow up,” what does <i>web</i> refer to?',
+        opts: ['the woven rawhide strips', 'a spider’s web', 'the wooden frame', 'the internet'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the passage show about Indigenous knowledge?',
+        a: 'Indigenous designers understood science and the land, and their designs are still used today.', look: 'skill; science; still used' },
+      { k: 'lines', code: 'C2.7', n: 2, q: 'Which strategy helped you most to understand the science part? Explain.',
+        a: 'Looking at the diagram helped me see how the weight spreads out.', look: 'a strategy and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-halifax-explosion', subject: 'history', form: 'Report',
+    title: 'The Halifax Explosion',
+    deck: 'December 6, 1917: a disaster, a rescue and a gift that still travels south every year',
+    hero: {
+      photo: 'g6-halifax-explosion.jpg', credit: 'Photo: Unknown authorUnknown author, Public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 220,
+      cap: 'The cloud from the Halifax Explosion, photographed from about 20 kilometres away.'
+    },
+    body: [
+      'On the morning of December 6, 1917, Halifax, Nova Scotia, was a busy wartime port. Ships carrying soldiers and supplies to the First World War crowded its harbour. Just before 9 a.m., two ships collided in a narrow channel called the Narrows. One of them, the <i>Mont-Blanc</i>, was secretly loaded with explosives.',
+      { fig: G.time([['8:45', 'Ships collide'], ['8:50', 'Fire on the Mont-Blanc'], ['9:04', 'The explosion'], ['Afternoon', 'Rescue trains arrive'], ['Next day', 'Blizzard hits']], { x: 70, top: 12, gap: 24, hl: 2 }),
+        tall: 128, cap: 'The first day of the disaster (times approximate).' },
+      { h: 'The blast' },
+      'The collision started a fire on the <i>Mont-Blanc</i>. Crowds gathered on the shore to watch the smoke. At 9:04, the ship exploded. It was the largest human-made explosion the world had ever seen. A huge wave swept the shore, and the blast flattened much of the north end of the city. Windows shattered kilometres away. About 2&nbsp;000 people were killed and 9&nbsp;000 were injured. Thousands were left homeless.',
+      { h: 'A hero’s warning' },
+      'Vince Coleman, a railway dispatcher, learned that the burning ship carried explosives. He could have run. Instead, he stayed at his post and tapped out a telegraph message warning an incoming passenger train to stop. He died in the blast, but the train and its passengers were saved. His <b>courage</b> is still honoured today.',
+      { h: 'Help pours in' },
+      'The disaster was made worse the next day, when a blizzard buried the ruined city in snow. But help arrived quickly. Trains came from across Nova Scotia and New Brunswick. The city of Boston, in the United States, sent a relief train full of doctors, nurses and supplies, pushing through the storm.',
+      'The Mi’kmaw community at Turtle Grove, on the Dartmouth shore, was destroyed in the blast. Its story was left out of many early histories and is now being told more fully.',
+      { box: 'A yearly thank-you', text: 'Every year since 1971, Nova Scotia has sent Boston a giant Christmas tree to thank the city for its help.' },
+      { h: 'Lessons learned' },
+      'The explosion changed how Canada handled disasters. Doctors learned new ways to treat eye injuries, and the city was rebuilt with safer homes. More than 100 years later, Halifax remembers the day with a ceremony each December 6, a reminder of loss, <b>resilience</b> and kindness between neighbours.'
+    ],
+    guide: { before: 'Find Halifax and Boston on a map. Teach <b>courage</b>, <b>resilience</b> and dispatcher.',
+      after: 'Ask: why does Nova Scotia still send a tree? Whose story was left out of early accounts, and why does that matter?' },
+    words: [['courage', 'bravery when facing danger'], ['resilience', 'the ability to recover after hard times']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the time line. When did the explosion happen?',
+        opts: ['9:04', '8:45', 'the next day'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Resilience</b> means …',
+        opts: ['recovering after hard times', 'giving up', 'an explosion'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number the events from 1 to 4.',
+        items: ['Two ships collide.', 'A fire starts.', 'The ship explodes.', 'A blizzard hits the city.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What did Vince Coleman do, and why was it brave?',
+        a: 'He stayed to send a telegraph warning to stop a train instead of running, and he died saving the passengers.', look: 'stayed; warned the train' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Whose story was left out of many early histories? Why is it important to tell it now?',
+        a: 'The Mi’kmaw community at Turtle Grove. Telling it gives a fuller, fairer picture of who was affected.', look: 'Turtle Grove; fuller picture' },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>Mont-Blanc</i> written in italics?',
+        opts: ['It is the name of a ship.', 'It is a French word for snow.', 'It is a question.', 'It is a quotation.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 2, q: 'Why does Nova Scotia still send Boston a tree every year?',
+        a: 'To thank Boston for sending help after the explosion.', look: 'thank-you for help' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-kanienkeha', subject: 'social', form: 'Report',
+    title: 'Bringing a Language Home',
+    deck: 'How Mohawk communities are reviving Kanien’kéha, one speaker at a time',
+    hero: {
+      photo: 'g6-mohawk-sign.jpg', credit: 'Photo: Moxy, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A stop sign in Kanien’kéha, Tyendinaga Mohawk Territory, Ontario.'
+    },
+    body: [
+      'At the end of a road in Tyendinaga, near Belleville, Ontario, a red stop sign does not say STOP. Its word is written in Kanien’kéha, the language of the Kanien’kehá:ka, or Mohawk, people. The sign is small, but it shows something big: a language that was nearly lost is being spoken again.',
+      { fig: G.flow(['Elders who speak the language', 'Adult learners in immersion', 'Children in language schools', 'Families speaking at home'], { top: 6, bh: 24, gap: 10, hl: 3 }),
+        tall: 140, cap: 'How a language passes from one generation to the next.' },
+      { h: 'How a language was taken' },
+      'For more than a hundred years, the Canadian government ran residential schools for Indigenous children. Children were taken from their families and punished for speaking their own languages. Many grew up afraid to speak them, and did not teach them to their own children. By the late 1900s, only a few hundred fluent speakers of Kanien’kéha remained, most of them Elders.',
+      'A language is more than words. It holds a people’s stories, ceremonies, humour and ways of seeing the world. Many Kanien’kéha words describe relationships, with family, with the land and with the Creator. When a language disappears, that knowledge can disappear too.',
+      { h: 'Learning again' },
+      'Communities decided to act. In Tyendinaga, Akwesasne, Kahnawà:ke and Six Nations of the Grand River, people created <b>immersion</b> programs, where all learning happens in Kanien’kéha. Adults study full-time for two years to become fluent. Young children attend language nests and schools where they hear only Kanien’kéha all day.',
+      'It is hard work. Adults learning a new language must practise every day. But each new speaker can teach others, and the number of speakers is growing.',
+      { box: 'A living language', text: 'New words are created for modern things, such as computers and phones, so the language can describe today’s world.' },
+      { h: 'Signs of hope' },
+      'Today, you can see Kanien’kéha on road signs, hear it on community radio, and find it in apps and online lessons. Some children who learned it at school now speak it with their parents and grandparents at home. That is the real goal: a language that lives in families every day.',
+      'Language <b>revitalization</b> is about more than the past. It is about young people knowing who they are, and passing that knowledge to their own children one day.'
+    ],
+    guide: { before: 'Teach <b>immersion</b> and <b>revitalization</b>. Talk gently and briefly about residential schools. Ask: what languages are spoken in your family?',
+      after: 'Find Tyendinaga and Six Nations on a map. Look up how to say hello in an Indigenous language spoken near you.' },
+    words: [['immersion', 'learning by using only the new language all day'], ['revitalization', 'bringing something back to life and strength']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What is the final goal?',
+        opts: ['families speaking at home', 'more signs', 'more apps'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>re</b>vitalization, the prefix “re-” means …',
+        opts: ['again', 'not', 'before'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why did the number of Kanien’kéha speakers become so small?',
+        a: 'Residential schools punished children for speaking it, so many did not teach it to their own children.', look: 'residential schools; not passed on' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why does the author say “a language is more than words”?',
+        a: 'It holds a people’s stories, ceremonies, humour and ways of seeing the world.', look: 'stories, culture, worldview' },
+      { k: 'choice', code: 'C3.3', q: 'In an immersion program, learners …',
+        opts: ['use only the new language', 'read about the language in English', 'learn only on weekends', 'study only grammar'], a: 0 },
+      { k: 'choice', code: 'C1.6', q: 'From what point of view is this passage written?',
+        opts: ['third person, by an outside writer', 'first person, by an Elder', 'second person, telling you what to do', 'first person, by a student'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Connect this passage to a language you speak or would like to learn. Why does it matter to you?',
+        a: 'My grandmother speaks Tagalog, and learning it would help me talk with her and know my family’s stories.', look: 'a personal connection' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-steelpan', subject: 'arts', form: 'Report',
+    title: 'Music from an Oil Drum',
+    deck: 'How the steelpan was invented in Trinidad and found a home in Canada',
+    hero: {
+      photo: 'g6-steelpan.jpg', credit: 'Photo: Shanel, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 220,
+      cap: 'A steelpan player in Trinidad and Tobago.'
+    },
+    body: [
+      'Picture a large metal drum, the kind used to ship oil. Now picture someone tapping its top with rubber-tipped sticks and filling the air with bright, ringing melodies. That is the steelpan, an instrument invented in Trinidad and Tobago in the 1930s and 1940s, and one of the few new acoustic instruments created in the last hundred years.',
+      { fig: '<circle class="k" cx="90" cy="70" r="62"/>' +
+          [[90, 26], [128, 44], [140, 82], [114, 112], [66, 112], [40, 82], [52, 44]].map(function (c) { return '<ellipse class="k" cx="' + c[0] + '" cy="' + c[1] + '" rx="15" ry="11"/>'; }).join('') +
+          '<ellipse class="h" cx="90" cy="70" rx="16" ry="12"/>' +
+          G.T(170, 40, 'each dent is', 'l') + G.T(170, 54, 'one note', 'l') + D.arrow(166, 50, 150, 70, 't') +
+          G.T(170, 100, 'smaller dents:', 'l') + G.T(170, 114, 'higher notes', 'l'),
+        tall: 140, cap: 'The top of a tenor pan, seen from above.' },
+      { h: 'Born from resistance' },
+      'In the 1800s, the British rulers of Trinidad banned the hand drums that people of African descent played during Carnival. Musicians did not give up. They made rhythms by beating bamboo tubes, then pots, pans and biscuit tins. In the 1930s and 1940s, they discovered that hammering dents into a metal container could produce different musical notes.',
+      'When the Second World War ended, the island had many empty oil drums. Inventive musicians cut them, hammered their tops into bowls and shaped dents for each note. They heated the metal to harden it, then tuned each note by ear with small taps.',
+      { h: 'How it makes sound' },
+      'Each dent on a pan is shaped to <b>vibrate</b> at a particular speed when struck. Faster vibrations make higher pitches, and slower vibrations make lower ones. Small dents near the centre play high notes; large dents near the edge play low ones. Bass pans use whole drums and have only a few big notes.',
+      { box: 'Steel orchestras', text: 'Steel bands can have more than 100 players, from high tenor pans to deep bass pans.' },
+      { h: 'A Canadian beat' },
+      'In the 1960s, many people from Trinidad and Tobago and other Caribbean countries moved to Canada. They brought the steelpan with them. In 1967, Caribbean Canadians in Toronto started a summer festival now called the Toronto Caribbean Carnival. Today, it is one of the largest festivals of its kind in North America, with steel bands, costumes and a huge parade.',
+      'Many Canadian schools now have steel bands, and students of every background learn to play. The steelpan is a reminder that creativity can grow from hardship, and that newcomers <b>enrich</b> the cultures they join.'
+    ],
+    guide: { before: 'Find Trinidad and Tobago on a map. Teach <b>vibrate</b>, <b>enrich</b> and pitch. Listen to a steel band recording if possible.',
+      after: 'Ask: how did a ban lead to a new instrument? Try tapping glasses with different amounts of water and compare the pitches.' },
+    words: [['vibrate', 'to move back and forth very quickly'], ['enrich', 'to add to and make better']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Smaller dents play …',
+        opts: ['higher notes', 'lower notes', 'no notes'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>vibrate</b> is to …',
+        opts: ['move back and forth quickly', 'stay still', 'melt'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What problem led musicians to invent new instruments?',
+        a: 'The British rulers banned the hand drums they played during Carnival.', look: 'drums were banned' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author call the steelpan “born from resistance”?',
+        a: 'Musicians refused to stop making music when their drums were banned, and invented a new instrument instead.', look: 'did not give up; found a new way' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence uses a compound subject (two subjects joined by “and”)?',
+        opts: ['Costumes and steel bands fill the parade.', 'They brought the steelpan with them.', 'Each dent is shaped.', 'The island had many drums.'], a: 0 },
+      { k: 'choice', code: 'C3.6', q: 'What is the main message of the last paragraph?',
+        opts: ['Creativity can grow from hardship, and newcomers enrich culture.', 'Steel bands are loud.', 'Toronto is big.', 'Oil drums are useful.'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 2, q: 'Which part was hardest to understand? What did you do to fix it?',
+        a: 'The part about vibrations; I reread it and looked at the diagram.', look: 'a hard part and a fix-up strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g6-habitat-67', subject: 'math', form: 'Report',
+    title: 'Habitat 67',
+    deck: 'A building made of stacked boxes, and the geometry that holds it together',
+    hero: {
+      photo: 'g6-habitat-67.jpg', credit: 'Photo: Dllu, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'Habitat 67 in Montreal, built from 354 concrete boxes.'
+    },
+    body: [
+      'Beside the St. Lawrence River in Montreal stands one of the most unusual buildings in the world. It looks like a giant pile of building blocks, stacked at odd angles, with gardens on the rooftops. It is called Habitat 67, and it was designed by a young architect named Moshe Safdie for the world’s fair, Expo 67.',
+      { fig: G.T(4, 12, 'one module: a rectangular prism', 'n') +
+          '<path class="k" d="M40 50 L160 50 L160 110 L40 110 Z"/><path class="k" d="M40 50 L70 30 L190 30 L160 50"/><path class="k" d="M160 110 L190 90 L190 30"/>' +
+          G.T(100, 128, 'about 12 m long', 'n', 'middle') + G.T(196, 74, '3 m tall', 'n') + G.T(184, 22, '5 m wide', 'n'),
+        tall: 136, cap: 'Each box has 6 faces, 12 edges and 8 vertices. Sizes are rounded.' },
+      { h: 'A big idea' },
+      'Safdie was a student at McGill University when he dreamed up the idea. He wanted to show that city apartments could feel like houses, each with its own garden, fresh air and sunlight. Instead of one tall tower, he stacked homes so that the roof of one became the garden of the next.',
+      { h: 'Built from boxes' },
+      'Habitat is made from 354 concrete <b>modules</b>. Each one is a rectangular prism, a 3D shape with six rectangular faces. The modules were cast in a factory next to the site, then lifted into place by a giant crane. One apartment might use one, two or even three modules joined together.',
+      'Because the boxes are offset, not lined up, the building has many different views and spaces. Its shape changes as you walk around it. Steel cables and rods hold the modules together so they can carry the weight above.',
+      'Building with identical modules has advantages. Workers can make many copies of the same shape quickly and check each one for quality before it leaves the factory. The same idea is used today for some schools, hotels and homes.',
+      { box: 'Faces, edges, vertices', text: 'A face is a flat surface. An edge is where two faces meet. A vertex is a corner where edges meet.' },
+      { h: 'Volume and space' },
+      'Architects think about <b>volume</b>, the amount of space inside a 3D shape. You find the volume of a rectangular prism by multiplying its length, width and height. A Habitat module measures about 12 m by 5 m by 3 m, so its volume is about 180 cubic metres. That is enough room for a living room and kitchen, or two bedrooms.',
+      'Habitat 67 was expensive to build, and Safdie’s plan for thousands more homes like it never happened. But it inspired architects around the world to rethink how people live together in cities. Today, it is a protected heritage site, and people still live in its stacked homes.'
+    ],
+    guide: { before: 'Teach <b>modules</b>, <b>volume</b>, face, edge and vertex. Have a cereal box nearby to count faces, edges and vertices.',
+      after: 'Build a mini Habitat with sugar cubes or blocks. Ask: how many cubes did you use? What is the volume of one box in cubic centimetres?' },
+    words: [['modules', 'separate units joined to make something larger'], ['volume', 'the amount of space inside a 3D shape']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How many vertices does a module have?',
+        opts: ['8', '6', '12'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Volume</b> is …',
+        opts: ['the space inside a 3D shape', 'how loud it is', 'the colour of a shape'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Show how the passage finds the volume of one module.',
+        a: '12 m × 5 m × 3 m = 180 cubic metres.', look: 'multiply l × w × h = 180' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What did Safdie want city apartments to feel like? How did his design do this?',
+        a: 'Like houses; the roof of one home became the garden of the next, giving each fresh air, sun and a garden.', look: 'like houses; rooftop gardens' },
+      { k: 'choice', code: 'C3.2', q: 'Why might the offset boxes give each home a different view?',
+        opts: ['They face different ways and heights.', 'All windows face one wall.', 'The boxes are round.', 'There are no windows.'], a: 0 },
+      { k: 'choice', code: 'C2.2', q: 'What is the main purpose of this report?',
+        opts: ['to explain a building and the geometry in it', 'to sell an apartment', 'to tell a made-up story', 'to give directions'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Would you like to live in Habitat 67? Give two reasons.',
+        a: 'Yes, because of the rooftop garden and the river views.', look: 'opinion with two reasons' }
+    ]
+  });
 })();

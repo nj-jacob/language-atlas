@@ -165,6 +165,26 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g6-forest-trail.jpg` | A forest hiking trail | Thomas Metaxas | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Forest_Hiking_Trail.jpg |
 | `g6-vancouver-port.jpg` | Container terminal in the Port of Vancouver | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Vancouver_Centerm_Terminal_--_2022_--_2151.jpg |
 | `g6-shadd.jpg` | Portrait of Mary Ann Shadd Cary | BiblioArchives / LibraryArchives | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Mary_Ann_Shadd_Cary.jpg |
+| `g6-little-brown-bat.jpg` | A little brown bat in a cave | Moriarty Marvin, U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Little_brown_bat_in_cave_myotis_lucifugus.jpg |
+| `g6-coral-reef.jpg` | A coral reef in Florida | Jerry Reid | Public domain | https://commons.wikimedia.org/wiki/File:Coral_Reef.jpg |
+| `g6-manicouagan.jpg` | The Manicouagan Reservoir from space | Copernicus Sentinel-2, ESA | CC BY-SA 3.0 igo | https://commons.wikimedia.org/wiki/File:Manicouagan_Reservoir_by_Sentinel-2.jpg |
+| `g6-drone.jpg` | A quadcopter drone in flight | Josh Sorenson | CC0 | https://commons.wikimedia.org/wiki/File:Quadcopter_camera_drone_in_flight.jpg |
+| `g6-tardigrade.jpg` | A tardigrade under a microscope | DSparrow14 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tardigrade_under_microscope.jpg |
+| `g6-place-royale.jpg` | Place Royale, Quebec City | Wilfredor | CC0 | https://commons.wikimedia.org/wiki/File:Place_Royale_and_Notre-Dame-des-Victoires_at_night.jpg |
+| `g6-treaty-9.jpg` | The James Bay Treaty (Treaty 9) | Government of Canada | Public domain | https://commons.wikimedia.org/wiki/File:James_Bay_Treaty.jpg |
+| `g6-winter-road.jpg` | Vehicles crossing the Albany River on a winter road, Ontario | Rev40 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Truckscrossingalbanyriver2004feb20.jpg |
+| `g6-tessellation.jpg` | A tessellation pattern | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ambigram_tessellation_Yes.png |
+| `g6-soft-drink-sugar.jpg` | Sugar pouring from a soft-drink can into a glass | SSgt Nathanel Callon | Public domain | https://commons.wikimedia.org/wiki/File:MPOTY_2012_soft_drink_sugar_awareness.jpg |
+| `g6-red-fox.jpg` | A red fox in snow | In india travel | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_fox_in_snow.jpg |
+| `g6-beekeeper.jpg` | A beekeeper holding a hive frame | Ich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beekeeper_with_moveable_comb_hive.jpg |
+| `g6-petitclerc.jpg` | Chantal Petitclerc, 2017 | Lëa-Kim Châteauneuf | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chantal_Petitclerc_2017.jpg |
+| `g6-ev-charging.jpg` | An electric vehicle charging station, Bowmanville, Ontario | Dillan Payne | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Electric_Vehicle_Charging_in_Bowmanville,_July_23_2026.jpg |
+| `g6-sea-ice-edge.jpg` | The edge of the sea ice in Nunavut | Doc Searls from Santa Barbara, USA | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_edge_of_the_ice_in_Nunavut_2.jpg |
+| `g6-snowshoes.jpg` | Canadian snowshoes, 1840 to 1870, Bata Shoe Museum, Toronto | Daderot | CC0 | https://commons.wikimedia.org/wiki/File:Canadian_snowshoes,_1840-1870_-_Bata_Shoe_Museum_-_DSC00222.JPG |
+| `g6-halifax-explosion.jpg` | The blast cloud of the Halifax Explosion, December 6, 1917 | Unknown authorUnknown author | Public domain | https://commons.wikimedia.org/wiki/File:Halifax_Explosion_blast_cloud_restored.jpg |
+| `g6-mohawk-sign.jpg` | A stop sign in Kanien'kéha (Mohawk), Tyendinaga Mohawk Territory, Ontario | Moxy | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Mohawk_language_stop_sign.jpg |
+| `g6-steelpan.jpg` | A steelpan player in Trinidad and Tobago | Shanel | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pan_player.jpg |
+| `g6-habitat-67.jpg` | Habitat 67, Montreal | Dllu | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Habitat_67_2019_dllu_01.jpg |
 | `g6-water-pump.jpg` | Children collecting water at a hand pump in a village in Ghana | Kwameghana(Bright Kwame Ayisi) | CC0 | https://commons.wikimedia.org/wiki/File:A_group_of_children_collecting_water_at_a_pipe_well.jpg |
 | `g6-solar-farm.jpg` | Solar panels on a farm in Grimsby, Ontario | Dave Lauretti from Burlington, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_farm_(13313377243).jpg |
 | `g6-canoe-lake.jpg` | The dock at Canoe Lake, Algonquin Park, Ontario | Markabq | Public domain | https://commons.wikimedia.org/wiki/File:CanoeLake.JPG |
