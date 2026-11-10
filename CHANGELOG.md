@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-10
+- Tool box: **Decodable readers** (Tools, then Reading, every grade), built to the Science of Reading and Orton-Gillingham. 50 printable one-page stories, one for each phonics step in teaching order, Kindergarten to Grade 2: short vowels, sh ch th wh ck, FLOSS, glued sounds, endings -s -ed -ing -es, blends, tch and dge, two closed syllables, silent e, open syllables, y as a vowel, soft c and g, ar or er ir ur, vowel teams, consonant-le, kind and old words, silent letters, prefixes and suffixes. Each page has the sound, warm-up words, heart words, an original story, a line-art picture, 3 questions and "read it three times" circles. A grown-up page (grown-up view) gives the rule, a 15-minute teaching routine, the answers with Grade 1 and Grade 2 codes, and dictation. New check: every word on every page can be sounded out with only the steps taught so far, or is a taught heart word.
+
 ## 2026-11-09
 - Grade 4 worksheets for all 15 chapters: 78 ideas, each with Learn, Practise 1 to 3 and Think (an "I can" goal and three reasoning questions written for paper, marked by a grown-up from a good answer), plus 31 activity sheets with their rubrics and 23 Read sheets: 444 sheets covering every Grade 4 expectation.
 - Worksheets for every Grade 7 chapter (14 chapters, 85 ideas): each idea's "I can" line and three Think questions written for paper, with a good answer for the grown-up on the key. Every Grade 7 expectation is on a sheet.

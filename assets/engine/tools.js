@@ -5,9 +5,12 @@
      #tools/read     Reading window (reader.js adds it)   #tools/maps   Text maps (textmaps.js)
      #tools/shades   Word shades         #tools/web      Word web (meaning.js adds both)
      #tools/paragraph  Paragraph builder #tools/letters  Letter pad (writetools.js adds both)
+     #tools/decodable  Decodable readers, one printable page per phonics step (decodable.js)
    A tool fills the screen under a slim bar (back to all tools, the tool's name, Undo, Tools). The Tools menu shows the tools on
    the same shelves, one shelf per part of Language. A tool opened from the site's own Toolbox page (Math Atlas tools.html, which
-   sets atlas:toolbox in this tab's session storage) goes back there instead; A.toolkit.shelves lets that page draw these shelves. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder).
+   sets atlas:toolbox in this tab's session storage) goes back there instead; A.toolkit.shelves lets that page draw these shelves. To add a tool, add it to TOOLS with its shelf and a function that draws it (see wordBuilder):
+   make(stage, canUndo, rest) gets the part of the address after the tool's id (#tools/decodable/short-a gives 'short-a').
+   A tool can start in a later grade (from: 4) and can have no Undo (undo: false).
 
    Word builder: one word in three views, linked (a word built in one view opens in the others when the word bank knows it).
      Sounds  letter tiles in sound boxes. Tap a tile to add it; tap a box, then a tile, to swap one sound. Blend plays the
@@ -48,9 +51,11 @@
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
 
   /* ---------- the tool box page ---------- */
-  function shelves(href, cur) {
+  /* grade: the grade whose tools to show (a tool with from: 4 starts in Grade 4); the page's own grade when not given */
+  function shelves(href, cur, grade) {
+    grade = grade || A.grade;
     return SHELVES.map(function (s) {
-      var on = TOOLS.filter(function (t) { return t.shelf === s[0]; });
+      var on = TOOLS.filter(function (t) { return t.shelf === s[0] && !(t.from > grade); });
       return on.length ? '<section class="tb-shelf"><h3><i class="tb-s-' + s[0] + '"></i>' + s[1] + '</h3><div class="tb-cards">' + on.map(function (t) {
         return '<a class="tb-card" href="' + href(t.id) + '"' + (t.id === cur ? ' aria-current="page"' : '') + '><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">' + t.icon + '</svg><span>' + t.name + '</span></a>';
       }).join('') + '</div></section>' : '';
@@ -61,7 +66,9 @@
     try { if (on === false) sessionStorage.removeItem('atlas:toolbox'); return sessionStorage.getItem('atlas:toolbox') === '1'; } catch (e) { return false; }
   }
   A.page('tools', function (app, sub) {
-    var cur = TOOLS.filter(function (t) { return t.id === sub; })[0];
+    var cut = sub.indexOf('/'), rest = cut < 0 ? '' : sub.slice(cut + 1);
+    sub = cut < 0 ? sub : sub.slice(0, cut);
+    var cur = TOOLS.filter(function (t) { return t.id === sub && !(t.from > A.grade); })[0];
     if (!cur) {
       fromBox(false);
       app.innerHTML = '<div class="wrap wide tb-all"><p class="crumb"><a href="#home">All chapters</a></p><header class="chead"><h1>Toolbox</h1>' +
@@ -72,12 +79,12 @@
     var menu = '<dialog class="tb-menu" aria-labelledby="tbmh"><div class="tb-mh"><h2 id="tbmh">Tools</h2><span class="tb-g">Grade ' + A.grade + '</span>' +
       '<button type="button" class="tb-x" aria-label="Close">&#10005;</button></div>' + shelves(toolHref, cur.id) + '</dialog>';
     app.innerHTML = '<div class="wrap wide tb"><div class="tb-bar">' + back + '&lsaquo;</a><h1>' + cur.name + '</h1><span class="tb-sp"></span>' +
-      '<button type="button" class="tb-b" data-a="undo" disabled>' + SVG_UNDO + '<span>Undo</span></button>' +
+      (cur.undo === false ? '' : '<button type="button" class="tb-b" data-a="undo" disabled>' + SVG_UNDO + '<span>Undo</span></button>') +
       '<button type="button" class="tb-b" data-a="menu" aria-haspopup="dialog">' + SVG_MENU + '<span>Tools</span></button></div>' +
       '<div class="tb-stage"></div>' + menu + '</div>';
     var undo = $('[data-a="undo"]', app), dlg = $('.tb-menu', app);
-    var tool = cur.make($('.tb-stage', app), function (can) { undo.disabled = !can; });
-    undo.addEventListener('click', function () { tool.undo(); });
+    var tool = cur.make($('.tb-stage', app), function (can) { undo.disabled = !can; }, rest);
+    if (undo) undo.addEventListener('click', function () { tool.undo(); });
     $('[data-a="menu"]', app).addEventListener('click', function () { dlg.showModal(); });
     $('.tb-x', dlg).addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.closest('.tb-card')) dlg.close(); });

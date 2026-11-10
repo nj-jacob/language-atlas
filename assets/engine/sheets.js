@@ -349,9 +349,12 @@
   }
   /* a sheet is drawn at full size (816 by 1056, US Letter at 96 per inch) and scaled to fit the screen */
   function fit() { $$('.ws-sheet').forEach(function (s) { s.style.setProperty('--s', s.clientWidth / 816); }); }
+  /* the tool box's Decodable readers (decodable.js) print with the same look */
+  S.fit = fit;
+  S.fonts = fonts;
   window.addEventListener('resize', fit);
   /* printing shows only the sheets, and only on a sheet's own page */
-  window.addEventListener('hashchange', function () { if (!/\/sheets\/./.test(location.hash)) document.documentElement.classList.remove('ws-print'); });
+  window.addEventListener('hashchange', function () { if (!/\/sheets\/.|^#tools\/decodable\/./.test(location.hash)) document.documentElement.classList.remove('ws-print'); });
   function chips(th) {
     return '<div class="ws-themes" role="radiogroup" aria-label="Theme">' + S.themes.map(function (t) {
       return '<button type="button" role="radio" class="ws-chip" data-th="' + t.id + '" aria-checked="' + (t.id === th.id) + '"><svg viewBox="0 0 56 56" aria-hidden="true">' + t.mark + '</svg>' + t.name + '</button>';
