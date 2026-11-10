@@ -70,6 +70,7 @@
 .dc-reads{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2)}
 .dc-reads b{color:var(--ink);margin-right:4px}
 .dc-reads i{width:18px;height:18px;border:1.4px solid var(--acc);border-radius:50%}
+.dc-hunt{margin-left:auto;text-align:right}
 .dc-line{margin-top:6px!important}
 
 /* the grown-up page */
