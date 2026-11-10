@@ -3923,4 +3923,974 @@
     ]
   });
 
+  P.add({
+    id: 'g7-microplastics', subject: 'science', form: 'Report',
+    title: 'Plastic You Cannot See',
+    deck: 'Where microplastics come from, and why scientists are finding them everywhere',
+    hero: {
+      photo: 'g7-microplastic.jpg', credit: 'Photo: OceanBlueProject, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Tiny pieces of plastic collected from a beach. Many are smaller than a grain of rice.'
+    },
+    body: [
+      'Plastic is strong, cheap and long-lasting. Those are the very reasons it causes trouble once it is thrown away. Plastic does not rot like wood or paper. Instead, sunlight, waves and wear break it into smaller and smaller pieces. Pieces smaller than 5 mm are called <b>microplastics</b>. Scientists have found them in the Arctic snow, at the bottom of the deepest ocean trenches, in the Great Lakes, in fish and in drinking water. A single plastic bottle can break into millions of pieces over many years. Because plastic is so light, wind and water carry these pieces thousands of kilometres from where they started.',
+      { fig: [['bottle', 60], ['pieces', 30], ['fragments', 14], ['microplastic', 5]].map(function (r, i) {
+            var x = 30 + i * 74; return '<rect class="h" x="' + (x - r[1] / 2 + 20) + '" y="' + (90 - r[1]) + '" width="' + r[1] + '" height="' + r[1] + '"/>' +
+              '<text class="n" x="' + (x + 20) + '" y="110" text-anchor="middle">' + r[0] + '</text>' + (i < 3 ? D.arrow(x + 50, 76, x + 80, 76, 'a') : ''); }).join('') +
+          '<text class="l" x="150" y="140" text-anchor="middle">sun, waves and wear break plastic into smaller pieces</text>',
+        tall: 148, cap: 'Plastic does not disappear. It breaks into smaller and smaller pieces.' },
+      { h: 'Where they come from' },
+      'Some microplastics were made small on purpose. Until a few years ago, many face scrubs and toothpastes contained tiny plastic beads that washed down the drain. Canada banned microbeads in these products in 2018. Most microplastics, though, come from bigger things breaking apart: bottles, bags, food wrappers, car tires and fishing nets. One surprising source is your laundry. Clothes made of polyester, nylon and fleece shed thousands of tiny <b>synthetic fibres</b> every time they are washed.',
+      { h: 'Why it matters' },
+      'Tiny animals at the bottom of the food chain, such as plankton and small fish, can mistake microplastics for food. Bigger fish eat the smaller ones, and the plastic moves up the food chain. Microplastics can also carry harmful chemicals that stick to their surfaces. Scientists are still studying what microplastics do inside the human body. What is clear is that they are now part of almost every environment on Earth.',
+      { box: 'A filter for your laundry', text: 'Some washing machines and add-on filters can trap many of the fibres before they go down the drain. Washing clothes in cold water and less often also helps.' },
+      { h: 'What can be done' },
+      'Because microplastics are so small and so widespread, cleaning them up is almost impossible. The best solution is to stop plastic from becoming waste in the first place. Canada has banned some single-use plastics, such as checkout bags and straws. People can choose reusable bottles and bags, pick natural fabrics such as cotton or wool, and join shoreline cleanups to catch plastic before it breaks down.'
+    ],
+    guide: { before: 'Look at the labels on a few pieces of clothing to see which are made of plastic fibres. Teach <b>microplastics</b> and <b>synthetic fibres</b>.',
+      after: 'Which plastic item does your family use most? What could replace it?' },
+    words: [['microplastics', 'pieces of plastic smaller than 5 mm'], ['synthetic fibres', 'threads made by people, often from plastic']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why does plastic break into smaller pieces instead of rotting?',
+        opts: ['It does not rot; sunlight, waves and wear break it apart.', 'Microbes eat it quickly.', 'It melts in water.', 'It turns into sand.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['a bottle breaking into smaller and smaller pieces', 'how a bottle is made', 'how fish eat plastic', 'a washing machine'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does plastic move up the food chain?',
+        opts: ['Small animals eat it, then bigger fish eat them.', 'It floats upward.', 'People feed it to fish.', 'Birds carry it.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Micro-</b> in <b>microplastics</b> means “very small.” Which word also uses this prefix?',
+        opts: ['microscope', 'mirror', 'middle', 'minute'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why does the author say the best solution is to stop plastic from becoming waste?',
+        a: 'Microplastics are so small and widespread that cleaning them up is almost impossible, so preventing waste is the only practical way.', look: 'the difficulty of cleanup and prevention' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Name two things in your home that could add microplastics to the environment. Explain how.',
+        a: 'My fleece jacket sheds fibres in the wash. Plastic bags can break into pieces if they end up outside.', look: 'two realistic sources with how' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Scientists are “still studying” what microplastics do in the human body. Should we act now or wait for more research? Explain.',
+        a: 'Act now, because microplastics are already everywhere and hard to remove. Waiting would let even more build up.', look: 'a position with a reason' },
+      { k: 'choice', code: 'C1.1', q: '“Those are the very reasons it causes trouble.” What does <b>Those</b> refer to?',
+        opts: ['plastic being strong, cheap and long-lasting', 'waves and sunlight', 'wood and paper', 'the Great Lakes'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-white-nose', subject: 'science', form: 'Report',
+    title: 'Silent Caves',
+    deck: 'A fungus that is killing Canada’s bats, and the scientists trying to stop it',
+    hero: {
+      photo: 'g7-brown-bat.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A little brown bat. One of these bats can eat thousands of insects in a summer night.'
+    },
+    body: [
+      'Every fall, millions of bats across eastern Canada fly into caves and old mines to <b>hibernate</b>. They hang in the cool, damp darkness all winter, their heartbeats slowing from hundreds of beats a minute to just a few. Their bodies burn stored fat very slowly, and they live on it until spring. But since 2006, many of those caves have gone silent.',
+      { h: 'A white fungus' },
+      'That year, cavers in New York State found dead bats with a strange white fuzz on their noses and wings. It was a <b>fungus</b> that grows best in cold, damp places like caves. Scientists named the disease white-nose syndrome. The fungus probably arrived from Europe, perhaps on the boots or gear of a visitor. European bats have lived with it for a long time, but North American bats had no defence. By 2010, it had spread to caves in Ontario and Quebec.',
+      { fig: '<path class="k" d="M20 130 H280"/>' +
+          [['normal winter', [12, 14, 12, 14, 12, 14, 12, 14]], ['with the fungus', [12, 50, 12, 50, 12, 50, 12, 50]]].map(function (r, i) { var y = 60 + i * 60, d = 'M110 ' + y; r[1].forEach(function (h, j) { d += ' L' + (132 + j * 22) + ' ' + (y - h + 12); }); return '<path class="' + (i ? 'a' : 't') + '" d="' + d + '"/><text class="n" x="20" y="' + (y + 4) + '">' + r[0] + '</text>'; }).join('') +
+          '<text class="n" x="150" y="146" text-anchor="middle">each spike is a time the bat wakes up and burns fat</text>',
+        tall: 154, cap: 'A simplified view of how often a hibernating bat wakes up. Bats with the fungus wake far more often.' },
+      { h: 'Why bats die' },
+      'The fungus irritates the bats’ skin and wakes them up again and again during winter. Each time a bat wakes, its body warms up, and it burns a large amount of its stored fat. Some bats fly out into the snow searching for insects that are not there. By late winter, many have used up all their fat and starve. In some caves, more than 90% of the bats have died.',
+      { box: 'Endangered', text: 'In 2014, the little brown bat and two other bat species were listed as endangered in Canada because of white-nose syndrome.' },
+      { h: 'Fighting back' },
+      'Losing bats matters. Bats eat huge numbers of insects, including mosquitoes and pests that damage farm crops and forests. To slow the disease, many caves are closed to visitors, and cavers must clean their boots and gear. Scientists are testing treatments, such as harmless bacteria and ultraviolet light, that might weaken the fungus. In a few places, some bats seem to be surviving, giving hope that populations could slowly recover. You can help by never disturbing bats in winter, and by putting up a bat box in summer. Scientists also ask people to report bats seen flying in winter, because that can be an early sign that the fungus has reached a new cave. Every report helps them track where the disease is spreading.'
+    ],
+    guide: { before: 'Teach <b>hibernate</b> and <b>fungus</b>. Ask what the child already knows about bats. Find Ontario and Quebec and New York State on a map.',
+      after: 'Why do you think people often care less about bats than about cuter animals? Should that change?' },
+    words: [['hibernate', 'to spend the winter in a deep sleep with a slowed body'], ['fungus', 'a living thing, such as a mould or mushroom, that feeds on other material']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps that lead to a bat dying of white-nose syndrome.',
+        items: ['The fungus grows on the bat’s skin.', 'The bat keeps waking up.', 'Each time, it burns a lot of fat.', 'It runs out of fat and starves.'], show: [3, 0, 2, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the graph show?',
+        opts: ['Bats with the fungus wake up much more often.', 'Bats sleep more with the fungus.', 'Bats eat more in winter.', 'The fungus grows in summer.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were North American bats hit so hard?',
+        opts: ['They had no defence against a fungus new to them.', 'They were already sick.', 'There were too few caves.', 'They do not hibernate.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author describe caves as having “gone silent”?',
+        opts: ['to show that so many bats have died', 'because caves are quiet', 'because people stopped visiting', 'to describe the fungus'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The fungus <b>irritates</b> the bats’ skin. What does <b>irritates</b> mean?',
+        opts: ['bothers or makes sore', 'heals', 'cleans', 'warms'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why should people who do not like bats still care about this disease?',
+        a: 'Bats eat huge numbers of insects, including mosquitoes and crop pests. Without them, there could be more pests harming forests and farms.', look: 'bats’ role in controlling insects' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what might happen to the bat population in the next 20 years. Use evidence.',
+        a: 'Some bats seem to be surviving and treatments are being tested, so populations might slowly recover, but it will take a long time because so many died.', look: 'a prediction tied to evidence from the last section' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'List three things people are doing to fight white-nose syndrome.',
+        a: 'Closing caves, cleaning boots and gear, and testing treatments like harmless bacteria and ultraviolet light.', look: 'three actions from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-arches', subject: 'tech', form: 'Explanation',
+    title: 'The Strength of an Arch',
+    deck: 'Why a curve of stones can stand for two thousand years',
+    hero: {
+      photo: 'g7-stone-arch.jpg', credit: 'Photo: Christian Ferrer, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An old stone arch bridge. No glue or steel holds the stones together. The shape does the work.'
+    },
+    body: [
+      'Some Roman bridges built two thousand years ago are still standing, and people still walk across them. They have no steel beams and, in many cases, no mortar holding the stones together. Their secret is a simple shape: the <b>arch</b>. Understanding how it works means understanding two forces that act on every structure.',
+      { h: 'Pushing and pulling' },
+      'A force that squeezes or pushes something together is called <b>compression</b>. A force that pulls or stretches something apart is called <b>tension</b>. Stone is very strong in compression. You can stack enormous weight on top of a stone block without crushing it. But stone is weak in tension, so a long, flat stone beam will crack across its bottom if you put weight in the middle.',
+      { fig: '<path class="k" d="M30 150 V100 Q150 -20 270 100 V150"/><path class="k" d="M60 150 V104 Q150 20 240 104 V150"/>' +
+          [[62, 96], [84, 70], [112, 52], [150, 44], [188, 52], [216, 70], [238, 96]].map(function (p, i) { return '<path class="t" d="M' + p[0] + ' ' + p[1] + ' l' + (i < 3 ? -14 : i > 3 ? 14 : 0) + ' -14"/>'; }).join('') +
+          '<rect class="h" x="138" y="30" width="24" height="22"/>' + D.label(196, 18, 'keystone', 156, 32) +
+          D.arrow(150, 2, 150, 28, 'a') + D.arrow(36, 120, 14, 140, 'a') + D.arrow(264, 120, 286, 140, 'a') +
+          '<text class="n" x="150" y="166" text-anchor="middle">weight is pushed around the curve and down into the ground</text>',
+        tall: 172, cap: 'In an arch, each stone presses against its neighbours. The weight travels around the curve and down to the ends.' },
+      { h: 'How an arch spreads the load' },
+      'An arch turns the weight above it into compression. When a load presses down on the top, each wedge-shaped stone pushes against the stones beside it. The force travels around the curve, from stone to stone, and down into the ground at both ends. Every stone is squeezed, and none is stretched, so the stone stays strong. The wedge at the very top, called the <b>keystone</b>, locks the others in place.',
+      { box: 'Building in the air', text: 'An arch cannot stand until the keystone is in. Builders first make a wooden frame in the shape of the arch, lay the stones on it, then remove the frame once the keystone is set.' },
+      { h: 'Arches everywhere' },
+      'Arches also push outward at their ends, so they need strong supports, such as solid rock or heavy walls, to keep from spreading apart. Builders have used arches in bridges, doorways, cathedral windows and tunnels for thousands of years. Modern engineers build arches from steel and concrete, such as the Rainbow Bridge over the Niagara River, which crosses the gorge in a single steel arch. You can see arch shapes in the curved tops of dams, in domes and even in the shape of an eggshell, which is surprisingly hard to crush when you squeeze it from end to end.'
+    ],
+    guide: { before: 'Make an arch from a strip of cardboard between two books and test how many coins it holds compared with a flat strip. Teach <b>compression</b>, <b>tension</b> and <b>keystone</b>.',
+      after: 'Find three arches in your neighbourhood or home. What does each one hold up?' },
+    words: [['compression', 'a force that squeezes or pushes together'], ['tension', 'a force that pulls or stretches apart'], ['keystone', 'the wedge-shaped stone at the top of an arch that locks it']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why is stone good for building arches?',
+        opts: ['It is very strong in compression.', 'It is strong in tension.', 'It is light.', 'It bends easily.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, where does the weight go?',
+        opts: ['around the curve and down into the ground', 'straight through the keystone into the air', 'into the middle stone only', 'up into the sky'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the two forces.', cols: ['Force', 'What it does', 'Is stone strong against it?'],
+        rows: [['compression', null, null], ['tension', null, null]],
+        a: [[null, 'squeezes or pushes together', 'yes'], [null, 'pulls or stretches apart', 'no']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do arches need strong supports at their ends?',
+        opts: ['Arches push outward at their ends.', 'The keystone is heavy.', 'They are made of steel.', 'They are very tall.'], a: 0 },
+      { k: 'choice', code: 'C2.4', half: true, q: 'If the paragraph “How an arch spreads the load” is confusing, which strategy would help most?',
+        opts: ['Reread it while tracing the arrows in the diagram.', 'Skip to the end.', 'Read only the box.', 'Count the words.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why would a flat stone beam crack but a stone arch would not?',
+        a: 'A flat beam is stretched on its bottom when weight presses the middle, and stone is weak in tension. In an arch every stone is squeezed, and stone is strong in compression.', look: 'tension in the beam versus compression in the arch' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Describe an arch you have seen. What do you think it was holding up?',
+        a: 'The doorway at our church is an arch. It holds up the heavy stone wall above the door.', look: 'a real arch and its load' },
+      { k: 'choice', code: 'B3.2', q: '“You can stack enormous weight on top of a stone block without crushing it.” Which word is an adjective?',
+        opts: ['enormous', 'stack', 'without', 'crushing'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-shanawdithit', subject: 'history', form: 'Biography',
+    title: 'Shanawdithit’s Drawings',
+    deck: 'The life of a Beothuk woman whose pictures and words preserved her people’s story',
+    hero: {
+      photo: 'g7-nl-coast.jpg', credit: 'Photo: Michel Rathwell, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The coast of Newfoundland, homeland of the Beothuk for hundreds of years before Europeans arrived.'
+    },
+    body: [
+      'For centuries, the Beothuk lived on the island now called Newfoundland. In summer they travelled to the coast to fish, hunt seals and gather eggs. In fall, they moved inland to the rivers, where they hunted caribou. They travelled in birchbark canoes with high, curved sides and covered their bodies and belongings with red <b>ochre</b>, a red earth paint. This custom may be why Europeans called Indigenous peoples “Red Indians,” a name now considered offensive.',
+      { fig: '<path class="k" d="M40 140 Q20 100 40 60 Q60 20 120 20 Q180 16 230 40 Q280 70 260 120 Q240 150 180 150 Q110 160 40 140 Z"/>' +
+          '<path class="t" d="M60 60 Q100 90 150 80 Q200 70 230 100"/><text class="n" x="150" y="100" text-anchor="middle">Exploits River</text>' +
+          '<path class="d" d="M40 60 Q30 100 40 140 M230 40 Q270 70 260 120"/><text class="l" x="20" y="22">coast</text>' +
+          '<circle class="dot" cx="150" cy="66" r="4"/><text class="n" x="150" y="56" text-anchor="middle">Red Indian Lake</text>' +
+          D.arrow(70, 130, 110, 110, 'a') + '<text class="n" x="74" y="150">pushed inland</text>',
+        tall: 162, cap: 'A simplified sketch of Newfoundland. As settlers took the coast, the Beothuk moved inland along rivers and lakes. Not a map.' },
+      { h: 'Pushed from the coast' },
+      'When European fishers and settlers arrived, they built along the coast and rivers where the Beothuk had always found food. The Beothuk avoided contact and were driven inland, where food was harder to find. There was violence between settlers and Beothuk, and settlers often went unpunished for killing them. Diseases such as tuberculosis, brought by Europeans, spread through their camps. Over many years, the Beothuk population fell sharply.',
+      { h: 'A young woman alone' },
+      'Shanawdithit was born around 1801. In 1823, starving and sick, she, her mother and her sister were taken by settlers. Her mother and sister soon died. Shanawdithit lived for several years as a servant in a settler family’s home. In 1828 she was brought to St. John’s, where a man named William Cormack, who was trying to learn about the Beothuk, asked her about her people.',
+      { box: 'Her record', text: 'Shanawdithit made drawings of Beothuk camps, canoes, tools and food, and of events she had lived through. She also shared Beothuk words. Her pictures are among the only first-hand records of Beothuk life.' },
+      { h: 'Remembering' },
+      'Shanawdithit died of tuberculosis in 1829. She is often described as the last known Beothuk. Today, historians and Indigenous communities in Newfoundland and Labrador work to honour the Beothuk and to tell their story truthfully, including the injustice they suffered. In 2020, the remains of two Beothuk people, taken to Scotland in the 1800s, were returned home to Newfoundland. Shanawdithit’s drawings remind us that every people’s history deserves to be <b>preserved</b>, and that it matters who gets to tell it.'
+    ],
+    guide: { before: 'Find Newfoundland, the Exploits River and St. John’s on a map. Teach <b>preserved</b>. Explain that this is a sad story and that it is fine to feel upset by it.',
+      after: 'How can we make sure the histories of Indigenous peoples are told truthfully and respectfully?' },
+    words: [['ochre', 'a natural earth used as red or yellow paint'], ['preserved', 'kept safe so it is not lost']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did the Beothuk find it harder to get food over time?',
+        opts: ['Settlers took the coast and rivers where they found food.', 'The caribou disappeared.', 'They stopped fishing by choice.', 'The rivers froze forever.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show?',
+        opts: ['the Beothuk being pushed inland from the coast', 'the route of a ship', 'where Cormack lived', 'the shape of a canoe'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The name “Red Indians” is now considered <b>offensive</b>. What does <b>offensive</b> mean?',
+        opts: ['hurtful or disrespectful', 'old-fashioned but fine', 'used in sports', 'very accurate'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a biography?',
+        opts: ['It tells the life of a real person in order.', 'It gives instructions.', 'It is a poem.', 'It is a made-up story.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why are Shanawdithit’s drawings so important to historians today?',
+        a: 'They are among the only first-hand records of Beothuk life, showing camps, canoes, tools, food and events she lived through.', look: 'first-hand record of Beothuk life' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Most early records about the Beothuk were written by settlers. Why does it matter that Shanawdithit’s own drawings exist?',
+        a: 'They show the Beothuk way of life from a Beothuk point of view, not only through the eyes of the settlers who harmed them.', look: 'an insider perspective versus settler records' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'What does the return of Beothuk remains in 2020 show about how people today view this history?',
+        a: 'It shows that people now see the past injustice and want to treat the Beothuk with respect by bringing their ancestors home.', look: 'respect and correcting past wrongs' },
+      { k: 'choice', code: 'B3.3', q: 'Why is “Red Indians” in quotation marks?',
+        opts: ['It is a name others used, not the author’s own words.', 'Someone is shouting.', 'It is a book title.', 'It is a question.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-wildfire-smoke', subject: 'health', form: 'Explanation',
+    title: 'When the Sky Turns Orange',
+    deck: 'What wildfire smoke does to your body, and how to protect yourself',
+    hero: {
+      photo: 'g7-smoke-haze.jpg', credit: 'Photo: Rod Raglin, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Wildfire smoke hangs over Vancouver in 2021. Smoke can travel thousands of kilometres from the fires.'
+    },
+    body: [
+      'In the summer of 2023, Canada had its worst wildfire season on record. Fires burned in almost every province and territory. Smoke drifted over cities from Yellowknife to Montréal and as far as New York and Europe. In some places, the sun glowed like a red coin and the sky turned orange at noon. Even people hundreds of kilometres from any flames were breathing smoke.',
+      { h: 'What is in smoke?' },
+      'Wildfire smoke is a mix of gases and tiny particles from burning trees, plants and buildings. The most harmful part is <b>fine particulate matter</b>, often called PM2.5. These particles are less than 2.5 micrometres across, about thirty times thinner than a human hair. They are so small that they slip past the nose and throat and travel deep into the lungs. Some even pass into the bloodstream.',
+      { fig: [['hair', 70, '70'], ['dust', 25, '25'], ['PM2.5', 2.5, '2.5']].map(function (r, i) { var x = 60 + i * 90; return '<circle class="' + (i === 2 ? 'a' : 'h') + '" cx="' + x + '" cy="62" r="' + (r[1] / 2) + '"/><text class="lb" x="' + x + '" y="118" text-anchor="middle">' + r[0] + '</text><text class="n" x="' + x + '" y="136" text-anchor="middle">' + r[2] + ' micrometres</text>'; }).join('') +
+          D.label(290, 22, 'smoke particle', 240, 62, 'end'),
+        tall: 144, cap: 'The width of a human hair, a speck of dust and a fine smoke particle. PM2.5 is small enough to reach deep into the lungs.' },
+      { h: 'Effects on the body' },
+      'Smoke can make your eyes sting, your throat scratchy and your head ache. It can cause coughing and make breathing feel hard. People with asthma, heart problems, babies, older adults and pregnant people are most at risk, but anyone can be affected, especially when exercising outdoors and breathing deeply.',
+      { box: 'Check the number', text: 'Environment Canada’s Air Quality Health Index, or AQHI, rates air from 1 to 10+. A rating of 7 or more means high risk: cut back on outdoor activity.' },
+      { h: 'Protecting yourself' },
+      'On smoky days, the best place to be is indoors with windows and doors closed. A portable air cleaner with a HEPA <b>filter</b> traps fine particles. Some families build their own by taping a furnace filter to a box fan. If you must go outside, a well-fitted N95 mask blocks most particles, while cloth masks block very few. Plan indoor activities instead of sports, drink plenty of water, and check on neighbours who may be at risk. Scientists expect smoky summers to become more common as the climate warms, so knowing these steps is becoming a life skill. When the air clears, open the windows to let fresh air back in.'
+    ],
+    guide: { before: 'Look up today’s AQHI for your area together. Teach <b>fine particulate matter</b> and <b>filter</b>. Ask if the child remembers a smoky day.',
+      after: 'Make a smoky-day plan for your home: where to stay, what to do, and who to check on.' },
+    words: [['fine particulate matter', 'tiny bits of solid or liquid in the air, small enough to breathe deep into the lungs'], ['filter', 'a material that traps particles while letting air or water through']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why is PM2.5 especially harmful?',
+        opts: ['It is small enough to get deep into the lungs and blood.', 'It smells bad.', 'It is orange.', 'It makes noise.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the drawing show?',
+        opts: ['how much smaller a smoke particle is than a hair or dust', 'how fires start', 'how a mask works', 'how wind carries smoke'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is exercising outside on a smoky day riskier?',
+        opts: ['You breathe more deeply and take in more smoke.', 'You get too hot.', 'The smoke is heavier near the ground only in the morning.', 'Running spreads the fire.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“These particles are less than 2.5 micrometres across.” What does <b>These particles</b> refer to?',
+        opts: ['fine particulate matter, or PM2.5', 'gases from trees', 'cloth masks', 'clouds'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Which groups are most at risk from smoke? Why do you think they are at greater risk?',
+        a: 'People with asthma or heart problems, babies, older adults and pregnant people. Their bodies may already have trouble with breathing or are more fragile.', look: 'groups from the text and a sensible reason' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize three ways to protect yourself on a smoky day.',
+        a: 'Stay indoors with windows closed, use an air cleaner with a HEPA filter, and wear an N95 mask if you must go out.', look: 'three protective steps' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'The AQHI is 8 tomorrow and you have a soccer game outdoors. Predict what should happen and explain why.',
+        a: 'The game should be moved indoors or cancelled, because 7 or more is high risk and running makes you breathe in more smoke.', look: 'a decision tied to the AQHI and breathing' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence contrasts two ideas using <b>while</b>?',
+        opts: ['A well-fitted N95 mask blocks most particles, while cloth masks block very few.', 'Smoke can make your eyes sting.', 'Fires burned in almost every province.', 'Check the number.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-great-green-wall', subject: 'geography', form: 'Report',
+    title: 'A Wall Made of Trees',
+    deck: 'Africa’s plan to stop the desert by growing a green belt across a continent',
+    hero: {
+      photo: 'g7-sahel.jpg', credit: 'Image: NASA (MODIS), public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A satellite view of Mali, in the Sahel. The dry Sahara lies to the north, and greener land lies to the south.'
+    },
+    body: [
+      'South of the Sahara Desert, a long strip of dry grassland and scattered trees stretches across Africa from the Atlantic Ocean to the Red Sea. This region is called the <b>Sahel</b>. More than a hundred million people live there, most of them farmers and herders who depend on the land. In the last century, long droughts, a growing population, overgrazing and cutting trees for firewood left much of the soil bare. Wind blew it away, and the land turned to dust.',
+      { h: 'Land turning to desert' },
+      'When healthy land loses its plants and topsoil and becomes desert-like, the process is called <b>desertification</b>. Without roots to hold it, soil washes or blows away. Without shade, the ground bakes. Rain runs off instead of soaking in. Crops fail, and families may have to leave their villages.',
+      { fig: '<rect class="t" x="10" y="20" width="280" height="40"/><text class="l" x="150" y="44" text-anchor="middle">Sahara Desert</text>' +
+          '<path class="h" d="M10 70 Q80 64 150 70 T290 70 V100 Q220 106 150 100 T10 100 Z"/><text class="lb" x="150" y="90" text-anchor="middle">Sahel: the Great Green Wall</text>' +
+          '<rect class="k" x="10" y="110" width="280" height="30"/><text class="l" x="150" y="130" text-anchor="middle">wetter savanna and forest</text>' +
+          '<text class="n" x="14" y="156">Senegal</text><text class="n" x="286" y="156" text-anchor="end">Djibouti</text>' + D.arrow(70, 152, 230, 152, 'a'),
+        tall: 162, cap: 'A simplified sketch of the band across Africa where the Great Green Wall is planned. Not to scale.' },
+      { h: 'The big idea' },
+      'In 2007, African countries launched the Great Green Wall. The first plan was to plant a belt of trees about 8 000 km long, from Senegal in the west to Djibouti in the east. Over time, the idea grew. Instead of a single line of trees, it became a patchwork of restored land: farms, forests and grasslands, managed by the people who live there.',
+      { box: 'Old ways that work', text: 'In Burkina Faso, farmers dig small pits called zaï and fill them with compost. The pits catch rain and help seeds grow in hard, dry soil. In Niger, farmers let tree stumps on their fields regrow instead of clearing them.' },
+      { h: 'Progress and problems' },
+      'Millions of trees have been planted, and in some areas crops and grass are returning. But progress has been much slower than hoped. Many planted seedlings died because no one watered or protected them. Conflict and poverty have made work difficult in some countries. Experts have learned that the projects that last are the ones local farmers choose and care for themselves. The Great Green Wall is unfinished, but it has changed how the world thinks about fighting deserts: not with one giant project, but with millions of small ones.'
+    ],
+    guide: { before: 'Find the Sahara, the Sahel, Senegal and Djibouti on a world map. Teach <b>Sahel</b> and <b>desertification</b>. Pour water on a tray of bare soil and a tray with grass and compare.',
+      after: 'Why do you think projects work better when local people choose and care for them?' },
+    words: [['Sahel', 'the dry region just south of the Sahara Desert'], ['desertification', 'when healthy land becomes dry and desert-like']],
+    qs: [
+      { k: 'order', code: 'C1.5', q: 'Number the steps of desertification as the report explains them.',
+        items: ['Plants and trees are lost.', 'Soil washes or blows away.', 'Rain runs off instead of soaking in.', 'Crops fail and families may leave.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Where is the Great Green Wall in the sketch?',
+        opts: ['in the band between the desert and the wetter land', 'in the middle of the Sahara', 'along the ocean', 'in the forest'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did many planted seedlings die?',
+        opts: ['No one watered or protected them.', 'It rained too much.', 'The trees were the wrong colour.', 'They were planted in Canada.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Desertification</b> contains <b>desert</b> + <b>-ify</b> + <b>-tion</b>. What does the word mean?',
+        opts: ['the process of becoming a desert', 'a person who lives in a desert', 'a desert plant', 'leaving a desert'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author call it a “wall” made of trees?',
+        opts: ['It was meant to hold back the desert, like a wall.', 'The trees are made of stone.', 'It surrounds a city.', 'It is very tall.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did the Great Green Wall idea change over time?',
+        a: 'It began as one long line of trees. It became a patchwork of restored farms, forests and grasslands managed by local people.', look: 'from a line of trees to local patchwork' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do you think the author included the box about zaï pits and regrowing stumps?',
+        a: 'To show that local people’s traditional methods work well and are cheap, and that solutions do not always need new technology.', look: 'the value of local and traditional knowledge' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The last sentence says deserts are fought “with millions of small ones.” Do you agree that small projects can be better than one huge one? Explain.',
+        a: 'Yes, because small projects are cared for by the people who use them, so they last, while a giant project can fail if no one looks after it.', look: 'a position with a reason from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-peer-pressure', subject: 'health', form: 'Interview', plain: true,
+    title: 'Saying No, Keeping Friends',
+    deck: 'An interview with a school counsellor about peer pressure',
+    hero: {
+      photo: 'g7-study-group.jpg', credit: 'Photo: Barry Pousman, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Students working together. Friends influence each other every day, often in good ways.'
+    },
+    body: [
+      '<i>Our student reporter, Kamal, spoke with Ms. Josée Lavoie, a counsellor at a middle school in Sudbury. This interview has been shortened. The people are invented for this text, but the advice is real.</i>',
+      '<b>Kamal:</b> What exactly is peer pressure?',
+      '<b>Ms. Lavoie:</b> It is the influence that people your age have on what you do. Sometimes it is spoken out loud, like “Come on, everyone’s doing it.” Often it is silent. You just notice what others wear or say and feel you should match them.',
+      '<b>Kamal:</b> Is it always bad?',
+      '<b>Ms. Lavoie:</b> Not at all. Friends can push you to try out for a team, study harder or stand up for someone. That is positive peer pressure. The problem is when it pushes you toward something that is unsafe, unkind or against your values.',
+      { fig: '<rect class="k" x="70" y="10" width="160" height="30"/><text class="n" x="150" y="30" text-anchor="middle">someone pressures you</text>' +
+          D.arrow(150, 40, 150, 58, 'a') + '<rect class="h" x="80" y="58" width="140" height="30"/><text class="lb" x="150" y="78" text-anchor="middle">pause and check</text>' +
+          D.arrow(120, 88, 60, 112, 'a') + D.arrow(180, 88, 240, 112, 'a') +
+          '<rect class="k" x="10" y="112" width="110" height="36"/><text class="n" x="65" y="128" text-anchor="middle">safe and kind?</text><text class="n" x="65" y="142" text-anchor="middle">your choice</text>' +
+          '<rect class="k" x="180" y="112" width="110" height="36"/><text class="n" x="235" y="128" text-anchor="middle">unsafe or unkind?</text><text class="n" x="235" y="142" text-anchor="middle">no, then a plan</text>',
+        tall: 156, cap: 'A quick way to think before you act.' },
+      '<b>Kamal:</b> Why is it so hard to say no?',
+      '<b>Ms. Lavoie:</b> Part of it is how the teenage brain works. The area that loves rewards and excitement is very active during the teen years, especially around friends. The front part of the brain, which weighs risks and plans ahead, keeps developing until your mid-twenties. So the “gas pedal” is strong, but the “brakes” are still being built. That is not an excuse, just something to know.',
+      '<b>Kamal:</b> So what can someone actually do?',
+      '<b>Ms. Lavoie:</b> First, pause. Even three seconds helps. Then use a clear, short no: “No thanks, I’m good.” You do not owe a long reason. Suggest something else to do. And plan ahead. Some families agree on a code word you can text, and a parent calls to “make” you come home. That gives you an <b>exit</b> without losing face.',
+      { box: 'Real friends', text: 'A good friend accepts your no. If someone keeps pushing after you say no, that tells you something about the friendship.' },
+      '<b>Kamal:</b> What if I already said yes and regret it?',
+      '<b>Ms. Lavoie:</b> You can change your mind at any point. Leave, call home, or talk to a trusted adult afterwards. One mistake does not mean you have to keep going.',
+      '<b>Kamal:</b> Any last advice?',
+      '<b>Ms. Lavoie:</b> Know your own <b>values</b> before you are in the moment. And remember, if one person says no, it often gives others the courage to say no too.'
+    ],
+    guide: { before: 'Explain that an interview is written as a conversation between two people. Teach <b>values</b> and <b>exit</b>. Agree on a family code word together.',
+      after: 'Role-play a situation where someone pressures you. Practise a short, clear no.' },
+    words: [['values', 'the beliefs and ideas that are most important to a person'], ['exit', 'a way out of a situation']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is an interview?',
+        opts: ['The speakers’ names come before what each one says.', 'It has a rhyme.', 'It has numbered steps only.', 'It is told by a narrator.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the first step when someone pressures you?',
+        opts: ['pause and check', 'say yes', 'run away', 'call the police'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Ms. Lavoie compares the teen brain to a “gas pedal” and “brakes.” What does this show?',
+        opts: ['The urge for excitement is strong, while the ability to stop and plan is still developing.', 'Teens like cars.', 'Brains have engines.', 'Teens should drive.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A code word lets you leave “without losing face.” What does <b>losing face</b> mean?',
+        opts: ['being embarrassed in front of others', 'getting a scar', 'forgetting someone’s face', 'losing a game'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Give one example of positive peer pressure and one of negative peer pressure.',
+        a: 'Positive: a friend encourages you to try out for the basketball team. Negative: friends push you to vape at a party.', look: 'one of each type' },
+      { k: 'lines', code: 'B1.1', n: 3, q: 'Kamal asks short, clear questions and lets Ms. Lavoie answer. Why is this good listening in an interview?',
+        a: 'It lets the expert explain fully without being interrupted, and his next question builds on what she said.', look: 'giving space and building on answers' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Which strategy from the interview would be easiest for you to use? Describe a time you could use it.',
+        a: 'Saying “No thanks, I’m good” is easiest. I could use it if someone offered me an energy drink at a sleepover.', look: 'a strategy and a realistic situation' },
+      { k: 'choice', code: 'C1.6', q: 'Why does the interview start with a note in italics?',
+        opts: ['to explain who is speaking and that the people are invented', 'to tell a joke', 'to give the answers', 'to list the questions'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-scale-maps', subject: 'math', form: 'Explanation',
+    title: 'How Far Is It Really?',
+    deck: 'Using scale and ratios to measure distances on a map',
+    hero: {
+      photo: 'g7-map-compass.jpg', credit: 'Photo: Wodgester, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A compass on a hiking map. Every map shrinks the real world by a fixed amount, called the scale.'
+    },
+    body: [
+      'Imagine you are planning a canoe trip in Algonquin Park. You spread a paper map on the kitchen table. The route to your first campsite crosses two lakes and a portage. It looks short on paper, only 9 cm. But how far will you actually paddle and carry the canoe? To find out, you need the map’s <b>scale</b>.',
+      { h: 'A ratio on every map' },
+      'A map’s scale tells you how much the real world was shrunk to fit on the page. Many Canadian topographic maps have a scale of 1:50 000. This is a <b>ratio</b>. It means that 1 unit on the map stands for 50 000 of the same units in real life. So 1 cm on the map represents 50 000 cm on the ground. Since there are 100 cm in a metre, that is 500 m. Since there are 1 000 m in a kilometre, 1 cm on the map is half a kilometre.',
+      { fig: '<path class="k" d="M20 50 H260"/>' + [0, 1, 2, 3, 4].map(function (i) { var x = 20 + i * 60; return '<path class="k" d="M' + x + ' 42 V58"/><text class="n" x="' + x + '" y="76" text-anchor="middle">' + (i * 0.5) + ' km</text>'; }).join('') +
+          '<rect class="h" x="20" y="44" width="60" height="12"/><rect class="h" x="140" y="44" width="60" height="12"/>' +
+          '<text class="lb" x="20" y="28">Scale 1:50 000</text><text class="n" x="20" y="100">each section = 1 cm on the map = 0.5 km on the ground</text>' +
+          '<path class="t" d="M20 130 Q80 110 140 132 T260 126"/><text class="n" x="20" y="150">a curvy route: measure it with string</text>',
+        tall: 156, cap: 'A scale bar. Maps show the scale as a ratio, as a bar, or both.' },
+      { h: 'Working it out' },
+      'Back to the canoe route. Lay a piece of string along the curving route, then straighten it and measure: 9 cm. Each centimetre is 0.5 km, so the route is 9 × 0.5 = 4.5 km. If you paddle about 3 km in an hour, the trip will take about an hour and a half, not counting the portage.',
+      'You can also use the scale bar. Instead of calculating, lay the string next to the bar and read off the distance. This is handy when you do not have a ruler, and it still works if the map has been printed larger or smaller.',
+      { box: 'Larger or smaller scale?', text: 'A 1:50 000 map shows more detail than a 1:250 000 map, because the land is shrunk less. Hikers use large-scale maps. A map of all of Canada needs a much smaller scale.' },
+      { h: 'Scale everywhere' },
+      'Scale is not only for maps. Architects draw floor plans at scales such as 1:100. Model trains and toy cars are made at scales such as 1:87 or 1:64. Each time, the same idea applies: a ratio connects the drawing or model to the real thing.',
+      'Scale also works backwards. To draw a 2 km trail on a 1:50 000 map, change 2 km to 200 000 cm, then divide: 200 000 ÷ 50 000 = 4 cm on the paper. So before you trust any distance, check the scale first. Two maps of the same park can be the same size on the table but use very different scales.'
+    ],
+    guide: { before: 'Find a map with a scale bar (a park map or road map). Teach <b>scale</b> and <b>ratio</b>. Have a ruler and string ready.',
+      after: 'Measure a route between two places on a real map and find the actual distance.' },
+    words: [['scale', 'how much smaller a map or model is than the real thing'], ['ratio', 'a comparison of two amounts, such as 1:50 000']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'On a 1:50 000 map, what does 1 cm stand for?',
+        opts: ['500 m', '50 m', '5 km', '50 000 km'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'On the scale bar, how far is it from 0 to the end?',
+        opts: ['2 km', '4 km', '1 km', '0.5 km'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'A route on a 1:50 000 map measures 6 cm. How long is it in real life?',
+        opts: ['3 km', '6 km', '30 km', '300 m'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does the scale bar still work if a map is printed larger?',
+        opts: ['The bar grows or shrinks with the map.', 'The ratio changes.', 'Bars are always 1 cm.', 'Rulers change size.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain, step by step, how 1:50 000 becomes “1 cm = 0.5 km.”',
+        a: '1 cm on the map is 50 000 cm on the ground. 50 000 cm ÷ 100 = 500 m. 500 m ÷ 1 000 = 0.5 km.', look: 'both unit conversions' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'If you got a different answer for the canoe route, how could you check your work?',
+        a: 'I could lay the string along the scale bar and read the distance, then compare it to my calculation.', look: 'a second method to check' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Where else have you seen scale used, besides maps? Explain the scale in your example.',
+        a: 'A model car that says 1:64. The real car is 64 times longer than the model.', look: 'an example and a correct explanation of its ratio' },
+      { k: 'choice', code: 'B2.2', q: 'In “a large-scale map,” what does <b>large-scale</b> mean?',
+        opts: ['the land is shrunk less, so more detail shows', 'the paper is very big', 'it shows a large country', 'it is very old'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-kathak', subject: 'arts', form: 'Explanation',
+    title: 'Dancing a Story',
+    deck: 'Kathak, a classical dance of India, where the feet make music',
+    hero: {
+      photo: 'g7-kathak.jpg', credit: 'Photo: Rhythm India, CC0, Wikimedia Commons', focus: '50% 30%',
+      tall: 200,
+      cap: 'A Kathak dancer in Varanasi, India. The wide skirt flares out during fast spins.'
+    },
+    body: [
+      'Kathak is one of the classical dance forms of India. Its name comes from <i>katha</i>, a word for story. Long ago, storytellers travelled between temples and villages in northern India, acting out old tales with gestures and movement. Over centuries, the dance moved into royal courts, where it became faster, showier and full of brilliant footwork. Different schools, named after cities such as Lucknow and Jaipur, each developed a style of their own. Today Kathak is taught in studios around the world, including many in Canadian cities.',
+      { h: 'Feet that make music' },
+      'A Kathak dancer wears ghungroo, strings of small brass bells tied around each ankle. Some dancers wear more than a hundred bells on each foot. By striking the floor with the flat foot, the heel and the toes, the dancer turns the feet into a drum. A skilled dancer can make the bells ring loudly, softly or not at all, even while the feet keep moving.',
+      { h: 'Counting in circles' },
+      'Kathak follows a <b>rhythm cycle</b> called a taal. The most common one, teentaal, has sixteen beats grouped in four sets of four. The cycle repeats again and again. The musicians, often a tabla drummer and a singer, keep the cycle going while the dancer weaves patterns over it. The most exciting moment comes when dancer and drummer land together on beat one, called sam.',
+      { fig: (function () {
+          var s = '';
+          for (var i = 0; i < 16; i++) {
+            var t = (-90 + i * 22.5) * Math.PI / 180, b = i + 1, x = (150 + 60 * Math.cos(t)).toFixed(1), y = (85 + 60 * Math.sin(t)).toFixed(1);
+            s += b === 1 || b === 5 || b === 13 ? '<circle class="h" cx="' + x + '" cy="' + y + '" r="8"/>' : b === 9 ? '<circle class="k" cx="' + x + '" cy="' + y + '" r="8"/>' : '<circle class="dot" cx="' + x + '" cy="' + y + '" r="3"/>';
+            if (b % 4 === 1) s += '<text class="n" x="' + (150 + 82 * Math.cos(t)).toFixed(1) + '" y="' + (89 + 82 * Math.sin(t)).toFixed(1) + '" text-anchor="middle">' + (b === 1 ? '1 (sam)' : b) + '</text>';
+          }
+          return s + '<text class="lb" x="150" y="84" text-anchor="middle">teentaal</text><text class="n" x="150" y="100" text-anchor="middle">16 beats</text>' +
+            '<circle class="h" cx="246" cy="150" r="6"/><text class="n" x="256" y="154">clap</text><circle class="k" cx="246" cy="168" r="6"/><text class="n" x="256" y="172">wave</text>';
+        })(),
+        tall: 176, cap: 'The sixteen beats of teentaal go around like a clock. Musicians clap on three beats and wave on one to keep their place.' },
+      { box: 'Spins', text: 'Kathak dancers are famous for chakkars, fast spins on the heel. A dancer may spin dozens of times in a row, then stop exactly on sam, perfectly still.' },
+      { h: 'Telling stories' },
+      'Not all Kathak is fast. In slower sections, the dancer uses the face and hands to tell a story or show a feeling. With a tilt of the head, a glance and a curve of the wrist, one dancer might play a mother, a child and a river, all in a minute. Dancers also <b>improvise</b>, making up new rhythm patterns on the spot and trading them with the drummer, like a conversation. Many dancers first recite a pattern out loud in spoken syllables, such as “ta thei thei tat”, and then dance it with their feet. A single performance can move from quiet storytelling to footwork so fast that the bells blur into one sound.'
+    ],
+    guide: { before: 'Watch a short Kathak performance together if you can. Teach <b>rhythm cycle</b> and <b>improvise</b>. Clap a steady count of 16 and stress beat 1.',
+      after: 'Clap teentaal together: clap on 1, 5 and 13, wave on 9, and land firmly on beat 1 each time around.' },
+    words: [['rhythm cycle', 'a set number of beats that repeats over and over'], ['improvise', 'to make something up on the spot, without planning it']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Where does the name Kathak come from?',
+        opts: ['a word for story', 'a word for bells', 'the name of a drum', 'the name of a city'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which beat is marked with a wave?',
+        opts: ['beat 9', 'beat 1', 'beat 5', 'beat 13'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The author says dancer and drummer trade patterns “like a conversation.” What does this suggest?',
+        opts: ['They take turns and answer each other.', 'They talk during the dance.', 'They argue about the rhythm.', 'They stop to rest.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might landing on sam together excite an audience?',
+        opts: ['After complicated patterns, the two meet exactly on the same beat.', 'The music gets louder for no reason.', 'The dance is over.', 'The bells fall off.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did Kathak change when it moved from villages into royal courts? Why might that have happened?',
+        a: 'It became faster and showier, with brilliant footwork. Court audiences may have wanted dazzling entertainment.', look: 'the change, plus a sensible reason' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the two sides of Kathak described in the text.',
+        a: 'Fast, rhythmic footwork with bells and spins, and slow storytelling with the face, head and hands.', look: 'both footwork and storytelling' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about music, dance or counting beats that helped you understand teentaal?',
+        a: 'Answers will vary, for example counting beats in a song, clapping games or music class.', look: 'a real connection to the idea of a repeating beat' },
+      { k: 'choice', code: 'B2.2', q: 'A dancer’s feet are said to be “brilliant.” What does <b>brilliant</b> mean here?',
+        opts: ['very skilled and impressive', 'shining with light', 'very smart at school', 'brightly coloured'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-farm-drones', subject: 'tech', form: 'Report',
+    title: 'Eyes Above the Field',
+    deck: 'How drones help farmers find problems and use less spray',
+    hero: {
+      photo: 'g7-farm-drone.jpg', credit: 'Photo: Shreesha Sharma, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A farm drone sprays a rice field. Drones can treat just the parts of a field that need it.'
+    },
+    body: [
+      'On a large farm in Saskatchewan, a field of canola can stretch farther than you can see. Walking every metre to check for pests, dry patches or disease would take days. So more and more farmers are sending up drones. In less than an hour, a drone can fly over a whole field and send back pictures that show trouble long before a person would spot it.',
+      { h: 'Seeing what eyes cannot' },
+      'Many farm drones carry a special camera, or <b>sensor</b>, that measures light our eyes cannot see. Healthy leaves reflect a lot of near-infrared light. Leaves that are thirsty, sick or eaten by insects reflect less. A computer turns these readings into a colour-coded map of the field. Green patches are thriving. Yellow and red patches need a closer look. The farmer can then go straight to those spots instead of searching the whole field.',
+      { fig: (function () {
+          var s = '', weak = { '1,1': 1, '2,1': 1, '4,2': 1, '4,3': 1 };
+          for (var r = 0; r < 4; r++) for (var c = 0; c < 6; c++) s += '<rect class="' + (weak[c + ',' + r] ? 'h' : 't') + '" x="' + (30 + c * 30) + '" y="' + (16 + r * 30) + '" width="30" height="30"/>';
+          return s + '<rect class="h" x="226" y="58" width="16" height="16"/><text class="n" x="248" y="66">weak patch:</text><text class="n" x="248" y="79">spray here</text>' + '<text class="n" x="120" y="152" text-anchor="middle">one field, divided into 24 squares</text>';
+        })(),
+        tall: 158, cap: 'A sketch of a drone map. The hatched squares reflect less near-infrared light, so the plants there may be in trouble.' },
+      { h: 'Using less, not more' },
+      'This is called <b>precision agriculture</b>: giving each part of a field exactly what it needs, and no more. Instead of spraying a whole field with fertilizer or pesticide, a farmer can treat only the weak patches. That saves money and fuel, and it means fewer chemicals reach nearby streams, bees and birds. Some drones can even do the spraying themselves, flying low over the problem spots. On some farms, spraying only where weeds grow has cut the amount of weed killer used by half or more.',
+      { box: 'Rules in the sky', text: 'In Canada, most drones heavier than 250 g must be registered, and the pilot needs a Transport Canada certificate. The pilot usually has to keep the drone in sight at all times.' },
+      { h: 'Not a magic fix' },
+      'Drones have limits. Their batteries last less than an hour, so big farms need many flights. Wind and rain can ground them. The equipment and software are expensive, which makes them hard for small farms to afford. And a map is only useful if someone knows how to read it. Many farmers say the best results come from mixing new tools with old knowledge: a drone points to a problem, and then the farmer walks out to see it with their own eyes.'
+    ],
+    guide: { before: 'Teach <b>sensor</b> and <b>precision agriculture</b>. Ask: how would you check a field bigger than 100 soccer fields?',
+      after: 'Look at the map sketch and work out the fraction of the field that needs spraying, then the fraction that does not.' },
+    words: [['sensor', 'a device that detects and measures something, such as light, heat or movement'], ['precision agriculture', 'farming that gives each part of a field exactly what it needs']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'How can a drone tell that plants are unhealthy?',
+        opts: ['Unhealthy leaves reflect less near-infrared light.', 'Unhealthy plants are taller.', 'The drone can smell disease.', 'Farmers paint the sick plants.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the sketch, what fraction of the field needs spraying?',
+        opts: ['one sixth', 'one half', 'one quarter', 'all of it'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '“Wind and rain can <b>ground</b> them.” What does <b>ground</b> mean here?',
+        opts: ['keep from flying', 'crush into powder', 'bury in soil', 'punish'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does spraying only the weak patches help bees and streams?',
+        opts: ['Fewer chemicals end up in the environment.', 'Bees like drones.', 'Streams need fertilizer.', 'The drone scares bees away.'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Sort the information from the report.', cols: ['Benefits of farm drones', 'Limits of farm drones'],
+        rows: [[null, null], [null, null]],
+        a: [['spot problems early', 'short battery life, grounded by wind and rain'], ['use less spray and save money', 'expensive, and someone must know how to read the map']] },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Should a small family farm buy a drone? Use facts from the report to support your answer.',
+        a: 'Answers will vary. Yes: finds problems early and saves spray. No: costly, short battery life, needs skill.', look: 'an opinion backed by facts from the text' },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'Why do you think the author ends with the farmer walking out to see the problem?',
+        a: 'To show that technology works best with human knowledge and checking things in person.', look: 'the idea of combining new tools with old knowledge' },
+      { k: 'choice', code: 'B3.3', q: 'Why are there commas in “thirsty, sick or eaten by insects”?',
+        opts: ['to separate items in a list', 'to show a quotation', 'to join two sentences', 'to show a pause before a name'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-angelique', subject: 'history', form: 'Report',
+    title: 'The Fire of 1734',
+    deck: 'Marie-Joseph Angélique, an enslaved woman in New France, and the trial that still raises questions',
+    hero: {
+      photo: 'g7-rue-saint-paul.jpg', credit: 'Photo: shankar s., CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Rue Saint-Paul in Old Montréal today. The fire of 1734 began on this street.'
+    },
+    body: [
+      'On the evening of 10 April 1734, a fire broke out on rue Saint-Paul in Montréal, then a small town in New France. Wind pushed the flames from roof to roof. By morning, 46 buildings were gone, including the Hôtel-Dieu, the town’s hospital. Frightened and angry, people wanted someone to blame. Within hours, many were pointing at one woman: Marie-Joseph Angélique.',
+      { h: 'Who was Angélique?' },
+      'Angélique was a Black woman born on Madeira, an island ruled by Portugal. As a young woman, she was sold and brought to Montréal, where she was <b>enslaved</b> by a wealthy merchant family. Slavery was legal in New France. Over the years, several thousand people, most of them Indigenous and some of them Black, were held as property there. Angélique was known for speaking her mind. Shortly before the fire, she learned she was going to be sold again. She tried to escape with a man named Claude Thibault, but they were caught.',
+      { fig: [['about 1705', 'born on Madeira'], ['1725', 'brought to Montréal'], ['Feb. 1734', 'tries to escape'], ['10 Apr. 1734', 'fire on rue Saint-Paul'], ['21 June 1734', 'executed']].map(function (e, i) { var y = 14 + i * 27; return '<circle class="' + (i === 3 ? 'h' : 'dot') + '" cx="96" cy="' + y + '" r="' + (i === 3 ? 6 : 3) + '"/><text class="n" x="84" y="' + (y + 4) + '" text-anchor="end">' + e[0] + '</text><text class="l" x="110" y="' + (y + 4) + '">' + e[1] + '</text>'; }).join('') + '<path class="t" d="M96 14 V122"/>',
+        tall: 130, cap: 'Key dates in Angélique’s life. The spaces between dates are not to scale.' },
+      { h: 'The trial' },
+      'Angélique was arrested and put on trial. Under the law at the time, she was not allowed a lawyer. No one had seen her start the fire. The court heard <b>testimony</b> from neighbours, much of it rumour. Weeks into the trial, a young child said she had seen Angélique go up to the attic that day. Angélique said again and again that she was innocent. In June, she was tortured until she confessed, and then she was executed.',
+      { box: 'A rare voice', text: 'The written records of the trial still survive. They are one of the few places where words spoken by an enslaved woman in New France were written down.' },
+      { h: 'What do historians think?' },
+      'Historians still disagree. Some think Angélique set the fire to cover her escape. Others point out that fires were common in towns built of wood, that the evidence was weak, and that a confession made under torture cannot be trusted. Almost all agree on one thing: her story shows that slavery was part of Canada’s past, a fact left out of many history books for a long time. Today her name appears in plays, books and lessons, and many people see her as a symbol of resistance. Historians also ask a harder question: why was the person with the least power in town the first one blamed?'
+    ],
+    guide: { before: 'Explain that slavery existed in New France and later in British North America. Teach <b>enslaved</b> and <b>testimony</b>. The text mentions torture and execution briefly.',
+      after: 'Discuss: why might a person’s words be missing from history? Whose records usually survive?' },
+    words: [['enslaved', 'forced to work for others without pay or freedom, and treated as property'], ['testimony', 'what a witness says in court, under a promise to tell the truth']],
+    qs: [
+      { k: 'order', code: 'C1.3', q: 'Number these events in the order they happened.',
+        items: ['Angélique tries to escape.', 'Fire breaks out on rue Saint-Paul.', 'Angélique is put on trial.', 'Angélique is executed.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Many see her as a symbol of <b>resistance</b>. What does <b>resistance</b> mean here?',
+        opts: ['refusing to accept unfair treatment', 'electricity moving through a wire', 'a kind of exercise', 'staying quiet'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might the town have been quick to blame Angélique?',
+        opts: ['She was enslaved and had tried to flee.', 'Many people saw her start it.', 'She lived far away.', 'She admitted it at once.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the timeline. About how long after the fire was Angélique executed?',
+        opts: ['about ten weeks', 'one day', 'two years', 'one week'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does the author include the sentence “No one had seen her start the fire”?',
+        opts: ['to show that the evidence against her was weak', 'to prove she was guilty', 'to describe the weather', 'to name the witnesses'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Whose voices were left out of many history books? Why do the trial records matter?',
+        a: 'Enslaved people, Black and Indigenous people. The records keep Angélique’s own words, which are rarely written down.', look: 'whose voices, and why the records are rare' },
+      { k: 'lines', code: 'C3.8', n: 4, q: 'Did Angélique set the fire? Which view do you find more convincing? Use evidence.',
+        a: 'Answers will vary. Many point to weak evidence and a confession under torture; others to her motive to escape.', look: 'a view supported by evidence from the text' },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a colon in “many were pointing at one woman: Marie-Joseph Angélique”?',
+        opts: ['to introduce and name the woman', 'to start a list of many items', 'to show the time', 'to end a question'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-wind-farms', subject: 'social', form: 'Report',
+    title: 'Turbines in the Cornfield',
+    deck: 'Wind power in rural Ontario, and who gets to decide',
+    hero: {
+      photo: 'g7-wind-farm.jpg', credit: 'Photo: Ken Lund, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Wind turbines in Chatham-Kent, Ontario. Crops can grow right up to the base of each tower.'
+    },
+    body: [
+      'Drive through Chatham-Kent in southwestern Ontario and you will see them: rows of white wind turbines turning slowly above flat fields of corn and soybeans. The area has hundreds of them. For some people they are a sign of a cleaner future. For others they are an unwelcome change to the land they love.',
+      { h: 'How a turbine works' },
+      'Wind pushes on the long blades and makes them spin. The blades turn a shaft inside the box at the top, called the nacelle, where a generator changes the motion into electricity. Cables carry the power down the tower and out to the grid. Wind is a <b>renewable</b> source: it will not run out, and turbines release no smoke while they work. A single large turbine can supply electricity for several hundred homes.',
+      { fig: '<path class="t" d="M20 160 H280"/><path class="k" d="M104 160 L108 60 L112 60 L116 160"/><rect class="h" x="104" y="48" width="30" height="14"/>' +
+          '<path class="k" d="M104 55 L104 8 M104 55 L145 79 M104 55 L63 79"/><circle class="dot" cx="104" cy="55" r="4"/>' +
+          D.label(172, 24, 'blade', 105, 22) + D.label(172, 58, 'nacelle with generator', 134, 55) + D.label(172, 116, 'tower', 114, 116) +
+          '<path class="d" d="M30 160 V55"/><text class="n" x="36" y="108">about</text><text class="n" x="36" y="121">100 m</text>',
+        tall: 166, cap: 'The parts of a wind turbine. Spinning blades turn a generator high above the ground.' },
+      { h: 'The case for' },
+      'Supporters say wind power helps Canada cut the pollution that drives climate change. Farmers who <b>lease</b> land for a turbine earn a payment every year, and the turbine takes up only a small corner of a field. Projects also bring jobs during construction and tax money for the town.',
+      { h: 'The case against' },
+      'Some neighbours complain about the steady whooshing sound and the flicker of shadows when the sun sets behind spinning blades. Others worry about birds and bats that hit the blades, or about falling property values. Others simply miss the view of open farmland under a wide sky. In 2009, an Ontario law sped up wind projects and limited what local councils could do to block them. Many rural residents felt the decision had been made for them by people far away. That law was later cancelled.',
+      { box: 'A question of voice', text: 'Today, many energy projects in Ontario need local support before they can go ahead. Who should decide what gets built: the people who live nearby, or the whole province that uses the power?' },
+      'There is no simple answer. Chatham-Kent shows that the same project can look very different depending on where you stand: beside a farmer counting a lease payment, on a neighbour’s back porch, or in a city far away.'
+    ],
+    guide: { before: 'Teach <b>renewable</b> and <b>lease</b>. Ask: what would you think if a turbine were built near your home?',
+      after: 'Hold a short debate: one person argues for a new wind farm, one against, using facts from the report.' },
+    words: [['renewable', 'able to be replaced naturally, so it will not run out'], ['lease', 'an agreement to rent land or property for a set time and price']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is the generator?',
+        opts: ['in the nacelle at the top of the tower', 'under the ground', 'at the tip of a blade', 'beside the road'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why can crops still grow in a field with a turbine?',
+        opts: ['The turbine takes up only a small corner.', 'Turbines water the crops.', 'Crops grow on the blades.', 'The turbine is moved every spring.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'How is the report organized?',
+        opts: ['It explains how turbines work, then gives arguments for and against.', 'It tells a story in order of time only.', 'It lists steps to build a turbine.', 'It compares wind and solar power.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does the author include both “The case for” and “The case against”?',
+        opts: ['to give a balanced view so readers can decide', 'to prove turbines are bad', 'to sell turbines', 'to fill space'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Fill in the chart with two points from each side.', cols: ['For wind farms', 'Against wind farms'],
+        rows: [[null, null], [null, null]],
+        a: [['cuts pollution that causes climate change', 'noise and shadow flicker'], ['payments for farmers, jobs and taxes', 'harm to birds and bats, lower property values']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why did many rural residents feel left out of the 2009 decision? Whose voice was missing?',
+        a: 'The law limited what local councils could do, so people living near turbines had little say. Their voice was missing.', look: 'the law limited local say; local residents left out' },
+      { k: 'lines', code: 'C3.8', n: 4, q: 'Answer the question in the box. Give two reasons for your opinion.',
+        a: 'Answers will vary, for example: nearby people, because they live with the noise; or the province, because everyone uses the power.', look: 'a clear opinion and two reasons' },
+      { k: 'choice', code: 'B2.1', q: '<b>Renewable</b> has the prefix <b>re-</b> and the suffix <b>-able</b>. What does it mean?',
+        opts: ['able to be made new again', 'not able to be used', 'very new', 'used only once'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-seasons', subject: 'science', form: 'Explanation',
+    title: 'Why We Have Winter',
+    deck: 'The real reason for the seasons is a tilt, not a distance',
+    hero: {
+      photo: 'g7-seasons.jpg', credit: 'Image: NASA Earth Observatory, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Earth photographed from space at different times of the year. How much of each pole is lit changes with the seasons.'
+    },
+    body: [
+      'Ask people why summer is warm and many will say it is because Earth is closer to the Sun. It is a good guess, but it is wrong. Earth is actually closest to the Sun in early January, in the middle of a Canadian winter. Seasons have a different cause: Earth is tilted.',
+      { h: 'A tilted planet' },
+      'Earth spins around an imaginary line through the North and South Poles, called its <b>axis</b>. The axis is not straight up and down. It leans about 23 degrees, and it always points the same way in space as Earth travels around the Sun. For part of the year, the Northern Hemisphere leans toward the Sun. Six months later, it leans away. Many scientists think Earth got its tilt billions of years ago, when another young planet crashed into it.',
+      { fig: '<path class="k" d="M10 110 H290"/>' +
+          '<rect class="k" x="63" y="6" width="24" height="14"/><path class="a" d="M66 20 L55 108 M84 20 L95 108"/><ellipse class="h" cx="75" cy="110" rx="20" ry="5"/>' +
+          '<path class="k" d="M154.7 40.5 L165.3 31.5 L151 14.8 L140.4 23.8 Z"/><path class="a" d="M154.7 40.5 L182 108 M165.3 31.5 L272 108"/><ellipse class="h" cx="227" cy="110" rx="45" ry="5"/>' +
+          '<text class="lb" x="75" y="136" text-anchor="middle">direct</text><text class="n" x="75" y="151" text-anchor="middle">small, bright spot</text>' +
+          '<text class="lb" x="227" y="136" text-anchor="middle">slanted</text><text class="n" x="227" y="151" text-anchor="middle">large, dim spot</text>',
+        tall: 158, cap: 'The same light spread over a small area or a large one. Slanted sunlight warms each square metre less.' },
+      { h: 'Direct and slanted light' },
+      'When your part of Earth leans toward the Sun, sunlight hits the ground more directly. The same amount of energy lands on a smaller area, so the ground heats up more. When your hemisphere leans away, sunlight arrives at a low slant and spreads over a larger area, like a flashlight beam shone at an angle. Each square metre gets less energy.',
+      { box: 'Try it', text: 'Shine a flashlight straight down on a sheet of paper, then tilt it. Trace both spots of light. The tilted spot is bigger and dimmer.' },
+      { h: 'Longer days, shorter nights' },
+      'The tilt also changes how long the Sun stays in the sky. In Ottawa, the longest day of the year, the June <b>solstice</b>, has nearly 15 and a half hours of daylight. The December solstice, the shortest day, has fewer than 9. More hours of sunshine mean more time to warm up and less time to cool down. Farther north, in Inuvik, the Sun does not set at all for weeks in summer and does not rise for weeks in winter. Seasons are flipped in the Southern Hemisphere: when Canadians are shovelling snow, people in Argentina are heading to the beach. So the next time someone blames winter on distance, you can explain the tilt instead.'
+    ],
+    guide: { before: 'Ask why the child thinks summer is warm, and accept any answer. Teach <b>axis</b> and <b>solstice</b>. Have a flashlight ready.',
+      after: 'Do the “Try it” activity together, then explain the seasons using a ball and a lamp, keeping the tilt pointed the same way.' },
+    words: [['axis', 'an imaginary line that something spins around'], ['solstice', 'the day with the most or the fewest hours of daylight in the year']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What is the main cause of the seasons?',
+        opts: ['the tilt of Earth’s axis', 'Earth’s distance from the Sun', 'clouds blocking the Sun', 'the Moon'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does the author begin with a common wrong idea?',
+        opts: ['to catch the reader’s interest and then correct it', 'to trick the reader', 'to show the author was wrong', 'to describe January'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, why is the slanted spot dimmer?',
+        opts: ['The same light is spread over a bigger area.', 'The flashlight is farther away.', 'The batteries are weaker.', 'The light is a different colour.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'When it is summer in Canada, what season is it in Argentina?',
+        opts: ['winter', 'summer', 'spring', 'there are no seasons there'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the two solstices in Ottawa.', cols: ['', 'June solstice', 'December solstice'],
+        rows: [['Hours of daylight', null, null], ['Angle of sunlight', null, null]],
+        a: [[null, 'nearly 15 and a half', 'fewer than 9'], [null, 'more direct', 'low and slanted']] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'In your own words, explain why Canada is cold in January even though Earth is closest to the Sun then.',
+        a: 'The Northern Hemisphere is tilted away, so sunlight is slanted and spread out, and days are short.', look: 'tilt, slanted light and shorter days' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which idea in this text was hardest to understand? What helped you make sense of it?',
+        a: 'Answers will vary, for example the slanted light; the diagram or the flashlight activity helped.', look: 'names a hard idea and a strategy or feature that helped' },
+      { k: 'choice', code: 'B2.1', q: '<b>Hemisphere</b> begins with <b>hemi-</b>, meaning half. What is the Northern Hemisphere?',
+        opts: ['the half of Earth north of the equator', 'the North Pole only', 'all of Canada', 'the sky at night'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-bike-lanes', subject: 'social', form: 'News report',
+    title: 'Council Votes Yes to Bike Lanes',
+    deck: 'A busy street, a close vote and a one-year trial',
+    hero: {
+      photo: 'g7-bike-lane.jpg', credit: 'Photo: Nate Wessel, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A protected bike lane in Toronto. A low barrier separates people on bikes from moving cars.'
+    },
+    body: [
+      'MAPLE FALLS, ONT. After a three-hour debate on Tuesday night, city council voted 6 to 3 to add protected bike lanes to a 2 km stretch of Queen Street. The lanes will be a <b>pilot project</b>, a one-year trial that council will review next fall before deciding whether to keep them.',
+      { h: 'What will change' },
+      'Queen Street now has four lanes for cars, two in each direction. Under the plan, it will have one car lane each way, a turning lane in the middle and a bike lane on each side. A row of low concrete curbs will form a <b>buffer</b> between bikes and moving cars. About 40 of the street’s 120 parking spots will be removed.',
+      { fig: (function () {
+          function row(y, parts) { var x = 10, s = ''; parts.forEach(function (p) { s += '<rect class="' + p[2] + '" x="' + x + '" y="' + y + '" width="' + p[1] + '" height="30"/>' + (p[0] ? '<text class="n" x="' + (x + p[1] / 2) + '" y="' + (y + 19) + '" text-anchor="middle">' + p[0] + '</text>' : ''); x += p[1]; }); return s; }
+          return '<text class="lb" x="10" y="18">Before</text>' + row(24, [['walk', 30, 't'], ['car', 55, 'k'], ['car', 55, 'k'], ['car', 55, 'k'], ['car', 55, 'k'], ['walk', 30, 't']]) +
+            '<text class="lb" x="10" y="84">After</text>' + row(90, [['walk', 30, 't'], ['bike', 34, 'h'], ['', 8, 'a'], ['car', 50, 'k'], ['turn', 36, 'd'], ['car', 50, 'k'], ['', 8, 'a'], ['bike', 34, 'h'], ['walk', 30, 't']]) +
+            D.label(150, 144, 'concrete curbs', 78, 120);
+        })(),
+        tall: 150, cap: 'Queen Street from side to side, before and after the change.' },
+      { h: 'Voices from the street' },
+      'Supporters filled the council chamber. “My daughter is twelve. I want her to ride to school without fearing for her life,” said parent Ana Ferreira. City staff reported that 14 cyclists had been injured on Queen Street in the past five years.',
+      'Not everyone is pleased. Dev Mehta, who owns a hardware store on Queen, worries about losing parking. “My older customers drive. If they can’t park, they’ll shop somewhere else,” he said. Councillor Ruth Ostrowski, who voted against the plan, said fewer car lanes would slow traffic and push cars onto side streets.',
+      { box: 'What other cities found', text: 'Studies in several Canadian cities found that after protected lanes were added, more people cycled and injuries fell. Sales at nearby shops often stayed the same or rose.' },
+      { h: 'What happens next' },
+      'Construction begins in May. During the trial, the city will count cyclists, cars and shoppers and report back to council. Mayor Joseph Whitecloud says the vote is not the end of the conversation. “If it doesn’t work, we’ll change it,” he said. “That’s what a pilot is for.”',
+      'A local cycling group says it will push to extend the lanes across the river if the trial succeeds. Several shop owners plan to track their sales month by month to see whether Mr. Mehta’s fears come true.',
+      '<i>Maple Falls and the people in this report are invented.</i>'
+    ],
+    guide: { before: 'Look at the parts of a news report: dateline, lead, quotations. Teach <b>pilot project</b> and <b>buffer</b>.',
+      after: 'Write two more quotations: one from a person who would welcome the lanes and one from a person who would not.' },
+    words: [['pilot project', 'a small trial run to test an idea before deciding whether to keep it'], ['buffer', 'something placed between two things to keep them apart and protect them']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which features show this text is a news report?',
+        opts: ['a dateline, a lead and quotations', 'rhyme and rhythm', 'a list of steps', 'chapters and a glossary'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'What does the first paragraph do?',
+        opts: ['It tells what happened, where and when.', 'It gives the mayor’s opinion.', 'It describes the weather.', 'It lists every speaker.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how many lanes for cars going straight will there be after the change?',
+        opts: ['2', '4', '3', '1'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might council choose a one-year trial instead of a permanent change?',
+        opts: ['to test the idea with real counts before deciding', 'because bikes are only used for one year', 'to save the curbs for later', 'because the mayor dislikes bikes'], a: 0 },
+      { k: 'table', code: 'C3.5', q: 'Fill in the chart about two people in the report.', cols: ['Person', 'For or against?', 'Their reason'],
+        rows: [['Ana Ferreira', null, null], ['Dev Mehta', null, null]],
+        a: [[null, 'for', 'her daughter’s safety on the way to school'], [null, 'against, or worried', 'his customers may lose parking']] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Whose point of view is missing from this report? Why would it be useful to hear from them?',
+        a: 'Answers will vary, for example children who ride, delivery drivers, bus riders or people who use wheelchairs.', look: 'a missing group and why their view matters' },
+      { k: 'lines', code: 'C3.8', n: 4, q: 'If you were on council, would you have voted yes or no? Give two reasons from the report.',
+        a: 'Answers will vary, supported by facts such as the 14 injuries, the lost parking or results from other cities.', look: 'a vote and two reasons from the text' },
+      { k: 'choice', code: 'B3.3', q: 'Why are quotation marks used in this report?',
+        opts: ['to show the exact words people said', 'to show the title of a book', 'to make words look important', 'to show a question'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-zero', subject: 'math', form: 'Explanation',
+    title: 'The Idea of Nothing',
+    deck: 'How people around the world invented zero',
+    hero: {
+      photo: 'g7-maya-numerals.jpg', credit: 'Drawing: Sylvanus Griswold Morley, 1915, public domain, Wikimedia Commons', focus: '50% 100%',
+      tall: 200,
+      cap: 'Maya signs for the numbers fourteen to nineteen and for zero, drawn in a 1915 book.'
+    },
+    body: [
+      'Try writing the number two hundred five without a zero. You might write 2 5 with a gap, but a reader could easily mistake it for 25. For thousands of years, people around the world had exactly this problem. The answer seems obvious now, but it took some of history’s greatest thinkers to invent it: a symbol for nothing.',
+      { h: 'A space that means something' },
+      'Our number system uses <b>place value</b>: the position of a digit tells its value. In 205, the 2 means two hundreds because it sits in the third place from the right. The 0 tells you there are no tens. Without it, every digit would slide into the wrong place. A zero used this way is a <b>placeholder</b>. About 2 300 years ago, scholars in Babylon, in what is now Iraq, began marking empty places with a small sign. But they did not treat it as a number of its own.',
+      { h: 'The Maya shell' },
+      'Far away, in what is now Mexico and Central America, the Maya built a number system on groups of twenty. They wrote numbers with dots for ones and bars for fives, and by about 2 000 years ago they were using a shell-shaped sign for zero. Maya astronomers used it in calendars that tracked thousands of years and predicted eclipses. They invented zero on their own, with no contact with Asia or Europe.',
+      { fig: [0, 1, 5, 7, 13, 19].map(function (n, i) {
+          var x = 30 + i * 48, s = '', b = Math.floor(n / 5), d = n % 5, k;
+          if (!n) s = '<ellipse class="k" cx="' + x + '" cy="82" rx="15" ry="9"/><path class="t" d="M' + (x - 9) + ' 82 Q' + x + ' 74 ' + (x + 9) + ' 82 M' + (x - 9) + ' 86 Q' + x + ' 79 ' + (x + 9) + ' 86"/>';
+          for (k = 0; k < b; k++) s += '<rect class="h" x="' + (x - 16) + '" y="' + (86 - k * 11) + '" width="32" height="7"/>';
+          for (k = 0; k < d; k++) s += '<circle class="dot" cx="' + (x - (d - 1) * 4.5 + k * 9) + '" cy="' + (80 - b * 11) + '" r="3"/>';
+          return s + '<text class="lb" x="' + x + '" y="118" text-anchor="middle">' + n + '</text>';
+        }).join('') + '<text class="n" x="150" y="22" text-anchor="middle">dot = 1 · bar = 5 · shell = 0</text>',
+        tall: 126, cap: 'Some Maya numbers. Dots sit above bars, and a shell stands for zero.' },
+      { h: 'Zero becomes a number' },
+      'In India, in the year 628, the mathematician Brahmagupta wrote rules for working with zero as a real number. He explained that a number minus itself equals zero, and that any number multiplied by zero equals zero. Indian digits, including zero, spread to Arab scholars in Baghdad, and from there to Europe. That is why the digits we use today are called Hindu-Arabic <b>numerals</b>. Some Europeans distrusted the strange new symbol at first, but it made calculating far faster. Today zero is everywhere, from price tags to computers, which store everything as patterns of 0s and 1s.',
+      { box: 'A rule he got wrong', text: 'Brahmagupta also tried to explain dividing by zero, but his answer did not work. Today mathematicians say that dividing by zero has no answer at all.' }
+    ],
+    guide: { before: 'Write 205 and 25 side by side and ask what the 0 is doing. Teach <b>place value</b> and <b>placeholder</b>.',
+      after: 'Write a few numbers the Maya way, such as 8, 12 and 17, using dots and bars.' },
+    words: [['place value', 'the value a digit has because of its position in a number'], ['placeholder', 'a symbol that holds an empty place so other digits stay in the right spot']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does the author begin by asking you to write 205 without a zero?',
+        opts: ['to show the problem that zero solves', 'to test your handwriting', 'to explain the Maya calendar', 'to show that 25 is bigger'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'How was the Babylonian sign different from our zero?',
+        opts: ['It only marked an empty place and was not a number.', 'It was shaped like a shell.', 'It meant five.', 'It was used only for money.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Using the diagram, how would the Maya write 8?',
+        opts: ['one bar with three dots above it', 'eight dots', 'two bars', 'one shell and eight dots'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is it remarkable that the Maya had a zero?',
+        opts: ['They invented it on their own, without help from other continents.', 'They copied it from Europe.', 'They used it only once.', 'They did not need numbers.'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number these events in the order they happened.',
+        items: ['Babylonian scholars mark empty places with a sign.', 'The Maya use a shell sign for zero.', 'Brahmagupta writes rules for zero.', 'Hindu-Arabic numerals reach Europe.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how zero changed from an empty space into a real number.',
+        a: 'First it was a placeholder for empty places, as in Babylon. The Maya also used it. In India, Brahmagupta gave it rules as a number.', look: 'placeholder first, then a number with rules' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Name two places outside math class where zero is used as a placeholder. What would go wrong without it?',
+        a: 'Answers will vary, for example prices like $10.05, phone numbers or addresses such as 1020. The amount would be misread.', look: 'two real examples and the problem without zero' },
+      { k: 'choice', code: 'B2.2', q: 'What does <b>numerals</b> mean in “Hindu-Arabic numerals”?',
+        opts: ['symbols used to write numbers', 'people who count', 'ancient books', 'kinds of maps'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-murals', subject: 'arts', form: 'Explanation',
+    title: 'Walls That Talk',
+    deck: 'How murals are made, and who decides what goes on the wall',
+    hero: {
+      photo: 'g7-murals.jpg', credit: 'Photo: Bernard Spragg, CC0, Wikimedia Commons', focus: '50% 45%',
+      tall: 200,
+      cap: 'Murals cover the walls of an alley in Kensington Market, Toronto.'
+    },
+    body: [
+      'Walk down an alley in Toronto’s Kensington Market and the walls seem to talk. Faces, animals, flowers and words cover brick that was once plain and grey. Each of these is a <b>mural</b>, a large painting made right on a wall. Unlike a painting in a gallery, a mural belongs to everyone who passes by. You do not need a ticket to see it, and you might walk past it every day for years.',
+      { h: 'A very old art' },
+      'People have painted on walls for tens of thousands of years, from caves to the walls of temples and palaces. In the 1920s, artists in Mexico, such as Diego Rivera, painted huge murals on public buildings that told the stories of ordinary workers and farmers. They believed art should not be locked away for the rich. Their ideas spread across the Americas, including to Canada. Today, Indigenous artists paint murals in cities from Winnipeg to Vancouver, often showing their nations’ stories, languages and clan animals.',
+      { h: 'From sketch to wall' },
+      'Painting a wall three storeys high is a puzzle of scale. Many muralists use the grid method. They draw a small sketch and cover it with a grid of squares. Then they mark a matching grid on the wall, with each square much larger. Square by square, they copy what is in each small box into the big one. Some artists project the image onto the wall at night instead.',
+      { fig: '<rect class="t" x="20" y="40" width="54" height="36"/><path class="t" d="M38 40 V76 M56 40 V76 M20 58 H74"/><path class="a" d="M20 70 Q47 40 74 62"/><circle class="k" cx="60" cy="49" r="4"/>' +
+          '<rect class="k" x="130" y="10" width="150" height="100"/><path class="t" d="M180 10 V110 M230 10 V110 M130 60 H280"/><path class="a" d="M130 93 Q205 10 280 71"/><circle class="k" cx="241" cy="35" r="11"/>' +
+          D.arrow(84, 58, 120, 58, 'k') + '<text class="n" x="47" y="94" text-anchor="middle">small sketch</text><text class="n" x="205" y="126" text-anchor="middle">wall</text>',
+        tall: 132, cap: 'The grid method. Each small square of the sketch is copied into the matching large square on the wall.' },
+      { h: 'Who decides?' },
+      'A mural changes a neighbourhood, so who chooses what goes on the wall? Cities often <b>commission</b> murals, and many, including Toronto, have programs that pay artists and match them with walls. The best projects first ask neighbours what matters to them: their history, their languages, their hopes. Building owners must agree before any work begins. A good mural can make an underpass feel safer, honour a community leader, or remind people whose land they are standing on. And because a mural is out in the weather, it will not last forever. Many cities now repaint or replace old murals, giving a new artist a turn.',
+      { box: 'Built to last', text: 'Outdoor murals face sun, rain and frost. Artists use paints made for the outdoors and often add a clear coat that protects the colours and lets spray-paint tags wash off easily.' }
+    ],
+    guide: { before: 'Look at the photo together and talk about what you notice first. Teach <b>mural</b> and <b>commission</b>.',
+      after: 'Try the grid method: draw a 3 by 2 grid over a small picture and copy it into a larger 3 by 2 grid.' },
+    words: [['mural', 'a large painting made directly on a wall'], ['commission', 'to ask and pay an artist to make a particular work']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'How is a mural different from a painting in a gallery?',
+        opts: ['Anyone passing by can see it for free.', 'It is always smaller.', 'It is painted on paper.', 'Only the artist can see it.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what changes between the sketch and the wall?',
+        opts: ['the size of each square', 'the number of squares', 'the shape of the picture', 'the colours'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A wall is “three <b>storeys</b> high.” What are <b>storeys</b>?',
+        opts: ['floors or levels of a building', 'tales or legends', 'shops', 'bricks'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why might a mural make an underpass feel safer?',
+        opts: ['A bright, cared-for space feels watched over and welcoming.', 'Paint makes walls stronger.', 'Murals block traffic.', 'Murals light up at night.'], a: 0 },
+      { k: 'order', code: 'C1.5', q: 'Number the steps of the grid method in order.',
+        items: ['Draw a small sketch.', 'Cover the sketch with a grid.', 'Mark a matching larger grid on the wall.', 'Copy the sketch square by square.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Who should decide what goes on a public wall? Whose voices does the author say matter?',
+        a: 'Neighbours should be asked about their history, languages and hopes; building owners must agree.', look: 'neighbours and owners, with a reason' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Describe a mural or piece of public art you have seen. What did it say about the place?',
+        a: 'Answers will vary.', look: 'a specific artwork and what it shows about its community' },
+      { k: 'choice', code: 'B3.2', q: 'In “Unlike a painting in a gallery, a mural belongs to everyone,” what does <b>Unlike</b> signal?',
+        opts: ['a contrast', 'a cause', 'a time order', 'an example'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-open-doors', subject: 'social', form: 'Speech', plain: true,
+    title: 'Open Doors for Everyone',
+    deck: 'A student’s speech to the school council about barriers',
+    hero: {
+      photo: 'g7-ramp.jpg', credit: 'Photo: AlphaBeta135, CC BY 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'A long, gentle ramp at a train station, built so that everyone can get to the platform.'
+    },
+    body: [
+      '<i>Malik gave this speech to his school’s student council. The speaker and the school are invented.</i>',
+      'Good afternoon. My name is Malik, and I am in Grade 7. Last month, my cousin Sara came to our school concert. Sara uses a wheelchair. She got into the building by the ramp at the side door, which was great. But when the concert ended and she wanted to come backstage to see me, she could not. There were six steps and no other way up. She waited in the hallway. I want to talk about why that matters, and what we can do.',
+      { h: 'What is a barrier?' },
+      'A <b>barrier</b> is anything that stops someone from taking part. Some barriers are physical, like steps, heavy doors or a water fountain that is too high. Some are about information, like an announcement that is only spoken, which a student who is Deaf will miss. Some are about attitude, like deciding someone cannot do something before asking them. About one in four Canadians aged 15 and older has a disability. Barriers affect a lot of people, including people at this school.',
+      { h: 'Good for everyone' },
+      'Here is something surprising. When cities cut ramps into curbs for wheelchair users, they found that almost everyone used them: parents with strollers, travellers with suitcases, kids on bikes, workers with delivery carts. People call this the curb-cut effect. When we remove a barrier for some people, we usually make things better for all of us. Captions on videos help people who are Deaf, but they also help anyone in a noisy cafeteria.',
+      { fig: '<path class="k" d="M10 76 H70 V48 H130"/><path class="a" d="M160 76 H196 L236 48 H290"/>' +
+          '<text class="lb" x="70" y="16" text-anchor="middle">curb</text><text class="n" x="70" y="32" text-anchor="middle">a step</text>' +
+          '<text class="lb" x="225" y="16" text-anchor="middle">curb cut</text><text class="n" x="225" y="32" text-anchor="middle">a gentle slope</text>' +
+          '<text class="n" x="150" y="104" text-anchor="middle">used by wheelchairs, strollers, suitcases, bikes and carts</text>',
+        tall: 112, cap: 'A curb seen from the side, before and after a curb cut.' },
+      { h: 'My proposal' },
+      'In 2005, Ontario passed a law that set a goal: an <b>accessible</b> province by 2025. That year has come and gone, and the goal has not been met. We do not have to wait for someone else. I am asking the council to do three things. First, walk through our school with students who have disabilities and list every barrier you find. Second, ask the principal to fix the stage first. Third, make sure every event we plan has a way in for everyone. This does not have to cost much to start. A walk-through takes one lunch hour, and listening is free. Sara should be able to come backstage next year. Thank you.',
+      { box: 'Ask, do not assume', text: 'If you are not sure whether someone wants help, ask. Then listen to the answer.' }
+    ],
+    guide: { before: 'Talk about a place where getting in or around was hard for someone. Teach <b>barrier</b> and <b>accessible</b>.',
+      after: 'Walk through your home or school together and list three barriers and how each could be fixed.' },
+    words: [['barrier', 'something that blocks a person from getting in or taking part'], ['accessible', 'easy for everyone to reach, enter, use or understand']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which features show that this text is a speech?',
+        opts: ['The speaker greets and thanks the audience and speaks to them directly.', 'It has a dateline.', 'It rhymes.', 'It lists ingredients.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does Malik begin with the story about Sara?',
+        opts: ['to make the problem real and personal for listeners', 'to show that Sara likes concerts', 'to complain about his cousin', 'to describe the ramp'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Which three kinds of barriers does Malik name?',
+        opts: ['physical, information and attitude', 'money, weather and time', 'doors, stairs and ramps', 'school, home and work'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, who uses a curb cut?',
+        opts: ['many people, including those with strollers and bikes', 'only people in wheelchairs', 'only drivers', 'no one'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'List the three things Malik asks the council to do.', cols: ['', 'Malik’s request'],
+        rows: [['First', null], ['Second', null], ['Third', null]],
+        a: [[null, 'walk through the school with students who have disabilities and list barriers'], [null, 'ask the principal to fix the stage first'], [null, 'make every event open to everyone']] },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Is Malik’s speech convincing? Which part persuaded you most, and why?',
+        a: 'Answers will vary, for example the story about Sara or the curb-cut effect.', look: 'an opinion tied to a specific part of the speech' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Name one barrier in a place you know. How could it be fixed?',
+        a: 'Answers will vary, for example a heavy door that could get an automatic button.', look: 'a real barrier and a sensible fix' },
+      { k: 'choice', code: 'B3.2', q: 'In the box, what kind of sentence is “Then listen to the answer”?',
+        opts: ['a command', 'a question', 'an exclamation', 'a statement of fact'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-two-row', subject: 'history', form: 'Report',
+    title: 'Two Boats, One River',
+    deck: 'The Two Row Wampum, a Haudenosaunee record of an agreement between equals',
+    hero: {
+      photo: 'g7-wampum.jpg', credit: 'Photo: Nosferattus, CC0, Wikimedia Commons', focus: '50% 55%',
+      tall: 200,
+      cap: 'Strands of wampum in a museum. The beads are made from white and purple shells.'
+    },
+    body: [
+      'For the Haudenosaunee, the six nations of the Iroquois Confederacy, an agreement is not just words. It is something you can hold. Important promises were woven into belts of small shell beads called <b>wampum</b>. White beads come from whelk shells; purple beads come from the shell of the quahog clam. Each belt’s pattern stands for an agreement. Trained keepers learned to read the belts aloud and passed their meaning from one generation to the next.',
+      { h: 'Two rows on a river' },
+      'One of the most famous belts is the Two Row Wampum. According to Haudenosaunee history, it records an agreement made with Dutch traders in 1613, near what is now Albany, New York. The belt has two rows of purple beads running side by side on a white background. One row is a Haudenosaunee canoe. The other is a European ship. The two boats travel down the same river of life. Each carries its own people, laws and ways of life, and neither tries to steer the other.',
+      { fig: '<rect class="k" x="80" y="20" width="200" height="74"/><rect class="h" x="80" y="34" width="200" height="10"/><rect class="h" x="80" y="70" width="200" height="10"/>' +
+          '<text class="lb" x="72" y="43" text-anchor="end">canoe</text><text class="lb" x="72" y="79" text-anchor="end">ship</text>' +
+          '<text class="n" x="180" y="61" text-anchor="middle">white: peace, friendship, respect</text>',
+        tall: 104, cap: 'A sketch of the Two Row pattern. Two purple rows travel side by side, separated by white.' },
+      { h: 'Equals on the water' },
+      'The rows of white beads stand for peace, friendship and respect. The idea is that the two peoples will share the land and the river as equals for as long as the grass grows and the rivers flow. Many Haudenosaunee leaders see the Two Row as the basis of every <b>treaty</b> that came after, including agreements with Britain and later with Canada. The belt also carries a warning: no one can stand with one foot in the canoe and one in the ship. If the boats drift apart, that person falls into the river.',
+      { box: 'History in a belt', text: 'Some historians have asked for written proof of the 1613 agreement. Haudenosaunee people point out that the belt itself is the record, and that history kept by trained keepers is real evidence.' },
+      { h: 'Paddling together' },
+      'In 2013, to mark 400 years, hundreds of Haudenosaunee and non-Indigenous paddlers travelled down the Hudson River together in two lines, side by side, all the way to New York City. They wanted to remind people that the promise still matters. Today, when people argue about land, water or resources, the Two Row asks a simple question: are both boats being treated as equals?'
+    ],
+    guide: { before: 'Locate Haudenosaunee territory and the Hudson River on a map. Teach <b>wampum</b> and <b>treaty</b>.',
+      after: 'Talk about a promise between two groups you know. How could it be recorded so it lasts 400 years?' },
+    words: [['wampum', 'beads made from shells, woven into belts or strings to record agreements and events'], ['treaty', 'a formal agreement between nations']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What are wampum belts made of?',
+        opts: ['small beads made from shells', 'carved wood', 'painted leather', 'woven grass'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the sketch, what do the two purple rows stand for?',
+        opts: ['a canoe and a ship', 'two rivers', 'two wars', 'two chiefs'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Each boat travels on its own and “neither tries to steer the other.” What does this mean for the two peoples?',
+        opts: ['Each keeps its own laws and ways of life.', 'They must race each other.', 'One must follow the other.', 'They will never meet.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the paddlers in 2013 travel in two lines, side by side?',
+        opts: ['to act out the message of the belt', 'because the river was narrow', 'to win a race', 'to carry more people'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain the message of the Two Row Wampum in your own words.',
+        a: 'Two peoples share the land as equals, each following its own ways, in peace, friendship and respect.', look: 'equals, own ways, peace and respect' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Read the box. Why do you think the author included it? What does it show about whose records count as evidence?',
+        a: 'To show that oral history and belts are real records, not only written documents.', look: 'oral history and the belt count as evidence' },
+      { k: 'choice', code: 'C1.5', q: 'How is the report organized?',
+        opts: ['It explains wampum, describes one belt and its meaning, then shows why it matters today.', 'It gives steps for making a belt.', 'It compares two museums.', 'It tells a made-up story.'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a semicolon in “White beads come from whelk shells; purple beads come from…”?',
+        opts: ['to join two closely related sentences', 'to start a list', 'to show a quotation', 'to end a question'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-fundy', subject: 'geography', form: 'Report',
+    title: 'The Bay That Breathes',
+    deck: 'Why the Bay of Fundy has the highest tides in the world',
+    hero: {
+      photo: 'g7-fundy.jpg', credit: 'Photo: Share Bear, public domain, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'Low tide at the Bay of Fundy. In about six hours, water will cover this beach and climb high up the rocks.'
+    },
+    body: [
+      'Twice a day, the Bay of Fundy, between New Brunswick and Nova Scotia, empties and fills like a giant bathtub. At the Hopewell Rocks, visitors can walk on the sea floor at low tide, among tall rock pillars topped with trees. About six hours later, the same spot is under water deep enough for kayaks. Many visitors come back twice in one day to see both. The bay has the highest tides in the world.',
+      { h: 'How high?' },
+      'The difference in height between high and low tide is called the <b>tidal range</b>. On most ocean coasts it is a metre or two. In the Minas Basin, at the top end of the bay, it can reach about 16 m, as tall as a four-storey building. Each tide moves about 100 billion tonnes of water in and out of the bay, more than the flow of all the world’s rivers combined.',
+      { fig: [['Bay of Fundy', 16, '16 m'], ['Vancouver', 5, '5 m'], ['Halifax', 2, '2 m'], ['Lake Ontario', 0.1, 'a few cm']].map(function (r, i) { var y = 14 + i * 28; return '<text class="l" x="94" y="' + (y + 13) + '" text-anchor="end">' + r[0] + '</text><rect class="' + (i ? 'k' : 'h') + '" x="100" y="' + y + '" width="' + r[1] * 10 + '" height="18"/><text class="n" x="' + (106 + r[1] * 10) + '" y="' + (y + 13) + '">' + r[2] + '</text>'; }).join('') +
+          '<text class="n" x="100" y="130">largest tidal range, in metres</text>',
+        tall: 136, cap: 'The largest tidal range at four places. Lake Ontario has almost no tide at all.' },
+      { h: 'Why here?' },
+      'Tides are caused mostly by the Moon’s gravity, which pulls the ocean into a bulge that moves around Earth. Every coast feels it, so why is Fundy special? Part of the answer is shape. The bay is wide at its mouth and gets narrower and shallower toward its head, like a funnel. Water pushed in has nowhere to go but up. The bigger part is timing. Water in the bay naturally sloshes back and forth about once every 13 hours, very close to the 12 hours and 25 minutes between high tides. Each new tide arrives just in time to add to the slosh, the way well-timed pushes make a swing go higher. Scientists call this <b>resonance</b>.',
+      { box: 'Check the tide table', text: 'The tide can rise quickly over Fundy’s mud flats. People who explore the sea floor check a tide table first and leave with plenty of time to spare.' },
+      { h: 'Living with the tides' },
+      'The tides shape life around the bay. Mud flats left bare at low tide feed huge flocks of migrating shorebirds each summer. The Mi’kmaq have fished and gathered food along these shores for thousands of years. Engineers have long dreamed of using the tides to make electricity, but the same strong currents that make the idea attractive also break equipment and can harm fish.'
+    ],
+    guide: { before: 'Find the Bay of Fundy on a map. Teach <b>tidal range</b> and <b>resonance</b>. Push a swing or sway in a chair to feel well-timed pushes.',
+      after: 'Use the chart to compare tidal ranges, then measure 16 m outside to see how high the water rises.' },
+    words: [['tidal range', 'the difference in height between high tide and low tide'], ['resonance', 'when pushes come at just the right rhythm and make a movement grow bigger']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. How many times greater is the tidal range at the Bay of Fundy than at Halifax?',
+        opts: ['8 times', '2 times', '14 times', '16 times'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What mostly causes tides?',
+        opts: ['the Moon’s gravity', 'strong winds', 'melting ice', 'rivers flowing into the sea'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The author compares the tides to pushing a swing. What does this help you understand?',
+        opts: ['Pushes at the right moment build a bigger movement.', 'Swings are found near the bay.', 'Water moves in circles.', 'Tides are a kind of game.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The bay is wide at its <b>mouth</b>. What is the mouth of a bay?',
+        opts: ['the opening where it meets the open sea', 'its deepest point', 'a cave in the cliffs', 'a river that feeds it'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Explain the two reasons the Fundy tides are so high.', cols: ['Reason', 'How it makes the tide higher'],
+        rows: [['shape', null], ['timing', null]],
+        a: [[null, 'the bay narrows and gets shallower, so the water has to rise'], [null, 'the bay’s natural slosh matches the tides, so each tide adds to it']] },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'A family arrives at the Hopewell Rocks at low tide and plans to stay on the sea floor all afternoon. Predict what will happen, and give them advice.',
+        a: 'The tide will come back in within hours and cover the beach. They should check a tide table and leave early.', look: 'the returning tide and sensible advice' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Resonance is a tricky idea. What did you do to understand it?',
+        a: 'Answers will vary, for example rereading, thinking about the swing comparison, or looking at the 13-hour and 12-hour times.', look: 'a named strategy' },
+      { k: 'choice', code: 'C1.5', q: 'Which question does the section “Why here?” answer?',
+        opts: ['Why are Fundy’s tides so much higher than elsewhere?', 'Where do the shorebirds go?', 'Who lives near the bay?', 'How do kayaks float?'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-interpreter', subject: 'story', form: 'Short story',
+    title: 'Don’t Make It Nice',
+    deck: 'A girl speaks for her mother at the doctor’s office',
+    hero: {
+      photo: 'g7-waiting-room.jpg', credit: 'Photo: Kurt Kaiser, CC0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'A quiet waiting room at a doctor’s office.'
+    },
+    body: [
+      'Thảo had already missed math class twice this month. She did not mind missing math. She minded the waiting room: the hum of the lights, the smell of hand sanitizer, the chairs in a stiff row, and the clock that never seemed to move. Her mother sat beside her, holding her purse on her lap with both hands, the way she always did when she was nervous.',
+      '“Tell me everything the doctor says,” her mother said in Vietnamese. “Everything. Don’t make it nice.”',
+      '“I know, Mẹ.”',
+      { h: 'Big words' },
+      'Dr. Okafor was kind, and she spoke quickly. She looked at the numbers on her screen and frowned a little. “Your mother’s blood pressure is still high,” she said. “This is <b>hypertension</b>. I want to change the dosage of her medication and see her again in four weeks. If she gets chest pain or a very bad headache, she needs to go to emergency right away.”',
+      'Thảo opened her mouth, and nothing came out. She knew the Vietnamese words for <i>rice</i>, <i>grandmother</i> and <i>hurry up</i>. She did not know a word for hypertension. She was not even sure what <i>dosage</i> meant in English. For a second, she thought about just saying, “The doctor says you are fine.” Her mother would smile. They could leave.',
+      'Then she remembered. <i>Don’t make it nice.</i>',
+      { fig: [['Dr. Okafor', 50], ['Thảo', 150], ['Mẹ (Mom)', 250]].map(function (p) { return '<rect class="' + (p[0] === 'Thảo' ? 'h' : 'k') + '" x="' + (p[1] - 42) + '" y="14" width="84" height="30" rx="6"/><text class="lb" x="' + p[1] + '" y="34" text-anchor="middle">' + p[0] + '</text>'; }).join('') +
+          D.arrow(94, 29, 106, 29, 'a') + D.arrow(194, 29, 206, 29, 'a') +
+          '<text class="n" x="50" y="66" text-anchor="middle">“hypertension”</text><text class="n" x="150" y="66" text-anchor="middle">“high blood pressure”</text><text class="n" x="250" y="66" text-anchor="middle">huyết áp cao</text>' +
+          '<text class="n" x="100" y="86" text-anchor="middle">English</text><text class="n" x="200" y="86" text-anchor="middle">Vietnamese</text>',
+        tall: 94, cap: 'A hard word has to become plain words before Thảo can turn it into Vietnamese.' },
+      { h: 'Asking' },
+      '“Sorry,” Thảo said, and her face went hot. “Can you say that in easier words? I don’t know how to say some of it.”',
+      'Dr. Okafor stopped typing. “Of course. That’s my fault.” She explained slowly: high blood pressure, a stronger pill, one each morning, come back next month. She wrote the warning signs on a card in big letters. Thảo turned each sentence into Vietnamese, carefully, and her mother nodded and asked two questions of her own.',
+      { h: 'Next time' },
+      'At the front desk, the receptionist leaned over. “Next visit, we can book an <b>interpreter</b> on the phone,” she said. “Someone trained in medical words. You could stay in school.”',
+      'On the bus home, her mother squeezed her hand. “You did well,” she said. Thảo looked out the window at the snow. She felt proud, and tired, and a little relieved that next time she might get to sit in math class after all.'
+    ],
+    guide: { before: 'Ask if the child has ever had to explain something for someone else. Teach <b>hypertension</b> and <b>interpreter</b>. Mẹ (say “meh”) means Mom in Vietnamese.',
+      after: 'Role-play: one person says a hard sentence, the other asks for easier words and then explains it.' },
+    words: [['hypertension', 'the medical word for high blood pressure'], ['interpreter', 'a person who turns spoken words from one language into another']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'From whose point of view do we mostly see the story?',
+        opts: ['Thảo’s', 'Dr. Okafor’s', 'her mother’s', 'the receptionist’s'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Thảo’s mother say “Don’t make it nice”?',
+        opts: ['She wants the whole truth, even if it is bad news.', 'She wants Thảo to be rude.', 'She does not trust the doctor.', 'She wants to leave quickly.'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why is Thảo tempted to say “The doctor says you are fine”?',
+        opts: ['She does not know the words and wants it to be over.', 'The doctor said so.', 'Her mother asked her to.', 'She is late for math.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, what must happen to “hypertension” before Thảo can translate it?',
+        opts: ['It must become plain English words.', 'It must be written down.', 'It must be shouted.', 'It must be spelled backward.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How does Thảo change from the start of the visit to the end? What helps her change?',
+        a: 'She goes from frozen and tempted to hide the truth to brave enough to ask for easier words. Remembering her mother’s words helps.', look: 'a change and what causes it' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Have you ever had to explain something for someone else, or not known a word you needed? How did that help you understand Thảo?',
+        a: 'Answers will vary.', look: 'a real experience linked to Thảo’s feelings' },
+      { k: 'choice', code: 'C1.5', q: 'What is the turning point of the story?',
+        opts: ['Thảo remembers “Don’t make it nice” and asks for easier words.', 'They get on the bus.', 'The receptionist leans over.', 'Thảo misses math class.'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why are <i>rice</i>, <i>grandmother</i> and <i>hurry up</i> in italics?',
+        opts: ['They are being talked about as words.', 'They are shouted.', 'They are titles of books.', 'They are spelled wrong.'], a: 0 }
+    ]
+  });
 })();

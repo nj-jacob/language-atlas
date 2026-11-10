@@ -115,12 +115,14 @@
     return '<figure class="ps-hero' + (h.photo ? ' ps-photo' : '') + '" style="--tall:' + h.tall + '">' + pic +
       (full ? '<figcaption>' + h.cap + (h.credit ? ' <span class="ps-credit">' + h.credit + '</span>' : '') + '</figcaption>' : '') + '</figure>';
   }
+  /* Keep a number such as 8 000 on one line: the space between its groups of digits does not break. */
+  function nobreak(t) { return t.replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00a0'); }
   function front(p, th) {
     var body = p.body.map(function (b) {
-      if (typeof b === 'string') return '<p>' + b + '</p>';
+      if (typeof b === 'string') return '<p>' + nobreak(b) + '</p>';
       if (b.h) return '<h3>' + b.h + '</h3>';
       if (b.fig) return '<figure class="ps-fig">' + art(b.fig, 300, b.tall) + (b.cap ? '<figcaption>' + b.cap + '</figcaption>' : '') + '</figure>';
-      return '<aside class="ps-box"><p class="ws-label">' + b.box + '</p><p>' + b.text + '</p></aside>';
+      return '<aside class="ps-box"><p class="ws-label">' + b.box + '</p><p>' + nobreak(b.text) + '</p></aside>';
     }).join('');
     return '<div class="ws-page ps-page ps-front">' + frame(th) + head(p, th) +
       hero(p, true) +

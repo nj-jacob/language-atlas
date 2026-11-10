@@ -168,3 +168,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-selfie.jpg` | A person taking a selfie | Maëlick | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Woman_taking_Selfie_at_Elliott_Bay,_Seattle,_2014.jpg |
 | `g7-edmonton-cold.jpg` | A cold, snowy day in Edmonton | hobvias sudoneighm | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Snowing_in_Deadmonton_~_physics_(130219606).jpg |
 | `g7-log-house.jpg` | A log house at Fanshawe Pioneer Village, London, Ontario | Adam Bishop | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fanshawe_Pioneer_Village_log_house.jpg |
+| `g7-microplastic.jpg` | Microplastics found on a beach | OceanBlueProject | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Microplastic-found-key-largo-beach-state-park.jpg |
+| `g7-brown-bat.jpg` | A little brown bat with white-nose syndrome | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Little_brown_bat_with_white-nose_syndrome_(5751822315).jpg |
+| `g7-stone-arch.jpg` | A stone arch bridge over the Orb, Roquebrun, France | Christian Ferrer | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Pont_sur_l'Orb,_Roquebrun.jpg |
+| `g7-nl-coast.jpg` | The coast of Newfoundland | Michel Rathwell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Seascape_Newfoundland_(39554985280).jpg |
+| `g7-smoke-haze.jpg` | Wildfire smoke haze over Vancouver, 2021 | Rod Raglin | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Haze_from_Wildfire_smoke_Vancouver_2021_(51379645320).jpg |
+| `g7-sahel.jpg` | Satellite view of the Sahel in Mali | NASA (MODIS) | Public domain | https://commons.wikimedia.org/wiki/File:Greening_in_Mali_(MODIS_2021-11-18).jpg |
+| `g7-study-group.jpg` | Students working together in a study group | Barry Pousman | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Biology_study_group_(6146861188).jpg |
+| `g7-kathak.jpg` | A Kathak dancer at a ghat in Varanasi | Rhythm India | CC0 | https://commons.wikimedia.org/wiki/File:Kathak_Dancer_at_Varanasi_Ghat.jpg |
+| `g7-farm-drone.jpg` | An agricultural drone spraying a rice field | Shreesha Sharma | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agricultural_drone_spraying_on_paddy_field.jpg |
+| `g7-rue-saint-paul.jpg` | Rue Saint-Paul in Old Montréal | shankar s. | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Rue_Saint-Paul_(8391089921).jpg |
+| `g7-wind-farm.jpg` | A wind farm in Chatham-Kent, Ontario | Ken Lund | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Wind_Farm,_Chatham-Kent,_Ontario_(21153525803).jpg |
+| `g7-seasons.jpg` | Earth from space at different seasons | NASA Earth Observatory | Public domain | https://commons.wikimedia.org/wiki/File:An_Epic_View_of_the_Seasons_(1378514_-_lrg).jpg |
+| `g7-bike-lane.jpg` | A protected bike lane in Toronto | Nate Wessel | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Toronto_Protected_Bike_Lanes.jpg |
+| `g7-maya-numerals.jpg` | Maya number signs, from a 1915 book by Sylvanus Morley | Sylvanus Griswold Morley | Public domain | https://commons.wikimedia.org/wiki/File:Maya_Hieroglyphs_Fig_53.jpg |
+| `g7-murals.jpg` | Murals in Kensington Market, Toronto | Bernard Spragg | CC0 | https://commons.wikimedia.org/wiki/File:Murals_at_Kensington_Market,_Toronto;_September_2019.jpg |
+| `g7-ramp.jpg` | An accessibility ramp at a train station | AlphaBeta135 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Accessibility_ramp_at_Grayland_station_-_August_2025.jpg |
+| `g7-wampum.jpg` | Wampum at the Seneca-Iroquois National Museum | Nosferattus | CC0 | https://commons.wikimedia.org/wiki/File:Wampum_at_Seneca_Iroquois_National_Museum.jpg |
+| `g7-fundy.jpg` | Low tide in the Bay of Fundy | Share Bear | Public domain | https://commons.wikimedia.org/wiki/File:118_-_Low_Tide_in_the_Bay_of_Fundy.JPG |
+| `g7-waiting-room.jpg` | A doctor's office waiting room | Kurt Kaiser | CC0 | https://commons.wikimedia.org/wiki/File:Doctor_office_waiting_room.jpg |
+| `g7-map-compass.jpg` | A compass resting on a map | Wodgester | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Compass_on_map.jpg |
