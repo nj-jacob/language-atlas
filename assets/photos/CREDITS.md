@@ -89,3 +89,22 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
 | `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
 | `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
+| `g8-hooke-cork.jpg` | Robert Hooke’s drawing of cork cells (Schem. XI) from *Micrographia*, 1665 | Robert Hooke | Public domain | https://commons.wikimedia.org/wiki/File:Micrographia_Schem_11.jpg |
+| `g8-red-river-cart.jpg` | A Red River ox cart and its driver in St. Paul, Minnesota, 1800s | Unknown photographer | Public domain | https://commons.wikimedia.org/wiki/File:Red_river_ox_cart_and_driver_in_St._Paul.jpg |
+| `g8-lake-freighter.jpg` | The bulk freighter Isolda approaching Cleveland on Lake Erie | William Davies | CC0 | https://commons.wikimedia.org/wiki/File:Polsteam_bulk_freighter_%22Isolda%22_approaching_Cleveland._(51259045193).jpg |
+| `g8-shibuya.jpg` | The Shibuya scramble crossing in Tokyo, from above | David Kernan | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Shibuya_Crossing,_Aerial.jpg |
+| `g8-heading-ball.jpg` | A soccer player heading the ball | Newfoundlandguy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Heading_the_ball.jpg |
+| `g8-cottingley.jpg` | “Frances and the Leaping Fairy,” the third Cottingley Fairies photo, 1920 | Elsie Wright | Public domain | https://commons.wikimedia.org/wiki/File:Cottingley_Fairies_3.jpg |
+| `g8-last-spike.jpg` | Donald Smith driving the last spike of the Canadian Pacific Railway, Craigellachie, BC, 1885 | Alexander Ross | Public domain | https://commons.wikimedia.org/wiki/File:Donald_A._Smith_driving_the_Last_Spike_to_complete_the_Canadian_Pacific_Railway,_1885.jpg |
+| `g8-sap-buckets.jpg` | Metal sap buckets on maple trees | U.S. Department of Agriculture | Public domain | https://commons.wikimedia.org/wiki/File:Sap_buckets_on_maple_trees.jpg |
+| `g8-goalie.jpg` | A goalie dropping to block a shot in an AHL game | The AHL | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:STP_20160201_337_(39368552025).jpg |
+| `g8-rc-harris.jpg` | The R. C. Harris Water Treatment Plant, Toronto | Richard Kang | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:RC_Harris_Water_Treatment_Plant_2009.jpg |
+| `g8-lake-superior.jpg` | The Lake Superior shoreline | U.S. Fish and Wildlife Service (Midwest Region) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Lake_Superior_shoreline_along_Michigan._(16039216709).jpg |
+| `g8-water-pump.jpg` | A girl at a hand water pump in Mali | Ferdinand Reus | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Mali_water_pump.jpg |
+| `g8-chilkoot.jpg` | Stampeders and supplies at the Scales, below the summit of the Chilkoot Pass, 1898 | Unknown photographer (Museum of History and Industry, Seattle) | Public domain | https://commons.wikimedia.org/wiki/File:Scales_and_summit_of_Chilkoot_Pass,_1898_(MOHAI_7249).jpg |
+| `g8-throat-singing.jpg` | Two Inuit throat singers performing face to face | Rudolf H. Boettcher | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Charlotte_-_Alexia_-_Inuit_throat_singing.jpg |
+| `g8-athabasca-glacier.jpg` | The Athabasca Glacier from the valley floor, Jasper National Park, Alberta | Ethan Sahagun | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Athabasca_Glacier_from_the_valley_floor,_Jasper_National_Park,_Alberta,_Canada.jpg |
+| `g8-excavator.jpg` | A JCB hydraulic excavator | Oto Zapletal | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:2023-02-13_-_JCB_JS220LC_hydraulic_excavator_-_01.jpg |
+| `g8-alarm-clock.jpg` | A classic twin-bell alarm clock | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Classic_alarm_clock_20180513.jpg |
+| `g8-nellie-mcclung.jpg` | Nellie McClung, about 1910 | Cyril Jessop | Public domain | https://commons.wikimedia.org/wiki/File:Nellie_McClung.jpg |
+| `g8-jack-pine.jpg` | *The Jack Pine*, painting by Tom Thomson, 1916–17 (National Gallery of Canada) | Tom Thomson | Public domain | https://commons.wikimedia.org/wiki/File:Tom_Thomson_-_The_Jack_Pine_1916.jpg |
