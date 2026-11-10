@@ -107,7 +107,11 @@ Open-ended writing is never auto-marked. It goes to the grown-up with a simple r
 
 ## Quick question makers
 
-`Atlas.Q.one(q, right, [wrong...], more)` makes a pick-one question, `Atlas.Q.tiles(...)` a tap-a-tile question, and `Atlas.Q.all(q, [right...], [wrong...], more)` a pick-every-answer question. `more` holds the other fields (`fig`, `hint`, `explain`, `steps`, `prompt`, `meta`).
+`Atlas.Q.one(q, right, [wrong...], more)` makes a pick-one question, `Atlas.Q.tiles(...)` a tap-a-tile question, `Atlas.Q.all(q, [right...], [wrong...], more)` a pick-every-answer question, and `Atlas.Q.tf(q, right, whyTrue, whyFalse, more)` a true-or-false question with its two reasons (the first is why it is true). `more` holds the other fields (`fig`, `hint`, `explain`, `steps`, `prompt`, `meta`).
+
+## Worksheets
+
+Every question here also prints on a worksheet (see "Printable worksheets" in `ARCHITECTURE.md`), so write questions that make sense on paper too: say "Tap" or "Pick" (paper says "Circle"), and keep a question's passage in its `fig` or `pic` (`Atlas.texts.show`), so a sheet can print it once at the top. A grade's `gradeN/sheets/<chapter>.js` adds each idea's "I can" line (`goal`) and its Think questions: questions from this kit (with `meta.k` and an answer check), or open questions `{ q, fig, lines: 3, key: 'a good answer' }` for the grown-up to mark.
 
 ## Worksheets
 
