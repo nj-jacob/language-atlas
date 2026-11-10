@@ -3917,4 +3917,980 @@
     ]
   });
 
+  P.add({
+    id: 'g5-fireworks', subject: 'science', form: 'Explanation',
+    title: 'The Chemistry of Fireworks',
+    deck: 'Every burst of colour in the sky is a chemical change you can see and hear',
+    hero: {
+      photo: 'g5-fireworks.jpg', credit: 'CREDIT', focus: '50% 45%',
+      tall: 220,
+      cap: 'Fireworks light up the sky on Canada Day.'
+    },
+    body: [
+      'On Canada Day, crowds gather in the dark and wait. Then, with a whoosh and a bang, the sky bursts into gold, red, green and blue. Those beautiful patterns are science in action. Every firework is a carefully planned set of <b>chemical changes</b>.',
+      { h: 'Inside a firework' },
+      'A firework shell is a paper tube with three main parts. At the bottom is a lift charge of black powder. In the middle is a <b>fuse</b> that burns slowly, like a timer. At the top are small pellets called stars, which hold the chemicals that make colour.',
+      { fig: '<rect class="k" x="110" y="10" width="80" height="140" rx="8"/><path class="d" d="M110 110 H190 M110 60 H190"/>' +
+          [[130, 30], [150, 30], [170, 30], [140, 45], [160, 45]].map(function (p) { return '<circle class="a" cx="' + p[0] + '" cy="' + p[1] + '" r="6"/>'; }).join('') +
+          '<path class="t" d="M150 62 Q140 80 150 90 Q160 100 150 108"/>' +
+          D.label(200, 36, 'stars: make colour') + D.label(200, 88, 'fuse: timer') + D.label(200, 134, 'lift charge'),
+        tall: 156, cap: 'Inside a firework shell.' },
+      { h: 'Up, then out' },
+      'When the lift charge is lit, it burns in a flash. Hot gases push the shell high into the air, the same way air pushes a cork out of a bottle. While the shell rises, the fuse burns. At the top, the fuse reaches a second charge, which bursts the shell open and lights the stars. The stars fly outward in a ball of light.',
+      { h: 'Where the colour comes from' },
+      'Each colour comes from a different metal in the stars. When a metal gets very hot, it gives off light of a certain colour.',
+      { box: 'Colour chart', text: 'strontium: red · barium: green · copper: blue · sodium: yellow · mixed red and blue: purple' },
+      'Blue is the hardest colour to make, because the copper must be hot enough to glow but not so hot that the colour disappears.',
+      { h: 'A change you cannot undo' },
+      'When a firework burns, new substances form: smoke, ash and gases. You cannot turn the smoke back into a firework. That is a sign of a chemical change. Other signs are light, heat, sound and a new smell. Fireworks show them all at once.',
+      'Fireworks makers are part chemist and part artist. They plan each show to music, timing every burst to the second. Some shells hold stars inside stars, so one colour bursts and then changes into another.',
+      'Fireworks are beautiful, but they are also dangerous. Only trained adults should light them, and everyone else should watch from a safe distance.'
+    ],
+    guide: { before: 'Review the signs of a chemical change (new colour, gas, heat, light, smell). Teach <b>chemical change</b>, <b>fuse</b> and <b>shell</b>.',
+      after: 'What other chemical changes have you seen? Can any of them be undone?' },
+    words: [['chemical changes', 'changes that make new substances and cannot easily be undone'], ['fuse', 'a cord that burns slowly to set off a charge']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Canada Day is fun.', 'Fireworks use chemical changes and metals to make light, colour and sound.', 'Copper is blue.', 'Fireworks are paper.'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the events from 1 to 4.',
+        items: ['The lift charge burns.', 'The shell rises as the fuse burns.', 'The burst charge opens the shell.', 'The stars fly out in colour.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which part works like a timer?',
+        opts: ['the fuse', 'the stars', 'the lift charge', 'the paper'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Use the colour chart. Which metal makes green?',
+        opts: ['barium', 'copper', 'sodium', 'strontium'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why does the author compare the lift charge to a cork in a bottle?',
+        opts: ['to help you picture gas pushing something up', 'to talk about drinks', 'to make a joke', 'to describe colour'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'In the colour chart, what do the colons ( : ) do?',
+        opts: ['link each metal to its colour', 'end sentences', 'show a question', 'join two names'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'How do you know a firework burning is a chemical change? Give two signs.',
+        a: 'New substances such as smoke and ash form and cannot be turned back. It also gives off light, heat and sound.', look: 'two signs of chemical change from the text' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about fireworks? How did it help you understand the text?',
+        a: 'I knew fireworks are loud and colourful. That helped me connect the bang and light to signs of a chemical change.', look: 'names prior knowledge and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-phantom-power', subject: 'science', form: 'Report',
+    title: 'The Energy Vampires',
+    deck: 'Your home may be using electricity even when everything is turned off',
+    hero: {
+      photo: 'g5-power-bar.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A power bar with many plugs. Some devices draw power even when they are off.'
+    },
+    body: [
+      'It is late at night. Everyone is asleep, and the lights are off. But look around: a tiny red light glows on the TV, a clock shines on the microwave, and a phone charger is warm in the wall. Your home is still using <b>electricity</b>. Some people call these devices energy vampires, because they quietly drain power while no one is looking.',
+      { h: 'Standby power' },
+      'Many devices never turn all the way off. They stay in standby mode, ready to wake up the moment you press a button on the remote. Game consoles, cable boxes, computers, printers and chargers left in the wall all use small amounts of power around the clock.',
+      { fig: '<path class="k" d="M40 10 V130 H290"/>' + [['TV box', 70], ['console', 50], ['computer', 40], ['microwave', 18], ['charger', 6]].map(function (d, i) {
+          var x = 66 + i * 50, h = d[1] * 1.4; return '<rect class="' + (i === 0 ? 'a' : 'k') + '" x="' + (x - 14) + '" y="' + (130 - h) + '" width="28" height="' + h + '"/><text class="n" x="' + x + '" y="' + (124 - h) + '" text-anchor="middle">' + d[1] + '</text><text class="n" x="' + x + '" y="146" text-anchor="middle">' + d[0] + '</text>'; }).join('') +
+          '<text class="n" x="36" y="20" text-anchor="end">kWh</text>',
+        tall: 152, cap: 'Electricity used in a year on standby by some devices in one home (example values, in kilowatt-hours).' },
+      'One device does not use much. But a typical Canadian home has dozens of them. Added together, standby power can be about 5 to 10% of a family’s electricity use.',
+      { h: 'Why it matters' },
+      'Electricity has to be made somewhere. In Ontario, much of it comes from nuclear power plants and dams on rivers. In some places, it comes from burning natural gas or coal, which adds pollution to the air. Wasting electricity means more of it must be made, and it costs families money.',
+      { h: 'Stop the vampires' },
+      'Unplug chargers when you are not using them. Plug several devices into one power bar, then switch the bar off at night. Turn off game consoles completely instead of leaving them in rest mode. When buying new devices, look for the ENERGY STAR symbol, which means the device uses less energy.',
+      { box: 'Be an energy detective', text: 'Walk through your home at night. Count the glowing lights and clocks. Each one is using power.' },
+      'Small actions add up. If every home in Canada cut its standby power, it would save enough electricity to power a whole city. <b>Conserving</b> energy starts with a flick of a switch. Ask your family to make it a habit, and check the electricity bill each month to see whether it makes a difference.'
+    ],
+    guide: { before: 'Explain that a kilowatt-hour (kWh) measures how much electricity is used. Look at your family’s electricity bill if you can. Teach <b>standby</b>, <b>conserve</b> and <b>electricity</b>.',
+      after: 'How many energy vampires can you find at home? Which could you unplug?' },
+    words: [['electricity', 'a form of energy that powers lights and machines'], ['conserving', 'saving something by using less of it']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['TVs have red lights.', 'Devices use power on standby, and simple actions can save energy and money.', 'Ontario has dams.', 'Vampires are scary.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. Which device uses the most standby power?',
+        opts: ['TV box', 'console', 'microwave', 'charger'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'About how many more kWh does the console use than the microwave?',
+        opts: ['32', '18', '50', '68'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why does the author call the devices “energy vampires”?',
+        opts: ['They quietly drain power.', 'They come out at night only.', 'They are scary to touch.', 'They are red.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>standby</b> mean in this text?',
+        opts: ['waiting, ready to turn on', 'standing up', 'broken', 'brand new'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the problem and solution.', cols: ['Problem', 'Solution'],
+        rows: [['Chargers left in the wall', null], ['Many devices on standby at night', null], [null, 'Look for the ENERGY STAR symbol.']],
+        a: [[null, 'Unplug them.'], [null, 'Switch off the power bar.'], ['Buying a device that wastes energy', null]] },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Plan an energy detective walk at home. What will you look for, and what will you do?',
+        a: 'I will count glowing lights and clocks at night. Then I will unplug chargers and ask to use a power bar for the TV.', look: 'a realistic plan using strategies from the text' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Does the author think small actions matter? Give evidence.',
+        a: 'Yes. The author says small actions add up and that cutting standby power could power a whole city.', look: 'identifies the author’s view with evidence' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-coding', subject: 'tech', form: 'How-to',
+    title: 'Talking to a Computer',
+    deck: 'Computers only do exactly what you tell them. Coding is the art of telling them clearly',
+    hero: {
+      photo: 'g5-coding.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Students building a program with blocks of code.'
+    },
+    body: [
+      'Imagine you ask a friend to make you a peanut-free sandwich. You say, “Put the jam on the bread.” Your friend knows what you mean. A computer would not. It might put the whole jar on top of the loaf. Computers are fast, but they only follow instructions exactly. Writing those instructions is called <b>coding</b>.',
+      { h: 'Algorithms' },
+      'A set of clear steps for solving a problem is called an <b>algorithm</b>. You use algorithms every day: a recipe, the steps to tie your shoes, the route you take to school. In coding, each step must be small, exact and in the right order.',
+      { fig: steps(4, [['start', ''], ['move 2', 'squares'], ['turn', 'left'], ['move 1', 'square'], ['end', '']], 46) +
+          '<rect class="t" x="60" y="70" width="180" height="70"/>' + [0, 1, 2, 3].map(function (i) { return '<path class="t" d="M' + (60 + i * 45) + ' 70 V140"/>'; }).join('') + '<path class="t" d="M60 105 H240"/>' +
+          '<circle class="k" cx="82" cy="122" r="7"/><path class="a" d="M82 122 H172 V88"/><path class="a" d="M166 96 L172 86 L178 96"/>',
+        tall: 146, cap: 'An algorithm for a robot on a grid, and the path it takes.' },
+      { h: 'Loops and ifs' },
+      'Coders use tools to make their instructions shorter and smarter. A loop repeats steps. Instead of writing “move” ten times, you write “repeat 10 times: move.” A conditional, or if statement, makes a choice. “If the robot touches a wall, turn left.” With loops and ifs, a program can handle many situations.',
+      { h: 'Bugs' },
+      'When a program does not work as planned, it has a bug. Finding and fixing bugs is called debugging. Every coder makes mistakes, even experts. Good coders test their code one step at a time, find exactly where it goes wrong, and fix it. Then they test again.',
+      { box: 'Try it with a partner', text: 'Write an algorithm to walk from your desk to the door. Your partner follows it exactly, word for word. Did it work? Debug it.' },
+      'Many people helped invent coding. In the 1840s, a mathematician named Ada Lovelace wrote what many call the first computer program, for a machine that was never finished. In the 1950s, Grace Hopper helped create languages that let people write code using words instead of numbers. Today, millions of people around the world write code, and many of them started as kids.',
+      'Coding is used to build games, run traffic lights, fly drones and help doctors read scans. You do not need a computer to start thinking like a coder. You just need to break a problem into small, clear steps.'
+    ],
+    guide: { before: 'If you can, try a free block-coding site together. Teach <b>algorithm</b>, <b>loop</b>, <b>conditional</b> and <b>debug</b>.',
+      after: 'Write an algorithm for brushing your teeth. Did you leave out any steps?' },
+    words: [['coding', 'writing instructions for a computer'], ['algorithm', 'a set of steps for solving a problem']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Sandwiches need jam.', 'Coding means giving computers clear, exact steps, using tools like loops and ifs.', 'Robots move on grids.', 'Bugs are insects.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the robot do after moving 2 squares?',
+        opts: ['turns left', 'stops', 'turns right', 'moves back'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why would a computer put the whole jar on the bread?',
+        opts: ['It follows instructions exactly.', 'It is hungry.', 'It likes jam.', 'It is broken.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Match each coding word to its meaning.', cols: ['Word', 'Meaning'],
+        rows: [['loop', null], ['conditional', null], ['debugging', null]],
+        a: [[null, 'repeats steps'], [null, 'makes a choice with if'], [null, 'finding and fixing mistakes']] },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>debugging</b>, the prefix <b>de-</b> means …',
+        opts: ['remove', 'add', 'again', 'before'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the author start with the sandwich example?',
+        opts: ['to show why exact steps matter', 'to give a recipe', 'to talk about lunch', 'to describe a robot'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Write a loop for a robot that must move 4 squares and then stop.',
+        a: 'Repeat 4 times: move 1 square. Then stop.', look: 'uses a repeat with the right count' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'If a part of this text confused you, what did you do? If not, what would you do?',
+        a: 'I did not understand conditionals, so I reread the example about the wall and thought of my own if statement.', look: 'names a fix-up strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-music-fractions', subject: 'math', form: 'Explanation',
+    title: 'Fractions You Can Hear',
+    deck: 'Musicians use fractions every time they read a beat. Here is how notes divide time',
+    hero: {
+      photo: 'g5-sheet-music.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Sheet music. Each note shows a pitch and how long to hold it.'
+    },
+    body: [
+      'Clap a steady beat: one, two, three, four. Now clap twice as fast. You just split each beat into halves. Music is full of fractions. Every note tells a musician not only which sound to play, but how long to hold it compared with the others.',
+      { h: 'Notes as fractions' },
+      'In most music, a bar or measure has four beats. A whole note lasts all four beats, the whole bar. A half note lasts two beats, half the bar. A quarter note lasts one beat, a quarter of the bar. An eighth note lasts half a beat.',
+      { fig: [['whole note', '1', 1], ['half notes', '1/2 + 1/2', 2], ['quarter notes', '4 × 1/4', 4], ['eighth notes', '8 × 1/8', 8]].map(function (r, i) {
+          var y = 6 + i * 34, w = 200 / r[2], out = '<text class="lb" x="0" y="' + (y + 16) + '">' + r[0] + '</text>';
+          for (var k = 0; k < r[2]; k++) out += '<rect class="' + (i % 2 ? 'a' : 'k') + '" x="' + (96 + k * w) + '" y="' + y + '" width="' + (w - 2) + '" height="22"/>';
+          return out; }).join(''),
+        tall: 146, cap: 'Each row fills one bar of four beats.' },
+      'Look at the rows. Two half notes fill the same time as one whole note. Four quarter notes fill it too. So do eight eighth notes. These are <b>equivalent</b> amounts of time, just as 2/4 and 1/2 are equivalent fractions.',
+      { h: 'Filling a bar' },
+      'Composers build each bar like a puzzle. The notes must add up to exactly four beats. A half note, a quarter note and two eighth notes work: 2 + 1 + 1/2 + 1/2 = 4. If the notes add up to more or less, the bar is wrong, and the music will stumble.',
+      { box: 'Try it', text: 'Clap a bar of two quarter notes and one half note. Say “ta, ta, ta-a.” Does it fill four beats?' },
+      { h: 'Rests count too' },
+      'Silence is part of music. A <b>rest</b> is a symbol that tells the musician not to play for a certain time. There are whole rests, half rests and quarter rests, and they count as fractions of the bar, just like notes.',
+      'Time signatures tell musicians how to count. The two numbers at the start of a piece look like a fraction. The top number says how many beats are in each bar. A waltz, for example, has three beats in each bar: ONE, two, three, ONE, two, three. Musicians feel these patterns in their bodies, and dancers move to them.',
+      'Fractions also explain speed. If a song gets twice as fast, every note lasts half as long. Drummers practise with a metronome, a tool that clicks a steady beat, so they can keep perfect time.',
+      'Next time you hear a drummer or a fiddler, listen for the beat. The music you love is built on the same fractions you learn in math class.'
+    ],
+    guide: { before: 'Review fractions of a whole and equivalent fractions. Clap a steady beat together. Teach <b>beat</b>, <b>bar</b> and <b>equivalent</b>.',
+      after: 'Make up your own bar of four beats with different notes. Clap it and check that it adds up.' },
+    words: [['equivalent', 'equal in value or amount'], ['rest', 'a symbol for silence in music']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Drums are loud.', 'Music notes are fractions of a bar, and they must add up to fill it.', 'Clapping is fun.', 'Silence is boring.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how many eighth notes fill one bar?',
+        opts: ['8', '4', '2', '1'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How many beats does a half note last?',
+        opts: ['2', '1', '4', '1/2'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the beats.', cols: ['Note', 'Beats', 'Fraction of the bar'],
+        rows: [['whole', '4', null], ['half', null, '1/2'], ['quarter', '1', null]],
+        a: [[null, null, '1'], [null, '2', null], [null, null, '1/4']] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The author says composers build a bar “like a puzzle.” This means …',
+        opts: ['the pieces must fit exactly', 'music is a game', 'bars have pictures', 'music is hard'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Two half notes fill the same time as one whole note.” The subject is …',
+        opts: ['Two half notes', 'the same time', 'one whole note', 'fill'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Does this bar fill four beats? half note + quarter note + quarter note + quarter note. Show your work.',
+        a: 'No. 2 + 1 + 1 + 1 = 5 beats, which is one beat too many.', look: 'adds the beats correctly and judges the bar' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a song you know. How could knowing about beats help you play or dance to it?',
+        a: 'In my favourite song I can clap four beats in each bar, so I know when to step in my dance.', look: 'a personal connection to beats in real music' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-quilt-patterns', subject: 'math', form: 'Explanation',
+    title: 'Patterns in a Quilt',
+    deck: 'Quilters slide, flip and turn shapes to make beautiful designs, using the same moves as mathematicians',
+    hero: {
+      photo: 'g5-quilt.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A patchwork quilt made of triangles and squares.'
+    },
+    body: [
+      'A patchwork quilt starts as a pile of fabric scraps. A quilter cuts them into shapes such as squares and triangles, then sews them into blocks. When the blocks are joined, a pattern appears. The secret to many quilt patterns is a set of moves that mathematicians call <b>transformations</b>.',
+      { h: 'Three moves' },
+      'A translation slides a shape to a new place without turning or flipping it. A reflection flips a shape over a line, like a mirror image. A rotation turns a shape around a point, like the hands of a clock.',
+      { fig: '<path class="k" d="M10 60 L50 20 L50 60 Z"/><path class="a" d="M60 60 L100 20 L100 60 Z"/>' + D.arrow(52, 74, 92, 74, 'a') +
+          '<path class="k" d="M120 60 L160 20 L160 60 Z"/><path class="d" d="M164 10 V70"/><path class="a" d="M208 60 L168 20 L168 60 Z"/>' +
+          '<path class="k" d="M236 60 L276 20 L276 60 Z"/><path class="a" d="M276 60 L236 60 L236 100 Z"/><circle class="k" cx="236" cy="60" r="3"/>' +
+          D.label(30, 106, 'translation') + D.label(140, 106, 'reflection') + D.label(232, 122, 'rotation'),
+        tall: 128, cap: 'A triangle slid, flipped and turned. The outlined shape is the start.' },
+      'Each move keeps the shape the same size. Only its position changes. A triangle that is translated, reflected or rotated is still exactly the same triangle.',
+      { h: 'Building a block' },
+      'Imagine a square cut into two triangles, one dark and one light. Rotate the square a quarter turn, and the dark triangle moves to a new corner. Put four of these squares together, each turned a quarter turn more than the last, and you get a <b>pinwheel</b>. Reflect the pinwheel block, and it spins the other way.',
+      { box: 'Quilts in Canadian history', text: 'Settler families and Mennonite communities in Ontario made quilts from worn clothing and flour sacks. Nothing was wasted. Many quilts were made together at gatherings called quilting bees.' },
+      'Quilters often plan their designs on grid paper first. They count squares, measure and use coordinates to place each piece. Mathematicians use the same grids and the same moves to describe how shapes travel across a plane.',
+      'Some quilt patterns have special names passed down through families: Log Cabin, Flying Geese, Bear’s Paw and Churn Dash. Each one uses the same few shapes, moved in different ways. Two quilters can start with the same block and make completely different quilts just by changing how they rotate and reflect it, or by choosing different colours for the light and dark pieces.',
+      'Look at floor tiles, wallpaper, carpets or the star blankets made by many Plains First Nations. You will find slides, flips and turns everywhere. Pattern is where art and math meet.'
+    ],
+    guide: { before: 'Cut out a paper triangle and slide, flip and turn it on grid paper. Teach <b>translation</b>, <b>reflection</b> and <b>rotation</b>.',
+      after: 'Design your own quilt block on grid paper using at least two transformations.' },
+    words: [['transformations', 'moves that change where a shape is but not its size'], ['pinwheel', 'a design with parts that seem to spin around a centre']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Quilts are warm.', 'Quilters use slides, flips and turns to make patterns, the same transformations used in math.', 'Triangles have three sides.', 'Fabric is soft.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Transformation', 'What it does'],
+        rows: [['translation', null], ['reflection', null], ['rotation', null]],
+        a: [[null, 'slides a shape'], [null, 'flips a shape over a line'], [null, 'turns a shape around a point']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what does the dashed line show?',
+        opts: ['the line of reflection', 'a slide', 'the centre of a turn', 'a fold in fabric'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'After a rotation, a shape is …',
+        opts: ['the same size, in a new position', 'bigger', 'smaller', 'a new shape'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'What does the box tell you about settler and Mennonite values?',
+        opts: ['They did not waste things.', 'They liked bright colours.', 'They bought new fabric.', 'They worked alone.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>bee</b> mean in <b>quilting bee</b>?',
+        opts: ['a gathering to work together', 'an insect', 'a letter', 'a sting'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'How is a pinwheel block made? Use the word rotation.',
+        a: 'Four squares are placed together, each rotated a quarter turn more than the last, so the triangles spin around the centre.', look: 'explains quarter-turn rotations' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'What did you picture or do to understand the moves? Did it help?',
+        a: 'I imagined turning a piece of toast on a plate for rotation. It helped me see the shape stays the same.', look: 'names a strategy and its effect' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-breaking', subject: 'arts', form: 'Report',
+    title: 'From the Street to the Olympics',
+    deck: 'Breaking began at block parties in New York. In 2024, a Canadian won the first Olympic gold',
+    hero: {
+      photo: 'g5-breakdancer.jpg', credit: 'CREDIT', focus: '50% 45%',
+      tall: 220,
+      cap: 'A breaker balances on one hand in a freeze.'
+    },
+    body: [
+      'In the 1970s, in the Bronx, a neighbourhood in New York City, young people gathered at outdoor parties called block parties. A DJ played records on two turntables. During the instrumental part of a song, called the break, the DJ played the same few seconds over and over. Dancers jumped into a circle and showed off their moves. They became known as b-boys and b-girls, and their dance became known as <b>breaking</b>.',
+      { h: 'Four kinds of moves' },
+      { fig: [['toprock', 'dancing on your feet'], ['footwork', 'quick steps close to the floor'], ['power moves', 'spins and flips'], ['freeze', 'a sudden, frozen pose']].map(function (m, i) {
+          var x = (i % 2) * 150, y = Math.floor(i / 2) * 50; return '<rect class="k" x="' + x + '" y="' + y + '" width="140" height="42" rx="5"/><text class="lb" x="' + (x + 70) + '" y="' + (y + 18) + '" text-anchor="middle">' + m[0] + '</text><text class="n" x="' + (x + 70) + '" y="' + (y + 34) + '" text-anchor="middle">' + m[1] + '</text>'; }).join(''),
+        tall: 96, cap: 'The four main kinds of breaking moves.' },
+      'A breaker usually starts with toprock, dancing upright to the beat. Then they drop to the floor for footwork, moving their legs in fast circles while their hands support them. Power moves, such as windmills and head spins, take great strength. Most sets end with a freeze, holding a difficult pose perfectly still, often right on the last beat of the music.',
+      { h: 'Battles' },
+      'Breakers compete in battles. Two dancers or two crews take turns, each answering the other’s moves. Judges look at technique, creativity, musicality and personality. Breaking is not only about tricks. A good breaker listens to the music and tells a story with their body. Respect is important too. Dancers often shake hands or hug after a battle.',
+      { h: 'An Olympic first' },
+      'Breaking spread around the world, from Seoul to São Paulo to Montreal. In 2024, it appeared at the Olympic Games in Paris for the first time. Philip Kim, a breaker from Vancouver known as Phil Wizard, won the gold medal in the men’s event. He had started dancing as a teenager, practising for hours in community centres.',
+      { box: 'Breaking and hip hop', text: 'Breaking is one of the four elements of hip hop culture, along with DJing, rapping (MCing) and graffiti art.' },
+      'Canada has a strong breaking scene. Crews from Montreal, Toronto, Winnipeg and Vancouver travel to battles around the world, and some Indigenous breakers mix in moves and music from their own cultures, such as hoop dance and powwow drums.',
+      'Today, kids learn breaking in studios, schools and parks across Canada. It needs no special equipment, just music, a smooth floor and the courage to step into the circle. As many breakers say, there are no wrong moves, only your own <b>style</b>.'
+    ],
+    guide: { before: 'If possible, watch a short clip of a breaking battle together. Teach <b>breaking</b>, <b>freeze</b>, <b>battle</b> and <b>crew</b>.',
+      after: 'How is a breaking battle like or unlike a sports game? What does “style” mean in dance?' },
+    words: [['breaking', 'a style of street dance that began in the Bronx'], ['style', 'a person’s own way of doing something']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Paris hosted the Olympics.', 'Breaking grew from New York block parties into a worldwide dance and Olympic sport.', 'DJs use turntables.', 'Freezes are hard.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the diagram to match each move.', cols: ['Move', 'What it is'],
+        rows: [['toprock', null], [null, 'spins and flips'], ['freeze', null]],
+        a: [[null, 'dancing on your feet'], ['power moves', null], [null, 'a sudden, frozen pose']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Why is the dance called breaking?',
+        opts: ['Dancers danced during the break in the music.', 'Dancers break things.', 'It breaks rules.', 'It is short.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'What do judges look for besides tricks?',
+        opts: ['musicality and creativity', 'expensive clothes', 'height', 'speed only'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which detail shows a value in breaking culture?',
+        opts: ['Dancers shake hands or hug after a battle.', 'It began in the 1970s.', 'It uses records.', 'It was in Paris.'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'How is the text organized?',
+        opts: ['from its beginning to today', 'as a list of rules', 'as a story with a problem', 'as a debate'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'How is breaking like an activity you enjoy? Explain.',
+        a: 'Like playing piano, breaking takes practice and lets you show your own style to the music.', look: 'a clear comparison with a personal activity' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The text says breaking “needs no special equipment.” Why might that help it spread to so many people?',
+        a: 'Anyone can try it, even if they cannot afford gear or lessons, so people of all backgrounds can join in.', look: 'connects low cost to access and inclusion' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-masks', subject: 'arts', form: 'Report',
+    title: 'Faces That Tell Stories',
+    deck: 'Around the world, performers have used masks to become someone, or something, else',
+    hero: {
+      photo: 'g5-theatre-masks.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'Masks of comedy and tragedy, symbols of theatre since ancient Greece.'
+    },
+    body: [
+      'Put on a mask, and something strange happens. People stop seeing you and start seeing the character. Your face disappears, so your body must do the talking. For thousands of years, performers have used masks to tell stories, to honour <b>ancestors</b> and to show what words cannot.',
+      { h: 'Ancient Greece' },
+      'About 2500 years ago, the ancient Greeks performed plays in huge outdoor theatres that held thousands of people. Actors wore masks with large, clear expressions so that even people in the back rows could tell whether a character was happy or sad. One actor could play several characters just by changing masks. Today, the smiling and frowning masks of comedy and tragedy are still symbols of theatre.',
+      { fig: '<circle class="k" cx="70" cy="60" r="44"/><circle class="k" cx="54" cy="48" r="6"/><circle class="k" cx="86" cy="48" r="6"/><path class="a" d="M48 74 Q70 96 92 74"/>' +
+          '<circle class="k" cx="220" cy="60" r="44"/><circle class="k" cx="204" cy="48" r="6"/><circle class="k" cx="236" cy="48" r="6"/><path class="a" d="M198 86 Q220 66 242 86"/>' +
+          D.label(40, 124, 'comedy') + D.label(194, 124, 'tragedy'),
+        tall: 130, cap: 'The two masks of theatre.' },
+      { h: 'Masks of the Northwest Coast' },
+      'On the Pacific coast of what is now British Columbia, First Nations such as the Kwakwaka’wakw carve masks from cedar for ceremonies called potlatches. Some are <b>transformation</b> masks. At a key moment in the dance, strings are pulled and the outer face of an animal, such as a raven or an eagle, opens to reveal a human face inside. The mask shows that animals and people are connected. These masks belong to families and are used with permission and great respect.',
+      { h: 'Making your own' },
+      'You can explore character with a simple mask made from paper or cardboard. Choose one strong feeling, such as surprise, and exaggerate it: wide eyes, raised eyebrows, open mouth. Then try moving as that character. Does a surprised character walk fast or slow? Do they jump back or lean in?',
+      { box: 'Mask rule', text: 'Actors often say: when you wear a mask, face the audience. A mask seen from the side loses its expression.' },
+      'Masks remind us that drama is about more than words. A tilt of the head, a slow step or a sudden freeze can say as much as a whole speech. Next time you watch a play, a dance or even a cartoon, notice how much the characters say with their bodies.'
+    ],
+    guide: { before: 'Explain that drama uses voice, body and expression to show a character. Teach <b>transformation</b>, <b>potlatch</b> and <b>exaggerate</b>.',
+      after: 'Make a paper mask showing one strong feeling. Act out a short entrance without words.' },
+    words: [['ancestors', 'family members who lived long ago'], ['transformation', 'a complete change in form']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Masks are made of paper.', 'People around the world use masks to tell stories and show characters.', 'Greek theatres were big.', 'Cedar is a tree.'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Greek masks have large expressions?',
+        opts: ['so people far away could see them', 'to scare children', 'to keep actors warm', 'because they were heavy'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how can you tell which mask is tragedy?',
+        opts: ['The mouth turns down.', 'It is bigger.', 'It has no eyes.', 'It is on the left.'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'What does a transformation mask show?',
+        opts: ['that animals and people are connected', 'that ravens are scary', 'how to carve wood', 'a Greek play'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“Put on a mask, and something strange happens.” The first part of this sentence is a …',
+        opts: ['command', 'question', 'name', 'list'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the masks.', cols: ['', 'Ancient Greece', 'Northwest Coast'],
+        rows: [['Made for', 'plays in theatres', null], ['Special feature', null, 'open to show a face inside']],
+        a: [[null, null, 'ceremonies such as potlatches'], [null, 'large, clear expressions', null]] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think the author says these masks “are used with permission and great respect”?',
+        a: 'The masks belong to families and are part of ceremonies, so the author wants readers to respect them and not copy them.', look: 'recognizes the author’s respect for cultural ownership' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Picture a surprised character. Describe how they would move. What helped you imagine it?',
+        a: 'They would jump back with wide eyes and hands up. The description of exaggerating one feeling helped me picture it.', look: 'a clear image linked to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-fake-news', subject: 'tech', form: 'Explanation',
+    title: 'Is It True?',
+    deck: 'Not everything online is real. Four quick checks can help you spot false information',
+    hero: {
+      photo: 'g5-phone-news.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Many people now get news on their phones, from friends, apps and videos.'
+    },
+    body: [
+      'After a big storm, a photo spreads online. It shows a shark swimming down a flooded highway. Thousands of people share it. It looks real. But it is not. The same fake photo has been shared after storms for years, each time with a new city’s name. Someone made it by pasting a shark into a picture of a flood.',
+      'Why do fakes like this spread so easily? People share things quickly, often without reading past the headline. Apps show us more of what we click on, so a shocking post can reach millions of people in a few hours. Fixing a false story usually takes much longer than spreading it.',
+      'Information that is false but presented as true is called <b>misinformation</b>. Some is spread by accident, by people who believe it. Some is made on purpose, to trick people, sell something or make them angry. Either way, it can spread faster than the truth.',
+      { h: 'Four quick checks' },
+      { fig: steps(4, [['Stop', 'before sharing'], ['Source', 'who made it?'], ['Search', 'other sites'], ['Look', 'for clues']], 66),
+        tall: 52, cap: 'Four checks before you believe or share.' },
+      'Stop. If a post makes you feel shocked, angry or excited, pause. Strong feelings are exactly what fake posts are designed to cause.',
+      'Source. Who made this? Is it a real news organization, a scientist, a government website, or an account you have never heard of? Can you find out who is behind it?',
+      'Search. Look for the same story on other trusted websites. If a big event really happened, many news sources will report it. If only one strange site has it, be careful.',
+      'Look for clues. Check the date: is it an old story being shared again? Look closely at photos. Are there blurry edges, odd shadows or strange hands? An image search can show where a photo first appeared.',
+      { box: 'Remember', text: 'Ask a trusted adult when you are not sure. It is always okay to not share.' },
+      { h: 'Why it matters' },
+      'False information can hurt people. It can spread unkind rumours, make people afraid for no reason, or lead them to make unsafe choices about their health. When you check before you share, you protect your friends and family. Being careful online is part of being a good digital <b>citizen</b>. And if you find out that you shared something false, the right thing to do is simple: delete it and tell the people you shared it with.'
+    ],
+    guide: { before: 'Look at a news website together and talk about how you know it is trustworthy. Teach <b>misinformation</b>, <b>source</b> and <b>citizen</b>.',
+      after: 'Have you ever seen something online that turned out not to be true? How could the four checks have helped?' },
+    words: [['misinformation', 'false information presented as true'], ['citizen', 'a member of a community']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Sharks can swim on highways.', 'Some information online is false, so check it before believing or sharing it.', 'Phones are useful.', 'Storms cause floods.'], a: 1 },
+      { k: 'order', code: 'C1.4', q: 'Number the four checks in the order the diagram shows.',
+        items: ['Stop', 'Source', 'Search', 'Look for clues'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'A2.6', half: true, q: 'Why are fake posts often designed to make you angry or shocked?',
+        opts: ['Strong feelings make people share quickly.', 'Anger is healthy.', 'It makes them true.', 'It makes them shorter.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How did people know the shark photo was fake?',
+        opts: ['The same photo appeared after many storms.', 'Sharks are small.', 'It was blurry.', 'No one shared it.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>misinformation</b>, the prefix <b>mis-</b> means …',
+        opts: ['wrong or false', 'more', 'again', 'before'], a: 0 },
+      { k: 'choice', code: 'A2.1', half: true, q: 'Which source is most likely to be trustworthy about health?',
+        opts: ['a government health website', 'an unknown account with no name', 'a joke video', 'an ad for vitamins'], a: 0 },
+      { k: 'lines', code: 'A2.6', n: 3, q: 'A friend sends you a post saying school is cancelled forever. Which checks would you use? Explain.',
+        a: 'I would stop and not share it, then check the school’s website or ask my parent. If only one post says it, it is probably false.', look: 'applies at least two checks to the example' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Why do you think the author wrote this text? Who is it for?',
+        a: 'To teach young people to check information online, because they use phones and might share fake posts.', look: 'names purpose and audience' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-morrisseau', subject: 'arts', form: 'Biography',
+    title: 'Copper Thunderbird',
+    deck: 'Norval Morrisseau painted Anishinaabe stories in bold lines and bright colours and changed Canadian art',
+    hero: {
+      photo: 'g5-morrisseau.jpg', credit: 'CREDIT', focus: '50% 40%',
+      tall: 220,
+      cap: 'Norval Morrisseau’s paintings use thick black outlines and bright, flat colours.'
+    },
+    body: [
+      'Norval Morrisseau was born in 1932 in northwestern Ontario and grew up near Beardmore, north of Lake Superior. He was raised mostly by his grandparents. His grandfather, a medicine man, taught him the stories, legends and teachings of the Anishinaabe. His grandmother, a Catholic, taught him about her beliefs too. Both shaped the art he would make.',
+      { h: 'A new way of painting' },
+      'As a young man, Morrisseau began to paint the stories his grandfather had told him: thunderbirds, bears, fish and the spirits of the land and water. At that time, many Anishinaabe teachings were shared only by speaking or in sacred birchbark scrolls. Some Elders did not approve of painting them for others to see. Morrisseau believed that sharing the stories could help keep the culture alive and proud.',
+      { fig: '<path class="k" d="M40 90 Q80 40 140 60 Q200 40 250 80 Q200 110 140 100 Q80 120 40 90 Z"/><circle class="k" cx="220" cy="72" r="6"/>' +
+          '<path class="a" d="M80 82 Q110 70 140 80 Q170 70 200 82"/><path class="a" d="M140 80 V100"/><circle class="a" cx="140" cy="74" r="10"/>' +
+          D.label(16, 140, 'thick black outline') + D.label(150, 140, 'x-ray lines show the inside'),
+        tall: 148, cap: 'Woodland style: a fish drawn with an outline and lines showing its inner life.' },
+      'His style was new. He outlined his figures with thick black lines and filled them with bright, flat colours. He drew lines inside animals and people to show their organs and their spirits, as if you could see right through them. Some people call this x-ray style. It showed that every living thing has an inner life and is connected to others.',
+      { h: 'Success and influence' },
+      'In 1962, Morrisseau’s first exhibition in Toronto sold out on the first day. People had never seen anything like it. Other Indigenous artists, such as Daphne Odjig and Carl Ray, created their own work in related styles. Together, their art became known as the <b>Woodland</b> school. They helped open the doors of Canadian galleries to Indigenous artists.',
+      { box: 'His name', text: 'Morrisseau signed his paintings with his Anishinaabe name, Copper Thunderbird, written in syllabics.' },
+      'Morrisseau died in 2007. His paintings hang in the National Gallery of Canada and in galleries around the world. His life’s work showed that <b>Indigenous</b> art is not only something from the past. It is alive, powerful and always growing.'
+    ],
+    guide: { before: 'Look at Woodland-style art online together (search the National Gallery of Canada). Teach <b>Anishinaabe</b>, <b>Woodland</b>, <b>exhibition</b> and <b>syllabics</b>.',
+      after: 'Why did Morrisseau believe sharing the stories was important? Do you agree?' },
+    words: [['Woodland', 'a style of art started by Anishinaabe painters'], ['Indigenous', 'First Nations, Métis and Inuit peoples, the first peoples of a land']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Morrisseau lived in Ontario.', 'Norval Morrisseau created a new style that shared Anishinaabe stories and opened doors for Indigenous artists.', 'Fish are colourful.', 'Galleries are in Toronto.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the lines inside the fish show?',
+        opts: ['its inner life', 'water', 'its scales', 'the sun'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did some Elders not approve of Morrisseau’s paintings?',
+        opts: ['Some teachings were sacred and shared only in certain ways.', 'They did not like colour.', 'He sold too many.', 'They lived far away.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Feature of his style', 'What it shows'],
+        rows: [['thick black outlines', null], ['x-ray lines', null]],
+        a: [[null, 'strong, clear shapes'], [null, 'the inner life and spirit of living things']] },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which detail shows how Morrisseau honoured his culture?',
+        opts: ['He signed with his Anishinaabe name in syllabics.', 'He lived in Toronto.', 'He used paint.', 'He sold paintings.'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the author start with Morrisseau’s grandparents?',
+        opts: ['They shaped the stories and beliefs in his art.', 'They were painters.', 'They lived in Toronto.', 'They named the Woodland school.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What does the author mean by “Indigenous art is not only something from the past”?',
+        a: 'Indigenous artists today are still creating new, living art, like Morrisseau did. It keeps changing and growing.', look: 'explains the author’s message about living culture' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'What did you do to understand x-ray style? How did it help?',
+        a: 'I looked at the fish diagram while I read the paragraph, so I could see what the lines inside meant.', look: 'names a strategy and its effect' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-niagara', subject: 'geography', form: 'Report',
+    title: 'The Falls Are Moving',
+    deck: 'Niagara Falls has crept backward about 11 kilometres since the last ice age. Here is how water carves rock',
+    hero: {
+      photo: 'g5-horseshoe-falls.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Horseshoe Falls, the Canadian side of Niagara Falls.'
+    },
+    body: [
+      'Every second, more water than an Olympic swimming pool holds pours over Niagara Falls. The roar can be heard from far away, and the mist rises higher than the falls themselves. But the falls are not standing still. Very slowly, they are moving upstream.',
+      { h: 'Born from ice' },
+      'About 12 000 years ago, at the end of the last ice age, huge sheets of ice melted across what is now Ontario. The meltwater filled the Great Lakes. Water from Lake Erie began to flow north toward Lake Ontario, and where it dropped over a steep cliff called the Niagara Escarpment, a waterfall was born. At that time, the falls stood near what is now Queenston, about 11 kilometres downstream from where they are today.',
+      { fig: '<path class="k" d="M10 40 H200 L200 60"/><rect class="h" x="10" y="40" width="190" height="20"/><path class="k" d="M10 60 H180 L180 140 H290"/>' +
+          '<path class="t" d="M180 60 Q170 90 176 140"/>' + D.arrow(150, 30, 210, 30, 'a') + '<path class="a" d="M205 46 Q220 90 230 130"/>' +
+          D.label(16, 30, 'hard rock (caprock)') + D.label(30, 100, 'soft rock (shale)') + D.label(220, 150, 'plunge pool') + D.label(208, 24, 'river'),
+        tall: 158, cap: 'Soft rock wears away under the hard caprock.' },
+      { h: 'How a waterfall moves' },
+      'The secret is in the layers of rock. The top layer is hard rock called dolostone. Underneath are layers of soft rock called shale. The falling water and the swirling spray wear away the soft shale faster than the hard rock on top. This wearing away is called <b>erosion</b>. Over time, the hard top layer is left hanging with nothing underneath. Finally, it cracks and crashes into the river below. The edge of the falls has moved back.',
+      'This happened again and again for thousands of years, and the falls carved a deep, narrow valley called the Niagara Gorge. Today, the gorge is about 11 kilometres long, with walls as tall as a 20-storey building. Hikers on its trails can see the layers of rock in the cliffs, like the pages of a giant book.',
+      { box: 'Slowing down', text: 'Today, much of the river’s water is sent through tunnels to power stations. With less water, the falls erode much more slowly than they once did.' },
+      { h: 'The future' },
+      'Scientists predict that, in thousands of years, the falls could wear back to Lake Erie. Of course, no one alive today will see that. But the story of Niagara shows that the land around us is always changing, even when it seems solid and still. Water is one of nature’s most powerful <b>sculptors</b>.'
+    ],
+    guide: { before: 'Find Niagara Falls, Lake Erie and Lake Ontario on a map. Teach <b>erosion</b>, <b>escarpment</b> and <b>gorge</b>.',
+      after: 'Where else have you seen erosion, such as on a beach or a hill? What caused it?' },
+    words: [['erosion', 'the slow wearing away of rock or soil by water, wind or ice'], ['sculptors', 'artists who carve or shape materials']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Niagara Falls is loud.', 'Erosion of soft rock under hard rock makes Niagara Falls move slowly upstream.', 'The Great Lakes are big.', 'Power stations use water.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which layer wears away faster?',
+        opts: ['soft shale', 'hard caprock', 'the river', 'the plunge pool'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the falls erode more slowly today?',
+        opts: ['Water is sent to power stations.', 'The rock got harder.', 'There is less rain.', 'The falls are frozen.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps of how the falls move back.',
+        items: ['Water wears away the soft shale.', 'The hard caprock is left hanging.', 'The caprock cracks and falls.', 'The edge of the falls has moved back.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Water is called a “sculptor.” What does this metaphor mean?',
+        opts: ['Water slowly shapes the land.', 'Water makes statues.', 'Water is an artist’s tool.', 'Water is cold.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is there a space in 12 000?',
+        opts: ['Big numbers are grouped in threes.', 'It is two numbers.', 'It shows money.', 'It is a typo.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The falls moved 11 km in about 12 000 years. About how far is that each year? Explain.',
+        a: 'About 1 metre a year, because 11 000 metres ÷ 12 000 years is a little less than 1 metre.', look: 'estimates about 1 m a year with reasoning' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'What did you predict from the title “The Falls Are Moving”? Was your prediction confirmed?',
+        a: 'I thought it meant the water moves. Then I learned the whole edge of the falls moves back over time.', look: 'a prediction and how the text confirmed or changed it' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-charter', subject: 'social', form: 'Explanation',
+    title: 'Rights Come With Responsibilities',
+    deck: 'The Canadian Charter of Rights and Freedoms protects everyone in Canada. Here is what it says, and what it asks of us',
+    hero: {
+      photo: 'g5-parliament.jpg', credit: 'CREDIT', focus: '50% 45%',
+      tall: 220,
+      cap: 'The Parliament buildings in Ottawa, where Canada’s federal laws are made.'
+    },
+    body: [
+      'In 1982, Canada added an important document to its constitution, the highest law of the country. It is called the Canadian <b>Charter</b> of Rights and Freedoms. It lists rights and freedoms that every government in Canada must respect, whether it is federal, provincial or municipal.',
+      { h: 'What the Charter protects' },
+      { fig: [['Fundamental freedoms', 'to believe, speak and gather peacefully'], ['Democratic rights', 'citizens 18 and over can vote'], ['Mobility rights', 'to live and work anywhere in Canada'], ['Legal rights', 'to a fair trial'], ['Equality rights', 'equal treatment for all'], ['Language rights', 'English and French services']].map(function (r, i) {
+          var y = 4 + i * 28; return '<rect class="' + (i % 2 ? 'k' : 'a') + '" x="0" y="' + y + '" width="8" height="22"/><text class="lb" x="16" y="' + (y + 15) + '">' + r[0] + '</text><text class="n" x="150" y="' + (y + 15) + '">' + r[1] + '</text>'; }).join(''),
+        tall: 172, cap: 'Six groups of rights in the Charter.' },
+      'Fundamental freedoms mean you can practise any religion or none, share your opinions and meet with others peacefully. Equality rights mean that governments cannot treat people unfairly because of their race, religion, sex, age or disability. The Charter also recognizes the rights of Indigenous peoples that come from treaties and their history on this land.',
+      { h: 'Limits' },
+      'The Charter can be used in court. If someone believes a government law or action breaks their Charter rights, they can challenge it. Judges then decide whether the right was broken and whether the limit was fair.',
+      'Rights are not unlimited. Freedom of expression does not mean you can spread hate or tell lies that hurt someone. Rights can be limited when that is reasonable and fair in a free society. One person’s rights end where they would harm the rights of others.',
+      { h: 'Responsibilities' },
+      'With rights come <b>responsibilities</b>. Citizens are expected to obey the law, respect the rights of others, vote in elections, help their communities and care for the environment. A right to vote means little if no one votes. Freedom of speech works best when people also listen.',
+      { box: 'A class charter', text: 'Many classes make their own charter. Students agree on rights, such as “to learn without interruption,” and matching responsibilities, such as “to let others learn.”' },
+      'The Charter is not just for adults or lawyers. It is a promise about the kind of country Canadians want: one where everyone is treated with fairness and dignity. Keeping that promise is up to all of us.'
+    ],
+    guide: { before: 'Explain that a constitution is a country’s most important set of rules. Teach <b>charter</b>, <b>right</b>, <b>freedom</b> and <b>responsibility</b>.',
+      after: 'Make a short class or family charter: three rights and the responsibilities that go with them.' },
+    words: [['Charter', 'an official document that lists rights'], ['responsibilities', 'things you are expected to do']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ottawa is the capital.', 'The Charter protects rights in Canada, and those rights come with responsibilities.', 'Everyone must vote.', 'Laws are long.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the chart. Which group of rights includes voting?',
+        opts: ['democratic rights', 'legal rights', 'mobility rights', 'language rights'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can freedom of expression be limited?',
+        opts: ['It cannot be used to harm others.', 'People talk too much.', 'Governments dislike it.', 'It is not in the Charter.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Match each right with a responsibility.', cols: ['Right', 'Responsibility'],
+        rows: [['to vote', null], ['to speak freely', null], ['to learn without interruption', null]],
+        a: [[null, 'to vote in elections'], [null, 'to listen to others and not spread hate'], [null, 'to let others learn']] },
+      { k: 'choice', code: 'B3.2', half: true, q: '“A right to vote means little if no one votes.” What does <b>if</b> introduce?',
+        opts: ['a condition', 'a time', 'a place', 'a list'], a: 0 },
+      { k: 'choice', code: 'C3.6', half: true, q: 'Which right most directly protects people from unfair treatment?',
+        opts: ['equality rights', 'mobility rights', 'language rights', 'legal rights'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Explain “one person’s rights end where they would harm the rights of others” with an example.',
+        a: 'I can play music, but not so loud at night that my neighbours cannot sleep, because they have rights too.', look: 'a clear example of balancing rights' },
+      { k: 'lines', code: 'B1.3', n: 3, q: 'You will explain one Charter right to a younger student. Which right, and how would you explain it?',
+        a: 'Equality rights. I would say everyone must be treated fairly, no matter what they look like or what they believe.', look: 'chooses a right and adapts the explanation for a younger audience' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-voyageurs', subject: 'history', form: 'Report',
+    title: 'Paddling for Furs',
+    deck: 'Coureurs des bois and voyageurs travelled thousands of kilometres by canoe, relying on Indigenous knowledge',
+    hero: {
+      photo: 'g5-voyageurs.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'A painting of voyageurs paddling a large canoe through a misty lake.'
+    },
+    body: [
+      'In the 1600s, Europeans wanted beaver fur to make fashionable felt hats. The best furs came from the North, where First Nations trapped beavers and prepared the pelts. To trade for those furs, young Frenchmen began to leave the towns of New France and paddle into the interior. They were called <b>coureurs des bois</b>, runners of the woods.',
+      { h: 'Learning to survive' },
+      'The coureurs des bois could not have survived without First Nations partners. Wendat, Anishinaabe, Cree and other peoples taught them how to paddle and repair birchbark canoes, how to wear snowshoes, which plants were safe to eat and how to find their way along rivers. Many coureurs des bois learned Indigenous languages and lived for months in Indigenous communities. Many married Indigenous women, and their children and grandchildren became part of the Métis Nation.',
+      { fig: '<path class="k" d="M10 70 Q150 110 290 70 Q150 90 10 70 Z"/>' + [50, 80, 110, 140, 170, 200, 230, 260].map(function (x) { return '<circle class="k" cx="' + x + '" cy="72" r="5"/><path class="a" d="M' + x + ' 77 L' + (x - 10) + ' 104"/>'; }).join('') +
+          '<rect class="t" x="100" y="80" width="90" height="10"/>' + D.label(110, 30, 'canot du maître: about 11 m long') + D.label(10, 130, '8 to 12 paddlers') + D.label(170, 130, 'cargo up to 2 tonnes'),
+        tall: 138, cap: 'A large voyageur canoe.' },
+      { h: 'The voyageurs' },
+      'Later, the fur trade became a big business. Companies hired paddlers called voyageurs to carry trade goods west and furs east. Their giant canoes, called canots du maître, were up to 11 metres long and could carry eight to twelve paddlers and two tonnes of cargo.',
+      'A voyageur’s day began before dawn and ended after dark. Crews paddled about 50 strokes a minute for up to 14 hours, singing French songs to keep the rhythm. At waterfalls and rapids, they had to portage, carrying the canoe and cargo over land. Each man carried two packs of about 40 kilograms each, often at a trot.',
+      { box: 'Did you know?', text: 'Voyageurs ate pemmican, a food made by First Nations and Métis from dried meat, fat and berries. It was light to carry and did not spoil.' },
+      { h: 'A lasting mark' },
+      'The fur trade routes followed rivers and lakes that Indigenous peoples had travelled for thousands of years. Many of Canada’s cities, such as Winnipeg, Thunder Bay and Edmonton, began as trading posts on those routes. The trade brought new goods and new families, but it also brought disease and conflict, and changed Indigenous ways of life forever.'
+    ],
+    guide: { before: 'Find the St. Lawrence River, the Great Lakes and Winnipeg on a map. Teach <b>coureurs des bois</b> (koo-RUR day BWAH), <b>voyageur</b>, <b>portage</b> and <b>pemmican</b>.',
+      after: 'Why did the French depend on First Nations? How did the fur trade help some people and harm others?' },
+    words: [['coureurs des bois', 'French traders who travelled into the woods to trade for furs'], ['portage', 'to carry a canoe and goods over land']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Beaver hats were popular.', 'French traders and voyageurs relied on Indigenous knowledge to travel and trade for furs.', 'Canoes are long.', 'Winnipeg is a city.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. How long was a canot du maître?',
+        opts: ['about 11 m', 'about 2 m', 'about 50 m', 'about 40 m'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did voyageurs sing while paddling?',
+        opts: ['to keep the rhythm', 'to scare animals', 'to stay awake at night', 'to call for help'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in what First Nations taught the French.', cols: ['Skill', 'Why it mattered'],
+        rows: [['paddling and repairing canoes', null], ['wearing snowshoes', null], ['which plants were safe to eat', null]],
+        a: [[null, 'to travel the rivers'], [null, 'to travel in winter snow'], [null, 'to find food and not get sick']] },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Voyageur</b> is related to the word <b>voyage</b>. A voyage is a …',
+        opts: ['long journey', 'song', 'canoe', 'beaver'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>Their</b> giant canoes were up to 11 metres long.” <b>Their</b> refers to …',
+        opts: ['the voyageurs', 'the beavers', 'the companies', 'the First Nations'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Does the author show only the good side of the fur trade? Use evidence.',
+        a: 'No. The author says it brought new goods and families but also disease and conflict and changed Indigenous ways of life.', look: 'recognizes both sides with evidence' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'A voyageur carried two 40 kg packs. How much was that? Compare it to something you know.',
+        a: '80 kilograms. That is more than two Grade 5 students put together.', look: 'calculates 80 kg and makes a sensible comparison' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-epidemics', subject: 'history', form: 'Report',
+    title: 'An Invisible Enemy',
+    deck: 'In the 1600s, new diseases from Europe devastated First Nations communities. The Wendat were among those hit hardest',
+    hero: {
+      photo: 'g5-wendat-village.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 196,
+      cap: 'A reconstructed longhouse village. In the 1630s, many Wendat villages were struck by disease.'
+    },
+    body: [
+      'In the early 1600s, Wendake, the homeland of the Wendat, was a busy, well-fed land between Georgian Bay and Lake Simcoe. About 20 000 to 30 000 people lived in more than a dozen villages. They grew large fields of corn, beans and squash and were at the centre of a trade network that stretched across the Great Lakes.',
+      'Then, within just a few years, more than half of the Wendat people died. They were not killed in battle. They were killed by an enemy no one could see.',
+      { h: 'New diseases' },
+      'Europeans brought diseases such as smallpox, measles and influenza. These diseases had spread in Europe for hundreds of years, so many Europeans had some <b>immunity</b>: their bodies had learned to fight them. The peoples of the Americas had never met these germs. Their bodies had no defence.',
+      { fig: '<path class="k" d="M40 10 V130 H290"/>' + [['1630', 25], ['1640', 10]].map(function (d, i) {
+          var x = 100 + i * 120, h = d[1] * 4; return '<rect class="' + (i ? 'a' : 'k') + '" x="' + (x - 30) + '" y="' + (130 - h) + '" width="60" height="' + h + '"/><text class="n" x="' + x + '" y="' + (124 - h) + '" text-anchor="middle">about ' + d[1] + ' 000</text><text class="n" x="' + x + '" y="146" text-anchor="middle">' + d[0] + '</text>'; }).join(''),
+        tall: 152, cap: 'An estimate of the Wendat population before and after the epidemics. Historians’ numbers vary.' },
+      'Between 1634 and 1640, wave after wave of <b>epidemics</b> swept through Wendake. Diseases travelled along the same trade routes that had made the Wendat strong. Whole families fell ill at once, so there was no one healthy to care for the sick, hunt or harvest the crops. Elders, who held the nation’s knowledge and stories, died in great numbers.',
+      { h: 'Grief and change' },
+      'People struggled to understand why this was happening. Some blamed the French missionaries, who lived among them and seemed not to get sick. The loss of so many people also left the Wendat weaker when conflict with other nations grew. By 1650, many survivors had left their homeland.',
+      { box: 'The Wendat today', text: 'The Wendat Nation lives on. Its people live in Wendake, near Québec City, and in other communities. They continue their language, culture and government.' },
+      'Historians today see the epidemics as one of the greatest tragedies in the history of the Americas. Remembering it helps us understand how much First Nations lost, and how strong they were to survive and rebuild.'
+    ],
+    guide: { before: 'Find Georgian Bay and Lake Simcoe on a map. Explain gently that this is a sad part of history. Teach <b>epidemic</b>, <b>immunity</b> and <b>missionary</b>.',
+      after: 'Why is it important to learn about hard parts of history? How did the Wendat show strength?' },
+    words: [['immunity', 'the body’s ability to fight a disease'], ['epidemics', 'outbreaks of disease that spread to many people quickly']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Wendat grew corn.', 'European diseases killed many Wendat in the 1630s, changing their nation, but they survived.', 'Smallpox is a germ.', 'Missionaries lived in Wendake.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. About how many fewer Wendat were there in 1640?',
+        opts: ['15 000', '10 000', '25 000', '5 000'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the diseases harm First Nations more than Europeans?',
+        opts: ['First Nations had no immunity to them.', 'Europeans had medicine.', 'The Wendat ate less.', 'It was colder.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the causes and effects.', cols: ['Cause', 'Effect'],
+        rows: [['Diseases travelled along trade routes.', null], ['Whole families fell ill at once.', null], ['Many Elders died.', null]],
+        a: [[null, 'They reached many villages quickly.'], [null, 'No one was healthy to care for the sick or harvest.'], [null, 'Knowledge and stories were lost.']] },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Why does the caption say “Historians’ numbers vary”?',
+        opts: ['The numbers are estimates.', 'The graph is wrong.', 'No one lived there.', 'It is a story.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'In “immunity: their bodies had learned,” what does the colon do?',
+        opts: ['introduces an explanation', 'ends the sentence', 'shows a question', 'lists names'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the box tell you about the Wendat today? Why might the author include it?',
+        a: 'The Wendat still live in Wendake and keep their language and culture. The author wants readers to know they survived and are not only in the past.', look: 'notes survival today and the author’s purpose' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Why was losing Elders such a great loss? Draw a conclusion.',
+        a: 'Elders held the nation’s knowledge and stories, so when they died, much of that knowledge could not be passed on.', look: 'a conclusion based on the role of Elders' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sleep', subject: 'health', form: 'Explanation',
+    title: 'What Happens While You Sleep',
+    deck: 'Sleep is not wasted time. While you rest, your brain and body are hard at work',
+    hero: {
+      photo: 'g5-sleeping.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A dark, quiet, cool room helps the body fall asleep.'
+    },
+    body: [
+      'You will spend about one third of your life asleep. It might seem like nothing is happening while your eyes are closed, but your body is busier than you think. Sleep is when you grow, heal and sort out everything you learned during the day.',
+      { h: 'A night of cycles' },
+      'Sleep is not the same all night. Your brain moves through cycles that each last about 90 minutes. In light sleep, you can wake easily. In deep sleep, your breathing slows and your body repairs muscles and releases growth hormone. Then comes dream sleep, also called REM sleep, when your eyes dart back and forth under your eyelids.',
+      { fig: '<path class="k" d="M30 10 V120 H290"/><path class="a" d="M30 30 L50 60 L70 100 L90 60 L100 30 L120 60 L140 100 L160 60 L170 30 L190 60 L205 85 L220 60 L230 30 L250 60 L265 70 L280 30"/>' +
+          '<text class="n" x="26" y="34" text-anchor="end">dream</text><text class="n" x="26" y="64" text-anchor="end">light</text><text class="n" x="26" y="104" text-anchor="end">deep</text>' +
+          '<text class="n" x="40" y="136">bedtime</text><text class="n" x="290" y="136" text-anchor="end">morning</text>',
+        tall: 142, cap: 'Sleep cycles through one night. Deep sleep comes earlier, and dream sleep grows longer toward morning.' },
+      { h: 'Your brain at night' },
+      'During sleep, your brain replays what you learned and files it away as <b>memories</b>. If you study spelling words or practise a piece of music, sleeping afterward helps you remember it. Sleep also clears away waste that builds up in the brain during the day.',
+      { h: 'How much?' },
+      'Children aged 5 to 13 need about 9 to 11 hours of sleep each night. Many get less. Without enough sleep, it is harder to pay attention, control your temper and fight off colds. You may also feel hungrier and crave sugary snacks.',
+      { box: 'Better sleep habits', text: 'Go to bed at the same time each night. Turn off screens an hour before bed. Keep your room dark and cool. Read a book to wind down.' },
+      'Screens make sleep harder in two ways. Games and videos keep your brain excited. And the light from screens can trick your brain into thinking it is still daytime, so it holds back <b>melatonin</b>, the chemical that makes you sleepy.',
+      'Animals sleep too, in surprising ways. Dolphins rest one half of their brain at a time, so they can keep swimming and come up to breathe. Bears in Canada sleep through much of the winter in their dens. Every animal with a brain seems to need some kind of sleep.',
+      'Getting enough sleep is one of the simplest things you can do for your health. Tonight, think of bedtime not as the end of the day, but as the start of tomorrow.'
+    ],
+    guide: { before: 'Ask what time the child usually falls asleep and wakes up, and work out the hours together. Teach <b>cycle</b>, <b>memories</b> and <b>melatonin</b>.',
+      after: 'Which habit from the box would be easiest for you to try this week?' },
+    words: [['memories', 'things your brain stores and remembers'], ['melatonin', 'a chemical in the body that makes you sleepy']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Dreams are strange.', 'Sleep is when the body and brain grow, heal and store learning, so children need enough of it.', 'Screens are bright.', 'Beds are soft.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. When does the deepest sleep happen?',
+        opts: ['earlier in the night', 'just before morning', 'only at bedtime', 'never'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How do screens make it harder to sleep?',
+        opts: ['They excite the brain and hold back melatonin.', 'They are loud.', 'They make you hungry.', 'They are too cold.'], a: 0 },
+      { k: 'choice', code: 'C2.6', half: true, q: 'Liam goes to bed at 9 p.m. and wakes at 7 a.m. Is he getting enough sleep?',
+        opts: ['Yes, 10 hours', 'No, 7 hours', 'No, 2 hours', 'Yes, 12 hours'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Many get less.” What is understood after <b>less</b>?',
+        opts: ['sleep', 'homework', 'food', 'screens'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Without enough sleep…', 'Effect'],
+        rows: [['your attention', null], ['your temper', null], ['your body’s defences', null]],
+        a: [[null, 'harder to focus'], [null, 'harder to control'], [null, 'weaker against colds']] },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Make a bedtime plan for a school night using at least two habits from the text.',
+        a: 'At 8 p.m. I will turn off screens and read a book. At 8:45 p.m. I will be in bed with the lights off.', look: 'a realistic plan using two habits' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about sleep? What new fact surprised you?',
+        a: 'I knew sleep helps you grow. I was surprised that the brain replays and stores what you learned.', look: 'names prior knowledge and a new fact' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-allergy', subject: 'health', form: 'Personal narrative',
+    title: 'My Allergy, My Plan',
+    deck: 'A Grade 5 student explains life with a severe peanut allergy, and how classmates can help',
+    hero: {
+      photo: 'g5-auto-injector.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'An epinephrine auto-injector. It can stop a severe allergic reaction long enough to get to a hospital.'
+    },
+    body: [
+      'My name is Sophie, and I am allergic to peanuts. Not a little allergic. Very allergic. If I eat even a crumb of peanut, my body could have a reaction called <b>anaphylaxis</b>. My throat could swell, I could have trouble breathing, and my blood pressure could drop. Without help, it could be life-threatening.',
+      'I found out when I was two. I tasted a cookie at a party, and within minutes my face swelled up and I started to cough. My parents rushed me to the hospital. I do not remember it, but my mom says it was the scariest day of her life.',
+      { h: 'What I carry' },
+      'Everywhere I go, I carry an <b>epinephrine</b> auto-injector in a pouch on my belt. It is a pen with medicine inside. If I have a reaction, someone presses it hard against the outside of my thigh. It works quickly. Then someone calls 911, because I still need to go to the hospital.',
+      { fig: steps(4, [['Notice', 'signs'], ['Inject', 'epinephrine'], ['Call', '911'], ['Stay', 'with me']], 66) +
+          '<text class="n" x="150" y="78" text-anchor="middle">Signs: hives, swelling, trouble breathing, feeling faint</text>',
+        tall: 88, cap: 'My emergency plan, posted in my classroom.' },
+      { h: 'How my school helps' },
+      'In Ontario, a law called Sabrina’s Law says every school must have a plan for students with severe allergies. It is named after Sabrina Shannon, a teenager who died after a reaction at school. At my school, every teacher knows my plan, and there is an extra auto-injector in the office.',
+      'My classmates help too. We do not share food. We wash our hands after lunch. When someone brings treats for the class, they check with my teacher first.',
+      { box: 'How you can help a friend', text: 'Learn the signs of a reaction. Never tease someone about an allergy. Do not share food. If something seems wrong, tell an adult right away.' },
+      { h: 'Just me' },
+      'Allergies are becoming more common. Doctors are not completely sure why, but they are studying it. Today, some babies are given tiny amounts of peanut early in life, with a doctor’s guidance, to help their bodies learn that peanuts are safe. Scientists are also testing treatments that could one day make allergies less dangerous. I hope that by the time I am grown up, a crumb of peanut will not be such a big deal.',
+      'Some kids used to think I was being fussy. Now they understand. My allergy is something I live with, but it does not define me. I play soccer, I draw comics and I am really good at chess. With a plan and good friends, I can do almost anything.'
+    ],
+    guide: { before: 'Ask if anyone in the child’s class has an allergy. Teach <b>allergy</b>, <b>anaphylaxis</b> (an-uh-fuh-LAK-sis) and <b>epinephrine</b> (ep-ih-NEF-rin).',
+      after: 'How can you make a friend with an allergy feel safe and included?' },
+    words: [['anaphylaxis', 'a severe, sudden allergic reaction'], ['epinephrine', 'a medicine that stops a severe allergic reaction']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Peanuts are tasty.', 'Sophie lives safely with a severe allergy through a plan, school rules and caring friends.', 'Hospitals are busy.', 'Chess is fun.'], a: 1 },
+      { k: 'order', code: 'C1.4', q: 'Number the steps of Sophie’s emergency plan.',
+        items: ['Notice the signs.', 'Inject epinephrine.', 'Call 911.', 'Stay with Sophie.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'C1.6', half: true, q: 'This text is written in the first person. How can you tell?',
+        opts: ['Sophie uses I and my.', 'It has headings.', 'It has a box.', 'It is about health.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why must Sophie still go to hospital after the injection?',
+        opts: ['She still needs medical care.', 'To get a new pen.', 'To meet the doctor.', 'To buy food.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the law called Sabrina’s Law?',
+        opts: ['It is named after a teen who died after a reaction at school.', 'Sabrina wrote it.', 'Sabrina was a doctor.', 'It is Sophie’s middle name.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '“It does not <b>define</b> me.” Here, define means …',
+        opts: ['decide who I am', 'explain a word', 'draw a line', 'make me sick'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Sophie says “it does not define me.” What does she want readers to understand about people with allergies?',
+        a: 'People with allergies are more than their allergy. They have talents and interests and should be included, not teased.', look: 'explains the message about seeing the whole person' },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Name two things you could do this week to help keep a classmate with an allergy safe.',
+        a: 'I could wash my hands after lunch and not share my snacks. I could learn the signs of a reaction.', look: 'two realistic actions from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-cookie-mystery', subject: 'story', form: 'Mystery story',
+    title: 'The Case of the Vanishing Cookies',
+    deck: 'Someone is stealing cookies from the Lam family kitchen. Detective Vivian follows the clues',
+    hero: {
+      photo: 'g5-cookies.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A plate of fresh cookies: the scene of the crime.'
+    },
+    body: [
+      'On Saturday morning, Grandpa Lam baked two dozen oatmeal cookies and set them on the counter to cool. By lunch, there were only nineteen. By dinner, there were eleven. By Sunday morning, the plate held nothing but crumbs.',
+      '“This,” said Vivian, pushing her glasses up her nose, “is a case for a detective.”',
+      { h: 'The suspects' },
+      'Vivian took out her notebook. There were four suspects in the house: her older brother Daniel, who was always hungry; her baby sister Mei, who could now climb onto chairs; Grandpa Lam himself, who claimed he did not even like oatmeal; and Biscuit, the family’s large and very innocent-looking dog.',
+      { fig: [['Daniel', 'always hungry'], ['Mei', 'climbs chairs'], ['Grandpa', 'baked them'], ['Biscuit', 'tall dog']].map(function (s, i) {
+          var x = i * 76; return '<rect class="k" x="' + x + '" y="4" width="68" height="60" rx="4"/><circle class="t" cx="' + (x + 34) + '" cy="24" r="10"/><text class="lb" x="' + (x + 34) + '" y="48" text-anchor="middle">' + s[0] + '</text><text class="n" x="' + (x + 34) + '" y="80" text-anchor="middle">' + s[1] + '</text>'; }).join(''),
+        tall: 88, cap: 'Vivian’s list of suspects.' },
+      { h: 'The clues' },
+      'First, Vivian examined the counter. She found a trail of crumbs leading toward the back door. Second, she noticed that the plate had been pushed to the very edge, where something tall could reach it. Third, she found a small, damp smudge on the cupboard door, about as high as her waist.',
+      'Daniel had an <b>alibi</b>. He had been at hockey practice all Saturday afternoon. Mei was too short to reach the counter, even from a chair, because the chair was across the room. Grandpa had been napping in front of a curling game, snoring loudly.',
+      'Vivian tapped her pencil against her chin. A good detective, she knew, does not guess. A good detective looks at every clue and asks what it means. The crumbs led to the back door. The cookies had been reached from the edge of the counter. And the smudge was damp, and exactly the height of a certain nose.',
+      'That left one suspect.',
+      { h: 'The solution' },
+      'Vivian found Biscuit asleep on his bed by the back door. She knelt down and examined him closely. There, stuck in the fur of his chin, was one golden oat flake.',
+      '“Biscuit,” Vivian said gravely, “the evidence is against you.”',
+      'Biscuit opened one eye, thumped his tail twice and went back to sleep. He did not seem the least bit sorry.',
+      'That afternoon, Grandpa baked a new batch. This time, he put them on the top of the fridge. Vivian wrote one last line in her notebook: <i>Case closed. Suspect too fluffy to punish.</i> Then she <b>deduced</b> that one cookie was hers, as payment for her excellent detective work.'
+    ],
+    guide: { before: 'Explain that a mystery has a problem, suspects, clues and a solution. Teach <b>suspect</b>, <b>alibi</b>, <b>evidence</b> and <b>deduce</b>.',
+      after: 'Which clue was most important? Could the story have a different solution?' },
+    words: [['alibi', 'proof that someone was somewhere else when something happened'], ['deduced', 'figured out by thinking about the clues']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main problem in the story?',
+        opts: ['The dog is sleepy.', 'Someone is taking the cookies, and Vivian must find out who.', 'Daniel is late for hockey.', 'Grandpa cannot bake.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in why each suspect is ruled out.', cols: ['Suspect', 'Why it was not them'],
+        rows: [['Daniel', null], ['Mei', null], ['Grandpa', null]],
+        a: [[null, 'He was at hockey practice.'], [null, 'She was too short to reach the counter.'], [null, 'He was napping and snoring.']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Which clue proves it was Biscuit?',
+        opts: ['an oat flake in his fur', 'the crumbs on the counter', 'the snoring', 'the hockey game'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which features show this is a mystery?',
+        opts: ['suspects, clues and a solution', 'headings and a graph', 'a moral', 'rhyme'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“Suspect too fluffy to punish.” What makes this line funny?',
+        opts: ['It sounds serious but is about a dog.', 'It is sad.', 'It has a number.', 'It is a question.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“That left one suspect.” This short sentence is used to …',
+        opts: ['build suspense', 'list clues', 'ask a question', 'describe a room'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'How many cookies disappeared between lunch and dinner? Show how you know.',
+        a: '8 cookies, because there were 19 at lunch and 11 at dinner. 19 − 11 = 8.', look: 'subtracts 19 − 11 correctly using the text' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Who did you think the thief was at first? What clue changed or confirmed your thinking?',
+        a: 'I first thought it was Daniel because he is always hungry. His alibi made me change my mind, and the smudge made me think of the dog.', look: 'a prediction and the clue that changed or confirmed it' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-ice-storm', subject: 'story', form: 'Diary',
+    title: 'Five Days of Ice',
+    deck: 'In January 1998, an ice storm left millions of people without power. Here is one family’s week',
+    hero: {
+      photo: 'g5-ice-storm.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Trees and power lines coated in thick ice after a freezing rain storm.'
+    },
+    body: [
+      '<b>Tuesday, January 6, 1998.</b> It is raining, but the rain freezes the moment it touches anything. Every branch, car and fence is covered in a shiny glass coat. Dad says this is called <b>freezing rain</b>. It is beautiful. School is cancelled!',
+      '<b>Wednesday, January 7.</b> Last night I heard cracks like gunshots. It was tree branches snapping under the weight of the ice. At 2 a.m., the power went out. Now the furnace does not work, and the house is getting colder. We are wearing hats and coats inside.',
+      { fig: '<path class="k" d="M10 40 H290"/><path class="t" d="M10 26 H290"/>' + D.arrow(150, 6, 150, 22, 'a') +
+          '<path class="d" d="M10 70 H290"/><text class="n" x="150" y="64" text-anchor="middle">0 °C</text>' +
+          '<rect class="h" x="10" y="110" width="280" height="10"/>' + D.arrow(150, 76, 150, 104, 'a') +
+          D.label(16, 20, 'snow falls from high clouds') + D.label(16, 54, 'warm layer: snow melts into rain') + D.label(16, 96, 'cold layer near the ground') + D.label(16, 138, 'rain freezes on contact'),
+        tall: 144, cap: 'How freezing rain forms: snow melts in a warm layer, then the rain freezes when it lands on cold surfaces.' },
+      '<b>Thursday, January 8.</b> Still no power. Mom heated soup on the camp stove in the garage. The radio says more than a million homes in Ontario and Quebec are dark. Hydro poles have fallen over like dominoes. Huge steel towers that carry power lines have crumpled. Our neighbour, Mrs. Diallo, lives alone, so we brought her over. We all sleep in the living room by the fireplace.',
+      '<b>Friday, January 9.</b> The army has come to help! Soldiers are clearing trees and checking on older people. Our town opened the high school as a warming centre with cots, food and showers. Mrs. Diallo says she has not seen people help each other like this in years. Some farmers have no power to milk their cows, so neighbours with <b>generators</b> are sharing.',
+      '<b>Friday night.</b> We played cards by candlelight, and Mrs. Diallo taught us a game from Senegal, where she grew up. Dad told stories about winters when he was a kid. My little brother, Noah, fell asleep on the couch under three blankets and the dog. It was the coldest night so far, but it was also one of the nicest. Without the TV or computer, we actually talked to each other all evening.',
+      '<b>Saturday, January 10.</b> The rain has finally stopped. The ice is still everywhere, sparkling in the sun. Our street sounds like a chainsaw factory. Dad says some places will not have power for weeks.',
+      '<b>Sunday, January 11.</b> The lights came on at 4:15 this afternoon! Everyone cheered. I never knew how much we depend on electricity. I also learned that when something goes wrong, people show their best side. I am keeping this diary so I never forget. Tomorrow, we are going to help Mrs. Diallo clear the broken branches from her yard.'
+    ],
+    guide: { before: 'Explain that a diary records events and feelings day by day. Find Ottawa, Montreal and Kingston on a map. Teach <b>freezing rain</b>, <b>generator</b> and <b>warming centre</b>.',
+      after: 'How would your family manage without power for five days? What would you need?' },
+    words: [['freezing rain', 'rain that freezes when it touches cold surfaces'], ['generator', 'a machine that makes electricity']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the diary?',
+        opts: ['School was cancelled.', 'During the 1998 ice storm, a family lived without power, and people helped each other.', 'Ice is shiny.', 'Soldiers clear trees.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. Where does the snow melt into rain?',
+        opts: ['in the warm layer', 'near the ground', 'in the high clouds', 'on the trees'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why are the dates in bold?',
+        opts: ['to show each new diary entry', 'because they are important words', 'to show a title', 'to show a question'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Poles fell “like dominoes.” This simile means they …',
+        opts: ['fell one after another', 'were small', 'were spotted', 'were games'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the family bring Mrs. Diallo to their house?',
+        opts: ['She lived alone in the cold.', 'She had a generator.', 'She was a soldier.', 'She had soup.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['Freezing rain starts.', 'The power goes out.', 'The army arrives.', 'The lights come back on.'], show: [3, 1, 0, 2] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What did the writer learn? Use evidence from the last entry.',
+        a: 'The writer learned how much people depend on electricity and that people show their best side in hard times.', look: 'two lessons supported by the last entry' },
+      { k: 'lines', code: 'B1.4', n: 3, q: 'You will read one diary entry aloud to the class. How would you use your voice to show the writer’s feelings?',
+        a: 'For Sunday, I would read faster and louder at “Everyone cheered” to show excitement, then slow down at the end.', look: 'specific voice choices linked to feelings in the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-printed-hand', subject: 'tech', form: 'Report',
+    title: 'A Hand From a Printer',
+    deck: 'Volunteers with 3D printers make helper hands for children, using strings that work like tendons',
+    hero: {
+      photo: 'g5-3d-hand.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A 3D-printed hand. Its fingers close when the wearer bends their wrist.'
+    },
+    body: [
+      'Some children are born without fingers on one hand, or lose them in an accident. A <b>prosthetic</b> hand can help them hold a ball, ride a bike or carry a lunch tray. But many prosthetic hands cost thousands of dollars, and children outgrow them quickly. A group of inventors found a creative solution: print the hands.',
+      { h: 'How 3D printing works' },
+      'A 3D printer builds an object one thin layer at a time. It melts a plastic thread and squeezes it through a tiny nozzle, like icing on a cake. The nozzle moves back and forth, drawing one layer, then rises a little and draws the next. Layer by layer, a solid object grows. A hand can be printed in about a day.',
+      { fig: '<path class="k" d="M40 120 L60 60 L110 50 L120 120 Z"/>' + [64, 80, 96, 110].map(function (x, i) { return '<rect class="k" x="' + (x - 6) + '" y="' + (14 + i * 4) + '" width="12" height="' + (40 - i * 4) + '" rx="5"/><path class="a" d="M' + x + ' ' + (20 + i * 4) + ' V112"/>'; }).join('') +
+          '<path class="k" d="M120 100 L170 90 L170 130 L120 125"/>' +
+          D.label(190, 36, 'strings act like tendons') + D.label(190, 90, 'wrist hinge') + D.label(190, 130, 'bend wrist: fingers close'),
+        tall: 140, cap: 'Inside a printed hand. Bending the wrist pulls the strings tight.' },
+      { h: 'Strings for tendons' },
+      'In your own hand, muscles in your arm pull on cords called <b>tendons</b>, which bend your fingers. A printed hand copies this idea. Strings run from each finger to the wrist. When the child bends their wrist down, the strings tighten and the fingers curl closed. When they straighten their wrist, elastic bands pull the fingers open again. There are no batteries and no motors.',
+      { h: 'A world of volunteers' },
+      'The designs are shared online for free. Volunteers around the world, including students, teachers and engineers, print hands and give them away. Families send measurements and photos, and a volunteer prints a hand in the right size. Many children pick their own colours. Some choose superhero designs.',
+      { box: 'Design thinking', text: 'Inventors test, ask users what works, improve the design and test again. Children who wear the hands help make them better.' },
+      'One boy in Ontario used his new hand to hold a hockey stick for the first time. Another girl learned to ride a bike with both hands on the handlebars. Because the hands are cheap to print, a child who grows can simply get a bigger one next year, instead of waiting and saving for months.',
+      'A printed hand cannot do everything a real hand can. But it gives children a new tool and lets them take part in more activities. It also shows how technology and kindness together can solve real problems.'
+    ],
+    guide: { before: 'Wiggle your fingers and feel the tendons move on the back of your hand. Teach <b>prosthetic</b>, <b>tendon</b> and <b>3D printer</b>.',
+      after: 'What other problem could volunteers with 3D printers help solve?' },
+    words: [['prosthetic', 'an artificial body part'], ['tendons', 'strong cords that connect muscles to bones']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Printers are slow.', 'Volunteers 3D-print low-cost hands for children that use strings like tendons.', 'Plastic melts.', 'Superheroes have gloves.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what makes the fingers close?',
+        opts: ['bending the wrist', 'a battery', 'a motor', 'pressing a button'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are printed hands useful for children?',
+        opts: ['They are cheaper, and kids outgrow hands quickly.', 'They are heavy.', 'They need batteries.', 'They are made of metal.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The printer squeezes plastic “like icing on a cake.” This helps you picture …',
+        opts: ['how the plastic comes out', 'what it tastes like', 'a birthday', 'colour'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“There are no batteries and no motors.” What does <b>and</b> join?',
+        opts: ['two things that are missing', 'two actions', 'two times', 'two places'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare a real hand and a printed hand.', cols: ['', 'Real hand', 'Printed hand'],
+        rows: [['What bends the fingers', 'tendons pulled by muscles', null], ['What opens the fingers', null, 'elastic bands']],
+        a: [[null, null, 'strings pulled by bending the wrist'], [null, 'muscles and tendons', null]] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'How does a printed hand help a child take part in more activities? Why does that matter?',
+        a: 'It helps them hold things like a ball or tray, so they can join games and daily life with others.', look: 'links the tool to participation and inclusion' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Who might want to read this text, and why?',
+        a: 'A student interested in robots or inventing, or a family looking for a helper hand for their child.', look: 'names a reader and a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-wetlands', subject: 'science', form: 'Report',
+    title: 'Nature’s Sponges',
+    deck: 'Marshes, swamps and bogs soak up floods, clean water and shelter wildlife. Why are they disappearing?',
+    hero: {
+      photo: 'g5-marsh.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 220,
+      cap: 'A marsh in Ontario, with cattails and open water.'
+    },
+    body: [
+      'Squish. If you have ever walked through a soggy marsh, you know how wet the ground can be. Land that is covered by shallow water for at least part of the year is called a <b>wetland</b>. To some people, wetlands look like wasted land. In fact, they are among the most useful places in nature.',
+      { h: 'Four kinds of wetlands' },
+      'Canada has about one quarter of all the wetlands on Earth. They come in four main types. Marshes have grasses and cattails growing in shallow water. Swamps have trees and shrubs. Bogs are covered with thick, spongy moss. Fens are fed by groundwater and have grasses and sedges.',
+      { fig: '<path class="k" d="M10 80 Q80 60 150 80 Q220 100 290 80"/><path class="t" d="M10 92 Q80 72 150 92 Q220 112 290 92"/>' +
+          D.arrow(60, 20, 60, 60, 'a') + D.arrow(150, 100, 150, 130, 'a') + D.arrow(240, 50, 280, 50, 'a') +
+          D.label(12, 14, 'rain and floodwater soak in') + D.label(156, 126, 'water filters down, cleaner') + D.label(180, 40, 'released slowly'),
+        tall: 140, cap: 'A wetland soaks up water like a sponge and releases it slowly.' },
+      { h: 'Why wetlands matter' },
+      'Wetlands act like giant sponges. During heavy rain or spring melt, they soak up water and release it slowly, which helps prevent floods in towns downstream. As water moves through wetland plants and soil, mud and pollution settle out, so the water that flows on is cleaner.',
+      'Wetlands are also full of life. Frogs, turtles, ducks, herons, muskrats and many fish depend on them. Many of Ontario’s species at risk, such as the Blanding’s turtle, need wetland <b>habitat</b> to survive. Wetland plants and soils also store large amounts of carbon, which helps slow climate change.',
+      { h: 'Disappearing wetlands' },
+      'In southern Ontario, about two thirds of the wetlands that existed before European settlement have been drained or filled in. Farmers drained them to grow crops. Cities filled them to build roads and houses. When wetlands disappear, floods can become worse, water becomes dirtier and animals lose their homes.',
+      { box: 'What helps', text: 'Protect wetlands near your community. Never dump anything into them. Volunteer for a cleanup. Learn about local conservation groups.' },
+      'Today, many communities, First Nations and conservation groups are working to protect and restore wetlands. Some are even building new ones. It turns out that soggy, squishy land is worth a lot.'
+    ],
+    guide: { before: 'If possible, visit a local marsh or look at photos. Teach <b>wetland</b>, <b>habitat</b> and <b>species at risk</b>.',
+      after: 'What would happen to a town downstream if a large wetland were filled in? Explain.' },
+    words: [['wetland', 'land covered by shallow water for part of the year'], ['habitat', 'the natural home of a plant or animal']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Marshes are wet.', 'Wetlands prevent floods, clean water and shelter wildlife, but many have been lost.', 'Frogs live in ponds.', 'Moss is spongy.'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the four kinds of wetlands.', cols: ['Wetland', 'What grows there'],
+        rows: [['marsh', null], ['swamp', null], ['bog', null], ['fen', null]],
+        a: [[null, 'grasses and cattails'], [null, 'trees and shrubs'], [null, 'thick, spongy moss'], [null, 'grasses and sedges']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. What happens to water as it filters down?',
+        opts: ['It becomes cleaner.', 'It turns to ice.', 'It disappears.', 'It gets saltier.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why does the author compare wetlands to sponges?',
+        opts: ['They soak up and slowly release water.', 'They are yellow.', 'They are used for cleaning dishes.', 'They are small.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were many wetlands drained?',
+        opts: ['for crops, roads and houses', 'to save frogs', 'to make lakes', 'to stop rain'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The opposite of <b>drained</b> in this text is …',
+        opts: ['filled with water', 'dried', 'emptied', 'built'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Explain how filling in a wetland could cause flooding downstream.',
+        a: 'Without the wetland to soak up rain and melting snow, the water runs off quickly into rivers and floods towns.', look: 'explains the sponge effect and its loss' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How does the author feel about wetlands? Use the last line as evidence.',
+        a: 'The author thinks they are valuable. The last line says “soggy, squishy land is worth a lot.”', look: 'identifies the author’s view using the last line' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-citizenship', subject: 'social', form: 'Story',
+    title: 'The Day We Became Canadian',
+    deck: 'After five years in Canada, Hamza’s family takes the oath of citizenship',
+    hero: {
+      photo: 'g5-citizenship.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'New citizens hold small flags at a citizenship ceremony.'
+    },
+    body: [
+      'Hamza had never seen his father wear a tie on a Tuesday. But this was no ordinary Tuesday. Today, Hamza, his parents and his little sister, Noor, were going to become Canadian <b>citizens</b>.',
+      'Five years earlier, they had arrived at Pearson Airport in Toronto with four suitcases and a lot of hope. Hamza had been five. He remembered the snow, and how he had never felt cold like that before.',
+      { h: 'Getting ready' },
+      'To become a citizen, an adult must have lived in Canada for at least three of the last five years. Adults aged 18 to 54 must also pass a test about Canada’s history, geography, government and the rights and responsibilities of citizens. For weeks, Hamza had quizzed his parents at dinner.',
+      { fig: steps(4, [['Arrive', 'in Canada'], ['Live here', '3 of 5 years'], ['Apply', 'and study'], ['Pass', 'the test'], ['Oath', 'ceremony']], 52),
+        tall: 52, cap: 'The steps to becoming a Canadian citizen.' },
+      '“Who is the head of the government of Canada?” he would ask.',
+      '“The prime minister,” his mother would answer.',
+      '“What are the three levels of government?”',
+      '“Federal, provincial and municipal,” said his father. “Now pass the rice.”',
+      { h: 'The ceremony' },
+      'The ceremony was held in a community centre. About 60 people from 25 countries filled the rows of chairs. A citizenship judge welcomed them. An Elder from a nearby First Nation spoke about the land they were standing on and the treaties that are part of Canada’s story.',
+      'Then everyone stood and raised their right hand to take the <b>oath</b>. They promised to be faithful to Canada, to obey its laws and to respect the rights and treaties of Indigenous peoples. Hamza said the words too, even though children do not have to. He wanted to.',
+      'Afterward, they all sang “O Canada.” Hamza’s mother cried, and his father pretended he had something in his eye. A woman from the Philippines took a photo of them holding their certificates and little red and white flags.',
+      { box: 'Did you know?', text: 'Hundreds of thousands of people become Canadian citizens every year.' },
+      'On the bus home, Noor asked if she was a different person now. Hamza laughed. “You’re still you,” he said. “You just have one more thing to be proud of.”',
+      'That night, Hamza wrote in his journal: <i>We were already home. Today, it became official.</i>'
+    ],
+    guide: { before: 'Talk about where your family comes from. Teach <b>citizen</b>, <b>oath</b>, <b>ceremony</b> and <b>treaty</b>.',
+      after: 'What does it mean to belong to a country? What responsibilities come with being a citizen?' },
+    words: [['citizens', 'official members of a country'], ['oath', 'a serious promise']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the story?',
+        opts: ['Hamza likes rice.', 'Hamza’s family prepares for and takes part in their Canadian citizenship ceremony.', 'Toronto has an airport.', 'Noor is little.'], a: 1 },
+      { k: 'order', code: 'C1.4', q: 'Number the steps to citizenship shown in the diagram.',
+        items: ['Arrive in Canada.', 'Live here 3 of 5 years.', 'Apply and study.', 'Pass the test.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Hamza quiz his parents?',
+        opts: ['to help them study for the test', 'to make them laugh', 'for homework', 'to learn French'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'His father “pretended he had something in his eye.” What does this show?',
+        opts: ['He was moved to tears.', 'He was sick.', 'He was bored.', 'He had dust in his eye.'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Why did an Elder speak at the ceremony?',
+        opts: ['to share the story of the land and the treaties', 'to give out flags', 'to take photos', 'to sing'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is “O Canada” in quotation marks?',
+        opts: ['It is the title of a song.', 'Someone is speaking.', 'It is a question.', 'It is a city.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What does Hamza’s journal line mean: “We were already home. Today, it became official”?',
+        a: 'Canada already felt like home to the family. The ceremony made it legal and official that they belong.', look: 'explains the difference between feeling at home and becoming official' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of an important day for your family. How was it like or unlike Hamza’s day?',
+        a: 'My sister’s graduation was also full of happy tears and photos, but it was about school, not a country.', look: 'a personal connection with a clear comparison' }
+    ]
+  });
+
 })();

@@ -89,3 +89,20 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
 | `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
 | `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
+| `g5-palisade.jpg` | The palisade and lookout of a rebuilt 15th-century Iroquoian village, Ontario | Laslovarga | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Iroquoian_Village,_Ontario,_Canada31.JPG |
+| `g5-cn-tower.jpg` | The CN Tower, Toronto | Scott Webb | CC0 | https://commons.wikimedia.org/wiki/File:CN_Tower,_Toronto,_Canada_(Unsplash_DJ_kOgH5u0o).jpg |
+| `g5-rusty-chain.jpg` | A very rusty chain | W.carter | CC0 | https://commons.wikimedia.org/wiki/File:Very_rusty_chain.jpg |
+| `g5-cereal-aisle.jpg` | Boxes of cereal on supermarket shelves | Wolfmann | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:SPAR_kolonial_mat_varehandel_hyller_(Supermarket_interior_GROCERY_store_aisle_shelves)_Frokostblandinger_gryn_müsli_Axa_frukt_energi_4-korn_blåbær_(cereals_muesli)_etc_Tjøme_NORWAY_2023-08-31_IMG_1095.jpg |
+| `g5-speed-skating.jpg` | Speed skaters on an outdoor oval in Lakefield | Suzanne Schroeter | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Speed_Skating_on_the_Oval_in_Lakefield_(5399470981).jpg |
+| `g5-champlain-map.jpg` | Samuel de Champlain's map of New France, 1612 | Samuel de Champlain | Public domain | https://commons.wikimedia.org/wiki/File:Samuel_de_Champlain_Carte_geographique_de_la_Nouvelle_France.jpg |
+| `g5-two-row.jpg` | Paddlers on the 2013 Two Row Wampum Renewal journey | Gorgenkor | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tom_Porter_and_Hickory_Edwards_on_2013_Two_Row_Journey.jpg |
+| `g5-tablets.jpg` | Children using tablet computers | Intel Free Press | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Kids_with_Education_Tablet_Computers.jpg |
+| `g5-carr-odds-and-ends.jpg` | Odds and Ends, painting by Emily Carr, 1939 | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g5-metis-sash.jpg` | A Métis beaded sash and a finger-woven sash (ceinture fléchée), Sault Ste. Marie Museum | Fungus Guy | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Métis_sash,_clay_pipe_fragments_and_ceinture_fléchée_Sault_Museum.jpg |
+| `g5-queens-park.jpg` | The Ontario Legislative Building at Queen's Park, Toronto | Spudgun67 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Legislative_Assembly_of_Ontario_-_Queen's_Park,_Toronto.jpg |
+| `g5-skeleton.jpg` | A model of the human skeleton, Kitchener | Sam Nabi | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Skeleton_model_20200122_184823074_iOS.jpg |
+| `g5-confederation-pier.jpg` | A pier of the Confederation Bridge with its ice shield | Wladyslaw | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:NB_-_Confederation_Bridge3.jpg |
+| `g5-savings-jar.jpg` | Coins saved in a glass jar | stevepb | CC0 | https://commons.wikimedia.org/wiki/File:Piggy-bank-968302.jpg |
+| `g5-dragon-boat.jpg` | Dragon boat racers at the Toronto International Dragon Boat Race Festival | John Vetterli | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Dragon_Boaters_1_(174187449).jpg |
+| `g5-port-royal.jpg` | The rebuilt Habitation at Port-Royal National Historic Site, Nova Scotia | Dlanglois | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Port-Royal_Nova-Scotia_1.jpg |
+| `g5-water-treatment.jpg` | Coagulation and filtration tanks at a drinking water treatment plant | U.S. Environmental Protection Agency | Public domain | https://commons.wikimedia.org/wiki/File:The_coagulation_and_filtration_processes_at_a_drinking_water_treatment_plant._(14868618507).jpg |
