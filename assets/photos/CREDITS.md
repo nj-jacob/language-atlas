@@ -116,3 +116,27 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-boreal.jpg` | Boreal forest | Ray Murphy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg |
 | `g7-atmosphere.jpg` | Earth's thin atmosphere seen from the ISS | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ISS-51_Moon,_Earth's_limb_and_the_thin_blue_atmosphere.jpg |
 | `g7-red-river-carts.jpg` | A train of Red River carts | Whitney's Gallery | Public domain | https://commons.wikimedia.org/wiki/File:Red_River_cart_train.jpg |
+| `g7-pi-day.jpg` | A Pi Day celebration | Marnie Briggs, NSF | Public domain | https://commons.wikimedia.org/wiki/File:Pi_Day_(13153589925).jpg |
+| `g7-fireweed-burn.jpg` | Fireweed blooming among burned trees a year after the 2017 Sprague Fire, Glacier National Park | U.S. National Park Service (GlacierNPS) | Public domain | https://commons.wikimedia.org/wiki/File:Burned_Forests_are_Beautiful_(44026769544).jpg |
+| `g7-peregrine.jpg` | A peregrine falcon | Carlos Delgado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Falco_peregrinus_-_01.jpg |
+| `g7-toronto-skyline.jpg` | The Toronto skyline and the CN Tower at sunset, from the Toronto Islands | Jchmrt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg |
+| `g7-plains-abraham.jpg` | The Plains of Abraham, Québec City, from the air | Gabriel Picard | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Plaines_d'Abraham_-_Vue_aérienne_2024-1.jpg |
+| `g7-iceland-eruption.jpg` | The Litli-Hrútur eruption on the Reykjanes Peninsula, Iceland, 2023 | DCheretovich | CC0 | https://commons.wikimedia.org/wiki/File:Litli-Hrútur_eruption_2023.jpg |
+| `g7-throat-singers.jpg` | Two Inuit throat singers performing | Ansgar Walk | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Throat_singers_1999-04-07.jpg |
+| `g7-3d-printer.jpg` | A 3D printer at work | Subhashish Panigrahi | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Printing_with_a_3D_printer_at_Makers_Party_Bangalore_2013_11.JPG |
+| `g7-hallway.jpg` | A school hallway in Markham, Ontario | ChinaFlag | Public domain | https://commons.wikimedia.org/wiki/File:Boxwood_PS_Hallway_3.jpg |
+| `g7-oil-sands.jpg` | Oil sands mine works at Mildred Lake, Alberta | Dicklyon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Syncrude_oil_sands_mine_works,_Mildred_Lake,_Alberta.jpg |
+| `g7-green-roof.jpg` | The green roof on the podium of Toronto City Hall | GreenRoofGardener | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Toronto_City_Hall_Podium_green_roof_by_LiveRoof,_July_2010.jpg |
+| `g7-brant.jpg` | Joseph Brant (Thayendanegea), painted by George Romney, 1776 (National Gallery of Canada) | George Romney | Public domain | https://commons.wikimedia.org/wiki/File:Joseph_Brant_painting_by_George_Romney_1776_(2).jpg |
+| `g7-energy-drinks.jpg` | Cans of energy drinks | Oto Zapletal | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Various_energy_drinks_01.jpg |
+| `g7-password.jpg` | A login screen asking for a username and password | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Username_and_password_20170626.jpg |
+| `g7-water-plant.jpg` | The R. C. Harris Water Treatment Plant, Toronto | Richard Kang | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:RC_Harris_Water_Treatment_Plant_2009.jpg |
+| `g7-habitat67.jpg` | Habitat 67, Montréal, seen from the St. Lawrence River | Citlallirios | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Habitat_67_Montreal_summer_sunset_view_from_the_river.jpg |
+| `g7-rideau.jpg` | The Rideau Canal locks in Ottawa | Robert Linsdell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Rideau_Canal_Locks,_Ottawa_(480390)_(9447371149).jpg |
+| `g7-monsoon.jpg` | A street in Chennai, India, during the monsoon | McKay Savage | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:India_-_Chennai_-_Monsoon_-_01_(3058208937).jpg |
+| `g7-sale-sign.jpg` | A store sign advertising 75% off | TheDigitel Beaufort | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bay_Street_Trading_Co._sale_sign_(4983153154).jpg |
+| `g7-footbridge.jpg` | A suspension footbridge in Morrison Park | Xnatedawgx | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morrison_Park_suspension_footbridge_1.jpg |
+| `g7-alarm-clock.jpg` | A classic alarm clock | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Classic_alarm_clock_20180513.jpg |
+| `g7-canadarm2.jpg` | Canadarm2 on the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Canadarm2_during_Expedition_62_(ISS062-E-055099).jpg |
+| `g7-athabasca.jpg` | The Athabasca Glacier | Ethan Sahagun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Athabasca_Glacier_on_the_Columbia_Icefield.jpg |
+| `g7-henson.jpg` | Josiah Henson | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:Josiah_Henson_bw.jpg |

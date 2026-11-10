@@ -988,4 +988,984 @@
     ]
   });
 
+  P.add({
+    id: 'g7-succession', subject: 'science', form: 'Explanation',
+    title: 'After the Fire',
+    deck: 'How a burned boreal forest grows back, step by step',
+    hero: {
+      photo: 'g7-fireweed-burn.jpg', credit: 'Photo: U.S. National Park Service, public domain', focus: '50% 70%',
+      tall: 200,
+      cap: 'Purple fireweed among burned trees, one year after a forest fire in the Rocky Mountains.'
+    },
+    body: [
+      'A forest fire leaves a strange, silent landscape: black trunks, grey ash and a smell of smoke that lingers for weeks. It looks like the end of the forest. In the boreal forest that stretches across northern Canada, though, fire is part of a natural cycle. Within weeks, life begins to return in a predictable series of changes called <b>ecological succession</b>.',
+      { h: 'Built for fire' },
+      'Some boreal trees are ready for fire before it ever arrives. A jack pine’s cones are sealed shut with a sticky resin. They can hang on a tree for years without opening. When a fire’s heat melts the resin, the cones open and drop their seeds onto the freshly cleared ground, which is rich in minerals from the ash. Without fire, many jack pine forests would slowly disappear.',
+      { fig: '<path class="k" d="M10 150 H290"/>' +
+          '<path class="a" d="M30 150 v-14 m-6 6 l6 -6 l6 6 M48 150 v-10 m-5 4 l5 -4 l5 4"/>' +
+          '<path class="k" d="M100 150 v-40 M92 120 q8 -16 16 0 M94 132 q6 -12 12 0 M124 150 v-30 M118 128 q6 -12 12 0"/>' +
+          D.spruce(200, 150, 70) + D.spruce(176, 150, 50) + '<path class="k" d="M168 150 v-34 m-8 10 q8 -16 16 0"/>' +
+          D.spruce(258, 150, 104) + D.spruce(282, 150, 84) + D.spruce(236, 150, 90) +
+          '<text class="lb" x="40" y="168" text-anchor="middle">1 year</text><text class="lb" x="112" y="168" text-anchor="middle">10 years</text><text class="lb" x="188" y="168" text-anchor="middle">40 years</text><text class="lb" x="260" y="168" text-anchor="middle">100 years</text>' +
+          '<text class="n" x="40" y="182" text-anchor="middle">fireweed</text><text class="n" x="112" y="182" text-anchor="middle">aspen, birch</text><text class="n" x="188" y="182" text-anchor="middle">young pine</text><text class="n" x="260" y="182" text-anchor="middle">spruce forest</text>',
+        tall: 188, cap: 'Stages of succession after a boreal forest fire. The times are rough and differ from place to place.' },
+      { h: 'The pioneers' },
+      'The first plants to move in are called <b>pioneer species</b>. Fireweed, with its tall pink flowers, often covers a burn in its first summer. Its tiny seeds float in on the wind by the millions. Mosses and grasses spread quickly too. Their roots hold the soil in place, and when they die, they add to it.',
+      { h: 'Taking turns' },
+      'Next come fast-growing trees such as trembling aspen and paper birch, which love open sunlight. Moose and snowshoe hares arrive to feed on the young shoots, and predators such as lynx follow them. Slowly, the pines and spruces grow taller than the leafy trees and shade them out. After a century or more, the forest may look much like it did before the fire, until the next fire starts the cycle again.',
+      { box: 'Fire as a tool', text: 'For thousands of years, many First Nations have set small, controlled fires in the right season to clear brush, renew berry patches and prevent huge wildfires. Some fire crews now work with these communities to bring back cultural burning.' },
+      'Not every burn recovers the same way. Fires that are very hot, very large or happen too often can destroy the seeds and soil that succession needs. As summers grow hotter and drier, scientists are watching closely to see whether the boreal forest can keep up.'
+    ],
+    guide: { before: 'Show a pine cone and talk about what is inside. Teach <b>succession</b> and <b>pioneer species</b>. Point out that the diagram is a sequence: read it from left to right.',
+      after: 'Should every forest fire be put out as quickly as possible? What does this text suggest?' },
+    words: [['ecological succession', 'the series of changes as living things return to an area'], ['pioneer species', 'the first living things to grow in a cleared area']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the stages of succession in order.',
+        items: ['Fire clears the forest.', 'Fireweed and grasses spread.', 'Aspen and birch grow.', 'Pines and spruces shade out the leafy trees.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about how long succession takes?',
+        opts: ['about a century or more', 'one summer', 'ten years', 'it never finishes'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do jack pine cones need fire?',
+        opts: ['Heat melts the resin so the cones open.', 'Fire kills insects.', 'Smoke helps them grow.', 'Ash makes them heavier.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Why are the first plants called <b>pioneers</b>?',
+        opts: ['Like the first settlers in a new place, they arrive first and prepare the way.', 'They grow in rows.', 'They are the tallest.', 'They come from far away.'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What text pattern does the author mostly use?',
+        opts: ['sequence (stages over time)', 'problem and solution', 'compare and contrast only', 'description of one moment'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'The author says a burned forest looks “like the end of the forest.” Does the text support or challenge this idea? Explain.',
+        a: 'It challenges it. The text shows that fire starts a cycle of new growth: fireweed, then aspen and birch, then pines and spruces grow back.', look: 'a clear position (challenges) supported by stages from the text' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What conclusion can you draw from the last paragraph about climate and forest fires?',
+        a: 'If summers keep getting hotter and drier, fires may become too hot or too frequent, and some forests may not grow back the same way.', look: 'a conclusion about hotter, drier summers making recovery harder' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the box tell you about First Nations knowledge of fire? Why might fire crews want to learn from it?',
+        a: 'First Nations have used small, controlled fires for thousands of years to care for the land. Fire crews can learn when and how to burn to prevent huge wildfires.', look: 'the long-standing knowledge and a reason it is useful today' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-peregrine', subject: 'science', form: 'Report',
+    title: 'The Falcon That Came Back',
+    deck: 'How a pesticide nearly wiped out the peregrine falcon, and how people saved it',
+    hero: {
+      photo: 'g7-peregrine.jpg', credit: 'Photo: Carlos Delgado, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'A peregrine falcon. In a hunting dive, it can reach more than 300 km/h.'
+    },
+    body: [
+      'The peregrine falcon is the fastest animal on Earth. It circles high above its prey, folds its wings and drops into a dive called a stoop, reaching more than 300 km/h, and snatches other birds in mid-air. Yet by the 1970s, this powerful hunter had almost vanished from eastern North America. The cause was not a predator. It was a chemical.',
+      { h: 'A poison that builds up' },
+      'After the Second World War, farmers and towns sprayed a <b>pesticide</b> called DDT to kill insects. It worked, but DDT does not break down easily, and animals cannot get rid of it. A small bird that eats many sprayed insects stores the DDT from all of them in its fat. A falcon that eats many small birds stores the DDT from all of those birds. With each step up the food chain, the amount grows larger. This build-up is called <b>bioaccumulation</b>.',
+      { fig: [[150, 150, 120, 'sprayed plants and insects', 3], [150, 110, 90, 'small birds', 8], [150, 70, 60, 'peregrine falcon', 16]].map(function (r) {
+            var s = '<rect class="k" x="' + (r[0] - r[2]) + '" y="' + (r[1] - 34) + '" width="' + (r[2] * 2) + '" height="34"/>';
+            for (var i = 0; i < r[4]; i++) s += '<circle class="dot" cx="' + (r[0] - r[2] + 10 + (i * 37) % (r[2] * 2 - 16)) + '" cy="' + (r[1] - 24 + (i % 3) * 8) + '" r="2.4"/>';
+            return s + '<text class="n" x="' + r[0] + '" y="' + (r[1] + 12) + '" text-anchor="middle">' + r[3] + '</text>'; }).join('') +
+          '<text class="n" x="10" y="20">dots: DDT</text>',
+        tall: 164, cap: 'Bioaccumulation. Each level of the food chain stores more DDT than the level below it.' },
+      { h: 'Eggs that broke' },
+      'The DDT did not usually kill adult falcons. Instead, it made their eggshells so thin that they cracked when the parents sat on them to keep them warm. Year after year, few chicks hatched, and at first nobody understood why. Ospreys, bald eagles and other birds of prey suffered in the same way. By 1975, scientists could find only a handful of peregrine pairs in all of southern Canada.',
+      { box: 'A book that changed things', text: 'In 1962, the scientist Rachel Carson published <i>Silent Spring</i>, warning that pesticides were harming birds and other wildlife. Her book helped lead to bans on DDT.' },
+      { h: 'The comeback' },
+      'Canada banned most uses of DDT in the 1970s. Scientists also raised young peregrines in captivity and released them in the wild, from cliffs and from the roofs of tall buildings. City skyscrapers turned out to be excellent cliffs, with plenty of pigeons to eat. Today, peregrines nest in Toronto, Ottawa, Winnipeg and many other cities, and volunteers watch some nests on webcams and count the chicks each spring. In 2017, Canada’s scientific committee on species at risk judged that it was no longer at risk.',
+      'The peregrine’s story shows how a chemical can move through a food web, and how quickly a species can recover when people remove the threat.'
+    ],
+    guide: { before: 'Review food chains. Teach <b>pesticide</b> and <b>bioaccumulation</b> with a simple model: one cup of water with a drop of food colouring per step, poured into a smaller and smaller cup.',
+      after: 'Pesticides help farmers grow food. How can we use chemicals in ways that do not harm wildlife?' },
+    words: [['bioaccumulation', 'the build-up of a substance in living things up the food chain'], ['pesticide', 'a chemical used to kill insects or other pests']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main cause of the peregrine’s decline, according to the report?',
+        opts: ['DDT built up in falcons and made their eggshells too thin.', 'Hunters shot them.', 'Cities destroyed their cliffs.', 'They ran out of pigeons.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Why does the top box of the diagram have the most dots?',
+        opts: ['DDT builds up at each step, so the top predator has the most.', 'Falcons are bigger.', 'Falcons eat plants.', 'The diagram is upside down.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Bio</b>accumulation contains <b>bio-</b>. Which word has the same part, meaning life?',
+        opts: ['biology', 'binoculars', 'bicycle', 'bitter'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'The report follows a problem-and-solution pattern. Fill in the chart.', cols: ['Problem', 'Solution'],
+        rows: [['DDT built up in food chains.', null], ['Very few chicks were hatching.', null], [null, 'Falcons nest on skyscrapers and hunt pigeons.']],
+        a: [[null, 'Canada banned most uses of DDT.'], [null, 'Scientists raised young falcons and released them.'], ['Falcons needed safe, high places to nest.', null]] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did DDT harm falcons more than the insects’ other predators lower in the food chain?',
+        a: 'Falcons are at the top of the food chain. Each falcon eats many birds, and each bird has eaten many insects, so the DDT from all of them builds up in the falcon.', look: 'the idea of build-up at each level, ending with the falcon at the top' },
+      { k: 'choice', code: 'B3.1', half: true, q: 'Which is a complex sentence?',
+        opts: ['It was a chemical.', 'It worked, but DDT does not break down easily.', 'When a falcon eats many small birds, it stores their DDT.', 'The peregrine falcon is fast.'], a: 2 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Which reason for reading this report fits it best?',
+        opts: ['to learn how a chemical affected wildlife and how people helped', 'to follow instructions for building a nest', 'to enjoy a funny story', 'to compare prices'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'This report is about bioaccumulation. Connect it to another text you have read about a food web or an invasive species. What is similar?',
+        a: 'Like the marsh food web passage, it shows that a change at the bottom of a food web affects the animals at the top. In both, protecting one species means protecting the whole web.', look: 'a connection to another text and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-cn-tower', subject: 'science', form: 'Explanation',
+    title: 'Built to Bend',
+    deck: 'How the shape of the CN Tower helps it stand tall in wind, storms and lightning',
+    hero: {
+      photo: 'g7-toronto-skyline.jpg', credit: 'Photo: Jchmrt, CC BY-SA 4.0, Wikimedia Commons', focus: '70% 50%',
+      tall: 200,
+      cap: 'Toronto at sunset. The CN Tower, 553 m tall, rises far above every other building. For more than 30 years it was the tallest free-standing structure in the world.'
+    },
+    body: [
+      'In the 1960s, Toronto had a problem. New skyscrapers downtown were blocking radio and television signals. The solution was to build an antenna so tall that its signals could pass over every building in the city. The result, finished in 1976, was the CN Tower. Its name comes from Canadian National, the railway company that built it. Its <b>form</b>, or shape, was designed above all for its <b>function</b>: to stand tall and steady while carrying signals far across the region.',
+      { h: 'A three-legged base' },
+      'Look at the tower from above, and its base is shaped like the letter Y. Three wide concrete legs spread out from a hollow, six-sided core. A tripod with three legs is hard to tip over, because there is always a leg braced against a push from any direction. The legs also become narrower as they rise, so the tower is heaviest and widest at the bottom, keeping its <b>centre of gravity</b> low.',
+      { fig: '<path class="k" d="M70 160 L84 40 L90 40 L104 160 M87 40 V6"/><ellipse class="k" cx="87" cy="58" rx="18" ry="6"/><ellipse class="k" cx="87" cy="72" rx="14" ry="4"/>' +
+          D.label(120, 14, 'antenna', 88, 12) + D.label(120, 62, 'pods: restaurant, lookouts', 105, 60) + D.label(120, 140, 'wide, heavy base', 102, 150) +
+          '<path class="k" d="M230 90 L230 60 M230 90 L204 106 M230 90 L256 106"/><circle class="t" cx="230" cy="90" r="9"/>' +
+          '<text class="lb" x="230" y="134" text-anchor="middle">base from above</text><text class="n" x="230" y="146" text-anchor="middle">three legs and a core</text>',
+        tall: 166, cap: 'The tower narrows as it rises. From above, its three legs and six-sided core form a Y.' },
+      { h: 'Swaying, not breaking' },
+      'Inside the concrete, steel cables were pulled tight to squeeze the concrete together and make it stronger. Even so, the tower is designed to bend a little. In very strong winds, the top can sway about a metre from side to side. A structure that could not bend at all would be more likely to crack. Below the ground, the foundation reaches about 15 m down to solid rock.',
+      { box: 'Did you know?', text: 'Lightning strikes the CN Tower about 75 times a year. Copper strips running down the tower carry the electricity safely into the ground.' },
+      { h: 'Building it' },
+      'The tower took about 40 months to build, and more than 1 500 people worked on it. Workers poured the concrete day and night, slowly raising a moving mould up the tower. The 102 m steel antenna on top was lifted into place in dozens of pieces by a giant helicopter. Today, visitors can stand on a glass floor 342 m above the ground or, on the EdgeWalk, circle the outside of the main pod wearing a harness. On a clear day, they can see across Lake Ontario toward Niagara Falls. Every part of the experience depends on the shape engineers chose more than fifty years ago.'
+    ],
+    guide: { before: 'Show a photo of the tower and a tripod camera stand. Teach <b>form</b>, <b>function</b> and <b>centre of gravity</b>. Have the child stand with feet together, then apart, while you gently push.',
+      after: 'Why do you think people visit the tower for fun, even though it was built to carry signals? Can a structure have more than one function?' },
+    words: [['form', 'the shape of a structure'], ['function', 'the job a structure is designed to do'], ['centre of gravity', 'the point where an object’s weight is balanced']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What was the original function of the CN Tower?',
+        opts: ['to be a restaurant', 'to send radio and TV signals over tall buildings', 'to measure the wind', 'to be a lighthouse'], a: 1 },
+      { k: 'table', code: 'C3.3', q: 'Connect each feature of the form to its function.', cols: ['Form (feature)', 'Function (how it helps)'],
+        rows: [['Y-shaped base with three legs', null], ['narrower as it rises', null], ['copper strips down the tower', null], [null, 'carry signals far across the region']],
+        a: [[null, 'braces against pushes from any direction'], [null, 'keeps the centre of gravity low'], [null, 'carry lightning safely to the ground'], ['a very tall antenna on top', null]] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the drawing of the base “from above” help you understand?',
+        opts: ['the Y shape of the three legs and core', 'how tall the antenna is', 'where the restaurant is', 'how lightning works'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is a tower that bends a little safer than one that cannot bend?',
+        opts: ['A stiff tower is more likely to crack in strong wind.', 'Bending makes it taller.', 'Visitors enjoy the movement.', 'It uses less concrete.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is <b>form</b> followed by a comma and “or shape,” and another comma?',
+        opts: ['The commas set off a short explanation of the word.', 'They begin a list.', 'They show a quotation.', 'They end the sentence.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Free-standing</b> means …',
+        opts: ['standing on its own, without cables holding it up', 'costing nothing', 'standing outside', 'able to move freely'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think engineers chose a helicopter to put the antenna on top?',
+        a: 'The tower was already very tall and narrow, so a crane could not easily reach. A helicopter could lift each heavy piece straight up and place it on top.', look: 'a logical reason linked to the height and shape of the tower' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'What strategy helped you most to understand how the base works: the diagram, trying the push test, or rereading? Why?',
+        a: 'Picturing a camera tripod helped most, because I already know a tripod does not tip over, so I could see why three legs are steady.', look: 'a named strategy and a clear reason it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-plains-abraham', subject: 'history', form: 'Report',
+    title: 'Fifteen Minutes That Changed a Continent',
+    deck: 'The Battle of the Plains of Abraham, Québec, 1759',
+    hero: {
+      photo: 'g7-plains-abraham.jpg', credit: 'Photo: Gabriel Picard, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Plains of Abraham today, a large park in Québec City. In 1759, this field was a battlefield.'
+    },
+    body: [
+      'In 1759, France and Britain were fighting the Seven Years’ War on several continents. In North America, the prize was New France, and the key to New France was the walled city of Québec, high on cliffs above the St. Lawrence River. All summer, a British fleet under General James Wolfe bombarded the city, but the French army, led by the Marquis de Montcalm, refused to come out and fight.',
+      { h: 'A climb in the dark' },
+      'Wolfe grew desperate. Winter was coming, and his fleet would soon have to leave before the river froze. Before dawn on September 13, he sent about 4 500 soldiers in small boats to a narrow path at the foot of the cliffs, a cove called the Anse au Foulon. They scrambled up the steep slope and, by morning, stood in battle lines on a farmer’s field called the Plains of Abraham, just outside the city walls.',
+      { fig: '<path class="t" d="M10 120 Q100 110 160 128 Q220 146 290 136"/><path class="k" d="M10 100 Q90 92 150 106 Q210 118 290 110"/>' +
+          '<path class="h" d="M210 40 h44 v34 h-44 Z"/>' + '<path class="a" stroke-dasharray="5 4" d="M60 132 L74 104 L96 82"/>' +
+          D.arrow(96, 82, 112, 70, 'a') + '<path class="k" d="M110 60 h50 M110 66 h50"/><path class="t" d="M176 60 h26 M176 66 h26"/>' +
+          D.label(196, 30, 'Québec (walled city)', 232, 40) + D.label(14, 40, 'Plains of Abraham', 130, 58) + D.label(10, 158, 'Anse au Foulon', 62, 130) +
+          '<text class="n" x="200" y="150">St. Lawrence River</text><text class="n" x="112" y="80">British</text><text class="n" x="168" y="80">French</text>',
+        tall: 166, cap: 'A sketch of the battle. The dashed arrow shows the British climb from the cove to the Plains.' },
+      { h: 'The battle' },
+      'Montcalm was surprised. Instead of waiting for more troops, he decided to attack at once. His army included French regular soldiers, Canadien <b>militia</b> and First Nations allies. The British held their fire until the French were very close, then fired together. In about fifteen minutes, the French lines broke. Canadien militia and First Nations warriors kept firing from the woods at the edge of the field, covering the retreat. Both commanders were badly wounded. Wolfe died on the field. Montcalm died the next morning.',
+      { box: 'Not only two armies', text: 'Many First Nations, including the Wendat, Mi’kmaq and Abenaki, fought as allies of the French. They had their own interests: protecting their lands and their trade.' },
+      { h: 'What came next' },
+      'Québec <b>surrendered</b> a few days later. Montréal fell the next year, and in 1763 the Treaty of Paris handed New France to Britain. About 70 000 French-speaking Canadiens suddenly found themselves living under a British king, with a different language and religion. The British promised that they could keep their homes, property and Catholic faith. How Britain would govern them became one of the great questions of Canada’s history. Today, the Plains are a peaceful park where people walk, skate and listen to concerts.'
+    ],
+    guide: { before: 'Find Québec City and the St. Lawrence River on a map. Explain that Britain and France were rivals for North America. Teach <b>militia</b> and <b>surrender</b>.',
+      after: 'How might a Canadien family in Québec have felt in 1763? What would they worry about, and what might stay the same?' },
+    words: [['militia', 'ordinary citizens trained to fight when needed'], ['surrendered', 'stopped fighting and gave up to the enemy']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['The British fleet bombards Québec all summer.', 'British soldiers climb the cliff in the dark.', 'The French lines break after about fifteen minutes.', 'The Treaty of Paris hands New France to Britain.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the sketch. Where did the British land?',
+        opts: ['at the Anse au Foulon, below the cliffs', 'inside the walled city', 'on the far side of the river', 'at Montréal'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Wolfe feel he had to act before winter?',
+        opts: ['The river would freeze and his fleet would have to leave.', 'He wanted to go skating.', 'Montcalm invited him to fight.', 'The treaty was signed in winter.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Was Montcalm’s decision to attack at once a good one? Use evidence from the text to explain.',
+        a: 'Probably not. He did not wait for more troops, and the British, who were ready in lines, broke his army in about fifteen minutes.', look: 'a judgment supported by details (no waiting for troops, quick defeat)' },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>They</b> had their own interests.” Who are <b>They</b>?',
+        opts: ['the First Nations allies', 'the British', 'the generals', 'the Canadiens in Montréal'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“They <b>scrambled</b> up the steep slope.” What does the adverbial phrase <b>up the steep slope</b> tell you?',
+        opts: ['where they scrambled', 'when they scrambled', 'why they scrambled', 'who scrambled'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 4, q: 'Many history books tell this story as a contest between two generals. What does the box add? Why is it important to include?',
+        a: 'It shows that First Nations fought too, for their own reasons: their lands and trade. Leaving them out would give an incomplete and biased story.', look: 'the First Nations perspective and why leaving it out creates bias' },
+      { k: 'choice', code: 'C2.3', q: 'Before reading, you might predict the battle lasted weeks. Which detail shows you should adjust that prediction?',
+        opts: ['“In about fifteen minutes, the French lines broke.”', '“All summer, a British fleet bombarded the city.”', '“Montréal fell the next year.”', '“Today, the Plains are a park.”'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-iceland', subject: 'geography', form: 'Report',
+    title: 'A Country Built on Fire',
+    deck: 'How the people of Iceland live with volcanoes, and use their heat',
+    hero: {
+      photo: 'g7-iceland-eruption.jpg', credit: 'Photo: DCheretovich, CC0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'Lava pours from a crack in the ground during an eruption on Iceland’s Reykjanes Peninsula in 2023.'
+    },
+    body: [
+      'Iceland sits right on top of the Mid-Atlantic Ridge, where the North American and Eurasian plates are pulling apart. Beneath the island, a plume of extra-hot rock also rises from deep inside Earth. The result is one of the most volcanic places on the planet. An eruption happens somewhere in Iceland every few years.',
+      { h: 'Cracks that open' },
+      'Many Icelandic eruptions are not cone-shaped mountains that explode. Instead, the ground splits open in a long crack called a fissure, and runny <b>lava</b> fountains out along it. In 2021, a fissure opened near Fagradalsfjall, a mountain less than 40 km from the capital, Reykjavík. It was the first eruption on that peninsula in about 800 years, and thousands of people hiked out to watch the glowing rivers of rock.',
+      { fig: '<path class="k" d="M10 70 H120 M180 70 H290"/><path class="k" d="M120 70 L134 120 M180 70 L166 120"/><path class="t" d="M10 92 H130 M170 92 H290"/>' +
+          '<path class="a" d="M150 150 Q146 120 150 96 Q154 80 150 62 M150 62 q-10 -16 -16 -30 M150 62 q10 -16 16 -30"/>' +
+          D.arrow(110, 50, 60, 50, 'k') + D.arrow(190, 50, 240, 50, 'k') +
+          '<text class="n" x="20" y="40">North American Plate</text><text class="n" x="196" y="40">Eurasian Plate</text>' +
+          D.label(196, 150, 'magma rises into the gap', 152, 124) + D.label(196, 18, 'lava fountains', 164, 32),
+        tall: 160, cap: 'As the plates pull apart, magma rises and erupts through long cracks.' },
+      { h: 'When it gets dangerous' },
+      'Not all eruptions are a show. In 2010, the volcano Eyjafjallajökull erupted under a glacier. Meltwater and lava created huge clouds of fine ash that drifted over Europe. Because ash can damage jet engines, about 100 000 flights were cancelled over several days. In 2023, the town of Grindavík, home to about 3 700 people, was evacuated as the ground cracked and magma moved underneath. Workers built huge earth walls to steer lava away from homes and a power plant.',
+      { box: 'Hot water for free', text: 'Water heated deep underground by volcanic rock is pumped up to heat about nine out of ten homes in Iceland. Many towns also have warm outdoor swimming pools all year round.' },
+      { h: 'Using the heat' },
+      'Icelanders have turned the danger into a resource. <b>Geothermal</b> power plants use underground steam to spin turbines and make electricity. Greenhouses heated by hot springs grow tomatoes and bananas just below the Arctic Circle. Scientists also place GPS stations and earthquake sensors across the country to watch for magma on the move. Before an eruption, thousands of small earthquakes may shake the ground in just a few days. Living on a volcano is risky, but careful monitoring, good planning and clean energy make it possible to thrive there.'
+    ],
+    guide: { before: 'Review the three kinds of plate boundary. Find Iceland on a world map and point out the ridge running through it. Teach <b>fissure</b>, <b>lava</b> and <b>geothermal</b>.',
+      after: 'Would you choose to live in Grindavík? What would you need to feel safe there?' },
+    words: [['lava', 'melted rock that comes out of the ground'], ['geothermal', 'using heat from deep inside Earth']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'Which sentence best states the main idea?',
+        opts: ['Iceland is cold.', 'Icelanders live with the dangers of volcanoes and also use their heat.', 'Volcanoes always explode.', 'All flights in Europe stopped forever.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['magma rising where two plates pull apart', 'a glacier melting', 'a power plant', 'an aircraft engine'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Geo</b>thermal has <b>geo-</b> (earth) and <b>therm</b> (heat). Which word also means earth + something?',
+        opts: ['geography', 'thermos', 'gesture', 'theme'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the two eruptions. Fill in the chart.', cols: ['', 'Fagradalsfjall, 2021', 'Eyjafjallajökull, 2010'],
+        rows: [['What happened', null, 'erupted under a glacier, making clouds of ash'], ['Effect on people', null, null]],
+        a: [[null, 'a fissure opened and lava fountained out', null], [null, 'thousands hiked out to watch', 'about 100 000 flights were cancelled']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did the 2010 eruption affect people far away in Europe, while the 2021 eruption did not?',
+        a: 'The 2010 eruption was under a glacier, so it made huge clouds of ash that drifted over Europe and grounded planes. The 2021 eruption had runny lava without much ash.', look: 'the role of the glacier and ash compared with runny lava' },
+      { k: 'choice', code: 'B3.3', half: true, q: '“…a mountain less than 40 km from the capital, Reykjavík.” Why is there a comma before <b>Reykjavík</b>?',
+        opts: ['It sets off the name of the capital.', 'It ends a list.', 'It shows a pause before a quotation.', 'It joins two sentences.'], a: 0 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Which purpose would this report suit best?',
+        opts: ['a project on how people adapt to natural hazards', 'a recipe for bananas', 'a story about dragons', 'a guide to buying a car'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Connect this report to what you know about plate boundaries from another text. How does that knowledge help explain Iceland’s volcanoes?',
+        a: 'I read that at some boundaries plates pull apart and hot rock rises to fill the gap. Iceland sits on such a boundary, which is why magma keeps erupting there.', look: 'a link to prior learning about divergent boundaries, applied to Iceland' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-teen-sleep', subject: 'health', form: 'Explanation',
+    title: 'Why Teens Can’t Fall Asleep',
+    deck: 'Your body clock shifts as you grow, and that changes everything about sleep',
+    hero: {
+      photo: 'g7-alarm-clock.jpg', credit: 'Photo: Santeri Viinamäki, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An alarm clock. Many teenagers need more sleep than they get on school nights.'
+    },
+    body: [
+      'When you were younger, you probably felt sleepy at 8 or 9 at night. Now you may lie awake until 11, then struggle to wake up for school. Adults sometimes think teenagers are just being lazy or staying up on purpose. Scientists have found that something real is going on inside the body.',
+      { h: 'The body clock' },
+      'Your body runs on a roughly 24-hour cycle called a <b>circadian rhythm</b>. It controls when you feel alert and when you feel sleepy. As evening comes, your brain releases a hormone called <b>melatonin</b>, which tells your body it is time to rest. During the teen years, the brain starts releasing melatonin later, often about two hours later than before. So a 13-year-old may not feel sleepy until 10:30 or 11, even if they are tired.',
+      { fig: '<path class="k" d="M20 130 H290"/>' + ['6 p.m.', '8 p.m.', '10 p.m.', 'midnight', '2 a.m.'].map(function (t, i) { var x = 30 + i * 62; return '<path class="t" d="M' + x + ' 126 v8"/><text class="n" x="' + x + '" y="148" text-anchor="middle">' + t + '</text>'; }).join('') +
+          '<rect class="t" x="92" y="76" width="198" height="20"/><rect class="h" x="154" y="36" width="136" height="20"/>' +
+          '<text class="lb" x="20" y="90">child</text><text class="lb" x="20" y="50">teen</text>' +
+          '<text class="n" x="96" y="110">melatonin starts</text><text class="n" x="158" y="70">starts about 2 hours later</text>',
+        tall: 156, cap: 'Melatonin, the sleep signal, starts later in the evening in the teen years.' },
+      { h: 'How much is enough?' },
+      'Canadian guidelines say that young people aged 5 to 13 need 9 to 11 hours of sleep a night, and teens aged 14 to 17 need 8 to 10. If you fall asleep at 11 and wake at 6:30, you get only seven and a half hours. Over a week, the lost hours add up to a <b>sleep debt</b>. It can make it harder to pay attention, remember what you learn, control your mood and stay healthy. It can even affect safety: tired people react more slowly, which matters on a bike, on the ice or, later, behind the wheel of a car.',
+      { box: 'Screens and sleep', text: 'The light from phones and tablets can delay melatonin even more. Putting screens away an hour before bed, and keeping them out of the bedroom, can help you fall asleep sooner.' },
+      { h: 'What helps' },
+      'You cannot change your biology, but you can work with it. Going to bed and waking up at about the same time every day, even on weekends, keeps the body clock steady. Morning light, exercise during the day and a calm bedtime routine all help. Caffeine in the afternoon, from cola, iced tea or energy drinks, can keep you awake for hours. Some school boards in North America have also moved high school start times later. Studies of those schools found that students slept longer, were less tired in class and were late less often.'
+    ],
+    guide: { before: 'Ask what time the child usually feels sleepy, and whether that has changed. Teach <b>circadian rhythm</b> and <b>melatonin</b>. Show how to read the time bars in the diagram.',
+      after: 'Should schools start later for older students? What would be the benefits and the problems?' },
+    words: [['circadian rhythm', 'the body’s 24-hour cycle of sleeping and waking'], ['melatonin', 'a hormone that makes you feel sleepy'], ['sleep debt', 'the total sleep you have missed over several nights']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Teenagers are lazy.', 'Changes in the teen body clock make it harder to fall asleep early, so teens need good sleep habits.', 'Alarm clocks should be banned.', 'Children need less sleep than teens.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. About when does melatonin start for the teen?',
+        opts: ['about 10 p.m.', 'about 6 p.m.', 'about 8 p.m.', 'about 2 a.m.'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'The first paragraph sets up a contrast. Between what?',
+        opts: ['what adults think and what scientists have found', 'cats and dogs', 'school and home', 'morning and night only'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Work out the sleep. Fill in the chart.', cols: ['Bedtime', 'Wake-up time', 'Hours of sleep', 'Enough for a 13-year-old?'],
+        rows: [['11 p.m.', '6:30 a.m.', '7.5', null], ['9:30 p.m.', '7 a.m.', null, null]],
+        a: [[null, null, null, 'no (needs 9 to 11)'], [null, null, '9.5', 'yes']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author say teens may not feel sleepy “even if they are tired”? Use the text to explain.',
+        a: 'Their bodies release melatonin about two hours later, so the sleep signal comes late. They can be tired from the day but still not get the signal to fall asleep.', look: 'the link between delayed melatonin and not feeling sleepy' },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What is a <b>sleep debt</b>, using the meaning of debt?',
+        opts: ['sleep you owe your body because you missed it', 'money spent on beds', 'a dream about money', 'extra sleep you have saved'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: 'Which is a complex sentence?',
+        opts: ['Morning light helps.', 'If you fall asleep at 11 and wake at 6:30, you get only seven and a half hours.', 'You cannot change your biology.', 'Your body runs on a cycle.'], a: 1 },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Did you make a personal connection while reading? Explain how connecting the text to your own sleep helped you understand it.',
+        a: 'Yes. I noticed I cannot fall asleep before 10:30 now, even though I used to at 9. Connecting to that made the idea of melatonin starting later make sense.', look: 'a personal connection and how it helped understanding' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-percent-sale', subject: 'math', form: 'Explanation',
+    title: 'What Does 40% Off Really Mean?',
+    deck: 'Percents, discounts and sales tax: doing the math before you pay',
+    hero: {
+      photo: 'g7-sale-sign.jpg', credit: 'Photo: TheDigitel Beaufort, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A store sign promising 75% off. Percent signs are everywhere when stores want you to buy.'
+    },
+    body: [
+      'Jonah has saved $60 for a pair of running shoes. In the store window, a sign says EVERYTHING 40% OFF. The shoes he wants have a price tag of $90. Can he afford them? To answer, he needs to understand what a <b>percent</b> is and how stores use it.',
+      { h: 'Out of one hundred' },
+      'Percent means “out of 100.” So 40% means 40 out of every 100, or 40 hundredths. A 40% discount means that for every $100 of the price, you save $40. To find the discount on $90, multiply 90 by 0.40. The discount is $36, so the sale price is $90 − $36 = $54. A quicker way is to notice that if you save 40%, you still pay 60%. And 60% of $90 is $54.',
+      { fig: '<rect class="k" x="20" y="40" width="260" height="40"/><rect class="h" x="20" y="40" width="156" height="40"/>' +
+          '<path class="t" d="M176 36 V84"/><text class="lb" x="98" y="30" text-anchor="middle">you pay 60%: $54</text><text class="lb" x="228" y="30" text-anchor="middle">you save 40%: $36</text>' +
+          '<text class="n" x="20" y="100">$0</text><text class="n" x="280" y="100" text-anchor="end">$90</text>' +
+          '<rect class="k" x="20" y="120" width="260" height="22"/><rect class="h" x="20" y="120" width="176" height="22"/><text class="n" x="200" y="136">+ 13% HST = about $61</text>',
+        tall: 150, cap: 'A percent bar. The whole bar is the original price, $90. The lower bar adds sales tax to the sale price.' },
+      { h: 'Do not forget the tax' },
+      'Jonah does the math and smiles. Then he remembers something. In Ontario, most purchases have a 13% <b>sales tax</b>, called the HST, added at the cash register. Children’s clothing and footwear are exempt from part of it, but these are adult-size shoes. So 13% of $54 is about $7.02, and the total comes to about $61.02. Jonah is just over a dollar short.',
+      { box: 'Watch the words', text: '“Up to 70% off” means that at least one item has 70% off. Most items may have much less. Read the small print before you get excited. Prices ending in .99 work the same way: $19.99 feels closer to $19 than to $20.' },
+      { h: 'Discounts on discounts' },
+      'Next week, the store advertises an extra 20% off sale prices. Does 40% plus 20% make 60% off? No. The second discount is taken from the new, lower price, not the original one. Twenty per cent of $54 is $10.80, so the price drops to $43.20. Compared with the original $90, that is a total discount of 52%, not 60%. Stores rely on shoppers adding percents in their heads and getting the wrong answer.',
+      { h: 'Thinking like a shopper' },
+      'Percents are useful, but they can hide the actual dollars. A 50% discount on a $10 shirt saves you $5, while 10% off a $200 bike saves $20. Before you buy, change the percent into dollars, add the tax and ask the most important question of all: do I actually need this? The same skills will help you for life, because interest on savings and loans is measured in percents too.'
+    ],
+    guide: { before: 'Review changing a percent to a decimal (40% = 0.40). Teach <b>percent</b>, <b>discount</b> and <b>sales tax</b>. Use a store flyer to find a few discounts together.',
+      after: 'Find a sale price in a flyer. Work out the price with tax. Is it really a good deal?' },
+    words: [['percent', 'a number out of 100'], ['sales tax', 'money added to a price that goes to the government']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Use the methods in the text. Fill in the chart.', cols: ['Original price', 'Discount', 'Sale price'],
+        rows: [['$90', '40%', null], ['$50', '20%', null], ['$200', null, '$150']],
+        a: [[null, null, '$54'], [null, null, '$40'], [null, '25%', null]] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the top bar, why is the shaded part longer than the white part?',
+        opts: ['Jonah pays 60%, which is more than the 40% he saves.', 'The tax is large.', 'The shoes cost $60.', 'It shows two pairs of shoes.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is 40% off followed by 20% off not the same as 60% off?',
+        opts: ['The second discount is taken from the lower sale price.', 'The store adds tax twice.', 'Percents cannot be added.', 'The sign was wrong.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Per cent</b> comes from Latin words meaning “for each hundred.” Which word also has <b>cent</b> meaning hundred?',
+        opts: ['century', 'centre', 'scent', 'accent'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'What does the dash in “$90 − $36 = $54” show?',
+        opts: ['It is a minus sign, meaning subtract.', 'It shows a pause.', 'It joins two words.', 'It shows a missing word.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text says, “Stores rely on shoppers adding percents in their heads and getting the wrong answer.” Is this fair to stores? Explain both sides.',
+        a: 'It may be fair, because some signs are designed to make deals look bigger than they are. But stores also give real discounts, and it is the shopper’s job to check the math.', look: 'two sides considered, with a reason for each' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What advice does the author give in the last paragraph? Why is it good advice?',
+        a: 'Change the percent into dollars, add the tax and ask if you really need it. It is good advice because percents can hide how much you really pay or save.', look: 'the steps of the advice and a reason it helps' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Which thinking skill helped you most to check the “extra 20% off” claim: estimating, calculating step by step, or comparing with the original price? Explain.',
+        a: 'Calculating step by step, because I worked out $54 minus $10.80 and saw the real total discount was 52%, not 60%.', look: 'a chosen thinking skill and how it revealed the truth' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-throat-singing', subject: 'arts', form: 'Report',
+    title: 'A Song Made of Breath',
+    deck: 'Katajjaq, the Inuit tradition of throat singing',
+    hero: {
+      photo: 'g7-throat-singers.jpg', credit: 'Photo: Ansgar Walk, CC BY-SA 2.5, Wikimedia Commons', focus: '50% 35%',
+      tall: 200,
+      cap: 'Two Inuit throat singers face each other, close enough to feel each other’s breath.'
+    },
+    body: [
+      'Two women stand face to face, so close that they can almost touch. One begins a short, rhythmic sound, deep in her throat. The other answers with a different sound, fitting it into the gaps. Their voices weave together faster and faster, until one of them runs out of breath or bursts out laughing, and the game is over. This is <b>katajjaq</b>, Inuit throat singing.',
+      { h: 'A game and a song' },
+      'Throat singing is traditionally done by women. In the past, while men were away hunting, women and girls sang together in the iglu or the tent to pass the long hours, entertain children and challenge one another. Each pattern of sounds has a name, and many imitate the world around them: geese, the wind, a river, a saw cutting wood. The sounds are made both while breathing in and while breathing out, which takes great skill and control. Singers often hold each other’s arms and sway gently as they sing.',
+      { fig: '<path class="k" d="M10 70 H290"/>' +
+          '<path class="a" d="M10 50 q8 -24 16 0 t16 0 M74 50 q8 -24 16 0 t16 0 M138 50 q8 -24 16 0 t16 0 M202 50 q8 -24 16 0 t16 0 M266 50 q8 -24 16 0"/>' +
+          '<path class="k" d="M42 96 q8 20 16 0 t16 0 M106 96 q8 20 16 0 t16 0 M170 96 q8 20 16 0 t16 0 M234 96 q8 20 16 0 t16 0"/>' +
+          '<text class="lb" x="10" y="20">singer 1</text><text class="lb" x="10" y="136">singer 2</text>' +
+          '<text class="n" x="150" y="150" text-anchor="middle">time →</text>',
+        tall: 156, cap: 'Each singer fills the gaps in the other’s rhythm, so the sound never stops.' },
+      { h: 'Nearly silenced' },
+      'In the early 1900s, Christian missionaries in the Arctic discouraged throat singing and other Inuit traditions, and many families stopped teaching it. By the 1980s, only a few elders in some communities still knew the songs. Inuit women worked hard to bring them back. They recorded elders, taught young people and performed at festivals and in schools. Many of those recordings are now kept safely in archives, so future singers can learn from them.',
+      { box: 'Protected heritage', text: 'In 2014, the Government of Québec recognized katajjaq as part of the province’s official cultural <b>heritage</b>, the first time it had given that status to an intangible tradition: something that lives in people rather than in an object.' },
+      { h: 'A living tradition' },
+      'Today, throat singing is strong and changing. Young Inuit women perform in pairs at community events and on stages around the world, and some artists combine katajjaq with rock, electronic music or orchestras. Some perform solo, a new way of using an old sound. Many say that throat singing connects them to their grandmothers, their language and the land. It is also still a game: when two singers meet, the challenge to keep going without laughing is as hard as ever.'
+    ],
+    guide: { before: 'If possible, listen to a short throat-singing recording shared by an Inuit organization. Teach <b>tradition</b> and <b>heritage</b>. Find Nunavut and Nunavik (northern Québec) on a map.',
+      after: 'Why does it matter that the songs were recorded from elders? What traditions in your family would you want to keep?' },
+    words: [['katajjaq', 'Inuit throat singing, often a game for two'], ['heritage', 'traditions and culture passed down from earlier generations']],
+    qs: [
+      { k: 'choice', code: 'C3.4', half: true, q: 'What does throat singing connect many singers to, according to the text?',
+        opts: ['their grandmothers, language and the land', 'a sports team', 'a company', 'a school subject only'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['two singers filling the gaps in each other’s rhythm', 'a map of the Arctic', 'how loud each singer is', 'the words of the song'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number these events in order.',
+        items: ['Women sing katajjaq while men are away hunting.', 'Missionaries discourage the tradition.', 'Inuit women record elders and teach young people.', 'Québec recognizes katajjaq as cultural heritage.'], show: [1, 3, 0, 2] },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How did the actions of missionaries in the early 1900s affect throat singing? How do Inuit artists today respond to that history?',
+        a: 'Missionaries discouraged the tradition, so families stopped teaching it and it nearly disappeared. Today Inuit women have revived it, teaching it and performing it proudly around the world.', look: 'the effect of the historical event and the present-day revival' },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>intangible</b> tradition is one that …',
+        opts: ['lives in people and cannot be touched like an object', 'is very old', 'is written in a book', 'costs money'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'In the box, why is there a colon after “intangible tradition”?',
+        opts: ['It introduces an explanation of the term.', 'It starts a list of names.', 'It shows a quotation.', 'It ends the paragraph.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The text says throat singing is “strong and changing.” Give two pieces of evidence that support this.',
+        a: 'Young women perform in pairs at events and on world stages. Some artists combine it with rock or electronic music, and some perform solo.', look: 'two details showing strength and change' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about singing, games or the Arctic that helped you picture katajjaq?',
+        a: 'I know clapping games where you have to keep the rhythm without making a mistake. That helped me picture two singers trying to keep going without laughing.', look: 'a real piece of prior knowledge connected to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-3d-printing', subject: 'tech', form: 'Explanation',
+    title: 'Building Things One Layer at a Time',
+    deck: 'How 3D printers work, and why they are changing how things are made',
+    hero: {
+      photo: 'g7-3d-printer.jpg', credit: 'Photo: Subhashish Panigrahi, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A 3D printer at work. A hot nozzle lays down thin lines of melted plastic, layer by layer.'
+    },
+    body: [
+      'For most of history, people made objects by starting with a block of material and taking some away. A carver chips at wood. A machine drills and cuts metal. This is called <b>subtractive manufacturing</b>, and it often leaves a pile of waste on the floor. A 3D printer works the opposite way. It starts with nothing and adds material only where it is needed, one thin layer at a time.',
+      { fig: '<rect class="k" x="110" y="14" width="40" height="22"/><path class="k" d="M124 36 L130 50 L136 36"/><path class="t" d="M60 20 Q90 6 110 22"/>' +
+          '<path class="k" d="M40 140 H220"/>' + [130, 122, 114, 106, 98, 90, 82, 74, 66].map(function (y, i) { var w = 60 - Math.abs(4 - i) * 4; return '<path class="t" d="M' + (130 - w) + ' ' + y + ' H' + (130 + w) + '"/>'; }).join('') +
+          D.label(170, 26, 'hot nozzle', 150, 26) + D.label(4, 40, 'filament', 74, 14) + D.label(196, 98, 'layers', 182, 98) + D.label(186, 158, 'printer bed', 160, 140) +
+          D.arrow(244, 70, 244, 120, 'a') + '<text class="n" x="250" y="90">bed</text><text class="n" x="250" y="102">drops</text>',
+        tall: 166, cap: 'The nozzle draws each layer; the bed drops a little so the next layer can go on top.' },
+      { h: 'From screen to object' },
+      'It begins with a digital design, drawn in a 3D modelling program or downloaded from a library of designs. Special software slices the design into hundreds of flat layers, each thinner than a sheet of cardboard. Then the printer gets to work. In the most common kind, a spool of plastic thread called filament feeds into a hot nozzle, where it melts. The nozzle moves back and forth, drawing the first layer onto a flat bed. When the layer cools and hardens, the bed drops slightly, and the nozzle draws the next layer on top.',
+      { h: 'Why it matters' },
+      'Because a printer adds material only where it is needed, <b>additive manufacturing</b> wastes very little. It can make shapes that would be impossible to cut from a block, such as a ball inside a cage. It is also fast to change: a designer can fix a mistake on screen and print a new version the same day.',
+      'These advantages are changing many fields. Volunteers around the world print low-cost prosthetic hands for children, which can be resized as the child grows. Dentists print models of teeth. Engineers print rocket parts, and builders have printed small concrete houses. In 2014, astronauts on the International Space Station printed a wrench from a design emailed up from Earth.',
+      { box: 'Not perfect yet', text: 'Most home printers are slow: a small object can take hours. Many plastic prints are not strong enough for heavy loads, and failed prints still create waste.' },
+      { h: 'Made from plants' },
+      'One popular filament, PLA, is made from plant starch, such as corn. It can be composted in industrial facilities, though not in a backyard bin. Researchers are now testing printers that use recycled plastic bottles as their raw material.'
+    ],
+    guide: { before: 'Build a small tower from flat layers of play dough or paper to show how layers add up. Teach <b>additive</b> and <b>subtractive</b> by contrasting building with blocks and carving soap.',
+      after: 'If your school had a 3D printer, what problem would you design something to solve?' },
+    words: [['subtractive manufacturing', 'making an object by cutting material away'], ['additive manufacturing', 'making an object by adding material layer by layer']],
+    qs: [
+      { k: 'table', code: 'C1.3', q: 'The text compares two ways of making things. Fill in the chart.', cols: ['', 'Subtractive', 'Additive (3D printing)'],
+        rows: [['How it works', null, 'adds material layer by layer'], ['Waste', null, null], ['Example', 'a carver chipping wood', null]],
+        a: [[null, 'takes material away from a block', null], [null, 'often a pile of waste', 'very little'], [null, null, 'a printed prosthetic hand']] },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps of 3D printing.',
+        items: ['Make or download a design.', 'Software slices it into layers.', 'The nozzle draws the first layer.', 'The bed drops and the next layer is added.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, why does the bed drop?',
+        opts: ['to make room for the next layer', 'to cool the nozzle', 'to remove waste', 'to change colours'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Sub</b>tractive has <b>sub-</b>, meaning under or away. Which word also uses this prefix?',
+        opts: ['submarine', 'subject', 'sudden', 'supper'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“…which can be resized as the child grows.” What does <b>which</b> refer to?',
+        opts: ['the prosthetic hands', 'the volunteers', 'the dentists', 'the rocket parts'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is a printed prosthetic hand especially useful for a child?',
+        a: 'Children grow quickly, so they need new hands often. Printing is low-cost and the design can be resized, so a new hand can be made easily.', look: 'the link between growth, resizing and low cost' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Is 3D printing better for the environment than subtractive manufacturing? Use evidence from the whole text, including the box.',
+        a: 'Partly. It wastes less material and some filament is made from plants or recycled bottles. But failed prints still make waste, and PLA cannot be composted at home.', look: 'a balanced conclusion with evidence for and against' },
+      { k: 'choice', code: 'C2.2', q: 'You want to print a phone stand at a library. Which part of the text would help you most?',
+        opts: ['“From screen to object”', '“Made from plants”', 'the box “Not perfect yet”', 'the first paragraph about carving'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-hallway', subject: 'story', form: 'Short story',
+    title: 'The Long Hallway',
+    deck: 'A story told in the second person: you are the new student',
+    hero: {
+      photo: 'g7-hallway.jpg', credit: 'Photo: ChinaFlag, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A school hallway in Ontario. On a first day, every hallway looks longer than it is.'
+    },
+    body: [
+      'You arrive in February, which is the wrong time to start anything. Everyone else has had five months to learn where the washrooms are, which teachers are strict and who sits with whom at lunch. You have had one weekend in Winnipeg, and most of it was spent looking at snow.',
+      'The office gives you a <b>timetable</b> and a map. Room 214, it says, for Science. The map shows a long hallway with a staircase at each end. You hold the map in front of you like a compass and start walking.',
+      { fig: '<rect class="k" x="10" y="20" width="280" height="130"/><path class="k" d="M10 76 H290 M10 96 H290"/>' +
+          [50, 110, 170, 230].map(function (x, i) { return '<path class="t" d="M' + x + ' 20 V76 M' + x + ' 96 V150"/><text class="n" x="' + (x - 20) + '" y="50" text-anchor="middle">' + (i === 3 ? 'library' : 202 + i * 4) + '</text><text class="n" x="' + (x - 20) + '" y="126" text-anchor="middle">' + (204 + i * 4) + '</text>'; }).join('') +
+          '<text class="n" x="270" y="50" text-anchor="middle">218</text><text class="n" x="270" y="126" text-anchor="middle">220</text>' +
+          '<path class="a" stroke-dasharray="5 4" d="M20 86 H268 Q280 86 280 100 V112 M268 86"/>' + D.arrow(150, 86, 186, 86, 'a') +
+          '<text class="lb" x="24" y="14">stairs</text><text class="lb" x="246" y="14">stairs</text>' + D.label(150, 172, '214 is inside the library', 190, 56),
+        tall: 178, cap: 'The map from the office. Room 214 is hidden inside the library.' },
+      'The hallway is loud. Lockers slam. Someone laughs, and for a second you think it is at you, but it is not. You read the numbers on the doors: 202, 206, 210. The next door says 218. You walk back. You walk forward again. There is no 214. The bell rings, and the hallway empties, the way water drains from a bathtub, and you are the only thing left in it.',
+      'You think about your old school in Asmara, where you knew every crack in the courtyard. You think about the smell of coffee roasting on Sunday mornings and your cousins arguing about football. You think about your grandmother, who said, when you left, “A new place is just an old place you have not met yet.” At the time, you thought it was the kind of thing grandmothers say. Now you are not so sure.',
+      'You check the map again. The paper is getting soft from your hands. A door opens behind you. A girl with a <b>hall pass</b> and a green hijab looks at you, then at your map, then back at you.',
+      '“Two-fourteen?” she asks. You nod. “Everybody gets lost. It’s across the hall, inside the library. Nobody tells you that.” She walks you there, and on the way she tells you her name is Hodan, that she came from Somalia in Grade 4, and that the cafeteria pizza is a lie on Wednesdays.',
+      'At the door of 214, she stops. “Lunch,” she says. “Third table from the window. Come find us.”',
+      'You go in. The teacher points to an empty desk. The hallway behind you is still long, but it is not empty any more. Somewhere in it is a third table from the window, and someone waiting there who has already met this place, and is willing to introduce you.'
+    ],
+    guide: { before: 'Explain point of view: first person (I), second person (you), third person (he, she, they). Ask what it feels like to be addressed as “you” in a story. Find Winnipeg and Eritrea (Asmara is its capital) on a map.',
+      after: 'What small things can students do to help a newcomer feel they belong? Which ones does Hodan do?' },
+    words: [['timetable', 'a schedule showing when and where classes happen'], ['hall pass', 'a note that lets a student be in the hallway during class']],
+    qs: [
+      { k: 'choice', code: 'C1.6', q: 'The story is told in the second person. Which words show this?',
+        opts: ['“you” and “your”', '“I” and “me”', '“he” and “she”', '“we” and “us”'], a: 0 },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'How would the story change if Hodan told it in the first person? Give one example.',
+        a: 'We would see the new student from the outside, maybe looking lost in the hallway, and learn why Hodan decided to help. We would not know about the grandmother or Asmara.', look: 'a clear change in what the reader knows or feels, with an example' },
+      { k: 'choice', code: 'C3.1', half: true, q: '“…the hallway empties, the way water drains from a bathtub.” What does this simile help you feel?',
+        opts: ['how suddenly and completely you are left alone', 'that the floor is wet', 'that the school is old', 'that you are clean'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the map help explain?',
+        opts: ['why room 214 was hard to find', 'where the cafeteria is', 'who Hodan is', 'what time it is'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What does the grandmother’s saying mean? How does the end of the story show it may be true?',
+        a: 'It means a new place will become familiar once you get to know it. At the end, Hodan helps and invites the student to lunch, so the school is starting to feel known.', look: 'an interpretation of the saying and a link to Hodan’s help' },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Lunch,” she says. “Third table from the window. Come find us.” Why are these words in separate short sentences?',
+        opts: ['to sound like natural, quick speech', 'because she is angry', 'to list foods', 'to show a mistake'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The first sentence says February is “the wrong time to start anything.” What does this word choice show?',
+        opts: ['the narrator’s worry about arriving late in the year', 'that winter is cold', 'that the school is closed', 'that the narrator is late for class'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What message does the story give about belonging? Use a detail from the end.',
+        a: 'Belonging can start with one small act of welcome. Hodan, who was once new herself, invites the student to her table, so the hallway is “not empty any more.”', look: 'a message about belonging or inclusion, supported by an ending detail' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-oil-sands', subject: 'geography', form: 'Two opinions',
+    title: 'Should the Oil Sands Grow?',
+    deck: 'Two students take opposite sides on one of Canada’s biggest resource debates',
+    hero: {
+      photo: 'g7-oil-sands.jpg', credit: 'Photo: Dicklyon, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An oil sands mine and plant at Mildred Lake, north of Fort McMurray, Alberta.'
+    },
+    body: [
+      'Under the boreal forest of northern Alberta lies one of the largest oil deposits in the world. The oil is not a liquid pool. It is <b>bitumen</b>, a thick, sticky oil mixed with sand, clay and water. Near the surface, it is dug up in huge open-pit mines. Deeper down, steam is pumped underground to melt the bitumen so it can flow up wells. Our class held a debate: should Canada let the oil sands grow? Here are two students’ closing statements.',
+      { fig: '<path class="k" d="M10 50 H290"/><path class="k" d="M20 50 Q50 96 100 96 Q130 96 140 50"/><path class="h" d="M30 70 Q60 92 100 92 Q122 92 132 68"/>' +
+          '<path class="h" d="M170 118 H290 V140 H170 Z"/><path class="k" d="M200 50 V128 M240 50 V128"/>' + D.arrow(200, 60, 200, 116, 'a') + D.arrow(240, 116, 240, 60, 'a') +
+          '<text class="lb" x="80" y="20" text-anchor="middle">near the surface</text><text class="n" x="80" y="34" text-anchor="middle">open-pit mine</text>' +
+          '<text class="lb" x="220" y="20" text-anchor="middle">deep underground</text><text class="n" x="220" y="34" text-anchor="middle">steam down, bitumen up</text>' +
+          '<text class="n" x="150" y="156" text-anchor="middle">shaded areas: oil sand</text>',
+        tall: 162, cap: 'Two ways of getting bitumen out of the ground.' },
+      { h: 'Yes: “It keeps our country running”' },
+      'The oil sands employ tens of thousands of people, not only in Alberta but across Canada, in factories that build equipment and in offices that run the companies. Fort McMurray grew from a small town into a city of about 70 000 people because of them. Taxes and royalties from oil pay for schools, hospitals and roads. Some First Nations and Métis communities own businesses that work in the oil sands and use the profits to support their people. The world still needs oil while we switch to clean energy, and Canada has strong environmental rules. If we do not produce it, other countries with weaker rules will. — Liam',
+      { h: 'No: “The real cost is too high”' },
+      'Producing oil from the oil sands releases more <b>greenhouse gases</b> than producing most other oil, because it takes so much energy to separate the bitumen. Mining strips away forest and wetlands. Companies must restore mined land, but so far only a small part has been certified as fully reclaimed. The leftover water and sand, called tailings, are stored in giant ponds that can harm birds and may leak into rivers. People in Fort Chipewyan, downstream on Lake Athabasca, have raised concerns about their water, fish and health. Instead of growing the oil sands, we should invest in solar, wind and the jobs they create. — Priya',
+      { box: 'Thinking about the debate', text: 'Both speakers use facts, but each chooses the facts that support their side. To judge an argument, ask what the speaker left out.' },
+      'After the debate, our teacher asked us to vote twice: once before we heard the statements and once after. Eight students changed their minds. Some moved toward Liam, and some toward Priya. Most of us agreed on one thing: the decision affects jobs, the land and the climate all at once, so there is no simple answer.'
+    ],
+    guide: { before: 'Find Fort McMurray, Fort Chipewyan and Lake Athabasca on a map. Teach <b>bitumen</b> and <b>greenhouse gas</b>. Explain that a debate presents two sides on purpose.',
+      after: 'Which statement was more convincing to you, and why? What facts would you want to check before you decided?' },
+    words: [['bitumen', 'a thick, sticky form of oil mixed with sand'], ['greenhouse gases', 'gases that trap heat in the atmosphere and warm the planet']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Sum up each side. Fill in the chart.', cols: ['', 'Liam (yes)', 'Priya (no)'],
+        rows: [['Main argument', null, null], ['One piece of evidence', null, null]],
+        a: [[null, 'The oil sands support jobs and pay for services.', 'The environmental cost is too high.'], [null, 'Taxes and royalties pay for schools and hospitals.', 'Producing it releases more greenhouse gases than most oil.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram explain?',
+        opts: ['the two ways bitumen is removed from the ground', 'how much oil costs', 'where Fort Chipewyan is', 'how a car engine works'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Why does the text include two closing statements?',
+        opts: ['to present both sides of a debate', 'to tell a story', 'to give instructions', 'to describe a science experiment'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 4, q: 'Find one fact that each speaker leaves out that would help the other side. Why might they leave it out?',
+        a: 'Liam does not mention tailings ponds or greenhouse gases. Priya does not mention that some First Nations and Métis businesses benefit. Each leaves out facts that weaken their own argument.', look: 'an omitted fact for each speaker and the reason (bias toward their side)' },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Oil companies pay <b>royalties</b> to the province. What are royalties here?',
+        opts: ['payments for the right to use a resource', 'members of a royal family', 'a kind of tailings', 'prizes'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Priya mention Fort Chipewyan in particular?',
+        opts: ['It is downstream, so the people there may be affected by the oil sands.', 'It is the capital of Alberta.', 'It has the most mines.', 'It is where Liam lives.'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'What does the dash before each name do?',
+        opts: ['It shows who wrote the statement.', 'It shows subtraction.', 'It begins a list.', 'It shows a missing word.'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Eight students changed their minds. What thinking skill helps a person change their mind for a good reason?',
+        a: 'Weighing evidence: listening to the facts on both sides, checking which are reliable and asking what was left out, instead of just going with your first feeling.', look: 'a named critical-thinking skill and why it leads to a good decision' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-urban-heat', subject: 'science', form: 'Explanation',
+    title: 'Why Cities Are Hotter',
+    deck: 'Asphalt, rooftops and the urban heat island',
+    hero: {
+      photo: 'g7-green-roof.jpg', credit: 'Photo: GreenRoofGardener, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The green roof on Toronto City Hall. Plants on a roof can keep a building and its neighbourhood cooler.'
+    },
+    body: [
+      'On a hot July afternoon, step from a city park onto a parking lot, and you will feel the difference at once. Downtown streets can be several degrees warmer than the countryside around the city, and at night the difference can be even greater. Scientists call this an <b>urban heat island</b>: a city that is warmer than the area around it.',
+      { h: 'Dark surfaces soak up heat' },
+      'Sunlight carries energy. When it hits a surface, some of it bounces off and some is absorbed and turns into heat. Light-coloured surfaces, like snow or a white roof, reflect most of the sunlight. Dark surfaces, like asphalt and black roofs, absorb most of it. How much light a surface reflects is called its albedo. On a sunny summer day, a dark roof can reach over 70 °C. The heat then radiates back into the air, warming the whole neighbourhood.',
+      { fig: '<path class="k" d="M10 150 H290"/><path class="a" d="M10 110 Q60 106 90 96 Q120 70 150 60 Q180 70 200 92 L220 112 Q240 110 290 112"/>' +
+          '<path class="t" d="M20 150 v-10 M40 150 v-12 M60 150 v-10"/><rect class="t" x="120" y="110" width="16" height="40"/><rect class="t" x="140" y="96" width="18" height="54"/><rect class="t" x="162" y="104" width="14" height="46"/>' +
+          D.spruce(222, 150, 30) + D.spruce(236, 150, 26) + '<path class="t" d="M260 150 v-10 M280 150 v-12"/>' +
+          '<text class="n" x="40" y="168" text-anchor="middle">farms</text><text class="n" x="148" y="168" text-anchor="middle">downtown</text><text class="n" x="228" y="168" text-anchor="middle">park</text><text class="n" x="272" y="168" text-anchor="middle">suburbs</text>' +
+          '<text class="lb" x="150" y="50" text-anchor="middle">warmest</text><text class="n" x="10" y="100">temperature</text>',
+        tall: 174, cap: 'Temperatures across a city on a summer afternoon. The line rises downtown and dips over the park.' },
+      { h: 'Other causes' },
+      'Cities have fewer trees and plants. Plants cool the air by releasing water through their leaves, much as sweat cools your skin. Tall buildings trap heat between them and block cooling breezes. Cars, air conditioners and factories add even more heat. Concrete and brick store heat all day and release it slowly at night, so the city never fully cools down. In winter, that extra warmth can melt snow faster downtown, but in summer it can become a serious problem.',
+      { box: 'Why it matters', text: 'Heat waves are dangerous, especially for older people, babies and people without air conditioning. In 2021, an extreme heat wave in British Columbia caused hundreds of deaths.' },
+      { h: 'Cooling the city' },
+      'Cities can fight back. Planting trees adds shade and cooling. Light-coloured or reflective roofs bounce sunlight away. A <b>green roof</b>, covered in soil and plants, keeps a building cooler, soaks up rainwater and gives bees and birds a place to feed. In 2009, Toronto became the first city in North America to require green roofs on many large new buildings. Some cities are also testing lighter pavements and turning parking lots into parks. Every cooler surface helps the whole neighbourhood.'
+    ],
+    guide: { before: 'On a sunny day, have the child touch a dark car and a light one, or a black and a white T-shirt left in the sun. Teach <b>absorb</b>, <b>reflect</b> and <b>urban</b>.',
+      after: 'Where are the hottest and coolest places near your home or school? What could make the hot ones cooler?' },
+    words: [['urban heat island', 'a city that is warmer than the land around it'], ['green roof', 'a roof covered with soil and plants']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the line graph show?',
+        opts: ['Downtown is warmest, and the park is cooler.', 'The suburbs are warmest.', 'Farms are hotter than downtown.', 'Temperature is the same everywhere.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Re</b>flect and <b>re</b>lease both begin with <b>re-</b>, meaning back. Which word also uses <b>re-</b> this way?',
+        opts: ['return', 'ready', 'real', 'region'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'The text explains causes and solutions. Fill in the chart.', cols: ['Cause of heat', 'A way to fix it'],
+        rows: [['dark roofs absorb sunlight', null], ['few trees and plants', null], [null, 'turn parking lots into parks']],
+        a: [[null, 'light-coloured or green roofs'], [null, 'plant trees'], ['asphalt and concrete store heat', null]] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does a city stay warm even after the sun goes down?',
+        a: 'Concrete and brick store heat all day and release it slowly at night, so the city never fully cools down.', look: 'the idea that materials store heat and release it at night' },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Plants cool the air “much as sweat cools your skin.” What does this comparison explain?',
+        opts: ['that releasing water causes cooling', 'that plants are alive', 'that sweat is green', 'that trees need water'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Cities can fight back.” What is the verb phrase?',
+        opts: ['can fight', 'Cities', 'back', 'fight back'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The box says heat waves are most dangerous for some people. Who are they, and what does this suggest cities should think about when they plan cooling?',
+        a: 'Older people, babies and people without air conditioning. Cities should make sure cooling, like trees and cooling centres, reaches the neighbourhoods where those people live.', look: 'the groups named and a fair, inclusive planning idea' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'What could you do to check that you understand why dark surfaces get hotter?',
+        a: 'I could do a test: put a black and a white piece of paper in the sun and feel which gets hotter, then reread the paragraph to see if my result matches.', look: 'a practical strategy (test, reread, explain to someone, use the diagram)' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-brant', subject: 'history', form: 'Biography',
+    title: 'Between Two Worlds',
+    deck: 'Joseph Brant, Thayendanegea, and the Six Nations’ land on the Grand River',
+    hero: {
+      photo: 'g7-brant.jpg', credit: 'Painting: George Romney, 1776, public domain, National Gallery of Canada', focus: '50% 25%',
+      tall: 200,
+      cap: 'Joseph Brant, painted in London by George Romney in 1776, when Brant was in his early thirties.'
+    },
+    body: [
+      'Thayendanegea, known in English as Joseph Brant, was born in 1743 in the Ohio country, into the Mohawk Nation. The Mohawk are one of the Six Nations of the Haudenosaunee Confederacy. As a teenager, Brant went to a school in Connecticut, where he learned to read and write English. He became a skilled <b>interpreter</b>, moving easily between Mohawk and British communities. His sister, Molly Brant, was also an influential leader.',
+      { h: 'Choosing a side' },
+      'When the American Revolution began in 1775, the Haudenosaunee had to decide what to do. Brant travelled to London, met King George III and was painted by a famous artist. He believed the British were more likely than the American colonists to respect Haudenosaunee land. He led Mohawk and Loyalist fighters on the British side throughout the war.',
+      { fig: '<path class="t" d="M20 30 Q90 18 160 34 Q230 50 290 40"/><path class="t" d="M20 150 Q100 140 180 152 Q240 160 290 150"/>' +
+          '<path class="k" d="M90 34 Q110 60 120 90 Q130 120 160 150"/><path class="d" d="M60 34 Q80 62 92 94 Q104 126 130 150 M120 34 Q140 58 148 86 Q158 116 190 150"/>' +
+          '<path class="h" d="M128 120 L146 116 L154 134 L134 138 Z"/>' +
+          D.label(196, 88, 'Grand River', 124, 96) + D.label(196, 114, 'land promised in 1784', 146, 74) + D.label(196, 140, 'Six Nations today', 150, 128) +
+          '<text class="n" x="20" y="22">north</text><text class="n" x="200" y="172">Lake Erie</text>',
+        tall: 176, cap: 'A sketch of the Haldimand Tract. The dashed lines show the land promised along the Grand River; the shaded area shows roughly how much remains with Six Nations today.' },
+      { h: 'A new home on the Grand River' },
+      'The British lost the war, and the peace treaty did not even mention their Haudenosaunee allies. Brant pressed the British for land. In 1784, Governor Frederick Haldimand promised the Six Nations the land for about ten kilometres on each side of the Grand River, from its source to Lake Erie. Brant led about 1 800 people there. The town of Brantford is named after the place where he crossed the river.',
+      { h: 'A hard choice' },
+      'Brant believed his people needed money and farming neighbours to survive in a changing world, so he sold and leased large parts of the land to settlers. Other chiefs disagreed, and the British government argued that the Six Nations had no right to sell it. Over time, through sales, leases and government decisions, most of the land passed out of Six Nations hands.',
+      { box: 'Still unresolved', text: 'Six Nations of the Grand River is today the largest First Nations community in Canada by population. Its people hold less than five per cent of the land promised in 1784, and many <b>land claims</b> are still being negotiated.' },
+      'Brant died in 1807. He also translated parts of the Bible into Mohawk. Historians still debate his choices, but few doubt that he spent his life trying to secure a future for his people.'
+    ],
+    guide: { before: 'Find the Grand River, Brantford and Lake Erie on a map of southern Ontario. Teach <b>interpreter</b>, <b>Loyalist</b> and <b>land claim</b>.',
+      after: 'Brant made hard choices that people still disagree about. Was selling land a reasonable choice in his situation? What else could he have done?' },
+    words: [['interpreter', 'a person who translates spoken words between languages'], ['land claims', 'legal cases about who has rights to an area of land']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What was Brant’s main goal throughout his life, according to the text?',
+        opts: ['to become British', 'to secure land and a future for his people', 'to become a painter', 'to start a school in Connecticut'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the shaded area on the map show?',
+        opts: ['roughly how much land Six Nations holds today', 'the land promised in 1784', 'Lake Erie', 'Brantford'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Brant side with the British?',
+        opts: ['He thought they would better respect Haudenosaunee land.', 'He was born in Britain.', 'He was paid to.', 'The king ordered him to.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 4, q: 'The text says, “Historians still debate his choices.” Give one reason someone might admire Brant’s choice to sell land, and one reason someone might criticize it.',
+        a: 'Admire: he was trying to get money and farming neighbours so his people could survive. Criticize: selling land meant most of it passed out of Six Nations hands forever.', look: 'one fair reason on each side' },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is <b>Thayendanegea</b> followed by a comma and “known in English as Joseph Brant”?',
+        opts: ['The commas set off another name for the same person.', 'They show a list of people.', 'They show a quotation.', 'They end the sentence.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Molly Brant was an <b>influential</b> leader. This means she …',
+        opts: ['had a strong effect on others’ decisions', 'was very young', 'lived far away', 'was often sick'], a: 0 },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How do events from 1784 still affect the Six Nations community today? Use the box.',
+        a: 'The land promised in 1784 was mostly lost, so Six Nations now holds less than five per cent of it. Many land claims about it are still being negotiated today.', look: 'a link between the historical promise and present-day land claims' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize Brant’s life in two or three sentences.',
+        a: 'Joseph Brant was a Mohawk leader and interpreter who fought for the British in the American Revolution. Afterward, he led his people to land on the Grand River, but selling parts of it led to a long dispute.', look: 'who he was, his role in the war and the land on the Grand River' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-energy-drinks', subject: 'health', form: 'Explanation',
+    title: 'What’s in That Can?',
+    deck: 'Energy drinks, caffeine and why they are not made for young people',
+    hero: {
+      photo: 'g7-energy-drinks.jpg', credit: 'Photo: Oto Zapletal, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Energy drinks on a shelf. The bright cans are designed to catch your eye.'
+    },
+    body: [
+      'The cans are tall and shiny, with names like Blast, Rocket or Monster. The ads show skateboarders, gamers and athletes doing amazing things. The message is clear: drink this, and you will have more energy. But what is actually in the can, and what does it do to a growing body?',
+      { h: 'The main ingredient' },
+      'The ingredient that makes energy drinks feel energizing is <b>caffeine</b>, the same drug found in coffee, tea and cola. Caffeine is a <b>stimulant</b>: it speeds up the nervous system, making you feel more alert for a while. A single large energy drink can contain more caffeine than a cup of coffee, and some people drink two or three in a day. Many also contain a lot of sugar, sometimes more than ten teaspoons in one can.',
+      { fig: '<path class="k" d="M40 150 H290 M40 150 V20"/>' + [['cola', 36], ['tea', 50], ['coffee', 120], ['energy drink', 160]].map(function (r, i) {
+            var x = 60 + i * 58, h = r[1] * 0.75; return '<rect class="h" x="' + x + '" y="' + (150 - h) + '" width="34" height="' + h + '"/><text class="n" x="' + (x + 17) + '" y="164" text-anchor="middle">' + r[0] + '</text><text class="lb" x="' + (x + 17) + '" y="' + (144 - h) + '" text-anchor="middle">' + r[1] + '</text>'; }).join('') +
+          '<path class="d" d="M40 86 H290"/><text class="n" x="44" y="80">85 mg: daily limit for ages 10 to 12</text>' +
+          '<text class="n" x="36" y="16" text-anchor="end">mg</text>',
+        tall: 172, cap: 'About how much caffeine is in one serving. Amounts vary by brand and size.' },
+      { h: 'What it does' },
+      'Health Canada advises that children aged 10 to 12 have no more than 85 mg of caffeine a day, less than one large energy drink. For teens, the limit depends on body weight: about 2.5 mg for each kilogram, or about 125 mg for a 50 kg teen. Too much caffeine can cause a racing heart, shaky hands, headaches, stomach aches and trouble sleeping. It can also make people feel anxious. When the caffeine wears off, many people feel even more tired than before, which makes them want another can.',
+      { box: 'Not a sports drink', text: 'Energy drinks are not the same as sports drinks, which replace water and salts lost in sweat. Health Canada requires energy drink cans to say that they are not recommended for children.' },
+      { h: 'Real energy' },
+      'Real, lasting energy comes from sleep, regular meals and water. A good night’s sleep does more for focus than any drink. Breakfast with protein, such as eggs, yogurt or peanut butter, gives steady energy through the morning. Water is the best choice for staying hydrated during sports. When you see an ad for an energy drink, ask yourself: who is the company trying to sell to, and why do they show young, active people? The answer can tell you a lot about the message behind the bright can.'
+    ],
+    guide: { before: 'Look at the label on a cola or tea and find the caffeine and sugar. Teach <b>caffeine</b> and <b>stimulant</b>. Show how to read the bar graph and the dashed limit line.',
+      after: 'Why do you think energy drink ads use skateboarders and gamers? What would an honest ad for an energy drink show?' },
+    words: [['caffeine', 'a drug in coffee, tea, cola and energy drinks that makes people feel alert'], ['stimulant', 'something that speeds up the body’s systems']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. Which drink is above the dashed line?',
+        opts: ['coffee and the energy drink', 'cola only', 'tea only', 'none of them'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>stimulant</b> speeds up the body. Which word is related?',
+        opts: ['stimulate', 'stimulus-free', 'still', 'stomach'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart using the text.', cols: ['Effect of too much caffeine', 'Part of the body or mind affected'],
+        rows: [['racing heart', null], [null, 'sleep'], ['feeling anxious', null]],
+        a: [[null, 'the heart'], ['trouble sleeping', null], [null, 'the mind and mood']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why might drinking one energy drink lead to wanting another?',
+        a: 'When the caffeine wears off, people often feel even more tired than before, so they want another can to feel alert again.', look: 'the crash after caffeine wears off, leading to wanting more' },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'Energy drink ads often show athletes and gamers doing amazing things. What technique is this, and what effect is it meant to have on young viewers?',
+        a: 'It links the drink with excitement, skill and being cool, so young people feel the drink will make them like those athletes, even though the drink does not do that.', look: 'the technique (association with cool or skilled people) and its intended effect' },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Caffeine is a stimulant: it speeds up the nervous system.” What does the colon do?',
+        opts: ['It introduces an explanation of the word stimulant.', 'It starts a list.', 'It shows a quotation.', 'It shows time.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“…which makes them want another can.” What does <b>which</b> refer to?',
+        opts: ['feeling more tired when the caffeine wears off', 'a racing heart', 'Health Canada', 'the can'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What conclusion does the author want readers to reach? Give two details that support it.',
+        a: 'Energy drinks are not a good choice for young people. One can has more caffeine than the daily limit for 10- to 12-year-olds, and too much causes a racing heart and poor sleep.', look: 'the conclusion and two supporting details' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-passwords', subject: 'tech', form: 'Explanation',
+    title: 'The Key to Your Online Life',
+    deck: 'How passwords get cracked, and how to make yours strong',
+    hero: {
+      photo: 'g7-password.jpg', credit: 'Photo: Santeri Viinamäki, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A login screen. Your username says who you are; your password proves it.'
+    },
+    body: [
+      'Your password is like the key to a house where you keep your messages, photos, games and school work. If someone copies your key, they can walk in, look around, pretend to be you and lock you out. Yet many people still use passwords like 123456, password or their pet’s name. Every year, lists of the most common passwords are published, and these are always at the top.',
+      { fig: '<path class="k" d="M110 150 H290 M110 150 V14"/>' + [['6 letters', 8], ['8 letters', 30], ['12 letters', 86], ['4 random words', 130]].map(function (r, i) {
+            var y = 24 + i * 34; return '<text class="l" x="104" y="' + (y + 13) + '" text-anchor="end">' + r[0] + '</text><rect class="h" x="110" y="' + y + '" width="' + r[1] + '" height="18"/>'; }).join('') +
+          '<text class="n" x="124" y="37">seconds</text><text class="n" x="146" y="71">hours</text><text class="n" x="202" y="105">many years</text><text class="n" x="246" y="139">centuries</text>',
+        tall: 156, cap: 'Roughly how long a computer might take to crack passwords of different lengths. Longer is much stronger.' },
+      { h: 'How passwords are cracked' },
+      'Criminals rarely guess passwords one at a time. They use computer programs that can try billions of guesses very quickly. First the program tries the most common passwords and every word in a dictionary. Then it tries words with numbers and symbols added, such as Hockey2013!. Finally, it tries every possible combination, which is called a <b>brute-force attack</b>. Criminals also trick people into typing their passwords into fake emails or websites that look real, a trick called phishing. A short password falls quickly, but every extra character multiplies the number of possible combinations.',
+      { h: 'Make it long' },
+      'The most important thing is <b>length</b>. A strong method is the passphrase: four or more random words strung together, such as maple-otter-trumpet-gravel. It is easy for you to remember but very hard for a program to guess. Adding capital letters or symbols helps a little, but adding more words helps far more. Avoid anything that can be found online, such as your birthday, your school or your favourite team, because attackers search social media for clues.',
+      { box: 'Two steps are better than one', text: 'Two-step verification asks for a second proof, such as a code sent to a phone, after your password. Even if someone steals the password, they still cannot get in.' },
+      { h: 'One key per door' },
+      'Never use the same password everywhere. When one website is hacked, criminals try the stolen passwords on many other sites. If you reuse a password, one break-in can open all your accounts. A password manager, an app that safely stores a different strong password for each account, can help, with a parent’s permission. Finally, keep your passwords private, even from friends. A friend today might not be a friend next month, and a shared password can be passed on without you ever knowing.'
+    ],
+    guide: { before: 'Ask how many accounts the child has and whether any share a password. Teach <b>brute-force attack</b> and <b>passphrase</b>. Make up a silly four-word passphrase together, but do not use it for a real account.',
+      after: 'What would you do if you thought someone had your password? Make a plan together.' },
+    words: [['brute-force attack', 'trying every possible combination until one works'], ['length', 'how many characters a password has']],
+    qs: [
+      { k: 'choice', code: 'A2.2', half: true, q: 'Which is the strongest password?',
+        opts: ['Hockey2013!', 'password', 'river-lantern-pickle-north', 'sam2011'], a: 2 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the bar graph show?',
+        opts: ['Longer passwords take far longer to crack.', 'Short passwords are best.', 'All passwords take hours.', 'Random words are easy to guess.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The author compares a password to a key. What does the comparison help you understand?',
+        opts: ['A password protects private things, and a copy lets others in.', 'Passwords are made of metal.', 'You should hide passwords under a mat.', 'Keys are better than passwords.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“…because attackers search social media for <b>clues</b>.” Clues to what?',
+        opts: ['the personal information people use in passwords', 'treasure', 'school work', 'the weather'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps a cracking program usually takes.',
+        items: ['Try the most common passwords.', 'Try every word in a dictionary.', 'Add numbers and symbols to words.', 'Try every possible combination.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'A2.1', n: 3, q: 'Why should you keep your password private even from a good friend? Use the text.',
+        a: 'A friend today might not be a friend later, and a shared password can be passed on without you knowing. Then someone could get into your accounts or pretend to be you.', look: 'the idea that sharing can lead to others getting access, with a reason from the text' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is reusing one password so risky?',
+        a: 'If one website is hacked, criminals try the stolen password on other sites. If it is the same everywhere, they can get into all your accounts.', look: 'the chain from one hacked site to many accounts' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence combines two ideas with a dependent clause?',
+        opts: ['Make it long.', 'If you reuse a password, one break-in can open all your accounts.', 'Never use the same password everywhere.', 'Two steps are better than one.'], a: 1 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-water-treatment', subject: 'science', form: 'Explanation',
+    title: 'From Lake to Tap',
+    deck: 'How a treatment plant separates the mixture in lake water to make it safe to drink',
+    hero: {
+      photo: 'g7-water-plant.jpg', credit: 'Photo: Richard Kang, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The R. C. Harris Water Treatment Plant in Toronto, built in the 1930s. It still cleans much of the city’s drinking water.'
+    },
+    body: [
+      'Lake Ontario looks clean on a calm day, but a glass of water straight from the lake is a <b>mixture</b> of many things. There is sand and silt, tiny bits of plants, algae, bacteria and sometimes chemicals washed off streets and farms. Before it reaches your tap, a water treatment plant separates out the parts you should not drink. Each step uses a different property of the mixture.',
+      { h: 'Screening and settling' },
+      'Water enters the plant through pipes that reach far out into the lake, where the water is deeper, colder and cleaner than near the shore. First it passes through screens that catch fish, weeds and garbage. Next, a chemical called a coagulant is added. It makes tiny particles stick together into clumps called floc. In large, calm tanks, the heavy floc slowly sinks to the bottom, a process called <b>sedimentation</b>.',
+      { fig: [['screen', 'catches large objects'], ['settling tank', 'clumps sink'], ['filter', 'sand traps small bits'], ['disinfect', 'chlorine kills germs'], ['to your tap', '']].map(function (r, i) {
+            var x = 8 + i * 58; return '<rect class="k" x="' + x + '" y="40" width="50" height="44"/><text class="lb" x="' + (x + 25) + '" y="30" text-anchor="middle">' + (i + 1) + '</text>' +
+              '<text class="n" x="' + (x + 25) + '" y="100" text-anchor="middle">' + r[0] + '</text><text class="n" x="' + (x + 25) + '" y="112" text-anchor="middle">' + r[1].split(' ').slice(0, 2).join(' ') + '</text><text class="n" x="' + (x + 25) + '" y="124" text-anchor="middle">' + r[1].split(' ').slice(2).join(' ') + '</text>' +
+              (i < 4 ? D.arrow(x + 50, 62, x + 58, 62, 'a') : ''); }).join('') +
+          '<path class="d" d="M74 74 H116"/><path class="t" d="M130 70 h40 M130 76 h40 M130 82 h40"/>',
+        tall: 132, cap: 'The main steps in a water treatment plant.' },
+      { h: 'Filtering' },
+      'The clearer water then trickles down through deep beds of sand, gravel and sometimes charcoal. This <b>filtration</b> traps smaller particles that did not settle, much like a coffee filter catches grounds. Every so often, the filters are cleaned by pumping water backward through them.',
+      { h: 'Killing germs' },
+      'Even crystal-clear water can carry bacteria and viruses too small to filter out. So the plant adds a small, carefully measured amount of chlorine, which kills harmful germs. Some plants also shine ultraviolet light through the water. A little chlorine stays in the water as it travels through kilometres of pipes, protecting it all the way to your home. Workers test the water many times a day. Many cities also add a small amount of fluoride to protect people’s teeth.',
+      { box: 'Not everyone has it', text: 'For years, dozens of First Nations communities in Canada have lived under long-term drinking water advisories, meaning their tap water was not safe to drink. Many advisories have been lifted, but some remain.' },
+      'The R. C. Harris plant, with its marble halls and brass railings, is sometimes called the Palace of Purification. Its builders believed clean water deserved a beautiful building. Today, people understand that clean water is not only beautiful but a basic right.'
+    ],
+    guide: { before: 'Mix sand, soil and leaves in a jar of water, let it settle, then pour the top through a coffee filter. Teach <b>sedimentation</b> and <b>filtration</b>.',
+      after: 'Why is clean drinking water called a basic right? What should happen when a community does not have it?' },
+    words: [['sedimentation', 'letting heavy particles sink to the bottom of a liquid'], ['filtration', 'passing a liquid through a material that traps solids']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps of water treatment in order.',
+        items: ['Screens catch fish and garbage.', 'Floc sinks in calm tanks.', 'Sand and gravel filter the water.', 'Chlorine is added to kill germs.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C3.3', q: 'Each step uses a different property. Fill in the chart.', cols: ['Step', 'What it removes', 'Property it uses'],
+        rows: [['screening', 'fish, weeds and garbage', null], ['sedimentation', null, 'heavy things sink'], ['filtration', null, null]],
+        a: [[null, null, 'large size'], [null, 'clumps of particles (floc)', null], [null, 'small particles', 'size: small bits get trapped']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['the steps in order from lake to tap', 'a map of Toronto', 'the inside of a pipe', 'how chlorine is made'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“Like a coffee filter catches grounds.” Why does the author use this comparison?',
+        opts: ['to connect filtration to something familiar', 'to suggest drinking coffee', 'to describe the colour of water', 'to explain chlorine'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does some chlorine stay in the water after it leaves the plant?',
+        opts: ['to keep it safe as it travels through the pipes', 'to make it taste better', 'by accident', 'to make it blue'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Purify</b> and <b>purification</b> share the base <b>pure</b>. What does the suffix <b>-ify</b> mean?',
+        opts: ['to make', 'not', 'full of', 'a person who'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do you think the author includes the box about First Nations communities? What does it add to the text?',
+        a: 'It shows that safe water is not equal for everyone in Canada. It reminds readers that the right to clean water is not yet met for all communities.', look: 'the idea of unequal access and why including it matters' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of the last glass of water you drank. Describe its journey, using what you learned.',
+        a: 'It probably came from a lake or well, passed through screens, settled in tanks, was filtered through sand and treated with chlorine, then travelled through pipes to my tap.', look: 'a personal connection that uses the steps from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-habitat67', subject: 'arts', form: 'Report',
+    title: 'A Village of Boxes',
+    deck: 'Habitat 67, the Montréal building that began as a student’s dream',
+    hero: {
+      photo: 'g7-habitat67.jpg', credit: 'Photo: Citlallirios, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 200,
+      cap: 'Habitat 67 seen from the St. Lawrence River. Hundreds of concrete boxes are stacked like giant building blocks.'
+    },
+    body: [
+      'In the early 1960s, Moshe Safdie, a student training to be an <b>architect</b> at McGill University, was worried about cities. Apartment towers were going up everywhere, packing families into identical boxes with no gardens and no sunlight on the sides. Houses with yards spread far into the countryside, using up farmland. Safdie wondered: could a building give city people the space, light and privacy of a house, without taking up so much land?',
+      { fig: '<path class="k" d="M10 150 H290"/>' + [[30, 120], [90, 120], [150, 120], [210, 120], [60, 90], [140, 90], [200, 90], [100, 60], [170, 60], [130, 30]].map(function (b) { return '<rect class="k" x="' + b[0] + '" y="' + b[1] + '" width="60" height="30"/>'; }).join('') +
+          '<path class="a" d="M64 88 q4 -8 8 0 M74 88 q4 -8 8 0 M174 58 q4 -8 8 0 M184 58 q4 -8 8 0"/>' +
+          D.label(4, 40, 'a roof becomes', 72, 86) + '<text class="n" x="4" y="54">a garden above</text>' + D.label(230, 30, 'one module', 190, 40),
+        tall: 156, cap: 'Offset boxes: the roof of one home becomes the garden of the home above it.' },
+      { h: 'Stacking the boxes' },
+      'For his final project, Safdie designed a building made of concrete boxes, called <b>modules</b>, stacked on top of one another at different angles, like a pile of children’s blocks. Each home was made of one to four modules. Because the boxes were offset, the roof of one home became the garden terrace of the home above it. Every family had fresh air, sunlight from several sides and a garden of its own.',
+      { h: 'From school project to world’s fair' },
+      'In 1967, Montréal hosted a world’s fair, Expo 67, to celebrate Canada’s 100th birthday. Organizers asked Safdie, then only 24 years old, to build his idea for real. Workers built 354 modules in a factory set up on the site, then lifted them into place with a huge crane. The result held 146 homes. Millions of visitors toured it, and photos of Habitat 67 appeared around the world.',
+      { box: 'Form and function', text: 'The building’s strange shape is not decoration. Each angle was chosen so that every home would get light, views and a terrace, and so that the stack would stay strong.' },
+      { h: 'A dream that cost too much' },
+      'Safdie hoped buildings like Habitat would provide good, affordable homes for ordinary families. But building and fitting the heavy concrete boxes turned out to be expensive, and no one built a second one in Canada. Today, the apartments are owned by their residents and are highly sought after. In 2009, Québec declared Habitat 67 a heritage site. Architects still study it as a bold answer to an old question: how can people live close together and still feel at home?'
+    ],
+    guide: { before: 'Build a small stack of boxes or blocks, offsetting each layer, and look for the “gardens.” Teach <b>architect</b> and <b>module</b>. Explain that Expo 67 was a world’s fair in Montréal.',
+      after: 'Would you like to live in Habitat 67? What would you like and not like about it?' },
+    words: [['modules', 'separate units that fit together to make something larger'], ['architect', 'a person who designs buildings']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What problem was Safdie trying to solve?',
+        opts: ['how to give city families space, light and gardens without using much land', 'how to build faster cars', 'how to make towers taller', 'how to win a prize at school'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram explain?',
+        opts: ['how offset boxes give each home a roof garden', 'how concrete is made', 'how a crane works', 'the map of Montréal'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The boxes were <b>offset</b>. What does <b>offset</b> mean here?',
+        opts: ['set at different positions, not lined up', 'turned off', 'paid for', 'painted'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was no second Habitat built in Canada?',
+        opts: ['It turned out to be too expensive.', 'Nobody liked it.', 'It fell down.', 'Safdie refused.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Read the box. How does the shape of Habitat 67 show the architect’s values?',
+        a: 'Every angle was chosen so each family got light, views and a garden. It shows that Safdie valued fairness, nature and good homes for everyone, not just looks.', look: 'a link between the design choices and the values they show' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Was Habitat 67 a success? Draw a conclusion and support it with evidence from the text.',
+        a: 'It was a success as an idea and a building: it became famous and is a heritage site. It was not a success as affordable housing, because it cost too much and was never repeated.', look: 'a balanced conclusion supported by evidence' },
+      { k: 'choice', code: 'B3.2', q: '“Organizers asked Safdie, <b>then only 24 years old</b>, to build his idea.” What does the bold phrase do?',
+        opts: ['It adds information about Safdie.', 'It is the main verb.', 'It names the organizers.', 'It is a question.'], a: 0 },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Name one reason someone might choose to read this text, and one other source they could use to learn more.',
+        a: 'To learn how architects design homes for cities. They could also look at the architect’s own website or a museum page about Expo 67.', look: 'a fitting purpose and a reasonable additional source' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-rideau', subject: 'history', form: 'Report',
+    title: 'Digging a Way Through the Wilderness',
+    deck: 'Why the Rideau Canal was built, and the people who paid the price',
+    hero: {
+      photo: 'g7-rideau.jpg', credit: 'Photo: Robert Linsdell, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The flight of locks where the Rideau Canal meets the Ottawa River. Many of the original stone walls still stand.'
+    },
+    body: [
+      'After the War of 1812, British officials in Upper Canada were nervous. The main route for soldiers and supplies between Montréal and Kingston ran up the St. Lawrence River, right along the American border. In another war, American soldiers could easily cut it off. The British needed a safer route farther inland.',
+      { h: 'The plan' },
+      'The answer was a <b>canal</b> linking the Ottawa River to Lake Ontario, using the Rideau and Cataraqui rivers and the lakes between them. In 1826, Lieutenant-Colonel John By of the Royal Engineers arrived to build it. Instead of digging a long ditch, By decided to build dams that raised the water level, flooding rapids and swamps to create long stretches of calm water. Where the land rose or fell, workers built <b>locks</b> to lift and lower boats.',
+      { fig: [[20, 'boat enters'], [110, 'gates close, water flows in'], [200, 'boat rises, upper gates open']].map(function (r, i) {
+            var x = r[0], w = 80, lvl = [110, 90, 70][i]; return '<path class="k" d="M' + x + ' 50 V130 H' + (x + w) + ' V50"/><path class="t" d="M' + x + ' 70 H' + (x - 6) + '"/>' +
+              D.ripple(x + 4, x + w - 4, lvl, 't') + '<rect class="h" x="' + (x + 24) + '" y="' + (lvl - 12) + '" width="32" height="10"/>' +
+              '<text class="n" x="' + (x + w / 2) + '" y="148" text-anchor="middle">' + r[1] + '</text>' + (i === 1 ? D.arrow(x + 70, 40, x + 70, 64, 'a') : ''); }).join(''),
+        tall: 154, cap: 'How a lock lifts a boat. Water flows in until the boat is level with the higher water.' },
+      { h: 'Who built it' },
+      'About 6 000 labourers did the work, many of them newly arrived Irish immigrants and French Canadians. They cut through forests and rock with hand tools, black powder and horses, in swamps full of mosquitoes. Wages were low, and many lived with their families in crowded shanties near the work sites. Malaria, a disease spread by mosquitoes, swept through the camps every summer. Historians estimate that about 1 000 workers died during construction, from disease and accidents. Many were buried in unmarked graves near the locks.',
+      { box: 'Did you know?', text: 'The town that grew up around By’s headquarters was called Bytown. In 1855 it was renamed Ottawa, and soon after, it became the capital of Canada.' },
+      { h: 'A canal never used for war' },
+      'The canal, about 200 km long, opened in 1832 after six years of work. John By was soon called back to England and blamed for spending far more than planned. It never had to carry troops to a war, but it carried settlers, timber and goods for decades and helped Upper Canada grow. Today it is a UNESCO World Heritage Site. In summer, boaters still pass through the locks, many of them opened by hand. In winter, part of the canal in Ottawa freezes into a skating rink nearly 8 km long, where people skate to work, school and the market.'
+    ],
+    guide: { before: 'Find Ottawa, Kingston and the St. Lawrence River on a map and trace the route of the canal. Teach <b>canal</b> and <b>lock</b>. Show the three-step lock diagram slowly.',
+      after: 'The canal is now a place for fun, but it was built at a great human cost. How should places like this remember the workers who built them?' },
+    words: [['canal', 'a waterway built by people for boats'], ['locks', 'sections of a canal with gates, used to raise and lower boats']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'Why was the Rideau Canal built?',
+        opts: ['to give the British a safer military route away from the American border', 'to create a skating rink', 'to bring water to farms', 'to connect Ottawa to the Atlantic Ocean'], a: 0 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps of a lock in order.',
+        items: ['The boat enters the lock.', 'The gates close.', 'Water flows in and the boat rises.', 'The upper gates open.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did By build dams instead of digging one long ditch?',
+        opts: ['Raising the water created long stretches of calm water to travel on.', 'Dams were cheaper than boats.', 'He wanted to make lakes for fishing.', 'Digging was not allowed.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 4, q: 'Whose story is easy to forget when people talk about the canal’s builder, John By? Why does it matter to include them?',
+        a: 'The thousands of labourers, many Irish and French Canadian, who did the dangerous work and the roughly 1 000 who died. Including them gives an honest picture of what the canal cost.', look: 'the workers named and a reason their story matters' },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Construction</b> comes from <b>construct</b>. What does the suffix <b>-ion</b> do?',
+        opts: ['turns a verb into a noun', 'makes a word plural', 'means “not”', 'means “again”'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“…where people skate to work, school and the market.” What does <b>where</b> refer to?',
+        opts: ['the frozen canal in Ottawa', 'Kingston', 'the locks', 'the market'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how the purpose of the canal has changed from 1832 to today.',
+        a: 'It was built for the military but never used in a war. It then carried settlers and goods, and today it is used for boating, skating and as a heritage site.', look: 'the change from military route to trade to recreation and heritage' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which strategy helped you more with the lock diagram: reading it step by step, or picturing yourself in a boat? Why?',
+        a: 'Picturing myself in the boat helped, because I could imagine the water rising under me as each gate opened.', look: 'a chosen strategy and a reason it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-monsoon', subject: 'geography', form: 'Explanation',
+    title: 'The Season of Rain',
+    deck: 'What causes the South Asian monsoon, and why a billion people watch for it',
+    hero: {
+      photo: 'g7-monsoon.jpg', credit: 'Photo: McKay Savage, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A street in Chennai, India, during the monsoon. In a few months, most of the year’s rain falls.'
+    },
+    body: [
+      'Every year in early June, millions of people in southern India look up at the sky and check the news. Farmers, city planners and weather scientists are all waiting for the same event: the arrival of the summer <b>monsoon</b>. When it comes, heavy rain sweeps north across the country over several weeks. In much of India, it brings about three quarters of the whole year’s rainfall in just four months.',
+      { h: 'A wind that changes direction' },
+      'The word monsoon comes from an Arabic word for season, and it really means a seasonal change in the wind. The cause is the different ways land and water heat up. In spring, the land of South Asia heats up much faster than the Indian Ocean. Hot air over the land rises, creating an area of low <b>air pressure</b>. Cooler, moist air from over the ocean flows in to replace it. As that wet air is pushed up over hills and mountains, it cools, and its water vapour turns into rain.',
+      { fig: '<path class="k" d="M10 120 H150"/><path class="t" d="M150 120 H290"/>' + D.ripple(154, 286, 120, 't') +
+          '<text class="lb" x="80" y="146" text-anchor="middle">hot land</text><text class="lb" x="220" y="146" text-anchor="middle">cooler ocean</text>' +
+          D.arrow(80, 110, 80, 50, 'a') + D.arrow(270, 60, 270, 104, 'k') + D.arrow(260, 110, 110, 110, 'a') + D.arrow(100, 40, 260, 40, 'k') +
+          '<path class="d" d="M50 58 L44 72 M62 58 L56 72 M74 58 L68 72"/>' +
+          '<text class="n" x="88" y="74">warm air rises</text><text class="n" x="150" y="104">moist ocean air flows in</text><text class="n" x="10" y="54">rain</text>',
+        tall: 156, cap: 'Summer monsoon: the hot land draws in moist air from the ocean, which rises, cools and falls as rain.' },
+      'In winter, the pattern reverses. The land cools faster than the ocean, so dry winds blow from the land out to sea, and the months are mostly dry. Sailors and traders have known these winds for thousands of years: ships sailed from Arabia to India on the summer winds and home again on the winter ones.',
+      { box: 'One of the wettest places on Earth', text: 'The village of Mawsynram, in the hills of northeast India, receives nearly 12 000 mm of rain a year, almost all during the monsoon. Toronto receives about 830 mm.' },
+      { h: 'A blessing and a danger' },
+      'The monsoon is vital. Rice, cotton, sugar cane and many other crops depend on it, and so do the reservoirs that supply cities with drinking water. A weak monsoon can mean drought, poor harvests and higher food prices. But too much rain too quickly causes floods and landslides that can destroy homes and roads. Cities like Mumbai can come to a standstill when streets turn into rivers. On one day in July 2005, Mumbai received about 944 mm of rain.',
+      { h: 'Watching the sky' },
+      'Because so much depends on it, India’s weather service tracks the monsoon closely and announces its arrival in each region. Scientists are also studying how a warming climate is changing it. Many have found that the total rain is becoming less predictable, with more days of extreme downpours and longer dry spells in between.'
+    ],
+    guide: { before: 'Find India and the Indian Ocean on a world map. Teach <b>monsoon</b> and <b>air pressure</b>. Remind the child that warm air rises, as with a hot-air balloon.',
+      after: 'Canada does not have a monsoon. What weather event do people in your area watch for and prepare for each year?' },
+    words: [['monsoon', 'a seasonal wind that brings a rainy season'], ['air pressure', 'the weight of air pressing down on Earth’s surface']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What causes the summer monsoon, according to the text?',
+        opts: ['Hot land draws in moist air from the cooler ocean.', 'Mountains make their own rain.', 'The ocean heats up faster than the land.', 'Winter winds blow out to sea.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which way does the moist air flow?',
+        opts: ['from the ocean toward the land', 'from the land to the ocean', 'straight down', 'it does not move'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'Compare the seasons. Fill in the chart.', cols: ['', 'Summer', 'Winter'],
+        rows: [['Wind direction', null, null], ['Weather', null, 'mostly dry']],
+        a: [[null, 'from the ocean to the land', 'from the land out to sea'], [null, 'heavy rain', null]] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the author call the monsoon “a blessing and a danger”?',
+        a: 'It brings rain that crops and cities need, which is a blessing. But too much rain at once causes floods and landslides, which is a danger.', look: 'one benefit and one danger, linked to the phrase' },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Cities can come to a <b>standstill</b>. What does this mean?',
+        opts: ['Everything stops moving.', 'Everyone stands up.', 'Buildings get taller.', 'The rain stops.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“As that wet air is pushed up over hills, it cools.” What does the clause starting with <b>As</b> tell you?',
+        opts: ['when the air cools', 'where the ocean is', 'why it is called a monsoon', 'who measures the rain'], a: 0 },
+      { k: 'choice', code: 'C1.1', q: '“Many have found that the total rain is becoming less predictable.” Who are <b>Many</b>?',
+        opts: ['many scientists', 'many farmers', 'many cities', 'many monsoons'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'What weather event do people where you live watch and prepare for each year? How is it like the monsoon?',
+        a: 'In my area, people watch for the first big snowstorm. Like the monsoon, it affects travel, schools and businesses, so people prepare ahead of time.', look: 'a local weather event and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-bridge-committee', subject: 'story', form: 'Play script', plain: true,
+    title: 'The Bridge Committee',
+    deck: 'A short play in one scene. Four members of a youth council must decide how to spend $40 000.',
+    hero: {
+      photo: 'g7-footbridge.jpg', credit: 'Photo: Xnatedawgx, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A footbridge in a park. In the play, an old bridge like this one is at the centre of a debate.'
+    },
+    body: [
+      'Names in bold show who is speaking. Words in italics are <b>stage directions</b>.',
+      '<i>A meeting room at the town hall. Four members of the youth council sit around a table covered in papers. A screen shows a photo of an old wooden footbridge with a sign: CLOSED.</i>',
+      '<b>Chair (Amira):</b> Okay. We have $40 000 from the town to spend on one project. Two ideas made the final vote: fixing the Mill Creek footbridge, or building a skate park. Devon, you first.',
+      '<b>Devon:</b> <i>(standing up)</i> The skate park. Hands down. There are more than two hundred skaters in this town and nowhere to skate except the library parking lot. We keep getting kicked out.',
+      '<b>Mei:</b> The bridge has been closed for two years. My grandmother used to walk across it every day to get to the pharmacy. Now it takes her forty minutes to go around by the road.',
+      { fig: '<path class="t" d="M138 46 Q148 74 138 100 Q130 124 140 146 M162 46 Q172 74 162 100 Q154 124 164 146"/>' +
+          '<rect class="k" x="16" y="88" width="44" height="30"/><rect class="k" x="240" y="88" width="44" height="30"/>' +
+          '<path class="a" stroke-dasharray="5 4" d="M60 104 H240"/><path class="k" d="M136 98 V110 M166 98 V110"/>' +
+          '<path class="d" d="M38 88 V36 H262 V88"/>' +
+          '<text class="n" x="38" y="132" text-anchor="middle">seniors’ homes</text><text class="n" x="262" y="132" text-anchor="middle">pharmacy</text>' +
+          '<text class="lb" x="150" y="28" text-anchor="middle">road: 40 minutes</text><text class="lb" x="202" y="130" text-anchor="middle">bridge: 8 min</text>' +
+          D.label(176, 70, 'old footbridge (closed)', 152, 100),
+        tall: 140, cap: 'Mei’s map: the walk to the pharmacy by the bridge and by the road.' },
+      '<b>Devon:</b> I get that, but a bridge is for, what, twenty people? The skate park would be used every day by kids who have nothing else.',
+      '<b>Theo:</b> <i>(quietly, from his wheelchair)</i> Can I say something? Neither of those plans works for me. The old bridge had steps at both ends. And most skate parks have no paths I can use. If we fix the bridge, it has to have ramps. Otherwise we’re spending the money on something half of us can’t cross.',
+      '<i>A pause. Devon sits down slowly.</i>',
+      '<b>Amira:</b> That’s… a really good point. Theo, what would make the bridge work?',
+      '<b>Theo:</b> Ramps instead of steps. Railings at the right height. And it’s not only me: parents with strollers, people with walkers, Mei’s grandmother.',
+      '<b>Mei:</b> She uses a cane now. Ramps would help her too.',
+      '<b>Devon:</b> <i>(looking at the photo on the screen)</i> I never thought about that. I skate right past that bridge every day.',
+      '<b>Devon:</b> <i>(thinking)</i> What if we fixed the bridge with ramps this year and asked the town for the skate park next year? And we design the skate park so there are paths and a viewing area everyone can get to.',
+      '<b>Amira:</b> A <b>compromise</b>. Then let’s vote. All in favour?',
+      '<i>Four hands go up. Theo and Devon shake hands. Mei is already sketching a ramp on the back of her agenda. Lights fade.</i>'
+    ],
+    guide: { before: 'Explain how a play script works: character names in bold, stage directions in italics. Teach <b>stage directions</b> and <b>compromise</b>. Read it aloud together, each person taking parts.',
+      after: 'Devon changes his mind. What made him change it? Have you ever changed your mind after listening to someone?' },
+    words: [['stage directions', 'instructions in a play that tell actors what to do'], ['compromise', 'an agreement where each side gives up something']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'How can you tell this is a play script?',
+        opts: ['It has character names before each speech and stage directions.', 'It has a glossary and headings.', 'It rhymes.', 'It is a diary.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why are some words in italics, like <i>(quietly, from his wheelchair)</i>?',
+        opts: ['They are stage directions telling actors how to act.', 'They are spoken loudly.', 'They are mistakes.', 'They are book titles.'], a: 0 },
+      { k: 'table', code: 'C3.5', q: 'Each character sees the problem from a different point of view. Fill in the chart.', cols: ['Character', 'What they want', 'Why'],
+        rows: [['Devon', 'a skate park', null], ['Mei', null, 'her grandmother needs it to reach the pharmacy'], ['Theo', null, null]],
+        a: [[null, null, 'skaters have nowhere to go'], [null, 'to fix the bridge', null], [null, 'a bridge with ramps', 'so everyone, including wheelchair users, can cross']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does Mei’s map show?',
+        opts: ['The bridge route is much shorter than the road.', 'The skate park is far away.', 'The pharmacy is closed.', 'The road is broken.'], a: 0 },
+      { k: 'choice', code: 'B1.1', half: true, q: 'Which shows good listening in a group discussion?',
+        opts: ['Amira asks Theo what would make the bridge work.', 'Devon says “Hands down.”', 'Everyone talks at once.', 'Mei leaves the room.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'How does Theo change the discussion? What message does the play give about accessibility?',
+        a: 'He points out that neither plan works for wheelchair users, so the group adds ramps and accessible paths. The message is that plans should include everyone from the start.', look: 'Theo’s effect on the debate and a message about including everyone' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does Devon “sit down slowly” after Theo speaks? What is he thinking?',
+        a: 'He realizes that his plan did not consider people like Theo either. He is rethinking his position, which leads to his compromise.', look: 'an inference about Devon’s realization, linked to his later suggestion' },
+      { k: 'choice', code: 'B3.3', q: '“That’s… a really good point.” What does the ellipsis (…) show?',
+        opts: ['a pause while Amira thinks', 'missing words from a quotation', 'the end of the play', 'a list'], a: 0 }
+    ]
+  });
+
 })();
