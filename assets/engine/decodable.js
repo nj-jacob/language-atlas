@@ -1,5 +1,5 @@
 /* Language Atlas tool box: Decodable readers (#tools/decodable), one printable page for each phonics step, Kindergarten to Grade 2.
-   Needs atlas.js, tools.js and sheets.js (the worksheets' themes, fonts and printing; sheets.css). It adds itself to the tool box.
+   Needs atlas.js and tools.js; drawing a page also needs sheets.js (the worksheets' themes, fonts and printing; sheets.css). It adds itself to the tool box.
    The steps follow a structured literacy (Orton-Gillingham) order: short vowels, digraphs, FLOSS, glued sounds, endings, blends,
    silent e, syllable types, r-controlled vowels, vowel teams, then prefixes and suffixes. Each page has the step's sound,
    warm-up words, heart words, a short story the child can sound out with only what has been taught, a picture and 3 questions.
@@ -26,8 +26,9 @@
 (function () {
   'use strict';
   var A = window.Atlas;
-  if (!A || !A.toolkit || !A.sheets) return;
-  var $ = A.$, $$ = A.$$, S = A.sheets;
+  if (!A || !A.toolkit) return;
+  /* the sheets' look is needed only to draw a page (the site's Toolbox page loads this file just for its shelf card) */
+  var $ = A.$, $$ = A.$$, S = function () { return A.sheets; };
   var D = (A.decodable = { list: [] });
   var BANDS = (D.bands = [['K', 'Kindergarten', 'LK'], ['1', 'Grade 1', 'FO'], ['2', 'Grade 2', 'SK']]);
   /* the same expectation in Grade 1 and in Grade 2 (the numbers changed between grades) */
@@ -222,7 +223,7 @@
       '<footer class="dc-foot">' + foot(p, 'Ontario Grade 1: ' + cs.g1.join(', ') + ' · Grade 2: ' + cs.g2.join(', ')) + '</footer></div>';
   }
   function frame(th) { return th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : ''; }
-  function themeOf(p) { return S.themeById(D.band(p)[2]); }
+  function themeOf(p) { return S().themeById(D.band(p)[2]); }
   /* Draw the page ('page' or 'key') into el, a .ws-sheet box. A long story is set a little smaller, down to 80%.
      Returns whether anything still runs off the page. */
   var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8];
@@ -270,9 +271,9 @@
         window.print();
       });
     });
-    return S.fonts().then(function () {
+    return S().fonts().then(function () {
       $$('.ws-sheet', root).forEach(function (el) { D.render(el, p, el.getAttribute('data-side')); });
-      S.fit();
+      S().fit();
     });
   }
   window.addEventListener('afterprint', function () { document.documentElement.removeAttribute('data-dc-print'); });
