@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-10
+- Reading passages, Grade 4: the last 20 passages (100 in all): fireflies, sand dunes at Sandbanks, a cloud poem with the science of clouds, Mohenjo-daro, the Pont du Gard aqueduct, the steelpan, the ice resurfacer, the CN Tower, a winter bird count, a fable about a red squirrel, a polar bear diary from Churchill, earthworms, apple blossoms and bees, kente cloth, ladybugs, Machu Picchu, a letter asking for a bike lane, a dragon boat story, a pulse procedure, and icebergs off Newfoundland. They add new text forms (poem, fable, diary, letter, procedure).
 - Reading passages, Grade 4: 20 more passages (80 in all): the northern lights, Niagara Falls erosion, salmon, snowflake symmetry, the St. Lawrence Seaway, the Rideau Canal, the Rocky Mountains, Inuit snow houses, the pyramids, Tenochtitlan, castles, the Three Sisters, healthy teeth, mosaics, how a guitar makes sound, lighthouses, road salt, temperatures below zero, and two stories (a corn maze and the 1998 ice storm).
 - Reading passages cover the whole curriculum: every answer key now ends with a read-aloud check (B2.3); 20 Grade 4 questions were changed or relabelled so the passages also ask about grammar in context (B3.1 to B3.3), what words such as "they" refer to (C1.1), prior knowledge and connections (C2.1, C2.5), reasons to read (C2.2), the reader's own strategies and thinking (C2.7, C3.8), culture (C3.4) and inclusion (C3.6). A new check fails if a grade's 100 passages miss any reading expectation.
 
