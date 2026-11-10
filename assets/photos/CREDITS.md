@@ -89,3 +89,22 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
 | `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
 | `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
+| `g6-specimen-drawer.jpg` | Butterfly and moth specimens in a drawer at the New Zealand Arthropod Collection | Siobhan Leachman | CC0 | https://commons.wikimedia.org/wiki/File:Insect_specimen_drawer_New_Zealand_Arthropod_Collection.jpg |
+| `g6-garlic-mustard.jpg` | Garlic mustard growing on a forest floor | Robert Flogaus-Faust | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Alliaria_petiolata_4_RF.jpg |
+| `g6-railway-memorial.jpg` | The memorial to Chinese railway workers, Toronto | Shaun Merritt | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chinese_Railway_Workers_Monument_Toronto.jpg |
+| `g6-un-assembly.jpg` | The United Nations General Assembly hall, New York | Basil D Soufi | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg |
+| `g6-cereal-aisle.jpg` | Boxes of breakfast cereal on supermarket shelves | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g6-carr-odds-and-ends.jpg` | Odds and Ends, painting by Emily Carr, 1939 | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g6-banting-best.jpg` | Frederick Banting and Charles Best with a dog, University of Toronto, 1921 | Thomas Fisher Rare Book Library | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Photograph_of_F.G._Banting_and_C.H._Best_with_a_dog_on_the_roof_of_the_Medical_Building_(12309019434).jpg |
+| `g6-blackout.jpg` | A Toronto neighbourhood during the 2003 blackout | Ashleystruan at en.wikipedia | Public domain | https://commons.wikimedia.org/wiki/File:Powercut-deerpark-01.JPG |
+| `g6-dark-sky.jpg` | Night sky over Torrance Barrens Dark Sky Preserve, Ontario | Mustang Joe | CC0 | https://commons.wikimedia.org/wiki/File:Torrance_Barrens_Dark_Sky_Preserve_(53968290486).jpg |
+| `g6-youth-hockey.jpg` | Girls' ice hockey final at the 2020 Winter Youth Olympics | Christophe95 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ice_hockey_at_the_2020_Winter_Youth_Olympics_–_Girls'_tournament_final.jpg |
+| `g6-skatepark.jpg` | A skatepark in Shearwater, Nova Scotia | T.Newfeels | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Shearwater_Skatepark_full_view.jpg |
+| `g6-two-row-journey.jpg` | Tom Porter and Hickory Edwards with a Two Row Wampum belt, 2013 renewal journey | Gorgenkor | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tom_Porter_and_Hickory_Edwards_on_2013_Two_Row_Journey.jpg |
+| `g6-exchange-rates.jpg` | A digital board showing currency exchange rates | Dvortygirl | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Exchange_rates_sign.jpg |
+| `g6-beaded-bag.jpg` | A beaded bag with flowers, Cree or Métis, Cleveland Museum of Art | Unknown | CC0 | https://commons.wikimedia.org/wiki/File:Clevelandart_1956.831.jpg |
+| `g6-moon-crescent.jpg` | A waxing crescent moon | Bruno Rijsman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Waxing_crescent_moon_(2).jpg |
+| `g6-snow-removal.jpg` | Snow removal operations in the Saint-Michel neighbourhood, Montréal | Miguel Angel Omaña Rojas | CC0 | https://commons.wikimedia.org/wiki/File:Snow_removal_operations.jpg |
+| `g6-holiday-lights.jpg` | Strings of holiday lights | Oast House Archive | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Christmas_lights_-_geograph.org.uk_-_5233972.jpg |
+| `g6-sale-sign.jpg` | A store window sign: 75% off | TheDigitel Beaufort from Beaufort, SC, USA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bay_Street_Trading_Co._sale_sign_(4983153154).jpg |
+| `g6-red-river-cart.jpg` | A full-size model of a Red River cart in front of Pembina Hall | Viola-Ness | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_River_cart_Pembina_Hall.jpg |
