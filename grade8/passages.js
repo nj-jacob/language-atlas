@@ -3550,5 +3550,881 @@
     ]
   });
 
+  P.add({
+    id: 'g8-tardigrade', subject: 'science', form: 'Feature article',
+    title: 'The Toughest Animal on Earth',
+    deck: 'It is smaller than a grain of sand, lives in moss and can survive a trip into space',
+    hero: {
+      photo: 'g8-tardigrade.jpg', credit: 'Photo: Bob Goldstein and Vicky Madden, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A tardigrade, or water bear, seen through a scanning electron microscope. It is less than half a millimetre long.'
+    },
+    body: [
+      'Scrape a little damp moss from a rock or a tree, shake it into a dish of water and look through a microscope. With luck, you will see a chubby creature with eight stubby legs, each tipped with tiny claws, lumbering through the water like a bear. It is a tardigrade, often called a water bear. Most are less than half a millimetre long. They live almost everywhere on Earth: in moss, in soil, in hot springs, on mountaintops and at the bottom of the ocean.',
+      { h: 'A tiny animal made of cells' },
+      'Unlike bacteria or a paramecium, a tardigrade is not a single cell. It is a true animal, made of many cells that work together in tissues and organs. It has a brain, a mouth with sharp stylets for piercing plant cells, a gut and muscles. Some species have only about a thousand cells in their whole body.',
+      { fig: '<path class="k" d="M10 120 H290"/>' + [[30, 2, 'grain of salt', '0.3 mm'], [100, 3, 'tardigrade', '0.5 mm'], [180, 6, 'ant', '3 mm'], [255, 10, 'ladybug', '6 mm']].map(function (o) { return '<circle class="' + (o[2] === 'tardigrade' ? 'a' : 'k') + '" cx="' + o[0] + '" cy="' + (120 - o[1] * 4) + '" r="' + o[1] * 4 + '"/>' + tx(o[0], 140, 'n', o[2], 'middle') + tx(o[0], 154, 'lb', o[3], 'middle'); }).join(''),
+        tall: 160, cap: 'Approximate sizes, drawn enlarged (not exactly to scale).' },
+      { h: 'Life on pause' },
+      'The tardigrade’s secret is a state called <b>cryptobiosis</b>, which means “hidden life.” When its home dries out, a tardigrade pulls in its legs, loses almost all the water in its body and curls into a dry little barrel called a tun. Its <b>metabolism</b>, the chemical activity that keeps it alive, slows to almost nothing. In this state, it can wait for years. Add water, and within hours it uncurls and walks away.',
+      { box: 'Tested to the limit', text: 'In experiments, tun-state tardigrades have survived being frozen to almost −273 °C, heated past 100 °C for a short time and exposed to the airless vacuum of space on a satellite in 2007.' },
+      { h: 'Why scientists care' },
+      'Tardigrades are not indestructible: they can be crushed, and active ones die easily in harsh conditions. But they fascinate scientists. Researchers have found special proteins that protect their cells as they dry out, and another that helps shield their genetic material from radiation. One day, ideas borrowed from water bears might help keep vaccines safe without a fridge, or protect astronauts on long journeys.'
+    ],
+    guide: { before: 'If possible, soak some moss and look for tardigrades with a magnifier or microscope. Teach <b>cryptobiosis</b> and <b>metabolism</b>. Compare the sizes in the diagram.',
+      after: 'If humans could enter a tun state, how might that change space travel? Would you want to try it?' },
+    words: [['cryptobiosis', 'a state in which an animal’s life processes almost stop until conditions improve'], ['metabolism', 'all the chemical activity in a living thing that keeps it alive']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, which is closest in size to a tardigrade?',
+        opts: ['a grain of salt', 'an ant', 'a ladybug', 'a human hair'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Crypto</b>biosis comes from Greek. If <i>bios</i> means life, <i>crypto</i> means …',
+        opts: ['hidden', 'long', 'cold', 'small'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps of cryptobiosis.',
+        items: ['The tardigrade’s home dries out.', 'It pulls in its legs and loses its water.', 'It curls into a tun.', 'Its metabolism almost stops.', 'Water returns and it uncurls.'], show: [3, 0, 4, 1, 2] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How is a tardigrade different from a paramecium? Use the text.',
+        a: 'A paramecium is a single cell, but a tardigrade is an animal made of many cells working together in tissues and organs, with a brain, gut and muscles.', look: 'single cell versus many cells, with detail' },
+      { k: 'choice', code: 'C1.1', q: '“Add water, and within hours <b>it</b> uncurls and walks away.” <b>It</b> refers to …',
+        opts: ['the tardigrade', 'the water', 'the tun’s shell', 'the moss'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The title calls the tardigrade the toughest animal on Earth. Does the last section agree completely? Explain.',
+        a: 'Not completely. It says tardigrades are not indestructible: they can be crushed, and active ones die easily. They are tough mainly in the tun state.', look: 'notices the qualification in the last section' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Why might a medical researcher and a space scientist both want to read this article?',
+        a: 'A medical researcher might want ideas for keeping vaccines safe without a fridge. A space scientist might want ways to protect astronauts from radiation.', look: 'two purposes linked to the last section' }
+    ]
+  });
 
+  P.add({
+    id: 'g8-canadarm', subject: 'tech', form: 'Report',
+    title: 'Canada’s Arm in Space',
+    deck: 'A robotic arm built in Canada has helped build and run the International Space Station for more than twenty years',
+    hero: {
+      photo: 'g8-canadarm.jpg', credit: 'Photo: NASA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 170,
+      cap: 'Astronaut Steve Robinson rides on the end of Canadarm2 during a spacewalk outside the International Space Station in 2005.'
+    },
+    body: [
+      'In November 1981, the space shuttle <i>Columbia</i> unfolded a long, white robotic arm in orbit for the first time. It had been designed and built in Canada. The arm, nicknamed Canadarm, became one of the most famous pieces of Canadian technology, and it began a tradition that continues today. Canadian engineers have been building robot arms for space ever since.',
+      { fig: '<rect class="k" x="10" y="130" width="40" height="20"/><path class="k" d="M30 130 L110 60 L200 90 L250 50"/><circle class="k" cx="30" cy="130" r="6"/><circle class="k" cx="110" cy="60" r="6"/><circle class="k" cx="200" cy="90" r="6"/><path class="a" d="M250 50 l14 -6 M250 50 l10 12"/>' +
+          D.label(56, 150, 'shoulder joints', 34, 132) + D.label(90, 28, 'elbow', 110, 54) + D.label(180, 124, 'wrist joints', 200, 96) + D.label(230, 20, 'end effector', 254, 44),
+        tall: 160, cap: 'A robotic arm’s main joints (simplified). Canadarm2 has seven joints in all.' },
+      { h: 'An arm like yours' },
+      'Like a human arm, Canadarm had a shoulder, an elbow and a wrist. Each <b>joint</b> could bend or rotate, controlled by electric motors. On the end was a special hand, called an end effector, which closed three wire snares around a metal pin on whatever the arm needed to grab. Astronauts trained for months to operate it from inside the shuttle, watching through windows and cameras. Over 30 years, Canadarm launched and caught satellites, repaired the Hubble Space Telescope and moved astronauts during spacewalks.',
+      { box: 'On your money', text: 'Canadarm2 and its robot helper, Dextre, appear on the back of the Canadian five-dollar bill.' },
+      { h: 'Canadarm2' },
+      'In 2001, Canadian astronaut Chris Hadfield helped install a bigger, smarter arm on the International Space Station: Canadarm2. It is about 17 metres long and has seven joints, more than a human arm, which gives it great <b>flexibility</b>. It has a hand at each end, so it can move end over end around the outside of the station, like an inchworm. It has caught visiting cargo spacecraft and helped assemble the station piece by piece. Its joints can be replaced in orbit if they wear out.',
+      { h: 'Controlled from the ground' },
+      'Today, much of Canadarm2’s work is controlled by teams on Earth, including at the Canadian Space Agency near Montréal. This lets astronauts spend their time on science. Canadian engineers are now building Canadarm3, an even smarter arm that will be able to do some jobs on its own using artificial intelligence. It is planned for a space station that will orbit the Moon.'
+    ],
+    guide: { before: 'Move your own arm and name your joints: shoulder, elbow, wrist. Teach <b>joint</b> and <b>flexibility</b>. Find a five-dollar bill and look at the back.',
+      after: 'What job would you design a robot arm to do on Earth? How many joints would it need?' },
+    words: [['joint', 'a place where two parts meet and can move'], ['flexibility', 'the ability to bend or move in many ways']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is the end effector?',
+        opts: ['at the end of the arm', 'at the shoulder', 'at the elbow', 'on the base'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can Canadarm2 move around the station like an inchworm?',
+        opts: ['It has a hand at each end.', 'It has wheels.', 'It floats freely.', 'Astronauts carry it.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the two arms.', cols: ['Canadarm', 'Canadarm2'],
+        rows: [['first used in 1981', null], ['worked from the space shuttle', null], [null, 'seven joints']],
+        a: [[null, 'installed in 2001'], [null, 'works on the International Space Station'], ['shoulder, elbow and wrist joints', null]] },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>Columbia</i> written in italics?',
+        opts: ['It is the name of a spacecraft.', 'It is a foreign word.', 'It is a quotation.', 'It is a new term.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'A robot arm is a system. Name one input, one part and one output of Canadarm2.',
+        a: 'Input: commands from a team on Earth. Part: the joints and their motors. Output: a spacecraft is caught and moved.', look: 'input, part and output that fit the text' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why do you think Canadarm is shown on the five-dollar bill? What does it say about how Canadians see this technology?',
+        a: 'It is a source of national pride. Putting it on money shows Canadians see it as an important achievement that represents the country.', look: 'national pride or identity, with a reason' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Canadarm3 will do some jobs on its own. Predict one job it might do, and one risk.',
+        a: 'It might repair the station while astronauts sleep. A risk is that it could make a mistake that no one notices in time.', look: 'a reasonable job and risk' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-wind-turbine', subject: 'science', form: 'Explanation',
+    title: 'Catching the Wind',
+    deck: 'A wind turbine is a tower-sized system for turning moving air into electricity. Why does wind speed matter so much?',
+    hero: {
+      photo: 'g8-wind-turbines.jpg', credit: 'Photo: Boris Kasimov, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Wind turbines turning in a field in southern Ontario.'
+    },
+    body: [
+      'Drive along the shores of Lake Huron or Lake Erie and you may see them: white towers taller than a 30-storey building, each topped with three slowly turning blades. Each <b>wind turbine</b> is a system with one job, to turn the energy of moving air into electricity.',
+      { h: 'Inside a turbine' },
+      'Wind pushes on the long blades and makes the rotor spin. The blades are shaped like airplane wings, so the wind creates lift that pulls them around. The rotor turns a shaft inside the box at the top, called the nacelle. A gearbox speeds up the slow turning of the blades, and a generator changes that motion into electricity. Sensors measure the wind, and motors turn the whole nacelle to face it. If the wind gets dangerously strong, the blades are angled so the turbine stops.',
+      { fig: bars([[1, '5 m/s'], [8, '10 m/s'], [27, '15 m/s']], { max: 30, step: 10 }) + tx(46, 12, 'n', 'power (compared with 5 m/s wind)'),
+        tall: 172, cap: 'When wind speed doubles, the power available goes up about eight times (simplified).' },
+      { h: 'Why wind speed matters' },
+      'The power in the wind depends on its speed multiplied by itself three times. If the wind blows twice as fast, it carries about 2 × 2 × 2 = 8 times as much power. That is why turbines are built where winds are strong and steady: on hilltops, along shorelines and out at sea. It is also why taller towers help, because winds are stronger higher above the ground.',
+      { box: 'Efficiency', text: 'No turbine can capture all of the wind’s energy, because some air must keep moving past the blades. Modern turbines turn roughly 40 percent of the wind’s energy into electricity at their best, which makes them quite <b>efficient</b>.' },
+      { h: 'Benefits and concerns' },
+      'Wind turbines make electricity without burning fuel or releasing carbon dioxide while they run, and the wind is free and <b>renewable</b>. But the wind does not always blow, so other sources must fill the gaps. Some neighbours dislike the noise and the change to the view. Turbines can kill birds and bats, so builders study migration routes before choosing a site. In some places, communities and First Nations own wind farms themselves and share in the money they earn.'
+    ],
+    guide: { before: 'Make a paper pinwheel and blow on it gently, then hard. Teach <b>wind turbine</b>, <b>efficient</b> and <b>renewable</b>. Read the bar graph together.',
+      after: 'Would you want a wind farm near your home? Weigh one benefit and one concern.' },
+    words: [['wind turbine', 'a machine that uses wind to make electricity'], ['efficient', 'producing a lot without wasting energy'], ['renewable', 'able to be replaced naturally, so it does not run out']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, how much more power is there at 15 m/s than at 5 m/s?',
+        opts: ['about 27 times', 'about 3 times', 'about 8 times', 'the same'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do taller towers help?',
+        opts: ['Winds are stronger higher up.', 'They are easier to build.', 'Birds fly lower.', 'They are quieter.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps in how a turbine makes electricity.',
+        items: ['Wind pushes on the blades.', 'The rotor spins a shaft.', 'A gearbox speeds up the turning.', 'A generator makes electricity.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Use the text to explain why doubling the wind speed gives about eight times the power.',
+        a: 'Power depends on speed multiplied by itself three times. Doubling the speed gives 2 × 2 × 2 = 8 times the power.', look: 'speed cubed and the calculation' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence begins with a dependent clause?',
+        opts: ['If the wind gets dangerously strong, the blades are angled so the turbine stops.', 'Wind pushes on the long blades.', 'The wind is free.', 'Some neighbours dislike the noise.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Is the last section balanced? Give evidence for your answer.',
+        a: 'Yes. It gives benefits, such as no fuel and renewable wind, and concerns, such as noise, birds and bats, and the wind not always blowing.', look: 'evidence of both benefits and concerns' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'What questions did you have about wind turbines before reading? Which were answered, and which do you still have?',
+        a: 'I wondered why they turn so slowly. The text explained the gearbox. I still wonder how long a turbine lasts.', look: 'own questions checked against the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-iceberg-alley', subject: 'geography', form: 'Report',
+    title: 'Iceberg Alley',
+    deck: 'Every spring, icebergs from Greenland drift past the coast of Newfoundland and Labrador. Their journey takes years.',
+    hero: {
+      photo: 'g8-iceberg.jpg', credit: 'Photo: Eduard47, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'An iceberg near Twillingate, Newfoundland and Labrador. Most of its ice is hidden below the water.'
+    },
+    body: [
+      'In late spring, people in towns such as Twillingate and St. Anthony climb the hills above the sea and look out at a parade of ice. Giant white icebergs, some as tall as a 15-storey building, drift slowly past the coast. This stretch of the Atlantic is known as Iceberg Alley.',
+      { fig: '<path class="k" d="M10 60 H290"/><path class="a" d="M110 60 L126 30 L150 22 L170 36 L184 60"/><path class="k" d="M110 60 L80 90 L84 130 L130 150 L200 140 L230 100 L184 60"/>' +
+          tx(200, 30, 'n', 'above water:') + tx(200, 44, 'n', 'about 1/10') + tx(236, 120, 'n', 'below water:') + tx(236, 134, 'n', 'about 9/10') + tx(20, 54, 'n', 'sea level'),
+        tall: 156, cap: 'An iceberg floats with most of its ice below the surface (simplified).' },
+      { h: 'Born in Greenland' },
+      'Most of these icebergs began as snow that fell on Greenland thousands of years ago. Over centuries, the snow was pressed into thick glacier ice that slowly flowed toward the sea. When a glacier reaches the ocean, huge pieces break off and fall into the water, a process called <b>calving</b>. Icebergs from western Greenland are carried north, then west and south by ocean currents. The cold Labrador Current carries them down the coast of Labrador and Newfoundland. The trip can take two or three years, and most icebergs melt long before they reach the end.',
+      { box: 'Ancient water', text: 'Iceberg ice is frozen fresh water, often more than 10 000 years old. Some companies in Newfoundland harvest small pieces of icebergs to make bottled water.' },
+      { h: 'The hidden part' },
+      'Ice is less <b>dense</b> than sea water, so an iceberg floats. But it is only a little less dense, so it floats very low. About nine tenths of an iceberg is underwater. That is where the phrase “the tip of the iceberg” comes from: what we see is only a small part of what is there. The hidden ice can stretch far out to the sides, which is why ships give icebergs a wide berth.',
+      { h: 'Watching the ice' },
+      'Icebergs are still a danger to shipping and to the oil platforms off Newfoundland. Since the <i>Titanic</i> sank in 1912, the International Ice Patrol has tracked icebergs in the North Atlantic, now using aircraft, satellites and radar. Some years, more than a thousand icebergs drift south of Newfoundland; in other years, almost none do. Scientists study the counts to understand how winds, currents and a warming climate affect Greenland’s ice.'
+    ],
+    guide: { before: 'Float an ice cube in a glass of water and look at how much is below the surface. Teach <b>calving</b> and <b>dense</b>. Trace the route from Greenland to Newfoundland on a map.',
+      after: 'The phrase “the tip of the iceberg” is used for many problems. Use it in a sentence about something in your life.' },
+    words: [['calving', 'when a large piece of ice breaks off a glacier into the water'], ['dense', 'having a lot of mass packed into a space']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, how much of an iceberg is above water?',
+        opts: ['about one tenth', 'about half', 'about nine tenths', 'all of it'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do ships give icebergs a wide berth?',
+        opts: ['The hidden ice can stretch far to the sides.', 'Icebergs move very fast.', 'Icebergs are magnetic.', 'Icebergs make loud noises.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the stages of an iceberg’s life.',
+        items: ['Snow falls on Greenland.', 'The snow is pressed into glacier ice.', 'The glacier flows to the sea.', 'A piece breaks off: calving.', 'The Labrador Current carries it south.'], show: [4, 1, 3, 0, 2] },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Explain the phrase “the tip of the iceberg” and how it connects to the science in the text.',
+        a: 'It means you see only a small part of a bigger problem. It comes from the fact that only about one tenth of an iceberg shows above the water.', look: 'figurative meaning linked to the nine tenths below' },
+      { k: 'choice', code: 'B2.2', q: 'To give something a “wide <b>berth</b>” means to …',
+        opts: ['keep well away from it', 'sleep near it', 'measure it', 'tie up beside it'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think the number of icebergs passing Newfoundland changes so much from year to year? Use the text.',
+        a: 'It depends on how many break off Greenland’s glaciers and on winds and currents, which change each year. Many melt before they arrive.', look: 'an inference using calving, currents or melting' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which text feature helped you most: the diagram, the box or the headings? How will you use features like it the next time you read a science text?',
+        a: 'The diagram helped most because I could see the hidden ice. Next time, I will look at diagrams first to preview the main idea.', look: 'names a helpful feature and a plan for next time' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-buxton', subject: 'history', form: 'Report',
+    title: 'The Bell of Buxton',
+    deck: 'In the 1850s, a settlement in Canada West rang its bell each time another freedom seeker arrived',
+    hero: {
+      photo: 'g8-buxton.jpg', credit: 'Photo: Ken Lund, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The Buxton National Historic Site and Museum in South Buxton, Ontario, near Chatham.'
+    },
+    body: [
+      'In the 1850s, a bell hung in the tower of a church in the woods near Chatham, Canada West. Whenever a freedom seeker who had escaped slavery in the United States arrived in the community, the bell was rung. People came out of their homes and fields to welcome the newcomer. The bell had been a gift from the Black citizens of Pittsburgh, and it became a symbol of <b>liberty</b>. It still hangs at Buxton today.',
+      { h: 'A different kind of settlement' },
+      'Buxton began in 1849 as the Elgin Settlement. Its founder was William King, a minister born in Ireland. While living in Louisiana, King had come to own enslaved people through his wife’s family. He freed them and travelled north with fifteen of them to Canada, where slavery had been abolished. There, he helped buy land for a settlement where Black families could own farms.',
+      'Settlers bought 50-acre lots and paid for them over ten years. They cleared the forest, drained the swampy land and built houses that had to meet a standard: a certain size, set back from the road, with a fence and a garden. The rules were strict, but the goal was clear. King and the settlers wanted Buxton to prove that free Black families could build a prosperous community, at a time when many people claimed they could not.',
+      { fig: timeline([[1834, 'slavery ends', 'in Canada'], [1849, 'Elgin Settlement', 'founded'], [1850, 'U.S. Fugitive', 'Slave Act'], [1865, 'slavery ends', 'in the U.S.']], 1828, 1872),
+        tall: 128, cap: 'Key dates in the story of Buxton.' },
+      { h: 'A school so good, everyone came' },
+      'The Buxton Mission School taught Latin, Greek and mathematics as well as reading and writing. It was so good that white families nearby closed their own school and sent their children to Buxton instead. Students from Buxton went on to become teachers, doctors and leaders. By the 1860s, the settlement had grown to well over a thousand people, with a sawmill, a brickyard, a store and a hotel.',
+      { box: 'After the war', text: 'When slavery ended in the United States in 1865, many Buxton families went south to find relatives or help newly freed people. Others stayed, and their <b>descendants</b> still live in the area.' },
+      'Today, the Buxton National Historic Site and Museum tells the settlement’s story. Each Labour Day weekend, descendants gather for a homecoming that has continued for more than a century.'
+    ],
+    guide: { before: 'Review the Underground Railroad and find Chatham on a map. Teach <b>liberty</b> and <b>descendants</b>. Read the timeline first.',
+      after: 'Why do you think the settlers kept ringing the bell for each newcomer? What does a symbol like that mean to a community?' },
+    words: [['liberty', 'freedom'], ['descendants', 'children, grandchildren and later generations of a person']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the timeline, how many years after Buxton began did slavery end in the U.S.?',
+        opts: ['16', '6', '31', '1'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>They</b> cleared the forest.” <b>They</b> refers to …',
+        opts: ['the settlers', 'the white families', 'the Black citizens of Pittsburgh', 'the teachers'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did King and the settlers want Buxton to be prosperous?',
+        a: 'To prove that free Black families could build a successful community, at a time when many people claimed they could not.', look: 'the goal of proving a point against prejudice' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What did the bell mean to the people of Buxton? Why do you think it still hangs there?',
+        a: 'It was a symbol of liberty and of welcome. It still hangs there to remember the freedom seekers and the community’s history.', look: 'the bell’s meaning and why it is kept' },
+      { k: 'choice', code: 'B3.2', q: '“It was <b>so</b> good that white families sent their children to Buxton.” <b>So</b> …',
+        opts: ['tells how good the school was', 'joins two names', 'names a place', 'shows a question'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The Buxton school welcomed both Black and white students. Why was this unusual for the 1850s? Why does it matter?',
+        a: 'Many schools then were separated by race. Buxton showed that students could learn together, and its excellence challenged prejudice.', look: 'the unusual inclusion and its significance' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the history of Buxton in three sentences.',
+        a: 'Buxton was founded in 1849 for Black families who had escaped slavery. Settlers built farms, homes and an excellent school. Many left after 1865, but descendants still gather there today.', look: 'founding, growth and later history, briefly' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-cariboo', subject: 'history', form: 'Report',
+    title: 'Gold in the Cariboo',
+    deck: 'In 1862, a strike of gold in the mountains of British Columbia built a boom town, a road and a colony',
+    hero: {
+      photo: 'g8-barkerville.jpg', credit: 'Photo: Bubblenymph, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The main street of Barkerville, British Columbia, now a historic town where visitors can see what life was like during the gold rush.'
+    },
+    body: [
+      'In August 1862, an English sailor named Billy Barker dug a deep shaft beside Williams Creek, in the Cariboo Mountains of British Columbia. Other miners laughed at him for digging so far down. At about 15 metres, he struck gravel full of gold. Within months, thousands of people rushed to the creek. A town of wooden stores, hotels and saloons grew up almost overnight, and it was named after him: Barkerville.',
+      { h: 'A rush for riches' },
+      'Gold had already brought thousands of miners to the Fraser River in 1858. To keep order and to claim the land for Britain, the British government quickly made the mainland a new colony: British Columbia. When the Cariboo strike came, miners pushed farther north. Most never got rich. Food was so hard to bring in that prices soared: a single egg could cost a dollar, more than many workers elsewhere earned in half a day.',
+      { h: 'Building the Cariboo Road' },
+      'The colony’s governor, James Douglas, ordered a wagon road built from Yale, on the Fraser River, to the goldfields. Royal Engineers and hired crews blasted ledges into canyon walls and built bridges over rushing rivers. The Cariboo Road, about 600 kilometres long, was finished to Barkerville by 1865. Freight wagons, stagecoaches and even a herd of camels, which turned out to be a failure, carried supplies up the road.',
+      { fig: '<path class="k" d="M40 150 Q60 120 90 110 Q130 96 150 70 Q170 40 230 30"/>' + [[40, 150, 'Yale', 'start'], [150, 70, 'roadhouses', 'end'], [230, 30, 'Barkerville', 'middle']].map(function (p) { return '<circle class="dot" cx="' + p[0] + '" cy="' + p[1] + '" r="4"/>' + tx(p[0] + (p[3] === 'end' ? -8 : 8), p[1] + 4, 'n', p[2], p[3]); }).join('') + tx(200, 140, 'n', 'about 600 km of wagon road', 'middle'),
+        tall: 160, cap: 'The Cariboo Road ran north from Yale to the goldfields (simplified).' },
+      { box: 'Many peoples', text: 'Barkerville was home to miners from Britain, the United States, Europe and China. Its Chinese community was one of the largest in Canada, and Chinese merchants kept many miners supplied.' },
+      { h: 'The cost to First Nations' },
+      'The gold rush brought great <b>prosperity</b> to some and great harm to others. The road and the mines cut through the lands of the Secwépemc, Dakelh, Tsilhqot’in and other First Nations, without treaties or permission. In 1862, a smallpox <b>epidemic</b> spread through the region, and thousands of First Nations people died. In 1864, Tsilhqot’in warriors fought road builders who had entered their territory. In 2018, the Government of Canada <b>exonerated</b> the six Tsilhqot’in chiefs who had been hanged after the conflict, saying they had been defending their land.'
+    ],
+    guide: { before: 'Find Yale, the Fraser River and Barkerville on a map of British Columbia. Teach <b>prosperity</b>, <b>epidemic</b> and <b>exonerated</b>.',
+      after: 'Was the gold rush good for British Columbia? Answer from two points of view.' },
+    words: [['prosperity', 'wealth and success'], ['epidemic', 'a disease that spreads quickly to many people'], ['exonerated', 'officially declared not guilty']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the map, where did the Cariboo Road begin?',
+        opts: ['Yale', 'Barkerville', 'Victoria', 'Vancouver'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did food cost so much in Barkerville?',
+        opts: ['It was very hard to bring supplies in.', 'Miners ate too much.', 'Gold was cheap.', 'Food was taxed.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the cause-and-effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['the Fraser River gold rush of 1858', null], ['Billy Barker struck gold in 1862', null], [null, 'the Cariboo Road was built']],
+        a: [[null, 'Britain made British Columbia a colony'], [null, 'thousands rushed to Williams Creek and Barkerville grew'], ['supplies were needed in the goldfields', null]] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How would a miner and a Tsilhqot’in person have seen the Cariboo Road differently?',
+        a: 'A miner saw a way to reach the gold and get supplies. A Tsilhqot’in person saw strangers entering their land without permission and bringing harm.', look: 'two perspectives, each with a reason' },
+      { k: 'choice', code: 'B2.1', q: 'In <b>ex</b>onerated, the prefix <b>ex-</b> means …',
+        opts: ['out of or away from', 'again', 'not', 'before'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The writer ends with the chiefs being exonerated in 2018. Why might the writer end with this?',
+        a: 'To show that the story is not over: Canada has recognized that the chiefs were defending their land, and history is being looked at again.', look: 'explains the effect of the ending' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about gold rushes, such as the Klondike? How was the Cariboo rush similar?',
+        a: 'I knew the Klondike rush brought crowds and high prices. The Cariboo was similar: a boom town grew quickly and most miners did not get rich.', look: 'prior knowledge and a similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-sod-house', subject: 'history', form: 'Letter (historical fiction)', plain: true,
+    title: 'A House Made of Prairie',
+    deck: 'A girl writes to her grandmother in Ukraine about her family’s first year on a homestead in 1898',
+    hero: {
+      photo: 'g8-sod-house.jpg', credit: 'Photo: Mpirie, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A rebuilt sod house at the Ukrainian Cultural Heritage Village, east of Edmonton, Alberta.'
+    },
+    body: [
+      '<i>Near Edna, District of Alberta, November 20, 1898</i>',
+      'Dear Baba,',
+      'We have a house! Papa says I must tell you everything, so here it is. When we stepped off the train in Strathcona in May, there was nothing but grass, sky and wind. Papa paid ten dollars for our <b>homestead</b>, 160 acres of land. If we live on it for three years, break the land and build a house, it will be ours forever. In the old village, Papa could never have dreamed of so much land. The journey took almost a month: a train to the port, a ship across the ocean, then the long train across Canada.',
+      'But there were no trees to build with, only a few thin poplars by the slough. So we built our house from the prairie itself. Papa ploughed long strips of <b>sod</b>, the thick top layer of soil held together by grass roots. Stepan and I cut them into bricks with a spade. We stacked them grass side down, like bricks, until the walls were thicker than my arm is long.',
+      'The roof is poplar poles covered with more sod. Inside, Mama plastered the walls with clay and whitewashed them, so it is bright, like our house at home. The floor is earth. We have one window, which Papa carried all the way from Winnipeg wrapped in his coat.',
+      'A sod house is warm in winter and cool in summer, because the earth walls are so thick. But when it rains hard, the roof drips mud for a whole day after the rain stops. Mice live in the walls, and once a garter snake fell onto the table at supper. Mama screamed louder than I did. Stepan laughed so hard that he fell off his stool.',
+      { fig: '<path class="k" d="M40 150 V80 H260 V150 Z"/><path class="k" d="M30 80 L150 30 L270 80"/>' + [0, 1, 2, 3, 4].map(function (r) { return [0, 1, 2, 3, 4, 5, 6].map(function (c) { return '<rect class="t" x="' + (40 + c * 31.4 + (r % 2 ? 15 : 0)) + '" y="' + (80 + r * 14) + '" width="' + (r % 2 && c === 6 ? 16 : 31) + '" height="14"/>'; }).join(''); }).join('') + '<rect class="k" x="134" y="110" width="30" height="40"/><rect class="k" x="64" y="98" width="24" height="18"/>' +
+          D.label(296, 20, 'roof: poles, sod and grass', 200, 50, 'end') + D.label(200, 168, 'sod bricks', 230, 140),
+        tall: 172, cap: 'A sod house: walls of stacked sod bricks and a roof of poles covered with sod.' },
+      'There are other Ukrainian families nearby, so we hear our own language at church. Mama planted a garden with the seeds you sewed into the hem of her coat. The poppies came up red, just like yours. When I see them, I am a little less <b>homesick</b>.',
+      'Winter is coming now, and the wind blows snow across the prairie like smoke. Please write soon. Papa says that next year, maybe, there will be enough money for a ticket for you.',
+      'Your loving granddaughter, Olena'
+    ],
+    guide: { before: 'Find Alberta on a map and the region east of Edmonton. Teach <b>homestead</b>, <b>sod</b> and <b>homesick</b>. Notice that this is a letter: point out the date line, greeting and closing.',
+      after: 'If you moved to a new country, what one object would you want to bring from home, and why?' },
+    words: [['homestead', 'land given to settlers who lived on it and farmed it'], ['sod', 'the top layer of soil held together by grass roots'], ['homesick', 'sad because you miss your home']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a letter?',
+        opts: ['a date line, greeting and closing', 'a glossary', 'headings', 'a list of steps'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, what was the roof made of?',
+        opts: ['poles, sod and grass', 'shingles', 'stone', 'logs only'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did Olena’s family build a house of sod instead of wood?',
+        a: 'There were no trees to build with on the prairie, only a few thin poplars, so they used the sod from the land itself.', look: 'lack of trees, with a detail' },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart about the sod house.', cols: ['Good things', 'Problems'],
+        rows: [['warm in winter', null], [null, 'mice live in the walls'], ['bright, whitewashed walls', null]],
+        a: [[null, 'the roof drips mud after rain'], ['cool in summer', null], [null, 'a snake fell onto the table']] },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'What do the poppies from Baba’s seeds symbolize for Olena?',
+        a: 'They stand for home and her grandmother. Seeing them makes her feel connected to Ukraine, so she is less homesick.', look: 'symbolic meaning linked to homesickness' },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a comma after “Dear Baba”?',
+        opts: ['It follows the greeting of a letter.', 'It ends the letter.', 'It separates a list.', 'It shows a question.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two ways Olena’s family keeps their Ukrainian culture in their new home.',
+        a: 'They hear their own language at church with other Ukrainian families, and Mama planted a garden with seeds from Ukraine.', look: 'two cultural connections from the letter' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-telephone', subject: 'tech', form: 'Report',
+    title: 'The Voice on the Wire',
+    deck: 'The idea for the telephone came to a young teacher in Brantford, Ontario. Turning it into a working machine took two more years.',
+    hero: {
+      photo: 'g8-bell.jpg', credit: 'Photo: 1892, Library of Congress, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'Alexander Graham Bell speaks into a telephone at the opening of the line between New York and Chicago in 1892.'
+    },
+    body: [
+      'In the summer of 1874, a young Scottish-born teacher sat thinking on the bluff above the Grand River, near his parents’ home in Brantford, Ontario. Alexander Graham Bell taught deaf students to speak, and he knew a great deal about how sound works. That summer, he worked out an idea: if sound could make a current of electricity rise and fall in the same pattern, then a voice could travel along a wire.',
+      { fig: flow(['voice makes the air vibrate', 'a diaphragm vibrates', 'the electric current changes', 'the current travels along the wire', 'a second diaphragm makes sound']),
+        tall: 190, cap: 'How an early telephone carried a voice (simplified).' },
+      { h: 'Sound into electricity' },
+      'Sound is a <b>vibration</b>. When you speak, your voice makes the air vibrate in waves. In Bell’s telephone, these waves struck a thin sheet called a diaphragm and made it vibrate too. The moving diaphragm changed an electric current flowing through the circuit, making it stronger and weaker in the same pattern as the voice. At the other end of the wire, the changing current made a second diaphragm vibrate, which recreated the sound.',
+      { box: 'A race to the patent office', text: 'On the very day Bell’s lawyer filed his <b>patent</b>, another American inventor filed papers for a similar idea. Lawsuits over who really invented the telephone first went on for many years.' },
+      { h: '“Come here”' },
+      'Bell and his assistant, Thomas Watson, worked for months in Boston. On March 10, 1876, Bell spoke into his transmitter: “Mr. Watson, come here. I want to see you.” Watson, in another room, heard the words clearly through the receiver. It was the first time a sentence had been sent by telephone.',
+      { h: 'Back to Brantford' },
+      'That August, Bell made one of the first long-distance calls in the world, from Brantford to the town of Paris, Ontario, about 13 kilometres away, over telegraph wire. Within a few years, telephone companies were stringing wires on poles across North America. Bell remained proud of his work with deaf people all his life. He later said he wanted to be remembered as a teacher of the deaf more than as the inventor of the telephone.'
+    ],
+    guide: { before: 'Make a cup-and-string phone and feel the string vibrate. Teach <b>vibration</b> and <b>patent</b>. Follow the flow chart from top to bottom.',
+      after: 'Bell got his idea in Brantford but built the phone in Boston. Which place do you think should get the credit? Why?' },
+    words: [['vibration', 'a quick back-and-forth movement'], ['patent', 'a legal right that says only the inventor can make or sell an invention for a time']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps in how an early telephone carried a voice.',
+        items: ['A voice makes the air vibrate.', 'A diaphragm vibrates.', 'The electric current changes.', 'The current travels along the wire.', 'A second diaphragm makes sound.'], show: [2, 4, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the flow chart, what turns the electric signal back into sound?',
+        opts: ['a second diaphragm', 'the wire', 'the voice', 'the air'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why are Bell’s words to Watson in quotation marks?',
+        opts: ['They are his exact words.', 'They are a title.', 'They are a new term.', 'They are a list.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How did Bell’s work as a teacher of the deaf help him invent the telephone?',
+        a: 'Teaching deaf students to speak meant he knew a great deal about how sound and vibration work, which he needed to send a voice along a wire.', look: 'links his knowledge of sound to the invention' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Read the box. Why might the other inventor’s supporters say the telephone was not only Bell’s invention?',
+        a: 'The other inventor filed papers for a similar idea on the same day, so his supporters could say he had the idea at the same time and deserved credit too.', look: 'the rival claim from the box' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which part of the explanation of sound and electricity was hardest to follow? What did you do to understand it?',
+        a: 'How the current matched the voice was hard. I used the flow chart and the cup-and-string idea to picture the vibrations.', look: 'names a hard part and a strategy' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Bell wanted to be remembered as a teacher of the deaf. What does this tell you about him?',
+        a: 'It shows he valued helping people more than being famous. His teaching mattered more to him than his most famous invention.', look: 'an inference about his values' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-mobile-money', subject: 'geography', form: 'Report',
+    title: 'A Bank in Your Pocket',
+    deck: 'In Kenya, millions of people who never had a bank account now send money by text message',
+    hero: {
+      photo: 'g8-mpesa.jpg', credit: 'Photo: Fiona Graham, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A mobile-money agent’s shop in Nairobi, Kenya. Agents turn cash into digital money on a phone, and back again.'
+    },
+    body: [
+      'Imagine you work in a city and want to send money to your family in a village 300 kilometres away. There is no bank in the village. In Kenya, not long ago, people sent cash with a bus driver or carried it home themselves, hoping it would not be lost or stolen. Today, they tap a few buttons on a phone, and the money arrives in seconds.',
+      { h: 'Money by text message' },
+      'In 2007, a Kenyan phone company launched a service called M-Pesa. (<i>Pesa</i> means money in Swahili.) It lets people store money on their phone and send it to anyone else by text message. To put money in or take it out, they visit an agent: a small shop, often selling phone credit or groceries, that trades cash for digital money. Each <b>transaction</b> costs a small fee. The service works even on simple phones without internet.',
+      { fig: flow(['you give cash to an agent in the city', 'the agent adds it to your phone account', 'you text it to your mother’s phone', 'she cashes out at an agent in her village']),
+        tall: 150, cap: 'Sending money home with mobile money.' },
+      { h: 'Leapfrogging the banks' },
+      'Banks are expensive to build in rural areas, so many Kenyans never had an account. But by the 2000s, many owned a mobile phone. Mobile money let them <b>leapfrog</b> the old system, jumping straight to a new technology without going through the stage before it. Today, most adults in Kenya use mobile money, and similar services have spread to dozens of countries.',
+      { box: 'What the research found', text: 'A study published in 2016 estimated that mobile money helped about 2 percent of Kenyan households, roughly 194 000 families, rise out of extreme poverty. Households led by women benefited most.' },
+      { h: 'Why it helps' },
+      'Mobile money makes it safer and cheaper to save, and easier to get help in a crisis. When a harvest fails or someone is sick, relatives far away can send money within minutes. Some women started small businesses instead of farming, because they could buy supplies and get paid by phone. There are risks too: fees add up, especially for people who send small amounts often, scams spread by text, and people without a phone or signal can be left out. Still, mobile money is often described as one of the most important tools for <b>economic development</b> of the past twenty years.'
+    ],
+    guide: { before: 'Find Kenya and Nairobi on a map of Africa. Teach <b>transaction</b>, <b>leapfrog</b> and <b>economic development</b>. Follow the flow chart from top to bottom.',
+      after: 'How do people in your family send or receive money? How is it like M-Pesa?' },
+    words: [['transaction', 'one exchange of money, such as a payment or transfer'], ['leapfrog', 'to skip over a stage and jump ahead'], ['economic development', 'the growth of a country’s wealth, jobs and quality of life']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Number the steps for sending money home.',
+        items: ['Give cash to an agent in the city.', 'The agent adds it to your phone account.', 'Text it to your mother’s phone.', 'She cashes out at an agent in her village.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did many Kenyans never have a bank account?',
+        opts: ['Banks are costly to build in rural areas.', 'Kenyans did not use money.', 'Banks were illegal.', 'Phones were cheaper than accounts.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is “(<i>Pesa</i> means money in Swahili.)” in brackets?',
+        opts: ['It adds a helpful extra fact.', 'It is a quotation.', 'It is the title.', 'It is a question.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'The writer says Kenya “leapfrogged” the banks. Explain this metaphor.',
+        a: 'In leapfrog, you jump over someone. Kenya jumped over the stage of building banks everywhere and went straight to phone banking.', look: 'explains the comparison to the game' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Give two ways mobile money helps families, and one risk.',
+        a: 'It makes saving safer and lets relatives send help quickly in a crisis. A risk is that scams spread by text.', look: 'two benefits and one risk from the text' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How does the box make the writer’s argument stronger?',
+        a: 'It gives evidence from a study with a number, about 194 000 families, so readers can trust that mobile money really helped.', look: 'research evidence supports the claim' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize what M-Pesa is and why it matters, in two sentences.',
+        a: 'M-Pesa lets Kenyans store and send money by text message using agents for cash. It helped many people without banks save, get help and rise out of poverty.', look: 'what it is and its impact' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-kakuma', subject: 'social', form: 'Feature article',
+    title: 'School in a Refugee Camp',
+    deck: 'In Kakuma, Kenya, more than 100 students may share one teacher. Some of them end up studying in Canada.',
+    hero: {
+      photo: 'g8-kakuma.jpg', credit: 'Photo: D. Willetts, CC BY-SA 3.0 IGO, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Students in a classroom in Kakuma refugee camp, Kenya.'
+    },
+    body: [
+      'The classroom has a tin roof, a chalkboard and more than a hundred students. Some sit three to a desk; others sit on the floor. It is hot, and there are only a few textbooks to share. Still, when the teacher asks a question, dozens of hands shoot up. For these students in Kakuma, a refugee camp in northwestern Kenya, school is a chance at a different future.',
+      { fig: bars([[25, 'Ontario', 'class'], [60, 'Kakuma', 'average'], [120, 'Kakuma', 'large class']], { max: 140, step: 35 }) + tx(46, 12, 'n', 'students per teacher (approximate)'),
+        tall: 172, cap: 'Approximate number of students per teacher (rounded).' },
+      { h: 'Forced from home' },
+      'A <b>refugee</b> is a person who has been forced to flee their country because of war, violence or persecution, and who cannot safely return. Kakuma opened in 1992 to shelter thousands of children and young people escaping war in Sudan. Today, it is home to more than 200 000 people from South Sudan, Somalia, the Democratic Republic of the Congo, Burundi and other countries. Some families have lived there for more than twenty years. Many children were born in the camp and have never seen the country their parents fled.',
+      { box: 'From Kakuma to Canada', text: 'Since 1978, a program run by the World University Service of Canada has helped young refugees come to Canada to attend university, with student groups on Canadian campuses raising money to <b>sponsor</b> them. Many students have come from Kakuma.' },
+      { h: 'Learning against the odds' },
+      'Education is a human right, but in a camp it is hard to provide. There are not enough classrooms or trained teachers, and many teachers are refugees themselves. Girls are more likely than boys to leave school early, often to help at home. Lessons may be in English or Swahili, which may not be a student’s first language. Yet many students study by lamplight and dream of becoming doctors, engineers and teachers.',
+      { h: 'A place to belong' },
+      'Students who arrive in Canada through the program face new challenges: snow, a new school system and missing family far away. But they also bring <b>resilience</b> and a deep belief in the value of education. Many go on to work in health care, business and teaching. Some return to East Africa to help others, and a few have gone back to Kakuma as teachers.'
+    ],
+    guide: { before: 'This topic can raise strong feelings; allow time to talk. Teach <b>refugee</b>, <b>sponsor</b> and <b>resilience</b>. Find Kenya and South Sudan on a map.',
+      after: 'If a student from Kakuma joined your class, what could you do to help them feel they belong?' },
+    words: [['refugee', 'a person forced to flee their country who cannot safely return'], ['sponsor', 'to support someone, often with money and help'], ['resilience', 'the ability to recover and keep going after hard times']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, about how many students share one teacher in a large Kakuma class?',
+        opts: ['120', '25', '60', '35'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why have many children in Kakuma never seen their parents’ country?',
+        opts: ['They were born in the camp.', 'They are too young to travel.', 'The camp is far from Kenya.', 'Their country is in Canada.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Name three challenges students in Kakuma face at school.',
+        a: 'Classes are very crowded, there are few textbooks and trained teachers, and lessons may not be in their first language.', look: 'three challenges from the text' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why are girls more likely to leave school early? What could help them stay?',
+        a: 'They are often needed to help at home. Programs that support families, or safe schools close by, could help girls stay.', look: 'the reason and a reasonable solution' },
+      { k: 'choice', code: 'B2.2', q: 'In “student groups … raising money to <b>sponsor</b> them,” <b>sponsor</b> means …',
+        opts: ['support with money and help', 'compete against', 'teach a lesson', 'send away'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The article begins inside a crowded classroom instead of with facts about refugees. Why?',
+        a: 'Starting with a vivid scene makes readers picture the students as real people, so they care before they learn the facts.', look: 'explains the effect of the opening' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'How is your school experience different from the one described in Kakuma? What does this make you think about?',
+        a: 'My class has about 25 students and everyone has a desk. It makes me think about how lucky I am and how hard those students work.', look: 'a real comparison and a reflection' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-hoop-dance', subject: 'arts', form: 'Explanation',
+    title: 'Circles in Motion',
+    deck: 'A hoop dancer can turn a handful of hoops into an eagle, a butterfly and the whole world',
+    hero: {
+      photo: 'g8-hoop-dance.jpg', credit: 'Photo: Smithsonian Institution, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'A dancer performs with hoops at a powwow. The hoops are linked and moved to form shapes.'
+    },
+    body: [
+      'The drum begins, and a dancer steps into the centre of the circle holding a single hoop. Within minutes, there are five, ten, twenty hoops, spinning around arms and legs, locking together and opening apart. Suddenly the hoops form wings, and the dancer becomes an eagle. A moment later, they become a globe. The audience leans forward, because the shapes seem to appear out of nowhere.',
+      { h: 'An art of many nations' },
+      'The hoop dance is performed by many First Nations and Native American peoples across North America. Different nations and families tell different stories about where it began. Some describe it as a healing dance. In many teachings, the hoop is a circle with no beginning and no end, a symbol of the <b>cycle</b> of life: birth, growing, death and renewal. Because the meanings belong to the communities who carry them, dancers often explain their own teachings to the audience.',
+      { fig: '<circle class="k" cx="50" cy="70" r="26"/>' + tx(50, 120, 'n', 'one hoop', 'middle') +
+          '<circle class="k" cx="130" cy="70" r="18"/><circle class="k" cx="160" cy="70" r="18"/><circle class="k" cx="145" cy="44" r="18"/>' + tx(150, 120, 'n', 'linked hoops', 'middle') +
+          '<circle class="a" cx="250" cy="70" r="30"/><ellipse class="k" cx="250" cy="70" rx="12" ry="30"/><ellipse class="k" cx="250" cy="70" rx="30" ry="12"/>' + tx(250, 120, 'n', 'a globe', 'middle'),
+        tall: 132, cap: 'Hoops can be linked to build larger shapes, such as a globe (simplified).' },
+      { h: 'Skill and storytelling' },
+      'A hoop dancer must keep perfect time with the drum while moving hoops faster than the eye can follow. Each shape tells part of a story. A dancer might show a flower opening, a snake crossing the ground, an eagle soaring, and finally the whole Earth, all in one dance. Judges in competitions look for <b>precision</b>, speed, creativity and how well the dancer stays on the beat. Many dancers train for years, and some begin as small children learning from relatives.',
+      { box: 'Making the hoops', text: 'Traditional hoops were made of willow or other bendable wood. Many dancers today use plastic tubing wrapped with coloured tape, which is lighter and more durable.' },
+      { h: 'A living tradition' },
+      'Hoop dancing is performed at powwows, in schools and on stages around the world. Each year, dancers from across Canada and the United States travel to the World Championship Hoop Dance Contest in Phoenix, Arizona. Young dancers keep adding new moves and shapes, while honouring the teachings of their elders. In this way, the hoop dance shows how a tradition can stay strong by continuing to grow.'
+    ],
+    guide: { before: 'Talk about why a circle might be a symbol (it has no beginning or end). Teach <b>cycle</b> and <b>precision</b>. Look at how the hoops link in the diagram.',
+      after: 'Find a video of a hoop dancer with a grown-up. Which shapes did you recognize?' },
+    words: [['cycle', 'a series of events that repeats in the same order'], ['precision', 'being exact and accurate']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['how hoops link to build shapes', 'how to make a hoop', 'the steps of a dance', 'a powwow circle'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do dancers often explain their own teachings?',
+        opts: ['The meanings belong to their own communities.', 'The audience asks them to.', 'Judges require it.', 'There is only one meaning.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the hoop symbolize in many teachings? Why does this fit its shape?',
+        a: 'It stands for the cycle of life. A circle has no beginning or end, just as life goes on through birth, growing, death and renewal.', look: 'the symbol and why the circle fits' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The first paragraph uses vivid verbs such as <i>spinning</i>, <i>locking</i> and <i>leans</i>. What effect do they have?',
+        a: 'They make the reader picture fast movement and feel the excitement, as if watching the dance.', look: 'explains the effect of the word choice' },
+      { k: 'choice', code: 'B3.2', q: '“Dancers move hoops <b>faster</b> than the eye can follow.” <b>Faster</b> is …',
+        opts: ['a comparative word', 'a noun', 'a past tense verb', 'a title'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why does the writer say “many First Nations and Native American peoples” instead of naming just one?',
+        a: 'Because the hoop dance belongs to many peoples with different stories. Naming only one would leave others out and be inaccurate.', look: 'respect for many nations and accuracy' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Do you know a dance, song or tradition that changes over time but keeps its meaning? How is it like the hoop dance?',
+        a: 'My family’s holiday songs get new versions each year, but we still sing them together. Like the hoop dance, the tradition grows but stays meaningful.', look: 'a personal connection about tradition and change' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-chemainus', subject: 'arts', form: 'Report',
+    title: 'The Town That Painted Itself',
+    deck: 'When its sawmill closed, a small town on Vancouver Island turned its walls into a history book',
+    hero: {
+      photo: 'g8-chemainus.jpg', credit: 'Photo: Blake Handley, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A street in Chemainus, British Columbia, with a large mural of a face painted on a building.'
+    },
+    body: [
+      'For more than a century, the town of Chemainus, on the east coast of Vancouver Island, depended on its sawmill. In the early 1980s, the old mill closed, and hundreds of workers lost their jobs. Stores emptied. Many people worried that the town would simply fade away, like other mill towns across the province.',
+      { h: 'An idea on the walls' },
+      'A group of residents had an unusual idea. What if the town’s walls told the town’s story? In 1982, artists painted the first five large <b>murals</b> on the sides of buildings. They showed scenes from local history: loggers felling giant trees, the steam trains that hauled the logs, the ships in the harbour and the people who built the community. Visitors began to stop. Then they came on purpose, by the busload, to walk from one painted wall to the next.',
+      { fig: '<rect class="k" x="20" y="30" width="260" height="110"/><path class="t" d="M20 120 H280"/><path class="k" d="M40 120 V60 L60 40 L80 60 V120"/><path class="k" d="M110 120 V80 H180 V120"/><circle class="k" cx="125" cy="124" r="6"/><circle class="k" cx="165" cy="124" r="6"/><path class="k" d="M200 120 Q240 90 270 120"/>' +
+          D.label(60, 18, 'tall trees', 60, 44) + D.label(130, 18, 'steam train', 145, 78) + D.label(210, 18, 'harbour', 236, 104) + tx(150, 158, 'n', 'the wall becomes a scene from the past', 'middle'),
+        tall: 164, cap: 'A mural turns a plain wall into a picture of local history (simplified).' },
+      { h: 'A gallery without walls' },
+      'Today, Chemainus has more than 40 murals, along with sculptures and a theatre. Footprints painted on the sidewalks lead visitors on a walking tour. Some murals honour the Stz’uminus and other Coast Salish peoples, on whose lands the town stands. Others remember the Chinese, Japanese and South Asian workers who helped build the town. Together they form a public history book that anyone can read for free.',
+      { box: 'A new economy', text: 'The murals drew tourists, and tourists brought new businesses: cafés, shops, galleries and inns. The town’s <b>economy</b> shifted from cutting trees to welcoming visitors.' },
+      { h: 'Art that belongs to everyone' },
+      '<b>Public art</b> is art made for shared spaces, where anyone can see it. Unlike a painting in a gallery, it reaches people on their way to school, work or the grocery store. The Chemainus murals show how public art can do more than decorate. It can help a community remember its past, bring people together and even give a town a new future. Towns across Canada and around the world have since visited Chemainus to learn from its example.'
+    ],
+    guide: { before: 'Find Vancouver Island on a map. Teach <b>murals</b>, <b>economy</b> and <b>public art</b>. Talk about any murals in your own community.',
+      after: 'If your community painted a mural about its history, what scene should it show? Why?' },
+    words: [['murals', 'large paintings made directly on walls'], ['economy', 'the way a place makes and spends money'], ['public art', 'art made for shared spaces where anyone can see it']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['scenes from the town’s past painted on a wall', 'a map of the town', 'how to mix paint', 'a sawmill'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did people worry the town would fade away?',
+        opts: ['The sawmill closed and jobs were lost.', 'There were too many tourists.', 'The murals faded.', 'The harbour froze.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the cause-and-effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['the sawmill closed', null], ['artists painted murals', null], [null, 'new cafés, shops and inns opened']],
+        a: [[null, 'hundreds lost their jobs and stores emptied'], [null, 'visitors began to come'], ['tourists came to see the murals', null]] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Whose stories do the murals include? Why is it important that they include more than the loggers?',
+        a: 'They include Coast Salish peoples and Chinese, Japanese and South Asian workers. Including them tells a more complete and fair history of the town.', look: 'names groups and explains why inclusion matters' },
+      { k: 'choice', code: 'B3.1', q: 'Which of these is a question the residents asked themselves?',
+        opts: ['What if the town’s walls told the town’s story?', 'Stores emptied.', 'Visitors began to stop.', 'Then they came on purpose.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'The writer calls the murals “a public history book.” What does this comparison mean?',
+        a: 'Like a book, the murals tell the story of the past, but they are on walls where anyone can read them for free.', look: 'explains the comparison to a book' },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'Public art reaches people on their way to school or work. How is this different from art in a gallery, and why might it have a stronger effect?',
+        a: 'Gallery art is seen only by people who choose to visit. Public art is seen by everyone every day, so it can shape how a whole community sees itself.', look: 'compares audiences and explains the effect' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-food-labels', subject: 'health', form: 'Procedure',
+    title: 'How to Read a Food Label',
+    deck: 'The front of the box is advertising. The facts are on the back. Here is how to read them in five steps.',
+    hero: {
+      photo: 'g8-nutrition-label.jpg', credit: 'Image: Cindyy28, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'The Nutrition Facts table on a bag of tortilla chips sold in Canada. Packaged foods must have one.'
+    },
+    body: [
+      'The front of a cereal box might say <i>Made with whole grains!</i> or <i>Good source of energy!</i> in big, bright letters. Those words are chosen to sell the cereal. To find out what is really inside, turn the box over and find the Nutrition Facts table. Almost every packaged food in Canada must have one, and they all follow the same layout. Here is how to read it.',
+      { fig: '<rect class="k" x="40" y="6" width="180" height="150"/><path class="k" d="M40 34 H220 M40 56 H220"/><path class="t" d="M40 80 H220 M40 100 H220 M40 120 H220 M40 140 H220"/>' +
+          tx(48, 24, 'lb', 'Nutrition Facts') + tx(48, 48, 'n', 'Per 1 cup (30 g)') + tx(48, 72, 'lb', 'Calories 120') + tx(212, 72, 'n', '% DV', 'end') + tx(48, 94, 'n', 'Fat 2 g') + tx(212, 94, 'n', '3 %', 'end') + tx(48, 114, 'n', 'Sodium 200 mg') + tx(212, 114, 'n', '9 %', 'end') + tx(48, 134, 'n', 'Sugars 12 g') + tx(212, 134, 'lb', '12 %', 'end') + tx(48, 152, 'n', 'Fibre 4 g') + tx(212, 152, 'lb', '14 %', 'end') +
+          D.label(228, 22, 'serving size', 180, 46) + D.label(228, 90, '% Daily', 214, 80) + tx(228, 104, 'l', 'Value'),
+        tall: 162, cap: 'A simplified Nutrition Facts table for a cereal.' },
+      { box: 'A new symbol', text: 'Since 2026, foods high in sodium, sugars or saturated fat must also show a black-and-white symbol with a magnifying glass on the front of the package.' },
+      { h: 'Step 1: Check the serving size' },
+      'At the top, the table tells you the <b>serving size</b>, such as 1 cup (30 g). Every number below is for that amount. If you eat two cups, double everything. Many people eat more than one serving without noticing, so this step matters. A small bag of chips may contain two or three servings.',
+      { h: 'Step 2: Look at the calories' },
+      'Calories measure how much energy the food gives you. Compare foods with the same serving size. Teenagers need plenty of energy to grow, but the calories should come mostly from foods that also give nutrients.',
+      { h: 'Step 3: Use the % Daily Value' },
+      'On the right is the <b>% Daily Value</b>, or % DV. It shows how much of a day’s worth of a nutrient is in one serving. Health Canada gives a simple rule: 5% or less is a little, and 15% or more is a lot.',
+      { h: 'Step 4: Choose more of some, less of others' },
+      'Aim for more fibre, calcium, iron and potassium. Aim for less sodium, sugars and saturated fat, which many Canadians eat too much of. Fibre helps digestion, calcium builds strong bones, and iron carries oxygen in the blood.',
+      { h: 'Step 5: Read the ingredients' },
+      'Ingredients are listed from the most to the least by weight. If sugar is one of the first ingredients, the food contains a lot of it. Sugar can hide under other names, such as glucose, syrup or honey. A short ingredient list of foods you recognize is usually a good sign.'
+    ],
+    guide: { before: 'Bring two cereal boxes to the table and find the Nutrition Facts tables. Teach <b>serving size</b> and <b>% Daily Value</b>. Read the sample table together.',
+      after: 'Compare two snacks at home using the 5% and 15% rule. Which would you choose, and why?' },
+    words: [['serving size', 'the amount of food that the nutrition numbers are based on'], ['% Daily Value', 'how much of a day’s worth of a nutrient is in one serving']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a procedure?',
+        opts: ['numbered steps in order', 'a story with characters', 'a rhyme', 'a letter greeting'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the sample table, which nutrient has the highest % DV?',
+        opts: ['fibre', 'fat', 'sodium', 'sugars'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Use the 5% and 15% rule to complete the chart.', cols: ['% DV', 'A little or a lot?'],
+        rows: [['3%', null], ['20%', null], ['5%', null]],
+        a: [[null, 'a little'], [null, 'a lot'], [null, 'a little']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why does the writer say the front of the box is “advertising”? How is the back different?',
+        a: 'The front uses words chosen to sell the food. The back gives facts in the same layout for every food, so you can compare honestly.', look: 'contrasts persuasion with facts' },
+      { k: 'choice', code: 'B2.2', q: 'In “Sugar can <b>hide</b> under other names,” the writer means sugar …',
+        opts: ['is listed with different words', 'is kept in a secret place', 'is invisible', 'is not in the food'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'If you eat two cups of the cereal in the diagram, how many grams of sugars do you eat? Explain how you know.',
+        a: '24 grams. The table is for one cup, which has 12 g, so two cups has double: 24 g.', look: 'correct answer and use of the serving size' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'While reading, did you look back at the diagram to check a step? Which one, and did it help?',
+        a: 'Yes, for step 3. I found the % DV column in the diagram, which helped me see where the numbers are on a real label.', look: 'describes checking understanding with the diagram' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-stress', subject: 'health', form: 'Advice column', plain: true,
+    title: 'Ask the Counsellor: My Heart Races Before Tests',
+    deck: 'A Grade 8 student asks for help with test stress. A school counsellor answers.',
+    hero: {
+      photo: 'g8-stress.jpg', credit: 'Photo: University of Illinois Library, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 180,
+      cap: 'A student studying alone in a library. Some stress before a test is normal, and it can even help.'
+    },
+    body: [
+      '<i>Dear Counsellor, before every test my heart pounds, my hands get sweaty and my mind goes blank, even when I studied. Last week I forgot answers I knew the night before. Is something wrong with me? — Blank in Brampton</i>',
+      'Dear Blank,',
+      'Nothing is wrong with you. What you are feeling is your body’s <b>stress response</b>, and almost everyone has it. It is an ancient alarm system. When your brain senses a threat, it signals your body to release hormones such as adrenaline. Your heart beats faster to send more blood to your muscles. You breathe quickly to take in more oxygen. Your muscles tighten, ready to move. This is sometimes called “fight or flight,” and it was very useful for our ancestors when the threat was a bear.',
+      { fig: '<circle class="k" cx="150" cy="40" r="20"/><path class="k" d="M150 60 V120 M150 76 L118 104 M150 76 L182 104 M150 120 L128 156 M150 120 L172 156"/>' +
+          D.label(178, 14, 'brain senses a threat', 166, 30) + D.label(200, 78, 'heart beats faster', 154, 82) + D.label(6, 70, 'breathing speeds up', 144, 72) + D.label(4, 130, 'muscles tighten', 136, 140) + D.label(206, 134, 'hands sweat', 182, 104),
+        tall: 164, cap: 'Some of the changes in the stress response.' },
+      'The trouble is that a test is not a bear. A little stress can help you focus, but too much makes it hard to think clearly and remember. The good news is that you can turn the alarm down. Here are four strategies that work for many students.',
+      '<b>1. Breathe in a box.</b> Breathe in slowly for four counts, hold for four, breathe out for four and hold for four. Repeat a few times. Slow breathing tells your body the danger has passed.',
+      '<b>2. Prepare in small pieces.</b> Studying a little each day for a week is calmer, and works better, than cramming the night before.',
+      '<b>3. Look after your body.</b> Sleep, exercise and a good breakfast give your brain what it needs to <b>cope</b> with pressure.',
+      '<b>4. Talk back to the worry.</b> Replace “I am going to fail” with “I studied, and I can do my best.”',
+      { box: 'When to ask for more help', text: 'If worry stops you from sleeping, eating or enjoying things for weeks, talk to a parent, a teacher, a counsellor or a doctor. Help is available, and asking for it is a sign of strength.' },
+      'Try one strategy before your next test, and let me know how it goes. — Ms. Okafor, School Counsellor'
+    ],
+    guide: { before: 'Talk about a time each of you felt nervous. Teach <b>stress response</b> and <b>cope</b>. Practise box breathing together before reading.',
+      after: 'Which of the four strategies would help you most? Plan when you will try it.' },
+    words: [['stress response', 'the body’s automatic reaction to a threat or pressure'], ['cope', 'to deal with something difficult successfully']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'How is this text organized?',
+        opts: ['a letter asking for advice, then a reply', 'a story told in order', 'a list of facts', 'a poem'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, what happens to breathing?',
+        opts: ['It speeds up.', 'It stops.', 'It slows down.', 'Nothing changes.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the counsellor say “a test is not a bear”?',
+        a: 'The stress response evolved for real dangers like a bear. A test is not a physical danger, so the strong alarm does not help and can make it hard to think.', look: 'explains the contrast between real danger and a test' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Choose one strategy and explain how it calms the stress response.',
+        a: 'Box breathing slows your breathing, which tells your body the danger has passed, so your heart and mind calm down.', look: 'a strategy and how it works' },
+      { k: 'choice', code: 'B3.3', q: 'Why is the student’s letter in italics?',
+        opts: ['to show it is a different writer’s words', 'because it is shouted', 'because it is a title', 'to show it is not important'], a: 0 },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'The column has two voices: the student and the counsellor. How do their voices sound different? Give an example of each.',
+        a: 'The student sounds worried and unsure: “Is something wrong with me?” The counsellor sounds calm and confident: “Nothing is wrong with you.”', look: 'contrasts two voices with examples' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Describe a time you felt stressed, other than a test. Which strategy from the column could have helped?',
+        a: 'Before a piano recital my hands shook. Box breathing could have helped me calm down before I played.', look: 'a personal example matched to a strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-sales-tax', subject: 'math', form: 'Explanation',
+    title: 'What Will I Really Pay?',
+    deck: 'The price tag says one thing. The receipt says another. Here is how discounts and tax change the total.',
+    hero: {
+      photo: 'g8-receipt.jpg', credit: 'Photo: Grandmaster Huon, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 220,
+      cap: 'A grocery store receipt. In Canada, sales tax is usually added at the checkout.'
+    },
+    body: [
+      'You find a hoodie you love. The tag says $80, and a sign says <i>25% off today!</i> You have $65 in your pocket. Is it enough? Many shoppers would guess yes, but they would be wrong. To find out, you need two kinds of <b>percent</b> calculation: one for the discount and one for the tax.',
+      { fig: bars([[80, 'tag', 'price'], [60, 'after', '25% off'], [67.8, 'after', '13% HST']], { max: 90, step: 30, pre: '$' }),
+        tall: 172, cap: 'How the price of the hoodie changes.' },
+      { h: 'Taking off the discount' },
+      'Percent means “out of 100.” A <b>discount</b> of 25% means you save 25 dollars for every 100 dollars of the price. To find 25% of $80, multiply: 0.25 × 80 = 20. You save $20, so the sale price is $80 − $20 = $60. You can also think of it this way: if you save 25%, you pay the other 75%. 0.75 × 80 = 60.',
+      { h: 'Adding the tax' },
+      'In most of Canada, the price on the tag does not include sales tax. It is added at the checkout. In Ontario, the Harmonized Sales Tax, or HST, is 13%. It combines a 5% federal tax and an 8% provincial tax. Thirteen percent of $60 is 0.13 × 60 = $7.80. So the total is $60 + $7.80 = $67.80. You are $2.80 short. You will need to wait for a bigger sale, or save a little more.',
+      { h: 'Does the order matter?' },
+      'Some people wonder whether a store should take off the discount first or add the tax first. Try both. Discount first: 0.75 × 80 = 60, then 1.13 × 60 = 67.80. Tax first: 1.13 × 80 = 90.40, then 0.75 × 90.40 = 67.80. The answer is the same, because multiplying in a different order gives the same product.',
+      { box: 'Different provinces', text: 'Sales tax is not the same across Canada. In Alberta, shoppers pay only the 5% federal GST, so the same $60 hoodie would cost $63.' },
+      'Knowing how to do these calculations helps you make smart choices. Before you reach the checkout, multiply by 1.13 in Ontario to estimate the real cost, and you will never be surprised by the total. A quick estimate: 13% is a little more than one tenth, so add about a tenth of the price, plus a bit.'
+    ],
+    guide: { before: 'Review changing a percent to a decimal (25% = 0.25). Teach <b>percent</b> and <b>discount</b>. Do the hoodie calculation together with a calculator.',
+      after: 'Find a flyer or a website with a sale. Pick an item and work out the real price after tax.' },
+    words: [['percent', 'out of 100'], ['discount', 'an amount taken off the regular price']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Complete the chart for an item with a $40 tag price in Ontario.', cols: ['Step', 'Amount'],
+        rows: [['25% discount', null], ['sale price', null], ['13% HST on the sale price', null], ['total', null]],
+        a: [[null, '$10'], [null, '$30'], [null, '$3.90'], [null, '$33.90']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, what is the final price of the hoodie?',
+        opts: ['$67.80', '$60', '$80', '$90.40'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is the hoodie cheaper in Alberta?',
+        opts: ['Alberta has only the 5% GST.', 'Alberta has bigger discounts.', 'Hoodies are made there.', 'There is no tax at all.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why taking off the discount first or adding the tax first gives the same total.',
+        a: 'Both ways multiply 80 by 0.75 and by 1.13. Multiplying in a different order gives the same product, so both give $67.80.', look: 'uses the order of multiplication' },
+      { k: 'choice', code: 'B2.1', q: 'The word <b>percent</b> comes from Latin <i>per centum</i>. What does <i>centum</i> mean?',
+        opts: ['one hundred', 'one thousand', 'money', 'part'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'How does the writer use the hoodie example to organize the whole text?',
+        a: 'The text starts with a problem (is $65 enough?), then works through each step with the hoodie, and gives the answer: you are $2.80 short.', look: 'problem, steps and solution structure' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Who might find this text useful, and why? Name two different readers.',
+        a: 'A student shopping for clothes could check if they have enough money. A new Canadian might want to learn why prices go up at the checkout.', look: 'two readers with reasons' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-passwords', subject: 'tech', form: 'Explanation',
+    title: 'Why Long Beats Clever',
+    deck: 'The math behind a strong password, and why a long passphrase often wins',
+    hero: {
+      photo: 'g8-padlock.jpg', credit: 'Photo: Trougnouf, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 180,
+      cap: 'A padlock and its keys. A password is the lock on your online accounts.'
+    },
+    body: [
+      'Every day, criminals use computer programs that try to break into accounts by guessing passwords, millions or even billions of guesses every second. A strong password is one that would take such a program so long to guess that it is not worth trying. Math can tell us what makes one password stronger than another.',
+      { h: 'Counting the possibilities' },
+      'A bike lock with four dials, each numbered 0 to 9, has 10 × 10 × 10 × 10 = 10 000 possible codes. A computer could try them all in a fraction of a second. Now think of a password made of 8 lowercase letters. Each position has 26 possibilities, so there are 26 multiplied by itself 8 times, about 209 billion possible passwords. That sounds like a lot, but a fast computer could try them all in minutes.',
+      { fig: bars([[4, '4-digit', 'code'], [11, '8 small', 'letters'], [16, '8 mixed', 'characters'], [19, '5 random', 'words']], { max: 24, step: 8 }) + tx(46, 12, 'n', 'possibilities: about 10 to the power of …'),
+        tall: 172, cap: 'The bigger the power of 10, the more possibilities. Each step of 1 means 10 times more (approximate).' },
+      { h: 'Length matters most' },
+      'Every extra character multiplies the number of possibilities. Adding capital letters, numbers and symbols helps too, because each position then has about 95 choices instead of 26. But people often make passwords “clever” in predictable ways, like <i>Password1!</i> or swapping <i>a</i> for <i>@</i>. Guessing programs know these tricks. A better idea is a <b>passphrase</b>: five or more unrelated words chosen at random, such as <i>tulip–canoe–orbit–pickle</i>. It is long, hard to guess and easy to remember.',
+      { box: 'Two locks are better than one', text: '<b>Two-step verification</b> asks for a second proof, such as a code sent to your phone. Even if someone steals your password, they cannot get in without it.' },
+      { h: 'Habits that protect you' },
+      'Use a different password for every important account, so that one leak does not unlock them all. Never share passwords with friends, even close ones. Be suspicious of messages that ask you to “confirm your password” by clicking a link: this trick, called phishing, is one of the most common ways accounts are stolen. A password manager, an app that remembers strong passwords for you, can make all of this easier. Ask a grown-up to help you set one up.'
+    ],
+    guide: { before: 'Count the codes on a bike lock together. Teach <b>passphrase</b> and <b>two-step verification</b>. Explain powers of 10: 10 to the power of 4 is 10 000.',
+      after: 'Make up a five-word passphrase you would remember (do not use it for a real account). Why is it hard to guess?' },
+    words: [['passphrase', 'a password made of several random words'], ['two-step verification', 'a second proof of who you are, as well as a password']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, which has the most possibilities?',
+        opts: ['5 random words', '8 mixed characters', '8 small letters', 'a 4-digit code'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is <i>Password1!</i> a weak password?',
+        opts: ['Guessing programs know such tricks.', 'It is too long.', 'It has no letters.', 'It uses a symbol.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how the bike lock has 10 000 possible codes.',
+        a: 'Each of the four dials has 10 choices, so there are 10 × 10 × 10 × 10 = 10 000 combinations.', look: 'multiplies the choices for each dial' },
+      { k: 'lines', code: 'A2.2', n: 3, q: 'Name three habits from the text that protect your accounts. Explain one.',
+        a: 'Use a different password for each account, never share passwords, and use two-step verification. Different passwords mean one leak does not unlock everything.', look: 'three habits and one explained' },
+      { k: 'choice', code: 'B3.3', q: '“This trick, called phishing, is one of the most common ways accounts are stolen.” The commas around <b>called phishing</b> …',
+        opts: ['set off extra information about the trick', 'separate items in a list', 'introduce a quotation', 'join two sentences'], a: 0 },
+      { k: 'lines', code: 'A2.1', n: 3, q: 'Why is sharing a password with a close friend still a risk?',
+        a: 'Friendships can change, and the friend might accidentally share it or log in somewhere unsafe. You lose control over who can get into your account.', look: 'a reasonable risk explained' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Before reading, what did you think made a password strong? How has your thinking changed?',
+        a: 'I thought symbols made it strong. Now I know length matters most, and a long passphrase can be stronger and easier to remember.', look: 'describes a change in thinking based on the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-understudy', subject: 'story', form: 'Play script', plain: true,
+    title: 'The Understudy',
+    deck: 'Ten minutes before the curtain rises, the lead actor cannot go on. A short play in one scene.',
+    hero: {
+      photo: 'g8-theatre.jpg', credit: 'Photo: Harrison Keely, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 170,
+      cap: 'Two actors rehearse a scene from a play.'
+    },
+    body: [
+      '<b>CHARACTERS:</b> PRIYA, 13, the <b>understudy</b>. MARCUS, 13, the lead actor. MS. DUBÉ, the drama teacher.',
+      '<i>(Backstage at a school theatre. Ten minutes to <b>curtain</b>. PRIYA sits on a box, mouthing lines from a script. MARCUS paces, holding his stomach.)</i>',
+      '<b>MARCUS:</b> I can’t do it. I really can’t. Not tonight.',
+      '<b>PRIYA:</b> <i>(not looking up)</i> You say that every night. And every night you go out there and the audience loves you.',
+      '<b>MARCUS:</b> No, I mean it. I think I’m going to be sick. Actually sick. My head is pounding.',
+      '<b>PRIYA:</b> <i>(looks up, alarmed)</i> Marcus. Sit down. Breathe.',
+      '<i>(MS. DUBÉ hurries in, carrying a clipboard.)</i>',
+      '<b>MS. DUBÉ:</b> Marcus, you’re green. <i>(She feels his forehead.)</i> You have a fever. You’re going home. <i>(She turns to PRIYA.)</i> Priya, you’re on.',
+      '<b>PRIYA:</b> Me? But I’ve only rehearsed with the cast twice. I don’t know where to stand in Act Two. I don’t —',
+      '<b>MS. DUBÉ:</b> Priya, look at me. You know every line. I’ve heard you saying them in the hallway for six weeks. <i>(She hands PRIYA a costume.)</i> Seven minutes.',
+      '<i>(MS. DUBÉ leads MARCUS off. PRIYA stands alone, holding the costume. MARCUS pauses at the door.)</i>',
+      '<b>MARCUS:</b> Priya. In Act Two, when the lights go blue, walk to the tape mark in the centre and wait for the music. That’s it. That’s the whole secret.',
+      '<b>PRIYA:</b> What if I freeze? What if I open my mouth and nothing comes out?',
+      '<b>MARCUS:</b> Then freeze in the middle of the stage. The audience will think it’s acting. <i>(He grins weakly.)</i> And don’t look at the front row. My little brother makes faces. You’re better than me, you know. Everybody knows it.',
+      { fig: '<rect class="k" x="20" y="20" width="260" height="110"/><path class="d" d="M20 130 H280"/>' + tx(150, 150, 'n', 'audience', 'middle') + tx(150, 14, 'n', 'back of stage', 'middle') +
+          '<rect class="h" x="30" y="30" width="50" height="90"/>' + tx(55, 80, 'n', 'wings', 'middle') + '<circle class="a" cx="160" cy="96" r="8"/>' + D.label(196, 60, 'centre stage', 166, 92) + D.arrow(84, 96, 148, 96, 'a'),
+        tall: 156, cap: 'A stage seen from above. Priya waits in the wings, then walks to centre stage.' },
+      '<i>(He exits. PRIYA looks at the costume, then at the curtain. The sound of the audience grows louder. She takes a slow breath, steps forward and pulls on the costume jacket.)</i>',
+      '<b>PRIYA:</b> <i>(quietly, to herself)</i> Blue lights. Tape mark. Wait for the music.',
+      '<i>(The house lights dim. A single spotlight finds her. She lifts her chin.)</i>',
+      '<i>(Blackout.)</i>'
+    ],
+    guide: { before: 'Explain that a script has character names, lines and stage directions. Teach <b>understudy</b> and <b>curtain</b>, and the stage words in the diagram: wings, centre stage. Read it aloud together, taking parts.',
+      after: 'Write the next scene: what happens when Priya walks on stage? Remember to include stage directions.' },
+    words: [['understudy', 'an actor who learns a part in order to replace the lead if needed'], ['curtain', 'the start of a performance, when the stage curtain opens']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'In a play script, what do the words in italics and brackets show?',
+        opts: ['stage directions: actions and setting', 'the characters’ thoughts', 'words to shout', 'the title'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, where does Priya wait before she goes on?',
+        opts: ['in the wings', 'centre stage', 'in the audience', 'behind the curtain at the back'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How do we know Priya is better prepared than she thinks? Give two clues.',
+        a: 'Ms. Dubé says Priya knows every line and has been saying them in the hallway for six weeks. Marcus says everybody knows she is better than him.', look: 'two clues from the dialogue' },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'A play has no narrator. How do we learn what Priya is feeling at the end?',
+        a: 'Through stage directions and her actions: she takes a slow breath, speaks quietly to herself and lifts her chin, which shows she is nervous but brave.', look: 'stage directions and actions reveal feelings' },
+      { k: 'choice', code: 'B3.3', q: 'Why does Priya’s line “I don’t —” end with a dash?',
+        opts: ['She is interrupted or stops mid-sentence.', 'It is a list.', 'It is a question.', 'It is the end of the play.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'What is the theme of the play? Use the ending to support your answer.',
+        a: 'Being ready matters more than feeling ready. Priya is scared, but she steps forward and lifts her chin, because she has prepared.', look: 'a theme stated as an idea, linked to the ending' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what happens when the spotlight finds Priya. Use clues from the script.',
+        a: 'She will remember Marcus’s advice and perform well, because she knows every line and she lifts her chin with confidence.', look: 'a prediction supported by clues' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-aurora', subject: 'story', form: 'Poem',
+    title: 'Night Shift, Yellowknife',
+    deck: 'A poem about watching the northern lights on a winter night',
+    hero: {
+      photo: 'g8-aurora.jpg', credit: 'Photo: TravelingOtter, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The northern lights, or aurora borealis, over Yellowknife, Northwest Territories.'
+    },
+    body: [
+      '<b>I.</b> Minus thirty-eight, and the snow<br>creaks under our boots like an old floor.<br>My breath hangs in the air, a small ghost<br>that will not follow me home.',
+      '<b>II.</b> Dad says, <i>Wait.</i><br>We have been waiting an hour.<br>The sky is a black lake, still,<br>and the stars are fish asleep in it.',
+      '<b>III.</b> Then, low over the trees, a green thread<br>pulls loose from nowhere.<br>It ripples, unravels, becomes a ribbon,<br>becomes a river poured across the dark.',
+      { fig: '<path class="k" d="M10 150 Q60 140 80 150 Q120 130 150 150 Q190 136 220 150 Q260 140 290 150"/><path class="a" d="M20 110 Q60 60 110 90 Q160 120 200 60 Q240 20 280 50"/><path class="t" d="M30 100 Q70 50 120 80 Q170 110 210 50 Q250 14 280 36"/>' +
+          D.label(4, 36, 'curtain of light', 70, 72) + D.label(200, 120, 'treeline', 220, 146),
+        tall: 160, cap: 'The aurora often moves like a curtain or ribbon above the horizon.' },
+      '<b>IV.</b> It folds like laundry on a windy line.<br>It dances, then forgets it is dancing<br>and simply <b>shimmers</b>, pink at the hem,<br>as if the sky were blushing.',
+      '<b>V.</b> Grandma told Dad, when he was small,<br>never to whistle at the lights,<br>or they might swoop down for a closer look.<br>He still does not whistle. Neither do I.',
+      '<b>VI.</b> In science class I learned the cause:<br>tiny particles from the Sun<br>crash into the air a hundred kilometres up<br>and make it glow.',
+      '<b>VII.</b> I know that. I believe that.<br>But tonight, standing on the frozen lake,<br>my eyelashes stiff with frost,<br>it feels like the sky is breathing.',
+      '<b>VIII.</b> Somewhere a dog barks, once,<br>and the sound travels for kilometres<br>across the ice, as if the whole lake<br>were listening with us.',
+      '<b>IX.</b> Dad does not say anything.<br>Neither do I.<br>Some things are too big for words,<br>so we just stand there, <b>awestruck</b>, and watch<br>until our toes go numb and the green fades to grey.',
+      { box: 'What is an aurora?', text: 'Auroras happen when charged particles from the Sun are pulled toward Earth’s magnetic poles. When they strike gases high in the atmosphere, the gases give off light. Oxygen glows green or red, and nitrogen can glow blue or purple. Yellowknife, in the Northwest Territories, is one of the best places in the world to see them, and visitors travel from around the world each winter for the chance.' }
+    ],
+    guide: { before: 'Look at the photo together and describe the colours and shapes. Teach <b>shimmers</b> and <b>awestruck</b>. Read the poem aloud slowly, pausing at each line break.',
+      after: 'Write three lines about something in nature that made you feel awestruck. Use one comparison.' },
+    words: [['shimmers', 'shines with a soft, wavering light'], ['awestruck', 'filled with wonder and amazement']],
+    qs: [
+      { k: 'choice', code: 'C1.5', half: true, q: '“My breath hangs in the air, a small ghost.” This is an example of …',
+        opts: ['a metaphor', 'a fact', 'a rhyme', 'a question'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about the aurora?',
+        opts: ['It moves like a curtain above the trees.', 'It touches the ground.', 'It is shaped like a circle.', 'It is below the trees.'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Find one simile in stanza IV and explain what it helps you picture.',
+        a: '“It folds like laundry on a windy line.” It helps me picture the light flapping and folding in waves, the way sheets move in the wind.', look: 'a simile from stanza IV and its picture' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'In stanza VII, the speaker says, “I know that. I believe that. But …” What idea is the poet exploring?',
+        a: 'That you can understand the science of something and still feel amazed by it. Knowing the cause does not take away the wonder.', look: 'science and wonder can exist together' },
+      { k: 'choice', code: 'B2.2', q: 'In stanza IV, “pink at the <b>hem</b>” means pink …',
+        opts: ['at the bottom edge', 'in the middle', 'at the top', 'all over'], a: 0 },
+      { k: 'lines', code: 'C1.2', n: 3, q: 'How is this poem different from the box, even though both explain the aurora?',
+        a: 'The box gives scientific facts in plain sentences. The poem uses comparisons, feelings and line breaks to show what it is like to see the aurora.', look: 'contrasts the purposes and features of the two forms' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Did reading the poem aloud, or slowly, help you understand it? Explain, and name one thing you will do the next time you read a poem.',
+        a: 'Reading slowly helped me notice the comparisons. Next time I will read the poem twice: once for the story and once for the images.', look: 'reflects on a strategy and sets a goal' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-yeast', subject: 'science', form: 'Lab report',
+    title: 'Can Yeast Blow Up a Balloon?',
+    deck: 'A Grade 8 student tests how temperature affects living yeast cells',
+    hero: {
+      photo: 'g8-bread-dough.jpg', credit: 'Photo: Ruth Hartnup, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 180,
+      cap: 'Bread dough rises because yeast cells inside it release a gas.'
+    },
+    body: [
+      '<b>Background.</b> Yeast is a tiny living thing made of a single <b>cell</b>. It is a kind of fungus, and a spoonful of baker’s yeast holds billions of cells. When yeast cells have sugar, water and warmth, they break the sugar down for energy. This process, called <b>fermentation</b>, releases carbon dioxide gas. In bread dough, the bubbles of gas get trapped, and the dough rises.',
+      '<b>Question.</b> How does the temperature of the water affect how much gas the yeast makes?',
+      '<b>Hypothesis.</b> I predicted that warm water would make the most gas, because yeast is alive and many living things work best when they are warm but not hot.',
+      '<b>Materials.</b> Three identical plastic bottles, three balloons, three packets of yeast (7 g each), sugar, measuring cups, cold water (about 5 °C), warm water (about 35 °C), hot water (about 70 °C) and a measuring tape.',
+      '<b>Method.</b> I put one packet of yeast and one tablespoon of sugar into each bottle. I added 250 mL of cold water to the first bottle, warm water to the second and hot water to the third. I quickly stretched a balloon over each bottle’s mouth. After 30 minutes, I measured the distance around the widest part of each balloon. To make it a fair test, I changed only one <b>variable</b>, the water temperature, and kept everything else the same.',
+      { fig: [[60, 'cold', 0], [150, 'warm', 1], [240, 'hot', 2]].map(function (b) { var r = [8, 30, 5][b[2]]; return '<rect class="k" x="' + (b[0] - 20) + '" y="96" width="40" height="56" rx="6"/><path class="k" d="M' + (b[0] - 8) + ' 96 V86 M' + (b[0] + 8) + ' 96 V86"/><circle class="' + (b[2] === 1 ? 'a' : 'k') + '" cx="' + b[0] + '" cy="' + (84 - r) + '" r="' + r + '"/>' + tx(b[0], 168, 'n', b[1] + ' water', 'middle'); }).join(''),
+        tall: 172, cap: 'The three balloons after 30 minutes (sketch).' },
+      '<b>Results.</b> The balloon on the cold-water bottle had barely started to fill, at 6 cm around. The balloon on the warm-water bottle was the biggest, at 58 cm around. The balloon on the hot-water bottle was almost flat, at 3 cm around.',
+      '<b>Conclusion.</b> My hypothesis was supported. Warm water produced by far the most carbon dioxide. Cold water slowed the yeast down. The hot water probably killed most of the yeast cells, because their parts are damaged by high heat. This is why bread recipes say to use warm water, not hot. Next, I would like to test whether more sugar makes more gas, and repeat each test three times to check that my results are reliable.'
+    ],
+    guide: { before: 'If you can, do the experiment together before reading. Teach <b>cell</b>, <b>fermentation</b> and <b>variable</b>. Notice the headings of a lab report.',
+      after: 'Design your own fair test with yeast. What one variable would you change?' },
+    words: [['cell', 'the smallest unit of a living thing'], ['fermentation', 'when yeast or bacteria break down sugar and release gas'], ['variable', 'a thing that can change in an experiment']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which section of a lab report gives the prediction?',
+        opts: ['Hypothesis', 'Materials', 'Results', 'Method'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the sketch, which bottle made the most gas?',
+        opts: ['warm water', 'cold water', 'hot water', 'all the same'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the results chart.', cols: ['Water', 'Balloon size after 30 minutes'],
+        rows: [['cold (about 5 °C)', null], ['warm (about 35 °C)', null], ['hot (about 70 °C)', null]],
+        a: [[null, '6 cm around'], [null, '58 cm around'], [null, '3 cm around']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did the hot-water balloon barely fill?',
+        a: 'The hot water probably killed most of the yeast cells, so they could not ferment the sugar and make gas.', look: 'heat damaged or killed the yeast' },
+      { k: 'choice', code: 'B3.2', q: '“I <b>quickly</b> stretched a balloon over each bottle’s mouth.” <b>Quickly</b> is …',
+        opts: ['an adverb', 'a verb', 'a noun', 'an adjective'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What made this a fair test? Name the one variable that changed and two things that stayed the same.',
+        a: 'Only the water temperature changed. The amount of yeast and sugar, and the amount of water, stayed the same.', look: 'the changed variable and two controlled ones' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the experiment and what it showed, in two sentences.',
+        a: 'The student mixed yeast and sugar with cold, warm and hot water and measured balloons. Warm water made the most gas, showing yeast works best when warm but not hot.', look: 'method and result, briefly' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-polls', subject: 'math', form: 'Explanation',
+    title: 'The Poll That Got It Wrong',
+    deck: 'In 1936, a magazine asked over two million people how they would vote, and still predicted the wrong winner',
+    hero: {
+      photo: 'g8-ballot-box.jpg', credit: 'Photo: W.carter, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 180,
+      cap: 'A ballot box at a polling station in Sweden. Polls try to predict what voters will decide before the votes are counted.'
+    },
+    body: [
+      'In 1936, Americans were choosing a president: Franklin Roosevelt or Alf Landon. A popular magazine, the <i>Literary Digest</i>, mailed out about ten million questionnaires and got back more than two million answers. Its prediction was confident: Landon would win easily. On election day, Roosevelt won in one of the biggest landslides in American history.',
+      { fig: bars([[57, 'Digest', 'predicted'], [37, 'actual', 'result']], { max: 70, step: 35, unit: '%' }) + tx(46, 12, 'n', 'Landon’s share of the vote (rounded)'),
+        tall: 172, cap: 'The Literary Digest predicted Landon would win most of the vote. He won far less.' },
+      { box: '19 times out of 20', text: 'Canadian news reports often say a poll is “accurate within 3 percentage points, 19 times out of 20.” This means that if the poll were repeated many times, about 95% of the results would land within 3 points of the true value.' },
+      { h: 'Samples and populations' },
+      'A poll cannot ask everyone, so it asks a <b>sample</b>, a smaller group chosen from the whole <b>population</b>. The idea is that if the sample is like the population, its answers will be like the population’s answers. The <i>Literary Digest</i> sample was huge. But it was not like the population.',
+      { h: 'What went wrong' },
+      'The magazine got its list of names mainly from telephone directories, car registrations and its own subscribers. In 1936, during the Great Depression, many people could not afford a telephone or a car. The people on the list were wealthier than average, and many wealthier voters favoured Landon. On top of that, only about a quarter of the people mailed a questionnaire sent it back, and those who did were more likely to be unhappy with the president. The sample was <b>biased</b>: it leaned toward one kind of person.',
+      { h: 'Small but fair beats big but biased' },
+      'That same year, a young pollster named George Gallup surveyed a much smaller sample, chosen carefully to include people of different incomes, ages and regions. He correctly predicted that Roosevelt would win. The lesson changed polling forever: a fair, <b>random sample</b> of about a thousand people can be more accurate than a biased sample of millions.',
+      'Today, pollsters still work hard to avoid bias, but it is not easy. Many people do not answer calls from unknown numbers, and online polls may reach only certain groups. A good reader always asks: who was asked, and how were they chosen?'
+    ],
+    guide: { before: 'Ask: if you surveyed only the basketball team about favourite sports, would the results be fair? Teach <b>sample</b>, <b>population</b>, <b>biased</b> and <b>random sample</b>.',
+      after: 'Find a poll in the news. Who was asked, and how many? Could the sample be biased?' },
+    words: [['sample', 'a smaller group chosen from a larger group to be studied'], ['population', 'the whole group you want to learn about'], ['biased', 'leaning unfairly toward one side']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, how far off was the Digest’s prediction for Landon?',
+        opts: ['about 20 percentage points', 'about 5 points', 'about 57 points', 'it was exactly right'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were the people on the Digest’s list wealthier than average?',
+        opts: ['Names came from phone books and car records.', 'Only rich people voted.', 'The magazine was free.', 'Gallup chose them.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain two reasons the Literary Digest sample was biased.',
+        a: 'The list came from phone books, car records and subscribers, who were wealthier. Also, only about a quarter answered, and those who did were more likely to be unhappy with the president.', look: 'the list and the low response rate' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The heading says “Small but fair beats big but biased.” Explain this idea using the text.',
+        a: 'Gallup’s small but carefully chosen sample predicted correctly, while the Digest’s huge but biased sample was wrong. Fairness matters more than size.', look: 'compares the two polls to explain the heading' },
+      { k: 'choice', code: 'B2.2', q: 'In this text, a <b>poll</b> is …',
+        opts: ['a survey of people’s opinions', 'a long pole', 'the top of the head', 'a place to swim'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'How does the writer organize this text? Name the pattern and explain why it suits the topic.',
+        a: 'Problem and solution, or cause and effect: a poll fails, the writer explains why, and then shows how Gallup fixed it. It helps readers understand what went wrong and the lesson.', look: 'names a pattern and links it to the content' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Before reading, did you think a bigger poll was always better? How has your thinking changed?',
+        a: 'Yes, I thought more people meant more accurate. Now I know a fair, random sample matters more than a huge one.', look: 'reflects on a change in thinking' }
+    ]
+  });
 })();
