@@ -89,6 +89,105 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
 | `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
 | `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
+| `g6-specimen-drawer.jpg` | Butterfly and moth specimens in a drawer at the New Zealand Arthropod Collection | Siobhan Leachman | CC0 | https://commons.wikimedia.org/wiki/File:Insect_specimen_drawer_New_Zealand_Arthropod_Collection.jpg |
+| `g6-garlic-mustard.jpg` | Garlic mustard growing on a forest floor | Robert Flogaus-Faust | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Alliaria_petiolata_4_RF.jpg |
+| `g6-railway-memorial.jpg` | The memorial to Chinese railway workers, Toronto | Shaun Merritt | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chinese_Railway_Workers_Monument_Toronto.jpg |
+| `g6-un-assembly.jpg` | The United Nations General Assembly hall, New York | Basil D Soufi | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg |
+| `g6-cereal-aisle.jpg` | Boxes of breakfast cereal on supermarket shelves | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g6-carr-odds-and-ends.jpg` | Odds and Ends, painting by Emily Carr, 1939 | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g6-banting-best.jpg` | Frederick Banting and Charles Best with a dog, University of Toronto, 1921 | Thomas Fisher Rare Book Library | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Photograph_of_F.G._Banting_and_C.H._Best_with_a_dog_on_the_roof_of_the_Medical_Building_(12309019434).jpg |
+| `g6-blackout.jpg` | A Toronto neighbourhood during the 2003 blackout | Ashleystruan at en.wikipedia | Public domain | https://commons.wikimedia.org/wiki/File:Powercut-deerpark-01.JPG |
+| `g6-dark-sky.jpg` | Night sky over Torrance Barrens Dark Sky Preserve, Ontario | Mustang Joe | CC0 | https://commons.wikimedia.org/wiki/File:Torrance_Barrens_Dark_Sky_Preserve_(53968290486).jpg |
+| `g6-youth-hockey.jpg` | Girls' ice hockey final at the 2020 Winter Youth Olympics | Christophe95 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ice_hockey_at_the_2020_Winter_Youth_Olympics_–_Girls'_tournament_final.jpg |
+| `g6-skatepark.jpg` | A skatepark in Shearwater, Nova Scotia | T.Newfeels | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Shearwater_Skatepark_full_view.jpg |
+| `g6-two-row-journey.jpg` | Tom Porter and Hickory Edwards with a Two Row Wampum belt, 2013 renewal journey | Gorgenkor | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tom_Porter_and_Hickory_Edwards_on_2013_Two_Row_Journey.jpg |
+| `g6-exchange-rates.jpg` | A digital board showing currency exchange rates | Dvortygirl | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Exchange_rates_sign.jpg |
+| `g6-beaded-bag.jpg` | A beaded bag with flowers, Cree or Métis, Cleveland Museum of Art | Unknown | CC0 | https://commons.wikimedia.org/wiki/File:Clevelandart_1956.831.jpg |
+| `g6-moon-crescent.jpg` | A waxing crescent moon | Bruno Rijsman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Waxing_crescent_moon_(2).jpg |
+| `g6-snow-removal.jpg` | Snow removal operations in the Saint-Michel neighbourhood, Montréal | Miguel Angel Omaña Rojas | CC0 | https://commons.wikimedia.org/wiki/File:Snow_removal_operations.jpg |
+| `g6-holiday-lights.jpg` | Strings of holiday lights | Oast House Archive | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Christmas_lights_-_geograph.org.uk_-_5233972.jpg |
+| `g6-sale-sign.jpg` | A store window sign: 75% off | TheDigitel Beaufort from Beaufort, SC, USA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bay_Street_Trading_Co._sale_sign_(4983153154).jpg |
+| `g6-red-river-cart.jpg` | A full-size model of a Red River cart in front of Pembina Hall | Viola-Ness | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_River_cart_Pembina_Hall.jpg |
+| `g6-cn-tower-lightning.jpg` | Lightning strikes the CN Tower, Toronto | Raul Heinrich | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:CN_Tower_struck_by_lightning.jpg |
+| `g6-adam-beck.jpg` | Sir Adam Beck hydroelectric generating station beside the Niagara River | Changku88 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sir_Adam_Beck_Hydroelectric_Generating_Station_beside_the_Niagara_River.jpg |
+| `g6-balloons.jpg` | Hot air balloons at the Gatineau Hot Air Balloon Festival | NoonIcarus | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Festival_de_Montgolfières_de_Gatineau_10.JPG |
+| `g6-silver-dart.jpg` | The Silver Dart, the first powered aircraft to fly in Canada | Dennis G. Jarvis | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Silver_Dart_(35781448891).jpg |
+| `g6-samaras.jpg` | Silver maple samaras (seeds with wings) | USFWSmidwest | Public domain | https://commons.wikimedia.org/wiki/File:Silver_Maple_Samaras.jpg |
+| `g6-canadarm.jpg` | The Canadarm on its first space shuttle mission, 1981 | NASA | Public domain | https://commons.wikimedia.org/wiki/File:STS-2_Canadarm_debut.jpg |
+| `g6-midnight-sun.jpg` | The midnight sun over Inuvik, Northwest Territories | Daniel Case | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Midnight_sun_from_Arctic_Chalet,_Inuvik,_NT_3.jpg |
+| `g6-eclipse.jpg` | The total solar eclipse of April 8, 2024, seen from Hamilton, Ontario | Pcbeetle | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:4-8-2024_solar_eclipse,_Hamilton,_Ontario.jpg |
+| `g6-pier21.jpg` | An immigrant woman with her baby at Pier 21, Halifax, 1948 | E.A. Bollinger | Public domain | https://commons.wikimedia.org/wiki/File:Immigrant_Woman_with_Baby,_Pier_21,_Halifax,_Nova_Scotia,_Canada,_1948.jpg |
+| `g6-henson-house.jpg` | Josiah Henson House, Josiah Henson Museum of African-Canadian History, Dresden, Ontario | Chris Woodrich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Josiah_Henson_House,_Josiah_Henson_Museum_of_African-Canadian_History,_Dresden,_Ontario,_2025-09-13.jpg |
+| `g6-tintamarre.jpg` | A tintamarre parade in front of City Hall, Fredericton | Quiet kiai | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tintamarre_Fredericton.JPG |
+| `g6-komagata-maru.jpg` | Sikh passengers aboard the Komagata Maru, Vancouver, 1914 | See description | Public domain | https://commons.wikimedia.org/wiki/File:Sikhs_aboard_S.S._Komagata_Maru,_1914.jpg |
+| `g6-cocoa.jpg` | A cocoa farmer and his son with cocoa pods | Irene Scott/AusAID | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Cocoa_farmer_David_Kebu_Jnr_and_his_son_Snider_Kebu_display_cocoa_pods_from_Kebu_farm._(10687079704).jpg |
+| `g6-bannock.jpg` | Bannock cooking on a stick over a fire | Sandra Cohen-Rose and Colin Rose from Montreal, Canada | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Bannock_on_the_Cooking_Stick_(4708283300).jpg |
+| `g6-descartes.jpg` | Portrait of René Descartes, after Frans Hals | Frans Hals | Public domain | https://commons.wikimedia.org/wiki/File:Frans_Hals,_Portrait_of_René_Descartes.jpg |
+| `g6-throat-singing.jpg` | Charlotte Qamaniq and Alexia Galloway-Alainga, Inuit throat singers | Rudolf H. Boettcher | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Charlotte_-_Alexia_-_Inuit_throat_singing.jpg |
+| `g6-mclaren.jpg` | Norman McLaren drawing on film at the National Film Board, 1944 | Jack Long/National Film Board of Canada | Public domain | https://commons.wikimedia.org/wiki/File:Norman_McLaren_drawing_on_film_-_1944.jpg |
+| `g6-winnipeg-forks.jpg` | The Forks, Winnipeg, Manitoba | Robert Linsdell from St. Andrews, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:The_Forks,_Winnipeg_(390110)_(9441803657).jpg |
+| `g6-phone-cameras.jpg` | Two people taking photos with their smartphones | U.S. Fish and Wildlife Service Headquarters | Public domain | https://commons.wikimedia.org/wiki/File:Smartphone_cameras_on_refuge_(7029496999).jpg |
+| `g6-bumblebee.jpg` | A bumblebee covered in pollen on a prairie dock flower | U.S. Fish and Wildlife Service - Midwest Region | Public domain | https://commons.wikimedia.org/wiki/File:Bumblebee_covered_in_pollen_(51432998921).jpg |
+| `g6-spirit-bear.jpg` | A spirit bear (Kermode bear) near Klemtu, British Columbia | Maximilian Helm from Dresden, Deutschland | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ursus_americanus_kermodei,_Spirit_Bear_Lodge,_Klemtu,_BC_1.jpg |
+| `g6-static.jpg` | Hair pulled toward a rubbed balloon by static electricity | MikeRun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Attractive-electric-force-between-hair-and-balloon.jpg |
+| `g6-bondar.jpg` | Official portrait of astronaut Roberta Bondar, 1991 | JSC/NASA | Public domain | https://commons.wikimedia.org/wiki/File:Roberta_Bondar.jpg |
+| `g6-aurora.jpg` | The northern lights over Yellowknife, Northwest Territories | raymond22112376 | Public domain | https://commons.wikimedia.org/wiki/File:2018_Aurora_Yellowknife_Canada.jpg |
+| `g6-paper-plane.jpg` | A folded white paper airplane | Arthurfan828 | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:White_paper_airplane.jpg |
+| `g6-peacekeeping.jpg` | Reconciliation: The Peacekeeping Monument, Ottawa | Pierre André Leclercq | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Reconciliation-_The_Peacekeeping_Monument,_Ottawa_(02-10-2017).jpg |
+| `g6-desmond.jpg` | Viola Desmond, Halifax, Nova Scotia | Unknown authorUnknown author | Public domain | https://commons.wikimedia.org/wiki/File:Viola_Desmond.jpg |
+| `g6-africville.jpg` | The rebuilt Seaview African United Baptist Church at Africville, Halifax | Dennis G. Jarvis | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Halifax_NS-01332_-_Seaview_African_United_Baptist_Church_(28445808013).jpg |
+| `g6-vegreville-church.jpg` | Ukrainian Orthodox Church of St. Vladimir, Vegreville, Alberta | TobyEditor | CC0 | https://commons.wikimedia.org/wiki/File:Ukrainian_Orthodox_Church,_Vegreville_02.jpg |
+| `g6-every-child.jpg` | An Every Child Matters sign for Orange Shirt Day | Taymaz Valley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Every_Child_Matters.jpg |
+| `g6-handwashing.jpg` | Washing hands with soap and water | Sgt. Grace L. Waladkewics | Public domain | https://commons.wikimedia.org/wiki/File:Washing_hands_(cropped).jpg |
+| `g6-dice.jpg` | A throw of two dice | JonRichfield | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_throw_of_two_dice_as_in_the_game_of_hazard_IMG_1705s.jpg |
+| `g6-haida-poles.jpg` | Poles at the Haida Heritage Centre, Skidegate, Haida Gwaii | Karen Neoh | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:TotemPoles-HaidaHeritageCentre.jpg |
+| `g6-monarch.jpg` | A monarch butterfly | Thomas Bresson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Danaus_plexippus_(7).jpg |
+| `g6-point-pelee.jpg` | The marsh boardwalk at Point Pelee National Park, Ontario | Ken Lund from Reno, Nevada, USA | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marsh_Boardwalk,_Point_Pelee_National_Park,_Leamington,_Ontario,_Canada_(21783820521).jpg |
+| `g6-webb-mirror.jpg` | An engineer with mirror segments of the James Webb Space Telescope | NASA/MSFC/David Higginbotham | Public domain | https://commons.wikimedia.org/wiki/File:James_Webb_Primary_Mirror.jpg |
+| `g6-e-waste.jpg` | Old computers collected for recycling | Tom Worthington | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Computers_for_Recycling_in_Steel_Mesh_Pallets.jpg |
+| `g6-emerald-ash-borer.jpg` | An emerald ash borer beetle | ShenandoahNPS | Public domain | https://commons.wikimedia.org/wiki/File:Emerald_Ash_Borer_(45568489611).jpg |
+| `g6-batteries.jpg` | AA alkaline batteries | Multicherry | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Golden_Power_Power_Plus_AA_alkaline_batteries.jpg |
+| `g6-geese-v.jpg` | Canada geese flying in a V formation | John Benson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:CanadianGeeseFlyingInVFormation.jpg |
+| `g6-curiosity.jpg` | The Curiosity rover on Mars, a self-portrait | semeion.photo | Public domain | https://commons.wikimedia.org/wiki/File:Curiosity_rover_selfie_at_Namib_Dune_Sol_1128_(53678107023).jpg |
+| `g6-tomato-seedlings.jpg` | Tomato seedlings | Dwight Sipler from Stow, MA, USA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tomato_seedlings_(464346184).jpg |
+| `g6-dinosaur-park.jpg` | Badlands in Dinosaur Provincial Park, Alberta | Hirgax | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Badlands_in_Dinosaur_Provincial_Park,_Alberta.jpg |
+| `g6-malala.jpg` | Malala Yousafzai, 2015 | DFID - UK Department for International Development | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Malala_Yousafzai_2015.jpg |
+| `g6-lemon-creek.jpg` | The Lemon Creek internment camp, British Columbia | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:View_of_the_Lemon_Creek_Internment_Camp,_British_Columbia,_the_second_camp_to_which_the_Moriyamas_were_sent_(I0020991).tif |
+| `g6-birchtown.jpg` | A heritage trail sign at Birchtown, Nova Scotia | Madereugeneandrew | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Birchtown,_Nova_Scotia.jpg |
+| `g6-nunavut-assembly.jpg` | The Legislative Assembly of Nunavut, Iqaluit | ADialla | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Legislative_Assembly_of_Nunavut.jpg |
+| `g6-kenojuak.jpg` | Kenojuak Ashevak with her prints | Judith Eglington | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Kenojuak_Ashevak_e011367900.jpg |
+| `g6-oscar-peterson.jpg` | The statue of Oscar Peterson, Ottawa | Jeangagnon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oscar_Peterson_-_Ottawa_-_01.jpg |
+| `g6-thermometer.jpg` | An outdoor thermometer | Naoag | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Thermometer_an_einem_Stadl.jpg |
+| `g6-school-bus.jpg` | A yellow school bus | QUOI Media Group | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:A_yellow_school_stock_bus.jpg |
+| `g6-maple-leaves.jpg` | Red maple leaves, Algonquin Park | Vincent Pham | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_Maple_Leaf_at_Algonquin_Park.jpg |
+| `g6-cupola.jpg` | An astronaut looks at Earth from the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ESA_astronaut_Sophie_Adenot_looks_at_the_Earth_below_from_the_cupola_(iss075e0121412).jpg |
+| `g6-home-children.jpg` | A plaque about the Home Children, Ottawa | ΙΣΧΣΝΙΚΑ-888 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Home_Children_-_St._George's_Home,_Ottawa,_Ontario.jpg |
+| `g6-forest-trail.jpg` | A forest hiking trail | Thomas Metaxas | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Forest_Hiking_Trail.jpg |
+| `g6-vancouver-port.jpg` | Container terminal in the Port of Vancouver | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Vancouver_Centerm_Terminal_--_2022_--_2151.jpg |
+| `g6-shadd.jpg` | Portrait of Mary Ann Shadd Cary | BiblioArchives / LibraryArchives | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Mary_Ann_Shadd_Cary.jpg |
+| `g6-little-brown-bat.jpg` | A little brown bat in a cave | Moriarty Marvin, U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Little_brown_bat_in_cave_myotis_lucifugus.jpg |
+| `g6-coral-reef.jpg` | A coral reef in Florida | Jerry Reid | Public domain | https://commons.wikimedia.org/wiki/File:Coral_Reef.jpg |
+| `g6-manicouagan.jpg` | The Manicouagan Reservoir from space | Copernicus Sentinel-2, ESA | CC BY-SA 3.0 igo | https://commons.wikimedia.org/wiki/File:Manicouagan_Reservoir_by_Sentinel-2.jpg |
+| `g6-drone.jpg` | A quadcopter drone in flight | Josh Sorenson | CC0 | https://commons.wikimedia.org/wiki/File:Quadcopter_camera_drone_in_flight.jpg |
+| `g6-tardigrade.jpg` | A tardigrade under a microscope | DSparrow14 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tardigrade_under_microscope.jpg |
+| `g6-place-royale.jpg` | Place Royale, Quebec City | Wilfredor | CC0 | https://commons.wikimedia.org/wiki/File:Place_Royale_and_Notre-Dame-des-Victoires_at_night.jpg |
+| `g6-treaty-9.jpg` | The James Bay Treaty (Treaty 9) | Government of Canada | Public domain | https://commons.wikimedia.org/wiki/File:James_Bay_Treaty.jpg |
+| `g6-winter-road.jpg` | Vehicles crossing the Albany River on a winter road, Ontario | Rev40 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Truckscrossingalbanyriver2004feb20.jpg |
+| `g6-tessellation.jpg` | A tessellation pattern | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ambigram_tessellation_Yes.png |
+| `g6-soft-drink-sugar.jpg` | Sugar pouring from a soft-drink can into a glass | SSgt Nathanel Callon | Public domain | https://commons.wikimedia.org/wiki/File:MPOTY_2012_soft_drink_sugar_awareness.jpg |
+| `g6-red-fox.jpg` | A red fox in snow | In india travel | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_fox_in_snow.jpg |
+| `g6-beekeeper.jpg` | A beekeeper holding a hive frame | Ich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beekeeper_with_moveable_comb_hive.jpg |
+| `g6-petitclerc.jpg` | Chantal Petitclerc, 2017 | Lëa-Kim Châteauneuf | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chantal_Petitclerc_2017.jpg |
+| `g6-ev-charging.jpg` | An electric vehicle charging station, Bowmanville, Ontario | Dillan Payne | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Electric_Vehicle_Charging_in_Bowmanville,_July_23_2026.jpg |
+| `g6-sea-ice-edge.jpg` | The edge of the sea ice in Nunavut | Doc Searls from Santa Barbara, USA | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_edge_of_the_ice_in_Nunavut_2.jpg |
+| `g6-snowshoes.jpg` | Canadian snowshoes, 1840 to 1870, Bata Shoe Museum, Toronto | Daderot | CC0 | https://commons.wikimedia.org/wiki/File:Canadian_snowshoes,_1840-1870_-_Bata_Shoe_Museum_-_DSC00222.JPG |
+| `g6-halifax-explosion.jpg` | The blast cloud of the Halifax Explosion, December 6, 1917 | Unknown authorUnknown author | Public domain | https://commons.wikimedia.org/wiki/File:Halifax_Explosion_blast_cloud_restored.jpg |
+| `g6-mohawk-sign.jpg` | A stop sign in Kanien'kéha (Mohawk), Tyendinaga Mohawk Territory, Ontario | Moxy | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Mohawk_language_stop_sign.jpg |
+| `g6-steelpan.jpg` | A steelpan player in Trinidad and Tobago | Shanel | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pan_player.jpg |
+| `g6-habitat-67.jpg` | Habitat 67, Montreal | Dllu | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Habitat_67_2019_dllu_01.jpg |
+| `g6-water-pump.jpg` | Children collecting water at a hand pump in a village in Ghana | Kwameghana(Bright Kwame Ayisi) | CC0 | https://commons.wikimedia.org/wiki/File:A_group_of_children_collecting_water_at_a_pipe_well.jpg |
+| `g6-solar-farm.jpg` | Solar panels on a farm in Grimsby, Ontario | Dave Lauretti from Burlington, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_farm_(13313377243).jpg |
+| `g6-canoe-lake.jpg` | The dock at Canoe Lake, Algonquin Park, Ontario | Markabq | Public domain | https://commons.wikimedia.org/wiki/File:CanoeLake.JPG |
 | `g5-palisade.jpg` | The palisade and lookout of a rebuilt 15th-century Iroquoian village, Ontario | Laslovarga | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Iroquoian_Village,_Ontario,_Canada31.JPG |
 | `g5-cn-tower.jpg` | The CN Tower, Toronto | Scott Webb | CC0 | https://commons.wikimedia.org/wiki/File:CN_Tower,_Toronto,_Canada_(Unsplash_DJ_kOgH5u0o).jpg |
 | `g5-rusty-chain.jpg` | A very rusty chain | W.carter | CC0 | https://commons.wikimedia.org/wiki/File:Very_rusty_chain.jpg |
