@@ -1,4 +1,4 @@
-/* Language Atlas tool box: Decodable readers (#tools/decodable), printable stories for each phonics step (3 a step), Kindergarten to Grade 2.
+/* Language Atlas tool box: Decodable readers (#tools/decodable), printable stories for each phonics step (3 a step), Kindergarten to Grade 3.
    Needs atlas.js and tools.js; drawing a page also needs sheets.js (the worksheets' themes, fonts and printing; sheets.css). It adds itself to the tool box.
    The steps follow a structured literacy (Orton-Gillingham) order: short vowels, digraphs, FLOSS, glued sounds, endings, blends,
    silent e, syllable types, r-controlled vowels, vowel teams, then prefixes and suffixes. Each page has the step's sound,
@@ -9,7 +9,8 @@
    The pages are in assets/engine/decodebank.js, loaded when the tool first opens:
      Atlas.decodable.add({ id, band, name, focus, key, mark, heart, words, title, text, pic, qs, tip })
    id     the step: tests/decodable.js lists the steps in order and works out again that every word can be sounded out at it.
-   band   'K', '1' or '2': where the step is usually taught (Kindergarten, Grade 1, Grade 2).
+   band   'K', '1', '2' or '3': the grade where Ontario's Language Foundations Continuum (2026) teaches the step's spelling.
+          The story's type size goes by its length (longer stories are set smaller), not by its grade.
    name   the step's name ('Digraph sh'). focus: the spellings shown large (['sh']). key: a key word for the sound ('ship').
    mark   a regular expression (text) for the letters to show in the accent colour in the warm-up and the story ('sh').
    heart  the new heart words (read by heart, not sounded out) for this step; earlier steps' heart words can be used too.
@@ -35,10 +36,24 @@
   /* the sheets' look is needed only to draw a page (the site's Toolbox page loads this file just for its shelf card) */
   var $ = A.$, $$ = A.$$, S = function () { return A.sheets; };
   var D = (A.decodable = { list: [] });
-  var BANDS = (D.bands = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2']]);
+  var BANDS = (D.bands = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2'], ['3', 'Grade 3']]);
   /* the same expectation in Grade 1 and in Grade 2 (the numbers changed between grades) */
-  var CODES = { 'B2.4': 'B2.1', 'B2.5': 'B2.2', 'B2.6': 'B2.3', 'B2.8': 'B2.5' };
+  var CODES = { 'B2.3': 'B2.1', 'B2.4': 'B2.1', 'B2.5': 'B2.2', 'B2.6': 'B2.3', 'B2.8': 'B2.5' };
+  /* Kindergarten (2026): phonemic awareness, letters and sounds, reading and spelling words, reading fluently */
+  var KCODES = ['A2.3', 'A2.4', 'A2.5', 'A2.6'];
   var LETTERS = 'ABCD';
+  /* the parts of Ontario's Language Foundations Continuum each step belongs to, with their codes (Kindergarten, Grade 1, Grades 2 and 3).
+     Heart words and reading fluently are on every page. */
+  var PARTS = (D.parts = [
+    ['gpc', 'Phonics: letters and sounds', { K: 'A2.4', 1: 'B2.3', 2: 'B2.1', 3: 'B2.1' }],
+    ['word', 'Reading and spelling words', { K: 'A2.5', 1: 'B2.4, B2.5', 2: 'B2.1, B2.2', 3: 'B2.1, B2.2' }],
+    ['morph', 'Word parts: endings, prefixes and suffixes', { K: 'A2.5', 1: 'B2.6', 2: 'B2.3', 3: 'B2.3' }]
+  ]);
+  var PART_OF = { 'short-mix': 'word', floss: 'word', 'blend-start': 'word', 'blend-end': 'word', 'blend-three': 'word', tch: 'word', dge: 'word',
+    'two-closed': 'word', open: 'word', cle: 'word', 'plural-s': 'morph', 'suffix-ed': 'morph', 'suffix-ing': 'morph', 'suffix-es': 'morph',
+    prefix: 'morph', 'suffix-more': 'morph', 'y-to-i': 'morph', tion: 'morph', 'affix-more': 'morph',
+    schwa: 'word', 'long-words': 'word', 'prefix-g3': 'morph', 'suffix-g3': 'morph' };
+  D.part = function (p) { var k = PART_OF[p.id] || 'gpc'; return PARTS.filter(function (x) { return x[0] === k; })[0]; };
 
   /* ---------- the pictures: line art in a 100 by 100 box, the ground at 96 ---------- */
   function k(d) { return '<path class="k" d="' + d + '"/>'; }
@@ -165,11 +180,11 @@
     return all.filter(function (h) { return used[h.toLowerCase()]; }).map(function (h) { return { w: h, fresh: (p.heart || []).indexOf(h) >= 0 }; });
   }
   D.codes = function (p) {
-    var g1 = ['B2.4', 'B2.8'].concat(p.qs.map(function (q) { return q.code; }));
-    if (/suffix|prefix|plural/.test(p.id)) g1.push('B2.6');
+    var g1 = ['B2.3', 'B2.4', 'B2.8'].concat(p.qs.map(function (q) { return q.code; }));
+    if (D.part(p)[0] === 'morph') g1.push('B2.6');
     if (!/^short-/.test(p.id)) g1.push('B2.5');
     g1 = g1.filter(function (x, i) { return g1.indexOf(x) === i; }).sort();
-    return { g1: g1, g2: g1.map(function (x) { return CODES[x] || x; }).sort() };
+    return { k: p.band === 'K' ? KCODES : null, g1: g1, g2: g1.map(function (x) { return CODES[x] || x; }).filter(function (x, i, all) { return all.indexOf(x) === i; }).sort() };
   };
   var LOAD = null;
   D.load = function () {
@@ -203,7 +218,7 @@
   }
   function page(p, th) {
     var hs = hearts(p);
-    return '<div class="ws-page dc-page dc-b' + p.band + '">' + head(p, th) +
+    return '<div class="ws-page dc-page dc-bK">' + head(p, th) +
       '<section class="dc-top"><div class="dc-sound"><p class="ws-label">Sound</p><p class="dc-focus' + (p.focus.length > 2 ? ' dc-many' : '') + '">' + p.focus.map(esc).join(' ') + '</p><p class="dc-key">' + marked(p.key, p) + '</p></div>' +
       '<div class="dc-warm"><p class="ws-label">Warm up · tap and blend</p><ul class="dc-words">' + p.words.map(function (w) { return '<li>' + marked(w, p) + '</li>'; }).join('') + '</ul></div></section>' +
       (hs.length ? '<p class="dc-hearts"><span class="ws-label">Heart words</span>' + hs.map(function (h) { return '<span class="dc-hw' + (h.fresh ? ' dc-new' : '') + '">' + HEART + esc(h.w) + '</span>'; }).join('') + '</p>' : '') +
@@ -232,7 +247,7 @@
   function key(p, th) {
     var cs = D.codes(p);
     return '<div class="ws-page dc-page dc-keyp ws-key">' + head(p, th, 'For the grown-up') +
-      '<section class="dc-kblock"><p class="ws-label">The rule</p><p>' + p.tip + '</p></section>' +
+      '<section class="dc-kblock"><p class="ws-label">The rule · ' + D.part(p)[1] + '</p><p>' + p.tip + '</p></section>' +
       '<section class="dc-kblock"><p class="ws-label">Teach the page (about 15 minutes)</p><ol class="dc-steps">' + STEPS.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></section>' +
       '<section class="dc-kblock"><p class="ws-label">Answers</p><ol class="dc-ans">' + p.qs.map(function (q) {
         return '<li><p class="dc-kq">' + esc(q.q) + '</p><p class="ws-ans">' + answer(q) + '</p><p class="dc-code">' + q.code + '</p></li>';
@@ -241,40 +256,54 @@
       [p.words[1], p.words[4], p.words[7]].map(esc).join('</b>, <b>') + '</b>. Then say this sentence for them to write: <b>' + esc(p.text[0].split(/(?<=[.!?])\s/)[0]) + '</b></p></section>' +
       '<section class="dc-kblock"><p class="ws-label">Every word can be sounded out</p><p>Only the spellings taught up to this step are used, plus the heart words. A check works this out for every word on the page. ' +
       'If the child is stuck on the warm-up words, go back a page before reading the story.</p></section>' +
-      '<footer class="dc-foot">' + foot(p, 'Ontario Grade 1: ' + cs.g1.join(', ') + ' · Grade 2: ' + cs.g2.join(', ')) + '</footer></div>';
+      '<footer class="dc-foot">' + foot(p, 'Ontario ' + (cs.k ? 'Kindergarten: ' + cs.k.join(', ') + ' · ' : '') + 'Grade 1: ' + cs.g1.join(', ') + ' · Grades 2 and 3: ' + cs.g2.join(', ')) + '</footer></div>';
   }
   /* one plain, calm look for every page (Noel): the site's own accent and face, an open book, no ornaments at the edges */
   var PLAIN = { acc: 'var(--accent)', font: 'var(--display)', mark: '<path d="M8 16 Q18 12 28 17 Q38 12 48 16 V44 Q38 40 28 45 Q18 40 8 44 Z M28 17 V45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>' };
   function themeOf() { return PLAIN; }
-  /* Draw the page ('page' or 'key') into el, a .ws-sheet box. A long story is set a little smaller, down to 77%.
+  /* Draw the page ('page' or 'key') into el, a .ws-sheet box. The story is set as large as fits: short stories start at the
+     Kindergarten size (dc-bK), longer ones smaller (dc-b1, dc-b2); every size shrinks down to 77%, and the largest text that fits wins.
      Returns whether anything still runs off the page. */
   var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8, 0.77];
+  var SIZES = [['K', 26], ['1', 22], ['2', 19.5]];
+  function tries(p, side) {
+    if (side === 'key') return ZOOM.map(function (z) { return ['', z]; });
+    var n = D.count(p), from = n <= 70 ? 0 : n <= 105 ? 1 : 2, out = [];
+    SIZES.slice(from).forEach(function (sz) { ZOOM.forEach(function (z) { out.push([sz[0], z, sz[1] * z]); }); });
+    return out.sort(function (x, y) { return y[2] - x[2]; });
+  }
   D.render = function (el, p, side) {
     var th = themeOf(p);
     el.innerHTML = (side === 'key' ? key : page)(p, th);
-    var pg = el.firstChild, over;
+    var pg = el.firstChild, over, all = tries(p, side), i;
     pg.style.setProperty('--acc', th.acc);
     pg.style.setProperty('--face', th.font);
-    for (var i = 0; i < ZOOM.length; i++) {
-      pg.style.setProperty('--z', ZOOM[i]);
+    for (i = 0; i < all.length; i++) {
+      if (all[i][0]) pg.className = pg.className.replace(/ dc-b\w+/, ' dc-b' + all[i][0]);
+      pg.style.setProperty('--z', all[i][1]);
       over = $$('.dc-text, .dc-qs, .dc-kblock', pg).some(function (b) { return b.scrollHeight > b.clientHeight + 1 || b.scrollWidth > b.clientWidth + 1; }) ||
         pg.scrollHeight > pg.clientHeight + 1;
       if (!over) break;
     }
-    return { over: over, z: ZOOM[Math.min(i, ZOOM.length - 1)] };
+    var t = all[Math.min(i, all.length - 1)];
+    return { over: over, z: t[1], size: t[0] };
   };
 
   /* ---------- the tool: every step, and one page ---------- */
   function card(p) {
     return '<a class="dc-card" href="#tools/decodable/' + p.id + '" style="--acc:' + themeOf(p).acc + '"><span class="dc-cn">' + p.n + '</span>' +
-      '<span class="dc-cf">' + p.focus.map(esc).join(' ') + '</span><span class="dc-cm"><b>' + esc(p.name) + '</b><span>' + (p.stories.length > 1 ? p.stories.length + ' stories' : esc(p.title)) + '</span></span></a>';
+      '<span class="dc-cf">' + p.focus.map(function (f) { return '<span>' + esc(f) + '</span>'; }).join(' ') + '</span><span class="dc-cm"><b>' + esc(p.name) + '</b><span>' + (p.stories.length > 1 ? p.stories.length + ' stories' : esc(p.title)) + '</span></span></a>';
   }
   function steps(root) {
     root.innerHTML = '<div class="dc-lib"><p class="dc-lede">' + D.all().length + ' short stories for ' + D.list.length + ' phonics steps, in teaching order. Every word can be sounded out with the steps before it, ' +
-      'plus a few heart words. Each prints on one page; turn on grown-up view for the answers and how to teach it.</p>' +
+      'plus a few heart words. The steps follow Ontario\'s Language Foundations Continuum, by grade and by part, taught the Orton-Gillingham way. ' +
+      'Each prints on one page; turn on grown-up view for the answers and how to teach it.</p>' +
       BANDS.map(function (b) {
         var here = D.list.filter(function (p) { return p.band === b[0]; });
-        return here.length ? '<section class="dc-band"><h2>' + b[1] + '</h2><div class="dc-cards">' + here.map(card).join('') + '</div></section>' : '';
+        return here.length ? '<section class="dc-band"><h2>' + b[1] + '</h2>' + PARTS.map(function (pt) {
+          var mine = here.filter(function (p) { return D.part(p) === pt; });
+          return mine.length ? '<h3 class="dc-part">' + pt[1] + ' <span>Ontario ' + pt[2][b[0]] + '</span></h3><div class="dc-cards">' + mine.map(card).join('') + '</div>' : '';
+        }).join('') + '</section>' : '';
       }).join('') + '</div>';
   }
   function href(p) { return '#tools/decodable/' + p.id + (p.s > 1 ? '/' + p.s : ''); }
