@@ -575,7 +575,7 @@ Atlas.decodable.more('all', {
   qs: [
     { k: 'choice', q: 'What did Ben give the duck?', opts: ['a bun', 'a ball', 'a cup'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Dad did a duck call.', 'The duck had a fall.', 'Ben fed the duck.'], show: [1, 2, 0], code: 'C3.3' },
-    { k: 'draw', q: 'Draw the duck on the wall.', a: 'A duck sitting on top of a wall, maybe with water beside it. Ask the child why the duck fell.', code: 'C1.4' }
+    { k: 'yn', q: 'The duck had a fall.', a: true, code: 'C1.1' }
   ]
 });
 Atlas.decodable.add({
@@ -888,7 +888,7 @@ Atlas.decodable.more('plural-s', {
   qs: [
     { k: 'order', q: 'Put the story in order.', items: ['The pigs dig a pit.', 'The pigs run to the hens.', 'Gus fills the pit.'], show: [1, 2, 0], code: 'C3.3' },
     { k: 'choice', q: 'Why did the pigs nap?', opts: ['They were full of buns.', 'They were sick.'], a: 0, code: 'C3.2' },
-    { k: 'draw', q: 'Draw the pigs at the bins.', a: 'Pigs with tipped-over bins and food spilling out.', code: 'C1.4' }
+    { k: 'yn', q: 'The pigs nap in the sun.', a: true, code: 'C1.1' }
   ]
 });
 Atlas.decodable.add({
@@ -1460,7 +1460,7 @@ Atlas.decodable.more('suffix-es', {
   qs: [
     { k: 'choice', q: 'How many fox kits did Deb see?', opts: ['two', 'six', 'ten'], a: 1, code: 'C1.1' },
     { k: 'order', q: 'Put the story in order.', items: ['Deb and Gramps sit on a bench.', 'The kits romp in the grass.', 'The foxes dash to a den.'], show: [2, 0, 1], code: 'C3.3' },
-    { k: 'draw', q: 'Draw the fox kits on the hill.', a: 'Small foxes on a hill or in grass, maybe one splashing in a pond, with two people on a bench.', code: 'C1.4' }
+    { k: 'yn', q: 'Deb pets a fox kit.', a: false, code: 'C1.1' }
   ]
 });
 /* step 22, story 3 */
@@ -2631,7 +2631,7 @@ Atlas.decodable.more('oi-oy', {
   pic: ['snow', 'maple', 'fire', 'pot'],
   qs: [
     { k: 'choice', q: 'What is the story about?', opts: ['making taffy from sap', 'a trip to the beach', 'a lost coin'], a: 0, code: 'C2.6' },
-    { k: 'draw', q: 'Draw the taffy on the snow.', a: 'Strips of syrup on snow, perhaps with a stick rolling one up. Ask the child how the sap turns into syrup (it is boiled).', code: 'C1.4' },
+    { k: 'yn', q: 'Noor enjoyed the taffy.', a: true, code: 'C3.2' },
     { k: 'write', q: 'What sweet treat do you enjoy?', a: 'The child\'s own idea, such as taffy, ice cream or fruit. Ask them to read it back to you.', code: 'C2.5' }
   ]
 });
@@ -2678,7 +2678,7 @@ Atlas.decodable.more('au-aw', {
   pic: ['bird', 'maple', 'pond', 'rope'],
   qs: [
     { k: 'write', q: 'Why did Paula and Grandpa haul out the dock?', a: 'So the ice would not hurt it in the winter (the ice was coming).', code: 'C3.2' },
-    { k: 'draw', q: 'Draw the hawk with a fish.', a: 'A large bird over the lake with a fish in its claws. Ask the child what Paula said when she saw it.', code: 'C1.4' },
+    { k: 'yn', q: 'Paula saw a hawk with a fish.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What is the story about?', opts: ['taking a dock out of a lake', 'a trip to the zoo', 'a lost dog'], a: 0, code: 'C2.6' }
   ]
 });
@@ -2710,7 +2710,7 @@ Atlas.decodable.more('ew-ue', {
   pic: ['snow', 'house', 'pot'],
   qs: [
     { k: 'choice', q: 'What did Granny make for the crew?', opts: ['stew', 'soup', 'cake'], a: 0, code: 'C1.1' },
-    { k: 'draw', q: 'Draw the crew in the snow.', a: 'People with shovels moving snow on a street. Ask the child who was in the crew.', code: 'C1.4' },
+    { k: 'yn', q: 'The crew had stew.', a: true, code: 'C1.1' },
     { k: 'write', q: 'How do you help when it snows?', a: 'The child\'s own idea, such as shovelling, getting the mail or making hot drinks. Ask them to read it back to you.', code: 'C2.5' }
   ]
 });
@@ -2819,7 +2819,7 @@ Atlas.decodable.more('kind-old', {
   pic: ['cloud', 'rain', 'house'],
   qs: [
     { k: 'choice', q: 'What went off in the storm?', opts: ['the lights', 'the rain', 'the game'], a: 0, code: 'C1.1' },
-    { k: 'draw', q: 'Draw Jack in the blindfold game.', a: 'A small child with a scarf over his eyes holding an object such as a spoon or a sock, perhaps with a candle. Ask the child why Emma made up the game.', code: 'C1.4' },
+    { k: 'yn', q: 'Jack was a bold boy.', a: true, code: 'C3.2' },
     { k: 'write', q: 'What do you do in a storm?', a: 'The child\'s own idea, such as reading, playing a game or sitting with family. Ask them to read it back to you.', code: 'C2.5' }
   ]
 });
@@ -2946,7 +2946,7 @@ Atlas.decodable.more('suffix-more', {
   qs: [
     { k: 'order', items: ['Jonah went down the steep hill.', 'Jonah landed in the snow.', 'Ruth helped Jonah up.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' },
     { k: 'write', q: 'Why did Jonah say slower is smarter?', a: 'Because he went too fast down the steep hill and crashed into a snowbank, but Ruth went slowly and was safe.', code: 'C3.2' },
-    { k: 'draw', q: 'Draw Jonah in the snowbank.', a: 'A child stuck in a pile of snow at the bottom of a hill, with a sled. Ask the child what Ruth did.', code: 'C1.4' }
+    { k: 'yn', q: 'Jonah was careful.', a: false, code: 'C3.2' }
   ]
 });
 /* step 50, story 3 */
