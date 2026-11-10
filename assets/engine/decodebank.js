@@ -1,4 +1,4 @@
-/* Language Atlas tool box: the Decodable readers' stories (decodable.js loads this when the tool opens), 3 for each phonics step, in teaching order.
+/* Language Atlas tool box: the Decodable readers' stories (decodable.js loads this when the tool opens), 3 for each phonics step, in teaching order (Kindergarten to Grade 3).
    Every story, title and question uses only the spellings taught up to its step, plus heart words: tests/decodable.js works this out
    again for every word. All text is written for this site. Canadian spelling. See decodable.js for what each part is. */
 Atlas.decodable.add({
@@ -258,7 +258,7 @@ Atlas.decodable.more('short-mix', {
   ]
 });
 Atlas.decodable.add({
-  id: 'sh', band: '1', name: 'Digraph sh', focus: ['sh'], key: 'ship', mark: 'sh',
+  id: 'sh', band: 'K', name: 'Digraph sh', focus: ['sh'], key: 'ship', mark: 'sh',
   heart: ['what', 'who', 'there'],
   words: ['ship', 'shop', 'shed', 'shut', 'shin', 'shot', 'fish', 'dish', 'wish', 'rush', 'hush', 'cash', 'mash', 'dash', 'gush'],
   title: 'Josh Has a Wish',
@@ -303,7 +303,7 @@ Atlas.decodable.more('sh', {
   ]
 });
 Atlas.decodable.add({
-  id: 'ch', band: '1', name: 'Digraph ch', focus: ['ch'], key: 'chin', mark: 'ch',
+  id: 'ch', band: 'K', name: 'Digraph ch', focus: ['ch'], key: 'chin', mark: 'ch',
   heart: ['where', 'were', 'come', 'some'],
   words: ['chin', 'chip', 'chop', 'chat', 'chug', 'chum', 'chap', 'rich', 'much', 'such'],
   title: 'Chip and the Fish',
@@ -348,7 +348,7 @@ Atlas.decodable.more('ch', {
   ]
 });
 Atlas.decodable.add({
-  id: 'th', band: '1', name: 'Digraph th', focus: ['th'], key: 'thumb', mark: 'th',
+  id: 'th', band: 'K', name: 'Digraph th', focus: ['th'], key: 'thumb', mark: 'th',
   heart: ['your', 'from', 'my', 'by'],
   words: ['this', 'that', 'then', 'them', 'than', 'thin', 'with', 'path', 'bath', 'math', 'moth', 'thud'],
   title: 'A Moth in the Bath',
@@ -393,7 +393,7 @@ Atlas.decodable.more('th', {
   ]
 });
 Atlas.decodable.add({
-  id: 'wh', band: '1', name: 'Digraph wh', focus: ['wh'], key: 'whale', mark: 'wh',
+  id: 'wh', band: 'K', name: 'Digraph wh', focus: ['wh'], key: 'whale', mark: 'wh',
   heart: ['here', 'give', 'live'],
   words: ['when', 'which', 'whip', 'whim', 'whiz', 'wham', 'whish', 'whet'],
   title: 'Whiz Up, Jet',
@@ -438,7 +438,7 @@ Atlas.decodable.more('wh', {
   ]
 });
 Atlas.decodable.add({
-  id: 'ck', band: '1', name: 'ck at the end', focus: ['ck'], key: 'duck', mark: 'ck',
+  id: 'ck', band: 'K', name: 'ck at the end', focus: ['ck'], key: 'duck', mark: 'ck',
   heart: ['says', 'does', 'want'],
   words: ['duck', 'back', 'sack', 'rock', 'sock', 'kick', 'lick', 'pick', 'sick', 'luck', 'neck', 'deck', 'pack', 'dock', 'puck'],
   title: 'A Duck on the Dock',
@@ -1161,6 +1161,57 @@ Atlas.decodable.more('blend-three', {
     { k: 'choice', q: 'What was in with the shrimp?', opts: ['a squid', 'a crab', 'a frog'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Lin had fun with Gramps.', a: true, code: 'C3.2' },
     { k: 'draw', q: 'Draw the trap full of shrimp.', a: 'A trap or cage (a box of net) with many small shrimp, maybe a squid too.', code: 'C1.4' }
+  ]
+});
+/* step 19x */
+Atlas.decodable.add({
+  id: 'oll-ull', band: '1', name: 'oll and ull', focus: ['oll', 'ull'], key: 'roll, full', mark: 'oll|ull',
+  hunt: 'Underline every word with oll or ull, like roll and full.',
+  heart: [],
+  words: ['roll', 'toll', 'poll', 'troll', 'stroll', 'scroll', 'full', 'pull', 'bull', 'rolls', 'pulls', 'bulls', 'trolls', 'scrolls'],
+  title: 'The Bull and the Plums',
+  text: ['Gran and Rick stroll up a hill. Gran has a bag full of plums. At the top of the hill is a pen with a big bull in it.',
+    'The bull is black, with a big neck. It huffs and stamps.',
+    'Then the bag tips, and a plum rolls off. It rolls and rolls, and it ends up in the bull\'s pen!',
+    'Rick wants to get it back, but Gran pulls him back. The bull sniffs the plum. Then munch, munch! It gulps it up.',
+    '"That bull has my plum!" says Rick. Gran grins. "We still have a bag full of them."'],
+  pic: ['sun', 'hill', 'bag'],
+  qs: [
+    { k: 'choice', q: 'What rolls in the pen?', opts: ['a plum', 'a bag', 'a hat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Gran is cross with the bull.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the bull and the plum in the pen.', a: 'A big bull in a pen with a plum, maybe Rick and Gran on the hill.', code: 'C1.4' }
+  ],
+  tip: 'In a few words, o before ll says its long name, as in roll, troll and stroll (not the short o in doll). In full, pull and bull, u says the sound in book (not the u in gull). These are small word families, so practise them as a set and watch for roll read to rhyme with doll.'
+});
+/* step 19x, story 2 */
+Atlas.decodable.more('oll-ull', {
+  words: ['poll', 'polls', 'pull', 'scroll', 'pulls', 'roll', 'troll', 'rolls', 'full', 'toll'],
+  title: 'The Class Poll',
+  text: ['Miss Fong\'s class wants a pet. "Let us have a poll," says Miss Fong. "Do we want a fish? Do we want a frog?"',
+    'The kids drop slips in a box. Miss Fong pulls the slips from the box, one by one. Jin adds them up on a list. Then he rolls the list up. It is a scroll!',
+    'Ten kids want a fish, and ten kids want a frog! Then Jin spots one last slip. It has a troll on it!',
+    'The class is full of grins. "We can get a fish and a frog," says Miss Fong. "But no troll!"'],
+  pic: ['fish', 'frog', 'box'],
+  qs: [
+    { k: 'yn', q: 'The last slip has a frog on it.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why is the class full of grins?', opts: ['A slip has a troll on it.', 'The fish is big.', 'Miss Fong is sad.'], a: 0, code: 'C3.2' },
+    { k: 'write', q: 'What pet do you want for your class?', a: 'Any sensible answer, such as: a fish, a frog, a rabbit.', code: 'C2.5' }
+  ]
+});
+/* step 19x, story 3 */
+Atlas.decodable.more('oll-ull', {
+  words: ['troll', 'toll', 'stroll', 'scroll', 'tolls', 'roll', 'full', 'trolls', 'bull', 'strolls'],
+  title: 'The Troll and the Toll',
+  text: ['Liz and Jin stroll on a path up a hill. At the top is a big log, and on the log sits a troll!',
+    'The troll has a long scroll. "Stop!" he yells. "This is my path. If you want to pass, you must give me a toll."',
+    '"What is the toll?" asks Liz. The troll rolls up his scroll. "A bag full of gems. A bull. Ten plums," he says.',
+    'Liz and Jin have no gems. They have no bull. "Can we sing you a song?" asks Jin.',
+    'The troll nods. Liz and Jin sing a long song. The troll claps and stomps. "That is the best toll!" he yells. "You can pass."'],
+  pic: ['sun', 'hill', 'log'],
+  qs: [
+    { k: 'order', q: 'Put the story in order.', items: ['Liz and Jin stroll up the hill.', 'The troll asks for a toll.', 'Liz and Jin sing a song.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'Where does the troll sit?', opts: ['on a log', 'in a pond', 'on a bull'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The troll is glad at the end.', a: true, code: 'C3.2' }
   ]
 });
 Atlas.decodable.add({
@@ -2111,6 +2162,55 @@ Atlas.decodable.more('soft-cg', {
     { k: 'draw', q: 'Draw Prince in the lunch box.', a: 'A small lizard (gecko) sitting on rice in a lunch box. Ask the child how Vince felt.', code: 'C1.4' }
   ]
 });
+/* step 32x */
+Atlas.decodable.add({
+  id: 'ph', band: '1', name: 'ph', focus: ['ph'], key: 'phone', mark: 'ph',
+  heart: [],
+  words: ['phone', 'graph', 'Phil', 'Ralph', 'dolphin', 'photo', 'trophy', 'alphabet', 'elephant', 'phase', 'Steph', 'phonics'],
+  title: 'Phil and the Dolphins',
+  text: ['Phil and his mom ride a big ship on the Pacific. Phil has Mom\'s phone. He wants to get a photo of a dolphin.',
+    'Then Phil spots a fin. Splash! A dolphin jumps up. Phil lifts the phone, but the dolphin dives back in.',
+    'Splash! Splash! Six dolphins jump and dive. Phil gets six photos of splashes. He gets one of a gull. He gets one of his hand.',
+    'Phil sits on a bench. He is glum. Then Mom taps him. "Look!" A dolphin swims up next to the ship. It jumps up close. Click! Phil gets his photo at last. "That is the best photo," he says.'],
+  pic: ['sun', 'ship', 'fish'],
+  qs: [
+    { k: 'choice', q: 'What does Phil want a photo of?', opts: ['a dolphin', 'a gull', 'a ship'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Phil is glad at the end.', a: true, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the dolphin next to the ship.', a: 'A dolphin jumping up out of the water beside a ship, maybe Phil with a phone.', code: 'C1.4' }
+  ],
+  tip: 'The two letters ph work as a team and say /f/, as in phone, graph and dolphin. You do not hear a p or an h. Watch for ph read as /p/ (pone for phone), and point out that ph can come at the start, middle or end of a word.'
+});
+/* step 32x, story 2 */
+Atlas.decodable.more('ph', {
+  words: ['Ralph', 'trophy', 'photo', 'Steph', 'Joseph', 'phone', 'dolphin', 'graph', 'phase', 'Phil'],
+  title: 'Ralph and the Trophy',
+  text: ['Ralph is in a big race at Pine Hill Camp. The kid who wins gets a trophy. Ralph wants that trophy!',
+    'Bang! The kids dash off. Ralph is fast. He is close to the end. Then Steph trips and falls next to him.',
+    'Ralph stops. He helps Steph up, and they run to the end side by side. They are the last two kids.',
+    'Ralph did not get the trophy. But then Miss Joseph hands him a big photo. It is Ralph and Steph, side by side at the end of the race. "This is a trophy as well," she says. Ralph grins.'],
+  pic: ['sun', 'tent', 'spruce'],
+  qs: [
+    { k: 'yn', q: 'Ralph gets the trophy.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why does Ralph stop?', opts: ['Steph falls.', 'He is sad.', 'He wins.'], a: 0, code: 'C3.2' },
+    { k: 'write', q: 'When did you help a pal?', a: 'Any sensible answer, such as: I helped my pal get up. I gave my pal a pencil.', code: 'C2.5' }
+  ]
+});
+/* step 32x, story 3 */
+Atlas.decodable.more('ph', {
+  words: ['alphabet', 'phone', 'elephant', 'Philip', 'photo', 'phones', 'graph', 'Steph', 'dolphins', 'trophy', 'elephants'],
+  title: 'The Alphabet Game',
+  text: ['Philip and Steph are on a long drive to a lake with Mom and Dad. Philip has Dad\'s phone. Then the phone stops. Philip is fed up.',
+    '"Let us do the alphabet game," says Mom. "Spot things, and begin with A."',
+    '"Ant!" says Philip. It is on the van mat. "Bike!" says Steph. A man on a bike zips past. "Cat!" "Dish!" They go on and on.',
+    'Then it is E. Steph thinks and thinks. "Elephant!" she says. Philip grins. "There is no elephant on this drive!"',
+    'Then Dad stops the van. "Here we are," he says. "Elephant Lake!" "Elephant Lake! That is my E!" says Steph. Philip gets a photo of it on the phone.'],
+  pic: ['sun', 'van', 'spruce', 'pond'],
+  qs: [
+    { k: 'order', q: 'Put the story in order.', items: ['The phone stops.', 'They do the alphabet game.', 'Dad stops the van at the lake.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'choice', q: 'What is the name of the lake?', opts: ['Elephant Lake', 'Dolphin Lake', 'Big Lake'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Philip and Steph have fun on the drive.', a: true, code: 'C3.2' }
+  ]
+});
 Atlas.decodable.add({
   id: 'ar', band: '1', name: 'r-controlled ar', focus: ['ar'], key: 'car', mark: 'ar',
   heart: ['warm', 'war'],
@@ -2252,8 +2352,58 @@ Atlas.decodable.more('er-ir-ur', {
     { k: 'draw', q: 'Draw the perch in the river.', a: 'A fish in clean water, maybe with Bert and Fern and full bags on the bank. Ask the child why picking up litter helps.', code: 'C1.4' }
   ]
 });
+/* step 35x */
 Atlas.decodable.add({
-  id: 'ai-ay', band: '2', name: 'Vowel team ai ay', focus: ['ai', 'ay'], key: 'rain, day', mark: 'ai|ay',
+  id: 'air-are', band: '1', name: 'air, are and ear', focus: ['air', 'are', 'ear'], key: 'chair, care, bear', mark: 'air|are\\b|ear',
+  hunt: 'Underline every word with air, are or ear that sounds like chair.',
+  heart: [],
+  words: ['hair', 'fair', 'chair', 'stairs', 'pair', 'care', 'share', 'scare', 'square', 'stare', 'bear', 'pear', 'wear', 'swear'],
+  title: 'The Fall Fair',
+  text: ['Clare and Gramps go to the fall fair. Clare wears a red hat. Gramps wears a pair of big glasses.',
+    'First they stop at the hens and the pigs. Then they see a big black mare with long hair. The mare stares at Clare. Clare stares back.',
+    'Next is a big ride. It spins and dips and zips. "I do not dare," says Clare. "It is a scare!" Gramps nods. "We can just look, then."',
+    'Then Clare spots a stand with pears. Gramps gets a bag of pears. They sit on a bench and share them. "This is the best part of the fair," says Clare.'],
+  pic: ['sun', 'tent', 'hen', 'pig'],
+  qs: [
+    { k: 'choice', q: 'What do Clare and Gramps share?', opts: ['pears', 'a hat', 'glasses'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Clare wants to go on the big ride.', a: false, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the mare with long hair.', a: 'A horse with a long mane, maybe Clare in a red hat looking at it.', code: 'C1.4' }
+  ],
+  tip: 'Air says the sound in chair. Are at the end of a word says the same sound (care, share), and so does ear in a few words: bear, pear, wear and swear. Watch for care read like car, and for bear read with the ear in hear; point out that one sound has three spellings here.'
+});
+/* step 35x, story 2 */
+Atlas.decodable.more('air-are', {
+  words: ['bear', 'scare', 'stare', 'hair', 'hare', 'dare', 'chair', 'bare', 'spare', 'fair'],
+  title: 'A Bear Scare',
+  text: ['Blair and her mom camp by a lake in the North. It is dark. Blair is in bed in the tent.',
+    'Then, thump, thump! Blair sits up. The hair on her neck stands up. "Mom, is it a bear?"',
+    'Mom gets the lamp. She and Blair look past the tent flap. A big hare sits on the grass. It stares at them. Then it hops off.',
+    '"It was just a hare," says Mom. "Not a bear!" Blair grins. "That was a big scare from a hare." Then she curls up in bed.'],
+  pic: ['moon', 'star', 'tent', 'rabbit'],
+  qs: [
+    { k: 'yn', q: 'It was a bear.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why does Blair sit up?', opts: ['There is a thump.', 'It is time to go.', 'Mom yells.'], a: 0, code: 'C3.2' },
+    { k: 'write', q: 'What is a big scare for you?', a: 'Any sensible answer, such as: a big dog, the dark, a storm.', code: 'C2.5' }
+  ]
+});
+/* step 35x, story 3 */
+Atlas.decodable.more('air-are', {
+  words: ['chair', 'spare', 'stairs', 'square', 'share', 'chairs', 'pear', 'care', 'hair', 'pears', 'wear'],
+  title: 'The Spare Chair',
+  text: ['Gran is coming for supper. Kamal and his dad set the plates and forks.',
+    'Then Kamal stops. There are six chairs, but there are seven people for supper! "Is there a spare chair?" asks Dad.',
+    'Kamal runs up the stairs. There is no chair. Then he checks the shed. There is no chair there as well.',
+    'Then Kamal has a plan. He gets a big square box and sets a soft rug on it. "Here is a spare chair," he says.',
+    'Gran comes in. She has long white hair, and she has a pear cake to share. "I will sit on the square chair," she says. "It is the best chair here!"'],
+  pic: ['box', 'cake'],
+  qs: [
+    { k: 'order', q: 'Put the story in order.', items: ['Kamal sets the forks.', 'Kamal runs up the stairs.', 'Gran sits on the box.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'What does Gran bring to share?', opts: ['a pear cake', 'a chair', 'a rug'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Gran is glad to sit on the box.', a: true, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'ai-ay', band: '1', name: 'Vowel team ai ay', focus: ['ai', 'ay'], key: 'rain, day', mark: 'ai|ay',
   heart: ['their', 'eight'],
   words: ['rain', 'train', 'paint', 'snail', 'tail', 'mail', 'wait', 'sail', 'day', 'play', 'stay', 'tray', 'hay', 'clay', 'pay'],
   title: 'A Rainy Day',
@@ -2272,7 +2422,7 @@ Atlas.decodable.add({
 });
 /* step 36, story 2 */
 Atlas.decodable.more('ai-ay', {
-  words: ['trail', 'way', 'chain', 'may', 'pail', 'sway', 'brain', 'spray', 'stain', 'plain', 'fair'],
+  words: ['trail', 'way', 'chain', 'may', 'pail', 'sway', 'brain', 'spray', 'stain', 'plain', 'snail'],
   title: 'Gail and the Snail',
   text: ['After the rain, Gail and her dad go for a walk on the trail by the lake. The trail is wet.',
     'Gail stops. On a rock by the trail, there is a snail. It slides on the rock and makes a shiny trail.',
@@ -2287,7 +2437,7 @@ Atlas.decodable.more('ai-ay', {
 });
 /* step 36, story 3 */
 Atlas.decodable.more('ai-ay', {
-  words: ['bay', 'stairs', 'today', 'raisin', 'claim', 'paid', 'sprain', 'delay', 'fail', 'railway'],
+  words: ['bay', 'mail', 'today', 'raisin', 'claim', 'paid', 'sprain', 'delay', 'fail', 'railway'],
   title: 'Jay Waits for Mail',
   text: ['Jay has a pen pal named Tayla. Tayla is Inuk. She lives up North, in a small place by a bay.',
     'Jay makes Tayla a letter. He tells her that he has a cat named Daisy. He adds a painting of Daisy on the stairs. Then he mails it.',
@@ -2302,7 +2452,7 @@ Atlas.decodable.more('ai-ay', {
   ]
 });
 Atlas.decodable.add({
-  id: 'ee-ea', band: '2', name: 'Vowel team ee ea ey', focus: ['ee', 'ea', 'ey'], key: 'tree, seal, key', mark: 'ee|ea|ey',
+  id: 'ee-ea', band: '1', name: 'Vowel team ee ea ey', focus: ['ee', 'ea', 'ey'], key: 'tree, seal, key', mark: 'ee|ea|ey',
   heart: ['head', 'bread'],
   words: ['tree', 'bee', 'feet', 'green', 'sleep', 'sheep', 'seal', 'beach', 'team', 'leaf', 'eat', 'read', 'key', 'sea', 'week'],
   title: 'The Seal on the Beach',
@@ -2350,8 +2500,59 @@ Atlas.decodable.more('ee-ea', {
     { k: 'write', q: 'What did Reena learn?', a: 'You do not need to be the fastest to help the team; being in the best spot matters too. Accept any answer close to this.', code: 'C2.6' }
   ]
 });
+/* step 37x */
 Atlas.decodable.add({
-  id: 'oa-ow', band: '2', name: 'Vowel team oa ow oe', focus: ['oa', 'ow', 'oe'], key: 'boat, snow, toe', mark: 'oa|ow|oe',
+  id: 'ea-bread', hunt: 'Underline every word where ea says /e/ as in bread or /ay/ as in great.', band: '1', name: 'ea as in bread and great', focus: ['ea'], key: 'bread, great', mark: 'ea',
+  heart: [],
+  words: ['head', 'bread', 'ready', 'heavy', 'weather', 'feather', 'sweater', 'breakfast', 'instead', 'spread', 'thread', 'breath', 'great', 'break', 'steak'],
+  title: 'Bannock for Breakfast',
+  text: ['The weather was wet and chilly. Ben and his dad wanted to make bannock for breakfast.',
+    'Dad set a heavy pan on the stove. Ben mixed the bannock in a big dish. Then he pressed it flat with his hands, and Dad slid it in the pan.',
+    '"Is it ready?" Ben asked. His tummy was rumbling. "Not yet," said Dad. "Bannock needs time. Let us get the jam instead."',
+    'At last, the bannock was ready. It was hot and crisp. Ben spread jam on a big slice. He ate one slice, then a second.',
+    'Dad gave Mom a slice in bed. "This is great bread," said Mom. Ben grinned. "It is great weather for bannock," he said.'],
+  pic: ['rain', 'house', 'pan'],
+  qs: [
+    { k: 'yn', q: 'Ben and Dad made bannock for breakfast.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Ben have to wait?', opts: ['Bannock needs time.', 'Dad was asleep.', 'The jam was lost.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'Which word ends like bread?', opts: ['head', 'bead', 'break'], a: 0, code: 'C3.1' }
+  ],
+  tip: 'Ea has three sounds. Most often it says /ee/ as in seal, but in some words it says short /e/, as in bread, head and weather, and in a few words it says /ay/, as in great, break and steak. If the child reads bread as "breed", have them try the other sounds of ea and pick the one that makes a real word.'
+});
+/* step 37x, story 2 */
+Atlas.decodable.more('ea-bread', {
+  words: ['sweater', 'thread', 'feather', 'breath', 'head', 'spread', 'instead', 'bread', 'great', 'leather', 'heavy'],
+  title: 'The Feather on the Sweater',
+  text: ['Lena has a red sweater. It is her best sweater. She likes it so much that she wants to sleep in it.',
+    'One day, Lena was playing tag at the park. She ran past a fence, and her sweater got stuck on a nail. Rip! Lena held her breath. Then she began to sob.',
+    'At home, her kokum said, "Do not be sad. Get my thread and my beads." Kokum is Cree, and she makes the best beadwork in the family.',
+    'Kokum spread the sweater on her lap. She stitched up the rip with red thread. Then she added tiny white beads in the shape of a feather.',
+    'Lena put the sweater on. Instead of a rip, there was a feather. "It is not just mended," said Lena. "It is great!"'],
+  pic: ['spruce', 'house', 'flower'],
+  qs: [
+    { k: 'yn', q: 'Lena got a rip in her sweater.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'How did Lena feel at the end?', opts: ['glad', 'sad', 'cross'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the feather on the sweater.', a: 'A red sweater with a feather shape made of small dots or beads where the rip was. Ask the child how Kokum fixed it.', code: 'C1.4' }
+  ]
+});
+/* step 37x, story 3 */
+Atlas.decodable.more('ea-bread', {
+  words: ['weather', 'heavy', 'steak', 'breath', 'instead', 'sweat', 'great', 'spread', 'ready', 'break', 'headed'],
+  title: 'Heavy Weather',
+  text: ['Deb and Sam live on a big farm in Alberta. It was a hot day in July, and they had a plan: a picnic by the pond, with steak and bread.',
+    'But at lunch, the sky got dark. Dad checked the weather on his phone. "A big storm is on the way," he said. "It will be a heavy one."',
+    'Deb and Sam rushed to get the hens in the barn. At last, the hens were in, and Deb had to stop and catch her breath.',
+    'Then the rain came in sheets. The family got in just in time.',
+    'Instead of a picnic by the pond, they had a picnic on the rug. Dad made steak on the stove, and Sam spread jam on the bread. "This is a great picnic," said Sam. "The best one," said Deb.'],
+  pic: ['cloud', 'rain', 'house', 'hen'],
+  qs: [
+    { k: 'yn', q: 'They had the picnic by the pond.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Which is the best name for this story?', opts: ['A Picnic in a Storm', 'The Lost Hen', 'A Trip to the Beach'], a: 0, code: 'C2.6' },
+    { k: 'write', q: 'What do you do on a day with heavy rain?', a: 'The child\'s own idea, such as read, paint, play a game or bake. Help write one short sentence.', code: 'C2.5' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'oa-ow', band: '1', name: 'Vowel team oa ow oe', focus: ['oa', 'ow', 'oe'], key: 'boat, snow, toe', mark: 'oa|ow|oe',
   heart: ['four', 'pour'],
   words: ['boat', 'coat', 'goat', 'road', 'toad', 'soap', 'loaf', 'snow', 'grow', 'slow', 'blow', 'show', 'bowl', 'toe'],
   title: 'Joan and the Goat',
@@ -2399,7 +2600,7 @@ Atlas.decodable.more('oa-ow', {
   ]
 });
 Atlas.decodable.add({
-  id: 'igh-ie', band: '2', name: 'Vowel team igh ie', focus: ['igh', 'ie'], key: 'light, pie', mark: 'igh|ie',
+  id: 'igh-ie', band: '1', name: 'Vowel team igh ie', focus: ['igh', 'ie'], key: 'light, pie', mark: 'igh|ie',
   heart: ['through', 'though'],
   words: ['light', 'night', 'right', 'bright', 'high', 'sight', 'tight', 'flight', 'might', 'pie', 'tie', 'lie', 'sigh', 'thigh'],
   title: 'Lights in the Night',
@@ -2447,7 +2648,7 @@ Atlas.decodable.more('igh-ie', {
   ]
 });
 Atlas.decodable.add({
-  id: 'oo-moon', band: '2', name: 'oo as in moon', focus: ['oo'], key: 'moon', mark: 'oo',
+  id: 'oo-moon', band: '1', name: 'oo as in moon', focus: ['oo'], key: 'moon', mark: 'oo',
   heart: ['soup', 'group'],
   words: ['moon', 'spoon', 'food', 'room', 'boot', 'cool', 'pool', 'zoo', 'too', 'broom', 'roof', 'tooth', 'noon', 'scoop', 'hoot'],
   title: 'The Loon at Noon',
@@ -2495,7 +2696,7 @@ Atlas.decodable.more('oo-moon', {
   ]
 });
 Atlas.decodable.add({
-  id: 'oo-book', band: '2', name: 'oo as in book', focus: ['oo'], key: 'book', mark: 'oo',
+  id: 'oo-book', band: '1', name: 'oo as in book', focus: ['oo'], key: 'book', mark: 'oo',
   heart: ['blood', 'flood'],
   words: ['book', 'cook', 'look', 'took', 'hook', 'good', 'wood', 'foot', 'stood', 'shook', 'brook', 'hood', 'wool'],
   title: 'A Good Hike',
@@ -2542,7 +2743,7 @@ Atlas.decodable.more('oo-book', {
   ]
 });
 Atlas.decodable.add({
-  id: 'ou-ow', band: '2', name: 'ou and ow as in cloud and cow', focus: ['ou', 'ow'], key: 'cloud, cow', mark: 'ou|ow',
+  id: 'ou-ow', band: '1', name: 'ou and ow as in cloud and cow', focus: ['ou', 'ow'], key: 'cloud, cow', mark: 'ou|ow',
   heart: ['our', 'hour'],
   words: ['cloud', 'loud', 'out', 'shout', 'round', 'ground', 'sound', 'found', 'mouth', 'south', 'proud', 'count', 'pouch', 'scout'],
   title: 'Cows and Clouds',
@@ -2589,7 +2790,7 @@ Atlas.decodable.more('ou-ow', {
   ]
 });
 Atlas.decodable.add({
-  id: 'oi-oy', band: '2', name: 'oi and oy', focus: ['oi', 'oy'], key: 'coin, boy', mark: 'oi|oy',
+  id: 'oi-oy', band: '1', name: 'oi and oy', focus: ['oi', 'oy'], key: 'coin, boy', mark: 'oi|oy',
   heart: ['laugh'],
   words: ['coin', 'boy', 'toy', 'join', 'soil', 'oil', 'point', 'boil', 'joy', 'coil', 'foil', 'enjoy', 'spoil', 'moist'],
   title: 'Roy and the Coin',
@@ -2636,9 +2837,9 @@ Atlas.decodable.more('oi-oy', {
   ]
 });
 Atlas.decodable.add({
-  id: 'au-aw', band: '2', name: 'au and aw', focus: ['au', 'aw'], key: 'August, saw', mark: 'au|aw',
+  id: 'au-aw', band: '1', name: 'au, aw and augh', focus: ['au', 'aw', 'augh'], key: 'August, saw', mark: 'augh|au|aw',
   heart: ['chalk'],
-  words: ['saw', 'paw', 'claw', 'draw', 'straw', 'crawl', 'yawn', 'dawn', 'lawn', 'hawk', 'haul', 'launch', 'fault', 'sauce'],
+  words: ['saw', 'paw', 'claw', 'draw', 'straw', 'crawl', 'yawn', 'dawn', 'caught', 'hawk', 'haul', 'launch', 'fault', 'taught'],
   title: 'Paw Prints',
   text: ['At dawn, Paul got up with a big yawn. He took his box of chalk out to the drive.',
     'Paul likes to draw. He made a hawk in the sky with long wings and sharp claws. Then he made a green lawn and a red barn. It took him a long time.',
@@ -2650,7 +2851,7 @@ Atlas.decodable.add({
     { k: 'yn', q: 'Paul was mad at Shawn at the end.', a: false, code: 'C3.2' },
     { k: 'write', q: 'What would you draw with chalk?', a: 'The child\'s own idea, such as a pet, a house or a game. Ask them to read it back to you.', code: 'C2.5' }
   ],
-  tip: 'The letters au and aw both say /aw/, as in Paul and saw. Use au at the start or middle of a word (haul, fault) and aw at the end or before n or l (saw, yawn, crawl). Watch for the child reading the a as short a; teach the pair as one chunk.'
+  tip: 'The letters au and aw both say /aw/, as in Paul and saw. Use au at the start or middle of a word (haul, fault) and aw at the end or before n or l (saw, yawn, crawl). In a few words, augh says /aw/ too (caught, taught). Watch for the child reading the a as short a; teach each spelling as one chunk.'
 });
 /* step 44, story 2 */
 Atlas.decodable.more('au-aw', {
@@ -2683,9 +2884,9 @@ Atlas.decodable.more('au-aw', {
   ]
 });
 Atlas.decodable.add({
-  id: 'ew-ue', band: '2', name: 'ew and ue', focus: ['ew', 'ue'], key: 'new, blue', mark: 'ew|ue',
+  id: 'ew-ue', band: '1', name: 'ew, ue and ui', focus: ['ew', 'ue', 'ui'], key: 'new, blue, fruit', mark: 'ew|ue|ui',
   heart: ['whose', 'lose'],
-  words: ['new', 'few', 'grew', 'chew', 'blew', 'flew', 'drew', 'stew', 'crew', 'threw', 'blue', 'glue', 'clue', 'true'],
+  words: ['new', 'few', 'grew', 'chew', 'blew', 'flew', 'drew', 'stew', 'fruit', 'threw', 'blue', 'glue', 'clue', 'suit'],
   title: 'The Blue Mitt Clue',
   text: ['Sue had new blue mitts. Her granny made them, and they were soft and warm.',
     'One day, after skating at the rink, Sue had just one mitt. "No!" she said. "I lose things all the time." Her brother Drew said, "We need a clue."',
@@ -2730,7 +2931,7 @@ Atlas.decodable.more('ew-ue', {
   ]
 });
 Atlas.decodable.add({
-  id: 'cle', hunt: 'Underline every word that ends in -le.', band: '2', name: 'Consonant-le', focus: ['-ble', '-tle', '-dle'], key: 'ta-ble', mark: '[bcdfgkptz]le\\b',
+  id: 'cle', hunt: 'Underline every word that ends in -le.', band: '1', name: 'Consonant-le', focus: ['-ble', '-tle', '-dle'], key: 'ta-ble', mark: '[bcdfgkptz]le\\b',
   heart: ['double', 'trouble'],
   words: ['table', 'apple', 'little', 'puddle', 'candle', 'bubble', 'turtle', 'purple', 'simple', 'giggle', 'needle', 'eagle', 'maple', 'bottle'],
   title: 'The Little Turtle',
@@ -2777,9 +2978,9 @@ Atlas.decodable.more('cle', {
   ]
 });
 Atlas.decodable.add({
-  id: 'kind-old', band: '2', name: 'Kind and old words', focus: ['ind', 'ild', 'old', 'olt'], key: 'kind, wild, cold', mark: 'ind|ild|old|olt',
+  id: 'kind-old', band: '1', name: 'Kind and old words', focus: ['ind', 'ild', 'old', 'olt', 'ost'], key: 'kind, wild, cold', mark: 'ind|ild|old|olt|ost',
   heart: ['post', 'ghost'],
-  words: ['kind', 'find', 'mind', 'wild', 'child', 'cold', 'gold', 'old', 'told', 'hold', 'fold', 'colt', 'bolt', 'behind'],
+  words: ['kind', 'find', 'mind', 'wild', 'child', 'cold', 'gold', 'old', 'told', 'hold', 'fold', 'colt', 'bolt', 'most', 'post'],
   title: 'The Wild Colt',
   text: ['It was a cold day on the farm. Ella and her grandpa went out to the barn to feed the colt. But the gate was open, and the colt was not in the barn!',
     '"Never mind," Grandpa told her. "He is a wild one, but he will not go far in the cold. We will find him." They went behind the barn and up a hill.',
@@ -2791,7 +2992,7 @@ Atlas.decodable.add({
     { k: 'choice', q: 'What is the story about?', opts: ['finding a lost colt', 'a trip to the lake', 'a cold child in bed'], a: 0, code: 'C2.6' },
     { k: 'draw', q: 'Draw the colt on the hill.', a: 'A young horse on a snowy hill, perhaps by a tree, with Ella nearby. Ask the child how Ella got the colt to come.', code: 'C1.4' }
   ],
-  tip: 'In ind, ild, old and olt, the vowel says its long sound even though a consonant follows, as in kind, wild, cold and colt. These words break the usual closed-syllable rule, so learn the chunks. Watch for kind read with a short i (to rhyme with tinned).'
+  tip: 'In ind, ild, old, olt and ost (most, post), the vowel says its long sound even though a consonant follows, as in kind, wild, cold and colt. These words break the usual closed-syllable rule, so learn the chunks. Watch for kind read with a short i (to rhyme with tinned).'
 });
 /* step 47, story 2 */
 Atlas.decodable.more('kind-old', {
@@ -2824,7 +3025,7 @@ Atlas.decodable.more('kind-old', {
   ]
 });
 Atlas.decodable.add({
-  id: 'silent', band: '2', name: 'Silent letters kn wr gn mb', focus: ['kn', 'wr', 'gn', 'mb'], key: 'knot, wrap, lamb', mark: '\\bkn|\\bwr|\\bgn|mb\\b',
+  id: 'silent', band: '1', name: 'Silent letters kn wr gn mb', focus: ['kn', 'wr', 'gn', 'mb'], key: 'knot, wrap, lamb', mark: '\\bkn|\\bwr|\\bgn|mb\\b',
   heart: ['answer'],
   words: ['knot', 'knee', 'knock', 'knit', 'knife', 'know', 'wrap', 'write', 'wrist', 'wrong', 'gnat', 'lamb', 'thumb', 'climb', 'comb'],
   title: 'Granny Can Knit',
@@ -2871,9 +3072,9 @@ Atlas.decodable.more('silent', {
   ]
 });
 Atlas.decodable.add({
-  id: 'prefix', hunt: 'Underline every word that starts with un- or re-.', band: '2', name: 'Prefixes un- and re-', focus: ['un-', 're-'], key: 'unpack, redo', mark: '^(un|re)(?=[a-z]{3})',
+  id: 'prefix', hunt: 'Underline every word that starts with un-, re- or dis-.', band: '1', name: 'Prefixes un-, re- and dis-', focus: ['un-', 're-', 'dis-'], key: 'unpack, redo, dislike', mark: '^(un|re|dis)(?=[a-z]{3})',
   heart: ['another', 'nothing'],
-  words: ['unpack', 'unlock', 'unzip', 'unkind', 'unwrap', 'unhappy', 'repack', 'refill', 'retell', 'reread', 'reuse', 'replay', 'rewind', 'reopen'],
+  words: ['unpack', 'unlock', 'unzip', 'unkind', 'unwrap', 'unhappy', 'repack', 'refill', 'retell', 'reread', 'reuse', 'replay', 'rewind', 'reopen', 'dislike', 'distrust'],
   title: 'Unwrap It Slowly',
   text: ['It was Raj\'s birthday, and it was raining at the cottage. Granny had sent a gift in red paper with a gold bow.',
     'Raj wanted to rip the paper, but Mom said, "Unwrap it slowly. Granny likes to reuse paper." So Raj unwrapped the gift bit by bit, and Mom folded the paper up.',
@@ -2885,7 +3086,7 @@ Atlas.decodable.add({
     { k: 'order', items: ['Raj unwrapped the gift.', 'Mom reread the book.', 'Raj reopened the book.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' },
     { k: 'write', q: 'What gift would you like to unwrap?', a: 'The child\'s own idea, such as a book, a toy or a game. Ask them to read it back to you.', code: 'C2.5' }
   ],
-  tip: 'A prefix is a small part added to the front of a word that changes its meaning: un- means not or the opposite (unwrap, unkind), and re- means again (reread, reuse). Have the child cover the prefix, read the base word, then add the prefix. Watch for words that only look like they have a prefix, such as uncle and ready.'
+  tip: 'A prefix is a small part added to the front of a word that changes its meaning: un- means not or the opposite (unwrap, unkind), re- means again (reread, reuse), and dis- means not or the opposite (dislike). In- can also mean not (incorrect). Have the child cover the prefix, read the base word, then add the prefix. Watch for words that only look like they have a prefix, such as uncle and ready.'
 });
 /* step 49, story 2 */
 Atlas.decodable.more('prefix', {
@@ -2918,7 +3119,7 @@ Atlas.decodable.more('prefix', {
   ]
 });
 Atlas.decodable.add({
-  id: 'suffix-more', hunt: 'Underline every word that ends in -er, -est, -ful, -less or -ly.', band: '2', name: 'Suffixes -er -est -ful -less -ly', focus: ['-ful', '-less', '-ly'], key: 'helpful', mark: '(er|est|ful|less|ly)\\b',
+  id: 'suffix-more', hunt: 'Underline every word that ends in -er, -est, -ful, -less or -ly.', band: '1', name: 'Suffixes -er -est -ful -less -ly', focus: ['-ful', '-less', '-ly'], key: 'helpful', mark: '(er|est|ful|less|ly)\\b',
   heart: ['women', 'country'],
   words: ['helpful', 'thankful', 'useful', 'spotless', 'endless', 'helpless', 'slowly', 'softly', 'sadly', 'kindly', 'taller', 'tallest', 'coldest', 'longer', 'strongest'],
   title: 'The Helpful Kid',
@@ -2962,5 +3163,533 @@ Atlas.decodable.more('suffix-more', {
     { k: 'choice', q: 'What did Grandma make with the pumpkin?', opts: ['soup', 'pie', 'bread'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Dana kept the pumpkin for her own lunch.', a: false, code: 'C3.2' },
     { k: 'write', q: 'What would you like to grow in a garden?', a: 'The child\'s own idea, such as carrots, beans or flowers. Ask them to read it back to you.', code: 'C2.5' }
+  ]
+});
+/* step 50x */
+Atlas.decodable.add({
+  id: 'y-to-i', hunt: 'Underline every word where y changed to i before an ending, like cries.', band: '1', name: 'Change y to i', focus: ['y → i'], key: 'cry, cries', mark: 'i(?=(es|ed|er|est|ly)\\b)',
+  heart: [],
+  words: ['cries', 'cried', 'tried', 'babies', 'puppies', 'ponies', 'dried', 'spied', 'carried', 'happier', 'happily', 'flies'],
+  title: 'The Smallest Puppy',
+  text: ['Mila\'s dog, Penny, had six puppies in the barn. The puppies were tiny. They cried for milk and slept in a heap.',
+    'Each day, Mila hurried to the barn. She tidied the puppies\' bed and dried them with a soft rag.',
+    'One puppy was the smallest. He tried and tried to get to the milk, but the bigger puppies pushed him back. Mila spied him in the hay, all alone and crying.',
+    'Mila picked him up and set him next to Penny. Then he drank and drank, and his belly got round and fat.',
+    'By the next week, he was bigger and happier. He wagged his tail happily. "You are the funniest puppy," said Mila. She named him Lucky.'],
+  pic: ['house', 'dog'],
+  qs: [
+    { k: 'yn', q: 'Penny had six puppies.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the smallest puppy cry?', opts: ['He did not get milk.', 'He was wet.', 'He was lost in the snow.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw Mila with Lucky.', a: 'A girl holding or sitting with a small puppy, maybe in a barn. Ask the child why the puppy was named Lucky.', code: 'C1.4' }
+  ],
+  tip: 'When a word ends in a consonant and y, the y changes to i before most endings: cry, cries, cried; happy, happier, happily. The y stays before -ing (crying), so the word never gets two i\'s in a row. Have the child cover the ending, change the i back to y, read the base word, then add the ending.'
+});
+/* step 50x, story 2 */
+Atlas.decodable.more('y-to-i', {
+  words: ['berries', 'flies', 'sunniest', 'carried', 'cherries', 'tastiest', 'hurried', 'stories', 'happiest', 'tried', 'fries'],
+  title: 'Saskatoon Berries',
+  text: ['In July, Jin and his grandpa went to pick saskatoon berries. The bushes were full of them.',
+    'It was the sunniest day of the summer. Flies buzzed by. Jin carried two pails. Grandpa carried a big pail.',
+    'Grandpa picked fast. Jin picked one berry and ate it. He picked the next one and ate it as well. "These are the tastiest berries in the world," he said. His lips were purple.',
+    'At the end of the day, Grandpa\'s pail was full. Jin\'s pails had six berries in them. Grandpa laughed and laughed.',
+    'At home, Grandpa made a saskatoon pie. Jin hurried to get a slice. He was the happiest kid at the table. "Next time," he said, "I will pick and not eat." Grandpa smiled. "We will see."'],
+  pic: ['sun', 'house', 'flower', 'cake'],
+  qs: [
+    { k: 'yn', q: 'Jin ate the berries he picked.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Jin have six berries at the end?', opts: ['He ate them.', 'He lost his pails.', 'The bushes were bare.'], a: 0, code: 'C3.2' },
+    { k: 'write', q: 'What is the tastiest thing you have had?', a: 'The child\'s own idea, such as a fruit, a pie or a snack. Help write one short sentence, such as "Pie is the tastiest."', code: 'C2.5' }
+  ]
+});
+/* step 50x, story 3 */
+Atlas.decodable.more('y-to-i', {
+  words: ['babies', 'stories', 'families', 'cried', 'worried', 'rainiest', 'funnier', 'tried', 'happily', 'crankier', 'ponies'],
+  title: 'The Rainiest Week',
+  text: ['The Shaw and Patel families went to a cottage by a lake for a week. There were six kids and two babies.',
+    'But it was the rainiest week of the summer. It rained on Monday. It rained on Tuesday. The kids got crankier and crankier. The babies cried. The moms and dads were worried.',
+    'Then Grandma Patel had a plan. "Let us tell stories," she said. She began a story about a moose that tried to ride in a canoe. The kids giggled. The babies stopped crying.',
+    'Then each kid tried to tell a funnier story than the last. Ava told a story about a beaver with a toque.',
+    'By Friday, the sun was back, but the kids did not want to go out. They sat happily by the fire. "One more story!" they said.'],
+  pic: ['rain', 'house', 'moose', 'canoe'],
+  qs: [
+    { k: 'choice', q: 'Why did the babies stop crying?', opts: ['The stories were funny.', 'The sun came out.', 'They had a nap.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'It was sunny all week.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story mostly about?', opts: ['telling stories on rainy days', 'a moose in a canoe', 'a trip on a plane'], a: 0, code: 'C2.6' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'er-spellings', hunt: 'Underline every word where ar, or or our says /er/, as in dollar, doctor and colour.', band: '2', name: 'ar, or and our saying /er/', focus: ['ar', 'or', 'our'], key: 'dollar, doctor, colour', mark: '(ar|our|or)(?=(s|ful)?\\b)',
+  heart: [],
+  words: ['dollar', 'collar', 'polar', 'cedar', 'doctor', 'actor', 'sailor', 'visitor', 'motor', 'inventor', 'colour', 'harbour', 'flavour', 'humour', 'armour'],
+  title: 'A Visitor at the Harbour',
+  text: ['Abby lives in a little town by a harbour on the East Coast. Her grandpa was a sailor for fifty years. Now he fixes boats.',
+    'One foggy morning, a visitor came in on a little red boat. He tied it to the dock, but he looked upset. "My motor is stuck," he said. "Can you help?"',
+    'Grandpa is a bit of an inventor. He looked at the motor. Then he fixed it with a bent nail and a scrap of wire. The motor started up with a roar.',
+    'The visitor was so thankful that he gave Abby a dollar and a jar of maple syrup. The syrup was a rich gold colour, and it had a sweet, smoky flavour.',
+    '"Come back next summer," said Grandpa. "And bring your motor," said Abby. "Grandpa can fix it again."'],
+  pic: ['cloud', 'house', 'ship', 'jar'],
+  qs: [
+    { k: 'yn', q: 'The visitor\'s motor was stuck.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the visitor give Abby a dollar?', opts: ['He was thankful for the help.', 'He wanted a boat.', 'He was lost.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'Which word ends like sailor?', opts: ['visitor', 'storm', 'corn'], a: 0, code: 'C3.1' }
+  ],
+  tip: 'At the end of a longer word, ar, or and our often say /er/, the same sound as in her: dollar, doctor, colour. Canadian spelling keeps the u in words like colour, harbour and flavour (in the United States these words drop it), so the child will see our in Canadian books and signs. If the child reads doc-TOR with a strong /or/, say the word the way we talk and ask which sound they hear at the end.'
+});
+/* step 51, story 2 */
+Atlas.decodable.more('er-spellings', {
+  words: ['actor', 'cellar', 'armour', 'doctor', 'mirror', 'humour', 'colour', 'visitor', 'collar', 'editor', 'favour'],
+  title: 'Actors in the Cellar',
+  text: ['It was a snowy day in Winnipeg. Omar and Ava wanted to put on a play. They would be the actors, and the cellar would be the stage.',
+    'Ava made a suit of armour from a box and foil. She painted it a silver colour. Omar was a doctor with a black bag. He looked in the mirror and drew a big beard on his chin.',
+    'Then they asked the family to come down. Mom, Dad and Baba sat on the steps. The play was about a knight who was sick, and the doctor who came to help.',
+    'But the knight\'s armour fell off, and the doctor\'s beard was on his nose. The visitors laughed and laughed. "It is not funny!" said Ava. Then she laughed too.',
+    '"What a lot of humour," said Baba. "Five stars."'],
+  pic: ['snow', 'house', 'star'],
+  qs: [
+    { k: 'yn', q: 'Omar was the knight in the play.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Which word ends like doctor?', opts: ['mirror', 'door', 'corn'], a: 0, code: 'C3.1' },
+    { k: 'choice', q: 'How did Baba feel at the end of the play?', opts: ['She liked it a lot.', 'She was cross.', 'She was sleepy.'], a: 0, code: 'C3.2' }
+  ]
+});
+/* step 51, story 3 */
+Atlas.decodable.more('er-spellings', {
+  words: ['tractor', 'mirrors', 'motor', 'visitor', 'colour', 'flavour', 'sailor', 'solar', 'dollar', 'labour', 'harbour'],
+  title: 'The Tractor and the Fox',
+  text: ['It is harvest time in Alberta. Jada\'s family grows wheat, and the wheat is a rich gold colour. This year, Jada can ride in the big tractor with her mom.',
+    'The tractor has a cab with a high seat and two big mirrors. The wheat moves like waves, and Jada feels like a sailor at sea.',
+    'Then Jada looks in the mirror. Something red is running in the wheat behind them. "Stop!" she yells. Mom stops the motor. A fox and three kits dash out of the wheat and hide in the ditch. "We had a visitor," says Mom. "Good job, Jada."',
+    'At sunset, they drive home. Dad has made bread from last year\'s wheat. It has a nutty flavour. "This is the best bread," says Jada. "And we helped the foxes too."'],
+  pic: ['sun', 'house', 'truck', 'fox'],
+  qs: [
+    { k: 'order', items: ['Jada looks in the mirror.', 'Mom stops the motor.', 'The foxes hide in the ditch.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' },
+    { k: 'yn', q: 'Jada saw a moose in the wheat.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story mostly about?', opts: ['a girl who helps a fox family', 'a sailor at sea', 'a lost tractor'], a: 0, code: 'C2.6' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'ei-eigh', band: '2', name: 'ei, eigh and ey saying long a', focus: ['eigh', 'ei', 'ey'], key: 'eight, vein, grey', mark: 'eigh|ei|ey',
+  heart: [],
+  words: ['eight', 'weigh', 'sleigh', 'neigh', 'freight', 'weight', 'neighbour', 'vein', 'rein', 'reindeer', 'veil', 'grey', 'prey', 'they', 'obey'],
+  title: 'The Grey Sleigh',
+  text: ['Every winter, our neighbour Ray hitches his two horses to his grey sleigh. Then he takes the kids on our street for a ride in the snow.',
+    'This year, eight kids came. They piled in with thick blankets on their laps. "Can the horses pull this much weight?" asked Tess. "Hey, they are strong," said Ray. "They could pull a freight train!"',
+    'Ray held the reins, and the sleigh slid off. But at the top of a hill, the horses stopped. One horse gave a loud neigh. A deer stood on the trail, as still as a rock.',
+    'Ray waited. The deer looked at them, and then it hopped off to the trees. "Off we go," said Ray, and the sleigh bells rang all the way home.'],
+  pic: ['snow', 'spruce', 'sled', 'bell', 'house'],
+  hunt: 'Underline every word with eigh, ei or ey saying /ay/.',
+  qs: [
+    { k: 'yn', q: 'Eight kids went on the sleigh ride.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the horses stop?', opts: ['A deer was on the trail.', 'The sleigh was too heavy.', 'It began to rain.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'Which word rhymes with sleigh?', opts: ['sleep', 'weigh', 'slid'], a: 1, code: 'C3.1' }
+  ],
+  tip: 'Eigh, ei and ey can all say long a, /ay/, as in eight, vein and grey. Eigh is the most common one, and its gh is silent. Watch for the child reading ei or ey as long e, as in key, or sounding the g in eight.'
+});
+/* step 52, story 2 */
+Atlas.decodable.more('ei-eigh', {
+  words: ['survey', 'reindeer', 'eighty', 'grey', 'prey', 'eighteen', 'they', 'weigh', 'rein', 'beige', 'hey', 'convey'],
+  title: 'The Reindeer Survey',
+  text: ['In spring, Ada and her Uncle Jim went out on the land near Inuvik to do a survey of the reindeer. They had to count the herd and check on the little calves.',
+    'From the top of a hill, they could see the herd. Some reindeer were brown, and some were grey. "Eighty, eighty-one, eighty-two," Ada said as she counted.',
+    'Then Uncle Jim pointed. A big bear was on the ridge. "The calves are its prey," he said. But the herd bunched up with the calves in the middle, and the bear trotted off.',
+    'When they were done, Ada had a stiff neck. "Three hundred and eighteen," she said, and Uncle Jim wrote it down.'],
+  pic: ['sun', 'hill', 'moose', 'tent'],
+  qs: [
+    { k: 'yn', q: 'All of the reindeer were grey.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story about?', opts: ['counting a reindeer herd', 'a trip to the lake', 'a lost bear'], a: 0, code: 'C2.6' },
+    { k: 'write', q: 'Why did the herd bunch up?', a: 'To keep the calves safe from the bear, in the middle of the herd.', code: 'C3.2' }
+  ]
+});
+/* step 52, story 3 */
+Atlas.decodable.more('ei-eigh', {
+  words: ['neighbour', 'weigh', 'beige', 'eight', 'freight', 'weighed', 'eighty', 'eighteen', 'grey', 'they', 'hey', 'weight'],
+  title: 'The Big Weigh In',
+  text: ['Every fall, the town of Morden has a fair, and the best part is the pumpkin weigh-off. This year, Owen and his neighbour Bev grew a pumpkin as big as a bathtub. It was not orange. It was pale beige with grey spots.',
+    'But Bev\'s pumpkin was much too big to lift. Eight people came to help. They slid it on a tarp and lifted it up on Bev\'s truck.',
+    'At the fair, a man rolled it on a big freight scale. Owen held his breath as the scale beeped. "Three hundred and eighty kilograms!" said the man. Everyone clapped.',
+    'Then the last pumpkin came in. It weighed eighteen kilograms more. Owen was a bit sad, but Bev just grinned. "Hey, there is next year," she said. "And I have kept the seeds."'],
+  pic: ['sun', 'truck', 'house'],
+  qs: [
+    { k: 'choice', q: 'What colour was the pumpkin?', opts: ['orange', 'beige with grey spots', 'green'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'Bev and Owen had the biggest pumpkin at the fair.', a: false, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Eight people lifted the pumpkin.', 'The scale beeped.', 'The last pumpkin came in.'], show: [2, 0, 1], code: 'C3.3' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'ou-ough', band: '2', name: 'ou as in soup, ough as in bought', focus: ['ou', 'ough'], key: 'soup, bought', mark: 'ough|ou',
+  heart: [],
+  words: ['soup', 'group', 'youth', 'coupon', 'caribou', 'toucan', 'bought', 'thought', 'brought', 'fought', 'ought', 'sought'],
+  title: 'The Soup Group',
+  text: ['On Saturday, the youth group at the hall made soup for a lunch for the neighbours. Kai thought they ought to make corn soup, just like his Kokum makes.',
+    'Lena brought a big bag of corn. Kai brought beans. Tam had a coupon, and she bought carrots at the shop.',
+    'The group chopped and stirred for an hour. But when Kai tasted the soup, he made a face. "It needs something," he thought.',
+    'Just then, Kokum came in. She tasted the soup and added some wild sage. "Now that is good soup," she said. Twenty people came for lunch, and not one bowl was left.'],
+  pic: ['house', 'pot', 'cup'],
+  hunt: 'Underline every word with ou as in soup or ough as in bought.',
+  qs: [
+    { k: 'yn', q: 'Tam bought carrots with a coupon.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Who added wild sage to the soup?', opts: ['Lena', 'Kokum', 'Tam'], a: 1, code: 'C1.1' },
+    { k: 'write', q: 'What soup do you like? Who makes it?', a: 'The child\'s own answer, such as "I like corn soup. My dad makes it." Ask them to read it back to you.', code: 'C2.5' }
+  ],
+  tip: 'Ou can say /oo/ as in soup, group and youth, and ough before a t says /aw/ as in bought and thought (the gh is silent). These are less common sounds, so they come only in some words. Watch for the child reading soup to rhyme with out, or sounding the gh in bought.'
+});
+/* step 53, story 2 */
+Atlas.decodable.more('ou-ough', {
+  words: ['group', 'toucan', 'caribou', 'thought', 'brought', 'soup', 'bought', 'ought', 'groups', 'youth', 'coupons'],
+  title: 'The Toucan at the Zoo',
+  text: ['Our class went to the zoo in Toronto in one big group. Miss Hall thought we ought to see the caribou first. They had thick coats and big antlers.',
+    'Next, we went in a hot, damp room full of plants. A toucan sat on a branch. Its long bill was orange, green and red. "It looks like it is wearing a funny mask," said Jin.',
+    'At lunch, Jin had brought soup in a thermos. I had brought a sandwich. We sat by the caribou to eat.',
+    'At the gift shop, Jin bought a little toucan. Then we got back on the bus with the rest of the group.'],
+  pic: ['bird', 'moose', 'bus'],
+  qs: [
+    { k: 'choice', q: 'What did Jin buy at the gift shop?', opts: ['a caribou', 'a toucan', 'a mask'], a: 1, code: 'C1.1' },
+    { k: 'yn', q: 'The toucan was in a hot, damp room.', a: true, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the toucan on its branch.', a: 'A bird with a long bill in orange, green and red, on a branch.', code: 'C1.4' }
+  ]
+});
+/* step 53, story 3 */
+Atlas.decodable.more('ou-ough', {
+  words: ['caribou', 'brought', 'soup', 'thought', 'fought', 'group', 'youth', 'ought', 'bought', 'sought', 'thoughts'],
+  title: 'Waiting for the Caribou',
+  text: ['Every fall, the caribou cross the river near Baker Lake. This year, Lucy\'s grandpa brought her to see them. They brought a tent, a stove and a pot of fish soup.',
+    'They waited on the hill for a long time. Lucy thought the caribou ought to be there by now. "They will come," said Grandpa. "My dad sat on this hill with me, the same way."',
+    'At last, a small group came over the hill. Then a big one came, and the whole hill was full of caribou. Two big bulls fought with their antlers, and then trotted off.',
+    'The caribou swam the river, one after the next. Lucy was still for a long time. Then she thought of her own kids one day, sitting on this hill with her.'],
+  pic: ['sun', 'hill', 'moose', 'tent', 'pot'],
+  qs: [
+    { k: 'yn', q: 'Lucy and Grandpa saw the caribou cross the river.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Who sat on this hill with Grandpa when he was little?', opts: ['his dad', 'his bulls', 'his group'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What did Lucy think of at the end?', opts: ['a pot of fish soup', 'her own kids one day', 'a trip to the zoo'], a: 1, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'ch-gh', band: '2', name: 'ch as in chef and school, gh as in ghost', focus: ['ch', 'gh'], key: 'chef, school, ghost', mark: 'ch|gh',
+  heart: [],
+  words: ['chef', 'machine', 'parachute', 'chalet', 'school', 'chorus', 'echo', 'stomach', 'ache', 'anchor', 'mechanic', 'ghost', 'spaghetti'],
+  title: 'The Chef at School',
+  text: ['Ravi\'s mom is a chef. One Monday, she came to Ravi\'s school to cook spaghetti for the whole school.',
+    'She had a machine that makes long strands of pasta. But when she switched it on, it went clunk, and then it stopped. "Oh no," said Mom. "Three hundred kids will have empty stomachs!"',
+    'Ravi had a plan. His friend Zack\'s dad is a mechanic, and his shop is next to the school. Ravi and Zack ran to get him. He looked at the machine and tightened one bolt. Whirr! It ran again.',
+    'At lunch, the kids ate every bit of the spaghetti. Then the school chorus sang a thank-you song for the chef. It was so loud that it echoed down the hall.'],
+  pic: ['house', 'pot', 'clock'],
+  hunt: 'Underline every word where ch says /sh/ or /k/, or gh says /g/.',
+  qs: [
+    { k: 'yn', q: 'Ravi\'s mom is a mechanic.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Who fixed the machine?', opts: ['Zack\'s dad', 'the chorus', 'Ravi'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the chorus sing for the chef?', opts: ['to thank her for lunch', 'to fix the machine', 'to get more pasta'], a: 0, code: 'C3.2' }
+  ],
+  tip: 'Ch usually says /ch/ as in chip, but in some words it says /sh/ (chef, machine) or /k/ (school, echo). Gh at the start of a word says /g/ (ghost). If the child reads chef with /ch/, say "good try, now try /sh/", and keep a short list of these words to read again.'
+});
+/* step 54, story 2 */
+Atlas.decodable.more('ch-gh', {
+  words: ['chalet', 'ghost', 'ghoul', 'echo', 'school', 'anchor', 'stomach', 'chef', 'ache', 'chute', 'ghosts'],
+  title: 'The Ghost at the Chalet',
+  text: ['Over the school break, Rosa and her family stayed in a chalet by a lake in Quebec. Dad was the chef, and he cooked big pots of chili.',
+    'On the first night, Rosa woke up. "Hoo-hoo-hoo!" Then the sound came back from across the lake: "Hoo-hoo-hoo!" Her stomach did a flip.',
+    'Her brother Sami sat up in bed. "It is a ghost," he said. "Or a ghoul!"',
+    'In the morning, they ran down to the dock, past the boat and its anchor. An owl sat on a branch in a tall pine. "Hoo-hoo-hoo," it said, and the echo came back from across the lake. "There is your ghost," said Rosa.'],
+  pic: ['moon', 'house', 'spruce', 'bird', 'pond'],
+  qs: [
+    { k: 'yn', q: 'A ghost was in the chalet.', a: false, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Rosa woke up.', 'Sami said, "It is a ghost."', 'They saw an owl.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'choice', q: 'What made the sound come back from across the lake?', opts: ['an echo', 'a ghoul', 'the anchor'], a: 0, code: 'C1.1' }
+  ]
+});
+/* step 54, story 3 */
+Atlas.decodable.more('ch-gh', {
+  words: ['orchestra', 'school', 'chord', 'stomach', 'ache', 'character', 'brochure', 'echo', 'chorus', 'scheme', 'chemist', 'anchor'],
+  title: 'The First Chord',
+  text: ['Lily plays the harp in the school orchestra. On the night of the winter concert, she had a stomach ache. "What if I play the wrong chord?" she said to Mom.',
+    'Mom held up the brochure for the concert. It had all the kids\' names in it, and Lily\'s name was at the top. "You play the first chord," said Mom. "The rest of the orchestra will follow you."',
+    'Lily thought of Kit, the brave character in her bedtime book. Kit was scared too, but she did it anyway.',
+    'On the stage, Lily lifted her hands. The gym was still. Then she played the first chord, deep and strong, and it rang like an echo off the walls. The orchestra came in with her. Her stomach ache was gone.'],
+  pic: ['star', 'house', 'drum', 'bell'],
+  qs: [
+    { k: 'yn', q: 'Lily had a stomach ache before the concert.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story about?', opts: ['a girl who is brave at a concert', 'a chef who cooks spaghetti', 'a lost harp'], a: 0, code: 'C2.6' },
+    { k: 'choice', q: 'Why did Lily think of Kit?', opts: ['Kit was scared but brave.', 'Kit played the harp.', 'Kit had the brochure.'], a: 0, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'tion', band: '2', name: '-tion and -sion', focus: ['tion', 'sion'], key: 'station, mission', mark: 'tion|sion',
+  heart: [],
+  words: ['station', 'nation', 'lotion', 'motion', 'action', 'fiction', 'vacation', 'question', 'section', 'direction', 'mission', 'session', 'tension', 'vision'],
+  title: 'The Train Station',
+  text: ['On the first day of summer vacation, Omar and his dad went to the train station. They were going to visit Granny in Winnipeg.',
+    'The station was busy. People rushed in all directions. Omar had a question. "Which train is ours?" Dad looked up at the big screen. "It is in the back section," he said. "It is the long train at the end."',
+    'Omar sat by the window. The motion of the train made him sleepy. He opened his fiction book about a mission to the moon, but soon his head was on Dad\'s arm.',
+    'When he woke up, the train was at the last station, and Granny was waving on the platform. "Here is my sleepy traveller," she said. Omar grinned. This was going to be a good vacation.'],
+  pic: ['train', 'house', 'book'],
+  qs: [
+    { k: 'choice', q: 'Who did Omar and Dad visit?', opts: ['Granny', 'a friend', 'a doctor'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Omar fell asleep on the train.', a: true, code: 'C3.2' },
+    { k: 'choice', q: 'Which word ends like station?', opts: ['motion', 'stamp', 'stack'], a: 0, code: 'C3.1' }
+  ],
+  tip: 'The chunks tion and sion at the end of a word both say /shun/ (station, mission); in a few words, such as vision, sion says /zhun/. Teach the chunk as one unit, then read the word part by part: sta-tion, mis-sion. Watch for the child sounding out every letter (t-i-o-n) instead of saying /shun/.'
+});
+/* step 55, story 2 */
+Atlas.decodable.more('tion', {
+  words: ['invention', 'action', 'solution', 'position', 'nation', 'attention', 'collection', 'station', 'mission', 'fraction', 'addition'],
+  title: 'The Bird Station',
+  text: ['Kai and Lena had a class mission: make an invention that helps nature. "Let us make a feeding station for birds," said Lena.',
+    'They cut a hole in a big milk jug and filled it with seeds. Then they hung it from a branch in Kai\'s yard. The next morning, the jug was empty. A fat grey squirrel was sitting in it!',
+    '"We need a solution," said Kai. They thought hard. Then Lena had a plan. They hung the jug on a long string from a thin branch, in a new position, far from the trunk.',
+    'The squirrel tried and tried, but it did not get to the seeds. Soon, chickadees came to eat. Kai and Lena showed their invention to the class, and it got a lot of attention.'],
+  pic: ['bird', 'maple', 'jar'],
+  qs: [
+    { k: 'order', q: 'Number the sentences in order.', items: ['They filled a jug with seeds.', 'A squirrel sat in the jug.', 'They hung the jug on a string.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'yn', q: 'The squirrel got the seeds in the end.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story about?', opts: ['an invention for birds', 'a trip to the lake', 'a lost cat'], a: 0, code: 'C2.6' }
+  ]
+});
+/* step 55, story 3 */
+Atlas.decodable.more('tion', {
+  words: ['celebration', 'motion', 'emotion', 'session', 'lotion', 'permission', 'tension', 'mission', 'television', 'expansion', 'portion'],
+  title: 'The Winter Celebration',
+  text: ['Tess and her grandpa play the fiddle. This year, they were asked to play at the big winter celebration at the hall in Saskatoon.',
+    'Each week, they had a practice session in Grandpa\'s kitchen. Tess learned the tunes, the motions of the bow and when to tap her foot.',
+    'On the night of the celebration, the hall was packed. Tess felt the tension in her tummy. "I can not do it," she said. "Do not think about all the people. Just feel the motion of the bow, like in the kitchen."',
+    'So Tess shut out the noise and played. The tunes rang out, and people got up to dance. When the last note ended, the whole hall clapped. Tess felt a rush of emotion. "Can we play again next year?" she asked. Grandpa laughed. "You have my permission."'],
+  pic: ['snow', 'house', 'star'],
+  qs: [
+    { k: 'choice', q: 'Where did Tess and Grandpa have a practice session?', opts: ['in the kitchen', 'at the rink', 'at school'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Tess was calm at the start of the show.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'How did Tess feel at the end?', opts: ['happy', 'sad', 'cross'], a: 0, code: 'C3.2' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'affix-more', hunt: 'Underline words with mis-, pre-, -ness, -ish or -able.', band: '2', name: 'More prefixes and suffixes', focus: ['mis-', 'pre-', '-ness', '-ish', '-able'], key: 'misplace, preheat, kindness', mark: '^(mis|pre)(?=[a-z]{3})|(ness|ish|able)\\b',
+  heart: [],
+  words: ['misplace', 'mislead', 'misspell', 'misread', 'preheat', 'pretest', 'prepay', 'kindness', 'sadness', 'darkness', 'greenish', 'childish', 'foolish', 'washable', 'breakable'],
+  title: 'The Misplaced Mitts',
+  text: ['Jin had new mitts. They were a greenish colour. "Do not misplace them," said Mom. After hockey at the rink, Jin looked for his mitts, but they were not in his pocket! In the darkness, he did not see a thing. Jin felt a wave of sadness. "That was foolish of me," he said.',
+    'A girl named Ruby came over. "I have a spare pair," she said. Jin was thankful for her kindness, and he wore them home.',
+    'The next day, Jin found his mitts in his hockey bag. He had misplaced them! He washed Ruby\'s mitts, since they were washable, and gave them back with a note.'],
+  pic: ['moon', 'snow', 'mitt', 'bag'],
+  qs: [
+    { k: 'choice', q: 'Where were the mitts in the end?', opts: ['in his bag', 'in the snow', 'at home'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Ruby was kind to Jin.', a: true, code: 'C3.2' },
+    { k: 'write', q: 'When was a friend kind to you?', a: 'The child\'s own idea, such as a friend sharing a snack or helping them up. Ask them to read it back to you.', code: 'C2.5' }
+  ],
+  tip: 'Mis- means wrongly (misplace, misread) and pre- means before (preheat, pretest); -ness makes a word for a feeling or thing (kind, kindness), -ish means a bit or sort of (greenish, childish), and -able means it can be done (washable). Have the child cover the prefix or suffix, read the base word, put it back together and say what the whole word means. Watch for words that only look like they have one, such as fish, dish and table.'
+});
+/* step 56, story 2 */
+Atlas.decodable.more('affix-more', {
+  words: ['preheat', 'misread', 'sweetness', 'fixable', 'reddish', 'misspell', 'likeable', 'sadness', 'pretest', 'foolish', 'readable'],
+  title: 'Bannock with Kokum',
+  text: ['One cold day in Thunder Bay, Kokum was teaching Mason to make bannock. "First, we preheat the stove," she said. "Then we mix the flour and the baking powder."',
+    'Mason read the recipe card. He misread one line and put in a cup of sugar, not a spoonful! The mix looked sticky and a bit yellowish.',
+    'Kokum laughed. "That is a sweet mistake. But it is fixable. We can make two pans, one sweet and one plain."',
+    'The bannock came out puffy and golden brown. Mason\'s dad liked the sweetness so much that he ate three big chunks. "Next time, I will not misread the card," said Mason. "Next time, you can make it sweet on purpose."'],
+  pic: ['house', 'pan', 'cup'],
+  qs: [
+    { k: 'choice', q: 'What did Mason misread?', opts: ['the card', 'a book', 'a map'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Kokum was cross with Mason.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'Which word ends like sweetness?', opts: ['sadness', 'sweeter', 'sweetly'], a: 0, code: 'C3.1' }
+  ]
+});
+/* step 56, story 3 */
+Atlas.decodable.more('affix-more', {
+  words: ['darkness', 'foolish', 'preheated', 'greenish', 'pinkish', 'softness', 'stillness', 'kindness', 'mislead', 'bendable', 'misplace'],
+  title: 'Lights in the Darkness',
+  text: ['Ella was at her uncle\'s cabin near Yellowknife. "Tonight we will stay up late to see the northern lights," said Uncle Ben.',
+    'At midnight, Ella put on her snow pants, her toque and mitts. Uncle Ben had preheated the truck, so it was warm inside. They drove to a hill far from town. In the darkness, the stars were bright. Ella felt sleepy and a bit grumpy. "This is foolish," she said.',
+    'Then the sky began to glow. A greenish light swept across the sky, then a pinkish one. The lights danced. The stillness was so deep that Ella heard her own breath.',
+    '"I take it back," she said softly. "It was not foolish at all." Ella will never forget that night.'],
+  pic: ['star', 'hill', 'truck'],
+  qs: [
+    { k: 'choice', q: 'What colour was the first light?', opts: ['greenish', 'pinkish', 'reddish'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Ella was glad she went in the end.', a: true, code: 'C3.2' },
+    { k: 'yn', q: 'Uncle Ben preheated the truck.', a: true, code: 'C1.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'schwa', band: '3', name: 'The schwa sound', focus: ['a', 'o', 'e'], key: 'about, sofa, lemon', mark: '^a(?=[a-z]{2})|a(?=,?$)|o(?=n$)',
+  heart: [],
+  hunt: 'Underline every word with a lazy "uh" sound, as in about and sofa.',
+  words: ['about', 'ago', 'alone', 'along', 'around', 'away', 'awake', 'asleep', 'ahead', 'across', 'afraid', 'banana', 'sofa', 'Canada', 'camera'],
+  title: 'Across the Lake',
+  text: ['It was the end of August in Ontario. Lena and her dad got up before the sun was awake. They packed pasta, bananas and a camera, and they slid the red canoe off the dock.',
+    'The lake was as still as glass. They paddled across it, away from the cabin, and a loon swam along beside them. Then, far ahead, Lena spotted something black on a rock. "Dad, is that a bear?" she asked. She felt a little afraid.',
+    'Dad held up the camera and zoomed in. Then he began to laugh. "It is a stump," he said. "It is just a big black stump with moss on it."',
+    'On the way back, Lena fell asleep on her life jacket. When she woke up, they were at the dock, and Mom was waiting. "Did you see a bear?" Mom asked. Lena grinned. "Just a stump," she said. "But I got a picture of the loon."'],
+  pic: ['sun', 'canoe', 'loon', 'rock', 'house'],
+  qs: [
+    { k: 'yn', q: 'Lena and Dad saw a bear on the rock.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Dad laugh?', opts: ['The bear was a stump.', 'Lena fell in the lake.', 'The loon quacked.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'What is the story mostly about?', opts: ['a canoe trip with a big mistake', 'a picnic at the cabin', 'how to catch a fish'], a: 0, code: 'C2.6' }
+  ],
+  tip: 'In a word of two or more syllables, the vowel in the syllable that is not stressed is often lazy and says "uh": the a in about and sofa, the o in lemon. This lazy sound is called the schwa. Teach the child to read the word the regular way first, then, if it does not sound like a real word, to flex the vowel to "uh" (a-bout becomes uh-bout). Watch for words read with a strong short a (ab-out) and left that way.'
+});
+/* step 57, story 2 */
+Atlas.decodable.more('schwa', {
+  words: ['zebra', 'panda', 'gorilla', 'koala', 'camera', 'extra', 'away', 'around', 'ago', 'awake', 'alone'],
+  title: 'A Day at the Zoo',
+  text: ['On Saturday, Jin and his class went on a trip to the zoo in Toronto. Jin had a camera around his neck. He wanted a picture of a red panda.',
+    'First, they saw the zebras. Then they went to see the gorillas. A big gorilla sat alone on a log, munching on a stick. A little one was asleep on its back. Next, Jin spotted a koala, but it was asleep in a tree, so he did not get a good shot.',
+    'At last, they got to the red pandas. Jin looked and looked, but the pandas were not there. "They hide away when it is hot," said the zookeeper. "Wait a bit."',
+    'So Jin waited. After a long time, a red panda came down a branch, wide awake. Jin got his picture. "That was worth the wait," he said.'],
+  pic: ['sun', 'bus', 'spruce', 'log'],
+  qs: [
+    { k: 'write', q: 'What animal would you like to see at the zoo? Why?', a: 'The child\'s own answer, such as "I want to see a gorilla because it is big." Ask them to read it back to you.', code: 'C2.5' },
+    { k: 'choice', q: 'Why were the red pandas not there at first?', opts: ['They hide away when it is hot.', 'They went to the vet.', 'Jin was at the wrong zoo.'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What does "wide awake" tell you?', opts: ['The panda was not sleepy at all.', 'The panda was very big.', 'The panda was sad.'], a: 0, code: 'C3.2' }
+  ]
+});
+/* step 57, story 3 */
+Atlas.decodable.more('schwa', {
+  words: ['tundra', 'parka', 'Canada', 'Manitoba', 'across', 'ahead', 'afraid', 'about', 'along', 'asleep', 'canoe', 'Alberta'],
+  title: 'Bears on the Tundra',
+  text: ['Hana lives in Winnipeg, Manitoba. Each fall, she and her aunt take the train north to the town of Churchill. People come from across Canada to see the polar bears there.',
+    'This year, Hana had a new red parka, and the wind was so cold that she needed it. They set off across the tundra in a big bus with huge tires. The land was flat and white. Hana held her camera and looked ahead.',
+    '"Polar bears can run fast," said the driver. "But you will be safe in this bus. Do not be afraid." Hana was not afraid. She was excited.',
+    'For a long time, they saw nothing but snow. Hana was about to give up. Then her aunt pointed. A mother bear and two cubs were walking along the shore. The cubs rolled around and swatted at each other in the snow.',
+    'Hana took a picture. That night, she fell asleep and dreamed about the cubs.'],
+  pic: ['snow', 'bus', 'bear', 'bear'],
+  qs: [
+    { k: 'choice', q: 'Why do people come to Churchill from across Canada?', opts: ['to see the polar bears', 'to swim in the lake', 'to visit a zoo'], a: 0, code: 'C2.6' },
+    { k: 'yn', q: 'Hana was afraid of the bears.', a: false, code: 'C3.2' },
+    { k: 'choice', q: 'What did Hana see along the shore?', opts: ['a mother bear and two cubs', 'a moose and a fox', 'a red panda'], a: 0, code: 'C1.1' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'long-words', band: '3', name: 'Long words: three syllables and more', focus: ['syl·la·ble'], key: 'fan·tas·tic', mark: '[aeiouy]+',
+  heart: [],
+  hunt: 'Underline every word with three or more syllables.',
+  words: ['fantastic', 'dinosaur', 'important', 'remember', 'skeleton', 'gigantic', 'animal', 'Atlantic', 'hospital', 'volcano', 'together', 'September', 'wonderful', 'understand'],
+  title: 'A Fantastic Find',
+  text: ['In September, Omar and his family went on a trip to Alberta. They wanted to see the land of the dinosaurs, in the badlands by the Red Deer River.',
+    'In the fossil hall, Omar stood under a gigantic skeleton. "This animal was as long as a bus," said his mom. "I am glad it is not alive," said Omar.',
+    'The next day, the family went on a dig with a fossil hunter named Kim. She gave Omar a little brush. "Go slowly," she said. "It is important to be careful."',
+    'Omar brushed and brushed. Then he saw something brown in the rock. It was a tiny bone! Kim looked at it with a lens. "This is fantastic," she said. "It is part of a dinosaur tail." Omar will remember that day for the rest of his life.'],
+  pic: ['sun', 'hill', 'rock', 'bone'],
+  qs: [
+    { k: 'yn', q: 'Omar found a tiny bone in the rock.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Kim tell Omar to go slowly?', opts: ['A bone can break.', 'It was time for lunch.', 'The sun was hot.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'Which word has three syllables?', opts: ['skeleton', 'river', 'brush'], a: 0, code: 'C3.1' }
+  ],
+  tip: 'To read a long word, find the vowels first: each vowel sound makes one syllable. Split the word into syllables (fan-tas-tic), read each one, then blend them into the whole word and check that it makes sense. Watch for the child guessing a word from its first part; cover the word and show one syllable at a time if needed.'
+});
+/* step 58, story 2 */
+Atlas.decodable.more('long-words', {
+  words: ['basketball', 'Saturday', 'tournament', 'volunteer', 'excited', 'eleven', 'everybody', 'determined', 'yesterday', 'fantastic', 'unlucky'],
+  title: 'The Basketball Tournament',
+  text: ['On Saturday, there was a basketball tournament at the community hall in Regina. Priya was excited. Her team had practised every day after school.',
+    'In the first game, the team played well and beat the Moose Jaw team. In the second game, Priya missed three shots in a row. "I am so unlucky," she said. Coach Bell, a volunteer, just smiled. "Look at the basket, not at the crowd," he said.',
+    'The last game was a close one. With eleven seconds left, the score was tied. The ball came to Priya. Everybody was yelling. She was determined. She looked at the basket, and she let the ball go.',
+    'It went in! The tournament was over, and the team was on top. "That was fantastic," said Coach Bell. Priya grinned all the way home.'],
+  pic: ['house', 'ball'],
+  qs: [
+    { k: 'choice', q: 'Who was the coach?', opts: ['Coach Bell', 'Priya', 'Mom'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Priya missed three shots.', 'The score was tied.', 'The ball went in.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'choice', q: 'What does "determined" mean in this story?', opts: ['She wanted it a lot and did not give up.', 'She was very sleepy.', 'She was cross with her team.'], a: 0, code: 'C3.2' }
+  ]
+});
+/* step 58, story 3 */
+Atlas.decodable.more('long-words', {
+  words: ['caterpillar', 'butterfly', 'September', 'October', 'Mexico', 'afternoon', 'interesting', 'carefully', 'magnificent', 'together', 'celebrate', 'remember'],
+  title: 'The Caterpillar Project',
+  text: ['In September, the class in Room 12 found a little caterpillar on a milkweed plant by the school fence. "It is a monarch caterpillar," said Miss Akiwenzie. "Let us keep it and see what happens."',
+    'The class set up a tank with fresh milkweed. Every afternoon, Ben checked on the caterpillar. It ate and ate and got bigger and bigger. Then one day, it hung upside down and made a green case around itself.',
+    'For ten days, nothing happened. "Is it alive?" asked Ben. "Yes," said Miss Akiwenzie. "It is changing inside."',
+    'At last, the case split open. Out came a magnificent orange and black butterfly. The next afternoon, the class took the tank outside and let the butterfly go. It flapped its wings and went up over the trees. "It will fly all the way to Mexico," said Ben.'],
+  pic: ['sun', 'flower', 'house', 'book'],
+  qs: [
+    { k: 'choice', q: 'Why did Ben ask if the caterpillar was alive?', opts: ['For ten days, nothing happened.', 'It ate all the milkweed.', 'It went up over the trees.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'The class let the butterfly go.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What is the main idea of the story?', opts: ['A caterpillar can change and grow wings.', 'Ben likes to play basketball.', 'The class goes to Mexico.'], a: 0, code: 'C2.6' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'prefix-g3', hunt: 'Underline every word that starts with over-, under-, sub-, mid-, non-, trans- or post-.', band: '3', name: 'Prefixes over-, under-, sub-, mid- and more', focus: ['over-', 'under-', 'sub-', 'mid-'], key: 'overflow, submarine', mark: '^(over|under|sub|mid|non|trans|inter|anti|post)(?=[a-z]{3})',
+  heart: [],
+  words: ['overflow', 'overcoat', 'overnight', 'overcast', 'underground', 'underline', 'subway', 'submarine', 'midnight', 'midday', 'nonstop', 'transport'],
+  title: 'The Subway Trip',
+  text: ['On a grey, overcast Saturday, Amir and his grandpa took the subway to the lake. Grandpa had on his long overcoat. Amir held a map of the subway lines.',
+    'The train went underground with a rush of wind. "This train is nonstop for the next three stations," said Grandpa. Amir used his finger to underline each stop on the map.',
+    'At midday, the train was warm, and Grandpa fell asleep. When he woke up, they had gone two stops too far! "We overshot our stop," said Grandpa with a grin.',
+    'They got off, crossed the platform and rode back. When they came up from underground, the sun was out. They sat by the lake and watched the ships. "Next time, I will stay awake," said Grandpa. "And next time, I will keep the map," said Amir.'],
+  pic: ['sun', 'train', 'map', 'ship'],
+  qs: [
+    { k: 'choice', q: 'Why did they go past their stop?', opts: ['Grandpa fell asleep.', 'The map was wrong.', 'The train broke.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'The train went underground.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What does overcast tell you about the sky?', opts: ['full of clouds', 'bright and clear', 'dark'], a: 0, code: 'C3.2' }
+  ],
+  tip: 'A prefix is a word part at the start that changes the meaning: over- means above or too much (overflow, overcoat), under- means below (underground), sub- means under (subway, submarine), mid- means in the middle (midnight), non- means not (nonstop), trans- means across (transport) and post- means after (postpone). Have the child cover the prefix, read the base word, then read the whole word and say what it means. Watch for words that only look like they start with a prefix, such as middle, post and subject: check that the part left over is a real word.'
+});
+/* step 59, story 2 */
+Atlas.decodable.more('prefix-g3', {
+  words: ['overhead', 'midnight', 'overjoyed', 'overcast', 'midway', 'nonstop', 'overgrown', 'midsummer', 'overlook', 'underline', 'subzero'],
+  title: 'Lights at Midnight',
+  text: ['Lena and her family were camping overnight on Uncle Remi\'s farm on the Prairies. Uncle Remi said the northern lights might come out at midnight.',
+    'But the sky was overcast. Thick clouds hung overhead, and Lena felt sad. "Do not give up yet," said Mom. "Clouds can move fast out here."',
+    'Lena tried hard to stay up. She drank hot cocoa. Midway through the night, a cold wind came up. The clouds slid off to the east, and the stars came out.',
+    'Then, at midnight, green and pink lights rippled overhead. They swirled and danced nonstop. Lena was overjoyed. Uncle Remi said that his grandmother taught him to be calm and still under the lights, and not to whistle at them. So Lena sat still in her sleeping bag, watching, until she fell asleep.'],
+  pic: ['star', 'moon', 'tent', 'cup'],
+  qs: [
+    { k: 'yn', q: 'The sky was clear all night.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What made the clouds go away?', opts: ['a cold wind', 'the fire', 'the rain'], a: 0, code: 'C1.1' },
+    { k: 'write', q: 'Why did Lena sit still under the lights?', a: 'Uncle Remi\'s grandmother taught him to be calm and still under the lights, so Lena did too.', code: 'C3.2' }
+  ]
+});
+/* step 59, story 3 */
+Atlas.decodable.more('prefix-g3', {
+  words: ['submarine', 'underwater', 'transport', 'overflow', 'postpone', 'midweek', 'nonstick', 'underpass', 'subtract', 'overtime'],
+  title: 'The Submarine Test',
+  text: ['Miss Patel\'s Grade 3 class was learning about transport. Each group had to make a model that could move. Kai, Hana and Ben chose a submarine.',
+    'They made it from a plastic bottle. Holes in the bottom let water in, so it could sink underwater. A tube let them blow air in to make it float.',
+    'On test day, Ben dropped the submarine in a full tub. Water spilled over the edge in an overflow, but the submarine did not sink. "We can postpone your test until midweek," said Miss Patel. Kai had an idea. They taped coins to the bottom of the bottle.',
+    'On Wednesday, the submarine sank to the bottom of the tub. Hana blew air in the tube, and it rose up again. Hana underlined the plan in her notebook: test it, fix it, and test it again.'],
+  pic: ['coin', 'book'],
+  qs: [
+    { k: 'yn', q: 'The submarine sank on the first test.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the group tape coins to the bottle?', opts: ['to make it sink', 'to pay for it', 'to make it float'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'The story shows that it is good to try again.', a: true, code: 'C2.6' }
+  ]
+});
+Atlas.decodable.add({
+  id: 'suffix-g3', hunt: 'Underline every describing word that ends in -ic, -al, -ous or -ive.', band: '3', name: 'Suffixes -ic, -al, -ous and -ive', focus: ['-ic', '-al', '-ous', '-ive'], key: 'magnetic, famous', mark: '(ic|al|ous|ive)\\b',
+  heart: [],
+  words: ['magnetic', 'metallic', 'artistic', 'athletic', 'magical', 'musical', 'national', 'coastal', 'famous', 'joyous', 'nervous', 'poisonous', 'active', 'festive', 'massive'],
+  title: 'The Magnetic Rock',
+  text: ['On a hike near Sudbury, Tomas found a dark, heavy rock. It had a metallic shine. He put it in his pocket to show his class.',
+    'At school, his teacher, Miss Grant, held a paper clip next to the rock. Click! The clip jumped to the rock and stuck. "Your rock is magnetic," she said. "It must have a lot of iron in it." Tomas was amazed. It felt a bit magical.',
+    'Miss Grant told the class that Sudbury is famous for its rocks. Long ago, a massive rock from space hit the land there. Now people dig deep mines to get metals like nickel and copper.',
+    'The class made a list of things the rock could pick up: pins, nails and a key. It did not pick up coins or a plastic spoon. Tomas was curious. Why not? "That can be our next lesson," said Miss Grant.'],
+  pic: ['rock', 'hill', 'book'],
+  qs: [
+    { k: 'choice', q: 'What did the rock pick up?', opts: ['pins, nails and a key', 'coins and a spoon', 'paper and a book'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What does magnetic mean in this story?', opts: ['It can pull things made of iron.', 'It is very heavy.', 'It is shiny.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Tomas wanted to find out more about his rock.', a: true, code: 'C2.6' }
+  ],
+  tip: 'These suffixes turn a word into a describing word: -ic (magnet, magnetic), -al (nation, national), -ous (fame, famous) and -ive (act, active). The ending is said quickly: -ous sounds like "us" and -ive like "iv", not like "five". Have the child cover the suffix, read the base word, then read the whole word; point out that the e drops off before -ous and -ive (fame, famous), and watch for words such as music and metal, which only look like they have one.'
+});
+/* step 60, story 2 */
+Atlas.decodable.more('suffix-g3', {
+  words: ['festive', 'nervous', 'joyous', 'musical', 'generous', 'seasonal', 'traditional', 'comical', 'dramatic', 'thunderous', 'attractive'],
+  title: 'The Festive Drum',
+  text: ['It was Lunar New Year, and Chinatown in Vancouver looked festive. Red lanterns hung over the streets, and the shops were packed with people. The shop owners were generous and handed out sweet buns.',
+    'Lin was in a dragon dance group. She did not dance; she played the big drum. Lin felt nervous. What if she lost the beat?',
+    'Then the musical parade began. Boom, boom, boom went Lin\'s drum. The long dragon bobbed and swirled to the beat, and its jaw snapped in a comical way. The crowd clapped and cheered. It was a joyous sound.',
+    'At the end, Grandma Wu gave Lin a red envelope and a hug. "You did not look nervous at all," she said. Lin grinned. "I was," she said, "but the drum was louder than my nerves."'],
+  pic: ['drum', 'house', 'cake'],
+  qs: [
+    { k: 'yn', q: 'Lin danced in the dragon.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'How did Lin feel at the start?', opts: ['nervous', 'sleepy', 'cross'], a: 0, code: 'C1.1' },
+    { k: 'write', q: 'When did you feel nervous? What did you do?', a: 'The child\'s own idea, such as a first day at school or a game. Ask them to read it back to you.', code: 'C2.5' }
+  ]
+});
+/* step 60, story 3 */
+Atlas.decodable.more('suffix-g3', {
+  words: ['national', 'natural', 'massive', 'protective', 'dangerous', 'enormous', 'historic', 'attentive', 'mountainous', 'scenic', 'active', 'arrival'],
+  title: 'Bears on the Trail',
+  text: ['Ines and her dad went to Banff National Park in Alberta. The land was mountainous and scenic. Massive peaks rose up to the clouds, and the lakes were blue-green.',
+    'One day, they hiked up a trail. Ines was the first to see them: a grizzly bear and two cubs in a patch of berries, far up the hill. The bear was enormous.',
+    'A park ranger was on the trail. "Bears are most active in the summer," she said. "A mother bear is very protective of her cubs. It is dangerous to get close." She asked them to back away slowly and stay attentive.',
+    'Ines and her dad stepped back, and they watched with binoculars from a long way off. Then the bears went off in the trees. That night, Ines wrote in her trip book: "We saw bears in their natural home, and we kept them safe by keeping our distance."'],
+  pic: ['bear', 'hill', 'spruce', 'book'],
+  qs: [
+    { k: 'choice', q: 'Why did the ranger say to back away?', opts: ['to keep the cubs safe', 'the trail was closed', 'it was going to rain'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Ines and her dad went up close to the cubs.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What is the story mostly about?', opts: ['keeping safe near bears', 'a trip in a car', 'picking berries'], a: 0, code: 'C2.6' }
   ]
 });
