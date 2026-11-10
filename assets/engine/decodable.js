@@ -22,7 +22,8 @@
             { k: 'order', q, items: [... in the right order], show: [indexes in the order printed], code }
             { k: 'draw', q, a: 'what to look for', code }       draw in a box
             { k: 'write', q, a: 'an answer', code }             write a word or a short sentence
-   tip    for the grown-up: the rule in plain words, and what to watch for. */
+   tip    for the grown-up: the rule in plain words, and what to watch for.
+   hunt   (optional) the word hunt under the story, when "Underline every word with" + the focus does not say it well. */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -194,7 +195,12 @@
       '<figure class="dc-pic">' + D.scene(p.pic) + '</figure>' +
       '<div class="dc-text">' + p.text.map(function (para) { return '<p>' + esc(para) + '</p>'; }).join('') + '</div>' +
       '<div class="dc-qs ws-grid">' + p.qs.map(question).join('') + '</div>' +
-      '<footer class="dc-foot"><p class="dc-reads"><b>Read it three times</b><i></i><i></i><i></i></p>' + foot(p, 'Language Atlas · ' + D.band(p)[1] + ' · ' + D.count(p) + ' words') + '</footer></div>';
+      '<footer class="dc-foot"><p class="dc-reads"><b>Read it three times</b><i></i><i></i><i></i><span class="dc-hunt"><b>Word hunt</b> ' + esc(hunt(p)) + '</span></p>' + foot(p, 'Language Atlas · ' + D.band(p)[1] + ' · ' + D.count(p) + ' words') + '</footer></div>';
+  }
+  /* after reading, the child goes back and underlines the step's words (a step can say it its own way: hunt) */
+  function hunt(p) {
+    var f = p.focus;
+    return p.hunt || 'Underline every word with ' + (f.length > 1 ? f.slice(0, -1).join(', ') + ' or ' + f[f.length - 1] : f[0]) + '.';
   }
   function answer(q) {
     if (q.k === 'yn') return '<b>' + (q.a ? 'yes' : 'no') + '</b>';

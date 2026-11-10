@@ -82,7 +82,7 @@ Atlas.decodable.add({
   tip: 'Short e says /e/ as in egg. It is the hardest short vowel to hear: children often mix it with short i (pen and pin). Say pairs like pen, pin and bed, bid, and ask which is which.'
 });
 Atlas.decodable.add({
-  id: 'short-mix', band: 'K', name: 'All five short vowels', focus: ['a e i', 'o u'], key: 'cat, bed, pig, fox, sun', mark: '[aeiou]',
+  id: 'short-mix', hunt: 'Underline one word for each short vowel: a, e, i, o, u.', band: 'K', name: 'All five short vowels', focus: ['a e i', 'o u'], key: 'cat, bed, pig, fox, sun', mark: '[aeiou]',
   heart: ['one', 'two', 'look', 'see'],
   words: ['cat', 'map', 'web', 'bed', 'lid', 'pig', 'fox', 'pot', 'sun', 'cub', 'quiz', 'quit'],
   title: 'The Cub and the Bun',
@@ -364,7 +364,7 @@ Atlas.decodable.add({
   "tip": "The letters ank, ink, onk and unk are glued sounds: read each as one chunk (p-ink). The n before k sounds like the ng in sing, not a plain /n/. Watch for the child dropping the n (pik for pink)."
 });
 Atlas.decodable.add({
-  "id": "plural-s",
+  "id": "plural-s", "hunt": "Underline every word that ends in -s.",
   "band": "1",
   "name": "Ending -s",
   "focus": [
@@ -439,7 +439,7 @@ Atlas.decodable.add({
   "tip": "Adding s means more than one (hens) or tells what one does (runs). Sometimes s sounds like /z/ (dogs, hens) and sometimes /s/ (cats, pups): both are right. Cover the s, read the base word, then add the s."
 });
 Atlas.decodable.add({
-  "id": "blend-start",
+  "id": "blend-start", "hunt": "Underline every word that starts with a blend.",
   "band": "1",
   "name": "Blends at the start",
   "focus": [
@@ -512,7 +512,7 @@ Atlas.decodable.add({
   "tip": "A blend is two consonants side by side where you still hear both sounds (fr in frog, sl in sled). Have the child say the two sounds quickly, then slide into the vowel. Watch for a dropped sound (fog for frog) or an extra vowel (fuh-rog)."
 });
 Atlas.decodable.add({
-  "id": "blend-end",
+  "id": "blend-end", "hunt": "Underline every word that ends with a blend.",
   "band": "1",
   "name": "Blends at the end",
   "focus": [
@@ -585,7 +585,7 @@ Atlas.decodable.add({
   "tip": "Now the blend is at the end of the word: two consonants where you hear both (nd in hand, mp in lamp). Watch for the last sound being dropped (han for hand, tet for tent)."
 });
 Atlas.decodable.add({
-  "id": "blend-three",
+  "id": "blend-three", "hunt": "Underline every word that starts with three consonants.",
   "band": "1",
   "name": "Three-letter blends",
   "focus": [
@@ -667,7 +667,7 @@ Atlas.decodable.add({
   "tip": "Some words start with three consonants that blend (str in string, spl in splash, shr in shrug). Build it up: s-t-r, then str, then add the rest. Watch for a sound left out (sing for string, sash for splash)."
 });
 Atlas.decodable.add({
-  "id": "suffix-ed",
+  "id": "suffix-ed", "hunt": "Underline every word that ends in -ed.",
   "band": "1",
   "name": "Ending -ed",
   "focus": [
@@ -747,7 +747,7 @@ Atlas.decodable.add({
   "tip": "The ending -ed means it already happened. It has three sounds: /t/ (jumped), /d/ (filled) and /id/ (landed, after t or d). When a short word ends in one consonant, it doubles before -ed (hop, hopped). Watch for the child reading every -ed as a separate \"ed\" syllable (jump-ed)."
 });
 Atlas.decodable.add({
-  "id": "suffix-ing",
+  "id": "suffix-ing", "hunt": "Underline every word that ends in -ing.",
   "band": "1",
   "name": "Ending -ing",
   "focus": [
@@ -822,7 +822,7 @@ Atlas.decodable.add({
   "tip": "The ending -ing means it is happening now. Cover -ing, read the base word, then add it back. When a short word ends in one consonant, it doubles before -ing (swim, swimming). Watch for the child reading a doubled letter as two sounds (swim-ming is right; swimm-ing is not a new sound)."
 });
 Atlas.decodable.add({
-  "id": "suffix-es",
+  "id": "suffix-es", "hunt": "Underline every word that ends in -es.",
   "band": "1",
   "name": "Ending -es",
   "focus": [
@@ -1030,7 +1030,7 @@ Atlas.decodable.add({
   "tip": "Right after a short vowel, the /j/ sound at the end is spelled dge (edge, fudge). The d and e are silent helpers. A beaver home is a lodge, and a baby beaver is a kit: tell the child before reading. Watch for the child saying a /d/ (fud-ge)."
 });
 Atlas.decodable.add({
-  "id": "two-closed",
+  "id": "two-closed", "hunt": "Underline every word with two syllables.",
   "band": "1",
   "name": "Two closed syllables",
   "focus": [
@@ -1171,7 +1171,7 @@ Atlas.decodable.add({
   tip: 'A silent e makes the u say its name, as in cube (/yoo/) or June (/oo/), and makes the e say its name, as in these. Compare cub and cube, them and theme. Watch for the short sound (cub for cube): have the child look at the end of the word first.'
 });
 Atlas.decodable.add({
-  id: 'open', band: '1', name: 'Open syllables', focus: ['go', 'me', 'hi'], key: 'go, ro-bot',
+  id: 'open', hunt: 'Underline every word that ends with a vowel.', band: '1', name: 'Open syllables', focus: ['go', 'me', 'hi'], key: 'go, ro-bot',
   mark: '',
   heart: ['over', 'open', 'even', 'most'],
   words: ['go', 'so', 'no', 'me', 'he', 'she', 'we', 'be', 'hi', 'tuba', 'sofa', 'panda', 'pasta', 'zebra', 'tuna'],
@@ -1189,7 +1189,7 @@ Atlas.decodable.add({
   tip: 'An open syllable ends with a vowel, so nothing closes it in and the vowel says its name: go, me, hi, and the first part of ro-bot. At the end of a longer word, a often says a quiet /uh/, as in sofa and panda. Watch for go read as "got": point to the end of the word.'
 });
 Atlas.decodable.add({
-  id: 'y-vowel', band: '1', name: 'y as a vowel', focus: ['y'], key: 'my, happy',
+  id: 'y-vowel', hunt: 'Underline every word with y at the end.', band: '1', name: 'y as a vowel', focus: ['y'], key: 'my, happy',
   mark: '(?<=[^aeiou\\W])y\\b',
   heart: ['pretty', 'ready'],
   words: ['my', 'fly', 'try', 'cry', 'dry', 'sky', 'shy', 'happy', 'funny', 'puppy', 'sunny', 'silly', 'bunny', 'jelly', 'candy'],
@@ -1207,7 +1207,7 @@ Atlas.decodable.add({
   tip: 'At the end of a short word, y says /eye/ (my, sky). At the end of a longer word, it says /ee/ (happy, puppy). At the start of a word, y is still a consonant (yes, yell). Watch for happy read as "happ-eye".'
 });
 Atlas.decodable.add({
-  id: 'soft-cg', band: '1', name: 'Soft c and soft g', focus: ['ce', 'ci', 'ge'], key: 'city, page',
+  id: 'soft-cg', hunt: 'Underline every word with a soft c or soft g.', band: '1', name: 'Soft c and soft g', focus: ['ce', 'ci', 'ge'], key: 'city, page',
   mark: 'c(?=[eiy])|g(?=e\\b)',
   heart: ['listen', 'often'],
   words: ['city', 'cent', 'face', 'ice', 'dance', 'fence', 'pencil', 'rice', 'race', 'spicy', 'page', 'cage', 'huge', 'stage', 'bulge'],
@@ -1448,7 +1448,7 @@ Atlas.decodable.add({
   tip: 'The letters ew and ue both say /oo/ as in moon (new, blue); in a few words they say /yoo/ (few). Both usually come at the end of a word. Watch for the child reading ew as e plus w; teach it as one chunk.'
 });
 Atlas.decodable.add({
-  id: 'cle', band: '2', name: 'Consonant-le', focus: ['-ble', '-tle', '-dle'], key: 'ta-ble', mark: '[bcdfgkptz]le\\b',
+  id: 'cle', hunt: 'Underline every word that ends in -le.', band: '2', name: 'Consonant-le', focus: ['-ble', '-tle', '-dle'], key: 'ta-ble', mark: '[bcdfgkptz]le\\b',
   heart: ['double', 'trouble'],
   words: ['table', 'apple', 'little', 'puddle', 'candle', 'bubble', 'turtle', 'purple', 'simple', 'giggle', 'needle', 'eagle', 'maple', 'bottle'],
   title: 'The Little Turtle',
@@ -1499,7 +1499,7 @@ Atlas.decodable.add({
   tip: 'Some letter pairs have a silent letter: in kn and gn the first letter is silent (knot, gnat), in wr the w is silent (wrap), and in mb at the end the b is silent (lamb). Watch for the child sounding the k in knot or the b in thumb; point to the silent letter and say "this one is quiet."'
 });
 Atlas.decodable.add({
-  id: 'prefix', band: '2', name: 'Prefixes un- and re-', focus: ['un-', 're-'], key: 'unpack, redo', mark: '^(un|re)(?=[a-z]{3})',
+  id: 'prefix', hunt: 'Underline every word that starts with un- or re-.', band: '2', name: 'Prefixes un- and re-', focus: ['un-', 're-'], key: 'unpack, redo', mark: '^(un|re)(?=[a-z]{3})',
   heart: ['another', 'nothing'],
   words: ['unpack', 'unlock', 'unzip', 'unkind', 'unwrap', 'unhappy', 'repack', 'refill', 'retell', 'reread', 'reuse', 'replay', 'rewind', 'reopen'],
   title: 'Unwrap It Slowly',
@@ -1516,7 +1516,7 @@ Atlas.decodable.add({
   tip: 'A prefix is a small part added to the front of a word that changes its meaning: un- means not or the opposite (unwrap, unkind), and re- means again (reread, reuse). Have the child cover the prefix, read the base word, then add the prefix. Watch for words that only look like they have a prefix, such as uncle and ready.'
 });
 Atlas.decodable.add({
-  id: 'suffix-more', band: '2', name: 'Suffixes -er -est -ful -less -ly', focus: ['-ful', '-less', '-ly'], key: 'helpful', mark: '(er|est|ful|less|ly)\\b',
+  id: 'suffix-more', hunt: 'Underline every word that ends in -er, -est, -ful, -less or -ly.', band: '2', name: 'Suffixes -er -est -ful -less -ly', focus: ['-ful', '-less', '-ly'], key: 'helpful', mark: '(er|est|ful|less|ly)\\b',
   heart: ['women', 'country'],
   words: ['helpful', 'thankful', 'useful', 'spotless', 'endless', 'helpless', 'slowly', 'softly', 'sadly', 'kindly', 'taller', 'tallest', 'coldest', 'longer', 'strongest'],
   title: 'The Helpful Kid',
