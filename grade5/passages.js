@@ -480,7 +480,7 @@
     title: 'Power from the Sun',
     deck: 'How solar panels change sunlight into electricity, and what they can and cannot do',
     hero: {
-      photo: 'g5-solar-roof.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-solar-roof.jpg', credit: 'Photo: Downtowngal, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'Solar panels on the roof of a house. They face the sun for as many hours of the day as possible.'
     },
@@ -1019,7 +1019,7 @@
     title: 'The Air Exchange',
     deck: 'How your lungs trade old air for new about 20 000 times a day',
     hero: {
-      photo: 'g5-lungs-model.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-lungs-model.jpg', credit: 'Photo: John Campbell, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
       cap: 'A model of the human lungs. The windpipe at the top splits into two branches, one for each lung.'
     },
@@ -1115,9 +1115,9 @@
     title: 'The Company of the Bay',
     deck: 'How two French traders, a small ship and Cree knowledge led to the Hudson’s Bay Company in 1670',
     hero: {
-      photo: 'g5-nonsuch.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-nonsuch.jpg', credit: 'Photo: Unknown photographer, Public domain, Wikimedia Commons', focus: '50% 55%',
       tall: 220,
-      cap: 'A full-size copy of the Nonsuch, the small ship that sailed into Hudson Bay in 1668.'
+      cap: 'York boats under sail in Manitoba. Boats like these carried furs and goods for the Hudson’s Bay Company.'
     },
     body: [
       'In the 1650s, two French traders named Pierre-Esprit Radisson and Médard Chouart des Groseilliers travelled west of the Great Lakes. Cree people there told them about a great salt sea to the north, where the beaver were thick-furred because of the cold. The traders had a bold idea. Instead of paddling furs thousands of kilometres to Montréal, why not sail ships straight into that northern bay?',
@@ -1163,9 +1163,9 @@
     title: 'Ice Cream in a Bag',
     deck: 'A tasty experiment with states of matter, salt and ice',
     hero: {
-      photo: 'g5-ice-cream.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-ice-cream.jpg', credit: 'Photo: Sarah Stierch, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Homemade ice cream. A liquid turns into a solid when enough heat is taken away.'
+      cap: 'An ice cream cone. A liquid turns into a solid when enough heat is taken away.'
     },
     body: [
       'Can you make ice cream with no freezer, in about ten minutes? You can, with two bags, some ice and a surprising helper: salt. Along the way, you will see how matter changes from one state to another.',
@@ -1213,9 +1213,9 @@
     title: 'Buildings That Bend',
     deck: 'How engineers design schools and towers to survive an earthquake',
     hero: {
-      photo: 'g5-earthquake.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-earthquake.jpg', credit: 'Photo: maryamarce, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'A building damaged by an earthquake. Engineers study damage like this to design safer structures.'
+      cap: 'A house destroyed by an earthquake in Puerto Rico in 2020. Engineers study damage like this to design safer buildings.'
     },
     body: [
       'The floor starts to roll like a boat on a wave. Pencils slide off the desk. In British Columbia, students practise for this moment with an earthquake drill: drop, cover and hold on. But the most important protection is one they cannot see. It is built into the walls.',
@@ -1262,7 +1262,7 @@
     title: 'A 40% Chance of Rain',
     deck: 'What a weather forecast really means, and how probability helps us decide',
     hero: {
-      photo: 'g5-weather-radar.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-weather-radar.jpg', credit: 'Photo: Chris Light, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A weather radar. It sends out radio waves that bounce off raindrops and snowflakes, showing where they are falling.'
     },
@@ -1311,9 +1311,9 @@
     title: 'Your First Vote',
     deck: 'How elections work in Canada, and how students practise voting',
     hero: {
-      photo: 'g5-polling-station.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-polling-station.jpg', credit: 'Photo: Champlain Marcil, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Voters at a polling station. Each voter marks a ballot behind a screen, so no one can see their choice.'
+      cap: 'A voter puts his ballot into a ballot box in Hull, Quebec. Each ballot is secret, so no one can see how a person voted.'
     },
     body: [
       'Behind a cardboard screen in the school gym, Ji-woo holds a pencil over a paper ballot. Four names are printed on it. She thinks about what each candidate promised, takes a breath and marks an X. Then she folds the ballot and drops it in a box. Ji-woo is 11, so her vote will not decide the election. But it is good practice for the real thing.',
@@ -1359,7 +1359,7 @@
     title: 'Behind the Food Bank Door',
     deck: 'Why more families need food banks, and how communities respond',
     hero: {
-      photo: 'g5-food-bank.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-food-bank.jpg', credit: 'Photo: U.S. Department of Agriculture, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Shelves of donated food at a food bank, sorted and ready for families.'
     },
@@ -1407,9 +1407,9 @@
     title: 'When in Doubt, Sit Out',
     deck: 'What a concussion is, how to spot one, and the Ontario law named after Rowan Stringer',
     hero: {
-      photo: 'g5-hockey-helmet.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-hockey-helmet.jpg', credit: 'Photo: Rhys Asplundh, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A hockey helmet. Helmets protect the skull, but a hard hit can still shake the brain inside.'
+      cap: 'Hockey players wear helmets. Helmets protect the skull, but a hard hit can still shake the brain inside.'
     },
     body: [
       'Ethan collided with another player and fell hard onto the ice. He got up, shook his head and said, “I’m fine.” But a few minutes later, the lights in the arena seemed too bright, and he could not remember the score. Ethan had a <b>concussion</b>.',
@@ -1454,7 +1454,7 @@
     title: 'The Buzz About Caffeine',
     deck: 'Why energy drinks are not made for kids',
     hero: {
-      photo: 'g5-energy-drinks.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-energy-drinks.jpg', credit: 'Photo: Klooni, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Energy drink cans. In Canada, their labels must say they are not recommended for children.'
     },
@@ -1501,7 +1501,7 @@
     title: 'Four Counts to Calm',
     deck: 'What stress does to your body, and a breathing tool you can use anywhere',
     hero: {
-      photo: 'g5-calm-lake.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-calm-lake.jpg', credit: 'Photo: DocHolliday2018, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A calm lake in the morning. Picturing a peaceful place is one way to help your body settle.'
     },
@@ -1550,9 +1550,9 @@
     title: 'The Angle off the Boards',
     deck: 'How hockey players use angles to pass the puck around a defender',
     hero: {
-      photo: 'g5-hockey-rink.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-hockey-rink.jpg', credit: 'Photo: Aknell4, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Hockey players on a rink. The boards around the edge can be used to bounce the puck.'
+      cap: 'A player battles for the puck along the boards. The boards can be used to bounce the puck.'
     },
     body: [
       'Priya has the puck near the boards. Her teammate, Lucas, is open up the ice, but a defender stands right between them. A straight pass will be stopped. So Priya does something clever. She shoots the puck at the boards, and it bounces off and slides right onto Lucas’s stick. How did she know where to aim?',
@@ -1601,7 +1601,7 @@
     title: 'Measuring a Sail',
     deck: 'How sailmakers find the area of triangles',
     hero: {
-      photo: 'g5-sailboat.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-sailboat.jpg', credit: 'Photo: Matti Blume, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
       cap: 'A sailboat with triangular sails. The bigger the sail, the more wind it can catch.'
     },
@@ -1649,7 +1649,7 @@
     title: 'Is This Game Fair?',
     deck: 'Using probability to test a game at the school fun fair',
     hero: {
-      photo: 'g5-dice.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-dice.jpg', credit: 'Photo: Diacritica, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Number cubes, also called dice. Each face of a fair number cube is equally likely to land on top.'
     },
@@ -1697,7 +1697,7 @@
     title: 'Drawing Distance',
     deck: 'How artists use a vanishing point to make a flat page look deep',
     hero: {
-      photo: 'g5-railway-tracks.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-railway-tracks.jpg', credit: 'Photo: XoMEoX, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
       tall: 220,
       cap: 'Railway tracks seem to come together far away, even though the rails are always the same distance apart.'
     },
@@ -1745,7 +1745,7 @@
     title: 'A Song Between Two Voices',
     deck: 'Inuit throat singing, a game of breath and rhythm that is being sung again',
     hero: {
-      photo: 'g5-throat-singers.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-throat-singers.jpg', credit: 'Photo: Rudolf H. Boettcher, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
       tall: 220,
       cap: 'Inuit throat singers perform face to face, so each one can hear and follow the other.'
     },
@@ -1792,9 +1792,9 @@
     title: 'The Worst Tryout Ever',
     deck: 'Dev has one chance to make the basketball team. Nothing goes to plan.',
     hero: {
-      photo: 'g5-basketball.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-basketball.jpg', credit: 'Photo: Eminence190, CC0, Wikimedia Commons', focus: '50% 45%',
       tall: 210,
-      cap: 'A basketball hoop in a school gym.'
+      cap: 'A school gym with a basketball hoop.'
     },
     body: [
       'Dev had practised for weeks. He had dribbled in the driveway until the streetlights came on. He had watched videos of famous players until his mother took his tablet away. He was ready. At least, he thought he was ready.',
@@ -1838,7 +1838,7 @@
     deck: 'How poets use imagery and comparisons to help us see, hear and feel',
     plain: true,
     hero: {
-      photo: 'g5-snowy-forest.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-snowy-forest.jpg', credit: 'Photo: Wiki.cullin, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A forest after a snowfall. Poets often try to capture a moment like this in a few words.'
     },
@@ -1886,7 +1886,7 @@
     title: 'A School for Everyone',
     deck: 'How accessible design removes barriers, and why it helps more people than you might think',
     hero: {
-      photo: 'g5-ramp.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-ramp.jpg', credit: 'Photo: Hullian111, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'A ramp beside stairs at a building entrance. A ramp lets people who use wheelchairs, walkers or strollers get in.'
     },
@@ -1933,7 +1933,7 @@
     title: 'The Journey of a Sandwich',
     deck: 'Follow your lunch through the digestive system, from first bite to last stop',
     hero: {
-      photo: 'g5-sandwich.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-sandwich.jpg', credit: 'Photo: Revital Salomon, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A sandwich. Over the next day or so, your body will break it down into parts small enough to use.'
     },
@@ -1981,9 +1981,9 @@
     title: 'Faster Than Thinking',
     deck: 'How your nervous system sends messages, and why some actions happen before you decide',
     hero: {
-      photo: 'g5-reflex.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-reflex.jpg', credit: 'Photo: Laura Guerin, CK-12 Foundation, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A doctor tests a reflex by tapping just below the knee. The leg kicks before the person decides to move it.'
+      cap: 'When a hammer taps just below the knee, the leg kicks before the brain decides to move it.'
     },
     body: [
       'You touch a hot pan and your hand jerks away before you even feel the pain. A ball flies at your face and you blink. How can your body act so fast? The answer is a team of messengers called the <b>nervous system</b>.',
@@ -2028,7 +2028,7 @@
     title: 'Tiny Plastic, Big Lakes',
     deck: 'How small pieces of plastic end up in the Great Lakes, and what people are doing about it',
     hero: {
-      photo: 'g5-plastic-beach.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-plastic-beach.jpg', credit: 'Photo: Partonez, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'Plastic litter on a shoreline. Over time, sun and waves break plastic into smaller and smaller pieces.'
     },
@@ -2077,7 +2077,7 @@
     title: 'From Scraps to Soil',
     deck: 'What happens to the food scraps in a green bin, and why it matters',
     hero: {
-      photo: 'g5-compost.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-compost.jpg', credit: 'Photo: Philip Cohen, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Compost: food scraps and leaves breaking down into dark, crumbly soil.'
     },
@@ -2125,7 +2125,7 @@
     title: 'Falling Water, Glowing Lights',
     deck: 'How the Niagara River makes electricity for Ontario homes',
     hero: {
-      photo: 'g5-hydro-station.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-hydro-station.jpg', credit: 'Photo: Changku88, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A hydroelectric generating station on the Niagara River. Water from above the falls is used to make electricity.'
     },
@@ -2173,7 +2173,7 @@
     title: 'Roads Made of Ice',
     deck: 'How winter roads connect northern Ontario communities, and why they are in trouble',
     hero: {
-      photo: 'g5-ice-road.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-ice-road.jpg', credit: 'Photo: Ian Mackenzie, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'A winter road across a frozen lake. For a few weeks each year, trucks can drive where there is no permanent road.'
     },
@@ -2220,7 +2220,7 @@
     title: 'A Mission in Wendake',
     deck: 'Sainte-Marie among the Hurons, 1639 to 1649, and how the Wendat and the Jesuits saw each other',
     hero: {
-      photo: 'g5-sainte-marie.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-sainte-marie.jpg', credit: 'Photo: P199, Public domain, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'The rebuilt mission of Sainte-Marie among the Hurons, near Midland, Ontario.'
     },
@@ -2269,7 +2269,7 @@
     title: 'The King’s Daughters',
     deck: 'Why about 800 young women sailed to New France between 1663 and 1673',
     hero: {
-      photo: 'g5-filles-du-roi.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-filles-du-roi.jpg', credit: 'Photo: Eleanor Fortescue-Brickdale, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'An artist’s picture of young women arriving in New France. Pictures like this were made long after the events.'
     },
@@ -2314,7 +2314,7 @@
     title: 'The Great Law of Peace',
     deck: 'How the Haudenosaunee Confederacy united nations under one law',
     hero: {
-      photo: 'g5-hiawatha-flag.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-hiawatha-flag.jpg', credit: 'Photo: Rick Hill, Harold Johnson and Tim Johnson, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 200,
       cap: 'The Haudenosaunee flag is based on the Hiawatha Belt, a wampum belt that records the union of the nations.'
     },
@@ -2358,7 +2358,7 @@
     title: 'Art from Porcupine Quills',
     deck: 'How Mi’kmaw artists decorated birchbark with quills, and why the art is still made today',
     hero: {
-      photo: 'g5-quillwork.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-quillwork.jpg', credit: 'Photo: Daderot, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A birchbark box decorated with dyed porcupine quills, made by a Mi’kmaw artist.'
     },
@@ -2405,9 +2405,9 @@
     title: 'Long, Narrow Farms',
     deck: 'Why the farms of New France were shaped like ribbons along the St. Lawrence River',
     hero: {
-      photo: 'g5-long-lots.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-long-lots.jpg', credit: 'Photo: Mélanie Plante, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Long, narrow fields stretching back from a river in Québec. Their shape comes from the way land was divided in New France.'
+      cap: 'A farm in Kamouraska, Quebec, near the St. Lawrence River. This area was once a seigneury.'
     },
     body: [
       'Fly over the St. Lawrence River in Québec today and look down. You will see something unusual: fields shaped like long, thin ribbons, side by side, all running back from the river. This pattern was created more than 300 years ago by the <b>seigneurial system</b>, the way land was shared out in New France.',
@@ -2453,7 +2453,7 @@
     title: 'Whalers at Red Bay',
     deck: 'How Basque sailors from Europe came to Labrador in the 1500s',
     hero: {
-      photo: 'g5-red-bay.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-red-bay.jpg', credit: 'Photo: Cephas, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'Red Bay, Labrador. In the 1500s, this quiet harbour was one of the busiest whaling ports in the world.'
     },
@@ -2501,7 +2501,7 @@
     title: 'Where Do Taxes Go?',
     deck: 'How governments collect money and use it for services we share',
     hero: {
-      photo: 'g5-fire-truck.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-fire-truck.jpg', credit: 'Photo: Emergency Vehicles, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A fire truck. Fire services are paid for with taxes, so help comes no matter who you are.'
     },
@@ -2550,7 +2550,7 @@
     deck: 'A student writes to town council to make the case for a new skate park',
     plain: true,
     hero: {
-      photo: 'g5-skatepark.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-skatepark.jpg', credit: 'Photo: T.Newfeels, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A public skate park. Many towns in Canada have built them as places for young people to be active.'
     },
@@ -2598,7 +2598,7 @@
     title: 'What Time Is It There?',
     deck: 'How Sandford Fleming’s idea of time zones brought order to a wide country',
     hero: {
-      photo: 'g5-sandford-fleming.jpg', credit: 'CREDIT', focus: '50% 30%',
+      photo: 'g5-sandford-fleming.jpg', credit: 'Photo: Unknown painter, Public domain, Wikimedia Commons', focus: '50% 30%',
       tall: 210,
       cap: 'Sir Sandford Fleming, the Canadian engineer who promoted standard time zones in the 1870s and 1880s.'
     },
@@ -2647,7 +2647,7 @@
     title: 'Ground That Never Thaws',
     deck: 'What permafrost is, and what happens in the North when it starts to melt',
     hero: {
-      photo: 'g5-tundra.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-tundra.jpg', credit: 'Photo: Lindsay Nicole Terry, CC BY 2.0, Wikimedia Commons', focus: '50% 55%',
       tall: 210,
       cap: 'Arctic tundra in summer. Under the thin layer of plants and soil, the ground stays frozen all year.'
     },
@@ -2695,9 +2695,9 @@
     title: 'Sunny Days, Smart Choices',
     deck: 'What the UV index tells you, and how to protect your skin and eyes',
     hero: {
-      photo: 'g5-sunscreen.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-sunscreen.jpg', credit: 'Photo: U.S. Environmental Protection Agency, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Sunscreen, a hat and sunglasses: three simple ways to protect yourself from the sun.'
+      cap: 'A sun safety poster: slip on a shirt, slop on sunscreen, slap on a hat and wrap on sunglasses.'
     },
     body: [
       'The sun gives us light, warmth and vitamin D. But sunlight also carries invisible rays called ultraviolet rays, or <b>UV rays</b>. You cannot see them or feel them, but they can burn your skin in less than half an hour on a summer day. Over many years, too much UV can damage your skin and eyes.',
@@ -2743,9 +2743,9 @@
     title: 'Paddling Into the Wind',
     deck: 'On a canoe trip in Algonquin Park, Nadia and her uncle race a storm across the lake',
     hero: {
-      photo: 'g5-canoe-lake.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-canoe-lake.jpg', credit: 'Photo: Ryan Hodnett, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A canoe on a lake in Ontario. On big lakes, the weather can change quickly.'
+      cap: 'Canoe Lake in Algonquin Park, Ontario. On big lakes, the weather can change quickly.'
     },
     body: [
       'The morning had been made of glass. The lake lay perfectly still, and the canoe slid across it as quietly as a loon. Nadia trailed her fingers in the cold water and watched the reflections of the pines ripple and mend behind them.',
@@ -2793,9 +2793,9 @@
     title: 'Reading the Hills',
     deck: 'How contour lines on a map show the shape of the land',
     hero: {
-      photo: 'g5-topo-map.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-topo-map.jpg', credit: 'Photo: Asybaris01, NASA data, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A topographic map. The thin wavy lines are contour lines. They show hills and valleys on a flat sheet of paper.'
+      cap: 'A topographic map of Level Mountain in British Columbia. The thin wavy lines are contour lines. They show the shape of the land.'
     },
     body: [
       'A map is flat, but the land is not. How can a flat sheet of paper show a mountain, a valley or a steep cliff? Mapmakers use a clever tool: the <b>contour line</b>.',
@@ -2842,7 +2842,7 @@
     title: 'The Highway of Ice',
     deck: 'Why sea ice matters to Inuit communities, polar bears and the whole planet',
     hero: {
-      photo: 'g5-sea-ice.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-sea-ice.jpg', credit: 'Photo: Ashley Pollak, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Sea ice in the Arctic Ocean. In winter, it covers much of the ocean around Canada’s northern islands.'
     },
@@ -2890,7 +2890,7 @@
     title: 'Cartier and Donnacona',
     deck: 'When a French explorer met the people of Stadacona, 1534 to 1536',
     hero: {
-      photo: 'g5-cartier.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-cartier.jpg', credit: 'Photo: Auguste Lemoine, Public domain, Wikimedia Commons', focus: '50% 40%',
       tall: 210,
       cap: 'A painting of Jacques Cartier, made long after his death. No one knows exactly what he looked like.'
     },
@@ -2939,9 +2939,9 @@
     title: 'The Toronto Discovery',
     deck: 'How a team in Toronto found a way to treat diabetes, and why it still matters today',
     hero: {
-      photo: 'g5-banting-best.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-banting-best.jpg', credit: 'Photo: Thomas Fisher Rare Book Library, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
       tall: 220,
-      cap: 'Frederick Banting (right) and Charles Best on the roof of the medical building at the University of Toronto, 1921.'
+      cap: 'Frederick Banting (right) and Charles Best with one of their dogs on the roof of the medical building at the University of Toronto.'
     },
     body: [
       'Before 1922, a child who was told they had type 1 diabetes had very little hope. Doctors could only put them on a strict diet that made them weak and thin. Most lived for only a year or two. Then a team at the University of Toronto made a discovery that changed medicine around the world.',
@@ -2985,7 +2985,7 @@
     title: 'The Can That Comes Back',
     deck: 'Why an aluminum can can be recycled again and again, and what changes when it melts',
     hero: {
-      photo: 'g5-crushed-cans.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-crushed-cans.jpg', credit: 'Photo: Oregon State University, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'Crushed aluminum cans pressed into a block, ready to be melted down.'
     },
@@ -3033,7 +3033,7 @@
     title: 'A Farm Boy in Space',
     deck: 'Chris Hadfield dreamed of space as a boy in Ontario, and the Canadarm helped get him there',
     hero: {
-      photo: 'g5-hadfield.jpg', credit: 'CREDIT', focus: '50% 35%',
+      photo: 'g5-hadfield.jpg', credit: 'Photo: NASA, Public domain, Wikimedia Commons', focus: '50% 35%',
       tall: 230,
       cap: 'Chris Hadfield on board the International Space Station in 2013.'
     },
@@ -3081,7 +3081,7 @@
     title: 'Graphs That Fool You',
     deck: 'The same numbers can tell different stories. Here is how to spot a graph that is trying to trick you',
     hero: {
-      photo: 'g5-bar-graph.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-bar-graph.jpg', credit: 'Photo: RWhitwam, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Graphs are everywhere: in news stories, ads and reports. Not all of them are fair.'
     },
@@ -3135,9 +3135,9 @@
     title: 'What the Ad Wants',
     deck: 'Ads are made to make you want things. Learn the tricks, and you get to decide',
     hero: {
-      photo: 'g5-billboards.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-billboards.jpg', credit: 'Photo: Steve Harris, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'Signs and screens in a busy city. Each one was designed to catch your eye.'
+      cap: 'Signs and screens at a busy corner in Toronto. Each one was designed to catch your eye.'
     },
     body: [
       'You see hundreds of advertisements every week: on the bus, on cereal boxes, before videos and inside games. Every ad has one job. It wants you to do something, usually to buy something. Ads are made by skilled people who know how to grab attention. Knowing their tricks helps you think for yourself.',
@@ -3182,9 +3182,9 @@
     title: 'Making Clay Come Alive',
     deck: 'Stop-motion animation turns tiny movements into a moving film. You can make one at home',
     hero: {
-      photo: 'g5-stop-motion.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-stop-motion.jpg', credit: 'Photo: Max Sviridov, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'An animator moves a model a tiny bit between photographs.'
+      cap: 'A scene made with clay models for a stop-motion film.'
     },
     body: [
       'Have you ever watched a clay character walk, blink and wave, and wondered how it was made? The answer is patience. In <b>stop-motion animation</b>, an artist takes a photo, moves the model a tiny bit, takes another photo, and repeats this hundreds of times. When the photos are played quickly, one after another, your brain sees smooth movement.',
@@ -3233,9 +3233,9 @@
     title: 'The Healing Sound',
     deck: 'The jingle dress dance began with the Anishinaabe and is now danced at powwows across North America',
     hero: {
-      photo: 'g5-jingle-dress.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-jingle-dress.jpg', credit: 'Photo: Thayne Tuason, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
       tall: 230,
-      cap: 'A jingle dress dancer at a powwow. The cones on her dress ring with each step.'
+      cap: 'Young jingle dress dancers at a powwow. The cones on their dresses ring with each step.'
     },
     body: [
       'At a powwow, the drum begins and a group of dancers steps into the circle. Their dresses are covered in rows of small metal cones. With every light step, the cones touch and ring, making a sound like gentle rain. This is the <b>jingle dress</b> dance, and for many Anishinaabe people, it is a dance of healing and prayer.',
@@ -3281,9 +3281,9 @@
     title: 'The Creator’s Game',
     deck: 'Long before hockey, lacrosse was played across this land. Its story begins with First Nations',
     hero: {
-      photo: 'g5-lacrosse.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-lacrosse.jpg', credit: 'Photo: Szkandera Ondrej, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
-      cap: 'Players race for the ball in a lacrosse game.'
+      cap: 'A lacrosse player reaches for the ball with the net of his stick.'
     },
     body: [
       'Lacrosse is one of the oldest team sports in North America. Players use a stick with a net at one end to catch, carry and throw a small ball, trying to score in the other team’s goal. Today it is Canada’s national summer sport. But the game was played here for hundreds of years before Canada existed.',
@@ -3330,9 +3330,9 @@
     title: 'Walking on Top of the Snow',
     deck: 'Snowshoes were designed by First Nations and Inuit long ago. The science behind them is all about pressure',
     hero: {
-      photo: 'g5-snowshoes.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-snowshoes.jpg', credit: 'Photo: Daderot, CC0, Wikimedia Commons', focus: '50% 55%',
       tall: 220,
-      cap: 'Traditional snowshoes with wooden frames and woven webbing.'
+      cap: 'Canadian snowshoes made between 1840 and 1870, with wooden frames and woven webbing.'
     },
     body: [
       'Try walking through deep, fresh snow in your boots. With every step, you sink up to your knees. You tire quickly. Now strap on a pair of snowshoes. Suddenly, you float on top of the snow. How can a wider shoe make such a difference?',
@@ -3376,9 +3376,9 @@
     title: 'Fire in the Forest',
     deck: 'Wildfires are part of the boreal forest’s life cycle, but bigger and more frequent fires bring new challenges',
     hero: {
-      photo: 'g5-forest-fire.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-forest-fire.jpg', credit: 'Photo: DarrenRD, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'A wildfire burning in a Canadian forest. Smoke can travel hundreds of kilometres.'
+      cap: 'Drivers leave Fort McMurray, Alberta, as a wildfire burns beside the highway in 2016.'
     },
     body: [
       'Canada’s <b>boreal forest</b> is a huge band of evergreen trees that stretches from Yukon to Newfoundland and Labrador. It is home to moose, caribou, lynx and billions of birds. It is also a forest that has burned and regrown for thousands of years.',
@@ -3421,7 +3421,7 @@
     title: 'A Gift That Flows',
     deck: 'What your blood does every second, and how donated blood saves lives',
     hero: {
-      photo: 'g5-blood-bags.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-blood-bags.jpg', credit: 'Photo: Ufficio Comunicazione, Azienda Ospedaliera SS. Antonio e Biagio e Cesare Arrigo, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'Bags of donated blood, labelled and ready for hospitals.'
     },
@@ -3470,9 +3470,9 @@
     title: 'Route 12',
     deck: 'When the city plans to cut her grandmother’s bus route, Leila learns how local government works',
     hero: {
-      photo: 'g5-city-bus.jpg', credit: 'CREDIT', focus: '50% 55%',
+      photo: 'g5-city-bus.jpg', credit: 'Photo: Transportfan70, CC0, Wikimedia Commons', focus: '50% 55%',
       tall: 220,
-      cap: 'A city bus at a stop. Local governments plan and pay for most public transit.'
+      cap: 'A city bus in Toronto. Local governments plan and pay for most public transit.'
     },
     body: [
       'Every Saturday, Leila and her grandmother, Teta, took the Route 12 bus to the market. Teta did not drive. The bus stopped right outside her apartment, and the driver always waited while she climbed the steps with her cane.',
@@ -3519,7 +3519,7 @@
     title: 'The Empty Seat',
     deck: 'Ethan and Mateo have been best friends forever. Then a new kid joins the lunch table',
     hero: {
-      photo: 'g5-cafeteria.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-cafeteria.jpg', credit: 'Photo: Nadia Eimandoust, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A school lunch room. Where you sit can feel like a big deal.'
     },
@@ -3571,7 +3571,7 @@
     title: 'Faster Than Yesterday',
     deck: 'Amira trains all spring for her first wheelchair race. Winning is not her only goal',
     hero: {
-      photo: 'g5-wheelchair-racer.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-wheelchair-racer.jpg', credit: 'Photo: Pierre-Yves Beaudouin, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'A racing wheelchair has three wheels and is built for speed.'
     },
@@ -3622,7 +3622,7 @@
     title: 'The Heron and the Muskrat',
     deck: 'A proud heron and a patient muskrat learn who is really wise in this original fable',
     hero: {
-      photo: 'g5-heron.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-heron.jpg', credit: 'Photo: sherseydc, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 40%',
       tall: 220,
       cap: 'A great blue heron stands still in a marsh, waiting for a fish.'
     },
@@ -3676,9 +3676,9 @@
     deck: 'A Grade 5 student writes to the local newspaper about a plan to cut library hours',
     plain: true,
     hero: {
-      photo: 'g5-library.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-library.jpg', credit: 'Photo: Gogerr, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A public library reading room. Libraries are run by local governments.'
+      cap: 'Inside a public library in Welland, Ontario. Libraries are run by local governments.'
     },
     body: [
       'To the <b>Editor</b>,',
@@ -3723,7 +3723,7 @@
     title: 'Sweet Science in the Sugar Bush',
     deck: 'A maple syrup maker explains how sap becomes syrup, and why spring weather matters',
     hero: {
-      photo: 'g5-maple-taps.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-maple-taps.jpg', credit: 'Photo: Oven Fresh, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'Sap drips from a tap into a bucket on a maple tree in early spring.'
     },
@@ -3774,7 +3774,7 @@
     title: 'Your Body Runs on Water',
     deck: 'Why water matters to every part of you, and how to tell when you need more',
     hero: {
-      photo: 'g5-water-bottle.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-water-bottle.jpg', credit: 'Photo: Zohasheikh, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'A refillable water bottle. Water is the best drink when you are thirsty.'
     },
@@ -3823,7 +3823,7 @@
     title: 'Hanging by a Thread',
     deck: 'How a suspension bridge holds up a road with cables, towers and a balance of forces',
     hero: {
-      photo: 'g5-lions-gate.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-lions-gate.jpg', credit: 'Photo: ThomasLendt, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'The Lions Gate Bridge in Vancouver, opened in 1938, crosses the entrance to the harbour.'
     },
@@ -3873,9 +3873,9 @@
     title: 'The Fish That Built a Nation',
     deck: 'Cod drew Europeans across the Atlantic for 500 years, until the fish almost disappeared',
     hero: {
-      photo: 'g5-cod-drying.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-cod-drying.jpg', credit: 'Photo: Charles Hugh Stevenson, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 200,
-      cap: 'Salted cod drying on wooden racks called flakes, in Newfoundland.'
+      cap: 'Salted cod drying on wooden racks called flakes, about 1900.'
     },
     body: [
       'In 1497, an Italian sailor working for England, Giovanni Caboto, known in English as John Cabot, sailed west across the Atlantic. He landed somewhere on the coast of what is now Newfoundland or Cape Breton. When his crew returned to England, they told an amazing story. The sea was so full of fish that they could catch them by lowering baskets over the side of the ship.',
@@ -3922,7 +3922,7 @@
     title: 'The Chemistry of Fireworks',
     deck: 'Every burst of colour in the sky is a chemical change you can see and hear',
     hero: {
-      photo: 'g5-fireworks.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-fireworks.jpg', credit: 'Photo: Bruce Guenter, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
       cap: 'Fireworks light up the sky on Canada Day.'
     },
@@ -3974,9 +3974,9 @@
     title: 'The Energy Vampires',
     deck: 'Your home may be using electricity even when everything is turned off',
     hero: {
-      photo: 'g5-power-bar.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-power-bar.jpg', credit: 'Photo: Yapparina, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A power bar with many plugs. Some devices draw power even when they are off.'
+      cap: 'A power bar. Some devices draw power even when they are off.'
     },
     body: [
       'It is late at night. Everyone is asleep, and the lights are off. But look around: a tiny red light glows on the TV, a clock shines on the microwave, and a phone charger is warm in the wall. Your home is still using <b>electricity</b>. Some people call these devices energy vampires, because they quietly drain power while no one is looking.',
@@ -4023,9 +4023,9 @@
     title: 'Talking to a Computer',
     deck: 'Computers only do exactly what you tell them. Coding is the art of telling them clearly',
     hero: {
-      photo: 'g5-coding.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-coding.jpg', credit: 'Photo: Mary Davis, U.S. Army, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Students building a program with blocks of code.'
+      cap: 'A Grade 5 student at a robotics competition, where teams code robots to complete tasks.'
     },
     body: [
       'Imagine you ask a friend to make you a peanut-free sandwich. You say, “Put the jam on the bread.” Your friend knows what you mean. A computer would not. It might put the whole jar on top of the loaf. Computers are fast, but they only follow instructions exactly. Writing those instructions is called <b>coding</b>.',
@@ -4072,9 +4072,9 @@
     title: 'Fractions You Can Hear',
     deck: 'Musicians use fractions every time they read a beat. Here is how notes divide time',
     hero: {
-      photo: 'g5-sheet-music.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-sheet-music.jpg', credit: 'Photo: Frédéric Chopin, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Sheet music. Each note shows a pitch and how long to hold it.'
+      cap: 'Sheet music written by hand by the composer Frédéric Chopin. Each note shows a pitch and how long to hold it.'
     },
     body: [
       'Clap a steady beat: one, two, three, four. Now clap twice as fast. You just split each beat into halves. Music is full of fractions. Every note tells a musician not only which sound to play, but how long to hold it compared with the others.',
@@ -4124,7 +4124,7 @@
     title: 'Patterns in a Quilt',
     deck: 'Quilters slide, flip and turn shapes to make beautiful designs, using the same moves as mathematicians',
     hero: {
-      photo: 'g5-quilt.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-quilt.jpg', credit: 'Photo: Auckland Museum, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A patchwork quilt made of triangles and squares.'
     },
@@ -4174,7 +4174,7 @@
     title: 'From the Street to the Olympics',
     deck: 'Breaking began at block parties in New York. In 2024, a Canadian won the first Olympic gold',
     hero: {
-      photo: 'g5-breakdancer.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-breakdancer.jpg', credit: 'Photo: Sandro Schachner, CC BY-SA 2.5, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
       cap: 'A breaker balances on one hand in a freeze.'
     },
@@ -4222,7 +4222,7 @@
     title: 'Faces That Tell Stories',
     deck: 'Around the world, performers have used masks to become someone, or something, else',
     hero: {
-      photo: 'g5-theatre-masks.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-theatre-masks.jpg', credit: 'Photo: Marjorie Kaufman, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'Masks of comedy and tragedy, symbols of theatre since ancient Greece.'
     },
@@ -4270,7 +4270,7 @@
     title: 'Is It True?',
     deck: 'Not everything online is real. Four quick checks can help you spot false information',
     hero: {
-      photo: 'g5-phone-news.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-phone-news.jpg', credit: 'Photo: bohed (Pixabay), uploaded by Océanos y dados, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'Many people now get news on their phones, from friends, apps and videos.'
     },
@@ -4317,9 +4317,9 @@
     title: 'Copper Thunderbird',
     deck: 'Norval Morrisseau painted Anishinaabe stories in bold lines and bright colours and changed Canadian art',
     hero: {
-      photo: 'g5-morrisseau.jpg', credit: 'CREDIT', focus: '50% 40%',
+      photo: 'g5-morrisseau.jpg', credit: 'Photo: Mhsheikholeslami, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
       tall: 220,
-      cap: 'Norval Morrisseau’s paintings use thick black outlines and bright, flat colours.'
+      cap: 'Ancient Anishinaabe paintings on Agawa Rock, Lake Superior. Morrisseau drew on images and stories like these.'
     },
     body: [
       'Norval Morrisseau was born in 1932 in northwestern Ontario and grew up near Beardmore, north of Lake Superior. He was raised mostly by his grandparents. His grandfather, a medicine man, taught him the stories, legends and teachings of the Anishinaabe. His grandmother, a Catholic, taught him about her beliefs too. Both shaped the art he would make.',
@@ -4364,7 +4364,7 @@
     title: 'The Falls Are Moving',
     deck: 'Niagara Falls has crept backward about 11 kilometres since the last ice age. Here is how water carves rock',
     hero: {
-      photo: 'g5-horseshoe-falls.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-horseshoe-falls.jpg', credit: 'Photo: Maksim Sokolov, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
       cap: 'The Horseshoe Falls, the Canadian side of Niagara Falls.'
     },
@@ -4411,7 +4411,7 @@
     title: 'Rights Come With Responsibilities',
     deck: 'The Canadian Charter of Rights and Freedoms protects everyone in Canada. Here is what it says, and what it asks of us',
     hero: {
-      photo: 'g5-parliament.jpg', credit: 'CREDIT', focus: '50% 45%',
+      photo: 'g5-parliament.jpg', credit: 'Photo: DXR, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 45%',
       tall: 220,
       cap: 'The Parliament buildings in Ottawa, where Canada’s federal laws are made.'
     },
@@ -4459,9 +4459,9 @@
     title: 'Paddling for Furs',
     deck: 'Coureurs des bois and voyageurs travelled thousands of kilometres by canoe, relying on Indigenous knowledge',
     hero: {
-      photo: 'g5-voyageurs.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-voyageurs.jpg', credit: 'Photo: Frances Anne Hopkins, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'A painting of voyageurs paddling a large canoe through a misty lake.'
+      cap: 'Canoes in a Fog, Lake Superior, painted by Frances Anne Hopkins in 1869. She travelled with voyageurs.'
     },
     body: [
       'In the 1600s, Europeans wanted beaver fur to make fashionable felt hats. The best furs came from the North, where First Nations trapped beavers and prepared the pelts. To trade for those furs, young Frenchmen began to leave the towns of New France and paddle into the interior. They were called <b>coureurs des bois</b>, runners of the woods.',
@@ -4472,7 +4472,7 @@
         tall: 138, cap: 'A large voyageur canoe.' },
       { h: 'The voyageurs' },
       'Later, the fur trade became a big business. Companies hired paddlers called voyageurs to carry trade goods west and furs east. Their giant canoes, called canots du maître, were up to 11 metres long and could carry eight to twelve paddlers and two tonnes of cargo.',
-      'A voyageur’s day began before dawn and ended after dark. Crews paddled about 50 strokes a minute for up to 14 hours, singing French songs to keep the rhythm. At waterfalls and rapids, they had to portage, carrying the canoe and cargo over land. Each man carried two packs of about 40 kilograms each, often at a trot.',
+      'A voyageur’s day began before dawn and ended after dark. Crews paddled about 50 strokes a minute for up to 14 hours, singing French songs to keep the rhythm. At waterfalls and rapids, they had to <b>portage</b>, carrying the canoe and cargo over land. Each man carried two packs of about 40 kilograms each, often at a trot.',
       { box: 'Did you know?', text: 'Voyageurs ate pemmican, a food made by First Nations and Métis from dried meat, fat and berries. It was light to carry and did not spoil.' },
       { h: 'A lasting mark' },
       'The fur trade routes followed rivers and lakes that Indigenous peoples had travelled for thousands of years. Many of Canada’s cities, such as Winnipeg, Thunder Bay and Edmonton, began as trading posts on those routes. The trade brought new goods and new families, but it also brought disease and conflict, and changed Indigenous ways of life forever.'
@@ -4506,9 +4506,9 @@
     title: 'An Invisible Enemy',
     deck: 'In the 1600s, new diseases from Europe devastated First Nations communities. The Wendat were among those hit hardest',
     hero: {
-      photo: 'g5-wendat-village.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-wendat-village.jpg', credit: 'Photo: Laslovarga, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
       tall: 196,
-      cap: 'A reconstructed longhouse village. In the 1630s, many Wendat villages were struck by disease.'
+      cap: 'Inside a reconstructed longhouse. In the 1630s, many Wendat villages were struck by disease.'
     },
     body: [
       'In the early 1600s, Wendake, the homeland of the Wendat, was a busy, well-fed land between Georgian Bay and Lake Simcoe. About 20 000 to 30 000 people lived in more than a dozen villages. They grew large fields of corn, beans and squash and were at the centre of a trade network that stretched across the Great Lakes.',
@@ -4553,9 +4553,9 @@
     title: 'What Happens While You Sleep',
     deck: 'Sleep is not wasted time. While you rest, your brain and body are hard at work',
     hero: {
-      photo: 'g5-sleeping.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-sleeping.jpg', credit: 'Photo: Brad Coy, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A dark, quiet, cool room helps the body fall asleep.'
+      cap: 'A bedside table in a dim room. A dark, quiet, cool room helps the body fall asleep.'
     },
     body: [
       'You will spend about one third of your life asleep. It might seem like nothing is happening while your eyes are closed, but your body is busier than you think. Sleep is when you grow, heal and sort out everything you learned during the day.',
@@ -4603,7 +4603,7 @@
     title: 'My Allergy, My Plan',
     deck: 'A Grade 5 student explains life with a severe peanut allergy, and how classmates can help',
     hero: {
-      photo: 'g5-auto-injector.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-auto-injector.jpg', credit: 'Photo: AngelHM, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'An epinephrine auto-injector. It can stop a severe allergic reaction long enough to get to a hospital.'
     },
@@ -4651,7 +4651,7 @@
     title: 'The Case of the Vanishing Cookies',
     deck: 'Someone is stealing cookies from the Lam family kitchen. Detective Vivian follows the clues',
     hero: {
-      photo: 'g5-cookies.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-cookies.jpg', credit: 'Photo: Evan Prodromou, CC0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
       cap: 'A plate of fresh cookies: the scene of the crime.'
     },
@@ -4703,9 +4703,9 @@
     title: 'Five Days of Ice',
     deck: 'In January 1998, an ice storm left millions of people without power. Here is one family’s week',
     hero: {
-      photo: 'g5-ice-storm.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-ice-storm.jpg', credit: 'Photo: J. Jensenius, NOAA, Public domain, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'Trees and power lines coated in thick ice after a freezing rain storm.'
+      cap: 'Trees and power lines coated in thick ice after the freezing rain of January 1998.'
     },
     body: [
       '<b>Tuesday, January 6, 1998.</b> It is raining, but the rain freezes the moment it touches anything. Every branch, car and fence is covered in a shiny glass coat. Dad says this is called <b>freezing rain</b>. It is beautiful. School is cancelled!',
@@ -4716,7 +4716,7 @@
           D.label(16, 20, 'snow falls from high clouds') + D.label(16, 54, 'warm layer: snow melts into rain') + D.label(16, 96, 'cold layer near the ground') + D.label(16, 138, 'rain freezes on contact'),
         tall: 144, cap: 'How freezing rain forms: snow melts in a warm layer, then the rain freezes when it lands on cold surfaces.' },
       '<b>Thursday, January 8.</b> Still no power. Mom heated soup on the camp stove in the garage. The radio says more than a million homes in Ontario and Quebec are dark. Hydro poles have fallen over like dominoes. Huge steel towers that carry power lines have crumpled. Our neighbour, Mrs. Diallo, lives alone, so we brought her over. We all sleep in the living room by the fireplace.',
-      '<b>Friday, January 9.</b> The army has come to help! Soldiers are clearing trees and checking on older people. Our town opened the high school as a warming centre with cots, food and showers. Mrs. Diallo says she has not seen people help each other like this in years. Some farmers have no power to milk their cows, so neighbours with <b>generators</b> are sharing.',
+      '<b>Friday, January 9.</b> The army has come to help! Soldiers are clearing trees and checking on older people. Our town opened the high school as a warming centre with cots, food and showers. Mrs. Diallo says she has not seen people help each other like this in years. Some farmers have no power to milk their cows, so a neighbour with a <b>generator</b> is sharing it.',
       '<b>Friday night.</b> We played cards by candlelight, and Mrs. Diallo taught us a game from Senegal, where she grew up. Dad told stories about winters when he was a kid. My little brother, Noah, fell asleep on the couch under three blankets and the dog. It was the coldest night so far, but it was also one of the nicest. Without the TV or computer, we actually talked to each other all evening.',
       '<b>Saturday, January 10.</b> The rain has finally stopped. The ice is still everywhere, sparkling in the sun. Our street sounds like a chainsaw factory. Dad says some places will not have power for weeks.',
       '<b>Sunday, January 11.</b> The lights came on at 4:15 this afternoon! Everyone cheered. I never knew how much we depend on electricity. I also learned that when something goes wrong, people show their best side. I am keeping this diary so I never forget. Tomorrow, we are going to help Mrs. Diallo clear the broken branches from her yard.'
@@ -4749,9 +4749,9 @@
     title: 'A Hand From a Printer',
     deck: 'Volunteers with 3D printers make helper hands for children, using strings that work like tendons',
     hero: {
-      photo: 'g5-3d-hand.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-3d-hand.jpg', credit: 'Photo: Intel Free Press, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'A 3D-printed hand. Its fingers close when the wearer bends their wrist.'
+      cap: 'A 3D-printed hand. Its fingers are pulled closed by strings, like tendons.'
     },
     body: [
       'Some children are born without fingers on one hand, or lose them in an accident. A <b>prosthetic</b> hand can help them hold a ball, ride a bike or carry a lunch tray. But many prosthetic hands cost thousands of dollars, and children outgrow them quickly. A group of inventors found a creative solution: print the hands.',
@@ -4798,9 +4798,9 @@
     title: 'Nature’s Sponges',
     deck: 'Marshes, swamps and bogs soak up floods, clean water and shelter wildlife. Why are they disappearing?',
     hero: {
-      photo: 'g5-marsh.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-marsh.jpg', credit: 'Photo: Matt MacGillivray, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 220,
-      cap: 'A marsh in Ontario, with cattails and open water.'
+      cap: 'Cattails in a marsh in Oshawa, Ontario.'
     },
     body: [
       'Squish. If you have ever walked through a soggy marsh, you know how wet the ground can be. Land that is covered by shallow water for at least part of the year is called a <b>wetland</b>. To some people, wetlands look like wasted land. In fact, they are among the most useful places in nature.',
@@ -4847,9 +4847,9 @@
     title: 'The Day We Became Canadian',
     deck: 'After five years in Canada, Hamza’s family takes the oath of citizenship',
     hero: {
-      photo: 'g5-citizenship.jpg', credit: 'CREDIT', focus: '50% 50%',
+      photo: 'g5-citizenship.jpg', credit: 'Photo: Joey Coleman, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
       tall: 210,
-      cap: 'New citizens hold small flags at a citizenship ceremony.'
+      cap: 'New citizens are welcomed at a citizenship ceremony in Hamilton, Ontario.'
     },
     body: [
       'Hamza had never seen his father wear a tie on a Tuesday. But this was no ordinary Tuesday. Today, Hamza, his parents and his little sister, Noor, were going to become Canadian <b>citizens</b>.',
