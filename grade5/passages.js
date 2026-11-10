@@ -480,7 +480,7 @@
     title: 'Power from the Sun',
     deck: 'How solar panels change sunlight into electricity, and what they can and cannot do',
     hero: {
-      photo: 'g5-solar-roof.jpg', credit: 'Photo: Gray Watson, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      photo: 'g5-solar-roof.jpg', credit: 'CREDIT', focus: '50% 50%',
       tall: 220,
       cap: 'Solar panels on the roof of a house. They face the sun for as many hours of the day as possible.'
     },
@@ -1230,7 +1230,7 @@
       { h: 'Bracing for it' },
       'One solution is cross-bracing. Steel beams are placed in an X shape inside the walls. When the building is pushed sideways, one beam of the X is stretched and the other is squeezed, and together they hold the frame square. Triangles are strong shapes, and an X makes four of them.',
       { h: 'Floating on pads' },
-      'Another solution is to let the building ride the shaking. Some buildings sit on base isolators, thick pads made of layers of rubber and steel. When the ground moves, the pads bend, and the building above moves much less, like a person standing on a bouncy bridge.',
+      'Another solution is to let the building ride the shaking. Some buildings sit on base <b>isolators</b>, thick pads made of layers of rubber and steel. When the ground moves, the pads bend, and the building above moves much less, like a person standing on a bouncy bridge.',
       { box: 'Did you know?', text: 'British Columbia has spent many years making its schools safer. Hundreds of older schools have been strengthened or rebuilt so they can stay standing in a strong earthquake.' },
       'Engineers test their designs on shake tables, platforms that copy the motion of real earthquakes. They also study buildings that were damaged, so the next ones can be stronger. A building does not have to stay perfectly still to be safe. It just has to bend without breaking.'
     ],
@@ -1267,7 +1267,7 @@
       cap: 'A weather radar. It sends out radio waves that bounce off raindrops and snowflakes, showing where they are falling.'
     },
     body: [
-      '“Tomorrow: cloudy, with a 40% chance of rain.” Malik heard the forecast and groaned. The class trip to the conservation area was tomorrow. Would it rain or not? His sister, Hana, shrugged. “The forecast can’t tell you that,” she said. “It tells you how likely it is.”',
+      '“Tomorrow: cloudy, with a 40% chance of rain.” Malik heard the <b>forecast</b> and groaned. The class trip to the conservation area was tomorrow. Would it rain or not? His sister, Hana, shrugged. “The forecast can’t tell you that,” she said. “It tells you how likely it is.”',
       { h: 'The language of chance' },
       '<b>Probability</b> is a way of describing how likely something is to happen. We can use words: impossible, unlikely, equally likely, likely and certain. We can also use numbers. An event that is impossible has a probability of 0%. An event that is certain has a probability of 100%. A coin landing heads is equally likely as tails, so each has a probability of 50%.',
       { fig: '<path class="k" d="M10 60 H290"/>' + [[10, '0%', 'impossible'], [80, '25%', 'unlikely'], [150, '50%', 'equally likely'], [220, '75%', 'likely'], [290, '100%', 'certain']].map(function (t) {
@@ -1557,7 +1557,7 @@
     body: [
       'Priya has the puck near the boards. Her teammate, Lucas, is open up the ice, but a defender stands right between them. A straight pass will be stopped. So Priya does something clever. She shoots the puck at the boards, and it bounces off and slides right onto Lucas’s stick. How did she know where to aim?',
       { h: 'Angles in, angles out' },
-      'An <b>angle</b> is the amount of turn between two lines that meet at a point. Angles are measured in degrees with a tool called a protractor. When a puck hits the boards, it bounces off at the same angle as it came in. This is true for a ball bouncing off a wall and for light bouncing off a mirror, too.',
+      'An <b>angle</b> is the amount of turn between two lines that meet at a point. Angles are measured in <b>degrees</b> with a tool called a protractor. When a puck hits the boards, it bounces off at the same angle as it came in. This is true for a ball bouncing off a wall and for light bouncing off a mirror, too.',
       { fig: '<path class="k" d="M6 20 H294"/><path class="t" d="M150 20 V100"/>' +
           '<circle class="k" cx="40" cy="130" r="8"/><circle class="k" cx="260" cy="130" r="8"/><rect class="h" x="140" y="100" width="20" height="40"/>' +
           '<path class="a" d="M46 124 L150 22 L254 124"/>' + D.arrow(100, 72, 120, 52, 'a') + D.arrow(180, 52, 200, 72, 'a') +
@@ -1615,7 +1615,7 @@
           '<text class="lb" x="212" y="60">rectangle: 4 × 3 = 12 m²</text><text class="lb" x="212" y="84">sail: 12 ÷ 2 = 6 m²</text>',
         tall: 164, cap: 'A right-angled triangle is exactly half of a rectangle.' },
       { h: 'Half a rectangle' },
-      'Many sails are triangles. Here is the trick: draw a rectangle around a triangle with the same base and height, and the triangle covers exactly half of it. So the area of a triangle is the base times the height, divided by 2. Grace’s sail has a base of 4 m and a height of 3 m. Its area is 4 × 3 ÷ 2 = 6 m².',
+      'Many sails are triangles. Here is the trick: draw a rectangle around a triangle with the same <b>base</b> and height, and the triangle covers exactly half of it. So the area of a triangle is the base times the height, divided by 2. Grace’s sail has a base of 4 m and a height of 3 m. Its area is 4 × 3 ÷ 2 = 6 m².',
       'The height must be measured straight up from the base, at a right angle. It is not the length of the slanted edge. Measuring the slanted edge by mistake would give Grace too much cloth.',
       { box: 'Check it', text: 'Cut a paper rectangle in half along its diagonal. Place the two triangles on top of each other. They match, so each one is half the rectangle.' },
       { h: 'More than cloth' },
@@ -1976,4 +1976,962 @@
         a: 'I knew that food goes to the stomach and that we need nutrients to grow. That helped me follow what happens next in the intestines.', look: 'names prior knowledge and how it helped' }
     ]
   });
+  P.add({
+    id: 'g5-reflexes', subject: 'science', form: 'Explanation',
+    title: 'Faster Than Thinking',
+    deck: 'How your nervous system sends messages, and why some actions happen before you decide',
+    hero: {
+      photo: 'g5-reflex.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A doctor tests a reflex by tapping just below the knee. The leg kicks before the person decides to move it.'
+    },
+    body: [
+      'You touch a hot pan and your hand jerks away before you even feel the pain. A ball flies at your face and you blink. How can your body act so fast? The answer is a team of messengers called the <b>nervous system</b>.',
+      { h: 'The body’s messengers' },
+      'Your nervous system is made of your brain, your spinal cord and billions of nerve cells that reach into every part of your body. Nerve cells carry messages as tiny electrical signals. Some messages travel from your senses to your brain: this is hot, this is loud, this is soft. Other messages travel from your brain to your muscles: lift your arm, kick the ball, smile.',
+      { fig: '<circle class="k" cx="60" cy="30" r="22"/><path class="k" d="M60 52 V150"/><path class="t" d="M60 120 H200 V150 M60 100 H230"/>' +
+          '<rect class="k" x="196" y="150" width="60" height="20" rx="4"/>' + D.arrow(230, 100, 150, 100, 'a') + D.arrow(70, 120, 180, 120, 'a') +
+          D.label(90, 24, 'brain') + D.label(4, 180, 'spinal cord', 60, 150) + D.label(214, 92, '1 “hot!”') + D.label(100, 140, '2 “pull away!”') + D.label(200, 186, 'hand on hot pan', 226, 170),
+        tall: 190, cap: 'In a reflex, the message goes to the spinal cord and straight back to the muscle.' },
+      { h: 'The shortcut' },
+      'Most of the time, messages go all the way to the brain, where you decide what to do. But when there is danger, waiting could hurt you. So your body uses a shortcut called a <b>reflex</b>. The message from your hand travels only as far as your spinal cord, which sends a message straight back to your arm muscles: pull away! Only afterward does a message reach your brain, and then you feel the pain and say, “Ouch!”',
+      { box: 'Try it', text: 'Ask a partner to hold a ruler just above your open fingers and drop it without warning. Catch it as fast as you can. The number where you catch it shows your reaction time. Catching is not a reflex: your brain has to decide.' },
+      { h: 'Speed and protection' },
+      'Some nerve signals travel faster than 100 metres per second, faster than a race car. Reflexes protect you many times a day. You blink when dust flies toward your eye, you sneeze when something tickles your nose, and you catch your balance when you trip.',
+      'Because the brain and spinal cord are so important, they are well protected. Your skull covers your brain, and the bones of your spine surround your spinal cord. A helmet adds even more protection when you ride, skate or ski. Look after your nervous system, and it will keep looking after you.'
+    ],
+    guide: { before: 'Try the ruler-drop test together. Teach <b>nervous system</b>, <b>nerve</b> and <b>reflex</b>. Trace the arrows in the diagram, saying “message in, message out.”',
+      after: 'Why is it helpful that some actions skip the brain? How does the nervous system work with the muscles and the skeleton?' },
+    words: [['nervous system', 'the brain, spinal cord and nerves, which carry messages'], ['reflex', 'an action the body does automatically, without deciding']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Pans can be hot.', 'The nervous system carries messages, and reflexes use a shortcut to protect us quickly.', 'Helmets protect the brain.', 'Rulers measure reaction time.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps of a reflex.',
+        items: ['The hand touches the hot pan.', 'A message goes to the spinal cord.', 'A message goes back to the arm.', 'The brain feels the pain.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do you feel the pain after you pull away?',
+        opts: ['The message reaches the brain after the reflex.', 'The pan cools down.', 'Your hand is numb.', 'Pain is slow to start.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Reflex or decision? Fill in the chart.', cols: ['Action', 'Reflex or decision?'],
+        rows: [['blinking when dust flies at you', null], ['catching a dropped ruler', null], ['sneezing', null]], a: [[null, 'reflex'], [null, 'decision'], [null, 'reflex']] },
+      { k: 'choice', code: 'C1.5', half: true, q: '“Faster than a race car.” Why does the author use this comparison?',
+        opts: ['to help you imagine the speed', 'to talk about cars', 'to give a rule', 'to describe pain'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Your <b>reaction</b> time is how fast you …',
+        opts: ['respond to something', 'grow', 'think about a story', 'run a race'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the difference between a reflex and a decision. Use an example of each.',
+        a: 'A reflex happens without thinking, like pulling away from a hot pan. A decision goes through the brain first, like catching a ruler.', look: 'a clear difference with one example of each' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Did the “Try it” box help you understand the text? How?',
+        a: 'Yes. Doing the ruler test showed me that catching takes time because my brain has to decide, which helped me understand why reflexes are faster.', look: 'explains how an activity or strategy confirmed their understanding' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-microplastics', subject: 'geography', form: 'Report',
+    title: 'Tiny Plastic, Big Lakes',
+    deck: 'How small pieces of plastic end up in the Great Lakes, and what people are doing about it',
+    hero: {
+      photo: 'g5-plastic-beach.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 210,
+      cap: 'Plastic litter on a shoreline. Over time, sun and waves break plastic into smaller and smaller pieces.'
+    },
+    body: [
+      'The Great Lakes hold about one fifth of all the fresh surface water on Earth. More than 30 million people in Canada and the United States get their drinking water from them. But scientists who skim the lakes with fine nets have found something worrying: billions of tiny bits of plastic.',
+      { h: 'What are microplastics?' },
+      '<b>Microplastics</b> are pieces of plastic smaller than five millimetres, about the size of a grain of rice or smaller. Some are made small on purpose, such as the tiny beads once used in face washes. Most come from bigger plastic objects, such as bottles, bags and food wrappers, that break into pieces in the sun and waves. Plastic does not rot away like a leaf. It just breaks into smaller and smaller bits.',
+      { fig: steps(10, [['litter', 'bags, bottles'], ['wash', 'rain, storm drains'], ['break', 'sun and waves']], 86) +
+          steps(86, [['float', 'tiny pieces'], ['eaten', 'by fish, birds'], ['spread', 'through the lake']], 86) +
+          '<path class="a" d="M257 54 V66 Q257 70 150 70 Q43 70 43 82"/>',
+        tall: 136, cap: 'How plastic litter becomes microplastics in a lake.' },
+      { h: 'Hidden sources' },
+      'Some microplastics come from places you might not expect. Clothes made of fleece and polyester shed tiny threads, called microfibres, every time they are washed. The threads flow down the drain, and many are too small for treatment plants to catch. Car tires wear down on roads and leave rubbery dust that rain washes into storm drains, then into rivers and lakes.',
+      { box: 'Did you know?', text: 'Canada banned microbeads in toiletries such as face scrubs and toothpaste in 2018, and it has banned some single-use plastics, such as checkout bags and straws.' },
+      { h: 'Why it matters' },
+      'Fish, birds and other animals can mistake microplastics for food. The plastic can fill their stomachs without giving them any <b>nutrition</b>. Scientists are still studying how microplastics affect people and wildlife over many years.',
+      { h: 'What can be done' },
+      'People are trying many solutions. Some communities hold shoreline cleanups to pick up litter before it breaks down. Inventors have designed filters that catch microfibres in washing machines, and small floating bins that skim plastic from marinas. You can help, too, by carrying a reusable bottle, choosing fewer plastic packages and putting litter in the right bin. Every piece of plastic that stays out of the lake is one that will never become a thousand tiny ones.'
+    ],
+    guide: { before: 'Find the five Great Lakes on a map. Teach <b>microplastic</b> (micro = very small). Look at the label on a fleece jacket to see what it is made of.',
+      after: 'Which source of microplastics surprised you most? Make a plan for one change your family could make this month.' },
+    words: [['microplastics', 'pieces of plastic smaller than five millimetres'], ['nutrition', 'the good things in food that the body needs']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Great Lakes are big.', 'Microplastics from many sources are polluting the Great Lakes, and people are working on solutions.', 'Fleece is warm.', 'Canada banned straws.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps.',
+        items: ['Litter is dropped.', 'Rain washes it into drains.', 'Sun and waves break it.', 'Fish and birds eat it.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.1', half: true, q: 'The prefix <b>micro-</b> in microplastic means …',
+        opts: ['very small', 'very large', 'many', 'under water'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Match each source with a solution from the text.', cols: ['Source', 'Solution'],
+        rows: [['fleece clothes in the wash', null], ['litter on the shore', null], ['plastic bottles', null]],
+        a: [[null, 'washing machine filters'], [null, 'shoreline cleanups'], [null, 'reusable bottles']] },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>It</b> just breaks into smaller and smaller bits.” What does <b>it</b> mean?',
+        opts: ['plastic', 'a leaf', 'the lake', 'a net'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are microfibres hard to stop?',
+        opts: ['They are too small for treatment plants to catch.', 'They float in the air.', 'They are made of leaves.', 'They are banned.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The last sentence says one piece kept out of the lake “will never become a thousand tiny ones.” What conclusion does this support?',
+        a: 'It is best to stop plastic before it reaches the lake, because each piece breaks into many tiny pieces that are much harder to clean up.', look: 'a conclusion about prevention supported by the idea of breaking down' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Name one thing in your home that could add microplastics to the water. What could you do about it?',
+        a: 'My fleece sweater sheds fibres in the wash. I could wash it less often or ask my family about a filter for the washing machine.', look: 'a real item from their life and a sensible action' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-green-bin', subject: 'science', form: 'Explanation',
+    title: 'From Scraps to Soil',
+    deck: 'What happens to the food scraps in a green bin, and why it matters',
+    hero: {
+      photo: 'g5-compost.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Compost: food scraps and leaves breaking down into dark, crumbly soil.'
+    },
+    body: [
+      'Banana peels, apple cores, coffee grounds and eggshells: in many Ontario towns, these go into a green bin instead of the garbage. Once a week, a truck takes them away. But where do they go, and why does it matter?',
+      { h: 'A problem in the landfill' },
+      'When food is buried in a <b>landfill</b>, it is packed so tightly that there is almost no air. Without air, it rots slowly and gives off methane, a gas that traps heat in the atmosphere and adds to climate change. Food also takes up space. In many Canadian homes, food scraps make up a large part of what is thrown away.',
+      { fig: '<path class="k" d="M150 20 A60 60 0 1 1 149 20"/>' + D.arrow(204, 52, 210, 66, 'a') + D.arrow(206, 128, 194, 140, 'a') + D.arrow(96, 140, 90, 126, 'a') + D.arrow(94, 54, 106, 42, 'a') +
+          '<text class="lb" x="150" y="12" text-anchor="middle">food scraps</text><text class="lb" x="222" y="100">tiny living things</text><text class="n" x="222" y="114">break them down</text>' +
+          '<text class="lb" x="150" y="196" text-anchor="middle">compost</text><text class="lb" x="78" y="100" text-anchor="end">plants grow</text><text class="n" x="78" y="114" text-anchor="end">and make food</text>',
+        tall: 200, cap: 'Composting returns nutrients from food to the soil in a cycle.' },
+      { h: 'The work of decomposers' },
+      'At a composting site, the scraps are mixed with leaves and wood chips and turned often to let air in. Billions of tiny living things go to work: bacteria, fungi, worms and insects. These <b>decomposers</b> eat the scraps and break them into simpler materials. As they work, the pile heats up, sometimes to more than 60°C, hot enough to kill weed seeds and germs.',
+      'After a few months, the scraps have become <b>compost</b>, a dark, crumbly material that smells like a forest floor. Farmers and gardeners add it to soil. It returns nutrients that plants need, and it helps soil hold water.',
+      { box: 'Did you know?', text: 'Some cities also capture the gas made by food scraps in sealed tanks and use it to make electricity or fuel for trucks.' },
+      { h: 'Using less, wasting less' },
+      'Composting is better than burying food, but wasting less food is better still. Planning meals, storing food well and eating leftovers all mean fewer scraps in the first place. Then whatever is left can go back to the soil, ready to grow next year’s apples and bananas.',
+      'You can also compost at home. A backyard bin needs a mix of “greens,” such as fruit and vegetable scraps and grass, and “browns,” such as dry leaves and shredded paper. Keep it damp like a wrung-out sponge and turn it every week or two. Meat, dairy and oily foods should stay out of a backyard bin, because they smell and attract animals, but many city green bins can take them.'
+    ],
+    guide: { before: 'Look in your kitchen for food scraps that could be composted. Teach <b>decomposer</b>, <b>compost</b> and <b>landfill</b>. Follow the cycle diagram around with a finger.',
+      after: 'What does your family do with food scraps now? What is one way you could waste less food this week?' },
+    words: [['landfill', 'a place where garbage is buried'], ['decomposers', 'living things that break down dead plants and animals'], ['compost', 'rotted plant and food material used to enrich soil']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Green bins are green.', 'Composting turns food scraps into soil instead of harmful landfill waste, though wasting less food is even better.', 'Worms live in soil.', 'Trucks pick up bins.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Why is the diagram drawn as a circle?',
+        opts: ['It shows a cycle that repeats.', 'Bins are round.', 'It shows the Earth.', 'It is a clock.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a compost pile get hot?',
+        opts: ['The decomposers are working.', 'The sun heats it.', 'Trucks drive over it.', 'It is on fire.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare.', cols: ['', 'In a landfill', 'In compost'],
+        rows: [['Is there air?', null, null], ['What does it make?', null, null]], a: [[null, 'almost none', 'yes, it is turned often'], [null, 'methane gas', 'rich soil (compost)']] },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Banana peels, apple cores, coffee grounds and eggshells: …” What does the colon do here?',
+        opts: ['It comes after a list and leads into the main idea.', 'It ends the sentence.', 'It shows speaking.', 'It joins two names.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Decomposers</b> …',
+        opts: ['break things down', 'build houses', 'grow seeds', 'collect garbage'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why food in a landfill is a problem. Give a cause and an effect.',
+        a: 'Food in a landfill has no air, so it rots slowly and makes methane. Methane traps heat and adds to climate change.', look: 'cause (no air) and effect (methane, climate change)' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The author says wasting less is “better still.” Why? Draw a conclusion.',
+        a: 'If less food is wasted, fewer scraps need to be collected, trucked and composted, and the food we paid for gets eaten.', look: 'a supported conclusion about reducing waste' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sir-adam-beck', subject: 'science', form: 'Explanation',
+    title: 'Falling Water, Glowing Lights',
+    deck: 'How the Niagara River makes electricity for Ontario homes',
+    hero: {
+      photo: 'g5-hydro-station.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A hydroelectric generating station on the Niagara River. Water from above the falls is used to make electricity.'
+    },
+    body: [
+      'Every second, huge amounts of water pour over Niagara Falls. But at night and in the winter, much less water goes over the edge than you might think. Where does the rest go? Some of it travels through enormous tunnels under the city of Niagara Falls to make electricity.',
+      { h: 'Energy in moving water' },
+      'Water high above the falls has stored energy because of its height. As it falls, that stored energy becomes the energy of motion. A hydroelectric station captures some of that motion and turns it into electricity. The word <b>hydroelectric</b> comes from hydro, meaning water, and electric.',
+      { fig: '<path class="k" d="M6 30 H90 L120 150 H294"/><path class="t" d="M90 34 Q100 90 150 120"/>' + D.ripple(10, 80, 26) +
+          '<circle class="a" cx="170" cy="130" r="18"/><path class="a" d="M170 112 V148 M152 130 H188"/><rect class="k" x="196" y="104" width="40" height="30" rx="4"/>' +
+          D.arrow(236, 118, 290, 90, 'a') +
+          D.label(6, 14, 'water stored up high') + D.label(140, 172, 'turbine spins', 170, 148) + D.label(200, 96, 'generator', 216, 104) + D.label(240, 76, 'to homes') + D.label(4, 92, 'tunnel', 100, 80),
+        tall: 176, cap: 'Falling water spins a turbine, which turns a generator.' },
+      { h: 'Inside the station' },
+      'Water from the river flows down through the tunnels to the generating station, which sits much lower, at the bottom of the gorge. The rushing water strikes the blades of a <b>turbine</b>, a giant wheel, and makes it spin. The turbine is joined to a generator. Inside the generator, magnets spin past coils of wire, and this makes electricity. The electricity flows through power lines to cities and towns.',
+      'This is a chain of energy transformations: stored energy in high water becomes motion, motion becomes electrical energy, and in your home, electrical energy becomes light, heat and sound.',
+      { box: 'Did you know?', text: 'Canada and the United States share the Niagara River. A treaty sets how much water must flow over the falls during the day in the tourist season, so visitors can still enjoy the view.' },
+      { h: 'Clean, but not perfect' },
+      'Hydroelectricity is <b>renewable</b>, because rain and snow keep filling the rivers, and it makes almost no air pollution. But dams and reservoirs can flood land, change rivers and affect fish and the people who depend on them. Some large dams in Canada were built on First Nations lands without their agreement. Today, many new projects are planned in partnership with First Nations. Every energy source has costs and benefits, and choosing well means weighing both.'
+    ],
+    guide: { before: 'Pour water from a jug onto a small toy pinwheel or water wheel, if you have one. Teach <b>turbine</b>, <b>generator</b> and <b>hydroelectric</b>. Find Niagara Falls on a map.',
+      after: 'Every energy source has costs and benefits. Make a two-column list for hydroelectricity. What would you want to know before building a new dam?' },
+    words: [['hydroelectric', 'making electricity from moving water'], ['turbine', 'a wheel with blades turned by moving water or air'], ['renewable', 'able to be replaced by nature']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Niagara Falls is beautiful.', 'Hydroelectric stations change the energy of falling water into electricity, which has benefits and costs.', 'Magnets are strong.', 'Tourists visit in summer.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps.',
+        items: ['Water flows down a tunnel.', 'It spins a turbine.', 'The generator makes electricity.', 'Power lines carry it to homes.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Hydro</b>electric: what does <b>hydro</b> mean?',
+        opts: ['water', 'fire', 'light', 'wind'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the energy chain.', cols: ['From', 'To'],
+        rows: [['stored energy in high water', null], ['motion of the turbine', null], ['electricity in your lamp', null]], a: [[null, 'motion'], [null, 'electrical energy'], [null, 'light (and heat)']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is less water going over the falls at night?',
+        opts: ['More is sent through tunnels to make electricity.', 'The river freezes.', 'It rains less at night.', 'The falls close.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“Hydroelectricity is renewable, because rain and snow keep filling the rivers.” This is a …',
+        opts: ['complex sentence', 'fragment', 'question', 'command'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why might a First Nation and a power company see a new dam differently? Use the text.',
+        a: 'The company may see clean, renewable electricity. A First Nation may see flooded land, changed rivers and fewer fish, especially if they were not asked.', look: 'two perspectives, each linked to a detail in the text' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What conclusion does the author reach in the last paragraph? Do you agree?',
+        a: 'Every energy source has costs and benefits, so we must weigh both. I agree, because hydro is clean but can harm rivers and communities.', look: 'restates the conclusion and gives a supported opinion' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-ice-road', subject: 'geography', form: 'Report',
+    title: 'Roads Made of Ice',
+    deck: 'How winter roads connect northern Ontario communities, and why they are in trouble',
+    hero: {
+      photo: 'g5-ice-road.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 210,
+      cap: 'A winter road across a frozen lake. For a few weeks each year, trucks can drive where there is no permanent road.'
+    },
+    body: [
+      'Many communities in the far north of Ontario have no road that connects them to the rest of the province all year. In summer, people and supplies arrive by plane, which is expensive. But for a few weeks each winter, something remarkable happens. Lakes, rivers and swamps freeze hard enough to drive on, and a network of <b>winter roads</b> opens.',
+      { h: 'Building a road of ice' },
+      'Crews begin when the cold is steady. They clear snow from the ice so the cold air can reach it and make it thicker. Snow acts like a blanket, so cleared ice freezes faster. Some crews pump water onto the ice to build it up layer by layer. They drill holes to check the thickness again and again. A loaded fuel truck needs ice about a metre thick to cross safely.',
+      { fig: '<text class="lb" x="6" y="16">How thick must the ice be? (about)</text>' + [['person walking', 15], ['snowmobile', 25], ['car', 40], ['heavy truck', 100]].map(function (r, i) {
+            var y = 30 + i * 30; return '<text class="n" x="6" y="' + (y + 14) + '">' + r[0] + '</text><rect class="a" x="110" y="' + y + '" width="' + r[1] * 1.6 + '" height="18"/><text class="n" x="' + (116 + r[1] * 1.6) + '" y="' + (y + 14) + '">' + r[1] + ' cm</text>';
+          }).join(''),
+        tall: 152, cap: 'Heavier loads need thicker ice. These are rough guides, not safety rules.' },
+      { h: 'A lifeline' },
+      'When the roads open, trucks carry a whole year of supplies: fuel, building materials, food and heavy machines. Families drive to visit relatives in other communities. Because trucking is much cheaper than flying, the winter road season is busy, day and night. Driving is slow and careful. Trucks keep their speed low, because a fast, heavy vehicle can push a wave under the ice that can crack it.',
+      { box: 'Did you know?', text: 'Ontario has thousands of kilometres of winter roads, many of them built and run by First Nations communities.' },
+      { h: 'Shorter winters' },
+      'As the <b>climate</b> warms, winters in the north are becoming shorter and milder. Some winter roads open late and close early, and some years they are not safe at all. When the road season fails, supplies must be flown in at a much higher cost, or communities go without. Some First Nations and governments are planning permanent all-season roads. Others worry about how those roads would change the land and wildlife. Communities are weighing what is best for their future. Whatever they decide, people who live in the north say the choice should be made by the communities themselves.'
+    ],
+    guide: { before: 'Find northern Ontario and Hudson Bay on a map, and notice how few roads there are. Teach <b>winter road</b> and <b>climate</b>. Remind the child never to go onto ice without an adult who has checked it.',
+      after: 'How would your life be different if your town had a road for only six weeks a year? What should be considered before building a permanent road?' },
+    words: [['winter roads', 'roads built on frozen ground, lakes and rivers that are used only in winter'], ['climate', 'the usual weather of a place over many years']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ice is cold.', 'Winter roads are a lifeline for northern communities, but warmer winters are making them less reliable.', 'Planes are expensive.', 'Trucks drive slowly.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the bar graph. About how thick must ice be for a car?',
+        opts: ['40 cm', '15 cm', '100 cm', '25 cm'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do crews clear snow off the ice?',
+        opts: ['Snow acts like a blanket and slows freezing.', 'Snow is slippery.', 'To see fish.', 'To make it look nice.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Cause', 'Effect'],
+        rows: [['Winters are shorter and milder.', null], ['The road season fails.', null], [null, 'A wave under the ice can crack it.']],
+        a: [[null, 'Winter roads open late and close early.'], [null, 'Supplies must be flown in at a higher cost.'], ['A heavy truck drives too fast.', null]] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'The caption under the graph says “rough guides, not safety rules.” Why include this?',
+        opts: ['to warn readers not to use it to decide if ice is safe', 'to make the graph longer', 'to show the graph is wrong', 'to sell trucks'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>lifeline</b> is something that …',
+        opts: ['people depend on to get what they need', 'is a rope for fishing', 'is a kind of ice', 'is a road sign'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Some want an all-season road, and others worry about it. Explain both perspectives.',
+        a: 'An all-season road would bring cheaper supplies all year. But some worry it would change the land and harm wildlife.', look: 'both perspectives, each with a reason' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about ice or winter that helped you understand this text?',
+        a: 'I knew ice on a pond can crack if it is thin. That helped me understand why crews check the thickness again and again.', look: 'prior knowledge connected to a part of the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sainte-marie', subject: 'history', form: 'Report',
+    title: 'A Mission in Wendake',
+    deck: 'Sainte-Marie among the Hurons, 1639 to 1649, and how the Wendat and the Jesuits saw each other',
+    hero: {
+      photo: 'g5-sainte-marie.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 210,
+      cap: 'The rebuilt mission of Sainte-Marie among the Hurons, near Midland, Ontario.'
+    },
+    body: [
+      'In 1639, a group of French Jesuit priests, workers and soldiers began building a fortified mission beside the Wye River, near Georgian Bay. They called it Sainte-Marie. It was the first European community in what is now Ontario, and it stood in the heart of Wendake, the homeland of the Wendat.',
+      { h: 'Why were they there?' },
+      'The Jesuits were <b>missionaries</b>. They had come to teach the Christian religion and to convince the Wendat to change their beliefs. The French also wanted to keep the Wendat as partners in the fur trade. Sainte-Marie had a chapel, a hospital, workshops, farm fields and a separate area for Wendat visitors. At its busiest, about 60 French people lived there.',
+      { fig: '<path class="k" d="M20 40 H280 V160 H20 Z"/><path class="t" d="M150 40 V160"/>' +
+          '<rect class="h" x="40" y="60" width="40" height="24"/><rect class="h" x="96" y="60" width="40" height="24"/><rect class="k" x="40" y="104" width="96" height="30"/>' +
+          '<rect class="h" x="172" y="70" width="90" height="16" rx="8"/><rect class="h" x="172" y="104" width="90" height="16" rx="8"/>' +
+          '<text class="lb" x="85" y="30" text-anchor="middle">French area</text><text class="lb" x="215" y="30" text-anchor="middle">Wendat area</text>' +
+          D.label(40, 180, 'chapel and workshops', 88, 134) + D.label(186, 180, 'longhouses', 216, 120),
+        tall: 186, cap: 'A simple plan of Sainte-Marie. The mission had separate areas for the French and for Wendat visitors.' },
+      { h: 'Two ways of seeing' },
+      'The Jesuits wrote long letters to France every year, describing everything they saw. These letters, called the Jesuit Relations, are an important <b>source</b> for historians today. But they show only the Jesuits’ point of view. The priests often described Wendat beliefs as wrong, even though those beliefs had guided Wendat life for generations.',
+      'Some Wendat accepted the new religion. Many others did not, and this divided families and villages. At the same time, diseases that the Europeans had brought, such as smallpox, killed about half of all the Wendat in only a few years. Some Wendat blamed the missionaries.',
+      { box: 'Did you know?', text: 'In 1649, after attacks by the Haudenosaunee, the Jesuits burned Sainte-Marie themselves rather than let it be captured. They moved with Wendat survivors to an island in Georgian Bay.' },
+      { h: 'Remembering' },
+      'Today, Sainte-Marie has been rebuilt as a museum. Visitors can see the chapel, the workshops and a longhouse. Historians now try to include Wendat voices, using Wendat oral history and the work of Wendat scholars, so that the story is told from more than one side.'
+    ],
+    guide: { before: 'Review what the child learned about Wendat villages. Teach <b>missionary</b> and <b>source</b>. Explain that historians compare many sources to find out what really happened.',
+      after: 'Why is it a problem if we learn history from only one group’s letters? How can we find other voices?' },
+    words: [['missionaries', 'people sent to spread a religion'], ['source', 'where information comes from, such as a letter or a book']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Jesuits wrote letters.', 'Sainte-Marie was a French mission in Wendake whose history must be understood from both French and Wendat points of view.', 'Smallpox is a disease.', 'Midland has a museum.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the plan show about the mission?',
+        opts: ['It had separate areas for the French and the Wendat.', 'It was round.', 'It had no buildings.', 'It was on an island.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did some Wendat blame the missionaries?',
+        opts: ['Diseases spread when the Europeans came.', 'The mission was noisy.', 'The French did not trade.', 'The priests were lost.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['The Jesuits start building Sainte-Marie.', 'Disease kills about half of the Wendat.', 'The Jesuits burn the mission.', 'Sainte-Marie is rebuilt as a museum.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>These</b> letters … are an important source.” What letters?',
+        opts: ['the Jesuit Relations', 'Wendat stories', 'letters from soldiers', 'museum signs'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Historians use a <b>source</b> to …',
+        opts: ['find information about the past', 'build missions', 'grow crops', 'cure diseases'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'What bias might the Jesuit Relations contain? How could it affect a reader?',
+        a: 'They show only the Jesuits’ view and call Wendat beliefs wrong. A reader might think the Wendat way of life was bad if they read only these letters.', look: 'names the bias and how it could influence a reader' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'How do historians today try to get a fuller picture? Why is this good critical thinking?',
+        a: 'They include Wendat oral history and Wendat scholars. Comparing more than one source helps you see what one side left out.', look: 'names the method and explains why comparing sources helps' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-filles-du-roi', subject: 'history', form: 'Report',
+    title: 'The King’s Daughters',
+    deck: 'Why about 800 young women sailed to New France between 1663 and 1673',
+    hero: {
+      photo: 'g5-filles-du-roi.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'An artist’s picture of young women arriving in New France. Pictures like this were made long after the events.'
+    },
+    body: [
+      'In 1663, New France had a problem. The <b>colony</b> along the St. Lawrence River had only about 3000 French settlers, and most of them were men. Without more families, the colony could not grow. King Louis XIV of France decided to act.',
+      { h: 'A plan to grow the colony' },
+      'Between 1663 and 1673, the king paid for about 800 young women to sail to New France. They were called the <b>filles du roi</b>, the King’s Daughters, because the king acted as their sponsor, almost like a father. Many were poor or orphans from Paris and nearby towns. The king paid for their voyage and gave each one a small amount of money and supplies, called a dowry, to start a new life.',
+      { fig: '<text class="lb" x="6" y="16">French population of New France (about)</text><path class="k" d="M30 150 H290 M30 150 V30"/>' +
+          [[1663, 3000], [1673, 7000], [1681, 10000], [1700, 15000]].map(function (d, i) { var x = 60 + i * 64, h = d[1] / 15000 * 108; return '<rect class="a" x="' + x + '" y="' + (150 - h) + '" width="34" height="' + h + '"/><text class="n" x="' + (x + 17) + '" y="166" text-anchor="middle">' + d[0] + '</text><text class="n" x="' + (x + 17) + '" y="' + (144 - h) + '" text-anchor="middle">' + d[1] + '</text>'; }).join(''),
+        tall: 172, cap: 'The French population of New France grew quickly after the filles du roi arrived.' },
+      { h: 'A hard new life' },
+      'The crossing took two months or more in crowded, damp ships, and some women did not survive it. When they arrived in Québec, Trois-Rivières or Montréal, most married within a few months, usually to farmers or soldiers. They had to learn quickly how to survive long, cold winters, clear land, grow food and raise large families, often far from any neighbour.',
+      { box: 'Did you know?', text: 'Millions of people in Québec and across North America today can trace their family trees back to at least one fille du roi.' },
+      { h: 'Whose land?' },
+      'The king’s plan worked. The French population grew quickly as families had many children. But the colony was growing on land that was already home to the Innu, Wendat, Algonquin, Haudenosaunee and other nations. As more farms were cleared along the river, those nations’ lands and ways of life were affected. The story of the filles du roi is a story of courage, and it is also part of a larger story of who the land belonged to. Historians today try to tell both parts, using records such as marriage contracts and letters, and the oral histories of the First Nations who lived along the river.'
+    ],
+    guide: { before: 'Find Québec, Trois-Rivières and Montréal on a map of the St. Lawrence River. Teach <b>colony</b>, <b>sponsor</b> and <b>dowry</b>. Explain that “filles du roi” is French for “daughters of the king.”',
+      after: 'What qualities would a person need to make that journey and start over? How might the First Nations living along the river have seen the new farms?' },
+    words: [['filles du roi', 'French for “the King’s Daughters,” young women sent to New France'], ['colony', 'a place settled and ruled by a faraway country']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Ships were crowded.', 'The king sent about 800 young women to grow New France, which changed the colony and affected First Nations.', 'Louis XIV was a king.', 'Winters are cold.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. About how many French people lived in New France in 1681?',
+        opts: ['10 000', '3000', '15 000', '7000'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the king want more women in New France?',
+        opts: ['So more families would make the colony grow.', 'To fight wars.', 'To trade furs.', 'To build ships.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Problem', 'What the king did'],
+        rows: [['Too few French families', null], ['The women were poor.', null]], a: [[null, 'He sent about 800 young women.'], [null, 'He paid their voyage and gave a dowry.']] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the caption say the picture was made long after the events?',
+        opts: ['So readers know it is an artist’s idea, not a photo or eyewitness picture', 'Because it is blurry', 'To tell the artist’s name', 'Because it is in colour'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “King Louis XIV of France decided to act,” <b>King Louis XIV</b> is a …',
+        opts: ['proper noun', 'verb', 'adjective', 'pronoun'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The last section is called “Whose land?” What perspective does it add to the story?',
+        a: 'It adds the perspective of the First Nations who already lived along the river, whose lands and ways of life were affected by the new farms.', look: 'identifies the First Nations perspective and its effect' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Was the king’s plan successful? Draw a conclusion and support it with the graph.',
+        a: 'Yes. The French population grew from about 3000 in 1663 to about 15 000 by 1700.', look: 'a conclusion supported by numbers from the graph' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-great-law', subject: 'social', form: 'Report',
+    title: 'The Great Law of Peace',
+    deck: 'How the Haudenosaunee Confederacy united nations under one law',
+    hero: {
+      photo: 'g5-hiawatha-flag.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 200,
+      cap: 'The Haudenosaunee flag is based on the Hiawatha Belt, a wampum belt that records the union of the nations.'
+    },
+    body: [
+      'Long before Europeans arrived, the Mohawk, Oneida, Onondaga, Cayuga and Seneca nations lived south of Lake Ontario and along the St. Lawrence River. Haudenosaunee oral history tells of a time of great conflict between them. Then a messenger known as the Peacemaker came with a message of peace, power and righteousness.',
+      { h: 'Five nations, one longhouse' },
+      'With the help of a leader named Hiawatha, the Peacemaker brought the nations together into one <b>confederacy</b>. They agreed to follow the Great Law of Peace. The nations described themselves as living together in one great longhouse, each with its own fire. The Mohawk guarded the eastern door, the Seneca guarded the western door, and the Onondaga kept the central fire, where the leaders met.',
+      { fig: '<rect class="k" x="10" y="40" width="280" height="70" rx="35"/>' + [[40, 'Seneca'], [95, 'Cayuga'], [150, 'Onondaga'], [205, 'Oneida'], [260, 'Mohawk']].map(function (n) { return '<circle class="a" cx="' + n[0] + '" cy="75" r="9"/><text class="n" x="' + n[0] + '" y="130" text-anchor="middle">' + n[1] + '</text>'; }).join('') +
+          D.label(4, 24, 'western door') + D.label(206, 24, 'eastern door') + D.label(108, 160, 'the central fire', 150, 84),
+        tall: 166, cap: 'The nations as one longhouse, from west to east. In about 1722, the Tuscarora joined as the sixth nation.' },
+      { h: 'How decisions were made' },
+      'Under the Great Law, chiefs from each nation met in a council to discuss matters that affected everyone. They talked until they reached <b>consensus</b>, which means agreement by all, rather than a simple majority vote. Clan mothers played a powerful role. They chose the chiefs, advised them and could remove a chief who did not serve the people well.',
+      { box: 'Did you know?', text: 'The Great Tree of Peace, a white pine, is a symbol of the Great Law. Its roots spread in four directions so other nations could follow them and find shelter under it.' },
+      { h: 'Still living' },
+      'The Haudenosaunee Confederacy is one of the oldest continuing democracies in the world. Today, Haudenosaunee people live in communities in Ontario, Québec and New York State, including Six Nations of the Grand River, the largest First Nation in Canada by population. The Great Law is still recited and taught, and the Haudenosaunee issue their own passports for travel. Their ideas about peace, shared decision making and the voices of women continue to guide them. Some historians believe that the Great Law also gave ideas to the people who wrote the constitution of the United States, though they still debate how much.'
+    ],
+    guide: { before: 'Explain that this history comes from Haudenosaunee oral tradition, passed down by trained speakers. Teach <b>confederacy</b> and <b>consensus</b>. Find Lake Ontario and Six Nations of the Grand River on a map.',
+      after: 'Try making a family decision by consensus instead of a vote. What is harder? What is better? Why might clan mothers choosing leaders matter?' },
+    words: [['confederacy', 'a union of nations or groups that agree to work together'], ['consensus', 'agreement by everyone in a group']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The Seneca guarded the western door.', 'The Great Law of Peace united Haudenosaunee nations into a confederacy that still guides them today.', 'White pines are tall.', 'Hiawatha was a leader.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which nation kept the central fire?',
+        opts: ['Onondaga', 'Mohawk', 'Seneca', 'Cayuga'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which shows a Haudenosaunee cultural value?',
+        opts: ['Clan mothers chose the chiefs.', 'One person made every decision.', 'Leaders were chosen by lottery.', 'Women had no say.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Symbol', 'What it stands for'],
+        rows: [['one great longhouse', null], ['the Great Tree of Peace', null]], a: [[null, 'the nations living together as one'], [null, 'the Great Law; peace and shelter for other nations']] },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Deciding by <b>consensus</b> means …',
+        opts: ['everyone agrees', 'most people vote yes', 'the leader decides', 'nobody decides'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“<b>Not only</b> the chiefs <b>but also</b> the clan mothers had power.” These paired words are …',
+        opts: ['correlative conjunctions', 'adverbs', 'proper adjectives', 'pronouns'], a: 0 },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'The Great Law began long ago. How is it connected to Haudenosaunee life today?',
+        a: 'It is still recited and taught, and the Haudenosaunee still make decisions and issue their own passports, so the Great Law continues to guide them.', look: 'links the historical law to present-day practice' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Compare deciding by consensus with deciding by a vote in your class. Which would you prefer for a big decision? Why?',
+        a: 'Consensus takes longer but everyone agrees, so no one feels left out. For a big decision like a class trip, I would prefer consensus.', look: 'a comparison with a reasoned preference' }
+    ]
+  });
+  P.add({
+    id: 'g5-quillwork', subject: 'arts', form: 'Report',
+    title: 'Art from Porcupine Quills',
+    deck: 'How Mi’kmaw artists decorated birchbark with quills, and why the art is still made today',
+    hero: {
+      photo: 'g5-quillwork.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A birchbark box decorated with dyed porcupine quills, made by a Mi’kmaw artist.'
+    },
+    body: [
+      'A porcupine has about 30 000 sharp quills to protect itself. To most animals, they are a warning: stay away. To Mi’kmaw artists in what is now Nova Scotia, New Brunswick and Prince Edward Island, they were also a beautiful art material.',
+      { h: 'From porcupine to box' },
+      'Artists gathered quills carefully, sometimes by throwing a blanket over a porcupine so the quills stuck to the cloth. They washed the quills and sorted them by size. Then they dyed them with colours made from plants, roots and berries. Later, artists also used dyes brought by traders.',
+      { fig: '<rect class="k" x="40" y="20" width="220" height="130" rx="6"/>' + [0, 1, 2, 3].map(function (i) { var x = 60 + i * 50; return '<path class="a" d="M' + x + ' 60 L' + (x + 20) + ' 40 L' + (x + 40) + ' 60 L' + (x + 20) + ' 80 Z"/>'; }).join('') +
+          '<path class="t" d="M50 100 H250 M50 106 H250 M50 112 H250 M50 118 H250 M50 124 H250 M50 130 H250"/>' +
+          D.label(196, 176, 'rows of quills, side by side', 200, 124) + D.label(4, 176, 'geometric pattern', 80, 78),
+        tall: 182, cap: 'A sketch of a quilled box lid. Patterns were made of shapes such as diamonds, stars and zigzags.' },
+      'The base of the art was birchbark, which is light, waterproof and easy to shape. The artist punched tiny holes in the bark with an awl, a pointed tool. Then the quills were softened in the mouth or in water, and their ends were pushed into the holes. As the quills dried, they tightened and held firmly in place. Row by row, the quills covered the bark in bright, tightly packed patterns.',
+      { h: 'Patterns with meaning' },
+      'Many designs were <b>geometric</b>, made of shapes such as triangles, diamonds, stars and zigzag lines. An eight-pointed star is a well-known Mi’kmaw symbol. Some patterns showed things from nature, and some were passed down in families.',
+      { box: 'Did you know?', text: 'In the 1800s, many Mi’kmaw artists sold quilled boxes, chair seats and cases to visitors. This art helped families earn a living during hard times.' },
+      { h: 'A living art' },
+      'For a time, fewer people learned quillwork. It takes great patience: a small box can take many weeks. Today, Mi’kmaw artists are teaching young people the <b>techniques</b> again, and quillwork is shown in museums and galleries and sold at art markets. Some artists follow old patterns exactly, and others create new designs. Both ways keep the knowledge alive and connect each new piece to the artists who came before. When you look closely at a quilled box, you are seeing hundreds of hours of patient work and many generations of knowledge.'
+    ],
+    guide: { before: 'Find the Maritime provinces on a map. Teach <b>geometric</b>, <b>technique</b> and <b>awl</b>. If you can, look at museum photos of Mi’kmaw quillwork together.',
+      after: 'Why do you think it matters that young Mi’kmaq are learning quillwork from Elders and artists? Design a geometric pattern of your own on paper.' },
+    words: [['geometric', 'made of shapes such as lines, triangles and diamonds'], ['techniques', 'special ways of doing a skill']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Porcupines have quills.', 'Mi’kmaw artists make detailed quillwork on birchbark, and the art is being taught again today.', 'Birchbark is light.', 'Stars have eight points.'], a: 1 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the steps in making quillwork.',
+        items: ['Gather the quills.', 'Dye them.', 'Punch holes in the bark.', 'Push the softened quills into the holes.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show about the patterns?',
+        opts: ['They use repeated shapes and rows.', 'They are drawn with paint.', 'They show people.', 'They have no pattern.'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why did the quills stay in place?',
+        opts: ['They tightened as they dried.', 'They were glued.', 'They were tied with string.', 'They were nailed.'], a: 0 },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which is a Mi’kmaw cultural element in the text?',
+        opts: ['the eight-pointed star', 'a metal kettle', 'a paintbrush', 'a computer'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'An <b>awl</b> is …',
+        opts: ['a pointed tool for making holes', 'a kind of dye', 'a box', 'a quill'], a: 0 },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How did life in the 1800s affect quillwork, and how is it connected to the present?',
+        a: 'In the 1800s, artists sold quillwork to earn a living during hard times. Today, artists teach young people so the art and knowledge continue.', look: 'connects a historical influence to present-day practice' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which strategy helped you picture how quillwork is made: the sketch, the photo or rereading the steps? Explain.',
+        a: 'The steps helped most. I reread them and pictured each one, then looked at the photo to see how the rows looked when they were finished.', look: 'names a strategy and explains how it helped comprehension' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-seigneury', subject: 'history', form: 'Report',
+    title: 'Long, Narrow Farms',
+    deck: 'Why the farms of New France were shaped like ribbons along the St. Lawrence River',
+    hero: {
+      photo: 'g5-long-lots.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Long, narrow fields stretching back from a river in Québec. Their shape comes from the way land was divided in New France.'
+    },
+    body: [
+      'Fly over the St. Lawrence River in Québec today and look down. You will see something unusual: fields shaped like long, thin ribbons, side by side, all running back from the river. This pattern was created more than 300 years ago by the <b>seigneurial system</b>, the way land was shared out in New France.',
+      { h: 'Seigneurs and habitants' },
+      'The king of France gave large pieces of land, called seigneuries, to important people, such as military officers and religious groups. The owner of a seigneury was called the seigneur. The seigneur divided the land into farms and gave them to settlers, called <b>habitants</b>. In return, the habitants paid a small yearly rent, often in grain, chickens or money, and worked a few days a year for the seigneur. The seigneur had to build a mill where the habitants could grind their grain into flour.',
+      { fig: '<path class="k" d="M6 150 Q150 136 294 152"/>' + D.ripple(10, 290, 164) + [0, 1, 2, 3, 4, 5, 6].map(function (i) { var x = 20 + i * 40; return '<path class="t" d="M' + x + ' 147 L' + (x - 10) + ' 20"/>'; }).join('') +
+          '<rect class="k" x="44" y="124" width="12" height="10"/><rect class="k" x="124" y="122" width="12" height="10"/><rect class="k" x="204" y="124" width="12" height="10"/>' +
+          D.label(80, 14, 'woods at the back') + D.label(150, 188, 'the river: the main road', 150, 164, 'middle') + D.label(230, 104, 'farmhouse near the water', 214, 124),
+        tall: 192, cap: 'Each farm had a narrow front on the river and stretched far back.' },
+      { h: 'Why this shape?' },
+      'In the 1600s, there were few roads. The river was the main highway. Everyone wanted a piece of the shore so they could travel and ship goods by boat or, in winter, by sleigh on the ice. Dividing the land into narrow strips gave every family a share of the river. A typical farm was about 200 metres wide but up to 2 kilometres long.',
+      'The shape had other benefits. Houses stood close together along the river, so neighbours could help one another and stay safe. Each farm also had a mix of land: good soil near the river for crops, meadows for animals and woods at the back for firewood.',
+      { box: 'Did you know?', text: 'The seigneurial system lasted in Québec until 1854, but the long, narrow fields can still be seen from the air today.' },
+      { h: 'Whose land?' },
+      'The seigneuries were laid out on lands where the Innu, Wendat, Algonquin, Abenaki, Haudenosaunee and other peoples had lived, hunted and travelled. The French king gave the land away without their <b>consent</b>, and this shaped the history of the region for centuries. Today, some First Nations in Québec are still working to have their rights to these lands recognized. Looking at a map of long, narrow fields is a reminder that every landscape has more than one story.'
+    ],
+    guide: { before: 'Look at a satellite map of the St. Lawrence River near Québec City to find the long fields. Teach <b>seigneur</b>, <b>habitant</b> and <b>consent</b>. Explain that seigneur and habitant are French words.',
+      after: 'Why was being near the river so important? How does the shape of your own town or neighbourhood show how people travelled when it was built?' },
+    words: [['seigneurial system', 'the way land was divided and managed in New France'], ['habitants', 'farmers who settled the land in New France'], ['consent', 'permission or agreement']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Québec has a river.', 'Under the seigneurial system, New France was divided into long, narrow farms so each family had a share of the river.', 'Mills grind grain.', 'Farms had woods.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where are the farmhouses?',
+        opts: ['near the river', 'in the woods', 'in the middle of the river', 'far from each other'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did everyone want land on the river?',
+        opts: ['The river was the main way to travel and ship goods.', 'The water was warm.', 'There were no fish elsewhere.', 'The king lived there.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'What did each person give or get?', cols: ['Person', 'Gave', 'Got'],
+        rows: [['habitant', null, null], ['seigneur', null, null]],
+        a: [[null, 'rent and a few days of work', 'a farm'], [null, 'land and a mill', 'rent and work']] },
+      { k: 'choice', code: 'C1.1', half: true, q: '“Everyone wanted a piece of the shore so <b>they</b> could travel.” Who are <b>they</b>?',
+        opts: ['the settlers', 'the fish', 'the kings', 'the mills'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Each farm had a mix of land: good soil, meadows and woods.” The colon …',
+        opts: ['introduces a list', 'ends a question', 'shows speech', 'joins two names'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize three reasons the farms were long and narrow.',
+        a: 'Every family got a piece of the river for travel. Houses were close together for help and safety. Each farm had good soil, meadows and woods.', look: 'three reasons from the text, in their own words' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text ends with “Whose land?” Why do you think the author included this section?',
+        a: 'To remind readers that the land already belonged to First Nations, and that the king gave it away without their consent, which is an important part of the story.', look: 'explains the purpose: adding an Indigenous perspective that might otherwise be left out' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-red-bay', subject: 'history', form: 'Report',
+    title: 'Whalers at Red Bay',
+    deck: 'How Basque sailors from Europe came to Labrador in the 1500s',
+    hero: {
+      photo: 'g5-red-bay.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 210,
+      cap: 'Red Bay, Labrador. In the 1500s, this quiet harbour was one of the busiest whaling ports in the world.'
+    },
+    body: [
+      'Today, Red Bay in Labrador is a small, quiet village beside a rocky harbour. But more than 450 years ago, it was crowded with ships, smoke and hundreds of sailors. They had crossed the Atlantic Ocean from the Basque Country, a region on the border of Spain and France, to hunt whales.',
+      { h: 'Oil for Europe' },
+      'In the 1500s, Europe needed oil for lamps, soap and many other things. Whale <b>blubber</b>, the thick layer of fat under a whale’s skin, could be melted into high-quality oil. Each summer, Basque ships sailed to the Strait of Belle Isle, between Labrador and Newfoundland, where bowhead and right whales passed on their journey.',
+      { fig: steps(10, [['spot', 'from a lookout'], ['chase', 'in small boats'], ['tow', 'to shore']], 86) +
+          steps(86, [['cut', 'the blubber'], ['melt', 'in big pots'], ['ship', 'barrels home']], 86) +
+          '<path class="a" d="M257 54 V66 Q257 70 150 70 Q43 70 43 82"/>',
+        tall: 136, cap: 'The steps of the whale hunt and oil making at Red Bay.' },
+      { h: 'A busy summer' },
+      'Lookouts watched from the hills. When a whale was spotted, crews rowed out in small boats called chalupas and hunted it with harpoons. The whale was towed to shore, and the blubber was cut away and melted in huge copper pots over fires. The oil was poured into wooden barrels and loaded onto the ships. A single ship could carry home about 1000 barrels of oil. At its busiest, Red Bay may have had about 600 workers each summer.',
+      { box: 'Did you know?', text: 'In 1978, archaeologists found the wreck of a Basque ship, the San Juan, at the bottom of Red Bay. It sank in 1565. Red Bay is now a UNESCO World Heritage Site.' },
+      { h: 'Neighbours and changes' },
+      'The Innu and Inuit already lived along these coasts. Records suggest that some Indigenous people traded with the Basques and even worked with them. By the early 1600s, the whale hunt had faded, partly because so many whales had been killed. Bowhead whales are still rare in this area today.',
+      'The whalers left behind barrels, tools, ovens, the bones of whales and the <b>shipwrecks</b> in the harbour. These clues let archaeologists piece together a story that was almost forgotten.',
+      'Divers spent years carefully mapping the San Juan, timber by timber, before bringing pieces to the surface to study. Then the pieces were returned to the bottom of the harbour and covered to protect them. The cold, dark water had kept the wood from rotting for more than 400 years. Today, visitors to Red Bay can see a whaling boat that was found there and rebuilt, along with tools and pottery the whalers used.'
+    ],
+    guide: { before: 'Find the Basque Country in Europe and Red Bay in Labrador on a map, and trace the ocean route. Teach <b>blubber</b>, <b>harpoon</b> and <b>archaeologist</b>.',
+      after: 'Why do you think the whale hunt faded? What lesson might it teach about using natural resources today?' },
+    words: [['blubber', 'the thick fat under a whale’s skin'], ['shipwrecks', 'ships that have sunk or been destroyed']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Red Bay is quiet.', 'In the 1500s, Basque whalers came to Red Bay to make whale oil, and archaeologists have uncovered their story.', 'Whales are big.', 'Copper pots melt fat.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the steps.',
+        items: ['Spot a whale.', 'Chase it in small boats.', 'Melt the blubber.', 'Ship the barrels home.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Europe want whale oil?',
+        opts: ['For lamps, soap and other uses', 'To drink', 'To paint ships', 'To feed animals'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Clue found', 'What it tells archaeologists'],
+        rows: [['the wreck of the San Juan', null], ['ovens and whale bones', null]], a: [[null, 'Basque ships came and some sank here.'], [null, 'Blubber was melted into oil here.']] },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did the whale hunt fade?',
+        opts: ['So many whales had been killed.', 'The ships were too big.', 'Oil was banned.', 'The harbour froze.'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: '“Whale <b>blubber</b>, the thick layer of fat under a whale’s skin, could be melted.” The commas set off …',
+        opts: ['a phrase that explains blubber', 'a list', 'spoken words', 'a question'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What conclusion can you draw about the effect of the whale hunt on the whales? Use evidence.',
+        a: 'The hunt killed so many whales that it faded, and bowhead whales are still rare there today, so the hunt harmed the whale population for a long time.', look: 'a conclusion supported by two pieces of evidence' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Why might someone want to read this text? Name two different purposes.',
+        a: 'To learn about early European visitors to Canada, and to find out how archaeologists use clues to learn about the past.', look: 'two different, reasonable purposes for reading' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-taxes', subject: 'social', form: 'Explanation',
+    title: 'Where Do Taxes Go?',
+    deck: 'How governments collect money and use it for services we share',
+    hero: {
+      photo: 'g5-fire-truck.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A fire truck. Fire services are paid for with taxes, so help comes no matter who you are.'
+    },
+    body: [
+      'Aisha bought a $10 book at a store in Ontario. At the counter, the cashier said, “That will be $11.30.” Aisha frowned. Where did the extra $1.30 come from? “That’s the tax,” the cashier explained. Aisha wondered where it would go.',
+      { h: 'What is a tax?' },
+      'A <b>tax</b> is money that people and businesses pay to the government. Governments use taxes to pay for <b>services</b> that people share, things that would be hard or impossible for one family to buy alone. Think of a road, a fire department or a public library. Everyone uses them, so everyone helps to pay.',
+      { fig: '<text class="lb" x="6" y="16">Some services paid for by taxes</text>' + [['Federal', 'passports, armed forces, payments to seniors'], ['Provincial', 'schools, hospitals, highways'], ['Municipal', 'fire, police, parks, libraries, garbage']].map(function (r, i) {
+            var y = 30 + i * 42; return '<rect class="k" x="6" y="' + y + '" width="90" height="34" rx="4"/><text class="lb" x="51" y="' + (y + 22) + '" text-anchor="middle">' + r[0] + '</text><text class="n" x="104" y="' + (y + 22) + '">' + r[1] + '</text>';
+          }).join(''),
+        tall: 160, cap: 'Each level of government uses taxes for different services.' },
+      { h: 'Kinds of taxes' },
+      'There are several kinds of taxes. A sales tax is added when you buy many things. In Ontario, it is called the HST, and it is 13%. That is the $1.30 on Aisha’s $10 book. Income tax is taken from the money people earn at their jobs. People who earn more pay a bigger share. Property tax is paid by people who own homes and buildings, and it goes mostly to the city or town.',
+      { box: 'Do the math', text: 'In Ontario, the HST is 13%, which is 13 cents on every dollar. On a $20 item, the tax is $2.60, so the total is $22.60.' },
+      { h: 'Deciding how to spend' },
+      'Elected governments decide how to spend tax money. They make a plan called a budget each year. Should more money go to hospitals or to roads? Should there be a new arena or a new library? People often disagree, and that is why elections, debates and public meetings matter.',
+      'Aisha did some reading. She learned that part of her $1.30 helped pay for schools and hospitals in Ontario. The next week, she visited the library, borrowed three books for free and thought, “I guess I already paid a little bit for these.”',
+      'Taxes can be a topic people argue about. Some people think taxes are too high, and others think the government should spend more on services. Most people agree on one thing, though: when a fire truck races to a burning house, nobody asks whether the family paid enough tax that year. Shared services are there for everyone.'
+    ],
+    guide: { before: 'Look at a store receipt together and find the HST. Teach <b>tax</b>, <b>service</b> and <b>budget</b>. Review the three levels of government.',
+      after: 'If you were the mayor, which service would you spend more tax money on, and why? What would you have to spend less on?' },
+    words: [['tax', 'money paid to the government to pay for shared services'], ['services', 'work done for the public, such as schools or fire protection']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Books cost $10.', 'Taxes are money people pay to governments for shared services, and governments decide how to spend them.', 'The HST is 13%.', 'Libraries lend books.'], a: 1 },
+      { k: 'table', code: 'C1.4', q: 'Use the diagram. Which level of government pays for each service?', cols: ['Service', 'Level'],
+        rows: [['a hospital', null], ['a fire department', null], ['passports', null]], a: [[null, 'provincial'], [null, 'municipal'], [null, 'federal']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How much HST would you pay on a $30 item in Ontario?',
+        opts: ['$3.90', '$3.00', '$1.30', '$13.00'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Aisha say she “already paid a little bit” for the library books?',
+        opts: ['Part of her tax helps pay for public services.', 'She bought the books.', 'She paid a late fee.', 'The library charged her.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Which is a <b>service</b> paid for by taxes?',
+        opts: ['a public library', 'a video game', 'a candy bar', 'a private party'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'This explanation begins with a short story about Aisha. Why?',
+        opts: ['to connect a big idea to a real-life moment', 'to give a fact', 'to list services', 'to show a map'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the difference between sales tax and income tax.',
+        a: 'Sales tax is added when you buy things, like the HST. Income tax is taken from the money people earn at their jobs.', look: 'a clear difference between the two taxes' },
+      { k: 'lines', code: 'B1.4', n: 3, q: 'You will speak to your town council about spending more on parks. Name two speaking strategies you would use and why.',
+        a: 'I would make eye contact and speak clearly so they listen. I would give a reason with a fact, like how many kids use the park.', look: 'two oral strategies (voice, eye contact, gestures, facts) with reasons' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-skatepark-letter', subject: 'social', form: 'Letter',
+    title: 'A Skate Park for Everyone',
+    deck: 'A student writes to town council to make the case for a new skate park',
+    plain: true,
+    hero: {
+      photo: 'g5-skatepark.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A public skate park. Many towns in Canada have built them as places for young people to be active.'
+    },
+    body: [
+      'Dear Mayor Tremblay and Members of Council,',
+      'My name is Oliver Mensah, and I am a Grade 5 student at Riverside Public School. I am writing to ask council to build a public skate park in Centennial Park. I believe a skate park would make our town healthier, safer and more welcoming for young people.',
+      'First, a skate park would help young people stay active. Skateboarding, scootering and BMX riding are great exercise, and they are fun. Doctors say children should be active for at least 60 minutes a day. Many of my friends do not play team sports, but they love to skate.',
+      { fig: '<text class="lb" x="6" y="16">Class survey: Would you use a skate park?</text><path class="k" d="M40 150 H290 M40 150 V30"/>' +
+          [['every week', 14], ['sometimes', 8], ['never', 4]].map(function (r, i) { var x = 70 + i * 74, h = r[1] * 7; return '<rect class="a" x="' + x + '" y="' + (150 - h) + '" width="40" height="' + h + '"/><text class="n" x="' + (x + 20) + '" y="166" text-anchor="middle">' + r[0] + '</text><text class="n" x="' + (x + 20) + '" y="' + (144 - h) + '" text-anchor="middle">' + r[1] + '</text>'; }).join(''),
+        tall: 172, cap: 'Oliver surveyed his class of 26 students.' },
+      'Second, a skate park would be safer. Right now, skaters use the library parking lot and the sidewalks downtown. This is dangerous for skaters, drivers and people walking. A skate park would give us a safe place, away from traffic.',
+      'Third, a skate park would bring people together. In our class survey, 22 out of 26 students said they would use a skate park at least sometimes. Skate parks are free, so families who cannot pay for sports teams could use it too. It could also be built so that wheelchair users can enjoy it.',
+      'Some people worry that skate parks are noisy or attract litter. I think these problems can be solved. The park could be placed away from houses, and students from my school would volunteer to help keep it clean.',
+      'Thank you for reading my <b>letter</b>. I hope I have helped to <b>persuade</b> you to vote for a skate park. I would be glad to speak at a council meeting.',
+      'Sincerely,<br>Oliver Mensah',
+      { h: 'What happened next' },
+      'Oliver’s letter was read aloud at the next council meeting. Two councillors asked him to come and speak. He brought his survey, photos of skaters in the parking lot and a list of classmates who promised to help clean up. Council voted to study the idea and asked young people to help design the park. Oliver says the best part was learning that a student’s letter can start a real conversation in town.'
+    ],
+    guide: { before: 'Explain that this is a persuasive letter: the writer wants to convince the reader. Teach <b>persuade</b> and <b>counter-argument</b>. Talk about who the audience is (the mayor and council).',
+      after: 'Which reason is the strongest? Which is the weakest? Write a short reply from a council member, either agreeing or raising a concern.' },
+    words: [['persuade', 'to try to make someone agree with you'], ['letter', 'a written message to a person or group']],
+    qs: [
+      { k: 'choice', code: 'C1.2', q: 'What is the purpose of this text?',
+        opts: ['to persuade council to build a skate park', 'to tell a story about skating', 'to explain how to skate', 'to describe Centennial Park'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'List Oliver’s three reasons.', cols: ['Reason', 'Evidence he gives'],
+        rows: [['It would help young people stay active.', null], ['It would be safer.', null], ['It would bring people together.', null]],
+        a: [[null, 'Children should be active 60 minutes a day; friends love to skate.'], [null, 'Skaters now use parking lots and sidewalks.'], [null, '22 of 26 students would use it; it is free.']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the graph. How many students would use the park every week?',
+        opts: ['14', '8', '4', '22'], a: 0 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Which words show Oliver is moving to a new reason?',
+        opts: ['First, Second, Third', 'Dear, Sincerely', 'I think', 'Thank you'], a: 0 },
+      { k: 'choice', code: 'C3.5', half: true, q: 'Which group’s worries does Oliver answer?',
+        opts: ['people who think skate parks are noisy or attract litter', 'skaters', 'his teacher', 'doctors'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'To <b>persuade</b> means to …',
+        opts: ['try to make someone agree', 'tell a joke', 'describe a place', 'ask a question'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'How does Oliver show that the skate park would be for everyone?',
+        a: 'He says it would be free for families who cannot pay for teams, and that it could be built so wheelchair users can enjoy it.', look: 'two details about inclusion or accessibility' },
+      { k: 'lines', code: 'D2.5', n: 3, q: 'Suggest one way Oliver could make his letter even more convincing.',
+        a: 'He could add a fact about how many skaters have been hurt on the sidewalks, or a quote from a parent who supports the park.', look: 'a specific, sensible revision that strengthens the argument' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-time-zones', subject: 'geography', form: 'Explanation',
+    title: 'What Time Is It There?',
+    deck: 'How Sandford Fleming’s idea of time zones brought order to a wide country',
+    hero: {
+      photo: 'g5-sandford-fleming.jpg', credit: 'CREDIT', focus: '50% 30%',
+      tall: 210,
+      cap: 'Sir Sandford Fleming, the Canadian engineer who promoted standard time zones in the 1870s and 1880s.'
+    },
+    body: [
+      'When it is noon in Toronto, it is 9 o’clock in the morning in Vancouver and 1:30 in the afternoon in St. John’s. Canada is so wide that the sun rises over Newfoundland hours before it rises over British Columbia. To keep track, we use <b>time zones</b>. But it was not always this way.',
+      { h: 'A missed train' },
+      'Before the 1880s, every town set its clocks by the sun. When the sun was highest in the sky, it was noon. That meant noon in Montréal was a few minutes different from noon in Toronto. This worked when people travelled by horse, but it was very confusing for railways. Train timetables had to list dozens of local times.',
+      'In 1876, a Scottish-born Canadian engineer named Sandford Fleming missed a train in Ireland, because the timetable was confusing. He began working on a better system.',
+      { fig: '<path class="k" d="M6 30 H294 V140 H6 Z"/>' + [56, 106, 156, 196, 246].map(function (x) { return '<path class="d" d="M' + x + ' 30 V140"/>'; }).join('') +
+          [[31, '9:00', 'Pacific'], [81, '10:00', 'Mountain'], [131, '11:00', 'Central'], [176, '12:00', 'Eastern'], [221, '1:00', 'Atlantic'], [270, '1:30', 'Nfld.']].map(function (z) {
+            return '<text class="lb" x="' + z[0] + '" y="82" text-anchor="middle">' + z[1] + '</text><text class="n" x="' + z[0] + '" y="104" text-anchor="middle">' + z[2] + '</text>';
+          }).join('') + '<text class="n" x="6" y="18">west</text><text class="n" x="294" y="18" text-anchor="end">east</text>',
+        tall: 146, cap: 'Canada’s six time zones when it is noon in Eastern time. Not to scale.' },
+      { h: 'Slicing the world' },
+      'Fleming’s idea was to divide the world into 24 time zones, one for each hour of the day. Inside each zone, every clock would show the same time. As you travel east, you move ahead one hour for each zone, and as you travel west, you move back. In 1884, at a conference in Washington, countries agreed on a starting line, the <b>prime meridian</b>, running through Greenwich, England. Over the following years, most of the world adopted standard time.',
+      { box: 'Did you know?', text: 'Newfoundland’s time zone is a half hour different from its neighbour’s. It is one of only a few places in the world with a half-hour time zone.' },
+      { h: 'Using time zones' },
+      'Today, time zones matter when you call a grandparent in another province, watch a hockey game that starts at 7 p.m. Eastern, or travel by plane. Remember: in Canada, the farther east you go, the later it is.',
+      'Fleming had other big ideas, too. He led the survey of the route for the Canadian Pacific Railway, and he designed Canada’s first postage stamp, the Threepenny Beaver, in 1851. But his time zones may be his greatest gift. Every time you check a clock, you are using a system that a frustrated traveller helped to invent.'
+    ],
+    guide: { before: 'Look at a map of Canada’s time zones. Teach <b>time zone</b> and <b>prime meridian</b>. Ask: if a hockey game starts at 7 p.m. in Toronto, what time is it in Vancouver?',
+      after: 'Find out what time it is right now in three other provinces or territories. Who do you know who lives in a different time zone?' },
+    words: [['time zones', 'areas of the world that all use the same time'], ['prime meridian', 'the starting line for time zones, through Greenwich, England']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Fleming missed a train.', 'Sandford Fleming’s idea of time zones replaced confusing local times and is still used today.', 'Newfoundland is in the east.', 'Trains have timetables.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the diagram. When it is noon Eastern time, what time is it in the Mountain zone?',
+        opts: ['10:00', '11:00', '1:00', '9:00'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were local times a problem for railways?',
+        opts: ['Timetables had to list many different times.', 'Trains had no clocks.', 'The sun was too bright.', 'Tracks were too short.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in order.',
+        items: ['Towns set clocks by the sun.', 'Fleming misses a train.', 'Countries agree on the prime meridian.', 'Most of the world uses standard time.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'A game starts at 7 p.m. in Toronto. What time is it in Vancouver?',
+        opts: ['4 p.m.', '10 p.m.', '7 p.m.', '6 p.m.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “a Scottish-born Canadian engineer,” which word is a proper adjective?',
+        opts: ['Canadian', 'engineer', 'born', 'a'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the cause and effect that led to time zones.',
+        a: 'Every town had its own time, so train timetables were confusing. Because of this, Fleming came up with 24 time zones.', look: 'cause (confusing local times) and effect (time zones)' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Use what you learned to predict: if you flew from Halifax to Calgary, would you set your watch earlier or later? Explain.',
+        a: 'Earlier, because Calgary is west of Halifax, and you move back one hour for each zone as you travel west.', look: 'a correct prediction using the east-west rule from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-permafrost', subject: 'geography', form: 'Report',
+    title: 'Ground That Never Thaws',
+    deck: 'What permafrost is, and what happens in the North when it starts to melt',
+    hero: {
+      photo: 'g5-tundra.jpg', credit: 'CREDIT', focus: '50% 55%',
+      tall: 210,
+      cap: 'Arctic tundra in summer. Under the thin layer of plants and soil, the ground stays frozen all year.'
+    },
+    body: [
+      'In much of northern Canada, if you dig down in the middle of summer, you will hit something hard: frozen ground. This is <b>permafrost</b>, ground that has stayed frozen for at least two years in a row. Some of it has been frozen for thousands of years. Permafrost lies under about half of Canada’s land.',
+      { h: 'Layers of the North' },
+      'Permafrost is not just frozen dirt. It is a mix of soil, rock, sand and ice, sometimes with large chunks of pure ice inside. On top of it sits the active layer, a thin layer of ground that thaws each summer and freezes again each winter. Plants of the <b>tundra</b>, such as mosses, lichens and low shrubs, grow in this thin layer. Trees cannot grow there, because their roots cannot reach down into the frozen ground.',
+      { fig: '<path class="k" d="M6 40 H294"/>' + D.ripple(10, 290, 34, 't') +
+          '<path class="d" d="M6 76 H294"/><path class="h" d="M6 80 H294 V160 H6 Z"/>' +
+          '<rect class="k" x="180" y="100" width="50" height="26" rx="10"/>' +
+          D.label(8, 20, 'plants: mosses, lichens, shrubs') + D.label(20, 64, 'active layer: thaws each summer') + D.label(20, 178, 'permafrost: frozen all year', 60, 150) + D.label(206, 178, 'chunk of ice', 205, 126),
+        tall: 184, cap: 'The active layer sits on top of the permafrost.' },
+      { h: 'A warming North' },
+      'The Arctic is warming about three to four times faster than the world as a whole. As it warms, the active layer gets deeper, and the top of the permafrost begins to thaw. When the ice inside the ground melts, the ground can sink and slump. Roads crack, buildings tilt and airport runways buckle. In some places, whole hillsides slide away.',
+      { box: 'Did you know?', text: 'Permafrost holds the remains of plants and animals that froze long ago. When it thaws, they rot and release gases that warm the planet even more, which thaws more permafrost.' },
+      { h: 'Building on ice' },
+      'People in northern communities such as Inuvik and Iqaluit have learned to build carefully. Many buildings stand on posts called piles, with an air space underneath, so the warmth of the building does not melt the ground. Some roads are built on thick layers of gravel to keep the ground below cold. Engineers and communities now watch the permafrost closely, measuring how it changes each year. Inuit and other Northern peoples, who know the land well, notice changes in the snow, ice and ground and share their <b>observations</b> with scientists.'
+    ],
+    guide: { before: 'Find the Arctic, Inuvik and Iqaluit on a map. Teach <b>permafrost</b> (permanent + frost), <b>tundra</b> and <b>active layer</b>. Look at the diagram layer by layer.',
+      after: 'Why might Inuit observations be important to scientists? How would your life change if the ground under your home started to sink?' },
+    words: [['permafrost', 'ground that stays frozen for two or more years'], ['tundra', 'cold, treeless land in the far North'], ['observations', 'things noticed by watching carefully']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Mosses grow in the Arctic.', 'Permafrost lies under much of the North, and warming is making it thaw, which damages land and buildings.', 'Iqaluit has an airport.', 'Ice is cold.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which layer thaws each summer?',
+        opts: ['the active layer', 'the permafrost', 'the chunk of ice', 'none of them'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'Permafrost is a short form of two words. Which?',
+        opts: ['permanent frost', 'perfect frost', 'permit frost', 'person frost'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Cause', 'Effect'],
+        rows: [['The ice in the ground melts.', null], ['Thawing permafrost releases gases.', null], [null, 'Trees cannot grow on the tundra.']],
+        a: [[null, 'The ground sinks, and roads and buildings crack.'], [null, 'The planet warms more, thawing more permafrost.'], ['Roots cannot reach into the frozen ground.', null]] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why are many northern buildings built on posts?',
+        opts: ['So their warmth does not melt the ground', 'To see over the snow', 'To keep animals out', 'Because posts are cheap'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“Some of <b>it</b> has been frozen for thousands of years.” What does <b>it</b> mean?',
+        opts: ['permafrost', 'the summer', 'Canada', 'a building'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The “Did you know?” box describes a cycle. Explain it and draw a conclusion.',
+        a: 'Thawing permafrost releases gases that warm the planet, which thaws more permafrost. So once it starts, the thawing can speed itself up, which is a serious problem.', look: 'explains the cycle and draws a conclusion about it' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Whose knowledge does the text say is important besides scientists? Why?',
+        a: 'Inuit and other Northern peoples. They live on the land and notice changes in the snow, ice and ground that scientists might miss.', look: 'names Northern peoples’ knowledge and explains its value' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sun-safety', subject: 'health', form: 'Explanation',
+    title: 'Sunny Days, Smart Choices',
+    deck: 'What the UV index tells you, and how to protect your skin and eyes',
+    hero: {
+      photo: 'g5-sunscreen.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Sunscreen, a hat and sunglasses: three simple ways to protect yourself from the sun.'
+    },
+    body: [
+      'The sun gives us light, warmth and vitamin D. But sunlight also carries invisible rays called ultraviolet rays, or <b>UV rays</b>. You cannot see them or feel them, but they can burn your skin in less than half an hour on a summer day. Over many years, too much UV can damage your skin and eyes.',
+      { h: 'The UV index' },
+      'In Canada, weather forecasts often include the <b>UV index</b>. It is a number that tells you how strong the sun’s UV rays will be that day. The higher the number, the faster your skin can burn. In much of Canada, the UV index can reach 8 or more on a clear summer afternoon.',
+      { fig: [['0–2', 'low', 'little protection needed'], ['3–5', 'moderate', 'hat, sunscreen'], ['6–7', 'high', 'shade at midday'], ['8–10', 'very high', 'extra care'], ['11+', 'extreme', 'stay in shade']].map(function (r, i) {
+            var y = 6 + i * 32; return '<rect class="' + (i > 1 ? 'a' : 'k') + '" x="6" y="' + y + '" width="' + (40 + i * 22) + '" height="24" rx="4"/><text class="lb" x="12" y="' + (y + 17) + '">' + r[0] + '</text><text class="lb" x="' + (56 + i * 22) + '" y="' + (y + 17) + '">' + r[1] + '</text><text class="n" x="' + (130 + i * 22) + '" y="' + (y + 17) + '">' + r[2] + '</text>';
+          }).join(''),
+        tall: 166, cap: 'The UV index scale and what to do at each level.' },
+      { h: 'When and where' },
+      'UV rays are strongest between 11 a.m. and 3 p.m., when the sun is highest. They can pass through thin clouds, so you can burn even on a cloudy day. Water, sand and snow reflect UV rays, so skiers and swimmers get a double dose. A good rule: if your shadow is shorter than you are, the UV rays are strong.',
+      { box: 'Slip, slop, slap, slide', text: 'Slip on a shirt. Slop on sunscreen (SPF 30 or more). Slap on a wide-brimmed hat. Slide on sunglasses.' },
+      { h: 'Protecting yourself' },
+      'Sunscreen works by blocking or soaking up UV rays before they reach your skin. Put it on 15 minutes before going outside, and put on more every two hours and after swimming. Do not forget your ears, the back of your neck and the tops of your feet. Clothing, hats and shade work even better, because they block the rays completely.',
+      'Sunburn is not the only danger. Each burn harms the cells in your skin, and the harm adds up over the years. That is why doctors say it is better to prevent a burn than to treat one. A cool shower and aloe gel can make a burn feel better, but they cannot undo the damage. Children’s skin is thin and burns easily, so habits that start now protect you for life.',
+      'Your eyes need protection, too. Sunglasses that block UV rays protect your eyes now and help keep them healthy as you get older. Being sun-smart does not mean staying inside. It means enjoying the outdoors and coming home without a burn.'
+    ],
+    guide: { before: 'Check today’s UV index in a weather app or forecast. Teach <b>UV rays</b>, <b>UV index</b> and <b>SPF</b>. Try the shadow rule outside at different times of day.',
+      after: 'Plan a sun-smart day at the beach. What will you pack, and at what times will you look for shade?' },
+    words: [['UV rays', 'invisible rays from the sun that can burn skin'], ['UV index', 'a number that tells how strong the sun’s UV rays are']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['The sun is warm.', 'UV rays can harm skin and eyes, and the UV index and simple habits help us stay safe.', 'Snow reflects light.', 'Sunglasses are cool.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the scale. A UV index of 7 is …',
+        opts: ['high', 'low', 'moderate', 'extreme'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can skiers get a “double dose” of UV?',
+        opts: ['Snow reflects UV rays.', 'Mountains are hot.', 'Skis attract the sun.', 'They ski at night.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart from the “Slip, slop, slap, slide” box.', cols: ['Word', 'What to do'],
+        rows: [['Slip', null], ['Slop', null], ['Slap', null], ['Slide', null]], a: [[null, 'on a shirt'], [null, 'on sunscreen'], [null, 'on a hat'], [null, 'on sunglasses']] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why use slip, slop, slap and slide?',
+        opts: ['The sounds are easy to remember.', 'They are science words.', 'They describe a beach.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“If your shadow is shorter than you are, the UV rays are strong.” Which part is the dependent clause?',
+        opts: ['If your shadow is shorter than you are', 'the UV rays are strong', 'are strong', 'your shadow'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'Summarize the advice in the text in two sentences.',
+        a: 'Check the UV index and protect yourself most between 11 a.m. and 3 p.m. Use sunscreen, clothing, a hat, shade and sunglasses.', look: 'the main pieces of advice in their own words' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a sunny day you spent outside. Which advice would have helped you?',
+        a: 'At the lake, I burned my shoulders. I should have put on more sunscreen after swimming and worn a shirt in the afternoon.', look: 'a personal connection matched to specific advice' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-storm-paddle', subject: 'story', form: 'Short story',
+    title: 'Paddling Into the Wind',
+    deck: 'On a canoe trip in Algonquin Park, Nadia and her uncle race a storm across the lake',
+    hero: {
+      photo: 'g5-canoe-lake.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A canoe on a lake in Ontario. On big lakes, the weather can change quickly.'
+    },
+    body: [
+      'The morning had been made of glass. The lake lay perfectly still, and the canoe slid across it as quietly as a loon. Nadia trailed her fingers in the cold water and watched the reflections of the pines ripple and mend behind them.',
+      'By noon, everything had changed. Uncle Sami stopped paddling and pointed west with his chin. A dark wall of cloud was rolling over the hills, swallowing the blue sky like ink spreading through water. The wind arrived first. It slapped the surface into small grey waves.',
+      '“We need to get to that island,” Uncle Sami said calmly. “Paddle hard, but stay low and steady.”',
+      { fig: '<path class="k" d="M10 120 Q60 60 110 90 Q160 120 210 50 Q250 20 290 40"/>' + [[30, 100, 'calm lake'], [100, 88, 'clouds appear'], [170, 88, 'wind and waves'], [214, 48, 'race to island'], [282, 40, 'safe']].map(function (t) { return '<circle class="a" cx="' + t[0] + '" cy="' + t[1] + '" r="5"/><text class="n" x="' + t[0] + '" y="' + (t[1] + 22) + '" text-anchor="middle">' + t[2] + '</text>'; }).join('') +
+          '<text class="lb" x="10" y="160">The rising action builds to the climax.</text>',
+        tall: 166, cap: 'A plot line of the story.' },
+      'Nadia dug her paddle into the water. Her shoulders burned. Each wave lifted the bow and dropped it again with a smack, and cold spray stung her face. The island looked close, then far, then close again. Thunder grumbled somewhere behind the hills, low and long, like a bear waking up in a cave.',
+      '“Count your strokes,” Uncle Sami called. “One, two, three, four. Don’t look at the island. Look at the next wave.”',
+      'So she counted. One wave, then the next, then the next. She stopped thinking about the storm and thought only about her paddle and the water right in front of her.',
+      'The canoe scraped onto the pebbles of the island just as the first fat raindrops hit. They hauled the boat up the beach, flipped it over and crawled underneath. Rain drummed on the <b>hull</b> like a hundred fingers tapping a table. Nadia was soaked, shaking and grinning.',
+      '“You did well,” Uncle Sami said. “The lake taught you something today.”',
+      '“What?” Nadia asked.',
+      'Uncle Sami tapped the overturned canoe. “When I was your age, my grandmother told me the same thing. She paddled these lakes long before there were maps with campsites on them. She said you cannot fight a lake. You can only listen to it and be patient.”',
+      'He smiled. “That a big job is just a lot of small strokes.”',
+      'An hour later, the storm had passed. The lake was calm again, as if nothing had happened. But Nadia knew it had. She felt <b>stronger</b>, and she would never look at a dark cloud the same way again.'
+    ],
+    guide: { before: 'Ask if the child has been in a canoe or a boat. Explain rising action and climax. Teach <b>bow</b> (the front of a canoe) and <b>hull</b> (the body of a boat).',
+      after: 'What did Uncle Sami mean by “a big job is just a lot of small strokes”? When could you use that advice?' },
+    words: [['stronger', 'having more strength or courage'], ['hull', 'the main body of a boat']],
+    qs: [
+      { k: 'choice', code: 'C3.1', q: '“The morning had been made of glass.” What does this image show?',
+        opts: ['The lake was perfectly still and smooth.', 'The canoe was made of glass.', 'It was very cold.', 'The windows broke.'], a: 0 },
+      { k: 'order', code: 'C3.3', half: true, q: 'Number the events in order.',
+        items: ['The lake is calm.', 'Dark clouds appear.', 'Nadia counts her strokes.', 'They hide under the canoe.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'On the plot line, which event is the climax?',
+        opts: ['the race to the island', 'the calm lake', 'the end of the storm', 'eating lunch'], a: 0 },
+      { k: 'table', code: 'C3.1', q: 'Find the comparison and say what it helps you imagine.', cols: ['Comparison', 'What it helps you imagine'],
+        rows: [['like ink spreading through water', null], ['like a bear waking up in a cave', null]],
+        a: [[null, 'the dark clouds spreading quickly across the sky'], [null, 'the low, deep rumble of thunder']] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Uncle Sami tell Nadia to look at the next wave?',
+        opts: ['To keep her focused on one small step', 'To find fish', 'To steer away', 'To scare her'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who tells the story?',
+        opts: ['a third-person narrator', 'Nadia, using “I”', 'Uncle Sami, using “I”', 'the lake'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Nadia ends up “soaked, shaking and grinning.” Why is she grinning? Use evidence.',
+        a: 'She is proud and relieved because she paddled hard through the storm and they reached the island safely.', look: 'an inference about her feelings, supported by events in the story' },
+      { k: 'lines', code: 'C2.5', n: 3, q: '“A big job is just a lot of small strokes.” Describe a big job in your life you could break into small steps.',
+        a: 'Writing a long report feels big. I could do one paragraph a day, like counting one stroke at a time.', look: 'a personal connection that applies the lesson' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-contour-lines', subject: 'geography', form: 'Explanation',
+    title: 'Reading the Hills',
+    deck: 'How contour lines on a map show the shape of the land',
+    hero: {
+      photo: 'g5-topo-map.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'A topographic map. The thin wavy lines are contour lines. They show hills and valleys on a flat sheet of paper.'
+    },
+    body: [
+      'A map is flat, but the land is not. How can a flat sheet of paper show a mountain, a valley or a steep cliff? Mapmakers use a clever tool: the <b>contour line</b>.',
+      { h: 'Lines of equal height' },
+      'A contour line joins places that are at the same height above sea level, called the <b>elevation</b>. Imagine walking around a hill without ever going up or down. The path you followed would be a contour line. A map with contour lines is called a topographic map.',
+      'Each contour line is a set height apart from the next, such as 10 metres. That difference is called the contour interval. If you start at the bottom of a hill and cross five lines to reach the top, and the interval is 10 metres, the hill is about 50 metres high.',
+      { fig: '<ellipse class="k" cx="80" cy="80" rx="70" ry="60"/><ellipse class="k" cx="86" cy="80" rx="48" ry="40"/><ellipse class="k" cx="92" cy="80" rx="26" ry="20"/><circle class="a" cx="96" cy="80" r="3"/>' +
+          '<ellipse class="k" cx="226" cy="80" rx="64" ry="60"/><ellipse class="k" cx="250" cy="80" rx="38" ry="40"/><ellipse class="k" cx="268" cy="80" rx="14" ry="20"/>' +
+          '<text class="n" x="10" y="150">100 m</text><text class="n" x="40" y="62">110 m</text><text class="n" x="74" y="76">120 m</text>' +
+          D.label(4, 14, 'a round hill') + D.label(180, 14, 'steep on the right side') + D.label(260, 162, 'lines close: steep', 284, 90) + D.label(150, 172, 'lines far apart: gentle', 172, 100),
+        tall: 176, cap: 'Two hills seen from above. Where the lines are close together, the slope is steep.' },
+      { h: 'Reading the shape' },
+      'The spacing of the lines tells you how steep the land is. Where contour lines are close together, the land rises quickly, so the slope is steep. Where they are far apart, the land rises slowly, so the slope is gentle. A set of small circles inside one another shows a hill or the top of a mountain. Lines that bend into a V shape often show a valley with a stream running through it.',
+      { box: 'Try it', text: 'Make a fist and draw around each knuckle with a washable marker at the same heights. Then look down from above. You have made contour lines.' },
+      { h: 'Who uses them?' },
+      'Contour lines can also show a valley. In a valley, the lines bend into a V shape, and the point of the V aims uphill. A stream often runs along the bottom of the V. A flat area, like a plain or a wide marsh, has hardly any contour lines at all, because the height barely changes. A cliff shows up as lines so close that they almost touch.',
+      'Hikers use topographic maps to choose trails and avoid cliffs. Canoeists use them to find the easiest portage between lakes. Engineers use them to plan roads and rail lines that do not climb too steeply. Cities use them to see where water will flow and where flooding might happen. Learning to read contour lines lets you see the hills before you even leave home.'
+    ],
+    guide: { before: 'Try the fist activity in the “Try it” box. Teach <b>contour line</b>, <b>elevation</b> and <b>contour interval</b>. Find the steep side of the second hill together.',
+      after: 'Look at a topographic map of a park near you, online or on paper. Where would you plan an easy hike? Where is it steep?' },
+    words: [['contour line', 'a line on a map joining places at the same height'], ['elevation', 'height above sea level']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Hikers like maps.', 'Contour lines show the height and shape of the land on a flat map.', 'Hills are round.', 'Maps are flat.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, why is one side of the second hill steep?',
+        opts: ['The lines are close together there.', 'It is labelled red.', 'It is bigger.', 'It has a dot.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'A hill has 4 lines from bottom to top, 20 m apart. About how high is it?',
+        opts: ['80 m', '20 m', '24 m', '40 m'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['What you see on the map', 'What the land is like'],
+        rows: [['lines close together', null], ['lines far apart', null], ['small circles inside each other', null]], a: [[null, 'steep'], [null, 'gentle slope'], [null, 'a hill or mountain top']] },
+      { k: 'choice', code: 'C1.3', half: true, q: 'What is the purpose of the caption under the photo?',
+        opts: ['to explain what the wavy lines on the map are', 'to name the photographer', 'to give a direction', 'to list hikers'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: '<b>Elevation</b> means …',
+        opts: ['height above sea level', 'a kind of map', 'a valley', 'a lift'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The idea of contour lines can be hard to picture. Which strategy helped you most? Explain.',
+        a: 'Imagining walking around a hill without going up or down helped me. Then I looked at the diagram and could see each line as one of those paths.', look: 'names a strategy (visualize, use the diagram, try it, reread) and how it helped' },
+      { k: 'lines', code: 'A3.1', n: 3, q: 'Give one example of how contour lines could be useful in another subject or job.',
+        a: 'In science, contour lines could show where rainwater will flow on a hill, so you could predict where a stream might form.', look: 'a sensible use in another subject or career' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-sea-ice', subject: 'geography', form: 'Report',
+    title: 'The Highway of Ice',
+    deck: 'Why sea ice matters to Inuit communities, polar bears and the whole planet',
+    hero: {
+      photo: 'g5-sea-ice.jpg', credit: 'CREDIT', focus: '50% 50%',
+      tall: 210,
+      cap: 'Sea ice in the Arctic Ocean. In winter, it covers much of the ocean around Canada’s northern islands.'
+    },
+    body: [
+      'For much of the year, the ocean around Canada’s Arctic islands is covered with a thick layer of frozen sea water. This <b>sea ice</b> is not just a frozen surface. For Inuit, it has been a highway, a hunting ground and a meeting place for thousands of years.',
+      { h: 'Life on the ice' },
+      'Inuit hunters travel across the sea ice by dog team or snowmobile to hunt seals, walrus and polar bears, and to visit other communities. Knowing the ice is a matter of life and death. Elders teach young people how to read its colour, its sounds and the way the snow lies on it. Darker ice is often thinner. Ice that has been worn by currents may look solid but be dangerously weak.',
+      { fig: '<text class="lb" x="6" y="16">Arctic sea ice in September (lowest each year)</text><path class="k" d="M40 150 H290 M40 150 V30"/>' +
+          [[1980, 7.8], [1990, 6.2], [2000, 6.3], [2010, 4.9], [2020, 4.0]].map(function (d, i) { var x = 60 + i * 46, h = d[1] * 13; return '<rect class="a" x="' + x + '" y="' + (150 - h) + '" width="28" height="' + h + '"/><text class="n" x="' + (x + 14) + '" y="166" text-anchor="middle">' + d[0] + '</text><text class="n" x="' + (x + 14) + '" y="' + (144 - h) + '" text-anchor="middle">' + d[1] + '</text>'; }).join('') +
+          '<text class="n" x="34" y="34" text-anchor="end">million</text><text class="n" x="34" y="46" text-anchor="end">km²</text>',
+        tall: 172, cap: 'The area of Arctic sea ice in September has shrunk over 40 years (rounded numbers).' },
+      { h: 'A shrinking cover' },
+      'Each year, sea ice grows in winter and melts back in summer. But over the past 40 years, scientists measuring from satellites have found that there is much less ice at the end of summer than there used to be. The ice that remains is also thinner. In many places, it forms later in the fall and breaks up earlier in the spring.',
+      'Why is the ice melting? Earth’s climate is getting warmer, and the Arctic is warming about three times faster than the rest of the planet. White ice reflects most of the sunlight that hits it. When the ice melts, the dark ocean underneath soaks up that heat instead. The warmer water then melts even more ice, so the change speeds itself up.',
+      'This makes travel more dangerous for hunters, and some routes are no longer safe. Polar bears, which hunt seals from the ice, must swim farther and wait longer on land with little food.',
+      { box: 'Did you know?', text: 'White ice reflects most sunlight back into space, which helps keep Earth cool. Dark ocean water absorbs sunlight and warms up. So as ice melts, the water warms, and more ice melts.' },
+      { h: 'Watching together' },
+      'Inuit communities and scientists now work side by side. Hunters record ice thickness and conditions with GPS and share them online, so others can travel more safely. This <b>partnership</b> combines satellite science with knowledge passed down for generations.'
+    ],
+    guide: { before: 'Find the Canadian Arctic Archipelago on a map. Teach <b>sea ice</b> and <b>partnership</b>. Read the bar graph together and describe the trend.',
+      after: 'Why is it valuable for Inuit hunters and scientists to share what they know? What does the graph make you wonder?' },
+    words: [['sea ice', 'frozen ocean water'], ['partnership', 'working together toward a shared goal']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Polar bears hunt seals.', 'Sea ice is vital to Inuit life and the planet, and it is shrinking, so communities and scientists are working together.', 'Satellites measure ice.', 'Dark ice is thin.'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What trend does the bar graph show?',
+        opts: ['September sea ice has mostly decreased.', 'Sea ice has grown.', 'Sea ice stays the same.', 'There is no ice in 2020.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do polar bears wait longer on land with little food?',
+        opts: ['The ice they hunt from forms later and melts earlier.', 'They like the land.', 'There are no seals.', 'It is too cold.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['Cause', 'Effect'],
+        rows: [['Ice melts and dark water is exposed.', null], ['Ice is thinner and breaks up earlier.', null]], a: [[null, 'The water absorbs sunlight and warms, melting more ice.'], [null, 'Travel is more dangerous for hunters.']] },
+      { k: 'choice', code: 'C3.4', half: true, q: 'Which detail shows how Inuit knowledge is passed on?',
+        opts: ['Elders teach young people how to read the ice.', 'Satellites take photos.', 'Ice is white.', 'Seals swim.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “Hunters record ice thickness,” which word is the direct object?',
+        opts: ['thickness', 'hunters', 'record', 'ice'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'What conclusion can you draw from the graph and the text together?',
+        a: 'The Arctic is warming, so there is less sea ice each September than 40 years ago, which affects Inuit hunters and polar bears.', look: 'a conclusion that uses both the graph and the text' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'How did reading the graph help you think critically about the text’s claims?',
+        a: 'The text says there is much less ice now. The graph gave me numbers that show it, so I could check the claim myself.', look: 'explains using the graph as evidence to check a claim' }
+    ]
+  });
+
+  P.add({
+    id: 'g5-cartier', subject: 'history', form: 'Report',
+    title: 'Cartier and Donnacona',
+    deck: 'When a French explorer met the people of Stadacona, 1534 to 1536',
+    hero: {
+      photo: 'g5-cartier.jpg', credit: 'CREDIT', focus: '50% 40%',
+      tall: 210,
+      cap: 'A painting of Jacques Cartier, made long after his death. No one knows exactly what he looked like.'
+    },
+    body: [
+      'In 1534, a French sailor named Jacques Cartier crossed the Atlantic Ocean with two ships. The king of France had sent him to look for gold and a sea route to Asia. Instead, he found a land where people had lived for thousands of years.',
+      { h: 'A cross at Gaspé' },
+      'At Gaspé, Cartier met a group of Stadaconans, St. Lawrence Iroquoians who had come to fish. Their leader was Donnacona. Cartier’s men put up a tall wooden cross with the words “Long live the King of France.” Donnacona understood what this meant. He pointed to the land around them and made it clear, with signs, that the land was theirs. Cartier claimed that the cross was only a landmark.',
+      'When Cartier sailed home, he took two of Donnacona’s sons, Domagaya and Taignoagny, with him to France. Historians still debate whether they went willingly.',
+      { fig: '<path class="k" d="M10 40 H290"/>' + [[20, '1534', 'Gaspé: the cross'], [110, '1535', 'up the river to Stadacona'], [200, '1535–36', 'winter; Stadaconans help'], [280, '1536', 'Donnacona taken to France']].map(function (t, i) {
+            return '<circle class="a" cx="' + t[0] + '" cy="40" r="5"/><text class="lb" x="' + t[0] + '" y="' + (i % 2 ? 66 : 24) + '" text-anchor="' + (t[0] < 40 ? 'start' : t[0] > 260 ? 'end' : 'middle') + '">' + t[1] + '</text><text class="n" x="' + t[0] + '" y="' + (i % 2 ? 82 : 98) + '" text-anchor="' + (t[0] < 40 ? 'start' : t[0] > 260 ? 'end' : 'middle') + '">' + t[2] + '</text>';
+          }).join(''),
+        tall: 104, cap: 'A timeline of Cartier’s first two voyages.' },
+      { h: 'Up the river' },
+      'In 1535, Cartier returned. Domagaya and Taignoagny guided him up the St. Lawrence River to their home village, Stadacona, where Québec City is today. They also told him the word <b>kanata</b>, which means village or settlement. Cartier used it to name the whole region, and it became the name Canada.',
+      { box: 'A gift of knowledge', text: 'That winter, many of Cartier’s men fell sick with scurvy. Domagaya showed them how to make a tea from the bark and needles of a tree, probably eastern white cedar. The tea cured them.' },
+      { h: 'A broken trust' },
+      'In the spring of 1536, Cartier kidnapped Donnacona, his sons and several others and took them to France. He wanted Donnacona to tell the king about a rich kingdom called Saguenay. Donnacona never came home. He died in France a few years later. By the time Europeans returned decades later, the people of Stadacona had disappeared, and historians are still not sure why.',
+      'Cartier made a third voyage in 1541, but by then the Stadaconans no longer trusted him. His men tried to build a settlement, but it failed. The rocks he carried home as “diamonds” and “gold” turned out to be quartz and a shiny mineral called pyrite.',
+      'Cartier is often called an explorer who “discovered” Canada. But the story of Donnacona shows that this land was already home to <b>nations</b> with leaders, villages and knowledge, and that their trust was broken.'
+    ],
+    guide: { before: 'Find Gaspé and Québec City on a map. Teach <b>claim</b>, <b>kanata</b> and <b>nation</b>. Explain that the St. Lawrence Iroquoians were a people who lived along the river at that time.',
+      after: 'Why do many people today question the word “discovered”? How might Donnacona have told this story?' },
+    words: [['kanata', 'an Iroquoian word for village or settlement, the root of “Canada”'], ['nations', 'peoples with their own lands, leaders and ways of life']],
+    qs: [
+      { k: 'choice', code: 'C3.3', q: 'What is the main idea of the text?',
+        opts: ['Cartier looked for gold.', 'Cartier’s voyages depended on Donnacona’s people, but he broke their trust.', 'Cedar tea cures scurvy.', 'Gaspé is in Québec.'], a: 1 },
+      { k: 'order', code: 'C1.4', half: true, q: 'Use the timeline. Number the events.',
+        items: ['The cross at Gaspé', 'Cartier reaches Stadacona.', 'Domagaya shares the cure.', 'Donnacona is taken to France.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Donnacona point to the land around the cross?',
+        opts: ['To show that the land belonged to his people', 'To show where to fish', 'To welcome the king', 'To ask for gold'], a: 0 },
+      { k: 'choice', code: 'B2.2', q: 'Where does the name <b>Canada</b> come from?',
+        opts: ['an Iroquoian word, kanata, meaning village', 'the name of a French king', 'a Latin word for river', 'Cartier’s ship'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>They</b> also told him the word kanata.” Who are <b>they</b>?',
+        opts: ['Domagaya and Taignoagny', 'Cartier’s sailors', 'the king and queen', 'the historians'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What saved Cartier’s men from scurvy?',
+        opts: ['a tea made from a tree, shared by Domagaya', 'food from France', 'warm clothes', 'fishing'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The author puts “discovered” in quotation marks. Why? What perspective does this show?',
+        a: 'Because Canada was already home to nations like Donnacona’s. The author shows that the word leaves out the Indigenous point of view.', look: 'explains the quotation marks as questioning the word, from an Indigenous perspective' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Draw a conclusion about how Cartier treated Donnacona’s people. Support it with two details.',
+        a: 'He took their help but did not treat them fairly. Domagaya cured his men, yet Cartier kidnapped Donnacona and his sons.', look: 'a conclusion supported by two details from the text' }
+    ]
+  });
+
 })();
