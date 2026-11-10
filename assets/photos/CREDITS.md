@@ -188,6 +188,105 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g6-water-pump.jpg` | Children collecting water at a hand pump in a village in Ghana | Kwameghana(Bright Kwame Ayisi) | CC0 | https://commons.wikimedia.org/wiki/File:A_group_of_children_collecting_water_at_a_pipe_well.jpg |
 | `g6-solar-farm.jpg` | Solar panels on a farm in Grimsby, Ontario | Dave Lauretti from Burlington, Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_farm_(13313377243).jpg |
 | `g6-canoe-lake.jpg` | The dock at Canoe Lake, Algonquin Park, Ontario | Markabq | Public domain | https://commons.wikimedia.org/wiki/File:CanoeLake.JPG |
+| `g5-palisade.jpg` | The palisade and lookout of a rebuilt 15th-century Iroquoian village, Ontario | Laslovarga | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Iroquoian_Village,_Ontario,_Canada31.JPG |
+| `g5-cn-tower.jpg` | The CN Tower, Toronto | Scott Webb | CC0 | https://commons.wikimedia.org/wiki/File:CN_Tower,_Toronto,_Canada_(Unsplash_DJ_kOgH5u0o).jpg |
+| `g5-rusty-chain.jpg` | A very rusty chain | W.carter | CC0 | https://commons.wikimedia.org/wiki/File:Very_rusty_chain.jpg |
+| `g5-cereal-aisle.jpg` | Boxes of cereal on supermarket shelves | Wolfmann | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:SPAR_kolonial_mat_varehandel_hyller_(Supermarket_interior_GROCERY_store_aisle_shelves)_Frokostblandinger_gryn_müsli_Axa_frukt_energi_4-korn_blåbær_(cereals_muesli)_etc_Tjøme_NORWAY_2023-08-31_IMG_1095.jpg |
+| `g5-speed-skating.jpg` | Speed skaters on an outdoor oval in Lakefield | Suzanne Schroeter | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Speed_Skating_on_the_Oval_in_Lakefield_(5399470981).jpg |
+| `g5-champlain-map.jpg` | Samuel de Champlain's map of New France, 1612 | Samuel de Champlain | Public domain | https://commons.wikimedia.org/wiki/File:Samuel_de_Champlain_Carte_geographique_de_la_Nouvelle_France.jpg |
+| `g5-two-row.jpg` | Paddlers on the 2013 Two Row Wampum Renewal journey | Gorgenkor | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tom_Porter_and_Hickory_Edwards_on_2013_Two_Row_Journey.jpg |
+| `g5-tablets.jpg` | Children using tablet computers | Intel Free Press | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Kids_with_Education_Tablet_Computers.jpg |
+| `g5-carr-odds-and-ends.jpg` | Odds and Ends, painting by Emily Carr, 1939 | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g5-metis-sash.jpg` | A Métis beaded sash and a finger-woven sash (ceinture fléchée), Sault Ste. Marie Museum | Fungus Guy | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Métis_sash,_clay_pipe_fragments_and_ceinture_fléchée_Sault_Museum.jpg |
+| `g5-queens-park.jpg` | The Ontario Legislative Building at Queen's Park, Toronto | Spudgun67 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Legislative_Assembly_of_Ontario_-_Queen's_Park,_Toronto.jpg |
+| `g5-skeleton.jpg` | A model of the human skeleton, Kitchener | Sam Nabi | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Skeleton_model_20200122_184823074_iOS.jpg |
+| `g5-confederation-pier.jpg` | A pier of the Confederation Bridge with its ice shield | Wladyslaw | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:NB_-_Confederation_Bridge3.jpg |
+| `g5-savings-jar.jpg` | Coins saved in a glass jar | stevepb | CC0 | https://commons.wikimedia.org/wiki/File:Piggy-bank-968302.jpg |
+| `g5-dragon-boat.jpg` | Dragon boat racers at the Toronto International Dragon Boat Race Festival | John Vetterli | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Dragon_Boaters_1_(174187449).jpg |
+| `g5-port-royal.jpg` | The rebuilt Habitation at Port-Royal National Historic Site, Nova Scotia | Dlanglois | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Port-Royal_Nova-Scotia_1.jpg |
+| `g5-water-treatment.jpg` | Coagulation and filtration tanks at a drinking water treatment plant | U.S. Environmental Protection Agency | Public domain | https://commons.wikimedia.org/wiki/File:The_coagulation_and_filtration_processes_at_a_drinking_water_treatment_plant._(14868618507).jpg |
+| `g5-heart-model.jpg` | Model of the human heart, opened to show the inside | Dguendel | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Dresden,_Deutsches_Hygiene-Museum,_anatomisches_Modell,_Herz.jpg |
+| `g5-weather-radar.jpg` | Weather radar dome on a tower | Chris Light | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:KIWX_National_Weather_Service_NEXRAD,_Northern_Indiana.jpg |
+| `g5-food-bank.jpg` | Shelves of food at a food bank | U.S. Department of Agriculture | Public domain | https://commons.wikimedia.org/wiki/File:Capital_Area_Food_Bank_-_Flickr_-_USDAgov.jpg |
+| `g5-calm-lake.jpg` | A calm lake in the morning, Ontario | DocHolliday2018 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morning_Calm_on_Six_Mile_Lake.jpg |
+| `g5-dice.jpg` | Four six-sided dice | Diacritica | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:6sided_dice.jpg |
+| `g5-throat-singers.jpg` | Two Inuit throat singers face to face | Rudolf H. Boettcher | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Charlotte_-_Alexia_-_Inuit_throat_singing.jpg |
+| `g5-snowy-forest.jpg` | Snow-covered forest in northern Ontario | Wiki.cullin | CC0 | https://commons.wikimedia.org/wiki/File:Dense,_snow-covered_forest_in_Northern_Ontario_during_late_winter.jpg |
+| `g5-ramp.jpg` | A ramp beside steps at a building entrance | Hullian111 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hull_Maritime_Museum_New_Wheelchair_Ramp,_Kingston_upon_Hull_Jun24.jpg |
+| `g5-sandwich.jpg` | A sandwich on a cutting board | Revital Salomon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sandwich_on_a_cutting_board.jpg |
+| `g5-plastic-beach.jpg` | Plastic litter washed up on a shore | Partonez | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Plastic_Litter,_Ivy_Cove.jpg |
+| `g5-compost.jpg` | Food scraps breaking down into compost | Philip Cohen | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Food-scraps-compost.jpg |
+| `g5-hydro-station.jpg` | Sir Adam Beck generating station on the Niagara River | Changku88 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sir_Adam_Beck_Hydroelectric_Generating_Station_beside_the_Niagara_River.jpg |
+| `g5-sainte-marie.jpg` | Main entrance of Sainte-Marie among the Hurons, Midland | P199 | Public domain | https://commons.wikimedia.org/wiki/File:St_Marie_Hurons_1.jpg |
+| `g5-filles-du-roi.jpg` | Painting of young women arriving in Quebec in 1667 | Eleanor Fortescue-Brickdale | Public domain | https://commons.wikimedia.org/wiki/File:Arrival_of_the_Brides_-_Eleanor_Fortescue-Brickdale.png |
+| `g5-energy-drinks.jpg` | Two energy drink cans | Klooni | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Energy_Drink_Battery_Cans.jpg |
+| `g5-hiawatha-flag.jpg` | The Haudenosaunee flag, based on the Hiawatha Belt | Rick Hill, Harold Johnson and Tim Johnson | Public domain | https://commons.wikimedia.org/wiki/File:Iroquois_flag.png |
+| `g5-quillwork.jpg` | Mi’kmaw birchbark box decorated with porcupine quills, 1895 | Daderot | CC0 | https://commons.wikimedia.org/wiki/File:Box,_Mi'kmaq,_1895,_birchbark,_porcupine_quills,_aniline_dye_-_Glenbow_Museum_-_DSC00901.JPG |
+| `g5-red-bay.jpg` | The harbour at Red Bay, Labrador | Cephas | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_Bay_Labrador_01.jpg |
+| `g5-fire-truck.jpg` | A fire truck in Vaughan, Ontario | Emergency Vehicles | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Vaughan_Fire_Truck_(16400191313).jpg |
+| `g5-skatepark.jpg` | A public skate park in Nova Scotia | T.Newfeels | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Shearwater_Skatepark_full_view.jpg |
+| `g5-sandford-fleming.jpg` | Portrait of Sir Sandford Fleming | Unknown painter | Public domain | https://commons.wikimedia.org/wiki/File:Sir_Sandford_Fleming.jpg |
+| `g5-tundra.jpg` | Tundra plants flowering in summer near Pangnirtung, Nunavut | Lindsay Nicole Terry | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:The_tundra_flowers_during_the_brief_Arctic_summer_near_Pangnirtung.jpg |
+| `g5-sunscreen.jpg` | Sun safety poster: slip, slop, slap and wrap | U.S. Environmental Protection Agency | Public domain | https://commons.wikimedia.org/wiki/File:On_"Don't_Fry_Day"_(and_Every_Day),_Slip,_Slop,_Slap_&_Wrap!_-_NARA_-_6061277.jpg |
+| `g5-canoe-lake.jpg` | Canoe Lake in Algonquin Park, Ontario | Ryan Hodnett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Canoe_Lake_-_Algonquin_Provincial_Park,_Ontario.jpg |
+| `g5-sea-ice.jpg` | Arctic sea ice seen from a plane | Ashley Pollak | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Arctic_ice_pack_from_a_plane.jpg |
+| `g5-cartier.jpg` | Painting of Jacques Cartier by Auguste Lemoine, 1895 | Auguste Lemoine | Public domain | https://commons.wikimedia.org/wiki/File:Auguste_Lemoine_-_Jacques_Cartier_-_1895.jpg |
+| `g5-banting-best.jpg` | Frederick Banting and Charles Best with a dog, University of Toronto | Thomas Fisher Rare Book Library | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Photograph_of_F.G._Banting_and_C.H._Best_with_a_dog_on_the_roof_of_the_Medical_Building_(12309019434).jpg |
+| `g5-hadfield.jpg` | Chris Hadfield in the Cupola of the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ISS-34_Chris_Hadfield_inside_the_Cupola.jpg |
+| `g5-bar-graph.jpg` | Two simple bar graphs | RWhitwam | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bar_graphs.png |
+| `g5-stop-motion.jpg` | A scene made with clay models for a stop-motion film | Max Sviridov | Public domain | https://commons.wikimedia.org/wiki/File:Animacion-con-plastilina-y-clay-animation-pelicula-Kuzmich-153.jpg |
+| `g5-lacrosse.jpg` | A lacrosse player reaching for the ball | Szkandera Ondrej | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_Lacrosse_Player.jpg |
+| `g5-snowshoes.jpg` | Canadian snowshoes, 1840-1870, Bata Shoe Museum | Daderot | CC0 | https://commons.wikimedia.org/wiki/File:Canadian_snowshoes,_1840-1870_-_Bata_Shoe_Museum_-_DSC00222.JPG |
+| `g5-forest-fire.jpg` | Wildfire beside Highway 63, Fort McMurray, 2016 | DarrenRD | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Landscape_view_of_wildfire_near_Highway_63_in_south_Fort_McMurray.jpg |
+| `g5-blood-bags.jpg` | Bags of donated blood | Ufficio Comunicazione, Azienda Ospedaliera SS. Antonio e Biagio e Cesare Arrigo | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Antonio_e_Biagio_e_Cesare_Arrigo_Blood_bags.jpg |
+| `g5-cafeteria.jpg` | A school cafeteria | Nadia Eimandoust | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Irving_High_School_cafeteria.jpg |
+| `g5-wheelchair-racer.jpg` | A wheelchair racer on a track | Pierre-Yves Beaudouin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meeting_d'Athlétisme_Paralympique_de_Paris_04.jpg |
+| `g5-heron.jpg` | A great blue heron in a marsh | sherseydc | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Great_blue_heron_in_a_marsh.jpg |
+| `g5-maple-taps.jpg` | A bucket hanging from a tapped maple tree | Oven Fresh | Public domain | https://commons.wikimedia.org/wiki/File:Maple_syrup_bucket.jpg |
+| `g5-water-bottle.jpg` | A reusable water bottle | Zohasheikh | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_and_Grey_Water_Bottle.jpg |
+| `g5-lions-gate.jpg` | The Lions Gate Bridge, Vancouver | ThomasLendt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lions_Gate_Bridge,_Vancouver,_Canada.jpg |
+| `g5-lungs-model.jpg` | Model of the human lungs and heart | John Campbell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Lung_dissection_model_1.jpg |
+| `g5-ice-cream.jpg` | An ice cream cone | Sarah Stierch | CC0 | https://commons.wikimedia.org/wiki/File:Dark_chocolate_chip_ice_cream_cone_-_August_2025_-_Sarah_Stierch.jpg |
+| `g5-polling-station.jpg` | A voter puts his ballot in a ballot box, Hull, Quebec | Champlain Marcil | Public domain | https://commons.wikimedia.org/wiki/File:Lionel_Émond_déposant_son_vote_dans_une_boîte_de_scrutin.jpg |
+| `g5-hockey-rink.jpg` | A hockey player battles for the puck along the boards | Aknell4 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:2026-02-25_TMU_Bold_Forward_Spencer_Shugrue.jpg |
+| `g5-sailboat.jpg` | A sailboat with triangular sails | Matti Blume | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sailing_on_Lake_Constance_(1X7A0062).jpg |
+| `g5-railway-tracks.jpg` | Railway tracks seeming to meet in the distance | XoMEoX | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Convergence_-_Flickr_-_XoMEoX.jpg |
+| `g5-reflex.jpg` | Diagram of the knee-jerk reflex | Laura Guerin, CK-12 Foundation | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Hammer_taps_knee.png |
+| `g5-ice-road.jpg` | An ice road in the Northwest Territories | Ian Mackenzie | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ice_road_in_the_Northwest_Territories_-a.jpg |
+| `g5-crushed-cans.jpg` | Blocks of crushed cans for recycling | Oregon State University | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Crushed_can_recycling_mounds.jpg |
+| `g5-billboards.jpg` | Signs at Yonge and Dundas, Toronto | Steve Harris | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Yonge_&_Dundas_(3351899661).jpg |
+| `g5-jingle-dress.jpg` | Young jingle dress dancers at a powwow | Thayne Tuason | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Assiniboine_Sioux_Jingle_Dress_Girls.jpg |
+| `g5-city-bus.jpg` | A Toronto Transit Commission bus | Transportfan70 | CC0 | https://commons.wikimedia.org/wiki/File:TTC_bus_6144_52G_Lawrence_West.jpg |
+| `g5-library.jpg` | Inside the Welland Public Library, Ontario | Gogerr | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Welland_Public_Library,_Interior.jpg |
+| `g5-cod-drying.jpg` | Salted cod drying on flakes, about 1900 | Charles Hugh Stevenson | Public domain | https://commons.wikimedia.org/wiki/File:FMIB_38918_Drying_Codfish_in_Flake_Yard_at_Gloucester_Massachusetts.jpg |
+| `g5-fireworks.jpg` | Canada Day fireworks, Saskatoon | Bruce Guenter | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Canada_Day_Fireworks_(5545156705).jpg |
+| `g5-coding.jpg` | A Grade 5 student at a robotics competition | Mary Davis, U.S. Army | Public domain | https://commons.wikimedia.org/wiki/File:Robotics_Competition_(5191837).jpg |
+| `g5-quilt.jpg` | Patchwork quilt of triangles and squares | Auckland Museum | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Quilt,_patchwork_(AM_1964.140-2).jpg |
+| `g5-breakdancer.jpg` | A breaker balancing on one hand, Copenhagen | Sandro Schachner | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Breakdance.jpg |
+| `g5-theatre-masks.jpg` | Comedy and tragedy masks on a theatre wall | Marjorie Kaufman | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Comedy_and_tragedy_masks_from_the_Princess_Theatre,_Decatur,_AL_image_by_Marjorie_Kaufman.jpg |
+| `g5-horseshoe-falls.jpg` | The Horseshoe Falls at Niagara Falls | Maksim Sokolov | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Horseshoe_Falls_(Niagara_Falls).jpg |
+| `g5-parliament.jpg` | Centre Block of the Parliament buildings, Ottawa | DXR | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Centre_Block,_Ottawa,_Southeast_view_20170422_1.jpg |
+| `g5-voyageurs.jpg` | Canoes in a Fog, Lake Superior, painting by Frances Anne Hopkins, 1869 | Frances Anne Hopkins | Public domain | https://commons.wikimedia.org/wiki/File:Canoes_in_a_Fog,_Lake_Superior.jpg |
+| `g5-wendat-village.jpg` | Inside a reconstructed longhouse, Ontario | Laslovarga | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Iroquoian_Village,_Ontario,_Canada37.JPG |
+| `g5-auto-injector.jpg` | How to use an epinephrine auto-injector | AngelHM | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Adrenalina_autoinyector9.JPG |
+| `g5-cookies.jpg` | Oatmeal cookies on a plate | Evan Prodromou | CC0 | https://commons.wikimedia.org/wiki/File:Oatmeal_cookies_on_a_plate.jpg |
+| `g5-3d-hand.jpg` | A 3D-printed mechanical hand | Intel Free Press | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:3d_printed_hand_(15642062429).jpg |
+| `g5-marsh.jpg` | Cattails at Second Marsh, Oshawa, Ontario | Matt MacGillivray | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Cattails_(3487868725).jpg |
+| `g5-citizenship.jpg` | Citizenship ceremony in Hamilton, Ontario | Joey Coleman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Hamilton_Ontario_Citizenship_Ceremony_(48087247618).jpg |
+| `g5-solar-roof.jpg` | Solar panels on the roof of a house | Downtowngal | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Solar_panel_roof_6th_St.jpg |
+| `g5-sheet-music.jpg` | Handwritten sheet music by Frédéric Chopin | Frédéric Chopin | Public domain | https://commons.wikimedia.org/wiki/File:Chopin_polonaise_Op._53.jpg |
+| `g5-beaver-hat.jpg` | A felted beaver hat (reproduction), Fort Langley | Themightyquill | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Beaver-felt-hat-ftl.jpg |
+| `g5-hockey-helmet.jpg` | Hockey players wearing helmets | Rhys Asplundh | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Hockey_helmets.jpg |
+| `g5-basketball.jpg` | A basketball hoop in a gym | Eminence190 | CC0 | https://commons.wikimedia.org/wiki/File:Close-up_view_of_the_wall-mounted_basketball_hoop_structure_at_OAU_Gymnasium.jpg |
+| `g5-earthquake.jpg` | A house destroyed by an earthquake in Yauco, Puerto Rico, 2020 | maryamarce | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Collapsed_house_in_Yauco.jpg |
+| `g5-ice-storm.jpg` | Trees and power lines coated in ice, January 1998 | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
+| `g5-morrisseau.jpg` | Agawa Rock pictographs, Lake Superior Provincial Park | Mhsheikholeslami | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lake_Superior_Provincial_Park-_Agawa_Rock_Pictographs_–Ontario.jpg |
+| `g5-nonsuch.jpg` | York boats under sail, Split Lake, Manitoba | Unknown photographer | Public domain | https://commons.wikimedia.org/wiki/File:York_boats,_under_sail,_Split_Lake,_Manitoba.jpg |
+| `g5-power-bar.jpg` | A power bar | Yapparina | CC0 | https://commons.wikimedia.org/wiki/File:Power_strip_of_National.jpg |
+| `g5-topo-map.jpg` | Topographic map of Level Mountain, British Columbia | Asybaris01, NASA data | Public domain | https://commons.wikimedia.org/wiki/File:Level_Mountain_topo_cropped.jpg |
+| `g5-phone-news.jpg` | A hand holding a smartphone | bohed (Pixabay), uploaded by Océanos y dados | CC0 | https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg |
+| `g5-sleeping.jpg` | A bedside table with a lamp | Brad Coy | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:The_use_of_Nightstand.jpg |
+| `g5-long-lots.jpg` | A farm in Kamouraska, Quebec | Mélanie Plante | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ferme_à_Kamouraska.jpg |
 | `g8-hooke-cork.jpg` | Robert Hooke’s drawing of cork cells (Schem. XI) from *Micrographia*, 1665 | Robert Hooke | Public domain | https://commons.wikimedia.org/wiki/File:Micrographia_Schem_11.jpg |
 | `g8-red-river-cart.jpg` | A Red River ox cart and its driver in St. Paul, Minnesota, 1800s | Unknown photographer | Public domain | https://commons.wikimedia.org/wiki/File:Red_river_ox_cart_and_driver_in_St._Paul.jpg |
 | `g8-lake-freighter.jpg` | The bulk freighter Isolda approaching Cleveland on Lake Erie | William Davies | CC0 | https://commons.wikimedia.org/wiki/File:Polsteam_bulk_freighter_%22Isolda%22_approaching_Cleveland._(51259045193).jpg |
