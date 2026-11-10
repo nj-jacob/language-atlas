@@ -1,0 +1,95 @@
+/* Language Atlas tool box: Decodable readers (decodable.js). The page itself is a worksheet page (sheets.css: .ws-sheet, .ws-page,
+   the theme's accent --acc and display face --face, printing); this adds the reader's own layout. Colours come from the theme. */
+
+/* ---------- every step ---------- */
+.dc-lib,.dc-one{display:flex;flex-direction:column;gap:14px;padding:4px 0 24px}
+.dc-lede{margin:0;color:var(--ink2);max-width:66ch}
+.dc-band h2{font-size:1.15rem;margin:10px 0 10px}
+.dc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.dc-card{--acc:var(--accent);display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.dc-card:hover,.dc-card:focus-visible{border-color:var(--accent)}
+.dc-cn{flex:none;width:24px;font-size:.8rem;font-weight:700;color:var(--ink3);text-align:right}
+.dc-cf{flex:0 0 72px;width:72px;font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--acc);line-height:1.05}
+.dc-cm{flex:1 1 0;display:flex;flex-direction:column;min-width:0;overflow-wrap:anywhere}
+.dc-cm b{font-size:.98rem}
+.dc-cm span{color:var(--ink2);font-size:.88rem}
+
+/* ---------- one page on screen ---------- */
+.dc-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dc-all{font-weight:700}
+.dc-do{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.dc-do .ws-hint{flex-basis:100%;margin:0}
+.dc-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.dc-tabs a{display:flex;flex-direction:column;justify-content:center;min-height:52px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.dc-tabs a span{font-size:.78rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em}
+.dc-tabs a[aria-current]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dc-tabs a:hover,.dc-tabs a:focus-visible{border-color:var(--accent)}
+
+/* ---------- the picture ---------- */
+.dc-art{display:block;width:100%;height:auto;overflow:visible}
+.dc-art .a,.dc-art .k,.dc-art .t{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dc-art .a{stroke:var(--acc);stroke-width:2}
+.dc-art .k{stroke:var(--ink);stroke-width:1.7}
+.dc-art .t{stroke:var(--ink2);stroke-width:1}
+.dc-art .dot{fill:var(--ink)}
+
+/* ---------- the printed page ---------- */
+.dc-page{padding:36px 54px 24px 60px}
+.dc-head{position:relative;padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
+.dc-head .ws-kick{padding-right:230px}
+.dc-name{position:absolute;right:0;top:0;width:210px}
+.dc-title{margin:8px 0 0;font-family:var(--face);font-size:36px;font-weight:700;line-height:1.08;color:var(--ink)}
+.dc-hl{color:var(--acc);font-weight:700}
+.dc-top{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;padding:10px 0 8px;border-bottom:1px solid var(--line2)}
+.dc-sound{display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px solid var(--acc);border-radius:14px;padding:6px 8px 10px;text-align:center}
+.dc-sound .ws-label{margin:0!important}
+.dc-focus{font-family:var(--face);font-size:44px;font-weight:700;line-height:1.05;color:var(--acc);word-spacing:.15em}
+.dc-focus.dc-many{display:grid;grid-template-columns:auto auto;gap:0 12px;font-size:32px}
+.dc-key{font-size:18px;margin-top:4px!important}
+.dc-warm .ws-label{margin:0 0 6px!important}
+.dc-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px 14px;font-size:20px;line-height:1.32}
+.dc-words li{border-bottom:1px dotted var(--line2);padding-bottom:1px}
+.dc-hearts{display:flex;flex-wrap:wrap;align-items:center;gap:3px 13px;padding:7px 0 0;font-size:15.5px}
+.dc-hearts .ws-label{margin:0 4px 0 0!important}
+.dc-hw{display:inline-flex;align-items:center;gap:5px}
+.dc-heart{width:14px;height:13px;fill:none;stroke:var(--acc);stroke-width:1.6}
+.dc-new .dc-heart{fill:var(--acc)}
+.dc-pic{margin:4px 0 0}
+.dc-pic .dc-art{height:calc(118px * var(--z, 1));width:100%}
+.dc-text{flex:1;min-height:0;overflow:hidden;padding:8px 0 4px;font-size:calc(26px * var(--z, 1));line-height:1.8}
+.dc-b1 .dc-text{font-size:calc(22px * var(--z, 1));line-height:1.65}
+.dc-b2 .dc-text{font-size:calc(19.5px * var(--z, 1));line-height:1.58}
+.dc-text p{margin:0 0 calc(8px * var(--z, 1))}
+.dc-qs{flex:none;padding-top:2px;row-gap:0}
+.dc-q{padding:6px 0 6px 28px}
+.dc-q .ws-qt{font-size:17px;line-height:1.35}
+.dc-q-order,.dc-q-draw,.dc-q-write{grid-column:1/-1}
+.dc-q:last-child:nth-child(odd){grid-column:1/-1}
+.dc-opts{gap:4px 16px;font-size:17px}
+.dc-opts .ws-opt{font-weight:400;padding:1px 12px;border:1.2px solid var(--line2)}
+.dc-order li{font-size:16px}
+.dc-order .ws-box{width:22px;min-width:22px;height:22px}
+.dc-draw{height:96px;margin-top:6px;border:1.2px dashed var(--line2);border-radius:10px}
+.dc-write{height:44px;background:repeating-linear-gradient(transparent 0 43px,var(--line2) 43px 44px)}
+.dc-foot{flex:none;padding-top:8px;border-top:1px solid var(--ink)}
+.dc-reads{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2)}
+.dc-reads b{color:var(--ink);margin-right:4px}
+.dc-reads i{width:18px;height:18px;border:1.4px solid var(--acc);border-radius:50%}
+.dc-hunt{margin-left:auto;text-align:right}
+.dc-line{margin-top:6px!important}
+
+/* the grown-up page */
+.dc-keyp .dc-head{padding-bottom:10px}
+.dc-kblock{padding:9px 0 8px;border-bottom:1px solid var(--line2);font-size:calc(14px * var(--z, 1));line-height:1.42;overflow:hidden}
+.dc-kblock:last-of-type{flex:1;min-height:0;border-bottom:0}
+.dc-steps,.dc-ans{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:3px}
+.dc-ans li{position:relative;padding-right:90px}
+.dc-kq{color:var(--ink2)}
+.dc-ans .ws-ans{font-size:14px}
+.dc-code{position:absolute;right:0;top:0;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--bad)}
+
+@media print{
+  html[data-dc-print="page"] .ws-sheet[data-side="key"],html[data-dc-print="key"] .ws-sheet:not([data-side="key"]){display:none!important}
+  html.ws-print .dc-bar,html.ws-print .dc-tabs,html.ws-print .dc-do,html.ws-print .tb-bar{display:none!important}
+  html.ws-print .dc-one,html.ws-print .tb{padding:0;gap:0}
+}
