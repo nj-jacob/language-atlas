@@ -4482,7 +4482,7 @@
     title: 'Walking on Top of Snow',
     deck: 'How Indigenous snowshoe designs solve a winter problem with science',
     hero: {
-      photo: 'g6-snowshoes.jpg', credit: 'Photo: Daderot, CC0, Wikimedia Commons', focus: '50% 50%',
+      photo: 'g6-snowshoes.jpg', credit: 'Photo: Daderot, CC0, Wikimedia Commons', focus: '50% 22%',
       tall: 220,
       cap: 'Snowshoes made in Canada between 1840 and 1870, now at the Bata Shoe Museum in Toronto.'
     },
@@ -4619,7 +4619,7 @@
     title: 'Music from an Oil Drum',
     deck: 'How the steelpan was invented in Trinidad and found a home in Canada',
     hero: {
-      photo: 'g6-steelpan.jpg', credit: 'Photo: Shanel, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 45%',
+      photo: 'g6-steelpan.jpg', credit: 'Photo: Shanel, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 82%',
       tall: 220,
       cap: 'A steelpan player in Trinidad and Tobago.'
     },
