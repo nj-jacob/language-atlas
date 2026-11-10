@@ -188,6 +188,105 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g8-stress.jpg` | A student studying alone in a library | University of Illinois Library | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Student_Studying_in_ACES_Library_(11056201595).jpg |
 | `g8-chemainus.jpg` | A street in Chemainus, British Columbia, with a large mural of a face painted on a building | Blake Handley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:2018_06_24c_Chemainus_Lunch_Stop_29_(29264469168).jpg |
 | `g8-receipt.jpg` | A grocery store receipt | Grandmaster Huon | CC0 | https://commons.wikimedia.org/wiki/File:Grocery_Store_Receipt_in_Vienna.jpg |
+| `g7-zebra-mussels.jpg` | A cluster of zebra mussels | NOAA Great Lakes Environmental Research Laboratory | Public domain | https://commons.wikimedia.org/wiki/File:Zebra_mussel_GLERL_2.jpg |
+| `g7-heron.jpg` | A great blue heron at Point Pelee National Park, Ontario | Lgbt7274 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Great_Blue_Heron,_Point_Pelee_National_Park.jpg |
+| `g7-truss-bridge.jpg` | A steel truss railway bridge (CNR main line), Winnipeg, Manitoba | Quintin Soloviev | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:CNR_Main_Line_Bridge_-_Winnipeg.jpg |
+| `g7-grand-pre.jpg` | The memorial church at Grand-Pré National Historic Site, Nova Scotia | CP Hoffman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Memorial_Church,_Grand-Pré,_Nova_Scotia_(3618093503).jpg |
+| `g7-thingvellir.jpg` | The rift valley at Þingvellir National Park, Iceland | Pi3.124 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Thingvellir_National_Park_rift_valley.jpg |
+| `g7-grocery.jpg` | Boxes of cereal on supermarket shelves | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g7-carr.jpg` | Odds and Ends, painting by Emily Carr, 1939 (Art Gallery of Greater Victoria) | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g7-gps-satellite.jpg` | An artist's view of a GPS satellite in orbit | NASA | Public domain | https://commons.wikimedia.org/wiki/File:GPS_Satellite_NASA_art-iif.jpg |
+| `g7-hockey.jpg` | Minor hockey players on the ice, Stirling, Ontario | Robert Taylor | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stirling_Blues_Minor_Hockey_Teams_7802_(8040367576).jpg |
+| `g7-cod.jpg` | An Atlantic cod | Wilhelm Thomas Fiege | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlantic_Cod,_Atlantischer_Kabeljau_(Gadus_morhua).jpg |
+| `g7-quinzhee.jpg` | A quinzhee snow shelter | NASA ICE | Public domain | https://commons.wikimedia.org/wiki/File:Quinzhee_(8474257236).jpg |
+| `g7-winter-road.jpg` | An ice road on Great Slave Lake, Northwest Territories | Hyougushi | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Ice_Road_on_Great_Slave_Lake_2.jpg |
+| `g7-birchtown.jpg` | An interpretive sign on the Heritage Trail at Birchtown, Nova Scotia | Madereugeneandrew | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Birchtown,_Nova_Scotia_(cropped).jpg |
+| `g7-bayard.jpg` | Self-Portrait as a Drowned Man, a staged photograph by Hippolyte Bayard, 1840 | Hippolyte Bayard | Public domain | https://commons.wikimedia.org/wiki/File:Hippolyte_Bayard_-_Drownedman_1840.jpg |
+| `g7-salt-pans.jpg` | Salt evaporation pans at Marakkanam, India | Sandip Dey | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Marakkanam_Salt_Pans.JPG |
+| `g7-jingle-dress.jpg` | A jingle dress dancer on Canada Day in Calgary, Alberta | JMacPherson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Jingle_Dress_Dancer_(43090211752).jpg |
+| `g7-vape.jpg` | A vape pen (e-cigarette) | Lindsay Fox | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Vape_Pen_-_E-Cigarette_(25245589669).jpg |
+| `g7-lanterns.jpg` | Red paper lanterns glowing at night | epSos.de | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Red_Chinese_Lanterns_at_Night.jpg |
+| `g7-tecumseh.jpg` | The Tecumseh memorial at the site of the Battle of the Thames, near Thamesville, Ontario | Adam Bishop | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tecumseh_memorial_Battle_of_the_Thames.jpg |
+| `g7-bike-frame.jpg` | A steel bicycle frame being built in a jig | 4300streetcar | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Partially-completed_steel_bicycle_frame_in_jig.jpg |
+| `g7-montgomery.jpg` | Montgomery's Tavern, Upper Canada | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:Montgomery's_Tavern.jpg |
+| `g7-brain-model.jpg` | A model of the human brain | YVC Biology Department | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Brain_Anatomy_Model_(50692878253).jpg |
+| `g7-coins.jpg` | Stacks of Canadian coins | Katherine Ridgley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stacks_of_Canadian_Coins_(16269886909).jpg |
+| `g7-harris-superior.jpg` | North Shore, Lake Superior (1926) by Lawren Harris | Lawren Harris | Public domain | https://commons.wikimedia.org/wiki/File:Lawren_Harris_North_Shore,_Lake_Superior_1926.jpg |
+| `g7-atmosphere.jpg` | Earth's thin atmosphere seen from the ISS | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ISS-51_Moon,_Earth's_limb_and_the_thin_blue_atmosphere.jpg |
+| `g7-pi-day.jpg` | A Pi Day celebration | Marnie Briggs, NSF | Public domain | https://commons.wikimedia.org/wiki/File:Pi_Day_(13153589925).jpg |
+| `g7-fireweed-burn.jpg` | Fireweed blooming among burned trees a year after the 2017 Sprague Fire, Glacier National Park | U.S. National Park Service (GlacierNPS) | Public domain | https://commons.wikimedia.org/wiki/File:Burned_Forests_are_Beautiful_(44026769544).jpg |
+| `g7-peregrine.jpg` | A peregrine falcon | Carlos Delgado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Falco_peregrinus_-_01.jpg |
+| `g7-toronto-skyline.jpg` | The Toronto skyline and the CN Tower at sunset, from the Toronto Islands | Jchmrt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg |
+| `g7-plains-abraham.jpg` | The Plains of Abraham, Québec City, from the air | Gabriel Picard | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Plaines_d'Abraham_-_Vue_aérienne_2024-1.jpg |
+| `g7-iceland-eruption.jpg` | The Litli-Hrútur eruption on the Reykjanes Peninsula, Iceland, 2023 | DCheretovich | CC0 | https://commons.wikimedia.org/wiki/File:Litli-Hrútur_eruption_2023.jpg |
+| `g7-throat-singers.jpg` | Two Inuit throat singers performing | Ansgar Walk | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Throat_singers_1999-04-07.jpg |
+| `g7-3d-printer.jpg` | A 3D printer at work | Subhashish Panigrahi | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Printing_with_a_3D_printer_at_Makers_Party_Bangalore_2013_11.JPG |
+| `g7-hallway.jpg` | A school hallway in Markham, Ontario | ChinaFlag | Public domain | https://commons.wikimedia.org/wiki/File:Boxwood_PS_Hallway_3.jpg |
+| `g7-oil-sands.jpg` | Oil sands mine works at Mildred Lake, Alberta | Dicklyon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Syncrude_oil_sands_mine_works,_Mildred_Lake,_Alberta.jpg |
+| `g7-green-roof.jpg` | The green roof on the podium of Toronto City Hall | GreenRoofGardener | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Toronto_City_Hall_Podium_green_roof_by_LiveRoof,_July_2010.jpg |
+| `g7-brant.jpg` | Joseph Brant (Thayendanegea), painted by George Romney, 1776 (National Gallery of Canada) | George Romney | Public domain | https://commons.wikimedia.org/wiki/File:Joseph_Brant_painting_by_George_Romney_1776_(2).jpg |
+| `g7-energy-drinks.jpg` | Cans of energy drinks | Oto Zapletal | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Various_energy_drinks_01.jpg |
+| `g7-password.jpg` | A login screen asking for a username and password | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Username_and_password_20170626.jpg |
+| `g7-water-plant.jpg` | The R. C. Harris Water Treatment Plant, Toronto | Richard Kang | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:RC_Harris_Water_Treatment_Plant_2009.jpg |
+| `g7-habitat67.jpg` | Habitat 67, Montréal, seen from the St. Lawrence River | Citlallirios | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Habitat_67_Montreal_summer_sunset_view_from_the_river.jpg |
+| `g7-rideau.jpg` | The Rideau Canal locks in Ottawa | Robert Linsdell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Rideau_Canal_Locks,_Ottawa_(480390)_(9447371149).jpg |
+| `g7-monsoon.jpg` | A street in Chennai, India, during the monsoon | McKay Savage | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:India_-_Chennai_-_Monsoon_-_01_(3058208937).jpg |
+| `g7-sale-sign.jpg` | A store sign advertising 75% off | TheDigitel Beaufort | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bay_Street_Trading_Co._sale_sign_(4983153154).jpg |
+| `g7-footbridge.jpg` | A suspension footbridge in Morrison Park | Xnatedawgx | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morrison_Park_suspension_footbridge_1.jpg |
+| `g7-alarm-clock.jpg` | A classic alarm clock | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Classic_alarm_clock_20180513.jpg |
+| `g7-canadarm2.jpg` | Canadarm2 on the International Space Station | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Canadarm2_during_Expedition_62_(ISS062-E-055099).jpg |
+| `g7-athabasca.jpg` | The Athabasca Glacier | Ethan Sahagun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Athabasca_Glacier_on_the_Columbia_Icefield.jpg |
+| `g7-henson.jpg` | Josiah Henson | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:Josiah_Henson_bw.jpg |
+| `g7-tsunami-sign.jpg` | A tsunami hazard zone sign in Bamfield, British Columbia | Mimigu | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Bamfield_Tsunami_Hazard_Zone_sign.jpg |
+| `g7-smartphone.jpg` | A person using a smartphone | Océanos y dados | CC0 | https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg |
+| `g7-old-map.jpg` | An 1862 map of Ontario and Quebec | Johnson and Ward | Public domain | https://commons.wikimedia.org/wiki/File:1862_Johnson_Map_of_Ontario_and_Quebec,_Canada_-_Geographicus_-_QuebecOntario-johnson-1862.jpg |
+| `g7-cereal-aisle.jpg` | A supermarket cereal aisle | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g7-stratford.jpg` | The Festival Theatre in Stratford, Ontario | Chris Woodrich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Festival_Theatre,_Stratford,_Ontario,_2025-08-04_04.jpg |
+| `g7-moon-surface.jpg` | Harrison Schmitt beside a boulder on the Moon, Apollo 17 | Eugene A. Cernan, NASA | Public domain | https://commons.wikimedia.org/wiki/File:Moon-apollo17-schmitt_boulder.jpg |
+| `g7-taiga.jpg` | Boreal forest (taiga) in Canada | peupleloup | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Taiga_Landscape_in_Canada.jpg |
+| `g7-red-river-cart.jpg` | A Red River cart in Pembina Hall | Viola-Ness | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_River_cart_Pembina_Hall.jpg |
+| `g7-bumblebee.jpg` | A bumblebee on flowers | Waitblock | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bumblebee_on_flowers.jpg |
+| `g7-eastern-wolf.jpg` | An eastern wolf in Algonquin Provincial Park | Quinten Wiegersma | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Eastern_wolf_Algonquin_Provincial_Park.jpeg |
+| `g7-marsh-trail.jpg` | A marsh trail in Silver Lake Provincial Park, Ontario | OTTCHAMPS2016 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marsh_Trail4._Silver_Lake_Provincial_Park,_ON.jpg |
+| `g7-lake-ice.jpg` | Floating ice on a lake | Donald Olszewski | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Floating_ice_on_the_lake_in_Pennsylvania.jpg |
+| `g7-attic.jpg` | Insulating an attic | USFWS Mountain-Prairie | Public domain | https://commons.wikimedia.org/wiki/File:Insulating_attic_(49525467656).jpg |
+| `g7-grosse-ile.jpg` | A hospital building on Grosse Île | Cephas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Intendant_hopital_Grosse_Ile.jpg |
+| `g7-aral-ships.jpg` | Abandoned ships on the dry bed of the Aral Sea, Mo‘ynoq | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ships_of_Aral_Sea,_Mo‘ynoq.jpg |
+| `g7-aed.jpg` | An automated external defibrillator | 쉰지식인 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Automated_external_defibrillator_(2).jpg |
+| `g7-hip-hop.jpg` | Hip hop dancers | Muhammed amine benloulou | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hip_hop_dance.jpg |
+| `g7-ev-charging.jpg` | An electric car recharging | Michael Movchin, Felix Müller | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Electric_Car_recharging.jpg |
+| `g7-killbear.jpg` | Sunset at Killbear Provincial Park on Georgian Bay | GBBR | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Killbear_Sunset.jpg |
+| `g7-cholera-map.jpg` | John Snow's 1854 map of cholera cases in London | John Snow | Public domain | https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg |
+| `g7-fiona.jpg` | Cleaning up after Fiona in Charlottetown, PEI | Larry (microbe) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fiona_cleanup_in_Charlottetown,_PEI_(52437438682).jpg |
+| `g7-spillway.jpg` | The spillway of the Robert-Bourassa generating station | fargomeD | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Évacuateur_de_crues_R-B.jpg |
+| `g7-zoetrope.jpg` | A zoetrope | Runner1616 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Zoetrope_NN.jpg |
+| `g7-running-blade.jpg` | An athlete running on a prosthetic blade | Cpl. Chelsea Anderson, USMC | Public domain | https://commons.wikimedia.org/wiki/File:2013_Marine_Corps_Trials_Practice_Day_3_130101-M-II268-001.jpg |
+| `g7-louisbourg.jpg` | The Fortress of Louisbourg, Nova Scotia | KenCLeBlanc | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fortress_Louisbourg,_Nova_Scotia_1.jpg |
+| `g7-permafrost.jpg` | Thawing permafrost on Herschel Island, Yukon | Boris Radosavljevic | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Permafrost_in_Herschel_Island_001.jpg |
+| `g7-charts.jpg` | Charts on a screen | Unknown | CC0 | https://commons.wikimedia.org/wiki/File:Stock_market_charts_illustration.jpg |
+| `g7-selfie.jpg` | A person taking a selfie | Maëlick | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Woman_taking_Selfie_at_Elliott_Bay,_Seattle,_2014.jpg |
+| `g7-edmonton-cold.jpg` | A cold, snowy day in Edmonton | hobvias sudoneighm | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Snowing_in_Deadmonton_~_physics_(130219606).jpg |
+| `g7-log-house.jpg` | A log house at Fanshawe Pioneer Village, London, Ontario | Adam Bishop | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fanshawe_Pioneer_Village_log_house.jpg |
+| `g7-microplastic.jpg` | Microplastics found on a beach | OceanBlueProject | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Microplastic-found-key-largo-beach-state-park.jpg |
+| `g7-brown-bat.jpg` | A little brown bat with white-nose syndrome | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Little_brown_bat_with_white-nose_syndrome_(5751822315).jpg |
+| `g7-stone-arch.jpg` | A stone arch bridge over the Orb, Roquebrun, France | Christian Ferrer | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Pont_sur_l'Orb,_Roquebrun.jpg |
+| `g7-nl-coast.jpg` | The coast of Newfoundland | Michel Rathwell | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Seascape_Newfoundland_(39554985280).jpg |
+| `g7-smoke-haze.jpg` | Wildfire smoke haze over Vancouver, 2021 | Rod Raglin | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Haze_from_Wildfire_smoke_Vancouver_2021_(51379645320).jpg |
+| `g7-sahel.jpg` | Satellite view of the Sahel in Mali | NASA (MODIS) | Public domain | https://commons.wikimedia.org/wiki/File:Greening_in_Mali_(MODIS_2021-11-18).jpg |
+| `g7-study-group.jpg` | Students working together in a study group | Barry Pousman | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Biology_study_group_(6146861188).jpg |
+| `g7-kathak.jpg` | A Kathak dancer at a ghat in Varanasi | Rhythm India | CC0 | https://commons.wikimedia.org/wiki/File:Kathak_Dancer_at_Varanasi_Ghat.jpg |
+| `g7-farm-drone.jpg` | An agricultural drone spraying a rice field | Shreesha Sharma | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agricultural_drone_spraying_on_paddy_field.jpg |
+| `g7-rue-saint-paul.jpg` | Rue Saint-Paul in Old Montréal | shankar s. | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Rue_Saint-Paul_(8391089921).jpg |
+| `g7-wind-farm.jpg` | A wind farm in Chatham-Kent, Ontario | Ken Lund | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Wind_Farm,_Chatham-Kent,_Ontario_(21153525803).jpg |
+| `g7-seasons.jpg` | Earth from space at different seasons | NASA Earth Observatory | Public domain | https://commons.wikimedia.org/wiki/File:An_Epic_View_of_the_Seasons_(1378514_-_lrg).jpg |
+| `g7-bike-lane.jpg` | A protected bike lane in Toronto | Nate Wessel | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Toronto_Protected_Bike_Lanes.jpg |
+| `g7-maya-numerals.jpg` | Maya number signs, from a 1915 book by Sylvanus Morley | Sylvanus Griswold Morley | Public domain | https://commons.wikimedia.org/wiki/File:Maya_Hieroglyphs_Fig_53.jpg |
+| `g7-murals.jpg` | Murals in Kensington Market, Toronto | Bernard Spragg | CC0 | https://commons.wikimedia.org/wiki/File:Murals_at_Kensington_Market,_Toronto;_September_2019.jpg |
+| `g7-ramp.jpg` | An accessibility ramp at a train station | AlphaBeta135 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Accessibility_ramp_at_Grayland_station_-_August_2025.jpg |
+| `g7-wampum.jpg` | Wampum at the Seneca-Iroquois National Museum | Nosferattus | CC0 | https://commons.wikimedia.org/wiki/File:Wampum_at_Seneca_Iroquois_National_Museum.jpg |
+| `g7-fundy.jpg` | Low tide in the Bay of Fundy | Share Bear | Public domain | https://commons.wikimedia.org/wiki/File:118_-_Low_Tide_in_the_Bay_of_Fundy.JPG |
+| `g7-waiting-room.jpg` | A doctor's office waiting room | Kurt Kaiser | CC0 | https://commons.wikimedia.org/wiki/File:Doctor_office_waiting_room.jpg |
+| `g7-map-compass.jpg` | A compass resting on a map | Wodgester | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Compass_on_map.jpg |
 | `g4-firefly.jpg` | A firefly glowing in flight | art farmer | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Photinus_pyralis_Firefly_glowing.jpg |
 | `g4-sand-dunes.jpg` | Sand dune at Sandbanks Provincial Park, Ontario | Mhsheikholeslami | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sandbanks_Provincial_Park-_Sand_Dunes-Ontario.jpg |
 | `g4-clouds.jpg` | Cumulus clouds in a blue sky | Lance Vanlewen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:White_Cumulus_Clouds_against_Blue_Sky_(4).jpg |
