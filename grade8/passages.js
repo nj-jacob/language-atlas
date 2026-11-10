@@ -2678,5 +2678,877 @@
     ]
   });
 
+  P.add({
+    id: 'g8-sickle-cell', subject: 'science', form: 'Explanation',
+    title: 'When a Cell Changes Shape',
+    deck: 'A red blood cell’s shape is perfect for its job. In sickle cell disease, that shape goes wrong.',
+    hero: {
+      photo: 'g8-blood-cells.jpg', credit: 'Image: National Cancer Institute, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Human blood seen through an electron microscope. The round, dimpled discs are red blood cells.'
+    },
+    body: [
+      'A single drop of your blood holds millions of red blood cells. Each one is a tiny disc, thinner in the middle than at the edges, like a doughnut that was pressed instead of punched through. This odd shape is no accident. In living things, a cell’s <b>structure</b> is closely matched to its <b>function</b>, the job it does.',
+      { h: 'Built for carrying oxygen' },
+      'The job of a red blood cell is to carry oxygen from the lungs to every other cell in the body. It is packed with a protein called hemoglobin, which grabs oxygen in the lungs and lets it go where it is needed. Unlike most cells, a mature red blood cell has no nucleus, which leaves more room for hemoglobin. Its flat, dimpled shape gives it a large surface for oxygen to pass through, and it is soft and flexible, so it can fold to squeeze through the narrowest blood vessels.',
+      { fig: '<ellipse class="k" cx="70" cy="56" rx="40" ry="40"/><ellipse class="t" cx="70" cy="56" rx="16" ry="16"/><path class="a" d="M190 30 Q250 30 260 80 Q236 54 196 60 Q178 46 190 30 Z"/>' +
+          '<path class="k" d="M20 130 H290 M20 150 H290"/><ellipse class="k" cx="70" cy="140" rx="14" ry="6"/><path class="a" d="M214 134 Q236 134 240 146 Q230 140 216 142 Z"/><path class="t" d="M244 134 L262 146 M262 134 L244 146"/>' +
+          tx(70, 112, 'n', 'healthy: round and soft', 'middle') + tx(226, 112, 'n', 'sickle: curved and stiff', 'middle') + tx(155, 168, 'n', 'a tiny blood vessel', 'middle'),
+        tall: 172, cap: 'A healthy red blood cell bends to pass through a tiny vessel. A sickle cell can get stuck.' },
+      { h: 'A change in one gene' },
+      '<b>Sickle cell disease</b> is an inherited condition. A small change in the gene for hemoglobin causes the protein to clump together when it gives up oxygen. The red blood cells become stiff and curved like a crescent moon or a farm tool called a sickle. Sickle cells can jam in small blood vessels, blocking blood flow and causing sudden, severe pain. They also break apart after a few weeks instead of the usual four months, so people with the disease often have too few red blood cells and feel very tired.',
+      { box: 'Who is affected?', text: 'Sickle cell disease is most common in people whose families come from Africa, the Caribbean, the Middle East, India and the Mediterranean. In Canada, newborns in several provinces, including Ontario, are tested for it at birth.' },
+      { h: 'Treating it today' },
+      'Medicines, blood transfusions and careful care help many people with sickle cell disease live long, active lives. Some patients have been cured with a transplant of healthy bone marrow, where blood cells are made. Scientists are now testing ways to repair the gene itself.'
+    ],
+    guide: { before: 'Review the parts of a cell (nucleus, membrane). Teach <b>structure</b>, <b>function</b> and <b>sickle cell disease</b>. Compare the two cell shapes in the diagram.',
+      after: 'Find one other cell in the body whose shape suits its job, such as a nerve cell. How does its shape help?' },
+    words: [['structure', 'the shape and parts of something'], ['function', 'the job that something does'], ['sickle cell disease', 'an inherited condition in which red blood cells become stiff and curved']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about sickle cells?',
+        opts: ['They can get stuck in tiny vessels.', 'They are larger than vessels.', 'They carry more oxygen.', 'They have a nucleus.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a mature red blood cell have no nucleus?',
+        opts: ['It leaves more room for hemoglobin.', 'It makes the cell stiff.', 'The nucleus is in the lungs.', 'It helps the cell divide.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Compare the two kinds of red blood cell.', cols: ['Healthy red blood cell', 'Sickle cell'],
+        rows: [['round, dimpled disc', null], ['soft and flexible', null], [null, 'breaks apart after a few weeks']],
+        a: [[null, 'curved like a crescent'], [null, 'stiff, and can jam in vessels'], ['lasts about four months', null]] },
+      { k: 'choice', code: 'C1.3', q: 'Which text pattern does the writer mainly use in this explanation?',
+        opts: ['compare and contrast, then cause and effect', 'a story in time order', 'a list of steps to follow', 'question and answer'], a: 0 },
+      { k: 'choice', code: 'B2.1', q: 'The Greek word <i>haima</i> means blood. Which word comes from it?',
+        opts: ['hemoglobin', 'hexagon', 'helmet', 'harvest'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how a change in one protein leads to severe pain.',
+        a: 'The changed hemoglobin clumps together, so red blood cells become stiff and curved. They jam in small blood vessels and block blood flow, which causes pain.', look: 'protein, cell shape, blocked vessels, pain, in order' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about cells from science class that helped you understand this text?',
+        a: 'I knew most cells have a nucleus and a membrane. That helped me see why it is unusual that red blood cells have no nucleus.', look: 'prior knowledge linked to a detail in the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-insulin', subject: 'health', form: 'Report',
+    title: 'The Discovery That Belonged to the World',
+    deck: 'In 1922, a dying boy in Toronto received an injection that changed medicine forever',
+    hero: {
+      photo: 'g8-banting-best.jpg', credit: 'Photo: Thomas Fisher Rare Book Library, University of Toronto, CC BY 2.0, Wikimedia Commons', focus: '50% 5%',
+      side: { w: 400, view: '0 0 300 150' },
+      tall: 200,
+      cap: 'Charles Best (left) and Frederick Banting on the roof of the medical building at the University of Toronto, 1921. Beside them: how insulin helps cells use glucose. In type 1 diabetes, the third step is missing.',
+      art: flow(['food is digested into glucose', 'glucose travels in the blood', 'insulin unlocks the body’s cells', 'cells use glucose for energy'])
+    },
+    body: [
+      'In January 1922, fourteen-year-old Leonard Thompson lay in a bed at Toronto General Hospital. He weighed less than 30 kilograms. Like everyone at that time with type 1 <b>diabetes</b>, he was expected to die. Then doctors gave him an injection of a new substance made at the University of Toronto. Within weeks, he was gaining weight and strength. He lived for thirteen more years. News of the treatment spread quickly, and desperate families travelled to Toronto from across North America.',
+      { h: 'A missing key' },
+      'Our cells get energy from glucose, a sugar that comes from the food we eat. After a meal, glucose travels in the blood. To get into most cells, it needs help from <b>insulin</b>, a hormone made by small clusters of cells in the pancreas. Insulin works like a key that unlocks cells so glucose can enter. In type 1 diabetes, the body attacks the cells that make insulin. Glucose builds up in the blood while the body’s cells starve.',
+      { h: 'A summer in the lab' },
+      'In 1921, a young surgeon named Frederick Banting had an idea for removing insulin from the pancreas. Professor John Macleod gave him a laboratory for the summer and a student assistant, Charles Best. Their early results were rough, and the first injection given to Leonard caused a bad reaction. A chemist, James Collip, found a way to <b>purify</b> the extract. The cleaner insulin worked, and soon children across North America were being saved.',
+      { fig: '<circle class="a" cx="150" cy="70" r="30"/>' + tx(150, 74, 'lb', 'insulin', 'middle') + '<path class="t" d="M96 40 L124 56 M204 40 L176 56 M96 104 L124 86 M204 104 L176 86"/>' +
+          tx(10, 30, 'lb', 'Banting') + tx(10, 44, 'n', 'had the idea') + tx(290, 30, 'lb', 'Best', 'end') + tx(290, 44, 'n', 'student assistant', 'end') +
+          tx(10, 106, 'lb', 'Collip') + tx(10, 120, 'n', 'purified the extract') + tx(290, 106, 'lb', 'Macleod', 'end') + tx(290, 120, 'n', 'lent the lab', 'end'),
+        tall: 130, cap: 'Four people, four different jobs in the discovery of insulin.' },
+      { box: 'One dollar', text: 'Banting, Best and Collip sold their rights to insulin to the University of Toronto for one dollar each, so that it could be made widely and cheaply.' },
+      { h: 'A Nobel Prize, shared' },
+      'In 1923, Banting and Macleod won the Nobel Prize in Medicine. Banting was angry that Best had been left out, so he shared his prize money with him. Macleod shared his with Collip. Today, millions of people with diabetes use insulin every day. Many still struggle to afford it, a reminder that a discovery helps only the people who can get it.'
+    ],
+    guide: { before: 'Ask what the child knows about diabetes. Teach <b>diabetes</b>, <b>insulin</b> and <b>purify</b>. Follow the flow chart and point to the missing step.',
+      after: 'The discoverers sold their rights for one dollar. Should life-saving medicines always be cheap? Who should pay?' },
+    words: [['diabetes', 'a condition in which the body cannot control the sugar in the blood'], ['insulin', 'a hormone that lets glucose enter the body’s cells'], ['purify', 'to make clean by removing unwanted parts']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the events in the order they happened.',
+        items: ['Banting gets a lab for the summer.', 'Leonard has a bad reaction to the first injection.', 'Collip purifies the extract.', 'Banting and Macleod win the Nobel Prize.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the flow chart, what does insulin do?',
+        opts: ['unlocks cells so glucose can enter', 'digests food', 'makes glucose', 'carries oxygen'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“Macleod shared <b>his</b> with Collip.” <b>His</b> refers to Macleod’s …',
+        opts: ['prize money', 'laboratory', 'insulin', 'student'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The writer compares insulin to a key. Explain why this comparison fits.',
+        a: 'A key opens a lock. Insulin opens the body’s cells so glucose can get in. Without the key, the glucose stays locked out.', look: 'explains what is locked and what is unlocked' },
+      { k: 'choice', code: 'B3.2', q: '“Banting was <b>angry</b> that Best had been left out.” The word <b>angry</b> is …',
+        opts: ['an adjective', 'a verb', 'a noun', 'an adverb'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The last sentence says “a discovery helps only the people who can get it.” What does this mean? Why might the writer end this way?',
+        a: 'A medicine saves no one if people cannot afford it. The writer ends this way to remind us that fairness and access still matter today.', look: 'explains access and the purpose of the ending' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the discovery of insulin in two or three sentences, naming the four people involved.',
+        a: 'In 1921, Banting and Best, working in Macleod’s lab, removed insulin from the pancreas. Collip purified it, and in 1922 it saved Leonard Thompson and many others.', look: 'all four people and the main result, briefly' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-welland-canal', subject: 'geography', form: 'Explanation',
+    title: 'A Staircase for Ships',
+    deck: 'Lake Erie is about 100 metres higher than Lake Ontario. Here is how giant ships climb between them.',
+    hero: {
+      photo: 'g8-welland-lock.jpg', credit: 'Photo: bgilliard, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A ship in Lock 7 of the Welland Canal in St. Catharines, Ontario.'
+    },
+    body: [
+      'Between Lake Erie and Lake Ontario, the land drops sharply at the Niagara Escarpment. The Niagara River tumbles over this cliff at Niagara Falls. Ships cannot sail over a waterfall, so in 1829 workers dug the first Welland Canal to go around it. Today’s canal, opened in 1932, is 43 kilometres long. It carries ships about 100 metres up or down using eight huge <b>locks</b>.',
+      { fig: [0, 1, 2].map(function (i) { var x = 10 + i * 100, lvl = [96, 72, 48][i]; return '<path class="k" d="M' + x + ' 40 V120 H' + (x + 80) + ' V40"/><path class="a" d="M' + (x + 2) + ' ' + lvl + ' H' + (x + 78) + '"/><path class="k" d="M' + (x + 22) + ' ' + (lvl - 12) + ' H' + (x + 58) + ' L' + (x + 52) + ' ' + lvl + ' H' + (x + 28) + ' Z"/>' + tx(x + 40, 140, 'n', ['1. ship enters', '2. chamber fills', '3. ship leaves'][i], 'middle'); }).join('') + tx(150, 20, 'n', 'water flows in from the higher level', 'middle'),
+        tall: 148, cap: 'Raising a ship in a lock: the water level rises and lifts the ship.' },
+      { h: 'How a lock works' },
+      'A lock is a concrete chamber with watertight gates at each end. It works like a water elevator, and it uses no pumps at all. The trick is <b>gravity</b>: water always flows downhill until the water levels are equal. To raise a ship, workers close the gates behind it and open valves that let water from the higher level flow into the chamber. As the chamber fills, the ship floats upward. When the water inside matches the level ahead, the front gates open, and the ship sails out. To lower a ship, the steps run in reverse, and the water drains out to the lower level.',
+      { box: 'What do the ships carry?', text: 'Ships called lakers carry iron ore, grain, coal and salt through the canal. One laker can carry as much as hundreds of train cars.' },
+      'Filling one lock takes about ten minutes, even though the chamber holds millions of litres of water. Going through the whole canal takes a ship about eleven hours. Locks 4, 5 and 6 are built side by side in pairs and joined end to end like steps, so that ships going up and ships coming down can pass at the same time. This is the staircase that gives the canal its nickname.',
+      { h: 'A link in a waterway' },
+      'The Welland Canal is part of the St. Lawrence Seaway, a <b>waterway</b> that links the Great Lakes to the Atlantic Ocean. Ships can travel more than 3000 kilometres from the ocean into the heart of North America. Grain from the Prairies can be loaded at Thunder Bay and shipped all the way to the sea. In winter, when ice covers the lakes, the canal closes for repairs. Each spring, the first ship through is greeted with a small ceremony, a sign that the shipping season has begun again.'
+    ],
+    guide: { before: 'Find Lake Erie, Lake Ontario and Niagara Falls on a map. Teach <b>lock</b>, <b>gravity</b> and <b>waterway</b>. Read the three diagram panels left to right.',
+      after: 'How would you explain a lock to a younger child using a bathtub and a toy boat?' },
+    words: [['locks', 'chambers with gates that raise or lower ships between water levels'], ['gravity', 'the force that pulls things down toward Earth'], ['waterway', 'a river, canal or lake that ships can travel on']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps for raising a ship in a lock.',
+        items: ['The ship enters the lock.', 'The gates behind it close.', 'Valves let water flow in from the higher level.', 'The ship floats upward.', 'The front gates open and the ship sails out.'], show: [3, 0, 4, 2, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what changes from panel 1 to panel 3?',
+        opts: ['The water level rises.', 'The ship gets bigger.', 'The gates disappear.', 'The water drains.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a lock need no pumps?',
+        opts: ['Water flows downhill by gravity.', 'Ships push the water.', 'The lake pumps it.', 'Workers carry the water.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why was the Welland Canal needed? Use the first paragraph.',
+        a: 'The land drops about 100 metres at the Niagara Escarpment, and ships cannot go over Niagara Falls, so the canal lets them go around it.', look: 'the escarpment or falls as the obstacle' },
+      { k: 'choice', code: 'C1.2', q: 'The writer says a lock “works like a water elevator.” Why compare it to an elevator?',
+        opts: ['Both move things up and down between levels.', 'Both use electricity.', 'Both are in tall buildings.', 'Both are very fast.'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which was easier to understand: the paragraph about how a lock works, or the diagram? How did using both help?',
+        a: 'The diagram was easier because I could see the water rising. The paragraph explained why the water flows in, so together they made sense.', look: 'compares the two and explains how both helped' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'The St. Lawrence Seaway links Thunder Bay to the Atlantic. Why might this matter to a grain farmer in Saskatchewan?',
+        a: 'The farmer’s grain can travel by train to Thunder Bay and then by ship to the ocean and other countries, so it can be sold around the world.', look: 'connects the waterway to trade' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-plimsoll', subject: 'science', form: 'Report',
+    title: 'The Line That Saved Sailors',
+    deck: 'Look closely at the side of a cargo ship and you will find a strange mark. It is about density.',
+    hero: {
+      photo: 'g8-plimsoll.jpg', credit: 'Photo: David Wright, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A load line mark painted on the side of a ship. The ship may be loaded only until the water reaches the right line.'
+    },
+    body: [
+      'In the 1800s, some shipowners in Britain loaded their ships so heavily that they rode dangerously low in the water. Many of these ships sank in storms, and thousands of sailors drowned. Some owners did not care, because their ships and cargo were insured. Sailors called them coffin ships. A sailor who refused to board an unsafe ship could even be sent to prison.',
+      { h: 'A member of Parliament takes on the owners' },
+      'Samuel Plimsoll, a member of the British Parliament, campaigned for years to stop the practice. He wrote a book about the dangers, gave angry speeches and was nearly thrown out of Parliament. In 1876, a law finally required every British cargo ship to carry a mark showing how deeply it could safely be loaded. The mark is still called the Plimsoll line. Today, ships around the world must carry a <b>load line</b>.',
+      { h: 'Why there are several lines' },
+      'A ship floats because the water pushes up on it with a force equal to the weight of the water it moves aside. But not all water is the same. Salt water has a greater <b>density</b> than fresh water: a litre of it has more mass. Denser water pushes up harder, so a ship floats higher in the ocean than in a river. Cold water is also slightly denser than warm water.',
+      'So a load line is really a set of lines. A ship loaded to the summer line in the ocean will sink a little deeper when it sails into a freshwater river, and that is allowed. In winter seas, where storms are worse, the ship must carry less and float higher.',
+      { fig: '<path class="k" d="M60 20 V140"/>' + [['TF', 32, 'tropical fresh water'], ['F', 54, 'fresh water'], ['T', 76, 'tropical sea'], ['S', 98, 'summer sea'], ['W', 120, 'winter sea']].map(function (r) { return '<path class="' + (r[0] === 'S' ? 'a' : 'k') + '" d="M60 ' + r[1] + ' H110"/>' + tx(116, r[1] + 4, 'lb', r[0]) + tx(146, r[1] + 4, 'n', r[2]); }).join(''),
+        tall: 150, cap: 'Load lines (simplified). A ship may sink deepest in warm fresh water and least deep in the winter sea.' },
+      { box: 'On the Great Lakes', text: 'Ships on the Great Lakes, which are fresh water, use their own load lines, and the limits change with the seasons.' },
+      'Plimsoll’s mark is one of the simplest safety rules ever invented, and it has saved countless lives. It works because of a scientific <b>principle</b> that is more than 2000 years old. The ancient Greek thinker Archimedes first described it, and every ship that floats still obeys it.'
+    ],
+    guide: { before: 'Float an egg in fresh water, then add salt until it floats. Teach <b>density</b>, <b>load line</b> and <b>principle</b>. Read the load lines from top to bottom.',
+      after: 'Why did it take a law, and not just science, to protect sailors?' },
+    words: [['load line', 'a mark on a ship that shows how deeply it may be loaded'], ['density', 'how much mass is packed into a certain space'], ['principle', 'a basic rule or law of science']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, where may a ship sink deepest?',
+        opts: ['in tropical fresh water', 'in the winter sea', 'in the summer sea', 'in the tropical sea'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did some owners not care if their ships sank?',
+        opts: ['Their ships and cargo were insured.', 'They did not own the ships.', 'Ships were cheap to build.', 'The sailors were insured.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why a ship floats higher in the ocean than in a river.',
+        a: 'Salt water is denser than fresh water, so it pushes up harder on the ship. The ship does not need to sink as deep to be held up.', look: 'denser salt water pushes up harder' },
+      { k: 'choice', code: 'B2.2', q: 'Sailors called overloaded ships “coffin ships.” What does this name suggest?',
+        opts: ['They were likely to kill the sailors.', 'They carried coffins.', 'They were made of wood.', 'They were very slow.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How might a shipowner in the 1870s have felt about Plimsoll’s law? How would a sailor have felt?',
+        a: 'An owner might be angry because he could carry less cargo and earn less money. A sailor would be grateful because the law made the ships safer.', look: 'two perspectives, each with a reason' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'The last sentence says the mark works because of a principle that is more than 2000 years old. Which principle is it? Use the text.',
+        a: 'It is the idea that water pushes up on an object with a force equal to the weight of the water it moves aside, which explains why ships float.', look: 'identifies the buoyancy principle described in the text' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Plimsoll fought for a safety rule. Name another safety rule that protects people today. How is it like the load line?',
+        a: 'Seatbelt laws. Like the load line, they are simple rules that save lives, even though some people first said they were not needed.', look: 'a real safety rule and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-moraine', subject: 'geography', form: 'Report',
+    title: 'The Sponge Under the Hills',
+    deck: 'North of Toronto, a ridge of sand and gravel left by glaciers stores water for hundreds of thousands of people',
+    hero: {
+      photo: 'g8-moraine.jpg', credit: 'Photo: Rick Harris, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 190,
+      cap: 'Rolling hills and fields on the Oak Ridges Moraine, north of Toronto.'
+    },
+    body: [
+      'Drive north from Toronto and the land begins to rise into rolling hills, kettle ponds and patches of forest. You are crossing the Oak Ridges Moraine, a ridge about 160 kilometres long that stretches from the Niagara Escarpment east to Rice Lake. It looks like ordinary countryside, but underground it is doing an important job for millions of people who live downstream.',
+      { h: 'Left by the ice' },
+      'About 12 000 years ago, the last great ice sheet was melting. Rivers of meltwater poured out of the ice and dropped huge amounts of sand and gravel between two lobes of the glacier. When the ice was gone, the sand and gravel were left behind as a long, hilly ridge. A ridge of material left by a glacier is called a <b>moraine</b>. Today, gravel pits on the moraine dig up the same sand and gravel to build roads.',
+      { fig: '<path class="k" d="M10 70 Q60 70 90 50 Q150 20 210 50 Q240 70 290 70"/><path class="d" d="M30 96 H270"/><path class="t" d="M10 130 H290"/>' + [60, 120, 180, 240].map(function (x) { return D.arrow(x, 18, x, 50, 'a'); }).join('') + D.arrow(230, 100, 286, 104, 'k') + D.arrow(70, 100, 14, 104, 'k') +
+          tx(150, 12, 'n', 'rain and snowmelt soak in', 'middle') + tx(150, 88, 'n', 'sand and gravel hold water', 'middle') + tx(150, 122, 'n', 'aquifer', 'middle') + tx(150, 148, 'n', 'water flows out to springs and streams', 'middle'),
+        tall: 154, cap: 'A cross-section of the moraine (simplified). Water soaks in at the top and slowly flows out at the sides.' },
+      { h: 'A giant sponge' },
+      'Sand and gravel have many spaces between their grains. When rain and melting snow fall on the moraine, the water soaks in quickly instead of running off. It collects underground in layers called <b>aquifers</b>. Slowly, over years, the water seeps out of the sides of the moraine into springs, wetlands and the headwaters of about 65 rivers and streams. Many towns pump their drinking water straight from the moraine’s aquifers. The moraine also gives shelter to forests, wetlands and rare animals, such as the Jefferson salamander.',
+      { box: 'Paving the sponge', text: 'Roads, parking lots and buildings are <b>impermeable</b>: water cannot soak through them. When they cover the moraine, rain runs off into storm drains instead of filling the aquifers.' },
+      { h: 'A fight over the hills' },
+      'In the 1990s, the land on the moraine was being bought for new housing. Developers said the growing region needed homes. Residents and environmental groups said that building on the moraine would endanger the water supply. After years of debate, Ontario passed the Oak Ridges Moraine Conservation Act in 2001. It protects most of the moraine from new building, although some development still goes ahead in its towns.'
+    ],
+    guide: { before: 'Pour water onto sand and onto a plate and compare. Teach <b>moraine</b>, <b>aquifers</b> and <b>impermeable</b>. Find the moraine on a map of southern Ontario.',
+      after: 'Should new homes ever be built on the moraine? Give one reason for each side.' },
+    words: [['moraine', 'a ridge of sand, gravel and rock left behind by a glacier'], ['aquifers', 'underground layers of rock, sand or gravel that hold water'], ['impermeable', 'not letting water pass through']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the cross-section, where does water leave the moraine?',
+        opts: ['at the sides, into springs and streams', 'at the very top', 'into the air', 'nowhere'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>im</b>permeable, the prefix <b>im-</b> means …',
+        opts: ['not', 'again', 'under', 'very'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps in how the moraine formed and how it works.',
+        items: ['Meltwater drops sand and gravel between lobes of ice.', 'The ice melts, leaving a ridge.', 'Rain and snowmelt soak into the sand and gravel.', 'Water collects in aquifers.', 'Water seeps out into springs and streams.'], show: [2, 4, 0, 3, 1] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why is the moraine called a giant sponge?',
+        a: 'Like a sponge, its sand and gravel have many spaces that soak up water quickly and hold it, then let it out slowly.', look: 'soaks up, holds and slowly releases water' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Explain the developers’ view and the residents’ view of building on the moraine. Does the writer favour one side?',
+        a: 'Developers said the region needed homes. Residents said building would endanger the water. The writer explains both, but the facts about water suggest protection matters.', look: 'both views and a judgment about the writer’s balance' },
+      { k: 'choice', code: 'C1.1', q: '“When <b>they</b> cover the moraine, rain runs off.” <b>They</b> refers to …',
+        opts: ['roads, parking lots and buildings', 'rivers and streams', 'aquifers', 'storm drains'], a: 0 },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'What questions did you ask yourself while reading this text? Which one did the text answer, and which is still unanswered?',
+        a: 'I asked how water gets underground and whether it is still safe to build there. The text answered the first, but I still wonder how much building is allowed.', look: 'names own questions and checks them against the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-sea-ice', subject: 'science', form: 'Explanation',
+    title: 'Why Melting Ice Speeds Up Melting',
+    deck: 'Arctic sea ice is shrinking. A simple idea about light explains why the change keeps growing.',
+    hero: {
+      photo: 'g8-sea-ice.jpg', credit: 'Photo: Kathryn Hansen / NASA, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Melt ponds on Arctic sea ice in summer. The dark blue pools absorb more sunlight than the white ice around them.'
+    },
+    body: [
+      'Every winter, the Arctic Ocean freezes over, and the ice spreads across millions of square kilometres. Every summer, some of it melts. Since satellites began measuring it in 1979, the ice left at the end of summer has shrunk dramatically. The ice is also thinner, because less of it survives from one year to the next. Scientists expect that, within a few decades, the Arctic Ocean may be almost free of ice in some Septembers.',
+      { h: 'Bright surfaces and dark ones' },
+      'Why does the melting keep speeding up? Part of the answer is a property called <b>albedo</b>, the share of sunlight that a surface reflects. White snow and ice have a high albedo. They bounce most of the Sun’s energy back into space, so they stay cool. Dark ocean water has a low albedo. It absorbs most of the sunlight that hits it and warms up.',
+      { fig: bars([[85, 'fresh', 'snow'], [60, 'bare', 'sea ice'], [30, 'melt', 'pond'], [7, 'open', 'ocean']], { max: 100, step: 50, unit: '%' }),
+        tall: 172, cap: 'Approximate share of sunlight reflected by different surfaces (albedo).' },
+      { h: 'A loop that feeds itself' },
+      'When some ice melts, it uncovers dark water. The water absorbs more heat, which melts more ice, which uncovers more water. This is called a <b>feedback loop</b>: a change that causes more of the same change. Melt ponds on top of the ice work the same way. Their dark blue surfaces soak up heat and help the ice beneath them thin and break.',
+      { box: 'Does sea level rise?', text: 'Melting sea ice does not raise sea level much, because the ice was already floating. Melting ice on land, such as glaciers and the Greenland ice sheet, does raise it.' },
+      { h: 'Who depends on the ice?' },
+      'Sea ice is a habitat. Polar bears hunt seals from it, and walruses rest on it between dives. For Inuit communities, sea ice is also a highway and a hunting ground, travelled for thousands of years. As the ice forms later and breaks up sooner, travel becomes more dangerous, and hunters must rely on knowledge of ice that is changing faster than ever. Inuit observations are now helping scientists track those changes, and Inuit organizations are calling for a say in decisions about the Arctic.'
+    ],
+    guide: { before: 'Put a black cloth and a white cloth in the sun and feel them after ten minutes. Teach <b>albedo</b> and <b>feedback loop</b>. Read the bar graph from left to right.',
+      after: 'Can you think of another feedback loop, in nature or in your own life?' },
+    words: [['albedo', 'how much sunlight a surface reflects'], ['feedback loop', 'a change that causes more of the same change']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, which surface reflects the least sunlight?',
+        opts: ['open ocean', 'fresh snow', 'bare sea ice', 'melt pond'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does melting sea ice not raise sea level much?',
+        opts: ['The ice was already floating.', 'The water freezes again.', 'It evaporates.', 'There is very little of it.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps in the feedback loop.',
+        items: ['Some ice melts.', 'Dark water is uncovered.', 'The water absorbs more heat.', 'More ice melts.'], show: [2, 0, 3, 1] },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why white ice stays cool but dark water warms up.',
+        a: 'White ice has a high albedo, so it reflects most sunlight back to space. Dark water has a low albedo and absorbs most of the sunlight, so it warms.', look: 'uses albedo to contrast the two surfaces' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence uses a colon to introduce an explanation?',
+        opts: ['This is called a feedback loop: a change that causes more of the same change.', 'Sea ice is a habitat.', 'Every summer, some of it melts.', 'Why does the melting keep speeding up?'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the text tell us about the importance of sea ice to Inuit communities? Why do you think the writer included it?',
+        a: 'For Inuit, sea ice is a highway and a hunting ground used for thousands of years. The writer includes it to show that melting ice affects people and cultures, not only animals.', look: 'Inuit uses of the ice and the writer’s purpose' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize, in two sentences, why Arctic sea ice is melting faster and faster.',
+        a: 'When ice melts, it uncovers dark water that absorbs more heat. That heat melts more ice, so the change keeps feeding itself.', look: 'the feedback loop, in brief' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-fundy-tides', subject: 'geography', form: 'Explanation',
+    title: 'The Highest Tides on Earth',
+    deck: 'Twice a day, the Bay of Fundy fills and empties. At low tide, you can walk on the ocean floor.',
+    hero: {
+      photo: 'g8-fundy.jpg', credit: 'Photo: Moneira Salic, CC BY 3.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 190,
+      cap: 'Visitors walk on the sea floor at low tide at the Hopewell Rocks, New Brunswick. Six hours later, the water will be over their heads.'
+    },
+    body: [
+      'At the Hopewell Rocks in New Brunswick, visitors stroll across the muddy ocean floor between tall stone pillars. Six hours later, they come back and paddle kayaks over the same spot. The water has risen higher than a four-storey building. The Bay of Fundy, between New Brunswick and Nova Scotia, has the highest <b>tides</b> in the world. In the Minas Basin, the difference between high and low tide can reach 16 metres.',
+      { h: 'Pulled by the Moon' },
+      'Tides happen everywhere on the ocean. The Moon’s <b>gravity</b> pulls on Earth’s water, making the ocean bulge slightly on the side facing the Moon and on the opposite side. As Earth spins, coasts pass through these bulges, and most places get two high tides and two low tides about every 25 hours. In the open ocean, the rise is less than a metre. So why is Fundy so extreme?',
+      { fig: '<path class="k" d="M20 150 H280"/><path class="k" d="M110 150 V80 Q100 60 120 46 Q150 36 180 46 Q200 60 190 80 V150"/><path class="a" d="M20 64 H90 M210 64 H280"/><path class="d" d="M20 136 H90 M210 136 H280"/>' +
+          tx(24, 58, 'n', 'high tide') + tx(24, 130, 'n', 'low tide') + D.arrow(250, 132, 250, 70, 'k') + tx(244, 104, 'n', 'up to 16 m', 'end'),
+        tall: 156, cap: 'A rock pillar at high and low tide (simplified, not to scale).' },
+      { h: 'A bay that sloshes' },
+      'The answer is the shape of the bay. Fundy is long, and it gets narrower and shallower toward its head. Water squeezed into a narrowing channel rises higher. Also, the time it takes water to slosh from the mouth of the bay to its head and back is about 13 hours, very close to the time between high tides. The bay works like water in a bathtub that someone pushes at just the right moment: each push makes the waves higher. Scientists call this <b>resonance</b>.',
+      { box: 'Carving the flowerpots', text: 'Twice a day, the tides wash against the Hopewell Rocks. Over thousands of years, the water has worn away their bases, leaving tall pillars shaped like flowerpots.' },
+      { h: 'Power from the sea' },
+      'Each tide carries billions of tonnes of water in and out of the bay. Engineers have long tried to turn that motion into electricity. A tidal power station at Annapolis Royal, Nova Scotia, ran for more than 30 years, and new underwater turbines are being tested in the Minas Passage. The challenge is building machines strong enough to survive such powerful currents, without harming the fish and whales that swim through them.'
+    ],
+    guide: { before: 'Find the Bay of Fundy on a map. Teach <b>tides</b>, <b>gravity</b> and <b>resonance</b>. Push water in a tub at the right rhythm and watch it rise.',
+      after: 'Would you rather visit Hopewell Rocks at low tide or high tide? What would you see?' },
+    words: [['tides', 'the regular rise and fall of the sea'], ['gravity', 'the force that pulls objects toward each other'], ['resonance', 'when pushes at just the right rhythm make a movement grow bigger']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['how far the water rises around a rock pillar', 'the Moon pulling the ocean', 'a map of the bay', 'a tidal power station'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'What causes tides everywhere?',
+        opts: ['the Moon’s gravity', 'strong winds', 'rivers', 'earthquakes'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart: why are Fundy’s tides so high?', cols: ['Cause', 'How it raises the tide'],
+        rows: [['the bay narrows and gets shallower', null], ['resonance', null]],
+        a: [[null, 'water squeezed into a narrowing channel rises higher'], [null, 'the water sloshes in rhythm with the tides, so each push builds higher']] },
+      { k: 'lines', code: 'C1.2', n: 3, q: 'The writer compares the bay to a bathtub. How does this comparison help readers understand resonance?',
+        a: 'Most readers have pushed water in a tub and seen it slosh higher. This makes the hard idea of resonance easy to picture.', look: 'links the familiar example to the new idea' },
+      { k: 'choice', code: 'B2.2', q: 'In “the head of the bay,” <b>head</b> means …',
+        opts: ['the far, inner end', 'the leader', 'the top of a person', 'the start of a river'], a: 0 },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'The text says new turbines are being tested in the Minas Passage. Predict one problem they might face. Use the text.',
+        a: 'The currents are so strong that the turbines might break. The text says the challenge is building machines strong enough to survive.', look: 'a prediction supported by the final paragraph' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which part of this explanation did you find hardest? What strategy helped, such as rereading, using the diagram or picturing it?',
+        a: 'Resonance was hardest. Picturing the bathtub and rereading the sentence about 13 hours helped me understand it.', look: 'names a hard part and a fitting strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-emily-stowe', subject: 'history', form: 'Biography',
+    title: 'The Doctor Who Would Not Take No',
+    deck: 'In the 1860s, no medical school in Canada would accept a woman. Emily Stowe became a doctor anyway.',
+    hero: {
+      photo: 'g8-emily-stowe.jpg', credit: 'Photo: public domain, Wikimedia Commons', focus: '50% 25%',
+      side: { w: 469, view: '0 0 300 128' },
+      tall: 200,
+      cap: 'Dr. Emily Stowe, one of the first women to practise medicine in Canada, and her path to becoming a doctor (selected events).',
+      art: timeline([[1831, 'born near', 'Norwich'], [1867, 'graduates', 'in New York'], [1880, 'licensed', 'in Ontario'], [1883, 'daughter', 'graduates']], 1822, 1892)
+    },
+    body: [
+      'In 1865, a teacher named Emily Stowe applied to study medicine at the Toronto School of Medicine. Her husband was ill with tuberculosis, and she wanted to learn how to heal people. The school turned her down. The reason was simple: she was a woman, and the university was not open to women.',
+      { h: 'A teacher first' },
+      'Emily Howard Jennings was born in 1831 near Norwich, in what is now Ontario. Her family were Quakers, who believed that girls should be educated as well as boys. Her mother taught her at home. When she was refused entry to Victoria College because she was female, she trained as a teacher instead. In 1852, she became the principal of a public school in Brantford, one of the first women in Upper Canada to hold such a job.',
+      { h: 'The long way around' },
+      'Since no Canadian school would accept her, Stowe went to the United States. She graduated from the New York Medical College for Women in 1867 and opened a practice in Toronto. But Ontario law said that doctors trained outside the province had to attend lectures there before they could get a <b>licence</b>. In 1870, after much pressure, the Toronto School of Medicine let her and another woman, Jennie Kidd Trout, attend. Some male students and teachers made the lectures so unpleasant that the women had to fight to stay. Stowe finally received her licence in 1880.',
+      { fig: tx(70, 14, 'lb', 'barrier', 'middle') + tx(230, 14, 'lb', 'what she did', 'middle') + [['no Canadian school', 'would take her', 'studied in', 'New York'], ['Ontario required', 'local lectures', 'fought to attend', 'in Toronto'], ['women could', 'not vote', 'started a', 'suffrage club']].map(function (r, i) { var y = 24 + i * 40; return '<rect class="k" x="6" y="' + y + '" width="128" height="34" rx="4"/><rect class="a" x="166" y="' + y + '" width="128" height="34" rx="4"/>' + D.arrow(138, y + 17, 162, y + 17) + tx(70, y + 14, 'n', r[0], 'middle') + tx(70, y + 28, 'n', r[1], 'middle') + tx(230, y + 14, 'n', r[2], 'middle') + tx(230, y + 28, 'n', r[3], 'middle'); }).join(''),
+        tall: 148, cap: 'Each barrier Emily Stowe met, and how she got past it.' },
+      { box: 'Like mother, like daughter', text: 'In 1883, Stowe’s daughter, Augusta Stowe-Gullen, became the first woman to earn a medical degree from a Canadian school.' },
+      { h: 'Fighting for the vote' },
+      'Stowe knew that women would not get equal chances in medicine, or anywhere else, without a voice in government. In 1876, she started the Toronto Women’s Literary Club. Its name was careful, because many people objected to women talking about politics. In fact, members discussed women’s rights and the right to vote. The club grew into the Canadian Woman Suffrage Association in 1883. Stowe did not live to see women vote, but she helped <b>pave the way</b> for the doctors, lawyers and voters who followed.'
+    ],
+    guide: { before: 'Talk about jobs that were once closed to women. Teach <b>licence</b> and the expression <b>pave the way</b>. Read the timeline first.',
+      after: 'Why did the club choose a careful name? Can you think of another time people had to hide what they were really doing?' },
+    words: [['licence', 'official permission to do a job, such as practise medicine'], ['pave the way', 'to make something possible or easier for people who come later']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the timeline, how many years passed between Stowe’s graduation and her licence?',
+        opts: ['13', '3', '16', '49'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Stowe study in the United States?',
+        opts: ['No Canadian medical school would accept a woman.', 'It was cheaper.', 'Her husband lived there.', 'She wanted to see New York.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Name two barriers Stowe faced because she was a woman.',
+        a: 'Victoria College and the Toronto School of Medicine refused her. When she was allowed to attend lectures, some students and teachers made them unpleasant.', look: 'two barriers from the text' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why did the club call itself a “Literary Club” instead of a women’s rights club?',
+        a: 'Many people objected to women talking about politics, so a safe-sounding name let them meet without being stopped or attacked.', look: 'links the name to public disapproval' },
+      { k: 'choice', code: 'B2.2', q: 'What does the expression “pave the way” mean in the last sentence?',
+        opts: ['make it easier for others who come later', 'build a road', 'walk in front of someone', 'stop others from following'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'How do the headings help organize this biography?',
+        a: 'They divide her life into parts: her early career, becoming a doctor and fighting for the vote, so a reader can follow her story step by step.', look: 'explains how the headings divide the life story' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Can you think of a person today who has broken a barrier in their field? How are they like Emily Stowe?',
+        a: 'A woman who became one of the first female astronauts. Like Stowe, she entered a field that was mostly closed to women and made it easier for others.', look: 'a real example and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-nwmp', subject: 'history', form: 'Report',
+    title: 'The March West',
+    deck: 'In 1874, a new police force rode across the Prairies. Its story looks different depending on who tells it.',
+    hero: {
+      photo: 'g8-fort-macleod.jpg', credit: 'Image: public domain, Wikimedia Commons', focus: '50% 0%',
+      side: { w: 370, view: '0 0 300 154' },
+      tall: 190,
+      cap: 'A North-West Mounted Police officer, from a drawing published in 1875, and the route of the March West in 1874 (simplified). The lower line is the border with the United States.',
+      art: '<path class="k" d="M20 110 Q150 130 280 90"/><path class="a" d="M276 92 Q200 100 140 90 Q80 80 40 96"/>' + D.arrow(60, 92, 40, 96, 'a') + '<circle class="dot" cx="276" cy="92" r="4"/><circle class="dot" cx="40" cy="96" r="4"/><circle class="dot" cx="120" cy="86" r="4"/>' +
+          tx(276, 76, 'n', 'Dufferin, Manitoba', 'end') + tx(40, 132, 'n', 'Fort Macleod', 'start') + tx(120, 72, 'n', 'Cypress Hills', 'middle') + tx(150, 148, 'n', 'about 1300 km on horseback', 'middle')
+    },
+    body: [
+      'In the early 1870s, the Prairies were part of Canada on paper, but the government in Ottawa had almost no presence there. American traders had built forts in what is now southern Alberta. They sold cheap, dangerous whisky to First Nations people in exchange for furs and horses, causing illness, violence and death. The most famous of these posts was nicknamed Fort Whoop-Up. First Nations leaders asked for the trade to be stopped.',
+      { h: 'The Cypress Hills Massacre' },
+      'In 1873, a group of American wolf hunters attacked a camp of Nakoda people in the Cypress Hills, after accusing them, without proof, of stealing horses. More than 20 Nakoda men, women and children were killed. News of the <b>massacre</b> shocked Ottawa. That year, Parliament created the North-West Mounted Police, a force of officers on horseback, to bring Canadian law to the West.',
+      { box: 'Two points of view', text: 'Many settlers saw the police as heroes who made the West safe. Many First Nations saw them first as protectors from the whisky trade, but later as enforcers of laws that controlled their lives.' },
+      { h: 'A hard journey' },
+      'In July 1874, about 275 officers and men set out from Dufferin, Manitoba. They wore red jackets so they would be recognized as Canadian, not American. The march was a struggle: horses and oxen died of hunger and thirst, and the men were often lost. In the fall, they built Fort Macleod near the whisky forts, and the traders soon left. Other posts followed, including Fort Calgary in 1875.',
+      { fig: timeline([[1873, 'Cypress Hills', 'Massacre'], [1874, 'March', 'West'], [1920, 'becomes', 'the RCMP'], [1885, 'passes', 'needed']], 1866, 1928),
+        tall: 128, cap: 'The North-West Mounted Police, 1873 to 1920 (selected events).' },
+      { h: 'A changing role' },
+      'At first, many First Nations leaders, such as the Siksika chief Crowfoot, welcomed the end of the whisky trade. But the police also enforced government rules that harmed First Nations, especially after 1885, when people needed a pass from an Indian agent to leave their reserve. In 1920, the force became the Royal Canadian Mounted Police. Today, the RCMP has apologized for parts of its <b>role</b> in the history of Indigenous peoples.'
+    ],
+    guide: { before: 'Find Manitoba, the Cypress Hills and southern Alberta on a map. Teach <b>massacre</b> and <b>role</b>. Read the box on two points of view aloud.',
+      after: 'How can the same group be seen as heroes by some people and as a threat by others? Can both views be true?' },
+    words: [['massacre', 'the killing of many people who cannot defend themselves'], ['role', 'the job or part someone plays']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the map, in which direction did the police march?',
+        opts: ['west', 'east', 'north', 'south'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the police wear red jackets?',
+        opts: ['to be recognized as Canadian, not American', 'to stay warm', 'to scare the traders', 'because red was cheap'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the cause-and-effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['the Cypress Hills Massacre', null], [null, 'the whisky traders left'], ['the pass system after 1885', null]],
+        a: [[null, 'Parliament created the North-West Mounted Police'], ['the police built Fort Macleod near the whisky forts', null], [null, 'the police enforced rules that harmed First Nations']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Read the box. Explain why First Nations’ view of the police changed over time.',
+        a: 'At first the police protected them from the whisky trade. Later the police enforced government rules, such as the pass system, that controlled their lives.', look: 'both stages of the view, with reasons' },
+      { k: 'choice', code: 'B3.2', q: '“The march <b>was</b> a struggle.” <b>Was</b> is …',
+        opts: ['a past tense verb', 'a noun', 'a future tense verb', 'an adjective'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the story of the March West in three sentences: why, what happened and what came after.',
+        a: 'After the Cypress Hills Massacre, Canada created the NWMP. In 1874, they marched west and built Fort Macleod, ending the whisky trade. Later they enforced rules that harmed First Nations and became the RCMP.', look: 'cause, event and later results, briefly' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Did this text change what you thought about the Mounties? Explain what new information changed or confirmed your view.',
+        a: 'I thought of Mounties only as heroes. Learning about the pass system showed me that their history is more complicated.', look: 'reflects on a change in thinking, linked to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-pauline-johnson', subject: 'arts', form: 'Biography',
+    title: 'The Poet with Two Costumes',
+    deck: 'E. Pauline Johnson, Tekahionwake, filled theatres across Canada more than a hundred years ago',
+    hero: {
+      photo: 'g8-pauline-johnson.jpg', credit: 'Photo: Cochran, about 1895, public domain, Wikimedia Commons', focus: '50% 25%',
+      side: { w: 469, view: '0 0 300 128' },
+      tall: 200,
+      cap: 'E. Pauline Johnson, Tekahionwake, about 1895, and her life and legacy (selected events).',
+      art: timeline([[1861, 'born at', 'Chiefswood'], [1892, 'first', 'recital'], [1895, 'first book', 'of poems'], [1913, 'dies in', 'Vancouver'], [1961, 'on a Canada', 'Post stamp']], 1856, 1972)
+    },
+    body: [
+      'In January 1892, a young woman stepped onto a stage in Toronto to recite a poem. Her name was Emily Pauline Johnson, and she was also known by her great-grandfather’s Mohawk name, Tekahionwake. Her poem, spoken in the voice of an Indigenous woman during the fighting of 1885, was angry and powerful. The audience was stunned. That night began a career that would make her one of the most famous Canadians of her time.',
+      { h: 'Between two worlds' },
+      'Pauline Johnson was born in 1861 at Chiefswood, her family’s home on the Six Nations of the Grand River. Her father, George Johnson, was a Mohawk chief. Her mother, Emily Howells, had been born in England. Pauline grew up speaking English, reading poetry and hearing the stories of her father’s people. All her life, she was proud of her Mohawk <b>heritage</b> and spoke up for Indigenous peoples at a time when most Canadians ignored them.',
+      { h: 'On stage' },
+      'For about fifteen years, Johnson toured Canada, the United States and England, travelling by train, stagecoach and canoe to reach small towns and big cities. She performed her poems from memory. In the first half of a show, she often wore a dress she had designed to suggest Indigenous clothing. After the break, she returned in an elegant evening gown. The change of <b>costume</b> made audiences think about the two parts of her identity, and about their own ideas of who Indigenous women were. Reviewers praised her voice and her stage presence, and crowds often asked for more.',
+      { fig: tx(72, 16, 'lb', 'first half', 'middle') + tx(228, 16, 'lb', 'after the break', 'middle') + '<rect class="k" x="10" y="26" width="124" height="62" rx="4"/><rect class="k" x="166" y="26" width="124" height="62" rx="4"/>' + D.arrow(138, 57, 162, 57) +
+          tx(72, 48, 'n', 'a dress she designed', 'middle') + tx(72, 62, 'n', 'to suggest Indigenous', 'middle') + tx(72, 76, 'n', 'clothing', 'middle') + tx(228, 55, 'n', 'an elegant', 'middle') + tx(228, 69, 'n', 'evening gown', 'middle'),
+        tall: 96, cap: 'The two costumes in one of Pauline Johnson’s shows.' },
+      { box: 'A first', text: 'In 1961, Pauline Johnson became the first woman, other than the Queen, the first author and the first Indigenous person to appear on a Canadian postage stamp.' },
+      'Her best-known poem describes paddling a canoe through rapids, and many Canadian children have learned it by heart. Late in life, she wrote down stories told to her by Joe Capilano, a Squamish chief, and published them in 1911 as <i>Legends of Vancouver</i>. She died in Vancouver in 1913 and is buried in Stanley Park.'
+    ],
+    guide: { before: 'Find the Six Nations of the Grand River (near Brantford) on a map. Teach <b>heritage</b> and <b>costume</b>. Read the timeline together first.',
+      after: 'Why do you think Johnson chose to wear two costumes? How do people show different parts of who they are today?' },
+    words: [['heritage', 'the traditions, culture and history passed down in a family or people'], ['costume', 'clothes worn to play a part or perform']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the timeline, how old was Johnson at her first recital?',
+        opts: ['about 31', 'about 21', 'about 41', 'about 51'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was the audience stunned in 1892?',
+        opts: ['Her poem was angry and powerful.', 'She forgot the words.', 'She sang instead of reciting.', 'The theatre was empty.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two ways Johnson’s Mohawk heritage shaped her life and work.',
+        a: 'She used her great-grandfather’s Mohawk name, Tekahionwake, and she spoke up for Indigenous peoples in her poems and performances.', look: 'two connections to her heritage from the text' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Why do you think Johnson changed costumes during her shows? What was she trying to make audiences think about?',
+        a: 'She wanted to show she was both Mohawk and English. It made audiences question their narrow ideas of who Indigenous women were.', look: 'interprets the purpose of the costume change' },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>Legends of Vancouver</i> in italics?',
+        opts: ['It is the title of a book.', 'It is a place name.', 'It is a quotation.', 'It is in another language.'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The writer begins with Johnson’s first recital instead of her birth. Why might the writer have made that choice?',
+        a: 'Starting on stage grabs the reader’s attention with a dramatic moment, then the writer goes back to explain her background.', look: 'explains the effect of the opening' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Have you seen a performer, artist or athlete who represents their culture? How are they like Johnson?',
+        a: 'A Métis fiddler at our school shared his music and stories. Like Johnson, he performed to show pride in his culture and teach others.', look: 'a real example and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-marconi', subject: 'tech', form: 'Report',
+    title: 'Three Dots Across the Ocean',
+    deck: 'In 1901, on a windy hill in St. John’s, a young inventor listened for a signal from across the Atlantic',
+    hero: {
+      photo: 'g8-marconi.jpg', credit: 'Photo: James Vey, 1901, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Marconi and his assistants at Signal Hill, St. John’s, in December 1901.'
+    },
+    body: [
+      'On December 12, 1901, a cold wind roared across Signal Hill, high above the harbour of St. John’s. Inside a small room, a 27-year-old Italian inventor named Guglielmo Marconi pressed a telephone earpiece to his ear. Outside, his assistants struggled to hold a kite on a long wire in the gale. He had chosen the hill because it was one of the closest points in North America to Europe. Marconi was listening for three short clicks, the letter S in Morse code, sent from Cornwall, England, about 3500 kilometres away.',
+      { fig: '<path class="k" d="M10 130 Q150 100 290 130"/><path class="a" d="M30 110 Q150 10 270 110"/><path class="k" d="M30 110 V128 M270 110 V128"/><path class="t" d="M270 110 L250 70"/><path class="k" d="M244 62 L256 62 L250 74 Z"/>' +
+          tx(30, 148, 'n', 'Cornwall, England', 'start') + tx(270, 148, 'n', 'Signal Hill', 'end') + tx(150, 50, 'n', 'about 3500 km', 'middle') + D.label(170, 82, 'kite holds the antenna', 246, 66),
+        tall: 154, cap: 'The signal travelled about 3500 km across the curve of the Earth (not to scale).' },
+      { h: 'Messages without wires' },
+      'At the time, messages crossed the ocean through telegraph cables laid on the sea floor. Marconi believed he could send them through the air using <b>radio waves</b>, invisible waves of energy that travel at the speed of light. He had already sent signals across the English Channel. Many scientists said the Atlantic was impossible: radio waves travel in straight lines, and the Earth is curved, so the signal would shoot off into space.',
+      { box: 'From dots to phones', text: 'Radio waves now carry radio and TV broadcasts, GPS signals and the calls and messages on your phone.' },
+      { h: 'Did he really hear it?' },
+      'Around noon, Marconi heard faint clicks. He said he heard them again several times that day. No machine had recorded the signal, so the only proof was his word and that of his assistant. Some scientists were <b>skeptical</b>. Others were thrilled. Years later, scientists discovered why the signal could have crossed the ocean: a layer of the upper atmosphere, the ionosphere, reflects some radio waves back toward Earth, so they can follow its curve.',
+      { h: 'Canada’s part' },
+      'After the telegraph company that owned the undersea cables threatened to sue, Marconi left Newfoundland. The Canadian government invited him to Nova Scotia and helped pay for a station at Glace Bay. In 1902, Glace Bay sent some of the first full messages across the Atlantic by radio. Within a few years, ships carried radios, and lives at sea were being saved.'
+    ],
+    guide: { before: 'Find St. John’s and Cornwall on a world map. Tap out S (three dots) in Morse code. Teach <b>radio waves</b> and <b>skeptical</b>.',
+      after: 'Marconi had no recording to prove his claim. How do scientists today make sure a discovery is real?' },
+    words: [['radio waves', 'invisible waves of energy that can carry signals through the air'], ['skeptical', 'doubting that something is true']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the kite for?',
+        opts: ['holding the antenna up high', 'measuring the wind', 'sending a message by flag', 'lighting the hill'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did many scientists think the Atlantic was impossible?',
+        opts: ['Radio waves travel straight, but Earth is curved.', 'The ocean was too deep.', 'Radio waves are too slow.', 'Cables already worked.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how the signal could cross the ocean even though Earth is curved.',
+        a: 'A layer of the upper atmosphere, the ionosphere, reflects some radio waves back toward Earth, so they can follow its curve.', look: 'ionosphere reflects the waves back' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why were some scientists skeptical of Marconi’s claim? Were they being fair?',
+        a: 'No machine recorded the signal, so the only proof was Marconi’s word. Their doubt was fair, because science needs evidence others can check.', look: 'lack of evidence, and a judgment with a reason' },
+      { k: 'choice', code: 'B2.1', q: 'The prefix <b>trans-</b> in <b>trans</b>atlantic means …',
+        opts: ['across', 'under', 'before', 'against'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'The writer uses the heading “Did he really hear it?” How does a question as a heading help the reader?',
+        a: 'It tells the reader what the section will discuss and makes them curious to find the answer.', look: 'the heading sets up the section’s focus' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Radio waves now carry the messages on your phone. How is texting a friend like Marconi’s experiment?',
+        a: 'Both send a coded message through the air on radio waves. My phone does in a second what Marconi struggled to do with a kite.', look: 'a clear connection to radio waves' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-adam-beck', subject: 'tech', form: 'Report',
+    title: 'Power for the People',
+    deck: 'Niagara Falls could light all of southern Ontario. In the early 1900s, Ontarians argued over who should own that power.',
+    hero: {
+      photo: 'g8-adam-beck.jpg', credit: 'Photo: Changku88, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The Sir Adam Beck generating stations beside the Niagara River, in Niagara Falls, Ontario.'
+    },
+    body: [
+      'Every second, thousands of tonnes of water pour over Niagara Falls. In the 1890s, engineers realized that the falling water held enormous energy, and that new machines could turn it into electricity. Whoever controlled that power would control the future of Ontario’s homes, farms and factories.',
+      { h: 'From falling water to electricity' },
+      'A <b>hydro-electric</b> station is a system that changes the energy of moving water into electrical energy. Water is taken from the river above the falls and sent through tunnels or canals. It drops down a steep pipe and spins the blades of a turbine, like wind spinning a pinwheel. The turbine turns a <b>generator</b>, where magnets spinning past coils of wire produce an electric current. Power lines carry the electricity to cities far away.',
+      { fig: flow(['water is taken from the upper river', 'it falls through a steep pipe', 'the water spins a turbine', 'the turbine turns a generator', 'power lines carry electricity away']),
+        tall: 190, cap: 'Inside a hydro-electric station (simplified).' },
+      { h: 'Private or public?' },
+      'At first, private companies built the stations at Niagara and sold the electricity to make a profit. Many people in small towns worried that companies would charge high prices or ignore places where they could not earn much. A businessman and mayor from London, Ontario, named Adam Beck led a campaign for <b>public ownership</b>: power stations owned by the people of Ontario through their government, selling electricity at cost.',
+      { box: 'Power Day', text: 'On October 11, 1910, crowds in Berlin, Ontario (now Kitchener) cheered as Beck switched on the first electricity delivered by the new public system.' },
+      'Owners of private companies argued that government should not run a business. Beck’s supporters answered that electricity was too important to be left to profit. In 1906, Ontario created the Hydro-Electric Power Commission, with Beck as its chair. It grew into Ontario Hydro, one of the largest public power systems in the world.',
+      { h: 'Sharing the falls' },
+      'Today, much of the Niagara River flows through tunnels to the Sir Adam Beck stations instead of over the falls. By an agreement between Canada and the United States, enough water must flow over the falls during the day for visitors to enjoy them. At night, more water is sent to the generators.'
+    ],
+    guide: { before: 'Spin a pinwheel under a running tap. Teach <b>hydro-electric</b>, <b>generator</b> and <b>public ownership</b>. Follow the flow chart from top to bottom.',
+      after: 'Should important services such as electricity or water be owned by the public or by companies? Give a reason for each side.' },
+    words: [['hydro-electric', 'making electricity from moving water'], ['generator', 'a machine that turns motion into electricity'], ['public ownership', 'owned by the people through their government']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps in making hydro-electric power.',
+        items: ['Water is taken from the upper river.', 'It falls through a steep pipe.', 'The water spins a turbine.', 'The turbine turns a generator.', 'Power lines carry electricity away.'], show: [2, 4, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the flow chart, what turns the generator?',
+        opts: ['the turbine', 'the power lines', 'the river', 'the pipe'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the stations get more water at night?',
+        opts: ['Visitors do not need to see the falls then.', 'Water flows faster at night.', 'People use no power by day.', 'The river freezes at night.'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Explain the two sides in the argument over Niagara power. Which side does the text seem to favour?',
+        a: 'Private companies said government should not run a business. Beck’s side said electricity was too important to leave to profit. The text seems to favour Beck, calling the public system one of the largest in the world.', look: 'both sides and evidence of the writer’s leaning' },
+      { k: 'choice', code: 'B3.3', q: 'In “Berlin, Ontario (now Kitchener),” why are the words in brackets?',
+        opts: ['They add extra information.', 'They are a quotation.', 'They are a title.', 'They are not important.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'A hydro-electric station is a system. Name its input, its main parts and its output.',
+        a: 'The input is falling water. The main parts are the tunnel, the pipe, the turbine and the generator. The output is electricity.', look: 'input, parts and output' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Where does the electricity in your home come from? How does this text help you think about it?',
+        a: 'In Ontario, some of it comes from Niagara. The text helped me see that flipping a switch depends on water, turbines and a long history.', look: 'connects own experience to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-green-roof', subject: 'geography', form: 'Proposal', plain: true,
+    title: 'A Garden on Our Roof',
+    deck: 'A Grade 8 class asks its school board to turn a hot, flat roof into a living one',
+    hero: {
+      photo: 'g8-green-roof.jpg', credit: 'Photo: GreenRoofGardener, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The green roof on the podium of Toronto City Hall, planted with low, hardy plants.'
+    },
+    body: [
+      'To the trustees of our school board: we are the Grade 8 class at Maple Grove Public School. This proposal asks you to replace part of our school’s flat black roof with a green roof, a roof covered with soil and living plants.',
+      { h: 'The problem: a hot city' },
+      'Cities are often several degrees warmer than the countryside around them, especially on summer evenings. This is called the <b>urban heat island</b> effect. Dark roofs, roads and parking lots soak up the Sun’s energy all day and give it off as heat. On a sunny July afternoon, we measured our school’s roof with a borrowed infrared thermometer. It was 68 °C. The grass on the field was 31 °C.',
+      { fig: bars([[68, 'black', 'roof'], [52, 'parking', 'lot'], [34, 'green', 'roof*'], [31, 'grass', 'field']], { max: 80, step: 20, unit: ' °C' }),
+        tall: 172, cap: 'Surface temperatures we measured on July 8 at 2 p.m. *Green roof measured at Toronto City Hall.' },
+      { h: 'Our proposal' },
+      'A green roof has layers: a waterproof barrier, a layer that drains water away, a thin layer of light soil and hardy plants such as sedum, which need little water. The plants shade the roof and cool the air as water evaporates from their leaves. In 2009, Toronto became the first city in North America to require green roofs on many large new buildings. We think schools should lead too, because students can see, measure and learn from the results every day.',
+      { h: 'Benefits and costs' },
+      'A green roof would keep our top-floor classrooms cooler in June, so less air conditioning would be needed. It would soak up rain that now rushes into storm drains during heavy storms. It would give bees and birds a place to feed. It could also be an outdoor classroom for science. We know a green roof costs more to build than a regular roof, and it needs to be weeded and checked. However, it can protect the roof underneath from sun damage and help it last longer, which saves money over time.',
+      { box: 'What we ask', text: 'Please send an engineer to check whether our roof can carry the weight of soil and plants. If it can, we will help plan, plant and care for it.' },
+      'Thank you for considering our proposal. We hope our school can become a cooler, greener and more <b>sustainable</b> place.'
+    ],
+    guide: { before: 'Touch a dark surface and a light one on a sunny day. Teach <b>urban heat island</b> and <b>sustainable</b>. Notice how the proposal is organized under headings.',
+      after: 'What problem in your school or neighbourhood would you write a proposal about? Who would you send it to?' },
+    words: [['urban heat island', 'a city area that is warmer than the countryside around it'], ['sustainable', 'able to continue for a long time without harming the environment']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, which surface was hottest?',
+        opts: ['the black roof', 'the parking lot', 'the green roof', 'the grass field'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Who is the audience for this proposal?',
+        opts: ['the school board trustees', 'the students’ parents', 'Toronto City Council', 'the bees and birds'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart.', cols: ['Benefits of a green roof', 'Costs or challenges'],
+        rows: [['cooler classrooms', null], [null, 'needs weeding and checking'], ['habitat for bees and birds', null]],
+        a: [[null, 'costs more to build'], ['soaks up rain from storms', null], [null, 'the roof must carry the weight']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The students admit that a green roof costs more. Why is it smart to include this in a proposal?',
+        a: 'It shows they have thought about both sides, so the trustees trust them more. Then they answer the cost with the savings over time.', look: 'recognizes a counterargument and how it is answered' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence begins with a transition word that signals a contrast?',
+        opts: ['However, it can protect the roof underneath from sun damage.', 'It was 68 °C.', 'We think schools should lead too.', 'Thank you for considering our proposal.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how plants on a roof help cool the air.',
+        a: 'The plants shade the roof so it absorbs less heat, and water evaporating from their leaves cools the air around them.', look: 'shade and evaporation' },
+      { k: 'lines', code: 'D1.1', n: 3, q: 'If the students wanted to share this idea with younger students, what form would they use, and how would they change it?',
+        a: 'A poster with pictures of a hot roof and a green roof, short labels and one big question, because younger students need fewer words.', look: 'a suitable form adjusted for audience' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-dharavi', subject: 'geography', form: 'Feature article',
+    title: 'A City Within a City',
+    deck: 'In the middle of Mumbai, one of the largest informal settlements in Asia is also one of the busiest places to work',
+    hero: {
+      photo: 'g8-dharavi.jpg', credit: 'Photo: Goodtrance, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Homes and workshops packed closely together in Dharavi, Mumbai, India.'
+    },
+    body: [
+      'From the window of a train crossing Mumbai, Dharavi looks like a sea of tin roofs. Narrow lanes, some barely wide enough for one person, wind between homes built of brick, metal sheets and tarpaulin. On just over two square kilometres of land, smaller than many Ontario farms, live somewhere between 600 000 and a million people. No one knows exactly how many.',
+      { fig: bars([[4, 'Canada'], [4400, 'City of', 'Toronto'], [20000, 'Mumbai'], [300000, 'Dharavi', '(estimate)']], { max: 300000, step: 100000, x0: 58 }) + tx(46, 12, 'n', 'people per square kilometre'),
+        tall: 172, cap: 'Rough population density. Canada’s bar and Toronto’s are too small to see.' },
+      { h: 'An informal settlement' },
+      'Dharavi is an <b>informal settlement</b>: an area where people have built homes without official permission or ownership of the land. Many cities in fast-growing countries have them. As people move from villages to cities to find work, a process called <b>urbanization</b>, there is often not enough affordable housing. Families build their own. Over a century, Dharavi grew from a fishing village on a swamp into one of the most crowded places on Earth.',
+      { box: 'Daily challenges', text: 'Many homes have no toilet. Dozens of families may share one public toilet block, and clean water may flow from a tap for only a few hours a day.' },
+      { h: 'A working city' },
+      'Dharavi is also a place of hard work. Thousands of small workshops recycle plastic, metal and paper collected from across Mumbai. Potters fire clay in kilns. Tailors stitch clothes, and leather workers make bags and belts that are sold around the world. Some estimates say Dharavi’s businesses earn hundreds of millions of dollars a year. Many families have lived there for generations, and neighbours depend on each other.',
+      { h: 'Who decides the future?' },
+      'For decades, governments have planned to <b>redevelop</b> Dharavi by tearing down old buildings and building apartment towers. Supporters say residents would finally get clean, safe homes. Many residents worry that they would lose their workshops, their neighbours and their right to stay, and that the valuable land would go to developers. They want a say in the plans. Their question is one that cities around the world must answer: how can a city improve people’s lives without pushing them out?'
+    ],
+    guide: { before: 'Find Mumbai on a map of India. Teach <b>informal settlement</b>, <b>urbanization</b> and <b>redevelop</b>. Compare the numbers above the bars.',
+      after: 'If you lived in Dharavi, what would you want planners to keep, and what would you want them to change?' },
+    words: [['informal settlement', 'an area where homes are built without official permission'], ['urbanization', 'the movement of people from the countryside to cities'], ['redevelop', 'to tear down and rebuild an area']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, which place is the most crowded?',
+        opts: ['Dharavi', 'Mumbai', 'Toronto', 'Canada'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do informal settlements grow?',
+        opts: ['There is not enough affordable housing for new arrivals.', 'People prefer small homes.', 'The government builds them.', 'Land is free everywhere.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do many residents want a say in the plans to redevelop Dharavi?',
+        a: 'They could lose their workshops, neighbours and right to stay. The people most affected should help decide, so the plans meet their needs.', look: 'what residents could lose and why their voice matters' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Does the writer present Dharavi only as a problem? Give evidence.',
+        a: 'No. The writer describes hard challenges, such as shared toilets, but also shows the busy workshops and strong community, so readers see both sides.', look: 'evidence of both the challenges and the strengths' },
+      { k: 'choice', code: 'B2.1', q: 'In <b>urban</b>ization, the suffix <b>-ization</b> turns the word into …',
+        opts: ['a process', 'a person', 'a place', 'a describing word'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The writer ends with a question. Why is this an effective ending?',
+        a: 'It leaves the reader thinking about a hard problem with no easy answer, and connects Dharavi to cities around the world.', look: 'explains the effect of ending with a question' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Is there a neighbourhood in your city or a city you know that is changing? How is it like Dharavi?',
+        a: 'An old neighbourhood near downtown is being replaced by condos. Like in Dharavi, some longtime residents worry they cannot afford to stay.', look: 'a real example and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-portage', subject: 'story', form: 'Short story',
+    title: 'The Long Portage',
+    deck: 'The map said 1450 metres. Nobody mentioned the hill.',
+    hero: {
+      photo: 'g8-portage.jpg', credit: 'Photo: Cornellier, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A canoeist carries a canoe over a portage trail between two lakes.'
+    },
+    body: [
+      'The map said the portage was 1450 metres long. It did not say anything about the hill.',
+      'I stood at the end of the trail with the canoe on my shoulders, the yoke pressing into my neck, and stared up at a wall of roots and rocks. My grandmother, Nokomis, had already disappeared around the first bend with the big pack. She was seventy-one. I was thirteen. This did not seem fair.',
+      '“You can rest the canoe on a tree if you need to,” she had told me before she set off. “There are canoe rests along the trail. Old ones.”',
+      'I had not wanted to come on this trip. My friends were at the mall, and I was in Algonquin Park, covered in mosquito bites, carrying a boat over a mountain. At least, it felt like a mountain. A loon called somewhere behind me, as if it were laughing.',
+      { fig: '<path class="k" d="M10 140 H40 Q70 140 90 100 Q110 40 140 36 Q170 34 190 70 Q220 120 260 130 H290"/><path class="a" d="M10 150 H40 M260 150 H290"/>' + tx(25, 166, 'n', 'Lake 1', 'middle') + tx(275, 166, 'n', 'Lake 2', 'middle') + D.label(150, 18, 'the hill', 140, 34) + D.label(200, 46, 'canoe rest', 172, 50) + tx(150, 166, 'n', '1450 m', 'middle'),
+        tall: 172, cap: 'The portage trail between two lakes, seen from the side.' },
+      'I started up. Halfway, my legs were shaking. The canoe seemed to grow heavier with every step, as if someone were quietly loading rocks into it. I thought about dropping it and walking back. Then I saw it: a wooden crosspiece nailed between two trees at exactly the right height, grey with age. A canoe rest.',
+      'I tipped the bow onto it and ducked out from under the yoke. For a minute I just breathed. Someone had built this, maybe fifty years ago, maybe more, so that people like me could stop halfway and keep going. I wondered who they were. I wondered how many people had leaned their canoes here, tired and complaining, and then picked them up again.',
+      'When I reached the top, Nokomis was sitting on the pack, eating an apple and looking out over the second lake. The water was <b>luminous</b>, gold in the late afternoon light.',
+      '“You stopped at the old rest,” she said. It was not a question.',
+      '“How did you know?”',
+      'She smiled. “Your grandfather built it. The summer I was your age.”',
+      'I looked back down the trail. It did not seem as long anymore. I think that was the moment I stopped feeling sorry for myself, and started to feel something more like <b>gratitude</b>.'
+    ],
+    guide: { before: 'Explain what a portage is: carrying a canoe between lakes. Teach <b>luminous</b> and <b>gratitude</b>. Look at the trail diagram and find the canoe rest.',
+      after: 'Who has left something behind that makes your life easier? How could you do the same for someone in the future?' },
+    words: [['luminous', 'glowing with light'], ['gratitude', 'a feeling of being thankful']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'From whose point of view is the story told?',
+        opts: ['the thirteen-year-old narrator', 'Nokomis', 'the grandfather', 'an all-knowing narrator'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, where is the canoe rest?',
+        opts: ['partway up the hill', 'at Lake 1', 'at Lake 2', 'at the very top'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'How does the narrator feel at the start of the story? Give two clues.',
+        a: 'Annoyed and sorry for themselves. The narrator says “this did not seem fair” and had not wanted to come, because friends were at the mall.', look: 'a feeling supported by two details' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'What does the canoe rest symbolize in the story?',
+        a: 'It stands for the help people leave for those who come after them. It also connects the narrator to a grandfather they never knew well and to the family’s past.', look: 'a symbolic meaning supported by the story' },
+      { k: 'choice', code: 'B3.3', q: '“You stopped at the old rest,” she said. Why is there a comma before the closing quotation mark?',
+        opts: ['The spoken words are followed by a speaker tag.', 'It ends the story.', 'It shows a list.', 'It shows a question.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'What is the theme of the story? Explain how the ending shows it.',
+        a: 'We are helped by people who came before us, and should be grateful. The ending reveals that the narrator’s grandfather built the rest, and the narrator feels gratitude.', look: 'a theme stated as an idea, linked to the ending' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'When the narrator saw the canoe rest, what did you predict? Was your prediction confirmed?',
+        a: 'I predicted she would rest and then finish the portage. That was confirmed, but I did not predict that the narrator’s grandfather had built it.', look: 'a prediction and how the story confirmed or changed it' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-habitat-67', subject: 'arts', form: 'Explanation',
+    title: 'A Village of Stacked Boxes',
+    deck: 'For Expo 67, a young architect stacked concrete boxes into homes with gardens in the sky',
+    hero: {
+      photo: 'g8-habitat-67.jpg', credit: 'Photo: Dllu, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Habitat 67 on the St. Lawrence River in Montréal. Each grey box is one piece of a home.'
+    },
+    body: [
+      'In 1967, Canada turned 100 and threw a party for the world. Montréal hosted Expo 67, a world’s fair that drew more than 50 million visits. Among the pavilions stood a strange new building that looked like a pile of children’s blocks tumbled beside the St. Lawrence River. It was called Habitat 67, and it was meant to answer a big question: how can people live close together in a city and still have privacy, light and a garden?',
+      { h: 'A student’s idea' },
+      'The architect, Moshe Safdie, had first sketched the idea for his university thesis at McGill. He was only in his twenties when Expo asked him to build it. Safdie wanted to combine the best of a house in the suburbs with the best of an apartment building downtown.',
+      { fig: [[0, 0], [1, 0], [2, 0], [3, 0], [0.5, 1], [1.8, 1], [2.9, 1], [1.2, 2], [2.4, 2], [1.8, 3]].map(function (b, i) { var x = 30 + b[0] * 56, y = 126 - b[1] * 30; return '<rect class="' + (i === 7 ? 'h' : 'k') + '" x="' + x + '" y="' + y + '" width="52" height="26"/>'; }).join('') +
+          '<path class="a" d="M42 96 h20 M178 96 h18"/>' + D.label(6, 20, 'one module', 98, 66) + D.label(220, 28, 'roof garden', 190, 94) + tx(150, 168, 'n', 'modules stacked and offset', 'middle'),
+        tall: 172, cap: 'Modules are stacked at offsets, so the roof of one becomes the garden of the home above.' },
+      { h: 'Building with boxes' },
+      'Habitat was built from 354 concrete boxes called <b>modules</b>. Each module was <b>prefabricated</b>: cast in a factory set up on the site, fitted with windows and kitchens, then lifted into place by a giant crane. One to eight modules joined together form a single home. Because the boxes are stacked at offsets, like a staircase in three directions, the roof of one home becomes the private garden of the home above. Nearly every home gets sunlight from several sides and a view of the river.',
+      { box: 'By the numbers', text: 'Today, Habitat 67 has 146 homes. Each module is about 11.7 metres long, 5.3 metres wide and 3 metres high, a rectangular prism.' },
+      { h: 'A dream that changed' },
+      'Safdie hoped that factory-made modules would make homes cheap enough for ordinary families, and that cities around the world would copy the idea. That did not happen. Building Habitat cost far more than planned, and few copies were made. Ironically, the experiment in affordable housing became one of the most sought-after and expensive places to live in Montréal. Still, architects around the world study it. Its ideas, such as gardens on rooftops and homes stacked to let in light, appear in many new buildings today, including towers Safdie later designed in Asia.'
+    ],
+    guide: { before: 'Build a stack with boxes or blocks so that each roof is open. Teach <b>modules</b> and <b>prefabricated</b>. Find the hatched module in the diagram.',
+      after: 'Design your own home from three modules. Where would the garden and windows be?' },
+    words: [['modules', 'separate units that join together to make something larger'], ['prefabricated', 'made in parts in a factory, then put together on site']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, why does each home have a garden?',
+        opts: ['The modules are offset, so a roof below becomes a garden.', 'The gardens are on the ground.', 'Each module has a yard.', 'The roof is made of soil.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In <b>pre</b>fabricated, the prefix <b>pre-</b> means …',
+        opts: ['before', 'after', 'not', 'again'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'The writer says Habitat’s story is ironic. Explain the irony.',
+        a: 'Habitat was meant to make homes affordable for ordinary families, but it became one of the most expensive places to live in Montréal.', look: 'the gap between the goal and the result' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'What problem was Safdie trying to solve, and how did his design solve it?',
+        a: 'He wanted city homes with privacy, light and gardens. Stacking modules at offsets gave each home a rooftop garden and sunlight from several sides.', look: 'the problem and how the design answers it' },
+      { k: 'choice', code: 'C3.2', q: 'Why were few copies of Habitat built?',
+        opts: ['It cost far more than planned.', 'People disliked the river.', 'The modules fell apart.', 'Expo 67 forbade it.'], a: 0 },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Who might read this text, and for what purpose? Give two different readers.',
+        a: 'An architecture student might read it to learn design ideas. A tourist might read it before visiting Montréal to understand the building.', look: 'two readers with different purposes' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize in two sentences what Habitat 67 is and why it still matters.',
+        a: 'Habitat 67 is a housing complex of stacked concrete modules built for Expo 67. Its ideas of rooftop gardens and stacked homes still influence buildings today.', look: 'what it is and its lasting influence' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-bike-gears', subject: 'tech', form: 'Explanation',
+    title: 'Why Bikes Have Gears',
+    deck: 'Climbing a hill or racing down a flat road needs very different help from your bike. Gears make the trade.',
+    hero: {
+      photo: 'g8-bike-gears.jpg', credit: 'Photo: Cjp24, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'The rear gears of a bicycle. The chain can move between sprockets of different sizes.'
+    },
+    body: [
+      'Ride a bike up a steep hill in the wrong gear and your legs will burn while the bike barely moves. Shift to a different gear and, suddenly, you can climb. Nothing about the hill has changed. What changed is how the bike shares the work between your legs and the wheels.',
+      { h: 'Teeth and turns' },
+      'A bike’s chain links two toothed wheels, called sprockets. The front one is turned by the pedals. The back one turns the rear wheel. Suppose the front sprocket has 48 teeth and the back one has 12. Each time you turn the pedals once, the chain pulls 48 teeth past the back sprocket. The back sprocket has only 12 teeth, so it must turn 4 times. The <b>gear ratio</b> is 48 to 12, or 4 to 1.',
+      { fig: '<circle class="k" cx="80" cy="76" r="50"/><circle class="k" cx="230" cy="76" r="14"/><path class="a" d="M80 26 L230 62 M80 126 L230 90"/>' + tx(80, 80, 'lb', '48 teeth', 'middle') + tx(230, 120, 'lb', '12 teeth', 'middle') + tx(80, 150, 'n', 'front: turned by pedals', 'middle') + tx(230, 150, 'n', 'back: turns the wheel', 'middle') + tx(155, 20, 'n', 'chain', 'middle'),
+        tall: 160, cap: 'A large front sprocket and a small back one: one turn of the pedals turns the wheel 4 times.' },
+      { h: 'The trade-off' },
+      'In a high gear like 4 to 1, the wheel spins quickly and you travel far with each push. But each push takes a lot of <b>force</b>, because your legs are doing the work of four wheel turns at once. That is great on a flat road or going downhill. On a steep hill, it is exhausting. In a low gear, such as 32 teeth in front and 32 at the back, the ratio is 1 to 1. Each pedal turn moves the wheel only once, so you go slowly, but each push is much easier. This is called <b>mechanical advantage</b>: a machine lets you use less force by moving a greater distance.',
+      { box: 'How far per pedal turn?', text: 'A road bike wheel travels about 2.1 metres each time it turns. In a 4 to 1 gear, one pedal turn moves you about 4 × 2.1 = 8.4 metres.' },
+      { h: 'Choosing well' },
+      'Many bikes have two or three front sprockets and up to twelve at the back, giving riders dozens of combinations. Good cyclists shift before they need to, keeping their legs turning at a steady, comfortable speed. The same idea is used in cars, wind turbines and electric drills: gears let a machine trade speed for force, or force for speed.'
+    ],
+    guide: { before: 'Turn a bike upside down and count the teeth on two sprockets together. Teach <b>gear ratio</b>, <b>force</b> and <b>mechanical advantage</b>.',
+      after: 'Which gear would you choose for a steep hill, a flat road and a downhill? Explain using the gear ratio.' },
+    words: [['gear ratio', 'how many times the back sprocket turns for each turn of the front one'], ['force', 'a push or a pull'], ['mechanical advantage', 'how much a machine multiplies the force you use']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Complete the chart. Use a wheel that travels 2.1 metres per turn.', cols: ['Front teeth : back teeth', 'Gear ratio', 'Distance per pedal turn'],
+        rows: [['48 : 12', '4 to 1', null], ['36 : 18', null, null], ['32 : 32', null, '2.1 m']],
+        a: [[null, null, '8.4 m'], [null, '2 to 1', '4.2 m'], [null, '1 to 1', null]] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, why does the back sprocket turn 4 times?',
+        opts: ['It has a quarter as many teeth.', 'It is closer to the wheel.', 'The chain is longer.', 'It is heavier.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is a low gear better for a steep hill?',
+        opts: ['Each push needs less force.', 'The bike goes faster.', 'The chain is shorter.', 'The wheel turns more.'], a: 0 },
+      { k: 'choice', code: 'B2.2', q: 'In “gears let a machine <b>trade</b> speed for force,” <b>trade</b> means …',
+        opts: ['give up one thing to get another', 'a job or skill', 'sell in a store', 'a kind of wind'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the trade-off between a high gear and a low gear.',
+        a: 'A high gear moves you far with each push but needs a lot of force. A low gear needs less force but moves you a shorter distance.', look: 'force and distance contrasted for both gears' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which part of this text did you need to reread? How did the box or the diagram help you check your understanding?',
+        a: 'I reread the part about 48 and 12 teeth. The diagram showed the big and small sprockets, and the box’s calculation helped me check the ratio.', look: 'names a reread part and how a feature helped' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'The last paragraph says gears are used in other machines. Choose one and explain why it might need gears.',
+        a: 'An electric drill needs gears so it can turn slowly with a lot of force to drive a screw, or quickly with less force to drill a small hole.', look: 'a real machine and the trade it makes' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-iqaluit-food', subject: 'geography', form: 'Report',
+    title: 'The Price of Groceries in the North',
+    deck: 'In Nunavut, a cart of groceries can cost two or three times as much as in southern Canada. Why?',
+    hero: {
+      photo: 'g8-iqaluit.jpg', credit: 'Photo: OhanaUnited, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A shopping centre with a grocery store in Iqaluit, the capital of Nunavut. Most of the food sold here arrives by air or by sea.'
+    },
+    body: [
+      'In a grocery store in Iqaluit, the capital of Nunavut, a bag of apples, a jug of milk and a box of cereal can cost two or three times what they cost in Toronto. In smaller communities farther north, prices are often even higher, because supplies must be flown on again from Iqaluit in smaller planes. For many families, this makes it hard to put healthy food on the table every day, even when parents work full time.',
+      { h: 'No roads in' },
+      'There are no roads or railways linking Nunavut’s 25 communities to the rest of Canada. Almost everything must come by air or by sea. Each summer, when the ice clears, ships called the <b>sealift</b> bring a year’s supply of things that keep, such as canned food, building materials, fuel and even cars. Fresh food, such as fruit, vegetables and milk, cannot wait a year. It must be flown in, and air freight is very expensive.',
+      { fig: '<rect class="k" x="10" y="20" width="80" height="36" rx="5"/><rect class="k" x="210" y="20" width="80" height="36" rx="5"/><rect class="k" x="210" y="100" width="80" height="36" rx="5"/><rect class="k" x="10" y="100" width="80" height="36" rx="5"/>' +
+          D.arrow(90, 38, 210, 38, 'a') + D.arrow(90, 118, 210, 118, 'k') + tx(50, 42, 'n', 'fresh food', 'middle') + tx(250, 42, 'n', 'store', 'middle') + tx(50, 122, 'n', 'canned food', 'middle') + tx(250, 122, 'n', 'warehouse', 'middle') +
+          tx(150, 30, 'n', 'plane: all year, costly', 'middle') + tx(150, 110, 'n', 'ship: once a year', 'middle') + tx(150, 156, 'n', 'two ways food reaches Nunavut', 'middle'),
+        tall: 160, cap: 'Fresh food is flown in all year. Food that keeps arrives by ship once a year.' },
+      { h: 'Food security' },
+      '<b>Food security</b> means that everyone has reliable access to enough safe, healthy food. By that measure, Nunavut faces one of the most serious challenges in Canada: surveys have found that about half of households have struggled to afford enough food. The cost of food is not the only reason. Many jobs pay less than the high cost of living, and housing is crowded and expensive.',
+      { box: 'Country food', text: 'Inuit have always lived on <b>country food</b>: caribou, Arctic char, seal and whale, hunted and shared. It is healthy and culturally important, but hunting now requires costly gas, snowmobiles and equipment.' },
+      { h: 'Working on solutions' },
+      'The federal government gives a subsidy, called Nutrition North Canada, to lower the price of healthy foods flown to the North. Some communities run freezers where hunters share country food with families who need it. Others are trying greenhouses that grow vegetables, even in the long Arctic winter. Many Inuit leaders say lasting solutions must come from the communities themselves, with more good jobs and support for hunting and sharing.'
+    ],
+    guide: { before: 'Find Iqaluit and Nunavut on a map of Canada; notice there are no roads. Teach <b>sealift</b>, <b>food security</b> and <b>country food</b>.',
+      after: 'Compare the price of one food in your store with prices reported online for Iqaluit. What surprised you?' },
+    words: [['sealift', 'the yearly delivery of supplies by ship to northern communities'], ['food security', 'reliable access to enough safe, healthy food'], ['country food', 'food that Inuit hunt, fish and gather from the land and sea']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, how does fresh food reach Nunavut?',
+        opts: ['by plane, all year', 'by ship, once a year', 'by truck', 'by train'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can fresh food not come by sealift?',
+        opts: ['It would spoil before the next ship.', 'Ships are too slow to carry it.', 'It is too heavy.', 'Ships carry only cars.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the cause-and-effect chart.', cols: ['Cause', 'Effect'],
+        rows: [['no roads to Nunavut', null], [null, 'fresh food is very expensive'], ['hunting needs gas and equipment', null]],
+        a: [[null, 'supplies come by air or sea'], ['fresh food must be flown in', null], [null, 'country food is costly to get']] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why is country food important to Inuit, beyond its price? Use the box.',
+        a: 'It is healthy and culturally important. Hunting and sharing food are traditions that connect families and communities.', look: 'health and cultural meaning' },
+      { k: 'choice', code: 'B3.3', q: 'In the box, why is there a colon after <b>country food</b>?',
+        opts: ['to introduce a list of examples', 'to end a sentence', 'to show a quotation', 'to join two names'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The last sentence says solutions must come from the communities themselves. Why might this be important?',
+        a: 'People who live in the North understand their needs best. Solutions designed far away may not fit their culture or way of life.', look: 'the value of local voices and decisions' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the main reasons food costs so much in Nunavut, in two sentences.',
+        a: 'There are no roads, so fresh food must be flown in, which is very expensive. Low wages and high living costs make it even harder to afford.', look: 'transport and income reasons' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-hot-air-balloon', subject: 'science', form: 'Explanation',
+    title: 'Floating on Warm Air',
+    deck: 'A hot air balloon has no engine and no wings. It rises because of a simple fact about air.',
+    hero: {
+      photo: 'g8-balloon.jpg', credit: 'Photo: Sunridin, CC BY 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A pilot fires the burner to heat the air inside a hot air balloon.'
+    },
+    body: [
+      'On a September morning in 1783, a crowd at the palace of Versailles, near Paris, watched a huge paper-and-cloth bag rise into the sky. Hanging beneath it in a basket were a sheep, a duck and a rooster, the first passengers ever carried by a balloon. The brothers Joseph and Étienne Montgolfier had built it. Two months later, two men rode a Montgolfier balloon over Paris for about 25 minutes. Human flight had begun.',
+      { fig: '<path class="k" d="M150 10 Q220 10 220 70 Q220 110 168 130 H132 Q80 110 80 70 Q80 10 150 10 Z"/><rect class="k" x="136" y="146" width="28" height="18"/><path class="t" d="M134 130 L138 146 M166 130 L162 146"/>' +
+          [110, 150, 190].map(function (x) { return '<circle class="t" cx="' + x + '" cy="62" r="2"/>'; }).join('') + [30, 50, 250, 270].map(function (x) { return '<circle class="dot" cx="' + x + '" cy="60" r="2"/><circle class="dot" cx="' + (x + 8) + '" cy="76" r="2"/><circle class="dot" cx="' + (x - 6) + '" cy="92" r="2"/>'; }).join('') +
+          D.arrow(150, 120, 150, 30, 'a') + tx(150, 92, 'n', 'hot air', 'middle') + tx(40, 116, 'n', 'cool air', 'middle') + tx(260, 116, 'n', 'cool air', 'middle'),
+        tall: 168, cap: 'Particles of hot air are spread out; particles of cool air are packed closer. The balloon is pushed up.' },
+      { h: 'Air is a fluid' },
+      'Air is a <b>fluid</b>, just like water: it flows and takes the shape of its container. And like water, it pushes up on anything inside it. When air is heated, its particles move faster and spread farther apart. A cubic metre of hot air contains fewer particles, so it has less mass. In other words, hot air is less <b>dense</b> than cool air. Just as a block of wood floats on water, a balloon full of hot air floats in the cooler, denser air around it.',
+      { h: 'How a pilot steers' },
+      'Modern balloons use a propane burner to heat the air inside the envelope, the fabric bag, to about 100 °C. To climb, the pilot fires the burner. To sink, the pilot lets the air cool or opens a vent at the top to let some hot air escape. A balloon has no way to steer left or right. Instead, pilots use the fact that wind often blows in different directions at different heights. By rising or sinking, they catch the wind that is going their way.',
+      { box: 'Lots of lift', text: 'Each cubic metre of hot air weighs about a quarter of a kilogram less than the cool air it replaces. A balloon holding 2800 cubic metres can lift about 700 kilograms: the balloon, the basket and several passengers.' },
+      'Every August, hundreds of thousands of visitors come to Saint-Jean-sur-Richelieu, Quebec, for the largest hot air balloon festival in Canada. As dozens of balloons drift over the river at sunset, they are a beautiful demonstration of <b>buoyancy</b>, the same force that lifts a swimmer or a ship.'
+    ],
+    guide: { before: 'Put a balloon over the mouth of an empty bottle and stand the bottle in hot water. Teach <b>fluid</b>, <b>dense</b> and <b>buoyancy</b>. Compare the particles inside and outside the balloon in the diagram.',
+      after: 'Why do you think balloon flights usually happen in the early morning or evening, when the air is cool?' },
+    words: [['fluid', 'a substance that flows, such as a liquid or a gas'], ['dense', 'having a lot of mass packed into a space'], ['buoyancy', 'the upward push of a fluid on an object in it']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about the particles inside the balloon?',
+        opts: ['They are farther apart than outside.', 'They are packed closer.', 'There are none.', 'They are the same as outside.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does a pilot change direction?',
+        opts: ['by rising or sinking to catch a different wind', 'with a steering wheel', 'with a propeller', 'by firing the burner sideways'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain, step by step, why heating the air makes the balloon rise.',
+        a: 'Heating makes the particles move faster and spread apart. The hot air becomes less dense than the cool air outside. The denser cool air pushes the balloon up.', look: 'particles spread, less dense, pushed up' },
+      { k: 'choice', code: 'B3.2', q: '“The pilot <b>fires</b> the burner.” In this sentence, <b>fires</b> is …',
+        opts: ['a verb', 'a noun', 'an adjective', 'an adverb'], a: 0 },
+      { k: 'lines', code: 'C1.2', n: 3, q: 'The writer compares a balloon in air to a block of wood on water. How does this comparison help?',
+        a: 'Most people know wood floats on water. It helps readers see that hot air floats in cool air for the same reason: it is less dense.', look: 'links the familiar example to density' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Use the box. If one cubic metre of hot air lifts a quarter of a kilogram, how much could 400 cubic metres lift? Show your thinking.',
+        a: '400 × 0.25 = 100 kilograms.', look: 'correct calculation: 100 kg' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Where else have you seen hot air rise, at home or outdoors? Explain using the text.',
+        a: 'Above a campfire, sparks and smoke rise. The air heated by the fire is less dense, so the cooler air around it pushes it up.', look: 'a real example explained with density' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-compound-interest', subject: 'math', form: 'Explanation',
+    title: 'Money That Grows Itself',
+    deck: 'Why starting to save early can matter more than saving a lot',
+    hero: {
+      photo: 'g8-coins.jpg', credit: 'Photo: KMR Photography, CC BY 2.0, Wikimedia Commons', focus: '50% 75%',
+      tall: 180,
+      cap: 'Stacks of Canadian coins. Small amounts, saved and left to grow, can add up over time.'
+    },
+    body: [
+      'Imagine you put $1000 in a savings account at the bank. The bank uses your money to make loans, and in return it pays you a little extra each year. That extra money is called <b>interest</b>. The amount you start with is the <b>principal</b>. If the bank pays 5% interest per year, how much will you have after ten years?',
+      { fig: bars([[1000, 'start'], [1276, 'after', '5 years'], [1629, 'after', '10 years'], [2653, 'after', '20 years']], { max: 3000, step: 1000, pre: '$' }),
+        tall: 172, cap: '$1000 earning 5% compound interest each year (rounded to the nearest dollar).' },
+      { h: 'Simple interest' },
+      'With simple interest, you earn interest only on your original $1000. Five percent of $1000 is $50, so you earn $50 every year. After ten years, you have $1000 + 10 × $50 = $1500. The amount you earn never changes, no matter how long you wait.',
+      { h: 'Compound interest' },
+      'Most savings accounts pay <b>compound interest</b>, which means you earn interest on your interest. In the first year, you earn $50, so you have $1050. In the second year, you earn 5% of $1050, which is $52.50, so you have $1102.50. Each year, the amount you earn interest on gets bigger, so the money grows faster and faster. By year ten, you are earning about $78 a year instead of $50.',
+      { h: 'Time is the secret' },
+      'Look at the graph. In the first ten years, the money grows by about $629. In the next ten, it grows by more than $1000, even though no new money was added. That is the power of compounding: the longer money is left to grow, the faster it grows. This is why financial advisers say that starting to save young matters even more than saving large amounts.',
+      { box: 'It works against you too', text: 'Credit cards charge compound interest on money you owe, often about 20% per year. A debt that is not paid off can grow quickly, in the same way that savings do.' },
+      'Real accounts pay different rates, and rates change over time. Prices also rise, a change called inflation, so money must grow just to keep its value. Still, the rule holds: interest on interest adds up. A good habit is to save a small part of any money you receive, such as birthday gifts or wages from a part-time job, before you spend the rest.'
+    ],
+    guide: { before: 'Calculate 5% of 1000 together. Teach <b>interest</b>, <b>principal</b> and <b>compound interest</b>. Read the bars on the graph from left to right.',
+      after: 'If you saved $5 a week from now until you are 18, about how much would you put in? How could interest help it grow?' },
+    words: [['interest', 'money paid for the use of money that is saved or borrowed'], ['principal', 'the amount of money you start with'], ['compound interest', 'interest earned on the principal and on earlier interest']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Complete the chart for $1000 at 5% compound interest.', cols: ['Year', 'Interest earned', 'Total at end of year'],
+        rows: [['1', '$50', null], ['2', null, '$1102.50'], ['3', null, null]],
+        a: [[null, null, '$1050'], [null, '$52.50', null], [null, '$55.13', '$1157.63']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, about how much is there after 20 years?',
+        opts: ['$2653', '$1629', '$1500', '$3000'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In this text, <b>interest</b> means …',
+        opts: ['money paid for the use of money', 'a feeling of curiosity', 'a hobby', 'a share in a business'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the difference between simple and compound interest, using the $1000 example.',
+        a: 'Simple interest pays $50 a year only on the $1000, giving $1500 after ten years. Compound interest pays interest on the interest too, giving about $1629.', look: 'both kinds with the example amounts' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why do advisers say starting young matters more than saving a lot?',
+        a: 'Because compound interest grows faster the longer money is left. Money saved early has more years to grow on its own interest.', look: 'links time to compounding' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why do you think the writer included the box about credit cards?',
+        a: 'To show the other side: compound interest can also make debt grow quickly, so readers understand it can help or harm them.', look: 'recognizes the warning and its purpose' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which helped you more to understand compounding: the worked example, the graph or the box? Explain, and say what you would do differently next time.',
+        a: 'The worked example helped most because I could follow each year. Next time I would try the calculation myself before reading the answer.', look: 'names what helped and a goal for next time' }
+    ]
+  });
+
 
 })();

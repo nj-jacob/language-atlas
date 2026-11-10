@@ -148,3 +148,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g8-moviola.jpg` | A Moviola film-editing machine | Biswarup Ganguly | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Moviola_-_35mm_Film_Editing_Machine_-_Kolkata_2012-10-09_1575.JPG |
 | `g8-carr-church.jpg` | Emily Carr, Church at Yuquot Village, 1929, oil on canvas, Art Gallery of Ontario | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_-_Indian_Church.jpg |
 | `g8-lottery.jpg` | Filling in a lottery ticket in Finland | Santeri Viinamäki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Filling_lottery_ticket_20180215.jpg |
+| `g8-blood-cells.jpg` | Human blood seen through an electron microscope | National Cancer Institute | Public domain | https://commons.wikimedia.org/wiki/File:Red_White_Blood_cells.jpg |
+| `g8-banting-best.jpg` | Charles Best (left) and Frederick Banting on the roof of the medical building at the University of Toronto, 1921 | Thomas Fisher Rare Book Library, University of Toronto | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Photograph_of_F.G._Banting_and_C.H._Best_with_a_dog_on_the_roof_of_the_Medical_Building_(12309019434).jpg |
+| `g8-welland-lock.jpg` | A ship in Lock 7 of the Welland Canal in St | bgilliard | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Lock_7_(238984698).jpg |
+| `g8-plimsoll.jpg` | A load line mark painted on the side of a ship | David Wright | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:International_Load_Line_on_"Alexander_Grin"_-_geograph.org.uk_-_1759965.jpg |
+| `g8-moraine.jpg` | Rolling hills and fields on the Oak Ridges Moraine, north of Toronto | Rick Harris | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Hill_and_field_on_the_Oak_Ridges_Moraine_in_2007.jpg |
+| `g8-sea-ice.jpg` | Melt ponds on Arctic sea ice in summer | Kathryn Hansen / NASA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Sea_Ice_Melt_Ponds_(938).jpg |
+| `g8-fundy.jpg` | Visitors walk on the sea floor at low tide at the Hopewell Rocks, New Brunswick | Moneira Salic | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Hopewell_Rocks_low_tide_with_tourists_2007.jpg |
+| `g8-pauline-johnson.jpg` | E | Cochran | Public domain | https://commons.wikimedia.org/wiki/File:Tekahionwake_ca_1895.jpg |
+| `g8-marconi.jpg` | Marconi and his assistants at Signal Hill, St | James Vey | Public domain | https://commons.wikimedia.org/wiki/File:Marconi_and_assistants_Cabot_Tower,_St._John's_1901.jpg |
+| `g8-adam-beck.jpg` | The Sir Adam Beck generating stations beside the Niagara River, in Niagara Falls, Ontario | Changku88 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sir_Adam_Beck_Hydroelectric_Generating_Station_beside_the_Niagara_River.jpg |
+| `g8-green-roof.jpg` | The green roof on the podium of Toronto City Hall, planted with low, hardy plants | GreenRoofGardener | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Toronto_City_Hall_Podium_green_roof_by_LiveRoof,_July_2010.jpg |
+| `g8-dharavi.jpg` | Homes and workshops packed closely together in Dharavi, Mumbai, India | Goodtrance | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dharavi_Mumbai_India.jpg |
+| `g8-portage.jpg` | A canoeist carries a canoe over a portage trail between two lakes | Cornellier | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Portage-prospector.jpg |
+| `g8-habitat-67.jpg` | Habitat 67 on the St | Dllu | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Habitat_67_2019_dllu_01.jpg |
+| `g8-balloon.jpg` | A pilot fires the burner to heat the air inside a hot air balloon | Sunridin | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Flames_from_burner_in_hot_air_balloon.JPG |
+| `g8-emily-stowe.jpg` | Dr | Unknown photographer | Public domain | https://commons.wikimedia.org/wiki/File:Portrait_of_Emily_Stowe.jpg |
+| `g8-bike-gears.jpg` | The rear gears of a bicycle | Cjp24 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bicycle_cassette_-_10-speed.jpg |
+| `g8-coins.jpg` | Stacks of Canadian coins | KMR Photography | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stacks_of_Canadian_Coins_(16269886909).jpg |
+| `g8-iqaluit.jpg` | A shopping centre with a grocery store in Iqaluit, the capital of Nunavut | OhanaUnited | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:The_Marketplace_and_Arctic_Ventures.jpg |
+| `g8-fort-macleod.jpg` | A North-West Mounted Police officer, from a drawing published in 1875, and the route of the March West in 1874 (simplified) | Unknown artist | Public domain | https://commons.wikimedia.org/wiki/File:Nwmp_lancer.jpg |
