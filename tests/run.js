@@ -1201,6 +1201,10 @@ async function checkSheets(browser, base, g) {
 
 /* ---------- Reading passages (library.js, gradeN/passages.js) ---------- */
 const PASSAGE_WORDS = { 4: [250, 420], 5: [270, 450], 6: [290, 480], 7: [310, 520], 8: [320, 560] };
+/* once a grade has its 100 passages, their questions together must reach every reading expectation (B2.3 fluency is on every key;
+   C1.7 and C3.7 ask for texts by First Nations, Métis and Inuit creators, which the site cannot write, so they are taught with real books) */
+const PASSAGE_COVER = ['B2.1', 'B2.2', 'B3.1', 'B3.2', 'B3.3', 'C1.1', 'C1.2', 'C1.3', 'C1.4', 'C1.5', 'C1.6', 'C2.1', 'C2.2', 'C2.3', 'C2.4', 'C2.5', 'C2.6', 'C2.7',
+  'C3.1', 'C3.2', 'C3.3', 'C3.4', 'C3.5', 'C3.6', 'C3.8'];
 async function checkPassages(browser, base, g) {
   const { ctx, page, errs } = await newPage(browser, base);
   /* pages must fit with the site's real fonts, so serve them from tests/fonts in place of Google Fonts */
@@ -1229,7 +1233,7 @@ async function checkPassages(browser, base, g) {
     for (const dir of ['', 'thumbs']) if (!fs.existsSync(path.join(ROOT, 'assets', 'photos', dir, photo))) fail(where, id + ': assets/photos/' + (dir ? dir + '/' : '') + photo + ' is missing');
     if (!credits.includes('`' + photo + '`')) fail(where, id + ': ' + photo + ' is not listed in assets/photos/CREDITS.md');
   }
-  for (const p of await page.evaluate(([g, band]) => {
+  for (const p of await page.evaluate(([g, band, cover]) => {
     const P = Atlas.library, out = [], seen = {};
     const expand = s => s.split(/,\s*/).flatMap(p => { const m = p.match(/^([A-D]\d)\.(\d+) to \1\.(\d+)$/); if (!m) return [p]; const r = []; for (let i = +m[2]; i <= +m[3]; i++) r.push(m[1] + '.' + i); return r; });
     const valid = new Set(Atlas.meta.flatMap(m => expand(m.codes || '')));
@@ -1290,8 +1294,13 @@ async function checkPassages(browser, base, g) {
       });
     });
     box.remove();
+    if (P.list.length >= 100) {
+      const used = new Set(P.list.flatMap(p => (p.qs || []).map(q => q.code)));
+      const miss = cover.filter(c => !used.has(c));
+      if (miss.length) out.push('the ' + P.list.length + ' passages never ask about ' + miss.join(', ') + ' (every reading expectation needs questions)');
+    }
     return out;
-  }, [g, PASSAGE_WORDS[g]])) fail(where, p);
+  }, [g, PASSAGE_WORDS[g], PASSAGE_COVER])) fail(where, p);
   const first = await page.evaluate(() => Atlas.library.list[0].id);
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);

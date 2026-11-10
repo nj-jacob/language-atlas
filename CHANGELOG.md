@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 - Reading passages, Grade 4: 20 more passages (80 in all): the northern lights, Niagara Falls erosion, salmon, snowflake symmetry, the St. Lawrence Seaway, the Rideau Canal, the Rocky Mountains, Inuit snow houses, the pyramids, Tenochtitlan, castles, the Three Sisters, healthy teeth, mosaics, how a guitar makes sound, lighthouses, road salt, temperatures below zero, and two stories (a corn maze and the 1998 ice storm).
+- Reading passages cover the whole curriculum: every answer key now ends with a read-aloud check (B2.3); 20 Grade 4 questions were changed or relabelled so the passages also ask about grammar in context (B3.1 to B3.3), what words such as "they" refer to (C1.1), prior knowledge and connections (C2.1, C2.5), reasons to read (C2.2), the reader's own strategies and thinking (C2.7, C3.8), culture (C3.4) and inclusion (C3.6). A new check fails if a grade's 100 passages miss any reading expectation.
 
 ## 2026-11-09
 - Reading passages, Grade 4: 20 more passages (60 in all): the Burgess Shale, spring peepers, bats and echoes, a forest food chain, the spirit bear, the Bay of Fundy tides, the Canadian Shield, Timbuktu, the first Olympic Games, the Silk Road, recycling, an opinion piece on recess, ice safety, reading a bus schedule, area and perimeter in a school garden, pottery, origami cranes, Roberta Bondar, a story about a newcomer and a letter home from camp.

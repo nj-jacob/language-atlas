@@ -102,7 +102,7 @@
         a: 'They show the sound wave spreading out in every direction as it travels through the air toward the ear.', look: 'the idea that the wave spreads outward from the drum, linked to the text' },
       { k: 'choice', code: 'C3.2', half: true, q: 'Why does a tap sound louder with your ear on the table?',
         opts: ['Sound travels well through wood.', 'The table is hollow.', 'Your hand is closer to your ear.'], a: 0 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>re</b>play lets you hear a sound again. What does <b>re-</b> mean?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'A <b>re</b>play lets you hear a sound again. What does <b>re-</b> mean?',
         opts: ['not', 'again', 'before', 'under'], a: 1 },
       { k: 'lines', code: 'C2.4', n: 3, q: 'Which part of the text was hardest to picture? What could you do to understand it better?',
         a: 'The part about air bumping into air was hard to picture. I could look at the diagram again, reread the paragraph slowly, or try it with a line of dominoes.', look: 'a named part of the text and a sensible fix-up strategy (reread, use the diagram, visualize, ask a question)' }
@@ -152,7 +152,7 @@
         a: 'A pulley is a wheel and a rope that helps people move loads. A fixed pulley changes the direction of the pull, and adding a moving pulley halves the force. Cranes, elevators and blinds all use pulleys.', look: 'the main idea and two supporting details in the child’s own words' },
       { k: 'choice', code: 'C1.2', half: true, q: 'Why does this explanation include a “Try it” box?',
         opts: ['to tell a story', 'so the reader can test the idea', 'to give a list of words', 'to show a map'], a: 1 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'A pulley that cannot move is <b>fixed</b>. A pulley that moves is <b>un</b>fixed. What does <b>un-</b> mean?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'A pulley that cannot move is <b>fixed</b>. A pulley that moves is <b>un</b>fixed. What does <b>un-</b> mean?',
         opts: ['again', 'not', 'very', 'before'], a: 1 },
       { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what would happen with three pulleys holding the load. Use a detail from the text.',
         a: 'It would be even easier to pull, about a third of the force, but I would have to pull even more rope.', look: 'a prediction that follows the pattern (less force, more rope) and a detail from the text' }
@@ -250,7 +250,7 @@
       { k: 'table', code: 'C3.3', q: 'Fill in the chart about the snowshoe hare.', cols: ['Feature', 'How it helps the hare'],
         rows: [['huge back feet', null], ['white winter coat', null], ['brown summer coat', null]],
         a: [[null, 'It can run on deep snow without sinking.'], [null, 'It hides in the snow.'], [null, 'It hides on the forest floor.']] },
-      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>cycle</b> is something that repeats. Which word also has the base <b>cycle</b> and means “use again”?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'A <b>cycle</b> is something that repeats. Which word also has the base <b>cycle</b> and means “use again”?',
         opts: ['recycle', 'bicycle', 'circle'], a: 0 },
       { k: 'lines', code: 'C2.4', n: 2, q: 'Reread “Up and down” slowly. In your own words, why do hare numbers drop?',
         a: 'There are so many hares that they eat most of the plants, and many lynx are hunting them.', look: 'both reasons (not enough food, many predators) in the child’s own words' },
@@ -397,7 +397,7 @@
       { k: 'table', code: 'C3.3', q: 'List three jobs an inuksuk can do.', cols: ['Job', 'Why it helps people'],
         rows: [['shows the way to a camp', null], [null, 'people know where to catch fish'], [null, 'travellers stay safe']],
         a: [[null, 'travellers do not get lost'], ['points to a good fishing place', null], ['warns about danger, such as thin ice', null]] },
-      { k: 'choice', code: 'B2.2', half: true, q: '<b>Inuksuit</b> is the word for more than one inuksuk. What English ending usually shows more than one?',
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Inuksuit</b> is the word for more than one inuksuk. What English ending usually shows more than one?',
         opts: ['-s or -es', '-ing', '-ed', '-ly'], a: 0 },
       { k: 'choice', code: 'C1.3', half: true, q: 'The text explains what <b>inunnguaq</b> means right after the word. Why?',
         opts: ['to help readers understand a new word', 'to make the text longer', 'to tell a joke'], a: 0 },
@@ -598,7 +598,7 @@
       { k: 'table', code: 'C3.3', q: 'Fill in the chart.', cols: ['What sleep does', 'How it helps you'],
         rows: [['repairs muscles', null], ['sorts what you learned', null], [null, 'you get sick less often']],
         a: [[null, 'your body grows and stays strong'], [null, 'you remember the important parts'], ['helps your body fight germs', null]] },
-      { k: 'choice', code: 'B2.2', half: true, q: 'Sleep helps you <b>re</b>member. Which word with <b>re-</b> means “build again”?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'Sleep helps you <b>re</b>member. Which word with <b>re-</b> means “build again”?',
         opts: ['rebuild', 'reason', 'ready'], a: 0 },
       { k: 'choice', code: 'C1.2', half: true, q: 'Why is “Tips for a good sleep” in a box?',
         opts: ['It gives advice the reader can use.', 'It is a story.', 'It is a joke.'], a: 0 },
@@ -648,7 +648,7 @@
         opts: ['It is cheap.', 'Crushing soaks up the force of the impact.', 'It makes the helmet lighter.'], a: 1 },
       { k: 'choice', code: 'C3.2', half: true, q: 'A helmet hit the road in a crash but looks fine. What should you do?',
         opts: ['keep using it', 'replace it', 'paint it'], a: 1 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>un-</b> mean in <b>un</b>safe and <b>un</b>buckled?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'What does <b>un-</b> mean in <b>un</b>safe and <b>un</b>buckled?',
         opts: ['not, or the opposite of', 'again', 'before'], a: 0 },
       { k: 'choice', code: 'C1.3', half: true, q: 'Why is the title “Two, V, One”?',
         opts: ['It names the fit check the text teaches.', 'It is a race.', 'It counts the riders.'], a: 0 },
@@ -702,7 +702,7 @@
         a: [[null, 'outdoors, at Grand Lake', null], [null, 'small, on a wooden board', 'much larger, on canvas']] },
       { k: 'choice', code: 'C3.2', half: true, q: 'Why did Thomson make quick sketches outdoors?',
         opts: ['He had no studio.', 'He could catch what he saw before the light and weather changed.', 'He did not like painting.'], a: 1 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'A <b>ranger</b> looks after a park. What does the ending <b>-er</b> in ranger and painter mean?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'A <b>ranger</b> looks after a park. What does the ending <b>-er</b> in ranger and painter mean?',
         opts: ['a person who does something', 'more than one', 'in the past'], a: 0 },
       { k: 'lines', code: 'C1.5', n: 2, q: 'The writer calls the tree “lonely.” What feeling does this word give the painting?',
         a: 'It makes the tree seem alone and a little sad or quiet, standing by itself by the lake.', look: 'a feeling (alone, quiet, sad) linked to the word lonely' },
@@ -1005,7 +1005,7 @@
       { k: 'table', code: 'C3.3', q: 'List the materials.', cols: ['Material', 'What it is for'],
         rows: [['pine cone', null], ['shortening', null], [null, 'to hang the feeder']],
         a: [[null, 'to hold the food'], [null, 'to make the seeds stick'], ['string', null]] },
-      { k: 'choice', code: 'B2.2', half: true, q: 'What does <b>re-</b> mean in “<b>re</b>place the cone”?',
+      { k: 'choice', code: 'B2.1', half: true, q: 'What does <b>re-</b> mean in “<b>re</b>place the cone”?',
         opts: ['again or back', 'not', 'before'], a: 0 },
       { k: 'choice', code: 'C1.4', half: true, q: 'Which step is NOT shown in the diagram?',
         opts: ['tie', 'roll', 'hang'], a: 2 },
@@ -1600,7 +1600,7 @@
         a: [[null, 'germs on your hands could get into your mouth'], [null, 'germs from the washroom could spread'], ['after you blow your nose, cough or sneeze', null], ['after you touch animals', null]] },
       { k: 'choice', code: 'C1.2', half: true, q: 'Which part of the text is a procedure?',
         opts: ['Five steps', 'How soap works', 'the title'], a: 0 },
-      { k: 'choice', code: 'B2.2', half: true, q: '<b>Harm</b>less means without harm. What does <b>-less</b> mean?',
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Harm</b>less means without harm. What does <b>-less</b> mean?',
         opts: ['without', 'full of', 'again'], a: 0 },
       { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how soap removes germs. Use the text.',
         a: 'One end of the soap grabs oil and the other end grabs water. Scrubbing pulls the oil and the germs in it off your skin, and the water washes them away.', look: 'both ends of the soap particle and the rinse' },
@@ -1695,7 +1695,7 @@
         a: [['It will never run out.', 'The wind does not blow all the time.'], ['It does not make smoke.', 'Some people dislike the look or sound, and it can harm birds and bats.']] },
       { k: 'choice', code: 'C3.2', half: true, q: 'Why are turbines built so tall?',
         opts: ['The wind is faster and steadier higher up.', 'So people can see them.', 'To be near the clouds.'], a: 0 },
-      { k: 'choice', code: 'B2.2', half: true, q: '<b>Re</b>newable energy can be made again and again. Which word also uses <b>re-</b> to mean “again”?',
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Re</b>newable energy can be made again and again. Which word also uses <b>re-</b> to mean “again”?',
         opts: ['recharge', 'real', 'ready'], a: 0 },
       { k: 'lines', code: 'C3.5', n: 3, q: 'Is the writer for or against wind power, or fair to both sides? How can you tell?',
         a: 'The writer is mostly fair. The text explains the benefits but also gives a section on problems, and says engineers keep working to make turbines better.', look: 'a judgement about balance with evidence from the text' },
@@ -2087,8 +2087,8 @@
         opts: ['Frogs are green.', 'Spring peepers are tiny wetland frogs with a loud call and an interesting life.', 'Ponds freeze in winter.', 'Tadpoles eat algae.'], a: 1 },
       { k: 'order', code: 'C1.4', half: true, q: 'Use the diagram. Number the stages in order.',
         items: ['eggs', 'tadpole', 'froglet', 'adult'], show: [2, 0, 3, 1] },
-      { k: 'choice', code: 'C3.2', half: true, q: 'Why do the males sing?',
-        opts: ['to call to the females', 'to scare away birds', 'to find insects'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In the sentence “Only the males sing,” which word is the verb?',
+        opts: ['Only', 'males', 'sing'], a: 2 },
       { k: 'choice', code: 'C3.1', half: true, q: 'The sac “blows up like a bubble gum balloon.” This comparison is a …',
         opts: ['simile', 'rhyme', 'question'], a: 0 },
       { k: 'choice', code: 'B2.2', half: true, q: 'A frog<b>let</b> is a small frog. What is a pig<b>let</b>?',
@@ -2139,8 +2139,8 @@
         items: ['The bat squeaks.', 'The sound hits an insect.', 'An echo bounces back.', 'The bat’s ears catch the echo.'], show: [2, 0, 3, 1] },
       { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the dashed lines show?',
         opts: ['the echo coming back', 'the bat’s path', 'the wind'], a: 0 },
-      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a bat squeak faster as it gets close?',
-        opts: ['to know exactly where the insect is', 'to scare the insect', 'because it is tired'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: 'Read: “So how do they find a tiny mosquito in the air?” Who are <b>they</b>?',
+        opts: ['bats', 'mosquitoes', 'people'], a: 0 },
       { k: 'choice', code: 'B2.2', half: true, q: '<b>Echo</b>location joins two words. What does <b>location</b> mean?',
         opts: ['where something is', 'how loud something is', 'how fast something is'], a: 0 },
       { k: 'table', code: 'C3.3', q: 'Fill in the chart. Each cause leads to an effect.', cols: ['Cause', 'Effect'],
@@ -2443,7 +2443,7 @@
       { k: 'table', code: 'C3.3', q: 'Compare the ancient Games with the Games today.', cols: ['', 'Ancient Games', 'Games today'],
         rows: [['Prize for winners', null, null], ['Who can take part', null, null]],
         a: [[null, 'a crown of olive leaves', 'medals'], [null, 'only Greek-speaking men who were not enslaved', 'women and men from countries all over the world']] },
-      { k: 'lines', code: 'C3.5', n: 3, q: 'Who could not take part in the ancient Games? Do you think this was fair? Explain.',
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Who could not take part in the ancient Games? Do you think this was fair? Explain.',
         a: 'Women, enslaved people and people who did not speak Greek could not take part. It was not fair, because everyone should have a chance to compete.', look: 'names who was left out and gives a reasoned opinion' },
       { k: 'lines', code: 'C3.2', n: 2, q: 'Why do you think an olive crown meant so much to the winners?',
         a: 'It came from a sacred tree at Olympia and showed everyone that they were a champion, so they were treated as heroes.', look: 'the meaning of the crown, not its value in money' }
@@ -2590,10 +2590,10 @@
         opts: ['follow the reasons in order', 'find the photo', 'learn new words'], a: 0 },
       { k: 'choice', code: 'C3.5', half: true, q: 'Who is the writer most likely trying to persuade?',
         opts: ['the people who decide how long recess is', 'doctors', 'little children'], a: 0 },
-      { k: 'choice', code: 'B2.2', half: true, q: '<b>Re</b>freshed means fresh again. Which prefix means “again”?',
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Re</b>freshed means fresh again. Which prefix means “again”?',
         opts: ['re-', 'un-', 'dis-'], a: 0 },
-      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does the writer say fifteen minutes is “barely enough time to choose teams”?',
-        a: 'To show that 15 minutes is too short for a real game, which supports the idea that recess should be longer.', look: 'links the detail to the writer’s opinion' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'How did you decide whether the writer’s reasons are strong? What did you check?',
+        a: 'I checked whether each reason had a fact to back it up. The first reason uses what doctors say and the 60-minute guideline, so it is strong. The third reason has fewer facts.', look: 'a way of checking reasons (facts, examples, the graph) applied to this text' },
       { k: 'lines', code: 'C3.5', n: 3, q: 'The writer mentions what “some people worry” about. Why is it smart to include the other side?',
         a: 'It shows the writer has thought about the other side and can answer it. That makes the argument stronger and more fair.', look: 'answering the other side makes the argument stronger' }
     ]
@@ -2641,8 +2641,8 @@
         a: [[null, 'the strongest'], [null, 'weaker'], [null, 'unsafe, because it has water in it']] },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why should you never run onto the ice to help someone who fell in?',
         a: 'The ice near the hole is already broken or thin, so you could fall in too. It is safer to call 911 and reach out with a stick or rope from the shore.', look: 'the danger of thin ice and the safer way to help' },
-      { k: 'lines', code: 'C1.3', n: 2, q: 'How does the heading “If you fall through” help a reader?',
-        a: 'It helps a reader quickly find the steps to follow in an emergency.', look: 'headings help readers find information fast' }
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Before you read, what did you already know about ice or cold water? How did it help you understand the text?',
+        a: 'Example: I knew thin ice can crack, so I understood why the chart shows how thick the ice must be for one person or a group.', look: 'something they knew before reading, linked to a part of the text' }
     ]
   });
 
@@ -2686,8 +2686,8 @@
         opts: ['It arrives after the club starts.', 'It is too crowded.', 'It does not stop at Elm Street.'], a: 0 },
       { k: 'choice', code: 'B2.2', half: true, q: '<b>Frequen</b>cy means how often. Which word means “happening often”?',
         opts: ['frequent', 'late', 'early'], a: 0 },
-      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the text show the times in a table?',
-        opts: ['A table shows many times in rows and columns, so they are easy to find.', 'A table tells a story.', 'A table shows the bus.'], a: 0 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'When would someone most need to read a text like this?',
+        opts: ['when planning a trip by bus', 'when looking for a bedtime story', 'when learning how buses are built'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why does Grandma choose the 9:40 bus instead of the 10:00 bus? Use details from the text.',
         a: 'The 9:40 bus arrives at 10:05, so they have time to pick out books, and they will still be on time if the bus is late.', look: 'extra time for books and for delays' },
       { k: 'lines', code: 'C2.3', n: 2, q: 'If Maya and Grandma miss the 9:40 bus, what should they do? Explain.',
@@ -2786,8 +2786,8 @@
         opts: ['like a child', 'a child’s toy', 'not a child'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think many pots wobble and collapse when a potter is learning? Use the text.',
         a: 'Using the wheel takes a lot of practice. If the clay is not centred, or the walls are pulled up too fast, the pot can wobble and fall.', look: 'centring and practice' },
-      { k: 'lines', code: 'C3.5', n: 2, q: 'Why does the writer mention Indigenous potters in North America?',
-        a: 'To show that Indigenous people were skilled potters who made beautiful coil pots long before the wheel arrived.', look: 'recognizes Indigenous skill and history' }
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Pottery is part of many cultures. What does the text tell you about how people in different places make or use pots?',
+        a: 'Many Indigenous potters in North America built coil pots long before the potter’s wheel arrived. Some potters make thin, delicate cups, and others make big, sturdy pots for cooking or storing food.', look: 'two details about pottery in different cultures or places' }
     ]
   });
 
@@ -2872,9 +2872,9 @@
         items: ['Roberta Bondar is born.', 'She is chosen as an astronaut.', 'She flies into space.', 'She photographs national parks.'], show: [2, 0, 3, 1] },
       { k: 'choice', code: 'C1.2', half: true, q: 'This text tells about a real person’s life. It is a …',
         opts: ['biography', 'fable', 'diary'], a: 0 },
-      { k: 'choice', code: 'C3.2', half: true, q: 'Why do astronauts’ muscles get weaker in space?',
-        opts: ['They do not have to work as hard without gravity.', 'They do not eat.', 'They sleep too much.'], a: 0 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'The ending <b>-ologist</b> means “one who studies.” What does a bi<b>ologist</b> study?',
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why does <b>Canadian</b> in “the first Canadian woman” start with a capital letter?',
+        opts: ['It is a describing word made from the name Canada.', 'It is the first word of the sentence.', 'It is a long word.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'The ending <b>-ologist</b> means “one who studies.” What does a bi<b>ologist</b> study?',
         opts: ['living things', 'rocks', 'numbers'], a: 0 },
       { k: 'table', code: 'C3.3', q: 'How did Roberta Bondar prepare for her dream?', cols: ['As a child', 'As an adult'],
         rows: [[null, null]],
@@ -2933,8 +2933,8 @@
         opts: ['full of help', 'without help', 'helping again'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'How did drawing help Oksana and the narrator become friends? Use details from the story.',
         a: 'They did not share a language, but they both liked to draw. The narrator showed her a hockey player, she fixed the skates, and they drew a whole team together.', look: 'drawing as a shared language, with details' },
-      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what might happen on the bus the next week.',
-        a: 'They will probably sit together again, draw more, and teach each other words in English and Ukrainian.', look: 'a prediction based on the new friendship' }
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Oksana is a newcomer who does not speak much English yet. What does the story show about including someone new?',
+        a: 'You do not need many words to make a friend. The narrator learned to say hello in Ukrainian and shared drawing, something they both loved, so Oksana did not have to sit alone.', look: 'a message about including others, backed by a detail from the story' }
     ]
   });
 
@@ -2983,8 +2983,8 @@
         opts: ['someone who acts', 'a kind of play', 'an action'], a: 0 },
       { k: 'lines', code: 'C1.5', n: 3, q: 'How does Jasmine’s writing sound like she is talking to her grandmother? Give two examples.',
         a: 'She writes “SO much” in capital letters to show excitement, and she asks Nana to rent a canoe with her. She also adds a P.S. about hugging her cat.', look: 'two examples of a friendly, chatty voice' },
-      { k: 'lines', code: 'C2.3', n: 2, q: 'Predict what Jasmine will do when she gets home.',
-        a: 'She will show Nana the J-stroke and maybe go canoeing with her at the park.', look: 'a prediction based on the letter' }
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Jasmine felt homesick on her first night. Have you ever felt that way, or read about someone who did? How does that help you understand Jasmine?',
+        a: 'Example: I felt homesick at my first sleepover. I know it gets better when someone kind stays with you, the way Aiyana stayed with Jasmine.', look: 'a real connection to their own life or another text, linked back to Jasmine' }
     ]
   });
 
@@ -3031,8 +3031,8 @@
         opts: ['a panel that uses sunlight', 'a panel for the Moon', 'a panel made of ice'], a: 0 },
       { k: 'lines', code: 'C3.5', n: 3, q: 'The text gives a science explanation and also Indigenous stories about the lights. Why do you think the writer included both?',
         a: 'To show that there are different ways of understanding the lights: science explains how they happen, and stories show what they mean to people.', look: 'values both science and Indigenous stories' },
-      { k: 'lines', code: 'C3.2', n: 2, q: 'Why is it hard to see the northern lights in a big city?',
-        a: 'City lights make the sky too bright, so you need a dark night far from the city.', look: 'light from the city' }
+      { k: 'lines', code: 'C2.7', n: 3, q: 'What helped you most to understand how the lights form: the diagram, picturing it in your mind, or rereading? Explain how it helped.',
+        a: 'Example: The diagram helped most. I could see where the air glows high above Earth, so the words made more sense.', look: 'names one strategy and tells how it helped with this text' }
     ]
   });
 
@@ -3225,8 +3225,8 @@
         opts: ['Locks lift ships step by step, like stairs.', 'It has real stairs.', 'It is made of wood.'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why do you think Canada and the United States built the Seaway together?',
         a: 'The Great Lakes and the St. Lawrence are shared by both countries, and both use the Seaway to ship goods, so working together made sense.', look: 'shared waters and shared use' },
-      { k: 'lines', code: 'C3.3', n: 2, q: 'In your own words, explain how a ship goes down through a lock.',
-        a: 'The ship sails in, the gates close behind it, water drains out to the lower river, the ship sinks with the water, and the front gates open.', look: 'the steps in reverse' }
+      { k: 'lines', code: 'C2.7', n: 2, q: 'A lock is hard to picture. What did you do to understand how a lock works? How did it help?',
+        a: 'Example: I followed the diagram one step at a time and pictured a bathtub filling up, so I could see the ship rising.', look: 'a strategy (diagram, visualizing, rereading) and how it helped' }
     ]
   });
 
@@ -3371,13 +3371,13 @@
       { k: 'table', code: 'C3.3', q: 'How does each part help? Fill in the chart.', cols: ['Part', 'How it helps'],
         rows: [['raised sleeping platform', null], ['small hole near the top', null], ['qulliq', null]],
         a: [[null, 'Warm air rises, so it is the warmest place.'], [null, 'It lets fresh air in.'], [null, 'It gives light and heat.']] },
-      { k: 'choice', code: 'B2.2', half: true, q: 'The ending <b>-or</b> can mean “a thing that does something.” An insulat<b>or</b> is …',
+      { k: 'choice', code: 'B2.1', half: true, q: 'The ending <b>-or</b> can mean “a thing that does something.” An insulat<b>or</b> is …',
         opts: ['a thing that insulates', 'a kind of snow', 'a cold place'], a: 0 },
       { k: 'choice', code: 'C3.1', half: true, q: 'The last block goes in “like a key.” This means it …',
         opts: ['locks the dome together', 'opens a door', 'is made of metal'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why do builders need snow that the wind has packed hard?',
         a: 'Hard-packed snow can be cut into firm blocks that hold their shape and freeze together into a strong dome.', look: 'firm blocks that hold their shape' },
-      { k: 'lines', code: 'C3.5', n: 2, q: 'Why is it important that Elders teach young people to build snow houses?',
+      { k: 'lines', code: 'C3.4', n: 2, q: 'Why is it important that Elders teach young people to build snow houses?',
         a: 'So the knowledge is not lost, young people can stay safe on hunting trips, and the culture stays strong.', look: 'safety and keeping knowledge and culture alive' }
     ]
   });
@@ -3518,8 +3518,8 @@
         a: [[null, 'Enemies had to cross deep water.'], [null, 'It slid down to block the entrance.'], [null, 'People could retreat there, with food and water.']] },
       { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is beside the moat?',
         opts: ['the drawbridge', 'the keep', 'the great hall'], a: 0 },
-      { k: 'choice', code: 'C3.2', half: true, q: 'Why did castles stop being useful as fortresses?',
-        opts: ['Cannons could smash the walls.', 'People stopped liking stone.', 'The moats dried up.'], a: 0 },
+      { k: 'choice', code: 'B3.1', half: true, q: '“If enemies broke through the outer walls, everyone could retreat into the keep.” Which part could NOT stand alone as a sentence?',
+        opts: ['If enemies broke through the outer walls', 'everyone could retreat into the keep', 'Both parts could stand alone.'], a: 0 },
       { k: 'choice', code: 'B2.2', half: true, q: '<b>Draw</b>bridge: draw can mean “pull.” A drawbridge is a bridge that …',
         opts: ['can be pulled up', 'has pictures on it', 'is very long'], a: 0 },
       { k: 'choice', code: 'C1.3', half: true, q: 'What is the box “The end of castles” about?',
@@ -3621,8 +3621,8 @@
         opts: ['protects your mouth', 'cleans your mouth', 'opens your mouth'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Why does the writer say your adult teeth “need to last for the rest of your life”?',
         a: 'Adult teeth are the only teeth you will ever get. If they are damaged or lost, they do not grow back.', look: 'adult teeth are not replaced' },
-      { k: 'lines', code: 'C1.3', n: 2, q: 'How do the headings help you read this text?',
-        a: 'They split the text into parts, so I know where to find how cavities form and how to keep teeth healthy.', look: 'headings organize the information' }
+      { k: 'lines', code: 'C2.1', n: 2, q: 'What did you already know about caring for your teeth? Which fact in the text was new to you?',
+        a: 'Example: I knew to brush twice a day. I did not know that sipping pop all day is hard on teeth.', look: 'one thing they knew and one new fact from the text' }
     ]
   });
 
@@ -3817,8 +3817,8 @@
         opts: ['the side of a river', 'a river that is wide', 'inside a river'], a: 0 },
       { k: 'lines', code: 'C3.5', n: 3, q: 'Is the writer for road salt, against it, or fair to both sides? How can you tell?',
         a: 'The writer is fair to both sides. The text explains how salt keeps people safe but also has a section on the problems it causes.', look: 'a judgement about balance with evidence' },
-      { k: 'lines', code: 'C3.2', n: 2, q: 'Why does spraying brine before a storm help?',
-        a: 'The salty layer stops ice from sticking to the road, so it is easier to clear.', look: 'stops ice from sticking' }
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Which thinking skill helped you most with this text: comparing good and bad points, checking the number line, or asking “why”? Explain how it helped.',
+        a: 'Example: Comparing good and bad points helped most. I made a list in my head: salt keeps roads safe, but it rusts cars and harms fish and plants. Then I could see the whole picture.', look: 'names a thinking skill and tells how it helped them understand this text' }
     ]
   });
 
@@ -3908,8 +3908,8 @@
         opts: ['the path along the right-hand wall', 'the shortest path', 'a dead end'], a: 0 },
       { k: 'choice', code: 'C3.2', half: true, q: 'How did the red barn roof help?',
         opts: ['It was a landmark near the exit.', 'It showed the time.', 'It blocked the wind.'], a: 0 },
-      { k: 'choice', code: 'C3.2', half: true, q: 'How much longer than average did they take?',
-        opts: ['12 minutes', '42 minutes', '30 minutes'], a: 0 },
+      { k: 'choice', code: 'C2.2', half: true, q: 'Which is a good reason to read a story like this?',
+        opts: ['to enjoy an adventure and see how the characters solve a problem', 'to find out the times of buses', 'to learn how farmers grow corn'], a: 0 },
       { k: 'choice', code: 'B2.2', half: true, q: '<b>Dead end</b> means a path that …',
         opts: ['does not go anywhere', 'is very long', 'leads outside'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'How do you know Ama was scared, even though she acted calm? Use details from the story.',
@@ -3963,8 +3963,8 @@
         opts: ['light from a candle', 'a kind of candle', 'a light that is off'], a: 0 },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Grandma says, “I have never seen people take care of each other like that.” Give two examples from the story.',
         a: 'The neighbours came to stay at Grandma’s house, and the farmers shared a generator. Soldiers also came to clear roads and fix the lines.', look: 'two examples of people helping' },
-      { k: 'lines', code: 'C3.3', n: 2, q: 'Why was the narrator “almost sorry” when the power came back on?',
-        a: 'Because Grandma would stop telling her story, and the narrator wanted to hear more.', look: 'wanting the story to continue' }
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Grandma remembers people helping each other. How does this connect to your own community or to another story you know?',
+        a: 'Example: When a storm knocked out our power, our neighbours shared their generator and food. Like in the ice storm, people took care of each other.', look: 'a connection to their community or another text, linked back to the story' }
     ]
   });
 })();

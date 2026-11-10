@@ -27,6 +27,9 @@
              { k: 'table', q, cols: [...], rows: [[cell or null, ...]], a: [[...]] }   fill the blanks (null) in a chart
              { k: 'order', q, items: [... in the right order], show: [indexes in the order printed] }   number them
            half: true puts two short questions side by side.
+           Across a grade's 100 passages, the codes must reach every reading expectation (tests/run.js, PASSAGE_COVER): plan each
+           batch to fill gaps, for example B3 grammar in a sentence from the text, C1.1 what a word such as they refers to, C2.1 and C2.5
+           connections, C2.7 and C3.8 the reader's own strategies, C3.4 cultural elements, C3.6 inclusion and accessibility.
    Line art (house style: white paper, thin outlines in the theme's one colour, no filled areas): class a (accent line),
    k (ink line), t (thin ink line), h (hatched area), d (dashed line), l (label text), lb (bold label), n (small note text). */
 (function () {
@@ -38,6 +41,8 @@
   var SUBJECTS = (P.subjects = [['science', 'Science', 'FO'], ['social', 'Social studies', 'LB'], ['history', 'History', 'LK'], ['geography', 'Geography', 'LK'],
     ['arts', 'The arts', 'GD'], ['health', 'Health', 'SN'], ['tech', 'Technology', 'SK'], ['math', 'Math', 'SK'], ['story', 'Stories', 'GD']]);
   var LETTERS = 'ABCDEFGH';
+  /* every key ends with the same fluency check (B2.3), so each passage is also read aloud once */
+  var FLUENT = 'Have the child read one paragraph aloud to you. Listen for accuracy, a steady pace and expression that fits the meaning. Note any words they stumble on and practise them together.';
   var HATCH = '<defs><pattern id="ps-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="t"/></pattern></defs>';
 
   /* small drawing helpers for the passages' line art (all lengths in the drawing's own units) */
@@ -158,9 +163,10 @@
         return '<li class="ws-q"><span class="ws-n">' + (i + 1) + '</span><p class="ps-kq">' + q.q + '</p><p class="ws-ans">' + answer(q) + '</p>' +
           '<p class="ps-code">' + q.code + ' · ' + P.marks(q) + (P.marks(q) > 1 ? ' marks' : ' mark') + '</p></li>';
       }).join('') + '</ol>' +
-      '<div class="ps-guide"><div><p class="ws-label">Before reading</p><p>' + p.guide.before + '</p></div><div><p class="ws-label">After reading, talk about it</p><p>' + p.guide.after + '</p></div></div>' +
+      '<div class="ps-guide"><div><p class="ws-label">Before reading</p><p>' + p.guide.before + '</p></div><div><p class="ws-label">After reading, talk about it</p><p>' + p.guide.after + '</p></div>' +
+      '<div class="ps-fluent"><p class="ws-label">Read aloud · B2.3</p><p>' + FLUENT + '</p></div></div>' +
       '<footer class="ps-foot"><p class="ps-tip">Score ____ of ' + total + '. Accept any answer the text supports: written answers here are examples.</p>' +
-      foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · Ontario ' + codes(p).join(', ')) + '</footer></div>';
+      foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · Ontario ' + codes(p).concat('B2.3').sort().join(', ')) + '</footer></div>';
   }
   function frame(th) { return th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : ''; }
   function codes(p) { var out = []; p.qs.forEach(function (q) { if (out.indexOf(q.code) < 0) out.push(q.code); }); return out.sort(); }
