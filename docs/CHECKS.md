@@ -64,7 +64,7 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - the list and a passage open on a phone, an iPad and a laptop with no errors and nothing off the side; the answer key shows only in grown-up view. In Grades 1 to 3 the tool is not on the Toolbox page.
 10. **Decodable readers** (the tool box's printable phonics stories, checked once, in Grade 1):
    - every word of every title, story and question can be sounded out with the phonics steps taught up to that page, or is a heart word taught by then. `tests/decodable.js` works this out again on its own: it splits each word into its spelling units (sh, ck, a_e, igh ...) and endings (-s, -ed, -ing ...) and finds the first step that teaches all of them. Words that look regular but are not (was, of, said, come) always count as heart words. To try a word: `node decodable.js x --word cake`;
-   - the pages are in teaching order; each has 8 or more warm-up words that all use its new spelling, a story with 5 or more different words that use it, and 3 questions with an Ontario code and an answer;
+   - the steps are in teaching order, with up to 3 stories each (checked the same way); a blends story marked l, r or s uses only that kind of blend in its warm-up and target words, and no kind taught after it; each story has 8 or more warm-up words that all use its new spelling, a story with 5 or more different words that use it, and 3 questions with an Ontario code and an answer;
    - every page and its grown-up page fit on the paper; the tool opens on a phone, an iPad and a laptop with no errors, and the grown-up page stays hidden with grown-up view off.
 
 ## Running them yourself

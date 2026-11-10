@@ -3,6 +3,9 @@
    it splits each word into its spelling units (sh, ck, a_e, igh ...) and its endings (-s, -ed, -ing ...), and a word is
    decodable at a step when every unit and every rule it needs (a blend, a second syllable, an open syllable ...) has been
    taught at that step or before. Words that cannot be sounded out yet must be heart words taught by then.
+   A step has up to 3 stories (more(id, story) adds one after the first); each story is checked the same way, with the step's
+   words, heart words and tip unless it gives its own. A story with blend 'l', 'r' or 's' is about that kind of blend at the start:
+   its warm-up and target words start with that kind, and it uses no blend of a kind taught after it (l, then r, then s).
    Each page must: be in the order below; use only decodable words and taught heart words in its title, passage and questions;
    have 8 or more warm-up words, each using that step's new unit or rule; and use 5 or more different words with it in the passage. */
 const fs = require('fs'), path = require('path'), vm = require('vm');
@@ -64,7 +67,10 @@ function units(w) {
   } else if (n >= 2 && out[n - 1] === 'e' && (out[n - 2] === 'c' || out[n - 2] === 'g') && out.slice(0, -2).some(x => VOWEL_UNITS.has(x) || /_e$/.test(x))) {
     out.pop(); need.add(out[n - 2] === 'c' ? 'soft-c' : 'soft-g');
   }
-  /* an e after two consonants (solve, horse) is not a pattern taught here */
+  /* a silent e after a vowel team or r-controlled vowel and one consonant (house, moose, cheese, horse, nurse) */
+  const t = out.length;
+  if (t >= 3 && out[t - 1] === 'e' && /^[a-z]$/.test(out[t - 2]) && !VOWELS.includes(out[t - 2]) && VOWEL_UNITS.has(out[t - 3]) && out[t - 3].length > 1) out.pop();
+  /* an e after two consonants (solve) is not a pattern taught here */
   const m = out.length;
   if (m >= 3 && out[m - 1] === 'e' && !VOWEL_UNITS.has(out[m - 2]) && out.slice(0, -2).some(x => VOWEL_UNITS.has(x) || /_e$/.test(x))) return null;
   const next = k => out[k + 1] || '', vowelNext = k => VOWEL_UNITS.has(next(k)) || /_e$/.test(next(k));
@@ -141,45 +147,69 @@ const ASK = new Set('circle draw write number yes no who what where why how did 
 /* the pages, from assets/engine/decodebank.js (or, while writing, from a folder of one file per page, in name order) */
 function load(root, dir) {
   const list = [];
-  const ctx = { Atlas: { decodable: { add: p => list.push(p) } } };
+  const more = (id, s) => {
+    const step = list.find(p => p.id === id);
+    if (!step) { list.push({ id: id + ' (more before its step)' }); return; }
+    step.more = (step.more || []).concat([s]);
+  };
+  const ctx = { Atlas: { decodable: { add: p => list.push(p), more } } };
   const src = dir ? fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort().map(f => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n')
     : fs.readFileSync(path.join(root, 'assets', 'engine', 'decodebank.js'), 'utf8');
   vm.runInNewContext(src, ctx);
   return list;
 }
+/* the kind of blend a word starts with: l (bl, cl, fl, gl, pl, sl), r (br, cr, dr, fr, gr, pr, tr), s (sc, sk, sm, sn, sp, st, sw), or '' */
+function blendKind(w) {
+  const lead = (w.toLowerCase().match(/^[^aeiouy]*/) || [''])[0];
+  if (lead.length !== 2 || /^(sh|ch|th|wh|qu|kn|wr|gn)$/.test(lead)) return '';
+  return lead[1] === 'l' ? 'l' : lead[1] === 'r' ? 'r' : lead[0] === 's' ? 's' : '';
+}
+const KINDS = ['l', 'r', 's'];
 function check(list) {
   const problems = [], heart = new Set(), order = STEPS.map(s => s[0]);
   const ids = list.map(p => p.id);
   if (ids.join() !== order.join()) problems.push('decodable readers: the steps must be, in order: ' + order.join(', ') + ' (found ' + ids.join(', ') + ')');
-  list.forEach(p => {
-    const at = order.indexOf(p.id), where = 'decodable reader ' + p.id;
+  list.forEach(step => {
+    const at = order.indexOf(step.id);
     if (at < 0) return;
-    (p.heart || []).forEach(h => heart.add(h.toLowerCase()));
-    if (!p.text) { problems.push(where + ': not written yet'); return; }
-    if (!Array.isArray(p.qs) || p.qs.length !== 3) problems.push(where + ': needs 3 questions');
-    (p.qs || []).forEach((q, i) => {
-      if (!/^[BC]\d\.\d$/.test(q.code || '')) problems.push(where + ' question ' + (i + 1) + ': needs its Ontario code (for example C1.1)');
-      if (q.k === 'choice' && !(q.opts && q.opts[q.a] !== undefined)) problems.push(where + ' question ' + (i + 1) + ': the answer must be one of the options');
-      if (q.k === 'order' && !(q.items && q.show && q.show.slice().sort().join() === q.items.map((x, j) => j).join() && q.show.some((x, j) => x !== j))) problems.push(where + ' question ' + (i + 1) + ': show must list every item, mixed up');
-      if (q.k === 'yn' && typeof q.a !== 'boolean') problems.push(where + ' question ' + (i + 1) + ': a yes or no question needs a: true or false');
-      if ((q.k === 'draw' || q.k === 'write') && !q.a) problems.push(where + ' question ' + (i + 1) + ': needs a good answer (a) for the grown-up');
-    });
-    if (!p.tip || !p.title || !Array.isArray(p.pic) || !p.pic.length) problems.push(where + ': needs a title, a picture (pic) and a tip for the grown-up');
-    const fresh = STEPS[at][1], review = REVIEW[p.id];
-    const ok = (w, extra) => { const lw = w.toLowerCase(); if (heart.has(lw) || (extra && extra.has(lw))) return true; const r = when(w); return r && r.at <= at; };
-    const target = w => ways(w).some(r => r.at <= at && r.used.some(u => (review || fresh).includes(u)));
-    if (!Array.isArray(p.words) || p.words.length < 8) problems.push(where + ': needs 8 or more warm-up words');
-    (p.words || []).forEach(w => { if (!target(w)) problems.push(where + ': warm-up word "' + w + '" ' + (ok(w) ? 'does not use this step\'s ' + (review ? 'sounds' : 'new spelling') : 'cannot be sounded out yet')); });
-    const text = [p.title].concat(p.text).join(' ');
-    const bad = [...new Set(words(text).filter(w => !ok(w)))];
-    if (bad.length) problems.push(where + ': these words cannot be sounded out at this step and are not heart words: ' + bad.join(', '));
-    const hits = new Set(words(p.text.join(' ')).filter(target).map(w => w.toLowerCase()));
-    if (hits.size < 5) problems.push(where + ': the passage uses only ' + hits.size + ' different words with this step\'s spelling (needs 5 or more)');
-    const qbad = [];
-    (p.qs || []).forEach(q => [q.q].concat(q.opts || [], q.items || []).forEach(t => words(t).forEach(w => { if (!ok(w, ASK)) qbad.push(w); })));
-    if (qbad.length) problems.push(where + ': its questions use words the child cannot read yet: ' + [...new Set(qbad)].join(', '));
+    (step.heart || []).forEach(h => heart.add(h.toLowerCase()));
+    const stories = [step].concat((step.more || []).map(s => Object.assign({}, step, s)));
+    if (stories.length > 3) problems.push('decodable reader ' + step.id + ': 3 stories at most');
+    const titles = stories.map(s => s.title);
+    if (new Set(titles).size !== titles.length) problems.push('decodable reader ' + step.id + ': each story needs its own title');
+    stories.forEach((p, si) => checkStory(p, si, at, heart, problems));
   });
   return problems;
+}
+function checkStory(p, si, at, heart, problems) {
+  const where = 'decodable reader ' + p.id + (si ? ' story ' + (si + 1) : '');
+  if (!p.text) { problems.push(where + ': not written yet'); return; }
+  if (!Array.isArray(p.qs) || p.qs.length !== 3) problems.push(where + ': needs 3 questions');
+  (p.qs || []).forEach((q, i) => {
+    if (!/^[BC]\d\.\d$/.test(q.code || '')) problems.push(where + ' question ' + (i + 1) + ': needs its Ontario code (for example C1.1)');
+    if (q.k === 'choice' && !(q.opts && q.opts[q.a] !== undefined)) problems.push(where + ' question ' + (i + 1) + ': the answer must be one of the options');
+    if (q.k === 'order' && !(q.items && q.show && q.show.slice().sort().join() === q.items.map((x, j) => j).join() && q.show.some((x, j) => x !== j))) problems.push(where + ' question ' + (i + 1) + ': show must list every item, mixed up');
+    if (q.k === 'yn' && typeof q.a !== 'boolean') problems.push(where + ' question ' + (i + 1) + ': a yes or no question needs a: true or false');
+    if ((q.k === 'draw' || q.k === 'write') && !q.a) problems.push(where + ' question ' + (i + 1) + ': needs a good answer (a) for the grown-up');
+  });
+  if (!p.tip || !p.title || !Array.isArray(p.pic) || !p.pic.length) problems.push(where + ': needs a title, a picture (pic) and a tip for the grown-up');
+  const fresh = STEPS[at][1], review = REVIEW[p.id];
+  const ok = (w, extra) => { const lw = w.toLowerCase(); if (heart.has(lw) || (extra && extra.has(lw))) return true; const r = when(w); return r && r.at <= at; };
+  const kind = p.blend, later = kind ? KINDS.slice(KINDS.indexOf(kind) + 1) : [];
+  if (kind && !KINDS.includes(kind)) problems.push(where + ': blend must be l, r or s');
+  const target = w => ways(w).some(r => r.at <= at && r.used.some(u => (review || fresh).includes(u))) && (!kind || blendKind(w) === kind);
+  if (!Array.isArray(p.words) || p.words.length < 8) problems.push(where + ': needs 8 or more warm-up words');
+  (p.words || []).forEach(w => { if (!target(w)) problems.push(where + ': warm-up word "' + w + '" ' + (ok(w) ? 'does not use this step\'s ' + (review ? 'sounds' : 'new spelling') : 'cannot be sounded out yet')); });
+  const text = [p.title].concat(p.text).join(' ');
+  const bad = [...new Set(words(text).filter(w => !ok(w)))];
+  if (bad.length) problems.push(where + ': these words cannot be sounded out at this step and are not heart words: ' + bad.join(', '));
+  const early = [...new Set(words(text).filter(w => later.includes(blendKind(w)) && !heart.has(w.toLowerCase())))];
+  if (early.length) problems.push(where + ': these words start with a kind of blend taught in a later story: ' + early.join(', '));
+  const hits = new Set(words(p.text.join(' ')).filter(target).map(w => w.toLowerCase()));
+  if (hits.size < 5) problems.push(where + ': the passage uses only ' + hits.size + ' different words with this step\'s spelling (needs 5 or more)');
+  const qbad = [];
+  (p.qs || []).forEach(q => [q.q].concat(q.opts || [], q.items || []).forEach(t => words(t).forEach(w => { if (!ok(w, ASK)) qbad.push(w); })));
+  if (qbad.length) problems.push(where + ': its questions use words the child cannot read yet: ' + [...new Set(qbad)].join(', '));
 }
 module.exports = { STEPS, when, check, load, words };
 if (require.main === module) {
@@ -191,6 +221,6 @@ if (require.main === module) {
   const ids = only ? only.split(',') : null;
   const pr = check(list).filter(p => !ids || ids.some(id => p.startsWith('decodable reader ' + id + ':') || p.startsWith('decodable reader ' + id + ' ')));
   pr.forEach(p => console.log(' - ' + p));
-  console.log(list.length + ' pages, ' + pr.length + ' problem(s)');
+  console.log(list.length + ' steps, ' + list.reduce((n, p) => n + 1 + (p.more || []).length, 0) + ' stories, ' + pr.length + ' problem(s)');
   process.exitCode = pr.length ? 1 : 0;
 }

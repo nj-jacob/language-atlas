@@ -1339,16 +1339,18 @@ async function checkDecodable(browser, base) {
     box.className = 'ws-sheet';
     box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
     document.body.appendChild(box);
-    D.list.forEach(p => {
+    D.all().forEach(p => {
+      const name = p.id + (p.s > 1 ? ' story ' + p.s : '');
       ['page', 'key'].forEach(side => {
         const r = D.render(box, p, side), text = box.textContent;
-        if (r.over) out.push(p.id + ': ' + (side === 'key' ? 'the grown-up page' : 'the page') + ' runs off the paper');
-        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(text)) out.push(p.id + ': shows undefined or NaN');
+        if (r.over) out.push(name + ': ' + (side === 'key' ? 'the grown-up page' : 'the page') + ' runs off the paper');
+        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(text)) out.push(name + ': shows undefined or NaN');
       });
-      p.pic.forEach(n => { if (!D.pics[n]) out.push(p.id + ': there is no picture called ' + n); });
+      p.pic.forEach(n => { if (!D.pics[n]) out.push(name + ': there is no picture called ' + n); });
     });
     box.remove();
-    return { out, n: D.list.length, first: D.list[0].id };
+    const more = D.list.filter(p => p.stories.length > 1)[0];
+    return { out, n: D.all().length, first: more ? more.id + '/2' : D.list[0].id };
   });
   r.out.forEach(p => fail(where, p));
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
@@ -1359,7 +1361,7 @@ async function checkDecodable(browser, base) {
     await page.evaluate(id => { location.hash = 'tools/decodable/' + id; }, r.first);
     await page.waitForSelector('.ws-sheet .dc-page');
     await page.waitForTimeout(200);
-    await screenCheck(page, where, 'a page at ' + vp.width + ' px');
+    await screenCheck(page, where, 'a story at ' + vp.width + ' px');
     if (await page.locator('.ws-sheet[data-side="key"]').isVisible()) fail(where, 'the grown-up page shows with grown-up view off at ' + vp.width + ' px');
   }
   if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
@@ -1392,7 +1394,7 @@ async function checkDecodable(browser, base) {
     try { await checkWriting(browser, url, g); log('Grade ' + g + ' tool box: Paragraph builder and Letter pad checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Paragraph builder and Letter pad', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.includes(1)) {
-    try { const n = await checkDecodable(browser, url); log('Decodable readers: ' + n + ' pages, every word sounded out at its step, each page drawn and opened on phone, iPad and laptop.'); } catch (e) { fail('decodable readers', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { const n = await checkDecodable(browser, url); log('Decodable readers: ' + n + ' stories, every word sounded out at its step, each story drawn and opened on phone, iPad and laptop.'); } catch (e) { fail('decodable readers', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
