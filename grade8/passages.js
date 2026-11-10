@@ -7,7 +7,7 @@
   function tx(x, y, cls, t, anchor) { return '<text class="' + cls + '" x="' + x + '" y="' + y + '"' + (anchor ? ' text-anchor="' + anchor + '"' : '') + '>' + t + '</text>'; }
   /* a bar chart, 300 wide and about 172 tall: rows [[value, 'label', 'second line'], ...], o { max, step, unit, pre } */
   function bars(rows, o) {
-    var top = 26, bot = 136, x0 = 46, w = 250 / rows.length, s = (bot - top) / o.max, u = o.unit || '', pre = o.pre || '';
+    var top = 26, bot = 136, x0 = o.x0 || 46, w = (296 - x0) / rows.length, s = (bot - top) / o.max, u = o.unit || '', pre = o.pre || '';
     var out = '<path class="k" d="M' + x0 + ' ' + (top - 8) + ' V' + bot + ' H298"/>';
     for (var v = 0; v <= o.max; v += o.step) out += '<path class="t" d="M' + (x0 - 4) + ' ' + (bot - v * s) + ' H298"/>' + tx(x0 - 7, bot - v * s + 4, 'n', pre + num(v) + u, 'end');
     rows.forEach(function (r, i) {
@@ -183,7 +183,7 @@
       { fig: '<path class="a" d="M10 70 H290"/>' + D.ripple(10, 60, 62) + D.ripple(240, 290, 62) +
           '<path class="k" d="M70 40 H230 L214 104 H86 Z"/><path class="h" d="M78 70 H222 L214 104 H86 Z"/>' +
           D.arrow(150, 150, 150, 112, 'a') + D.arrow(150, 0, 150, 34, 'k') +
-          tx(160, 14, 'n', 'weight of the ship') + tx(160, 146, 'n', 'buoyant force') + D.label(232, 96, 'water pushed aside', 210, 90) + D.label(6, 92, 'water line', 74, 70),
+          tx(160, 14, 'n', 'weight of the ship') + tx(160, 146, 'n', 'buoyant force') + D.label(196, 126, 'water pushed aside', 204, 100) + D.label(6, 92, 'water line', 74, 70),
         tall: 156, cap: 'The ship sinks until the water it pushes aside weighs as much as the ship.' },
       { box: 'Fresh water or salt?', text: 'Salt water is denser than fresh water, so it pushes up harder. A ship floats a little higher in the ocean than in Lake Ontario. Lines painted on the hull show how deeply it can safely be loaded in each.' },
       { h: 'The push from below' },
@@ -400,8 +400,8 @@
     },
     body: [
       'Taste the sap that drips from a sugar maple in March and you might be disappointed. It looks like water and tastes only faintly sweet. That is because sap is about 98 percent water and only about 2 percent sugar. To turn it into syrup, producers must boil away almost all of that water, and the amount of sap they need follows a simple <b>ratio</b>.',
-      { fig: '<path class="k" d="M20 50 H290 M20 116 H290"/>' + [0, 1, 2, 3, 4].map(function (i) { var x = 20 + i * 67.5; return '<path class="t" d="M' + x + ' 44 V56 M' + x + ' 110 V122"/>' + tx(x, 38, 'lb', num(i * 40), 'middle') + tx(x, 140, 'lb', i, 'middle'); }).join('') +
-          tx(20, 16, 'n', 'litres of sap') + tx(20, 160, 'n', 'litres of syrup') + D.arrow(87.5, 60, 87.5, 104, 'a'),
+      { fig: '<path class="k" d="M20 50 H290 M20 116 H290"/>' + [0, 1, 2, 3, 4].map(function (i) { var x = 20 + i * 65; return '<path class="t" d="M' + x + ' 44 V56 M' + x + ' 110 V122"/>' + tx(x, 38, 'lb', num(i * 40), 'middle') + tx(x, 140, 'lb', i, 'middle'); }).join('') +
+          tx(20, 16, 'n', 'litres of sap') + tx(20, 160, 'n', 'litres of syrup') + D.arrow(85, 60, 85, 104, 'a'),
         tall: 166, cap: 'A double number line for a 40 to 1 ratio of sap to syrup.' },
       { box: 'Freeze, then thaw', text: 'Sap flows best when nights fall below 0°C and days rise above it. The changing temperature builds up pressure inside the tree that pushes the sap out through the tap.' },
       { h: 'Forty to one' },
@@ -620,7 +620,7 @@
       { fig: '<path class="k" d="M10 140 L80 120 L130 96 L160 60 L176 30 L190 34 L230 70 L290 90"/>' +
           '<circle class="dot" cx="10" cy="140" r="4"/><circle class="dot" cx="160" cy="60" r="4"/><circle class="dot" cx="176" cy="30" r="4"/><circle class="dot" cx="290" cy="90" r="4"/>' +
           tx(14, 158, 'n', 'Dyea, sea level') + tx(150, 78, 'n', 'the Scales', 'end') + tx(182, 22, 'lb', 'Summit, 1067 m') + tx(286, 110, 'n', 'Lake Bennett', 'end') +
-          D.label(60, 70, 'Golden Stairs', 168, 46),
+          D.label(40, 50, 'Golden Stairs', 168, 46),
         tall: 166, cap: 'The Chilkoot Trail climbs from the sea to the summit in about 26 kilometres.' },
       '<i>March 19. Sheep Camp.</i> The North-West Mounted Police will not let anyone into Canada without a year’s food and gear, about a <b>tonne</b> of supplies each. We cannot carry it all at once, so we carry a load ahead, leave it in a <b>cache</b> and walk back for more. Uncle Will counts thirty trips to move our pile to the top.',
       '<i>March 26. The Scales.</i> Today I climbed the Golden Stairs: fifteen hundred steps cut into the ice, so steep my nose nearly touched the boots of the man above. If you step out of line to rest, it can take hours to find a gap to get back in. At the summit, the Mounties weighed our goods and collected duty. I have never been so cold or so proud.',
@@ -660,8 +660,8 @@
     },
     body: [
       'Two women stand face to face, so close their noses almost touch. One begins a low, rhythmic sound, half breath and half voice. The other answers, filling the gaps in the first singer’s pattern. The sounds weave together so tightly that it is hard to tell which singer is making which. This is <b>katajjaq</b>, Inuit throat singing.',
-      { fig: '<path class="k" d="M40 40 H290 M40 100 H290"/>' + tx(36, 44, 'n', 'singer 1', 'end') + tx(36, 104, 'n', 'singer 2', 'end') +
-          [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { var x = 52 + i * 30; return (i % 2 ? '<path class="h" d="M' + x + ' 100 v-20 h18 v20"/>' : '<path class="h" d="M' + x + ' 40 v-20 h18 v20"/>') + (i % 2 ? '<path class="t" d="M' + x + ' 40 h18"/>' : '<path class="t" d="M' + x + ' 100 h18"/>'); }).join('') +
+      { fig: '<path class="k" d="M56 40 H290 M56 100 H290"/>' + tx(50, 44, 'n', 'singer 1', 'end') + tx(50, 104, 'n', 'singer 2', 'end') +
+          [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { var x = 64 + i * 28; return (i % 2 ? '<path class="h" d="M' + x + ' 100 v-20 h18 v20"/>' : '<path class="h" d="M' + x + ' 40 v-20 h18 v20"/>') + (i % 2 ? '<path class="t" d="M' + x + ' 40 h18"/>' : '<path class="t" d="M' + x + ' 100 h18"/>'); }).join('') +
           tx(165, 130, 'n', 'Each singer sounds in the other’s silence.', 'middle'),
         tall: 140, cap: 'The pattern of sounds in katajjaq. The singers take turns so fast they seem to sing as one.' },
       { box: 'Who sings?', text: 'Katajjaq is traditionally performed by women. In some communities today, men also throat sing, but many singers stress that respecting the tradition matters.' },
@@ -751,7 +751,7 @@
       { fig: '<path class="k" d="M20 30 V120 H280 V60 M60 30 V96 H200 V60 M280 60 H200"/><path class="h" d="M22 96 H58 V118 H22 Z M62 98 H278 V118 H62 Z M202 62 H278 V96 H202 Z"/>' +
           '<rect class="a" x="20" y="64" width="40" height="8"/><rect class="a" x="200" y="50" width="80" height="10"/>' +
           D.arrow(40, 20, 40, 60, 'k') + D.arrow(240, 46, 240, 10, 'k') + tx(46, 16, 'n', '10 N in') + tx(246, 18, 'n', '80 N out') +
-          tx(40, 144, 'n', 'small piston', 'middle') + tx(240, 144, 'n', 'large piston (8 × the area)', 'middle') + tx(150, 112, 'n', 'oil', 'middle'),
+          tx(40, 144, 'n', 'small piston', 'middle') + tx(296, 144, 'n', 'large piston (8 × the area)', 'end') + tx(150, 112, 'n', 'oil', 'middle'),
         tall: 152, cap: 'The same pressure acts on both pistons. A piston with 8 times the area pushes with 8 times the force.' },
       { h: 'Pressure spreads everywhere' },
       'In the 1600s, the French scientist Blaise Pascal discovered that when you push on a fluid in a closed container, the <b>pressure</b> spreads equally to every part of the fluid. Liquids such as oil cannot easily be squeezed into a smaller space, so a push at one end is felt instantly at the other.',
@@ -795,7 +795,7 @@
     },
     body: [
       'Our class asked Dr. Amira Haddad, who studies sleep at a university in Ontario, about the problems we have falling asleep and waking up. Here are her answers, shortened.',
-      { fig: '<path class="k" d="M20 40 H290 M20 100 H290"/>' + [0, 1, 2, 3, 4, 5, 6].map(function (i) { var x = 20 + i * 45; return '<path class="t" d="M' + x + ' 34 V46 M' + x + ' 94 V106"/>' + tx(x, 130, 'n', ['8 pm', '10 pm', '12 am', '2 am', '4 am', '6 am', '8 am'][i], 'middle'); }).join('') +
+      { fig: '<path class="k" d="M20 40 H290 M20 100 H290"/>' + [0, 1, 2, 3, 4, 5, 6].map(function (i) { var x = 20 + i * 45; return '<path class="t" d="M' + x + ' 34 V46 M' + x + ' 94 V106"/>' + tx(x, 130, 'n', ['8 pm', '10 pm', '12 am', '2 am', '4 am', '6 am', '8 am'][i], i === 6 ? 'end' : 'middle'); }).join('') +
           '<rect class="h" x="42" y="28" width="225" height="24"/><rect class="h" x="110" y="88" width="180" height="24"/>' +
           tx(20, 20, 'n', 'age 9: sleepy at about 8:30 pm') + tx(20, 80, 'n', 'age 14: sleepy at about 11 pm') + '<path class="d" d="M245 20 V120"/>' + tx(245, 148, 'lb', 'school alarm', 'middle'),
         tall: 154, cap: 'When the body clock says “sleep.” The dashed line shows a 7 am alarm.' },
@@ -891,9 +891,9 @@
       'Thomson painted with thick strokes and outlined shapes in dark colour, almost like stained glass. The result is not a photograph of a lake. It is a <b>composition</b>, arranged to create a feeling of stillness and quiet power.',
       { h: 'The Group of Seven' },
       'Thomson’s friends in Toronto shared his love of the northern landscape. In 1920, seven of them, including Lawren Harris and A. Y. Jackson, held their first exhibition as the Group of Seven. They wanted to create a new style of art that was distinctly Canadian, and for decades their paintings shaped how Canadians pictured their country.',
-      { fig: '<rect class="k" x="20" y="10" width="260" height="150"/><path class="d" d="M20 74 H280 M20 104 H280"/><path class="k" d="M150 160 C146 120 156 80 148 22"/>' +
+      { fig: '<rect class="k" x="20" y="10" width="236" height="150"/><path class="d" d="M20 74 H256 M20 104 H256"/><path class="k" d="M150 160 C146 120 156 80 148 22"/>' +
           '<path class="t" d="M148 40 Q110 30 80 44 M150 60 Q190 48 220 62 M149 84 Q120 78 96 90"/>' +
-          tx(286, 44, 'n', 'sky') + tx(286, 92, 'n', 'hills') + tx(286, 134, 'n', 'water') + D.label(176, 150, 'tree', 152, 124),
+          tx(262, 44, 'n', 'sky') + tx(262, 92, 'n', 'hills') + tx(262, 134, 'n', 'water') + D.label(176, 150, 'tree', 152, 124),
         tall: 168, cap: 'The composition: flat bands of sky, hills and water, crossed by one vertical tree.' },
       { h: 'What is missing?' },
       'Today, some critics point out that these paintings almost never show people. The lands Thomson and the Group painted were the homelands of Anishinaabe and other First Nations peoples, who had lived, travelled and harvested there for thousands of years. Showing the north as empty wilderness, these critics argue, supported the idea that the land was waiting to be claimed.',
@@ -935,7 +935,7 @@
       { fig: '<path class="k" d="M150 10 V40 M140 10 H160"/><rect class="k" x="138" y="40" width="24" height="44" rx="3"/><path class="k" d="M130 84 H170 L164 100 H136 Z"/><path class="k" d="M146 100 V114 M154 100 V116"/>' +
           '<rect class="h" x="90" y="120" width="120" height="8"/><path class="k" d="M100 140 H200 M150 128 V140 M150 140 V160 M110 160 H190"/><circle class="k" cx="226" cy="76" r="9"/><circle class="k" cx="226" cy="104" r="6"/><path class="k" d="M170 76 H217 M170 104 H220"/>' +
           D.label(8, 14, 'eyepiece', 140, 18) + D.label(8, 64, 'body tube', 138, 62) + D.label(8, 104, 'objective lenses', 146, 108) + D.label(8, 134, 'stage and slide', 100, 124) +
-          D.label(240, 60, 'coarse focus', 232, 72) + D.label(240, 130, 'fine focus', 230, 108) + D.label(196, 168, 'light', 150, 150),
+          D.label(196, 30, 'coarse focus', 222, 68) + D.label(240, 130, 'fine focus', 230, 108) + D.label(196, 168, 'light', 150, 150),
         tall: 172, cap: 'The main parts of a compound light microscope.' },
       { box: 'Why look from the side?', text: 'At high power, the lens sits less than a millimetre above the slide. Watching from the side in step 3 stops you from crashing the lens into the glass and cracking the slide.' },
       { h: 'Before you begin' },
@@ -1024,8 +1024,8 @@
     },
     body: [
       'Tip a jar of water and the water rushes out. Tip a jar of honey and you will wait. Both are liquids, but they flow very differently. Scientists describe a fluid’s resistance to flowing as its <b>viscosity</b>. Honey has a high viscosity. Water has a low one. Viscosity is not the same as density. Cooking oil floats on water because it is less dense, yet it is far more viscous: it pours more slowly than the water it floats on.',
-      { fig: bars([[1, 'water'], [50, 'cooking', 'oil'], [100, 'maple', 'syrup'], [250, 'liquid', 'honey', '']], { max: 250, step: 50 }) + tx(150, 12, 'n', 'how many seconds to drain a funnel (made-up test)', 'middle'),
-        tall: 172, cap: 'Results of a class test: the more viscous the liquid, the longer it takes to drain.' },
+      { fig: bars([[1, 'water'], [50, 'cooking', 'oil'], [100, 'maple', 'syrup'], [250, 'liquid', 'honey', '']], { max: 250, step: 50 }),
+        tall: 172, cap: 'Seconds to drain a funnel in a made-up class test: the more viscous the liquid, the longer it takes to drain.' },
       { box: 'A liquid that acts like a solid', text: 'Mix cornstarch and water to make oobleck. Stir it slowly and it flows like a liquid. Punch it quickly and it turns hard, because the <b>particles</b> jam together. Its viscosity changes with force.' },
       { h: 'Particles that cling' },
       'Why the difference? The particles in every liquid slide past one another. In water, the particles are small and slip by easily. In honey, the sugar particles are large and pull strongly on their neighbours, like a crowd of people holding hands trying to walk through a narrow door. The stronger the pull between particles, the higher the viscosity.',
@@ -1513,7 +1513,7 @@
       'Most factories make things by cutting material away, the way a sculptor carves stone, or by pouring it into a mould. A 3D printer works the opposite way. It builds an object by adding material, one thin layer on top of another. Engineers call this <b>additive manufacturing</b>.',
       { fig: '<rect class="k" x="40" y="130" width="220" height="10"/>' + [0, 1, 2, 3, 4, 5].map(function (i) { return '<rect class="' + (i === 5 ? 'a' : 'h') + '" x="' + (90 + i * 4) + '" y="' + (120 - i * 10) + '" width="' + (120 - i * 8) + '" height="10"/>'; }).join('') +
           '<path class="k" d="M150 20 V48 L144 56 H156 L150 48"/><path class="k" d="M30 16 H270"/>' + D.arrow(170, 30, 210, 30, 'k') +
-          D.label(200, 72, 'hot nozzle', 152, 52) + D.label(10, 104, 'layers', 92, 108) + D.label(200, 156, 'build plate', 230, 138) + D.label(214, 48, 'moves left, right,', 200, 30) + tx(214, 62, 'n', 'forward and back'),
+          D.label(200, 72, 'hot nozzle', 152, 52) + D.label(10, 104, 'layers', 92, 108) + D.label(200, 156, 'build plate', 230, 138) + tx(216, 34, 'n', 'moves'),
         tall: 160, cap: 'A printer melts plastic and adds one layer at a time.' },
       { h: 'From idea to object' },
       'First, a designer draws the object in 3D modelling software, or downloads a design. Next, a program called a slicer cuts the design into hundreds of horizontal layers, each perhaps 0.2 millimetres thick, and writes instructions for the printer. The most common home printers feed a thin plastic thread, called filament, into a hot nozzle that reaches about 200°C. The nozzle moves back and forth, drawing each layer like a hot-glue gun, and the plastic cools and hardens in seconds. A small object can take an hour; a large one can take a whole day.',
@@ -1607,7 +1607,7 @@
       'The class laughed. I kept reading.',
       '<i>Here is my advice. Do not worry so much about what people think. I worry all the time, and it has never helped once. Also, the radiator under your window makes a noise like a cat. It is not a cat. I checked.</i>',
       { fig: '<rect class="k" x="20" y="10" width="260" height="140" rx="4"/><path class="k" d="M20 20 H280"/>' + [0, 1, 2, 3].map(function (r) { return [0, 1, 2, 3, 4].map(function (c) { var hit = r === 1 && c === 2; return '<rect class="' + (hit ? 'h' : 't') + '" x="' + (44 + c * 46) + '" y="' + (40 + r * 26) + '" width="30" height="16"/>'; }).join(''); }).join('') +
-          tx(150, 32, 'n', 'front of Room 12', 'middle') + D.label(200, 146, 'third seat, second row', 152, 80),
+          tx(150, 32, 'n', 'front of Room 12', 'middle') + D.label(160, 146, 'third seat, second row', 152, 82),
         tall: 156, cap: 'The seating plan of Room 12. The hatched desk is Amaya’s.' },
       'I looked over. The radiator under our window made that noise every morning. I had always thought it sounded like a cat.',
       '<i>Your friend from the past, Leah Okonkwo, Grade 7.</i>',
@@ -1652,7 +1652,7 @@
       'For tiny numbers, the <b>exponent</b> is negative. To write 0.000 008, move the decimal point 6 places to the right to reach 8. The red blood cell is 8 × 10<sup>−6</sup> metres wide. A negative exponent means the number is smaller than 1. It does not mean the number is below zero. A virus, at about 1 × 10<sup>−7</sup> metres, is smaller still: you could line up about eighty of them across one red blood cell.',
       { h: 'Why scientists love it' },
       'Scientific notation makes comparing easy. Is the Sun or the Moon farther from Earth? The Moon is about 3.8 × 10<sup>8</sup> metres away, and the Sun 1.5 × 10<sup>11</sup>. Compare the exponents, 8 and 11, and you know at once that the Sun is roughly a thousand times farther. Calculators and spreadsheets use a version of it too: when a number is too long for the screen, you might see <i>1.5E11</i>, which means the same thing. Astronomers, chemists and doctors all use the same notation, so a number written in Canada can be read without confusion in Japan or Brazil. It is one of the few languages that every scientist on Earth shares.',
-      { fig: '<path class="k" d="M10 70 H290"/>' + [['10⁻⁶', 'a cell', 30], ['10⁰', 'a metre', 90], ['10⁶', 'Toronto to Montréal (about)', 150], ['10¹¹', 'Earth to Sun', 200], ['10¹⁶', 'nearest star', 250]].map(function (p, i) { return '<path class="k" d="M' + p[2] + ' 64 V76"/>' + tx(p[2], i % 2 ? 98 : 52, 'lb', p[0], i === 4 ? 'end' : 'middle') + tx(p[2], i % 2 ? 112 : 38, 'n', p[1], i === 4 ? 'end' : i === 0 ? 'start' : 'middle'); }).join(''),
+      { fig: '<path class="k" d="M10 70 H290"/>' + [['10⁻⁶', 'a cell', 30], ['10⁰', 'a metre', 85], ['10⁶', 'Toronto to Montréal', 140], ['10¹¹', 'Earth to Sun', 200], ['10¹⁶', 'nearest star', 270]].map(function (p, i) { return '<path class="k" d="M' + p[2] + ' 64 V76"/>' + tx(p[2], i % 2 ? 98 : 52, 'lb', p[0], i === 4 ? 'end' : 'middle') + tx(p[2], i % 2 ? 112 : 38, 'n', p[1], i === 4 ? 'end' : i === 0 ? 'start' : 'middle'); }).join(''),
         tall: 124, cap: 'Sizes and distances in metres, on a scale where each step is a power of 10 (rounded).' },
       { box: 'Quick check', text: 'A bigger exponent means a bigger number. 2 × 10<sup>9</sup> is a thousand times bigger than 2 × 10<sup>6</sup>, because 9 − 6 = 3, and 10 × 10 × 10 = 1000.' }
     ],
@@ -1734,7 +1734,7 @@
       'Listen before you look. At a <b>powwow</b>, a jingle dress dancer makes a sound like falling rain. Her dress is covered in hundreds of metal cones, called jingles, sewn in rows. As she dances, light, quick steps close to the ground, the cones strike one another and shimmer.',
       { fig: '<path class="k" d="M150 10 Q130 12 128 34 L100 140 H200 L172 34 Q170 12 150 10 Z"/>' +
           [60, 84, 108, 132].map(function (y) { var w = (y - 34) * 0.27 + 22; var s = ''; for (var x = 150 - w; x <= 150 + w; x += 10) s += '<path class="a" d="M' + x + ' ' + y + ' l-3 8 h6 Z"/>'; return s; }).join('') +
-          D.label(220, 70, 'rows of metal cones', 178, 82) + D.label(220, 120, '365 jingles is', 192, 128) + tx(220, 134, 'n', 'a common number') + D.label(10, 40, 'lightweight cloth', 132, 40),
+          D.label(212, 70, 'metal cones', 178, 82) + D.label(212, 120, 'often 365', 192, 128) + tx(212, 134, 'n', 'of them') + D.label(10, 40, 'lightweight cloth', 132, 40),
         tall: 150, cap: 'A jingle dress. Many dancers sew one jingle for each day of the year.' },
       { box: 'At a powwow', text: 'Listen to the emcee. Stand during the Grand Entry and honour songs. Ask before taking photos of dancers. A dancer’s outfit is called <b>regalia</b>, not a costume: many pieces are gifts with personal meaning.' },
       { h: 'A dream and a healing' },
@@ -1778,10 +1778,10 @@
       '<i>In many northern communities in Canada, there is no road to the rest of the country for most of the year. Supplies come by plane, which is expensive. But for a few weeks each winter, when lakes and muskeg freeze hard, crews plough and flood a <b>winter road</b> across the ice. This poem is spoken by a girl who lives in one of those communities.</i>',
       '<b>I.</b> In summer we are an island with no sea around it,<br>only lakes and black spruce and the hum of the small plane<br>that brings the mail on Tuesdays,<br>and milk that costs as much as a pair of new mitts.',
       '<b>II.</b> In January my uncle drills the ice and reads it like a page:<br>thirty centimetres, forty, fifty.<br>When it is thick enough to hold a truck, the ploughs come,<br>scraping a long white sentence across the lake.',
-      { fig: '<path class="k" d="M10 30 H290"/><path class="h" d="M10 30 H290 V62 H10 Z"/>' + D.ripple(10, 290, 84, 't') +
+      { fig: '<path class="k" d="M10 30 H290"/><path class="h" d="M10 30 H290 V62 H10 Z"/>' + D.ripple(10, 290, 94, 't') +
           '<rect class="k" x="110" y="8" width="60" height="18" rx="3"/><circle class="k" cx="122" cy="27" r="4"/><circle class="k" cx="158" cy="27" r="4"/>' +
-          D.label(200, 46, 'ice, about 1 m thick', 240, 48) + tx(150, 104, 'n', 'lake water below', 'middle') + D.label(196, 12, 'loaded truck', 170, 16),
-        tall: 110, cap: 'A loaded truck needs thick ice. Crews measure it often.' },
+          D.label(186, 82, 'ice, about 1 m thick', 220, 58) + tx(150, 114, 'n', 'lake water below', 'middle') + D.label(196, 12, 'loaded truck', 170, 16),
+        tall: 120, cap: 'A loaded truck needs thick ice. Crews measure it often.' },
       '<b>III.</b> Then the trucks arrive at night,<br>headlights in a line like a string of beads,<br>carrying lumber, fuel, a new washing machine,<br>a whole winter of groceries, my cousin home from college.<br>My grandmother says the road is a guest:<br>you welcome it, you feed it, you know it will not stay.',
       '<b>IV.</b> Each year the guest arrives later. Each year it leaves sooner.<br>The ice thinks harder about holding us.<br>The men and women in the band office talk about a real road,<br>gravel, all-season, open in July,<br>and I want it, I do. Cheaper milk. A doctor who can drive in.<br>But I will miss the night the lake becomes a highway,<br>the whole north holding its breath,<br>listening to the ice <b>sing</b>.',
       '<b>V.</b> In April the guest packs up quietly.<br>The ploughed line goes soft and grey, then disappears,<br>and we are an island again, waiting for Tuesday,<br>for the plane, for the hum,<br>for the long white sentence to be written one more time.',
@@ -1805,6 +1805,876 @@
         opts: ['Lines in poems often break in the middle of sentences.', 'The writer forgot.', 'Each line is a separate question.', 'Poems never use punctuation.'], a: 0 },
       { k: 'lines', code: 'C3.6', n: 3, q: 'The speaker says “I want it, I do. But I will miss …” What two positions about an all-season road does the poem show?',
         a: 'An all-season road would make supplies cheaper and the community less isolated. But the ice road is a special, shared experience and part of the community’s way of life.', look: 'two positions fairly described, with evidence from the poem' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-immune-cells', subject: 'science', form: 'Explanation',
+    title: 'The Cells That Fight Back',
+    deck: 'Every day, white blood cells hunt down invaders you never knew were there',
+    hero: {
+      photo: 'g8-neutrophil.jpg', credit: 'Image: NIAID, National Institutes of Health, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A white blood cell called a neutrophil (large, purple) attacking bacteria (small, yellow), seen with an electron microscope and coloured to show the parts.'
+    },
+    body: [
+      'Right now, bacteria are landing on your skin, drifting into your nose and riding on your food. Most never make you sick. Your skin, the mucus in your nose and the acid in your stomach stop many of them at the door. The rest meet a second line of defence. That is because your body has an army of cells that recognizes invaders and destroys them. Together, these cells and organs make up your <b>immune system</b>.',
+      { h: 'The first responders' },
+      'If bacteria get through a cut in your skin, the first cells to arrive are usually neutrophils, a kind of white blood cell. They squeeze out of tiny blood vessels and crawl toward the invaders, following chemical signals. When a neutrophil reaches a bacterium, it wraps around it and swallows it whole, then breaks it down inside. This is why a cut becomes red, warm and swollen: blood rushes to the area, carrying more fighters.',
+      { h: 'The specialists' },
+      'Other white blood cells are slower but smarter. Some make <b>antibodies</b>, Y-shaped proteins that lock onto one particular germ, like a key fitting a single lock. Antibodies mark the germ so that other cells can destroy it. The first time your body meets a new germ, making the right antibodies can take a week or more, which is why you feel sick for a while. A fever during an infection is not a mistake: a higher temperature can slow some germs down and speed up the body’s defenders.',
+      { h: 'Remembering the enemy' },
+      'After the infection is over, some of these cells stay behind as memory cells. If the same germ returns, they recognize it at once and make antibodies quickly, often before you feel sick at all. This is called <b>immunity</b>.',
+      { fig: '<circle class="k" cx="60" cy="80" r="40"/><circle class="h" cx="60" cy="80" r="14"/>' + [[120, 60], [128, 96], [150, 76]].map(function (p) { return '<ellipse class="a" cx="' + p[0] + '" cy="' + p[1] + '" rx="9" ry="5"/>'; }).join('') +
+          D.arrow(104, 80, 112, 76, 'k') + '<circle class="k" cx="236" cy="80" r="42"/><ellipse class="a" cx="236" cy="80" rx="9" ry="5"/><circle class="t" cx="236" cy="80" r="16"/>' + D.arrow(170, 80, 188, 80, 'k') +
+          tx(60, 140, 'n', '1. finds bacteria', 'middle') + tx(236, 140, 'n', '2. swallows and digests', 'middle') + D.label(8, 20, 'white blood cell', 40, 46) + D.label(140, 30, 'bacteria', 124, 54),
+        tall: 150, cap: 'A white blood cell swallows bacteria and breaks them down.' },
+      { box: 'How vaccines help', text: 'A vaccine shows the immune system a harmless piece or copy of a germ. The body makes memory cells without getting the disease, so it is ready if the real germ arrives.' },
+      'Your immune system is a system in the true sense: many kinds of cells, each with a job, working together and passing signals. When one part fails, as in some illnesses, the whole body becomes easier to infect. When it works, you never notice the battle at all.'
+    ],
+    guide: { before: 'Ask what happens when a cut gets red and swollen. Teach <b>immune system</b>, <b>antibodies</b> and <b>immunity</b>. Explain that the photo is coloured by scientists to show the parts.',
+      after: 'Why do you think scientists call the immune system a “system”? What other systems in your body work together?' },
+    words: [['immune system', 'the cells and organs that protect the body from germs'], ['antibodies', 'proteins that lock onto a particular germ so it can be destroyed'], ['immunity', 'the body’s ability to resist a germ it has met before']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Complete the chart.', cols: ['Cell or protein', 'Its job'],
+        rows: [['neutrophil', null], [null, 'locks onto one particular germ'], ['memory cell', null]],
+        a: [[null, 'finds and swallows bacteria'], ['antibody', null], [null, 'recognizes a returning germ and makes antibodies quickly']] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The writer says antibodies fit a germ “like a key fitting a single lock.” This means each antibody …',
+        opts: ['matches only one kind of germ', 'opens doors in cells', 'is made of metal', 'works on every germ'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>They</b> squeeze out of tiny blood vessels.” <b>They</b> refers to …',
+        opts: ['neutrophils', 'bacteria', 'antibodies', 'cuts'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why does a cut become red, warm and swollen? Explain using the text.',
+        a: 'Blood rushes to the area, carrying more white blood cells to fight the bacteria. The extra blood makes the cut red, warm and swollen.', look: 'connects blood flow to the fighting cells and the symptoms' },
+      { k: 'lines', code: 'C1.4', n: 3, q: 'The photo has been coloured. Why might scientists add colour to an electron microscope image?',
+        a: 'Electron microscopes make black-and-white images. Adding colour helps viewers tell the white blood cell apart from the bacteria.', look: 'explains that colour helps viewers see the different parts' },
+      { k: 'choice', code: 'B2.1', q: 'The prefix <b>anti-</b> in <b>anti</b>body means “against.” Which word also uses anti- this way?',
+        opts: ['antibiotic', 'antelope', 'antenna', 'anticipate'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how the body becomes immune to a germ.',
+        a: 'The first time a germ arrives, white blood cells make antibodies, which takes time. Afterward, memory cells stay behind, so the next time they make antibodies quickly and the person may not get sick.', look: 'first infection, antibodies, memory cells, faster response' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-paramecium', subject: 'science', form: 'Report',
+    title: 'A Whole Life in One Cell',
+    deck: 'A paramecium has no brain, no mouth and no legs. It swims, eats and escapes danger anyway.',
+    hero: {
+      photo: 'g8-paramecium.jpg', credit: 'Photo: Fritzmann2002, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A paramecium seen through a light microscope. It is about a quarter of a millimetre long, just visible as a speck to the naked eye.'
+    },
+    body: [
+      'Put a drop of pond water under a microscope and you may see a tiny slipper-shaped creature racing across the slide. It spins, reverses and changes direction. This is a paramecium, and its entire body is a single cell. Organisms like it are called <b>unicellular</b>. Everything a large animal does with organs, a paramecium does inside one cell, using tiny structures called <b>organelles</b>.',
+      { fig: '<path class="k" d="M30 80 Q40 30 150 34 Q270 40 276 80 Q270 122 150 126 Q40 130 30 80 Z"/>' +
+          (function () { var s = ''; for (var x = 40; x < 270; x += 12) s += '<path class="t" d="M' + x + ' ' + (x < 150 ? 36 + (150 - x) * 0.05 : 36 + (x - 150) * 0.04) + ' l-2 -7"/>'; return s; })() +
+          '<ellipse class="h" cx="160" cy="78" rx="26" ry="16"/><circle class="k" cx="80" cy="70" r="9"/><circle class="k" cx="240" cy="74" r="9"/><path class="k" d="M118 108 Q130 90 146 104"/><circle class="t" cx="200" cy="96" r="6"/>' +
+          D.label(8, 16, 'cilia (tiny hairs)', 60, 32) + D.label(130, 150, 'oral groove', 132, 102) + D.label(146, 14, 'nucleus', 160, 64) + D.label(220, 150, 'food vacuole', 202, 100) + D.label(296, 30, 'contractile vacuole', 240, 66, 'end'),
+        tall: 156, cap: 'Some of the organelles inside a paramecium.' },
+      { box: 'Copying itself', text: 'A paramecium usually reproduces by splitting in two. In good conditions, one cell can become thousands in a week, a living example of the cell theory: every cell comes from a cell.' },
+      { h: 'Moving and eating' },
+      'Its surface is covered with thousands of hair-like cilia. They beat together in waves, like oars on a long rowing boat, pushing the cell through the water. Cilia also sweep bacteria and bits of food into a channel called the oral groove. Food is wrapped in a bubble of membrane, a food vacuole, where it is digested as the vacuole drifts through the cell.',
+      { h: 'Staying in balance' },
+      'Pond water is fresher than the inside of the cell, so water keeps leaking in by osmosis. If nothing stopped it, the paramecium would swell and burst. Star-shaped contractile vacuoles collect the extra water and squeeze it out every few seconds, like a pump bailing out a leaky boat.',
+      { h: 'Sensing and escaping' },
+      'A paramecium has no eyes or nerves, yet it responds to its surroundings. When it bumps into an obstacle or a harmful chemical, it reverses its cilia, backs up, turns and tries a new direction. Scientists call this the avoiding reaction. It is a simple behaviour, but it keeps the cell alive. Paramecia also swim toward places with the right amount of oxygen and away from water that is too hot or too cold. In a crowded drop of pond water, they gather where conditions are best.',
+      'Studying organisms like the paramecium helps scientists understand how all cells work, including our own. The same kinds of membranes, vacuoles and signals are found in the cells of your body, working together in tissues and organs instead of alone.'
+    ],
+    guide: { before: 'Review the cell theory and organelles from earlier science lessons. Teach <b>unicellular</b> and <b>organelle</b>. Match each label on the diagram to a heading in the text.',
+      after: 'Which organelles in a paramecium do the same jobs as organs in your body? Make a list together.' },
+    words: [['unicellular', 'made of only one cell'], ['organelles', 'tiny structures inside a cell that each do a job']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Match each organelle with its job.', cols: ['Organelle', 'Job'],
+        rows: [['cilia', null], ['food vacuole', null], ['contractile vacuole', null]],
+        a: [[null, 'move the cell and sweep in food'], [null, 'digests food'], [null, 'pumps out extra water']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Where is the oral groove in the diagram?',
+        opts: ['near the bottom edge', 'at the very top', 'outside the cell', 'inside the nucleus'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Cilia beat “like oars on a long rowing boat.” This comparison shows that cilia …',
+        opts: ['work together in rhythm to push the cell', 'are made of wood', 'are very large', 'move only once'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Connect this text to the passage about osmosis, or to what you know about osmosis. Why does a paramecium need contractile vacuoles?',
+        a: 'Pond water is fresher than the inside of the cell, so water moves in by osmosis. Without contractile vacuoles pumping it out, the cell would swell and burst.', look: 'applies osmosis correctly to the paramecium' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The paramecium has no brain. How can it still avoid danger? Use evidence.',
+        a: 'When it bumps into something harmful, it reverses its cilia, backs up and turns. This simple avoiding reaction works without a brain.', look: 'describes the avoiding reaction' },
+      { k: 'choice', code: 'B3.2', q: 'In “it reverses its cilia, backs up, turns and tries a new direction,” the words <b>reverses, backs up, turns</b> and <b>tries</b> are …',
+        opts: ['verbs in a series', 'nouns', 'adjectives', 'prepositions'], a: 0 },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Your class is about to look at pond water under microscopes. Why would reading this text first be useful?',
+        a: 'It tells me what a paramecium looks like and how it moves, so I could recognize one and know which organelles to look for.', look: 'a practical purpose connected to the activity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-submarine', subject: 'science', form: 'Explanation',
+    title: 'How a Submarine Dives',
+    deck: 'A submarine sinks and rises by changing one thing: its density',
+    hero: {
+      photo: 'g8-submarine.jpg', credit: 'Photo: U.S. Navy, public domain, Wikimedia Commons', focus: '50% 55%',
+      tall: 190,
+      cap: 'The Royal Canadian Navy submarine HMCS <i>Victoria</i> on the surface near Bangor, Washington.'
+    },
+    body: [
+      'A ship is built to float. A submarine is built to float, to sink and to hover at any depth in between. It does all three by controlling its <b>density</b>, using the same principle that keeps a freighter afloat.',
+      { fig: [0, 1, 2].map(function (i) { var x = 14 + i * 96, y = [30, 64, 98][i]; return '<path class="a" d="M' + (x - 4) + ' 46 H' + (x + 86) + '"/><rect class="k" x="' + x + '" y="' + y + '" width="78" height="26" rx="13"/><rect class="' + (i ? 'h' : 't') + '" x="' + (x + 6) + '" y="' + (y + (i === 1 ? 4 : i === 2 ? 2 : 18)) + '" width="66" height="' + (i === 1 ? 18 : i === 2 ? 22 : 4) + '"/>'; }).join('') +
+          tx(53, 150, 'n', 'tanks full of air:', 'middle') + tx(53, 162, 'n', 'floats', 'middle') + tx(149, 150, 'n', 'tanks part full:', 'middle') + tx(149, 162, 'n', 'hovers', 'middle') + tx(245, 150, 'n', 'tanks full of water:', 'middle') + tx(245, 162, 'n', 'sinks', 'middle') + tx(4, 40, 'n', 'surface'),
+        tall: 168, cap: 'Hatching shows sea water in the ballast tanks.' },
+      { h: 'Ballast tanks' },
+      'Between the inner hull, where the crew lives, and the outer hull are large spaces called <b>ballast tanks</b>. On the surface, the tanks are full of air, and the submarine floats like any ship. To dive, the crew opens vents at the top of the tanks. Air rushes out, sea water rushes in, and the submarine becomes heavier for its size. When its density is greater than the water around it, it sinks.',
+      { h: 'Neutral buoyancy' },
+      'Sinking forever would be a disaster, so the crew adjusts the amount of water in smaller tanks until the submarine’s density exactly matches the sea water. The buoyant force then equals the submarine’s weight, and it hovers, neither rising nor sinking. Sailors call this neutral buoyancy. Small fins called diving planes, like the wings of an airplane, steer the submarine up or down as it moves forward.',
+      { h: 'Coming back up' },
+      'To surface, the crew blows compressed air from high-pressure bottles into the ballast tanks. The air forces the water out through openings at the bottom. The submarine becomes less dense than the water and rises. In an emergency, all the tanks can be blown at once, and the boat shoots to the surface.',
+      { box: 'Fish did it first', text: 'Many fish have a swim bladder, a gas-filled sac that works like a ballast tank. By adding or removing gas, a fish can hover at any depth without swimming.' },
+      'Water pressure increases with depth, so a submarine’s hull must be very strong. HMCS <i>Victoria</i> can dive deeper than 200 metres, where every square metre of hull feels the weight of more than 200 tonnes of water.',
+      'Life on board is crowded. About fifty sailors share a space not much wider than a city bus, for weeks at a time, with no windows and no sunlight. Fresh air comes in only when the boat raises a snorkel pipe near the surface, and fresh water is carefully rationed. Submarine crews say the hardest part is not the danger but the silence: when the boat is hiding, everyone must move and speak quietly.'
+    ],
+    guide: { before: 'Review buoyancy and density from the freighter passage. Teach <b>ballast</b> and <b>neutral buoyancy</b>. Trace the three submarines in the diagram from left to right.',
+      after: 'A diver uses a vest that can be filled with air. How is it like a submarine’s ballast tank?' },
+    words: [['density', 'how much mass is packed into a certain volume'], ['ballast tanks', 'tanks that are filled with water to sink or with air to rise']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps for diving and surfacing.',
+        items: ['The crew opens vents at the top of the tanks.', 'Sea water fills the ballast tanks.', 'The submarine sinks.', 'Compressed air is blown into the tanks.', 'Water is forced out and the submarine rises.'], show: [3, 0, 4, 1, 2] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which submarine is hovering?',
+        opts: ['the middle one, with tanks part full', 'the left one', 'the right one', 'none of them'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why must a submarine’s hull be very strong?',
+        opts: ['Water pressure increases with depth.', 'It carries a lot of food.', 'It hits icebergs often.', 'Fish bite it.'], a: 0 },
+      { k: 'lines', code: 'C1.1', n: 3, q: 'Reread the paragraph under “Neutral buoyancy.” Explain the term in your own words, using <i>density</i>.',
+        a: 'Neutral buoyancy is when the submarine’s density matches the water’s, so the push up equals its weight and it stays at the same depth.', look: 'correct explanation using density and balanced forces' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Compare a submarine’s ballast tanks with a fish’s swim bladder. How are they alike?',
+        a: 'Both add or remove gas to change density. That lets the submarine or the fish rise, sink or hover without using much energy.', look: 'a clear similarity, using density or gas' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence shows a cause and its effect joined by <i>when</i>?',
+        opts: ['When its density is greater than the water around it, it sinks.', 'The air forces the water out.', 'A ship is built to float.', 'Sailors call this neutral buoyancy.'], a: 0 },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'How did reading the freighter passage (or what you know about buoyancy) help you understand this one? What will you do the next time a text builds on an earlier one?',
+        a: 'I already knew that a ship floats when the water pushed aside weighs as much as the ship, so ballast tanks made sense. Next time I will look back at the earlier text first.', look: 'reflects on using prior reading and sets a goal' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-lake-effect', subject: 'science', form: 'Explanation',
+    title: 'Snow Made by a Lake',
+    deck: 'Why towns east of the Great Lakes can be buried in snow while others nearby stay clear',
+    hero: {
+      photo: 'g8-lake-effect.jpg', credit: 'Image: NOAA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A satellite image of lake-effect snow over the Great Lakes. The white streaks are long bands of cloud forming over the open water.'
+    },
+    body: [
+      'In early winter, a town on the eastern shore of Lake Huron can get half a metre of snow in a day, while a town forty kilometres inland sees only flurries. The difference is the lake. Drivers on Highway 21 or Highway 26 can go from clear skies into a whiteout in a few minutes, as they pass under a single band of cloud. The snow is called <b>lake-effect snow</b>, and it shows how water and air work together as one system.',
+      { fig: '<path class="a" d="M10 130 H180"/>' + D.ripple(10, 180, 124) + '<path class="k" d="M180 130 L290 120"/>' +
+          D.arrow(10, 60, 60, 60, 'k') + tx(10, 50, 'n', 'cold, dry wind') + [40, 80, 120].map(function (x) { return D.arrow(x, 116, x, 92, 'a'); }).join('') + tx(60, 84, 'n', 'heat and moisture rise', 'middle') +
+          '<path class="k" d="M150 60 Q170 30 200 40 Q230 20 250 44 Q276 46 270 66 H156 Q140 66 150 60 Z"/>' + [190, 210, 230, 250].map(function (x) { return '<path class="t" d="M' + x + ' 74 l-6 30"/>'; }).join('') +
+          tx(232, 140, 'n', 'snow falls on the shore', 'middle') + tx(100, 148, 'n', 'open lake (still warm)', 'middle'),
+        tall: 154, cap: 'Cold air crosses warm open water, picks up moisture and drops it as snow on the far shore.' },
+      { box: 'Ontario’s snow belts', text: 'Places such as Owen Sound, Wiarton, London and Barrie, downwind of Lake Huron and Georgian Bay, often get far more snow than Toronto.' },
+      { h: 'Warm water, cold air' },
+      'Water heats up and cools down much more slowly than land. All summer, the Great Lakes soak up heat. By December, the land is frozen, but the lakes are still open and relatively warm. When a blast of Arctic air blows across a lake, the bottom layer of air is heated by the water and picks up water vapour through <b>evaporation</b>. Warm, moist air rises, cools, and its water vapour condenses into clouds.',
+      { h: 'Long bands of snow' },
+      'As the wind keeps blowing, the clouds grow into long, narrow bands lined up with the wind. When the air reaches the shore, it is pushed up over the rising land and cools even more. The clouds drop their moisture as heavy snow. The longer the stretch of open water the wind crosses, called the <b>fetch</b>, the more moisture it gathers and the heavier the snow. That is why the snow belts lie on the eastern and southeastern shores: the usual winter winds blow from the west and northwest.',
+      { h: 'When it stops' },
+      'Lake-effect snow usually fades by late winter. Once a lake freezes over, the air can no longer pick up heat and moisture from the water, and the snow machine shuts down. Lake Erie, the shallowest of the Great Lakes, often freezes first, so towns near it get relief sooner than towns near deep Lake Ontario or Lake Huron. As winters warm and the lakes freeze later, some scientists expect more lake-effect snow in early winter, at least for a while.'
+    ],
+    guide: { before: 'Recall the water cycle: evaporation, condensation, precipitation. Teach <b>evaporation</b> and <b>fetch</b>. Find Lake Huron, Georgian Bay and Owen Sound on a map, then read the diagram.',
+      after: 'If the wind blew from the east instead, where would the snow fall? Explain using the diagram.' },
+    words: [['lake-effect snow', 'snow made when cold air picks up moisture from a warmer lake'], ['evaporation', 'water changing into a gas (water vapour)'], ['fetch', 'the distance wind travels over open water']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number the steps in making lake-effect snow.',
+        items: ['Cold, dry wind blows over the lake.', 'The air picks up heat and water vapour.', 'Warm, moist air rises and forms clouds.', 'The air is pushed up over the shore.', 'Snow falls on the shore.'], show: [2, 4, 0, 3, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where does the snow fall?',
+        opts: ['on the shore, downwind of the lake', 'in the middle of the lake', 'where the wind starts', 'nowhere'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does lake-effect snow usually stop by late winter?',
+        opts: ['The lake freezes over.', 'The wind stops blowing.', 'The sun is too hot.', 'People shovel it all.'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why are the snow belts on the eastern shores of the lakes, not the western shores?',
+        a: 'Winter winds usually blow from the west and northwest. They pick up moisture crossing the lake and drop it as snow on the eastern side.', look: 'connects wind direction to the side that gets snow' },
+      { k: 'choice', code: 'B2.2', q: 'The word <b>fetch</b> usually means “to go and get.” What does it mean in this text?',
+        opts: ['the distance wind travels over open water', 'a dog’s game', 'a kind of snow', 'the height of a cloud'], a: 0 },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What do you know about the water cycle from science class that helps you understand lake-effect snow?',
+        a: 'I know water evaporates, rises, condenses into clouds and falls as precipitation. Lake-effect snow is the water cycle happening quickly over one lake.', look: 'names water cycle steps and links them to the text' },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'How do the subheadings help a reader follow this explanation?',
+        a: 'They break the process into parts: why it starts, how the bands form, and when it stops. A reader can find each part quickly and follow the order.', look: 'explains how headings organize the steps or ideas' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-rubber-ducks', subject: 'science', form: 'Report',
+    title: 'The Great Rubber Duck Voyage',
+    deck: 'In 1992, thousands of bath toys fell into the Pacific. Scientists followed them for years.',
+    hero: {
+      photo: 'g8-rubber-ducks.jpg', credit: 'Photo: frielp, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Yellow rubber ducks. In 1992, plastic ducks, beavers, frogs and turtles fell from a ship and began a journey across the oceans.'
+    },
+    body: [
+      'In January 1992, a container ship crossing the North Pacific from Hong Kong to the United States ran into a storm. Several shipping containers broke loose and fell overboard. One held 28 800 plastic bath toys: yellow ducks, blue turtles, red beavers and green frogs. The containers burst open, and the toys floated free. They became the most famous accidental science experiment in the ocean.',
+      { h: 'Following the ducks' },
+      'Ten months later, toys began washing up on beaches in Alaska. An oceanographer named Curtis Ebbesmeyer, who studied ocean <b>currents</b>, asked beachcombers to report every toy they found, with the place and date. Because scientists knew exactly where and when the toys had fallen, each sighting showed how fast and in which direction the ocean was moving. Ebbesmeyer and a colleague fed the reports into a computer model of the Pacific. The model, built to track ocean currents for fishing fleets, could now be tested against real objects.',
+      { h: 'Rivers in the sea' },
+      'The results showed that the toys were riding a <b>gyre</b>, a huge loop of currents that circles the North Pacific. Some toys went round the loop more than once, taking about three years for each lap. Others were carried south toward Hawaii, and some came ashore in Washington State and British Columbia. Others escaped. A few drifted north through the Bering Strait, became frozen into Arctic sea ice, and travelled slowly across the top of the world. Years later, toys were reported on beaches as far away as Scotland and the east coast of North America.',
+      { fig: '<path class="k" d="M20 30 Q150 6 280 30 Q290 80 270 120 Q150 146 30 120 Q10 80 20 30 Z"/><path class="a" d="M60 40 Q150 22 240 44 Q264 70 244 100 Q150 120 64 104 Q40 74 60 40 Z"/>' +
+          D.arrow(150, 22, 170, 23, 'a') + D.arrow(150, 120, 130, 120, 'a') + '<circle class="dot" cx="110" cy="40" r="4"/>' +
+          D.label(80, 64, 'spill, 1992', 110, 42) + tx(10, 140, 'n', 'Asia') + tx(290, 140, 'n', 'North America', 'end') + D.label(200, 80, 'Alaska', 268, 36),
+        tall: 150, cap: 'The toys circled the North Pacific with a great loop of ocean currents called a gyre (simplified).' },
+      { box: 'Bleached by the sun', text: 'After years at sea, many of the ducks turned white. Collectors still prize the faded survivors.' },
+      { h: 'A serious lesson' },
+      'The toys taught scientists about currents, but they also showed something troubling. Anything that floats, including plastic waste, can travel thousands of kilometres and gather in the centre of a gyre. The Great Pacific Garbage Patch, a vast area of floating plastic, lies in the same system of currents the ducks once rode.'
+    ],
+    guide: { before: 'Ask how scientists might study ocean currents. Teach <b>current</b> and <b>gyre</b>. Trace the loop on the map with a finger, starting at the spill.',
+      after: 'The ducks were an accident that became useful. How could scientists track currents on purpose today?' },
+    words: [['currents', 'steady flows of water in one direction in the ocean'], ['gyre', 'a huge loop of ocean currents that circles an ocean basin']],
+    qs: [
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were the toys useful to scientists?',
+        opts: ['Scientists knew exactly where and when they fell.', 'They were brightly coloured.', 'They could swim.', 'They were very expensive.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the map show?',
+        opts: ['a loop of currents circling the North Pacific', 'the route of the ship to China', 'the ocean floor', 'the Arctic sea ice'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how beachcombers helped scientists learn about ocean currents.',
+        a: 'They reported each toy they found, with the place and date. Scientists compared these with where the toys fell to work out how fast and which way the water moved.', look: 'reports with place and date, and how scientists used them' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Why is it ironic that bath toys became a famous science experiment?',
+        a: 'Bath toys are made for fun in a tub, not for science. Yet by accident they taught scientists about the biggest ocean currents on Earth.', look: 'contrast between the toys’ purpose and what they ended up doing' },
+      { k: 'choice', code: 'B3.3', q: 'In “yellow ducks, blue turtles, red beavers and green frogs,” the commas …',
+        opts: ['separate items in a list', 'join two sentences', 'show a quotation', 'introduce a question'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The last section turns from ducks to plastic waste. Summarize the lesson it draws.',
+        a: 'Because floating things travel so far on currents, plastic waste can spread thousands of kilometres and pile up in gyres like the Great Pacific Garbage Patch.', look: 'the connection between the ducks and plastic pollution' },
+      { k: 'lines', code: 'D1.1', n: 3, q: 'You want to tell younger students about ocean currents using this story. What form would you choose (for example, a comic, a video or a map), and why?',
+        a: 'A comic, because it could show the ducks’ journey step by step with pictures, which would hold younger students’ attention and make the route easy to follow.', look: 'a suitable form with a reason linked to audience and purpose' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-assembly-line', subject: 'tech', form: 'Report',
+    title: 'The Line That Changed Work',
+    deck: 'In 1913, a car factory found a way to build a car in about 90 minutes. Workers paid a price.',
+    hero: {
+      photo: 'g8-ford-line.jpg', credit: 'Photo: 1913, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Workers on Ford’s first moving assembly line at Highland Park, Michigan, in 1913, putting together engine parts. Each worker repeated the same task.'
+    },
+    body: [
+      'In 1908, building one Ford Model T took a team of skilled workers about twelve hours. They gathered the parts and built each car where it stood. By 1914, the same car rolled out of the factory roughly every ninety minutes of work, and its price had dropped by more than half. The change was a new kind of <b>system</b>: the moving assembly line.',
+      { fig: '<path class="k" d="M10 100 H290 M10 112 H290"/>' + [0, 1, 2, 3].map(function (i) { var x = 26 + i * 70; return '<rect class="' + (i === 3 ? 'h' : 'k') + '" x="' + x + '" y="' + (78 - i * 4) + '" width="' + (36 + i * 6) + '" height="' + (22 + i * 4) + '" rx="3"/><circle class="k" cx="' + (x + 16) + '" cy="50" r="6"/><path class="k" d="M' + (x + 16) + ' 56 V70"/>' + tx(x + 18, 134, 'n', ['frame', 'engine', 'body', 'wheels'][i], 'middle'); }).join('') +
+          D.arrow(30, 150, 270, 150, 'a') + tx(150, 166, 'n', 'the car moves; each worker stays in place', 'middle'),
+        tall: 170, cap: 'On an assembly line, the work comes to the worker.' },
+      { box: 'The five-dollar day', text: 'The work was so boring and tiring that many workers quit. In 1914, Ford doubled pay to about five dollars a day, partly to keep workers from leaving.' },
+      { h: 'Bringing the work to the worker' },
+      'Henry Ford and his engineers broke the job of building a car into 84 small steps. Each worker did one step, again and again, as the car was pulled past on a rope, and later on a moving chain. One worker might tighten the same few bolts hundreds of times a day. Parts were made in identical, <b>interchangeable</b> sizes, so any bolt fit any car. Nobody had to walk to fetch parts or wait for another team to finish. Supervisors timed each motion with a stopwatch and looked for ways to save even a few seconds.',
+      { h: 'Inputs, outputs and efficiency' },
+      'Engineers describe a system by its inputs, such as materials, energy and labour, and its outputs, such as finished cars. A system is more <b>efficient</b> when it turns the same inputs into more output, or wastes less along the way. The assembly line was dramatically more efficient. Factories around the world copied it, including the Ford plant in Windsor, Ontario, and later the auto plants of Oshawa, Oakville and Alliston.',
+      { h: 'The cost to workers' },
+      'Not everyone welcomed the change. Skilled craftsmen who had once built a whole car now repeated one small motion all day. The pace was set by the machine, not by the worker. Workers suffered injuries from repeating the same movement. Critics said people were being treated like parts of the machine. These worries helped workers form unions to bargain for shorter hours, safer conditions and breaks.'
+    ],
+    guide: { before: 'Make three paper airplanes one at a time, then with two people on an “assembly line”, and compare the times. Teach <b>system</b>, <b>efficient</b> and <b>interchangeable</b>.',
+      after: 'Was the assembly line good or bad overall? Who gained the most and who lost the most?' },
+    words: [['system', 'a set of parts that work together to do a job'], ['interchangeable', 'made exactly alike, so one can replace another'], ['efficient', 'producing a lot without wasting time, energy or materials']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the arrow under the diagram show?',
+        opts: ['The car moves past workers who stay in place.', 'Workers walk to the car.', 'The factory is getting bigger.', 'Time is running out.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Ford raise pay to five dollars a day?',
+        opts: ['Many workers were quitting because the work was boring.', 'Cars became more expensive.', 'A new law required it.', 'Workers built cars at home.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart about the factory as a system.', cols: ['Part of the system', 'Example'],
+        rows: [['inputs', null], ['process', null], ['outputs', null]],
+        a: [[null, 'materials, energy, labour'], [null, 'the moving assembly line with 84 steps'], [null, 'finished Model T cars']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The first sections praise the assembly line. The last section criticizes it. Why do you think the writer included both?',
+        a: 'To give a balanced view. The line made cars cheap and fast, but it made work boring and harmful, so readers can judge for themselves.', look: 'recognizes balance and names one positive and one negative' },
+      { k: 'choice', code: 'B2.1', q: '<b>Inter</b>changeable, <b>inter</b>national and <b>inter</b>act share a prefix. <b>Inter-</b> means …',
+        opts: ['between or among', 'not', 'before', 'too much'], a: 0 },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of a system you see every day, such as a cafeteria line or a school bus route. How is it like an assembly line?',
+        a: 'In the cafeteria, each worker serves one food as students move along the line. Like an assembly line, the work is divided into small steps and people stay in one place.', look: 'a real example with at least one clear similarity' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Critics said workers were treated “like parts of the machine.” What does this mean, and do you agree?',
+        a: 'It means workers were valued only for doing one task quickly, not as skilled people. I agree, because they had no control over the pace and their bodies were hurt.', look: 'explains the criticism and gives a reasoned opinion' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-robots', subject: 'tech', form: 'Feature article',
+    title: 'Robots on the Line',
+    deck: 'In Ontario car plants, robots now do much of the welding. What jobs are left for people?',
+    hero: {
+      photo: 'g8-car-robots.jpg', credit: 'Photo: BMW Werk Leipzig, CC BY-SA 2.0 DE, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Robot arms build car bodies at a factory in Leipzig, Germany. Industrial robots can repeat the same weld thousands of times without tiring.'
+    },
+    body: [
+      'Walk through a modern car plant in Ontario and you will see showers of sparks but very few people near them. Rows of orange robotic arms swing, twist and weld car bodies together, each one guided by a computer program. This is <b>automation</b>: using machines and computers to do work that people once did.',
+      { fig: '<path class="k" d="M40 150 H120 M80 150 V130"/><rect class="k" x="60" y="118" width="40" height="12" rx="3"/><circle class="k" cx="80" cy="112" r="8"/><path class="k" d="M80 112 L140 60 L220 80"/><circle class="k" cx="140" cy="60" r="6"/><circle class="k" cx="220" cy="80" r="5"/><path class="a" d="M220 80 L236 100"/>' +
+          D.label(4, 104, 'base joint', 72, 112) + D.label(120, 30, 'elbow joint', 140, 54) + D.label(232, 60, 'wrist', 222, 76) + D.label(230, 128, 'welding tool', 234, 100) + tx(296, 156, 'n', 'sensors and a computer guide it', 'end'),
+        tall: 160, cap: 'Like a human arm, a robot arm moves at joints.' },
+      { box: 'Different points of view', text: 'A plant manager: “Robots help us compete with factories around the world.” A retired welder: “My job went to a machine.” A robotics technician, age 24: “I learned to fix robots at college. It is a good job.”' },
+      { h: 'What robots do well' },
+      'An industrial robot is a machine with a jointed arm, a tool at its end, and a controller that tells it exactly how to move. It can place a weld in the same spot, to within a fraction of a millimetre, every minute of every shift. It does not get tired, bored or hurt. Robots are especially useful for jobs that are dangerous, dirty or dull: welding, painting with toxic fumes, or lifting heavy parts.',
+      { h: 'What people still do' },
+      'Robots are good at doing exactly what they are told. They are not good at noticing that something is a little wrong, solving a new problem, or fitting a tricky wire behind a dashboard. A robot cannot tell when a part looks wrong unless someone has programmed it to check. People still do much of the final assembly, inspect quality and fix problems. New jobs have also appeared: technicians who maintain robots, programmers who write their instructions, and engineers who design whole automated systems.',
+      { h: 'Who benefits?' },
+      'Automation has made cars safer to build and better built. It has also changed who can find work. Fewer workers are needed for each car, and the new jobs often require training after high school. Communities that depend on one factory can be hit hard when it automates or closes. Many people argue that companies, colleges and governments share a <b>responsibility</b> to help workers learn new skills, so that the benefits of automation are shared fairly.'
+    ],
+    guide: { before: 'Ask the child to name a job a robot could do and one it could not. Teach <b>automation</b> and <b>responsibility</b>. Read the three quotations in the box aloud in different voices.',
+      after: 'Which of the three people in the box would you most like to talk to? What would you ask them?' },
+    words: [['automation', 'using machines and computers to do work that people once did'], ['responsibility', 'a duty to deal with something or take care of someone']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Complete the chart.', cols: ['Robots do well', 'People still do well'],
+        rows: [['repeating the same weld exactly', null], [null, 'solving a new problem'], ['dangerous jobs with toxic fumes', null]],
+        a: [[null, 'noticing something is a little wrong'], ['working without getting tired', null], [null, 'fitting tricky wires; inspecting quality']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'The diagram compares a robot arm to …',
+        opts: ['a human arm with joints', 'a car', 'a crane', 'a computer'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“<b>It</b> does not get tired, bored or hurt.” <b>It</b> refers to …',
+        opts: ['an industrial robot', 'a weld', 'a shift', 'a car plant'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Read the box. Explain how each person’s position affects their view of automation.',
+        a: 'The manager cares about competing, so robots look good. The retired welder lost his job, so he sees a loss. The young technician got a job from automation, so he sees opportunity.', look: 'links each view to the person’s situation' },
+      { k: 'choice', code: 'B3.3', q: 'Why are the speakers’ words in the box inside quotation marks?',
+        opts: ['They are the people’s exact words.', 'They are titles.', 'They are questions.', 'They are made-up words.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The last paragraph says benefits should be “shared fairly.” What could make automation fairer for workers?',
+        a: 'Companies and colleges could offer free training so workers can learn to maintain robots, and governments could support communities when a factory closes.', look: 'a concrete idea for fairness, linked to the text' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict how automation might change one job in your community in the next ten years. What evidence from the text supports your prediction?',
+        a: 'Grocery checkouts may become fully automated. The text says machines take over repetitive jobs, but people will still be needed to help customers and fix machines.', look: 'a reasonable prediction supported by an idea from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-batoche', subject: 'history', form: 'Report',
+    title: 'The Stand at Batoche',
+    deck: 'In 1885, Métis families on the South Saskatchewan River fought to keep their land. How should we name what happened?',
+    hero: {
+      photo: 'g8-batoche.jpg', credit: 'Photo: Dave Bonser, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 190,
+      cap: 'The church and rectory at Batoche, Saskatchewan, seen from the cemetery. Bullet holes from 1885 can still be seen in the rectory.'
+    },
+    body: [
+      'In the spring of 1885, the small Métis village of Batoche, on the South Saskatchewan River, became a battlefield. For four days, a few hundred Métis and First Nations fighters held off about 800 soldiers. The fighting ended a struggle that had been building for years, and its meaning is still argued about today.',
+      { h: 'Long, narrow farms' },
+      'The Métis are a people whose roots go back to First Nations women and French and Scottish fur traders. By the 1870s, many Métis families had moved west from Red River and settled along the South Saskatchewan. They farmed in the style they knew: <b>river lots</b>, long narrow strips of land that each touched the water. Every family could reach the river for water and transport.',
+      'The Canadian government planned to <b>survey</b> the prairies into square blocks. The Métis feared they would lose the farms they had built, because they had no official papers proving they owned them. For years they sent petitions to Ottawa asking for title to their land. Most went unanswered.',
+      { h: 'Four days in May' },
+      'In 1884, the Métis invited Louis Riel, who had led them at Red River in 1870, to return from the United States. In March 1885, they formed a provisional government. Ottawa sent troops west on the new railway. At Batoche, the Métis, led in battle by Gabriel Dumont, dug rifle pits along the ridges. They ran so low on ammunition that some fired nails and stones. On May 12, the soldiers broke through. Riel surrendered, was tried in Regina, and was hanged that November. Dumont escaped to the United States.',
+      { fig: [0, 1, 2, 3, 4, 5, 6].map(function (i) { return '<rect class="' + (i === 3 ? 'h' : 't') + '" x="34" y="' + (12 + i * 20) + '" width="106" height="20"/>'; }).join('') + '<path class="a" d="M24 6 Q34 80 24 156"/>' +
+          [0, 1, 2].map(function (r) { return [0, 1, 2].map(function (c) { return '<rect class="t" x="' + (170 + c * 40) + '" y="' + (24 + r * 40) + '" width="40" height="40"/>'; }).join(''); }).join('') +
+          tx(87, 174, 'n', 'Métis river lots', 'middle') + tx(230, 174, 'n', 'government square survey', 'middle') + D.label(150, 14, 'one family’s farm', 120, 74),
+        tall: 180, cap: 'River lots (left) gave every farm a share of the riverbank. The government’s survey (right) divided land into squares.' },
+      { box: 'One event, two names', text: 'For many years, Canadian textbooks called 1885 the “North-West Rebellion,” which suggests an attack on lawful government. Many Métis today call it the “North-West <b>Resistance</b>,” which suggests defending their homes and rights.' },
+      'Today, Batoche is a national historic site. Each summer, Métis people gather there for Back to Batoche Days, with fiddle music, jigging and the Michif language, to remember and to celebrate a living culture.'
+    ],
+    guide: { before: 'Find Batoche and the South Saskatchewan River on a map of Saskatchewan. Teach <b>survey</b>, <b>river lots</b> and <b>resistance</b>. Compare the two shapes of farm in the diagram.',
+      after: 'Which name would you use for the events of 1885, and why? Does the name we choose change how people remember an event?' },
+    words: [['river lots', 'long, narrow farms that each reach a river'], ['survey', 'to measure and mark out land into sections'], ['resistance', 'standing up against something to defend yourself or your rights']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about river lots?',
+        opts: ['Every farm touched the river.', 'The farms were square.', 'Only one family lived by the river.', 'The farms were far from water.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“Most went unanswered.” <b>Most</b> refers to most of the …',
+        opts: ['petitions sent to Ottawa', 'river lots', 'Métis families', 'soldiers'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in the order they happened.',
+        items: ['The Métis send petitions about their land.', 'Riel is invited to return.', 'The Métis form a provisional government.', 'Soldiers break through at Batoche.', 'Riel is tried in Regina.'], show: [3, 0, 4, 2, 1] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Read the box. Explain how each name for the events of 1885 shows a different perspective.',
+        a: '“Rebellion” is the government’s view: the Métis broke the law. “Resistance” is the Métis view: they were defending their land and rights from a government that ignored them.', look: 'explains whose view each name reflects' },
+      { k: 'choice', code: 'B2.2', q: 'In this text, <b>title</b> to land means …',
+        opts: ['legal proof that you own it', 'the name of a book', 'a sports championship', 'a heading'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two Métis cultural elements in the text. Why do you think the writer ends with them?',
+        a: 'River lots and Back to Batoche Days with fiddling, jigging and Michif. Ending with them shows the Métis are a living culture today, not only a story of defeat.', look: 'two elements and a reason linked to the ending' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Which part of this text was hardest for you: the background, the diagram or the battle? What did you do to understand it?',
+        a: 'The background on who the Métis are was new to me. I reread it slowly and looked back at the diagram, which made the land problem clear.', look: 'names a hard part and a strategy that fits it' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-orange-shirt', subject: 'history', form: 'Speech', plain: true,
+    title: 'Why We Wear Orange',
+    deck: 'A Grade 8 student speaks to the school before the National Day for Truth and Reconciliation',
+    hero: {
+      photo: 'g8-orange-shirt.jpg', credit: 'Photo: Maksim Sokolov, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'People in Huntsville, Ontario, mark the National Day for Truth and Reconciliation on September 30.'
+    },
+    body: [
+      'Good morning, everyone. My name is Jordan, and I am in Ms. Lavoie’s Grade 8 class. On Friday, many of us will wear orange shirts. I want to tell you why, because a shirt is only a shirt unless we know the story behind it.',
+      'In 1973, a six-year-old girl named Phyllis Webstad was sent to St. Joseph Mission, a <b>residential school</b> near Williams Lake, British Columbia. Her grandmother had bought her a brand-new shirt for her first day. It was bright orange, and it was shiny. When Phyllis arrived, the shirt was taken away, and she never wore it again. For many years, she said, the colour orange reminded her that her feelings did not matter to anyone.',
+      { fig: timeline([[0, 'first schools', 'open', '1830s'], [1, 'last school', 'closes', '1996'], [2, 'first Orange', 'Shirt Day', '2013'], [3, '94 Calls', 'to Action', '2015'], [4, 'national day', 'begins', '2021']], -0.4, 4.4),
+        tall: 128, cap: 'Some key dates (not to scale).' },
+      'Phyllis was one of more than 150 000 First Nations, Inuit and Métis children who were sent to residential schools in Canada. The schools were run by churches and paid for by the government. Their purpose was to <b>assimilate</b> children: to make them give up their languages, families and cultures. Many children were punished for speaking their own language. Many were hurt. Thousands never came home. The last school closed in 1996, which means that many survivors are the parents and grandparents of students in schools like ours today. Some of them may even be our neighbours.',
+      'In 2013, Phyllis shared her story at an event in Williams Lake, and the first Orange Shirt Day began. It is held on September 30, the time of year when children were taken from their homes. In 2015, the Truth and Reconciliation Commission listened to thousands of survivors and called on all of Canada to act. Since 2021, September 30 has been the National Day for Truth and Reconciliation.',
+      { box: 'Every Child Matters', text: 'These words are printed on many orange shirts. They remind us of the children who went to the schools, the survivors who are still with us, and their families.' },
+      'So, here is what I am asking. Wear orange on Friday, but do not stop there. Read a book by an Indigenous author. Learn whose land our school stands on. Listen when survivors share their stories, and believe them. <b>Reconciliation</b> is not one day. It is something we do together, all year. Thank you.'
+    ],
+    guide: { before: 'This is a serious topic: read it together and allow time to talk. Teach <b>residential school</b>, <b>assimilate</b> and <b>reconciliation</b>. Point out that this is a speech: notice how Jordan speaks to the audience.',
+      after: 'Jordan asks the audience to do three things. Which one could you do this month? Find out whose traditional land you live on.' },
+    words: [['residential school', 'a boarding school that First Nations, Inuit and Métis children were forced to attend'], ['assimilate', 'to make a group give up its own culture and take on another'], ['reconciliation', 'repairing a relationship after harm, with truth and action']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows that this text is a speech?',
+        opts: ['Jordan speaks directly to the audience.', 'It has a glossary.', 'It has a table of contents.', 'It is written in the past tense.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the colour orange upset Phyllis for many years?',
+        opts: ['It reminded her that her feelings had not mattered.', 'She did not like bright colours.', 'Her grandmother chose it.', 'It was the school’s colour.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Jordan says, “a shirt is only a shirt unless we know the story behind it.” What does Jordan mean?',
+        a: 'An orange shirt has meaning only when you understand Phyllis’s story and the residential schools. Without the story, wearing it is empty.', look: 'explains that the symbol depends on knowing the story' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is a command (an imperative sentence)?',
+        opts: ['Wear orange on Friday, but do not stop there.', 'My name is Jordan.', 'Many were hurt.', 'It was bright orange, and it was shiny.'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Whose voices does the speech include? Why is it important that the Commission listened to survivors?',
+        a: 'It includes Phyllis’s own story and the survivors who spoke to the Commission. Their voices matter because they lived it, and the truth must come from them.', look: 'names the voices included and why first-hand voices matter' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Jordan ends with three short actions and “Reconciliation is not one day.” Why is this a strong ending?',
+        a: 'It turns the history into things the audience can do, and the short sentence sticks in their minds, so they remember to act all year.', look: 'links the ending to the speaker’s purpose' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about residential schools or Orange Shirt Day? How did this speech add to it?',
+        a: 'I knew we wear orange on September 30. I did not know the story of Phyllis’s shirt or that the last school closed in 1996.', look: 'prior knowledge and one new idea from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-mary-ann-shadd', subject: 'history', form: 'Biography',
+    title: 'The Editor Who Would Not Be Silenced',
+    deck: 'Mary Ann Shadd was the first Black woman in North America to publish a newspaper. She did it in Canada West.',
+    hero: {
+      photo: 'g8-mary-ann-shadd.jpg', credit: 'Photo: Library and Archives Canada, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 200,
+      cap: 'Mary Ann Shadd, teacher, writer, newspaper publisher and, later, lawyer.'
+    },
+    body: [
+      'In 1853, a new weekly newspaper appeared in Windsor, Canada West, which is now Ontario. Its motto was “Self-Reliance Is the True Road to Independence.” Its founder was Mary Ann Shadd, and she became the first Black woman in North America to publish a newspaper.',
+      { fig: timeline([[1823, 'born free', 'in Delaware'], [1851, 'moves to', 'Windsor'], [1853, 'founds the', 'newspaper'], [1883, 'earns a', 'law degree']], 1815, 1890),
+        tall: 128, cap: 'Mary Ann Shadd’s life (selected events).' },
+      { box: 'Honoured today', text: 'Mary Ann Shadd has been named a Person of National Historic Significance in Canada, and Canada Post put her portrait on a stamp in 2009.' },
+      { h: 'A family of activists' },
+      'Mary Ann Shadd was born free in Delaware in 1823, at a time when slavery was still legal in much of the United States. Her parents helped people escaping slavery on the Underground Railroad, a secret network of routes and safe houses. Mary Ann became a teacher. In 1850, the United States passed the Fugitive Slave Act, which allowed people who had escaped slavery to be captured in free states and sent back. Even free Black people were in danger. The next year, Mary Ann moved north to Windsor.',
+      { h: 'A voice in print' },
+      'In Windsor, she opened a school that welcomed all children, Black and white. She also wrote a booklet urging Black Americans to move to Canada, describing its farmland, its climate and its laws. Then she started <i>The Provincial Freeman</i>. The paper reported news, argued against slavery and called for equal rights for women. Mary Ann was <b>outspoken</b>. She criticized anyone, even other Black leaders, whom she thought was doing harm to the cause of freedom. Some readers objected to a woman running a newspaper, so for a time she listed men as its editors, while she kept doing much of the work.',
+      { h: 'Never finished' },
+      'After the American Civil War, she returned to the United States. She recruited soldiers, taught, and, at age sixty, earned a law degree. Throughout her life, she spoke up for <b>equality</b>, believing that people should be judged by what they do, not by their race or whether they are a man or a woman.'
+    ],
+    guide: { before: 'Explain the Underground Railroad briefly and find Windsor and Chatham on a map. Teach <b>outspoken</b> and <b>equality</b>. Read the timeline first to preview her life.',
+      after: 'Why do you think Mary Ann Shadd chose a newspaper to share her ideas? What would she use today?' },
+    words: [['outspoken', 'saying what you think openly, even when others disagree'], ['equality', 'being treated the same, with the same rights']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'How is this biography mainly organized?',
+        opts: ['in time order', 'by problem and solution', 'by comparing two people', 'as a list of facts'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Mary Ann Shadd move to Windsor in 1851?',
+        opts: ['A new law put Black people in danger in the U.S.', 'She wanted to study law.', 'Her newspaper closed.', 'She was asked to teach there.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Find two pieces of evidence that Mary Ann Shadd was outspoken.',
+        a: 'She criticized anyone, even other Black leaders, whom she thought was doing harm. She argued in print against slavery and for women’s rights.', look: 'two pieces of evidence from the text' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Some readers objected to a woman running a newspaper. What does this show about the time, and how did she respond?',
+        a: 'It shows women were not treated as equals. She listed men as editors for a while but kept doing the work, so her voice still reached readers.', look: 'barrier for women and her response' },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>The Provincial Freeman</i> in italics?',
+        opts: ['It is the title of a newspaper.', 'It is a quotation.', 'It is a foreign word.', 'It is shouted.'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize Mary Ann Shadd’s life and importance in two or three sentences.',
+        a: 'Mary Ann Shadd moved to Canada West to escape danger and started a newspaper in 1853. She fought for an end to slavery and for equal rights, and later became a lawyer.', look: 'key events and why she matters, in few words' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think of someone today who speaks up for equality. How are they like Mary Ann Shadd?',
+        a: 'A student activist who speaks at rallies is like her, because both use their voices in public to call for fair treatment, even when people disagree.', look: 'a real example and a clear similarity' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-longboat', subject: 'health', form: 'Profile',
+    title: 'Ahead of His Time',
+    deck: 'Tom Longboat won the Boston Marathon in record time. His coaches said he trained the wrong way. He was right.',
+    hero: {
+      photo: 'g8-longboat.jpg', credit: 'Photo: 1907, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'Tom Longboat running, in the early 1900s. He was one of the most famous athletes in the world.'
+    },
+    body: [
+      'On April 19, 1907, a nineteen-year-old runner from the Six Nations of the Grand River crossed the finish line of the Boston Marathon. Tom Longboat had won in a record time, through cold rain and slush. Back home, crowds filled the streets of Toronto to welcome him.',
+      { h: 'A runner from Six Nations' },
+      'Tom Longboat, whose Onondaga name was Cogwagee, was born in 1887. As a boy, he was sent to the Mohawk Institute, a residential school in Brantford. He ran away twice. By his late teens, he was winning road races across Ontario with a long, smooth stride. Newspapers praised him one day and insulted him the next, often with <b>stereotypes</b> about Indigenous people.',
+      { h: 'Hard days and easy days' },
+      'Longboat’s managers wanted him to train hard every day. Longboat disagreed. Between hard runs, he took easy days: long walks, light jogs and complete rest. His managers called him lazy. Today, coaches know he was right. Hard training breaks down muscle fibres slightly. During <b>recovery</b>, the body repairs them and becomes stronger. Without rest, an athlete grows tired, slow and more likely to be injured. Sleep, water and good food all help the body recover. Many top runners today follow a pattern very like Longboat’s, with only two or three hard sessions a week.',
+      'In 1908, he raced at the Olympics in London but collapsed in the heat. Later, he turned professional and beat some of the best runners in the world in races watched by huge crowds.',
+      { fig: bars([[3, 'hard', 'Mon'], [1, 'easy', 'Tue'], [3, 'hard', 'Wed'], [0, 'rest', 'Thu'], [3, 'hard', 'Fri'], [1, 'easy', 'Sat']], { max: 3, step: 1 }),
+        tall: 176, cap: 'Effort from 0 (rest) to 3 (hard) in a training week that mixes hard days, easy days and rest, much like Longboat’s plan.' },
+      { box: 'At war', text: 'In the First World War, Longboat served as a dispatch runner in France, carrying messages between units. He was wounded twice and once was wrongly reported dead.' },
+      'Longboat died in 1949. Two years later, the Tom Longboat Awards began. They still honour outstanding Indigenous athletes in Canada every year. His story shows how an athlete who listened to his own body was more than half a century ahead of the experts.'
+    ],
+    guide: { before: 'Ask what the child knows about how muscles get stronger. Teach <b>recovery</b> and <b>stereotypes</b>. Read the effort chart together: count the hard days and rest days.',
+      after: 'Plan your own active week with hard, easy and rest days. Why does rest matter?' },
+    words: [['recovery', 'the time when the body rests and repairs itself'], ['stereotypes', 'unfair ideas that all people in a group are the same']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the chart, how many rest days are in the week?',
+        opts: ['one', 'two', 'three', 'none'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Longboat’s managers call him lazy?',
+        opts: ['He took easy days and rest days.', 'He lost the Boston Marathon.', 'He refused to race.', 'He ran too slowly.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain, using the text, why rest days make an athlete stronger.',
+        a: 'Hard training slightly damages muscle fibres. During recovery, the body repairs them and they become stronger. Without rest, athletes get tired and injured.', look: 'damage, repair, stronger, in that order' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'How was Longboat treated unfairly? Give two examples from the text.',
+        a: 'He was sent to a residential school. Newspapers insulted him with stereotypes about Indigenous people, and his managers called him lazy.', look: 'two examples of unfair treatment' },
+      { k: 'choice', code: 'B2.1', q: '<b>Dis</b>agreed, <b>dis</b>like and <b>dis</b>honest share a prefix. <b>Dis-</b> means …',
+        opts: ['not, or the opposite of', 'again', 'before', 'very'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Why do you think the writer chose the title “Ahead of His Time”?',
+        a: 'Because Longboat trained with hard and easy days long before experts agreed it worked. His ideas were decades ahead of the coaches of his day.', look: 'links the title to his training ideas' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Connect this text to your own sport, music or other practice. When have you needed rest to improve?',
+        a: 'In hockey, I play better after a rest day. When I practised every day without rest, my legs felt heavy and I got slower.', look: 'a personal connection linked to recovery' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-titanic', subject: 'history', form: 'Report',
+    title: 'The City That Answered the Titanic',
+    deck: 'When the largest ship in the world sank in 1912, Halifax took on the hardest work of all',
+    hero: {
+      photo: 'g8-titanic.jpg', credit: 'Photo: 1912, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'RMS Titanic in 1912. It was called the largest moving object people had ever built.'
+    },
+    body: [
+      'Just before midnight on April 14, 1912, the RMS <i>Titanic</i> struck an iceberg in the North Atlantic, about 600 kilometres off the coast of Newfoundland. Less than three hours later, the giant ship broke apart and sank. More than 1500 people died in the freezing water. About 700 survivors were rescued by the ship <i>Carpathia</i> and taken to New York. The ship had been called unsinkable. Its loss shocked the world, and the story is still retold in books, films and museums more than a century later.',
+      { fig: bars([[2200, 'people', 'on board'], [1178, 'lifeboat', 'seats'], [710, 'survivors']], { max: 2400, step: 800 }),
+        tall: 172, cap: 'There were seats in the lifeboats for only about half the people on board (numbers rounded).' },
+      { h: 'Messages through the air' },
+      'The <i>Titanic</i> carried a new invention: a <b>wireless</b> radio that sent messages in Morse code. Its operators called for help again and again. A station at Cape Race, Newfoundland, picked up the signals and passed the news to the world. Some ships nearby never heard the calls, because their only radio operator had gone to bed. The <i>Carpathia</i> raced through the dark for more than three hours to reach the lifeboats.',
+      { box: 'A deck chair', text: 'Halifax’s Maritime Museum of the Atlantic displays a wooden deck chair recovered from the sea after the sinking.' },
+      { h: 'Halifax’s grim task' },
+      'Halifax, Nova Scotia, was the nearest large port with a railway. The shipping company, the White Star Line, hired a Halifax cable ship, the <i>Mackay-Bennett</i>, to search the sea. Its crew found 306 victims. Back in Halifax, workers prepared bodies for families, and the city held funerals for strangers. Today, 150 <i>Titanic</i> victims lie in three Halifax cemeteries, many under small grey stones marked only with a number and the date.',
+      { h: 'Lessons learned' },
+      'The disaster led to new <b>regulations</b> for ships. A 1914 agreement among many countries required lifeboat seats for every person on board and lifeboat drills on every voyage. Ships had to keep a radio watch all day and all night. An International Ice Patrol began tracking icebergs in the North Atlantic. Because of these rules, the <i>Titanic</i> left a <b>legacy</b> of safety that protects travellers at sea today.'
+    ],
+    guide: { before: 'Find Halifax, Cape Race and the North Atlantic on a map. Teach <b>wireless</b>, <b>regulations</b> and <b>legacy</b>. Read the bar graph: compare the first two bars.',
+      after: 'Why did it take a disaster to change the rules? Can you think of another safety rule that came from an accident?' },
+    words: [['wireless', 'sending messages through the air by radio waves, without wires'], ['regulations', 'official rules'], ['legacy', 'something left behind for people who come later']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the bar graph show?',
+        opts: ['There were not enough lifeboat seats.', 'Most people survived.', 'Every seat was used.', 'The ship was half empty.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was Halifax given the task of recovering the victims?',
+        opts: ['It was the nearest large port with a railway.', 'The ship was built there.', 'The survivors lived there.', 'It was the ship’s last stop.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart: what went wrong, and what changed.', cols: ['Problem in 1912', 'New rule'],
+        rows: [['too few lifeboat seats', null], ['radio operators went to bed', null], [null, 'an ice patrol tracks icebergs']],
+        a: [[null, 'a seat for every person, and drills'], [null, 'a radio watch day and night'], ['the ship hit an iceberg', null]] },
+      { k: 'choice', code: 'C1.3', q: 'Which text pattern does the last section use?',
+        opts: ['cause and effect', 'compare and contrast', 'a list of steps', 'a description of a place'], a: 0 },
+      { k: 'choice', code: 'B3.3', q: 'Why are <i>Titanic</i>, <i>Carpathia</i> and <i>Mackay-Bennett</i> in italics?',
+        opts: ['They are the names of ships.', 'They are foreign words.', 'They are quotations.', 'They are new vocabulary.'], a: 0 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Some graves are marked “only with a number and the date.” What does this detail make you feel or understand?',
+        a: 'It is sad, because these people were never identified. It shows how huge and confusing the disaster was, and that families never found out what happened.', look: 'a feeling or idea linked to the detail' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Which section did you have to read slowly or reread? What helped you understand it?',
+        a: 'I reread “Messages through the air” because I did not know Morse code. The sentence about Cape Race passing on the news helped me understand.', look: 'names a section and a fix-up strategy' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-night-lights', subject: 'geography', form: 'Explanation',
+    title: 'A Map Made of Light',
+    deck: 'A photo of Earth at night shows where people live, and where they do not',
+    hero: {
+      photo: 'g8-night-lights.jpg', credit: 'Image: NASA, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Western North America at night, seen by a satellite. Bright clusters are cities; dark areas have few people.'
+    },
+    body: [
+      'Look at a satellite picture of North America at night, and you are looking at a map of people. Cities glow like spilled sugar. Highways show up as thin strings of light that link one city to the next. Huge areas of the North are almost completely dark. Geographers use pictures like this to study <b>population distribution</b>: the pattern of where people live.',
+      { h: 'Clustered and sparse' },
+      'People are not spread evenly across the land. In some places they are <b>clustered</b>, or crowded together, in cities and towns. In other places they are sparse, or thinly scattered. Canada is the second-largest country in the world, but most Canadians live in a narrow band in the south, within a few hundred kilometres of the border with the United States. The lights show it clearly: a long chain of bright spots from Vancouver to Montréal, then darkness to the north.',
+      { fig: [[0, 'sparse', 6], [1, 'clustered', 40]].map(function (b) { var x0 = 20 + b[0] * 150, out = '<rect class="k" x="' + x0 + '" y="10" width="110" height="110"/>'; for (var i = 0; i < b[2]; i++) { var x = x0 + 8 + ((i * 37) % 94), y = 18 + ((i * 53) % 94); if (b[0]) { x = x0 + 30 + ((i * 17) % 50); y = 30 + ((i * 29) % 50); } out += '<circle class="dot" cx="' + x + '" cy="' + y + '" r="3"/>'; } return out + tx(x0 + 55, 140, 'lb', b[1], 'middle'); }).join(''),
+        tall: 150, cap: 'Each dot is a family. On the left, families are spread out; on the right, they crowd together.' },
+      { h: 'Why people live where they do' },
+      'Many <b>factors</b> help explain the pattern. Climate matters: few people choose to live where winters are long and the growing season is short. Landforms matter too: flat plains and river valleys are easier to farm and build on than mountains or muskeg. Water draws people, for drinking, farming and transport, which is why so many cities grow beside lakes, rivers and coasts. Jobs matter most of all today, because people move to where the work is. Many small towns have shrunk as young people leave for jobs in the cities.',
+      { box: 'Density', text: 'Population <b>density</b> is the number of people per square kilometre. Canada has only about 4 people per square kilometre. The City of Toronto has more than 4000.' },
+      { h: 'What the dark hides' },
+      'A night-light map has limits. Small communities, including many First Nations and Inuit communities in the North, use little outdoor lighting and barely show up. A dark area is not an empty area. To understand where people live, geographers combine these pictures with census counts, maps and the knowledge of the people who live there.'
+    ],
+    guide: { before: 'Look at the photo together first and point out cities you know. Teach <b>population distribution</b>, <b>clustered</b>, <b>factors</b> and <b>density</b>.',
+      after: 'Where do most people in your province live? Which factors from the text explain it?' },
+    words: [['population distribution', 'the pattern of where people live in an area'], ['clustered', 'crowded together in groups'], ['density', 'how many people live in each square kilometre']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, which square shows a clustered pattern?',
+        opts: ['the right square', 'the left square', 'both squares', 'neither square'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In this text, <b>sparse</b> means …',
+        opts: ['thinly scattered', 'very bright', 'crowded', 'near water'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart of factors that affect where people live.', cols: ['Factor', 'How it affects where people live'],
+        rows: [['climate', null], [null, 'flat plains and valleys are easier to farm and build on'], ['water', null]],
+        a: [[null, 'few people live where winters are long'], ['landforms', null], [null, 'cities grow beside lakes, rivers and coasts']] },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why might a dark area on the map not be empty?',
+        a: 'Small communities, such as many in the North, use little outdoor lighting, so people live there even though the satellite barely sees them.', look: 'small communities with little lighting' },
+      { k: 'choice', code: 'C1.1', q: '“The lights show <b>it</b> clearly.” <b>It</b> refers to …',
+        opts: ['most Canadians living in a narrow band in the south', 'the border with the United States', 'the second-largest country', 'the North'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The writer warns that a night-light map has limits. Why is it important to include this warning?',
+        a: 'Without it, readers might think the North is empty and forget the communities there. It shows that one source can be incomplete.', look: 'recognizes the risk of a misleading source' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Think about your own town or city. Is its population clustered or sparse? Use one factor from the text to explain why.',
+        a: 'My city is clustered along the lake. Water explains it, because the lake gave early settlers transport and drinking water.', look: 'applies a term and a factor to a real place' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-garment-factory', subject: 'geography', form: 'Feature article',
+    title: 'Who Made Your Shirt?',
+    deck: 'Many clothes sold in Canada are sewn in Bangladesh. A disaster in 2013 made the world look closer.',
+    hero: {
+      photo: 'g8-garment-factory.jpg', credit: 'Photo: Fahad Faisal, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Workers sew dress shirts in a garment factory in Bangladesh.'
+    },
+    body: [
+      'Check the label inside your shirt. There is a good chance it says <i>Made in Bangladesh</i>. This small country in South Asia, with about 170 million people, is one of the largest clothing makers in the world. Millions of its workers, most of them women, sew garments that end up in stores in Canada, the United States and Europe.',
+      { fig: flow(['cotton is grown and spun', 'cloth is sewn in Bangladesh', 'clothes are shipped overseas', 'shoppers buy them in Canada']),
+        tall: 150, cap: 'A simple supply chain for a shirt.' },
+      { h: 'A global supply chain' },
+      'A shirt travels a long way. Cotton may be grown in one country, spun and woven in another, and sewn in a third. This path is called a <b>supply chain</b>. Companies in wealthy countries choose factories where wages are low, so clothes can be sold cheaply. For Bangladesh, the work has brought jobs and money. Clothing makes up more than three quarters of what the country sells to the world, and many young women earn their own wages for the first time. Some of those wages pay for younger brothers and sisters to stay in school.',
+      { h: 'The collapse' },
+      'On April 24, 2013, an eight-storey building called Rana Plaza collapsed near the capital, Dhaka. It held five clothing factories. The day before, workers had seen cracks in the walls, but they were told to return to work. More than 1100 people were killed. In the rubble, rescuers found labels from well-known brands, including one sold in Canadian stores.',
+      { box: 'After Rana Plaza', text: 'More than 200 clothing companies signed an agreement to pay for independent safety inspections of the factories they used. Thousands of buildings were checked, and many cracked walls, blocked exits and unsafe wires were repaired.' },
+      { h: 'Whose responsibility?' },
+      'The disaster raised hard questions about <b>economic development</b>. Should shoppers stop buying clothes from Bangladesh? Most workers’ groups said no, because millions of families depend on those jobs. Instead, they asked companies to pay fair wages, allow workers to form unions and keep buildings safe. Some shoppers now ask, before they buy, who made their clothes and how those workers are treated. A few brands now publish lists of the factories they use, so anyone can check.'
+    ],
+    guide: { before: 'Look at the labels on a few clothes at home and find the countries on a map. Teach <b>supply chain</b> and <b>economic development</b>. Follow the flow chart from top to bottom.',
+      after: 'Would you pay more for a shirt if you knew the workers were paid fairly and safe? Why or why not?' },
+    words: [['supply chain', 'all the steps and places a product passes through before it is sold'], ['economic development', 'the growth of a country’s wealth, jobs and quality of life']],
+    qs: [
+      { k: 'order', code: 'C1.4', q: 'Number the steps in the supply chain.',
+        items: ['Cotton is grown and spun.', 'Cloth is sewn in Bangladesh.', 'Clothes are shipped overseas.', 'Shoppers buy them in Canada.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do companies choose factories in Bangladesh?',
+        opts: ['Wages are low, so clothes can be sold cheaply.', 'Cotton grows best there.', 'The factories are the safest.', 'Canada requires it.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Workers <b>had seen</b> cracks in the walls.” This verb shows an action that …',
+        opts: ['happened before another past event', 'is happening now', 'will happen later', 'happens every day'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Why did workers’ groups say shoppers should not stop buying clothes from Bangladesh? Do you agree?',
+        a: 'Because millions of families depend on the jobs. I agree: better rules and fair wages help workers more than losing their jobs would.', look: 'the workers’ groups’ reason and a supported opinion' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Whose voices are heard in this article, and whose are missing? What would a garment worker add?',
+        a: 'We hear about companies, shoppers and workers’ groups, but no worker speaks. A worker could tell us what a day in the factory is really like.', look: 'notices a missing voice and what it would add' },
+      { k: 'choice', code: 'C1.5', q: 'Why does the writer begin by asking readers to check the label in their shirt?',
+        opts: ['to connect a faraway issue to the reader’s own life', 'to sell more shirts', 'to explain how to read a label', 'to show where cotton grows'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the two sides of clothing factories for Bangladesh.',
+        a: 'Factories bring jobs and wages, especially for women. But wages are low and some buildings were unsafe, as the Rana Plaza collapse showed.', look: 'one benefit and one harm, briefly' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-microfinance', subject: 'social', form: 'Explanation',
+    title: 'A Small Loan, a Big Idea',
+    deck: 'Can lending a few dollars to people with no money help end poverty?',
+    hero: {
+      photo: 'g8-microfinance.jpg', credit: 'Photo: Jaimoen87, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Members of a women’s savings and loan group meet in Kerala, India.'
+    },
+    body: [
+      'In 1976, an economics professor named Muhammad Yunus walked through a village near his university in Bangladesh. He met women who made bamboo stools. They had to borrow money to buy bamboo from a trader, who then paid them almost nothing for the stools. Yunus lent 42 women a total of about 27 American dollars from his own pocket. They paid him back, and he began to wonder how far the idea could go. With a fair loan, the women could buy their own bamboo, sell their stools at a fair price and keep the profit.',
+      { h: 'How a group loan works' },
+      'Banks usually lend only to people who own something valuable, such as land or a house, which the bank can take if the loan is not repaid. This is called <b>collateral</b>. The poorest people have none. Yunus’s solution was to lend tiny amounts to small groups, mostly women. Members meet every week, encourage each other and repay a little at a time. If one member falls behind, the others notice and help, because the next loans in the group depend on everyone repaying. Most loans are used to start or grow a small business, such as raising goats, selling vegetables or sewing clothes.',
+      'In 1983, Yunus started the Grameen Bank, which means “village bank.” Borrowers pay <b>interest</b>, an extra charge for using the money, which helps the bank lend to others. In 2006, Yunus and the Grameen Bank won the Nobel Peace Prize. The idea, now called <b>microfinance</b>, spread around the world, including to self-help groups in India and programs in Canada.',
+      { fig: flow(['a group of five women meets weekly', 'two members receive small loans', 'they repay a little each week', 'then the next members can borrow']),
+        tall: 150, cap: 'One common way that group loans are shared.' },
+      { box: 'Not a magic answer', text: 'In 2015, researchers published six careful studies from different countries. Small loans helped some families start or grow businesses, but on average they did not lift most borrowers out of poverty.' },
+      { h: 'What we have learned' },
+      'Microfinance has given millions of people, especially women, a way to save, borrow and plan. It works best when it comes with training, savings and fair interest rates. When lenders charge too much, some borrowers fall deeper into debt. Most experts now see small loans as one useful tool against poverty, alongside schools, health care and decent jobs.'
+    ],
+    guide: { before: 'Talk about what a bank does. Teach <b>collateral</b>, <b>interest</b> and <b>microfinance</b>. Follow the steps of the group loan in the flow chart.',
+      after: 'Why do you think group loans were given mostly to women? What else besides a loan might a family need to escape poverty?' },
+    words: [['collateral', 'something valuable a borrower promises to give up if a loan is not repaid'], ['interest', 'an extra charge paid for borrowing money'], ['microfinance', 'small loans and savings services for people with little money']],
+    qs: [
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why could the poorest people not borrow from banks?',
+        opts: ['They had no collateral.', 'Banks were closed.', 'They did not want loans.', 'Loans were illegal.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the flow chart, when can the next members borrow?',
+        opts: ['after the first two repay', 'right away', 'after one year', 'never'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how the group helps make sure loans are repaid.',
+        a: 'Members meet every week, encourage each other and repay a little at a time. If one falls behind, the others notice and the next members cannot borrow until loans are repaid.', look: 'weekly meetings, encouragement and the group noticing' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Before you read the box, did you think microfinance would end poverty? How did the evidence change your thinking?',
+        a: 'At first I thought it was a perfect solution. The studies showed it helps some families but not most, so now I see it as one tool among many.', look: 'describes a change in thinking based on evidence' },
+      { k: 'choice', code: 'B2.1', q: 'In <b>micro</b>finance, <b>micro</b>scope and <b>micro</b>wave, <b>micro-</b> means …',
+        opts: ['very small', 'very large', 'money', 'far away'], a: 0 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'The text moves from a story, to how loans work, to what studies found. Why is this a good way to organize it?',
+        a: 'The story makes us interested, the middle explains the idea, and the end tests whether it works, so readers can judge it fairly.', look: 'explains the purpose of each part of the structure' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Using the last section, summarize when microfinance works best and when it can cause harm.',
+        a: 'It works best with training, savings and fair interest. It can harm people when lenders charge too much and borrowers fall into debt.', look: 'conditions for success and for harm' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-energy-drinks', subject: 'health', form: 'Fact sheet',
+    title: 'Energy Drinks: Know the Facts',
+    deck: 'Bright cans promise power and focus. Here is what is really inside.',
+    hero: {
+      photo: 'g8-energy-drinks.jpg', credit: 'Photo: Coolgurl5555, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Energy drinks on display in a store in Alberta. Bold colours and names are part of how they are sold.'
+    },
+    body: [
+      'Energy drinks are sold beside the pop in almost every corner store. Their cans show lightning bolts, extreme sports and words like <i>blast</i> and <i>charge</i>. Many teens drink them before games, tests or late nights. But what do they actually do to a growing body? And are they as harmless as the advertising suggests? This fact sheet looks at the ingredients, the safe limits and the better choices.',
+      { h: 'What is in the can?' },
+      'The main active ingredient is <b>caffeine</b>, a stimulant that speeds up the brain and nervous system. A large can of energy drink can contain about as much caffeine as a strong cup of coffee, and much more than a can of cola. Many energy drinks also contain a lot of sugar: a 473 mL can may hold about 13 teaspoons. Some drinks add other ingredients, such as taurine or guarana, a plant that contains even more caffeine.',
+      { fig: bars([[40, 'cola', '355 mL'], [50, 'black tea', '237 mL'], [135, 'coffee', '237 mL'], [160, 'energy drink', '473 mL']], { max: 180, step: 60, unit: ' mg' }),
+        tall: 172, cap: 'Approximate caffeine in common drinks, in milligrams (mg). Amounts vary by brand.' },
+      { h: 'How much is too much?' },
+      'Health Canada says teens aged 13 and older should have no more than 2.5 mg of caffeine for each kilogram of body weight per day. For a 50 kg teen, that is 125 mg, less than one large can. Too much caffeine can cause a racing heart, headaches, an upset stomach, nervousness and trouble sleeping. Caffeine affects young people more strongly because their bodies are smaller. Because caffeine stays in the body for many hours, a can after school can still keep you awake at bedtime.',
+      { box: 'Read the label', text: 'In Canada, energy drink cans must say they are not recommended for children, and they may not contain more than 180 mg of caffeine per can.' },
+      { h: 'Not a sports drink' },
+      'Energy drinks are not the same as sports drinks, and they are not a good way to stay <b>hydrated</b> during exercise. Mixed with heavy activity, caffeine can make the heart work even harder. Sports drinks replace water and salts lost in sweat; energy drinks do not. For real energy, health experts recommend the basics: enough sleep, regular meals and water. They are less exciting than a can with a lightning bolt, but they work every time.'
+    ],
+    guide: { before: 'Look at a drink label together and find the caffeine and sugar. Teach <b>caffeine</b> and <b>hydrated</b>. Read the bar graph and compare the bars.',
+      after: 'Design a more honest label for an energy drink. What would it say?' },
+    words: [['caffeine', 'a substance in coffee, tea and energy drinks that speeds up the body'], ['hydrated', 'having enough water in your body']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, which drink has the least caffeine?',
+        opts: ['cola', 'black tea', 'coffee', 'energy drink'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is a fact sheet?',
+        opts: ['headings that organize facts on one topic', 'a story with characters', 'rhyming lines', 'a letter greeting'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Use the text to complete the chart for a teen.', cols: ['Body weight', 'Daily caffeine limit'],
+        rows: [['40 kg', null], ['50 kg', '125 mg'], ['60 kg', null]],
+        a: [[null, '100 mg'], [null, null], [null, '150 mg']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Energy drink cans show lightning bolts and extreme sports. What message are the companies sending, and what do they leave out?',
+        a: 'They suggest the drink makes you powerful and exciting. They leave out the side effects, such as a racing heart and trouble sleeping.', look: 'the advertising message and what is missing' },
+      { k: 'choice', code: 'B3.3', q: 'In “a racing heart, headaches, an upset stomach, nervousness and trouble sleeping,” the commas …',
+        opts: ['separate items in a list', 'show a quotation', 'join two sentences', 'show a pause for effect'], a: 0 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why might a can of energy drink after school affect a teen’s sleep?',
+        a: 'Caffeine stays in the body for many hours, so it can still be working at bedtime and make it hard to fall asleep.', look: 'caffeine lasts for hours' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what might happen to a student who drinks two energy drinks before a hockey game. Use facts from the text.',
+        a: 'They would have more caffeine than the safe limit and their heart would work harder during the game. They might feel shaky, sick or unable to sleep later.', look: 'a prediction using at least two facts' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-ski-race', subject: 'health', form: 'Explanation',
+    title: 'The Engine Inside',
+    deck: 'Cross-country skiers have some of the strongest hearts and lungs in sport. What can they teach the rest of us?',
+    hero: {
+      photo: 'g8-ski-race.jpg', credit: 'Photo: Denali National Park and Preserve, CC BY 2.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 190,
+      cap: 'Young skiers in a cross-country race. The sport uses the arms, legs and core at the same time.'
+    },
+    body: [
+      'A cross-country ski race looks peaceful from a distance: skiers gliding through snowy trees. Up close, it is one of the hardest events in sport. Skiers push with their legs and pull with their arms up steep hills, often for more than an hour. Scientists who test athletes’ fitness have found that top cross-country skiers have some of the strongest hearts and lungs ever measured.',
+      { fig: bars([[70, 'resting'], [110, 'walking'], [150, 'easy ski'], [190, 'race', 'sprint']], { max: 210, step: 70 }) + tx(46, 12, 'n', 'heart rate (beats per minute)'),
+        tall: 172, cap: 'Approximate heart rates for a fit teenager at different levels of effort.' },
+      { h: 'Aerobic fitness' },
+      'Your muscles need oxygen to keep working for a long time. Your lungs take in the oxygen, and your heart pumps it to your muscles in the blood. Exercise that makes your heart and lungs work harder for many minutes is called <b>aerobic</b> exercise. Over weeks of training, the heart grows stronger and pumps more blood with each beat. That is why a fit person often has a lower resting heart rate.',
+      { box: 'A Canadian champion', text: 'In 2002, Beckie Scott of Vermilion, Alberta, became the first North American woman to win an Olympic medal in cross-country skiing. She later spoke out strongly against athletes who cheat by taking drugs.' },
+      { h: 'Measuring your effort' },
+      'You can check your effort by measuring your heart rate: count your pulse at your wrist or neck for 15 seconds, then multiply by 4. A rough estimate of your maximum heart rate is 220 minus your age. During <b>moderate</b> activity, such as a brisk walk, your heart beats at roughly 60 to 75 percent of its maximum. You can still talk, but not sing. During <b>vigorous</b> activity, such as a ski race, it beats faster, and you can say only a few words at a time.',
+      { h: 'How much do you need?' },
+      'Canada’s movement guidelines for young people say to get at least 60 minutes of moderate to vigorous activity every day, with vigorous activity on at least three days a week. You do not need skis. Running, swimming, dancing, cycling and shovelling snow all count. The best activity is one you enjoy enough to keep doing all year.'
+    ],
+    guide: { before: 'Take your pulse together for 15 seconds and multiply by 4. Teach <b>aerobic</b>, <b>moderate</b> and <b>vigorous</b>. Read the bar graph aloud.',
+      after: 'Keep a three-day activity log. Which activities were moderate, and which were vigorous?' },
+    words: [['aerobic', 'exercise that makes the heart and lungs work harder for a long time'], ['moderate', 'medium in amount or effort'], ['vigorous', 'hard and energetic']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, about how much faster does the heart beat in a race sprint than at rest?',
+        opts: ['about 120 more beats', 'about 20 more beats', 'about 70 more beats', 'about the same'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a fit person often have a lower resting heart rate?',
+        opts: ['The heart pumps more blood with each beat.', 'They breathe less.', 'Their muscles need no oxygen.', 'They sleep more.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Use the text to estimate each maximum heart rate (220 minus age).', cols: ['Age', 'Estimated maximum heart rate'],
+        rows: [['13', null], ['14', null], ['40', null]],
+        a: [[null, '207 beats per minute'], [null, '206 beats per minute'], [null, '180 beats per minute']] },
+      { k: 'choice', code: 'B3.2', q: '“Skiers push with their legs and <b>pull</b> with their arms.” The word <b>pull</b> is …',
+        opts: ['a verb', 'a noun', 'an adjective', 'an adverb'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How can you tell the difference between moderate and vigorous activity without counting your pulse?',
+        a: 'In moderate activity you can talk but not sing. In vigorous activity you can say only a few words at a time.', look: 'the talk test for both levels' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Give two different reasons someone might read this text, and say which section would help each reader most.',
+        a: 'A coach might read it to plan training, using “Measuring your effort.” A parent might want to know how much activity a child needs, using the last section.', look: 'two purposes matched to sections' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'The text says the best activity is one you enjoy. Which activity would you choose to meet the guidelines, and why?',
+        a: 'I would choose basketball, because I enjoy it with friends and it makes me breathe hard, so it counts as vigorous activity.', look: 'a personal choice linked to the guidelines' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-film-editing', subject: 'arts', form: 'Feature article',
+    title: 'The Invisible Art',
+    deck: 'Film editors decide what you see and in what order. If they do their job well, you never notice them.',
+    hero: {
+      photo: 'g8-moviola.jpg', credit: 'Photo: Biswarup Ganguly, CC BY 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'A Moviola film-editing machine. For decades, editors watched film through its small viewer, then cut and taped the strips together by hand.'
+    },
+    body: [
+      'A movie is not filmed in the order you watch it. A director may shoot the last scene on the first day and record the same moment twenty times from different angles. Weeks later, in a dark room, a film <b>editor</b> chooses which pieces to use and joins them together. Editing is sometimes called the invisible art, because when it is done well, viewers never notice it.',
+      { h: 'Shots and cuts' },
+      'Each continuous piece of film, from the moment the camera starts until it stops, is called a <b>shot</b>. The point where one shot changes to the next is a cut. For most of film history, a cut was a real cut. Editors used machines like the Moviola to find the right frame, sliced the film with a blade and joined the pieces with tape. Today, editors work on computers, but they still use the same words.',
+      { h: 'An experiment with a face' },
+      'In the 1920s, a Russian filmmaker named Lev Kuleshov tried an experiment. He took one shot of an actor with a calm, blank face. He joined it to a shot of a bowl of soup, then to a shot of a coffin, then to a shot of a child playing. Audiences praised the actor’s performance. They said he looked hungry, then sad, then full of love. But the face was exactly the same each time.',
+      'This is now called the Kuleshov effect. It shows that meaning in film comes not only from each shot, but from the way shots are <b>juxtaposed</b>, or placed side by side. Viewers fill in the connection themselves.',
+      { fig: [['a bowl of soup', 'hunger'], ['a coffin', 'grief'], ['a child playing', 'love']].map(function (r, i) { var y = 6 + i * 46; return '<rect class="k" x="10" y="' + y + '" width="56" height="38" rx="3"/><circle class="k" cx="38" cy="' + (y + 19) + '" r="11"/>' + tx(80, y + 24, 'lb', '+', 'middle') + '<rect class="k" x="94" y="' + y + '" width="56" height="38" rx="3"/>' + tx(122, y + 23, 'n', 'shot ' + (i + 2), 'middle') + tx(164, y + 24, 'lb', '→', 'middle') + tx(180, y + 18, 'n', r[0]) + tx(180, y + 32, 'lb', 'viewers see ' + r[1]); }).join(''),
+        tall: 144, cap: 'The Kuleshov effect: the same face seems to show different feelings, depending on the shot that follows it.' },
+      { box: 'Pacing', text: 'Editors also control pacing. Many quick cuts make a chase scene feel fast and tense. Long shots with few cuts make a quiet scene feel calm.' },
+      { h: 'Editing everywhere' },
+      'The same techniques are used in news reports, advertisements and the short videos on your phone. An editor can make a crowd look huge or small, make a speaker seem nervous or confident, and make a product look exciting. Knowing how editing works helps you ask what was left out.'
+    ],
+    guide: { before: 'Watch a short movie trailer together and count the cuts. Teach <b>shot</b>, <b>editor</b> and <b>juxtaposed</b>. Read the diagram row by row.',
+      after: 'Film a short scene with a phone in two different orders. How does the order change the meaning?' },
+    words: [['editor', 'a person who chooses and arranges the parts of a film or text'], ['shot', 'one continuous piece of film, from when the camera starts until it stops'], ['juxtaposed', 'placed side by side to compare or contrast']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What stays the same in all three rows of the diagram?',
+        opts: ['the actor’s face', 'the second shot', 'what viewers see', 'nothing'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is editing called “the invisible art”?',
+        opts: ['When it is done well, viewers do not notice it.', 'Editors work in the dark.', 'It is never shown on screen.', 'Nobody knows who the editors are.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain what the Kuleshov effect shows about how viewers understand film.',
+        a: 'Viewers get meaning from how shots are placed together. The same blank face seemed hungry, sad or loving depending on the next shot.', look: 'meaning comes from juxtaposition, with the example' },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'Choose one editing technique from the text. Explain how a news report or ad could use it to influence viewers.',
+        a: 'Quick cuts can make an ad feel exciting, so the product seems thrilling even if it is ordinary.', look: 'names a technique and its effect on viewers' },
+      { k: 'choice', code: 'B2.2', q: 'In this text, the word <b>cut</b> means …',
+        opts: ['the change from one shot to the next', 'an injury', 'a smaller share', 'a haircut'], a: 0 },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Did you understand the Kuleshov experiment from the paragraph alone, or did you need the diagram? Explain.',
+        a: 'I was confused about which shot came first. The diagram showed the face, then the second shot, and what viewers saw, so it made sense.', look: 'monitors understanding and names what helped' },
+      { k: 'lines', code: 'A2.5', n: 3, q: 'The last section says knowing about editing helps you “ask what was left out.” Why is this important for viewers?',
+        a: 'Because editors choose what to show, a video may give only one side. Asking what was left out helps you think for yourself.', look: 'links editing choices to critical viewing' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-carr-church', subject: 'arts', form: 'Art analysis',
+    title: 'A Small Church, a Giant Forest',
+    deck: 'Emily Carr painted a tiny white church against a towering dark forest. What was she trying to say?',
+    hero: {
+      photo: 'g8-carr-church.jpg', credit: 'Painting: Emily Carr, 1929, public domain, Wikimedia Commons', focus: '50% 78%',
+      tall: 210,
+      cap: 'Emily Carr, Church at Yuquot Village, 1929, oil on canvas, Art Gallery of Ontario.'
+    },
+    body: [
+      'At first glance, the painting seems simple. A small white church with a pointed steeple stands in the middle of the canvas. Behind it rises a forest so dark and massive that it seems to swallow the sky. The church is the brightest thing in the painting, yet it looks tiny, almost fragile. In the foreground, a low fence and a few small crosses mark a graveyard.',
+      { fig: '<path class="k" d="M10 150 Q20 40 60 30 Q90 10 120 40 Q150 6 190 30 Q230 10 260 40 Q290 60 290 150"/><path class="t" d="M50 150 Q60 70 90 60 M200 150 Q220 60 250 70"/>' +
+          '<rect class="a" x="130" y="98" width="40" height="44"/><path class="a" d="M130 98 L150 76 L170 98 M150 76 V58"/><path class="k" d="M20 150 H290"/>' +
+          D.label(186, 16, 'dark forest', 160, 40) + D.label(192, 100, 'white church', 170, 110) + tx(150, 166, 'n', 'foreground', 'middle'),
+        tall: 172, cap: 'A sketch of the painting’s composition. The forest fills most of the space.' },
+      { h: 'The artist' },
+      'Emily Carr was born in Victoria, British Columbia, in 1871. For many years, she travelled to the coast and islands of British Columbia to paint the villages of First Nations peoples, including totem poles and big houses. Few people bought her work, and for a time she nearly gave up painting. In 1927, she met members of the Group of Seven in Toronto, who encouraged her. Her paintings grew bolder and more confident. Two years later, she painted this church at Yuquot, a village of the Mowachaht/Muchalaht First Nation on the west coast of Vancouver Island.',
+      { h: 'Reading the painting' },
+      'Carr used strong <b>contrast</b> between light and dark. The pale church glows against the green-black trees. She also used <b>scale</b>: the trees are so large compared with the church that the forest seems alive and powerful. The trees are painted as smooth, rounded shapes, almost like sculpture, and they seem to lean in around the clearing. Some viewers see the painting as a sign of the power of the land. Others see the small church as a sign of how newcomers’ beliefs were placed on an ancient place and its peoples.',
+      { box: 'A new title', text: 'Carr called the painting <i>Indian Church</i>. In 2018, the Art Gallery of Ontario renamed it <i>Church at Yuquot Village</i>, to replace an outdated term and name the place and its people.' },
+      'Carr’s work is admired today, but it also raises questions. She painted Indigenous villages with respect, yet she often described their peoples as vanishing, when in fact they and their cultures were very much alive.'
+    ],
+    guide: { before: 'Look closely at the painting for one quiet minute before reading. Teach <b>contrast</b> and <b>scale</b>. Find Vancouver Island and Yuquot on a map.',
+      after: 'If you renamed one artwork or place in your community, which would it be, and why does a name matter?' },
+    words: [['contrast', 'a strong difference, such as light against dark'], ['scale', 'the size of one thing compared with another']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show about the painting?',
+        opts: ['The forest fills most of the space.', 'The church is the largest shape.', 'There is no background.', 'People fill the foreground.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In this text, <b>fragile</b> means …',
+        opts: ['easily broken or harmed', 'very old', 'brightly painted', 'very tall'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain two ways Carr makes the forest seem powerful.',
+        a: 'She makes the trees huge compared with the church (scale), and she paints them dark against the bright church (contrast), so they seem to swallow the sky.', look: 'scale and contrast, each explained' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'The text gives two ways viewers read the painting. Explain each one. Which do you find more convincing?',
+        a: 'One says the painting shows the power of the land. The other says the church shows newcomers’ beliefs placed on Indigenous land. I find the second more convincing because the church is so out of place.', look: 'both readings and a reasoned choice' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why did the gallery rename the painting? Why does a name matter?',
+        a: 'To replace an outdated term and name the real place and people. A name shows respect and tells viewers whose land it is.', look: 'the reason for renaming and why names matter' },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>Church at Yuquot Village</i> in italics?',
+        opts: ['It is the title of an artwork.', 'It is a quotation.', 'It is a place on a map.', 'It is a new word.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'The last paragraph says Carr described Indigenous peoples as “vanishing.” Why does the writer point out that this was wrong?',
+        a: 'Because the peoples and cultures she painted were alive then and are alive now. The writer wants readers to admire Carr’s art without accepting that false idea.', look: 'explains the error and why it matters' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-lottery', subject: 'math', form: 'Opinion article',
+    title: 'Why I Will Never Buy a Lottery Ticket',
+    deck: 'A math teacher explains what the numbers say about winning the jackpot',
+    hero: {
+      photo: 'g8-lottery.jpg', credit: 'Photo: Santeri Viinamäki, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Filling in a lottery ticket in Finland. Lotteries are run in countries all over the world.'
+    },
+    body: [
+      'Every week, millions of Canadians buy a lottery ticket and dream about what they would do with the jackpot. I understand the dream. But I teach math, and I have done the calculations. That is why I will never buy a ticket. Let me show you the numbers, and you can decide for yourself whether a ticket is worth it.',
+      { h: 'Counting the chances' },
+      'In Lotto 6/49, you choose 6 numbers from 1 to 49. To win the jackpot, all six must match the numbers drawn. The <b>probability</b> of an event is the number of ways it can happen divided by the number of possible outcomes. There are 13 983 816 different ways to choose six numbers from 49, and only one of them wins. Choosing birthdays, lucky numbers or a random computer pick makes no difference at all. So the probability of winning the jackpot with one ticket is 1 in 13 983 816.',
+      { fig: '<path class="k" d="M20 70 H280"/>' + [[20, '0', 'impossible'], [150, '1/2', 'even chance'], [280, '1', 'certain']].map(function (p) { return '<path class="k" d="M' + p[0] + ' 62 V78"/>' + tx(p[0], 96, 'lb', p[1], p[0] < 30 ? 'start' : p[0] > 270 ? 'end' : 'middle') + tx(p[0], 110, 'n', p[2], p[0] < 30 ? 'start' : p[0] > 270 ? 'end' : 'middle'); }).join('') +
+          '<circle class="dot" cx="20" cy="70" r="4"/><circle class="dot" cx="150" cy="70" r="4"/><circle class="dot" cx="237" cy="70" r="4"/>' +
+          D.label(30, 22, 'jackpot (almost 0)', 22, 66) + D.label(110, 40, 'coin lands heads', 150, 64) + D.label(292, 22, 'die does not show 6', 237, 64, 'end'),
+        tall: 120, cap: 'A probability scale from 0 (impossible) to 1 (certain).' },
+      { h: 'How small is that?' },
+      'Numbers that large are hard to imagine, so try this. If you bought one ticket every week, you would expect to wait about 270 000 years to win once. Or picture 14 million people lined up across Canada, with one prize-winner hidden among them, and you get one guess. You are far more likely to be struck by lightning in your lifetime than to win the jackpot with a single ticket.',
+      { box: 'The gambler’s mistake', text: 'Some players avoid numbers that won last week, or choose numbers that have not come up in a while. But each draw is <b>independent</b>: the balls do not remember the past.' },
+      { h: 'Where the money goes' },
+      'A ticket costs about three dollars. Only about half of all ticket money is paid back as prizes. The rest goes to running the lottery and to government programs. In other words, on average, players lose about half of every dollar they spend. A habit of two tickets a week costs more than 300 dollars a year. Put into a savings account instead, that money would grow, slowly but surely, every single year.',
+      'Some people say a ticket buys a few days of hope, and that is worth three dollars. That is their choice. My choice is to keep the money and enjoy dreaming for free.'
+    ],
+    guide: { before: 'Flip a coin and roll a die together; talk about the chance of each outcome. Teach <b>probability</b> and <b>independent</b>. Place events on the probability scale.',
+      after: 'The writer respects people who buy tickets for hope. Is that a fair point? Would you buy a ticket? Why or why not?' },
+    words: [['probability', 'how likely something is to happen, from 0 (impossible) to 1 (certain)'], ['independent', 'not affected by what happened before']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'On the scale, why is the jackpot placed almost at 0?',
+        opts: ['It is almost impossible.', 'It costs almost nothing.', 'It is certain.', 'It happens every week.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does avoiding last week’s winning numbers not help?',
+        opts: ['Each draw is independent.', 'Those numbers are banned.', 'Machines remember the past.', 'Only new numbers can win.'], a: 0 },
+      { k: 'table', code: 'C3.3', q: 'Complete the chart of probabilities.', cols: ['Event', 'Probability'],
+        rows: [['a coin lands heads', null], ['a die shows 6', null], ['one ticket wins the Lotto 6/49 jackpot', null]],
+        a: [[null, '1/2'], [null, '1/6'], [null, '1 in 13 983 816']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'This is an opinion article. How does the writer try to persuade readers? Give two techniques.',
+        a: 'The writer uses facts and calculations, such as 1 in 13 983 816, and vivid comparisons, such as waiting 270 000 years.', look: 'two persuasive techniques with examples' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is a compound sentence (two complete ideas joined by <i>and</i>, <i>but</i> or <i>so</i>)?',
+        opts: ['I understand the dream, but I teach math.', 'A ticket costs about three dollars.', 'That is their choice.', 'Every week, millions of Canadians buy a ticket.'], a: 0 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Why does the writer admit that some people buy a ticket for hope? Does it make the argument weaker or stronger?',
+        a: 'It shows the writer is fair to the other side. It makes the argument stronger, because readers trust a writer who is not one-sided.', look: 'recognizes a counterargument and judges its effect' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Before reading, what did you predict a math teacher would say about lotteries? Was your prediction confirmed?',
+        a: 'I predicted the teacher would say the chances are bad. That was confirmed, but I did not expect the point about where the money goes.', look: 'states a prediction and checks it against the text' }
     ]
   });
 
