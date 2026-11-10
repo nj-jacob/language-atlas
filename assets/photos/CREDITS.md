@@ -113,9 +113,7 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-brain-model.jpg` | A model of the human brain | YVC Biology Department | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Brain_Anatomy_Model_(50692878253).jpg |
 | `g7-coins.jpg` | Stacks of Canadian coins | Katherine Ridgley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stacks_of_Canadian_Coins_(16269886909).jpg |
 | `g7-harris-superior.jpg` | North Shore, Lake Superior (1926) by Lawren Harris | Lawren Harris | Public domain | https://commons.wikimedia.org/wiki/File:Lawren_Harris_North_Shore,_Lake_Superior_1926.jpg |
-| `g7-boreal.jpg` | Boreal forest | Ray Murphy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg |
 | `g7-atmosphere.jpg` | Earth's thin atmosphere seen from the ISS | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ISS-51_Moon,_Earth's_limb_and_the_thin_blue_atmosphere.jpg |
-| `g7-red-river-carts.jpg` | A train of Red River carts | Whitney's Gallery | Public domain | https://commons.wikimedia.org/wiki/File:Red_River_cart_train.jpg |
 | `g7-pi-day.jpg` | A Pi Day celebration | Marnie Briggs, NSF | Public domain | https://commons.wikimedia.org/wiki/File:Pi_Day_(13153589925).jpg |
 | `g7-fireweed-burn.jpg` | Fireweed blooming among burned trees a year after the 2017 Sprague Fire, Glacier National Park | U.S. National Park Service (GlacierNPS) | Public domain | https://commons.wikimedia.org/wiki/File:Burned_Forests_are_Beautiful_(44026769544).jpg |
 | `g7-peregrine.jpg` | A peregrine falcon | Carlos Delgado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Falco_peregrinus_-_01.jpg |
@@ -150,3 +148,23 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-red-river-cart.jpg` | A Red River cart in Pembina Hall | Viola-Ness | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Red_River_cart_Pembina_Hall.jpg |
 | `g7-bumblebee.jpg` | A bumblebee on flowers | Waitblock | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bumblebee_on_flowers.jpg |
 | `g7-eastern-wolf.jpg` | An eastern wolf in Algonquin Provincial Park | Quinten Wiegersma | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Eastern_wolf_Algonquin_Provincial_Park.jpeg |
+| `g7-marsh-trail.jpg` | A marsh trail in Silver Lake Provincial Park, Ontario | OTTCHAMPS2016 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marsh_Trail4._Silver_Lake_Provincial_Park,_ON.jpg |
+| `g7-lake-ice.jpg` | Floating ice on a lake | Donald Olszewski | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Floating_ice_on_the_lake_in_Pennsylvania.jpg |
+| `g7-attic.jpg` | Insulating an attic | USFWS Mountain-Prairie | Public domain | https://commons.wikimedia.org/wiki/File:Insulating_attic_(49525467656).jpg |
+| `g7-grosse-ile.jpg` | A hospital building on Grosse Île | Cephas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Intendant_hopital_Grosse_Ile.jpg |
+| `g7-aral-ships.jpg` | Abandoned ships on the dry bed of the Aral Sea, Mo‘ynoq | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ships_of_Aral_Sea,_Mo‘ynoq.jpg |
+| `g7-aed.jpg` | An automated external defibrillator | 쉰지식인 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Automated_external_defibrillator_(2).jpg |
+| `g7-hip-hop.jpg` | Hip hop dancers | Muhammed amine benloulou | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hip_hop_dance.jpg |
+| `g7-ev-charging.jpg` | An electric car recharging | Michael Movchin, Felix Müller | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Electric_Car_recharging.jpg |
+| `g7-killbear.jpg` | Sunset at Killbear Provincial Park on Georgian Bay | GBBR | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Killbear_Sunset.jpg |
+| `g7-cholera-map.jpg` | John Snow's 1854 map of cholera cases in London | John Snow | Public domain | https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg |
+| `g7-fiona.jpg` | Cleaning up after Fiona in Charlottetown, PEI | Larry (microbe) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fiona_cleanup_in_Charlottetown,_PEI_(52437438682).jpg |
+| `g7-spillway.jpg` | The spillway of the Robert-Bourassa generating station | fargomeD | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Évacuateur_de_crues_R-B.jpg |
+| `g7-zoetrope.jpg` | A zoetrope | Runner1616 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Zoetrope_NN.jpg |
+| `g7-running-blade.jpg` | An athlete running on a prosthetic blade | Cpl. Chelsea Anderson, USMC | Public domain | https://commons.wikimedia.org/wiki/File:2013_Marine_Corps_Trials_Practice_Day_3_130101-M-II268-001.jpg |
+| `g7-louisbourg.jpg` | The Fortress of Louisbourg, Nova Scotia | KenCLeBlanc | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fortress_Louisbourg,_Nova_Scotia_1.jpg |
+| `g7-permafrost.jpg` | Thawing permafrost on Herschel Island, Yukon | Boris Radosavljevic | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Permafrost_in_Herschel_Island_001.jpg |
+| `g7-charts.jpg` | Charts on a screen | Unknown | CC0 | https://commons.wikimedia.org/wiki/File:Stock_market_charts_illustration.jpg |
+| `g7-selfie.jpg` | A person taking a selfie | Maëlick | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Woman_taking_Selfie_at_Elliott_Bay,_Seattle,_2014.jpg |
+| `g7-edmonton-cold.jpg` | A cold, snowy day in Edmonton | hobvias sudoneighm | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Snowing_in_Deadmonton_~_physics_(130219606).jpg |
+| `g7-log-house.jpg` | A log house at Fanshawe Pioneer Village, London, Ontario | Adam Bishop | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fanshawe_Pioneer_Village_log_house.jpg |

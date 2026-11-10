@@ -2949,4 +2949,978 @@
     ]
   });
 
+  P.add({
+    id: 'g7-wetlands', subject: 'science', form: 'Report',
+    title: 'The Land That Holds Water',
+    deck: 'Why Ontario’s wetlands matter more than most people realize',
+    hero: {
+      photo: 'g7-marsh-trail.jpg', credit: 'Photo: OTTCHAMPS2016, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A marsh trail in Silver Lake Provincial Park, Ontario. Cattails grow in shallow water that teems with life.'
+    },
+    body: [
+      'For a long time, people saw wetlands as wasted land: soggy, buggy places to be drained and turned into farms, roads or shopping centres. In southern Ontario, more than two thirds of the original wetlands have disappeared. Today, scientists know that these wet places do jobs that would cost billions of dollars to replace.',
+      { h: 'Four kinds of wetland' },
+      'A <b>wetland</b> is land that is covered by shallow water or soaked with water for at least part of the year. Ontario has four main kinds. Marshes have cattails, reeds and grasses. Swamps have trees, such as silver maple or cedar, growing in standing water. Bogs and fens are covered in thick mats of moss over deep layers of peat, made from plants that have rotted very slowly for thousands of years.',
+      { fig: '<path class="k" d="M10 100 Q60 96 90 110 T170 112 T290 100"/>' +
+          D.ripple(14, 286, 92, 't') +
+          '<path class="h" d="M10 150 H290 V124 Q220 118 150 128 T10 124 Z"/>' +
+          '<path class="a" d="M40 92 V60 M46 92 V56 M52 92 V64 M230 92 V62 M236 92 V58"/><path class="k" d="M40 60 v-8 M46 56 v-8 M230 62 v-8"/>' +
+          D.arrow(150, 30, 150, 82, 'a') + '<text class="l" x="158" y="44">rain and floodwater</text>' +
+          '<text class="n" x="150" y="166" text-anchor="middle">peat and soil store water and carbon</text>' +
+          '<text class="n" x="20" y="44">cattails</text>',
+        tall: 172, cap: 'A wetland works like a sponge. It soaks up water during floods and lets it out slowly in dry times.' },
+      { h: 'Nature’s sponge and filter' },
+      'During heavy rain or spring melt, wetlands soak up water like a sponge, then release it slowly. This reduces flooding in towns downstream and keeps streams flowing in dry summers. As water moves slowly through the plants, mud settles out and roots absorb extra nutrients from farm fertilizers. The water that leaves a wetland is often much cleaner than the water that entered it.',
+      { box: 'Carbon in storage', text: 'Peat in bogs and fens holds huge amounts of carbon. When these wetlands are drained, the peat dries and releases carbon dioxide into the air.' },
+      { h: 'Full of life' },
+      'Wetlands are among the richest <b>habitats</b> on Earth. Frogs, turtles, muskrats, herons and many kinds of fish depend on them. Ducks and geese stop to rest and feed on their long migrations. Many of Ontario’s species at risk, such as the Blanding’s turtle, live in wetlands. For Indigenous communities, wetlands have long been places to harvest wild rice, medicines and food.',
+      'Ontario now has rules to protect its most important wetlands, and groups work to restore drained ones. A restored marsh can fill with frogs and birds again within a few years, proof that what was lost can sometimes be brought back.'
+    ],
+    guide: { before: 'Pour water onto a dry sponge and a plate to compare how each holds water. Teach <b>wetland</b> and <b>habitats</b>. Ask what the child already knows about marshes or swamps.',
+      after: 'If a developer wanted to drain a wetland near your town to build houses, what questions would you want answered first?' },
+    words: [['wetland', 'land covered by shallow water or soaked with water for part of the year'], ['habitats', 'natural homes of plants and animals']],
+    qs: [
+      { k: 'table', code: 'C1.3', q: 'Compare the kinds of wetland.', cols: ['Wetland', 'What grows there'],
+        rows: [['marsh', null], ['swamp', null], ['bog or fen', null]],
+        a: [[null, 'cattails, reeds and grasses'], [null, 'trees in standing water, such as silver maple or cedar'], [null, 'thick mats of moss over peat']] },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author compare a wetland to a sponge?',
+        opts: ['It soaks up water and releases it slowly.', 'It is yellow and soft.', 'It is used for cleaning dishes.', 'It is full of holes.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, where is carbon stored?',
+        opts: ['in the peat and soil', 'in the rain', 'in the cattails’ flowers', 'in the air'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How do wetlands clean water?',
+        opts: ['Mud settles out and roots absorb extra nutrients.', 'Fish drink the dirty water.', 'The sun boils the water.', 'Ducks filter it.'], a: 0 },
+      { k: 'choice', code: 'B3.2', half: true, q: '“Wetlands are among the <b>richest</b> habitats on Earth.” What kind of word is <b>richest</b>?',
+        opts: ['an adjective that compares many things', 'a verb', 'a noun', 'an adverb'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How has the way people see wetlands changed? Use the first and last paragraphs.',
+        a: 'People once saw them as wasted land to drain. Now people know they prevent floods, clean water and support wildlife, so Ontario protects and restores them.', look: 'the old view and the new view, with reasons' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'Have you seen a marsh, swamp or pond? Describe it, and connect it to one idea from the text.',
+        a: 'I saw a pond with cattails and frogs at a park. It connects to the idea that wetlands are full of life, because I heard frogs everywhere.', look: 'a personal experience linked to the text' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'List three jobs wetlands do, in your own words.',
+        a: 'They soak up floodwater, they clean water, and they give homes to animals like turtles and herons. They also store carbon.', look: 'three jobs paraphrased' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-ice-floats', subject: 'science', form: 'Explanation',
+    title: 'Why Ice Floats',
+    deck: 'A strange property of water that lets lakes stay alive all winter',
+    hero: {
+      photo: 'g7-lake-ice.jpg', credit: 'Photo: Donald Olszewski, CC BY 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Ice floating on a lake. Underneath, the water stays liquid.'
+    },
+    body: [
+      'Drop an ice cube in a glass of water and it floats. This seems so ordinary that most people never wonder about it. But it is actually very unusual. For almost every other substance, the solid form is heavier for its size than the liquid, so it sinks. Solid wax sinks in melted wax. Solid iron sinks in melted iron. Water is a rare exception, and life on Earth depends on it.',
+      { h: 'Packed and spread out' },
+      'Whether something floats depends on its <b>density</b>: how much mass is packed into a certain amount of space. In liquid water, the particles move around and slide close together. As water freezes, the particles lock into a pattern with lots of open space, like a honeycomb. The same amount of water takes up about 9% more space as ice. Because ice is less dense than liquid water, it floats.',
+      { fig: '<text class="lb" x="75" y="18" text-anchor="middle">liquid water</text><text class="lb" x="225" y="18" text-anchor="middle">ice</text>' +
+          '<rect class="k" x="25" y="28" width="100" height="100"/><rect class="k" x="175" y="28" width="100" height="100"/>' +
+          [[38, 44], [60, 40], [84, 46], [108, 42], [44, 64], [70, 62], [96, 66], [114, 70], [36, 86], [58, 84], [84, 88], [106, 92], [46, 108], [72, 112], [98, 106], [116, 114]].map(function (p) { return '<circle class="dot" cx="' + p[0] + '" cy="' + p[1] + '" r="5"/>'; }).join('') +
+          [[195, 48], [225, 48], [255, 48], [210, 78], [240, 78], [195, 108], [225, 108], [255, 108]].map(function (p) { return '<circle class="dot" cx="' + p[0] + '" cy="' + p[1] + '" r="5"/>'; }).join('') +
+          '<path class="t" d="M195 48 L210 78 L225 48 L240 78 L255 48 M210 78 L195 108 M210 78 L225 108 L240 78 L255 108"/>' +
+          '<text class="n" x="75" y="146" text-anchor="middle">close together</text><text class="n" x="225" y="146" text-anchor="middle">spread out in a pattern</text>',
+        tall: 152, cap: 'The same space holds fewer particles of ice than of liquid water, so ice is less dense.' },
+      { h: 'A lake in winter' },
+      'Water has another odd property. As it cools, it gets denser, until it reaches about 4 °C. Below that, it starts to expand again. In the fall, cold surface water sinks until the whole lake is about 4 °C. Then the surface water keeps cooling and stays on top, until it freezes. The ice forms a lid that <b>insulates</b> the water below from the freezing air.',
+      { box: 'Imagine the opposite', text: 'If ice sank, lakes would freeze from the bottom up. Each winter more ice would pile up, and many lakes might freeze solid, killing the fish and plants.' },
+      { h: 'Life under the ice' },
+      'Because of this, the bottom of a deep Canadian lake stays near 4 °C all winter, even when the air is −30 °C. Fish slow down and rest near the bottom. Frogs and turtles bury themselves in the mud. Under the ice, life waits for spring. The same property explains why water pipes can burst in winter: freezing water expands with great force. Over many winters, water that seeps into cracks in rock freezes and expands again and again, slowly splitting boulders apart. The same thing happens to roads, which is one reason Canadian streets are full of potholes every spring. So the next time you drop an ice cube into a drink, remember that you are looking at one of the most important oddities in nature.'
+    ],
+    guide: { before: 'Freeze a plastic cup filled exactly to a line, then check the ice level the next day. Teach <b>density</b> and <b>insulates</b>.',
+      after: 'Can you think of other times when water freezing and expanding causes problems, or helps?' },
+    words: [['density', 'how much mass is packed into a certain amount of space'], ['insulates', 'slows down the movement of heat']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why does ice float on water?',
+        opts: ['Ice is less dense than liquid water.', 'Ice is heavier than water.', 'Ice has air bubbles only.', 'Ice is colder than the air.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show about ice?',
+        opts: ['Its particles are spread out in a pattern.', 'Its particles move faster.', 'It has more particles.', 'It is a gas.'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number the steps of how a lake freezes in winter.',
+        items: ['Cold surface water sinks.', 'The whole lake reaches about 4 °C.', 'Colder surface water stays on top.', 'The surface freezes into a lid of ice.'], show: [1, 3, 0, 2] },
+      { k: 'choice', code: 'C1.5', half: true, q: 'What does the box “Imagine the opposite” do?',
+        opts: ['It shows why the property matters by imagining what would happen without it.', 'It gives a new fact about fish.', 'It tells a story.', 'It defines density.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Insulate</b> and <b>insulation</b> belong to the same word family. Which is a noun?',
+        opts: ['insulation', 'insulate', 'insulates', 'insulated'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain how fish survive the winter in a frozen lake.',
+        a: 'The ice floats and forms a lid that insulates the water, so the bottom stays near 4 °C. Fish slow down and rest near the bottom where the water is liquid.', look: 'the insulating ice and the 4 °C water at the bottom' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Why can water pipes burst in winter? Use the text.',
+        a: 'When water freezes it takes up about 9% more space, and it expands with great force, pushing on the pipe until it cracks.', look: 'expansion when freezing' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The idea that water gets denser until 4 °C and then expands is tricky. What did you do to make sense of it?',
+        a: 'I reread the paragraph and drew a lake with labels for the cold water at the top and the 4 °C water at the bottom.', look: 'a monitoring strategy and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-insulation', subject: 'science', form: 'Explanation',
+    title: 'Keeping the Heat In',
+    deck: 'How heat escapes from a house in winter, and how insulation stops it',
+    hero: {
+      photo: 'g7-attic.jpg', credit: 'Photo: USFWS Mountain-Prairie, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Insulation being added to an attic. Fluffy materials trap air, which slows the flow of heat.'
+    },
+    body: [
+      'On a January night in Sudbury, it might be −25 °C outside and 20 °C inside. Heat always flows from warmer places to cooler ones, so the warmth inside a house is always trying to escape. A furnace burns fuel or uses electricity to replace the heat that is lost. The better a house holds its heat, the less energy it needs and the less money and fuel it costs.',
+      { h: 'Three ways heat moves' },
+      'Heat escapes in three ways. In <b>conduction</b>, heat passes directly through a solid material, from particle to particle. That is why a metal spoon in hot soup gets hot. In <b>convection</b>, warm air or water rises and carries heat with it, while cooler air sinks to take its place. In <b>radiation</b>, heat travels as invisible rays, the way you feel the warmth of a campfire from across the circle.',
+      { fig: '<path class="k" d="M40 150 V70 L150 20 L260 70 V150 Z"/><path class="h" d="M60 66 L150 26 L240 66"/><path class="k" d="M40 70 H260"/>' +
+          D.arrow(150, 110, 150, 78, 'a') + D.arrow(150, 40, 150, 6, 'a') + '<text class="n" x="158" y="100">warm air rises</text><text class="n" x="158" y="14">heat lost through the roof</text>' +
+          D.arrow(240, 118, 290, 118, 'a') + '<text class="n" x="200" y="140" text-anchor="middle">through walls</text>' +
+          '<rect class="t" x="60" y="94" width="34" height="30"/>' + D.arrow(60, 108, 12, 108, 'a') + '<text class="n" x="70" y="140" text-anchor="middle">windows</text>' +
+          D.label(4, 40, 'insulation', 70, 60, 'start'),
+        tall: 156, cap: 'Where a house loses heat in winter. Warm air rises, so a lot escapes through the roof.' },
+      { h: 'Trapping air' },
+      'Materials that slow the flow of heat are called <b>insulators</b>. Still air is a very good insulator, as long as it cannot move around and carry heat by convection. That is the secret of most insulation. Fibreglass, foam and cellulose, made from recycled newspaper, are full of tiny pockets that trap air. A winter coat, a down sleeping bag and a bird’s fluffed-up feathers all work the same way.',
+      'Builders put thick layers of insulation in attics, because warm air rises and a lot of heat would otherwise escape through the roof. Walls are filled with insulation too. Windows are a weak spot, so modern windows have two or three layers of glass with a sealed gap between them.',
+      { box: 'Find the leaks', text: 'On a cold, windy day, hold a strip of tissue near a window frame or outlet. If it flutters, cold air is leaking in. Weatherstripping and caulking can seal those gaps.' },
+      { h: 'Why it matters' },
+      'Heating homes uses a large share of the energy Canadians use. Adding insulation and sealing leaks is one of the cheapest ways to save energy and reduce the greenhouse gases released by burning fuel. In summer, the same insulation slows heat from getting in and keeps the house cooler.'
+    ],
+    guide: { before: 'Wrap one jar of warm water in a towel and leave another bare, then compare after 20 minutes. Teach <b>conduction</b>, <b>convection</b>, <b>radiation</b> and <b>insulators</b>.',
+      after: 'Do the tissue test on a window or door at home. Where does your home lose heat?' },
+    words: [['conduction', 'heat moving directly through a material'], ['convection', 'heat carried by moving air or water'], ['insulators', 'materials that slow the flow of heat']],
+    qs: [
+      { k: 'table', code: 'C3.3', q: 'Fill in the chart about how heat moves.', cols: ['Way heat moves', 'How it works', 'Example'],
+        rows: [['conduction', null, 'a spoon in hot soup'], ['convection', 'warm air or water rises and carries heat', null], ['radiation', null, null]],
+        a: [[null, 'heat passes through a solid from particle to particle', null], [null, null, 'warm air rising to the roof'], [null, 'heat travels as invisible rays', 'feeling a campfire’s warmth']] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, why does so much heat escape through the roof?',
+        opts: ['Warm air rises.', 'Roofs are made of glass.', 'Snow is warm.', 'Cold air rises.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why is fibreglass a good insulator?',
+        opts: ['It traps air in tiny pockets.', 'It is made of metal.', 'It is heavy.', 'It makes its own heat.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author mention a winter coat and a bird’s feathers?',
+        opts: ['to connect insulation to familiar examples that also trap air', 'to talk about fashion', 'to describe birds', 'to sell coats'], a: 0 },
+      { k: 'choice', code: 'B3.3', half: true, q: '“…and cellulose, made from recycled newspaper, are full of tiny pockets…” What do the commas around <b>made from recycled newspaper</b> do?',
+        opts: ['They set off extra information about cellulose.', 'They separate a list.', 'They show a pause in speech only.', 'They join two sentences.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why does insulation help in summer as well as winter?',
+        a: 'Insulation slows heat flowing in either direction. In summer it slows heat coming in from outside, so the house stays cooler.', look: 'heat flow in both directions' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Give an example from your own life of conduction, convection or radiation. Explain which one it is.',
+        a: 'Holding a mug of hot chocolate warms my hands. That is conduction, because the heat moves through the mug into my hands.', look: 'a correct personal example with the right type named' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The author says insulation is “one of the cheapest ways to save energy.” What else would you want to know before deciding to insulate a house?',
+        a: 'How much it costs, how much money it would save each year, and how long it would take to pay for itself.', look: 'relevant questions about cost and benefit' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-grosse-ile', subject: 'history', form: 'Report',
+    title: 'The Island of Sorrow',
+    deck: 'Grosse Île and the Irish famine ships of 1847',
+    hero: {
+      photo: 'g7-grosse-ile.jpg', credit: 'Photo: Cephas, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A hospital building on Grosse Île, in the St. Lawrence River below Québec City. The island is now a national historic site.'
+    },
+    body: [
+      'In the 1840s, a disease destroyed the potato crops of Ireland year after year. For millions of poor Irish families, potatoes were almost their only food. About a million people died of hunger and disease in what became known as the Great Famine. Over a million more left Ireland, hoping to survive somewhere else. In 1847 alone, around 100 000 sailed for British North America.',
+      { h: 'Coffin ships' },
+      'Many crossed the Atlantic in crowded, filthy cargo ships that had carried timber from Canada. Passengers were packed below deck for six weeks or more, with little food or clean water. A disease called <b>typhus</b>, spread by lice, swept through the ships. So many people died at sea that the ships became known as “coffin ships.”',
+      { fig: '<path class="t" d="M10 120 C80 110 140 130 290 90"/>' + D.ripple(20, 280, 132, 't') +
+          '<circle class="dot" cx="24" cy="118" r="5"/><circle class="dot" cx="236" cy="104" r="5"/><circle class="dot" cx="276" cy="94" r="5"/>' +
+          '<text class="l" x="24" y="106" text-anchor="middle">Ireland</text><text class="l" x="224" y="86" text-anchor="middle">Grosse Île</text>' +
+          '<text class="l" x="276" y="150" text-anchor="end">Québec City</text>' +
+          '<text class="lb" x="110" y="40" text-anchor="middle">about six weeks at sea</text>' + D.arrow(60, 56, 170, 56, 'a'),
+        tall: 156, cap: 'A simplified sketch of the route. Ships had to stop at Grosse Île before going on to Québec City.' },
+      { h: 'The quarantine station' },
+      'To keep disease from spreading into the colonies, every ship heading up the St. Lawrence had to stop at Grosse Île, an island below Québec City. It was a <b>quarantine</b> station, a place where sick or possibly sick travellers were kept apart. The station was built for a few hundred patients. In the summer of 1847, dozens of ships waited in a line kilometres long. Thousands of sick people lay in tents and sheds, and many healthy people caught typhus while waiting.',
+      'Doctors, nurses, priests and soldiers worked day and night. Many caught typhus themselves, and some died. By the end of the year, more than 5 000 people had been buried on the island, most of them in mass graves.',
+      { box: 'Families for the orphans', text: 'Hundreds of children lost their parents. Many were adopted by French-speaking families in Québec. Some kept their Irish last names, and their descendants still carry them today.' },
+      { h: 'Remembering' },
+      'In 1909, Irish Canadians raised a tall stone Celtic cross on the island. Today Grosse Île is a national historic site. Visitors walk among the old buildings and read the thousands of names on the memorial. The story is a reminder of how desperate people can be to find safety, and of the kindness of strangers who took them in.'
+    ],
+    guide: { before: 'Find Ireland, the Atlantic Ocean and Québec City on a map. Teach <b>typhus</b> and <b>quarantine</b>. Explain that a famine is a time when there is not enough food.',
+      after: 'Many people today still leave their home countries to escape danger or hunger. What can communities learn from Grosse Île?' },
+    words: [['typhus', 'a deadly disease spread by lice'], ['quarantine', 'keeping people apart to stop a disease from spreading']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did so many Irish people leave Ireland in the 1840s?',
+        opts: ['A disease destroyed the potato crops, causing famine.', 'They were invited to Canada.', 'There was a gold rush.', 'Ireland was too crowded with farms.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did ships have to stop at Grosse Île?',
+        opts: ['to keep disease from spreading into the colonies', 'to pick up timber', 'to pay a tax', 'to change captains'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The ships were called “coffin ships.” What does this name suggest?',
+        opts: ['So many people died on them that they were like floating coffins.', 'They were shaped like boxes.', 'They carried coffins for sale.', 'They were painted black.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show?',
+        opts: ['the route from Ireland to Québec City, with a stop at Grosse Île', 'the shape of the island', 'how typhus spreads', 'the memorial cross'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why did so many people catch typhus at Grosse Île, even though it was meant to stop disease?',
+        a: 'The station was built for a few hundred patients but thousands came. Sick and healthy people were crowded together, so many healthy people caught typhus while waiting.', look: 'overcrowding and healthy people catching it' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How is the story of Grosse Île still part of life in Québec today?',
+        a: 'Descendants of the orphans adopted by French-speaking families still carry Irish last names, and the island is a historic site people visit.', look: 'the Irish last names or the historic site' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What message does the author share in the last sentence? Do you think it still matters today? Why?',
+        a: 'That desperate people seek safety and that strangers’ kindness matters. Yes, because people still flee hunger and war today and need welcome.', look: 'the message and a reasoned link to today' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence begins with a phrase that tells when?',
+        opts: ['In 1909, Irish Canadians raised a tall stone Celtic cross on the island.', 'Doctors, nurses, priests and soldiers worked day and night.', 'Many caught typhus themselves.', 'The story is a reminder.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-aral-sea', subject: 'geography', form: 'Report',
+    title: 'The Sea That Disappeared',
+    deck: 'How the Aral Sea shrank in one lifetime, and how part of it is coming back',
+    hero: {
+      photo: 'g7-aral-ships.jpg', credit: 'Photo: Adam Harangozó, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Rusting fishing boats in Mo‘ynoq, Uzbekistan. The town was once a busy port. Today the water is far away.'
+    },
+    body: [
+      'Sixty years ago, the Aral Sea in Central Asia was one of the four largest lakes in the world. Fishing boats sailed from busy ports, and canneries packed tonnes of fish every year. Today, rusting ships sit on a dusty desert where water used to be. The Aral Sea is one of the worst environmental disasters caused by people.',
+      { fig: '<text class="lb" x="70" y="18" text-anchor="middle">1960</text><text class="lb" x="225" y="18" text-anchor="middle">today</text>' +
+          '<path class="h" d="M24 40 Q40 26 80 30 Q120 34 122 70 Q124 120 86 136 Q40 146 28 110 Q16 74 24 40 Z"/>' +
+          '<path class="k" d="M178 40 Q194 26 234 30 Q274 34 276 70 Q278 120 240 136 Q194 146 182 110 Q170 74 178 40 Z"/>' +
+          '<path class="h" d="M190 40 Q204 34 222 42 Q226 56 206 60 Q188 56 190 40 Z"/><path class="h" d="M236 84 Q248 80 252 100 Q250 124 238 120 Q228 104 236 84 Z"/>' +
+          '<text class="n" x="230" y="160" text-anchor="middle">outline shows the old shore</text><text class="n" x="70" y="160" text-anchor="middle">one large lake</text>',
+        tall: 166, cap: 'A simplified drawing of the Aral Sea in 1960 and today. Most of it has dried up and split apart. Not to scale.' },
+      { h: 'Taking the rivers' },
+      'The Aral Sea had no outlet to the ocean. It was fed by two great rivers, the Amu Darya and the Syr Darya, which carry melted snow from distant mountains. In the 1960s, the government of the Soviet Union decided to turn the dry land around the sea into huge cotton farms. Engineers dug thousands of kilometres of canals to carry river water to the fields. This is called <b>irrigation</b>. Many canals leaked, and much of the water soaked into the sand or <b>evaporated</b> in the desert heat. At first, the plan seemed to work. Cotton harvests grew, and the region earned a great deal of money selling it to other countries. Few people paid attention to what was happening downstream.',
+      { h: 'A shrinking sea' },
+      'With less river water flowing in, the sea began to shrink. By the 2000s, it had lost about nine tenths of its water and split into separate lakes. The remaining water became so salty that most fish died. The fishing industry collapsed, and thousands of people lost their jobs. In the port of Mo‘ynoq, the shore is now far away. Visitors walk for hours past old boats and dry shells without reaching the water. Summers there have become hotter and winters colder, because there is no longer a huge body of water to soften the climate.',
+      { box: 'Poisoned dust', text: 'The dried seabed is covered with salt and with chemicals that once washed off the cotton fields. Strong winds lift this dust and blow it across the region, where people have suffered from breathing problems.' },
+      { h: 'A small comeback' },
+      'In 2005, Kazakhstan built a long dam to hold water in the northern part of the sea, called the Small Aral. The water level rose, the water became less salty, and fish returned. Fishers in the area are working again. The large southern part is still mostly desert, but the Small Aral shows that even serious damage can sometimes be partly repaired when people work to fix it.'
+    ],
+    guide: { before: 'Find Kazakhstan and Uzbekistan on a world map. Teach <b>irrigation</b> and <b>evaporated</b>. Leave a shallow dish of salt water in the sun and look at it the next day.',
+      after: 'The cotton farms brought jobs and money too. How should a country balance farming and protecting nature?' },
+    words: [['irrigation', 'bringing water to crops through pipes or canals'], ['evaporated', 'changed from a liquid into a gas']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What was the main cause of the Aral Sea shrinking?',
+        opts: ['River water was taken for cotton farms.', 'An earthquake drained it.', 'Too many fish were caught.', 'It rained too much.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the drawing show?',
+        opts: ['how much smaller the sea is today than in 1960', 'where cotton grows', 'the path of the rivers', 'the ships in Mo‘ynoq'], a: 0 },
+      { k: 'order', code: 'C1.5', q: 'The report explains a chain of causes and effects. Number them in order.',
+        items: ['Canals take water from the rivers.', 'Less water flows into the sea.', 'The sea shrinks and gets saltier.', 'Fish die and the fishing industry collapses.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Evaporate</b> contains the Latin root <b>vapor</b>. What does <b>vapor</b> mean?',
+        opts: ['steam or gas', 'water', 'desert', 'salt'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did fish return to the Small Aral?',
+        opts: ['A dam raised the water and made it less salty.', 'Fish were brought in trucks.', 'The cotton farms closed.', 'It rained every day.'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did the shrinking sea affect people’s health and jobs? Give one example of each.',
+        a: 'Health: dust with salt and chemicals from the seabed caused breathing problems. Jobs: the fishing industry collapsed and thousands lost their work.', look: 'one health effect and one job effect from the text' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The author calls the Aral Sea “one of the worst environmental disasters caused by people.” Do you agree after reading? Explain.',
+        a: 'Yes. A huge lake almost vanished in one lifetime, fish died, people lost jobs and got sick, and it was caused by human decisions.', look: 'an opinion supported by several effects from the text' },
+      { k: 'lines', code: 'C2.6', n: 2, q: 'Summarize the last section in one sentence.',
+        a: 'A dam built in 2005 brought water and fish back to the northern Small Aral, showing damage can be partly repaired.', look: 'the dam, the recovery and the lesson' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-aed-cpr', subject: 'health', form: 'Procedure',
+    title: 'Hands That Save a Life',
+    deck: 'What to do if someone’s heart suddenly stops',
+    hero: {
+      photo: 'g7-aed.jpg', credit: 'Photo: 쉰지식인, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An automated external defibrillator, or AED. Many schools, arenas and malls have one.'
+    },
+    body: [
+      'A man watching a hockey game in a community arena suddenly collapses. He is not breathing normally. His heart has stopped pumping blood, a medical emergency called <b>cardiac arrest</b>. Without help, his brain will begin to die within minutes. An ambulance might take ten minutes to arrive. What the people around him do in those first minutes will decide whether he lives.',
+      { h: 'Not the same as a heart attack' },
+      'A heart attack happens when blood cannot reach part of the heart muscle. The person is usually awake and may have chest pain. In cardiac arrest, the heart’s electrical signals go wrong. It quivers instead of pumping, and the person becomes unresponsive. A heart attack can lead to cardiac arrest, but they are different.',
+      { h: 'Three steps' },
+      'First, check and call. Tap the person and shout, “Are you okay?” If there is no response and they are not breathing normally, call 911 and send someone to get an AED. Put the phone on speaker; the dispatcher will guide you.',
+      'Second, push. Place the heel of one hand in the centre of the chest, with your other hand on top. Push hard and fast, about 5 cm deep, at about 100 to 120 times a minute. Let the chest come all the way back up between pushes. This is <b>CPR</b>. It moves blood to the brain until help arrives. It is tiring, so switch with another person every two minutes if you can.',
+      { fig: '<path class="k" d="M30 120 Q80 100 150 104 Q220 108 270 120"/><circle class="k" cx="40" cy="104" r="16"/>' +
+          '<rect class="h" x="140" y="70" width="34" height="18"/><path class="k" d="M150 70 L132 30 M164 70 L182 30"/>' +
+          D.arrow(157, 40, 157, 64, 'a') + '<text class="l" x="196" y="44">push hard and fast</text><text class="n" x="196" y="58">about 5 cm deep</text>' +
+          '<rect class="t" x="100" y="96" width="14" height="18"/><rect class="t" x="206" y="104" width="14" height="18"/>' +
+          D.label(60, 150, 'AED pads', 108, 114) + D.label(290, 150, '100 to 120 a minute', 160, 92, 'end'),
+        tall: 160, cap: 'Hands go in the centre of the chest. The AED pads go where the pictures on them show.' },
+      'Third, use the AED as soon as it arrives. Open it and it starts talking, telling you exactly what to do. Stick the pads on the bare chest where the pictures show. The machine checks the heart’s rhythm and decides whether a <b>shock</b> is needed. If it is, it tells everyone to stand clear. The shock can reset the heart’s rhythm. Then keep doing CPR until the AED or paramedics tell you to stop.',
+      { box: 'You cannot make it worse', text: 'An AED will not shock a heart that does not need it. Ontario law protects people who help in an emergency in good faith.' },
+      'Learning CPR takes only a few hours, and many courses accept students. Someday, your hands might keep someone alive.'
+    ],
+    guide: { before: 'Teach <b>cardiac arrest</b>, <b>CPR</b> and <b>shock</b>. Find the AED at your school, arena or community centre. Practise the rhythm by pushing on a firm cushion to the beat of a fast song. This text does not replace a certified course.',
+      after: 'Look up a CPR course near you. Would you like to take one together?' },
+    words: [['cardiac arrest', 'when the heart suddenly stops pumping blood'], ['CPR', 'pushing on the chest to keep blood moving when the heart has stopped'], ['shock', 'a burst of electricity that can reset the heart’s rhythm']],
+    qs: [
+      { k: 'order', code: 'C1.5', q: 'Number the steps to help someone in cardiac arrest.',
+        items: ['Check if the person responds and is breathing normally.', 'Call 911 and send someone for an AED.', 'Push hard and fast on the centre of the chest.', 'Use the AED as soon as it arrives.'], show: [2, 0, 3, 1] },
+      { k: 'table', code: 'C1.3', q: 'Compare a heart attack and cardiac arrest.', cols: ['', 'Heart attack', 'Cardiac arrest'],
+        rows: [['What goes wrong', 'blood cannot reach part of the heart', null], ['Is the person awake?', null, null]],
+        a: [[null, null, 'the heart’s electrical signals go wrong and it stops pumping'], [null, 'usually, and may have chest pain', 'no, they become unresponsive']] },
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is a procedure?',
+        opts: ['It gives numbered steps in order.', 'It tells a made-up story.', 'It argues an opinion.', 'It is a poem.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, where do your hands go?',
+        opts: ['in the centre of the chest', 'on the stomach', 'on the neck', 'on the shoulders'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why should rescuers switch every two minutes?',
+        opts: ['CPR is tiring, and tired pushes are weaker.', 'The AED needs to rest.', 'It is a rule of hockey.', 'The patient needs a break.'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Why does the author begin with a scene in an arena?',
+        opts: ['to show that cardiac arrest can happen anywhere, to anyone', 'to talk about hockey', 'to describe the ambulance', 'to explain the rules of CPR courses'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why do the first few minutes matter so much? Use the text.',
+        a: 'Without blood, the brain begins to die within minutes, and an ambulance might take ten minutes. CPR and an AED keep blood moving and can restart the heart before help arrives.', look: 'the time limit for the brain and how bystanders fill the gap' },
+      { k: 'lines', code: 'B1.1', n: 3, q: 'On a 911 call, the dispatcher gives instructions. Why is listening carefully so important, and how can you show you understood?',
+        a: 'The dispatcher knows what to do and can guide you step by step. I can repeat back what they said or answer their questions clearly.', look: 'the importance of listening and a way to confirm understanding' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-misleading-graphs', subject: 'math', form: 'Explanation',
+    title: 'Graphs That Lie',
+    deck: 'How true numbers can be drawn to fool you',
+    hero: {
+      photo: 'g7-charts.jpg', credit: 'Image: unknown author, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Charts on a screen. Graphs make numbers easy to see, which also makes them easy to twist.'
+    },
+    body: [
+      'Graphs are powerful. One glance can show a trend that would take paragraphs to explain. That is exactly why advertisers, politicians and websites use them. But a graph can use completely accurate numbers and still leave a false impression. Learning to spot the tricks is part of being a careful reader of <b>data</b>.',
+      { h: 'Trick 1: the cut-off axis' },
+      'Imagine two brands of juice. Brand A has 24 g of sugar per bottle, and Brand B has 22 g. That is a small difference. But if a graph’s vertical axis starts at 21 instead of 0, Brand A’s bar will look three times taller than Brand B’s. The numbers are true, but the picture is misleading. Always check where the <b>axis</b> begins. Also check the labels and units. A graph without a title, scale or units is a warning sign, because you cannot tell what is really being compared.',
+      { fig: '<text class="lb" x="75" y="16" text-anchor="middle">axis starts at 21</text><text class="lb" x="225" y="16" text-anchor="middle">axis starts at 0</text>' +
+          '<path class="k" d="M30 24 V140 H130 M180 24 V140 H280"/>' +
+          '<rect class="h" x="44" y="36" width="30" height="104"/><rect class="t" x="86" y="106" width="30" height="34"/>' +
+          '<rect class="h" x="194" y="44" width="30" height="96"/><rect class="t" x="236" y="52" width="30" height="88"/>' +
+          '<text class="n" x="26" y="144" text-anchor="end">21</text><text class="n" x="26" y="40" text-anchor="end">24</text><text class="n" x="176" y="144" text-anchor="end">0</text><text class="n" x="176" y="48" text-anchor="end">24</text>' +
+          '<text class="n" x="59" y="156" text-anchor="middle">A</text><text class="n" x="101" y="156" text-anchor="middle">B</text><text class="n" x="209" y="156" text-anchor="middle">A</text><text class="n" x="251" y="156" text-anchor="middle">B</text>',
+        tall: 162, cap: 'The same data, grams of sugar in two juices, drawn two ways.' },
+      { h: 'Trick 2: the growing picture' },
+      'Some graphs use pictures instead of bars. If sales doubled, the artist might draw a second juice bottle twice as tall. But making it twice as tall also makes it twice as wide, so it covers four times the area. Our eyes judge the size of the whole picture, so the increase looks far bigger than it really was. Three-dimensional pie charts play a similar trick: the slice at the front looks bigger than an equal slice at the back, simply because it is closer to you.',
+      { h: 'Trick 3: the hand-picked time' },
+      'A company might show its sales rising from March to June, but leave out the years before, when sales fell steadily. By choosing only part of the data, a graph can tell almost any story. Ask yourself: what came before and after?',
+      { box: 'Graph detective checklist', text: 'Where does each axis start? Are the intervals equal? Is the whole time period shown? Who made the graph, and what do they want me to think?' },
+      'Not every graph that starts above zero is trying to trick you. Scientists sometimes zoom in to show small but important changes, like a rise in average temperature. The key is to notice the choices the graph maker made, and to decide for yourself what the numbers really mean. A good habit is to read the actual numbers, not just the shapes.'
+    ],
+    guide: { before: 'Find a graph in a flyer, website or news story. Teach <b>data</b> and <b>axis</b>. Ask: does this graph start at zero?',
+      after: 'Make a graph that tells the truth and one that exaggerates, using the same numbers. Which was harder to make?' },
+    words: [['data', 'facts and numbers collected to answer a question'], ['axis', 'a line on a graph with a scale of numbers']],
+    qs: [
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the two graphs. Why does Brand A look three times bigger on the left?',
+        opts: ['The vertical axis starts at 21, not 0.', 'Brand A has three times more sugar.', 'The bars are different colours.', 'The right graph is wrong.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does a picture that is twice as tall look much bigger?',
+        opts: ['It is also twice as wide, so it covers four times the area.', 'It uses brighter colours.', 'Pictures are always bigger than bars.', 'It is drawn closer to the reader.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'A graph can leave a false <b>impression</b>. What does <b>impression</b> mean here?',
+        opts: ['an idea or feeling that something gives you', 'a mark pressed into something', 'an imitation of a person', 'a printed copy'], a: 0 },
+      { k: 'choice', code: 'A2.2', half: true, q: 'Which question from the checklist helps you think about the graph maker’s purpose?',
+        opts: ['Who made the graph, and what do they want me to think?', 'Where does each axis start?', 'Are the intervals equal?', 'Is the whole time period shown?'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the hand-picked time trick in your own words, with an example.',
+        a: 'You show only the part of the data that supports your story. A team could show only its last five wins and leave out the twenty losses before.', look: 'a paraphrase and a fitting example' },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'Why might an advertiser use a cut-off axis? What effect does it have on viewers?',
+        a: 'To make a small difference look huge, so their product seems much better. Viewers who do not check the axis believe the difference is big.', look: 'the advertiser’s purpose and the effect on viewers' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The last paragraph says not every zoomed-in graph is a trick. Why do you think the author added this?',
+        a: 'To be fair and balanced, so readers do not reject every graph. Sometimes zooming in shows real, important changes.', look: 'the idea of balance and a legitimate use' },
+      { k: 'choice', code: 'B3.2', q: '“Always check where the axis begins.” What kind of sentence is this?',
+        opts: ['an imperative, giving an instruction', 'a question', 'an exclamation', 'a statement of opinion'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-hip-hop', subject: 'arts', form: 'Report',
+    title: 'Born at a Block Party',
+    deck: 'How hip hop grew from one neighbourhood into a worldwide art form',
+    hero: {
+      photo: 'g7-hip-hop.jpg', credit: 'Photo: Muhammed amine benloulou, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Hip hop dancers. Breaking, one of the original elements, is now danced around the world.'
+    },
+    body: [
+      'In the early 1970s, the Bronx, a neighbourhood in New York City, was struggling. Buildings were abandoned, jobs were scarce and there was little money for youth programs. But in this tough place, young people created something new. In August 1973, a teenager called DJ Kool Herc played records at a back-to-school party in his building’s recreation room. That party is often called the birth of hip hop.',
+      { h: 'The break' },
+      'Kool Herc noticed that dancers went wild during the <b>break</b>, the short part of a song where the singing stops and only the drums play. So he used two record players with two copies of the same record. As one break ended, he started it on the other turntable, stretching a few seconds of drums into minutes. Dancers, called b-boys and b-girls, invented spinning, freezing and footwork moves to fill those beats. This became breaking.',
+      { fig: [['DJing', 'mixing records'], ['MCing', 'rhyming to the beat'], ['breaking', 'dancing'], ['graffiti', 'painting']].map(function (r, i) {
+            var x = 20 + (i % 2) * 140, y = 20 + Math.floor(i / 2) * 64; return '<rect class="k" x="' + x + '" y="' + y + '" width="120" height="48"/><text class="lb" x="' + (x + 60) + '" y="' + (y + 22) + '" text-anchor="middle">' + r[0] + '</text><text class="n" x="' + (x + 60) + '" y="' + (y + 38) + '" text-anchor="middle">' + r[1] + '</text>'; }).join('') +
+          '<text class="l" x="150" y="160" text-anchor="middle">the four original elements</text>',
+        tall: 168, cap: 'Hip hop began as four art forms that grew up together.' },
+      { h: 'Voices on the mic' },
+      'At parties, DJs had helpers who spoke over the music, hyping the crowd. These masters of ceremonies, or MCs, began to rhyme in rhythm with the beat. This is rapping. Early raps were fun party rhymes, but soon artists used them to tell stories about their lives and neighbourhoods. Hip hop gave young people who were often ignored a way to be heard.',
+      { box: 'Hip hop in Canada', text: 'In 1989, Maestro Fresh Wes’s “Let Your Backbone Slide” became the first Canadian rap song to reach the national top 40. At the 2024 Olympics in Paris, Phil Wizard, a b-boy from Vancouver, won the first Olympic gold medal ever awarded in breaking.' },
+      { h: 'Around the world' },
+      'Hip hop is now one of the most popular forms of music on Earth. Artists rap in hundreds of languages. Many Indigenous artists in Canada use hip hop to share stories, protest injustice and keep their languages alive, sometimes rhyming in Cree, Anishinaabemowin or Inuktitut. What began in one recreation room became a global <b>culture</b>: a shared way of making art, dressing, speaking and seeing the world. In community centres across Canada, young people learn breaking, DJing and writing rhymes, carrying on traditions that began at one party more than fifty years ago.'
+    ],
+    guide: { before: 'Find the Bronx on a map of New York City. Teach <b>break</b> and <b>culture</b>. Listen together to the drum break of an old funk song if you can.',
+      after: 'Why do you think hip hop spread to so many countries and languages?' },
+    words: [['break', 'the part of a song where only the drums play'], ['culture', 'the shared art, language, customs and beliefs of a group']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What did Kool Herc do with two record players?',
+        opts: ['He played the break on one, then the other, to make it last longer.', 'He played two songs at once.', 'He recorded his own voice.', 'He played them faster.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['the four original elements of hip hop', 'a map of the Bronx', 'how a record player works', 'the steps of a dance'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'MCs began to <b>hype</b> the crowd. What does <b>hype</b> mean here?',
+        opts: ['get people excited', 'make people leave', 'calm people down', 'ask for money'], a: 0 },
+      { k: 'choice', code: 'C1.2', half: true, q: 'How is this report mostly organized?',
+        opts: ['in time order, from the 1970s to today', 'from least to most important', 'as a list of songs', 'as a set of instructions'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'How did hip hop give “young people who were often ignored a way to be heard”? Use the text.',
+        a: 'MCs used raps to tell stories about their lives and neighbourhoods, so people outside the Bronx heard about their struggles.', look: 'rapping as storytelling about their lives' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How do some Indigenous artists in Canada use hip hop today?',
+        a: 'They share stories, protest injustice and keep their languages alive, sometimes rapping in Cree, Anishinaabemowin or Inuktitut.', look: 'two uses from the text' },
+      { k: 'lines', code: 'C2.1', n: 3, q: 'What did you already know about hip hop before reading? What surprised you?',
+        a: 'I knew about rap songs. I was surprised it started at one party and that breaking is now an Olympic sport.', look: 'prior knowledge and one surprising fact' },
+      { k: 'choice', code: 'B3.3', q: 'Why is “Let Your Backbone Slide” in quotation marks?',
+        opts: ['It is the title of a song.', 'Someone is speaking.', 'It is a foreign phrase.', 'It is the most important idea.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-ev-batteries', subject: 'tech', form: 'Explanation',
+    title: 'Inside an Electric Car',
+    deck: 'How a battery stores energy, and the hard questions about where its materials come from',
+    hero: {
+      photo: 'g7-ev-charging.jpg', credit: 'Photo: Michael Movchin and Felix Müller, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'An electric car plugged in to recharge. Its battery stores the energy that a gas tank would hold in fuel.'
+    },
+    body: [
+      'An electric car has no gas tank, no tailpipe and no engine that roars. Under its floor is a flat, heavy box: the <b>battery</b>. It holds thousands of small cells, each a little like the battery in a phone. Together, they store enough energy to drive a car hundreds of kilometres.',
+      { h: 'Ions on the move' },
+      'Most electric cars use lithium-ion batteries. Each cell has two sides, called <b>electrodes</b>, with a liquid or gel between them. When you plug the car in, electricity pushes tiny charged particles, called lithium ions, from one electrode to the other, where they are stored. When you drive, the ions flow back. As they move, they send electrons through wires to the motor, which turns the wheels.',
+      { fig: '<rect class="k" x="40" y="30" width="60" height="100"/><rect class="k" x="200" y="30" width="60" height="100"/><rect class="t" x="100" y="30" width="100" height="100"/>' +
+          '<text class="lb" x="70" y="148" text-anchor="middle">electrode</text><text class="lb" x="230" y="148" text-anchor="middle">electrode</text><text class="n" x="150" y="148" text-anchor="middle">gel</text>' +
+          [60, 80, 100].map(function (y) { return '<circle class="dot" cx="' + (120 + (y - 60)) + '" cy="' + y + '" r="4"/>'; }).join('') +
+          D.arrow(110, 50, 190, 50, 'a') + '<text class="n" x="150" y="44" text-anchor="middle">charging</text>' +
+          D.arrow(190, 116, 110, 116, 'a') + '<text class="n" x="150" y="126" text-anchor="middle">driving</text>' +
+          '<path class="k" d="M70 30 V12 H230 V30"/><circle class="k" cx="150" cy="12" r="8"/><text class="n" x="166" y="10">motor</text>',
+        tall: 156, cap: 'One cell, simplified. Lithium ions move one way when the battery charges and back again when the car runs.' },
+      { h: 'Cold and range' },
+      'Canadian drivers quickly learn that batteries do not like the cold. The chemical reactions inside slow down, and the car may also use energy to heat the cabin. On a −20 °C day, a car may travel noticeably fewer kilometres on a full charge than in summer. Many drivers plug in at home overnight, and fast chargers along highways can refill much of a battery in under an hour.',
+      { box: 'Cleaner, but not perfect', text: 'Electric cars give off no exhaust while driving. How clean they are overall depends on how the electricity is made and how the battery’s materials are mined.' },
+      { h: 'From the ground' },
+      'A battery is made from <b>minerals</b> such as lithium, nickel, cobalt and graphite. Canada has deposits of many of them, and new battery factories have been built in Ontario and Quebec. But mining can harm land and water, and some deposits lie on the traditional territories of First Nations. Many people believe mines should go ahead only with the consent of the communities affected and strict protection for the environment.',
+      'When a car battery wears out, after many years, its metals do not have to be thrown away. Recycling plants can recover much of the lithium, nickel and cobalt to make new batteries. Engineers are also testing new kinds of batteries that need fewer rare materials, charge faster and work better in the cold.'
+    ],
+    guide: { before: 'Look at the battery label on a phone or laptop. Teach <b>battery</b>, <b>electrodes</b> and <b>minerals</b>. Ask what the child already knows about electric cars.',
+      after: 'If your family were choosing a car, what questions would you ask about an electric one?' },
+    words: [['electrodes', 'the two ends of a battery cell, where ions are stored'], ['minerals', 'natural solid substances found in the ground']],
+    qs: [
+      { k: 'order', code: 'C3.3', q: 'Number what happens when an electric car is driven after charging.',
+        items: ['Electricity pushes lithium ions to one electrode.', 'The ions are stored there.', 'When you drive, the ions flow back.', 'Electrons travel through wires to the motor.'], show: [2, 3, 0, 1] },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what do the two arrows show?',
+        opts: ['Ions move one way when charging and the other way when driving.', 'Air flows through the battery.', 'The car moves forward and back.', 'Electricity goes into the ground.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does an electric car go a shorter distance in winter?',
+        opts: ['Cold slows the reactions, and heating the cabin uses energy.', 'Snow blocks the wheels.', 'The battery freezes solid.', 'The motor is smaller in winter.'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'What is the purpose of the box “Cleaner, but not perfect”?',
+        opts: ['to show that the benefits of electric cars depend on other things', 'to sell electric cars', 'to explain how ions move', 'to list the minerals'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Mines should go ahead only with the <b>consent</b> of the communities. What does <b>consent</b> mean?',
+        opts: ['permission or agreement', 'payment', 'a warning', 'a map'], a: 0 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do some people believe mines need the consent of First Nations? Use the text.',
+        a: 'Some deposits lie on First Nations’ traditional territories, and mining can harm their land and water, so they should have a say.', look: 'traditional territory and possible harm' },
+      { k: 'lines', code: 'C3.8', n: 4, q: 'Are electric cars a good solution for the environment? Give one point for and one point against, then your opinion.',
+        a: 'For: they give off no exhaust while driving. Against: mining for battery minerals can harm land and water. I think they are better overall, especially if batteries are recycled.', look: 'one point each way and a reasoned opinion' },
+      { k: 'lines', code: 'C2.2', n: 2, q: 'Who might want to read this text before making a decision? What would they learn?',
+        a: 'A family thinking about buying an electric car. They would learn about winter range, charging and where the materials come from.', look: 'a reader with a purpose and what they would gain' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-georgian-bay', subject: 'story', form: 'Poems', plain: true,
+    title: 'Two Poems from the Bay',
+    deck: 'Two original poems about Georgian Bay: one in calm weather, one in a storm',
+    hero: {
+      photo: 'g7-killbear.jpg', credit: 'Photo: GBBR, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Sunset at Killbear Provincial Park on Georgian Bay, where pines cling to bare pink granite.'
+    },
+    body: [
+      { h: 'The Pine on the Point' },
+      '<i>She leans away from the west wind<br>as if she has been listening<br>to it for a hundred years<br>and has finally learned the argument.<br><br>Her roots grip the pink granite<br>like a climber’s fingers<br>in a crack too thin for hope.<br>She has no soil to speak of. She grows anyway.<br><br>Her branches all reach east,<br>a flag that never comes down,<br>a compass with only one direction:<br>away from the storm, toward the morning.</i>',
+      { fig: '<path class="k" d="M10 150 Q80 120 150 128 T290 140"/>' +
+          '<path class="k" d="M120 128 Q118 90 130 60 Q140 40 150 30"/>' +
+          '<path class="a" d="M128 70 Q160 66 196 72 M132 56 Q164 50 200 56 M140 44 Q166 38 190 40 M124 88 Q156 86 186 94"/>' +
+          D.arrow(60, 40, 100, 50, 'a') + '<text class="n" x="20" y="34">west wind</text>' +
+          D.label(200, 116, 'roots in a crack', 126, 126) + D.label(210, 30, 'branches reach east', 196, 56),
+        tall: 156, cap: 'A windswept pine. Its shape records years of wind from one direction.' },
+      { h: 'Storm Warning' },
+      '<i>By noon the sky had changed its mind.<br>The water, glass at breakfast,<br>began to grumble, then to shout,<br>throwing white fists at the rocks.<br><br>Gulls gave up and rode the wind backward.<br>Our canoe waited on the shore,<br>upside down, patient as a turtle.<br><br>We watched from the cabin window:<br>the bay was a wild animal pacing,<br>and we were glad,<br>very glad,<br>to be on the right side of the glass.</i>',
+      { h: 'About the poems' },
+      'Georgian Bay, the eastern arm of Lake Huron, is famous for its thirty thousand islands, its rocky shores and its storms. These two poems show the same place in very different weather. Both poems use <b>figurative language</b>, words that mean more than their exact dictionary meaning. The first uses <b>personification</b>, giving the pine human qualities: she listens, she learns, she grows anyway. The second compares the stormy water to shouting fists and a pacing animal. Neither poem rhymes. Instead, the poets rely on strong images and the rhythm of everyday speech. Read each poem twice, once silently and once aloud. Notice where the lines break, because a poet uses line breaks to make you pause. Ask yourself what each comparison helps you see or feel that a plain description could not. Poets choose every word on purpose, so a single surprising word, like “argument” or “patient,” is often worth a second look.'
+    ],
+    guide: { before: 'Look at the photo together and describe the rocks and trees. Teach <b>figurative language</b> and <b>personification</b>. Read each poem aloud slowly.',
+      after: 'Which poem did you like better? Choose one image from it and draw it.' },
+    words: [['figurative language', 'words that mean more than their exact dictionary meaning'], ['personification', 'giving human qualities to something that is not human']],
+    qs: [
+      { k: 'choice', code: 'C1.5', half: true, q: '“Her roots grip the pink granite like a climber’s fingers.” What is this?',
+        opts: ['a simile', 'a rhyme', 'a fact', 'a question'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'How does the diagram help you understand the first poem?',
+        opts: ['It shows why the branches all reach east.', 'It shows a storm.', 'It shows a canoe.', 'It shows the cabin window.'], a: 0 },
+      { k: 'table', code: 'C3.1', q: 'Explain what each image suggests.', cols: ['Image', 'What it suggests'],
+        rows: [['“a flag that never comes down”', null], ['“throwing white fists at the rocks”', null], ['“patient as a turtle”', null]],
+        a: [[null, 'The branches stay pointing one way, proud and steady.'], [null, 'The waves crash hard and angrily against the shore.'], [null, 'The canoe waits quietly and safely for the storm to pass.']] },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why does the second poem repeat “very glad” on its own line?',
+        opts: ['to slow the reader down and stress the feeling', 'because the poet made a mistake', 'to start a new stanza', 'to make it rhyme'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who is the speaker in “Storm Warning”?',
+        opts: ['someone watching the storm from a cabin, using “we” and “our”', 'the pine tree', 'a gull', 'the wind'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'In “The Pine on the Point,” what qualities does the pine have? What might the poet want us to admire?',
+        a: 'She is stubborn and strong, growing with no soil and facing the wind. The poet wants us to admire never giving up in hard conditions.', look: 'the pine’s qualities and a message about resilience' },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'Compare the mood of the two poems. Use one word or line from each.',
+        a: 'The first is calm and proud, like “she grows anyway.” The second is wild and tense, like “the bay was a wild animal pacing,” but it ends feeling safe.', look: 'a mood for each, supported by a quotation' },
+      { k: 'lines', code: 'B2.3', n: 2, q: 'Read “Storm Warning” aloud. Where did you pause, and why?',
+        a: 'I paused at the end of each line and after “very glad,” because the line breaks tell you to slow down.', look: 'pauses linked to line breaks or punctuation' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-cholera-map', subject: 'science', form: 'Report',
+    title: 'The Map That Stopped a Disease',
+    deck: 'How Dr. John Snow used dots on a map to find the source of an outbreak',
+    hero: {
+      photo: 'g7-cholera-map.jpg', credit: 'Map: John Snow, 1854, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Part of John Snow’s 1854 map of London. Each small black bar stands for one person who died of cholera.'
+    },
+    body: [
+      'In the summer of 1854, a terrifying disease swept through Soho, a crowded neighbourhood in London, England. People who were healthy in the morning could be dead by night. In about ten days, more than 500 people died. The disease was <b>cholera</b>, which causes severe diarrhea and dehydration. Cholera had also killed thousands in Canada, including in Québec City and Montréal in 1832.',
+      { h: 'Bad air or bad water?' },
+      'At the time, most doctors believed cholera spread through “bad air,” a foul-smelling mist rising from garbage and sewage. A London doctor named John Snow disagreed. He had noticed that cholera attacked the stomach, not the lungs. He suspected that people caught it by swallowing something, probably dirty water.',
+      { fig: '<path class="t" d="M10 60 H290 M10 120 H290 M90 10 V160 M200 10 V160"/>' +
+          '<circle class="k" cx="150" cy="90" r="8"/>' + D.label(96, 152, 'Broad Street pump', 146, 96) + '' +
+          [[140, 74], [160, 76], [130, 92], [168, 98], [142, 108], [156, 110], [124, 80], [176, 84], [136, 66], [118, 100], [182, 106], [150, 126], [110, 74], [190, 72], [168, 132], [128, 136], [230, 40], [60, 140], [250, 140]].map(function (p) { return '<rect class="h" x="' + (p[0] - 3) + '" y="' + (p[1] - 2) + '" width="6" height="4"/>'; }).join('') +
+          '<rect class="k" x="226" y="70" width="44" height="34"/><text class="n" x="248" y="118" text-anchor="middle">brewery</text>' +
+          '<rect class="k" x="20" y="72" width="50" height="34"/><text class="n" x="45" y="118" text-anchor="middle">workhouse</text>',
+        tall: 166, cap: 'A simplified version of the map. Deaths cluster around one pump. Few died in the brewery or the workhouse.' },
+      { h: 'Following the evidence' },
+      'Snow went door to door, asking where each victim had lived and where they got their water. Then he marked every death on a map. A pattern jumped out: the deaths were clustered around a single public water pump on Broad Street. Most of the victims lived closer to that pump than to any other.',
+      'Snow also studied the exceptions. A nearby workhouse with hundreds of residents had very few deaths. It had its own well. Workers at a brewery on the same street were almost untouched. They were given free beer and rarely drank pump water. Each exception supported his idea instead of weakening it.',
+      { box: 'The handle comes off', text: 'On September 8, 1854, Snow convinced local officials to remove the handle of the Broad Street pump. The outbreak was already slowing, but new cases dropped.' },
+      { h: 'A new science' },
+      'Later, investigators found that a cesspool beside the pump had been leaking sewage into the well. Many experts still doubted Snow, but over time the evidence for germs in water won. Today, Snow is called a founder of <b>epidemiology</b>, the study of how diseases spread through groups of people. His idea of mapping cases is still used to track outbreaks around the world.'
+    ],
+    guide: { before: 'Mark where everyone in the family drinks water on a quick sketch of your home. Teach <b>cholera</b> and <b>epidemiology</b>. Explain that in 1854 people did not yet know about germs.',
+      after: 'How do scientists track diseases today? How is it like what Snow did?' },
+    words: [['cholera', 'a dangerous disease spread through dirty water'], ['epidemiology', 'the study of how diseases spread through groups of people']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What did most doctors in 1854 believe caused cholera?',
+        opts: ['bad air from garbage and sewage', 'dirty water', 'germs on hands', 'cold weather'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What pattern does the map show?',
+        opts: ['Deaths cluster around one water pump.', 'Deaths are spread evenly.', 'Most deaths were in the brewery.', 'No one died near the pump.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did few brewery workers get sick?',
+        opts: ['They drank beer and rarely drank pump water.', 'They were stronger.', 'They lived far away.', 'The brewery had clean air.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Epidemiology</b> ends in <b>-ology</b>. What does <b>-ology</b> mean?',
+        opts: ['the study of', 'a fear of', 'without', 'a person who'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain how the workhouse and the brewery supported Snow’s idea.',
+        a: 'Both were near the pump but had few deaths. The workhouse had its own well and the brewery workers drank beer, so they did not drink the pump water.', look: 'both places linked to not drinking the pump water' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the steps Snow took to find the source of the outbreak.',
+        a: 'He went door to door asking about victims and their water, marked each death on a map, saw the cluster around the Broad Street pump and studied the exceptions.', look: 'the steps in order' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'Many experts still doubted Snow. Why do you think it can take a long time for people to accept a new idea?',
+        a: 'People trust what they already believe, and Snow could not see the germs. It takes a lot of evidence to change many people’s minds.', look: 'a reasoned answer about changing beliefs' },
+      { k: 'choice', code: 'C1.1', q: '“It had its own well.” What does <b>It</b> refer to?',
+        opts: ['the workhouse', 'the brewery', 'the pump', 'the map'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-fiona', subject: 'geography', form: 'News report',
+    title: 'Fiona’s Night',
+    deck: 'How one storm in 2022 changed Atlantic Canada, and what it warns about the future',
+    hero: {
+      photo: 'g7-fiona.jpg', credit: 'Photo: Larry (microbe), CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Cleaning up fallen trees in Charlottetown, Prince Edward Island, after Fiona in September 2022.'
+    },
+    body: [
+      'Overnight on September 23 and 24, 2022, the remains of Hurricane Fiona slammed into Atlantic Canada. By morning, roofs had been torn off, huge trees lay across streets and hundreds of thousands of homes had no power. It was one of the most destructive storms in Canadian history. For many people in the region, it became the storm they measure all others against, the way earlier generations remembered Hurricane Juan in 2003.',
+      { h: 'A record-breaking storm' },
+      'Fiona formed in the warm waters of the Atlantic, near the Caribbean, where it caused deadly flooding. As it moved north, it lost some of its tropical features and became a <b>post-tropical storm</b>, but it also grew larger. When it reached Nova Scotia, its air pressure was the lowest ever measured on land in Canada. Low pressure means stronger winds, and gusts reached more than 170 km/h.',
+      { fig: '<path class="k" d="M30 150 Q70 120 110 110 Q160 98 190 80 Q230 56 270 20"/>' +
+          [[40, 144, 'Caribbean'], [150, 100, 'Atlantic Ocean'], [214, 64, 'Nova Scotia'], [262, 28, 'Newfoundland']].map(function (r, i) { return '<circle class="dot" cx="' + r[0] + '" cy="' + r[1] + '" r="5"/><text class="n" x="' + (r[0] + (i === 3 ? -12 : 10)) + '" y="' + (r[1] + (i === 3 ? 4 : i === 2 ? 14 : 4)) + '"' + (i === 3 ? ' text-anchor="end"' : '') + '>' + r[2] + '</text>'; }).join('') +
+          D.arrow(110, 110, 150, 100, 'a') + D.arrow(190, 80, 230, 56, 'a'),
+        tall: 160, cap: 'A simplified sketch of Fiona’s path north. Not a map.' },
+      { h: 'The damage' },
+      'In Nova Scotia, Prince Edward Island and Cape Breton, winds snapped power poles and flattened forests. In Charlottetown, many of the city’s tall old trees came down. Waves and a <b>storm surge</b>, a rise in sea level pushed ashore by the wind, washed away parts of the coastline. In Port aux Basques, Newfoundland, the sea swept whole houses into the water, and one woman lost her life. Some families waited weeks for their power to come back.',
+      { box: 'Neighbours helping', text: 'Crews came from other provinces to repair power lines. Volunteers cleared roads, opened warming centres and cooked meals for people without electricity.' },
+      { h: 'A warning' },
+      'Scientists say that warmer oceans give storms more energy, so strong storms are likely to reach farther north more often. After Fiona, communities are thinking about how to prepare: burying more power lines, protecting shorelines with natural barriers like dunes and salt marshes, and moving some homes away from the most exposed coasts. In some places, people are now asking whether rebuilding in the same spot is safe. These are hard choices, because many families have lived beside the sea for generations, and the coast is part of who they are.'
+    ],
+    guide: { before: 'Find Nova Scotia, Prince Edward Island and Port aux Basques on a map. Teach <b>post-tropical storm</b> and <b>storm surge</b>. Ask what the child knows about hurricanes.',
+      after: 'What would your family need if the power went out for a week? Make an emergency kit list together.' },
+    words: [['post-tropical storm', 'a storm that began as a hurricane but changed as it moved into cooler areas'], ['storm surge', 'a rise in sea level pushed ashore by a storm’s winds']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is a news report?',
+        opts: ['It gives dates, places and facts about a real event.', 'It rhymes.', 'It gives steps to follow.', 'It is made up.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show?',
+        opts: ['the path Fiona took from the Caribbean north to Canada', 'the size of the waves', 'where power lines are', 'the pressure readings'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did Fiona have such strong winds in Nova Scotia?',
+        opts: ['Its air pressure was extremely low.', 'It was still a small storm.', 'The ocean was frozen.', 'It moved very slowly.'], a: 0 },
+      { k: 'choice', code: 'C1.1', half: true, q: '“…where it caused deadly flooding.” What does <b>where</b> refer to?',
+        opts: ['near the Caribbean', 'Nova Scotia', 'Charlottetown', 'Port aux Basques'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain how a storm surge can destroy houses near the shore.',
+        a: 'The wind pushes the sea higher onto the land, so waves reach places they usually do not and can wash away the ground and houses.', look: 'higher water pushed ashore and its effect on houses' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Based on the last section, predict one change a coastal town might make in the next ten years. Why?',
+        a: 'It might bury its power lines so winds cannot knock them down, because warmer oceans may bring more strong storms.', look: 'a prediction linked to the text’s reasons' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Why do you think the author included the box about neighbours helping?',
+        a: 'To show that the story is not only about damage. People came together and helped, which gives hope.', look: 'the purpose of showing community response' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence is a complex sentence?',
+        opts: ['Low pressure means stronger winds, and gusts reached more than 170 km/h.', 'In Charlottetown, many of the city’s tall old trees came down.', 'As it moved north, it lost some of its tropical features.', 'It was one of the most destructive storms in Canadian history.'], a: 2 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-james-bay', subject: 'history', form: 'Report',
+    title: 'Power from the North',
+    deck: 'The James Bay power project and Canada’s first modern treaty',
+    hero: {
+      photo: 'g7-spillway.jpg', credit: 'Photo: fargomeD, CC BY 2.5, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The spillway of the Robert-Bourassa generating station. Its huge steps are called the Giant’s Staircase.'
+    },
+    body: [
+      'In 1971, the premier of Quebec, Robert Bourassa, announced what he called the project of the century. Quebec would dam the great rivers that flow into James Bay and build enormous power stations to make <b>hydroelectricity</b>. The electricity would power Quebec’s homes and factories and be sold to the United States. There was one problem. The land was not empty. About 6 000 Cree and Inuit lived there, hunting, fishing and trapping as their ancestors had for thousands of years. No one had asked them.',
+      { fig: '<path class="k" d="M10 120 Q60 116 100 110"/><rect class="h" x="100" y="70" width="20" height="60"/><path class="t" d="M120 80 Q200 70 290 84 V130 H120 Z"/>' +
+          D.ripple(130, 286, 92, 't') + '<path class="k" d="M10 130 H290"/>' +
+          '<text class="l" x="210" y="62" text-anchor="middle">reservoir: flooded land</text><text class="n" x="110" y="146" text-anchor="middle">dam</text>' +
+          '<text class="n" x="50" y="104" text-anchor="middle">river below</text>' + D.arrow(100, 118, 60, 118, 'a') +
+          '<circle class="k" cx="110" cy="56" r="10"/><path class="k" d="M110 46 V66 M100 56 H120"/><text class="n" x="110" y="34" text-anchor="middle">power station</text>',
+        tall: 156, cap: 'A dam holds back a river and floods the land behind it. Falling water turns turbines in the power station.' },
+      { h: 'Going to court' },
+      'Cree and Inuit leaders learned about the plans from the news. Rivers they depended on would be flooded, and hunting grounds would disappear under huge <b>reservoirs</b>. They went to court. In 1973, a judge ordered construction to stop, agreeing that their rights had been ignored. A higher court overturned the order within a week, and work started again. But the case showed that the government had to deal with the Cree and Inuit.',
+      { h: 'A new kind of agreement' },
+      'In 1975, after long negotiations, the Cree, the Inuit, Quebec and Canada signed the James Bay and Northern Québec Agreement. It is often called the first modern <b>treaty</b> in Canada. The Cree and Inuit received money, guaranteed hunting and fishing rights, and control over their own schools, health care and local governments. In return, the project could go ahead.',
+      { box: 'A canoe to New York', text: 'In 1990, Cree and Inuit paddled a special canoe-kayak from James Bay to New York City to protest a second project on the Great Whale River. Quebec cancelled that project in 1994.' },
+      { h: 'Benefits and costs' },
+      'Today the James Bay power stations make a large share of Quebec’s electricity, which is clean compared with burning coal or gas. But the flooding changed the land forever. Some trap lines and burial grounds were lost, and mercury released from flooded soil built up in fish, so people had to eat less of a key food. Many Cree say the agreement gave them tools to protect their way of life, while others say it came at too high a price.'
+    ],
+    guide: { before: 'Find James Bay, Quebec, on a map. Teach <b>hydroelectricity</b>, <b>reservoirs</b> and <b>treaty</b>. Ask: who should decide what happens to land?',
+      after: 'If you were a Cree leader in 1975, would you have signed the agreement? What would you have asked for?' },
+    words: [['hydroelectricity', 'electricity made by the force of falling or flowing water'], ['reservoirs', 'large lakes made by building a dam'], ['treaty', 'a formal agreement between nations or governments']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'What was the “one problem” with the project in 1971?',
+        opts: ['The Cree and Inuit who lived there had not been asked.', 'There was not enough water.', 'It was too cold to build.', 'No one wanted electricity.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, what is a reservoir?',
+        opts: ['land flooded behind a dam', 'a power station', 'a river below a dam', 'a turbine'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why was the 1973 court case important even though the order was overturned?',
+        opts: ['It showed the government had to deal with the Cree and Inuit.', 'It stopped the project forever.', 'It gave Quebec more money.', 'It moved the dam.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Hydroelectricity</b> begins with <b>hydro-</b>. What does <b>hydro-</b> mean?',
+        opts: ['water', 'fire', 'earth', 'power'], a: 0 },
+      { k: 'table', code: 'C1.3', q: 'List benefits and costs of the James Bay project.', cols: ['Benefits', 'Costs'],
+        rows: [[null, null], [null, null]],
+        a: [['clean electricity for Quebec', 'flooded hunting grounds, trap lines and burial grounds'], ['schools, health care and rights for the Cree and Inuit', 'mercury in fish, a key food']] },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Whose voices were left out at the start of the project? How did they make themselves heard?',
+        a: 'The Cree and Inuit. They went to court, negotiated the 1975 agreement and later paddled to New York to protest.', look: 'the Cree and Inuit and at least one action' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How does the 1975 agreement still affect Cree and Inuit communities today?',
+        a: 'They still control their own schools, health care and local governments and have hunting and fishing rights from the agreement.', look: 'lasting rights or self-government' },
+      { k: 'lines', code: 'C3.8', n: 3, q: 'The last sentence gives two views of the agreement. Why is it important that the author includes both?',
+        a: 'So readers can see that people disagree and think for themselves, instead of hearing only one side.', look: 'balance and independent thinking' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-edited-images', subject: 'tech', form: 'Explanation',
+    title: 'Too Perfect to Be Real',
+    deck: 'How photos of people are edited, and why it matters how we feel about ourselves',
+    hero: {
+      photo: 'g7-selfie.jpg', credit: 'Photo: Maëlick, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Taking a selfie. Many phone cameras can smooth skin and change faces before a photo is even saved.'
+    },
+    body: [
+      'Scroll through social media or flip through a magazine, and you will see people with flawless skin, perfect teeth and not a single stray hair. It is easy to believe these images show how people really look. Often, they do not. Most photos of people that we see in ads and online have been changed in some way.',
+      { h: 'How images are edited' },
+      'Professional photographers have always used lighting and makeup to make people look their best. Today, photo-editing software makes it easy to go much further. An editor can smooth skin, remove freckles and pimples, whiten teeth, make eyes bigger and change the shape of a person’s body. This is called <b>retouching</b>. Many phone apps offer <b>filters</b> that do some of these changes automatically, with one tap, and some cameras smooth faces by default.',
+      { fig: '<rect class="k" x="20" y="20" width="110" height="120"/><rect class="k" x="170" y="20" width="110" height="120"/>' +
+          '<circle class="k" cx="75" cy="64" r="26"/><circle class="k" cx="225" cy="62" r="24"/><path class="k" d="M45 140 Q75 96 105 140 M200 140 Q225 102 250 140"/>' +
+          '<circle class="dot" cx="64" cy="70" r="1.5"/><circle class="dot" cx="88" cy="58" r="1.5"/><circle class="dot" cx="70" cy="76" r="1.5"/>' +
+          '<circle class="k" cx="66" cy="60" r="3"/><circle class="k" cx="84" cy="60" r="3"/><circle class="k" cx="216" cy="58" r="5"/><circle class="k" cx="234" cy="58" r="5"/>' +
+          D.arrow(134, 80, 166, 80, 'a') +
+          '<text class="n" x="75" y="156" text-anchor="middle">original</text><text class="n" x="225" y="156" text-anchor="middle">edited</text>' +
+          D.label(160, 12, 'bigger eyes, no freckles', 216, 52, 'start'),
+        tall: 162, cap: 'A simple drawing of common edits. Small changes add up to a face that no real person has.' },
+      { h: 'Why it matters' },
+      'When almost every image we see has been edited, our idea of “normal” shifts. Real skin has pores and marks. Real bodies come in every shape and size. Studies have found that comparing ourselves with edited images can make many young people feel worse about how they look. Some people even try to look like their own filtered photos.',
+      { box: 'Labels for edits', text: 'Some countries now have laws requiring a label on ads when a person’s body has been edited. Some companies have promised to stop retouching the people in their ads.' },
+      { h: 'Seeing clearly' },
+      'You can protect yourself by asking a few questions when you look at an image. Has this been edited? Who made it, and what do they want me to feel or buy? Notice how you feel after scrolling, and follow accounts that show real, unedited people. When you post photos yourself, think about whether you need a filter at all. Your face does not need fixing to be worth seeing. The same goes for your friends. Real faces, with freckles, scars, braces and uneven smiles, are what people actually look like, and they are what make each person recognizable and interesting.'
+    ],
+    guide: { before: 'Look at a magazine ad or online post together and guess what was edited. Teach <b>retouching</b> and <b>filters</b>. Keep the talk positive about the child’s own appearance.',
+      after: 'How do you feel after scrolling for a while? What could you change about what you follow?' },
+    words: [['retouching', 'changing a photo to remove or alter details'], ['filters', 'effects in an app that change how a photo looks']],
+    qs: [
+      { k: 'choice', code: 'A2.3', half: true, q: 'Which is the best clue that an image may have been edited?',
+        opts: ['The skin has no pores or marks at all.', 'The photo is in colour.', 'The person is smiling.', 'It was posted online.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the drawing show?',
+        opts: ['common edits that make a face look unreal', 'how cameras work', 'two different people', 'how to apply makeup'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why can edited images make people feel worse about how they look?',
+        opts: ['They compare themselves with images that are not real.', 'The images are blurry.', 'They cannot afford cameras.', 'Edited photos are too small.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The author says our idea of “normal” <b>shifts</b>. What does <b>shifts</b> mean?',
+        opts: ['changes', 'disappears', 'improves', 'stays the same'], a: 0 },
+      { k: 'lines', code: 'A2.4', n: 3, q: 'Why might a company retouch the people in its ads? What effect might this have on buyers?',
+        a: 'To make the product seem to make people perfect, so buyers want it. Buyers might feel they need it to look like the ad.', look: 'the company’s purpose and the effect on viewers' },
+      { k: 'lines', code: 'A2.1', n: 3, q: 'When you post a photo of yourself or a friend, what is one responsible choice you could make? Why?',
+        a: 'Post it without a filter, or ask my friend before posting. It shows real faces and respects their right to decide.', look: 'a responsible posting choice with a reason' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'What message does the last sentence send? Do you agree?',
+        a: 'That you are worth seeing just as you are. I agree, because everyone has marks and differences and that is normal.', look: 'the message and a personal response' },
+      { k: 'choice', code: 'B3.2', q: '“Has this been edited?” What kind of sentence is this?',
+        opts: ['a question', 'a command', 'an exclamation', 'a statement'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-integers-cold', subject: 'math', form: 'Explanation',
+    title: 'Below Zero',
+    deck: 'Using integers to make sense of Canadian winter temperatures',
+    hero: {
+      photo: 'g7-edmonton-cold.jpg', credit: 'Photo: hobvias sudoneighm, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A snowy winter day in Edmonton. Prairie cities can swing from mild to bitter cold in a single day.'
+    },
+    body: [
+      'Few countries know cold the way Canada does. On February 3, 1947, the village of Snag, in Yukon, recorded −63 °C, the coldest temperature ever officially measured in North America. Even in southern cities, winter temperatures often drop far below zero. To talk about these temperatures, and to calculate with them, we need <b>integers</b>: whole numbers that can be positive, negative or zero.',
+      { h: 'The number line' },
+      'A thermometer is really a vertical number line. Zero is where water freezes. Temperatures above zero are positive, and temperatures below zero are negative. Each negative number is the <b>opposite</b> of a positive number: −8 and +8 are the same distance from zero, but on different sides. The farther a negative number is from zero, the colder it is, so −20 °C is colder than −5 °C, even though 20 is bigger than 5.',
+      { fig: '<path class="k" d="M20 70 H280"/>' + [-20, -15, -10, -5, 0, 5, 10].map(function (n, i) { var x = 30 + i * 40; return '<path class="k" d="M' + x + ' 64 V76"/><text class="n" x="' + x + '" y="94" text-anchor="middle">' + (n < 0 ? '−' + (-n) : n) + '</text>'; }).join('') +
+          '<path class="a" d="M94 60 Q162 20 224 56"/>' + D.arrow(220, 52, 229, 62, 'a') +
+          '<circle class="dot" cx="94" cy="70" r="5"/><circle class="dot" cx="230" cy="70" r="5"/>' +
+          '<text class="l" x="162" y="22" text-anchor="middle">a rise of 17 degrees</text>' +
+          '<text class="n" x="94" y="114" text-anchor="middle">7 a.m.: −12</text><text class="n" x="230" y="114" text-anchor="middle">3 p.m.: +5</text>' +
+          '<text class="n" x="150" y="140" text-anchor="middle">12 to reach zero, then 5 more</text>',
+        tall: 148, cap: 'Finding a change in temperature on a number line. Each mark is 5 degrees; the dots are at −12 and +5.' },
+      { h: 'Finding the change' },
+      'Suppose it is −12 °C at 7 a.m. in Edmonton and +5 °C by 3 p.m. How much did it warm up? On a number line, count from −12 to 0: that is 12 degrees. Then count from 0 to +5: 5 more. The temperature rose 12 + 5 = 17 degrees. You can also subtract: (+5) − (−12) = +17. Subtracting a negative number is the same as adding its opposite.',
+      { box: 'Wind chill', text: 'Weather reports often give a wind chill, such as −30, on a −20 °C windy day. It is not a real temperature. It tells you how cold the wind will feel on bare skin.' },
+      { h: 'Going down' },
+      'Temperatures can fall quickly too. If it is +3 °C at noon and a cold front drops the temperature by 11 degrees, the new temperature is 3 − 11 = −8 °C. On the number line, you move 3 to reach zero and 8 more below it.',
+      'Integers are not just for weather. They describe bank balances, heights above and below sea level, and goals for and against in hockey. Any time there is a zero point with two directions, integers are the tool. A submarine 40 m below the surface is at −40 m. A bank account that is $15 overdrawn has a balance of −$15. And when your favourite hockey team has scored 3 goals and let in 5, its goal difference is −2.'
+    ],
+    guide: { before: 'Look at today’s forecast together. Teach <b>integers</b> and <b>opposite</b>. Draw a vertical number line from −20 to +20.',
+      after: 'Find the difference between today’s high and low. Show it on a number line.' },
+    words: [['integers', 'whole numbers that can be positive, negative or zero'], ['opposite', 'a number the same distance from zero on the other side']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Which temperature is colder?',
+        opts: ['−20 °C', '−5 °C', 'They are the same.', '0 °C'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, how does the arrow show the change from −12 to +5?',
+        opts: ['It jumps from one dot to the other, a rise of 17.', 'It shows a fall of 7.', 'It shows a rise of 5.', 'It shows the wind chill.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'It is −4 °C and warms up 9 degrees. What is the new temperature?',
+        opts: ['+5 °C', '−13 °C', '+13 °C', '−5 °C'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What does the word <b>opposite</b> mean in this text?',
+        opts: ['a number the same distance from zero on the other side', 'a number that is bigger', 'a number next to zero', 'a number that is cold'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain why −20 °C is colder than −5 °C, even though 20 is bigger than 5.',
+        a: 'For negative numbers, the farther from zero, the colder. −20 is 20 below zero, and −5 is only 5 below, so −20 is colder.', look: 'distance below zero' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'The text shows two ways to find a change in temperature. Explain one way in your own words.',
+        a: 'Count on the number line from the first temperature up to zero, then from zero to the second temperature, and add the two amounts.', look: 'one correct method paraphrased' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Describe a time you experienced a big change in temperature in one day. Write it as an integer problem.',
+        a: 'On a ski day it was −15 °C in the morning and −2 °C in the afternoon. The temperature rose 13 degrees.', look: 'a personal example with a correct integer change' },
+      { k: 'choice', code: 'B3.3', q: 'Why is there a comma after “Yukon” in “the village of Snag, in Yukon, recorded −63 °C”?',
+        opts: ['to set off extra information about where Snag is', 'to separate a list', 'to end a sentence', 'to show a question'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-animation', subject: 'arts', form: 'Explanation',
+    title: 'Pictures That Move',
+    deck: 'How animation tricks your eyes, from spinning drums to Canada’s National Film Board',
+    hero: {
+      photo: 'g7-zoetrope.jpg', credit: 'Photo: Runner1616, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A zoetrope, a spinning drum invented in the 1800s. Through its slits, a strip of drawings seems to move.'
+    },
+    body: [
+      'No movie, cartoon or video game actually moves. Every one is a series of still pictures shown very quickly, one after another. Your brain fills in the gaps and sees smooth motion. Animation is the art of using that trick on purpose.',
+      { h: 'Spinning drums' },
+      'In the 1830s, inventors created toys that showed this effect. The most famous was the <b>zoetrope</b>, an open drum with thin slits around its side. Inside, a paper strip held a series of drawings, such as a horse galloping, each one slightly different from the last. When you spun the drum and looked through the slits, you saw each picture for an instant. The slits acted like tiny shutters, so the pictures did not blur. The horse seemed to run.',
+      { fig: [0, 1, 2, 3, 4].map(function (i) { var x = 18 + i * 56, lift = [0, 10, 18, 10, 0][i]; return '<rect class="k" x="' + x + '" y="20" width="48" height="74"/><circle class="k" cx="' + (x + 24) + '" cy="' + (60 - lift) + '" r="10"/><path class="t" d="M' + (x + 4) + ' 84 H' + (x + 44) + '"/>' +
+            '<text class="n" x="' + (x + 24) + '" y="110" text-anchor="middle">' + (i + 1) + '</text>'; }).join('') +
+          '<text class="l" x="150" y="134" text-anchor="middle">five frames of a ball bouncing</text>',
+        tall: 140, cap: 'Each frame changes only a little. Shown quickly in order, the ball seems to bounce.' },
+      { h: 'Frames per second' },
+      'Each single picture in an animation is called a <b>frame</b>. Films are usually shown at 24 frames every second. Hand-drawn cartoons often use 12 different drawings each second, showing each one twice. That means a one-minute cartoon could need about 720 drawings. Animators plan the important poses first, called keyframes, then draw the in-between frames.',
+      { box: 'Make your own', text: 'Draw a stick figure in the corner of each page of a notepad, moving it a tiny bit each time. Flip the pages quickly, and you have made a flipbook.' },
+      { h: 'Canada’s animators' },
+      'Canada has a famous history in animation. In 1941, the Scottish-born artist Norman McLaren joined the new National Film Board of Canada in Ottawa. He scratched and painted directly onto film, and he animated real actors one frame at a time, a technique called pixilation. His short film <i>Neighbours</i> won an Academy Award in 1953. Since then, NFB animators have won many international prizes, and Canadian studios today create cartoons and video game animation watched around the world. Many Canadian animators began just as you can: with a pencil, a stack of paper and the patience to change each drawing only a little. Today, computers can draw the in-between frames, but artists still decide every important pose, the timing of every movement and the feeling each character shows.'
+    ],
+    guide: { before: 'Make a two-page flipbook or use a phone’s burst photo mode to see frames. Teach <b>zoetrope</b> and <b>frame</b>.',
+      after: 'Make a flipbook with at least 10 pages. What did you notice about how small each change needs to be?' },
+    words: [['zoetrope', 'a spinning drum with slits that makes drawings seem to move'], ['frame', 'one single picture in an animation or film']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did the slits in a zoetrope matter?',
+        opts: ['They acted like shutters so the pictures did not blur.', 'They let air in.', 'They held the paper.', 'They made a sound.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the five frames. What changes from frame to frame?',
+        opts: ['the height of the ball', 'the size of the box', 'the colour', 'the ground'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'A one-minute cartoon with 12 drawings per second needs about how many drawings?',
+        opts: ['720', '60', '24', '1 440'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Keyframes</b> is made of two words. Which pair?',
+        opts: ['key + frames', 'kef + rames', 'keyf + rames', 'key + fr + ames'], a: 0 },
+      { k: 'order', code: 'C1.3', q: 'Number these events in order.',
+        items: ['Inventors create the zoetrope.', 'Norman McLaren joins the National Film Board.', 'Neighbours wins an Academy Award.', 'Canadian studios make video game animation.'], show: [1, 3, 0, 2] },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Explain the trick that makes still pictures seem to move.',
+        a: 'Pictures that change a little are shown quickly one after another, and your brain fills in the gaps, so you see smooth motion.', look: 'quick sequence and the brain filling in' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Did the diagram or the flipbook box help you understand frames more? Explain.',
+        a: 'The diagram, because I could see how the ball moves a bit in each frame. Then I could imagine flipping through them.', look: 'a chosen feature and why it helped' },
+      { k: 'lines', code: 'C3.7', n: 2, q: 'How did Norman McLaren’s work affect Canadian animation?',
+        a: 'He won an Academy Award and helped make the NFB famous, so Canadian animators kept winning prizes.', look: 'his influence on Canada’s reputation in animation' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-prosthetics', subject: 'science', form: 'Explanation',
+    title: 'Engineering a New Limb',
+    deck: 'How prosthetic legs and arms work, and how they keep getting better',
+    hero: {
+      photo: 'g7-running-blade.jpg', credit: 'Photo: Cpl. Chelsea Anderson, U.S. Marine Corps, public domain, Wikimedia Commons', focus: '50% 40%',
+      tall: 200,
+      cap: 'An athlete with a prosthetic leg skips rope during training. Modern prostheses let people run, jump and play sports.'
+    },
+    body: [
+      'People lose limbs for many reasons: an accident, an illness, or being born without part of an arm or leg. For thousands of years, people have made replacements, from carved wooden legs to iron hands. Today, a replacement limb, called a <b>prosthesis</b>, can let a person walk, run, swim, play an instrument or pick up an egg without breaking it.',
+      { h: 'The parts of a leg' },
+      'A prosthetic leg has several parts. The <b>socket</b> fits over the remaining part of the limb, called the residual limb. It must fit perfectly, because every step pushes the person’s weight through it. A poor fit can cause painful sores. Below the socket, a strong tube called a pylon does the job of the bone. For a person missing a leg above the knee, a mechanical knee joint bends and locks. At the bottom is the foot.',
+      { fig: '<path class="k" d="M60 20 Q50 60 60 80 H100 Q110 60 100 20"/><rect class="h" x="54" y="70" width="52" height="34"/><rect class="k" x="74" y="104" width="12" height="44"/><path class="k" d="M66 148 H110 Q112 156 66 156 Z"/>' +
+          '<path class="k" d="M200 20 Q190 60 200 80 H240 Q250 60 240 20"/><rect class="h" x="194" y="70" width="52" height="34"/><path class="a" d="M220 104 V124 Q220 150 250 150 Q270 150 270 140"/>' +
+          D.label(130, 84, 'socket', 104, 86, 'start') + D.label(130, 128, 'pylon', 86, 126, 'start') + D.label(130, 152, 'foot', 108, 152, 'start') +
+          '<text class="n" x="80" y="172" text-anchor="middle">walking leg</text><text class="n" x="232" y="172" text-anchor="middle">running blade</text>',
+        tall: 178, cap: 'Two prosthetic legs below the knee. The running blade stores energy like a spring.' },
+      { h: 'Springs and sensors' },
+      'Running blades, made of layers of carbon fibre, have no heel at all. When the runner lands, the curved blade squashes and stores energy, then springs back and pushes the runner forward. New prosthetic arms can be controlled by the person’s own muscles. Sensors on the skin pick up tiny electrical signals when the person tightens a muscle, and a small motor opens or closes the hand. Some prosthetic knees and ankles have computer chips that adjust hundreds of times a second for stairs and slopes.',
+      { box: 'Canada’s War Amps', text: 'After the First World War, Canadian veterans who had lost limbs formed The War Amps. Today its CHAMP program helps children who are missing limbs pay for artificial limbs and meet other kids like them.' },
+      { h: 'Made to fit' },
+      'Children outgrow a prosthesis every year or two, and high-tech limbs can cost tens of thousands of dollars. Engineers are now using 3D scanning and printing to make sockets that fit better and cost less. The goal is not only a limb that works, but one that lets each person do what matters to them. Terry Fox ran thousands of kilometres across Canada on a simple artificial leg in 1980. His run is still a reminder of what determination can do.'
+    ],
+    guide: { before: 'Teach <b>prosthesis</b> and <b>socket</b>. Ask what the child already knows about Terry Fox. Press on a ruler held over a table edge to feel how it springs back.',
+      after: 'If you were an engineer, what would you improve about a prosthetic limb? Why?' },
+    words: [['prosthesis', 'an artificial body part'], ['socket', 'the part of a prosthesis that fits over the residual limb']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why must the socket fit perfectly?',
+        opts: ['Every step pushes the person’s weight through it, and a poor fit causes sores.', 'It looks better.', 'It holds the computer chip.', 'It is the most expensive part.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'In the diagram, what is the running blade missing that the walking leg has?',
+        opts: ['a heel and a separate foot', 'a socket', 'a curve', 'a top'], a: 0 },
+      { k: 'order', code: 'C3.3', q: 'Number how a muscle-controlled arm works.',
+        items: ['The person tightens a muscle.', 'Sensors pick up a tiny electrical signal.', 'A small motor is switched on.', 'The hand opens or closes.'], show: [3, 1, 0, 2] },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The author says the blade works “like a spring.” What does this help you understand?',
+        opts: ['It squashes, stores energy and pushes back.', 'It is made of metal coils.', 'It is used only in spring.', 'It is very soft.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'What is a <b>residual limb</b>?',
+        opts: ['the part of the limb that remains', 'a brand-new limb', 'a robot arm', 'the foot of a prosthesis'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why are 3D scanning and printing helpful for children who need a prosthesis?',
+        a: 'Children outgrow a prosthesis every year or two, and 3D printing can make sockets that fit better and cost less, so new ones are easier to get.', look: 'growing children and lower cost or better fit' },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'The author says the goal is a limb that “lets each person do what matters to them.” What does this show about the author’s view of people with limb loss?',
+        a: 'The author sees them as individuals with their own goals and abilities, not just as patients who need to be fixed.', look: 'respect for individual goals' },
+      { k: 'lines', code: 'C2.1', n: 2, q: 'What did you already know about Terry Fox? How did it help you understand the last paragraph?',
+        a: 'I knew he ran across Canada to raise money for cancer research. It helped me understand how much a simple artificial leg let him do.', look: 'prior knowledge linked to the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-louisbourg', subject: 'history', form: 'Report',
+    title: 'The Fortress by the Sea',
+    deck: 'Louisbourg, the French stronghold on Cape Breton Island that was captured twice',
+    hero: {
+      photo: 'g7-louisbourg.jpg', credit: 'Photo: KenCLeBlanc, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'The rebuilt Fortress of Louisbourg on Cape Breton Island, Nova Scotia. About a quarter of the town has been reconstructed.'
+    },
+    body: [
+      'In 1713, France signed the Treaty of Utrecht and gave up most of Acadia and Newfoundland to Britain. But France kept Île Royale, now Cape Breton Island. There, on a foggy harbour facing the Atlantic, the French began building Louisbourg in 1719. It would become one of the busiest ports in North America and one of the strongest <b>fortifications</b> the French ever built in the Americas.',
+      { fig: '<path class="t" d="M10 150 Q70 120 110 140 T200 120 T290 130"/>' + D.ripple(20, 280, 156, 't') +
+          '<path class="k" d="M40 120 L60 40 L150 30 L240 46 L260 120"/><path class="h" d="M60 40 L48 30 L72 26 Z M150 30 L140 18 L162 18 Z M240 46 L230 34 L254 34 Z"/>' +
+          D.label(196, 14, 'bastions', 160, 22) + '<text class="l" x="150" y="80" text-anchor="middle">town</text>' +
+          '<text class="n" x="150" y="138" text-anchor="middle">harbour</text><text class="n" x="20" y="24">land side</text>',
+        tall: 162, cap: 'A simplified plan. Pointed bastions let soldiers fire along the walls, but the land side could be attacked from nearby hills.' },
+      { h: 'A town of fish and trade' },
+      'Louisbourg grew rich from cod. The waters nearby were full of fish, which were dried on the beaches and shipped to France, the Caribbean and New England. Ships arrived with wine, cloth and tools, and sometimes with enslaved Africans brought from the Caribbean. Several thousand people lived inside and around the walls: soldiers, fishers, merchants, craftspeople and their families. The Mi’kmaq, whose homeland this was, were allies and trading partners of the French.',
+      { h: 'Captured twice' },
+      'Louisbourg looked strong, but it had weaknesses. Hills overlooked parts of the walls, and the fortress depended on ships for food. In 1745, an army of New England colonists, with help from the British navy, laid <b>siege</b> to the town. After seven weeks of bombardment, Louisbourg surrendered. To the colonists’ anger, Britain gave it back to France in a peace treaty three years later.',
+      { box: 'The final siege', text: 'In 1758, a much larger British force captured Louisbourg again. A year later, British engineers blew up the walls so the fortress could never be used against them.' },
+      { h: 'Rebuilt' },
+      'For two hundred years, the ruins sat in the grass. In the 1960s, the government of Canada began rebuilding part of the town, partly to create work for coal miners who had lost their jobs. Archaeologists dug up millions of objects, and historians studied old French plans. Today, in summer, interpreters in costume bake bread, fire muskets and show visitors what life was like in 1744. It is one of the largest historical reconstructions in North America.'
+    ],
+    guide: { before: 'Find Cape Breton Island on a map and point out how close it is to the Atlantic shipping routes. Teach <b>fortifications</b> and <b>siege</b>.',
+      after: 'Why do you think people spend so much effort rebuilding places from the past?' },
+    words: [['fortifications', 'walls and defences built to protect a place'], ['siege', 'surrounding a place and attacking it to force it to give up']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why did France build Louisbourg on Île Royale?',
+        opts: ['France had kept the island after giving up most of Acadia and Newfoundland.', 'It was the warmest place in Canada.', 'The British asked them to.', 'There were gold mines.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the plan, why was the land side a weakness?',
+        opts: ['It could be attacked from nearby hills.', 'It had no walls.', 'It was underwater.', 'It had too many bastions.'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why were the New England colonists angry in 1748?',
+        opts: ['Britain gave Louisbourg back to France.', 'They lost the siege.', 'The fish were gone.', 'They had to rebuild it.'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: '<b>Reconstruction</b> has the prefix <b>re-</b>. What does it mean here?',
+        opts: ['again', 'not', 'before', 'under'], a: 0 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Which groups lived in or traded with Louisbourg? Why is it important that the report names all of them?',
+        a: 'French soldiers, fishers, merchants and families, enslaved Africans and the Mi’kmaq. Naming them shows a fuller, more honest picture of who lived there.', look: 'several groups and the value of including them' },
+      { k: 'lines', code: 'C3.7', n: 3, q: 'How has the meaning of Louisbourg changed from 1745 to today?',
+        a: 'It was once a fortress for war and trade. Today it is a reconstructed historic site where visitors learn about the past.', look: 'its past purpose and its present one' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the history of Louisbourg in three sentences.',
+        a: 'France built it in 1719 as a fishing port and fortress. It was captured in 1745, returned, and captured again in 1758, then destroyed. In the 1960s, Canada rebuilt part of it as a historic site.', look: 'building, captures and rebuilding' },
+      { k: 'choice', code: 'B3.1', q: 'Which sentence uses a dependent clause beginning with <b>whose</b>?',
+        opts: ['The Mi’kmaq, whose homeland this was, were allies and trading partners of the French.', 'Louisbourg grew rich from cod.', 'For two hundred years, the ruins sat in the grass.', 'Louisbourg looked strong, but it had weaknesses.'], a: 0 }
+    ]
+  });
+
+  P.add({
+    id: 'g7-permafrost', subject: 'geography', form: 'Report',
+    title: 'When Frozen Ground Thaws',
+    deck: 'How warming is changing the permafrost under Canada’s North',
+    hero: {
+      photo: 'g7-permafrost.jpg', credit: 'Photo: Boris Radosavljevic, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'Thawing permafrost on Herschel Island, Yukon. As the ice in the ground melts, the land slumps and slides into the sea.'
+    },
+    body: [
+      'In much of northern Canada, if you dig down a little way, even in July, you hit ground that is frozen as hard as concrete. This is <b>permafrost</b>, ground that stays at or below 0 °C for at least two years in a row. Some of it has been frozen for thousands of years. Permafrost lies under roughly half of Canada’s land, from Yukon and the Northwest Territories to Nunavut and the far north of Quebec, Ontario and the Prairie provinces.',
+      { fig: '<rect class="t" x="20" y="40" width="260" height="22"/><rect class="h" x="20" y="62" width="260" height="88"/>' +
+          '<path class="a" d="M40 40 v-12 M44 40 v-16 M100 40 v-10 M210 40 v-14 M214 40 v-10"/>' +
+          '<text class="l" x="150" y="55" text-anchor="middle">active layer: thaws each summer</text>' +
+          '<text class="l" x="150" y="108" text-anchor="middle">permafrost: frozen all year</text>' +
+          D.arrow(290, 40, 290, 70, 'a') + '<text class="n" x="286" y="86" text-anchor="end">warming</text>' +
+          '<text class="n" x="150" y="166" text-anchor="middle">as the climate warms, the active layer gets deeper</text>',
+        tall: 172, cap: 'The active layer sits on top of the permafrost. Warmer summers thaw deeper into the frozen ground.' },
+      { h: 'Layers of ground' },
+      'Above the permafrost is a thin <b>active layer</b> that thaws each summer and freezes again each winter. Plants grow in it, and in summer it can be soft and soggy, because the frozen ground below stops water from draining away. The permafrost itself is a mix of soil, rock and ice. In some places, the ground is more ice than soil. Scientists drill holes and lower thermometers deep into the ground to measure how warm the permafrost is, year after year. Their records show it is warming in many places across the North.',
+      { h: 'A foundation that moves' },
+      'Northern buildings, roads and airstrips are built on permafrost, and they depend on it staying frozen. Canada’s North is warming about three times faster than the world as a whole. As the active layer deepens, ice in the ground melts, and the land sinks unevenly. Houses tilt, roads buckle and pipelines can bend. In some places, whole hillsides slump, as on Herschel Island.',
+      { box: 'Building on ice', text: 'Many northern buildings stand on steel posts drilled deep into the permafrost, with an air gap underneath, so the heat from the building cannot melt the ground.' },
+      { h: 'A global problem' },
+      'Permafrost holds the frozen remains of plants that lived long ago. When it thaws, microbes break this material down and release carbon dioxide and methane, greenhouse gases that cause more warming, which thaws more permafrost. Scientists call this a <b>feedback loop</b>. Northern communities, including many Inuit, Dene and Gwich’in, are working with scientists to measure the changes, adapt their buildings and protect the land they depend on for travel, hunting and food.'
+    ],
+    guide: { before: 'Freeze a tray of wet soil, then let the top thaw while the bottom stays frozen. Teach <b>permafrost</b>, <b>active layer</b> and <b>feedback loop</b>. Find Herschel Island on a map.',
+      after: 'How would life in your community change if the ground under it started to sink?' },
+    words: [['permafrost', 'ground that stays frozen for at least two years in a row'], ['active layer', 'the top layer of ground that thaws in summer'], ['feedback loop', 'a chain where a result causes more of its own cause']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Why is the active layer soggy in summer?',
+        opts: ['The frozen ground below stops water from draining away.', 'It rains every day.', 'Snow falls on it.', 'The plants make water.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the arrow in the diagram show?',
+        opts: ['Warming makes the active layer reach deeper.', 'Water flows uphill.', 'Plants grow downward.', 'The permafrost gets thicker.'], a: 0 },
+      { k: 'order', code: 'C1.5', q: 'Number the steps of the permafrost feedback loop.',
+        items: ['The climate warms.', 'Permafrost thaws.', 'Microbes release carbon dioxide and methane.', 'These gases cause more warming.'], show: [2, 0, 3, 1] },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why do some northern buildings stand on posts with an air gap?',
+        opts: ['so the building’s heat cannot melt the ground', 'to keep out animals', 'to see the view', 'to store snow'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Roads <b>buckle</b> when permafrost thaws. What does <b>buckle</b> mean here?',
+        opts: ['bend and crack out of shape', 'fasten', 'get longer', 'freeze'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Why is thawing permafrost a problem for the whole world, not only for the North?',
+        a: 'Thawing releases carbon dioxide and methane, which add to global warming everywhere and cause even more thawing.', look: 'greenhouse gases and the worldwide effect' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Whose knowledge and work does the report mention in the last sentence? Why does it matter?',
+        a: 'Inuit, Dene and Gwich’in communities working with scientists. They know the land well and depend on it, so their knowledge helps measure and respond to the changes.', look: 'the communities named and why their role matters' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'The idea of a feedback loop can be confusing. What did you do to check your understanding?',
+        a: 'I drew the steps in a circle with arrows and saw that the last step leads back to the first.', look: 'a monitoring strategy and how it helped' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-upper-canada-letter', subject: 'story', form: 'Letter', plain: true,
+    title: 'A Letter from the Bush',
+    deck: 'An invented letter from a girl in Upper Canada to her grandmother in Scotland, 1834',
+    hero: {
+      photo: 'g7-log-house.jpg', credit: 'Photo: Adam Bishop, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 200,
+      cap: 'A log house at Fanshawe Pioneer Village in London, Ontario, like those built by settlers in the 1830s.'
+    },
+    body: [
+      '<i>Near Peterborough, Upper Canada<br>the 2nd of October, 1834</i>',
+      'Dearest Grandmother,',
+      'We are alive and well, though it has been a long road since Greenock. The crossing took seven weeks. Wee Tam was sick nearly the whole way, and two passengers died of fever, but God spared us. From Montréal we went by bateau up the river, then by wagon over roads that are mostly stumps and mud. Father says the word “road” here is a kind of joke.',
+      { h: 'Our new home' },
+      'Our land is one hundred acres, and when we arrived it was all trees, bigger than any in Scotland. You cannot imagine the size of them. Father and Uncle Rab cut a small <b>clearing</b> and built a shanty of logs, with a bark roof that leaks when it rains. In August our neighbours came to help raise a proper log house. They call it a <b>bee</b>. There were twenty men and boys, and the women cooked from dawn to dark. I carried water until my arms ached. By nightfall the walls were up, and there was fiddle music and dancing.',
+      { h: 'New neighbours' },
+      'There are Mississauga families who camp by the lake in summer. A woman came to our door with fish and maple sugar, and Mother gave her a wool shawl. We cannot speak to one another, but she showed me how to set a snare for rabbits. I have learned to say <i>miigwech</i>, which means thank you. Father says this was all their country before ours, and I think about that often.',
+      { fig: '<rect class="k" x="20" y="20" width="260" height="130"/>' +
+          '<rect class="h" x="40" y="40" width="70" height="50"/><text class="n" x="75" y="104" text-anchor="middle">clearing</text>' +
+          '<rect class="k" x="64" y="56" width="22" height="16"/><text class="n" x="75" y="34" text-anchor="middle">log house</text>' +
+          [130, 160, 190, 220, 250, 140, 175, 210, 245, 60, 95, 125].map(function (x, i) { return D.spruce(x, i < 5 ? 70 : i < 9 ? 112 : 140, 18); }).join('') +
+          '<text class="l" x="200" y="48" text-anchor="middle">forest still to clear</text><text class="n" x="150" y="166" text-anchor="middle">one hundred acres</text>',
+        tall: 172, cap: 'The narrator’s sketch of the family’s land after the first summer.' },
+      { box: 'Reading a letter from the past', text: 'This letter is invented, but it is based on real settlers’ letters and diaries. As you read, notice what the writer worries about, what she is proud of, and what she does not fully understand.' },
+      'The winter is coming, and they say it is colder than anything in Scotland. Please send wool, and a little tea if you can. I miss you every day, and I miss the sea. Mother says that in a few years we will have fields of wheat where the trees stand now, and a real house with glass windows. I hope she is right.',
+      'Your loving granddaughter,<br>Isobel'
+    ],
+    guide: { before: 'Find Scotland and Peterborough, Ontario, on a map. Teach <b>clearing</b> and <b>bee</b>. Explain that Upper Canada is now Ontario, and that the Mississauga are an Anishinaabe nation.',
+      after: 'Isobel writes that “this was all their country before ours.” What questions would you ask her about that?' },
+    words: [['clearing', 'an area of land where the trees have been cut down'], ['bee', 'a gathering where neighbours work together on a big job']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a letter?',
+        opts: ['It has a place, a date, a greeting and a closing.', 'It has headings and a glossary.', 'It rhymes.', 'It has numbered steps.'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the sketch show about the family’s land?',
+        opts: ['Only a small part has been cleared.', 'All the land is cleared.', 'It is beside the sea.', 'It has many houses.'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Father says the word “road” is “a kind of joke.” What does he mean?',
+        opts: ['The roads are so bad they hardly deserve the name.', 'The roads are funny to look at.', 'There are no roads at all.', 'He is telling a riddle.'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'From whose point of view is the letter written?',
+        opts: ['Isobel, a settler girl, in the first person', 'the Mississauga woman', 'Grandmother', 'an outside narrator'], a: 0 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What hardships did Isobel’s family face? Give three.',
+        a: 'A long sick voyage, terrible roads, a leaking shanty, hard work clearing trees, and a cold winter coming.', look: 'three hardships from the letter' },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'How might the Mississauga woman describe the same events? Think about her point of view.',
+        a: 'She might say new families were cutting down the forest where her people had always lived and camped, but that she tried to be kind and helpful to them.', look: 'a perspective that reflects the Mississauga experience' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Isobel misses the sea and her grandmother. Have you ever moved or been far from someone you love? Connect your experience to hers.',
+        a: 'When I moved schools I missed my friends. Like Isobel, I felt excited about new things but also homesick.', look: 'a personal connection to her feelings' },
+      { k: 'choice', code: 'B3.3', q: 'Why is <i>miigwech</i> written in italics?',
+        opts: ['It is a word from another language.', 'It is the title of a book.', 'Someone is shouting it.', 'It is spelled wrong.'], a: 0 }
+    ]
+  });
+
 })();
