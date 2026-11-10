@@ -28,10 +28,14 @@
    9. Reading passages (Grades 4 to 8): every passage has its pictures, words to know, a grown-up guide, a length right for the
       grade and 6 to 9 questions on real expectations of the grade, each with a right answer the key can print; the front, the
       back and the answer key each fit on one page. The list and a passage open on a phone, an iPad and a laptop, and the key
-      shows only in grown-up view. */
+      shows only in grown-up view.
+  10. Decodable readers (tool box): every word on every page can be sounded out with the phonics steps taught so far, or is a
+      taught heart word (decodable.js works this out again); every page and its grown-up page are drawn with nothing off the page;
+      the tool opens on a phone, an iPad and a laptop with no errors, and the grown-up page stays hidden unless grown-up view is on. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
+const decodable = require('./decodable');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -39,7 +43,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'engine.css', 'sheets.css', 'library.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'decodable.js', 'engine.css', 'sheets.css', 'decodable.css', 'library.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -1323,6 +1327,48 @@ async function checkPassages(browser, base, g) {
   return n;
 }
 
+/* ---------- 9. decodable readers (tool box, the same in every grade: checked once, in Grade 1) ---------- */
+async function checkDecodable(browser, base) {
+  const where = 'decodable readers';
+  decodable.check(decodable.load(ROOT)).forEach(p => fail('tool box', p));
+  const { ctx, page, errs } = await newPage(browser, base);
+  await page.goto(base + '/grade1/index.html#tools/decodable');
+  await page.waitForSelector('.dc-card');
+  const r = await page.evaluate(() => {
+    const D = Atlas.decodable, out = [], box = document.createElement('div');
+    box.className = 'ws-sheet';
+    box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
+    document.body.appendChild(box);
+    D.all().forEach(p => {
+      const name = p.id + (p.s > 1 ? ' story ' + p.s : '');
+      ['page', 'key'].forEach(side => {
+        const r = D.render(box, p, side), text = box.textContent;
+        if (r.over) out.push(name + ': ' + (side === 'key' ? 'the grown-up page' : 'the page') + ' runs off the paper');
+        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(text)) out.push(name + ': shows undefined or NaN');
+      });
+      p.pic.forEach(n => { if (!D.pics[n]) out.push(name + ': there is no picture called ' + n); });
+    });
+    box.remove();
+    const more = D.list.filter(p => p.stories.length > 1)[0];
+    return { out, n: D.all().length, first: more ? more.id + '/2' : D.list[0].id };
+  });
+  r.out.forEach(p => fail(where, p));
+  for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    await page.evaluate(() => { location.hash = 'tools/decodable'; });
+    await page.waitForSelector('.dc-card');
+    await screenCheck(page, where, 'the list of steps at ' + vp.width + ' px');
+    await page.evaluate(id => { location.hash = 'tools/decodable/' + id; }, r.first);
+    await page.waitForSelector('.ws-sheet .dc-page');
+    await page.waitForTimeout(200);
+    await screenCheck(page, where, 'a story at ' + vp.width + ' px');
+    if (await page.locator('.ws-sheet[data-side="key"]').isVisible()) fail(where, 'the grown-up page shows with grown-up view off at ' + vp.width + ' px');
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+  return r.n;
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -1346,6 +1392,9 @@ async function checkPassages(browser, base, g) {
     try { await checkMeaning(browser, url, g); log('Grade ' + g + ' tool box: Word shades and Word web checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Word shades and Word web', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkMaps(browser, url, g); log('Grade ' + g + ' tool box: Text maps checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Text maps', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { await checkWriting(browser, url, g); log('Grade ' + g + ' tool box: Paragraph builder and Letter pad checked on phone, iPad and laptop.'); } catch (e) { fail('grade ' + g + ' Paragraph builder and Letter pad', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+  }
+  if (GRADES.includes(1)) {
+    try { const n = await checkDecodable(browser, url); log('Decodable readers: ' + n + ' stories, every word sounded out at its step, each story drawn and opened on phone, iPad and laptop.'); } catch (e) { fail('decodable readers', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
