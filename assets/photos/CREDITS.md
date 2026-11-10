@@ -89,3 +89,30 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-corn-maze.jpg` | A path through a corn maze | Hugho226 | CC0 | https://commons.wikimedia.org/wiki/File:Inside_a_corn_maze_near_Christchurch,_New_Zealand.JPG |
 | `g4-ice-storm.jpg` | Trees and power lines coated in ice after the 1998 ice storm | J. Jensenius, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Ice_Storm_98_trees_line_Noaa6198.jpg |
 | `g4-thermometer.jpg` | A frozen outdoor thermometer | August Geyler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eingefrorenes_Außenthermometer.jpg |
+| `g7-zebra-mussels.jpg` | A cluster of zebra mussels | NOAA Great Lakes Environmental Research Laboratory | Public domain | https://commons.wikimedia.org/wiki/File:Zebra_mussel_GLERL_2.jpg |
+| `g7-heron.jpg` | A great blue heron at Point Pelee National Park, Ontario | Lgbt7274 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Great_Blue_Heron,_Point_Pelee_National_Park.jpg |
+| `g7-truss-bridge.jpg` | A steel truss railway bridge (CNR main line), Winnipeg, Manitoba | Quintin Soloviev | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:CNR_Main_Line_Bridge_-_Winnipeg.jpg |
+| `g7-grand-pre.jpg` | The memorial church at Grand-Pré National Historic Site, Nova Scotia | CP Hoffman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Memorial_Church,_Grand-Pré,_Nova_Scotia_(3618093503).jpg |
+| `g7-thingvellir.jpg` | The rift valley at Þingvellir National Park, Iceland | Pi3.124 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Thingvellir_National_Park_rift_valley.jpg |
+| `g7-grocery.jpg` | Boxes of cereal on supermarket shelves | Vauxford | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesco_Supermarket_(Cereal).jpg |
+| `g7-carr.jpg` | Odds and Ends, painting by Emily Carr, 1939 (Art Gallery of Greater Victoria) | Emily Carr | Public domain | https://commons.wikimedia.org/wiki/File:Emily_Carr_(1939)_Odds_and_Ends.jpg |
+| `g7-gps-satellite.jpg` | An artist's view of a GPS satellite in orbit | NASA | Public domain | https://commons.wikimedia.org/wiki/File:GPS_Satellite_NASA_art-iif.jpg |
+| `g7-hockey.jpg` | Minor hockey players on the ice, Stirling, Ontario | Robert Taylor | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stirling_Blues_Minor_Hockey_Teams_7802_(8040367576).jpg |
+| `g7-cod.jpg` | An Atlantic cod | Wilhelm Thomas Fiege | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlantic_Cod,_Atlantischer_Kabeljau_(Gadus_morhua).jpg |
+| `g7-quinzhee.jpg` | A quinzhee snow shelter | NASA ICE | Public domain | https://commons.wikimedia.org/wiki/File:Quinzhee_(8474257236).jpg |
+| `g7-winter-road.jpg` | An ice road on Great Slave Lake, Northwest Territories | Hyougushi | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Ice_Road_on_Great_Slave_Lake_2.jpg |
+| `g7-birchtown.jpg` | An interpretive sign on the Heritage Trail at Birchtown, Nova Scotia | Madereugeneandrew | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Birchtown,_Nova_Scotia_(cropped).jpg |
+| `g7-bayard.jpg` | Self-Portrait as a Drowned Man, a staged photograph by Hippolyte Bayard, 1840 | Hippolyte Bayard | Public domain | https://commons.wikimedia.org/wiki/File:Hippolyte_Bayard_-_Drownedman_1840.jpg |
+| `g7-salt-pans.jpg` | Salt evaporation pans at Marakkanam, India | Sandip Dey | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Marakkanam_Salt_Pans.JPG |
+| `g7-jingle-dress.jpg` | A jingle dress dancer on Canada Day in Calgary, Alberta | JMacPherson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Jingle_Dress_Dancer_(43090211752).jpg |
+| `g7-vape.jpg` | A vape pen (e-cigarette) | Lindsay Fox | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Vape_Pen_-_E-Cigarette_(25245589669).jpg |
+| `g7-lanterns.jpg` | Red paper lanterns glowing at night | epSos.de | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Red_Chinese_Lanterns_at_Night.jpg |
+| `g7-tecumseh.jpg` | The Tecumseh memorial at the site of the Battle of the Thames, near Thamesville, Ontario | Adam Bishop | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tecumseh_memorial_Battle_of_the_Thames.jpg |
+| `g7-bike-frame.jpg` | A steel bicycle frame being built in a jig | 4300streetcar | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Partially-completed_steel_bicycle_frame_in_jig.jpg |
+| `g7-montgomery.jpg` | Montgomery's Tavern, Upper Canada | Unknown | Public domain | https://commons.wikimedia.org/wiki/File:Montgomery's_Tavern.jpg |
+| `g7-brain-model.jpg` | A model of the human brain | YVC Biology Department | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Brain_Anatomy_Model_(50692878253).jpg |
+| `g7-coins.jpg` | Stacks of Canadian coins | Katherine Ridgley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Stacks_of_Canadian_Coins_(16269886909).jpg |
+| `g7-harris-superior.jpg` | North Shore, Lake Superior (1926) by Lawren Harris | Lawren Harris | Public domain | https://commons.wikimedia.org/wiki/File:Lawren_Harris_North_Shore,_Lake_Superior_1926.jpg |
+| `g7-boreal.jpg` | Boreal forest | Ray Murphy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg |
+| `g7-atmosphere.jpg` | Earth's thin atmosphere seen from the ISS | NASA | Public domain | https://commons.wikimedia.org/wiki/File:ISS-51_Moon,_Earth's_limb_and_the_thin_blue_atmosphere.jpg |
+| `g7-red-river-carts.jpg` | A train of Red River carts | Whitney's Gallery | Public domain | https://commons.wikimedia.org/wiki/File:Red_River_cart_train.jpg |
