@@ -1,0 +1,149 @@
+/* Language Atlas tool box: the Spelling path (spellpath.js). The step list and the printed page borrow the decodable readers' layout
+   (decodable.css: .dc-card, .dc-page) and the worksheets' paper and printing (sheets.css); this adds the spelling parts. Colours come from the theme. */
+
+/* ---------- one step ---------- */
+.sp-one{display:flex;flex-direction:column;gap:14px;padding:4px 0 24px}
+.sp-rule{min-width:0;display:flex;align-items:center;gap:18px;padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.sp-focus{white-space:nowrap;display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.05;color:var(--accent)}
+.sp-rt{min-width:0;margin:0;font-size:1.15rem;font-weight:700}
+.sp-coach{margin:0}
+.sp-coach p{margin:0 0 6px}
+.sp-codes{font-size:.85rem;color:var(--ink2)}
+.sp-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:14px;background:var(--line)}
+.sp-tabs a{flex:1 0 auto;display:grid;place-items:center;min-height:44px;padding:0 14px;border-radius:10px;color:var(--ink2);font-weight:700;text-decoration:none;white-space:nowrap}
+.sp-tabs a[aria-current]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.sp-card{display:flex;flex-direction:column;align-items:center;gap:16px;padding:clamp(16px,3vw,28px);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+.sp-msg{min-height:1.6em;margin:0;text-align:center;font-weight:700;color:var(--ink2)}
+.sp-good{color:var(--good)}
+.sp-do{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.sp-do .btn{min-height:48px}
+.sp-wc{min-height:50px;padding:0 18px;border-radius:14px;border:2px solid var(--line2);box-shadow:0 3px 0 var(--line2);background:var(--card);color:var(--ink);font:inherit;font-size:1.2rem;font-weight:700;cursor:pointer;touch-action:manipulation;transition:transform .15s}
+.sp-wc.sp-sel{transform:translateY(-5px) rotate(-2deg);border-color:var(--accent);box-shadow:0 8px 16px rgba(19,32,57,.16)}
+
+/* Sound boxes */
+.sp-count{margin:0;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.sp-cue{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 20px;max-width:100%}
+.sp-pic{margin:0;width:130px;max-width:100%;padding:8px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.sp-pic .dc-art{--acc:var(--accent);height:auto}
+.sp-clue{margin:0;font-size:1.25rem;text-align:center;max-width:30ch}
+.sp-blank{display:inline-block;width:3.5em;border-bottom:2.5px solid var(--ink);vertical-align:baseline}
+.sp-say{margin:0;color:var(--ink2);font-size:.95rem}
+.sp-say-g{margin:0}
+.sp-boxes{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.sp-box{display:flex;flex-direction:column;align-items:center;gap:10px}
+.sp-slot{white-space:nowrap;display:grid;place-items:center;width:clamp(64px,13vw,100px);height:clamp(74px,14vw,112px);border:2px dashed var(--line2);border-radius:18px;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;cursor:pointer;touch-action:manipulation;transition:background .2s,border-color .2s}
+.sp-full{border-style:solid}
+.sp-long{font-size:clamp(1.4rem,3.6vw,2.1rem)}
+.sp-pick{border-color:var(--accent);border-style:solid;box-shadow:0 0 0 3px var(--tint)}
+.sp-ok{border:2px solid var(--good);background:color-mix(in srgb,var(--good) 12%,var(--card))}
+.sp-no{border:2px solid var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--card))}
+.sp-dot{width:18px;height:18px;border-radius:50%;background:var(--line2);cursor:pointer}
+.sp-dot.sp-lit{background:var(--accent);box-shadow:0 0 0 6px var(--tint)}
+.sp-tray{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:640px}
+.sp-tile{white-space:nowrap;display:grid;place-items:center;min-width:58px;height:60px;padding:0 12px;border-radius:14px;border:2px solid var(--line2);box-shadow:0 3px 0 var(--line2);background:var(--card);color:var(--ink);font:inherit;font-size:1.55rem;font-weight:700;cursor:pointer;touch-action:manipulation}
+.sp-tile.sp-v{border-color:var(--hi);box-shadow:0 3px 0 var(--hi);background:color-mix(in srgb,var(--hi) 22%,var(--card))}
+.sp-tile:active{transform:translateY(3px);box-shadow:none}
+.sp-word{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,7vw,3.2rem);color:var(--ink)}
+
+/* Sort and the choice map */
+.sp-q{margin:0;font-family:var(--display);font-weight:700;font-size:1.2rem;text-align:center}
+.sp-map,.sp-cols{display:grid;gap:12px;width:100%}
+.sp-map{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.sp-cols{grid-template-columns:repeat(var(--n),minmax(0,1fr))}
+.sp-zone{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:18px;background:var(--paper);border:1px solid var(--line);min-width:0}
+.sp-zone h3{margin:0;display:flex;align-items:center;gap:8px;font-size:.95rem}
+.sp-shape{display:flex;gap:4px}
+.sp-shape i{width:14px;height:14px;border-radius:4px;background:var(--line2)}
+.sp-shape i.sp-here{background:var(--accent)}
+.sp-bin{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-height:116px;min-width:0;padding:12px;border:2px dashed var(--line2);border-radius:16px;background:var(--card);color:var(--ink);font:inherit;text-align:left;cursor:pointer;touch-action:manipulation}
+.sp-bin:hover{border-color:var(--accent)}
+.sp-bl{font-family:var(--display);font-weight:800;font-size:1.35rem;overflow-wrap:anywhere}
+.sp-got{display:flex;flex-wrap:wrap;gap:6px}
+.sp-got span{padding:2px 10px;border-radius:99px;background:color-mix(in srgb,var(--good) 14%,var(--card));color:var(--good);font-weight:700}
+.sp-words{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.sp-shake{animation:spshake .35s}
+@keyframes spshake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* Ending workshop */
+.sp-pairs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.sp-pairs .sp-wc{font-size:1.05rem;min-height:46px}
+.sp-bench{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;min-height:110px}
+.sp-piece{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3rem);padding:4px 18px;border-radius:16px;background:var(--paper);border:2px solid var(--line2)}
+.sp-sufp{border-color:var(--accent);color:var(--accent)}
+.sp-plus{font-size:2rem;color:var(--ink3)}
+.sp-joined{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,7vw,3.5rem);overflow-wrap:anywhere}
+.sp-joined span{display:inline-block}
+.sp-suf,.sp-swap{color:var(--accent)}
+.sp-add{color:var(--good);animation:sppop .6s ease}
+.sp-swap{animation:sppop .6s ease}
+.sp-gone{color:var(--bad);text-decoration:line-through;opacity:.4}
+@keyframes sppop{0%{transform:translateY(-16px) scale(1.4);opacity:0}100%{transform:none;opacity:1}}
+.sp-try{display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:700;color:var(--ink2)}
+.sp-try input{width:min(280px,80vw);min-height:52px;padding:0 14px;border:2px solid var(--line2);border-radius:14px;font:inherit;font-size:1.4rem;text-align:center;color:var(--ink);background:var(--card)}
+.sp-try input:focus{border-color:var(--accent);outline:none}
+
+/* Dictation pad */
+.sp-dict{align-items:stretch}
+.sp-lede,.sp-how{margin:0;color:var(--ink2)}
+.sp-h{margin:4px 0 0;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.sp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sp-line{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sp-ln{display:flex;align-items:center;gap:10px}
+.sp-ln b{flex:none;width:1.4em;text-align:right;font-family:var(--display);color:var(--ink3)}
+.sp-ln canvas{flex:1;min-width:0;height:88px;border-radius:14px;border:1px solid var(--line);touch-action:none;cursor:crosshair;
+  background:linear-gradient(transparent 29px,var(--line2) 29px,var(--line2) 30px,transparent 30px,transparent 59px,var(--ink3) 59px,var(--ink3) 60px,transparent 60px),var(--paper)}
+.sp-script{margin:0 0 0 2.1em;color:var(--ink2)}
+.sp-marks{display:flex;flex-wrap:wrap;gap:6px;margin-left:2.1em}
+.sp-mk{min-width:44px;min-height:40px;padding:0 10px;border-radius:10px;border:1px solid var(--good);background:color-mix(in srgb,var(--good) 10%,var(--card));color:var(--good);font:inherit;font-weight:700;cursor:pointer}
+.sp-mk[aria-pressed="true"]{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--card));color:var(--bad);text-decoration:line-through}
+.sp-sum{text-align:center}
+.sp-sum span{display:inline-block;margin:2px;padding:1px 10px;border-radius:99px;background:color-mix(in srgb,var(--bad) 10%,var(--card));color:var(--bad);font-weight:700}
+.sp-hist p,.sp-hist ul{margin:0}
+.sp-hist ul{padding-left:20px;color:var(--ink2)}
+html.adult .sp-marks.adult-only,html.adult .sp-script.adult-only,html.adult .sp-say-g.adult-only{border:0;padding-top:0;margin-top:0}
+html.adult .sp-marks.adult-only::after,html.adult .sp-script.adult-only::after,html.adult .sp-say-g.adult-only::after{content:none}
+
+/* the list: where each step stands */
+.sp-st{font-weight:700}
+.sp-st-secure{color:var(--good)}
+.sp-st-practise{color:var(--accent)}
+
+@media (max-width:640px){
+  .sp-rule{gap:12px;padding:12px 14px}
+  .sp-grid{grid-template-columns:1fr}
+  .sp-cols{grid-template-columns:1fr}
+  .sp-bin{min-height:0}
+  .sp-tile{min-width:52px;height:54px;font-size:1.35rem}
+  .sp-pic{width:120px}
+}
+@media (prefers-reduced-motion:reduce){.sp-add,.sp-swap,.sp-shake{animation:none}.sp-wc,.sp-slot{transition:none}}
+
+/* ---------- the printed page ---------- */
+.sp-page .dc-title{font-size:32px}
+.sp-pband{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line2)}
+.sp-pfocus{display:grid;place-items:center;min-height:84px;border:1.5px solid var(--acc);border-radius:14px;font-family:var(--face);font-size:38px;font-weight:700;color:var(--acc);word-spacing:.15em;text-align:center;line-height:1.1}
+.sp-prule{font-size:19px;font-weight:700}
+.sp-pheart{display:flex;align-items:flex-end;gap:14px;margin-top:8px!important}
+.sp-pheart .ws-label{margin:0!important}
+.sp-trace{font-family:var(--face);font-size:30px;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1px var(--ink2);border-bottom:1.3px solid var(--ink)}
+.sp-pheart i{width:110px;height:30px;border-bottom:1.3px solid var(--ink)}
+.sp-psec{padding:6px 0 calc(10px * var(--z,1));border-bottom:1px solid var(--line2);overflow:hidden}
+.sp-pboxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(10px * var(--z,1)) 30px}
+.sp-pb{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"pic clue" "pic row";align-items:center;gap:4px 12px}
+.sp-pb > p{grid-area:clue;font-size:calc(15px * var(--z,1))}
+.sp-ppic{grid-area:pic;width:calc(70px * var(--z,1))}
+.sp-ppic .dc-art{width:100%;height:auto}
+.sp-prow{grid-area:row;display:flex;gap:6px}
+.sp-prow i{width:calc(44px * var(--z,1));height:calc(48px * var(--z,1));border:1.4px solid var(--ink);border-radius:8px}
+.sp-pbank{font-size:calc(18px * var(--z,1));font-weight:700;letter-spacing:.02em;margin:2px 0 6px!important}
+.sp-pcols{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:22px}
+.sp-pbin{font-family:var(--face);font-size:20px;font-weight:700;color:var(--acc);border-bottom:1.5px solid var(--acc);padding-bottom:2px}
+.sp-pbin span{font-family:var(--body);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.sp-plines{height:calc(150px * var(--z,1));background:repeating-linear-gradient(transparent 0 29px,var(--line2) 29px 30px)}
+.sp-pends{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(12px * var(--z,1)) 30px;font-size:calc(18px * var(--z,1))}
+.sp-pdict{flex:1;min-height:0;border-bottom:0}
+.sp-pdl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.sp-pdl p,.sp-psent{display:flex;align-items:flex-end;gap:10px;height:calc(40px * var(--z,1))}
+.sp-pdl b,.sp-psent b{font-family:var(--face);font-size:18px;color:var(--acc);width:18px}
+.sp-pdl i,.sp-psent i{flex:1;border-bottom:1.3px solid var(--ink);height:1px}
+.sp-page .ws-ans{margin-top:4px!important}

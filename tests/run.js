@@ -36,6 +36,7 @@ const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = r
 const { chromium } = require('playwright');
 const startServer = require('./server');
 const decodable = require('./decodable');
+const spelling = require('./spelling');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -43,7 +44,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'decodable.js', 'engine.css', 'sheets.css', 'decodable.css', 'library.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'decodable.js', 'spellpath.js', 'engine.css', 'sheets.css', 'decodable.css', 'spellpath.css', 'library.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -1369,6 +1370,78 @@ async function checkDecodable(browser, base) {
   return r.n;
 }
 
+/* ---------- 10. Spelling path (tool box, the same in every grade: checked once, in Grade 1) ---------- */
+async function checkSpelling(browser, base) {
+  const where = 'spelling path';
+  const list = spelling.load(ROOT);
+  spelling.check(list, ROOT).forEach(p => fail('tool box', p));
+  const { ctx, page, errs } = await newPage(browser, base);
+  await page.goto(base + '/grade1/index.html#tools/spelling');
+  await page.waitForSelector('.dc-card');
+  const r = await page.evaluate(want => {
+    const SP = Atlas.spelling, out = [], box = document.createElement('div');
+    box.className = 'ws-sheet';
+    box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
+    document.body.appendChild(box);
+    want.forEach(([id, b, s, w]) => { const e = SP.ending(b, s); if (e.word !== w) out.push(id + ': ' + b + ' + ' + s + ' makes ' + e.word + ' in the tool, but the spelling rules give ' + w); });
+    SP.list.forEach(p => {
+      ['page', 'key'].forEach(side => {
+        const r = SP.render(box, p, side);
+        if (r.over) out.push(p.id + ': the printed ' + (side === 'key' ? 'grown-up page' : 'page') + ' runs off the paper');
+        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push(p.id + ': the printed ' + side + ' shows undefined or NaN');
+      });
+      SP.dictation(p).words.forEach(w => { if (Atlas.toolkit.spell(w.u).toLowerCase() !== w.w.toLowerCase()) out.push(p.id + ': the dictation word ' + w.w + ' is split into ' + w.u.join(' ') + ', which does not spell it'); });
+      p.words.forEach(w => { const t = SP.tray(w.u); w.u.forEach(u => { if (t.indexOf(u) < 0) out.push(p.id + ' "' + w.w + '": the tray has no ' + u + ' tile'); }); });
+    });
+    box.remove();
+    return { out, n: SP.list.length, ids: SP.list.map(p => p.id) };
+  }, spelling.endings(list));
+  r.out.forEach(p => fail(where, p));
+  /* use every part of every step on a phone: spell a word, sort every word, join an ending, mark and save a dictation */
+  for (const id of r.ids) {
+    await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/build'; }, id);
+    await page.waitForSelector('.sp-slot');
+    const units = await page.evaluate(id => { const c = document.querySelector('.sp-clue').textContent.trim(); return Atlas.spelling.find(id).words.find(w => w.clue.replace('___', '').trim() === c).u; }, id);
+    for (const u of units) await page.click('.sp-tile[data-t="' + u + '"]');
+    await page.click('[data-a="check"]');
+    if (!(await page.$('.sp-msg.sp-good'))) fail(where, id + ': spelling a word right in Sound boxes is not marked right');
+    if (await page.$('a[href="#tools/spelling/' + id + '/sort"]')) {
+      await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/sort'; }, id);
+      await page.waitForSelector('.sp-bin');
+      const items = await page.evaluate(id => Atlas.spelling.find(id).sort.list.map(it => [it.w, it.bin]), id);
+      for (const [w, b] of items) { await page.click('.sp-wc:text-is("' + w + '")'); await page.click('.sp-bin[data-b="' + b + '"]'); }
+      if (!(await page.$('[data-a="again"]'))) fail(where, id + ': putting every word in its bin does not finish the sort');
+    }
+    if (await page.$('a[href="#tools/spelling/' + id + '/endings"]')) {
+      await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/endings'; }, id);
+      await page.waitForSelector('.sp-bench');
+      const w = spelling.addEnding(...(await page.evaluate(id => Atlas.spelling.find(id).endings[0], id)));
+      await page.fill('#sp-end-in', w); await page.click('[data-a="join"]');
+      if (!(await page.$('.sp-msg.sp-good'))) fail(where, id + ': writing ' + w + ' in the Ending workshop is not marked right');
+    }
+  }
+  for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print']) {
+      await page.evaluate(h => { location.hash = 'tools/spelling' + h; }, part);
+      await page.waitForSelector(part ? '.sp-stage > *' : '.dc-card');
+      await page.waitForTimeout(150);
+      await screenCheck(page, where, (part || 'the list of steps') + ' at ' + vp.width + ' px');
+    }
+  }
+  await page.evaluate(() => Atlas.adult(true));
+  await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/dictate'; }, r.ids[0]);
+  await page.waitForSelector('.sp-mk');
+  await page.click('.sp-grid .sp-mk >> nth=0');
+  await page.click('[data-a="save"]');
+  const saved = await page.evaluate(id => Atlas.spelling.record(Atlas.spelling.find(id)).days, r.ids[0]);
+  if (!saved.length || saved[0].slips.length !== 1 || saved[0].ok !== saved[0].of - 1) fail(where, 'saving a dictation with one sound marked wrong does not keep the right score');
+  await page.evaluate(() => Atlas.adult(false));
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+  return r.n;
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -1395,6 +1468,7 @@ async function checkDecodable(browser, base) {
   }
   if (GRADES.includes(1)) {
     try { const n = await checkDecodable(browser, url); log('Decodable readers: ' + n + ' stories, every word sounded out at its step, each story drawn and opened on phone, iPad and laptop.'); } catch (e) { fail('decodable readers', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { const n = await checkSpelling(browser, url); log('Spelling path: ' + n + ' steps, every word, sort and ending worked out again, every part used, each printed page drawn, on phone, iPad and laptop.'); } catch (e) { fail('spelling path', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }
