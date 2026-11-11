@@ -4622,7 +4622,7 @@
       '<i>Hamza Siddiqui, a Grade 8 student in Fort McMurray, Alberta, interviewed Rae Cardinal for his school newspaper. Cardinal leads a wildfire crew and has fought fires for eleven seasons.</i>',
       '<b class="ps-who">Hamza:</b> Let’s start with the obvious question. Why would anyone run toward a fire?',
       '<b class="ps-who">Cardinal:</b> We’re not running toward it the way people imagine. We’re walking toward it with a plan. When my crew lands, we first size up the fire: how big it is, which way the wind is pushing it and what fuel lies in front of it. Then we choose where to attack. Usually that’s a <b>flank</b>, not the head, which is the front edge, where the fire moves fastest. Standing in front of the head is how people get hurt.',
-      { fig: '<path class="a" d="M150 14 L262 176 H38 Z"/>' + tx(150, 8, 'lb', 'HEAT', 'middle') + tx(150, 194, 'lb', 'FUEL', 'middle') + tx(70, 82, 'lb', 'OXYGEN', 'end') +
+      { fig: '<path class="a" d="M150 18 L262 176 H38 Z"/>' + tx(150, 12, 'lb', 'HEAT', 'middle') + tx(150, 194, 'lb', 'FUEL', 'middle') + tx(70, 82, 'lb', 'OXYGEN', 'end') +
           tx(150, 112, 'n', 'Take away any side', 'middle') + tx(150, 126, 'n', 'and the fire goes out.', 'middle') +
           tx(214, 62, 'n', 'water cools', 'start') + tx(214, 75, 'n', 'the fire', 'start') + tx(150, 212, 'n', 'a fire guard (a strip dug down to soil) removes fuel', 'middle') + tx(70, 96, 'n', 'soil smothers', 'end') + tx(70, 109, 'n', 'the flames', 'end'),
         tall: 220, cap: 'The fire triangle: a fire needs heat, fuel and oxygen. Crews attack one side.' },
@@ -5049,7 +5049,7 @@
     },
     body: [
       'In 1942, an American comic book published a story about a Canadian engineer. Its heroine was not a soldier or a pilot but an engineer bent over drawings of aircraft, and the comic gave her a nickname that stayed with her for the rest of her life: “Queen of the Hurricanes.” Her real name was Elsie MacGill, and almost nothing about her career had been expected of her.',
-      { fig: timeline([[0, 'born in', 'Vancouver', '1905'], [1, 'engineering', 'degree', '1927'], [2, 'polio;', 'master’s', '1929'], [3, 'designs the', 'Maple Leaf II', '1938'], [4, '“Queen of the', 'Hurricanes”', '1942'], [5, 'commission on', 'women', '1967']], 0, 5),
+      { fig: timeline([[0, 'born in', 'Vancouver', '1905'], [1, 'engineering', 'degree', '1927'], [2, 'polio;', 'master’s', '1929'], [3, 'designs', 'Maple Leaf II', '1938'], [4, '“Queen of the', 'Hurricanes”', '1942'], [5, 'women’s', 'commission', '1967']], 0, 5),
         tall: 128, cap: 'Key events in Elsie MacGill’s life (not to scale).' },
       { h: 'An unusual student' },
       'MacGill was born in Vancouver in 1905. Her mother, Helen Gregory MacGill, became one of the first women judges in British Columbia, and her household treated ambition as ordinary. Even so, when Elsie enrolled in engineering at the University of Toronto, she was the only woman in her program. In 1927 she became the first woman in Canada to earn a degree in electrical engineering. She then moved to the University of Michigan to study <b>aeronautical</b> engineering, the science of designing aircraft.',
@@ -5086,7 +5086,7 @@
     title: 'Why We Love Cliffhangers',
     deck: 'Unfinished stories pull at us. Scientists have some ideas about why.',
     hero: {
-      photo: 'g8-stress.jpg', credit: 'Photo: University of Illinois Library, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      photo: 'g8-stress.jpg', credit: 'Photo: University of Illinois Library, CC BY 2.0, Wikimedia Commons', focus: '50% 43%',
       tall: 130,
       cap: 'A reader in a library. Have you ever stayed up too late to finish just one more chapter?'
     },
@@ -5098,7 +5098,7 @@
       'Why? One early explanation came from Bluma Zeigarnik, a psychologist who reportedly noticed in the 1920s that restaurant servers could remember complicated unpaid orders, then forgot them as soon as the bills were settled. In experiments, she found that people tended to remember interrupted tasks better than completed ones. Later studies have produced mixed results, so scientists treat the “Zeigarnik effect” with caution. Still, the idea remains popular with writers, who have always known that an unanswered question can be more powerful than an answer.',
       'A second explanation focuses on curiosity. The economist George Loewenstein has argued that curiosity is a kind of <b>information gap</b>: when we know a little about something but not enough, we feel an itch to close the gap. A cliffhanger works by opening such a gap deliberately and then refusing, for the moment, to close it.',
       { fig: '<path class="k" d="M20 150 H290 M20 150 V20"/><path class="a" d="M20 140 C70 130 90 100 120 96 C150 92 160 60 190 46 C210 38 220 30 236 26"/><path class="d" d="M236 26 V150"/><path class="t" d="M240 40 C255 60 262 100 288 128"/>' +
-          tx(236, 18, 'lb', 'cliffhanger', 'middle') + tx(155, 168, 'n', 'the story goes on →', 'middle') + tx(14, 86, 'n', 'tension', 'end') + tx(264, 112, 'n', 'next', 'middle') + tx(264, 124, 'n', 'chapter', 'middle') + tx(60, 126, 'n', 'build-up', 'middle'),
+          tx(236, 18, 'lb', 'cliffhanger', 'middle') + tx(155, 168, 'n', 'the story goes on →', 'middle') + tx(24, 14, 'n', 'tension', 'start') + tx(297, 38, 'n', 'next', 'end') + tx(297, 50, 'n', 'chapter', 'end') + tx(52, 108, 'n', 'build-up', 'middle'),
         tall: 176, cap: 'In a cliffhanger, the chapter ends at the highest point of tension, before the problem is solved.' },
       { h: 'Use with care' },
       'Not every reader enjoys being left hanging, however. Television series and online videos now use cliffhangers constantly, and streaming services start the next episode automatically, sometimes within seconds. Some critics find this <b>manipulative</b>, especially when a story uses them to keep viewers watching rather than to tell a satisfying tale. Good writers balance suspense with reward: they answer some questions even as they raise new ones. The next time you cannot put a book down, try to notice exactly which question is pulling you forward. Then ask yourself whether the author has earned your attention, or simply trapped it.'
@@ -5972,8 +5972,8 @@
       '<b class="ps-who">Day 1.</b> We launched from the beach at Killbear at nine. Georgian Bay is so big that people call it the sixth Great Lake, and from a kayak it looks like the sea, except that you can drink it if you boil it first. Our guide, Theo, made us practise a <b>wet exit</b> before we left: you flip the kayak, pull the spray skirt and swim out. I swallowed half the bay. The water in July is about nineteen degrees, which Theo described as “refreshing” and I would describe as a crime.',
       { fig: '<path class="k" d="M60 196 C58 160 80 140 70 110 C62 84 90 66 84 36 C82 22 96 10 110 8"/>' + D.ripple(120, 290, 60, 'a') + D.ripple(120, 290, 140, 'a') +
           '<circle class="dot" cx="66" cy="176" r="5"/><circle class="dot" cx="80" cy="100" r="4"/><circle class="dot" cx="98" cy="30" r="5"/><path class="d" d="M70 176 C100 150 104 120 88 100 C100 76 120 50 102 30"/>' +
-          '<ellipse class="k" cx="132" cy="110" rx="10" ry="6"/><ellipse class="k" cx="150" cy="86" rx="8" ry="5"/><ellipse class="k" cx="126" cy="160" rx="9" ry="5"/>' +
-          tx(78, 180, 'lb', 'Killbear (start)', 'start') + tx(92, 104, 'n', 'camp, night 1', 'start') + tx(106, 28, 'lb', 'Pointe au Baril', 'start') + tx(210, 104, 'n', 'Georgian Bay', 'middle') + tx(30, 120, 'n', 'land', 'middle') +
+          '<ellipse class="k" cx="170" cy="119" rx="10" ry="6"/><ellipse class="k" cx="150" cy="86" rx="8" ry="5"/><ellipse class="k" cx="126" cy="160" rx="9" ry="5"/>' +
+          tx(78, 180, 'lb', 'Killbear (start)', 'start') + tx(112, 104, 'n', 'camp, night 1', 'start') + tx(106, 28, 'lb', 'Pointe au Baril', 'start') + tx(228, 104, 'n', 'Georgian Bay', 'middle') + tx(30, 120, 'n', 'land', 'middle') +
           D.arrow(260, 20, 260, 0, 'k') + tx(260, 32, 'n', 'N', 'middle') + tx(210, 194, 'n', 'about 15 km each way (not to scale)', 'middle'),
         tall: 200, cap: 'Ruth’s route, sketched from her journal. The dashed line is the kayak trail.' },
       'We paddled north along the shore to Pointe au Baril, about fifteen kilometres. The rock here is pink and grey granite, smoothed by glaciers into humps that look like sleeping whales. The trees grow out of cracks in the rock, bent sideways by the wind, all leaning the same way like people looking at something on the horizon. Theo said the wind mostly blows from the west, so the trees literally show you the weather.',
@@ -6192,12 +6192,12 @@
       '<b class="ps-who">Thursday.</b> The library has old copies of the town newspaper on microfilm, which is like a tiny photograph of every page, read on a glowing machine that hums. I searched the 1911 and 1913 papers. In the issue for October 3, 1912, I found it: a front-page story called “Main Street Ablaze With Light,” describing crowds cheering as forty lamps came on at dusk. So both the book and the website were wrong!',
       '<b class="ps-who">Friday.</b> The newspaper is a <b>primary source</b>, written at the time, but that does not mean it is perfect. The article was very excited and quoted only the mayor and the owner of the power company. I want to know what ordinary people thought. Mr. Diallo suggested the town archives, which have letters and diaries, and an interview with the oldest member of the historical society, whose grandmother was a girl in 1912.',
       '<b class="ps-who">Saturday.</b> At the archives I found a letter from a farmer’s wife who came to town to see the lights. She wrote that they were “pretty enough,” but that her own farm would not get electricity for another twenty years. That one sentence told me something the newspaper never did: the new lights were not for everyone. Now my project has two sides, and I have the sources to prove both.',
-      { fig: '<rect class="k" x="4" y="4" width="292" height="186" rx="6"/><path class="t" d="M4 34 H296 M120 4 V190"/>' + tx(62, 24, 'lb', 'If you need …', 'middle') + tx(208, 24, 'lb', 'try …', 'middle') +
-          tx(12, 56, 'n', 'books on a topic') + tx(128, 56, 'n', 'the library catalogue (subject search)') +
-          tx(12, 86, 'n', 'a word’s meaning') + tx(128, 86, 'n', 'a dictionary') +
-          tx(12, 116, 'n', 'a quick overview') + tx(128, 116, 'n', 'an encyclopedia') +
-          tx(12, 146, 'n', 'what people said then') + tx(128, 146, 'n', 'old newspapers, letters, diaries') +
-          tx(12, 176, 'n', 'facts about a person’s life') + tx(128, 176, 'n', 'a biography'),
+      { fig: '<rect class="k" x="4" y="4" width="292" height="186" rx="6"/><path class="t" d="M4 34 H296 M134 4 V190"/>' + tx(69, 24, 'lb', 'If you need …', 'middle') + tx(215, 24, 'lb', 'try …', 'middle') +
+          tx(12, 56, 'n', 'books on a topic') + tx(142, 56, 'n', 'the library catalogue') +
+          tx(12, 86, 'n', 'a word’s meaning') + tx(142, 86, 'n', 'a dictionary') +
+          tx(12, 116, 'n', 'a quick overview') + tx(142, 116, 'n', 'an encyclopedia') +
+          tx(12, 146, 'n', 'what people said then') + tx(142, 146, 'n', 'old newspapers and letters') +
+          tx(12, 176, 'n', 'a person’s life story') + tx(142, 176, 'n', 'a biography'),
         tall: 194, cap: 'Mr. Diallo’s guide to choosing a source.' }
     ],
     guide: { before: 'Explain the difference between a <b>primary source</b> (made at the time, such as a letter, diary, photo or newspaper) and a <b>secondary source</b> (written later, about the past, such as a textbook). Look at Mr. Diallo’s guide. Teach <b>catalogue</b>.',
