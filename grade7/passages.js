@@ -5074,7 +5074,7 @@
 
   P.add({
     id: 'g7-beluga-interview', subject: 'science', form: 'Interview', lines: true, plain: true,
-    title: 'Listening to the Canaries of the Sea',
+    title: 'Canaries of the Sea',
     deck: 'A student podcast interviews a scientist who studies belugas in Churchill, Manitoba',
     hero: {
       photo: 'g7-belugas.jpg', credit: 'Photo: TravelingOtter, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
@@ -5161,7 +5161,7 @@
     deck: 'From the diary of Annie Lindqvist, who joined the Klondike Gold Rush in 1898 (a made-up diary based on real events)',
     hero: {
       photo: 'g8-chilkoot.jpg', credit: 'Photo: 1898, public domain, Wikimedia Commons', focus: '50% 40%',
-      tall: 170,
+      tall: 150,
       cap: 'Stampeders and their supplies below the summit of the Chilkoot Pass in 1898. The line of climbers is the “Golden Stairs.”'
     },
     body: [
@@ -5178,13 +5178,13 @@
       '<b class="ps-who">June 21 · Dawson City</b>',
       'We have arrived. Every creek for kilometres was <b>staked</b> long before we left Seattle. Men who sold everything they owned to come here are now selling their boots to afford the journey home. Erik sat on the riverbank all afternoon without speaking.',
       'Yet this evening a woman paid me two dollars for a loaf of bread, and a miner offered five for a pie. I have flour enough for a year. Tomorrow I will build an oven.',
-      { fig: '<path class="t" d="M20 150 Q40 120 60 112 Q80 100 92 82"/>' +
-          '<path class="a" stroke-dasharray="5 4" d="M28 148 L60 112 L92 82 L128 70 Q170 60 200 44 Q240 28 280 16"/>' +
-          place(28, 148, 'Dyea', 8, 4) + place(60, 112, 'Chilkoot Pass', 8, 6) + place(92, 82, 'Lake Bennett', 8, 12) + place(128, 70, 'Miles Canyon', 4, 16) + place(280, 16, 'Dawson City', -4, 16, true) +
-          '<text class="n" x="20" y="174">Pacific Ocean</text><text class="n" x="196" y="78">Yukon River</text>' +
-          '<path class="d" d="M70 172 V40"/><text class="n" x="74" y="168">Alaska</text><text class="n" x="50" y="44" text-anchor="end">Canada</text>' +
-          D.arrow(280, 150, 280, 122, 'k') + '<text class="lb" x="288" y="144">N</text>',
-        tall: 180, cap: 'The Chilkoot route: from Dyea over the pass into Canada, then by boat down the Yukon River to Dawson City, about 900 kilometres in all.' }
+      { fig: '<path class="d" d="M110 182 L280 102"/>' +
+          '<path class="a" stroke-dasharray="5 4" d="M200 166 L190 140 L178 114 L150 80 Q118 48 70 20"/>' +
+          place(200, 166, 'Dyea', 8, 4) + place(190, 140, 'Chilkoot Pass', 9, 4) + place(178, 114, 'Lake Bennett', 9, 4) + place(150, 80, 'Miles Canyon', 9, 4) + place(70, 20, 'Dawson City', 9, 4) +
+          '<text class="n" x="22" y="62">Yukon River</text><text class="n" x="20" y="184">Pacific Ocean</text>' +
+          '<text class="lb" x="236" y="96">Canada</text><text class="lb" x="236" y="160">Alaska</text>' +
+          D.arrow(282, 58, 282, 26, 'k') + '<text class="lb" x="276" y="72">N</text>',
+        tall: 188, cap: 'The Chilkoot route: from Dyea over the pass into Canada, then by boat down the Yukon River to Dawson City, about 900 kilometres in all.' }
     ],
     guide: { before: 'Find the Yukon and Dawson City on a map of Canada. Explain the Klondike Gold Rush in two sentences (gold found in 1896, about 100 000 people set out, few got rich). Teach <b>flotilla</b> and <b>staked</b> (claimed a piece of land for mining by marking it with posts).',
       after: 'Annie came “because somebody in this family ought to have sense.” Was she right to come? Who really “struck gold” in her diary?' },
@@ -5633,7 +5633,7 @@
     deck: 'A letter from a Canadian nursing sister to her younger sister, December 1917 (a made-up letter based on real events)',
     hero: {
       photo: 'g7-nurses-vote.jpg', credit: 'Photo: William Rider-Rider, 1917, public domain, Library and Archives Canada', focus: '50% 35%',
-      tall: 190,
+      tall: 150,
       cap: 'Canadian nursing sisters at a hospital in France vote in the federal election of December 1917, among the first women in Canada to vote in a national election.'
     },
     body: [
@@ -5647,7 +5647,12 @@
       'It is nearly midnight and the stove has gone out, so I will stop here. Please tell Father I am eating properly, which is mostly true, and tell Thomas I have not forgotten that he owes me a game of checkers.',
       'Your loving sister,',
       'Margaret',
-      { box: 'The real Bluebirds', text: 'About 2 500 Canadian nursing sisters served overseas during the First World War. In 1917, new laws allowed them, and women with close relatives in the forces, to vote in the federal election. Most other Canadian women won the right to vote in federal elections in 1918, although many First Nations women and men, and some other Canadians, were kept from voting for decades longer.' }
+      { box: 'The real Bluebirds', text: 'About 2 500 Canadian nursing sisters served overseas during the First World War. In 1917, new laws allowed them, and women with close relatives in the forces, to vote in the federal election. Most other Canadian women won the right to vote in federal elections in 1918, although many First Nations women and men, and some other Canadians, were kept from voting for decades longer.' },
+      { fig: [['1917', 'nursing sisters, and women with', 'relatives in the forces'], ['1918', 'most women', ''], ['1947–48', 'Chinese, South Asian and', 'Japanese Canadians'], ['1950', 'Inuit', ''], ['1960', 'First Nations people', '']].map(function (r, i) {
+          var y = 12 + i * 30;
+          return '<circle class="dot" cx="20" cy="' + y + '" r="3.5"/><text class="lb" x="32" y="' + (y + 4) + '">' + r[0] + '</text><text class="l" x="94" y="' + (y + 4) + '">' + r[1] + '</text>' + (r[2] ? '<text class="l" x="94" y="' + (y + 18) + '">' + r[2] + '</text>' : '');
+        }).join('') + '<path class="t" d="M20 12 V132"/>',
+        tall: 146, cap: 'Some of the years when groups of Canadians first won the right to vote in federal elections.' }
     ],
     guide: { before: 'Explain the First World War in two sentences, and that Canadian women could not vote in national elections until 1917 and 1918. Look at the photo together: what are the women doing? Teach <b>censor</b> and <b>ballots</b> (the papers on which people mark their vote).',
       after: 'Margaret says, “I hope … you will never take it for granted.” What rights do you have that people once fought for?' },
@@ -5655,15 +5660,13 @@
     qs: [
       { k: 'choice', code: 'C3.3', half: true, q: 'Why does Margaret not say where her hospital is?',
         opts: ['She has forgotten.', 'Letters were read by a censor, and the location was secret.', 'She wants to surprise Bea.', 'The hospital had no name.'], a: 1 },
-      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:marvellous}, “marvellous” means',
-        opts: ['wonderful', 'strange', 'heavy', 'sad'], a: 0 },
-      { k: 'choice', code: 'C1.5', q: '“Only one heel is slightly larger than the other.” ({line:heel}) The tone of this sentence is',
-        opts: ['angry', 'gently teasing', 'worried', 'formal'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Use the timeline. In which year could First Nations people first vote in federal elections?',
+        opts: ['1917', '1918', '1950', '1960'], a: 3 },
       { k: 'choice', code: 'C3.2', q: 'Margaret thinks of Aunt Edith while voting ({line:Edith}). Why does this make her cry?',
         opts: ['She misses home and is homesick.', 'Her aunt has worked for women’s votes but never been allowed to vote, so the moment feels important and unfair.', 'Her mother told her how to vote.', 'She is tired from work.'], a: 1 },
       { k: 'choice', code: 'C3.6', q: 'Some sisters argue it is unfair that they can vote while most women at home cannot. What does Margaret believe?',
         opts: ['Only nurses should vote.', 'They are right, and the unfairness will soon change.', 'Voting does not matter.', 'Women at home do not want to vote.'], a: 1 },
-      { k: 'lines', code: 'C3.4', n: 3, q: 'Read the box. Whose right to vote was still denied after 1918? What does this show about who was included in Canadian democracy?',
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Read the box and the timeline. Whose right to vote was still denied after 1918? What does this show about who was included in Canadian democracy?',
         a: 'Many First Nations people, and some other Canadians, were kept from voting for decades longer. It shows that the right to vote was not given to everyone equally; some groups were left out for a long time.', look: 'the group named from the box and a clear statement about unequal inclusion' },
       { k: 'lines', code: 'C1.2', n: 3, q: 'Margaret writes about hard work and wounded soldiers, but also about fudge, socks and checkers. Why might she include these small, cheerful details in a letter home?',
         a: 'She wants to reassure her family and keep her letter warm and personal. Small, homely details show she is coping and remind her of normal life.', look: 'a purpose linked to the audience (family at home): reassurance, connection, keeping things normal' }
@@ -6318,6 +6321,394 @@
         a: 'She has found confidence. Earlier she paced and said she could not perform, but after Maya’s words and June’s trust, she puts on the coat and speaks the line calmly.', look: 'the change from fear to confidence, with evidence from before and after' },
       { k: 'lines', code: 'C1.2', n: 3, q: 'A play is meant to be performed. Choose one stage direction and explain how it helps an actor or the audience understand a character’s feelings.',
         a: 'Example: “(standing, pacing)” shows Bea is nervous and cannot sit still. An actor would walk back and forth to show the audience her panic.', look: 'a quoted stage direction and the feeling it shows through action' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-interpreter-interview', subject: 'social', form: 'Interview', lines: true, plain: true,
+    title: 'Between Two Languages',
+    deck: 'A student newspaper interviews a sign language interpreter',
+    hero: {
+      photo: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 35%',
+      tall: 160,
+      cap: 'A sign language interpreter at a conference. Interpreters stand where Deaf audience members can see both them and the speaker.'
+    },
+    body: [
+      '<i>When Westdale Public School held its Remembrance Day assembly, two interpreters stood beside the stage, translating every word into American Sign Language (ASL) for Deaf students and families. Grade 7 reporter Amira Hassan spoke with one of them, Danielle Côté, a <b>certified</b> ASL-English interpreter from Ottawa.</i>',
+      '<b class="ps-who">Amira:</b> Many people think sign language is just English made with your hands. Is that true?',
+      '<b class="ps-who">Danielle:</b> It is the most common misunderstanding about my work. ASL is a complete language, with its own vocabulary and grammar, and it is quite different from English. Facial expressions are part of the grammar: raising your eyebrows can turn a statement into a question. In Canada there are two main sign languages, ASL and Langue des signes québécoise, or LSQ, which is used mostly in Quebec. Just as English and French are separate languages, so are ASL and LSQ.',
+      '<b class="ps-who">Amira:</b> Why were there two of you at the assembly?',
+      '<b class="ps-who">Danielle:</b> Interpreting is mentally exhausting. You are listening to one language, understanding it, rearranging it into the structure of another language and producing it, all at the same moment and without falling behind. After about twenty minutes, accuracy begins to drop, so interpreters usually work in pairs and switch. The one who is resting is not really resting, though. She is watching, ready to feed her partner a word or a number that was missed.',
+      '<b class="ps-who">Amira:</b> What is the hardest thing to interpret?',
+      '<b class="ps-who">Danielle:</b> Jokes, without question. A joke built on two English words that sound alike usually has no equivalent in ASL, so I have to decide in a split second whether to explain it, replace it with something that works in ASL, or simply let the audience know a joke was made. Poems and songs are difficult too. At the assembly, the choir sang, and I had to convey not only the words but the rhythm and the feeling.',
+      '<b class="ps-who">Amira:</b> You wrote “Deaf” with a capital D in your email. Why?',
+      '<b class="ps-who">Danielle:</b> Lowercase “deaf” describes not being able to hear. Capital-D “Deaf” describes a cultural community, with its own language, history, art and humour. Many Deaf people do not see themselves as missing something. They see themselves as members of a linguistic minority, like francophones in Alberta.',
+      '<b class="ps-who">Amira:</b> What can hearing students do to be more <b>inclusive</b>?',
+      '<b class="ps-who">Danielle:</b> Learn a few signs, starting with the finger-spelling alphabet. Face a Deaf person when you speak, and do not cover your mouth. And never say “never mind” if someone misses something. To a Deaf person, those two words mean, “You are not worth repeating it for.”',
+      { img: 'g7-asl-alphabet.png', credit: 'Diagram: Marnanel, after Dancor and Ds13, public domain, Wikimedia Commons', tall: 200, cap: 'The ASL finger-spelling alphabet. Signers spell names and some words letter by letter.' }
+    ],
+    guide: { before: 'Ask what the child knows about sign language. Look at the finger-spelling alphabet together and try spelling your first names. Teach <b>certified</b> (officially trained and tested) and <b>inclusive</b>.',
+      after: 'Danielle says “never mind” can hurt. What other small habits might leave people out without our noticing?' },
+    words: [['certified', 'officially trained and tested to do a job'], ['inclusive', 'making sure everyone can take part and belong']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'According to Danielle, what is the most common misunderstanding about sign language?',
+        opts: ['that it is hard to learn', 'that it is just English made with the hands', 'that it is used only in Quebec', 'that it has no alphabet'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'What does the diagram show?',
+        opts: ['how to sign whole sentences', 'one handshape for each letter of the alphabet', 'the grammar of ASL', 'how to read lips'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why do interpreters usually work in pairs?',
+        opts: ['It looks better on stage.', 'Interpreting is so tiring that accuracy drops after about twenty minutes.', 'One signs ASL and the other signs LSQ.', 'One interprets jokes and the other interprets songs.'], a: 1 },
+      { k: 'choice', code: 'B2.2', q: 'A joke “has no equivalent in ASL” ({line:equivalent}). Equivalent means',
+        opts: ['something that means the same thing', 'a translation error', 'a funny sign', 'a written word'], a: 0 },
+      { k: 'choice', code: 'C3.6', q: 'Why does Danielle compare Deaf people to “francophones in Alberta” ({line:Alberta})?',
+        opts: ['Most Deaf people live in Alberta.', 'Both are communities that share a language that is not the majority’s.', 'Both use LSQ.', 'Both need interpreters at school.'], a: 1 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Name two things hearing students can do to be more inclusive of Deaf people, according to the interview, and explain why one of them matters.',
+        a: 'Learn some signs, such as finger-spelling, and face a Deaf person when speaking. Facing them matters because many Deaf people read lips and facial expressions, which carry meaning.', look: 'two actions from the text, and a reason for one' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Danielle says the resting interpreter “is not really resting” ({line:resting}). What does this show about the job?',
+        a: 'The job needs constant attention and teamwork. Even while not signing, the partner watches closely to catch and supply missed words or numbers.', look: 'an inference about the job (teamwork, concentration) supported by the quote' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-ice-safety-notice', subject: 'health', form: 'Safety notice', lines: true, plain: true,
+    title: 'Before You Step on the Ice',
+    deck: 'A safety notice posted at the entrance to a conservation area',
+    hero: {
+      photo: 'g4-thin-ice.jpg', credit: 'Photo: Nolabob, CC0, Wikimedia Commons', focus: '50% 60%',
+      tall: 170,
+      cap: 'A thin ice warning sign beside a frozen pond.'
+    },
+    body: [
+      '<b class="ps-who">Mill Creek Conservation Area · Winter Safety Notice</b>',
+      'Every winter, people across Canada fall through ice that looked perfectly safe from the shore. Many of these accidents happen in early winter or late in the season, when the ice is changing quickly, and many involve people who had walked on the same pond or river safely the week before. Ice is never completely safe. However, you can greatly reduce the risk by checking it carefully and by understanding what you are looking at.',
+      { h: 'Check the thickness' },
+      'Before anyone goes out, an adult should drill or chip a test hole near the shore and measure the ice. Then check again every few metres, because ice thickness can change dramatically across a single pond. Use the chart below as a guide for clear, solid ice. These are minimums, not guarantees.',
+      { h: 'Check the colour' },
+      'Clear blue or black ice is the strongest. White, cloudy ice forms when snow or slush freezes on top, and because it is full of trapped air, it is only about half as strong. Grey ice is the most dangerous of all: the grey colour means there is water inside it, and it should never be trusted.',
+      { h: 'Know where ice is thinner' },
+      'Ice is usually weaker near <b>inflows</b> and outflows, where moving water wears it away from below. It is also thinner around docks, rocks and fallen trees, which <b>absorb</b> heat from the sun, and beneath snowbanks, which act like a blanket and slow freezing.',
+      { h: 'If you go through' },
+      'Stay calm and try to control your breathing; the cold shock will make you gasp for about a minute. Turn back toward the direction you came from, because that ice held you before. Put your arms on the surface, kick your legs to raise your body flat, and pull yourself out like a seal. Then roll away from the hole instead of standing. Never go out on the ice alone, and tell someone where you are going.',
+      'Questions about conditions? Ask at the visitor centre. Our staff test the ice on the main pond every morning and post the results by 10 a.m.',
+      { fig: [['15 cm', 'one person walking or skating', 70], ['20 cm', 'a group skating or playing games', 100], ['25 cm', 'a snowmobile', 130]].map(function (r, i) {
+          var y = 10 + i * 40;
+          return '<rect class="k" x="10" y="' + y + '" width="' + r[2] + '" height="26"/><text class="lb" x="' + (r[2] + 18) + '" y="' + (y + 12) + '">' + r[0] + '</text><text class="n" x="' + (r[2] + 18) + '" y="' + (y + 24) + '">' + r[1] + '</text>';
+        }).join('') + '<text class="n" x="10" y="138">no cars or trucks on any lake without local advice</text>',
+        tall: 144, cap: 'Smallest safe thickness of clear, solid ice, based on Canadian Red Cross advice.' }
+    ],
+    guide: { before: 'Ask: have you ever walked or skated on a frozen pond or lake? How did you know it was safe? Look at the chart first. Teach <b>inflows</b> (where water enters a lake) and <b>absorb</b>.',
+      after: 'Make a three-step checklist that you would use before stepping onto ice.' },
+    words: [['inflows', 'places where a stream or river flows into a lake or pond'], ['absorb', 'soak up or take in']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What is the main purpose of this notice?',
+        opts: ['to advertise skating lessons', 'to help visitors judge ice safety and avoid accidents', 'to explain how ponds form', 'to sell ice-fishing gear'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the chart, how thick should clear ice be for a group of people skating?',
+        opts: ['10 cm', '15 cm', '20 cm', '25 cm'], a: 2 },
+      { k: 'choice', code: 'C1.3', q: 'How do the headings help a reader?',
+        opts: ['They tell a story in order.', 'They divide the advice into topics that are easy to find quickly.', 'They show which rules are most fun.', 'They list the staff.'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why is white, cloudy ice weaker than clear ice?',
+        opts: ['It is warmer.', 'It is full of trapped air.', 'It is thinner.', 'It has salt in it.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'The notice says to turn back “because that ice held you before” ({line:held}). The reasoning is that',
+        opts: ['the ice behind you has already proven strong enough', 'it is closer to the shore', 'it is darker', 'it is easier to swim that way'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain two reasons that ice can be thin near docks, rocks or fallen trees and near inflows.',
+        a: 'Docks, rocks and trees absorb heat from the sun and warm the ice around them. At inflows and outflows, moving water wears away the ice from below.', look: 'both reasons: heat absorbed by objects, and moving water underneath' },
+      { k: 'lines', code: 'C2.6', n: 4, q: 'In your own words, summarize what to do if you fall through the ice, in the correct order.',
+        a: 'Stay calm and control your breathing. Turn back the way you came. Put your arms on the ice and kick to lie flat. Pull yourself out like a seal, then roll away from the hole.', look: 'the main steps in order, in the reader’s own words' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-dark-sky-poster', subject: 'science', form: 'Poster', lines: true, plain: true,
+    title: 'Turn Off the Lights, Turn On the Stars',
+    deck: 'A poster for a public star-watching night',
+    hero: {
+      photo: 'g6-aurora.jpg', credit: 'Photo: raymond22112376, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 170,
+      cap: 'The northern lights over Yellowknife. Far from city lights, the night sky can be astonishing.'
+    },
+    body: [
+      '<b class="ps-who">Dark Sky Night · Friday, October 9 · 8 p.m. to midnight · Hilltop Field, Silver Lake Conservation Area · Free</b>',
+      { h: 'What is happening?' },
+      'Join the Silver Lake Astronomy Club for an evening under one of the darkest skies within two hours of the city. Club members will set up six telescopes pointed at Saturn, the Moon, star clusters and the Andromeda Galaxy, the most distant object you can see without a telescope. At 9 p.m., a short talk will explain how to find the North Star using the Big Dipper. If the sky cooperates, we may even see the northern lights.',
+      { h: 'Why darkness matters' },
+      'In a big city, artificial light glowing into the sky hides all but a few dozen of the brightest stars. This <b>light pollution</b> affects more than astronomers. Migrating birds, which navigate partly by the stars, become confused and collide with lit buildings. Sea turtles, insects and even trees are affected by night that never becomes truly dark. Most light pollution comes from fixtures that shine upward or sideways, where no one needs the light. Shielding lights so that they point down can recover a surprising amount of the night sky.',
+      { h: 'What to bring' },
+      'Warm layers, even if the afternoon is mild; a lawn chair or blanket; a thermos of something hot; and binoculars if you have them. Bring a flashlight covered with red cellophane. Red light does not ruin your night vision, which takes about twenty to thirty minutes to fully <b>adapt</b> to the dark.',
+      { h: 'Please remember' },
+      'Turn off your car headlights as you enter the field, and park facing away from the telescopes. No white flashlights or phone screens on the hill: one bright screen can spoil the view for everyone nearby. Children are welcome and must stay with an adult. The event will be cancelled if the sky is cloudy; check the club’s website by 5 p.m. on the day.',
+      { fig: '<circle class="dot" cx="40" cy="96" r="3"/><circle class="dot" cx="80" cy="110" r="3"/><circle class="dot" cx="120" cy="108" r="3"/><circle class="dot" cx="156" cy="100" r="3"/>' +
+          '<circle class="dot" cx="168" cy="132" r="3"/><circle class="dot" cx="216" cy="138" r="3"/><circle class="dot" cx="226" cy="104" r="3"/>' +
+          '<path class="t" d="M40 96 L80 110 L120 108 L156 100 L168 132 L216 138 L226 104 L156 100"/>' +
+          '<path class="d" d="M216 138 L226 104 L254 14"/><circle class="dot" cx="254" cy="14" r="4.5"/>' +
+          '<text class="lb" x="262" y="18">North Star</text><text class="n" x="236" y="64">follow the pointer</text><text class="n" x="236" y="76">stars about 5 times</text><text class="n" x="236" y="88">their distance apart</text>' +
+          '<text class="n" x="60" y="152">Big Dipper</text><text class="n" x="218" y="156">pointer stars</text>',
+        tall: 162, cap: 'How to find the North Star: follow the two “pointer stars” at the end of the Big Dipper’s bowl.' }
+    ],
+    guide: { before: 'Go outside on a clear night if you can, or look at a star chart. Find the Big Dipper and the North Star using the diagram. Teach <b>light pollution</b> and <b>adapt</b>.',
+      after: 'Where near you is the darkest sky? What lights near your home could be shielded or turned off?' },
+    words: [['light pollution', 'too much artificial light at night, which hides the stars'], ['adapt', 'change to suit new conditions']],
+    qs: [
+      { k: 'choice', code: 'C3.3', half: true, q: 'Who is putting on this event?',
+        opts: ['a school', 'the Silver Lake Astronomy Club', 'a city council', 'a telescope store'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, how do you find the North Star?',
+        opts: ['Follow the Big Dipper’s handle.', 'Follow the two pointer stars at the end of the bowl.', 'Look straight up.', 'Look for the brightest star.'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why should visitors cover their flashlights with red cellophane?',
+        opts: ['Red light looks festive.', 'Red light does not ruin night vision.', 'Red light is brighter.', 'It is a club tradition.'], a: 1 },
+      { k: 'choice', code: 'C1.3', q: 'The section “Why darkness matters” is organized mainly as',
+        opts: ['a story', 'a problem, its effects and a solution', 'a list of times', 'a comparison of two planets'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'The poster says, “If the sky cooperates” ({line:cooperates}). This means',
+        opts: ['if the weather is clear', 'if the club allows it', 'if the stars move', 'if people arrive on time'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Light pollution affects more than astronomers. Give two examples from the poster.',
+        a: 'Migrating birds become confused and fly into lit buildings. Sea turtles, insects and trees are also affected when night never becomes truly dark.', look: 'two effects on living things from the text' },
+      { k: 'lines', code: 'C1.2', n: 3, q: 'Why do you think the poster includes rules about headlights and phone screens, as well as information about the stars?',
+        a: 'The event only works if it stays dark. One bright light can spoil everyone’s view and night vision, so the organizers must explain how to keep the field dark.', look: 'the link between the rules and the purpose of the event (keeping it dark for everyone)' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-salt-lab-log', subject: 'science', form: 'Lab notebook', lines: true, plain: true,
+    title: 'Which Melts Ice Fastest?',
+    deck: 'Pages from a Grade 7 science fair notebook',
+    hero: {
+      photo: 'g4-science-fair.jpg', credit: 'Photo: U.S. Navy, public domain, Wikimedia Commons', focus: '50% 30%',
+      tall: 160,
+      cap: 'Students explain their projects at a science fair.'
+    },
+    body: [
+      '<b class="ps-who">Question · January 8</b>',
+      'Every winter, our town spreads salt on the roads and sidewalks. My uncle, who owns a garden centre, says some customers buy sand instead, and some buy sugar beet mixtures that are supposed to be gentler on plants and pets. I want to know: which of these melts ice fastest?',
+      '<b class="ps-who">Hypothesis · January 8</b>',
+      'I predict that table salt will melt the ice fastest, because salt lowers the temperature at which water freezes. I predict that sand will not melt the ice at all, because sand does not dissolve.',
+      '<b class="ps-who">Method · January 10</b>',
+      'I froze 20 identical ice cubes of 30 grams each. I placed four cubes in each of five dishes and kept the dishes in our garage, where the temperature was minus 2 degrees Celsius. To each dish I added 5 grams of one material: table salt, coarse road salt, sugar or sand. The fifth dish got nothing. This was my <b>control</b>, so I could compare the others against ice with no treatment. After 45 minutes, I poured off the meltwater from each dish and weighed it.',
+      'To make it a fair test, I kept every <b>variable</b> the same except the material: same size cubes, same dishes, same amount of material, same location and same time. I ran the whole experiment three times on three different days and averaged the results.',
+      '<b class="ps-who">Results · January 14</b>',
+      'Table salt melted the most ice, followed closely by road salt. Sugar melted some ice, but much less. Sand and the control melted almost nothing. The table salt dishes were noticeably colder to the touch than the others, which surprised me.',
+      '<b class="ps-who">Conclusion · January 15</b>',
+      'My hypothesis was correct about table salt and sand. Road salt worked nearly as well as table salt; its larger crystals may dissolve more slowly. Sugar also lowers the freezing point, but a gram of sugar contains far fewer particles than a gram of salt, which probably explains why it melted less. Sand did not melt anything, but it may still be useful, because it adds grip.',
+      'Next steps: I would like to test what salt does to soil and plants, because my uncle says lawns beside salted sidewalks often turn brown in spring. Melting ice is only half the question. The other half is what the meltwater does afterward.',
+      { fig: [['table salt', 41], ['road salt', 36], ['sugar', 14], ['sand', 2], ['nothing', 1]].map(function (r, i) {
+          var y = 6 + i * 26;
+          return '<text class="l" x="74" y="' + (y + 14) + '" text-anchor="end">' + r[0] + '</text><rect class="k" x="80" y="' + y + '" width="' + Math.max(2, r[1] * 4.6) + '" height="18"/><text class="n" x="' + (86 + r[1] * 4.6) + '" y="' + (y + 13) + '">' + r[1] + ' g</text>';
+        }).join('') + '<text class="n" x="80" y="146">average meltwater after 45 minutes (3 trials)</text>',
+        tall: 152, cap: 'My results: grams of meltwater from 120 g of ice in each dish.' }
+    ],
+    guide: { before: 'Review the parts of an experiment: question, hypothesis, method, results, conclusion. Explain a fair test (change one thing only). Teach <b>control</b> and <b>variable</b> (anything that can change in an experiment).',
+      after: 'What would you test next? Design a fair test in three sentences.' },
+    words: [['control', 'the part of an experiment with no treatment, used for comparison'], ['variable', 'anything that can change in an experiment']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'How is this notebook organized?',
+        opts: ['by the steps of a science experiment', 'from least to most important', 'as a list of materials', 'as a story with dialogue'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the graph, about how much ice did sugar melt?',
+        opts: ['1 g', '14 g', '36 g', '41 g'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why did the student include a dish with nothing added?',
+        opts: ['to have a spare dish', 'to compare the treated ice against untreated ice', 'to test sand', 'to save money'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why did the student run the experiment three times?',
+        opts: ['The first two failed.', 'Repeating trials makes the results more reliable.', 'The teacher required three dishes.', 'To use up the salt.'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Which statement does the student’s data support?',
+        opts: ['Sand melts ice as well as salt.', 'Road salt melted nearly as much ice as table salt.', 'Sugar melted the most ice.', 'The control melted 14 g.'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'The student says sand “may still be useful” ({line:grip}). Explain why, even though it did not melt ice.',
+        a: 'Sand does not melt ice, but it makes the surface rough, so people and cars get more grip and are less likely to slip.', look: 'the idea of traction or grip as a different purpose from melting' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'The student wants to test what salt does to soil and plants. Predict the result, and explain your prediction using a detail from the text.',
+        a: 'I predict the plants near the salted soil will grow less or turn brown. The uncle says lawns beside salted sidewalks often turn brown in spring.', look: 'a prediction supported by the uncle’s observation or other reasoning' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-three-oceans-book', subject: 'geography', form: 'Book front pages', lines: true, plain: true,
+    title: 'Three Oceans: The Coasts of Canada',
+    deck: 'The title page, contents and introduction of an information book',
+    hero: {
+      photo: 'g8-iceberg.jpg', credit: 'Photo: Eduard47, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 150,
+      cap: 'An iceberg near Twillingate, Newfoundland and Labrador. This photo appears on the book’s cover.'
+    },
+    body: [
+      '<b class="ps-who">Title page</b>',
+      '<i>Three Oceans: The Coasts of Canada.</i> Written by Teresa Okpik. Illustrated by Daniel Mah. Maps by Sofia Rinaldi. Northern Shore Press, Halifax, 2026.',
+      { h: 'Contents' },
+      'Introduction: A Country Shaped by Water ……… 1',
+      'Chapter 1: The Atlantic: Fog, Fisheries and Tides ……… 4',
+      'Chapter 2: The Bay of Fundy, Where the Sea Breathes ……… 18',
+      'Chapter 3: The Pacific: Rainforests at the Water’s Edge ……… 26',
+      'Chapter 4: Salmon, Orcas and Kelp Forests ……… 40',
+      'Chapter 5: The Arctic: A Coast of Ice ……… 52',
+      'Chapter 6: Living on the Arctic Coast: Inuit Knowledge ……… 66',
+      'Chapter 7: Changing Coasts: Storms, Erosion and Warming Seas ……… 80',
+      'Glossary ……… 94 · Index ……… 98 · Further reading ……… 102',
+      { h: 'Introduction: A Country Shaped by Water' },
+      'Canada has the longest coastline of any country in the world: about 243 000 kilometres, if you include the shores of all its islands. That is long enough to wrap around the equator six times. Three oceans touch Canada, and each one has shaped the land, the climate, the wildlife and the lives of the people who live beside it.',
+      'On the Atlantic coast, cold currents and warm currents meet, creating thick fog and some of the richest fishing grounds on Earth. On the Pacific coast, moist ocean air drops enormous amounts of rain, feeding temperate rainforests where trees can live for more than a thousand years. Along the Arctic coast, which makes up most of Canada’s shoreline, the sea is frozen for much of the year, and Inuit have lived, travelled and hunted on the sea ice for thousands of years.',
+      'This book visits all three coasts. You can read it from beginning to end, or you can begin with whichever ocean interests you most. Words in <b>bold</b> type are explained in the glossary at the back, and the index will help you find any topic quickly. Each chapter ends with a short <b>profile</b> of a person who lives or works on that coast.',
+      { fig: '<text class="lb" x="8" y="16">Index (sample)</text>' +
+          ['Bay of Fundy, 18–25', 'beluga, 56, 62', 'fog, 6–7', 'kelp forests, 44–47', 'sea ice, 52–58, 70, 86', 'tides, 20–23'].map(function (t, i) { return '<text class="l" x="12" y="' + (38 + i * 18) + '">' + t + '</text>'; }).join('') +
+          '<path class="t" d="M4 24 H296"/>',
+        tall: 150, cap: 'Part of the book’s index. Page numbers show where each topic appears.' }
+    ],
+    guide: { before: 'Hold up a real non-fiction book and find its title page, contents, glossary and index together. Explain that tests sometimes ask where in a book to find information. Teach <b>profile</b> (a short piece about one person) and point out that <b>bold</b> is both a word to know and an example.',
+      after: 'Which chapter would you read first? Why? Where would you look to find the meaning of a word you did not know?' },
+    words: [['bold', 'thick, dark type used to make words stand out'], ['profile', 'a short piece of writing about one person']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'Who drew the illustrations in this book?',
+        opts: ['Teresa Okpik', 'Daniel Mah', 'Sofia Rinaldi', 'Northern Shore Press'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'On which page does the chapter about the Arctic coast begin?',
+        opts: ['4', '26', '52', '80'], a: 2 },
+      { k: 'choice', code: 'C2.4', q: 'A reader wants to find out how high the tides are in the Bay of Fundy. Which pages should they read?',
+        opts: ['4 to 17', '18 to 25', '40 to 51', '94 to 97'], a: 1 },
+      { k: 'choice', code: 'C2.4', q: 'A reader finds the word “temperate” and does not know what it means. Where is the best place to look?',
+        opts: ['the title page', 'the contents', 'the glossary', 'Chapter 7'], a: 2 },
+      { k: 'choice', code: 'C1.4', q: 'Use the sample index. On which pages would you find information about kelp forests?',
+        opts: ['6 to 7', '18 to 25', '44 to 47', '52 to 58'], a: 2 },
+      { k: 'lines', code: 'C1.3', n: 3, q: 'The introduction says you can read the book from beginning to end or start with any ocean. Which features of the book make it easy to start anywhere?',
+        a: 'The contents shows where each ocean’s chapters begin, the index lists topics with page numbers, and the glossary explains bold words, so a reader does not need earlier chapters.', look: 'two features (contents, index, glossary, chapter organization by ocean) and how they help' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Choose one chapter you would read for a project, and explain why that chapter suits your purpose.',
+        a: 'Example: For a project on climate change, I would read Chapter 7, because it is about storms, erosion and warming seas on all three coasts.', look: 'a chapter chosen and a clear link between its title and a purpose' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-quiet-room-speech', subject: 'health', form: 'Speech', lines: true, plain: true,
+    title: 'A Room to Breathe',
+    deck: 'A speech by a Grade 7 student at a student council meeting',
+    hero: {
+      photo: 'g8-stress.jpg', credit: 'Photo: University of Illinois Library, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 160,
+      cap: 'A student working alone in a quiet library.'
+    },
+    body: [
+      'Good afternoon, members of the student council, Ms. Desrosiers, and everyone who came to listen.',
+      'Close your eyes for a moment. Imagine the cafeteria at 12:05 on a Friday. Four hundred voices. Chairs scraping. Someone dropping a tray. The bell, the announcements, the smell of fries. Now imagine that every one of those sounds feels as loud to you as a fire alarm, and that there is nowhere in this building you are allowed to go to make it stop.',
+      'For some students at Lakeview, that is not imaginary. That is lunch.',
+      'My name is Kiran Bhatt, and I am here to propose that our school create a quiet room: one small, calm space where any student can go for ten or fifteen minutes when they feel overwhelmed, with soft lighting, a few comfortable chairs and one rule, which is silence.',
+      'Some of you might be thinking that this is only for a few people. It is not. Health experts estimate that about one in five young people in Canada will face a mental health challenge such as anxiety. Many others, including students who are autistic or who have <b>sensory</b> sensitivities, find noise and crowds genuinely painful. And honestly, all of us have days when the hallway feels like too much. Last month, our class surveyed 150 students. The results are on the chart beside me. More than half said they would use a quiet room at least sometimes.',
+      'Some of you might be worried that students would use the room to skip class. That is a fair concern, so here is our plan. The room would be open only at lunch and before school. Students would sign in, and a staff volunteer, Mr. Ellis has already offered, would be nearby. Schools in other boards, including two in our own city, already have rooms like this, and their principals report that students who use them are more focused afterward, not less.',
+      'And some of you might be wondering where we would put it. The old book room on the second floor has been empty since September. It needs paint, two lamps and some chairs. Our class has already raised 340 dollars from a bake sale to pay for them.',
+      'We talk a lot at this school about <b>inclusion</b>. We put up posters about it. We have an assembly about it every year. But inclusion is not just a poster. Sometimes it is a door that you can close.',
+      'I am asking you to vote yes. Thank you.',
+      { fig: [['often', 28], ['sometimes', 52], ['rarely', 38], ['never', 32]].map(function (r, i) {
+          var y = 8 + i * 30;
+          return '<text class="l" x="70" y="' + (y + 15) + '" text-anchor="end">' + r[0] + '</text><rect class="k" x="78" y="' + y + '" width="' + r[1] * 3.6 + '" height="20"/><text class="n" x="' + (84 + r[1] * 3.6) + '" y="' + (y + 14) + '">' + r[1] + '</text>';
+        }).join('') + '<text class="n" x="78" y="136">students (out of 150)</text>',
+        tall: 142, cap: 'Survey of 150 Lakeview students: “Would you use a quiet room at lunch?”' }
+    ],
+    guide: { before: 'Ask: is there a time of day at school that feels too loud or crowded? Explain that a speech is written to be heard, so it uses techniques such as speaking directly to the audience and repeating key phrases. Teach <b>sensory</b> and <b>inclusion</b>.',
+      after: 'Would you vote yes or no? What is one more argument Kiran could have used?' },
+    words: [['sensory', 'to do with the senses: hearing, sight, touch, smell and taste'], ['inclusion', 'making sure everyone can take part and belong']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What is the purpose of this speech?',
+        opts: ['to entertain with a story', 'to persuade the council to create a quiet room', 'to explain how the cafeteria works', 'to thank a teacher'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the chart, how many students said they would use the room “sometimes”?',
+        opts: ['28', '32', '38', '52'], a: 3 },
+      { k: 'choice', code: 'C1.5', q: 'Kiran begins with “Close your eyes for a moment. Imagine …” ({line:Imagine}). Why?',
+        opts: ['to make the audience sleepy', 'to help listeners feel what an overwhelmed student experiences', 'to fill time', 'to describe the menu'], a: 1 },
+      { k: 'choice', code: 'C1.3', q: 'Three paragraphs begin “Some of you might be …”. What is Kiran doing in these paragraphs?',
+        opts: ['telling jokes', 'answering possible objections before the audience can raise them', 'listing friends', 'changing the topic'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'Which statement is an opinion rather than a fact?',
+        opts: ['“Last month, our class surveyed 150 students.” ({line:surveyed})', '“The old book room on the second floor has been empty since September.” ({line:September})', '“Inclusion is not just a poster.” ({line:poster})', '“Our class has already raised 340 dollars.” ({line:raised})'], a: 2 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Kiran says, “Sometimes it is a door that you can close.” What does he mean about inclusion?',
+        a: 'Inclusion is not only words and posters; it means real changes that meet people’s needs. For some students, being included means having a quiet place to go when the school is too much.', look: 'the contrast between talking about inclusion and taking practical action, explained in own words' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Is Kiran’s speech convincing? Give your opinion and two reasons based on the speech.',
+        a: 'Yes. He gives evidence from the survey and other schools, and he answers worries about skipping class, location and cost with a real plan.', look: 'a clear opinion with two reasons from the speech (evidence, answering objections, emotional appeal)' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-snow-crystals-review', subject: 'arts', form: 'Review', lines: true, plain: true,
+    title: 'Small Wonders',
+    deck: 'A student reviews a museum exhibit about the farmer who photographed snowflakes',
+    hero: {
+      photo: 'g4-snowflakes.jpg', credit: 'Photo: Wilson Bentley, public domain, Wikimedia Commons', focus: '50% 30%',
+      tall: 180,
+      cap: 'Snowflakes photographed by Wilson Bentley more than 100 years ago.'
+    },
+    body: [
+      '<b class="ps-who">Exhibit review · Small Wonders: The Snow Crystals of Wilson Bentley · Lakeshore Science Centre, until March 31 · Rating: four stars out of five</b>',
+      'I expected an exhibit about snowflakes to take ten minutes. I stayed for an hour and a half, and I would have stayed longer if the science centre had not started turning off the lights.',
+      'Small Wonders tells the story of Wilson Bentley, a farmer from Vermont who, in January 1885, became the first person known to photograph a single snow crystal. He was nineteen. His parents thought the expensive camera was a waste of money, and his neighbours thought he was a little strange for standing in the cold all winter catching snowflakes on a black tray. Over the next forty-six years, he photographed more than 5 000 of them, working fast, before each crystal could melt or <b>evaporate</b>.',
+      'The exhibit’s greatest strength is that it lets the photographs speak for themselves. Two hundred of Bentley’s images are printed large and lit from behind, so that each crystal glows like a stained-glass window. Walking down that long, dim gallery felt almost like being inside a snowstorm. Small cards beside the photographs explain the science simply: every crystal has six sides because of the way water <b>molecules</b> fit together as they freeze, but each one grows differently because it passes through slightly different temperatures and humidity on its way down.',
+      'The best section, in my opinion, is the hands-on lab at the end, where visitors use a cold plate and a microscope to catch and photograph real frost crystals. My little brother was not interested in anything else the entire visit, and then refused to leave the lab.',
+      'The exhibit is not perfect. The section about Bentley’s life is mostly long panels of small text, and many visitors, including me, skimmed them. A few short videos or an audio guide would have made his story come alive, because it is a genuinely interesting story: he sold his photographs for five cents each to schools and universities and earned very little, and he died of pneumonia in 1931 after walking home through a blizzard. I also wished the exhibit had explained more clearly whether it is really true that no two snowflakes are alike, since that is the question everyone asks.',
+      'Overall, Small Wonders is beautiful, calm and surprisingly moving. I recommend it for anyone over the age of about eight, and especially for anyone who has ever stood still in falling snow and wondered what they were looking at. Wear mittens to the lab.',
+      { fig: '<path class="k" d="M150 20 V160 M89 55 L211 125 M89 125 L211 55"/>' +
+          [[150, 20], [150, 160], [89, 55], [211, 125], [89, 125], [211, 55]].map(function (p) {
+            var dx = (p[0] - 150) * 0.25, dy = (p[1] - 90) * 0.25;
+            return '<path class="t" d="M' + (150 + dx * 2.4) + ' ' + (90 + dy * 2.4) + ' l' + (dy * 0.6) + ' ' + (-dx * 0.6) + ' M' + (150 + dx * 2.4) + ' ' + (90 + dy * 2.4) + ' l' + (-dy * 0.6) + ' ' + (dx * 0.6) + '"/>';
+          }).join('') +
+          D.label(250, 40, 'six arms', 205, 58) + D.label(250, 150, 'side branches', 186, 110) + '<text class="n" x="8" y="176">each crystal grows in a hexagon pattern</text>',
+        tall: 182, cap: 'The basic shape of a snow crystal: six arms, with side branches that grow as it falls.' }
+    ],
+    guide: { before: 'Explain that a review gives an opinion about something (a book, film, exhibit or restaurant) and gives reasons, both good and bad. Look at the snowflake photographs together. Teach <b>evaporate</b> and <b>molecules</b>.',
+      after: 'Write a short review of something you have visited, read or watched recently. Give it a rating, one strength and one weakness.' },
+    words: [['evaporate', 'turn from a liquid or solid into a gas and disappear into the air'], ['molecules', 'the tiny particles that a substance is made of']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this text is a review?',
+        opts: ['a rating and the writer’s opinions with reasons', 'a list of steps', 'rhyming lines', 'a cast of characters'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the diagram, how many arms does a snow crystal have?',
+        opts: ['four', 'five', 'six', 'eight'], a: 2 },
+      { k: 'choice', code: 'C3.3', q: 'Why does every snow crystal look slightly different?',
+        opts: ['Each one is photographed differently.', 'Each passes through slightly different temperatures and humidity as it falls.', 'Some are made of salt water.', 'They melt into different shapes.'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Each crystal “glows like a stained-glass window” ({line:stained}). The simile suggests the photographs are',
+        opts: ['dark and gloomy', 'bright, detailed and beautiful', 'broken', 'old-fashioned'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'What is the reviewer’s main criticism of the exhibit?',
+        opts: ['The photographs are too small.', 'The section on Bentley’s life is mostly long text, which many visitors skim.', 'The lab is boring.', 'It is too expensive.'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'The reviewer gives four stars, not five. Using the review, explain what kept the exhibit from a perfect score.',
+        a: 'The section about Bentley’s life was mostly long text panels that people skimmed, and the exhibit did not clearly explain whether no two snowflakes are really alike.', look: 'the two weaknesses named in the review' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Bentley’s neighbours thought he was strange for photographing snowflakes. Connect this to another person, in real life or in a text, whose passion others did not understand at first.',
+        a: 'Example: In a book I read, a girl collected rocks and others laughed, but she later became a geologist. Like Bentley, she kept going because she loved it.', look: 'a clear connection to a person whose passion was misunderstood, with a link to Bentley' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-email-exchange', subject: 'tech', form: 'Emails', lines: true, plain: true,
+    title: 'Re: Order 4821',
+    deck: 'A customer’s complaint and the company’s reply',
+    hero: {
+      photo: 'g8-smartphone.jpg', credit: 'Photo: Beth Kanter, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 150,
+      cap: 'A smartphone. Many customer complaints are now sent and answered by email.'
+    },
+    body: [
+      '<b class="ps-who">From: Leo Marchetti · To: Customer Service, Northpeak Outdoor Gear · October 9 · Subject: Damaged tent, order 4821</b>',
+      'Hello,',
+      'On October 2, I ordered a two-person backpacking tent from your website for $189.99, as a birthday present for my older brother. It arrived today, October 9, three days later than the delivery date your website promised.',
+      'Unfortunately, when we opened the box, one of the aluminium tent poles was bent almost in half, and the rain fly had a tear about ten centimetres long. The cardboard box was also crushed on one corner, so I believe the damage happened during shipping. I have attached three photographs of the pole, the tear and the box.',
+      'My brother’s camping trip is on October 18, so I would appreciate a replacement tent as soon as possible. If a replacement cannot arrive by October 16, I would prefer a full <b>refund</b> instead.',
+      'I have bought from Northpeak four times before and have always been very satisfied, which is why I was so disappointed by this order.',
+      'Thank you for your help.',
+      'Leo Marchetti',
+      '<b class="ps-who">From: Customer Service, Northpeak Outdoor Gear · To: Leo Marchetti · October 10 · Subject: Re: Damaged tent, order 4821</b>',
+      'Dear Leo,',
+      'Thank you for contacting us, and for the clear photographs. I am very sorry that your brother’s tent arrived damaged, and late. That is not the experience we want any customer to have, especially with a gift.',
+      'Based on your photos, the damage clearly happened in transit. We have shipped a replacement tent today by express delivery, at no cost to you. It should arrive by October 14. Your tracking number is below. You do not need to return the damaged tent; please recycle the box and keep the undamaged parts, such as the stakes, as spares.',
+      'We have also added a credit of $25 to your account as an <b>apology</b> for the delay, and we have reported the crushed box to our shipping company so that we can prevent this from happening again.',
+      'Happy birthday to your brother. We hope the trip is a great one, and dry.',
+      'Sincerely,',
+      'Hana Yoshida, Customer Care Team',
+      { fig: [['Oct 2', 'ordered'], ['Oct 9', 'arrived damaged; Leo emails'], ['Oct 10', 'company replies'], ['Oct 14', 'replacement due'], ['Oct 18', 'camping trip']].map(function (r, i) {
+          var y = 14 + i * 26;
+          return '<circle class="dot" cx="24" cy="' + y + '" r="3.5"/><text class="lb" x="38" y="' + (y + 4) + '">' + r[0] + '</text><text class="l" x="92" y="' + (y + 4) + '">' + r[1] + '</text>';
+        }).join('') + '<path class="t" d="M24 14 V118"/>',
+        tall: 130, cap: 'Timeline of order 4821.' }
+    ],
+    guide: { before: 'Ask: have you or your family ever had to complain about something you bought? Point out the parts of an email: from, to, date and subject line. Teach <b>refund</b> (money given back) and <b>apology</b>.',
+      after: 'What made Leo’s email effective? Write a short, polite complaint about a real or imagined problem.' },
+    words: [['refund', 'money given back to a customer'], ['apology', 'words or actions that say you are sorry']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What is the purpose of Leo’s email?',
+        opts: ['to praise the company', 'to report a problem and ask for a solution', 'to order a second tent', 'to invite Hana camping'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'According to the timeline, how many days before the camping trip should the replacement arrive?',
+        opts: ['two', 'four', 'eight', 'ten'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Which word best describes the tone of Leo’s email?',
+        opts: ['angry and rude', 'polite but firm', 'joking', 'confused'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Leo mention that the box was crushed on one corner ({line:crushed})?',
+        opts: ['to show the damage was caused by shipping, not by him', 'to complain about cardboard', 'to ask for a new box', 'to describe the colour'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Leo say he has bought from Northpeak four times before ({line:four})?',
+        opts: ['to brag', 'to show he is a loyal customer who deserves good service', 'to ask for a discount on all orders', 'to change the subject'], a: 1 },
+      { k: 'choice', code: 'B3.3', q: 'In the reply, “You do not need to return the damaged tent; please recycle the box” ({line:recycle}). The semicolon joins',
+        opts: ['two closely related complete sentences', 'a list of items', 'a question and an answer', 'a quotation'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Name two things the company does in its reply to make up for the problem.',
+        a: 'It sends a free replacement by express delivery and adds a $25 credit to Leo’s account. It also lets him keep the undamaged parts and reports the problem to the shipper.', look: 'two actions from the reply' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Hana ends with “We hope the trip is a great one, and dry.” Why might she end with a friendly, slightly humorous line?',
+        a: 'It shows she read the email carefully (the torn rain fly) and makes the company seem caring and human, which helps keep Leo as a happy customer.', look: 'a reason linked to tone and customer relationship, ideally noticing the link to the torn rain fly' }
     ]
   });
 })();
