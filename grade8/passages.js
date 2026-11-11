@@ -4432,7 +4432,7 @@
 
   P.add({
     id: 'g8-four-am-bakery', subject: 'story', form: 'Novel excerpt', lines: true,
-    title: 'Four in the Morning on Bay Street',
+    title: 'Four in the Morning',
     deck: 'Tomás agrees to help his aunt at her bakery. He has no idea what he has agreed to.',
     hero: {
       photo: 'g8-bread-dough.jpg', credit: 'Photo: Ruth Hartnup, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
@@ -4707,11 +4707,11 @@
 
   P.add({
     id: 'g8-hockey-bag-ode', subject: 'story', form: 'Poem (ode)', lines: true,
-    title: 'Ode to My Brother’s Hockey Bag',
-    deck: 'A poem of praise, more or less',
+    title: 'Ode to a Hockey Bag',
+    deck: 'A poem in praise of my brother’s hockey bag, more or less',
     hero: {
       photo: 'g7-hockey.jpg', credit: 'Photo: Robert Taylor, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
-      tall: 110,
+      tall: 90,
       cap: 'Minor hockey players in Stirling, Ontario.'
     },
     body: [
@@ -4896,6 +4896,674 @@
         a: 'The poster leaves out how few people rode late and the on-demand shuttle. The reply leaves out how hard a 45-minute walk is, and that people are losing pay.', look: 'one omission from each text' },
       { k: 'lines', code: 'C3.6', n: 4, q: 'Should the city bring back the night bus? Take a position and support it with one fact from each text.',
         a: 'Answers will differ. For example: Yes, at least to the hospital. Only six people ride, but they are workers with no other way home, and the shuttle needs a phone booking that some seniors may find hard.', look: 'a clear position, one fact from each text, and attention to who is affected (fairness, access)' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-harbour-window', subject: 'story', form: 'Historical fiction', lines: true,
+    title: 'The Harbour Window',
+    deck: 'Halifax, December 6, 1917. A ship is burning in the harbour, and everyone wants to watch.',
+    hero: {
+      photo: 'g6-halifax-explosion.jpg', credit: 'Photo: unknown photographer, public domain, Wikimedia Commons', focus: '50% 35%',
+      tall: 140,
+      cap: 'The cloud rising over Halifax moments after the explosion of December 6, 1917.'
+    },
+    body: [
+      '<i>This story is invented, but the events around it are real. On December 6, 1917, during the First World War, a French cargo ship loaded with explosives caught fire after a collision in Halifax Harbour.</i>',
+      'Clara was supposed to be halfway to school by nine o’clock, but the whole of Richmond seemed to have stopped to look at the ship.',
+      'From the upstairs window of her family’s narrow house on Russell Street, she could see it clearly: a grey freighter drifting toward the piers, black smoke pouring from its deck in a column so thick that it looked solid enough to climb. Every few seconds something on board burst with a pop like a firecracker, and bright barrels arced into the water. On the street below, men had left their wagons, children had abandoned the walk to school, and a crowd of dockworkers stood along the waterfront, pointing.',
+      '“Come away from the glass,” her father called from the kitchen. He worked on the railway and had been in the yards since dawn; he had come home for a forgotten lunch pail and had not yet taken off his boots.',
+      '“In a minute,” Clara said. She pressed her forehead to the cold pane. She had never seen anything so terrible and so beautiful at the same time.',
+      'Her father appeared in the doorway. He did not look at the ship. He looked at her, and something in his face made her step back without being told twice.',
+      '“That ship came in under a <b>red flag</b>,” he said quietly. “I saw it from the yard. Get your brother. Go to the cellar. Now.”',
+      'She would remember, for the rest of her life, that she had been halfway down the cellar stairs with Thomas’s hand in hers when the world turned white.',
+      'There was no sound at first, only pressure, as if the air itself had been shoved. Then came the roar, and the shattering of every window on Russell Street at once, a noise like an ocean made of glass. The house lurched. Plaster rained down in clumps. Somewhere above them, a door tore from its hinges.',
+      'When the shaking stopped, her father found them in the dark, his hands moving over their faces and arms, checking. He was bleeding from a cut above one eye, but he was laughing, a strange, cracked laugh that frightened her more than the blast.',
+      'The upstairs room no longer had a window. Where Clara had stood a minute before, the floor glittered with a thousand <b>shards</b> of glass, some driven deep into the far wall.',
+      'In the days that followed, she learned the numbers that everyone in Halifax would learn: nearly two thousand people killed, about nine thousand injured, many of them hurt by the glass of the very windows they had been watching from. She learned that a blizzard had buried the ruins the next day, and that trains full of doctors and nurses had pushed through the snow from as far away as Boston.',
+      'She never learned what her father had seen in the rail yard that morning. When she asked, years later, he would only say that some warnings come in time, and some do not, and that she should always, always come away from the glass.'
+    ],
+    guide: { before: 'Show Halifax and its harbour on a map. Explain that a ship carrying explosives caught fire after a collision, and that the blast was one of the largest ever caused by people before the atomic bomb. Teach <b>red flag</b> (a signal that a ship carries explosives) and <b>shards</b>. This story describes injuries and deaths; read it together.',
+      after: 'Every year, Nova Scotia sends a large Christmas tree to Boston to say thank you for its help in 1917. Why might a city keep a thank-you going for more than a hundred years?' },
+    words: [['red flag', 'a signal flown by a ship that is carrying explosives'], ['shards', 'sharp, broken pieces of glass, pottery or metal']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'This text is historical fiction because it',
+        opts: ['is a true diary', 'places invented characters in real events', 'is set in the future', 'gives only facts and numbers'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:abandoned}, “abandoned” means',
+        opts: ['finished', 'left behind', 'hurried along', 'cleaned up'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Which detail is an example of <b>foreshadowing</b>, a hint that something terrible will happen?',
+        opts: ['Clara is late for school.', 'Her father tells her to come away from the glass.', 'The house is narrow.', 'Her brother is named Thomas.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Her father “did not look at the ship. He looked at her” ({line:did}). This shows that he',
+        opts: ['was not curious about the fire', 'understood the danger and was thinking about his children', 'was angry that Clara was late', 'could not see the harbour'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: '“A noise like an ocean made of glass” ({line:ocean}) helps the reader',
+        opts: ['hear how huge and overwhelming the sound was', 'picture the harbour', 'understand why the ship caught fire', 'count the windows'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why does the father laugh “a strange, cracked laugh” after the blast?',
+        opts: ['He thinks the explosion was funny.', 'He is relieved and shaken that his children are alive.', 'He is pretending nothing happened.', 'He hit his head and is confused.'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain why the title, “The Harbour Window,” fits the story. Use two details.',
+        a: 'Clara watches the burning ship from the window, and the same window shatters where she stood. Many people were hurt by the windows they watched from, so the window is both how she sees the danger and the danger itself.', look: 'two details linking the window to watching and to danger' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Using the last two paragraphs, summarize what happened to Halifax after the explosion.',
+        a: 'Nearly two thousand people died and about nine thousand were hurt, many by glass. A blizzard buried the ruins the next day, and doctors and nurses came by train from places as far as Boston.', look: 'the deaths and injuries, the blizzard and the help that arrived' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-group-chat', subject: 'story', form: 'Humorous essay', lines: true,
+    title: 'Grandma Joins the Group Chat',
+    deck: 'It seemed like a good idea at the time.',
+    hero: {
+      photo: 'g7-smartphone.jpg', credit: 'Photo: Océanos y dados, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 130,
+      cap: 'A phone, a family and one very enthusiastic new member.'
+    },
+    body: [
+      'It was my idea to add my grandmother to the family group chat, and I would like that recorded somewhere official, so that future historians know whom to blame.',
+      'For three years, the chat had been a peaceful place. My mother posted reminders about dentist appointments. My father posted photographs of sunsets that looked, to the untrained eye, identical to the previous evening’s sunset. My sister and I posted nothing at all, which is the correct way to use a family chat. We were content.',
+      'Then, at Thanksgiving, my grandmother announced that she had purchased a smartphone. She held it up to the table the way an explorer might hold up a newly discovered continent. She had chosen the largest model available, with the text set so big that a single word filled the screen. “Now,” she said, “I can be part of everything.”',
+      'Nobody could think of a reason to refuse. I added her that evening.',
+      'Her first message arrived at 5:12 the next morning. It read, in its entirety: <i>HELLO THIS IS GRANDMA. ARE YOU THERE.</i> There was no question mark. There did not need to be. The capital letters communicated an <b>urgency</b> usually reserved for weather warnings.',
+      'By 5:30 she had discovered the emoji keyboard. I will not describe everything she discovered there, but I will say that she used the eggplant to mean “vegetables,” the skull to mean “I am laughing so hard,” and a small yellow face with no mouth to mean, as far as anyone could determine, “good morning.” She sent this face every day for the next month, at dawn, like a lighthouse.',
+      'She also discovered the voice message, which she held to her ear like a telephone, so that each recording consisted mainly of the sound of her cheek.',
+      'Within a week, the chat had changed completely. My father’s sunsets now received detailed reviews. My mother’s dentist reminders were answered with long accounts of my grandmother’s own teeth, from 1961 onward. My sister, who had not typed a word in three years, began replying to Grandma privately to explain what the skull really meant, and the two of them now exchange messages so often that my sister claims she has a “pen pal.”',
+      'I was, I admit, <b>exasperated</b>. Then, one morning in January, the yellow face did not arrive. Seven o’clock passed, and eight. Nobody said anything in the chat, but I noticed that all four of us had opened it more than once. At 8:46 my mother called her. Grandma’s phone, it turned out, had simply run out of battery overnight.',
+      'At 9:02, the face arrived, followed by: <i>SORRY I WAS ASLEEP.</i>',
+      'I replied with a thumbs-up. Then, for reasons I cannot fully explain, I sent the yellow face back. I have sent it every morning since. My friends think this is very strange. My friends are not in the chat.'
+    ],
+    guide: { before: 'Tell the child that a humorous essay tells a true-sounding story in an exaggerated, mock-serious voice to make readers laugh. Teach <b>exasperated</b>, <b>urgency</b> and <b>mock-serious</b> (pretending to be serious, for a funny effect). Ask them to mark one sentence that made them smile.',
+      after: 'The essay starts by blaming Grandma and ends somewhere else. What do you think the writer really feels about her joining the chat?' },
+    words: [['exasperated', 'very annoyed, especially by something that keeps happening'], ['urgency', 'a feeling that something must be dealt with right away']],
+    qs: [
+      { k: 'choice', code: 'C1.5', half: true, q: 'The writer says future historians should know “whom to blame.” The tone here is',
+        opts: ['mock-serious', 'angry', 'sad', 'scientific'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The face arriving “like a lighthouse” ({line:lighthouse}) suggests it was',
+        opts: ['bright yellow', 'steady and dependable', 'a warning of danger', 'far away'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Which sentence is an example of <b>exaggeration</b> for humour?',
+        opts: ['“I added her that evening.”', '“She held it up … the way an explorer might hold up a newly discovered continent.”', '“At 8:46 my mother called her.”', '“I replied with a thumbs-up.”'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'All four family members opened the chat “more than once” when the face did not arrive ({line:opened}). This shows that they',
+        opts: ['were bored', 'were worried about Grandma and had come to count on her message', 'wanted to send her photos', 'were glad the messages had stopped'], a: 1 },
+      { k: 'choice', code: 'B3.2', q: 'In “My friends are not in the chat,” the writer suggests that',
+        opts: ['the friends are not invited to Thanksgiving', 'only people inside the family can understand why the face matters', 'the chat is broken', 'the friends sent the face too'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How do the writer’s feelings about Grandma in the chat change from the beginning to the end? Use one detail from each part.',
+        a: 'At first the writer jokes that adding her was a mistake to “blame” them for and is exasperated. By the end, the writer sends the yellow face back every morning, showing they now love the routine.', look: 'an early detail (blame, exasperated) and a late detail (sending the face), with the change' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'The chat changed the sister and Grandma’s relationship. Describe how technology has changed (for better or worse) a relationship in your family or in another text you know.',
+        a: 'Answers will differ. For example: My cousin in Pakistan and I play an online game together every Sunday, so we talk more now than when we lived close by.', look: 'a specific connection, with how the relationship changed' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-ceres-garden', subject: 'story', form: 'Science fiction excerpt', lines: true,
+    title: 'The Last Tomato on Ceres',
+    deck: 'On a mining station far from Earth, one plant matters more than it should.',
+    hero: {
+      photo: 'g6-cupola.jpg', credit: 'Photo: NASA, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 140,
+      cap: 'An astronaut looks out at Earth from the International Space Station.'
+    },
+    body: [
+      'There were four hundred and twelve people living on Ceres Station, and as far as Ines Okonkwo could tell, every one of them had come to look at her tomato.',
+      'It hung from a plant in the corner of Hydroponics Bay C, under the violet glow of the grow lights, and it was very nearly ripe: a deep, glossy red at the bottom, still blushing orange near the stem. It was the first tomato the station had grown in two years, since a fungus had swept through the bay and destroyed everything green. The botanists had scrubbed every surface, sterilized every tray and started again from a packet of seeds that had travelled four hundred million kilometres. Most of the seeds had failed. One had not.',
+      'Ines was fourteen and had been assigned to the bay as an apprentice, which mostly meant that she checked water levels, recorded numbers on a tablet and was not allowed to touch anything important. Now, because the head botanist was in the medical bay with a broken wrist, she was the only person standing between the tomato and an increasingly hungry crowd.',
+      '“It’s a scientific <b>specimen</b>,” she said for the ninth time that shift, to a miner who had pressed his face so close to the glass that it fogged. “It is not for eating.”',
+      '“Everything’s for eating,” the miner said sadly, “if you wait long enough.”',
+      'By the end of the week, people had begun leaving things at the door of the bay: a drawing of a tomato by one of the youngest children, a handwritten recipe for salsa that nobody could possibly make, and a note from the station commander that simply said <i>Well done, Bay C.</i> Ines was baffled. It was one tomato. The station’s food factories produced thousands of protein bars, flavoured algae cakes and vitamin drinks every day, all of them perfectly nutritious. Nobody was going to starve.',
+      'It was her grandmother, on a delayed video call from Lagos, who explained it. The signal took twenty minutes each way, so their conversations were really a series of long letters, spoken aloud.',
+      '“A tomato is not food,” her grandmother said, her image frozen for a moment mid-smile. “Not up there. Up there, a tomato is proof. It says the place where you live can grow something. It says you can make a home, and not just a <b>shelter</b>.”',
+      'Ines watched the message twice. Then she went back to the bay and looked at the plant for a long time, the way the miners did.',
+      'The next morning, she proposed a plan to the head botanist, who listened from her hospital bed, wrist in a cast. When the tomato was ripe, its seeds would be saved and planted, every single one. The fruit itself would be sliced as thinly as the station’s laser cutters allowed, into four hundred and twelve pieces.',
+      'The head botanist laughed until she winced. Then she said yes.'
+    ],
+    guide: { before: 'Explain that Ceres is a dwarf planet in the asteroid belt between Mars and Jupiter. Science fiction imagines how people might live in the future, but it is often really about people now. Teach <b>specimen</b> and <b>shelter</b>, and the difference between a shelter and a home.',
+      after: 'What would be your “tomato,” the small thing that would make a strange new place feel like home?' },
+    words: [['specimen', 'one example of something, kept for study'], ['shelter', 'a place that protects people from danger or weather']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is science fiction?',
+        opts: ['a girl and her grandmother', 'a station on a dwarf planet far from Earth', 'a plant with a tomato', 'a video call'], a: 1 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In “sterilized,” the suffix <i>-ize</i> (here <i>-ized</i>) means',
+        opts: ['full of', 'to make or become', 'without', 'a person who'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'The miner says, “Everything’s for eating, if you wait long enough” ({line:Everything}). He is mostly',
+        opts: ['threatening to steal the tomato', 'joking, but also showing how much people miss real food', 'giving Ines advice about botany', 'complaining about the protein bars’ taste'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why is Ines “baffled” by the gifts left at the door?',
+        opts: ['She thinks nobody needs the tomato, because there is plenty of other food.', 'She does not know who the commander is.', 'She cannot read the recipe.', 'She is allergic to tomatoes.'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: 'The grandmother says a tomato is “proof” ({line:proof}). Proof of what?',
+        opts: ['that the seeds were real', 'that people can make a real home on Ceres', 'that Ines is a good scientist', 'that Earth food is better'], a: 1 },
+      { k: 'choice', code: 'C3.4', q: 'What does the plan to cut the tomato into 412 pieces show about life on the station?',
+        opts: ['Food is rationed strictly.', 'Sharing and belonging matter as much as nutrition.', 'The commander makes every decision.', 'Most people dislike tomatoes.'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain the difference between a “home” and a “shelter,” as the grandmother uses the words. Use the story.',
+        a: 'A shelter only keeps people alive, like the food factories and protein bars. A home is a place where things can grow and people belong; the tomato shows Ceres could be that.', look: 'the two meanings and a link to the tomato or the food factories' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'Predict what might happen when the seeds are planted. Use a clue from the story to support your prediction.',
+        a: 'Example: More tomatoes will grow and the bay will become a garden, because the station has already cleaned out the fungus and Ines will now take care of every seed.', look: 'a reasonable prediction supported by a detail (seeds saved, fungus cleaned, Ines’s new attitude)' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-elsie-macgill', subject: 'history', form: 'Biography', lines: true,
+    title: 'The Queen of the Hurricanes',
+    deck: 'Elsie MacGill designed airplanes when almost no women were allowed to',
+    hero: {
+      photo: 'g8-elsie-macgill.jpg', credit: 'Photo: Library and Archives Canada, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      art: '<path class="k" d="M40 60 C80 50 200 48 250 56 L270 60 L250 64 C200 70 80 70 40 60 Z"/><path class="k" d="M150 52 C160 40 185 40 195 52"/><path class="a" d="M140 64 L112 98 H152 L190 64"/>' +
+        '<path class="k" d="M40 60 L28 30 H50 L66 56 M44 64 L30 80 H56 L70 64"/><path class="k" d="M274 40 V80"/><circle class="k" cx="272" cy="60" r="4"/>' +
+        '<path class="t" d="M124 98 V108 M144 98 V108"/><path class="k" d="M100 110 H168 Q176 110 176 104"/>' + tx(150, 14, 'n', 'A Hurricane fighter on winter skis', 'middle') + tx(200, 112, 'n', 'skis', 'start'),
+      side: { w: 480, view: '0 0 300 119' },
+      tall: 190,
+      cap: 'Elsie MacGill, the first woman in Canada to earn a degree in electrical engineering, and a drawing of the plane she adapted for winter.'
+    },
+    body: [
+      'In 1942, an American comic book published a story about a Canadian engineer. Its heroine was not a soldier or a pilot but an engineer bent over drawings of aircraft, and the comic gave her a nickname that stayed with her for the rest of her life: “Queen of the Hurricanes.” Her real name was Elsie MacGill, and almost nothing about her career had been expected of her.',
+      { fig: timeline([[0, 'born in', 'Vancouver', '1905'], [1, 'engineering', 'degree', '1927'], [2, 'polio;', 'master’s', '1929'], [3, 'designs the', 'Maple Leaf II', '1938'], [4, '“Queen of the', 'Hurricanes”', '1942'], [5, 'commission on', 'women', '1967']], 0, 5),
+        tall: 128, cap: 'Key events in Elsie MacGill’s life (not to scale).' },
+      { h: 'An unusual student' },
+      'MacGill was born in Vancouver in 1905. Her mother, Helen Gregory MacGill, became one of the first women judges in British Columbia, and her household treated ambition as ordinary. Even so, when Elsie enrolled in engineering at the University of Toronto, she was the only woman in her program. In 1927 she became the first woman in Canada to earn a degree in electrical engineering. She then moved to the University of Michigan to study <b>aeronautical</b> engineering, the science of designing aircraft.',
+      'Shortly before she finished her master’s degree in 1929, MacGill became seriously ill with polio, a disease that can damage the nerves that control muscles. Doctors told her she would probably never walk again. She completed her thesis from a hospital bed, and over the next few years she taught herself to walk with metal canes, which she used for the rest of her life.',
+      { h: 'Designing for the cold' },
+      'In 1938 she became chief aeronautical engineer at Canadian Car and Foundry in Fort William, Ontario, now part of Thunder Bay. There she designed the Maple Leaf II, a training plane, and became one of the first women in the world to design an aircraft. When the Second World War began, the factory was given a much larger task: building Hawker Hurricane fighter planes for Britain’s air force. MacGill organized the production line, which turned out more than 1400 Hurricanes. She also adapted the plane for Canadian winters, adding skis and equipment to keep ice from forming on its wings.',
+      { h: 'A second career' },
+      'After the war, MacGill ran her own engineering business and turned more and more of her energy toward women’s rights. From 1967 to 1970 she served on a national <b>commission</b> that studied the status of women in Canada.',
+      'When she died in 1980, she was remembered both as an engineer and as an <b>advocate</b>. Perhaps the two roles were connected. She had spent her life designing machines to work in conditions that others considered impossible, and she spent its second half trying to redesign a society that had expected her to fail.'
+    ],
+    guide: { before: 'Explain that a biography tells the true story of a real person’s life, written by someone else. Look at the timeline first. Teach <b>aeronautical</b>, <b>commission</b> and <b>advocate</b>. Ask: what is polio? (A disease, now prevented by vaccines.)',
+      after: 'The last paragraph links MacGill’s two careers. Do you agree that they were connected? What else might have driven her?' },
+    words: [['aeronautical', 'to do with designing and building aircraft'], ['commission', 'a group officially chosen to study a problem and report on it'], ['advocate', 'a person who speaks up publicly for a cause']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'The biography is organized mainly in',
+        opts: ['time order', 'compare and contrast', 'problem and solution', 'order of importance'], a: 0 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the timeline. How old was MacGill when she designed the Maple Leaf II?',
+        opts: ['about 22', 'about 24', 'about 33', 'about 37'], a: 2 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the writer begin with the 1942 comic book instead of with MacGill’s birth?',
+        opts: ['to hook the reader with a surprising, vivid moment', 'because the comic was her most important work', 'because her birth date is unknown', 'to show that she liked comics'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: '“Her household treated ambition as ordinary” ({line:ordinary}). This suggests her family',
+        opts: ['did not care about her success', 'expected and encouraged the children to aim high', 'was poor', 'wanted her to be a judge'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Which of these did NOT happen during MacGill’s career?',
+        opts: ['She adapted the Hurricane for winter.', 'She flew Hurricanes in the war.', 'She ran her own engineering business.', 'She served on a national commission.'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'What does the way MacGill responded to polio reveal about her character? Use two details.',
+        a: 'She was determined and stubborn in a good way: she finished her thesis in a hospital bed, and she taught herself to walk with canes after doctors said she would not walk again.', look: 'a trait (determination, persistence) and two details from the polio paragraph' },
+      { k: 'lines', code: 'C3.6', n: 4, q: 'The last sentence says she tried “to redesign a society that had expected her to fail.” Explain what this means, using two details from her life.',
+        a: 'Society did not expect women, or people with a disability, to become engineers: she was the only woman in her program and was told she would not walk. Later she worked on a national commission on the status of women, to change the rules so others would not face the same barriers.', look: 'two barriers she faced (gender, disability) and her later work to change society' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-cliffhanger', subject: 'arts', form: 'Feature article', lines: true,
+    title: 'Why We Love Cliffhangers',
+    deck: 'Unfinished stories pull at us. Scientists have some ideas about why.',
+    hero: {
+      photo: 'g8-stress.jpg', credit: 'Photo: University of Illinois Library, CC BY 2.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 130,
+      cap: 'A reader in a library. Have you ever stayed up too late to finish just one more chapter?'
+    },
+    body: [
+      'You reach the end of the chapter. The hero is dangling from a rope, the villain has just revealed a secret, or a stranger has knocked on the door at midnight. The next line says “Chapter 12,” and although it is long past your bedtime, you turn the page. Writers call this device a <b>cliffhanger</b>, and it may be one of the oldest tricks in storytelling.',
+      { h: 'An old trick' },
+      'Cliffhangers were especially powerful in the 1800s, when many novels were published in instalments, a chapter or two at a time, in magazines. Readers waited weeks for the next part. According to a famous story, crowds gathered at the docks in New York in 1841 to shout at arriving sailors, asking whether a beloved character in a novel by Charles Dickens had survived. Historians are not sure this really happened, but the story has lasted because it captures something true: an unfinished story can feel almost unbearable.',
+      { h: 'The pull of the unfinished' },
+      'Why? One early explanation came from Bluma Zeigarnik, a psychologist who reportedly noticed in the 1920s that restaurant servers could remember complicated unpaid orders, then forgot them as soon as the bills were settled. In experiments, she found that people tended to remember interrupted tasks better than completed ones. Later studies have produced mixed results, so scientists treat the “Zeigarnik effect” with caution. Still, the idea remains popular with writers, who have always known that an unanswered question can be more powerful than an answer.',
+      'A second explanation focuses on curiosity. The economist George Loewenstein has argued that curiosity is a kind of <b>information gap</b>: when we know a little about something but not enough, we feel an itch to close the gap. A cliffhanger works by opening such a gap deliberately and then refusing, for the moment, to close it.',
+      { fig: '<path class="k" d="M20 150 H290 M20 150 V20"/><path class="a" d="M20 140 C70 130 90 100 120 96 C150 92 160 60 190 46 C210 38 220 30 236 26"/><path class="d" d="M236 26 V150"/><path class="t" d="M240 40 C255 60 262 100 288 128"/>' +
+          tx(236, 18, 'lb', 'cliffhanger', 'middle') + tx(155, 168, 'n', 'the story goes on →', 'middle') + tx(14, 86, 'n', 'tension', 'end') + tx(264, 112, 'n', 'next', 'middle') + tx(264, 124, 'n', 'chapter', 'middle') + tx(60, 126, 'n', 'build-up', 'middle'),
+        tall: 176, cap: 'In a cliffhanger, the chapter ends at the highest point of tension, before the problem is solved.' },
+      { h: 'Use with care' },
+      'Not every reader enjoys being left hanging, however. Television series and online videos now use cliffhangers constantly, and streaming services start the next episode automatically, sometimes within seconds. Some critics find this <b>manipulative</b>, especially when a story uses them to keep viewers watching rather than to tell a satisfying tale. Good writers balance suspense with reward: they answer some questions even as they raise new ones. The next time you cannot put a book down, try to notice exactly which question is pulling you forward. Then ask yourself whether the author has earned your attention, or simply trapped it.'
+    ],
+    guide: { before: 'Ask the child to name a book, show or game that ended a part with a cliffhanger. Look at the tension graph together. Teach <b>cliffhanger</b> and <b>information gap</b>. Point out the words that show uncertainty: “reportedly,” “according to a famous story,” “mixed results.”',
+      after: 'Write a two-sentence cliffhanger to end a chapter about your own day. Which question did you leave open?' },
+    words: [['cliffhanger', 'an ending that leaves the reader in suspense'], ['information gap', 'the difference between what we know and what we want to know'], ['manipulative', 'controlling people in an unfair or hidden way']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'The subheadings help the reader by',
+        opts: ['naming the main idea of each section', 'listing the sources', 'giving definitions', 'telling a story'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:instalments}, “instalments” are',
+        opts: ['payments', 'parts published one at a time', 'magazines', 'endings'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the article begin by describing a reader at the end of a chapter?',
+        opts: ['to put the reader inside the experience the article explains', 'to tell a short story about a hero', 'to give a definition', 'to argue that cliffhangers are bad'], a: 0 },
+      { k: 'choice', code: 'C3.5', q: 'The writer says “historians are not sure” and that scientists treat the Zeigarnik effect “with caution.” Why include these warnings?',
+        opts: ['to show that the article is fiction', 'to be honest about which claims are not fully proven', 'to make the article longer', 'to disagree with Dickens'], a: 1 },
+      { k: 'choice', code: 'C1.4', q: 'Look at the graph. Where does a cliffhanger end a chapter?',
+        opts: ['at the start of the build-up', 'at the highest point of tension', 'after the problem is solved', 'where tension is lowest'], a: 1 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the two explanations for why cliffhangers work.',
+        a: 'Zeigarnik’s idea: people remember unfinished tasks better than finished ones. Loewenstein’s idea: curiosity is an information gap, and we want to close it, so a story that opens a gap pulls us on.', look: 'both explanations in the child’s own words' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Think about how you read. Does knowing how cliffhangers work change how you will read your next book? Explain.',
+        a: 'Answers will differ. For example: Yes, I will notice the question the author leaves open, and decide on purpose whether to keep reading or stop for the night.', look: 'reflects on a reading strategy (noticing questions, predicting) with a reason' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-racer-interview', subject: 'health', form: 'Interview plan and interview', lines: true, plain: true,
+    title: 'Faster Than the Hill',
+    deck: 'Before interviewing a wheelchair racer, Yasmin made a plan. Here is the plan, and how it went.',
+    hero: {
+      photo: 'g5-wheelchair-racer.jpg', credit: 'Photo: Pierre-Yves Beaudouin, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 55%',
+      tall: 130,
+      cap: 'A wheelchair racer speeds down the track in a racing chair, which is long, low and has three wheels.'
+    },
+    body: [
+      '<i>Yasmin Farah, a Grade 8 student in Sherbrooke, Québec, interviewed Maya Desrosiers, 24, a wheelchair racer who has competed for Canada. Before the interview, Yasmin wrote the plan in the diagram.</i>',
+      { fig: '<rect class="k" x="4" y="4" width="292" height="196" rx="6"/>' + tx(150, 24, 'lb', 'INTERVIEW PLAN', 'middle') +
+          tx(16, 50, 'lb', '1. Background') + tx(28, 64, 'n', 'Where did you grow up? When did you start racing?') +
+          tx(16, 90, 'lb', '2. Training') + tx(28, 104, 'n', 'What does a training week look like?') +
+          tx(16, 130, 'lb', '3. Challenges') + tx(28, 144, 'n', 'What is the hardest part of your sport?') +
+          tx(16, 170, 'lb', '4. Looking ahead') + tx(28, 184, 'n', 'What do you hope to change for young athletes?'),
+        tall: 204, cap: 'Yasmin’s plan, with one sample question for each section.' },
+      '<b class="ps-who">Yasmin:</b> How did you start racing?',
+      '<b class="ps-who">Desrosiers:</b> I was born with <b>spina bifida</b>, which affects my spinal cord, so I have used a wheelchair since I was small. When I was eleven, a coach came to my school with a racing chair and let us try it on the parking lot. I went down the little hill by the gym faster than anybody had ever seen me move. I remember thinking, oh, so this is what my arms are for. I begged my parents to find a club, and the closest one was an hour’s drive away. My father drove me there every Saturday for six years without once complaining, which I only appreciated much later.',
+      '<b class="ps-who">Yasmin:</b> What does a training week look like?',
+      '<b class="ps-who">Desrosiers:</b> About ten sessions: track work, long pushes on the road, weights and a lot of stretching for my shoulders, because they do all the work. Racers push the rims of their wheels with special padded gloves, and at full speed on a flat track we can go faster than thirty kilometres an hour. People are always surprised by that.',
+      '<b class="ps-who">Yasmin:</b> What is the hardest part of your sport?',
+      '<b class="ps-who">Desrosiers:</b> Honestly, it is often not the racing. It is getting to the race. Some tracks have no ramp to the infield, some hotels say they are <b>accessible</b> but the bathroom door is too narrow, and racing chairs are expensive, often more than eight thousand dollars. A lot of talented kids never get to try one.',
+      '<b class="ps-who">Yasmin:</b> Has anything changed since you started?',
+      '<b class="ps-who">Desrosiers:</b> A lot. More clubs lend chairs to beginners, and big races now include wheelchair divisions as a normal part of the event, not an extra. When I was twelve, my race at a provincial meet was scheduled at seven in the morning, before the crowd arrived. Last year, the wheelchair final was run in the evening, under the lights, with the stands full.',
+      '<b class="ps-who">Yasmin:</b> What do you hope to change for young athletes?',
+      '<b class="ps-who">Desrosiers:</b> I want every school to have one racing chair that any student can borrow. One chair. That’s how I started. Think about how many kids are waiting for their own little hill.'
+    ],
+    guide: { before: 'Look at the interview plan first, and explain that interviewers group their questions into sections. Teach <b>accessible</b> and <b>spina bifida</b> (a condition, present from birth, that affects the spine and can affect walking). Ask: what might make a sport hard to join, apart from the sport itself?',
+      after: 'Desrosiers asks for one racing chair in every school. What is one change in your school or community that would let more people take part in a sport or activity?' },
+    words: [['accessible', 'easy to reach, enter or use for everyone, including people with disabilities'], ['spina bifida', 'a condition, present from birth, in which the spine does not form fully']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'Under which section of Yasmin’s plan does “Has anything changed since you started?” fit best?',
+        opts: ['Background', 'Training', 'Challenges', 'Looking ahead'], a: 3 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'Which section of the plan does Yasmin’s second question belong to?',
+        opts: ['Background', 'Training', 'Challenges', 'Looking ahead'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“Think about how many kids are waiting for their own little hill” ({line:waiting}). The “little hill” stands for',
+        opts: ['a hill near every school', 'the first chance to discover what you can do', 'a race course', 'a hard training session'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Desrosiers mention that her race at age twelve was held at seven in the morning?',
+        opts: ['to show that she liked early mornings', 'to show that wheelchair racing used to be treated as less important', 'to explain why she was tired', 'to complain about her coach'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'Which statement from the interview is an opinion?',
+        opts: ['“Racing chairs are … often more than eight thousand dollars.”', '“A lot of talented kids never get to try one.”', '“Racers push the rims of their wheels with special padded gloves.”', '“I was born with spina bifida.”'], a: 1 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Desrosiers says the hardest part is often “getting to the race.” Explain what she means, using two examples.',
+        a: 'The barriers are outside the sport: some tracks have no ramp, “accessible” hotels have doors too narrow, and racing chairs cost more than $8000, so many kids cannot start.', look: 'two barriers from the interview and the idea that access, not ability, is the problem' },
+      { k: 'lines', code: 'C2.2', n: 3, q: 'Write one more question Yasmin could ask in the “Looking ahead” section. Explain what you would want to find out.',
+        a: 'Example: “What would you tell a school principal who says one chair is too expensive?” I want to know how she would persuade people with power to make the change.', look: 'a fitting future-focused question and a clear purpose for asking it' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-superior-storm', subject: 'story', form: 'Novel excerpt', lines: true,
+    title: 'Whitecaps',
+    deck: 'Two cousins are paddling along the shore of Lake Superior. The lake has other plans.',
+    hero: {
+      photo: 'g8-lake-superior.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, CC BY 2.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 130,
+      cap: 'Lake Superior, the largest of the Great Lakes, can change from calm to dangerous in under an hour.'
+    },
+    body: [
+      'The morning had been so calm that Sam had complained about it. “It’s like paddling on a plate,” she had said, dipping her blade into water so clear that they could count the stones three metres below. Her cousin Arjun, in the stern, had only grunted. He had been watching the sky to the northwest, where a thin grey line lay along the horizon like a pencil mark someone had forgotten to erase.',
+      'By eleven, the pencil mark had become a wall.',
+      'It came across the lake faster than Sam would have believed possible, a darkening that swallowed the far islands one by one. The temperature fell so sharply that the hair on her arms rose. Then the wind arrived, not gradually but all at once, as though a door had been flung open somewhere in Thunder Bay, and the flat plate of the lake broke into short, steep waves topped with white.',
+      '“<b>Whitecaps</b>,” Arjun said. He said it calmly, but he had stopped talking and started paddling, hard, angling the bow toward the shore. “We should have been off the water an hour ago.”',
+      '“You knew?”',
+      '“I guessed.” He did not look at her. “I wanted to make it to the point.”',
+      'Sam turned to argue and a wave slapped over the gunwale, pouring a bucket of icy water into her lap. Superior never warms up, even in August; her uncle liked to say that the lake does not forgive, it only forgets. She had always thought the saying was a little dramatic. She did not think so anymore.',
+      'The shore was perhaps three hundred metres away, a curve of grey cobblestones below the dark spruce, but every stroke seemed to buy them only a metre. The canoe rose, hung, and slammed into each trough with a bang that shook her teeth. Arjun was shouting something about keeping low, about keeping the bow into the waves, and she understood, with a clarity that surprised her, that she must not stand up, must not reach for the bailer, must not do anything except paddle.',
+      'So she paddled. She stopped feeling her hands. She counted strokes in French, as her grandmother had taught her, because counting gave her mind something to hold. <i>Vingt. Vingt et un. Vingt-deux.</i>',
+      'At three hundred and six, the bow ground onto stones.',
+      'They dragged the canoe up the beach and collapsed beside it in the <b>lee</b> of a boulder, soaked and shaking, while the lake roared behind them as though furious to have lost them. For a long time, neither spoke.',
+      '“I’m sorry,” Arjun said finally. “I saw the line in the sky at nine.”',
+      'Sam looked at the lake, then at her cousin, who was sixteen and had always seemed to know everything. He looked younger now, and frightened, and very honest.',
+      '“Next time,” she said, “say it out loud.”'
+    ],
+    guide: { before: 'Show Lake Superior on a map and explain that its water stays cold all year and its storms build quickly. Review canoe words: bow (front), stern (back), gunwale (the top edge of the side), trough (the low point between waves). Teach <b>whitecaps</b> and <b>lee</b>.',
+      after: 'Arjun guessed the danger but said nothing. Why do people sometimes keep quiet about a risk? What would you have done in his place?' },
+    words: [['whitecaps', 'waves with white, foaming tops, a sign of strong wind'], ['lee', 'the side sheltered from the wind']],
+    qs: [
+      { k: 'choice', code: 'C3.1', half: true, q: 'The grey line “like a pencil mark” ({line:pencil}) is an example of',
+        opts: ['a metaphor', 'a simile', 'onomatopoeia', 'alliteration'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:trough}, a “trough” is',
+        opts: ['a high wave', 'the low point between waves', 'the back of the canoe', 'a kind of paddle'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Which detail is the clearest example of <b>foreshadowing</b>?',
+        opts: ['Sam counts the stones under the water.', 'Arjun watches a grey line on the horizon.', 'Sam complains about the calm.', 'Sam’s grandmother taught her French.'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Why is “By eleven, the pencil mark had become a wall.” ({line:wall}) a paragraph of its own?',
+        opts: ['to mark a sudden, dramatic change', 'to show time passing slowly', 'to introduce a new character', 'to explain how storms form'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Sam count her strokes in French?',
+        opts: ['to practise for school', 'to keep her mind steady and away from panic', 'because Arjun asked her to', 'to measure the distance exactly'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: '“The lake does not forgive, it only forgets” ({line:forgive}). Which event in the story best shows the meaning of this saying?',
+        opts: ['The water is clear enough to see stones.', 'The storm arrives within an hour and nearly swamps them.', 'They rest in the lee of a boulder.', 'Arjun apologizes.'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Sam says, “Next time, say it out loud.” What does this show about her and about her feelings toward Arjun?',
+        a: 'She is not angry enough to blame him; she forgives him but wants honesty. It shows she has grown more confident, speaking to her older cousin as an equal.', look: 'an inference about forgiveness or honesty, and about Sam’s confidence' },
+      { k: 'lines', code: 'C1.6', n: 3, q: 'The story is told from close to Sam’s point of view. How would it be different if it were told from Arjun’s? Give one example.',
+        a: 'We would know from the start that he saw the storm line at nine and was worried, so there would be less surprise and more guilt. His thoughts would explain why he wanted to reach the point.', look: 'a specific change in what the reader knows or feels' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-two-languages', subject: 'story', form: 'Poem', lines: true,
+    title: 'Two Languages',
+    deck: 'A poem about speaking Tagalog at home and English everywhere else',
+    hero: {
+      photo: 'g7-murals.jpg', credit: 'Photo: Bernard Spragg, CC0, Wikimedia Commons', focus: '50% 50%',
+      tall: 96,
+      cap: 'Murals on a street in Kensington Market, Toronto.'
+    },
+    body: [
+      { poem: ['At home my words are soft and round,', 'they come out warm, like rice from the pot.', 'My mother calls me <i>anak</i>,', 'and the word wraps around me like a blanket.', '',
+        'At school my words stand up straight.', 'They wear their good shoes.', 'They raise their hands and wait their turn', 'and never, ever laugh too loud.', '',
+        'Sometimes they trip.', 'A Tagalog word sneaks into an English sentence', 'like a cat through an open door,', 'and someone giggles, and my face goes hot,', 'and I chase it back outside.', '',
+        'My grandmother speaks only one of my languages.', 'My teacher speaks only the other.', 'I am the <b>bridge</b> between them,', 'and some days the traffic is heavy.', '',
+        'But last night, at the kitchen table,', 'I translated a joke for Lola', 'from a show we were watching,', 'and it was funny in both languages,', 'and she laughed so hard she had to hold the table.', '',
+        'I am learning that I do not have', 'one voice that is real and one that is borrowed.', 'I have two coats for two kinds of weather,', 'and both of them are <b>mine</b>.'] }
+    ],
+    guide: { before: 'Explain that Tagalog is one of the main languages of the Philippines, and that <i>anak</i> means “my child” and <i>Lola</i> means grandmother. Ask whether the child, or someone they know, speaks one language at home and another at school. Teach <b>bridge</b> in its figurative sense.',
+      after: 'The poet compares two languages to two coats. Make up your own comparison for something that is two parts of you.' },
+    words: [['bridge', 'here, a person who connects two people or worlds'], ['mine', 'belonging to me']],
+    qs: [
+      { k: 'choice', code: 'C3.1', half: true, q: 'At school, the speaker’s words “wear their good shoes” ({line:shoes}). This is an example of',
+        opts: ['personification', 'rhyme', 'a fact', 'a question'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'How does the speaker feel when a Tagalog word “sneaks into an English sentence” ({line:sneaks})?',
+        opts: ['proud', 'embarrassed', 'bored', 'angry at the teacher'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“Some days the traffic is heavy” ({line:traffic}) means that, on some days,',
+        opts: ['there are many cars on the way to school', 'the speaker has to translate a lot and it is tiring', 'the grandmother visits', 'the speaker is late'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'The first two stanzas describe words at home as “soft and round” and words at school as standing “up straight.” This contrast shows that',
+        opts: ['the speaker feels relaxed at home and careful at school', 'English is harder to spell', 'the speaker prefers school', 'the speaker has bad posture'], a: 0 },
+      { k: 'choice', code: 'C3.3', q: 'Which stanza marks a turning point in the speaker’s feelings?',
+        opts: ['the first (rice from the pot)', 'the third (the word sneaks in)', 'the fifth (the joke for Lola)', 'the second (good shoes)'], a: 2 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'In the last stanza, the speaker no longer thinks one language is “real” and one is “borrowed.” Explain this change, using the image of the two coats.',
+        a: 'At first the speaker hid the home language at school. Now both languages are part of who they are; like coats for different weather, each fits a different place, and both belong to them.', look: 'the change in attitude, and the meaning of the coats (both belong, each fits a different situation)' },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the poem show about the role of a child in a family that speaks two languages? Use one detail.',
+        a: 'The child often connects family members, translating between a grandmother and a teacher or a TV show, so the child carries extra responsibility, and sometimes joy, as the “bridge.”', look: 'the role of translator or bridge, supported by a detail' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-book-review', subject: 'arts', form: 'Book review and comments', lines: true, plain: true,
+    title: 'Review: <i>The Salt Road</i>',
+    deck: 'A student reviewer and three readers disagree about the same novel',
+    hero: {
+      photo: 'g5-library.jpg', credit: 'Photo: Gogerr, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 30%',
+      tall: 110,
+      cap: 'The novel in this review is invented for this page. The reviews are about how readers judge books.'
+    },
+    body: [
+      '<i>From the review page of the Westview Middle School library website</i>',
+      { h: '★★★☆☆ A long road, but worth some of the trip' },
+      '<i>The Salt Road</i> follows fifteen-year-old Teodor and his younger sister across the Prairies in 1932, when drought, dust storms and the Great Depression drove thousands of families from their farms. Their father has gone west to look for work, and the children must reach an uncle in Saskatoon with only a horse, a cart and a letter they have been told not to open.',
+      'The novel’s greatest strength is its setting. The author describes the dust with such precision that I felt grit between my teeth: it “settled in the bread, in the Bible, in the creases of my mother’s hands.” Every chapter made me understand why people later called those years the Dirty Thirties.',
+      'Unfortunately, the plot moves slowly. The opening chapters are gripping, with a dust storm that buries the family’s fence posts overnight and a frightening scene in which Teodor’s sister wanders off into the haze, but the pace soon slackens. The middle third consists mostly of walking, and the children meet a series of strangers who exist mainly to teach them lessons. The secret letter is a good idea, but I guessed its contents by chapter four, which made the ending feel <b>predictable</b>.',
+      'The characters are more successful. Teodor is stubborn and proud, and his refusal to accept help from strangers causes most of the children’s problems, which is both frustrating and believable. I would recommend <i>The Salt Road</i> to patient readers who love history, but not to anyone looking for a fast adventure.',
+      '<i>Reviewed by Gabriel M., Grade 8</i>',
+      { fig: bars([[2, '1 star'], [3, '2 stars'], [9, '3 stars'], [14, '4 stars'], [12, '5 stars']], { max: 16, step: 4 }), tall: 172, cap: 'How 40 student readers rated <i>The Salt Road</i> on the library website.' },
+      { h: 'Comments' },
+      '<b class="ps-who">Hana K.:</b> I disagree about the slow middle. The walking IS the story. You feel how tired and hungry they are, and when they finally see Saskatoon you feel it too. Five stars.',
+      '<b class="ps-who">Leo T.:</b> I didn’t finish it. Too sad, and nothing happens. Also, the cover is ugly. One star.',
+      '<b class="ps-who">Ms. Aziz (librarian):</b> Thank you for a thoughtful review, Gabriel. Readers, notice that Gabriel supports his opinions with evidence, such as the quotation about the dust. When you comment, try to explain <i>why</i>, not just how you felt. Also, please don’t <b>spoil</b> the letter!'
+    ],
+    guide: { before: 'Explain that a review gives an opinion about a book, film or product, supported by reasons and examples. Point out that this novel is invented. Teach <b>predictable</b> and <b>spoil</b>. Mention the Dirty Thirties: a time of drought and dust storms on the Prairies in the 1930s.',
+      after: 'Which comment is the most useful to someone deciding whether to read the book? Which is the least useful? Why?' },
+    words: [['predictable', 'easy to guess before it happens'], ['spoil', 'to reveal a surprise in a story before others read it']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What is the main purpose of a book review?',
+        opts: ['to retell the whole plot', 'to give a supported opinion of a book', 'to sell a book', 'to teach history'], a: 1 },
+      { k: 'choice', code: 'C1.4', half: true, q: 'Look at the graph. Which rating did the most readers give?',
+        opts: ['3 stars', '4 stars', '5 stars', '2 stars'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Which sentence states Gabriel’s overall judgment of the book?',
+        opts: ['“The novel’s greatest strength is its setting.”', '“Unfortunately, the plot moves slowly.”', '“I would recommend <i>The Salt Road</i> to patient readers who love history, but not to anyone looking for a fast adventure.”', '“I guessed its contents by chapter four.”'], a: 2 },
+      { k: 'choice', code: 'C3.5', q: 'Why is Leo’s comment the least convincing?',
+        opts: ['He gives one star.', 'He did not finish the book and gives few reasons, one about the cover.', 'He disagrees with Gabriel.', 'His comment is too long.'], a: 1 },
+      { k: 'choice', code: 'C1.4', q: 'Gabriel gave 3 stars. Compare his rating with the graph. Most readers rated the book',
+        opts: ['lower than Gabriel did', 'about the same', 'higher than Gabriel did', 'not at all'], a: 2 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Hana and Gabriel judge the “slow middle” differently. Explain each view and which you find more convincing.',
+        a: 'Gabriel thinks the walking makes the plot slow and dull. Hana thinks the walking makes readers feel the characters’ tiredness, so the arrival matters more. Answers will differ on which is more convincing, with a reason.', look: 'both views stated accurately and a reasoned choice' },
+      { k: 'lines', code: 'C2.4', n: 3, q: 'Ms. Aziz tells readers to “explain why.” Rewrite Leo’s comment so that it gives one opinion with a reason or example.',
+        a: 'Example: I found the book too sad to finish. In the first chapters the family loses their farm and the children are hungry all the time, and I wanted more hope.', look: 'an opinion plus a specific reason or example from the book' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-icarus-complaint', subject: 'story', form: 'Satire', lines: true, plain: true,
+    title: 'Icarus Files a Complaint',
+    deck: 'An ancient Greek myth, as told by the one person who did not enjoy it',
+    hero: {
+      art: '<circle class="a" cx="560" cy="70" r="40"/>' + [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { var a = i * Math.PI / 4; return '<path class="a" d="M' + (560 + 50 * Math.cos(a)).toFixed(1) + ' ' + (70 + 50 * Math.sin(a)).toFixed(1) + ' L' + (560 + 64 * Math.cos(a)).toFixed(1) + ' ' + (70 + 64 * Math.sin(a)).toFixed(1) + '"/>'; }).join('') +
+        '<path class="k" d="M150 110 C190 70 250 60 300 80 C260 90 230 100 210 118 Z M300 80 C340 60 400 70 440 110 C400 104 360 100 330 104 Z"/>' +
+        '<path class="t" d="M180 100 L170 120 M205 92 L196 116 M230 86 L224 112 M360 86 L366 112 M385 92 L392 116 M410 100 L420 120"/>' +
+        '<path class="d" d="M320 120 C330 140 300 150 310 166"/><path class="t" d="M80 166 H620"/>' + D.ripple(80, 620, 172, 'a'),
+      tall: 180,
+      cap: 'Wings of feathers and wax, the sun, and the sea below.'
+    },
+    body: [
+      '<i>In an ancient Greek myth, the inventor Daedalus builds wings of feathers and wax so that he and his son Icarus can escape from the island of Crete. He warns Icarus not to fly too close to the sun. Icarus does, the wax melts, and he falls into the sea. This version is not from the myth.</i>',
+      '<i>To the Department of Workshop Safety, Island of Crete</i>',
+      'I wish to file a formal complaint regarding a product designed by my father, the inventor Daedalus, and the inadequate instructions that came with it.',
+      'The product consisted of one pair of wings, made of feathers attached to a wooden frame with beeswax. I was informed that the wings would allow me to escape a <b>labyrinth</b>, an island and a king, which they did. I have no complaint about the escape. My complaint concerns the safety information, which was delivered verbally, once, while we were standing on a cliff in a strong wind.',
+      'The full warning, as I recall it, was: “Don’t fly too high, don’t fly too low.” I would ask the Department to consider whether this meets any reasonable standard of instruction. How high is too high? How low is too low? Were these distances provided in metres, in cubits or in feelings? No chart was supplied. No label was printed on the wings. No one mentioned the melting point of wax.',
+      'I would also like to note that the product was tested by a single user, the designer, who is an adult of considerable experience, and that no testing was carried out on teenagers, who, as any parent could have predicted, are more likely to fly toward the sun to see what happens.',
+      'Since the incident, I have heard my story used by many people as a <b>cautionary tale</b> about pride and ambition, and about children who do not listen. I find this unfair. Nobody ever tells the story as a lesson about engineers who do not write things down.',
+      'I am requesting the following: a written apology from the designer; clear instructions on all future wings, including a maximum altitude; and that the expression “flying too close to the sun” be changed, in all languages, to “receiving poor product instructions.”',
+      'I understand this last request may take some time.',
+      'Finally, I would like it entered into the record that I did, in fact, fly. For several glorious minutes I flew higher than any human being had ever flown, over a sea so blue that it hurt to look at, and I would like at least one version of my story to mention that part, too.',
+      'Respectfully submitted, and still somewhat damp,<br>Icarus, son of Daedalus'
+    ],
+    guide: { before: 'Tell or read the myth of Daedalus and Icarus first (the italic note gives the short version). Explain <b>satire</b>: humour that makes fun of something to make a point. Teach <b>labyrinth</b> and <b>cautionary tale</b>. Point out that “flying too close to the sun” is an <b>allusion</b> people still use today.',
+      after: 'Is Icarus completely wrong? What would a fair version of the story say about both father and son?' },
+    words: [['labyrinth', 'a maze; in the myth, a maze built by Daedalus for King Minos'], ['cautionary tale', 'a story told to warn people about a danger']],
+    qs: [
+      { k: 'choice', code: 'C3.1', half: true, q: 'This piece is mainly an example of',
+        opts: ['satire', 'a biography', 'a news report', 'a fact sheet'], a: 0 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'The phrase “flying too close to the sun” is an <b>allusion</b>. That means it',
+        opts: ['refers to a well-known story', 'describes the weather', 'is a scientific fact', 'is a rhyme'], a: 0 },
+      { k: 'choice', code: 'C1.2', q: 'The writer copies the form of a formal complaint letter. This makes the piece funny because',
+        opts: ['ancient myths usually use letters', 'modern business language is applied to an ancient myth', 'Icarus is a real person', 'the letter is very short'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'From Icarus’s point of view, who is mostly to blame for his fall?',
+        opts: ['himself', 'the sun', 'his father, for poor instructions', 'the king'], a: 2 },
+      { k: 'choice', code: 'C3.2', q: 'He signs the letter “still somewhat damp” ({line:damp}). This humorous detail reminds the reader that',
+        opts: ['it was raining', 'he fell into the sea', 'he was swimming for fun', 'the ink was wet'], a: 1 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'What is the satire making fun of? Name two targets and give an example of each.',
+        a: 'It makes fun of formal complaint and safety language (“the inadequate instructions that came with it”) and of the usual moral of the myth, by blaming the father’s instructions instead of the son’s pride.', look: 'two targets (complaint or legal language, safety rules, the myth’s usual moral, parents) with examples' },
+      { k: 'lines', code: 'C1.6', n: 4, q: 'The myth is usually told as a lesson about a son who would not listen. How does telling it from Icarus’s point of view change its meaning? Do you agree with him?',
+        a: 'From his side, the lesson becomes about adults giving unclear warnings and not thinking about teenagers. Answers will differ on agreement: for example, both share blame, because he did hear the warning.', look: 'how the point of view changes the moral, and a reasoned opinion' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-cart-brigade', subject: 'story', form: 'Historical fiction', lines: true,
+    title: 'The Singing Wheels',
+    deck: 'Red River, 1862. Josette’s family is part of a cart brigade crossing the prairie. Then an axle breaks.',
+    hero: {
+      photo: 'g8-red-river-cart.jpg', credit: 'Photo: unknown photographer, public domain, Wikimedia Commons', focus: '50% 45%',
+      tall: 140,
+      cap: 'A Red River cart and its driver in the 1800s. The carts were made entirely of wood and rawhide.'
+    },
+    body: [
+      '<i>This story is invented. The Métis cart brigades are real: every summer in the mid-1800s, long lines of carts carried furs and goods between the Red River Settlement, where Winnipeg is today, and St. Paul, Minnesota.</i>',
+      'You heard the <b>brigade</b> long before you saw it. The wheels of a Red River cart were made entirely of wood, with no metal and no grease, because grease gathered dust and wore the axles down. So every one of the two hundred carts in the line screamed as it turned, a high, grinding wail that rose and fell across the prairie like a choir that had never agreed on a song.',
+      'Josette Lépine had stopped hearing it after the second day. On the ninth day, she heard it stop.',
+      'Her father’s cart had lurched sideways into a badger hole, and the axle had cracked with a sound like a rifle shot. The ox stood patiently in its harness while bundles of buffalo robes slid into the grass. Josette ran to steady the load, and her father knelt beside the wheel, running his hand along the split wood with a face she could not read.',
+      'Ahead of them, the line of carts was already moving on, the sound fading. Josette felt a cold knot form in her stomach. The brigade could not wait for one family. Everyone knew that. If they fell behind, they would cross the next river alone.',
+      'Then the screaming of the wheels changed. One by one, the carts ahead slowed and fell silent.',
+      'A rider came galloping back along the line. It was her uncle Baptiste, the guide, a wide man in a blue capote with a woven sash around his waist. He looked at the broken axle, said something short in Michif that made her father laugh despite himself, and shouted to the carts behind.',
+      'Within minutes, half a dozen men had gathered. One brought a straight length of oak that he had been carrying, he said, “for exactly this kind of foolishness.” Another unrolled a coil of <b>shaganappi</b>, strips of rawhide that would shrink and tighten as they dried. Josette’s grandmother arrived with a pot of tea, as if a broken cart were a social visit, and handed out cups of it while the men worked.',
+      'Josette watched her father and her uncle shape the new axle with an axe and a knife. Nobody measured anything. They seemed to know the size of a cart axle the way she knew the shape of her own hand. They lashed the wheel back on with the wet rawhide and stood back, and her father slapped the ox gently on the shoulder.',
+      'Less than two hours after the crack, the cart was moving again. As it rolled forward, the new axle began, faintly at first, to scream along with all the others.',
+      'Josette had complained about that noise for nine days. Now, walking beside the wheel, she found that she was smiling. It sounded, she thought, like two hundred families refusing to leave anyone behind.'
+    ],
+    guide: { before: 'Explain that the Métis Nation grew from First Nations and European (often French) families in the fur trade, with its own language (Michif), culture and symbols, such as the woven sash. Show the Red River and St. Paul on a map. Teach <b>shaganappi</b> and <b>brigade</b>.',
+      after: 'At the start, the noise of the wheels is annoying. At the end, it means something else. Can you think of a sound in your own life whose meaning has changed for you?' },
+    words: [['shaganappi', 'strips of rawhide used to tie and repair things'], ['brigade', 'a large group travelling or working together']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'The italic note at the start tells the reader that',
+        opts: ['the whole story is true', 'the characters are invented but the setting is real', 'the story is set today', 'the story is a legend'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:lurched}, “lurched” means',
+        opts: ['rolled smoothly', 'moved suddenly and unsteadily', 'stopped slowly', 'turned around'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'The wheels sound “like a choir that had never agreed on a song” ({line:choir}). This simile suggests the sound was',
+        opts: ['beautiful and calm', 'loud and out of tune', 'quiet and sad', 'short and sharp'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Josette feel “a cold knot” in her stomach ({line:knot})?',
+        opts: ['She is hungry.', 'She fears the brigade will leave her family behind.', 'The weather has turned cold.', 'She broke the axle.'], a: 1 },
+      { k: 'choice', code: 'C3.4', q: 'Which detail best shows a value shared by the people of the brigade?',
+        opts: ['The wheels have no grease.', 'The carts stop and many people come to help one family.', 'Uncle Baptiste wears a sash.', 'The ox stands patiently.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'The grandmother serves tea “as if a broken cart were a social visit.” This shows that she',
+        opts: ['does not understand the danger', 'stays calm and turns a problem into a time to be together', 'is angry with the men', 'wants the brigade to stop for the night'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Explain how the meaning of the wheels’ noise changes for Josette from the beginning to the end of the story.',
+        a: 'At first it is just an annoying scream she has stopped hearing. At the end the sound means the whole brigade waited and helped, so it sounds like families refusing to leave anyone behind.', look: 'the early meaning (annoying noise) and the final meaning (community, belonging)' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize how the cart was repaired, in two or three sentences, in the right order.',
+        a: 'The brigade stopped and men gathered to help. They shaped a new oak axle with an axe and a knife, then tied the wheel on with wet rawhide (shaganappi). Less than two hours later the cart was moving.', look: 'the main steps in order: help arrives, new axle shaped, wheel tied with rawhide, cart moves' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-failed-inventions', subject: 'story', form: 'Humorous memoir', lines: true,
+    title: 'My Inventions, So Far',
+    deck: 'Every great inventor has failures. Some of us have mostly failures.',
+    hero: {
+      photo: 'g8-3d-printer.jpg', credit: 'Photo: MukhtaromST, CC0, Wikimedia Commons', focus: '50% 55%',
+      tall: 130,
+      cap: 'A 3D printer at work. Not all inventions need one.'
+    },
+    body: [
+      'Thomas Edison is supposed to have said that he had not failed, he had just found ten thousand ways that would not work. I have always found this <b>reassuring</b>, because by the age of thirteen I had found at least forty, and I was only getting started.',
+      'My first invention, at age six, was the Automatic Cat Feeder. It consisted of a bowl, a long string and our cat, Biscuit, who was supposed to pull the string to release the food. Biscuit studied the device for several minutes, then sat on the bowl. I learned an important lesson about users, which is that they never do what the designer intended.',
+      'At nine, I invented Rain Boots for Dogs. I made them from four balloons and a great deal of tape. The <b>prototype</b> lasted eleven seconds, or approximately the time it takes a dog to discover that it is wearing balloons. My mother says she can still hear the noise.',
+      'The Homework Timer came next. It was a kitchen timer glued to a cardboard box, designed to ring every twenty minutes to remind me to take a break. Within a week I had redesigned it to ring every four minutes. My teacher described the result as “not an invention, but an excuse.” This seemed harsh, but in fairness, it was a very well-built excuse.',
+      'My most ambitious project was the Sock Finder, at age eleven. Every sock in the house would be fitted with a small magnet, and a larger magnet on a stick would locate missing socks under furniture. The Sock Finder located every sock in the house, and also the paper clips, two forks, the television remote and, briefly and dramatically, the refrigerator door. We have since agreed, as a family, that the Sock Finder will not be spoken of.',
+      'I would like to say that all these failures taught me nothing, because that would be funnier. Unfortunately, it is not true. Biscuit taught me to watch what people actually do. The dog taught me to test things for longer than eleven seconds. The Homework Timer taught me that a design reveals what its designer really wants. And the Sock Finder taught me that solving one problem can create three others, some of them involving the refrigerator.',
+      'Some of my inventions were never built at all, which my parents describe as my most successful period. These include the Self-Making Bed (too many springs), the Umbrella Hat for Two (structural problems, and also friendship problems) and a machine to translate what babies want, which I abandoned after my baby cousin made it clear that what babies want is everything.',
+      'This year, for the regional science fair, I designed a bird feeder that squirrels cannot reach. It uses a cone of smooth plastic and a spring that tips a squirrel gently onto the lawn. I tested it for six weeks, and I watched what the squirrels actually did, which was mostly to sit on the fence and plan their revenge.',
+      'It won second place. The squirrel that finally defeated it, in week seven, did not attend the ceremony. But I have named the next model after him, out of respect.'
+    ],
+    guide: { before: 'Explain that a memoir is a true-feeling story from the writer’s own life, and that this one is written for laughs. Teach <b>reassuring</b> and <b>prototype</b>. Ask the child to underline each lesson the writer learns.',
+      after: 'Which of your own mistakes taught you something useful? Could you tell it in a funny way?' },
+    words: [['reassuring', 'making someone feel less worried'], ['prototype', 'the first, rough version of an invention, made for testing']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'The memoir is organized mainly',
+        opts: ['in time order, by age', 'from most to least important', 'as problem and solution', 'by place'], a: 0 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'The root <i>vent</i> in “invention” means',
+        opts: ['to come or to find', 'to break', 'to write', 'to see'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: '“It was a very well-built excuse” ({line:excuse}). The humour comes from',
+        opts: ['admitting the teacher was right while still sounding proud', 'a rhyme', 'a fact about timers', 'an insult to the teacher'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'What does “briefly and dramatically, the refrigerator door” ({line:refrigerator}) suggest happened?',
+        opts: ['The big magnet pulled the fridge door open or stuck to it.', 'The fridge broke.', 'A sock was in the fridge.', 'The family bought a new fridge.'], a: 0 },
+      { k: 'choice', code: 'C1.5', q: 'The writer says the failures taught nothing, “because that would be funnier,” then admits it is not true. This sentence marks the shift from',
+        opts: ['jokes to the real lessons', 'the past to the future', 'facts to opinions', 'the writer to the cat'], a: 0 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'List two lessons the writer learned and the failure that taught each one.',
+        a: 'Biscuit the cat taught the writer to watch what users actually do. The balloon dog boots taught the writer to test for longer than eleven seconds.', look: 'two correct lesson and failure pairs from the sixth paragraph' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How does the squirrel-proof bird feeder show that the writer has used those lessons? Give two details.',
+        a: 'The writer tested it for six weeks instead of seconds, and watched what the squirrels actually did, which are the lessons from the dog and the cat.', look: 'two details from the bird feeder paragraph linked to earlier lessons' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-last-hill', subject: 'story', form: 'Short story', lines: true,
+    title: 'The Last Hill',
+    deck: 'A cross-country ski race, told from inside the head of a skier who wants to quit',
+    hero: {
+      photo: 'g8-ski-race.jpg', credit: 'Photo: Denali National Park and Preserve, CC BY 2.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 130,
+      cap: 'Young skiers in a cross-country race.'
+    },
+    body: [
+      'Four kilometres in, and Amara’s lungs feel like two paper bags that someone has crumpled and set on fire.',
+      'The trail curves through the spruce at the edge of the golf course, and the snow under her skis has gone from fast and squeaky to slow and wet, the kind that grabs at you with every stride. Somewhere behind her, a coach is ringing a cowbell. It is the most irritating sound she has ever heard. She would like to put the cowbell, and possibly the coach, into a snowbank.',
+      'Ahead, the bib with the number 14 on it is pulling away. Number 14 belongs to Chloé Tremblay, who has beaten Amara at every race this winter, who has a ponytail that swings like a metronome and who never, as far as anyone can tell, gets tired. Amara has been staring at that ponytail for three kilometres. She hates it with a <b>sincerity</b> that surprises her.',
+      'And then the last hill appears.',
+      'It is not a big hill. On a training day, she would climb it in herringbone without thinking: skis spread in a V, edges biting, arms pumping, the <b>herringbone</b> pattern stamped behind her in the snow. But today it rises in front of her like a wall someone has tilted toward the sky, and halfway up she can see Chloé slowing, too, her ponytail no longer swinging but bobbing, heavy, as though it has given up first.',
+      '<i>You could stop</i>, says a calm, reasonable voice in Amara’s head. <i>You could just stand here. Nobody would blame you. You are thirteen, and your legs are made of wet sand.</i>',
+      'It is a very convincing voice. She has heard it before, mostly during math tests, and once during a piano recital, when it persuaded her that she had forgotten every note of a piece she had practised for four months. She had not forgotten. She had simply listened to the voice instead of to her hands.',
+      'Her coach told her once that every skier meets that voice on the last hill, and that the trick is not to argue with it, because it is better at arguing than you are. The trick, he said, is to give it a smaller job. <i>Do not think about the top</i>, he said. <i>Think about the next pole plant. Just the next one.</i>',
+      'So she does. Pole, ski. Pole, ski. The voice keeps talking, but she stops answering it, and gradually it becomes background noise, like the cowbell, which, she realizes, is now ahead of her, at the top of the hill, being rung by Chloé’s father.',
+      'She crests the hill one metre behind number 14. The downhill is short and icy, and she tucks low, and for one wild second the wind roars in her ears and she is not tired at all.',
+      'Chloé crosses the line first, by the length of a ski. Amara collapses in the snow beside her, gasping, and is astonished when Chloé reaches over and bumps her mitten with her own.',
+      '“That hill,” Chloé pants, “is the worst.”',
+      'Amara laughs, which hurts. She has never liked the ponytail more.'
+    ],
+    guide: { before: 'Explain that this story is told in the present tense, from inside one character’s thoughts. Teach <b>sincerity</b> and <b>herringbone</b> (climbing with skis in a V). Ask: what do you tell yourself when something gets hard?',
+      after: 'The coach says to give the “quit” voice a smaller job. Could that advice work for something you find hard, such as a test or a long piece of writing?' },
+    words: [['sincerity', 'honesty; really meaning what you feel'], ['herringbone', 'a way of climbing a hill on skis, with the tips spread in a V']],
+    qs: [
+      { k: 'choice', code: 'B3.2', half: true, q: 'The story is told mostly in the',
+        opts: ['past tense', 'present tense', 'future tense', 'second person'], a: 1 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'Lungs “like two paper bags … set on fire” is an example of',
+        opts: ['simile and exaggeration', 'onomatopoeia', 'a fact', 'alliteration'], a: 0 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the author use the present tense?',
+        opts: ['to make the race feel as if it is happening right now', 'to show it happened long ago', 'because it is a news report', 'to make the story shorter'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Amara hates the ponytail “with a sincerity that surprises her” ({line:surprises}). This shows that she',
+        opts: ['really dislikes Chloé as a person', 'is frustrated by always losing, and the ponytail stands for that', 'thinks ponytails are bad for skiing', 'is joking'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'What does the coach mean by giving the voice “a smaller job” ({line:smaller})?',
+        opts: ['ignoring the race', 'focusing on the next small step instead of the whole hill', 'arguing loudly with yourself', 'skiing more slowly'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How do Amara’s feelings about Chloé change by the end? Use the last line in your answer.',
+        a: 'At first she resents Chloé and hates her ponytail. After the race Chloé is friendly and admits the hill is hard for her too, so Amara feels a connection and “has never liked the ponytail more.”', look: 'early resentment, the mitten bump or the shared struggle, and the meaning of the last line' },
+      { k: 'lines', code: 'C2.7', n: 3, q: 'Amara used a strategy to keep going. Describe a strategy you use when a reading or task gets hard, and how well it works for you.',
+        a: 'Answers will differ. For example: When a passage is hard, I read one paragraph and write one word that sums it up before going on. It keeps me from giving up.', look: 'a specific strategy and a reflection on how well it works' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-kitchen-poem', subject: 'story', form: 'List poem', lines: true,
+    title: 'What Biji’s Kitchen Knows',
+    deck: 'A poem made of the things in a grandmother’s kitchen in Brampton',
+    hero: {
+      art: '<g transform="translate(130 0) scale(0.63)"><path class="k" d="M250 150 H450 V120 H250 Z"/><path class="k" d="M262 120 C262 70 438 70 438 120"/><path class="k" d="M240 120 H460"/><path class="k" d="M226 128 H250 M450 128 H474"/>' +
+        '<path class="a" d="M300 60 C290 40 310 30 300 10 M350 56 C340 36 360 26 350 6 M400 60 C390 40 410 30 400 10"/>' +
+        '<path class="t" d="M80 166 H620"/><circle class="k" cx="140" cy="150" r="16"/><circle class="k" cx="180" cy="154" r="12"/><circle class="k" cx="540" cy="148" r="18"/><path class="k" d="M575 166 V126 H605 V166"/></g>',
+      tall: 110,
+      cap: 'A pot on the stove, and the steam that fills a kitchen.'
+    },
+    body: [
+      { poem: ['Biji’s kitchen knows the weight of a steel <i>tava</i>', 'and the slap of dough between two palms,', 'how many cardamom pods go into the tea', '(four, unless there are guests, then five).', '',
+        'It knows the radio, always on,', 'playing songs from a city Biji left in 1979,', 'and it knows which songs make her stop stirring', 'and look out the window at the snow.', '',
+        'It knows the jar labelled SUGAR', 'is really full of buttons.', 'It knows the jar labelled BUTTONS', 'is really full of <b>cumin</b>.', 'It knows the jar labelled COOKIES', 'is a trap.', '',
+        'It knows my father as a boy, doing homework at the table,', 'and my cousins learning to count in Punjabi,', 'and me, sitting on the counter', 'when nobody is looking.', '',
+        'It knows every argument this family has had', 'and how all of them ended:', 'with somebody saying they were not hungry', 'and then eating two plates.', '',
+        'It does not know how to write any of this down.', 'Biji has never used a recipe.', 'So I am writing it here,', 'one <b>pinch</b> at a time,', 'before the kitchen forgets.'] }
+    ],
+    guide: { before: 'Explain that <b>Biji</b> is a Punjabi word for grandmother (or mother) in many families, and a <i>tava</i> is a flat pan for cooking roti. A <b>list poem</b> builds meaning by listing things. Teach <b>cumin</b> and <b>pinch</b>. Read it aloud together.',
+      after: 'Write a five-line list poem called “What My ___ Knows” about a room or place in your life.' },
+    words: [['cumin', 'a spice made from small, strong-smelling seeds'], ['pinch', 'the tiny amount you can hold between your finger and thumb']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'A list poem is built mainly by',
+        opts: ['rhyming every line', 'listing many details', 'telling a long story', 'asking questions'], a: 1 },
+      { k: 'choice', code: 'C3.1', half: true, q: 'In this poem, the kitchen “knows” things. This is an example of',
+        opts: ['personification', 'a simile', 'onomatopoeia', 'a fact'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Biji “stop stirring and look out the window at the snow” ({line:stirring})?',
+        opts: ['She is checking the weather.', 'Some songs remind her of the home she left.', 'She is bored.', 'The radio is too loud.'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'The stanza about the jars ({line:labelled}) is mainly',
+        opts: ['sad', 'humorous', 'angry', 'frightening'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Every argument ends with someone “saying they were not hungry / and then eating two plates.” This suggests that',
+        opts: ['the family eats too much', 'sharing food is how the family makes peace', 'nobody likes the food', 'arguments are about food'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Why is the speaker writing the poem?',
+        opts: ['to win a contest', 'to save the family’s memories and recipes before they are lost', 'to complain about the kitchen', 'to sell a cookbook'], a: 1 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'What does the poem show about this family’s culture and history? Use two details.',
+        a: 'Biji left another country in 1979, and the kitchen holds that past (the radio songs, cardamom tea, the tava). The cousins learn to count in Punjabi, so the language is passed on.', look: 'two cultural or historical details (migration in 1979, food, language, music) and what they show' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The poem ends “one pinch at a time, / before the kitchen forgets.” Explain the double meaning of “one pinch at a time.”',
+        a: 'A pinch is a tiny amount of spice, as in cooking. It also means the speaker is saving memories slowly, in small pieces, the way Biji cooks without measuring.', look: 'both meanings: cooking and saving memories bit by bit' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-the-stairs', subject: 'story', form: 'Short story', lines: true,
+    title: 'Sixty-Two Steps',
+    deck: 'The class trip is to a historic fort. Marcus has looked at the map. The map has stairs.',
+    hero: {
+      photo: 'g7-ramp.jpg', credit: 'Photo: AlphaBeta135, CC BY 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 130,
+      cap: 'A long ramp beside a train station. A ramp is a small thing to build and a large thing to be without.'
+    },
+    body: [
+      'The permission form said <i>comfortable shoes recommended</i>, which made Marcus laugh, because he had not used shoes for walking since he was four.',
+      'He had looked up the fort online the night before: a stone star on a hill above the lake, built in the 1830s, with cannons and costumed guides and a famous view from the <b>ramparts</b>. He had also looked at the visitor map, and counted the little stair symbols. The ramparts, where the view was, were reached by sixty-two stone steps. The map listed the fort as “partially <b>accessible</b>,” which in Marcus’s experience meant that the gift shop had a ramp.',
+      'He did not say anything to Ms. Abebe. He had learned, over the years, that saying something usually led to a meeting, and the meeting usually led to a plan in which he waited somewhere comfortable with an adult while everyone else did the interesting part. Teachers called this “making alternative arrangements.” Marcus called it the Bench.',
+      'At the fort, the guide, a university student in a red wool coat and a tall hat, led the class across the parade square. Marcus’s wheels rattled over the old cobblestones. At the foot of the stairs, the guide stopped and looked at him, and Marcus braced himself for the Bench.',
+      '“Right,” said the guide. “So, there’s a service road around the back that goes up to the east rampart. It’s gravel, and it’s steep. Do you want to try it? I can walk up with you.”',
+      'Marcus blinked. “Is it on the map?”',
+      '“No,” the guide admitted. “It should be. Nobody ever asks.”',
+      'His friend Divya had already turned toward the road. “I’m coming too,” she said. “Stairs are boring.” Two more classmates followed, and then, after a moment of hesitation, Ms. Abebe, who said she needed the exercise.',
+      'The service road was every bit as steep as promised. Divya pushed on the hardest stretch, and Marcus let her, which was not something he always did. At the top, the five of them came out onto the east rampart at almost the same moment that the rest of the class arrived, puffing, from the stairs.',
+      'The view was everything the website said: the blue lake, the islands, the long grey line of the old city. But what Marcus remembered afterward was the guide’s sentence. <i>Nobody ever asks.</i>',
+      'That night, he wrote an email to the fort. He described the service road, the gravel and the slope. He suggested a sign and a line on the map, and maybe, someday, a proper path. He was polite. He was also very specific.',
+      'Three weeks later, a reply arrived. It thanked him, said that the map was being updated, and asked whether he would be willing to test the new path in the spring.',
+      'Marcus printed the email and pinned it above his desk, next to the permission form.'
+    ],
+    guide: { before: 'Explain that <b>accessible</b> means a place can be reached and used by everyone, including people who use wheelchairs. Ask the child to notice who makes decisions for Marcus in the story and who asks him. Teach <b>ramparts</b> (the top of a fort’s walls).',
+      after: 'The guide says “Nobody ever asks.” Why might nobody ask? Who is responsible for making a place accessible: the visitors, the staff or the builders?' },
+    words: [['accessible', 'easy for everyone, including people with disabilities, to reach, enter and use'], ['ramparts', 'the wide top of a fort’s walls, where soldiers stood']],
+    qs: [
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Marcus laugh at “comfortable shoes recommended”?',
+        opts: ['His shoes are uncomfortable.', 'He uses a wheelchair, so the advice does not fit him.', 'He forgot his shoes.', 'The form has a spelling mistake.'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:partially}, “partially” means',
+        opts: ['completely', 'only in some parts', 'never', 'for a party'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Marcus calls “alternative arrangements” the Bench ({line:Bench}). His name for it suggests he feels',
+        opts: ['grateful for a rest', 'left out and made to wait on the sidelines', 'excited about the plan', 'proud of his teachers'], a: 1 },
+      { k: 'choice', code: 'C3.6', q: 'What makes the guide different from the adults Marcus is used to?',
+        opts: ['He wears a costume.', 'He asks Marcus what he wants to try instead of deciding for him.', 'He knows the history.', 'He is a student.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Marcus “let her” push, “which was not something he always did” ({line:always}). This shows that',
+        opts: ['he was too tired to care', 'he trusted Divya and accepted help on his own terms', 'Divya forced him', 'he wanted to go faster than the stairs'], a: 1 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Explain how the story shows both a problem with accessibility and a way to fix it. Use two details.',
+        a: 'The problem: the map says “partially accessible” but the view is up 62 steps, and the service road is not on the map. The fix: Marcus emails specific suggestions, and the fort updates the map and builds a path.', look: 'a detail showing the barrier and a detail showing the solution' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why does Marcus pin the email next to the permission form? What do the two papers stand for?',
+        a: 'The form stands for the start of the trip, when he expected to be left out. The email stands for the change he caused. Together they show how far he came.', look: 'the meaning of each paper and the contrast between them' }
     ]
   });
 })();
