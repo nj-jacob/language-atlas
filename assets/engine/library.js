@@ -208,9 +208,10 @@
   };
 
   /* ---------- line numbers ---------- */
-  /* the lines of the passage as they fall on the printed front, in reading order: { col, top, left } in page units */
+  /* the lines of the passage as they fall on the printed front, in reading order: { col, top, left } in page units (a poem in one
+     wide column has one column, however far right a word sits) */
   function linesOf(pg) {
-    var box = $('.ps-text', pg), b = box.getBoundingClientRect(), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, mid = b.left + b.width / 2, out = [];
+    var box = $('.ps-text', pg), b = box.getBoundingClientRect(), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, mid = box.classList.contains('ps-verse') ? Infinity : b.left + b.width / 2, out = [];
     $$('.ps-text > p, .ps-poem > p:not(.ps-gap):not(.ps-by)', pg).forEach(function (el) {
       var r = document.createRange();
       r.selectNodeContents(el);
@@ -225,7 +226,7 @@
   }
   /* number every fifth line in the margin, and note the line of each word that a question points to ({line:word}) */
   function number(pg, p) {
-    var lines = linesOf(pg), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, edge = [Infinity, Infinity], tb = $('.ps-text', pg).getBoundingClientRect(), mid = tb.left + tb.width / 2;
+    var lines = linesOf(pg), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, edge = [Infinity, Infinity], tb = $('.ps-text', pg).getBoundingClientRect(), mid = $('.ps-text', pg).classList.contains('ps-verse') ? Infinity : tb.left + tb.width / 2;
     lines.forEach(function (l) { edge[l.col] = Math.min(edge[l.col], l.left); });
     pg.insertAdjacentHTML('beforeend', lines.map(function (l, i) {
       return (i + 1) % 5 ? '' : '<span class="ps-ln" style="left:' + (edge[l.col] - 30).toFixed(1) + 'px;top:' + l.top.toFixed(1) + 'px">' + (i + 1) + '</span>';
