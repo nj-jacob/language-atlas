@@ -106,3 +106,14 @@
   html[data-ps-print="sheet"] .ws-sheet[data-side="key"],html[data-ps-print="key"] .ws-sheet:not([data-side="key"]){display:none!important}
   html.ws-print .ps-bar,html.ws-print .ps-do{display:none!important}
 }
+
+/* ---------- poems, real diagrams and line numbers ---------- */
+.ps-poem{margin:2px 0 8px;break-inside:avoid}
+.ps-poem p{margin:0;padding-left:1.4em;text-indent:-1.4em}
+.ps-poem .ps-gap{height:.7em}
+.ps-poem .ps-by{margin-top:4px;text-align:right;font-style:italic;color:var(--ink2)}
+.ps-verse{columns:1;column-rule:none;padding-left:110px;font-size:calc(15.5px * var(--z, 1));line-height:1.5}
+.ps-img{margin:6px 0 8px;break-inside:avoid}
+.ps-img img{display:block;width:100%;object-fit:contain}
+.ps-who{color:var(--acc)}
+.ps-ln{position:absolute;width:22px;text-align:right;font-size:10px;line-height:20px;color:var(--ink3);font-variant-numeric:tabular-nums}

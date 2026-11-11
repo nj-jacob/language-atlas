@@ -4950,4 +4950,191 @@
         a: 'Example: I pictured the mall near my house floating in the sea. That helped me see how huge an iceberg really is.', look: 'visualizing with something familiar' }
     ]
   });
+
+  /* ---------- reading-test style: line numbers, a story, a poem, an interview and a class journal ---------- */
+
+  P.add({
+    id: 'g4-snow-fort-rule', subject: 'story', form: 'Short story', lines: true,
+    title: 'The Snow Fort Rule',
+    deck: 'Owen has one rule for his fort. Then the weather changes.',
+    hero: {
+      photo: 'g4-snow-fort.jpg', credit: 'Photo: Andrew Wiseman, CC BY-SA 3.0, Wikimedia Commons', focus: '50% 70%',
+      tall: 236,
+      cap: 'A snow fort in a front yard, with walls of packed snow.'
+    },
+    body: [
+      'Owen had built the best snow fort on Birch Crescent. It had two rooms, a window shaped like a half-moon and a wall so thick that a snowball would bounce right off it. Across the front, in red food colouring, he had painted his rule: NO LITTLE KIDS.',
+      'His sister, Mei, was six. She read the rule every morning on the way to the bus. She never said anything about it. She just walked a little slower as she passed.',
+      '“Why can’t she come in?” asked Owen’s friend Jaden one Saturday. They were sitting inside the fort, eating crackers that had gone soft in the <b>damp</b> air.',
+      '“Because little kids wreck things,” Owen said. “She would knock down the window. She would cry if a snowball hit her.” He said it quickly, the way people say things they have practised.',
+      'That afternoon, the weather turned. A warm wind blew in from the west, and water began to drip from the roof of the fort. By Sunday morning, the half-moon window had slumped into a crooked smile. One wall leaned like a tired person against a fence.',
+      'Owen stood in the yard with a shovel and stared. He could not fix both walls before the sun ruined them.',
+      'Then he heard boots crunching behind him. Mei was dragging her red sled, and the sled was piled high with snow. She had scraped it from the <b>shady</b> side of the house, where the snow was still cold and firm.',
+      '“For the wall,” she said. She did not look at the sign.',
+      'Owen opened his mouth and then closed it. Together they packed the snow into the leaning wall. Mei patted each handful flat with her mittens, slowly and carefully, the way she coloured inside the lines in her colouring books. Every few minutes she ran back for another load. By lunch, the wall stood straight again.',
+      'Owen looked at the red letters on the front of the fort. Then he scooped up a handful of fresh snow and rubbed out the word LITTLE. He stood back, thought for a moment, and rubbed out NO as well.',
+      '“What does it say now?” Mei asked. She could read it perfectly well.',
+      '“It says KIDS,” Owen said. “That means everyone.”'
+    ],
+    guide: { before: 'Ask: have you ever made a rule to keep someone out? How did it feel? Point to the line numbers in the margin and practise finding line 10 together. Teach <b>damp</b> and <b>shady</b>.',
+      after: 'Owen never says sorry out loud. How does he show that he has changed his mind? Is showing as good as saying?' },
+    words: [['damp', 'a little wet'], ['shady', 'out of the sun']],
+    qs: [
+      { k: 'choice', code: 'C3.2', q: 'Why does Mei walk “a little slower” past the fort each morning?',
+        opts: ['She is tired from waking up early.', 'She wishes she could go inside.', 'She is looking for Jaden.', 'She is afraid of the fort.'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The word “slumped” ({line:slumped}) means',
+        opts: ['sank down', 'froze hard', 'grew bigger', 'broke apart'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who tells this story?',
+        opts: ['Owen', 'Mei', 'a narrator who is not in the story', 'Jaden'], a: 2 },
+      { k: 'choice', code: 'C3.1', q: 'One wall “leaned like a tired person against a fence” ({line:tired}). This comparison shows that the wall',
+        opts: ['was about to fall over', 'was the tallest part of the fort', 'was made of ice', 'was the strongest part of the fort'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Owen “opened his mouth and then closed it” ({line:closed}). He most likely',
+        opts: ['was too cold to talk', 'started to tell Mei to go away, then decided her help mattered more than his rule', 'wanted to call Jaden to come and help', 'was angry that Mei had touched his fort'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Which of these would be another good title for this story?',
+        opts: ['How to Build a Snow Fort', 'A Warm Wind from the West', 'Room for Everyone', 'Jaden’s Saturday'], a: 2 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Mei asks what the sign says, but “she could read it perfectly well” ({line:perfectly}). Why do you think she asks?',
+        a: 'She wants to hear Owen say out loud that she is welcome now. Hearing it makes it real.', look: 'an inference that goes beyond the words (she wants Owen to say it), with a reason' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How does Owen change from the beginning of the story to the end? Use one detail from each part.',
+        a: 'At first Owen keeps Mei out with his rule. At the end he rubs out NO and LITTLE, so the fort is for everyone.', look: 'a beginning detail (the rule) and an ending detail (rubbing out the words), and the change between them' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-before-the-others-wake', subject: 'story', form: 'Poem', lines: true,
+    title: 'Before the Others Wake',
+    deck: 'A poem about an early morning paddle',
+    hero: {
+      photo: 'g4-canoe-lake.jpg', credit: 'Photo: Paul LaRocque, CC BY 3.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 200,
+      cap: 'A canoe on the shore of a calm lake in northern Ontario.'
+    },
+    body: [
+      { poem: ['Before the others wake,', 'Grandpa and I slip the canoe', 'into water as still as a held breath.', 'Mist lifts off the lake', 'like steam from a mug of cocoa.', '',
+        'He paddles at the back.', 'I paddle at the front,', 'splashing, much too fast,', 'until he says, <i>Listen</i>.', '',
+        'So I rest my paddle across my knees', 'and listen.', '',
+        'A <b>loon</b> calls from the far shore,', 'a long, wobbly cry', 'that sounds like a question.', 'Another loon answers.', 'The sound rolls over the water', 'and into my chest.', '',
+        'We do not talk on the way back.', 'We do not need to.', 'At the dock, my cousins are just waking up,', '<b>yawning</b>, asking what we did.', '<i>Nothing</i>, I tell them.', '<i>We listened.</i>'] }
+    ],
+    guide: { before: 'Play a recording of a common loon call if you can. Read the poem aloud once while the child follows, then have the child read it. Show how the line numbers count only the lines of the poem. Teach <b>loon</b>.',
+      after: 'When was the last time you stopped to just listen? What did you hear that you would have missed?' },
+    words: [['loon', 'a diving water bird with a long, haunting call'], ['yawning', 'opening the mouth wide because you are sleepy']],
+    qs: [
+      { k: 'choice', code: 'C1.1', half: true, q: 'When does this poem take place?',
+        opts: ['early in the morning', 'at lunchtime', 'late in the afternoon', 'in the middle of the night'], a: 0 },
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who is the speaker in the poem?',
+        opts: ['Grandpa', 'a child paddling with Grandpa', 'one of the cousins', 'a loon'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Which line uses a simile to describe the mist?',
+        opts: ['“Mist lifts off the lake” ({line:Mist})', '“like steam from a mug of cocoa” ({line:cocoa})', '“splashing, much too fast” ({line:splashing})', '“The sound rolls over the water” ({line:rolls})'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why does Grandpa say “Listen” ({line:until})?',
+        opts: ['He hears a bear on the shore.', 'He wants the speaker to slow down and notice the lake.', 'He wants to go back to the dock.', 'He is teaching the speaker to paddle faster.'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'The loon’s cry is “wobbly” ({line:wobbly}). Wobbly means',
+        opts: ['shaky, going up and down', 'very quiet', 'angry', 'short and sharp'], a: 0 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Two lines in a row start with “We do not” ({line:talk}). This repetition helps show that',
+        opts: ['the trip back was long', 'the quiet felt peaceful and shared', 'they were angry with each other', 'they were lost'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'This poem is mainly about',
+        opts: ['learning to paddle a canoe fast', 'a quiet moment of listening shared with Grandpa', 'how loons find food', 'cousins who sleep late'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The speaker tells the cousins they did “Nothing.” Did they really do nothing? Explain, using two details from the poem.',
+        a: 'No. They paddled out in the mist and listened to two loons calling to each other. To the speaker, listening was something special.', look: 'a clear answer with two details (the paddle, the loons, the quiet) and why “nothing” is not quite true' },
+      { k: 'lines', code: 'C1.5', n: 2, q: 'The sound goes “into my chest” ({line:chest}). What does this tell you about how the speaker feels?',
+        a: 'The loon call moves the speaker. They feel it deeply, not just hear it.', look: 'a feeling (moved, amazed, peaceful) linked to the words' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-rink-interview', subject: 'social', form: 'Interview', lines: true, plain: true,
+    title: 'Rink Under the Lights',
+    deck: 'Kiara interviews her grandmother about winters long ago',
+    hero: {
+      photo: 'g4-outdoor-rink.jpg', credit: 'Photo: Fort Simpson Chamber of Commerce, CC BY 2.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 180,
+      cap: 'An outdoor rink in Fort Simpson, Northwest Territories, where Kiara’s grandmother grew up.'
+    },
+    body: [
+      '<i>Kiara is in Grade 4. For a class project about how childhood has changed, she interviewed her grandmother, Rose, who grew up in Fort Simpson in the Northwest Territories.</i>',
+      '<b class="ps-who">Kiara:</b> Where did you skate when you were my age?',
+      '<b class="ps-who">Grandma:</b> On an outdoor rink near the river. There was no indoor arena in our town then, so the whole community took care of that rink. We skated from November until almost April.',
+      '<b class="ps-who">Kiara:</b> Who made the ice?',
+      '<b class="ps-who">Grandma:</b> Everybody. The grown-ups packed the snow flat with their boots and shovels. Then they <b>flooded</b> it with water from a tank on the back of a truck. You have to flood a rink in thin layers. If you pour too much water at once, the ice comes out bumpy and full of cracks. My job was to sweep off the fresh snow after every storm.',
+      '<b class="ps-who">Kiara:</b> Wasn’t it really cold?',
+      '<b class="ps-who">Grandma:</b> Some nights it was minus forty. We wore two pairs of wool socks and mitts my auntie made. When our toes went <b>numb</b>, we went into the warming <b>shack</b>. It had a wood stove, and it smelled like smoke and wet mittens. I loved that smell.',
+      '<b class="ps-who">Kiara:</b> What was the best part?',
+      '<b class="ps-who">Grandma:</b> Skating at night. In the middle of winter, it gets dark early in the afternoon up north. Sometimes the northern lights came out, green and pink, moving across the whole sky. We would lie flat on the ice and watch them. That was the most beautiful thing I have ever seen.',
+      '<b class="ps-who">Kiara:</b> Did you ever fall?',
+      '<b class="ps-who">Grandma:</b> All the time! My brother used to say the ice was the best teacher in town, because it never let you get away with a mistake. Every time you fall, you learn where to put your weight.',
+      '<b class="ps-who">Kiara:</b> Do you think kids today have more fun?',
+      '<b class="ps-who">Grandma:</b> I think kids today have more choices. But nothing beats an outdoor rink on a clear night. You should try it. I will lend you my old skates.',
+      '<b class="ps-who">Kiara:</b> Grandma, your skates are older than Mom!',
+      '<b class="ps-who">Grandma:</b> Then they have had lots of practice.',
+      { fig: '<rect class="k" x="4" y="8" width="84" height="64" rx="6"/><rect class="k" x="108" y="8" width="84" height="64" rx="6"/><rect class="k" x="212" y="8" width="84" height="64" rx="6"/>' +
+          D.arrow(90, 40, 106, 40, 'a') + D.arrow(194, 40, 210, 40, 'a') +
+          '<text class="lb" x="46" y="30" text-anchor="middle">1. Pack</text><text class="l" x="46" y="48" text-anchor="middle">stamp the</text><text class="l" x="46" y="62" text-anchor="middle">snow flat</text>' +
+          '<text class="lb" x="150" y="30" text-anchor="middle">2. Flood</text><text class="l" x="150" y="48" text-anchor="middle">spray a thin</text><text class="l" x="150" y="62" text-anchor="middle">layer of water</text>' +
+          '<text class="lb" x="254" y="30" text-anchor="middle">3. Freeze</text><text class="l" x="254" y="48" text-anchor="middle">let it freeze,</text><text class="l" x="254" y="62" text-anchor="middle">flood again</text>' +
+          '<path class="d" d="M254 74 V92 H150 V76"/><text class="n" x="202" y="104" text-anchor="middle">repeat many times</text>',
+        tall: 110, cap: 'How an outdoor rink is made, step by step.' }
+    ],
+    guide: { before: 'Ask what the child knows about outdoor rinks or very cold places. Show Fort Simpson on a map of Canada. Point out how an interview shows who is speaking. Teach <b>flooded</b>, <b>numb</b> and <b>shack</b>.',
+      after: 'If you interviewed an older person in your family, what three questions would you ask? Why those?' },
+    words: [['flooded', 'covered with water'], ['numb', 'unable to feel, often from cold'], ['shack', 'a small, simple building']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'How can you tell that this text is an interview?',
+        opts: ['It has a photo at the top.', 'It shows questions and answers, with names.', 'It is about a grandmother.', 'It tells about long ago.'], a: 1 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'What was Kiara mainly trying to find out?',
+        opts: ['how to make a rink', 'what her grandmother’s winters were like', 'why the northern lights are green', 'where to buy skates'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'Which of these is an opinion rather than a fact?',
+        opts: ['“Some nights it was minus forty.” ({line:forty})', '“We skated from November until almost April.” ({line:April})', '“That was the most beautiful thing I have ever seen.” ({line:beautiful})', '“It had a wood stove.” ({line:stove})'], a: 2 },
+      { k: 'choice', code: 'B2.2', half: true, q: '“Nothing beats an outdoor rink” ({line:beats}). Here, beats means',
+        opts: ['hits', 'is better than', 'makes a drum sound', 'runs faster than'], a: 1 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'When Grandma says her skates “have had lots of practice,” she is',
+        opts: ['annoyed', 'joking', 'worried', 'confused'], a: 1 },
+      { k: 'choice', code: 'C1.4', q: 'Look at the diagram. Why does the dashed arrow go back from step 3 to step 2?',
+        opts: ['The rink needs many thin layers of water.', 'The snow must be packed again.', 'The rink melts every night.', 'The steps can be done in any order.'], a: 0 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Why did the whole community take care of the rink? Use two details from the interview.',
+        a: 'There was no indoor arena in town, so the rink was the only place to skate. Grown-ups packed and flooded it, and children swept it after storms.', look: 'the reason (no indoor arena) and a detail about who did what' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Grandma says kids today have “more choices.” Compare her winters with your own. Give one way they are the same and one way they are different.',
+        a: 'Example: Like Grandma, I play outside in winter. But I skate at an indoor arena and she skated outside under the northern lights.', look: 'one similarity and one difference, with a detail from the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g4-butterfly-journal', subject: 'science', form: 'Class journal', lines: true, plain: true,
+    title: 'Our Butterfly Journal',
+    deck: 'A Grade 4 class in Kenora watches caterpillars change',
+    hero: {
+      photo: 'g4-monarchs.jpg', credit: 'Photo: U.S. Fish and Wildlife Service, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 150,
+      cap: 'Adult butterflies resting on a branch. Room 12 raised a smaller kind, the painted lady.'
+    },
+    body: [
+      '<i>Room 12 at Lakeview School in Kenora raised painted lady butterflies in a mesh habitat. Each week, a different student wrote in the class journal.</i>',
+      '<b class="ps-who">May 6, Hassan:</b> Five tiny caterpillars arrived in a cup, with their food at the bottom. Each one was about as long as a grain of rice. Ms. Tremblay says we must not open the cup, because the food inside is all they need.',
+      '<b class="ps-who">May 13, Amelia:</b> The caterpillars have grown so much! The biggest one is as long as my thumb. They eat all day and leave tiny black specks behind. The specks are called frass, which is a polite word for caterpillar poop. A caterpillar’s skin does not stretch, so it sheds its skin, or <b>moults</b>, as it grows.',
+      '<b class="ps-who">May 17, Tyler:</b> Big news. Four caterpillars climbed to the lid and hung upside down in the shape of the letter J. Then their skin split, and each one became a hard brown case called a <b>chrysalis</b>. We moved the lid carefully into the habitat. One caterpillar is still eating. I think it is the slowest caterpillar in the world.',
+      '<b class="ps-who">May 27, Ayesha:</b> This morning a chrysalis was shaking. Then it cracked open, and a butterfly crawled out with crumpled, wet wings. It hung there for about an hour while its wings dried and spread out. A few drops of red liquid fell to the floor of the habitat. We were worried it was blood, but it is normal.',
+      '<b class="ps-who">June 3, Liam:</b> All five butterflies are out. We fed them orange slices and sugar water. Today we let them go in the school garden. One landed on Mr. Diaz’s hat, and the whole class laughed. In about two weeks, the females will lay eggs on plants, and the life cycle will start again.',
+      { img: 'g4-butterfly-cycle.png', credit: 'Diagram: Cyanocorax, CC0, Wikimedia Commons', tall: 240, cap: 'The four stages in the life cycle of a butterfly. This drawing shows a monarch.' },
+      { box: 'What we learned', text: 'A butterfly’s life has four stages: egg, larva (caterpillar), pupa (chrysalis) and adult. Changing from one body shape to a very different one is called <b>metamorphosis</b>.' }
+    ],
+    guide: { before: 'Look at the diagram first and name the four stages together. Show how each entry starts with a date and a writer. Teach <b>moults</b>, <b>chrysalis</b> and <b>metamorphosis</b>; clap the syllables in metamorphosis.',
+      after: 'The class let the butterflies go. Would you have kept them? Why is letting them go the better choice?' },
+    words: [['moults', 'sheds its skin to grow'], ['chrysalis', 'the hard case a caterpillar forms before it becomes a butterfly'], ['metamorphosis', 'a big change from one body shape to another']],
+    qs: [
+      { k: 'choice', code: 'C1.3', q: 'Why does each journal entry start with a date and a name?',
+        opts: ['to show when it was written and who wrote it', 'to make the journal longer', 'to name each butterfly', 'to list the class in order'], a: 0 },
+      { k: 'choice', code: 'C3.3', half: true, q: 'About how long did the class have the butterflies, from the first entry to the last?',
+        opts: ['one week', 'two weeks', 'four weeks', 'two months'], a: 2 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Frass is “a polite word” ({line:polite}). This means frass is',
+        opts: ['a rude word', 'a nicer way to say poop', 'a kind of food', 'a part of the wing'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Tyler writes, “I think it is the slowest caterpillar in the world” ({line:slowest}). He most likely feels',
+        opts: ['proud', 'scared', 'impatient, and a little amused', 'angry'], a: 2 },
+      { k: 'choice', code: 'C1.4', q: 'Look at the diagram. Which stage comes just before the adult butterfly?',
+        opts: ['egg', 'caterpillar', 'chrysalis', 'another adult'], a: 2 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in the order they happened.',
+        items: ['Tiny caterpillars arrive in a cup.', 'The caterpillars grow and moult.', 'They hang in a J and form a chrysalis.', 'A butterfly crawls out and dries its wings.', 'The butterflies are let go in the garden.'], show: [2, 0, 4, 1, 3] },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'In your own words, what is metamorphosis? Use an example from the journal.',
+        a: 'Metamorphosis is a big change in body shape. A caterpillar turned into a chrysalis, and then into a butterfly with wings.', look: 'a definition in own words and one example from the entries' },
+      { k: 'lines', code: 'C1.2', n: 2, q: 'Why might a class write a journal instead of one report at the end?',
+        a: 'A journal shows the changes as they happen, week by week, and lets every student write.', look: 'a reason linked to journals (dates, changes over time, many writers)' }
+    ]
+  });
 })();

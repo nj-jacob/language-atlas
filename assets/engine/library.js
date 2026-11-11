@@ -17,7 +17,14 @@
            on its own, on top of the photo, or beside it with side: { w, view } (the drawing's width on the page out of 700, and
            its own viewBox).
    body    in order: 'a paragraph (bold a glossary word with <b>)', { h: 'Subheading' }, { fig: art, tall, cap } (a 300 by tall box),
-           { box: 'Did you know?', text: '...' }. The front has two columns; a figure or box sits in its column.
+           { box: 'Did you know?', text: '...' }, { poem: ['a line', 'a line', '', 'a new verse ...'], by: 'the poet' } (a '' line
+           starts a new verse), { img: 'diagram.png', credit, tall, cap } (a real diagram or drawing from assets/photos/, in a column,
+           with its licence like a photo). The front has two columns; a figure or box sits in its column.
+           A story or a poem needs no figure in the text: its picture across the top is enough. A passage that is only a poem is set
+           in one wide column, a little larger.
+   lines   true: number the lines of the passage in the margin (every fifth line), as reading tests do. A question, choice or answer
+           can then point to a line with {line:word}: it prints as "line 14", the line where that word first appears in the passage,
+           so the number stays right when the text is edited.
    plain   true: no large first letter (for a letter or other text that starts with a greeting).
    words   the glossary along the foot of the front: every word is bold in the text.
    guide   { before, after } for the grown-up, on the answer key: what to teach before reading (background and words, as the Science
@@ -81,7 +88,7 @@
   function strip(h) { return String(h).replace(/<[^>]+>/g, ' '); }
   /* the words of the passage itself: paragraphs, subheadings and boxes (not captions or the glossary) */
   P.count = function (p) {
-    return p.body.map(function (b) { return typeof b === 'string' ? b : b.h || (b.box ? b.box + ' ' + b.text : ''); })
+    return p.body.map(function (b) { return typeof b === 'string' ? b : b.h || (b.box ? b.box + ' ' + b.text : '') || (b.poem ? b.poem.join(' ') : ''); })
       .join(' ').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(function (w) { return /[A-Za-z0-9]/.test(w); }).length;
   };
   P.marks = function (q) { return q.m || (q.k === 'table' ? q.rows.reduce(function (n, r) { return n + r.filter(function (c) { return c === null; }).length; }, 0) : q.k === 'lines' ? (q.n >= 4 ? 3 : 2) : 1); };
@@ -124,11 +131,15 @@
       if (typeof b === 'string') return '<p>' + nobreak(b) + '</p>';
       if (b.h) return '<h3>' + b.h + '</h3>';
       if (b.fig) return '<figure class="ps-fig">' + art(b.fig, 300, b.tall) + (b.cap ? '<figcaption>' + b.cap + '</figcaption>' : '') + '</figure>';
+      if (b.img) return '<figure class="ps-fig ps-img"><img src="../assets/photos/' + b.img + '" alt="" style="height:' + b.tall + 'px">' +
+        '<figcaption>' + b.cap + ' <span class="ps-credit">' + b.credit + '</span></figcaption></figure>';
+      if (b.poem) return '<div class="ps-poem">' + b.poem.map(function (l) { return l ? '<p>' + l + '</p>' : '<p class="ps-gap"></p>'; }).join('') +
+        (b.by ? '<p class="ps-by">' + b.by + '</p>' : '') + '</div>';
       return '<aside class="ps-box"><p class="ws-label">' + b.box + '</p><p>' + nobreak(b.text) + '</p></aside>';
     }).join('');
     return '<div class="ws-page ps-page ps-front">' + frame(th) + head(p, th) +
       hero(p, true) +
-      '<div class="ps-text' + (p.plain ? ' ps-plain' : '') + '">' + body + '</div>' +
+      '<div class="ps-text' + (p.plain ? ' ps-plain' : '') + (p.body.every(function (b) { return b.poem; }) ? ' ps-verse' : '') + '">' + body + '</div>' +
       '<footer class="ps-foot"><dl class="ps-words"><dt class="ws-label">Words to know</dt>' + p.words.map(function (w) { return '<div><dt>' + w[0] + '</dt><dd>' + w[1] + '</dd></div>'; }).join('') + '</dl>' +
       foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · ' + P.count(p) + ' words · Turn over for the questions') + '</footer></div>';
   }
@@ -182,7 +193,8 @@
   var ZOOM = [1, 0.97, 0.94, 0.91, 0.88];
   P.render = function (el, p, side) {
     var th = themeOf(p);
-    el.innerHTML = (side === 'front' ? front : side === 'back' ? back : key)(p, th);
+    if (p.lines && side !== 'front' && !p.at) layout(p);
+    el.innerHTML = lineRefs((side === 'front' ? front : side === 'back' ? back : key)(p, th), p);
     var pg = el.firstChild, box = $(side === 'front' ? '.ps-text' : side === 'back' ? '.ps-qs' : '.ps-guide', pg), over;
     pg.style.setProperty('--acc', th.acc);
     pg.style.setProperty('--face', th.font);
@@ -191,8 +203,63 @@
       over = box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1;
       if (!over) break;
     }
+    if (p.lines && side === 'front') number(pg, p);
     return { over: over, z: ZOOM[i] || ZOOM[ZOOM.length - 1] };
   };
+
+  /* ---------- line numbers ---------- */
+  /* the lines of the passage as they fall on the printed front, in reading order: { col, top, left } in page units */
+  function linesOf(pg) {
+    var box = $('.ps-text', pg), b = box.getBoundingClientRect(), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, mid = b.left + b.width / 2, out = [];
+    $$('.ps-text > p, .ps-poem > p:not(.ps-gap):not(.ps-by)', pg).forEach(function (el) {
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      [].forEach.call(r.getClientRects(), function (c) {
+        if (!c.width || c.bottom > b.bottom + 1) return;
+        var col = c.left > mid ? 1 : 0, top = (c.top - pr.top) / k, left = (c.left - pr.left) / k;
+        var same = out.filter(function (l) { return l.col === col && Math.abs(l.top - top) < 6; })[0];
+        if (same) same.left = Math.min(same.left, left); else out.push({ col: col, top: top, left: left });
+      });
+    });
+    return out.sort(function (a, c) { return a.col - c.col || a.top - c.top; });
+  }
+  /* number every fifth line in the margin, and note the line of each word that a question points to ({line:word}) */
+  function number(pg, p) {
+    var lines = linesOf(pg), pr = pg.getBoundingClientRect(), k = pr.width / pg.offsetWidth || 1, edge = [Infinity, Infinity], tb = $('.ps-text', pg).getBoundingClientRect(), mid = tb.left + tb.width / 2;
+    lines.forEach(function (l) { edge[l.col] = Math.min(edge[l.col], l.left); });
+    pg.insertAdjacentHTML('beforeend', lines.map(function (l, i) {
+      return (i + 1) % 5 ? '' : '<span class="ps-ln" style="left:' + (edge[l.col] - 30).toFixed(1) + 'px;top:' + l.top.toFixed(1) + 'px">' + (i + 1) + '</span>';
+    }).join(''));
+    p.at = {};
+    refs(p).forEach(function (w) {
+      var walk = document.createTreeWalker($('.ps-text', pg), NodeFilter.SHOW_TEXT), re = new RegExp('\\b' + w + '\\b', 'i'), t, m;
+      while ((t = walk.nextNode())) {
+        if (t.parentNode.closest('figure, aside, h3, .ps-by') || !(m = re.exec(t.data))) continue;
+        var r = document.createRange();
+        r.setStart(t, m.index);
+        r.setEnd(t, m.index + m[0].length);
+        var c = r.getClientRects()[0], top = (c.top - pr.top) / k, col = c.left > mid ? 1 : 0;
+        lines.forEach(function (l, i) { if (l.col === col && Math.abs(l.top - top) < 6) p.at[w] = i + 1; });
+        return;
+      }
+    });
+  }
+  /* the words that the questions, choices and answers point to */
+  function refs(p) {
+    var out = [];
+    JSON.stringify(p.qs).replace(/\{line:([^}]+)\}/g, function (all, w) { if (out.indexOf(w) < 0) out.push(w); });
+    return out;
+  }
+  function lineRefs(html, p) { return html.replace(/\{line:([^}]+)\}/g, function (all, w) { return 'line ' + (p.at && p.at[w] || '?'); }); }
+  /* lay the front out on a hidden sheet, to learn the line numbers when the back or the key is drawn first */
+  function layout(p) {
+    var tmp = document.createElement('div');
+    tmp.className = 'ws-sheet';
+    tmp.style.cssText = 'position:absolute;left:-10000px;top:0;width:816px;max-width:none';
+    document.body.appendChild(tmp);
+    P.render(tmp, p, 'front');
+    document.body.removeChild(tmp);
+  }
 
   /* ---------- the tool: the library, and one passage ---------- */
   function card(p) {

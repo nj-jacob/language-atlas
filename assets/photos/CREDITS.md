@@ -1,8 +1,8 @@
-# Photos in the Reading passages
+# Photos and diagrams in the Reading passages
 
 Every photo here is free to use: public domain, CC0, or a Creative Commons licence that only asks for credit (CC BY, and CC BY-SA, which asks for credit and that changed copies of the photo stay under the same licence). Each photo's credit is also printed under its caption. `thumbs/` holds small copies for the list of passages.
 
-To add a photo: take it from Wikimedia Commons (or another source with the same licences), save it at most 1280 px wide, add a 480 px copy to `thumbs/`, add a row here, and give the passage's hero a `photo` and a `credit`. Never use a photo whose licence you cannot see.
+To add a photo: take it from Wikimedia Commons (or another source with the same licences), save it at most 1280 px wide, add a 480 px copy to `thumbs/`, add a row here, and give the passage's hero a `photo` and a `credit`. Never use a photo whose licence you cannot see. Real diagrams and drawings placed in a passage's text (`img` in the body) follow the same rules.
 
 | File | What it shows | By | Licence | Source |
 | --- | --- | --- | --- | --- |
@@ -505,3 +505,4 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-dragon-boat.jpg` | Dragon boat crew paddling in Toronto | John Vetterli | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Dragon_Boaters_2_(174187450).jpg |
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
+| `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
