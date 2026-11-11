@@ -4,7 +4,7 @@ Atlas.setup({
   grade: 7,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D.',
   chapters: [
-    { id: 'word-parts', title: 'Word Parts', sub: 'roots, prefixes, suffixes and spelling', strand: 'B', codes: 'B2.1, B2.2',
+    { id: 'word-parts', title: 'Word Parts', sub: 'roots, prefixes, suffixes and spelling', strand: 'B', codes: 'B2.1, B2.2', spell: true,
       desc: 'Use Greek and Latin roots to read long words, build words from parts, and spell them when a suffix is added.' },
     { id: 'meanings', title: 'Word Meanings', sub: 'context clues, shades of meaning and subject words', strand: 'B', codes: 'B2.2',
       desc: 'Work out a new word from the sentence, choose the word with the right feeling, and use words from other subjects.' },
