@@ -1443,13 +1443,22 @@ async function checkSpelling(browser, base) {
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);
     for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print',
-      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print']) {
+      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print', '/check']) {
       await page.evaluate(h => { location.hash = 'tools/spelling' + h; }, part);
-      await page.waitForSelector(part ? '.sp-stage > *' : '.dc-card');
+      await page.waitForSelector(part ? '.sp-stage > *, .sp-check' : '.dc-card');
       await page.waitForTimeout(150);
       await screenCheck(page, where, (part || 'the list of steps') + ' at ' + vp.width + ' px');
     }
   }
+  /* the spelling check: right on the first words, then 3 not yet; it stops, names the step to start at, and saves it */
+  const pr = spelling.probes(list), right = Math.min(9, pr.length - 3), want = spelling.start(list, [...Array(right).fill(true), false]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.evaluate(() => { location.hash = 'tools/spelling/check'; });
+  for (let i = 0; i < right; i++) { await page.waitForSelector('.sp-check [data-m]'); await page.click('[data-m="1"]'); }
+  for (let i = 0; i < 3; i++) { await page.waitForSelector('.sp-check [data-m]'); await page.click('[data-m="0"]'); }
+  await page.waitForSelector('.sp-check a.btn');
+  const got = await page.evaluate(() => [document.querySelector('.sp-check a.btn').getAttribute('href'), (Atlas.load('sp:check', {}) || {}).start]);
+  if (got[0] !== '#tools/spelling/' + want || got[1] !== want) fail(where, 'the spelling check with ' + right + ' right then 3 not yet should start at ' + want + ', but it says ' + got.join(' / '));
   await page.evaluate(() => Atlas.adult(true));
   await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/dictate'; }, r.ids[0]);
   await page.waitForSelector('.sp-mk');

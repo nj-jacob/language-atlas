@@ -57,8 +57,13 @@ function check(list, root) {
   const problems = [], order = decodable.STEPS.map(s => s[0]);
   const hearts = new Set(), readers = decodable.load(root), ids = new Set();
   let last = -1, first = true, band = 0;
+  const groups = new Set();
   list.forEach((p, i) => {
     const where = 'spelling step ' + p.id, at = order.indexOf(p.id);
+    if (!(p.words || []).some(w => w[0] === p.key)) problems.push(where + ': its key word ' + p.key + ' is not one of its words (the spelling check says it)');
+    const g = p.band + ' ' + p.group, prev = list[i - 1];
+    if (groups.has(g) && !(prev && prev.band + ' ' + prev.group === g)) problems.push(where + ': its group (' + p.group + ') is split; keep a grade\'s groups together');
+    groups.add(g);
     if (ids.has(p.id)) problems.push(where + ': is listed twice');
     ids.add(p.id);
     if (BANDS.indexOf(p.band) < band) problems.push(where + ': its grade (band) comes before the step above it');
@@ -184,10 +189,21 @@ function later(p, before, problems) {
   (p.review || []).forEach(w => { if (!earlier.has(w.toLowerCase())) problems.push(where + ' review "' + w + '": must be a word from an earlier step'); });
   if (p.sounds) problems.push(where + ': a Grades 4 to 8 step has no warm-up sounds');
 }
+/* the spelling check: one word for each group (the key word of its last step); the start is the first step of the first group missed */
+function probes(list) {
+  const out = [];
+  list.forEach((p, i) => {
+    const g = p.band + ' ' + p.group;
+    if (!out.length || out[out.length - 1].g !== g) out.push({ g, first: p.id });
+    Object.assign(out[out.length - 1], { w: p.key, last: p.id });
+  });
+  return out;
+}
+function start(list, marks) { const pr = probes(list), miss = marks.indexOf(false); return miss < 0 ? pr[pr.length - 1].last : pr[miss].first; }
 /* every ending's word, for the browser check to compare with the engine */
 function endings(list) { return list.map(p => (p.endings || []).map(([b, s, st]) => [p.id, b, s, addEnding(b, s, st), st])).flat(); }
 
-module.exports = { load, check, endings, addEnding };
+module.exports = { load, check, endings, addEnding, probes, start };
 if (require.main === module) {
   const root = path.resolve(__dirname, '..'), list = load(root), pr = check(list, root);
   pr.forEach(p => console.log(' - ' + p));
