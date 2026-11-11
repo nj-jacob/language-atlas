@@ -37,6 +37,7 @@ const { chromium } = require('playwright');
 const startServer = require('./server');
 const decodable = require('./decodable');
 const spelling = require('./spelling');
+const hearts = require('./hearts');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -44,7 +45,7 @@ const QUICK = args.includes('--quick');
 const ALL_GRADES = fs.readdirSync(ROOT).filter(d => /^grade\d$/.test(d)).map(d => +d.slice(5)).sort();
 const GRADES = args.includes('--grade') ? [+args[args.indexOf('--grade') + 1]] : ALL_GRADES;
 const TRIES = QUICK ? 12 : 40;
-const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'decodable.js', 'spellpath.js', 'engine.css', 'sheets.css', 'decodable.css', 'spellpath.css', 'library.css'];
+const ENGINE = ['atlas.js', 'qkit.js', 'words.js', 'lesson.js', 'practice.js', 'tasks.js', 'wordbank.js', 'cardbank.js', 'tools.js', 'soundbank.js', 'soundboard.js', 'reader.js', 'meaningbank.js', 'meaning.js', 'mapbank.js', 'textmaps.js', 'writebank.js', 'writetools.js', 'sheets.js', 'sheet-themes.js', 'library.js', 'decodable.js', 'spellpath.js', 'heartwords.js', 'engine.css', 'sheets.css', 'decodable.css', 'spellpath.css', 'heartwords.css', 'library.css'];
 const US_SPELLING = /\b(colors?|colored|colorful|favorite|favor|neighbor|neighbors|neighborhood|center|centers|centered|theater|honor|labor|behavior|flavor|humor|traveled|traveling|traveler|canceled|jewelry|gray|catalog)\b/i;
 const problems = [];
 function fail(where, what) { problems.push(where + ': ' + what); }
@@ -1442,6 +1443,60 @@ async function checkSpelling(browser, base) {
   return r.n;
 }
 
+/* ---------- the tool box: Heart words (checked once, in Grade 1) ---------- */
+async function checkHearts(browser, base) {
+  const where = 'heart words';
+  const sets = hearts.load(ROOT);
+  hearts.check(sets, ROOT).forEach(p => fail('tool box', p));
+  const { ctx, page, errs } = await newPage(browser, base);
+  await page.goto(base + '/grade1/index.html#tools/hearts');
+  await page.waitForSelector('.hw-set');
+  const r = await page.evaluate(() => {
+    const H = Atlas.hearts, out = [], box = document.createElement('div');
+    box.className = 'ws-sheet';
+    box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
+    document.body.appendChild(box);
+    H.sets.forEach(s => {
+      ['page', 'key'].forEach(side => {
+        const r = H.render(box, s, side);
+        if (r.over) out.push('set ' + s.n + ': the printed ' + (side === 'key' ? 'grown-up page' : 'page') + ' runs off the paper');
+        if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push('set ' + s.n + ': the printed ' + side + ' shows undefined or NaN');
+      });
+      s.words.forEach(x => { if (!x.parts.some(p => p[1])) out.push('set ' + s.n + ' "' + x.w + '": shows no heart part'); });
+    });
+    box.remove();
+    return { out, n: H.sets.length, words: H.sets.reduce((n, s) => n + s.words.length, 0), cards: document.querySelectorAll('.hw-set').length };
+  });
+  r.out.forEach(p => fail(where, p));
+  if (r.cards !== r.n) fail(where, 'the list shows ' + r.cards + ' sets, not ' + r.n);
+  /* on a phone: look, trace and write the first word of each set, mark it Got it, and see it count */
+  for (let n = 1; n <= r.n; n++) {
+    await page.evaluate(n => { location.hash = 'tools/hearts/' + n; }, n);
+    await page.waitForSelector('.hw-big .hw-h');
+    await page.click('[data-a="go"]');
+    await page.waitForSelector('.hw-trace canvas');
+    await page.click('[data-a="go"]');
+    await page.waitForSelector('.hw-line canvas');
+    if (await page.isVisible('.hw-ans')) fail(where, 'set ' + n + ': the word shows before Show it, so the child cannot write it from memory');
+    await page.click('[data-a="show"]');
+    await page.click('[data-a="yes"]');
+    const w = await page.evaluate(n => Atlas.hearts.find(n).words[0].w, n);
+    if (!(await page.evaluate(w => Atlas.hearts.record(w).days.length === 1, w))) fail(where, 'set ' + n + ': Got it on "' + w + '" is not saved');
+  }
+  for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
+    await page.setViewportSize(vp);
+    for (const part of ['', '/1', '/' + r.n, '/1/print']) {
+      await page.evaluate(h => { location.hash = 'tools/hearts' + h; }, part);
+      await page.waitForSelector(part ? '.hw-stage > *' : '.hw-set');
+      await page.waitForTimeout(150);
+      await screenCheck(page, where, (part || 'the list of sets') + ' at ' + vp.width + ' px');
+    }
+  }
+  if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
+  await ctx.close();
+  return r;
+}
+
 (async () => {
   const t0 = Date.now();
   repoRules();
@@ -1469,6 +1524,7 @@ async function checkSpelling(browser, base) {
   if (GRADES.includes(1)) {
     try { const n = await checkDecodable(browser, url); log('Decodable readers: ' + n + ' stories, every word sounded out at its step, each story drawn and opened on phone, iPad and laptop.'); } catch (e) { fail('decodable readers', 'the check itself stopped: ' + e.message.split('\n')[0]); }
     try { const n = await checkSpelling(browser, url); log('Spelling path: ' + n + ' steps, every word, sort and ending worked out again, every part used, each printed page drawn, on phone, iPad and laptop.'); } catch (e) { fail('spelling path', 'the check itself stopped: ' + e.message.split('\n')[0]); }
+    try { const r = await checkHearts(browser, url); log('Heart words: ' + r.n + ' sets, ' + r.words + ' words checked, each set practised and printed, on phone, iPad and laptop.'); } catch (e) { fail('heart words', 'the check itself stopped: ' + e.message.split('\n')[0]); }
   }
   if (GRADES.length === ALL_GRADES.length) {
     try { const n = await checkPlacement(browser, url); log('Placement check: ' + n + ' questions answered by made-up children, each placed where expected.'); } catch (e) { fail('placement check', 'the check itself stopped: ' + e.message.split('\n')[0]); }

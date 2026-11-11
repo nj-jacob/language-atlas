@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Heart words (tool box, Spelling shelf): 238 tricky words in 25 sets, Kindergarten to Grade 3, with a heart over the part to learn by heart. Look, trace, then write each word from memory; secure when right on two different days. Each set prints a trace-and-write page and a grown-up page.
 - Spelling path: every Kindergarten to Grade 3 step (63 in all, up from 10), listed by grade: short vowels, digraphs, FLOSS, glued sounds, blends, endings, tch and dge, soft c and g, ph, vowels with r, vowel teams, consonant-le, silent letters, prefixes and suffixes, and the Grade 2 and 3 spellings. Longer words use beat boxes (one box for each beat). The tile tray offers only spellings taught by then.
 
 ## 2026-11-10

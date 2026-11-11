@@ -1,0 +1,40 @@
+/* Language Atlas tool box: Heart words (heartwords.js). The set list and printed page borrow the decodable readers' layout
+   (decodable.css) and the spelling path's cards and tabs (spellpath.css). Colours come from the theme. */
+
+.hw-one{display:flex;flex-direction:column;gap:14px;padding:4px 0 24px}
+.hw-coach{margin:0}
+.hw-coach p{margin:0 0 6px}
+.hw-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.hw-chip{min-height:40px;padding:0 12px;border-radius:12px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink2);font:inherit;font-weight:700;cursor:pointer;touch-action:manipulation}
+.hw-chip.hw-sec{border-color:var(--good);color:var(--good)}
+.hw-chip.hw-on{border-color:var(--accent);color:var(--ink);box-shadow:0 0 0 3px var(--tint)}
+.hw-steps{display:flex;gap:4px;padding:4px;border-radius:14px;background:var(--line);width:100%;max-width:420px}
+.hw-steps button{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border:0;border-radius:10px;background:none;color:var(--ink2);font:inherit;font-weight:700;cursor:pointer}
+.hw-steps button b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line2);font-size:.8rem;color:var(--ink)}
+.hw-steps button[aria-current]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.hw-body{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
+
+/* the word, with a heart over its heart part */
+.hw-word{font-family:var(--display);font-weight:800;letter-spacing:.02em;white-space:nowrap}
+.hw-h{position:relative;display:inline-block;color:var(--accent)}
+.hw-h svg{position:absolute;left:50%;top:-.42em;width:.42em;height:.38em;transform:translateX(-50%);fill:var(--bad)}
+.hw-big{padding:.5em .2em .1em;font-size:clamp(3rem,13vw,5.5rem);line-height:1.1;max-width:100%;overflow:hidden}
+.hw-trace,.hw-line{position:relative;width:min(100%,560px);border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.hw-trace{display:grid;place-items:center;padding:.45em .3em .1em;font-size:clamp(3rem,13vw,5.5rem);line-height:1.1}
+.hw-hollow{color:transparent;-webkit-text-stroke:2px var(--line2)}
+.hw-hollow .hw-h{color:transparent;-webkit-text-stroke-color:color-mix(in srgb,var(--accent) 60%,var(--line2))}
+.hw-trace canvas,.hw-line canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;--ink:var(--ink)}
+.hw-line{height:clamp(110px,22vw,150px);background:linear-gradient(to bottom,transparent 72%,var(--line2) 72%,var(--line2) calc(72% + 2px),transparent calc(72% + 2px)),var(--paper)}
+.hw-ans{font-size:clamp(2.2rem,9vw,3.6rem);padding-top:.4em}
+.hw-set .dc-cm b{font-weight:700}
+
+/* ---------- the printed page ---------- */
+.hw-page{--z:1}
+.hw-prow{display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;gap:calc(14px*var(--z));align-items:end;padding:calc(10px*var(--z)) 0;border-bottom:1px solid var(--line2)}
+.hw-prow i{display:block;height:calc(40px*var(--z));border-bottom:1.5px solid var(--ink)}
+.hw-phead{padding-top:calc(14px*var(--z));font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.hw-pw{font-size:calc(30px*var(--z))}
+.hw-pw .hw-h{color:var(--acc)}
+.hw-pt{font-family:var(--face);font-size:calc(32px*var(--z));font-weight:700;color:transparent;-webkit-text-stroke:1.2px var(--ink3)}
+.hw-klist{display:flex;flex-wrap:wrap;gap:18px 26px;margin-top:16px!important;font-size:24px}
+.hw-klist small{font-family:var(--body);font-size:13px;color:var(--ink2);margin-left:4px}
