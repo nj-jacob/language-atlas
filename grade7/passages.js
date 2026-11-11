@@ -6016,4 +6016,308 @@
         a: 'Hannah could tell us why she decided to help, and how cold her own hands were afterward. We would see Yonas from the outside, shivering in a thin jacket.', look: 'a change in what the reader knows (Hannah’s reasons or feelings; Yonas seen from outside)' }
     ]
   });
+
+  P.add({
+    id: 'g7-sash', subject: 'story', form: 'Short story', lines: true,
+    title: 'The Sash',
+    deck: 'Jolene’s grandfather is coming to her school. She is not sure that is a good idea.',
+    hero: {
+      photo: 'g6-red-river-cart.jpg', credit: 'Photo: Viola-Ness, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 180,
+      cap: 'A full-size model of a Red River cart. Métis families used carts like this to carry goods across the Prairies.'
+    },
+    body: [
+      'When Ms. Laroque announced that each student in 7B would invite a family member to speak about their heritage, Jolene felt her stomach drop several floors. Her classmates were inviting parents who would talk for five minutes and pass around a photo. Jolene had only one option, and he did not do anything in five minutes.',
+      'Her grandfather, Norman Beaulieu, was seventy-eight, Métis, and the keenest storyteller in St. Norbert. He had once spent forty minutes explaining to a cashier why Red River carts squealed so loudly that people heard them kilometres away. (Wood rubbed on wood, and grease would have caught dust and ground down the axles, so drivers left them dry. The cashier had not asked.)',
+      'On the morning of his visit, Grandpa arrived early, wearing his good jacket and, over it, his sash: a long band of wool woven by hand into arrows of red, blue, green and white, with fringes at both ends. He had brought his fiddle, too, which Jolene had specifically asked him not to bring.',
+      'He began, as she had feared, with the carts. But something unexpected happened. Nobody looked bored. When he imitated the screeching wheels, Marcus laughed out loud. When Grandpa explained that a Red River cart could float across a river if you took the wheels off and wrapped the body in buffalo hide, three hands went up at once.',
+      'Then he unwound the sash and held it up so the class could see it properly. He told them that his grandmother had woven it without a loom, using only her fingers, in a pattern called <b>fléché</b>, which means “arrowed.” He explained that the sash had been practical: it kept out the wind, carried tools and even served as a rope in an emergency. And he told them that, for many Métis people, its colours now carried meaning: red, he said, for the people who had struggled for Métis rights; blue for the depth of the Métis spirit.',
+      '“For a long time,” he said, “some people hid their sashes. They were told being Métis was something to be ashamed of. My own father would not wear his in town.” He paused. “I wear mine everywhere.”',
+      'The classroom was very quiet. Jolene was staring at her desk, and her face was hot, and it was not, after all, from embarrassment.',
+      'At the end, Grandpa asked if anyone wanted to try a few steps of the Red River jig while he played. Jolene braced herself. But Priya stood up, then Marcus, then half the class, and for four minutes Room 112 was full of stamping feet, laughter and a fiddle tune a century old.',
+      'Afterward, as Grandpa packed up, Jolene helped him fold the sash. Then she stopped, held out her hands and asked him to show her how to tie it.',
+      'He said nothing. He wrapped it around her waist, knotted it on the left side, the way he had been taught, and let the fringes fall. Then he stepped back and looked at her the way people look at something they have been waiting a long time to <b>witness</b>.'
+    ],
+    guide: { before: 'Explain that the Métis are one of the three Indigenous peoples recognized in Canada’s Constitution, with a distinct culture that grew from First Nations and European roots, especially around the Red River (Winnipeg). If you can, show a picture of a Métis sash. Teach <b>fléché</b> and <b>witness</b>. Note for the grown-up: this story is written for the site; for C1.7, also read stories by Métis creators.',
+      after: 'Why do you think Grandpa’s father would not wear his sash in town, but Grandpa wears his everywhere? What changed?' },
+    words: [['fléché', 'French for “arrowed”: the arrow pattern woven into a Métis sash'], ['witness', 'see something happen with your own eyes']],
+    qs: [
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Jolene’s stomach “drop several floors” ({line:stomach})?',
+        opts: ['She is hungry.', 'She is worried about how her grandfather’s visit will go.', 'She is excited to present.', 'She feels sick.'], a: 1 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'Why is the sentence about the cart wheels in brackets ({line:axles})?',
+        opts: ['It is a side comment that adds humour and background.', 'It is the most important idea.', 'It is a quotation from a book.', 'It shows Grandpa is angry.'], a: 0 },
+      { k: 'choice', code: 'C3.4', q: 'According to Grandpa, what was the sash used for in the past?',
+        opts: ['only for dancing', 'keeping out the wind, carrying tools and as a rope', 'as a flag', 'as a blanket for babies'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Jolene’s face was hot, “and that it was not, after all, from embarrassment” ({line:embarrassment}). She most likely felt',
+        opts: ['angry', 'proud and moved', 'bored', 'afraid'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'At the end, Grandpa ties the sash around Jolene. This action symbolizes',
+        opts: ['that the sash is too long for him', 'Jolene accepting and taking pride in her Métis heritage', 'that the presentation is over', 'that Jolene will become a fiddler'], a: 1 },
+      { k: 'lines', code: 'C3.4', n: 3, q: 'Name two cultural elements that Grandpa shares with the class, and explain what one of them means to him.',
+        a: 'He shares the finger-woven sash and the fiddle music for the Red River jig. The sash means pride: he wears it everywhere because people were once made to feel ashamed of being Métis.', look: 'two elements (sash, fiddle, jig, Red River cart) and the meaning of one, with a detail' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How do Jolene’s feelings about her grandfather’s visit change from the beginning to the end? Use evidence.',
+        a: 'At first she is worried and embarrassed; she asked him not to bring the fiddle. By the end she is proud and asks him to teach her how to tie the sash.', look: 'feelings at the beginning and at the end, each supported by a detail' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-unplugged', subject: 'story', form: 'Humour (short story)', lines: true,
+    title: 'Unplugged Week',
+    deck: 'Dad has a plan to bring the family together. The family has other plans.',
+    hero: {
+      photo: 'g6-phone-cameras.jpg', credit: 'Photo: U.S. Fish and Wildlife Service Headquarters, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 180,
+      cap: 'Two people taking photos with their phones. Many families have more screens than people.'
+    },
+    body: [
+      'It began, as most family disasters do, with my father reading an article.',
+      'The article claimed that the average Canadian teenager spends more than seven hours a day looking at screens. My father read it aloud at dinner, slowly, pausing after each statistic to look meaningfully at me, my sister Aria and, for some reason, the dog. Then he announced Unplugged Week: seven days without phones, tablets, video games or television for the entire family. Laptops for homework only. Violators would wash the dishes.',
+      'My mother said it was an excellent idea. My grandmother, who lives with us and has never owned a smartphone, said it was the best idea she had heard in years. Aria and I said nothing, because we were already composing our objections in our heads.',
+      'Day one went surprisingly well, mostly because everyone was asleep for much of it.',
+      'On day two, my mother was discovered in the laundry room checking her work email. She claimed this was an <b>exception</b>, because work is not entertainment. My father pointed out that she had been smiling. She washed the dishes.',
+      'On day three, Aria attempted to phone her friend Zoe from the landline, a device none of us had touched in years. Unfortunately, she could not remember Zoe’s number, because it had always lived inside her phone. She sat beside the landline for a long time, looking at it the way you look at a dog that will not fetch.',
+      'On day four, I went to the library and borrowed a book. The librarian seemed so pleased that I almost felt guilty.',
+      'On day five, my father, the founder and chief enforcer of Unplugged Week, was found in the car in the driveway, engine off, watching the second half of a hockey game on his phone. When my grandmother tapped on the window, he dropped the phone, banged his head on the roof and claimed he had been “checking the weather.” Nobody believed him. The game was in overtime. He washed the dishes for the rest of the week.',
+      'By day six, something strange had happened. With nothing else to do in the evenings, we had begun playing cribbage, a card game my grandmother had learned on a fishing boat in Nova Scotia and played with an <b>intensity</b> usually seen in professional athletes. She beat each of us eleven times. She counted points so quickly that we suspected her of inventing them. She would not explain how she did it, and she would not let us quit.',
+      'On day seven, we all got our phones back. We checked our messages, which turned out to be less urgent than we had imagined. Then, at around eight o’clock, without anyone saying anything, my father went and got the cribbage board.',
+      'We have not officially continued Unplugged Week. But my grandmother is now undefeated in one hundred and four games, and Aria has memorized Zoe’s phone number.'
+    ],
+    guide: { before: 'Ask: could your family go a week without screens? Who would give up first? Explain that this is a humorous story: watch for exaggeration and surprising twists. Teach <b>exception</b> and <b>intensity</b>.',
+      after: 'The family did not keep Unplugged Week, but something changed. What changed, and is that a better result?' },
+    words: [['exception', 'something that does not follow the usual rule'], ['intensity', 'great strength, energy or seriousness']],
+    qs: [
+      { k: 'choice', code: 'C1.5', half: true, q: '“It began, as most family disasters do, with my father reading an article.” ({line:disasters}) The tone of this opening is',
+        opts: ['humorous', 'tragic', 'angry', 'scientific'], a: 0 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:Violators}, “violators” are people who',
+        opts: ['break the rules', 'play the violin', 'make the rules', 'win a game'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why could Aria not call Zoe from the landline?',
+        opts: ['The landline was broken.', 'She had never learned Zoe’s number, because her phone remembered it for her.', 'Zoe was not home.', 'Her father stopped her.'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'What is ironic about day five?',
+        opts: ['The person who made the rule is caught breaking it.', 'The weather was bad.', 'The hockey game was cancelled.', 'Grandmother broke the rule.'], a: 0 },
+      { k: 'choice', code: 'C3.3', q: 'Which statement best describes the result of Unplugged Week?',
+        opts: ['The family gave up screens forever.', 'The rules failed, but the family found a new activity to share.', 'Everyone was angry with Dad.', 'Nothing changed at all.'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'At eight o’clock on day seven, Dad gets the cribbage board “without anyone saying anything” ({line:eight}). What does this suggest about the family?',
+        a: 'They enjoyed playing together more than they expected. Even with phones back, they chose the game, so the week brought them closer.', look: 'an inference (they enjoyed time together, a new habit) supported by the detail' },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Find one example of exaggeration in the story and explain how it adds humour.',
+        a: 'Example: Grandmother plays cribbage “with an intensity usually seen in professional athletes.” Comparing a card game to pro sports makes her seriousness funny.', look: 'a quoted example of exaggeration and its humorous effect' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-zucchini', subject: 'story', form: 'Humour (short story)', lines: true,
+    title: 'The Zucchini Situation',
+    deck: 'Mr. Novak planted twelve zucchini plants. Nobody on Elm Court will forget it.',
+    hero: {
+      photo: 'g7-zucchini.jpg', credit: 'Photo: George Chernilevsky, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 190,
+      cap: 'Zucchini and dill in a basket. A single healthy zucchini plant can produce more than twenty zucchini in a summer.'
+    },
+    body: [
+      'Experienced gardeners will tell you that one zucchini plant is plenty for a family. Two is generous. Mr. Novak, who had recently retired from the post office and moved to Elm Court with tremendous energy and very little gardening experience, planted twelve.',
+      'For the first few weeks of July, this seemed harmless. The plants grew large, leafy and handsome, with bright yellow flowers the size of teacups. Mr. Novak photographed them daily. Then, in the second week of August, every plant began producing zucchini at the same time, at a rate that seemed to defy the laws of nature.',
+      'A zucchini, if you do not pick it, does not politely wait. It keeps growing. By the time Mr. Novak noticed the first one hiding under the leaves, it was roughly the size of my little brother’s arm. By the end of the week, his kitchen counter held thirty-one zucchini, and the garden was producing more every night.',
+      'He began, reasonably enough, by giving them away. Everyone on Elm Court received three. The Mendozas made zucchini fritters. The Okafors made soup. My mother, who is a <b>resourceful</b> cook, shredded ours into a chocolate cake, which my brother ate before he learned what was inside.',
+      'The following week, Mr. Novak gave everyone three more.',
+      'By the third week, the neighbours had stopped answering the door when he knocked. So Mr. Novak changed his strategy. He started leaving zucchini on people’s porches in the early morning, before anyone was awake, sometimes with a cheerful note: <i>Enjoy!</i> or <i>Fresh today!</i> or, once, ominously, <i>More tomorrow.</i>',
+      'This is when the situation escalated.',
+      'Mrs. Mendoza, who already had nine zucchini in her refrigerator, quietly placed four of them on the Okafors’ porch. The Okafors, discovering them, moved six to the Dubois family. The Dubois family, being clever, waited until dark and left a large paper bag of zucchini on Mr. Novak’s own front step. He found it the next morning and assumed, with great delight, that he had a secret admirer who also grew zucchini.',
+      'For ten days, the same vegetables travelled around Elm Court in a slow, secret circle, like a game of hot potato played in slow motion. Some of them visited every house at least twice. My brother claimed to recognize one by a scar on its side and named it Kevin.',
+      'Finally, my mother, who believes that every problem can be solved with a gathering, sent a note to every house. On the last Saturday of August, Elm Court held its first Zucchini Festival. There were muffins, fritters, soup, relish, a zucchini-boat race in the Dubois family’s kiddie pool, and a prize for the largest specimen, which Mr. Novak won by a wide margin.',
+      'In his speech, he thanked his neighbours for their <b>generosity</b> in sharing their own zucchini with him. Nobody had the heart to tell him.',
+      'Next spring, he says, he is planting pumpkins. Fourteen of them.'
+    ],
+    guide: { before: 'Show a picture of a zucchini plant, or a very large zucchini. Ask: what do you do when you have too much of something? Teach <b>resourceful</b> and <b>generosity</b>.',
+      after: 'Is the ending kind or unkind to Mr. Novak? Why did nobody “have the heart to tell him”?' },
+    words: [['resourceful', 'good at finding clever ways to solve problems'], ['generosity', 'the quality of giving freely to others']],
+    qs: [
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:escalated}, “escalated” means',
+        opts: ['became more serious', 'ended', 'went upstairs', 'got smaller'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why did the neighbours stop answering the door?',
+        opts: ['They were on holiday.', 'They did not want more zucchini.', 'They were angry at each other.', 'They were asleep.'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'The zucchini travelled around “like a game of hot potato played in slow motion” ({line:potato}). The comparison shows that',
+        opts: ['everyone kept passing the zucchini on as quickly as they politely could', 'the zucchini were very hot', 'nobody wanted to play games', 'the zucchini were cooked'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Mr. Novak thinks he has “a secret admirer who also grew zucchini” ({line:admirer}). What is the joke?',
+        opts: ['The zucchini in the bag were his own, returned to him.', 'He really has an admirer.', 'He does not like zucchini.', 'The bag was empty.'], a: 0 },
+      { k: 'choice', code: 'C3.3', q: 'Which sentence best states the theme?',
+        opts: ['Gardening is difficult.', 'A shared problem can bring a neighbourhood together.', 'Zucchini are healthy.', 'Retirement is boring.'], a: 1 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'The last line is, “Fourteen of them.” Why is this a funny way to end the story?',
+        a: 'Mr. Novak has learned nothing: after twelve zucchini plants caused chaos, he plans to plant even more pumpkins, which are even bigger. The short sentence lands the joke.', look: 'the humour (he has not learned; more and bigger) and the effect of the short final line' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize the story in three sentences: the problem, what the neighbours did, and how it ended.',
+        a: 'Mr. Novak planted twelve zucchini plants and grew far too many. His neighbours secretly passed the extras around, even back to him. Finally they held a Zucchini Festival, and he planned to plant fourteen pumpkins next year.', look: 'problem, key events and resolution in the reader’s own words, in about three sentences' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-two-languages', subject: 'story', form: 'Poem', lines: true,
+    title: 'Bridge',
+    deck: 'A poem about speaking one language at home and another at school',
+    hero: {
+      photo: 'g6-school-bus.jpg', credit: 'Photo: QUOI Media Group, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'A yellow school bus. For many students, the ride to school is a trip between two worlds.'
+    },
+    body: [{ box: 'Before you read', text: 'The speaker’s family speaks Tagalog, a language of the Philippines. <i>Anak</i> means “my child,” and <i>Kain na</i> means “Let’s eat.” More than 450 000 people in Canada speak Tagalog.' }].concat(verses([
+      'At home I am <i>anak</i>.', 'At home the kitchen talks in Tagalog,', 'the rice cooker clicks,', 'my lola laughs from her whole body', 'at a joke I only half understand,', 'and I laugh too, a beat behind.', '',
+      'At school I am Jason,', 'which my mother chose', 'because it sounded strong in English', 'and easy for teachers to say.', 'At school I put my hand up,', 'I spell <b>fluently</b>,', 'I know which jokes are funny', 'and exactly when to laugh.', '',
+      'Every morning the bus is a bridge,', 'and somewhere around Albion Road', 'I switch,', 'the way you switch on a light', 'in a room you know well', 'without looking for the wall.', '',
+      'Some days I worry', 'that the bridge only goes one way,', 'that each year my Tagalog', 'gets a little smaller,', 'like a sweater', 'washed too many times.', '',
+      'So at night I sit with Lola', 'and ask her for the words', 'for things I already know in English:', 'moon, hurry, homesick, proud.', 'She says them slowly,', 'the way you hand someone', 'something <b>fragile</b>.', '',
+      'Then she says, <i>Kain na</i>,', 'and I answer her,', 'and for a moment both of my names', 'are sitting at the same table.'
+    ])),
+    guide: { before: 'Read the box together, and practise saying <i>anak</i> (AH-nak) and <i>Kain na</i> (kah-EEN nah). Ask: do you, or does someone you know, speak one language at home and another at school? Teach <b>fluently</b> and <b>fragile</b>. <i>Lola</i> means grandmother.',
+      after: 'What is a word or saying from your family that you would never want to lose?' },
+    words: [['fluently', 'smoothly and easily, without mistakes'], ['fragile', 'easily broken; needing care']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'The speaker of the poem is',
+        opts: ['Lola', 'the speaker’s mother', 'a student called Jason at school', 'a teacher'], a: 2 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'The speaker laughs “a beat behind” ({line:beat}) because',
+        opts: ['they did not hear the joke', 'they understand the Tagalog joke only partly', 'the joke was not funny', 'they were eating'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“The bus is a bridge” ({line:bridge}) is a metaphor. The bridge connects',
+        opts: ['two roads', 'the speaker’s home language and world with their school language and world', 'the bus driver and the students', 'the Philippines and Canada by sea'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'The speaker’s Tagalog gets smaller “like a sweater / washed too many times” ({line:sweater}). This simile shows a fear of',
+        opts: ['ruining clothes', 'slowly losing the home language', 'growing too fast', 'cold weather'], a: 1 },
+      { k: 'choice', code: 'C3.4', q: 'Why does the speaker ask Lola for words they already know in English?',
+        opts: ['to test her English', 'to keep their Tagalog alive and stay close to her', 'because they forgot the English words', 'for a school spelling test'], a: 1 },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Explain the last two lines: “both of my names / are sitting at the same table.” What has changed for the speaker in this moment?',
+        a: 'For once, the speaker does not have to switch. Their Tagalog self (anak) and their English self (Jason) are together, at home with Lola, so they feel whole.', look: 'the idea that the two identities come together, linked to the names anak and Jason' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Connect the poem to your own life, another text or the world. When do people “switch” the way the speaker does?',
+        a: 'Example: My cousin speaks Punjabi with our grandparents and English with friends. She says she even feels like a slightly different person in each language.', look: 'a clear connection to switching languages, roles or ways of speaking' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-inventory', subject: 'story', form: 'Poem (list poem)', lines: true,
+    title: 'Inventory of My Grandmother’s Kitchen',
+    deck: 'A list poem, written on the day the house was sold',
+    hero: {
+      photo: 'g8-bread-dough.jpg', credit: 'Photo: Ruth Hartnup, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 230,
+      cap: 'Bread dough rising in a bowl.'
+    },
+    body: [{ box: 'What is a list poem?', text: 'A list poem, or catalogue poem, is built from a list of things. An <b>inventory</b> is a complete list of everything in a place. The details on the list, and their order, tell a story without explaining it.' }].concat(verses([
+      'One wooden spoon, burnt black at the tip', 'from fifty years of stirring.', '',
+      'One mixing bowl, cream-coloured, cracked,', 'held together with a strip of tape', 'that is older than my mother.', '',
+      'Six mismatched teacups.', 'Seven, if you count the one with no handle', 'that held the pencils by the phone.', '',
+      'One recipe box, the cards soft as cloth,', 'stained with butter and vanilla,', 'written in three languages', 'and one secret code', 'that only she could read.', '',
+      'One calendar from last March,', 'still turned to last March.', '',
+      'One apron on the hook behind the door,', 'the pocket full of things:', 'a bobby pin, a seed packet, a grocery list', 'that says only <i>flour, eggs, call Ana</i>.', '',
+      'One kitchen chair by the window,', 'the cushion pressed into her shape.', 'I do not sit in it.', '',
+      'I take the spoon.', 'My mother takes the recipe box.', 'Nobody takes the chair.', '',
+      'The new owners will paint the walls.', 'They will not know', 'that the <b>lingering</b> smell of bread', 'is not coming from the bakery', 'down the street.'
+    ])),
+    guide: { before: 'Read the box. Ask: if you made a list of ten objects in your home, what story would it tell about your family? Teach <b>inventory</b> and <b>lingering</b>. Read the poem aloud once slowly; this poem deals with loss, so leave time to talk.',
+      after: 'Which object on the list would you have taken, and why?' },
+    words: [['inventory', 'a complete list of everything in a place'], ['lingering', 'staying on, slow to go away']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'How is this poem built?',
+        opts: ['as a list of objects in the kitchen', 'as a conversation', 'as a set of rhyming verses', 'as a news report'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'The calendar is “still turned to last March” ({line:still}). This suggests that',
+        opts: ['the grandmother liked March', 'the grandmother has been gone since last March', 'the calendar is broken', 'it is March now'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why does the speaker say “I do not sit in it” about the chair ({line:sit})?',
+        opts: ['The chair is broken.', 'The chair still feels like it belongs to the grandmother.', 'The speaker does not like the window.', 'The new owners own it.'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Most verses begin with “One …”. This repetition makes the poem feel like',
+        opts: ['a careful, item-by-item record of a life', 'a song for dancing', 'a set of instructions', 'an argument'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: 'What does the burnt wooden spoon most likely symbolize?',
+        opts: ['a cooking accident', 'the grandmother’s many years of cooking and caring for her family', 'something to throw away', 'the new owners'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'The poem never says directly what happened to the grandmother. What do you think happened? Give two clues from the poem.',
+        a: 'She has most likely died. The calendar stopped last March, the house is being sold, the family divides her things, and nobody will sit in her chair.', look: 'a reasonable inference supported by two clues from the poem' },
+      { k: 'lines', code: 'C3.1', n: 3, q: 'Explain the last five lines. Where is the “smell of bread” really coming from, and why won’t the new owners know?',
+        a: 'The smell is the memory of the grandmother’s baking that seems to stay in the house. The new owners never knew her, so they will think it is the bakery.', look: 'the smell as memory or a lasting presence, and why only the family would recognize it' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-beaver-allegory', subject: 'story', form: 'Allegory', lines: true,
+    title: 'The Beaver Who Built Too Much',
+    deck: 'A story about a pond, a dam and a beaver who could not stop',
+    hero: {
+      photo: 'g4-beaver-lodge.jpg', credit: 'Photo: Benfwilliamson, CC0, Wikimedia Commons', focus: '50% 62%',
+      tall: 200,
+      cap: 'A beaver lodge in a beaver pond. The dead trees stand where the water rose.'
+    },
+    body: [
+      'In a valley where three streams met, there lived a beaver named Broadtail, who was the finest builder the valley had ever known. When she was young, she built a dam across the middle stream, and a small, clear pond spread behind it. The pond was good for everyone. Fish rested in its deep water. Ducks raised their young among the reeds. The moose came to wade and drink at dusk, and the otters slid down its muddy banks for no reason except joy.',
+      'The animals thanked Broadtail, and Broadtail was pleased. But she noticed something about herself that she did not examine closely. She enjoyed being thanked, and she enjoyed building even more.',
+      'So the next summer, she raised the dam by half a metre. The pond grew wider, and the animals said, “How generous! There is more water for all of us.” The following summer, she raised it again. The pond swallowed the meadow where the deer grazed, but the deer, being polite, simply moved up the hill.',
+      'Broadtail kept building. She told herself that every new layer of sticks and mud was for the good of the valley. A bigger pond meant a safer pond, she said. A safer pond meant more fish, more ducks, more of everything. And each time she said it, she believed it a little more, because she had stopped asking anyone else.',
+      'By the fifth summer, the pond had become a lake. It drowned the birch grove where the porcupines lived. It flooded the burrows of the muskrats. It crept around the roots of the old pines until they stood grey and dead in the water, like the masts of sunken ships. Downstream, below the dam, the creek had shrunk to a trickle, and the trout that lived there gasped in warm, shallow pools.',
+      'At last the animals came together on the shore. The old heron, who had seen many summers, spoke for them. “Broadtail,” she said, “your first dam gave us a home. Your last five have taken our homes away.”',
+      'Broadtail was offended. “I built all of this for you,” she said. “Without me, there would be no pond at all.”',
+      '“That is true,” said the heron <b>serenely</b>. “And without the rest of us, there would be no one to build it for.”',
+      'That night, a storm came down the valley. The swollen lake pushed against the great dam, and the dam, which had grown too high and too heavy for its old foundations, gave way with a sound like thunder. By morning, the water had drained to the size of the first, small pond, and the stumps of the drowned trees stood in the mud like the bones of a mistake.',
+      'Broadtail looked at the ruins for a long time. Then, very slowly, she began to repair the dam: not to its last, great height, but to its first. When she had finished, she did something she had not done in years. She asked the others whether it was enough.',
+      'The <b>moral</b>, if you want one: a gift that keeps growing without asking can become a flood.'
+    ],
+    guide: { before: 'Explain what an allegory is: a story in which characters and events stand for bigger ideas in real life. Ask: can a good thing become harmful if there is too much of it? Teach <b>serenely</b> and <b>moral</b>.',
+      after: 'What might Broadtail stand for in our world? A person, a company, a city, a country? Explain your choice.' },
+    words: [['serenely', 'calmly and peacefully'], ['moral', 'the lesson a story teaches']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'Which feature shows this is an allegory?',
+        opts: ['It gives facts about beavers.', 'The animals and events stand for bigger ideas about people.', 'It is told in rhyme.', 'It has a map.'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:grazed}, “grazed” means',
+        opts: ['ate grass', 'scraped their knees', 'slept', 'ran quickly'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Broadtail believed her own reasons more “because she had stopped asking anyone else” ({line:stopped}). This shows that',
+        opts: ['she was very wise', 'not listening to others let her convince herself she was right', 'the other animals agreed with her', 'she was too busy to talk'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'The dead pines stood “like the masts of sunken ships” ({line:masts}). This simile creates a mood of',
+        opts: ['joy', 'loss and ruin', 'excitement', 'peace'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'Whose point of view does Broadtail ignore for most of the story?',
+        opts: ['her own', 'the animals who lost their homes, and the trout downstream', 'the storm', 'the reader'], a: 1 },
+      { k: 'lines', code: 'C3.1', n: 4, q: 'This story is an allegory. What real-world situation could it stand for? Explain how two details from the story match that situation.',
+        a: 'It could stand for a company or city that keeps growing and says growth helps everyone, but takes over land and harms others. The meadow, birch grove and burrows being flooded are like habitats destroyed by development; the trout downstream are like communities harmed far away.', look: 'a reasonable real-world meaning and two details matched to it' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'At the end, Broadtail “asked the others whether it was enough.” Why is this the most important change in the story?',
+        a: 'For years she decided alone and stopped listening. Asking shows she has learned to share decisions with the others her building affects, which is the opposite of how she caused the flood.', look: 'the change (from deciding alone to asking) linked to the cause of the problem' }
+    ]
+  });
+
+  P.add({
+    id: 'g7-opening-night', subject: 'story', form: 'Play script', lines: true, plain: true,
+    title: 'Opening Night',
+    deck: 'A scene from a play written for this site. Twenty minutes before curtain, the lead actor has lost her voice.',
+    hero: {
+      photo: 'g7-stage.jpg', credit: 'Photo: Harrison Keely, CC BY 4.0, Wikimedia Commons', focus: '50% 45%',
+      tall: 170,
+      cap: 'Two actors rehearse a scene on stage. In a play, stage directions tell actors how to move and speak.'
+    },
+    body: [
+      '<i>Backstage at a school auditorium. A rack of costumes, a mirror lined with bulbs, a table covered in makeup. MAYA, the stage manager, wears a headset and holds a clipboard. JUNE, the lead actor, sits in costume with a scarf around her throat. BEA, her understudy, sits in the corner reading a script she has clearly read many times.</i>',
+      '<b class="ps-who">MAYA:</b> <i>(checking her watch)</i> Twenty minutes. June, say something.',
+      '<b class="ps-who">JUNE:</b> <i>(opens her mouth; only a dry squeak comes out)</i>',
+      '<b class="ps-who">MAYA:</b> That is not a voice. That is a door hinge.',
+      '<b class="ps-who">JUNE:</b> <i>(writes on a notepad and holds it up)</i> I CAN DO IT. TEA AND HONEY.',
+      '<b class="ps-who">MAYA:</b> You have drunk four cups of tea and half a jar of honey. Your throat is <b>sticky</b>, not better. <i>(She turns slowly toward the corner.)</i> Bea.',
+      '<b class="ps-who">BEA:</b> <i>(looking up, alarmed)</i> No.',
+      '<b class="ps-who">MAYA:</b> You are the understudy. This is what understudies are for.',
+      '<b class="ps-who">BEA:</b> Understudies are for rehearsals. Understudies are for emergencies that never happen. I have been the understudy for six weeks precisely because nothing was ever going to happen.',
+      '<b class="ps-who">MAYA:</b> Something has happened.',
+      '<b class="ps-who">BEA:</b> <i>(standing, pacing)</i> Three hundred people are out there. My grandmother is out there. My grandmother does not even know I am in this play, because I did not think I would ever be in this play.',
+      '<b class="ps-who">JUNE:</b> <i>(writes quickly, holds up the notepad)</i> YOU KNOW EVERY LINE.',
+      '<b class="ps-who">BEA:</b> Knowing the lines is different from saying them in front of people.',
+      '<i>JUNE stands, walks over to BEA and, without a word, takes off the costume’s long red coat and holds it out. A pause. BEA does not move.</i>',
+      '<b class="ps-who">MAYA:</b> <i>(gently, putting down the clipboard)</i> Can I tell you something? At every rehearsal, when June was saying the lines on stage, I watched you in the <b>wings</b>. Your lips were moving. You were saying every word with her. Sometimes you were saying it better.',
+      '<b class="ps-who">BEA:</b> <i>(quietly)</i> You noticed that?',
+      '<b class="ps-who">MAYA:</b> I am the stage manager. I notice everything. It is a curse.',
+      '<i>BEA looks at the coat for a long moment. Then she takes it and puts it on. It fits. JUNE adjusts the collar, steps back and gives two thumbs up.</i>',
+      '<b class="ps-who">MAYA:</b> <i>(into her headset)</i> Lights, this is Maya. We have a change in the cast. <i>(She looks at BEA.)</i> Fifteen minutes. Places in ten.',
+      '<b class="ps-who">BEA:</b> <i>(to the mirror, taking a deep breath, in a voice that is suddenly clear and steady)</i> “I have travelled a very long way to stand in this room.”',
+      '<i>MAYA and JUNE look at each other. Lights fade.</i>'
+    ],
+    guide: { before: 'Explain the parts of a play script: the character’s name before each line, and stage directions in italics and brackets, which are not spoken aloud. Explain “understudy” (an actor who learns a role in case the main actor cannot perform). Teach <b>sticky</b> and <b>wings</b> (the hidden sides of a stage). Read it aloud together, taking parts.',
+      after: 'Bea’s last line is from the play she is about to perform. Why might the writer end the scene with that line?' },
+    words: [['sticky', 'here: thick and gluey, from too much honey'], ['wings', 'the hidden areas at the sides of a stage']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'What do the words in italics and brackets show?',
+        opts: ['lines to be spoken loudly', 'stage directions for actions and setting', 'the audience’s thoughts', 'words in another language'], a: 1 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“That is not a voice. That is a door hinge.” ({line:hinge}) This line is an example of',
+        opts: ['a metaphor used for humour', 'a simile', 'rhyme', 'foreshadowing'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'Why does June write on a notepad instead of speaking?',
+        opts: ['She is shy.', 'She has lost her voice.', 'She is practising her lines.', 'She is angry with Maya.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'June offers Bea the red coat “without a word” ({line:coat}). What is June telling Bea?',
+        opts: ['that the coat is too hot', 'that she trusts Bea to take her place', 'that she wants a different costume', 'that the play is cancelled'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'What finally convinces Bea to go on stage?',
+        opts: ['Her grandmother asks her to.', 'Maya tells her she has watched Bea say every line with June, sometimes better.', 'June gets her voice back.', 'The audience leaves.'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Bea’s voice is “suddenly clear and steady” at the end ({line:steady}). What has changed inside her? Use evidence from the scene.',
+        a: 'She has found confidence. Earlier she paced and said she could not perform, but after Maya’s words and June’s trust, she puts on the coat and speaks the line calmly.', look: 'the change from fear to confidence, with evidence from before and after' },
+      { k: 'lines', code: 'C1.2', n: 3, q: 'A play is meant to be performed. Choose one stage direction and explain how it helps an actor or the audience understand a character’s feelings.',
+        a: 'Example: “(standing, pacing)” shows Bea is nervous and cannot sit still. An actor would walk back and forth to show the audience her panic.', look: 'a quoted stage direction and the feeling it shows through action' }
+    ]
+  });
 })();

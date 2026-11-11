@@ -514,3 +514,5 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-lake-huron-ice.jpg` | Ice forming on the shore of Lake Huron, Sarnia, Ontario | Ryan Hodnett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ice_on_Lake_Huron_Shore_-_Sarnia,_Ontario_01.jpg |
 | `g7-tamarack.jpg` | A tamarack with golden needles in autumn | Anne Marie Peterson | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Tamarack_in_Autumn_(30500958145).jpg |
 | `g7-wawa-goose.jpg` | The giant goose statue in Wawa, Ontario | AgreeableTigerMoth | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Wawa_Goose,_Ontario.jpg |
+| `g7-repair-cafe.jpg` | Visitors and volunteers at a repair café | Ilvy Njiokiktjien | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Repair_Cafe_by_Ilvy_Njiokiktjien.jpg |
+| `g7-nurses-vote.jpg` | Canadian nursing sisters voting in France in the federal election of 1917 | William Rider-Rider | Public domain | https://commons.wikimedia.org/wiki/File:Canadian_nurses_voting_1917.jpg |
