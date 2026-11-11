@@ -1381,7 +1381,7 @@ async function checkDecodable(browser, base) {
 async function checkSpelling(browser, base) {
   const where = 'spelling path';
   const list = spelling.load(ROOT);
-  spelling.check(list, ROOT).forEach(p => fail('tool box', p));
+  spelling.check(list, ROOT).concat(spelling.checkRules(spelling.rules(ROOT), list)).forEach(p => fail('tool box', p));
   const { ctx, page, errs } = await newPage(browser, base);
   await page.goto(base + '/grade1/index.html#tools/spelling');
   await page.waitForSelector('.dc-card');
@@ -1449,12 +1449,24 @@ async function checkSpelling(browser, base) {
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);
     for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print',
-      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print', '/check', '/review']) {
+      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print', '/check', '/review', '/rules', '/rules/doubling']) {
       await page.evaluate(h => { location.hash = 'tools/spelling' + h; }, part);
-      await page.waitForSelector(part ? '.sp-stage > *, .sp-check' : '.dc-card');
+      await page.waitForSelector(part ? '.sp-stage > *, .sp-check, .sp-rlist, .sp-rcard' : '.dc-card');
       await page.waitForTimeout(150);
       await screenCheck(page, where, (part || 'the list of steps') + ' at ' + vp.width + ' px');
     }
+  }
+  /* every rule card opens on a phone, and each step it names links back to it */
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const c of spelling.rules(ROOT)) {
+    await page.evaluate(id => { location.hash = 'tools/spelling/rules/' + id; }, c.id);
+    await page.waitForSelector('.sp-rcard');
+    await screenCheck(page, where, 'the rule card ' + c.id + ' at 390 px');
+    const n = await page.evaluate(() => document.querySelectorAll('.sp-rsteps a').length);
+    if (n !== c.steps.length) fail(where, 'the rule card ' + c.id + ' should link to ' + c.steps.length + ' steps, but links to ' + n);
+    await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/print'; }, c.steps[0]);
+    await page.waitForSelector('.sp-rule');
+    if (!(await page.$('.sp-rc[href="#tools/spelling/rules/' + c.id + '"]'))) fail(where, 'step ' + c.steps[0] + ' does not link to its rule card ' + c.id);
   }
   /* the spelling check: right on the first words, then 3 not yet; it stops, names the step to start at, and saves it */
   const pr = spelling.probes(list), right = Math.min(9, pr.length - 3), want = spelling.start(list, [...Array(right).fill(true), false]);

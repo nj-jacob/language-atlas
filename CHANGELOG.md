@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Spelling path: Rule cards. 25 spelling rules on cards (FLOSS, ck, tch, dge, soft c and g, doubling, drop the e, y to i, i before e, -able or -ible, Canadian spelling and more), each with coloured examples, the words that break it, a grown-up note and links to the steps that practise it. Every one of those steps links to its card.
 - Heart words, Grades 4 to 8: 199 more tricky words in 20 sets (4 a grade), such as weather, doubt, restaurant, colonel and conscience, each with its heart part marked. Every heart word of the Grades 4 to 8 spelling steps is now in a set.
 - Spelling path: Daily review. About 5 minutes a day with a grown-up: words the child missed in a dictation come back until they are right on two different days, with words from the steps being practised and one word from each secure step, so old spellings stay fresh.
 - Spelling path, Grades 4 to 8: 24 new steps (47 in all, 9 or 10 a grade), going past the Ontario list: inter-, trans- and anti-; -ly, -ful and -less; -ture and -sure; -age; silent letters; vis and aud; -ous, -ious and -eous; keeping the e (noticeable); y from Greek (gym); -logy and -ist; number prefixes; -ssion and -tion; plurals with -ves and -oes; French -que and -et; Canadian spelling; duct and scribe; -ary, -ery and -ory; -ally; ps, pn and rh; -cede and -ceed; advice and advise; base words that change (pronunciation); hidden vowels (separate); gh and ph.

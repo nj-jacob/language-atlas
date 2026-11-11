@@ -19,6 +19,34 @@ function load(root) {
   vm.runInNewContext(fs.readFileSync(path.join(root, 'assets', 'engine', 'spellbank.js'), 'utf8'), { Atlas: { spelling: { add: p => list.push(p) } } });
   return list;
 }
+/* the rule cards, from assets/engine/rulebank.js */
+function rules(root) {
+  const out = [];
+  vm.runInNewContext(fs.readFileSync(path.join(root, 'assets', 'engine', 'rulebank.js'), 'utf8'), { Atlas: { spelling: { rule: c => out.push(c) } } });
+  return out;
+}
+/* each card: a name, rule, grown-up note, 3 or more examples, steps that exist; [ ] marks closed and not empty; each word sum
+   ('hop + ing = hop[p]ing', 'in- + legal = [il]legal') gives the word the spelling rules give */
+function checkRules(cards, list) {
+  const problems = [], ids = new Set(list.map(p => p.id)), seen = new Set();
+  cards.forEach(c => {
+    const where = 'rule card ' + c.id;
+    if (seen.has(c.id)) problems.push(where + ': is listed twice');
+    seen.add(c.id);
+    ['name', 'rule', 'why'].forEach(f => { if (!c[f]) problems.push(where + ': needs ' + f); });
+    if (!Array.isArray(c.ex) || c.ex.length < 3) problems.push(where + ': needs 3 or more examples');
+    if (!Array.isArray(c.steps) || !c.steps.length) problems.push(where + ': needs the steps that practise it');
+    (c.steps || []).forEach(id => { if (!ids.has(id)) problems.push(where + ': step ' + id + ' does not exist'); });
+    [...(c.ex || []), ...(c.not || [])].forEach(x => {
+      if (/\[\]|\[[^\]]*\[|\][^[]*\]|^[^[]*\]|\[[^\]]*$/.test(x)) problems.push(where + ' "' + x + '": a [ ] mark is empty or not closed');
+      const m = /^([a-z]+-?) \+ ([a-z]+-?) = (.+)$/.exec(x);
+      if (!m) return;
+      const got = m[3].replace(/[[\]]/g, ''), want = /-$/.test(m[1]) ? addEnding(m[2], m[1]) : addEnding(m[1], m[2], (c.stress || []).includes(m[1]));
+      if (got !== want) problems.push(where + ' "' + x + '": the spelling rules give ' + want);
+    });
+  });
+  return problems;
+}
 /* adding an ending (or a prefix, written un-): y to i after a consonant (not before i), drop a silent e before a vowel, double one last consonant after one short vowel in one beat,
    or in a longer word whose last beat is stressed (stress: 1). The prefix in- becomes im- before b, m and p, il- before l, ir- before r. */
 function addEnding(base, suf, stress) {
@@ -203,10 +231,10 @@ function start(list, marks) { const pr = probes(list), miss = marks.indexOf(fals
 /* every ending's word, for the browser check to compare with the engine */
 function endings(list) { return list.map(p => (p.endings || []).map(([b, s, st]) => [p.id, b, s, addEnding(b, s, st), st])).flat(); }
 
-module.exports = { load, check, endings, addEnding, probes, start };
+module.exports = { load, rules, checkRules, check, endings, addEnding, probes, start };
 if (require.main === module) {
-  const root = path.resolve(__dirname, '..'), list = load(root), pr = check(list, root);
+  const root = path.resolve(__dirname, '..'), list = load(root), cards = rules(root), pr = check(list, root).concat(checkRules(cards, list));
   pr.forEach(p => console.log(' - ' + p));
-  console.log(list.length + ' steps, ' + pr.length + ' problem(s)');
+  console.log(list.length + ' steps, ' + cards.length + ' rule cards, ' + pr.length + ' problem(s)');
   process.exitCode = pr.length ? 1 : 0;
 }

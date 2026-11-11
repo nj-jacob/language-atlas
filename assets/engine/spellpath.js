@@ -21,6 +21,7 @@
                A step is secure when the score is 90% or more on two different days.
      print     A printed page (boxes, word family or sort, endings, proofreading, dictation lines) and a grown-up page (answers, script, rule).
    The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only).
+   Rule cards (#tools/spelling/rules) show one spelling rule each; a step links to its cards.
    The spelling check (#tools/spelling/check) finds the step to start at. The daily review (#tools/spelling/review) brings back
    missed words and words from earlier steps, a few each day. */
 (function () {
@@ -106,10 +107,14 @@
   SP.load = function () {
     LOAD = LOAD || new Promise(function (ok) {
       var s = document.createElement('script');
-      s.src = '../assets/engine/spellbank.js';
-      s.onload = ok;
-      s.onerror = ok;
-      document.head.appendChild(s);
+      var n = 0;
+      ['spellbank', 'rulebank'].forEach(function (f) {
+        var s = document.createElement('script');
+        s.src = '../assets/engine/' + f + '.js';
+        s.async = false;
+        s.onload = s.onerror = function () { if (++n === 2) ok(); };
+        document.head.appendChild(s);
+      });
     });
     return LOAD;
   };
@@ -181,7 +186,7 @@
       (prev ? '<a class="ws-k" href="#tools/spelling/' + prev.id + '/' + part + '" aria-label="Previous step">&lsaquo; Back</a>' : '') +
       (next ? '<a class="ws-k" href="#tools/spelling/' + next.id + '/' + part + '" aria-label="Next step">Next &rsaquo;</a>' : '') + '</div>' +
       '<header class="sp-rule"><p class="sp-focus">' + p.focus.map(function (f) { return '<span>' + lab(f) + '</span>'; }).join('') + '</p>' +
-      '<p class="sp-rt">' + esc(p.rule) + '</p></header>' +
+      '<div class="sp-rtw"><p class="sp-rt">' + esc(p.rule) + '</p>' + SP.rulesFor(p).map(function (c) { return '<a class="sp-rc" href="#tools/spelling/rules/' + c.id + '">Rule card: ' + esc(c.name) + '</a>'; }).join('') + '</div></header>' +
       '<div class="coach adult-only sp-coach"><p>' + esc(p.tip) + '</p><p><b>Watch for:</b> ' + esc(p.mistake) + '</p>' +
       '<p class="sp-codes">Ontario ' + SP.codeLine(p) + '</p></div>' +
       '<nav class="sp-tabs" aria-label="Parts of this step">' + all.map(function (x) {
@@ -657,6 +662,39 @@
     }
     draw();
   }
+
+  /* ---------- Rule cards (#tools/spelling/rules, one card #tools/spelling/rules/<id>) ----------
+     One spelling rule on a card: the rule in a line, examples with the part the rule works on in colour (a word sum shows the join),
+     words that break it, the grown-up note, and the steps that practise it. Each of those steps links to its card. The cards are in
+     assets/engine/rulebank.js. */
+  SP.rules = [];
+  SP.rule = function (c) { SP.rules.push(c); };
+  SP.rulesFor = function (p) { return SP.rules.filter(function (c) { return c.steps.indexOf(p.id) >= 0; }); };
+  function hl(x) { return esc(x).replace(/\[([^\]]+)\]/g, '<b class="sp-hl">$1</b>'); }
+  function rbar(back) { return '<div class="sp-one"><div class="dc-bar"><a class="dc-all" href="#tools/spelling' + (back ? '/rules' : '') + '">' + (back ? 'All rule cards' : 'All steps') + '</a>'; }
+  function rules(root) {
+    root.innerHTML = rbar(false) + '</div><p class="dc-lede">Each card is one spelling rule, with examples and the words that break it.</p>' +
+      '<div class="dc-cards sp-rlist">' + SP.rules.map(function (c) {
+        return '<a class="dc-card" href="#tools/spelling/rules/' + c.id + '"><span class="dc-cm"><b>' + esc(c.name) + '</b><span>' + esc(c.rule) + '</span></span></a>';
+      }).join('') + '</div></div>';
+  }
+  function card(root, c) {
+    var i = SP.rules.indexOf(c), prev = SP.rules[i - 1], next = SP.rules[i + 1];
+    function ex(list) {
+      return '<ul class="sp-rex">' + list.map(function (x) {
+        var w = x.replace(/[[\]]/g, '').split(' ').pop(), pic = /[+→]/.test(x) ? '' : picture(w.toLowerCase());
+        return '<li>' + (pic ? '<span class="sp-rpic">' + pic + '</span>' : '') + '<span>' + hl(x) + '</span></li>';
+      }).join('') + '</ul>';
+    }
+    root.innerHTML = rbar(true) + '<span class="tb-sp"></span>' +
+      (prev ? '<a class="ws-k" href="#tools/spelling/rules/' + prev.id + '" aria-label="Previous card">&lsaquo; Back</a>' : '') +
+      (next ? '<a class="ws-k" href="#tools/spelling/rules/' + next.id + '" aria-label="Next card">Next &rsaquo;</a>' : '') + '</div>' +
+      '<article class="sp-card sp-rcard"><p class="sp-count">Rule card</p><h2 class="sp-rname">' + esc(c.name) + '</h2><p class="sp-q">' + esc(c.rule) + '</p>' +
+      ex(c.ex) + (c.not ? '<h3 class="sp-h">Watch out</h3>' + ex(c.not) : '') +
+      '<div class="coach adult-only sp-coach"><p>' + esc(c.why) + '</p></div>' +
+      '<p class="sp-rsteps">Practise it: ' + c.steps.map(SP.find).filter(Boolean).map(function (p) { return '<a href="#tools/spelling/' + p.id + '">step ' + p.n + ', ' + nm(p) + '</a>'; }).join(' · ') + '</p>' +
+      '</article></div>';
+  }
   function list(root) {
     var ck = A.load('sp:check', null), cs = ck && SP.find(ck.start), rd = SP.review().days.slice(-1)[0], due = SP.today().length;
     var rv = due ? due + (due === 1 ? ' word' : ' words') + ' today, about 5 minutes' + (rd ? '. Last review ' + esc(rd.d) + ': ' + rd.ok + ' of ' + rd.of + ' right' : '') + '.' : 'Words from the steps you practise come back here.';
@@ -664,6 +702,7 @@
       'Grades 4 to 8 build words from their parts. Each step has boxes to spell in, practice, a dictation and a page to print.</p>' +
       '<div class="sp-start"><a class="btn" href="#tools/spelling/check">Find where to start</a>' + (cs ? '<p>Last check (' + esc(ck.d) + '): start at <a href="#tools/spelling/' + cs.id + '">step ' + cs.n + ', ' + nm(cs) + '</a></p>' : '<p>A short spelling check, about 10 minutes, with a grown-up.</p>') + '</div>' +
       '<div class="sp-start"><a class="btn alt" href="#tools/spelling/review">Daily review</a><p>' + rv + '</p></div>' +
+      '<div class="sp-start"><a class="btn alt" href="#tools/spelling/rules">Rule cards</a><p>' + SP.rules.length + ' spelling rules, each with examples and the words that break it.</p></div>' +
       BANDS.map(function (bd) {
         var here = SP.list.filter(function (p) { return p.band === bd[0]; });
         if (!here.length) return '';
@@ -685,6 +724,7 @@
       if (p) step(root, p, bits[1] || 'build');
       else if (bits[0] === 'check') check(root);
       else if (bits[0] === 'review') review(root);
+      else if (bits[0] === 'rules') { var c = SP.rules.filter(function (x) { return x.id === bits[1]; })[0]; if (c) card(root, c); else rules(root); }
       else list(root);
     });
     return {};
