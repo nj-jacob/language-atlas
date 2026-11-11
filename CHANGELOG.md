@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Reading passages, Grade 7 (reading-test style, guided by the CAT): new passages beside the 100 already there, all with numbered lines: short stories, novel excerpts, a mystery, poems (an ode, a narrative poem, free verse), humour (memos and a how-to guide), interviews, a field journal, a diary, letters and a poster. More inference, literary-device and word-in-context questions with 4 choices; written at a higher reading level than Grade 6; real open-licence photos and an echolocation drawing.
 - Spelling chapters (every grade): under the title, links to the Spelling path at that grade, the rule cards, the daily review and Heart words.
 - Spelling path: Rule cards. 25 spelling rules on cards (FLOSS, ck, tch, dge, soft c and g, doubling, drop the e, y to i, i before e, -able or -ible, Canadian spelling and more), each with coloured examples, the words that break it, a grown-up note and links to the steps that practise it. Every one of those steps links to its card.
 - Heart words, Grades 4 to 8: 199 more tricky words in 20 sets (4 a grade), such as weather, doubt, restaurant, colonel and conscience, each with its heart part marked. Every heart word of the Grades 4 to 8 spelling steps is now in a set.

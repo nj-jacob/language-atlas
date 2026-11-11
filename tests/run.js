@@ -1300,7 +1300,10 @@ async function checkPassages(browser, base, g) {
         } else out.push(qw + 'unknown kind "' + q.k + '"');
       });
       ['front', 'back', 'key'].forEach(side => {
-        if (P.render(box, p, side).over) out.push(w + 'its ' + side + ' runs off the page');
+        if (P.render(box, p, side).over) {
+          const t = box.querySelector({ front: '.ps-text', back: '.ps-qs', key: '.ps-guide' }[side]);
+          out.push(w + 'its ' + side + ' runs off the page (by ' + Math.max(t.scrollHeight - t.clientHeight, 0) + ' px down, ' + Math.max(t.scrollWidth - t.clientWidth, 0) + ' px across, at the smallest text size)');
+        }
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push(w + 'its ' + side + ' shows undefined or NaN');
         if (/\bline \?|\{line:/.test(box.textContent)) out.push(w + 'its ' + side + ' points to a line ({line:word}) whose word is not in the passage');
       });
