@@ -506,3 +506,45 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
 | `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
+| `g5-road-bike.jpg` | A steel racing bicycle on display | Ged Carroll | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Faema_steel_racing_bike_used_by_Eddy_Merckx_(26068021782).jpg |
+| `g5-candles.jpg` | Candles burning on a dark windowsill | Le Priyavrat | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Candles_on_a_dark_sill.jpg |
+| `g5-lighthouse-fog.jpg` | Peggy’s Cove lighthouse, Nova Scotia, on a foggy day | Inmouchar | Public domain | https://commons.wikimedia.org/wiki/File:Peggy's_Cove_foggy_day.jpg |
+| `g5-geese-flying.jpg` | Canada geese flying in a V formation | John Benson | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:CanadianGeeseFlyingInVFormation.jpg |
+| `g5-classroom.jpg` | An empty primary school classroom | Martin Kraft | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Klassenraum_Grundschule.jpg |
+| `g5-zucchini.jpg` | A basket full of garden zucchini | George Chernilevsky | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Zucchini_in_basket_2021_G1.jpg |
+| `g5-pond-hockey.jpg` | A game of pond hockey in Nova Scotia | Spencer Gillis | Public domain | https://commons.wikimedia.org/wiki/File:Game_of_pond_hockey_(Nova_Scotia,_2007).jpg |
+| `g5-wheelchair-basketball.jpg` | A wheelchair basketball game | Isiwal | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%C3%96sterreichische_Meisterschaft_2017-2018_Flinkstones_II_-_WBS_Pardubice-0928.jpg |
+| `g5-footprints-snow.jpg` | Cat and bird tracks in fresh snow | stevevoght | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Cat_and_bird_tracks_in_Seattle_snow_2008.jpg |
+| `g5-space-tomatoes.jpg` | Tomato plants grown for the International Space Station | NASA/Cory Huston | Public domain | https://commons.wikimedia.org/wiki/File:Tomato_plants_in_the_Veggie_Passive_Orbital_Nutrient_Delivery_System_(PONDS).jpg |
+| `g5-buxton.jpg` | Buxton National Historic Site and Museum, South Buxton, Ontario | Ken Lund | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Buxton_National_Historic_Site_and_Museum,_South_Buxton,_Ontario_(21152008724).jpg |
+| `g5-chilkoot.jpg` | Gold seekers climbing the Chilkoot Pass, about 1898 | Eric A. Hegg | Public domain | https://commons.wikimedia.org/wiki/File:Packers_ascending_summit_of_Chilkoot_Pass,_ca_1898_(MOHAI_7230).jpg |
+| `g5-log-drive.jpg` | Men with poles breaking a log jam on the Moira River, Ontario | Deseronto Archives | No known copyright restrictions | https://commons.wikimedia.org/wiki/File:%22Breaking_a_jam_-_Moira_River_drive%22._Men_with_poles_breaking_up_a_log_jam._(3656262577).jpg |
+| `g5-lost-found.jpg` | A lost and found box | Paul Gorbould | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Lost_and_Found_Box_(6947296049).jpg |
+| `g5-stage.jpg` | A red stage curtain in the Savoy Theatre, Monmouth, Wales | Dillyboase | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Savoy_Theatre_Monmouth_Curtain_and_Pillar.jpg |
+| `g5-camp-canoes.jpg` | Canoes at YMCA Camp Wanakita, Ontario | Connor Behan | CC0 | https://commons.wikimedia.org/wiki/File:Ymca_wanakita_canoes.jpg |
+| `g5-georgian-bay.jpg` | Rocky shore of Georgian Bay near Parry Sound, Ontario | Thestormpine | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Parry_sound_Georgian_Bay._Rugged_Trail,_JennAndi_cove.jpg |
+| `g5-dumplings.jpg` | Hand-folded dumplings (jiaozi) | Emcc83 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Jiaozi_GS_CN.jpg |
+| `g5-maple-taffy.jpg` | Children eating maple taffy on snow | Chris Lund | Public domain | https://commons.wikimedia.org/wiki/File:Children_eating_maple_syrup_on_snow.jpg |
+| `g5-winter-dawn.jpg` | A snowy street early on a winter morning | Basher Eyre | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Early_morning_in_a_snowy_Park_Lane_-_geograph.org.uk_-_1656540.jpg |
+| `g5-rapids.jpg` | Rapids near Smiths Falls, Ontario | Edwin Lester Brittain | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Breaker_in_rapids,_near_Smiths_Falls,_Ontario_(PR2004-014.2.3-574).jpg |
+| `g5-lightning-lake.jpg` | Lightning over a lake at night | Michael Seeley | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Lightning_over_Lake_Washington_-_July_14,_2015._(19490075238).jpg |
+| `g5-chess-handshake.jpg` | Two chess players shaking hands | W. Punt, Anefo | CC0 | https://commons.wikimedia.org/wiki/File:IBM-schaaktoernooi,_Planinc_in_aktie,_Spasski_en_Planinc_schudden_elkaar_de_hand,_Bestanddeelnr_926-5879.jpg |
+| `g5-moving-boxes.jpg` | A stack of old moving boxes | Boivie | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Some_old_moving_boxes_from_Sweden.jpg |
+| `g5-maple-autumn.jpg` | A maple tree in autumn colours | King of Photos | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Maple_Tree_In_Autumn_(fall).jpg |
+| `g5-barred-owl.jpg` | A barred owl at Innis Woods | Sixflashphoto | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Innis_Woods_-_Barred_Owl_2.jpg |
+| `g5-snowplow.jpg` | A snowplow clearing a street at night in Vancouver | Emma0mb | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Vancouver_Snowplow_night.jpg |
+| `g5-beekeeper.jpg` | A beekeeper holding a frame from a hive | Grendelkhan | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beekeeper_holding_frame_at_El_Sol_Winery.jpg |
+| `g5-grotto.jpg` | The Grotto, a sea cave in Bruce Peninsula National Park, Ontario | VictoriardPC | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bruce_Peninsula_Grotto.jpg |
+| `g5-sod-house.jpg` | A pioneer sod house on the prairie | Stilfehler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Prairie_Homestead_South_Dakota_Sod_House_16.jpg |
+| `g5-bird-count.jpg` | A young volunteer watching birds through binoculars | USFWS Mountain-Prairie | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Young_Citizen_Scientist_(6554384629).jpg |
+| `g5-cleanup.jpg` | Volunteers collecting litter along a shoreline | U.S. Environmental Protection Agency | Public domain | https://commons.wikimedia.org/wiki/File:Coastal_Clean_Up_Volunteers._(15010938649).jpg |
+| `g5-iqaluit.jpg` | Houses in Iqaluit, Nunavut | Angela | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iqaluit_housing_-c.jpg |
+| `g5-nunavut-map.png` | Map of Canada with Nunavut highlighted | MapGrid | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nunavut_in_Canada_2.svg |
+| `g5-crossing-guard.jpg` | A crossing guard helping children cross the street | Austin Transportation and Public Works | Public domain | https://commons.wikimedia.org/wiki/File:Walk_%26_Roll_to_School_Day_-_54841555526.jpg |
+| `g5-little-nemo.jpg` | A page of the comic strip Little Nemo in Slumberland (1905) | Winsor McCay | Public domain | https://commons.wikimedia.org/wiki/File:Little_Nemo_in_Slumberland_(1905-10-22).jpeg |
+| `g5-gros-morne.jpg` | Cliffs and water in Gros Morne National Park, Newfoundland | WayneRay | Public domain | https://commons.wikimedia.org/wiki/File:Gros_Morne_Park3.JPG |
+| `g5-reference-shelf.jpg` | Dictionaries and a thesaurus on a shelf | Alborzagros | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:English-English_dictionaries_and_thesaurus_books.JPG |
+| `g5-lift-lock.jpg` | The Peterborough Lift Lock on the Trent–Severn Waterway | Ron Crough | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Peterborough_Lift_Lock_8.jpg |
+| `g5-trent-severn-map.jpg` | An early map of the Trent–Severn route across Ontario | A. L. Killaly | Public domain | https://commons.wikimedia.org/wiki/File:Trent-Severn_Waterway_map.jpg |
+| `g5-willie-oree.jpg` | Willie O’Ree in 2019 | Eric Connolly, U.S. House Photographer | Public domain | https://commons.wikimedia.org/wiki/File:WillieORee2019.jpg |
+| `g5-recess.jpg` | Children playing outside at recess | Greenestreetfs | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Recess_at_Greene_Street_Friends.jpg |

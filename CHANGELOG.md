@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Reading passages, Grade 5 (reading-test style, guided by the CAT): 40 new passages beside the 100 already there (none changed): 19 stories and novel-style excerpts (one a short play), 6 poems, and 15 other kinds of text: interviews, an interview plan, journals, a diary, posters, letters, a guide to reading comics, the front of a book, reference sources, a speech. Every page has numbered lines, more inference questions with 4 choices, and a real open-licence photo, map or diagram. Reading level sits between Grade 4 and Grade 6.
 - Reading passages, Grade 4 pilot (reading-test style, guided by the CAT): 4 new passages beside the 100 already there: a short story, a poem, an interview and a class journal. Lines are numbered in the margin and questions point to them ("line 20"); more inference and word-in-context questions with 4 choices; a free, credited butterfly life-cycle diagram. Passages can now be poems (one wide column), carry line numbers, and hold real open-licence diagrams.
 - Spelling path: Find where to start. A short check with a grown-up (one word for each group of steps; it stops after 3 not yet right) names the step to start at and keeps it on the list.
 - Spelling path, Grades 4 to 8: 23 new steps with part boxes (one box for each word part), a Word family tree (grow words from a root such as port or graph) and a Proofreading lens (find and fix the mistakes in a short text). Printed pages now shrink a little to fit rather than cut off the last dictation lines.
