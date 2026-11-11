@@ -1,15 +1,20 @@
 /* Language Atlas Spelling path: the steps (words, sorts, endings, dictation), loaded when the tool first opens. Written for this site.
-   Each step is a decodable reader step (same id, same order; tests/decodable.js), so a child spells the pattern they have just read.
-   The consonant pages and the short vowel review have no spelling step of their own, nor has wh (too few words a child can spell).
+   Each Kindergarten to Grade 3 step is a decodable reader step (same id, same order; tests/decodable.js), so a child spells the pattern
+   they have just read. The consonant pages and the short vowel review have no spelling step of their own, nor has wh (too few words a
+   child can spell). Grades 4 to 8 come after them: word parts, roots, word families and proofreading.
    Atlas.spelling.add({ id, band, group, name, focus, key, rule, tip, mistake, heart, words, sort, endings, review, sounds, sentence, beats })
-   band      'K', '1', '2' or '3': the grade where Ontario's Language Foundations Continuum (2026) teaches the spelling
+   band      'K' to '8': the grade where Ontario's Language Foundations Continuum (2026) or curriculum teaches the spelling
    words     8 to 10 words: [word, its sounds (one spelling for each sound, a_e for a silent-e vowel), a clue with ___ for the word]
    beats     true: the words split into beats (syllables) instead of sounds, one box for each beat (longer words)
    sort      { q, bins: [[spelling, label, where]], items: 'word/bin ...' }: where is 'start', 'middle' or 'end' (the choice map),
              or left out (plain columns); bin is the number of the bin the word goes in, from 0
    endings   [[word, ending]]: the tool works the new word out with the spelling rules (tools.js join); an ending like 'un-' is a prefix
    review    2 words from earlier steps for the dictation (none on the first step); sounds: 2 earlier spellings for the dictation warm-up
-   sentence  the dictation sentence: every word can be spelled at this step, or is a heart word
+   sentence  the dictation sentence: every word can be spelled at this step, or is a heart word (Kindergarten to Grade 3)
+   parts     true (Grades 4 to 8): the words split into word parts (prefix, root, suffix or a tricky chunk), one box for each part,
+             and extra holds 3 or more wrong tiles for the tray; an ending's third item, 1, means the last beat is stressed (begin, beginning)
+   family    { root, means, pre, suf, words }: the word family tree; every word is a front from pre, the root and an end from suf
+   proof     a short text to proofread: each mistake is written {wrong|right}
    tests/spelling.js checks all of it again on its own. */
 (function () {
   var add = Atlas.spelling.add;
@@ -814,4 +819,360 @@
     endings: [['magnet', 'ic'], ['magic', 'al'], ['fame', 'ous'], ['nation', 'al'], ['act', 'ive']],
     review: ['subway', 'midnight'], sounds: ['tion', 'sion'],
     sentence: 'The famous artist is nervous.' });
+
+  /* ---------- Grades 4 to 8: word parts, roots, word families and proofreading ---------- */
+  var AFFIX4 = 'Prefixes and suffixes';
+  var REL = 'Hear it in a relative';
+
+  add({ id: 'g4-prefix', band: '4', group: AFFIX4, parts: true, name: 'Prefixes fore-, super- and semi-', focus: ['fore-', 'super-', 'semi-'], key: 'semicircle',
+    rule: 'Fore- means before, super- above or more, semi- half.',
+    tip: 'Each prefix keeps all its letters, and so does the word it joins: fore + cast, super + market. Ask what the prefix adds to the meaning, then build the word part by part.',
+    mistake: 'Writes for- for fore- (forcast), or leaves a letter out where the parts meet.',
+    heart: ['weather'],
+    words: [['forecast', 'fore cast', 'The ___ says snow tomorrow.'], ['forehead', 'fore head', 'My hat covers my ___.'], ['foresee', 'fore see', 'Nobody can ___ every problem.'], ['superhero', 'super hero', 'The ___ in my comic can fly.'],
+      ['supermarket', 'super market', 'We buy food at the ___.'], ['superstar', 'super star', 'The hockey ___ signed my jersey.'], ['semicircle', 'semi circle', 'Sit in a ___ around the teacher.'], ['semifinal', 'semi final', 'The winner of the ___ plays in the final.'],
+      ['semicolon', 'semi colon', 'A ___ joins two sentences.']],
+    extra: ['for', 'four', 'supper', 'semmi'],
+    sort: { q: 'Which prefix?', bins: [['fore-', 'fore-', ''], ['super-', 'super-', ''], ['semi-', 'semi-', '']], items: 'forecast/0 superstar/1 semicircle/2 forearm/0 supersonic/1 semifinal/2 foreground/0 superpower/1 semicolon/2' },
+    endings: [['cast', 'fore-'], ['market', 'super-'], ['circle', 'semi-'], ['see', 'fore-']],
+    proof: 'Mom checked the {forcast|forecast} before the {semmifinal|semifinal}. After the game, we went to the {supermarkit|supermarket} for snacks.',
+    review: ['magnetic', 'famous'],
+    sentence: 'The forecast calls for snow at the semifinal.' });
+
+  add({ id: 'g4-en-em', band: '4', group: AFFIX4, parts: true, name: 'Prefixes en- and em-', focus: ['en-', 'em-'], key: 'enlarge',
+    rule: 'En- means make or put in. Before b, m and p, it is em-.',
+    tip: 'Enlarge is make large; endanger is put in danger. Say em-power and em-body: the lips close for b, m and p, so the prefix turns to em-.',
+    mistake: 'Writes in- for en- (inlarge), or en- before b, m and p (enpower).',
+    heart: ['danger'],
+    words: [['enlarge', 'en large', 'Can you ___ the photo?'], ['enrich', 'en rich', 'Compost will ___ the soil.'], ['endanger', 'en danger', 'Oil spills ___ sea birds.'], ['encourage', 'en courage', 'Coaches ___ every player.'],
+      ['enclose', 'en close', 'A fence will ___ the garden.'], ['entrust', 'en trust', 'I will ___ you with my key.'], ['empower', 'em power', 'Learning to read will ___ you.'], ['embody', 'em body', 'Elders ___ the wisdom of the community.'],
+      ['embrace', 'em brace', 'The friends ___ at the airport.'], ['embed', 'em bed', 'Fossils ___ themselves in rock.']],
+    extra: ['in', 'im', 'an'],
+    sort: { q: 'Which prefix?', bins: [['en-', 'en-', ''], ['em-', 'em-', '']], items: 'enlarge/0 empower/1 enrich/0 embody/1 encircle/0 embark/1 entangle/0 embed/1' },
+    endings: [['large', 'en-'], ['danger', 'en-'], ['power', 'em-'], ['encourage', 'ment']],
+    proof: 'Smoke from a campfire can {indanger|endanger} the birds. Rangers {incourage|encourage} people to {inclose|enclose} their fires in a ring of stones.',
+    review: ['forecast', 'semicircle'],
+    sentence: 'Do not endanger the animals.' });
+
+  add({ id: 'g4-ate-ation', band: '4', group: AFFIX4, parts: true, name: '-ate and -ation', focus: ['-ate', '-ation'], key: 'celebration',
+    rule: '-ate makes an action word. Add -ion and the e drops.',
+    tip: 'Pair each action with its thing: create, creation; donate, donation. The /shun/ at the end is spelled tion, with the a from -ate kept: -ation.',
+    mistake: 'Writes shun or sion (celebrashun), or keeps the e (createion).',
+    heart: ['beautiful'],
+    words: [['create', 'cre ate', 'Artists ___ new things.'], ['decorate', 'decor ate', 'Let\'s ___ the room for the party.'], ['celebrate', 'celebr ate', 'We ___ Diwali with lights.'], ['donate', 'don ate', 'We ___ food to the food bank.'],
+      ['locate', 'loc ate', 'Can you ___ Nunavut on the map?'], ['creation', 'cre ation', 'The sculpture is her own ___.'], ['decoration', 'decor ation', 'Hang the ___ on the door.'], ['celebration', 'celebr ation', 'The powwow was a joyful ___.'],
+      ['donation', 'don ation', 'Thank you for your ___.'], ['location', 'loc ation', 'Mark the ___ of the school.']],
+    extra: ['ate', 'ation', 'ait', 'ashun'],
+    sort: { q: 'Action or thing?', bins: [['-ate', '-ate', ''], ['-ation', '-ation', '']], items: 'create/0 creation/1 decorate/0 decoration/1 celebrate/0 celebration/1 donate/0 donation/1 locate/0 location/1' },
+    endings: [['create', 'ion'], ['decorate', 'ion'], ['celebrate', 'ion'], ['locate', 'ion']],
+    proof: 'Our class made a {decorashun|decoration} for the {selebration|celebration}. We will {donait|donate} the money we raise.',
+    review: ['enlarge', 'encourage'],
+    sentence: 'We will celebrate with a big decoration.' });
+
+  add({ id: 'g4-ant-ent', band: '4', group: REL, parts: true, name: 'Suffixes -ant and -ent', focus: ['-ant', '-ent'], key: 'important',
+    rule: '-ant and -ent sound the same. A relative shows which one.',
+    tip: 'Say a relative that ends in -ance or -ence: distance, so distant; difference, so different. The child keeps a list of the words with no helper and learns those by sight.',
+    mistake: 'Picks one ending for every word (importent, distent).',
+    heart: ['answer'],
+    words: [['important', 'import ant', 'Sleep is ___ for growing.'], ['distant', 'dist ant', 'We saw a ___ island.'], ['pleasant', 'pleas ant', 'It was a ___ walk by the river.'], ['servant', 'serv ant', 'The king had a loyal ___.'],
+      ['giant', 'gi ant', 'A ___ tree grew in the park.'], ['different', 'differ ent', 'Every snowflake is ___.'], ['student', 'stud ent', 'Each ___ has a locker.'], ['absent', 'abs ent', 'Two people were ___ today.'],
+      ['silent', 'sil ent', 'The library is ___.'], ['present', 'pres ent', 'Everyone is ___ for the photo.']],
+    extra: ['ant', 'ent', 'int'],
+    sort: { q: 'Which ending?', bins: [['-ant', '-ant', ''], ['-ent', '-ent', '']], items: 'important/0 different/1 distant/0 student/1 pleasant/0 silent/1 servant/0 absent/1 giant/0 present/1' },
+    endings: [['differ', 'ent'], ['import', 'ant'], ['serve', 'ant'], ['please', 'ant']],
+    proof: 'It is {importent|important} to be {silant|silent} in the library. Every {studant|student} can choose a {diffrent|different} book.',
+    review: ['celebration', 'donate'],
+    sentence: 'A pleasant student was absent today.' });
+
+  add({ id: 'g4-schwa', band: '4', group: REL, parts: true, name: 'The schwa: find a relative', focus: ['-ition', '-ation'], key: 'definition',
+    rule: 'A lazy vowel is clear in a relative: define, definition.',
+    tip: 'In definition, the i after f says a lazy /uh/. Say define, where it is clear. Compete gives competition; prepare gives preparation. Say the relative first, then spell.',
+    mistake: 'Writes u or a for the lazy vowel (defanition, compotition).',
+    heart: ['business'],
+    words: [['definition', 'defin ition', 'Look up the ___ of the word.'], ['competition', 'compet ition', 'She won the skating ___.'], ['composition', 'compos ition', 'The band played his ___.'], ['opposition', 'oppos ition', 'The team faced strong ___.'],
+      ['invitation', 'invit ation', 'I got an ___ to the party.'], ['preparation', 'prepar ation', 'A test needs ___.'], ['inspiration', 'inspir ation', 'The Northern Lights were her ___.'], ['admiration', 'admir ation', 'We looked at the art with ___.'],
+      ['declaration', 'declar ation', 'They signed a ___.'], ['exploration', 'explor ation', 'Space ___ takes courage.']],
+    extra: ['etion', 'ution', 'ishun'],
+    sort: { q: 'Which ending?', bins: [['-ition', '-ition', ''], ['-ation', '-ation', '']], items: 'definition/0 invitation/1 competition/0 preparation/1 composition/0 inspiration/1 opposition/0 exploration/1' },
+    endings: [['define', 'ition'], ['compete', 'ition'], ['prepare', 'ation'], ['explore', 'ation']],
+    proof: 'The {compitition|competition} had a hard {definishun|definition} round. Our {prepration|preparation} helped us win.',
+    review: ['important', 'student'],
+    sentence: 'The invitation is for the competition.' });
+
+  var ROOT5 = 'Latin roots';
+  var CHOICE = 'Choosing the right spelling';
+
+  add({ id: 'g5-port', band: '5', group: ROOT5, parts: true, name: 'The root port', focus: ['port'], key: 'transport',
+    rule: 'The root port means carry.',
+    tip: 'A root is the heart of a word family. Find port, then the parts around it: trans- (across) + port = carry across. Knowing the root keeps every family word spelled the same way.',
+    mistake: 'Spells the root differently in different words (pourt, transpot).',
+    heart: ['foreign'],
+    words: [['import', 'im port', 'Canada needs to ___ bananas.'], ['export', 'ex port', 'Farms on the Prairies ___ wheat.'], ['transport', 'trans port', 'Trucks ___ food across the country.'], ['portable', 'port able', 'A ___ speaker is easy to carry.'],
+      ['report', 're port', 'Write a ___ on beavers.'], ['reporter', 're port er', 'The ___ asked the mayor a question.'], ['support', 'sup port', 'Beams ___ the roof.'], ['passport', 'pass port', 'Bring your ___ to cross the border.'],
+      ['airport', 'air port', 'The plane landed at the ___.'], ['porter', 'port er', 'The ___ carried our bags.']],
+    extra: ['pourt', 'porte', 'tranz'],
+    family: { root: 'port', means: 'carry', pre: 'im ex trans re sup', suf: 'er able ation',
+      words: 'port porter portable import importer importable importation export exporter exportable exportation transport transporter transportable transportation report reporter reportable support supporter supportable' },
+    endings: [['port', 'able'], ['report', 'er'], ['transport', 'ation'], ['support', 'ive']],
+    proof: 'Trucks {transpourt|transport} food to the store. A {reportor|reporter} wrote about the new {airpourt|airport}.',
+    review: ['definition', 'invitation'],
+    sentence: 'Show your passport at the airport.' });
+
+  add({ id: 'g5-spect-dict', band: '5', group: ROOT5, parts: true, name: 'The roots spect and dict', focus: ['spect', 'dict'], key: 'predict',
+    rule: 'The root spect means look. The root dict means say.',
+    tip: 'An inspector looks closely; a dictionary tells you what words say. Find the root first, then build out: pre- (before) + dict = say before.',
+    mistake: 'Leaves the t out of the root (inspec, predic), or writes k for c.',
+    heart: ['tongue'],
+    words: [['inspect', 'in spect', '___ your bike before a ride.'], ['respect', 're spect', 'Treat Elders with ___.'], ['spectator', 'spect ator', 'Each ___ cheered for the team.'], ['inspector', 'in spect or', 'The ___ checked the bridge.'],
+      ['prospect', 'pro spect', 'The ___ of a snow day made us smile.'], ['predict', 'pre dict', 'Can you ___ the ending?'], ['dictionary', 'dict ionary', 'Look the word up in a ___.'], ['contradict', 'contra dict', 'The two stories ___ each other.'],
+      ['dictate', 'dict ate', 'I will ___ the words, and you write them.'], ['verdict', 'ver dict', 'The judge gave the ___.']],
+    extra: ['spek', 'spec', 'dikt', 'dic'],
+    sort: { q: 'Which root?', bins: [['spect', 'spect: look', ''], ['dict', 'dict: say', '']], items: 'inspect/0 predict/1 respect/0 dictate/1 spectator/0 verdict/1 prospect/0 dictionary/1' },
+    family: { root: 'spect', means: 'look', pre: 'in re pro', suf: 'or ator ful', words: 'spectator inspect inspector respect respectful prospect prospector' },
+    endings: [['inspect', 'ion'], ['predict', 'ion'], ['respect', 'ful'], ['dictate', 'ion']],
+    proof: 'Can you {pradict|predict} the end of the story? Look up new words in a {dicshunary|dictionary}. Every {spectater|spectator} clapped.',
+    review: ['transport', 'support'],
+    sentence: 'The inspector will predict the verdict.' });
+
+  add({ id: 'g5-tract-form', band: '5', group: ROOT5, parts: true, name: 'The roots tract and form', focus: ['tract', 'form'], key: 'tractor',
+    rule: 'The root tract means pull. The root form means shape.',
+    tip: 'A tractor pulls; to subtract is to pull away. A uniform is one shape for everyone; to transform is to change shape. Spell the root the same in every word.',
+    mistake: 'Leaves the t off tract (subtrac), or writes ck (subtrackt).',
+    heart: ['doubt'],
+    words: [['tractor', 'tract or', 'The ___ pulled the plough.'], ['attract', 'at tract', 'Flowers ___ bees.'], ['subtract', 'sub tract', '___ 5 from 12.'], ['distract', 'dis tract', 'Noise can ___ you from reading.'],
+      ['extract', 'ex tract', 'The dentist will ___ the tooth.'], ['transform', 'trans form', 'A caterpillar will ___ into a butterfly.'], ['uniform', 'uni form', 'The team wears a red ___.'], ['inform', 'in form', 'Please ___ us if you will be late.'],
+      ['reform', 're form', 'The class voted to ___ the rules.'], ['formula', 'form ula', 'Use the ___ to find the area.']],
+    extra: ['trak', 'tracked', 'fourm'],
+    sort: { q: 'Which root?', bins: [['tract', 'tract: pull', ''], ['form', 'form: shape', '']], items: 'tractor/0 uniform/1 subtract/0 inform/1 attract/0 reform/1 extract/0 platform/1' },
+    family: { root: 'tract', means: 'pull', pre: 'at sub dis ex', suf: 'or ion ive',
+      words: 'tract tractor traction attract attraction attractive subtract subtraction subtractive distract distraction extract extractor extraction' },
+    endings: [['subtract', 'ion'], ['inform', 'ation'], ['attract', 'ive'], ['form', 'al']],
+    proof: 'It is hard to {subtrack|subtract} when music can {distrack|distract} you. Use the {formala|formula} on the board.',
+    review: ['inspect', 'predict'],
+    sentence: 'The tractor can extract the stump.' });
+
+  add({ id: 'g5-cian-sion', band: '5', group: CHOICE, parts: true, name: '-cian and -sion', focus: ['-cian', '-sion'], key: 'musician',
+    rule: '-cian is a person. -sion often says /zhun/.',
+    tip: 'A person who works with music, magic or electric things keeps the c: musician, magician, electrician. -sion usually comes from a word ending in d, de or se: decide, decision; explode, explosion.',
+    mistake: 'Writes -tion or -shun for a person (musition), or -tion for /zhun/ (decition).',
+    heart: ['guitar'],
+    words: [['musician', 'musi cian', 'The ___ played the fiddle.'], ['magician', 'magi cian', 'The ___ pulled a coin from my ear.'], ['electrician', 'electri cian', 'An ___ fixed the lights.'], ['optician', 'opti cian', 'An ___ made my new glasses.'],
+      ['politician', 'politi cian', 'The ___ gave a speech.'], ['decision', 'deci sion', 'It was a hard ___.'], ['television', 'televi sion', 'Turn off the ___.'], ['explosion', 'explo sion', 'The volcano made a loud ___.'],
+      ['confusion', 'confu sion', 'There was ___ about the time.'], ['division', 'divi sion', 'Check your ___ with multiplication.']],
+    extra: ['tion', 'shun', 'sian'],
+    sort: { q: 'Which ending?', bins: [['-cian', '-cian', ''], ['-sion', '-sion', '']], items: 'musician/0 decision/1 magician/0 explosion/1 electrician/0 division/1 optician/0 confusion/1 technician/0 invasion/1' },
+    endings: [['music', 'ian'], ['magic', 'ian'], ['electric', 'ian']],
+    proof: 'The {magishun|magician} made a fast {decison|decision}. Then a {musision|musician} played on {televishun|television}.',
+    review: ['subtract', 'uniform'],
+    sentence: 'The electrician made a decision.' });
+
+  add({ id: 'g5-able-ible', band: '5', group: CHOICE, parts: true, name: '-able and -ible', focus: ['-able', '-ible'], key: 'visible',
+    rule: 'Add -able to a whole word. Add -ible to a part that is not a word.',
+    tip: 'Break, wash and enjoy are words, so they take -able. Vis, poss and terr are not words, so they take -ible. Cover the ending and ask: is what is left a word?',
+    mistake: 'Writes -able for -ible (possable), or the other way round.',
+    heart: ['muscle'],
+    words: [['comfortable', 'comfort able', 'This chair is ___.'], ['breakable', 'break able', 'Glass is ___.'], ['washable', 'wash able', 'The paint is ___.'], ['enjoyable', 'enjoy able', 'The trip was ___.'],
+      ['valuable', 'valu able', 'The old coin is ___.'], ['visible', 'vis ible', 'The moon is ___ tonight.'], ['possible', 'poss ible', 'Is it ___ to swim across?'], ['terrible', 'terr ible', 'The storm was ___.'],
+      ['edible', 'ed ible', 'Some berries are not ___.'], ['horrible', 'horr ible', 'The smell was ___.']],
+    extra: ['able', 'ible', 'abel', 'ibel'],
+    sort: { q: 'Which ending?', bins: [['-able', '-able', ''], ['-ible', '-ible', '']], items: 'comfortable/0 visible/1 breakable/0 possible/1 washable/0 terrible/1 enjoyable/0 edible/1 fixable/0 horrible/1' },
+    endings: [['break', 'able'], ['enjoy', 'able'], ['fix', 'able'], ['comfort', 'able']],
+    proof: 'Is it {possable|possible} to see stars in the day? The sun is so bright that they are not {visable|visible}. These berries are not {edable|edible}.',
+    review: ['musician', 'decision'],
+    sentence: 'This comfortable coat is washable.' });
+
+  add({ id: 'g5-homophones', band: '5', group: CHOICE, parts: true, name: 'They\'re, it\'s, you\'re: the apostrophe', focus: ['\'re', '\'s'], key: 'they\'re',
+    rule: 'An apostrophe shows letters left out: they\'re is they are.',
+    tip: 'Say the long form: if they are fits, write they\'re; if it is fits, write it\'s. Their, its, your and whose own something and have no apostrophe.',
+    mistake: 'Writes their or there for they\'re, or its for it\'s (and the other way round).',
+    heart: ['their', 'whose', 'your'],
+    words: [['they\'re', 'they \'re', '___ going to the lake.'], ['you\'re', 'you \'re', '___ next in line.'], ['we\'re', 'we \'re', '___ late for the bus.'], ['who\'s', 'who \'s', '___ at the door?'],
+      ['it\'s', 'it \'s', '___ cold outside.'], ['there\'s', 'there \'s', '___ a moose on the road!'], ['here\'s', 'here \'s', '___ your lunch.'], ['what\'s', 'what \'s', '___ for supper?']],
+    extra: ['re', 's', 'r', 'ir'],
+    sort: { q: 'What was left out?', bins: [['\'re', '\'re: are', ''], ['\'s', '\'s: is', '']], items: 'they\'re/0 it\'s/1 you\'re/0 who\'s/1 we\'re/0 what\'s/1' },
+    proof: '{Their|They\'re} going to the lake today. {Its|It\'s} a long drive, and they forgot {they\'re|their} snacks. {Who\'s|Whose} bag is this? I think {your|you\'re} right.',
+    review: ['possible', 'visible'],
+    sentence: 'They\'re sure it\'s going to rain.' });
+
+  var GREEK = 'Greek and Latin parts';
+
+  add({ id: 'g6-graph-phon', band: '6', group: GREEK, parts: true, name: 'Greek roots graph and phon', focus: ['graph', 'phon'], key: 'microphone',
+    rule: 'Graph means write or draw. Phon means sound. Both spell /f/ with ph.',
+    tip: 'Words from Greek spell /f/ as ph. If a word has graph or phon in it, the /f/ is ph: paragraph, saxophone. Build from the root: photo (light) + graph (draw).',
+    mistake: 'Writes f for ph (paragraf, telefone).',
+    heart: ['rhythm'],
+    words: [['autograph', 'auto graph', 'The author signed an ___.'], ['paragraph', 'para graph', 'Indent each new ___.'], ['photograph', 'photo graph', 'Take a ___ of the sunset.'], ['graphic', 'graph ic', 'Draw a ___ for the poster.'],
+      ['biography', 'bio graph y', 'I read a ___ of Terry Fox.'], ['telephone', 'tele phon e', 'Answer the ___.'], ['microphone', 'micro phon e', 'Speak into the ___.'], ['symphony', 'sym phon y', 'The orchestra played a ___.'],
+      ['phonics', 'phon ics', '___ links sounds and letters.'], ['saxophone', 'saxo phon e', 'He plays the ___ in the band.']],
+    extra: ['graf', 'fon', 'fone'],
+    sort: { q: 'Which root?', bins: [['graph', 'graph: write', ''], ['phon', 'phon: sound', '']], items: 'autograph/0 telephone/1 paragraph/0 microphone/1 graphic/0 symphony/1 biography/0 phonics/1' },
+    family: { root: 'graph', means: 'write or draw', pre: 'auto para photo bio', suf: 'ic er y',
+      words: 'graph graphic autograph paragraph photograph photographic photographer photography biographer biography' },
+    endings: [['photograph', 'er'], ['graph', 'ic'], ['autograph', 'ed']],
+    proof: 'I wrote a {paragrafe|paragraph} about my grandmother. She played the {saxafone|saxophone} and signed my {autograf|autograph}.',
+    review: ['comfortable', 'possible'],
+    sentence: 'Speak into the microphone, then write a paragraph.' });
+
+  add({ id: 'g6-bio-therm-scope', band: '6', group: GREEK, parts: true, name: 'Greek parts bio, therm and scope', focus: ['bio', 'therm', 'scope'], key: 'microscope',
+    rule: 'Bio means life, therm means heat, scope means look at.',
+    tip: 'Science words are built from Greek parts. Spell each part as a chunk: micro (small) + scope (look at). A thermometer measures heat; a biologist studies life.',
+    mistake: 'Leaves the e off scope (microscop), or writes therm as thurm.',
+    heart: ['scissors'],
+    words: [['biology', 'bio logy', 'In ___ we study living things.'], ['biologist', 'bio logist', 'A ___ studies frogs in the pond.'], ['antibiotic', 'anti bio tic', 'The doctor gave me an ___.'], ['thermometer', 'therm ometer', 'The ___ shows 22 degrees Celsius.'],
+      ['thermal', 'therm al', 'Wear ___ socks in winter.'], ['thermostat', 'therm ostat', 'Turn the ___ down at night.'], ['microscope', 'micro scope', 'Look at the cells under a ___.'], ['telescope', 'tele scope', 'We saw Saturn through a ___.'],
+      ['periscope', 'peri scope', 'The submarine raised its ___.'], ['stethoscope', 'stetho scope', 'The nurse listened with a ___.']],
+    extra: ['scop', 'thurm', 'bi'],
+    sort: { q: 'Which part?', bins: [['bio', 'bio: life', ''], ['therm', 'therm: heat', ''], ['scope', 'scope: look', '']], items: 'biology/0 thermal/1 microscope/2 antibiotic/0 thermometer/1 telescope/2 biome/0 thermostat/1 periscope/2' },
+    proof: 'We looked at pond water under a {microscop|microscope}. A {biolagist|biologist} told us the {thermomiter|thermometer} read 18 degrees Celsius.',
+    review: ['paragraph', 'photograph'],
+    sentence: 'The biologist used a microscope and a thermometer.' });
+
+  add({ id: 'g6-ance-ence', band: '6', group: REL, parts: true, name: '-ance and -ence', focus: ['-ance', '-ence'], key: 'distance',
+    rule: '-ant words take -ance. -ent words take -ence.',
+    tip: 'Build on Grade 4: distant, distance; different, difference. If the base ends in a stressed beat with one vowel and one consonant, double it: occur, occurrence. Refer, reference does not, because the stress moves.',
+    mistake: 'Picks one ending for every word (differance, distence).',
+    heart: ['science'],
+    words: [['distance', 'dist ance', 'The ___ to Calgary is 300 km.'], ['importance', 'import ance', 'Talk about the ___ of clean water.'], ['balance', 'bal ance', 'Keep your ___ on the beam.'], ['entrance', 'entr ance', 'Meet me at the front ___.'],
+      ['allowance', 'allow ance', 'I save part of my ___.'], ['difference', 'differ ence', 'What is the ___ between 9 and 4?'], ['silence', 'sil ence', 'The hall fell into ___.'], ['absence', 'abs ence', 'Write a note for your ___.'],
+      ['confidence', 'confid ence', 'Practice builds ___.'], ['evidence', 'evid ence', 'The footprints were ___ of a bear.']],
+    extra: ['ance', 'ence', 'ense', 'anse'],
+    sort: { q: 'Which ending?', bins: [['-ance', '-ance', ''], ['-ence', '-ence', '']], items: 'distance/0 difference/1 importance/0 silence/1 balance/0 absence/1 allowance/0 confidence/1 appearance/0 evidence/1' },
+    endings: [['differ', 'ence'], ['allow', 'ance'], ['appear', 'ance'], ['refer', 'ence'], ['occur', 'ence', 1]],
+    proof: 'Our science fair project showed a big {differance|difference} in how the plants grew. The {evidance|evidence} was clear, and I presented it with {confidance|confidence}.',
+    review: ['important', 'different'],
+    sentence: 'Keep your distance and your balance.' });
+
+  add({ id: 'g6-in-not', band: '6', group: AFFIX4, parts: true, name: 'in- that changes: im-, il-, ir-', focus: ['in-', 'im-', 'il-', 'ir-'], key: 'impossible',
+    rule: 'In- means not. It changes to match the next letter.',
+    tip: 'Im- before b, m and p; il- before l; ir- before r. That is why illegal has two l and irregular has two r: one from the prefix, one from the word.',
+    mistake: 'Writes one letter where two meet (ilegal, iregular), or keeps in- (inpossible).',
+    heart: ['ought'],
+    words: [['impossible', 'im possible', 'It is ___ to touch the sky.'], ['immature', 'im mature', 'The ___ birds stayed in the nest.'], ['impatient', 'im patient', 'Waiting makes me ___.'], ['illegal', 'il legal', 'Parking here is ___.'],
+      ['illogical', 'il logical', 'That plan is ___.'], ['irregular', 'ir regular', 'The rock has an ___ shape.'], ['irresponsible', 'ir responsible', 'Leaving the gate open was ___.'], ['inactive', 'in active', 'The volcano is ___.'],
+      ['invisible', 'in visible', 'Air is ___.'], ['incorrect', 'in correct', 'Fix the ___ answer.']],
+    extra: ['in', 'im', 'il', 'ir'],
+    sort: { q: 'Which form of in-?', bins: [['in-', 'in-', ''], ['im-', 'im-', ''], ['il-', 'il-', ''], ['ir-', 'ir-', '']], items: 'incorrect/0 impossible/1 illegal/2 irregular/3 invisible/0 immature/1 illogical/2 irresponsible/3' },
+    endings: [['possible', 'in-'], ['legal', 'in-'], ['regular', 'in-'], ['visible', 'in-'], ['mature', 'in-'], ['correct', 'in-']],
+    proof: 'It is {inpossible|impossible} to park here, because it is {ilegal|illegal}. The bus times are {iregular|irregular} today.',
+    review: ['difference', 'balance'],
+    sentence: 'It is illegal and irresponsible to litter.' });
+
+  var ROOT7 = 'Roots and rules';
+
+  add({ id: 'g7-rupt-struct-ject', band: '7', group: ROOT7, parts: true, name: 'The roots rupt, struct and ject', focus: ['rupt', 'struct', 'ject'], key: 'construct',
+    rule: 'Rupt means break, struct means build, ject means throw.',
+    tip: 'A volcano erupts (breaks out); a builder constructs; a pitcher throws, and a reject is thrown back. Find the root, then add parts. Inter- (between) + rupt: to break in between, so interrupt has two r.',
+    mistake: 'Writes one r in interrupt, or leaves the t off struct and rupt.',
+    heart: ['colonel'],
+    words: [['erupt', 'e rupt', 'The volcano may ___.'], ['interrupt', 'inter rupt', 'Please do not ___.'], ['disrupt', 'dis rupt', 'The storm will ___ the flights.'], ['bankrupt', 'bank rupt', 'The shop went ___.'],
+      ['construct', 'con struct', 'Beavers ___ dams.'], ['instruct', 'in struct', 'The coach will ___ us.'], ['structure', 'struct ure', 'An igloo is a strong ___.'], ['project', 'pro ject', 'Our ___ is about the Great Lakes.'],
+      ['reject', 're ject', 'Do not ___ a new idea too fast.'], ['inject', 'in ject', 'The nurse will ___ the vaccine.']],
+    extra: ['rup', 'strukt', 'jekt'],
+    sort: { q: 'Which root?', bins: [['rupt', 'rupt: break', ''], ['struct', 'struct: build', ''], ['ject', 'ject: throw', '']], items: 'erupt/0 construct/1 project/2 interrupt/0 structure/1 reject/2 disrupt/0 instruct/1 inject/2' },
+    family: { root: 'struct', means: 'build', pre: 'con in de re', suf: 'ure ion or ive',
+      words: 'structure construct construction constructor constructive instruct instruction instructor instructive destruct destruction destructive restructure' },
+    endings: [['erupt', 'ion'], ['construct', 'ion'], ['reject', 'ion'], ['interrupt', 'ion']],
+    proof: 'The volcano could {errupt|erupt} at any time. Scientists {instruckt|instruct} people to leave. Please do not {interupt|interrupt} the warning.',
+    review: ['impossible', 'illegal'],
+    sentence: 'Do not interrupt the project.' });
+
+  add({ id: 'g7-doubling', band: '7', group: ROOT7, parts: true, name: 'Doubling in longer words', focus: ['-ing', '-ed'], key: 'beginning',
+    rule: 'Double the last letter when the last beat is stressed: be-GIN, beginning.',
+    tip: 'Say the word and find the loud beat. be-GIN, for-GET, oc-CUR: stressed at the end, so double. VIS-it, O-pen, HAP-pen: stressed at the start, so just add the ending.',
+    mistake: 'Doubles every time (visitting) or never (begining, occured).',
+    heart: ['yacht'],
+    words: [['beginning', 'begin n ing', 'Start at the ___.'], ['forgetting', 'forget t ing', 'I keep ___ my lunch.'], ['preferred', 'prefer r ed', 'She ___ the blue canoe.'], ['occurred', 'occur r ed', 'The eclipse ___ at noon.'],
+      ['admitted', 'admit t ed', 'He ___ he was wrong.'], ['controlled', 'control l ed', 'The pilot ___ the plane.'], ['referring', 'refer r ing', 'Who are you ___ to?'], ['visiting', 'visit ing', 'We are ___ Halifax.'],
+      ['opening', 'open ing', 'The ___ of the show was exciting.'], ['happened', 'happen ed', 'What ___ next?']],
+    extra: ['nn', 'tt', 'rr', 'll'],
+    endings: [['begin', 'ing', 1], ['forget', 'ing', 1], ['prefer', 'ed', 1], ['visit', 'ing'], ['control', 'ed', 1], ['open', 'ing'], ['happen', 'ed']],
+    proof: 'The movie was {begining|beginning} when the power went out. Nothing like that had {occured|occurred} before. We kept {visitting|visiting} the snack table.',
+    review: ['construct', 'erupt'],
+    sentence: 'It occurred at the beginning of the game.' });
+
+  add({ id: 'g7-ie-ei', band: '7', group: ROOT7, parts: true, name: 'ie or ei', focus: ['ie', 'ei'], key: 'receive',
+    rule: 'Write ie, but ei after c, or when it says /ay/.',
+    tip: 'Believe, field, piece: ie. After c: receive, ceiling. Saying /ay/: neighbour, weigh. Learn the odd ones as a set: weird, seize, either, their.',
+    mistake: 'Writes ie after c (recieve), or ei in words like piece (peice).',
+    heart: ['weird'],
+    words: [['believe', 'bel ie ve', 'I ___ you.'], ['field', 'f ie ld', 'Cows graze in the ___.'], ['piece', 'p ie ce', 'May I have a ___ of bannock?'], ['chief', 'ch ie f', 'The ___ spoke at the gathering.'],
+      ['shield', 'sh ie ld', 'A ___ protects the knight.'], ['receive', 'rec ei ve', 'Did you ___ my letter?'], ['ceiling', 'c ei ling', 'A spider is on the ___.'], ['receipt', 'rec ei pt', 'Keep the ___ from the store.'],
+      ['neighbour', 'n ei ghbour', 'Our ___ shovelled our driveway.'], ['weigh', 'w ei gh', 'How much do you ___?']],
+    extra: ['ee', 'ea', 'ay'],
+    sort: { q: 'Which spelling?', bins: [['ie', 'ie', ''], ['ei', 'ei', '']], items: 'believe/0 receive/1 field/0 ceiling/1 piece/0 receipt/1 chief/0 neighbour/1 shield/0 weight/1' },
+    proof: 'Did you {recieve|receive} the {reciept|receipt}? I {beleive|believe} it fell in the {feild|field}.',
+    review: ['beginning', 'occurred'],
+    sentence: 'I believe the chief got a receipt.' });
+
+  add({ id: 'g7-plurals', band: '7', group: ROOT7, parts: true, name: 'Plurals from Latin and Greek', focus: ['-i', '-es', '-ae', '-a'], key: 'cacti',
+    rule: 'Some words keep their Latin or Greek plural: cactus, cacti.',
+    tip: '-us becomes -i (cactus, cacti). -is becomes -es (crisis, crises). -a becomes -ae (larva, larvae). -um and -on become -a (bacterium, bacteria; criterion, criteria). Science words often follow these.',
+    mistake: 'Adds s to a plural that is already plural (bacterias, criterias).',
+    heart: ['chaos'],
+    words: [['cacti', 'cact i', 'The desert was full of ___.'], ['fungi', 'fung i', 'Mushrooms are ___.'], ['nuclei', 'nucle i', 'The cells\' ___ were dark.'], ['crises', 'cris es', 'The town faced two ___ in one year.'],
+      ['oases', 'oas es', 'Camels rest at ___ in the desert.'], ['larvae', 'larv ae', 'The ___ will turn into beetles.'], ['antennae', 'antenn ae', 'The ant waved its ___.'], ['bacteria', 'bacteri a', 'Wash your hands to remove ___.'],
+      ['criteria', 'criteri a', 'Read the ___ before you start.'], ['phenomena', 'phenomen a', 'The Northern Lights are amazing ___.']],
+    extra: ['us', 'is', 'um', 'on', 's'],
+    sort: { q: 'Which plural ending?', bins: [['-i', '-i', ''], ['-es', '-es', ''], ['-ae', '-ae', ''], ['-a', '-a', '']], items: 'cacti/0 crises/1 larvae/2 bacteria/3 fungi/0 oases/1 antennae/2 criteria/3 nuclei/0 analyses/1 vertebrae/2 phenomena/3' },
+    proof: 'The {bacterias|bacteria} grew fast. The scientist wrote her {criterias|criteria} for the test. Then the {larvas|larvae} hatched.',
+    review: ['believe', 'receive'],
+    sentence: 'The larvae and fungi grew near the cacti.' });
+
+  var G8 = 'Spelling for writers';
+
+  add({ id: 'g8-confused', band: '8', group: G8, parts: true, name: 'Affect or effect, accept or except', focus: ['af-', 'ef-', 'ac-', 'ex-'], key: 'effect',
+    rule: 'Affect is the action, effect is the result. Accept means take; except means leave out.',
+    tip: 'The rain will affect the game (an action); the rain had an effect (a thing). Ac- is like add: accept means take in. Ex- means out: everyone except Sam leaves Sam out. A spell-checker will not catch these, so read for meaning.',
+    mistake: 'Writes effect for the action or except for accept. Both are real words, so a spell-checker passes them.',
+    heart: ['conscience'],
+    words: [['affect', 'af fect', 'Lack of sleep can ___ your mood.'], ['effect', 'ef fect', 'The medicine had a quick ___.'], ['affected', 'af fect ed', 'The flood ___ many farms.'], ['effective', 'ef fect ive', 'Practice is an ___ way to learn.'],
+      ['accept', 'ac cept', 'Please ___ this gift.'], ['except', 'ex cept', 'Everyone came ___ Sam.'], ['acceptable', 'ac cept able', 'Is this answer ___?'], ['exception', 'ex cept ion', 'Every rule has an ___.'],
+      ['accepted', 'ac cept ed', 'She ___ the award.'], ['exceptional', 'ex cept ion al', 'His work was ___.']],
+    extra: ['ax', 'eff', 'aff', 'acc'],
+    sort: { q: 'Which prefix?', bins: [['af-', 'af-', ''], ['ef-', 'ef-', ''], ['ac-', 'ac-', ''], ['ex-', 'ex-', '']], items: 'affect/0 effect/1 accept/2 except/3 affected/0 effective/1 acceptable/2 exception/3' },
+    proof: 'The cold will {effect|affect} the game. Everyone came {accept|except} Sam. Please {except|accept} my apology. The {affect|effect} was huge.',
+    review: ['larvae', 'bacteria'],
+    sentence: 'The storm had an effect on everyone except me.' });
+
+  add({ id: 'g8-science', band: '8', group: G8, parts: true, name: 'Science words: eco-, hydro-, -sphere, -vore', focus: ['eco-', 'hydro-', '-sphere', '-vore'], key: 'ecosystem',
+    rule: 'Science words are built from Greek and Latin parts.',
+    tip: 'Eco- means home or habitat, hydro- water, -sphere a ball, -vore eater. Spell each part: hemi (half) + sphere = half a ball. -sphere has ph, like other Greek words.',
+    mistake: 'Writes f for ph (atmosfere), or leaves the e off -vore (carnivor).',
+    heart: ['Celsius'],
+    words: [['atmosphere', 'atmo sphere', 'Earth\'s ___ is a layer of air.'], ['hemisphere', 'hemi sphere', 'Canada is in the northern ___.'], ['biosphere', 'bio sphere', 'The ___ is every place life is found.'], ['carnivore', 'carni vore', 'A wolf is a ___.'],
+      ['herbivore', 'herbi vore', 'A caribou is a ___.'], ['omnivore', 'omni vore', 'A bear is an ___.'], ['hydroelectric', 'hydro electric', 'Quebec makes ___ power.'], ['hydrogen', 'hydro gen', 'Water is made of ___ and oxygen.'],
+      ['ecosystem', 'eco system', 'A wetland is a rich ___.'], ['ecology', 'eco logy', 'In ___ we study how living things connect.']],
+    extra: ['sfere', 'vor', 'hidro', 'eko'],
+    sort: { q: 'Which part?', bins: [['eco', 'eco-: home', ''], ['hydro', 'hydro-: water', ''], ['sphere', '-sphere: ball', ''], ['vore', '-vore: eater', '']], items: 'ecosystem/0 hydrogen/1 atmosphere/2 carnivore/3 ecology/0 hydroelectric/1 hemisphere/2 omnivore/3' },
+    proof: 'A wolf is a {carnivor|carnivore}. Earth\'s {atmosfear|atmosphere} protects every {ecosistem|ecosystem}. Some power comes from {hidroelectric|hydroelectric} dams.',
+    review: ['affect', 'effect'],
+    sentence: 'A herbivore and a carnivore share the ecosystem.' });
+
+  add({ id: 'g8-civics', band: '8', group: G8, parts: true, name: 'Civics words', focus: ['-ment', '-ion', '-cracy'], key: 'government',
+    rule: 'Find the base word, then add the ending.',
+    tip: 'Say the hidden letters: gov-ern-ment (the n goes quiet in fast speech), par-li-a-ment (an a hides in it). Find the base: govern, elect, settle, reconcile. -cracy means rule: democracy is rule by the people.',
+    mistake: 'Leaves out the quiet n (goverment) or the a (parliment).',
+    heart: ['sovereign'],
+    words: [['government', 'govern ment', 'The ___ makes laws.'], ['parliament', 'parlia ment', 'Members of ___ meet in Ottawa.'], ['settlement', 'settle ment', 'The ___ grew into a town.'], ['election', 'elect ion', 'Every adult can vote in the ___.'],
+      ['constitution', 'constitut ion', 'Canada\'s ___ lists our rights.'], ['confederation', 'confederat ion', 'In 1867, ___ made Canada a country.'], ['reconciliation', 'reconciliat ion', 'Truth and ___ go together.'], ['legislation', 'legislat ion', 'New ___ protects the lakes.'],
+      ['democracy', 'demo cracy', 'In a ___, people vote.'], ['autocracy', 'auto cracy', 'In an ___, one person rules.']],
+    extra: ['mint', 'shun', 'crasy'],
+    sort: { q: 'Which ending?', bins: [['-ment', '-ment', ''], ['-ion', '-ion', ''], ['-cracy', '-cracy', '']], items: 'government/0 election/1 democracy/2 parliament/0 confederation/1 autocracy/2 settlement/0 reconciliation/1' },
+    endings: [['govern', 'ment'], ['elect', 'ion'], ['settle', 'ment'], ['amend', 'ment'], ['legislate', 'ion']],
+    proof: 'In 1867, {Confedaration|Confederation} made Canada a country. The {goverment|government} meets in {Parliment|Parliament}. {Reconsiliation|Reconciliation} with First Nations, Inuit and Métis goes on.',
+    review: ['ecosystem', 'atmosphere'],
+    sentence: 'The government meets in Parliament in Ottawa.' });
+
+  add({ id: 'g8-doubles', band: '8', group: G8, parts: true, name: 'Tricky words: one letter or two?', focus: ['cc', 'mm', 'rr', 'ss'], key: 'necessary',
+    rule: 'Check each double letter: necessary has one c and two s.',
+    tip: 'Say the word in parts and count the doubles: ne-c-e-ss-ary, a-cc-o-mm-odate. A memory line helps: necessary has one collar and two sleeves. Read a draft once just for these words.',
+    mistake: 'Doubles the wrong letter (neccesary) or misses a double (embarass, tommorow).',
+    heart: ['separate'],
+    words: [['necessary', 'ne c e ss ary', 'Is a coat ___ today?'], ['embarrass', 'em ba rr a ss', 'Do not ___ your friend.'], ['accommodate', 'a cc o mm odate', 'The cabin can ___ six people.'], ['occasion', 'o cc a sion', 'A wedding is a special ___.'],
+      ['recommend', 're c o mm end', 'Can you ___ a good book?'], ['tomorrow', 'to m o rr ow', 'We leave ___ morning.'], ['address', 'a dd re ss', 'Write your ___ on the form.'], ['possession', 'po ss e ss ion', 'Her bike is her favourite ___.'],
+      ['success', 'su cc e ss', 'The bake sale was a ___.'], ['committee', 'co mm i tt ee', 'The ___ planned the event.']],
+    extra: ['c', 'm', 'r', 's'],
+    proof: 'It is {neccessary|necessary} to check your draft. I {reccomend|recommend} reading it aloud {tommorow|tomorrow}. Do not let small mistakes {embarass|embarrass} you.',
+    review: ['government', 'election'],
+    sentence: 'It is necessary to address the committee tomorrow.' });
 })();

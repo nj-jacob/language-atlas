@@ -1,21 +1,25 @@
 /* Language Atlas tool box: the Spelling path (#tools/spelling), spelling taught step by step, the Orton-Gillingham way.
    Needs atlas.js and tools.js (join and spell); the printed page also needs sheets.js (look, fonts and printing; sheets.css) and
    decodable.js (its line-art pictures). It adds itself to the tool box, on the Spelling shelf.
-   Each step is a decodable reader step (same id and order, Kindergarten to Grade 3), so the child spells the pattern they have
-   just read. The steps are in assets/engine/spellbank.js, loaded when the tool first opens. The list groups them by grade (band).
-   One step has five parts (#tools/spelling/<step>/<part>):
+   Each Kindergarten to Grade 3 step is a decodable reader step (same id and order), so the child spells the pattern they have
+   just read. Grades 4 to 8 follow: word parts, roots, word families and proofreading. The steps are in assets/engine/spellbank.js, loaded when the tool first opens. The list groups them by grade (band).
+   One step has up to seven parts (#tools/spelling/<step>/<part>):
      build     Sound boxes: a picture or a clue; one box for each sound; tap a letter tile, it goes in the next box (or the box
                picked). A spelling of two or more letters is one tile (ai, igh, -ed); a silent-e tile (a_e) is one sound too.
                Check marks each box; a wrong box turns red, only that box. The tray holds the word's sounds and other spellings
                of the same sound taught by then, so the child has to choose. A step with beats (longer words) has one box for
                each beat (syllable) instead, and the tray holds the beats and beats spelled another way (lar, ler).
+               A Grades 4 to 8 step (parts) has one box for each word part, and the tray adds the step's wrong tiles (extra).
+     family    Word family tree (Grades 4 to 8): pick a front and an end around the root and grow a word; each one found is a leaf.
      sort      Spelling choice map: tap a word, then the spelling it uses. Bins with a place (middle, end) sit on a word-shaped map.
      endings   Ending workshop: write the new word, then join. The join shows the rule at work: a letter doubles, the e drops,
-               y turns to i (tools.js join works the word out). A prefix (un-) goes on the front and never changes the word.
+               y turns to i (tools.js join works the word out). A prefix (un-) goes on the front and never changes the word,
+               except in-, which turns to im-, il- or ir-. An ending marked stressed doubles the last letter of a longer word.
+     proof     Proofreading lens (Grades 4 to 8): tap a word that looks wrong in a short text, then write it right.
      dictate   Dictation pad: the grown-up reads (grown-up view shows the script); the child writes with a finger or pencil on
                lines. The grown-up taps every sound written wrong; Save keeps the day's score and slips (sp:<step>).
                A step is secure when the score is 90% or more on two different days.
-     print     A printed page (sound boxes, sort, endings, dictation lines) and a grown-up page (answers, script, rule).
+     print     A printed page (boxes, word family or sort, endings, proofreading, dictation lines) and a grown-up page (answers, script, rule).
    The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only). */
 (function () {
   'use strict';
@@ -52,10 +56,22 @@
   SP.find = function (id) { return SP.list.filter(function (p) { return p.id === id; })[0]; };
   SP.code = function (p) { return 'SP-' + (p.n < 10 ? '0' : '') + p.n; };
   /* the new word an ending makes, and the rule at the join */
-  SP.ending = function (base, suf) {
-    var pre = /-$/.test(suf), j = pre ? T.join([suf, base]) : T.join([base, '-' + suf]), rule = pre ? 'prefix' : j.rule;
-    if (!rule && /y$/.test(base) && suf.charAt(0) === 'i') rule = 'keep the y';
-    return { word: j.word, rule: rule, base: base, suf: suf.replace(/-$/, ''), pre: pre };
+  SP.ending = function (base, suf, stress) {
+    var pre = /-$/.test(suf), j, rule;
+    if (pre) {
+      /* in- takes the sound of the next letter: im- before b, m, p; il- before l; ir- before r */
+      var as = suf === 'in-' ? ({ b: 'im', m: 'im', p: 'im', l: 'il', r: 'ir' })[base.charAt(0)] : null;
+      j = { word: (as || suf.slice(0, -1)) + base };
+      rule = as ? 'in- changes' : 'prefix';
+      suf = (as || suf.slice(0, -1)) + '-';
+    } else if (stress && /^[aeiouy]/.test(suf) && /[aeiou][^aeiouwxy]$/.test(base) && !/[aeiou]{2}[^aeiou]$/.test(base)) {
+      /* a longer word whose last beat is stressed doubles its last letter too (begin, beginning) */
+      j = { word: base + base.slice(-1) + suf }; rule = 'double the last letter';
+    } else {
+      j = T.join([base, '-' + suf]); rule = j.rule;
+      if (!rule && /y$/.test(base) && suf.charAt(0) === 'i') rule = 'keep the y';
+    }
+    return { word: j.word, rule: rule, base: base, suf: suf.replace(/-$/, ''), pre: pre, stress: !!stress };
   };
   /* an ending or a prefix as a sum: bake + ing, un- + lock */
   function sum(x) { return /-$/.test(x[1]) ? esc(x[1]) + ' + ' + esc(x[0]) : esc(x[0]) + ' + ' + esc(x[1]); }
@@ -66,7 +82,7 @@
       var known = [].concat.apply([], SP.list.map(function (s) { return s.words; })).filter(function (x) { return x.w === w; })[0];
       return known || { w: w, u: SP.units(w) };
     });
-    return { sounds: (p.beats ? [] : p.focus.filter(function (f) { return /^\w_e$/.test(f) || MULTI.indexOf(f) >= 0; })).concat(p.sounds || []), words: mine.concat(rev), sentence: p.sentence };
+    return { sounds: (p.beats || p.parts ? [] : p.focus.filter(function (f) { return /^\w_e$/.test(f) || MULTI.indexOf(f) >= 0; })).concat(p.sounds || []), words: mine.concat(rev), sentence: p.sentence };
   };
   /* Ontario codes: Kindergarten (sounds, letters, spelling words), Grade 1 (phonics, segmenting to spell, spelling choices, endings)
      and the same expectations in Grades 2 and 3. A step lists the grades from its own band on. */
@@ -78,10 +94,12 @@
   };
   SP.codeLine = function (p) {
     var c = SP.codes(p), b = p.band;
+    /* Grades 4 to 8: spelling words (B2.1), with proofreading (D2.5) and, in Grades 6 to 8, spell-checkers (D2.6) */
+    if (+b >= 4) return 'Grade ' + b + ': ' + ['B2.1'].concat(p.proof ? ['D2.5'] : [], p.proof && +b >= 6 ? ['D2.6'] : []).join(', ');
     return [b === 'K' ? 'Kindergarten: ' + c.k.join(', ') : '', b === 'K' || b === '1' ? 'Grade 1: ' + c.g1.join(', ') : '',
       (b === '3' ? 'Grade 3: ' : 'Grades 2 and 3: ') + c.g2.join(', ')].filter(Boolean).join(' · ');
   };
-  var BANDS = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2'], ['3', 'Grade 3']];
+  var BANDS = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2'], ['3', 'Grade 3'], ['4', 'Grade 4'], ['5', 'Grade 5'], ['6', 'Grade 6'], ['7', 'Grade 7'], ['8', 'Grade 8']];
   var LOAD = null;
   SP.load = function () {
     LOAD = LOAD || new Promise(function (ok) {
@@ -124,11 +142,15 @@
   /* the spellings taught by a step: those in its words and in every earlier step's words */
   function taught(p) {
     var n = p ? SP.list.indexOf(p) : SP.list.length - 1, all = {};
-    SP.list.slice(0, n + 1).forEach(function (s) { if (!s.beats) s.words.forEach(function (w) { w.u.forEach(function (x) { all[x] = 1; }); }); });
+    SP.list.slice(0, n + 1).forEach(function (s) { if (!s.beats && !s.parts) s.words.forEach(function (w) { w.u.forEach(function (x) { all[x] = 1; }); }); });
     return all;
   }
   SP.tray = function (u, p) {
     var out = u.slice();
+    if (p && p.parts) {
+      (p.extra || []).forEach(function (x) { out.push(x); });
+      return shuffle(out.filter(function (x, i) { return out.indexOf(x) === i; }));
+    }
     if (p && p.beats) {
       u.forEach(function (x) { var r = OTHER.filter(function (o) { return o[0].test(x); })[0]; if (r) out.push(x.replace(r[0], r[1])); });
       return shuffle(out.filter(function (x, i) { return out.indexOf(x) === i; }));
@@ -143,10 +165,12 @@
   };
 
   /* ---------- the step page ---------- */
-  var PARTS = [['build', 'Sound boxes'], ['sort', 'Sort'], ['endings', 'Endings'], ['dictate', 'Dictation'], ['print', 'Print']];
+  var PARTS = [['build', 'Sound boxes'], ['family', 'Word family'], ['sort', 'Sort'], ['endings', 'Endings'], ['proof', 'Proofread'], ['dictate', 'Dictation'], ['print', 'Print']];
+  /* what the boxes hold: sounds, beats (syllables) or word parts (Grades 4 to 8) */
+  function boxes(p) { return p.parts ? ['Part boxes', 'part'] : p.beats ? ['Beat boxes', 'beat'] : ['Sound boxes', 'sound']; }
   function parts(p) {
-    return PARTS.filter(function (x) { return (x[0] !== 'sort' || p.sort) && (x[0] !== 'endings' || p.endings); })
-      .map(function (x) { return x[0] === 'build' && p.beats ? ['build', 'Beat boxes'] : x; });
+    return PARTS.filter(function (x) { return x[0] === 'build' || x[0] === 'dictate' || x[0] === 'print' || p[x[0]]; })
+      .map(function (x) { return x[0] === 'build' ? ['build', boxes(p)[0]] : x; });
   }
   function step(root, p, part) {
     var all = parts(p), i = SP.list.indexOf(p), prev = SP.list[i - 1], next = SP.list[i + 1];
@@ -162,7 +186,7 @@
         return '<a href="#tools/spelling/' + p.id + '/' + x[0] + '"' + (x[0] === part ? ' aria-current="page"' : '') + '>' + x[1] + '</a>';
       }).join('') + '</nav><div class="sp-stage"></div></div>';
     var stage = $('.sp-stage', root);
-    ({ build: build, sort: sort, endings: endings, dictate: dictate, print: printPart })[part](stage, p);
+    ({ build: build, family: family, sort: sort, endings: endings, proof: proof, dictate: dictate, print: printPart })[part](stage, p);
   }
 
   /* Sound boxes */
@@ -175,7 +199,7 @@
       fill = w.u.map(function () { return null; }); pick = 0; tray = SP.tray(w.u, p);
       stage.innerHTML = '<div class="sp-card sp-build"><p class="sp-count">Word ' + (at + 1) + ' of ' + order.length + '</p>' +
         '<div class="sp-cue">' + (pic ? '<figure class="sp-pic">' + pic + '</figure>' : '') + '<p class="sp-clue">' + clue(w.clue) + '</p></div>' +
-        '<p class="sp-say">' + (p.beats ? 'Say it. Tap a dot for each beat.' : 'Say it. Tap a dot for each sound.') + '</p>' +
+        '<p class="sp-say">Say it. Tap a dot for each ' + boxes(p)[1] + '.</p>' +
         '<div class="sp-boxes">' + w.u.map(function (u, i) { return '<div class="sp-box"><button type="button" class="sp-slot" data-i="' + i + '" aria-label="Box ' + (i + 1) + '"></button><span class="sp-dot" data-i="' + i + '"></span></div>'; }).join('') + '</div>' +
         '<div class="sp-tray">' + tray.map(function (t) { return '<button type="button" class="sp-tile' + (/^[aeiouy]/.test(t) ? ' sp-v' : '') + '" data-t="' + esc(t) + '">' + lab(t) + '</button>'; }).join('') + '</div>' +
         '<p class="sp-msg" role="status"></p><div class="sp-do"><button type="button" class="btn alt" data-a="clear">Start again</button><button type="button" class="btn" data-a="check">Check</button></div>' +
@@ -214,7 +238,7 @@
         b.focus();
       } else {
         msg.className = 'sp-msg';
-        msg.textContent = fill.indexOf(null) >= 0 ? 'Fill every box. One sound in each.' : 'Look at the red box. Say the word again, slowly.';
+        msg.textContent = fill.indexOf(null) >= 0 ? 'Fill every box. One ' + boxes(p)[1] + ' in each.' : 'Look at the red box. Say the word again, slowly.';
       }
     }
     draw();
@@ -259,7 +283,7 @@
 
   /* Ending workshop */
   var SAYS = { 'drop the e': 'The ending starts with a vowel, so the e drops off.', 'double the last letter': 'One short vowel and one last letter: double it, so the vowel stays short.',
-    'y changes to i': 'A letter comes before the y, so the y turns to i.', 'keep the y': 'Before -ing, keep the y.', 'add es': 'After s, x, sh or ch, add -es.',
+    'y changes to i': 'A letter comes before the y, so the y turns to i.', 'in- changes': 'Before b, m or p, in- becomes im-; before l, il-; before r, ir-.', 'keep the y': 'Before -ing, keep the y.', 'add es': 'After s, x, sh or ch, add -es.',
     prefix: 'A prefix goes on the front. The word does not change.', '': 'Nothing changes. Just add the ending.' };
   function joined(e) {
     var b = e.base, s = '<span class="sp-suf">' + esc(e.suf) + '</span>';
@@ -272,11 +296,11 @@
   function endings(stage, p) {
     var at = 0;
     function draw() {
-      var e = SP.ending(p.endings[at][0], p.endings[at][1]);
+      var x = p.endings[at], e = SP.ending(x[0], x[1], x[2]);
       stage.innerHTML = '<div class="sp-card sp-end"><div class="sp-pairs">' + p.endings.map(function (x, i) {
         return '<button type="button" class="sp-wc' + (i === at ? ' sp-sel' : '') + '" data-i="' + i + '">' + sum(x) + '</button>';
       }).join('') + '</div>' +
-        '<div class="sp-bench">' + (e.pre ? '<span class="sp-piece sp-sufp">' + esc(e.suf) + '-</span><span class="sp-plus">+</span><span class="sp-piece">' + esc(e.base) + '</span>'
+        '<div class="sp-bench">' + (e.pre ? '<span class="sp-piece sp-sufp">' + esc(x[1]) + '</span><span class="sp-plus">+</span><span class="sp-piece">' + esc(e.base) + '</span>'
           : '<span class="sp-piece">' + esc(e.base) + '</span><span class="sp-plus">+</span><span class="sp-piece sp-sufp">' + esc(e.suf) + '</span>') + '</div>' +
         '<label class="sp-try"><span>Write the new word</span><input id="sp-end-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"></label>' +
         '<div class="sp-do"><button type="button" class="btn" data-a="join">Join them</button></div><p class="sp-msg" role="status"></p></div>';
@@ -285,13 +309,78 @@
         var typed = $('#sp-end-in', stage).value.trim().toLowerCase(), msg = $('.sp-msg', stage);
         $('.sp-bench', stage).innerHTML = '<span class="sp-joined">' + joined(e) + '</span>';
         msg.className = 'sp-msg' + (typed === e.word ? ' sp-good' : '');
-        msg.innerHTML = '<b>' + esc(SAYS[e.rule]) + '</b>' + (typed ? (typed === e.word ? ' You wrote it right.' : ' You wrote ' + esc(typed) + '. Look at the join.') : '');
+        msg.innerHTML = '<b>' + esc(e.stress && e.rule === 'double the last letter' ? 'The last beat is stressed, so its last letter doubles.' : SAYS[e.rule]) + '</b>' + (typed ? (typed === e.word ? ' You wrote it right.' : ' You wrote ' + esc(typed) + '. Look at the join.') : '');
         $('.sp-do', stage).innerHTML = at + 1 < p.endings.length ? '<button type="button" class="btn" data-a="next">Next</button>' : '';
         var n = $('[data-a="next"]', stage);
         if (n) n.addEventListener('click', function () { at++; draw(); });
       });
     }
     draw();
+  }
+
+  /* Word family tree: a root in the trunk; pick a front (prefix) and an end (suffix) to grow a word of the family */
+  SP.familyWords = function (f) { return f.words.split(' '); };
+  function family(stage, p) {
+    var f = p.family, all = SP.familyWords(f), found = [], pre = '', suf = '';
+    function draw(say, good) {
+      stage.innerHTML = '<div class="sp-card sp-fam"><p class="sp-q">Grow words from <b>' + esc(f.root) + '</b>.</p>' +
+        '<div class="sp-tree"><ul class="sp-leaves">' + found.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul>' +
+        '<div class="sp-trunk"><span class="sp-pre">' + esc(pre) + '</span><b>' + esc(f.root) + '</b><span class="sp-sufx">' + esc(suf) + '</span></div></div>' +
+        '<p class="sp-count">' + found.length + ' of ' + all.length + ' words found</p>' +
+        '<div class="sp-aff"><p class="ws-label">Front</p>' + f.pre.split(' ').map(function (x) { return '<button type="button" class="sp-wc' + (x === pre ? ' sp-sel' : '') + '" data-pre="' + esc(x) + '">' + esc(x) + '-</button>'; }).join('') + '</div>' +
+        '<div class="sp-aff"><p class="ws-label">End</p>' + f.suf.split(' ').map(function (x) { return '<button type="button" class="sp-wc' + (x === suf ? ' sp-sel' : '') + '" data-suf="' + esc(x) + '">-' + esc(x) + '</button>'; }).join('') + '</div>' +
+        '<div class="sp-do"><button type="button" class="btn alt" data-a="clear">Clear</button><button type="button" class="btn" data-a="grow">Grow it</button></div>' +
+        '<p class="sp-msg' + (good ? ' sp-good' : '') + '" role="status">' + esc(say || 'Pick a front, an end, or both.') + '</p></div>';
+      $$('[data-pre]', stage).forEach(function (b) { b.addEventListener('click', function () { pre = pre === b.dataset.pre ? '' : b.dataset.pre; draw(); }); });
+      $$('[data-suf]', stage).forEach(function (b) { b.addEventListener('click', function () { suf = suf === b.dataset.suf ? '' : b.dataset.suf; draw(); }); });
+      $('[data-a="clear"]', stage).addEventListener('click', function () { pre = suf = ''; draw(); });
+      $('[data-a="grow"]', stage).addEventListener('click', function () {
+        var w = pre + f.root + suf, ok = all.indexOf(w) >= 0;
+        if (ok && found.indexOf(w) < 0) found.push(w);
+        pre = suf = '';
+        draw(ok ? (found.length === all.length ? 'The whole family is found.' : w + ' is in the family.') : w + ' is not on this tree. Try another front or end.', ok);
+      });
+    }
+    draw();
+  }
+
+  /* Proofread: a short text with spelling mistakes ({wrong|right} in the bank); tap a word that looks wrong, then write it right */
+  SP.proofItems = function (p) {
+    var out = [], re = /\{([^|}]+)\|([^}]+)\}|([^{]+)/g, m;
+    while ((m = re.exec(p.proof))) out.push(m[3] ? { t: m[3] } : { t: m[1], fix: m[2] });
+    return out;
+  };
+  function bare(t) { return t.replace(/^[^A-Za-z']+|[^A-Za-z']+$/g, ''); }
+  function proof(stage, p) {
+    var words = [], done = 0, sel = null;
+    SP.proofItems(p).forEach(function (x) {
+      if (x.fix) words.push(x);
+      else x.t.split(/(\s+)/).forEach(function (t) { if (t) words.push({ t: t }); });
+    });
+    var wrong = words.filter(function (x) { return x.fix; }).length;
+    stage.innerHTML = '<div class="sp-card sp-proof"><p class="sp-q">Find ' + wrong + ' spelling mistakes. Tap a word, then write it right.</p>' +
+      '<p class="sp-text">' + words.map(function (x, i) { return /^\s+$/.test(x.t) ? ' ' : '<button type="button" class="sp-pw" data-i="' + i + '">' + esc(x.t) + '</button>'; }).join('') + '</p>' +
+      '<div class="sp-fixer" hidden><label class="sp-try"><span>Write it right</span><input id="sp-proof-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"></label>' +
+      '<div class="sp-do"><button type="button" class="btn" data-a="fix">Fix it</button></div></div><p class="sp-msg" role="status">0 of ' + wrong + ' found.</p></div>';
+    var msg = $('.sp-msg', stage), inp = $('#sp-proof-in', stage), box = $('.sp-fixer', stage);
+    $$('.sp-pw', stage).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var x = words[+b.dataset.i];
+        if (b.classList.contains('sp-fixed')) return;
+        if (!x.fix) { msg.className = 'sp-msg'; msg.textContent = bare(x.t) + ' is spelled right. Look again.'; return; }
+        if (sel) sel.classList.remove('sp-sel');
+        sel = b; b.classList.add('sp-sel'); box.hidden = false; inp.value = ''; inp.focus();
+        msg.className = 'sp-msg'; msg.textContent = 'How do you spell it?';
+      });
+    });
+    $('[data-a="fix"]', stage).addEventListener('click', function () {
+      if (!sel) return;
+      var x = words[+sel.dataset.i];
+      if (inp.value.trim().toLowerCase() === bare(x.fix).toLowerCase()) {
+        sel.textContent = x.fix; sel.classList.remove('sp-sel'); sel.classList.add('sp-fixed'); sel = null; done++; box.hidden = true;
+        msg.className = 'sp-msg sp-good'; msg.textContent = done === wrong ? 'All ' + wrong + ' fixed.' : done + ' of ' + wrong + ' found.';
+      } else { msg.className = 'sp-msg'; msg.textContent = 'Not quite. Say it in parts and try again.'; }
+    });
   }
 
   /* Dictation pad */
@@ -362,22 +451,28 @@
   function foot(p, left) { return '<footer class="dc-foot"><p class="ws-line dc-line"><span>' + left + '</span><span>' + SP.code(p) + '</span></p></footer>'; }
   SP.boxWords = function (p) { return [0, 2, 5, 7].map(function (i) { return p.words[i]; }); };
   function page(p) {
-    var d = SP.dictation(p), ends = (p.endings || []).slice(0, 4);
+    var d = SP.dictation(p), ends = (p.endings || []).slice(0, p.parts && (p.sort || p.family) ? 2 : 4), n = 0;
+    function label(t) { n++; return '<p class="ws-label">' + n + ' · ' + t + '</p>'; }
+    var proofText = p.proof ? SP.proofItems(p).map(function (x) { return esc(x.t); }).join('') : '';
     return '<div class="ws-page dc-page sp-page">' + head(p) +
       '<section class="sp-pband"><p class="sp-pfocus' + (p.focus.join('').length > 8 ? ' sp-pmany' : '') + '">' + p.focus.map(function (f) { return '<span>' + lab(f) + '</span>'; }).join(' ') + '</p><div><p class="sp-prule">' + esc(p.rule) + '</p>' +
       '<p class="sp-pheart"><span class="ws-label">Heart word</span><span class="sp-trace">' + esc(p.heart[0]) + '</span><i></i><i></i></p></div></section>' +
-      '<section class="sp-psec"><p class="ws-label">1 · ' + (p.beats ? 'Beat boxes: one beat in each box' : 'Sound boxes: one sound in each box') + '</p><div class="sp-pboxes">' + SP.boxWords(p).map(function (w) {
+      '<section class="sp-psec">' + label(boxes(p)[0] + ': one ' + boxes(p)[1] + ' in each box') + '<div class="sp-pboxes">' + SP.boxWords(p).map(function (w) {
         var pic = picture(w.w);
         return '<div class="sp-pb">' + (pic ? '<div class="sp-ppic">' + pic + '</div>' : '') + '<p>' + clue(w.clue) + '</p><div class="sp-prow">' + w.u.map(function () { return '<i></i>'; }).join('') + '</div></div>';
       }).join('') + '</div></section>' +
-      (p.sort ? '<section class="sp-psec"><p class="ws-label">2 · Sort: ' + esc(p.sort.q) + '</p><p class="sp-pbank">' + p.sort.list.map(function (it) { return esc(it.w); }).join(' · ') + '</p>' +
+      (p.family ? '<section class="sp-psec">' + label('Word family: ' + esc(p.family.root) + ' means ' + esc(p.family.means)) +
+        '<p class="sp-pbank">Fronts: ' + p.family.pre.split(' ').map(function (x) { return esc(x) + '-'; }).join(' · ') + ' &nbsp; Ends: ' + p.family.suf.split(' ').map(function (x) { return '-' + esc(x); }).join(' · ') + '</p>' +
+        '<div class="sp-pends sp-pfam">' + [0, 1, 2, 3].map(function () { return '<p><span class="ws-blank ws-word"></span></p>'; }).join('') + '</div></section>' : '') +
+      (p.sort && !p.family ? '<section class="sp-psec">' + label('Sort: ' + esc(p.sort.q)) + '<p class="sp-pbank">' + p.sort.list.map(function (it) { return esc(it.w); }).join(' · ') + '</p>' +
         '<div class="sp-pcols" style="--n:' + p.sort.bins.length + '">' + p.sort.bins.map(function (b) {
           return '<div><p class="sp-pbin">' + (b[1] === b[0] ? lab(b[0]) : esc(b[1])) + (b[2] ? ' <span>' + b[2] + '</span>' : '') + '</p><div class="sp-plines"></div></div>';
         }).join('') + '</div></section>' : '') +
-      (ends.length ? '<section class="sp-psec"><p class="ws-label">' + (p.sort ? 3 : 2) + ' · Add the ending</p><div class="sp-pends">' + ends.map(function (e) {
+      (ends.length ? '<section class="sp-psec">' + label('Add the ending') + '<div class="sp-pends">' + ends.map(function (e) {
         return '<p>' + sum(e) + ' = <span class="ws-blank ws-word"></span></p>';
       }).join('') + '</div></section>' : '') +
-      '<section class="sp-psec sp-pdict"><p class="ws-label">' + (2 + (p.sort ? 1 : 0) + (ends.length ? 1 : 0)) + ' · Dictation: your grown-up says each word</p><div class="sp-pdl">' +
+      (p.proof ? '<section class="sp-psec">' + label('Proofread: circle each mistake and write the word right above it') + '<p class="sp-pproof">' + proofText + '</p></section>' : '') +
+      '<section class="sp-psec sp-pdict">' + label('Dictation: your grown-up says each word') + '<div class="sp-pdl">' +
       d.words.map(function (w, i) { return '<p><b>' + (i + 1) + '</b><i></i></p>'; }).join('') + '</div><p class="sp-psent"><b>&#9998;</b><i></i></p></section>' +
       foot(p, 'Language Atlas · Spelling path · ' + nm(p)) + '</div>';
   }
@@ -386,19 +481,26 @@
     '<b>Sort.</b> The child reads each word in the bank, then writes it under its spelling.',
     '<b>Dictation.</b> Say each word twice. Say it, spell it aloud, write it, read it back (Simultaneous Oral Spelling). Mark each sound, not the whole word.',
     '<b>Fix it.</b> The child finds the wrong sound and writes the word again. Words missed today come back next time.'];
+  var ROUTINE_PARTS = ['<b>Rule.</b> Show the part. Say what it means, then two words that have it.',
+    '<b>Part boxes.</b> Say the word. The child says it back in parts (front, root, end), then writes one part in each box.',
+    '<b>Word family or sort.</b> The child builds words from the root, or reads each word in the bank and writes it under its part.',
+    '<b>Proofread.</b> The child reads the text aloud slowly, circles each mistake and writes the word right above it.',
+    '<b>Dictation.</b> Say each word twice. The child says it in parts, writes it, then reads it back. Mark each part, not the whole word.'];
   function key(p) {
-    var d = SP.dictation(p), ends = (p.endings || []).slice(0, 4);
+    var d = SP.dictation(p), ends = (p.endings || []).slice(0, p.parts && (p.sort || p.family) ? 2 : 4);
     return '<div class="ws-page dc-page dc-keyp ws-key sp-page">' + head(p, 'For the grown-up') +
       '<section class="dc-kblock"><p class="ws-label">The rule</p><p>' + esc(p.tip) + '</p><p><b>Watch for:</b> ' + esc(p.mistake) + '</p></section>' +
-      '<section class="dc-kblock"><p class="ws-label">Teach the page (about 15 minutes)</p><ol class="dc-steps">' + ROUTINE.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></section>' +
-      '<section class="dc-kblock"><p class="ws-label">Answers</p><p class="ws-ans"><b>Sound boxes:</b> ' + SP.boxWords(p).map(function (w) { return w.u.map(lab).join(' | '); }).join(' &nbsp;·&nbsp; ') + '</p>' +
-      (p.sort ? '<p class="ws-ans"><b>Sort:</b> ' + p.sort.bins.map(function (b, i) {
+      '<section class="dc-kblock"><p class="ws-label">Teach the page (about 15 minutes)</p><ol class="dc-steps">' + (p.parts ? ROUTINE_PARTS : ROUTINE).map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></section>' +
+      '<section class="dc-kblock"><p class="ws-label">Answers</p><p class="ws-ans"><b>' + boxes(p)[0] + ':</b> ' + SP.boxWords(p).map(function (w) { return w.u.map(lab).join(' | '); }).join(' &nbsp;·&nbsp; ') + '</p>' +
+      (p.sort && !p.family ? '<p class="ws-ans"><b>Sort:</b> ' + p.sort.bins.map(function (b, i) {
         return (b[1] === b[0] ? lab(b[0]) : esc(b[1])) + ': ' + p.sort.list.filter(function (it) { return it.bin === i; }).map(function (it) { return esc(it.w); }).join(', ');
       }).join(' &nbsp;·&nbsp; ') + '</p>' : '') +
-      (ends.length ? '<p class="ws-ans"><b>Endings:</b> ' + ends.map(function (e) { return esc(SP.ending(e[0], e[1]).word); }).join(', ') + '</p>' : '') + '</section>' +
-      '<section class="dc-kblock"><p class="ws-label">Dictation script</p><p><b>Sounds:</b> ' + d.sounds.map(function (s) { return '/' + lab(s) + '/'; }).join(' ') +
-      ' &nbsp; <b>Words:</b> ' + d.words.map(function (w, i) { return (i + 1) + ' ' + esc(w.w); }).join(', ') + ' &nbsp; <b>Sentence:</b> ' + esc(d.sentence) + '</p>' +
-      '<p>Secure means 90% or more of the sounds right on two different days. Then go on to the next step.</p></section>' +
+      (p.family ? '<p class="ws-ans"><b>Word family:</b> ' + SP.familyWords(p.family).map(esc).join(', ') + '</p>' : '') +
+      (p.proof ? '<p class="ws-ans"><b>Proofread:</b> ' + SP.proofItems(p).filter(function (x) { return x.fix; }).map(function (x) { return esc(x.t) + ' → ' + esc(x.fix); }).join(', ') + '</p>' : '') +
+      (ends.length ? '<p class="ws-ans"><b>Endings:</b> ' + ends.map(function (e) { return esc(SP.ending(e[0], e[1], e[2]).word); }).join(', ') + '</p>' : '') + '</section>' +
+      '<section class="dc-kblock"><p class="ws-label">Dictation script</p><p>' + (d.sounds.length ? '<b>Sounds:</b> ' + d.sounds.map(function (s) { return '/' + lab(s) + '/'; }).join(' ') + ' &nbsp; ' : '') +
+      '<b>Words:</b> ' + d.words.map(function (w, i) { return (i + 1) + ' ' + esc(w.w); }).join(', ') + ' &nbsp; <b>Sentence:</b> ' + esc(d.sentence) + '</p>' +
+      '<p>Secure means 90% or more of the ' + boxes(p)[1] + 's right on two different days. Then go on to the next step.</p></section>' +
       foot(p, 'Ontario ' + SP.codeLine(p)) + '</div>';
   }
   var ZOOM = [1, 0.96, 0.92, 0.88, 0.84, 0.8];
@@ -409,7 +511,7 @@
     pg.style.setProperty('--face', PLAIN.font);
     for (i = 0; i < ZOOM.length; i++) {
       pg.style.setProperty('--z', ZOOM[i]);
-      over = $$('.sp-psec, .dc-kblock', pg).some(function (b) { return b.scrollWidth > b.clientWidth + 1; }) || pg.scrollHeight > pg.clientHeight + 1;
+      over = $$('.sp-psec, .dc-kblock', pg).some(function (b) { return b.scrollWidth > b.clientWidth + 1 || b.scrollHeight > b.clientHeight + 1; }) || pg.scrollHeight > pg.clientHeight + 1;
       if (!over) break;
     }
     return { over: over };
