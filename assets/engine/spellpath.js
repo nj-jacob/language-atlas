@@ -451,7 +451,7 @@
   function foot(p, left) { return '<footer class="dc-foot"><p class="ws-line dc-line"><span>' + left + '</span><span>' + SP.code(p) + '</span></p></footer>'; }
   SP.boxWords = function (p) { return [0, 2, 5, 7].map(function (i) { return p.words[i]; }); };
   function page(p) {
-    var d = SP.dictation(p), ends = (p.endings || []).slice(0, p.parts && (p.sort || p.family) ? 2 : 4), n = 0;
+    var d = SP.dictation(p), ends = (p.endings || []).slice(0, !p.parts ? 4 : p.proof && (p.sort || p.family) ? 0 : 2), n = 0;
     function label(t) { n++; return '<p class="ws-label">' + n + ' · ' + t + '</p>'; }
     var proofText = p.proof ? SP.proofItems(p).map(function (x) { return esc(x.t); }).join('') : '';
     return '<div class="ws-page dc-page sp-page">' + head(p) +
@@ -465,7 +465,7 @@
         '<p class="sp-pbank">Fronts: ' + p.family.pre.split(' ').map(function (x) { return esc(x) + '-'; }).join(' · ') + ' &nbsp; Ends: ' + p.family.suf.split(' ').map(function (x) { return '-' + esc(x); }).join(' · ') + '</p>' +
         '<div class="sp-pends sp-pfam">' + [0, 1, 2, 3].map(function () { return '<p><span class="ws-blank ws-word"></span></p>'; }).join('') + '</div></section>' : '') +
       (p.sort && !p.family ? '<section class="sp-psec">' + label('Sort: ' + esc(p.sort.q)) + '<p class="sp-pbank">' + p.sort.list.map(function (it) { return esc(it.w); }).join(' · ') + '</p>' +
-        '<div class="sp-pcols" style="--n:' + p.sort.bins.length + '">' + p.sort.bins.map(function (b) {
+        '<div class="sp-pcols" style="--n:' + p.sort.bins.length + ';--r:' + (Math.max.apply(null, p.sort.bins.map(function (b, i) { return p.sort.list.filter(function (it) { return it.bin === i; }).length; }))) + '">' + p.sort.bins.map(function (b) {
           return '<div><p class="sp-pbin">' + (b[1] === b[0] ? lab(b[0]) : esc(b[1])) + (b[2] ? ' <span>' + b[2] + '</span>' : '') + '</p><div class="sp-plines"></div></div>';
         }).join('') + '</div></section>' : '') +
       (ends.length ? '<section class="sp-psec">' + label('Add the ending') + '<div class="sp-pends">' + ends.map(function (e) {
@@ -487,7 +487,7 @@
     '<b>Proofread.</b> The child reads the text aloud slowly, circles each mistake and writes the word right above it.',
     '<b>Dictation.</b> Say each word twice. The child says it in parts, writes it, then reads it back. Mark each part, not the whole word.'];
   function key(p) {
-    var d = SP.dictation(p), ends = (p.endings || []).slice(0, p.parts && (p.sort || p.family) ? 2 : 4);
+    var d = SP.dictation(p), ends = (p.endings || []).slice(0, !p.parts ? 4 : p.proof && (p.sort || p.family) ? 0 : 2);
     return '<div class="ws-page dc-page dc-keyp ws-key sp-page">' + head(p, 'For the grown-up') +
       '<section class="dc-kblock"><p class="ws-label">The rule</p><p>' + esc(p.tip) + '</p><p><b>Watch for:</b> ' + esc(p.mistake) + '</p></section>' +
       '<section class="dc-kblock"><p class="ws-label">Teach the page (about 15 minutes)</p><ol class="dc-steps">' + (p.parts ? ROUTINE_PARTS : ROUTINE).map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></section>' +
@@ -503,7 +503,7 @@
       '<p>Secure means 90% or more of the ' + boxes(p)[1] + 's right on two different days. Then go on to the next step.</p></section>' +
       foot(p, 'Ontario ' + SP.codeLine(p)) + '</div>';
   }
-  var ZOOM = [1, 0.96, 0.92, 0.88, 0.84, 0.8];
+  var ZOOM = [1, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76];
   SP.render = function (el, p, side) {
     el.innerHTML = (side === 'key' ? key : page)(p);
     var pg = el.firstChild, over, i;

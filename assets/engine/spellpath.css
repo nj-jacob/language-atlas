@@ -139,7 +139,7 @@ html.adult .sp-marks.adult-only::after,html.adult .sp-script.adult-only::after,h
 .sp-pcols{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:22px}
 .sp-pbin{font-family:var(--face);font-size:20px;font-weight:700;color:var(--acc);border-bottom:1.5px solid var(--acc);padding-bottom:2px}
 .sp-pbin span{font-family:var(--body);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
-.sp-plines{height:calc(150px * var(--z,1));background:repeating-linear-gradient(transparent 0 29px,var(--line2) 29px 30px)}
+.sp-plines{height:calc(30px * var(--r,5) * var(--z,1));background:repeating-linear-gradient(transparent 0 29px,var(--line2) 29px 30px)}
 .sp-pends{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(12px * var(--z,1)) 30px;font-size:calc(18px * var(--z,1))}
 .sp-pdict{flex:1;min-height:0;border-bottom:0}
 .sp-pdl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
