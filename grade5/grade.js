@@ -4,7 +4,7 @@ Atlas.setup({
   grade: 5,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D.',
   chapters: [
-    { id: 'word-parts', title: 'Word Parts and Spelling', sub: 'prefixes, suffixes and roots', strand: 'B', codes: 'B2.1, B2.2',
+    { id: 'word-parts', title: 'Word Parts and Spelling', sub: 'prefixes, suffixes and roots', strand: 'B', codes: 'B2.1, B2.2', spell: true,
       desc: 'Use mis-, pre-, dis- and non-, the suffixes -able, -ible, -tion and -ous, and Greek and Latin roots to read, spell and understand long words.' },
     { id: 'vocabulary', title: 'Word Meanings', sub: 'clues in the text, shades of meaning, subject words', strand: 'B', codes: 'B2.2',
       desc: 'Work out new words from clues in the sentence, choose the word with the right shade of meaning, and learn the words of other subjects.' },

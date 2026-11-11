@@ -1,4 +1,4 @@
-/* Language Atlas tool box: Heart words (#tools/hearts), the tricky words learned by heart, in sets of 10, Kindergarten to Grade 3.
+/* Language Atlas tool box: Heart words (#tools/hearts), the tricky words learned by heart, in sets of 10, Kindergarten to Grade 8.
    Needs atlas.js and tools.js; the printed page also needs sheets.js (look, fonts and printing; sheets.css). It adds itself to the
    tool box, on the Spelling shelf. The sets are in assets/engine/heartbank.js, loaded when the tool first opens.
    A heart word is mostly regular: only its heart part (marked [ ] in the bank) is learned by heart, and a small heart sits over it.
@@ -15,9 +15,9 @@
   if (!A || !A.toolkit) return;
   var $ = A.$, $$ = A.$$, T = A.toolkit;
   var H = (A.hearts = { sets: [] });
-  var BANDS = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2'], ['3', 'Grade 3']];
-  /* Ontario codes: reading and spelling high-frequency words (Kindergarten A2.5; Grade 1 B2.4; Grades 2 and 3 B2.1) */
-  var CODES = { K: 'Kindergarten A2.5, Grade 1 B2.4', 1: 'Grade 1 B2.4, Grades 2 and 3 B2.1', 2: 'Grades 2 and 3 B2.1', 3: 'Grade 3 B2.1' };
+  var BANDS = [['K', 'Kindergarten'], ['1', 'Grade 1'], ['2', 'Grade 2'], ['3', 'Grade 3'], ['4', 'Grade 4'], ['5', 'Grade 5'], ['6', 'Grade 6'], ['7', 'Grade 7'], ['8', 'Grade 8']];
+  /* Ontario codes: reading and spelling high-frequency words (Kindergarten A2.5; Grade 1 B2.4; Grades 2 to 8 B2.1) */
+  var CODES = { K: 'Kindergarten A2.5, Grade 1 B2.4', 1: 'Grade 1 B2.4, Grades 2 and 3 B2.1', 2: 'Grades 2 and 3 B2.1', 3: 'Grade 3 B2.1', 4: 'Grade 4 B2.1', 5: 'Grade 5 B2.1', 6: 'Grade 6 B2.1', 7: 'Grade 7 B2.1', 8: 'Grade 8 B2.1' };
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
 
   /* ---------- the sets ---------- */

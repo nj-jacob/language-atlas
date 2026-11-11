@@ -4,9 +4,9 @@ Atlas.setup({
   grade: 3,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D.',
   chapters: [
-    { id: 'sounds', title: 'Syllables and Spelling', sub: 'beats in long words, vowel teams and tricky words', strand: 'B', codes: 'B2.1, B2.2',
+    { id: 'sounds', title: 'Syllables and Spelling', sub: 'beats in long words, vowel teams and tricky words', strand: 'B', codes: 'B2.1, B2.2', spell: true,
       desc: 'Split long words into beats to read them. Spell ai, ay, oa and ow in the right place.' },
-    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.3, B2.4',
+    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.3, B2.4', spell: true,
       desc: 'Build words from parts. Use un-, re-, -ful and -less to work out what a word means.' },
     { id: 'meanings', title: 'Word Meanings', sub: 'same, opposite and clues in the sentence', strand: 'B', codes: 'B2.4',
       desc: 'Find words that mean the same or the opposite, and use the sentence to work out a new word.' },

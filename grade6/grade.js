@@ -4,7 +4,7 @@ Atlas.setup({
   grade: 6,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D (Grade 6 column).',
   chapters: [
-    { id: 'word-study', title: 'Roots and Spelling', sub: 'Latin and Greek roots, prefixes, and spelling rules for suffixes', strand: 'B', codes: 'B2.1',
+    { id: 'word-study', title: 'Roots and Spelling', sub: 'Latin and Greek roots, prefixes, and spelling rules for suffixes', strand: 'B', codes: 'B2.1', spell: true,
       desc: 'Use roots like port and graph to read long words. Spell words when you add -ing, -ed, -ness and -able.' },
     { id: 'vocabulary', title: 'Word Meanings', sub: 'clues in the sentence, shades of meaning, and subject words', strand: 'B', codes: 'B2.2',
       desc: 'Work out new words from clues and word parts. Choose the word with the right shade of meaning.' },
