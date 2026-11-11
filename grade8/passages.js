@@ -4427,4 +4427,475 @@
         a: 'Yes, I thought more people meant more accurate. Now I know a fair, random sample matters more than a huge one.', look: 'reflects on a change in thinking' }
     ]
   });
+
+  /* ---------- reading-test style, guided by the CAT: stories, novel excerpts, poems, humour and other forms, with line numbers ---------- */
+
+  P.add({
+    id: 'g8-four-am-bakery', subject: 'story', form: 'Novel excerpt', lines: true,
+    title: 'Four in the Morning on Bay Street',
+    deck: 'Tomás agrees to help his aunt at her bakery. He has no idea what he has agreed to.',
+    hero: {
+      photo: 'g8-bread-dough.jpg', credit: 'Photo: Ruth Hartnup, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 150,
+      cap: 'Bread dough rising in a bowl, hours before the bakery opens.'
+    },
+    body: [
+      '<i>This is the opening chapter of a longer story, written for this site. It is set in Thunder Bay, Ontario, on the shore of Lake Superior.</i>',
+      'The alarm went off at 3:40, which was not a time, Tomás had decided, so much as an insult. He lay motionless for a moment, listening to the furnace ticking somewhere in the darkness, and tried to recall why he had ever agreed to this arrangement. Then he remembered: his aunt Lucía had asked, and in forty years nobody in the family had discovered a way to refuse her.',
+      'By four o’clock he was standing in the back of her bakery on Bay Street, wearing an apron that reached his shins. The kitchen smelled of yeast and warm metal, and three steel bowls the size of bathtubs waited on the counter, and Lucía was already up to her elbows in the first one, folding the dough over itself with a rhythm that looked effortless and, Tomás would discover, was nothing of the kind.',
+      '“Wash your hands to the elbow,” she said without looking up. “Then weigh the flour for the rye. Twelve kilos. Not eleven and a half because your arms are tired. Twelve.”',
+      'He weighed it twice, because the scale was older than he was and its needle trembled for an uncomfortably long time before it settled. When he carried the bucket over, Lucía glanced at the needle and nodded once, which, from her, was practically a parade.',
+      'For an hour they worked without talking while she demonstrated how to shape a loaf, tucking the edges underneath until the surface pulled tight, like the skin of a drum. His first attempts sagged into lopsided puddles. Instead of throwing them out, she arranged them on a separate tray and said, “Those are ours. In this kitchen, we eat our mistakes.”',
+      'At half past five, the front window was still black, but a pickup truck rumbled to a stop outside. A man in an orange safety vest tapped twice on the glass. Lucía handed Tomás a paper bag of warm rolls and a <b>ledger</b>, a narrow book ruled into columns of names and numbers. “Write down Arvo, two dozen. He pays on Fridays.”',
+      'Tomás wrote it down, and as he did, he noticed that Arvo’s column went back three years and that, here and there, a whole month had been crossed out with a single neat line and the word <i>forgiven</i>. He opened his mouth to ask about it, then closed it again, because Lucía was already back at the ovens, and because some questions, he suspected, were better answered by watching.',
+      'By seven, the sky over the lake had turned the colour of weak tea, and customers were lining up on the sidewalk, stamping the cold out of their boots. Tomás’s shoulders ached, and flour had somehow found its way into his ears. When Lucía finally slid the rye from the oven, the loaves came out dark and <b>crackling</b>, their crusts singing faintly as they cooled.',
+      'She tore one of his lopsided loaves in half and handed him the steaming end. It was the best thing he had ever tasted, though he would have walked into the lake before admitting it.',
+      '“Same time tomorrow?” she asked, turning the sign on the door to OPEN.',
+      'Tomás was surprised to hear himself say yes.'
+    ],
+    guide: { before: 'Show Thunder Bay on a map of Ontario. Practise finding line 15 and line 30 with the numbers in the margin. Teach <b>ledger</b> and <b>crackling</b>. Tell the child that many answers in a story are not written down: they must be worked out from clues, as Tomás does.',
+      after: 'Lucía never explains the word “forgiven” in the ledger. What does it tell you about her that she would never say about herself?' },
+    words: [['ledger', 'a book in which a business records money owed and paid'], ['crackling', 'making small, sharp snapping sounds']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'From whose point of view is the story told?',
+        opts: ['Lucía’s, in the first person', 'Tomás’s, in the third person', 'Arvo’s, in the first person', 'every character’s, all-knowing'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:trembled}, “trembled” means',
+        opts: ['shook slightly', 'broke suddenly', 'turned quickly', 'rang loudly'], a: 0 },
+      { k: 'choice', code: 'C3.2', half: true, q: 'Lucía’s nod was “practically a parade” ({line:parade}). This tells the reader that Lucía',
+        opts: ['loves parades', 'rarely praises, so a nod means a lot', 'is too busy to look up', 'thinks the flour is wrong'], a: 1 },
+      { k: 'choice', code: 'C1.5', half: true, q: 'The first sentence calls 3:40 “not a time … so much as an insult.” This word choice gives the story a voice that is',
+        opts: ['angry and bitter', 'grumpy but funny', 'calm and scientific', 'sad and lonely'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“In this kitchen, we eat our mistakes” ({line:mistakes}). Beyond its plain meaning, the line suggests that',
+        opts: ['mistakes are part of learning and nothing to hide', 'Lucía cannot afford to buy food', 'Tomás must pay for the dough he wasted', 'mistakes taste better than good bread'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'The word <i>forgiven</i> in Arvo’s column most likely shows that Lucía',
+        opts: ['forgot to write down what Arvo paid', 'sometimes lets customers who are struggling off what they owe', 'is angry with Arvo', 'gives free bread to everyone on Fridays'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How do Tomás’s feelings about the job change from the beginning of the excerpt to the end? Use one detail from each part.',
+        a: 'At the start he thinks 3:40 is an insult and wonders why he agreed. At the end the bread is the best thing he has ever tasted, and he surprises himself by saying yes to tomorrow.', look: 'a detail from the opening and one from the ending, and the change between them (from reluctant to willing or proud)' },
+      { k: 'lines', code: 'C2.3', n: 3, q: 'This is the first chapter of a longer story. Predict one thing Tomás will learn about Lucía later. Which clue makes you think so?',
+        a: 'Example: He will learn that Lucía quietly helps people in the neighbourhood who cannot pay. The clue is the word “forgiven” in Arvo’s column.', look: 'a reasonable prediction tied to a specific clue in the text' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-bus-stop-poem', subject: 'story', form: 'Poem', lines: true,
+    title: 'Bus Stop, Minus Twenty-Eight',
+    deck: 'Four strangers, one glass shelter and a sign that will not tell the truth',
+    hero: {
+      photo: 'g7-edmonton-cold.jpg', credit: 'Photo: hobvias sudoneighm, CC BY 2.0, Wikimedia Commons', focus: '0% 55%',
+      tall: 96,
+      cap: 'An outdoor thermometer on a winter morning in Edmonton, Alberta.'
+    },
+    body: [
+      { poem: ['At 7:12 the shelter is a glass box of breath,', 'four of us standing as far apart', 'as strangers can in a space this small,', 'each pretending the others are furniture.', '',
+        'The man in the orange toque stamps one boot, then the other,', 'a slow drum that nobody asked for.', 'The girl with the violin case', 'hugs it like a cat that might escape.',
+        'An old woman in a fur-trimmed parka', 'reads a paperback through fogged glasses,', 'turning the pages with her mitten on.', '',
+        'I count the seconds on the sign:', 'DUE 2 MIN. DUE 2 MIN. DUE 2 MIN.', 'The sign is a liar, and we all know it,', 'and somehow that is the first thing we share.', '',
+        'The man laughs first, a short <b>bark</b> of a laugh.', 'The girl looks up. The woman lowers her book', 'and says, to no one, <i>Every winter, the same promise.</i>',
+        'And then we are talking, the four of us,', 'about buses and liars and the cold,', 'our words rising in white clouds', 'that hang for a moment, <b>visible</b>,', 'before the wind takes them.', '',
+        'When the bus finally groans around the corner,', 'we climb on, find separate seats,', 'go back to being strangers.', 'But the girl with the violin', 'nods to me as she passes,',
+        'and I nod back, the way you do', 'with someone who has been', 'somewhere with you.'] }
+    ],
+    guide: { before: 'Read the poem aloud once while the child follows, then have the child read it. Point out that the line numbers count only the lines of the poem. Teach <b>bark</b> (a second meaning) and <b>visible</b>. Ask: what does “minus twenty-eight” feel like?',
+      after: 'Think of a time when a shared problem, such as a late bus or a power cut, got strangers talking. Why does a shared problem do that?' },
+    words: [['bark', 'a short, sharp sound, like a dog’s'], ['visible', 'able to be seen']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'Who is the speaker of the poem?',
+        opts: ['the bus driver', 'one of the four people waiting', 'the old woman', 'someone watching from a window'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:bark}, “bark” means',
+        opts: ['the skin of a tree', 'a short, sharp sound', 'a kind of boat', 'an angry order'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“Each pretending the others are furniture” ({line:furniture}). This comparison shows that, at first, the four people',
+        opts: ['are too cold to move', 'are ignoring one another on purpose', 'are sitting on benches', 'are old friends'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the poet repeat “DUE 2 MIN.” three times in one line ({line:DUE})?',
+        opts: ['to show that the sign never changes while time drags on', 'to show that three buses are coming', 'to teach the reader to read a bus sign', 'to make the poem rhyme'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: '“That is the first thing we share” ({line:share}). What do the strangers share first?',
+        opts: ['a seat on the bus', 'their names', 'the joke that the sign cannot be trusted', 'a hot drink'], a: 2 },
+      { k: 'choice', code: 'C3.3', q: 'This poem is mainly about',
+        opts: ['how to stay warm in winter', 'why buses are always late', 'how a small shared moment can connect strangers', 'a girl learning the violin'], a: 2 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Read the last six lines. On the bus they “go back to being strangers.” Has anything really changed? Explain using the nod.',
+        a: 'Yes. They sit apart, but the nod shows the speaker and the girl now share a memory. They “have been somewhere” together, even if only a cold bus stop.', look: 'an interpretation of the nod as a sign of connection, using the final lines' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Connect the poem to your own life. Describe a time when you and people you did not know were brought together by something you shared.',
+        a: 'Answers will differ. For example: During a power cut, my neighbours and I talked in the hallway for the first time, and now we say hello.', look: 'a real or imagined connection that matches the poem’s idea of a shared moment' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-volcano-appeal', subject: 'story', form: 'Humour: a letter', lines: true, plain: true,
+    title: 'In Defence of My Volcano',
+    deck: 'Declan believes the science fair judges made a terrible mistake. He has put it in writing.',
+    hero: {
+      photo: 'g4-science-fair.jpg', credit: 'Photo: U.S. Navy, public domain, Wikimedia Commons', focus: '50% 25%',
+      tall: 150,
+      cap: 'A student explains a project at a school science fair.'
+    },
+    body: [
+      '<i>To the Judges of the Lakeview Regional Science Fair:</i>',
+      'I am writing to <b>appeal</b> your decision to award my project, “The Volcano: Nature’s Fury,” a Participation Ribbon. I believe there has been a misunderstanding, and I would like to correct the record before it becomes permanent.',
+      'First, your scoring sheet states that my project “did not test a question.” This is simply untrue. My question was: Will the volcano erupt? I tested it eleven times in my garage, and the answer was yes every time, which is what scientists call consistent results. I fail to see what else you wanted.',
+      'Second, Judge Two wrote that baking soda volcanoes have been done “approximately one million times.” I would point out that this is an estimate and not a measurement, which seems careless for a science judge. Furthermore, if something has been done a million times, that only proves how important it is. Nobody complains that the sun has risen a million times.',
+      'Third, regarding the incident. I accept that the eruption at 2:15 p.m. was larger than the one described in my plan. However, I would argue that it was a <b>breakthrough</b>, not an accident. Real volcanoes do not stay inside their plans either. In addition, Priya Sharma’s project on mould was, in my opinion, a health hazard before any vinegar landed on it, and her dishes were labelled “Do not open,” which, technically, I did not.',
+      'Fourth, Judge One asked, “Where is your data?” Here is my data: the volcano was 40 centimetres tall, it used 500 millilitres of vinegar, and the foam travelled 3.2 metres, all the way to the gym doors. I did not write these numbers on my display board, because I did not measure them until after the eruption, using the custodian’s tape measure. But I have them now, and that is what counts.',
+      'Finally, I noticed that first place went to Owen Kaur for “Does Salt Water Freeze Faster?” I watched his presentation. He asked a question, made a prediction, changed only one thing at a time, tested it five times, recorded everything in a table and admitted when one result surprised him. Honestly, it was a little boring. Nothing exploded. Nobody had to call the custodian.',
+      'In conclusion, I respectfully request that you upgrade my ribbon to First Place, or at least to Honourable Mention, which I understand comes with a certificate. If you cannot do this, I will accept an apology, or a refund for my vinegar.',
+      'Yours scientifically,<br>Declan Ferreira, Grade 8',
+      'P.S. My mother has asked me to add that I have offered to help Priya grow new mould for next year. I also asked Owen whether he would show me how he made his table. It still seems unfair to me. But I suppose I would like to know.'
+    ],
+    guide: { before: 'Tell the child this letter is meant to be funny, and that the joke is in the gap between what Declan believes and what the reader can see. Teach <b>appeal</b> and <b>breakthrough</b>. Review the steps of a fair test: question, prediction, change one thing, repeat, record.',
+      after: 'Declan never says he was wrong. Which sentence comes closest? Why might it be hard for him to say it directly?' },
+    words: [['appeal', 'to ask for a decision to be changed'], ['breakthrough', 'an important discovery or step forward']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'What kind of text is this?',
+        opts: ['a news report', 'a funny letter', 'a science report', 'a diary entry'], a: 1 },
+      { k: 'choice', code: 'B2.1', half: true, q: 'In “misunderstanding,” the prefix <i>mis-</i> means',
+        opts: ['again', 'not yet', 'wrongly', 'before'], a: 2 },
+      { k: 'choice', code: 'C3.1', q: 'Most of the humour in the letter comes from the fact that',
+        opts: ['Declan uses long words', 'Declan’s arguments actually prove that the judges were right', 'the judges made spelling mistakes', 'the volcano was very small'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Declan calls Owen’s presentation “a little boring” ({line:boring}). What does the reader understand that Declan does not?',
+        opts: ['Owen’s project was copied.', 'Owen described exactly how a fair test should be done.', 'Owen’s project also exploded.', 'Owen was a judge.'], a: 1 },
+      { k: 'choice', code: 'C1.6', q: 'Declan is an <b>unreliable narrator</b>. This means',
+        opts: ['he does not finish his letter', 'the reader cannot fully trust how he sees events', 'he tells the story in the third person', 'he is not a real student'], a: 1 },
+      { k: 'choice', code: 'C3.3', q: 'Which statement from the letter is a fact, not an opinion?',
+        opts: ['“It was a breakthrough, not an accident.”', '“The foam travelled 3.2 metres.”', '“Honestly, it was a little boring.”', '“That only proves how important it is.”'], a: 1 },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Read the P.S. ({line:P.S}). What does it suggest about how Declan may be starting to change? Use two details.',
+        a: 'He offers to help Priya, which shows he knows he ruined her project. He asks Owen how he made his table, which shows he wants to learn how real data is recorded, even though he will not admit it.', look: 'two details from the P.S. and an inference about a change in Declan' },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Using Owen’s project as a model, give Declan two pieces of advice for next year’s science fair.',
+        a: 'Ask a question that can be measured, such as how the amount of vinegar changes the height of the foam. Measure and record the results in a table during each test, not after.', look: 'two pieces of advice drawn from Owen’s steps (question, one change, repeat, record)' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-what-the-ice-says', subject: 'story', form: 'Novel excerpt', lines: true,
+    title: 'What the Ice Says',
+    deck: 'Elisapee trusts the ice map on her phone. Her grandfather trusts something else.',
+    hero: {
+      photo: 'g6-sea-ice-edge.jpg', credit: 'Photo: Doc Searls, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 150,
+      cap: 'Sea ice along the coast of Nunavut in spring, seen from the air.'
+    },
+    body: [
+      'The snowmobile’s engine coughed twice and died, and in the silence that followed, Elisapee could hear the ice.',
+      'It was not a loud sound. It was a low, settling groan that seemed to come from everywhere at once, the way thunder does, and it made the back of her neck prickle. Ahead of her, her grandfather swung his leg off the seat, walked to the front of the <b>qamutik</b> and stood very still, his head tilted as though someone far away had called his name.',
+      '“It’s fine,” Elisapee said, holding up her phone. “The ice map says it’s thirty centimetres thick here. I checked this morning.”',
+      'Her grandfather nodded politely, the way he nodded at the weather forecast on the radio, and kept listening.',
+      'They had left Iqaluit after breakfast, heading across Frobisher Bay toward the <b>floe edge</b>, where the sea ice met open water and the seals came up to breathe. It was late May. The sun hardly set anymore, and in the afternoons the snow on the bay softened into slush. Elisapee’s cousins had gone out the week before and returned with stories, and she had been impatient to go ever since.',
+      'Her grandfather lifted the long ice chisel from the sled and struck the surface in front of them. The blade bit cleanly and rang. He took three steps and struck again. This time the sound was duller, and a thin line of dark water seeped up around the blade.',
+      '“Look at the colour,” he said.',
+      'Elisapee looked. She had been watching the screen so closely that she had not noticed how the ice ahead changed from white to a darker, wet grey, like a sidewalk after rain. The line between the two colours was as sharp as a painted stripe.',
+      '“The map is from yesterday,” her grandfather said mildly. “The ice is from today.”',
+      'She felt her face go hot. She wanted to explain that the map was made from satellite pictures and the measurements of real hunters, that scientists and Elders had built it together, that it was not just some app. All of that was true. None of it changed the colour of the ice in front of her.',
+      'Her grandfather said nothing else. He turned the sled around slowly, keeping to the white ice, and restarted the engine on the third pull. They followed their own tracks back toward land.',
+      'Halfway home, he stopped again and pointed with his chin at a seal lying beside its breathing hole, far off on solid ice, black against the glare. He handed her the binoculars. Neither of them moved for a long time.',
+      'That night, Elisapee opened the ice map and added a note for the place where they had turned back: <i>grey, wet, soft, May 28.</i> Then, after a moment, she added one more word that she had never typed into a map before: <i>listen.</i>'
+    ],
+    guide: { before: 'Show Iqaluit and Frobisher Bay on a map of Nunavut. Explain that Inuit hunters read sea ice by its colour, sound and feel, knowledge passed down for generations, and that some communities now also use ice maps that Inuit and scientists build together. Teach <b>qamutik</b> (an Inuktitut word) and <b>floe edge</b>.',
+      after: 'The story does not say that the phone was wrong or that the grandfather was right. What does it say about using both kinds of knowledge?' },
+    words: [['qamutik', 'an Inuit sled, pulled by dogs or a snowmobile'], ['floe edge', 'where the frozen sea ice ends and open water begins']],
+    qs: [
+      { k: 'choice', code: 'C1.6', half: true, q: 'The story is told by',
+        opts: ['Elisapee, as “I”', 'her grandfather, as “I”', 'a narrator who follows Elisapee', 'one of the cousins'], a: 2 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:seeped}, “seeped” means',
+        opts: ['sprayed high', 'froze quickly', 'leaked out slowly', 'dried up'], a: 2 },
+      { k: 'choice', code: 'C3.2', q: 'Her grandfather nods “the way he nodded at the weather forecast on the radio” ({line:politely}). This suggests that he',
+        opts: ['does not hear what Elisapee says', 'respects the map but trusts his own senses more', 'thinks the phone is broken', 'is angry with Elisapee'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: '“The map is from yesterday. The ice is from today” ({line:yesterday}). The grandfather means that',
+        opts: ['maps are always wrong', 'the ice changes, so you must also look at what is in front of you', 'Elisapee checked the wrong day', 'they should come back tomorrow'], a: 1 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the author begin with the engine dying and Elisapee hearing the ice?',
+        opts: ['to explain how a snowmobile works', 'to create suspense and introduce the idea of listening', 'to show that the trip is boring', 'to describe the weather'], a: 1 },
+      { k: 'choice', code: 'C3.4', q: 'Which detail shows that the story values both Inuit knowledge and science?',
+        opts: ['The cousins came back with stories.', 'The seal lay beside its breathing hole.', 'Scientists and Elders had built the ice map together.', 'The engine started on the third pull.'], a: 2 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'How has Elisapee changed by the end? Use the note she adds to the map ({line:typed}) in your answer.',
+        a: 'At first she trusts only the map. By the end she adds what she saw, felt and heard to it, and the word “listen” shows she now values her grandfather’s way of reading the ice too.', look: 'a change from relying on the phone to valuing direct observation, linked to the note and the word “listen”' },
+      { k: 'lines', code: 'C3.2', n: 3, q: 'Her grandfather “said nothing else.” Why might he choose silence instead of explaining? Give a reason from the story.',
+        a: 'He lets the ice teach her, because seeing the grey ice for herself means more than a lecture. His quiet manner throughout (listening, pointing with his chin) shows he teaches by showing.', look: 'an inference about his teaching, supported by his quiet actions in the story' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-fire-crew-interview', subject: 'social', form: 'Interview', lines: true, plain: true,
+    title: 'Walking Toward the Fire',
+    deck: 'A wildfire crew leader explains what her job is really like',
+    hero: {
+      photo: 'g5-forest-fire.jpg', credit: 'Photo: DarrenRD, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 140,
+      cap: 'Cars drive past a wildfire beside Highway 63 near Fort McMurray, Alberta, in May 2016.'
+    },
+    body: [
+      '<i>Hamza Siddiqui, a Grade 8 student in Fort McMurray, Alberta, interviewed Rae Cardinal for his school newspaper. Cardinal leads a wildfire crew and has fought fires for eleven seasons.</i>',
+      '<b class="ps-who">Hamza:</b> Let’s start with the obvious question. Why would anyone run toward a fire?',
+      '<b class="ps-who">Cardinal:</b> We’re not running toward it the way people imagine. We’re walking toward it with a plan. When my crew lands, we first size up the fire: how big it is, which way the wind is pushing it and what fuel lies in front of it. Then we choose where to attack. Usually that’s a <b>flank</b>, not the head, which is the front edge, where the fire moves fastest. Standing in front of the head is how people get hurt.',
+      { fig: '<path class="a" d="M150 14 L262 176 H38 Z"/>' + tx(150, 8, 'lb', 'HEAT', 'middle') + tx(150, 194, 'lb', 'FUEL', 'middle') + tx(70, 82, 'lb', 'OXYGEN', 'end') +
+          tx(150, 112, 'n', 'Take away any side', 'middle') + tx(150, 126, 'n', 'and the fire goes out.', 'middle') +
+          tx(214, 62, 'n', 'water cools', 'start') + tx(214, 75, 'n', 'the fire', 'start') + tx(150, 212, 'n', 'a fire guard (a strip dug down to soil) removes fuel', 'middle') + tx(70, 96, 'n', 'soil smothers', 'end') + tx(70, 109, 'n', 'the flames', 'end'),
+        tall: 220, cap: 'The fire triangle: a fire needs heat, fuel and oxygen. Crews attack one side.' },
+      '<b class="ps-who">Hamza:</b> What does a normal day look like?',
+      '<b class="ps-who">Cardinal:</b> There is no normal day, and that’s what I love about it. On quiet days we train, look after our pumps and hoses, and work on fitness. When a new fire is reported, we can be in the helicopter within minutes. Our goal is to catch a fire while it is still small, because a small fire caught early can save weeks of work and sometimes a whole town.',
+      '<b class="ps-who">Hamza:</b> You were here in 2016, when the fire reached the city. What do you remember?',
+      '<b class="ps-who">Cardinal:</b> The colour of the sky. It was orange at two in the afternoon. My crew was protecting a neighbourhood, and I remember thinking, these are people’s school pictures and their kids’ drawings, and we’re the last line. We lost some homes. We saved a lot more. I still drive past some of those streets.',
+      '<b class="ps-who">Hamza:</b> Is the job getting harder?',
+      '<b class="ps-who">Cardinal:</b> Yes. Fire seasons start earlier and end later than when I began. I’m careful about saying exactly why, because I’m a firefighter, not a climate scientist, but the scientists I trust say hotter, drier summers are a big part of it.',
+      '<b class="ps-who">Hamza:</b> What would you tell a student who wants to do this work?',
+      '<b class="ps-who">Cardinal:</b> Get fit, stay curious and learn to pay attention. The best firefighters I know are not the bravest. They’re the ones who notice when the wind shifts.',
+      { box: 'Initial attack', text: 'Crews like Cardinal’s are called <b>initial attack</b> crews: small teams, often four to eight people, sent quickly to a new fire to stop it while it is small. Most wildfires in Canada are put out at this early stage.' }
+    ],
+    guide: { before: 'Show Fort McMurray on a map of Alberta and explain that a huge wildfire forced the whole city to leave in May 2016. Look at the fire triangle together first. Teach <b>flank</b> and <b>initial attack</b>.',
+      after: 'Cardinal says the best firefighters “notice when the wind shifts.” What is a job or activity you know where noticing matters more than courage?' },
+    words: [['flank', 'the side of something, such as a fire or an army'], ['initial attack', 'the first, fast response to a new wildfire']],
+    qs: [
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the interview begin with a paragraph in italics?',
+        opts: ['to give the main idea', 'to tell who is speaking and why', 'to list the questions', 'to quote an expert'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'In {line:Usually}, the “head” of a fire is',
+        opts: ['its leader', 'its hottest flame', 'its fast-moving front edge', 'the place it started'], a: 2 },
+      { k: 'choice', code: 'C1.4', q: 'Look at the fire triangle. Digging a fire guard stops a fire by taking away',
+        opts: ['heat', 'fuel', 'oxygen', 'wind'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: '“I’m a firefighter, not a climate scientist” ({line:scientist}). Cardinal says this to show that she',
+        opts: ['does not care why fires are changing', 'separates what she has seen from what experts have studied', 'disagrees with scientists', 'wants to change jobs'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Cardinal mentions “school pictures” and “kids’ drawings” ({line:pictures}). These details show that she felt',
+        opts: ['bored', 'responsible for people’s whole lives, not just buildings', 'angry at the homeowners', 'confused about what to do'], a: 1 },
+      { k: 'lines', code: 'C2.6', n: 3, q: 'Summarize Cardinal’s advice to students. Why does she think noticing matters more than bravery?',
+        a: 'Get fit, stay curious and pay attention. Fires change with the wind, so a firefighter who notices changes keeps the crew safe; bravery alone can put people in front of the head of a fire.', look: 'the three pieces of advice and a reason linked to safety or the wind' },
+      { k: 'lines', code: 'C3.3', n: 4, q: 'Hamza has room to print only three of his five questions. Which two would you cut? Explain why the other three matter most to readers.',
+        a: 'Answers will differ. For example: Cut “normal day” and “advice.” Keep “why run toward a fire,” “2016” and “harder,” because they explain the danger, connect to the town’s own history and show how the job is changing.', look: 'a clear choice of two to cut and reasons that consider the readers (a Fort McMurray school)' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-empty-case', subject: 'story', form: 'Mystery story', lines: true,
+    title: 'The Empty Case',
+    deck: 'A valuable book disappears from a locked case. Everyone has a suspect. Nadia has questions.',
+    hero: {
+      photo: 'g5-library.jpg', credit: 'Photo: Gogerr, CC BY-SA 4.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 140,
+      cap: 'Inside a public library in Welland, Ontario.'
+    },
+    body: [
+      'Every Saturday, Nadia Haddad shelved books at the public library, which is how she came to be standing beside the glass display case at 10:05 a.m. when Mr. Okoye, the head librarian, noticed that it was empty.',
+      'The case had held the library’s most valuable book: a first edition of a novel published in 1908, its green cover faded to the colour of old moss. It was worth, Mr. Okoye said in a voice that had gone very thin, more than his car.',
+      '“The case was locked,” he said. “I checked it myself last night.”',
+      'Nadia examined the case. The lock was still fastened, with no scratches around the keyhole and no cracks in the glass; nothing was out of place except the missing book and a small, damp circle on the wooden shelf inside, as though someone had set down a cup.',
+      'Only three people had entered the building since it opened at ten. Mrs. Lavoie, a regular, was reading newspapers by the window, her umbrella dripping steadily beside her chair. A university student named Kwame had been hunched over a computer since opening, typing furiously with his headphones on. And Dominic, the new part-time custodian, had been mopping the front entrance, which was why the floor near the door still gleamed.',
+      '“Dominic has keys to the case,” Mr. Okoye said slowly. “For dusting. He started on Tuesday.” He did not say anything more, but he did not need to. Mrs. Lavoie lowered her newspaper and looked toward the entrance with an expression that suggested she had suspected Dominic of something since Tuesday.',
+      'Nadia circled the case thoughtfully. It had rained heavily until nine-thirty, and the sidewalks outside were still dark with water. She studied the damp circle again and decided that it was not the shape of a cup at all: it was irregular, with a faint brown edge, like a <b>stain</b> on a used coffee filter.',
+      'Water, then. But from where? The lid of the case was solid glass, except for a narrow <b>ventilation</b> gap along the back that allowed air to circulate around the pages.',
+      'Nadia looked up.',
+      'Directly above the case, one of the white ceiling tiles had a brown blotch the size of a dinner plate, and at its centre a single drop was swelling, slowly, patiently, until it fell and landed with a soft tick on the glass lid.',
+      '“The roof is leaking,” she said. “Right over the case.”',
+      'Mr. Okoye stared at the ceiling. At that moment, Dominic came around the corner from the staff room, carrying something wrapped carefully in a clean white towel.',
+      '“It was getting wet when I came in at nine,” he said, a little out of breath. “I didn’t want to wait. I’ve got it drying flat, under a fan, away from the heater. That’s what you’re supposed to do with old paper, right? I left you a note on your desk.”',
+      'Mr. Okoye unfolded the towel. The green cover was spotted at one corner, but the book was whole. Then he walked to his desk and lifted his coffee mug. Underneath it was a yellow sticky note.',
+      'Mrs. Lavoie raised her newspaper again, rather quickly.',
+      'Nadia said nothing. But she made a note of her own, in her head, for the next mystery: <i>Before you look at people, look up.</i>'
+    ],
+    guide: { before: 'Tell the child that a mystery plants clues, and that a good reader collects them as a detective does. Teach <b>stain</b> and <b>ventilation</b>. Pause after line 25 and ask: who do you think took the book, and why?',
+      after: 'Why did Mr. Okoye and Mrs. Lavoie suspect Dominic so quickly? What does this story say about judging the newest or least powerful person in a room?' },
+    words: [['stain', 'a mark left by a liquid that has soaked in'], ['ventilation', 'letting fresh air move through a space']],
+    qs: [
+      { k: 'choice', code: 'C3.2', half: true, q: 'Why does Mrs. Lavoie raise her newspaper “rather quickly” ({line:quickly})?',
+        opts: ['She wants to finish reading.', 'She is embarrassed that she suspected Dominic.', 'She is hiding the book.', 'She cannot hear well.'], a: 1 },
+      { k: 'choice', code: 'B3.2', half: true, q: 'In “slowly, patiently,” ({line:patiently}) the two words are',
+        opts: ['nouns', 'verbs', 'adverbs', 'adjectives'], a: 2 },
+      { k: 'lines', code: 'C2.3', n: 2, q: 'Which clue helped Nadia predict that the water did not come from a cup? Explain.',
+        a: 'The damp circle was uneven, with a brown edge like a stain, so it had dripped from somewhere dirty, not been left by a cup.', look: 'the shape or brown edge of the circle, and why it rules out a cup' },
+      { k: 'choice', code: 'C1.5', q: 'The author gives the sentence “Nadia looked up.” ({line:looked}) a paragraph of its own. Why?',
+        opts: ['to slow the reader down at the turning point of the mystery', 'because Nadia is short', 'to start a new chapter', 'to show that time has passed'], a: 0 },
+      { k: 'choice', code: 'C3.5', q: 'Mr. Okoye “did not say anything more, but he did not need to” ({line:Tuesday}). What is he suggesting without saying it?',
+        opts: ['that Dominic is a hard worker', 'that Dominic probably took the book', 'that the case needs a new lock', 'that Nadia should go home'], a: 1 },
+      { k: 'order', code: 'C3.3', q: 'Number the events in the order they actually happened (not the order in which the story tells them).',
+        items: ['Rain leaks through the roof above the case.', 'Dominic finds the book getting wet and moves it to dry.', 'Dominic leaves a note on the desk.', 'Mr. Okoye notices the case is empty.', 'Nadia sees the drip on the ceiling.'], show: [3, 1, 4, 0, 2] },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Nadia’s final thought is “Before you look at people, look up.” Explain what she learned, using what happened to Dominic.',
+        a: 'She learned to check the evidence before blaming someone. The adults suspected Dominic because he was new and had keys, but he had actually saved the book.', look: 'the lesson about evidence versus assumptions, linked to how Dominic was treated' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-hockey-bag-ode', subject: 'story', form: 'Poem (ode)', lines: true,
+    title: 'Ode to My Brother’s Hockey Bag',
+    deck: 'A poem of praise, more or less',
+    hero: {
+      photo: 'g7-hockey.jpg', credit: 'Photo: Robert Taylor, CC BY 2.0, Wikimedia Commons', focus: '50% 50%',
+      tall: 110,
+      cap: 'Minor hockey players in Stirling, Ontario.'
+    },
+    body: [
+      { poem: ['O hockey bag, great beast of our front hall,', 'you sprawl beside the door like a walrus', 'that has given up on life.', 'My mother steps around you. The dog will not.', 'Even the winter boots lean away.', '',
+        'What lives in you, I cannot say.', 'I have watched my brother unzip you', 'and step back, the way a scientist', 'steps back from something that might be alive.',
+        'Your smell has a <b>personality</b>.', 'It arrives in a room before you do', 'and stays long after you have gone to practice.', '',
+        'And yet.', '',
+        'Every Saturday at half past five,', 'when the house is dark and the furnace sighs,', 'my brother hoists you onto his shoulder', 'like a soldier lifting a friend,',
+        'and my father warms up the car,', 'and the two of them drive into the blue cold', 'toward an arena that smells, honestly, a lot like you.', '',
+        'They come home pink-cheeked and loud,', 'replaying every shift at the kitchen table,', 'and you slump back into your corner, exhausted,', 'your zipper grinning a crooked grin,',
+        'holding three years of winter mornings', 'in your <b>mildewed</b> heart.', '',
+        'O bag, I will never love you.', 'But I understand,', 'a little,', 'why he does.'] }
+    ],
+    guide: { before: 'Explain that an <b>ode</b> is a poem that praises its subject, often speaking to it directly (“O ...”). This one plays with that idea. Teach <b>personality</b> and <b>mildewed</b>. Read it aloud together; it is meant to be enjoyed.',
+      after: 'Write the first three lines of an ode to an ordinary object in your home. Speak to it directly, as this poet does.' },
+    words: [['personality', 'the qualities that make someone (or something) who they are'], ['mildewed', 'spotted with a mould that grows in damp places']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'An ode usually praises its subject. This ode is unusual because it',
+        opts: ['does not rhyme', 'mostly makes fun of its subject', 'is very short', 'is about a person'], a: 1 },
+      { k: 'choice', code: 'C3.1', half: true, q: '“Your zipper grinning a crooked grin” ({line:zipper}) is an example of',
+        opts: ['personification', 'rhyme', 'a fact', 'onomatopoeia'], a: 0 },
+      { k: 'choice', code: 'C1.5', q: 'Why does the poet put the words “And yet.” ({line:yet}) on a line by themselves?',
+        opts: ['to mark the turn from complaining about the bag to understanding it', 'to show the poem is ending', 'to start a list', 'because the speaker is out of breath'], a: 0 },
+      { k: 'choice', code: 'C3.1', q: 'The brother lifts the bag “like a soldier lifting a friend” ({line:soldier}). This simile suggests that the bag is',
+        opts: ['very light', 'something he cares about and would never leave behind', 'dangerous', 'too heavy for him'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Which best describes how the speaker’s attitude changes across the poem?',
+        opts: ['from love to hate', 'from disgust to some understanding', 'from fear to anger', 'from boredom to excitement'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'The bag holds “three years of winter mornings” ({line:holding}). What does the bag really stand for?',
+        opts: ['the brother’s dirty laundry', 'the time and memories the brother and father share', 'the cost of hockey', 'the cold Canadian winter'], a: 1 },
+      { k: 'lines', code: 'C1.5', n: 3, q: 'Find two words or phrases that make the poem funny. Explain how each one creates humour.',
+        a: 'Example: “a walrus that has given up on life” compares the bag to a lazy, defeated animal. “Even the winter boots lean away” pretends the boots can smell it.', look: 'two quoted words or phrases, each with how it creates humour (exaggeration, personification, surprise)' },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'The last lines say “I understand, a little, why he does.” What does the speaker understand now? Use details from the poem.',
+        a: 'The speaker understands that the bag is part of something the brother loves: early drives with their father, games and stories at the kitchen table.', look: 'an explanation tied to the Saturday mornings, the father and the replaying of shifts' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-letters-lola', subject: 'story', form: 'Letters (fiction)', lines: true, plain: true,
+    title: 'Dear Lola',
+    deck: 'Bea has moved from Manila to Winnipeg. Her grandmother has a surprise for her.',
+    hero: {
+      photo: 'g6-winnipeg-forks.jpg', credit: 'Photo: Robert Linsdell, CC BY 2.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 130,
+      cap: 'A snow sculpture at The Forks in Winnipeg, Manitoba, where the Red and Assiniboine rivers meet.'
+    },
+    body: [
+      { h: 'Winnipeg, January 14' },
+      'Dear Lola,',
+      'It is minus thirty-four today, which Mama says is “not even the record.” When you breathe in, the inside of your nose freezes and goes crunchy, which I am not making up. I wish you could experience it, but I am also extremely grateful that you cannot.',
+      'School is fine, and almost everyone is friendly, but nobody can pronounce my name. They say “Bee-AT-riss” or “Bee-a-TREES,” and one substitute teacher called me “Beatrice,” which is not my name at all. So now I just tell people to call me Bee, because it is easier for everyone. A girl named Fatima says that Bee suits me because I am small and always busy.',
+      'On Sunday we went to The Forks, where two rivers meet and people skate on a trail cleared right across the frozen river. I fell eleven times, Papa fell four times, and Mama sensibly refused to try. Along the trail were tiny warming huts that architects had designed, and one was shaped like a giant ear. If you stood inside it, you could hear the river ice groaning underneath you, like an old house settling at night.',
+      'I miss your <b>sinigang</b>. The one Mama makes is good, but it is not yours.',
+      'Love, Bea (or Bee)',
+      { h: 'Manila, February 2' },
+      'My dear Beatriz,',
+      'Your letter made me laugh so much that your Lolo came to see what was wrong.',
+      'Now I will tell you something I have never told you. In 1974, when I was twenty-three, I worked for three winters as a nurse at a hospital in Winnipeg, along with many other young Filipino nurses who had been recruited to work in Canadian hospitals. During my first winter, I wore my thin Manila coat to work and cried at the bus stop because I was convinced my ears would fall off. The daughter of an elderly Ukrainian patient noticed, and she knitted me a scarf, red and very ugly. I wore it every single day, and I still have it.',
+      'I also skated on that river. I fell more than eleven times, I promise you.',
+      'About your name. You were named after my mother, Beatriz, who taught school in Pampanga for forty years and was also small and always busy. If people cannot pronounce it, you can teach them patiently, the way she taught. A name is a kind of <b>inheritance</b>. But you may also be Bee, if Bee is who you feel like. Both are yours.',
+      'I am sending the recipe. It will still not be mine. But make it anyway, and think of me.',
+      'With all my love, from someone who has also been very cold,<br>Lola'
+    ],
+    guide: { before: 'Explain that <b>Lola</b> and <b>Lolo</b> are Filipino words for grandmother and grandfather. Show Manila and Winnipeg on a world map. Teach <b>sinigang</b> and <b>inheritance</b>. Mention that many Filipino nurses and workers moved to Winnipeg from the 1960s on, and the city has a large Filipino community today.',
+      after: 'Lola says both names belong to Bea. Do you have a name, nickname or word from your family’s language that means something special? Who gave it to you?' },
+    words: [['sinigang', 'a sour Filipino soup, often made with tamarind'], ['inheritance', 'something passed down from older family members']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'This story is told through',
+        opts: ['a diary', 'two letters', 'a news report', 'a speech'], a: 1 },
+      { k: 'choice', code: 'B3.3', half: true, q: 'Why is “not even the record” ({line:record}) in quotation marks?',
+        opts: ['It is a title.', 'It is what Mama said.', 'It is a new word.', 'It is a question.'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why did Bea start telling people to call her “Bee”?',
+        opts: ['She never liked the name Beatriz.', 'People kept saying her name wrong, and Bee was easier.', 'Her teacher told her to.', 'Fatima gave her a new name as a joke.'], a: 1 },
+      { k: 'choice', code: 'C3.1', q: 'Lola signs her letter “from someone who has also been very cold.” This closing is meaningful because',
+        opts: ['Manila is a cold city', 'it shows Lola understands Bea’s new life from her own experience', 'Lola is sick', 'Lola is angry about the weather'], a: 1 },
+      { k: 'choice', code: 'C3.4', q: 'Which detail shows a cultural tradition that Lola wants Bea to keep?',
+        opts: ['skating at The Forks', 'the red knitted scarf', 'the recipe for sinigang', 'the hut shaped like an ear'], a: 2 },
+      { k: 'choice', code: 'C3.2', q: 'Why do you think Lola never told Bea about her winters in Winnipeg before?',
+        opts: ['She had forgotten them.', 'It did not seem important until Bea was living there too.', 'She was ashamed of being a nurse.', 'Bea’s parents asked her not to.'], a: 1 },
+      { k: 'lines', code: 'C3.6', n: 3, q: 'Lola says Bea can “teach them” her name, or be Bee: “Both are yours.” Why might it matter to Lola that people learn to say Beatriz? Use the letter.',
+        a: 'The name belonged to Lola’s mother, a teacher for forty years, so it carries the family’s history. Saying a name correctly respects the person and where they come from.', look: 'a reason linked to the name as an inheritance, and to respect for a person’s identity' },
+      { k: 'lines', code: 'C2.5', n: 3, q: 'Compare Bea’s first winter with Lola’s first winter in 1974. Give one way they are alike and one way they are different.',
+        a: 'Alike: both were shocked by the cold and both fell skating on the river. Different: Lola came alone to work as a nurse, while Bea came with her parents as a student.', look: 'one similarity and one difference, each with a detail from the letters' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-room-214', subject: 'story', form: 'Play script', lines: true, plain: true,
+    title: 'Room 214, Lunch Hour',
+    deck: 'A group project is due tomorrow. Only one person has done the work. Or has she?',
+    hero: {
+      photo: 'g8-theatre.jpg', credit: 'Photo: Harrison Keely, CC BY 4.0, Wikimedia Commons', focus: '50% 40%',
+      tall: 130,
+      cap: 'Two actors rehearse a scene. In a script, the words in italics tell the actors what to do.'
+    },
+    body: [
+      '<i>CHARACTERS: NOOR, 13, organized and worried. AIDEN, 13, her partner. A classroom at lunch. NOOR sits at a desk covered in markers and a half-finished poster about the water cycle. AIDEN enters, eating an apple.</i>',
+      '<b class="ps-who">AIDEN:</b> Hey. You’re here early.',
+      '<b class="ps-who">NOOR:</b> <i>(without looking up)</i> I’ve been here since the bell. And since Friday, and since last Tuesday. You might remember last Tuesday. It was the day you said you would “definitely” do the diagram.',
+      '<b class="ps-who">AIDEN:</b> <i>(sitting down slowly)</i> Right.',
+      '<b class="ps-who">NOOR:</b> It’s due tomorrow, Aiden. Ms. Benoit said we’ll both get the same mark. So if this is terrible, it’s terrible for both of us, except I’ll be the only one who cares.',
+      '<b class="ps-who">AIDEN:</b> That’s not fair.',
+      '<b class="ps-who">NOOR:</b> No? I did the research. I did the title. I bought the poster board with my own money, because you said you would bring one and then you “forgot.”',
+      '<b class="ps-who">AIDEN:</b> I said I’d pay you back.',
+      '<b class="ps-who">NOOR:</b> <i>(finally looking at him)</i> Which part?',
+      '<i>(A pause. AIDEN puts the apple down. He reaches into his backpack, <b>hesitates</b>, then pulls out a rolled-up sheet of paper and holds it without opening it.)</i>',
+      '<b class="ps-who">AIDEN:</b> I did the diagram.',
+      '<b class="ps-who">NOOR:</b> <i>(flatly)</i> You did the diagram.',
+      '<b class="ps-who">AIDEN:</b> I did it, like, four times. They kept looking wrong. The arrows were all messy. Yours always look like they came out of a printer. I didn’t want to be the reason we got a bad mark.',
+      '<i>(He unrolls it. NOOR stares at it. It is careful and detailed, with clouds, mountains and arrows, and every label is written in neat capitals.)</i>',
+      '<b class="ps-who">NOOR:</b> Aiden. This is ...',
+      '<b class="ps-who">AIDEN:</b> <i>(quickly)</i> I know. The <b>condensation</b> arrow is crooked.',
+      '<b class="ps-who">NOOR:</b> It’s good. It’s really good. <i>(beat)</i> Why didn’t you just tell me?',
+      '<b class="ps-who">AIDEN:</b> <i>(shrugging, looking at the floor)</i> You seemed so sure about how everything should look. I figured it would be easier if you just did it all.',
+      '<i>(NOOR opens her mouth to argue, then closes it. She looks at her own poster, covered in her neat handwriting, with a blank space in the middle.)</i>',
+      '<b class="ps-who">NOOR:</b> <i>(quietly)</i> I left a space for it. In the middle. Since Tuesday.',
+      '<b class="ps-who">AIDEN:</b> Yeah?',
+      '<b class="ps-who">NOOR:</b> Yeah. <i>(She slides the glue stick across the desk.)</i> Your diagram. You put it in.',
+      '<i>(AIDEN picks up the glue stick. He hesitates, as if waiting for her to take it back. She doesn’t. He begins, carefully, to glue. NOOR watches, and for the first time in the scene, she does not reach for a marker. Lights fade.)</i>'
+    ],
+    guide: { before: 'Show how a play script works: the speaker’s name, then the words; stage directions in italics tell actors what to do and how to say lines. Teach <b>condensation</b> (review the water cycle) and <b>hesitates</b>, and explain <b>subtext</b>: what a character means but does not say. Read it aloud in two parts.',
+      after: 'Noor and Aiden were each partly right and partly wrong. What could each of them have done differently last Tuesday?' },
+    words: [['condensation', 'water vapour cooling and turning into liquid droplets, as in clouds'], ['hesitates', 'pauses because of being unsure']],
+    qs: [
+      { k: 'choice', code: 'C1.2', half: true, q: 'In a play script, the words in italics and brackets are',
+        opts: ['the title', 'stage directions', 'what the audience says', 'mistakes'], a: 1 },
+      { k: 'choice', code: 'B2.2', half: true, q: 'Noor says “You did the diagram” <i>flatly</i> ({line:flatly}). Flatly means',
+        opts: ['with no feeling, not believing it', 'with great joy', 'loudly', 'lying down'], a: 0 },
+      { k: 'choice', code: 'C3.2', q: 'When Noor says “Which part?” ({line:Which}), the subtext (what she means but does not say) is',
+        opts: ['she did not hear Aiden', 'she thinks nothing about the project has been fair to her', 'she wants him to choose a part of the poster', 'she is joking'], a: 1 },
+      { k: 'choice', code: 'C3.2', q: 'Why did Aiden keep the diagram hidden?',
+        opts: ['He forgot about it.', 'He was afraid it was not good enough next to Noor’s work.', 'He wanted to use it for another class.', 'He wanted Noor to fail.'], a: 1 },
+      { k: 'choice', code: 'C1.4', q: 'The last stage direction says Noor “does not reach for a marker.” This action shows the audience that',
+        opts: ['she has run out of markers', 'she is ready to let Aiden share the work', 'she is angry again', 'the poster is finished'], a: 1 },
+      { k: 'lines', code: 'C3.3', n: 3, q: 'Noor left “a space for it. In the middle. Since Tuesday.” What does this tell you about what she really expected from Aiden? Explain.',
+        a: 'Even though she was angry, she still hoped and trusted that Aiden would do his part, because she kept the most important space on the poster for him.', look: 'an inference that Noor still trusted or hoped, linked to the blank space' },
+      { k: 'lines', code: 'C1.6', n: 4, q: 'A play has no narrator, so the audience learns about the characters only through what they say and do. Choose one character and explain how one line and one stage direction reveal who they are.',
+        a: 'Example: Aiden says the arrow is “crooked” before Noor can finish praising him, and he looks at the floor, so we see he is unsure of himself and expects criticism.', look: 'one line and one stage direction for the same character, each linked to a trait' }
+    ]
+  });
+
+  P.add({
+    id: 'g8-night-bus-poster', subject: 'social', form: 'Poster and reply', lines: true, plain: true,
+    title: 'Bring Back the Night Bus',
+    deck: 'A neighbourhood group puts up a poster. The transit service answers it.',
+    hero: {
+      photo: 'g4-city-bus.jpg', credit: 'Photo: Mx0268, CC BY 4.0, Wikimedia Commons', focus: '50% 60%',
+      tall: 120,
+      cap: 'A city bus in Ottawa. Many cities cut late-night routes when fewer people ride them.'
+    },
+    body: [
+      { h: 'The poster, taped to a bus shelter' },
+      '<b>WHERE DID ROUTE 7 GO?</b> Since September 1, the last Route 7 bus leaves downtown at 9:40 p.m. Before the cut, it ran until 12:40 a.m.',
+      'Who rides the night bus? Nurses finishing late shifts. Cooks and cleaners. Students leaving the library. Seniors coming home from family dinners. People who do not own a car and cannot afford a taxi.',
+      'For them, the cut means a 45-minute walk in the dark, an expensive taxi, or not going at all. One of our members, a hospital cleaner, now leaves work early twice a week and loses the pay. Another, a student, has stopped studying at the library after dark because she is afraid to walk home alone along the river path.',
+      '<b>A city that works at night needs a bus that runs at night.</b> Come to the public meeting at Riverside Community Centre, Thursday, November 20, at 7 p.m. Bring your story. Bring a neighbour.',
+      '<i>Route 7 Riders, a group of neighbours who use this bus</i>',
+      { fig: '<path class="a" d="M20 60 H120 L170 100 H280"/><circle class="dot" cx="20" cy="60" r="5"/><circle class="dot" cx="120" cy="60" r="4"/><circle class="dot" cx="170" cy="100" r="4"/><circle class="dot" cx="230" cy="100" r="4"/><circle class="dot" cx="280" cy="100" r="5"/>' +
+          tx(20, 44, 'lb', 'Downtown', 'start') + tx(120, 44, 'n', 'Library', 'middle') + tx(170, 124, 'n', 'Hospital', 'middle') + tx(230, 124, 'n', 'Riverside', 'middle') + tx(280, 84, 'lb', 'Eastgate', 'end') +
+          tx(150, 156, 'n', 'Last bus, before: 12:40 a.m.   Now: 9:40 p.m.', 'middle'),
+        tall: 166, cap: 'Route 7 and its main stops, from the poster.' },
+      { h: 'The transit service’s reply, posted online' },
+      'We hear the concerns of Route 7 riders, and we want to explain our decision. Our <b>ridership</b> counts showed that, after 10 p.m., Route 7 carried an average of six passengers per trip, compared with forty-one during the afternoon. Our operating budget this year was reduced by four percent, and running a bus with six riders costs almost exactly as much as running one with sixty. Every dollar spent on a nearly empty late bus is a dollar that cannot be spent on crowded morning routes.',
+      'Night service has not disappeared completely. The 9:40 p.m. bus is followed by an <b>on-demand</b> shuttle that riders can book by telephone or through our app until midnight, for the price of a regular fare. Since September, the shuttle has completed more than 900 trips.',
+      'We will review all late-night routes in the spring and will use what we hear at the public meeting. We encourage riders to attend.',
+      'We also recognize that numbers do not tell the whole story. A route that carries few people may still be the only way home for those who use it. That is why our spring review will look at who rides late at night and why, not only how many.'
+    ],
+    guide: { before: 'Explain that a poster is written to make people act, and that it shows one side. Point out the two texts and their two writers. Teach <b>ridership</b> and <b>on-demand</b>.',
+      after: 'After reading both texts, what would you say at the public meeting? Use a fact from each side.' },
+    words: [['ridership', 'the number of people who use a bus or train'], ['on-demand', 'available when someone asks for it, not on a fixed schedule']],
+    qs: [
+      { k: 'choice', code: 'C3.5', half: true, q: 'Who put up the poster?',
+        opts: ['the city transit service', 'a group of riders', 'the hospital', 'a bus driver'], a: 1 },
+      { k: 'choice', code: 'C1.3', half: true, q: 'Why does the poster list nurses, cooks, students and seniors?',
+        opts: ['to show that many kinds of people need the bus', 'to name its members', 'to give a schedule', 'to describe the route'], a: 0 },
+      { k: 'choice', code: 'C1.5', q: 'The poster ends with “Bring your story. Bring a neighbour.” These short sentences are meant to',
+        opts: ['explain the budget', 'urge readers to take action', 'list the stops', 'apologize to the transit service'], a: 1 },
+      { k: 'choice', code: 'C1.4', q: 'Look at the route map. Why might the poster’s writers have chosen to mark the hospital and the library?',
+        opts: ['They are the biggest buildings.', 'They are places where people stay late and need the bus home.', 'They are where the bus is cleaned.', 'They are both downtown.'], a: 1 },
+      { k: 'choice', code: 'C3.5', q: 'Which piece of information does the reply include that the poster leaves out?',
+        opts: ['the time of the last bus', 'that a hospital cleaner loses pay', 'that only about six people rode each late trip', 'the date of the meeting'], a: 2 },
+      { k: 'lines', code: 'C3.5', n: 3, q: 'Each text shows only part of the story. What is one thing the poster leaves out, and one thing the reply leaves out?',
+        a: 'The poster leaves out how few people rode late and the on-demand shuttle. The reply leaves out how hard a 45-minute walk is, and that people are losing pay.', look: 'one omission from each text' },
+      { k: 'lines', code: 'C3.6', n: 4, q: 'Should the city bring back the night bus? Take a position and support it with one fact from each text.',
+        a: 'Answers will differ. For example: Yes, at least to the hospital. Only six people ride, but they are workers with no other way home, and the shuttle needs a phone booking that some seniors may find hard.', look: 'a clear position, one fact from each text, and attention to who is affected (fairness, access)' }
+    ]
+  });
 })();
