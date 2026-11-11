@@ -107,6 +107,7 @@ html.adult .sp-marks.adult-only::after,html.adult .sp-script.adult-only::after,h
 .sp-start{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:0 0 18px}
 .sp-start p{margin:0;color:var(--ink2)}
 .sp-check{align-items:stretch;text-align:center}
+.sp-why{margin:0;color:var(--ink2);font-size:.9rem}
 .sp-cl canvas{height:110px}
 .sp-st{font-weight:700}
 .sp-st-secure{color:var(--good)}

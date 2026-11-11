@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Spelling path: Daily review. About 5 minutes a day with a grown-up: words the child missed in a dictation come back until they are right on two different days, with words from the steps being practised and one word from each secure step, so old spellings stay fresh.
 - Spelling path, Grades 4 to 8: 24 new steps (47 in all, 9 or 10 a grade), going past the Ontario list: inter-, trans- and anti-; -ly, -ful and -less; -ture and -sure; -age; silent letters; vis and aud; -ous, -ious and -eous; keeping the e (noticeable); y from Greek (gym); -logy and -ist; number prefixes; -ssion and -tion; plurals with -ves and -oes; French -que and -et; Canadian spelling; duct and scribe; -ary, -ery and -ory; -ally; ps, pn and rh; -cede and -ceed; advice and advise; base words that change (pronunciation); hidden vowels (separate); gh and ph.
 - Reading passages, Grade 4 pilot (reading-test style, guided by the CAT): 4 new passages beside the 100 already there: a short story, a poem, an interview and a class journal. Lines are numbered in the margin and questions point to them ("line 20"); more inference and word-in-context questions with 4 choices; a free, credited butterfly life-cycle diagram. Passages can now be poems (one wide column), carry line numbers, and hold real open-licence diagrams.
 - Spelling path: Find where to start. A short check with a grown-up (one word for each group of steps; it stops after 3 not yet right) names the step to start at and keeps it on the list.

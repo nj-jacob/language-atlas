@@ -21,7 +21,8 @@
                A step is secure when the score is 90% or more on two different days.
      print     A printed page (boxes, word family or sort, endings, proofreading, dictation lines) and a grown-up page (answers, script, rule).
    The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only).
-   The spelling check (#tools/spelling/check) finds the step to start at. */
+   The spelling check (#tools/spelling/check) finds the step to start at. The daily review (#tools/spelling/review) brings back
+   missed words and words from earlier steps, a few each day. */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -405,14 +406,14 @@
   function marks(items) { return '<div class="sp-marks adult-only">' + items.map(function (x) { return '<button type="button" class="sp-mk" aria-pressed="false" data-u="' + esc(x) + '">' + lab(x) + '</button>'; }).join('') + '</div>'; }
   function dictate(stage, p) {
     var d = SP.dictation(p), sent = d.sentence.replace(/[.!?]$/, '').split(' ');
-    function line(n, label, items, cls) {
-      return '<div class="sp-line' + (cls ? ' ' + cls : '') + '"><div class="sp-ln"><b>' + n + '</b><canvas aria-label="Writing line ' + n + '"></canvas></div>' +
+    function line(n, label, items, cls, w) {
+      return '<div class="sp-line' + (cls ? ' ' + cls : '') + '"' + (w ? ' data-w="' + esc(w) + '"' : '') + '><div class="sp-ln"><b>' + n + '</b><canvas aria-label="Writing line ' + n + '"></canvas></div>' +
         (label ? '<p class="sp-script adult-only">' + label + '</p>' : '') + marks(items) + '</div>';
     }
     stage.innerHTML = '<div class="sp-card sp-dict"><p class="sp-lede">Your grown-up says each one. Write it on its line.</p>' +
       '<p class="adult-only sp-how">Say each sound or word twice. The child says it back, taps the sounds, then writes. Tap any sound written wrong, then Save.</p>' +
       '<h3 class="sp-h">Sounds</h3>' + line('✎', 'Say the sounds: ' + d.sounds.map(function (s) { return '/' + lab(s) + '/'; }).join(' '), d.sounds, 'sp-wide') +
-      '<h3 class="sp-h">Words</h3><div class="sp-grid">' + d.words.map(function (w, i) { return line(i + 1, '<b>' + esc(w.w) + '</b>', w.u); }).join('') + '</div>' +
+      '<h3 class="sp-h">Words</h3><div class="sp-grid">' + d.words.map(function (w, i) { return line(i + 1, '<b>' + esc(w.w) + '</b>', w.u, '', w.w); }).join('') + '</div>' +
       '<h3 class="sp-h">Sentence</h3>' + line('✎', '<b>' + esc(d.sentence) + '</b>', sent, 'sp-wide') +
       '<div class="sp-sum adult-only" role="status"></div>' +
       '<div class="sp-do"><button type="button" class="btn alt" data-a="wipe">Clear the writing</button><button type="button" class="btn adult-only" data-a="save">Save today</button></div>' +
@@ -436,6 +437,10 @@
     $('[data-a="save"]', stage).addEventListener('click', function (e) {
       var slips = sum();
       saveDay(p, all.length - slips.length, all.length, slips);
+      /* a word with a sound written wrong goes into the daily review */
+      var r = SP.review();
+      $$('.sp-line[data-w]', stage).forEach(function (l) { if ($('.sp-mk[aria-pressed="true"]', l)) SP.miss(r, l.dataset.w); });
+      A.save('sp:review', r);
       hist();
       e.target.textContent = 'Saved';
     });
@@ -579,11 +584,86 @@
     }
     draw();
   }
+
+  /* ---------- Daily review (#tools/spelling/review): the Orton-Gillingham cumulative review ----------
+     About 10 words a day, from three places, in this order: words missed in a dictation or a review (each stays until it is right on
+     two different days), words from the steps being practised, and one word from each secure step, the one reviewed longest ago first.
+     The grown-up says each word and its sentence; the child writes it; the grown-up marks it Right or Not yet.
+     Saved as sp:review: { box: { word: { id, d, ok: [days right] } }, seen: { step: day }, days: [{ d, ok, of }] }. */
+  function today() { return new Date().toISOString().slice(0, 10); }
+  SP.review = function () { var r = A.load('sp:review', null) || {}; return { box: r.box || {}, seen: r.seen || {}, days: r.days || [] }; };
+  /* the step a word belongs to (its first step) */
+  SP.owner = function (w) { return SP.list.filter(function (p) { return p.words.some(function (x) { return x.w === w; }); })[0]; };
+  SP.miss = function (r, w) { var p = SP.owner(w); if (p) r.box[w] = { id: p.id, d: today(), ok: [] }; };
+  SP.today = function () {
+    var r = SP.review(), out = [], have = {}, n = r.days.length;
+    function put(p, i, why) {
+      var x = p && p.words[i % p.words.length];
+      if (x && !have[x.w] && out.length < 10) { have[x.w] = 1; out.push({ p: p, x: x, why: why }); }
+    }
+    Object.keys(r.box).sort(function (a, b) { return r.box[a].d < r.box[b].d ? -1 : r.box[a].d > r.box[b].d ? 1 : 0; }).slice(0, 5).forEach(function (w) {
+      var p = SP.find(r.box[w].id);
+      if (p) put(p, p.words.map(function (x) { return x.w; }).indexOf(w), 'missed');
+    });
+    var started = SP.list.filter(function (p) { return SP.record(p).days.length; });
+    started.filter(function (p) { return SP.status(p) !== 'secure'; }).slice(-2).forEach(function (p) { put(p, n * 2, 'practise'); put(p, n * 2 + 5, 'practise'); });
+    started.filter(function (p) { return SP.status(p) === 'secure'; }).sort(function (a, b) {
+      var x = r.seen[a.id] || '', y = r.seen[b.id] || '';
+      return x < y ? -1 : x > y ? 1 : 0;
+    }).forEach(function (p) { put(p, n, 'secure'); });
+    return out;
+  };
+  /* one word marked: right counts a day toward leaving the box (two different days); not yet puts it back in, from the start */
+  SP.mark = function (r, it, right) {
+    var w = it.x.w, b = r.box[w], d = today();
+    r.seen[it.p.id] = d;
+    if (!right) { SP.miss(r, w); return; }
+    if (!b) return;
+    if (b.ok.indexOf(d) < 0) b.ok.push(d);
+    if (b.ok.length >= 2) delete r.box[w];
+  };
+  var WHY = { missed: 'Missed before', practise: 'From the step being practised', secure: 'Review of a secure step' };
+  function review(root) {
+    var items = SP.today(), marks = [], at = 0;
+    function bar() { return '<div class="sp-one"><div class="dc-bar"><a class="dc-all" href="#tools/spelling">All steps</a></div>'; }
+    if (!items.length) {
+      root.innerHTML = bar() + '<div class="sp-card sp-check"><p class="sp-q">Nothing to review yet.</p>' +
+        '<p class="sp-say">Practise a step and save a dictation. Its words come back here.</p>' +
+        '<div class="sp-do"><a class="btn" href="#tools/spelling/check">Find where to start</a></div></div></div>';
+      return;
+    }
+    function draw() {
+      var it = items[at];
+      if (!it) return done();
+      root.innerHTML = bar() + '<div class="sp-card sp-check sp-review"><p class="sp-count">Word ' + (at + 1) + ' of ' + items.length + '</p>' +
+        '<p class="adult-only sp-script">Say <b>' + esc(it.x.w) + '</b>. ' + clue(it.x.clue, esc(it.x.w)) + ' <b>' + esc(it.x.w) + '</b>.</p>' +
+        '<p class="adult-only sp-why">' + WHY[it.why] + ': step ' + it.p.n + ', ' + nm(it.p) + '</p>' +
+        '<div class="sp-ln sp-cl"><canvas aria-label="Write the word here"></canvas></div>' +
+        '<p class="sp-say">Write the word your grown-up says.</p>' +
+        '<div class="sp-do"><button type="button" class="btn alt" data-m="0">Not yet</button><button type="button" class="btn" data-m="1">Right</button></div></div></div>';
+      pad($('canvas', root));
+      $$('[data-m]', root).forEach(function (b) { b.addEventListener('click', function () { marks.push(b.dataset.m === '1'); at++; draw(); }); });
+    }
+    function done() {
+      var r = SP.review(), d = today(), ok = marks.filter(Boolean).length;
+      items.forEach(function (it, i) { SP.mark(r, it, marks[i]); });
+      r.days = r.days.filter(function (x) { return x.d !== d; }).concat([{ d: d, ok: ok, of: marks.length }]).slice(-30);
+      A.save('sp:review', r);
+      var back = Object.keys(r.box);
+      root.innerHTML = bar() + '<div class="sp-card sp-check sp-review"><p class="sp-count">' + ok + ' of ' + marks.length + ' right</p>' +
+        '<p class="sp-q">' + (ok === marks.length ? 'Every word right.' : 'Words not yet right come back next time.') + '</p>' +
+        '<p class="adult-only sp-how">' + (back.length ? 'Waiting for review: ' + back.map(esc).join(', ') + '. A word leaves the list when it is right on two different days.' : 'No missed words are waiting.') + '</p>' +
+        '<div class="sp-do"><a class="btn" href="#tools/spelling">All steps</a></div></div></div>';
+    }
+    draw();
+  }
   function list(root) {
-    var ck = A.load('sp:check', null), cs = ck && SP.find(ck.start);
+    var ck = A.load('sp:check', null), cs = ck && SP.find(ck.start), rd = SP.review().days.slice(-1)[0], due = SP.today().length;
+    var rv = due ? due + (due === 1 ? ' word' : ' words') + ' today, about 5 minutes' + (rd ? '. Last review ' + esc(rd.d) + ': ' + rd.ok + ' of ' + rd.of + ' right' : '') + '.' : 'Words from the steps you practise come back here.';
     root.innerHTML = '<div class="dc-lib"><p class="dc-lede">Spelling, one step at a time. Kindergarten to Grade 3 follow the decodable readers: read a pattern, then spell it. ' +
       'Grades 4 to 8 build words from their parts. Each step has boxes to spell in, practice, a dictation and a page to print.</p>' +
       '<div class="sp-start"><a class="btn" href="#tools/spelling/check">Find where to start</a>' + (cs ? '<p>Last check (' + esc(ck.d) + '): start at <a href="#tools/spelling/' + cs.id + '">step ' + cs.n + ', ' + nm(cs) + '</a></p>' : '<p>A short spelling check, about 10 minutes, with a grown-up.</p>') + '</div>' +
+      '<div class="sp-start"><a class="btn alt" href="#tools/spelling/review">Daily review</a><p>' + rv + '</p></div>' +
       BANDS.map(function (bd) {
         var here = SP.list.filter(function (p) { return p.band === bd[0]; });
         if (!here.length) return '';
@@ -604,6 +684,7 @@
       var bits = (rest || '').split('/'), p = SP.find(bits[0]);
       if (p) step(root, p, bits[1] || 'build');
       else if (bits[0] === 'check') check(root);
+      else if (bits[0] === 'review') review(root);
       else list(root);
     });
     return {};
