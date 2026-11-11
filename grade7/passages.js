@@ -6329,9 +6329,9 @@
     title: 'Between Two Languages',
     deck: 'A student newspaper interviews a sign language interpreter',
     hero: {
-      photo: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', focus: '50% 35%',
-      tall: 160,
-      cap: 'A sign language interpreter at a conference. Interpreters stand where Deaf audience members can see both them and the speaker.'
+      photo: 'g7-asl-alphabet.png', credit: 'Diagram: Marnanel, after Dancor and Ds13, public domain, Wikimedia Commons', focus: '50% 50%',
+      tall: 246,
+      cap: 'The ASL finger-spelling alphabet. Signers spell names and some words letter by letter.'
     },
     body: [
       '<i>When Westdale Public School held its Remembrance Day assembly, two interpreters stood beside the stage, translating every word into American Sign Language (ASL) for Deaf students and families. Grade 7 reporter Amira Hassan spoke with one of them, Danielle Côté, a <b>certified</b> ASL-English interpreter from Ottawa.</i>',
@@ -6345,7 +6345,7 @@
       '<b class="ps-who">Danielle:</b> Lowercase “deaf” describes not being able to hear. Capital-D “Deaf” describes a cultural community, with its own language, history, art and humour. Many Deaf people do not see themselves as missing something. They see themselves as members of a linguistic minority, like francophones in Alberta.',
       '<b class="ps-who">Amira:</b> What can hearing students do to be more <b>inclusive</b>?',
       '<b class="ps-who">Danielle:</b> Learn a few signs, starting with the finger-spelling alphabet. Face a Deaf person when you speak, and do not cover your mouth. And never say “never mind” if someone misses something. To a Deaf person, those two words mean, “You are not worth repeating it for.”',
-      { img: 'g7-asl-alphabet.png', credit: 'Diagram: Marnanel, after Dancor and Ds13, public domain, Wikimedia Commons', tall: 200, cap: 'The ASL finger-spelling alphabet. Signers spell names and some words letter by letter.' }
+      { img: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', tall: 105, cap: 'An interpreter at work.' }
     ],
     guide: { before: 'Ask what the child knows about sign language. Look at the finger-spelling alphabet together and try spelling your first names. Teach <b>certified</b> (officially trained and tested) and <b>inclusive</b>.',
       after: 'Danielle says “never mind” can hurt. What other small habits might leave people out without our noticing?' },
@@ -6670,7 +6670,7 @@
       '<b class="ps-who">From: Leo Marchetti · To: Customer Service, Northpeak Outdoor Gear · October 9 · Subject: Damaged tent, order 4821</b>',
       'Hello,',
       'On October 2, I ordered a two-person backpacking tent from your website for $189.99, as a birthday present for my older brother. It arrived today, October 9, three days later than the delivery date your website promised.',
-      'Unfortunately, when we opened the box, one of the aluminium tent poles was bent almost in half, and the rain fly had a tear about ten centimetres long. The cardboard box was also crushed on one corner, so I believe the damage happened during shipping. I have attached three photographs of the pole, the tear and the box.',
+      'Unfortunately, when we opened the box, one of the aluminum tent poles was bent almost in half, and the rain fly had a tear about ten centimetres long. The cardboard box was also crushed on one corner, so I believe the damage happened during shipping. I have attached three photographs of the pole, the tear and the box.',
       'My brother’s camping trip is on October 18, so I would appreciate a replacement tent as soon as possible. If a replacement cannot arrive by October 16, I would prefer a full <b>refund</b> instead.',
       'I have bought from Northpeak four times before and have always been very satisfied, which is why I was so disappointed by this order.',
       'Thank you for your help.',

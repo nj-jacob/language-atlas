@@ -520,3 +520,5 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-pool-lanes.jpg` | Lanes and starting blocks in a 50-metre swimming pool | KeepActive Australia | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Swimming_Pool_lanes_and_starting_blocks.jpg |
 | `g7-interpreter.jpg` | A sign language interpreter at a conference | Stephan Röhl, Heinrich-Böll-Stiftung | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Sign_language_interpreter,_2012_(01).jpg |
 | `g7-zucchini.jpg` | A basket of zucchini and dill | George Chernilevsky | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Zucchini_in_basket_2021_G1.jpg |
+| `g7-stage.jpg` | Two actors rehearsing a scene on a theatre stage | Harrison Keely | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Two_actors_rehearse_a_scene_from_"Almost,_Maine".jpg |
+| `g7-asl-alphabet.png` | Diagram: the American Sign Language finger-spelling alphabet, with letters | Marnanel, after Dancor and Ds13 | Public domain | https://commons.wikimedia.org/wiki/File:Asl_alphabet_gallaudet_ann.svg |
