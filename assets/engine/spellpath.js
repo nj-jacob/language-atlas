@@ -20,7 +20,8 @@
                lines. The grown-up taps every sound written wrong; Save keeps the day's score and slips (sp:<step>).
                A step is secure when the score is 90% or more on two different days.
      print     A printed page (boxes, word family or sort, endings, proofreading, dictation lines) and a grown-up page (answers, script, rule).
-   The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only). */
+   The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only).
+   The spelling check (#tools/spelling/check) finds the step to start at. */
 (function () {
   'use strict';
   var A = window.Atlas;
@@ -532,9 +533,57 @@
   }
 
   /* ---------- every step ---------- */
+
+  /* ---------- Spelling check: where to start ----------
+     One word for each group of steps, in order: the key word of the group's last step. The grown-up says the word and its sentence;
+     the child writes it; the grown-up marks it. The check stops after 3 words not yet right. The start is the first step of the
+     first group missed (every word right: the last step). Saved as sp:check. */
+  SP.probes = function () {
+    var out = [], from = SP.list[0];
+    SP.list.forEach(function (p, i) {
+      var nx = SP.list[i + 1];
+      if (nx && nx.group === p.group && nx.band === p.band) return;
+      var w = p.words.filter(function (x) { return x.w === p.key; })[0];
+      out.push({ w: p.key, clue: w.clue, first: from, last: p });
+      from = nx;
+    });
+    return out;
+  };
+  SP.start = function (marks) {
+    var probes = SP.probes(), miss = marks.indexOf(false);
+    return miss < 0 ? probes[probes.length - 1].last : probes[miss].first;
+  };
+  function check(root) {
+    var probes = SP.probes(), marks = [], at = 0;
+    function draw() {
+      var x = probes[at], misses = marks.filter(function (m) { return !m; }).length;
+      if (!x || misses >= 3) return done();
+      root.innerHTML = '<div class="sp-one"><div class="dc-bar"><a class="dc-all" href="#tools/spelling">All steps</a></div>' +
+        '<div class="sp-card sp-check"><p class="sp-count">Word ' + (at + 1) + '</p>' +
+        '<p class="adult-only sp-script">Say <b>' + esc(x.w) + '</b>. ' + clue(x.clue, esc(x.w)) + ' <b>' + esc(x.w) + '</b>.</p>' +
+        '<div class="sp-ln sp-cl"><canvas aria-label="Write the word here"></canvas></div>' +
+        '<p class="sp-say">Write the word your grown-up says.</p>' +
+        '<div class="sp-do"><button type="button" class="btn alt" data-m="0">Not yet</button><button type="button" class="btn" data-m="1">Right</button></div></div></div>';
+      pad($('canvas', root));
+      $$('[data-m]', root).forEach(function (b) { b.addEventListener('click', function () { marks.push(b.dataset.m === '1'); at++; draw(); }); });
+    }
+    function done() {
+      var p = SP.start(marks), today = new Date().toISOString().slice(0, 10);
+      A.save('sp:check', { d: today, start: p.id, ok: marks.filter(Boolean).length, of: marks.length });
+      root.innerHTML = '<div class="sp-one"><div class="dc-bar"><a class="dc-all" href="#tools/spelling">All steps</a></div>' +
+        '<div class="sp-card sp-check"><p class="sp-count">' + marks.filter(Boolean).length + ' of ' + marks.length + ' right</p>' +
+        '<p class="sp-q">Start at step ' + p.n + ': ' + nm(p) + '</p>' +
+        '<div class="sp-do"><a class="btn" href="#tools/spelling/' + p.id + '">Go to step ' + p.n + '</a></div>' +
+        '<p class="adult-only sp-how">Words not yet right: ' + (probes.filter(function (x, i) { return marks[i] === false; }).map(function (x) { return esc(x.w); }).join(', ') || 'none') +
+        '. Earlier steps can still be used for review.</p></div></div>';
+    }
+    draw();
+  }
   function list(root) {
-    root.innerHTML = '<div class="dc-lib"><p class="dc-lede">Spelling, one step at a time, in the same order as the decodable readers: read a pattern, then spell it. ' +
-      'Each step has sound boxes, a sort, endings, a dictation and a page to print. Start at the first step your child is not yet sure of.</p>' +
+    var ck = A.load('sp:check', null), cs = ck && SP.find(ck.start);
+    root.innerHTML = '<div class="dc-lib"><p class="dc-lede">Spelling, one step at a time. Kindergarten to Grade 3 follow the decodable readers: read a pattern, then spell it. ' +
+      'Grades 4 to 8 build words from their parts. Each step has boxes to spell in, practice, a dictation and a page to print.</p>' +
+      '<div class="sp-start"><a class="btn" href="#tools/spelling/check">Find where to start</a>' + (cs ? '<p>Last check (' + esc(ck.d) + '): start at <a href="#tools/spelling/' + cs.id + '">step ' + cs.n + ', ' + nm(cs) + '</a></p>' : '<p>A short spelling check, about 10 minutes, with a grown-up.</p>') + '</div>' +
       BANDS.map(function (bd) {
         var here = SP.list.filter(function (p) { return p.band === bd[0]; });
         if (!here.length) return '';
@@ -554,6 +603,7 @@
     SP.load().then(function () {
       var bits = (rest || '').split('/'), p = SP.find(bits[0]);
       if (p) step(root, p, bits[1] || 'build');
+      else if (bits[0] === 'check') check(root);
       else list(root);
     });
     return {};
