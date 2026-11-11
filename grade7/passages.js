@@ -6330,7 +6330,7 @@
     deck: 'A student newspaper interviews a sign language interpreter',
     hero: {
       photo: 'g7-asl-alphabet.png', credit: 'Diagram: Marnanel, after Dancor and Ds13, public domain, Wikimedia Commons', focus: '50% 50%',
-      tall: 246,
+      tall: 218,
       cap: 'The ASL finger-spelling alphabet. Signers spell names and some words letter by letter.'
     },
     body: [
@@ -6345,7 +6345,7 @@
       '<b class="ps-who">Danielle:</b> Lowercase “deaf” describes not being able to hear. Capital-D “Deaf” describes a cultural community, with its own language, history, art and humour. Many Deaf people do not see themselves as missing something. They see themselves as members of a linguistic minority, like francophones in Alberta.',
       '<b class="ps-who">Amira:</b> What can hearing students do to be more <b>inclusive</b>?',
       '<b class="ps-who">Danielle:</b> Learn a few signs, starting with the finger-spelling alphabet. Face a Deaf person when you speak, and do not cover your mouth. And never say “never mind” if someone misses something. To a Deaf person, those two words mean, “You are not worth repeating it for.”',
-      { img: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', tall: 105, cap: 'An interpreter at work.' }
+      { img: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', tall: 90, cap: 'An interpreter at work.' }
     ],
     guide: { before: 'Ask what the child knows about sign language. Look at the finger-spelling alphabet together and try spelling your first names. Teach <b>certified</b> (officially trained and tested) and <b>inclusive</b>.',
       after: 'Danielle says “never mind” can hurt. What other small habits might leave people out without our noticing?' },
