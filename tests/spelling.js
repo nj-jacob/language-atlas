@@ -1,9 +1,11 @@
 /* Spelling path: checks every step's words, sorts, endings and dictation (run by run.js; or alone:  node spelling.js  ).
    It works the answers out again on its own, without the engine:
-   - each word's sounds spell the word, each sound is a known spelling, and the word uses the step's new spelling;
+   - each word's sounds spell the word, each sound is a known spelling, and the word uses the step's new spelling
+     (a step with beats: true splits its words into beats, each with a vowel, instead of sounds; on the long words step, 3 or more);
    - every word, sort word, review word and dictation sentence can be sounded out by that step (the decodable readers'
      own checker, decodable.js, which splits words into spellings by itself), or is a heart word taught by then;
-   - each sort word goes in the bin the checker finds in it (its spelling; open or closed; y as /eye/ in one beat, /ee/ in two);
+   - each sort word goes in the bin the checker finds in it (its spelling; open or closed; y as /eye/ in one beat, /ee/ in two;
+     soft or hard c; the prefix it starts with or the suffix it ends with);
    - each ending makes the word that the spelling rules below give (written here, apart from tools.js). */
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const decodable = require('./decodable');
@@ -14,8 +16,9 @@ function load(root) {
   vm.runInNewContext(fs.readFileSync(path.join(root, 'assets', 'engine', 'spellbank.js'), 'utf8'), { Atlas: { spelling: { add: p => list.push(p) } } });
   return list;
 }
-/* adding an ending: y to i after a consonant (not before i), drop a silent e before a vowel, double one last consonant after one short vowel in one beat */
+/* adding an ending (or a prefix, written un-): y to i after a consonant (not before i), drop a silent e before a vowel, double one last consonant after one short vowel in one beat */
 function addEnding(base, suf) {
+  if (/-$/.test(suf)) return suf.slice(0, -1) + base;
   const vowelFirst = /^[aeiouy]/.test(suf);
   if (/[^aeiou]y$/.test(base) && suf[0] !== 'i') return base.slice(0, -1) + 'i' + suf;
   if (vowelFirst && /[^aeiou]e$/.test(base)) return base.slice(0, -1) + suf;
@@ -23,9 +26,12 @@ function addEnding(base, suf) {
   return base + suf;
 }
 /* known pairs, so the rules above are checked too */
-const KNOWN = { 'hop+ing': 'hopping', 'hope+ing': 'hoping', 'cry+ed': 'cried', 'cry+ing': 'crying', 'play+ed': 'played', 'snow+y': 'snowy', 'tap+ing': 'tapping', 'tape+ing': 'taping', 'happy+er': 'happier', 'fight+ing': 'fighting' };
+const KNOWN = { 'un-+lock': 'unlock', 'dis-+like': 'dislike', 'hope+ful': 'hopeful', 'happy+ness': 'happiness', 'fame+ous': 'famous', 'hop+ing': 'hopping', 'hope+ing': 'hoping', 'cry+ed': 'cried', 'cry+ing': 'crying', 'play+ed': 'played', 'snow+y': 'snowy', 'tap+ing': 'tapping', 'tape+ing': 'taping', 'happy+er': 'happier', 'fight+ing': 'fighting' };
 /* the spellings a sound box may hold */
-const UNITS = new Set('b c d f g h j k l m n p r s t v w x y z a e i o u sh ch th wh ck ng qu ai ay ee ea ey oa ow oe ie igh pp nn ll ss ff zz a_e e_e i_e o_e u_e'.split(' '));
+const UNITS = new Set(('b c d f g h j k l m n p r s t v w x y z a e i o u sh ch th wh ck ng qu ai ay ee ea ey oa ow oe ie igh a_e e_e i_e o_e u_e ' +
+  'pp nn ll ss ff zz tt dd gg mm bb rr tch dge all ang ing ong ung ank ink onk unk oll ull ph ar or ore er ir ur air are ear our ' +
+  'oo ou oi oy au aw augh ough ew ue ui eigh ei ind ild old olt ost kn wr gn mb gh tion sion ' +
+  'ed es un re dis mis pre ful less ly est ness ish able').split(' '));
 /* the units spelled out: a silent-e unit puts its e after the next unit */
 function spell(u) {
   let out = '', e = false;
@@ -42,7 +48,7 @@ function syllables(w) { return (w.match(/[aeiouy]+/g) || []).length - (/[^aeiouy
 function check(list, root) {
   const problems = [], order = decodable.STEPS.map(s => s[0]);
   const hearts = new Set(), readers = decodable.load(root);
-  let last = -1;
+  let last = -1, first = true;
   list.forEach(p => {
     const where = 'spelling step ' + p.id, at = order.indexOf(p.id);
     if (at < 0) { problems.push(where + ': is not a decodable reader step (tests/decodable.js lists them)'); return; }
@@ -50,19 +56,26 @@ function check(list, root) {
     last = at;
     readers.slice(0, at + 1).forEach(r => (r.heart || []).forEach(h => hearts.add(h.toLowerCase())));
     (p.heart || []).forEach(h => hearts.add(h.toLowerCase()));
-    const fresh = decodable.STEPS[at][1];
+    const fresh = decodable.REVIEW[p.id] || decodable.STEPS[at][1];
+    /* the word can be sounded out by this step in a way that uses the step's new spelling */
+    const uses = (w, u) => fresh.includes('long-words') ? u.length >= 3 : decodable.ways(w).some(r => r.at <= at && r.used.some(x => fresh.includes(x)));
     const ok = w => { const lw = w.toLowerCase(); if (hearts.has(lw)) return true; const r = decodable.when(lw); return r && r.at <= at; };
     ['name', 'group', 'rule', 'tip', 'mistake', 'sentence'].forEach(f => { if (!p[f]) problems.push(where + ': needs ' + f); });
     if (!Array.isArray(p.focus) || !p.focus.length) problems.push(where + ': needs its focus spellings');
     if (!Array.isArray(p.heart) || !p.heart.length) problems.push(where + ': needs a heart word');
-    if (!Array.isArray(p.words) || p.words.length !== 10) problems.push(where + ': needs 10 words');
+    if (!Array.isArray(p.words) || p.words.length < 8 || p.words.length > 10) problems.push(where + ': needs 8 to 10 words');
     (p.words || []).forEach(([w, units, clue]) => {
       const u = String(units).split(' '), lw = w.toLowerCase();
-      u.filter(x => !UNITS.has(x.toLowerCase())).forEach(x => problems.push(where + ' "' + w + '": "' + x + '" is not a spelling a sound box can hold'));
-      if (spell(u).toLowerCase() !== lw) problems.push(where + ' "' + w + '": its sounds spell ' + spell(u) + ', not ' + w);
+      if (p.beats) {
+        if (u.length < 2 || u.some(x => !/^[a-z]+$/.test(x) || !/[aeiouy]/.test(x))) problems.push(where + ' "' + w + '": needs 2 or more beats, each with a vowel');
+        if (u.join('') !== lw) problems.push(where + ' "' + w + '": its beats spell ' + u.join('') + ', not ' + w);
+      } else {
+        u.filter(x => !UNITS.has(x.toLowerCase())).forEach(x => problems.push(where + ' "' + w + '": "' + x + '" is not a spelling a sound box can hold'));
+        if (spell(u).toLowerCase() !== lw) problems.push(where + ' "' + w + '": its sounds spell ' + spell(u) + ', not ' + w);
+      }
       const r = decodable.when(lw);
       if (!r || r.at > at) problems.push(where + ' "' + w + '": cannot be sounded out by this step');
-      else if (!decodable.STEPS.slice(0, at + 1).some(s => s[0] === p.id) || !r.used.some(x => fresh.includes(x))) problems.push(where + ' "' + w + '": does not use this step\'s new spelling');
+      else if (!uses(lw, u)) problems.push(where + ' "' + w + '": does not use this step\'s new spelling');
       if (!/^[^_]*___[^_]*$/.test(clue || '')) problems.push(where + ' "' + w + '": its clue needs one blank (___)');
       else if (new RegExp('\\b' + w + '\\b', 'i').test(clue)) problems.push(where + ' "' + w + '": its clue gives the word away');
     });
@@ -74,7 +87,10 @@ function check(list, root) {
         const r = decodable.when(w);
         if (!ok(w)) { problems.push(where + ' sort "' + w + '": cannot be sounded out by this step'); return; }
         let right;
-        if (bins.includes('open')) right = r.used.includes('open') ? 'open' : 'closed';
+        if (bins.every(x => /-$/.test(x))) right = bins.filter(x => w.startsWith(x.slice(0, -1))).sort((x, y) => y.length - x.length)[0] || null;
+        else if (bins.every(x => /^-/.test(x))) right = bins.filter(x => w.endsWith(x.slice(1))).sort((x, y) => y.length - x.length)[0] || null;
+        else if (bins.includes('soft-c')) right = r.used.includes('soft-c') ? 'soft-c' : 'hard-c';
+        else if (bins.includes('open')) right = r.used.includes('open') ? 'open' : 'closed';
         else if (bins.includes('y-eye')) right = syllables(w) === 1 ? 'y-eye' : 'y-ee';
         else { const hit = bins.filter(x => r.used.includes(x)); right = hit.length === 1 ? hit[0] : null; }
         if (right === null) problems.push(where + ' sort "' + w + '": uses none or more than one of the bins\' spellings');
@@ -86,7 +102,8 @@ function check(list, root) {
       const want = KNOWN[b + '+' + s];
       if (want && addEnding(b, s) !== want) problems.push('the spelling check itself: ' + b + ' + ' + s + ' should be ' + want);
     });
-    if (!Array.isArray(p.review) || p.review.length !== 2) problems.push(where + ': needs 2 review words for the dictation');
+    if (!Array.isArray(p.review) || p.review.length !== (first ? 0 : 2)) problems.push(where + ': needs ' + (first ? 'no review words (it is the first step)' : '2 review words for the dictation'));
+    first = false;
     (p.review || []).forEach(w => { const r = decodable.when(w); if (!r || r.at >= at) problems.push(where + ' review "' + w + '": must be a word from an earlier step'); });
     (p.sounds || []).forEach(s => { if (!UNITS.has(s)) problems.push(where + ': "' + s + '" is not a spelling for the dictation warm-up'); });
     const bad = decodable.words(p.sentence || '').filter(w => !ok(w));

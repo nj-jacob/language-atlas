@@ -257,7 +257,7 @@ function checkStory(p, si, at, heart, problems) {
   (p.qs || []).forEach(q => [q.q].concat(q.opts || [], q.items || []).forEach(t => words(t).forEach(w => { if (!ok(w, ASK)) qbad.push(w); })));
   if (qbad.length) problems.push(where + ': its questions use words the child cannot read yet: ' + [...new Set(qbad)].join(', '));
 }
-module.exports = { STEPS, when, check, load, words };
+module.exports = { STEPS, REVIEW, when, ways, check, load, words };
 if (require.main === module) {
   const fi = process.argv.indexOf('--frags');
   const list = load(path.resolve(__dirname, '..'), fi > 0 ? process.argv[fi + 1] : null);

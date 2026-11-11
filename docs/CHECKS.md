@@ -67,11 +67,11 @@ The checks in `tests/run.js` stand in for a careful human tester. They run:
    - the steps are in teaching order, with up to 3 stories each (checked the same way); a blends story marked l, r or s uses only that kind of blend in its warm-up and target words, and no kind taught after it; each story has 8 or more warm-up words that all use its new spelling, a story with 5 or more different words that use it, and 3 questions with an Ontario code and an answer;
    - every page and its grown-up page fit on the paper; the tool opens on a phone, an iPad and a laptop with no errors, and the grown-up page stays hidden with grown-up view off.
 11. **Spelling path** (the tool box's spelling steps, checked once, in Grade 1). `tests/spelling.js` works the answers out again on its own (alone: `node spelling.js`):
-   - each step is a decodable reader step, in the same order; it has its name, rule, grown-up tip, common mistake, a heart word, 10 words, 2 review words and a dictation sentence;
-   - each word's sounds spell the word, each sound is a spelling a sound box can hold, and the word uses the step's new spelling; each clue has one blank and does not give the word away;
+   - each step is a decodable reader step, in the same order; it has its name, rule, grown-up tip, common mistake, a heart word, 8 to 10 words, 2 review words (none on the first step) and a dictation sentence;
+   - each word's sounds spell the word, each sound is a spelling a sound box can hold, and the word uses the step's new spelling (a step with beat boxes: 2 or more beats, each with a vowel, that spell the word; 3 or more on the long words step); each clue has one blank and does not give the word away;
    - every word, sort word, ending word, review word and sentence word can be sounded out by that step (the decodable readers' own checker), or is a heart word taught by then; review words come from earlier steps;
-   - each sort word is in the bin the checker finds in it (its spelling; open or closed; y as /eye/ in one beat or /ee/ in two);
-   - each ending makes the word that its own copy of the spelling rules gives (y to i, drop the e, double the last letter), and the tool's word matches it; the tile tray always holds every sound of the word;
+   - each sort word is in the bin the checker finds in it (its spelling; open or closed; y as /eye/ in one beat or /ee/ in two; soft or hard c; the prefix it starts with or the suffix it ends with);
+   - each ending makes the word that its own copy of the spelling rules gives (y to i, drop the e, double the last letter; a prefix changes nothing), and the tool's word matches it; the tile tray always holds every sound of the word;
    - on a phone, every part of every step is used: a word is spelled in Sound boxes and marked right, every sort word is put in its bin, an ending is written and marked right, and a dictation with one sound marked wrong saves the right score; every printed page and grown-up page fits on the paper; the list and each part open on a phone, an iPad and a laptop with no errors, nothing off the side and no grown-up notes showing to the child.
 
 ## Running them yourself

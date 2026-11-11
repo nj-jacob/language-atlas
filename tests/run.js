@@ -1391,7 +1391,7 @@ async function checkSpelling(browser, base) {
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push(p.id + ': the printed ' + side + ' shows undefined or NaN');
       });
       SP.dictation(p).words.forEach(w => { if (Atlas.toolkit.spell(w.u).toLowerCase() !== w.w.toLowerCase()) out.push(p.id + ': the dictation word ' + w.w + ' is split into ' + w.u.join(' ') + ', which does not spell it'); });
-      p.words.forEach(w => { const t = SP.tray(w.u); w.u.forEach(u => { if (t.indexOf(u) < 0) out.push(p.id + ' "' + w.w + '": the tray has no ' + u + ' tile'); }); });
+      p.words.forEach(w => { const t = SP.tray(w.u, p); w.u.forEach(u => { if (t.indexOf(u) < 0) out.push(p.id + ' "' + w.w + '": the tray has no ' + u + ' tile'); }); });
     });
     box.remove();
     return { out, n: SP.list.length, ids: SP.list.map(p => p.id) };
