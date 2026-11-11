@@ -231,9 +231,20 @@ function start(list, marks) { const pr = probes(list), miss = marks.indexOf(fals
 /* every ending's word, for the browser check to compare with the engine */
 function endings(list) { return list.map(p => (p.endings || []).map(([b, s, st]) => [p.id, b, s, addEnding(b, s, st), st])).flat(); }
 
-module.exports = { load, rules, checkRules, check, endings, addEnding, probes, start };
+/* every grade from 1 to 8 has a spelling chapter (spell: true in gradeN/grade.js) that links to its steps, and the grade has steps */
+function checkChapters(root, list) {
+  const problems = [];
+  for (let g = 1; g <= 8; g++) {
+    let meta = null;
+    vm.runInNewContext(fs.readFileSync(path.join(root, 'grade' + g, 'grade.js'), 'utf8'), { Atlas: { setup: m => { meta = m; } } });
+    if (!meta.chapters.some(c => c.spell)) problems.push('Grade ' + g + ': no chapter links to the Spelling path (spell: true in grade.js)');
+    if (!list.some(p => p.band === String(g))) problems.push('Grade ' + g + ': has no spelling steps for its chapter to link to');
+  }
+  return problems;
+}
+module.exports = { load, rules, checkRules, checkChapters, check, endings, addEnding, probes, start };
 if (require.main === module) {
-  const root = path.resolve(__dirname, '..'), list = load(root), cards = rules(root), pr = check(list, root).concat(checkRules(cards, list));
+  const root = path.resolve(__dirname, '..'), list = load(root), cards = rules(root), pr = check(list, root).concat(checkRules(cards, list), checkChapters(root, list));
   pr.forEach(p => console.log(' - ' + p));
   console.log(list.length + ' steps, ' + cards.length + ' rule cards, ' + pr.length + ' problem(s)');
   process.exitCode = pr.length ? 1 : 0;

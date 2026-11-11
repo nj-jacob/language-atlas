@@ -1381,7 +1381,7 @@ async function checkDecodable(browser, base) {
 async function checkSpelling(browser, base) {
   const where = 'spelling path';
   const list = spelling.load(ROOT);
-  spelling.check(list, ROOT).concat(spelling.checkRules(spelling.rules(ROOT), list)).forEach(p => fail('tool box', p));
+  spelling.check(list, ROOT).concat(spelling.checkRules(spelling.rules(ROOT), list), spelling.checkChapters(ROOT, list)).forEach(p => fail('tool box', p));
   const { ctx, page, errs } = await newPage(browser, base);
   await page.goto(base + '/grade1/index.html#tools/spelling');
   await page.waitForSelector('.dc-card');
@@ -1456,6 +1456,13 @@ async function checkSpelling(browser, base) {
       await screenCheck(page, where, (part || 'the list of steps') + ' at ' + vp.width + ' px');
     }
   }
+  /* a spelling chapter's link opens the Spelling path at its grade */
+  await page.goto(base + '/grade1/index.html#word-reading');
+  await page.waitForSelector('.ch-spell a');
+  await page.click('.ch-spell a >> nth=0');
+  await page.waitForSelector('#sp-band-1');
+  await page.waitForTimeout(200);
+  if (await page.evaluate(() => Math.abs(document.getElementById('sp-band-1').getBoundingClientRect().top) > 200)) fail(where, 'the Grade 1 spelling chapter link does not open the Spelling path at Grade 1');
   /* every rule card opens on a phone, and each step it names links back to it */
   await page.setViewportSize({ width: 390, height: 844 });
   for (const c of spelling.rules(ROOT)) {

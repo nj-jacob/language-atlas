@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-11
+- Spelling chapters (every grade): under the title, links to the Spelling path at that grade, the rule cards, the daily review and Heart words.
 - Spelling path: Rule cards. 25 spelling rules on cards (FLOSS, ck, tch, dge, soft c and g, doubling, drop the e, y to i, i before e, -able or -ible, Canadian spelling and more), each with coloured examples, the words that break it, a grown-up note and links to the steps that practise it. Every one of those steps links to its card.
 - Heart words, Grades 4 to 8: 199 more tricky words in 20 sets (4 a grade), such as weather, doubt, restaurant, colonel and conscience, each with its heart part marked. Every heart word of the Grades 4 to 8 spelling steps is now in a set.
 - Spelling path: Daily review. About 5 minutes a day with a grown-up: words the child missed in a dictation come back until they are right on two different days, with words from the steps being practised and one word from each secure step, so old spellings stay fresh.

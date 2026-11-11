@@ -21,7 +21,8 @@
                A step is secure when the score is 90% or more on two different days.
      print     A printed page (boxes, word family or sort, endings, proofreading, dictation lines) and a grown-up page (answers, script, rule).
    The rule, the grown-up tip, the common mistake and the codes sit above the parts (tip and mistake in grown-up view only).
-   Rule cards (#tools/spelling/rules) show one spelling rule each; a step links to its cards.
+   Rule cards (#tools/spelling/rules) show one spelling rule each; a step links to its cards. #tools/spelling/band-<grade> opens
+   the list at a grade: each grade's spelling chapter links there (spell: true in grade.js; atlas.js draws the link).
    The spelling check (#tools/spelling/check) finds the step to start at. The daily review (#tools/spelling/review) brings back
    missed words and words from earlier steps, a few each day. */
 (function () {
@@ -725,7 +726,12 @@
       else if (bits[0] === 'check') check(root);
       else if (bits[0] === 'review') review(root);
       else if (bits[0] === 'rules') { var c = SP.rules.filter(function (x) { return x.id === bits[1]; })[0]; if (c) card(root, c); else rules(root); }
-      else list(root);
+      else {
+        list(root);
+        /* #tools/spelling/band-4 opens the list at that grade (a spelling chapter links here) */
+        var b = /^band-(\w)$/.exec(bits[0]), at = b && document.getElementById('sp-band-' + b[1]);
+        if (at) at.scrollIntoView();
+      }
     });
     return {};
   }

@@ -48,7 +48,7 @@ Plain web pages with no build step: what is in this repository is exactly what t
 `gradeN/index.html` sets three `meta` tags for the header, loads `engine.css` then `atlas-theme.css`, then the scripts in this order:
 1. `../assets/atlas-header.js` (first thing in `<body>`)
 2. `../assets/engine/atlas.js`, `qkit.js`, `words.js`, `lesson.js`, `practice.js`, `tasks.js`, `wordbank.js`, `cardbank.js`, `tools.js`, `soundbank.js`, `soundboard.js`, `reader.js`, `meaningbank.js`, `meaning.js`, `mapbank.js`, `textmaps.js`, `writebank.js`, `writetools.js`, `sheets.js`, `sheet-themes.js`, `library.js`, `decodable.js`, `spellpath.js`, `heartwords.js` (and `sheets.css`, `library.css`, `decodable.css`, `spellpath.css` and `heartwords.css` after `engine.css`)
-3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc }] })`. A chapter in the list without a file shows as "Coming soon".
+3. `grade.js`: `Atlas.setup({ grade, curriculum, chapters: [{ id, title, sub, strand, codes, desc, spell }] })`. A chapter in the list without a file shows as "Coming soon". `spell: true` marks a spelling chapter: under its title it links to the Spelling path at the grade (`#tools/spelling/band-<grade>`), the rule cards, the daily review and Heart words.
 4. `texts.js` (optional): reading passages shared by the grade's chapters
 5. `chapters/<id>.js`: one file per chapter, each calling `Atlas.register(id, chapter)` and `Atlas.Q.shapes(id, SHAPES)`
 `passages.js` (Grades 4 to 8) is not in this list: the Reading passages tool loads it when it opens.

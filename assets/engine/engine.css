@@ -908,3 +908,7 @@ main:has(.tb){padding-top:12px;padding-bottom:16px}
   .lp-keys{grid-template-columns:repeat(auto-fill,minmax(44px,1fr))}
   .lp-key{height:52px}
 }
+
+/* a spelling chapter's links to the tool box (atlas.js chapterHead, spell: true) */
+.ch-spell{margin:10px 0 0;font-size:.95rem;color:var(--ink2)}
+.ch-spell a{font-weight:700}
