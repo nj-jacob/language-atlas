@@ -522,3 +522,4 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g7-zucchini.jpg` | A basket of zucchini and dill | George Chernilevsky | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Zucchini_in_basket_2021_G1.jpg |
 | `g7-stage.jpg` | Two actors rehearsing a scene on a theatre stage | Harrison Keely | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Two_actors_rehearse_a_scene_from_"Almost,_Maine".jpg |
 | `g7-asl-alphabet.png` | Diagram: the American Sign Language finger-spelling alphabet, with letters | Marnanel, after Dancor and Ds13 | Public domain | https://commons.wikimedia.org/wiki/File:Asl_alphabet_gallaudet_ann.svg |
+| `g7-baklava.jpg` | Trays of baklava in a bakery | Benreis | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Turkish_baklava_in_a_bakery_in_Taksim,_Istanbul.jpg |
