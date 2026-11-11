@@ -548,3 +548,20 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g5-trent-severn-map.jpg` | An early map of the Trent–Severn route across Ontario | A. L. Killaly | Public domain | https://commons.wikimedia.org/wiki/File:Trent-Severn_Waterway_map.jpg |
 | `g5-willie-oree.jpg` | Willie O’Ree in 2019 | Eric Connolly, U.S. House Photographer | Public domain | https://commons.wikimedia.org/wiki/File:WillieORee2019.jpg |
 | `g5-recess.jpg` | Children playing outside at recess | Greenestreetfs | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Recess_at_Greene_Street_Friends.jpg |
+| `g7-ice-huts.jpg` | Ice-fishing huts on a frozen lake | RobbieFrench | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ice_Fishing_Huts_(8479240359).jpg |
+| `g7-goose-nest.jpg` | A Canada goose sitting on her nest | Paul F. Kisak | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Canada_goose_on_nest_at_Kisak's_Cinnamon_Hill.jpg |
+| `g7-bluffs.jpg` | The Scarborough Bluffs above Lake Ontario, Toronto | The Cosmonaut | CC BY-SA 2.5 CA | https://commons.wikimedia.org/wiki/File:Scarborough_Bluffs_-_Bluffer's_Park.jpg |
+| `g7-echolocation.jpg` | Drawing: echolocation in a toothed whale (clicks out, echoes back from a fish) | Uko Gorter, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Killer_whale_echolocation.jpg |
+| `g7-belugas.jpg` | Belugas in the Churchill River, Manitoba | TravelingOtter | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Beluga_Whales_-_Churchill,_Manitoba_(27426558548).jpg |
+| `g7-lake-huron-ice.jpg` | Ice forming on the shore of Lake Huron, Sarnia, Ontario | Ryan Hodnett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ice_on_Lake_Huron_Shore_-_Sarnia,_Ontario_01.jpg |
+| `g7-tamarack.jpg` | A tamarack with golden needles in autumn | Anne Marie Peterson | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Tamarack_in_Autumn_(30500958145).jpg |
+| `g7-wawa-goose.jpg` | The giant goose statue in Wawa, Ontario | AgreeableTigerMoth | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Wawa_Goose,_Ontario.jpg |
+| `g7-repair-cafe.jpg` | Visitors and volunteers at a repair café | Ilvy Njiokiktjien | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Repair_Cafe_by_Ilvy_Njiokiktjien.jpg |
+| `g7-nurses-vote.jpg` | Canadian nursing sisters voting in France in the federal election of 1917 | William Rider-Rider | Public domain | https://commons.wikimedia.org/wiki/File:Canadian_nurses_voting_1917.jpg |
+| `g7-outport.jpg` | Fishing boats moored in a Newfoundland outport | miguelb | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_moored_in_a_Newfoundland_outport.jpg |
+| `g7-pool-lanes.jpg` | Lanes and starting blocks in a 50-metre swimming pool | KeepActive Australia | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Swimming_Pool_lanes_and_starting_blocks.jpg |
+| `g7-interpreter.jpg` | A sign language interpreter at a conference | Stephan Röhl, Heinrich-Böll-Stiftung | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Sign_language_interpreter,_2012_(01).jpg |
+| `g7-zucchini.jpg` | A basket of zucchini and dill | George Chernilevsky | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Zucchini_in_basket_2021_G1.jpg |
+| `g7-stage.jpg` | Two actors rehearsing a scene on a theatre stage | Harrison Keely | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Two_actors_rehearse_a_scene_from_"Almost,_Maine".jpg |
+| `g7-asl-alphabet.png` | Diagram: the American Sign Language finger-spelling alphabet, with letters | Marnanel, after Dancor and Ds13 | Public domain | https://commons.wikimedia.org/wiki/File:Asl_alphabet_gallaudet_ann.svg |
+| `g7-baklava.jpg` | Trays of baklava in a bakery | Benreis | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Turkish_baklava_in_a_bakery_in_Taksim,_Istanbul.jpg |
