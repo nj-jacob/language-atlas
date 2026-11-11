@@ -1235,7 +1235,7 @@ async function checkPassages(browser, base, g) {
   await page.waitForSelector('.ps-card');
   await page.evaluate(() => Promise.all([...document.fonts].map(f => f.load())));
   const credits = fs.readFileSync(path.join(ROOT, 'assets', 'photos', 'CREDITS.md'), 'utf8');
-  for (const [id, photo] of await page.evaluate(() => Atlas.library.list.filter(p => p.hero && p.hero.photo).map(p => [p.id, p.hero.photo]))) {
+  for (const [id, photo] of await page.evaluate(() => Atlas.library.list.flatMap(p => [p.hero && p.hero.photo].concat(p.body.map(b => b.img)).filter(Boolean).map(f => [p.id, f])))) {
     for (const dir of ['', 'thumbs']) if (!fs.existsSync(path.join(ROOT, 'assets', 'photos', dir, photo))) fail(where, id + ': assets/photos/' + (dir ? dir + '/' : '') + photo + ' is missing');
     if (!credits.includes('`' + photo + '`')) fail(where, id + ': ' + photo + ' is not listed in assets/photos/CREDITS.md');
   }
@@ -1259,13 +1259,18 @@ async function checkPassages(browser, base, g) {
       if (!(h.art || h.photo) || !h.tall || !h.cap) out.push(w + 'needs a photo or drawing across the top (hero: photo or art, tall, cap)');
       if (h.photo && !h.credit) out.push(w + 'its photo needs a credit');
       if (h.side && !(h.art && h.side.w > 0 && h.side.w < 700 && h.side.view)) out.push(w + 'a drawing beside the photo needs art and side: { w, view }');
-      if (!p.body.some(b => b.fig && b.tall && b.cap)) out.push(w + 'needs a diagram, map or chart in the text (fig, tall, cap)');
-      const text = p.body.map(b => typeof b === 'string' ? b : b.text || '').join(' ');
+      const poem = p.body.some(b => b.poem);
+      if (p.subject !== 'story' && !poem && !p.body.some(b => (b.fig || b.img) && b.tall && b.cap)) out.push(w + 'needs a diagram, map or chart in the text (fig or img, tall, cap)');
+      p.body.filter(b => b.img).forEach(b => {
+        if (!b.credit) out.push(w + 'the diagram ' + b.img + ' needs a credit');
+      });
+      const text = p.body.map(b => typeof b === 'string' ? b : b.text || (b.poem || []).join(' ')).join(' ');
       if (!p.words || p.words.length < 2 || p.words.length > 3) out.push(w + 'needs 2 or 3 words to know');
       (p.words || []).forEach(x => { if (!text.toLowerCase().includes('<b>' + x[0].toLowerCase() + '</b>')) out.push(w + 'the word to know "' + x[0] + '" is not in bold in the text'); });
       if (!p.guide || !p.guide.before || !p.guide.after) out.push(w + 'needs a guide for the grown-up (before and after reading)');
       const n = P.count(p);
-      if (n < band[0] || n > band[1]) out.push(w + 'has ' + n + ' words; a Grade ' + g + ' passage has ' + band[0] + ' to ' + band[1]);
+      const low = poem ? 100 : band[0];
+      if (n < low || n > band[1]) out.push(w + 'has ' + n + ' words; a Grade ' + g + (poem ? ' poem' : ' passage') + ' has ' + low + ' to ' + band[1]);
       const qs = p.qs || [];
       if (qs.length < 6 || qs.length > 9) out.push(w + 'has ' + qs.length + ' questions; it needs 6 to 9');
       if (qs.filter(q => q.k === 'lines').length < 2) out.push(w + 'needs 2 or more written answers');
@@ -1297,6 +1302,7 @@ async function checkPassages(browser, base, g) {
       ['front', 'back', 'key'].forEach(side => {
         if (P.render(box, p, side).over) out.push(w + 'its ' + side + ' runs off the page');
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push(w + 'its ' + side + ' shows undefined or NaN');
+        if (/\bline \?|\{line:/.test(box.textContent)) out.push(w + 'its ' + side + ' points to a line ({line:word}) whose word is not in the passage');
       });
     });
     box.remove();
