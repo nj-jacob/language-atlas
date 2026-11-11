@@ -506,3 +506,11 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
 | `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
+| `g7-ice-huts.jpg` | Ice-fishing huts on a frozen lake | RobbieFrench | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Ice_Fishing_Huts_(8479240359).jpg |
+| `g7-goose-nest.jpg` | A Canada goose sitting on her nest | Paul F. Kisak | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Canada_goose_on_nest_at_Kisak's_Cinnamon_Hill.jpg |
+| `g7-bluffs.jpg` | The Scarborough Bluffs above Lake Ontario, Toronto | The Cosmonaut | CC BY-SA 2.5 CA | https://commons.wikimedia.org/wiki/File:Scarborough_Bluffs_-_Bluffer's_Park.jpg |
+| `g7-echolocation.jpg` | Drawing: echolocation in a toothed whale (clicks out, echoes back from a fish) | Uko Gorter, NOAA | Public domain | https://commons.wikimedia.org/wiki/File:Killer_whale_echolocation.jpg |
+| `g7-belugas.jpg` | Belugas in the Churchill River, Manitoba | TravelingOtter | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Beluga_Whales_-_Churchill,_Manitoba_(27426558548).jpg |
+| `g7-lake-huron-ice.jpg` | Ice forming on the shore of Lake Huron, Sarnia, Ontario | Ryan Hodnett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ice_on_Lake_Huron_Shore_-_Sarnia,_Ontario_01.jpg |
+| `g7-tamarack.jpg` | A tamarack with golden needles in autumn | Anne Marie Peterson | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Tamarack_in_Autumn_(30500958145).jpg |
+| `g7-wawa-goose.jpg` | The giant goose statue in Wawa, Ontario | AgreeableTigerMoth | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Wawa_Goose,_Ontario.jpg |
