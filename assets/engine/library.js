@@ -1,12 +1,14 @@
-/* Language Atlas tool box: Reading passages (#tools/passages), printable reading comprehension, Grades 4 to 8.
+/* Language Atlas tool box: Reading passages (#tools/passages), printable reading comprehension, Grades 1 to 8.
    Needs atlas.js and tools.js; drawing a passage also needs sheets.js (the worksheets' themes, look and printing; sheets.css). It adds
-   itself to the tool box, so the site's Toolbox page lists it for Grades 4 to 8.
+   itself to the tool box, so the site's Toolbox page lists it for every grade.
    Each passage prints as one sheet of paper, both sides: the front is the passage with its pictures, diagrams and charts,
    the back is its questions. The answer key (grown-up view) is a third page, printed on its own.
    Nothing is marked on screen: the child answers on paper and the grown-up marks with the key.
 
-   The passages are written for this site, about 100 for each grade, on topics from every subject. A grade's passages are in
-   gradeN/passages.js, loaded only when the tool opens:
+   The passages are written for this site, on topics from every subject: about 100 for each of Grades 4 to 8, and shorter ones for
+   Grades 1 to 3 (a story, poem or simple information text of about 60 to 270 words, 3 choices in each circle-one question). In
+   Grades 1 and 2 the text is large, in one column, with any diagram or box beside it; Grade 3 is a little smaller, in two columns.
+   A grade's passages are in gradeN/passages.js, loaded only when the tool opens:
      Atlas.library.add({ id, subject, form, title, deck, hero: { art, cap }, body: [...], words: [[word, meaning], ...], qs: [...] })
    id      'g5-potholes': the grade, then a short name. The sheet number is G5-P01 (the order in the file).
    subject one of SUBJECTS below. form: the text form (Report, Explanation, Diary, Letter to the editor ...).
@@ -50,7 +52,8 @@
   var SUBJECTS = (P.subjects = [['science', 'Science', 'FO'], ['social', 'Social studies', 'LB'], ['history', 'History', 'LK'], ['geography', 'Geography', 'LK'],
     ['arts', 'The arts', 'GD'], ['health', 'Health', 'SN'], ['tech', 'Technology', 'SK'], ['math', 'Math', 'SK'], ['story', 'Stories', 'GD']]);
   var LETTERS = 'ABCDEFGH';
-  /* every key ends with the same fluency check (B2.3), so each passage is also read aloud once */
+  /* every key ends with the same fluency check, so each passage is also read aloud once: B2.3 from Grade 4, B2.5 in Grades 2 and 3, B2.8 in Grade 1 */
+  P.fluency = function () { return A.grade >= 4 ? 'B2.3' : A.grade > 1 ? 'B2.5' : 'B2.8'; };
   var FLUENT = 'Have the child read one paragraph aloud to you. Listen for accuracy, a steady pace and expression that fits the meaning. Note any words they stumble on and practise them together.';
   var HATCH = '<defs><pattern id="ps-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="t"/></pattern></defs>';
 
@@ -107,6 +110,8 @@
   };
 
   /* ---------- the pages ---------- */
+  /* the page's class: Grades 1 to 3 are set larger (library.css, .ps-young and .ps-g1 to .ps-g3) */
+  function page(side) { return '<div class="ws-page ps-page ps-' + side + (A.grade < 4 ? ' ps-young ps-g' + A.grade : '') + '">'; }
   function art(svg, w, h, cls) { return '<svg class="ps-art' + (cls ? ' ' + cls : '') + '" viewBox="0 0 ' + w + ' ' + h + '" aria-hidden="true">' + HATCH + svg + '</svg>'; }
   function head(p, th, kind) {
     var sub = P.subject(p.subject);
@@ -137,7 +142,7 @@
         (b.by ? '<p class="ps-by">' + b.by + '</p>' : '') + '</div>';
       return '<aside class="ps-box"><p class="ws-label">' + b.box + '</p><p>' + nobreak(b.text) + '</p></aside>';
     }).join('');
-    return '<div class="ws-page ps-page ps-front">' + frame(th) + head(p, th) +
+    return page('front') + frame(th) + head(p, th) +
       hero(p, true) +
       '<div class="ps-text' + (p.plain ? ' ps-plain' : '') + (p.body.every(function (b) { return b.poem; }) ? ' ps-verse' : '') + '">' + body + '</div>' +
       '<footer class="ps-foot"><dl class="ps-words"><dt class="ws-label">Words to know</dt>' + p.words.map(function (w) { return '<div><dt>' + w[0] + '</dt><dd>' + w[1] + '</dd></div>'; }).join('') + '</dl>' +
@@ -156,7 +161,7 @@
     return '<div class="ws-q ps-q' + (q.half ? '' : ' ws-wide') + '"><span class="ws-n">' + (i + 1) + '</span>' + h + '</div>';
   }
   function back(p, th) {
-    return '<div class="ws-page ps-page ps-back">' + frame(th) + head(p, th, 'Questions') +
+    return page('back') + frame(th) + head(p, th, 'Questions') +
       '<div class="ps-qs ws-grid">' + p.qs.map(question).join('') + '</div>' +
       '<footer class="ps-foot"><p class="ps-tip">Look back at the passage to find and check each answer.</p>' + foot(p, th, 'Language Atlas · Grade ' + A.grade) + '</footer></div>';
   }
@@ -173,15 +178,15 @@
   }
   function key(p, th) {
     var total = p.qs.reduce(function (n, q) { return n + P.marks(q); }, 0);
-    return '<div class="ws-page ps-page ps-key ws-key">' + frame(th) + head(p, th, 'Answer key') +
+    return page('key ws-key') + frame(th) + head(p, th, 'Answer key') +
       '<ol class="ps-qs ps-ans">' + p.qs.map(function (q, i) {
         return '<li class="ws-q"><span class="ws-n">' + (i + 1) + '</span><p class="ps-kq">' + q.q + '</p><p class="ws-ans">' + answer(q) + '</p>' +
           '<p class="ps-code">' + q.code + ' · ' + P.marks(q) + (P.marks(q) > 1 ? ' marks' : ' mark') + '</p></li>';
       }).join('') + '</ol>' +
       '<div class="ps-guide"><div><p class="ws-label">Before reading</p><p>' + p.guide.before + '</p></div><div><p class="ws-label">After reading, talk about it</p><p>' + p.guide.after + '</p></div>' +
-      '<div class="ps-fluent"><p class="ws-label">Read aloud · B2.3</p><p>' + FLUENT + '</p></div></div>' +
+      '<div class="ps-fluent"><p class="ws-label">Read aloud · ' + P.fluency() + '</p><p>' + FLUENT + '</p></div></div>' +
       '<footer class="ps-foot"><p class="ps-tip">Score ____ of ' + total + '. Accept any answer the text supports: written answers here are examples.</p>' +
-      foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · Ontario ' + codes(p).concat('B2.3').sort().join(', ')) + '</footer></div>';
+      foot(p, th, 'Language Atlas · Grade ' + A.grade + ' · Ontario ' + codes(p).concat(P.fluency()).sort().join(', ')) + '</footer></div>';
   }
   function frame(th) { return th.frame ? '<svg class="ws-frame" viewBox="0 0 816 1056" aria-hidden="true">' + th.frame() + '</svg>' : ''; }
   function codes(p) { var out = []; p.qs.forEach(function (q) { if (out.indexOf(q.code) < 0) out.push(q.code); }); return out.sort(); }
@@ -303,7 +308,6 @@
     P.load().then(function () {
       var p = P.list.filter(function (x) { return x.id === rest; })[0];
       if (p) return one(root, p);
-      if (!P.list.length) { root.innerHTML = '<p class="ps-lede">Reading passages start in Grade 4.</p>'; return; }
       library(root, '');
     });
     return {};
@@ -311,5 +315,5 @@
 
   var ICON = '<rect x="7" y="5" width="30" height="38" rx="3" style="fill:var(--card);stroke:var(--ink);stroke-width:2"/><rect x="12" y="10" width="20" height="10" rx="1.5" style="fill:none;stroke:var(--accent);stroke-width:2"/>' +
     '<path d="M12 25h20M12 30h20M12 35h14" style="stroke:var(--ink3);stroke-width:2.5;stroke-linecap:round"/><path d="M37 13l6 3v26l-6-3" style="fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round"/>';
-  A.toolkit.tools.push({ id: 'passages', shelf: 'read', name: 'Reading passages', icon: ICON, make: passages, from: 4, undo: false });
+  A.toolkit.tools.push({ id: 'passages', shelf: 'read', name: 'Reading passages', icon: ICON, make: passages, undo: false });
 })();

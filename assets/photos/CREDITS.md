@@ -506,3 +506,16 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
 | `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
+| `g1-mittens.jpg` | Mitts covered in fresh snow | Pink Sherbet Photography | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Snow-covered_mittens_(4229023687).jpg |
+| `g1-green-frog.jpg` | A northern green frog on moss next to a pond | Contrabaroness | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Northern_Green_Frog_-_Tewksbury,_NJ.jpg |
+| `g1-puddle.jpg` | Raindrops making rings in a puddle | Jean-Marie Vugnon | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:3040_flaque_et_ronds_dans_l_eau.jpg |
+| `g2-fog.jpg` | Morning fog over a lake | Kgbo | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morning_fog_over_lake_in_Warmian-Masurian_Voivodeship,_summer_2024.jpg |
+| `g2-crow.jpg` | An American crow, Pittsfield, Massachusetts | Paul Danese | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20240204_american_crow_646_PD204773.jpg |
+| `g2-carpenter-ant.jpg` | An eastern black carpenter ant, Guelph, Ontario | Ryan Hodnett | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eastern_Black_Carpenter_Ant_(Camponotus_pennsylvanicus)_-_Guelph,_Ontario_2017-04-09_(02).jpg |
+| `g3-garbage-truck.jpg` | A side-loading recycling and garbage truck with a robot arm | Dllu | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Recology_Lodal_Garbage_Truck_14425_in_San_Francisco.jpg |
+| `g1-sled-hill.jpg` | A child sliding down a hill on a yellow sled | Michał Frąckowiak | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Michał_Frąckowiak_-_Snow_Sledding.jpg |
+| `g3-cat-vet.jpg` | A veterinarian listens to an orange cat with a stethoscope | Veterinarian Pet Alliance | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Stethoscope_examination_of_an_orange_cat_in_Newark,_New_Jersey.jpg |
+| `g3-snow-tracks.jpg` | Animal tracks in fresh snow on a forest trail | Peter Cooper Jr. | CC0 | https://commons.wikimedia.org/wiki/File:Animal_tracks_in_fresh_snow_on_Oak_Ridge_Trail,_Capen_Hill,_2025-01-20.jpg |
+| `g3-kite.jpg` | A kite high in the sky | Rafsan Rasin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kite_in_the_sky.JPG |
+| `g3-crossing-guard.jpg` | Crossing guards help children cross a street near a school | Austin Transportation and Public Works | Public domain | https://commons.wikimedia.org/wiki/File:Walk_%26_Roll_to_School_Day_-_54841803483.jpg |
+| `g2-bean-steps.jpg` | A navy bean growing from seed to seedling, step by step | B. Domangue | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Navy_Bean_Seed_to_Seedling_Germination.jpg |
