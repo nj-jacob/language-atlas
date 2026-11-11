@@ -4,7 +4,7 @@ Atlas.setup({
   grade: 8,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D, and the Language Conventions Continuum (Appendix B).',
   chapters: [
-    { id: 'roots', title: 'Roots and Word Parts', sub: 'Greek and Latin roots, suffixes and spelling changes', strand: 'B', codes: 'B2.1',
+    { id: 'roots', title: 'Roots and Word Parts', sub: 'Greek and Latin roots, suffixes and spelling changes', strand: 'B', codes: 'B2.1', spell: true,
       desc: 'Use roots like port, spect and graph to read long words. See how suffixes change a word' + '’' + 's job and its spelling.' },
     { id: 'vocabulary', title: 'Words in Context', sub: 'clues in the sentence, academic words and shades of meaning', strand: 'B', codes: 'B2.2',
       desc: 'Work out new words from clues and word parts. Use the words of other subjects, and choose words for their feeling.' },

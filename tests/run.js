@@ -1303,7 +1303,10 @@ async function checkPassages(browser, base, g) {
         } else out.push(qw + 'unknown kind "' + q.k + '"');
       });
       ['front', 'back', 'key'].forEach(side => {
-        if (P.render(box, p, side).over) out.push(w + 'its ' + side + ' runs off the page');
+        if (P.render(box, p, side).over) {
+          const t = box.querySelector({ front: '.ps-text', back: '.ps-qs', key: '.ps-guide' }[side]);
+          out.push(w + 'its ' + side + ' runs off the page (by ' + Math.max(t.scrollHeight - t.clientHeight, 0) + ' px down, ' + Math.max(t.scrollWidth - t.clientWidth, 0) + ' px across, at the smallest text size)');
+        }
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(box.textContent)) out.push(w + 'its ' + side + ' shows undefined or NaN');
         if (/\bline \?|\{line:/.test(box.textContent)) out.push(w + 'its ' + side + ' points to a line ({line:word}) whose word is not in the passage');
       });
@@ -1384,7 +1387,7 @@ async function checkDecodable(browser, base) {
 async function checkSpelling(browser, base) {
   const where = 'spelling path';
   const list = spelling.load(ROOT);
-  spelling.check(list, ROOT).forEach(p => fail('tool box', p));
+  spelling.check(list, ROOT).concat(spelling.checkRules(spelling.rules(ROOT), list), spelling.checkChapters(ROOT, list)).forEach(p => fail('tool box', p));
   const { ctx, page, errs } = await newPage(browser, base);
   await page.goto(base + '/grade1/index.html#tools/spelling');
   await page.waitForSelector('.dc-card');
@@ -1452,13 +1455,41 @@ async function checkSpelling(browser, base) {
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);
     for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print',
-      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print']) {
+      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print', '/check', '/review', '/rules', '/rules/doubling']) {
       await page.evaluate(h => { location.hash = 'tools/spelling' + h; }, part);
-      await page.waitForSelector(part ? '.sp-stage > *' : '.dc-card');
+      await page.waitForSelector(part ? '.sp-stage > *, .sp-check, .sp-rlist, .sp-rcard' : '.dc-card');
       await page.waitForTimeout(150);
       await screenCheck(page, where, (part || 'the list of steps') + ' at ' + vp.width + ' px');
     }
   }
+  /* a spelling chapter's link opens the Spelling path at its grade */
+  await page.goto(base + '/grade1/index.html#word-reading');
+  await page.waitForSelector('.ch-spell a');
+  await page.click('.ch-spell a >> nth=0');
+  await page.waitForSelector('#sp-band-1');
+  await page.waitForTimeout(200);
+  if (await page.evaluate(() => Math.abs(document.getElementById('sp-band-1').getBoundingClientRect().top) > 200)) fail(where, 'the Grade 1 spelling chapter link does not open the Spelling path at Grade 1');
+  /* every rule card opens on a phone, and each step it names links back to it */
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const c of spelling.rules(ROOT)) {
+    await page.evaluate(id => { location.hash = 'tools/spelling/rules/' + id; }, c.id);
+    await page.waitForSelector('.sp-rcard');
+    await screenCheck(page, where, 'the rule card ' + c.id + ' at 390 px');
+    const n = await page.evaluate(() => document.querySelectorAll('.sp-rsteps a').length);
+    if (n !== c.steps.length) fail(where, 'the rule card ' + c.id + ' should link to ' + c.steps.length + ' steps, but links to ' + n);
+    await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/print'; }, c.steps[0]);
+    await page.waitForSelector('.sp-rule');
+    if (!(await page.$('.sp-rc[href="#tools/spelling/rules/' + c.id + '"]'))) fail(where, 'step ' + c.steps[0] + ' does not link to its rule card ' + c.id);
+  }
+  /* the spelling check: right on the first words, then 3 not yet; it stops, names the step to start at, and saves it */
+  const pr = spelling.probes(list), right = Math.min(9, pr.length - 3), want = spelling.start(list, [...Array(right).fill(true), false]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.evaluate(() => { location.hash = 'tools/spelling/check'; });
+  for (let i = 0; i < right; i++) { await page.waitForSelector('.sp-check [data-m]'); await page.click('[data-m="1"]'); }
+  for (let i = 0; i < 3; i++) { await page.waitForSelector('.sp-check [data-m]'); await page.click('[data-m="0"]'); }
+  await page.waitForSelector('.sp-check a.btn');
+  const got = await page.evaluate(() => [document.querySelector('.sp-check a.btn').getAttribute('href'), (Atlas.load('sp:check', {}) || {}).start]);
+  if (got[0] !== '#tools/spelling/' + want || got[1] !== want) fail(where, 'the spelling check with ' + right + ' right then 3 not yet should start at ' + want + ', but it says ' + got.join(' / '));
   await page.evaluate(() => Atlas.adult(true));
   await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/dictate'; }, r.ids[0]);
   await page.waitForSelector('.sp-mk');
@@ -1466,6 +1497,29 @@ async function checkSpelling(browser, base) {
   await page.click('[data-a="save"]');
   const saved = await page.evaluate(id => Atlas.spelling.record(Atlas.spelling.find(id)).days, r.ids[0]);
   if (!saved.length || saved[0].slips.length !== 1 || saved[0].ok !== saved[0].of - 1) fail(where, 'saving a dictation with one sound marked wrong does not keep the right score');
+  /* the daily review: the word with the slip is waiting; it comes first, and leaves after it is right on two different days */
+  const missed = await page.evaluate(id => Atlas.spelling.dictation(Atlas.spelling.find(id)).words[0].w, r.ids[0]);
+  const box = await page.evaluate(() => Object.keys(Atlas.spelling.review().box));
+  if (box.join() !== missed) fail(where, 'a dictation word with a sound marked wrong (' + missed + ') should wait in the daily review, but the review holds ' + (box.join(', ') || 'nothing'));
+  async function runReview(right) {
+    await page.evaluate(() => { location.hash = 'tools/spelling'; });
+    await page.waitForSelector('.dc-card');
+    await page.evaluate(() => { location.hash = 'tools/spelling/review'; });
+    await page.waitForSelector('.sp-review [data-m]');
+    const items = await page.evaluate(() => Atlas.spelling.today().map(i => i.x.w));
+    for (let i = 0; i < items.length; i++) { await page.waitForSelector('.sp-review [data-m]'); await page.click(right(i) ? '[data-m="1"]' : '[data-m="0"]'); }
+    await page.waitForSelector('.sp-review a.btn');
+    return items;
+  }
+  let items = await runReview(() => true);
+  if (items[0] !== missed) fail(where, 'the daily review should start with the missed word ' + missed + ', not ' + items[0]);
+  if (!(await page.evaluate(w => Atlas.spelling.review().box[w], missed))) fail(where, 'a missed word leaves the daily review after one right day; it needs two different days');
+  await page.evaluate(w => { const r = Atlas.spelling.review(); r.box[w].ok = ['2000-01-01']; Atlas.save('sp:review', r); }, missed);
+  items = await runReview(i => i !== 1);
+  const after = await page.evaluate(() => Atlas.spelling.review());
+  if (after.box[missed]) fail(where, 'a missed word right on two different days should leave the daily review');
+  if (items[1] && !after.box[items[1]]) fail(where, 'a word marked not yet in the daily review (' + items[1] + ') should wait for the next review');
+  if (after.days.slice(-1)[0].of !== items.length) fail(where, 'the daily review does not save the day\'s score');
   await page.evaluate(() => Atlas.adult(false));
   if (errs.length) fail(where, 'errors: ' + [...new Set(errs)].slice(0, 5).join(' / '));
   await ctx.close();
