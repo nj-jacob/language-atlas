@@ -6334,18 +6334,18 @@
       cap: 'The ASL finger-spelling alphabet. Signers spell names and some words letter by letter.'
     },
     body: [
+      { img: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', tall: 90, cap: 'An interpreter at work.' },
       '<i>When Westdale Public School held its Remembrance Day assembly, two interpreters stood beside the stage, translating every word into American Sign Language (ASL) for Deaf students and families. Grade 7 reporter Amira Hassan spoke with one of them, Danielle Côté, a <b>certified</b> ASL-English interpreter from Ottawa.</i>',
       '<b class="ps-who">Amira:</b> Many people think sign language is just English made with your hands. Is that true?',
-      '<b class="ps-who">Danielle:</b> It is the most common misunderstanding about my work. ASL is a complete language, with its own vocabulary and grammar, and it is quite different from English. Facial expressions are part of the grammar: raising your eyebrows can turn a statement into a question. In Canada there are two main sign languages, ASL and Langue des signes québécoise, or LSQ, which is used mostly in Quebec.',
+      '<b class="ps-who">Danielle:</b> It is the most common misunderstanding about my work. ASL is a complete language, with its own vocabulary and grammar, and it is quite different from English. In Canada there are two main sign languages, ASL and Langue des signes québécoise, or LSQ, which is used mostly in Quebec.',
       '<b class="ps-who">Amira:</b> Why were there two of you at the assembly?',
       '<b class="ps-who">Danielle:</b> Interpreting is mentally exhausting. You are listening to one language, understanding it, rearranging it into the structure of another language and producing it, all at the same moment and without falling behind. After about twenty minutes, accuracy begins to drop, so interpreters usually work in pairs and switch. The one who is resting is not really resting, though. She is watching, ready to feed her partner a word or a number that was missed.',
       '<b class="ps-who">Amira:</b> What is the hardest thing to interpret?',
-      '<b class="ps-who">Danielle:</b> Jokes, without question. A joke built on two English words that sound alike usually has no equivalent in ASL, so I have to decide in a split second whether to explain it, replace it with something that works in ASL, or simply let the audience know a joke was made.',
+      '<b class="ps-who">Danielle:</b> Jokes, without question. A joke built on two English words that sound alike usually has no equivalent in ASL, so I have to decide in a split second whether to explain it, swap in a different joke, or simply let the audience know a joke was made.',
       '<b class="ps-who">Amira:</b> You wrote “Deaf” with a capital D in your email. Why?',
       '<b class="ps-who">Danielle:</b> Lowercase “deaf” describes not being able to hear. Capital-D “Deaf” describes a cultural community, with its own language, history, art and humour. Many Deaf people do not see themselves as missing something. They see themselves as members of a linguistic minority, like francophones in Alberta.',
       '<b class="ps-who">Amira:</b> What can hearing students do to be more <b>inclusive</b>?',
-      '<b class="ps-who">Danielle:</b> Learn a few signs, starting with the finger-spelling alphabet. Face a Deaf person when you speak, and do not cover your mouth. And never say “never mind” if someone misses something. To a Deaf person, those two words mean, “You are not worth repeating it for.”',
-      { img: 'g7-interpreter.jpg', credit: 'Photo: Stephan Röhl, Heinrich-Böll-Stiftung, CC BY-SA 2.0, Wikimedia Commons', tall: 90, cap: 'An interpreter at work.' }
+      '<b class="ps-who">Danielle:</b> Learn a few signs, starting with the finger-spelling alphabet. Face a Deaf person when you speak, and do not cover your mouth. And never say “never mind” if someone misses something. To a Deaf person, those two words mean, “You are not worth repeating it for.”'
     ],
     guide: { before: 'Ask what the child knows about sign language. Look at the finger-spelling alphabet together and try spelling your first names. Teach <b>certified</b> (officially trained and tested) and <b>inclusive</b>.',
       after: 'Danielle says “never mind” can hurt. What other small habits might leave people out without our noticing?' },
@@ -6362,7 +6362,7 @@
       { k: 'choice', code: 'C3.6', q: 'Why does Danielle compare Deaf people to “francophones in Alberta” ({line:Alberta})?',
         opts: ['Most Deaf people live in Alberta.', 'Both are communities that share a language that is not the majority’s.', 'Both use LSQ.', 'Both need interpreters at school.'], a: 1 },
       { k: 'lines', code: 'C3.6', n: 3, q: 'Name two things hearing students can do to be more inclusive of Deaf people, according to the interview, and explain why one of them matters.',
-        a: 'Learn some signs, such as finger-spelling, and face a Deaf person when speaking. Facing them matters because many Deaf people read lips and facial expressions, which carry meaning.', look: 'two actions from the text, and a reason for one' },
+        a: 'Learn some signs, such as finger-spelling, and face a Deaf person when speaking. Facing them matters because many Deaf people read lips and faces to follow what is said.', look: 'two actions from the text, and a reason for one' },
       { k: 'lines', code: 'C3.2', n: 3, q: 'Danielle says the resting interpreter “is not really resting” ({line:resting}). What does this show about the job?',
         a: 'The job needs constant attention and teamwork. Even while not signing, the partner watches closely to catch and supply missed words or numbers.', look: 'an inference about the job (teamwork, concentration) supported by the quote' }
     ]
