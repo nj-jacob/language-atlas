@@ -103,7 +103,11 @@
 html.adult .sp-marks.adult-only,html.adult .sp-script.adult-only,html.adult .sp-say-g.adult-only{border:0;padding-top:0;margin-top:0}
 html.adult .sp-marks.adult-only::after,html.adult .sp-script.adult-only::after,html.adult .sp-say-g.adult-only::after{content:none}
 
-/* the list: where each step stands */
+/* the list: where each step stands, and the spelling check */
+.sp-start{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:0 0 18px}
+.sp-start p{margin:0;color:var(--ink2)}
+.sp-check{align-items:stretch;text-align:center}
+.sp-cl canvas{height:110px}
 .sp-st{font-weight:700}
 .sp-st-secure{color:var(--good)}
 .sp-st-practise{color:var(--accent)}
