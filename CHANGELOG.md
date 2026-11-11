@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-11
+- Spelling path: every Kindergarten to Grade 3 step (63 in all, up from 10), listed by grade: short vowels, digraphs, FLOSS, glued sounds, blends, endings, tch and dge, soft c and g, ph, vowels with r, vowel teams, consonant-le, silent letters, prefixes and suffixes, and the Grade 2 and 3 spellings. Longer words use beat boxes (one box for each beat). The tile tray offers only spellings taught by then.
+
 ## 2026-11-10
 - Spelling path (tool box, new Spelling shelf): spelling taught step by step in the decodable readers' order. Pilot: the 10 Grade 1 long vowel steps, each with Sound boxes, a Sort (a choice map for ai/ay and oa/ow), an Ending workshop, a Dictation pad the grown-up marks sound by sound (secure at 90% on two different days), and a page to print with a grown-up page.
 - Reading passages, Grade 6: the last 20 passages (100 in all): bats and white-nose syndrome, coral reefs, the Manicouagan crater, drones, tardigrades, New France, two views of Treaty 9, winter ice roads, tessellations, sugar in drinks, a fable about a fox, an imagined interview with a beekeeper, Chantal Petitclerc, electric cars and energy, Arctic sea ice, snowshoes, the Halifax Explosion, reviving the Kanien'kéha language, the steelpan and Habitat 67. Grade 6 now covers every reading expectation the check asks for.

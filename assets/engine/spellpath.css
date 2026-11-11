@@ -147,3 +147,7 @@ html.adult .sp-marks.adult-only::after,html.adult .sp-script.adult-only::after,h
 .sp-pdl b,.sp-psent b{font-family:var(--face);font-size:18px;color:var(--acc);width:18px}
 .sp-pdl i,.sp-psent i{flex:1;border-bottom:1.3px solid var(--ink);height:1px}
 .sp-page .ws-ans{margin-top:4px!important}
+.sp-bcodes{font-weight:400;font-size:.82rem;color:var(--ink3);margin-left:.4em}
+.sp-pfocus span{white-space:nowrap}
+.sp-pfocus.sp-pmany{font-size:26px}
+.sp-page .dc-name+.dc-title{padding-right:230px}
