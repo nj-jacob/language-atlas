@@ -1384,7 +1384,7 @@ async function checkSpelling(browser, base) {
     box.className = 'ws-sheet';
     box.style.cssText = 'width:816px;position:absolute;left:0;top:0';
     document.body.appendChild(box);
-    want.forEach(([id, b, s, w]) => { const e = SP.ending(b, s); if (e.word !== w) out.push(id + ': ' + b + ' + ' + s + ' makes ' + e.word + ' in the tool, but the spelling rules give ' + w); });
+    want.forEach(([id, b, s, w, st]) => { const e = SP.ending(b, s, st); if (e.word !== w) out.push(id + ': ' + b + ' + ' + s + ' makes ' + e.word + ' in the tool, but the spelling rules give ' + w); });
     SP.list.forEach(p => {
       ['page', 'key'].forEach(side => {
         const r = SP.render(box, p, side);
@@ -1420,10 +1420,30 @@ async function checkSpelling(browser, base) {
       await page.fill('#sp-end-in', w); await page.click('[data-a="join"]');
       if (!(await page.$('.sp-msg.sp-good'))) fail(where, id + ': writing ' + w + ' in the Ending workshop is not marked right');
     }
+    if (await page.$('a[href="#tools/spelling/' + id + '/family"]')) {
+      await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/family'; }, id);
+      await page.waitForSelector('.sp-trunk');
+      const f = await page.evaluate(id => Atlas.spelling.find(id).family, id), w = f.words.split(' ').find(x => x !== f.root);
+      const [pre, suf] = w.split(f.root);
+      if (pre) await page.click('[data-pre="' + pre + '"]');
+      if (suf) await page.click('[data-suf="' + suf + '"]');
+      await page.click('[data-a="grow"]');
+      if (!(await page.$('.sp-msg.sp-good')) || !(await page.$('.sp-leaves li'))) fail(where, id + ': growing ' + w + ' on the Word family tree is not marked right');
+    }
+    if (await page.$('a[href="#tools/spelling/' + id + '/proof"]')) {
+      await page.evaluate(id => { location.hash = 'tools/spelling/' + id + '/proof'; }, id);
+      await page.waitForSelector('.sp-pw');
+      const x = await page.evaluate(id => Atlas.spelling.proofItems(Atlas.spelling.find(id)).find(x => x.fix), id);
+      await page.click('.sp-pw:text-is("' + x.t + '")');
+      await page.fill('#sp-proof-in', x.fix.replace(/^[^A-Za-z']+|[^A-Za-z']+$/g, ''));
+      await page.click('[data-a="fix"]');
+      if (!(await page.$('.sp-pw.sp-fixed')) || !(await page.$('.sp-msg.sp-good'))) fail(where, id + ': fixing ' + x.t + ' to ' + x.fix + ' in Proofread is not marked right');
+    }
   }
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);
-    for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print']) {
+    for (const part of ['', '/' + r.ids[0] + '/build', '/ai-ay/sort', '/y-vowel/endings', '/' + r.ids[0] + '/dictate', '/' + r.ids[0] + '/print',
+      '/g8-doubles/build', '/g5-port/family', '/g5-homophones/proof', '/g6-in-not/endings', '/g8-civics/print']) {
       await page.evaluate(h => { location.hash = 'tools/spelling' + h; }, part);
       await page.waitForSelector(part ? '.sp-stage > *' : '.dc-card');
       await page.waitForTimeout(150);
