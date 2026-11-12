@@ -506,6 +506,7 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
 | `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
+| `g8-elsie-macgill.jpg` | Portrait of Elsie MacGill, aeronautical engineer | Library and Archives Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Elsie_Gregory_MacGill.jpg |
 | `g5-road-bike.jpg` | A steel racing bicycle on display | Ged Carroll | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Faema_steel_racing_bike_used_by_Eddy_Merckx_(26068021782).jpg |
 | `g5-candles.jpg` | Candles burning on a dark windowsill | Le Priyavrat | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Candles_on_a_dark_sill.jpg |
 | `g5-lighthouse-fog.jpg` | Peggy’s Cove lighthouse, Nova Scotia, on a foggy day | Inmouchar | Public domain | https://commons.wikimedia.org/wiki/File:Peggy's_Cove_foggy_day.jpg |
