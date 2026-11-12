@@ -506,6 +506,13 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g4-skipping.jpg` | Two girls skipping rope | Maksym Kozlenko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Two_girls_playing_skipping_rope.jpg |
 | `g4-iceberg.jpg` | Iceberg off the coast of Newfoundland | Natalie Lucier | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Iceberg_in_Newfoundland_Canada.jpg |
 | `g4-butterfly-cycle.png` | Diagram: the life cycle of a monarch butterfly (egg, caterpillar, chrysalis, butterfly) | Cyanocorax (Openclipart) | CC0 | https://commons.wikimedia.org/wiki/File:Butterfly_life_cycle_diagram_in_English.svg |
+| `g6-fresnel-lens.png` | Diagram: how a Fresnel lens bends the light of a lamp into a beam (from Ganot’s physics textbook, 1800s) | Adolphe Ganot | Public domain | https://commons.wikimedia.org/wiki/File:Fresnel_lighthouse_lens_diagram.png |
+| `g6-big-dipper.png` | Map: the Big Dipper, part of the constellation Ursa Major (cropped) | Torsten Bronger | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ursa_Major_constellation_map.svg |
+| `g6-cloud-types.png` | Diagram: cloud types arranged by height | Valentin de Bruyn / Coton | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Cloud_types_en.svg |
+| `g6-nunavut-map.png` | Map: Nunavut (in yellow) within northern Canada | Flappiefh, after TUBS | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Canada_Nunavut_location_map-lambert_proj3.svg |
+| `g6-bird-banding.jpg` | A researcher holds a magnolia warbler at a bird banding station | Lorie Shaull | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_researcher_with_a_Magnolia_warbler_at_a_bird_banding_station.jpg |
+| `g6-mcmurray-smoke.jpg` | Satellite image: smoke from the Fort McMurray wildfire, May 2016 | Jeff Schmaltz, NASA | Public domain | https://commons.wikimedia.org/wiki/File:Fort_McMurray_Wildfire,_Alberta_(MODIS_2016-05-29).jpg |
+| `g6-flyways.jpg` | Map: the four bird migration flyways of North America | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Flyways_map_(29995934172).jpg |
 | `g8-elsie-macgill.jpg` | Portrait of Elsie MacGill, aeronautical engineer | Library and Archives Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Elsie_Gregory_MacGill.jpg |
 | `g5-road-bike.jpg` | A steel racing bicycle on display | Ged Carroll | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Faema_steel_racing_bike_used_by_Eddy_Merckx_(26068021782).jpg |
 | `g5-candles.jpg` | Candles burning on a dark windowsill | Le Priyavrat | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Candles_on_a_dark_sill.jpg |
