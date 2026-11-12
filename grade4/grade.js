@@ -4,9 +4,9 @@ Atlas.setup({
   grade: 4,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D.',
   chapters: [
-    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.1, B2.2',
+    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.1, B2.2', spell: true,
       desc: 'Use dis-, mis- and pre-, and -able, -ness and -ment, to read, spell and work out new words.' },
-    { id: 'spelling', title: 'Spelling Word Endings', sub: 'what happens when you add an ending', strand: 'B', codes: 'B2.1',
+    { id: 'spelling', title: 'Spelling Word Endings', sub: 'what happens when you add an ending', strand: 'B', codes: 'B2.1', spell: true,
       desc: 'Drop the e, double the last letter, change y to i, and spell plurals with -s, -es and -ies.' },
     { id: 'meanings', title: 'Word Meanings', sub: 'clues, shades of meaning and subject words', strand: 'B', codes: 'B2.2',
       desc: 'Work out new words from clues, pick the exact word, and learn words from science and social studies.' },

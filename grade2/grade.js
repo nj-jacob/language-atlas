@@ -4,9 +4,9 @@ Atlas.setup({
   grade: 2,
   curriculum: 'Expectation codes and wording were checked against the Ministry\'s 2023 Language curriculum, strands A, B, C and D, and the Language Foundations Continuum.',
   chapters: [
-    { id: 'sounds', title: 'Sounds and Spelling', sub: 'blend sounds, split sounds, and spelling choices', strand: 'B', codes: 'B2.1, B2.2',
+    { id: 'sounds', title: 'Sounds and Spelling', sub: 'blend sounds, split sounds, and spelling choices', strand: 'B', codes: 'B2.1, B2.2', spell: true,
       desc: 'Blend sounds to read and split them to spell. Soft c and g, long o, and the air sound.' },
-    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.3, B2.4',
+    { id: 'word-parts', title: 'Word Parts', sub: 'prefixes and suffixes', strand: 'B', codes: 'B2.3, B2.4', spell: true,
       desc: 'Build words from parts. Use uni-, bi-, tri-, mis-, pre-, -er, -or, -ness and -y to work out what a word means.' },
     { id: 'meanings', title: 'Word Meanings', sub: 'same, opposite, stronger, and words with two meanings', strand: 'B', codes: 'B2.4',
       desc: 'Find words that mean the same or the opposite, pick the stronger word, and use the sentence to choose the right meaning.' },

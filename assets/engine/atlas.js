@@ -80,7 +80,10 @@
       m: m, prev: built[at - 1] || null, next: built[at + 1] || null,
       head: '<header class="chead"><span class="num">Chapter ' + (idx + 1) + '</span><h1>' + m.title + '</h1>' +
         '<p class="lede">' + m.sub.charAt(0).toUpperCase() + m.sub.slice(1) + '.</p>' +
-        '<span class="pill">' + m.strand + ' &middot; ' + Atlas.strands[m.strand] + '</span> <span class="codes adult-only">Ontario expectations ' + m.codes + '</span></header>'
+        '<span class="pill">' + m.strand + ' &middot; ' + Atlas.strands[m.strand] + '</span> <span class="codes adult-only">Ontario expectations ' + m.codes + '</span>' +
+        /* a spelling chapter (spell: true) links to the tool box's spelling: the Grade's steps, rule cards, daily review and heart words */
+        (m.spell ? '<p class="ch-spell">Spell it step by step: <a href="#tools/spelling/band-' + Atlas.grade + '">Spelling path, Grade ' + Atlas.grade + '</a> &middot; ' +
+          '<a href="#tools/spelling/rules">Rule cards</a> &middot; <a href="#tools/spelling/review">Daily review</a> &middot; <a href="#tools/hearts">Heart words</a></p>' : '') + '</header>'
     };
   };
   Atlas.nextPrev = function (ctx) {
