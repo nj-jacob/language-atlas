@@ -513,6 +513,7 @@ To add a photo: take it from Wikimedia Commons (or another source with the same 
 | `g6-bird-banding.jpg` | A researcher holds a magnolia warbler at a bird banding station | Lorie Shaull | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_researcher_with_a_Magnolia_warbler_at_a_bird_banding_station.jpg |
 | `g6-mcmurray-smoke.jpg` | Satellite image: smoke from the Fort McMurray wildfire, May 2016 | Jeff Schmaltz, NASA | Public domain | https://commons.wikimedia.org/wiki/File:Fort_McMurray_Wildfire,_Alberta_(MODIS_2016-05-29).jpg |
 | `g6-flyways.jpg` | Map: the four bird migration flyways of North America | U.S. Fish and Wildlife Service | Public domain | https://commons.wikimedia.org/wiki/File:Flyways_map_(29995934172).jpg |
+| `g8-elsie-macgill.jpg` | Portrait of Elsie MacGill, aeronautical engineer | Library and Archives Canada | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Elsie_Gregory_MacGill.jpg |
 | `g5-road-bike.jpg` | A steel racing bicycle on display | Ged Carroll | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Faema_steel_racing_bike_used_by_Eddy_Merckx_(26068021782).jpg |
 | `g5-candles.jpg` | Candles burning on a dark windowsill | Le Priyavrat | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Candles_on_a_dark_sill.jpg |
 | `g5-lighthouse-fog.jpg` | Peggy’s Cove lighthouse, Nova Scotia, on a foggy day | Inmouchar | Public domain | https://commons.wikimedia.org/wiki/File:Peggy's_Cove_foggy_day.jpg |
