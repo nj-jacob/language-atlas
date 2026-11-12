@@ -869,6 +869,36 @@
     review: ['enlarge', 'encourage'],
     sentence: 'We will celebrate with a big decoration.' });
 
+  add({ id: 'g4-inter-trans-anti', band: '4', group: AFFIX4, parts: true, name: 'Prefixes inter-, trans- and anti-', focus: ['inter-', 'trans-', 'anti-'], key: 'translate',
+    rule: 'Inter- means between, trans- across, anti- against.',
+    tip: 'Each prefix keeps all its letters: inter + view, trans + late, anti + freeze. Find the prefix, say what it means, then spell the rest of the word.',
+    mistake: 'Writes enter- for inter- (enterview), or drops the s in trans- (tranlate).',
+    heart: ['ocean'],
+    words: [['interact', 'inter act', 'Animals ___ with each other in the forest.'], ['interview', 'inter view', 'The reporter will ___ the coach.'], ['internet', 'inter net', 'We looked up the bus times on the ___.'], ['international', 'inter national', 'The ___ fair had food from many countries.'],
+      ['intersection', 'inter section', 'Stop at the ___ and look both ways.'], ['transfer', 'trans fer', 'I will ___ to the new school in May.'], ['translate', 'trans late', 'Can you ___ this sign into French?'], ['transparent', 'trans parent', 'The window glass is ___.'],
+      ['antifreeze', 'anti freeze', 'Put ___ in the car before winter.'], ['antibody', 'anti body', 'Your blood makes an ___ to fight a germ.']],
+    extra: ['enter', 'tran', 'ante'],
+    sort: { q: 'Which prefix?', bins: [['inter-', 'inter-', ''], ['trans-', 'trans-', ''], ['anti-', 'anti-', '']], items: 'interact/0 transfer/1 antifreeze/2 internet/0 translate/1 antibody/2 interview/0 transparent/1' },
+    endings: [['national', 'inter-'], ['act', 'inter-'], ['freeze', 'anti-'], ['port', 'trans-']],
+    proof: 'I watched an {enterview|interview} on the {internett|internet}. The athlete spoke French, so we had to {tranlate|translate} it.',
+    review: ['semicircle', 'forecast'],
+    sentence: 'Turn left at the intersection to find the international school.' });
+
+  add({ id: 'g4-ly-ful-less', band: '4', group: AFFIX4, parts: true, name: 'Suffixes -ly, -ful and -less', focus: ['-ly', '-ful', '-less'], key: 'happily',
+    rule: 'Change y to i before -ly, -ful and -less.',
+    tip: 'When a word ends in a consonant then y, the y turns to i: happy, happily; beauty, beautiful. A vowel then y keeps the y: play, playful. And -ful has only one l.',
+    mistake: 'Keeps the y (happyly, beautyful), or writes full with two l (beautifull).',
+    heart: ['friend'],
+    words: [['happily', 'happi ly', 'The puppy wagged its tail ___.'], ['easily', 'easi ly', 'She ___ climbed the rope.'], ['angrily', 'angri ly', 'The goose honked ___ at us.'], ['busily', 'busi ly', 'The bees worked ___ in the garden.'],
+      ['beautiful', 'beauti ful', 'The sunset over the lake was ___.'], ['plentiful', 'plenti ful', 'Berries are ___ in August.'], ['pitiful', 'piti ful', 'The wet kitten gave a ___ cry.'], ['penniless', 'penni less', 'He lost his wallet and was ___.'],
+      ['merciless', 'merci less', 'The ___ wind blew all night.'], ['playful', 'play ful', 'The ___ kitten chased the string.']],
+    extra: ['y', 'full', 'ley'],
+    sort: { q: 'Which ending?', bins: [['-ly', '-ly', ''], ['-ful', '-ful', ''], ['-less', '-less', '']], items: 'happily/0 beautiful/1 penniless/2 easily/0 plentiful/1 merciless/2 angrily/0 pitiful/1' },
+    endings: [['happy', 'ly'], ['beauty', 'ful'], ['penny', 'less'], ['play', 'ful']],
+    proof: 'The kids played {happyly|happily} in the {plentyful|plentiful} snow. It was a {beautyful|beautiful} day.',
+    review: ['enlarge', 'celebration'],
+    sentence: 'The playful otter swam happily.' });
+
   add({ id: 'g4-ant-ent', band: '4', group: REL, parts: true, name: 'Suffixes -ant and -ent', focus: ['-ant', '-ent'], key: 'important',
     rule: '-ant and -ent sound the same. A relative shows which one.',
     tip: 'Say a relative that ends in -ance or -ence: distance, so distant; difference, so different. The child keeps a list of the words with no helper and learns those by sight.',
@@ -898,6 +928,49 @@
     proof: 'The {compitition|competition} had a hard {definishun|definition} round. Our {prepration|preparation} helped us win.',
     review: ['important', 'student'],
     sentence: 'The invitation is for the competition.' });
+
+  var WORDEND4 = 'Word endings';
+  var SILENT4 = 'Silent letters';
+  add({ id: 'g4-ture-sure', band: '4', group: WORDEND4, parts: true, name: 'Endings -ture and -sure', focus: ['-ture', '-sure'], key: 'treasure',
+    rule: 'Say /cher/ and write ture. Say /zher/ and write sure.',
+    tip: 'Listen to the last beat: picture ends /cher/, so it is ture; treasure ends /zher/, so it is sure. Neither ending is ever spelled cher or zher.',
+    mistake: 'Spells the sound (picher, treazher), or mixes the two endings (measture).',
+    heart: ['minute'],
+    words: [['picture', 'pic ture', 'Draw a ___ of your family.'], ['nature', 'na ture', 'We went on a ___ walk in the woods.'], ['adventure', 'adven ture', 'The canoe trip was a real ___.'], ['furniture', 'furni ture', 'We moved the ___ to paint the walls.'],
+      ['temperature', 'tempera ture', 'The ___ dropped below zero.'], ['creature', 'crea ture', 'A strange ___ lived in the pond.'], ['measure', 'mea sure', 'Use a ruler to ___ the line.'], ['treasure', 'trea sure', 'The pirates buried their ___.'],
+      ['pleasure', 'plea sure', 'It was a ___ to meet you.'], ['leisure', 'lei sure', 'Grandpa reads in his ___ time.']],
+    extra: ['cher', 'chur', 'zher'],
+    sort: { q: 'Which ending?', bins: [['-ture', '-ture', ''], ['-sure', '-sure', '']], items: 'picture/0 measure/1 nature/0 treasure/1 adventure/0 pleasure/1 creature/0 leisure/1' },
+    proof: 'We found a strange {creacher|creature} on our {nachure|nature} walk. I took a {pikture|picture} of it. It felt like finding {treazure|treasure}.',
+    review: ['happily', 'beautiful'],
+    sentence: 'Measure the temperature before the adventure.' });
+
+  add({ id: 'g4-age', band: '4', group: WORDEND4, parts: true, name: 'Ending -age', focus: ['-age'], key: 'message',
+    rule: 'At the end of a longer word, /ij/ is spelled age.',
+    tip: 'Village, message and package all end in a quiet /ij/, spelled age. After a short vowel in a one-beat word, use dge instead (bridge, fridge).',
+    mistake: 'Writes idge or ige (messige, villidge).',
+    heart: ['guard'],
+    words: [['village', 'vill age', 'The ___ had one store and a school.'], ['cabbage', 'cabb age', 'We grew a big ___ in the garden.'], ['message', 'mess age', 'Leave a ___ after the beep.'], ['package', 'pack age', 'A ___ came in the mail.'],
+      ['cottage', 'cott age', 'We spend the summer at a ___ by the lake.'], ['garbage', 'garb age', 'Take the ___ out on Monday.'], ['luggage', 'lugg age', 'Our ___ was too heavy for the plane.'], ['bandage', 'band age', 'Put a ___ on the cut.'],
+      ['damage', 'dam age', 'The hail did ___ to the car.'], ['passage', 'pass age', 'A narrow ___ led to the cave.']],
+    extra: ['idge', 'ige', 'ij'],
+    sort: { q: 'age or dge?', bins: [['-age', '-age', ''], ['-idge', '-idge', '']], items: 'village/0 bridge/1 cabbage/0 fridge/1 message/0 ridge/1 package/0 porridge/1' },
+    proof: 'We drove to the {cottige|cottage} with all our {luggidge|luggage}. A {messige|message} said the bridge had storm {damige|damage}.',
+    review: ['picture', 'nature'],
+    sentence: 'The package had a message from the village.' });
+
+  add({ id: 'g4-silent', band: '4', group: SILENT4, parts: true, name: 'Silent letters kn, wr, mb, gn, bt', focus: ['kn', 'wr', 'mb', 'gn', 'bt'], key: 'knuckle',
+    rule: 'Some letters are written but not said.',
+    tip: 'Long ago these letters were said out loud. Say the word the spelling way to remember it: k-nuckle, w-restle, thum-b, desi-g-n, dou-b-t. Relatives help too: design, designer, signal.',
+    mistake: 'Leaves out the silent letter (nuckle, plumer, doutful).',
+    heart: ['island'],
+    words: [['knuckle', 'kn uckle', 'I bumped my ___ on the door.'], ['knowledge', 'kn owledge', 'Elders share their ___ with us.'], ['wrinkle', 'wr inkle', 'Iron out each ___ in the shirt.'], ['wrestle', 'wr estle', 'The bear cubs ___ in the grass.'],
+      ['plumber', 'plu mb er', 'Call a ___ to fix the leak.'], ['thumbnail', 'thu mb nail', 'My ___ is painted blue.'], ['design', 'desi gn', 'We will ___ a poster for the play.'], ['resign', 'resi gn', 'The coach decided to ___ after ten years.'],
+      ['debt', 'de bt', 'He paid back his ___.'], ['doubtful', 'dou bt ful', 'I am ___ it will stop raining.']],
+    extra: ['n', 'r', 'm', 'g', 't'],
+    proof: 'The {plumer|plumber} hurt his {nuckle|knuckle} fixing the sink. I am {doutful|doubtful} he will finish today.',
+    review: ['village', 'message'],
+    sentence: 'The plumber wrestled with the pipe.' });
 
   var ROOT5 = 'Latin roots';
   var CHOICE = 'Choosing the right spelling';
@@ -951,6 +1024,23 @@
     review: ['inspect', 'predict'],
     sentence: 'The tractor can extract the stump.' });
 
+  add({ id: 'g5-vis-aud', band: '5', group: ROOT5, parts: true, name: 'The roots vis and aud', focus: ['vis', 'aud'], key: 'vision',
+    rule: 'The root vis means see. The root aud means hear.',
+    tip: 'Television lets you see far away; an audience is the people who hear a show. Find the root, then add the parts around it. The root is spelled the same in every word.',
+    mistake: 'Writes z for the s in vis (vizion), or au as o (odience).',
+    heart: ['eye'],
+    words: [['vision', 'vis ion', 'Eagles have sharp ___.'], ['visual', 'vis ual', 'A map is a ___ way to show places.'], ['revise', 're vis e', 'Read your story again and ___ it.'], ['supervise', 'super vis e', 'A lifeguard will ___ the swimmers.'],
+      ['invisible', 'in vis ible', 'The ink was ___ until we warmed the paper.'], ['visit', 'vis it', 'We ___ Grandma every Sunday.'], ['audio', 'aud io', 'Turn up the ___ on the video.'], ['audience', 'aud ience', 'The ___ clapped after the song.'],
+      ['audition', 'aud ition', 'She sang at the ___ for the play.'], ['auditorium', 'aud itorium', 'The concert is in the school ___.']],
+    extra: ['viz', 'odd', 'aw'],
+    sort: { q: 'Which root?', bins: [['vis', 'vis: see', ''], ['aud', 'aud: hear', '']], items: 'vision/0 audio/1 visual/0 audience/1 revise/0 audition/1 visit/0 auditorium/1' },
+    family: { root: 'vis', means: 'see', pre: 'super re tele in', suf: 'ion ual it or ible',
+      words: 'vision visual visit visor visible supervision supervisor revision revisit television invisible' },
+    endings: [['vision', 'ary'], ['revise', 'ion'], ['supervise', 'or'], ['visual', 'ize']],
+    proof: 'The {audiance|audience} cheered at the {auditiun|audition}. My {vizion|vision} is blurry, so I need new glasses.',
+    review: ['transport', 'predict'],
+    sentence: 'The audience will visit the auditorium.' });
+
   add({ id: 'g5-cian-sion', band: '5', group: CHOICE, parts: true, name: '-cian and -sion', focus: ['-cian', '-sion'], key: 'musician',
     rule: '-cian is a person. -sion often says /zhun/.',
     tip: 'A person who works with music, magic or electric things keeps the c: musician, magician, electrician. -sion usually comes from a word ending in d, de or se: decide, decision; explode, explosion.',
@@ -981,6 +1071,35 @@
     review: ['musician', 'decision'],
     sentence: 'This comfortable coat is washable.' });
 
+  add({ id: 'g5-ous-ious', band: '5', group: CHOICE, parts: true, name: 'Endings -ous, -ious and -eous', focus: ['-ous', '-ious', '-eous'], key: 'curious',
+    rule: '-ous means full of. Listen for /ee/ before it.',
+    tip: 'Dangerous is full of danger. When you hear /ee-us/, write ious (curious) or, less often, eous (hideous). The ending is never spelled us.',
+    mistake: 'Writes us for ous (enormus), or leaves the i out (curous).',
+    heart: ['ocean'],
+    words: [['dangerous', 'danger ous', 'Thin ice is ___.'], ['enormous', 'enorm ous', 'A blue whale is ___.'], ['jealous', 'jeal ous', 'My brother was ___ of my new bike.'], ['poisonous', 'poison ous', 'Some mushrooms are ___.'],
+      ['curious', 'cur ious', 'The ___ fox sniffed our tent.'], ['delicious', 'delic ious', 'The bannock was ___.'], ['serious', 'ser ious', 'A broken arm is ___.'], ['various', 'var ious', 'The store sells ___ kinds of tea.'],
+      ['hideous', 'hid eous', 'The mask in the play was ___.'], ['courteous', 'court eous', 'Be ___ and hold the door.']],
+    extra: ['us', 'ius', 'eus'],
+    sort: { q: 'Which ending?', bins: [['-ous', '-ous', ''], ['-ious', '-ious', ''], ['-eous', '-eous', '']], items: 'dangerous/0 curious/1 hideous/2 enormous/0 serious/1 courteous/2 jealous/0 delicious/1' },
+    endings: [['danger', 'ous'], ['poison', 'ous'], ['fame', 'ous']],
+    proof: 'The {enormus|enormous} moose looked {dangerus|dangerous}. My {curius|curious} dog stayed close to me.',
+    review: ['vision', 'audience'],
+    sentence: 'The curious cat found a delicious snack.' });
+
+  add({ id: 'g5-keep-e', band: '5', group: CHOICE, parts: true, name: 'Keep the e after soft c and g', focus: ['ce', 'ge'], key: 'noticeable',
+    rule: 'Keep the e after c or g before -able or -ous.',
+    tip: 'The e keeps c saying /s/ and g saying /j/. Without it, noticable would say /k/. So notice + able keeps its e: noticeable; courage + ous: courageous.',
+    mistake: 'Drops the e like other words (noticable, couragous).',
+    heart: ['vegetable'],
+    words: [['noticeable', 'noti ce able', 'The stain on the shirt was ___.'], ['changeable', 'chan ge able', 'Spring weather is ___.'], ['manageable', 'mana ge able', 'Ten pages a day is a ___ goal.'], ['peaceable', 'pea ce able', 'The two groups reached a ___ agreement.'],
+      ['replaceable', 'repla ce able', 'The battery is ___.'], ['knowledgeable', 'knowled ge able', 'Our guide was ___ about birds.'], ['courageous', 'coura ge ous', 'The ___ firefighter saved the cat.'], ['outrageous', 'outra ge ous', 'The price was ___.'],
+      ['advantageous', 'advanta ge ous', 'Living near the school is ___.'], ['gorgeous', 'gor ge ous', 'The fall leaves were ___.']],
+    extra: ['able', 'ous', 'cable'],
+    sort: { q: 'Which ending?', bins: [['-able', '-able', ''], ['-ous', '-ous', '']], items: 'noticeable/0 courageous/1 changeable/0 outrageous/1 manageable/0 gorgeous/1 replaceable/0 advantageous/1' },
+    proof: 'The change was {noticable|noticeable}. The {couragous|courageous} girl spoke up, and her plan was {managable|manageable}.',
+    review: ['curious', 'dangerous'],
+    sentence: 'The courageous guide was knowledgeable.' });
+
   add({ id: 'g5-homophones', band: '5', group: CHOICE, parts: true, name: 'They\'re, it\'s, you\'re: the apostrophe', focus: ['\'re', '\'s'], key: 'they\'re',
     rule: 'An apostrophe shows letters left out: they\'re is they are.',
     tip: 'Say the long form: if they are fits, write they\'re; if it is fits, write it\'s. Their, its, your and whose own something and have no apostrophe.',
@@ -993,6 +1112,20 @@
     proof: '{Their|They\'re} going to the lake today. {Its|It\'s} a long drive, and they forgot {they\'re|their} snacks. {Who\'s|Whose} bag is this? I think {your|you\'re} right.',
     review: ['possible', 'visible'],
     sentence: 'They\'re sure it\'s going to rain.' });
+
+  var GREEKY = 'Greek spellings';
+  add({ id: 'g5-greek-y', band: '5', group: GREEKY, parts: true, name: 'y that says /i/', focus: ['y'], key: 'system',
+    rule: 'In words from Greek, y in the middle can say short /i/.',
+    tip: 'Gym, myth and system come from Greek, where this sound was written with y. When /i/ sounds like a science or story word, try y.',
+    mistake: 'Writes i for the y (jim, sistem, simbol).',
+    heart: ['rhythm'],
+    words: [['myth', 'm y th', 'The ___ tells how the world began.'], ['gym', 'g y m', 'We play basketball in the ___.'], ['mystery', 'm y stery', 'Who ate the pie? It is a ___.'], ['symbol', 's y mbol', 'The maple leaf is a ___ of Canada.'],
+      ['system', 's y stem', 'The heart pumps blood through the body\'s ___.'], ['crystal', 'cr y stal', 'Each snowflake is an ice ___.'], ['oxygen', 'ox y gen', 'We breathe in ___.'], ['pyramid', 'p y ramid', 'A ___ has a square base.'],
+      ['cymbal', 'c y mbal', 'The drummer hit the ___.'], ['typical', 't y pical', 'Snow is ___ in January.']],
+    extra: ['i', 'e', 'ie'],
+    proof: 'In the {jim|gym}, our teacher showed us the solar {sistem|system}. Each planet had a {simbol|symbol}.',
+    review: ['noticeable', 'courageous'],
+    sentence: 'A crystal pyramid is a mystery.' });
 
   var GREEK = 'Greek and Latin parts';
 
@@ -1027,6 +1160,36 @@
     review: ['paragraph', 'photograph'],
     sentence: 'The biologist used a microscope and a thermometer.' });
 
+  add({ id: 'g6-ology-ist', band: '6', group: GREEK, parts: true, name: 'Endings -logy and -ist', focus: ['-logy', '-ist'], key: 'geology',
+    rule: '-logy means the study of. -ist means a person who does it.',
+    tip: 'Geology is the study of the earth (geo). An artist makes art. Find the front part, then add the ending: zoo + logy, dent + ist.',
+    mistake: 'Writes -lagy or -ledgy, or -est for -ist (dentest, tourest).',
+    heart: ['science'],
+    words: [['geology', 'geo logy', 'In ___ we study rocks.'], ['zoology', 'zoo logy', 'She studies animals in ___.'], ['technology', 'techno logy', 'Tablets are new ___.'], ['archaeology', 'archaeo logy', 'Old tools are found in ___.'],
+      ['mythology', 'mytho logy', 'Greek ___ has many gods.'], ['artist', 'art ist', 'The ___ painted a mural.'], ['dentist', 'dent ist', 'The ___ cleaned my teeth.'], ['cyclist', 'cycl ist', 'The ___ wore a helmet.'],
+      ['tourist', 'tour ist', 'A ___ asked us for directions.'], ['florist', 'flor ist', 'The ___ sold us tulips.']],
+    extra: ['ology', 'olagy', 'est'],
+    sort: { q: 'Which ending?', bins: [['-logy', '-logy', ''], ['-ist', '-ist', '']], items: 'geology/0 artist/1 zoology/0 dentist/1 technology/0 cyclist/1 mythology/0 tourist/1' },
+    endings: [['art', 'ist'], ['tour', 'ist'], ['cycle', 'ist']],
+    proof: 'The {tourest|tourist} visited a {dentest|dentist}. She studied {geolagy|geology} at school.',
+    review: ['microscope', 'biology'],
+    sentence: 'The tourist met an artist who loves geology.' });
+
+  add({ id: 'g6-number', band: '6', group: GREEK, parts: true, name: 'Number prefixes mono-, bi-, tri-, multi-', focus: ['mono-', 'bi-', 'tri-', 'multi-'], key: 'bicycle',
+    rule: 'Mono- means one, bi- two, tri- three, multi- many.',
+    tip: 'Count with the prefix: a bicycle has two wheels, a tripod three legs. The prefix keeps its own spelling: bi, never by; multi, never multy.',
+    mistake: 'Writes by for bi- (bycycle), or y for the i of multi- (multyply).',
+    heart: ['once'],
+    words: [['monorail', 'mono rail', 'The ___ runs on one track.'], ['monologue', 'mono logue', 'The actor gave a long ___.'], ['bicycle', 'bi cycle', 'I ride my ___ to school.'], ['biweekly', 'bi weekly', 'Our club meets every other week, so it is ___.'],
+      ['triangle', 'tri angle', 'A ___ has three sides.'], ['tripod', 'tri pod', 'The camera sat on a ___.'], ['triathlon', 'tri athlon', 'A ___ has swimming, biking and running.'], ['multiply', 'multi ply', '___ 6 by 7.'],
+      ['multimedia', 'multi media', 'Our ___ project had video and sound.'], ['multicultural', 'multi cultural', 'Toronto is a ___ city.']],
+    extra: ['by', 'multy', 'tre'],
+    sort: { q: 'Which number prefix?', bins: [['mono-', 'mono-', ''], ['bi-', 'bi-', ''], ['tri-', 'tri-', ''], ['multi-', 'multi-', '']], items: 'monorail/0 bicycle/1 triangle/2 multiply/3 monologue/0 biweekly/1 tripod/2 multicultural/3' },
+    endings: [['cycle', 'bi-'], ['angle', 'tri-'], ['media', 'multi-']],
+    proof: 'I rode my {bycycle|bicycle} past a {triangel|triangle} sign. Our school is {multicultral|multicultural}.',
+    review: ['geology', 'artist'],
+    sentence: 'The triathlon ended with a bicycle race.' });
+
   add({ id: 'g6-ance-ence', band: '6', group: REL, parts: true, name: '-ance and -ence', focus: ['-ance', '-ence'], key: 'distance',
     rule: '-ant words take -ance. -ent words take -ence.',
     tip: 'Build on Grade 4: distant, distance; different, difference. If the base ends in a stressed beat with one vowel and one consonant, double it: occur, occurrence. Refer, reference does not, because the stress moves.',
@@ -1042,6 +1205,21 @@
     review: ['important', 'different'],
     sentence: 'Keep your distance and your balance.' });
 
+  add({ id: 'g6-ssion', band: '6', group: REL, parts: true, name: 'Endings -ssion and -tion', focus: ['-ssion', '-tion'], key: 'permission',
+    rule: 'If the base word ends in ss, write ssion. If it ends in t, write tion.',
+    tip: 'Say the base word first: discuss gives discussion; invent gives invention. Permit and admit change to ssion too: permission, admission.',
+    mistake: 'Writes one s (permision), or sion for tion (atension).',
+    heart: ['answer'],
+    words: [['discussion', 'discu ssion', 'We had a ___ about the book.'], ['expression', 'expre ssion', 'Her face had a happy ___.'], ['permission', 'permi ssion', 'Ask for ___ to leave early.'], ['admission', 'admi ssion', '___ to the museum is free today.'],
+      ['impression', 'impre ssion', 'He made a good ___ on the coach.'], ['profession', 'profe ssion', 'Nursing is a caring ___.'], ['attention', 'atten tion', 'Pay ___ to the speaker.'], ['invention', 'inven tion', 'The telephone was a great ___.'],
+      ['direction', 'direc tion', 'Which ___ is north?'], ['collection', 'collec tion', 'He has a rock ___.']],
+    extra: ['sion', 'shun', 'cion'],
+    sort: { q: 'Which ending?', bins: [['-ssion', '-ssion', ''], ['-tion', '-tion', '']], items: 'discussion/0 attention/1 expression/0 invention/1 permission/0 direction/1 admission/0 collection/1' },
+    endings: [['discuss', 'ion'], ['express', 'ion'], ['invent', 'ion'], ['collect', 'ion']],
+    proof: 'Ask for {permision|permission} before the {discusion|discussion}. Pay {atention|attention} to every speaker.',
+    review: ['distance', 'difference'],
+    sentence: 'The invention got our attention.' });
+
   add({ id: 'g6-in-not', band: '6', group: AFFIX4, parts: true, name: 'in- that changes: im-, il-, ir-', focus: ['in-', 'im-', 'il-', 'ir-'], key: 'impossible',
     rule: 'In- means not. It changes to match the next letter.',
     tip: 'Im- before b, m and p; il- before l; ir- before r. That is why illegal has two l and irregular has two r: one from the prefix, one from the word.',
@@ -1056,6 +1234,50 @@
     proof: 'It is {inpossible|impossible} to park here, because it is {ilegal|illegal}. The bus times are {iregular|irregular} today.',
     review: ['difference', 'balance'],
     sentence: 'It is illegal and irresponsible to litter.' });
+
+  var PLUR6 = 'Plurals';
+  var FRENCH = 'Words from French';
+  var CANADA = 'Canadian spelling';
+  add({ id: 'g6-plurals-ves', band: '6', group: PLUR6, parts: true, name: 'Plurals -ves, -oes and -os', focus: ['-ves', '-oes', '-os'], key: 'knives',
+    rule: 'Most f and fe words change to ves. Some o words add es.',
+    tip: 'Knife, knives; half, halves. Heroes and potatoes add es; pianos and photos (short or music words) add only s. Say the plural: if you hear /v/, write ves.',
+    mistake: 'Keeps the f (knifes, wolfs), or adds only s to words that need es (potatos).',
+    heart: ['women'],
+    words: [['knives', 'kni ves', 'Put the forks and ___ on the table.'], ['leaves', 'lea ves', 'The ___ turn red in the fall.'], ['shelves', 'shel ves', 'The books sit on two ___.'], ['wolves', 'wol ves', 'A pack of ___ howled at the moon.'],
+      ['halves', 'hal ves', 'Cut the apple into two ___.'], ['heroes', 'her oes', 'Firefighters are ___.'], ['potatoes', 'potat oes', 'We dug ___ from the garden.'], ['echoes', 'ech oes', 'Your voice ___ in the canyon.'],
+      ['pianos', 'pian os', 'The music room has two ___.'], ['photos', 'phot os', 'We took ___ at the lake.']],
+    extra: ['fs', 'vs', 'ose'],
+    sort: { q: 'Which plural ending?', bins: [['-ves', '-ves', ''], ['-oes', '-oes', ''], ['-os', '-os', '']], items: 'knives/0 heroes/1 pianos/2 leaves/0 potatoes/1 photos/2 wolves/0 echoes/1' },
+    proof: 'We cut the {potatos|potatoes} with two {knifes|knives}. The {wolfs|wolves} howled from the hill.',
+    review: ['impossible', 'illegal'],
+    sentence: 'The heroes cut the potatoes into halves.' });
+
+  add({ id: 'g6-que-et', band: '6', group: FRENCH, parts: true, name: 'French endings -que and -et', focus: ['-que', '-et'], key: 'unique',
+    rule: 'From French: que says /k/ and et can say /ay/.',
+    tip: 'These words came from French, so they keep French spellings. Unique ends /k/ but is spelled que. Ballet and buffet end /ay/ but are spelled et. Canada is a French and English country, so you will see many.',
+    mistake: 'Spells the sound (unik, ballay), or adds a k (antiquek).',
+    heart: ['restaurant'],
+    words: [['unique', 'uni que', 'Every snowflake is ___.'], ['antique', 'anti que', 'That ___ clock is 200 years old.'], ['technique', 'techni que', 'Practise the swimming ___.'], ['boutique', 'bouti que', 'She bought a scarf at a small ___.'],
+      ['plaque', 'pla que', 'A ___ on the wall names the builder.'], ['ballet', 'ball et', 'My sister dances ___.'], ['bouquet', 'bouqu et', 'He gave her a ___ of roses.'], ['buffet', 'buff et', 'We ate at the ___.'],
+      ['chalet', 'chal et', 'We rented a ski ___ in Quebec.'], ['beret', 'ber et', 'The painter wore a black ___.']],
+    extra: ['k', 'ck', 'ay'],
+    sort: { q: 'Which ending?', bins: [['-que', '-que', ''], ['-et', '-et', '']], items: 'unique/0 ballet/1 antique/0 bouquet/1 technique/0 buffet/1 boutique/0 chalet/1' },
+    proof: 'We stayed in a {shalay|chalet} with {antik|antique} furniture. The hotel had a big {buffay|buffet}.',
+    review: ['knives', 'heroes'],
+    sentence: 'The ballet had a unique ending.' });
+
+  add({ id: 'g6-canadian', band: '6', group: CANADA, parts: true, name: 'Canadian spelling', focus: ['-our', '-re', '-ize', '-lled'], key: 'neighbour',
+    rule: 'Canada writes our, re, ize, and doubles l before -ed.',
+    tip: 'Canadian spelling keeps the u (colour, neighbour), writes re (centre, metre) and ize (organize), and doubles the l in travelled and cancelled. Spell-checkers set to the United States will mark these wrong, so set yours to Canada.',
+    mistake: 'Drops the u in our, writes er for re, or writes one l before -ed.',
+    heart: ['beautiful'],
+    words: [['colour', 'col our', 'What ___ is the sky at sunset?'], ['neighbour', 'neighb our', 'Our ___ shovels our walk.'], ['favourite', 'fav our ite', 'Summer is my ___ season.'], ['centre', 'cent re', 'Put the vase in the ___ of the table.'],
+      ['theatre', 'theat re', 'We saw a play at the ___.'], ['metre', 'met re', 'A ___ is 100 centimetres.'], ['organize', 'organ ize', 'Let\'s ___ the books by size.'], ['realize', 'real ize', 'I did not ___ it was so late.'],
+      ['travelled', 'trave lled', 'We ___ to Halifax by train.'], ['cancelled', 'cance lled', 'The game was ___ because of rain.']],
+    extra: ['or', 'er', 'ise', 'led'],
+    proof: 'My {nieghbour|neighbour} {travled|travelled} to the science {centr|centre}.',
+    review: ['unique', 'ballet'],
+    sentence: 'My neighbour travelled to the theatre.' });
 
   var ROOT7 = 'Roots and rules';
 
@@ -1075,6 +1297,23 @@
     proof: 'The volcano could {errupt|erupt} at any time. Scientists {instruckt|instruct} people to leave. Please do not {interupt|interrupt} the warning.',
     review: ['impossible', 'illegal'],
     sentence: 'Do not interrupt the project.' });
+
+  add({ id: 'g7-duct-scribe', band: '7', group: ROOT7, parts: true, name: 'The roots duct and scribe', focus: ['duct', 'scribe', 'script'], key: 'describe',
+    rule: 'The root duct means lead. Scribe and script mean write.',
+    tip: 'A conductor leads the band; to describe is to write or tell about. Scribe becomes script in the thing that is written: describe, description; manuscript.',
+    mistake: 'Writes duck or dukt for duct, or skribe for scribe.',
+    heart: ['orchestra'],
+    words: [['conduct', 'con duct', 'Copper wires ___ electricity.'], ['product', 'pro duct', 'The new ___ is sold in every store.'], ['deduct', 'de duct', 'The store will ___ five dollars.'], ['conductor', 'con duct or', 'The ___ waved her baton.'],
+      ['viaduct', 'via duct', 'The train crossed the tall ___.'], ['describe', 'de scribe', '___ the animal you saw.'], ['subscribe', 'sub scribe', 'We ___ to a nature magazine.'], ['inscribe', 'in scribe', 'They will ___ her name on the trophy.'],
+      ['manuscript', 'manu script', 'The author sent her ___ to the editor.'], ['postscript', 'post script', 'She added a ___ under her name.']],
+    extra: ['duck', 'scrib', 'skribe'],
+    sort: { q: 'Which root?', bins: [['duct', 'duct: lead', ''], ['scri', 'scribe, script: write', '']], items: 'conduct/0 describe/1 product/0 subscribe/1 viaduct/0 manuscript/1 deduct/0 inscribe/1' },
+    family: { root: 'duct', means: 'lead', pre: 'con pro de in', suf: 'ion or ive',
+      words: 'duct conduct conduction conductor conductive product production productive deduct deduction deductive induct induction inductive inductor' },
+    endings: [['conduct', 'or'], ['product', 'ive'], ['deduct', 'ion']],
+    proof: 'The {conducter|conductor} asked us to {discribe|describe} the music. Then she signed the {manuscrip|manuscript}.',
+    review: ['erupt', 'construct'],
+    sentence: 'The conductor will describe the new product.' });
 
   add({ id: 'g7-doubling', band: '7', group: ROOT7, parts: true, name: 'Doubling in longer words', focus: ['-ing', '-ed'], key: 'beginning',
     rule: 'Double the last letter when the last beat is stressed: be-GIN, beginning.',
@@ -1118,6 +1357,63 @@
     review: ['believe', 'receive'],
     sentence: 'The larvae and fungi grew near the cacti.' });
 
+  var ENDS7 = 'Endings to choose';
+  var TRICKY7 = 'Tricky starts and ends';
+  add({ id: 'g7-ary-ery-ory', band: '7', group: ENDS7, parts: true, name: 'Endings -ary, -ery and -ory', focus: ['-ary', '-ery', '-ory'], key: 'library',
+    rule: '-ary, -ery and -ory sound alike. Say each word slowly to hear the vowel.',
+    tip: 'Say the word in a careful voice: lib-RAR-y, bak-ER-y, fac-TOR-y. A relative helps too: history and historian, bakery and baker. Learn the rest by sight.',
+    mistake: 'Drops a syllable (libary, histry), or picks the wrong vowel (vocabulery).',
+    heart: ['February'],
+    words: [['library', 'libr ary', 'Return your book to the ___.'], ['ordinary', 'ordin ary', 'It was an ___ Tuesday.'], ['secretary', 'secret ary', 'The club ___ wrote the notes.'], ['vocabulary', 'vocabul ary', 'Reading builds your ___.'],
+      ['bakery', 'bak ery', 'The ___ smells of fresh bread.'], ['bravery', 'brav ery', 'She got a medal for her ___.'], ['discovery', 'discov ery', 'The ___ of insulin saved many lives.'], ['factory', 'fact ory', 'Cars are built in a ___.'],
+      ['history', 'hist ory', 'We are studying Canadian ___.'], ['territory', 'territ ory', 'Yukon is a ___ of Canada.']],
+    extra: ['ry', 'erry', 'arry'],
+    sort: { q: 'Which ending?', bins: [['-ary', '-ary', ''], ['-ery', '-ery', ''], ['-ory', '-ory', '']], items: 'library/0 bakery/1 history/2 ordinary/0 bravery/1 factory/2 secretary/0 discovery/1 territory/2' },
+    proof: 'We went to the {libary|library} to read about Canadian {histery|history}. I learned a new {vocabulery|vocabulary} word.',
+    review: ['conductor', 'describe'],
+    sentence: 'The bakery is next to the library.' });
+
+  add({ id: 'g7-ally', band: '7', group: ENDS7, parts: true, name: 'Ending -ally', focus: ['-ally'], key: 'basically',
+    rule: 'A word ending in ic adds -ally, not -ly.',
+    tip: 'Basic becomes basically; automatic becomes automatically. You often do not hear the al, so remember: ic + ally. Publicly is the one common word that breaks the rule.',
+    mistake: 'Writes -ly after ic (basicly, automaticly).',
+    heart: ['publicly'],
+    words: [['basically', 'basic ally', '___, we need more time.'], ['automatically', 'automatic ally', 'The door opens ___.'], ['dramatically', 'dramatic ally', 'The sky changed ___ before the storm.'], ['frantically', 'frantic ally', 'He searched ___ for his keys.'],
+      ['specifically', 'specific ally', 'I asked ___ for the blue one.'], ['scientifically', 'scientific ally', 'The idea was tested ___.'], ['realistically', 'realistic ally', '___, we can finish by Friday.'], ['logically', 'logic ally', 'Think ___ about the clues.'],
+      ['tragically', 'tragic ally', 'The story ends ___.'], ['heroically', 'heroic ally', 'The dog ___ saved the boy.']],
+    extra: ['ly', 'aly', 'ley'],
+    endings: [['basic', 'ally'], ['logic', 'ally'], ['automatic', 'ally'], ['public', 'ly']],
+    proof: 'The lights turned on {automaticly|automatically}. The weather changed {dramaticly|dramatically}. {Basicly|Basically}, we stayed inside.',
+    review: ['history', 'library'],
+    sentence: 'The lights turned on automatically.' });
+
+  add({ id: 'g7-greek-silent', band: '7', group: TRICKY7, parts: true, name: 'Silent letters from Greek: ps, pn, rh, sc', focus: ['ps', 'pn', 'rh', 'sc'], key: 'rhyme',
+    rule: 'Words from Greek can start with ps, pn or rh, where one letter is silent.',
+    tip: 'Psychology starts with a silent p; rhyme has a silent h. In scene and scent, sc says /s/. If a word sounds like science or medicine, check for these starts.',
+    mistake: 'Leaves the silent letter out (sychology, ryme, sene).',
+    heart: ['rhythm'],
+    words: [['psychology', 'ps ychology', 'In ___ we study how people think.'], ['pseudonym', 'ps eudonym', 'The author wrote under a ___.'], ['pneumonia', 'pn eumonia', 'He went to the hospital with ___.'], ['rhyme', 'rh yme', 'Cat and hat ___.'],
+      ['rhubarb', 'rh ubarb', 'Grandma makes ___ pie.'], ['rhinoceros', 'rh inoceros', 'A ___ has a horn on its nose.'], ['scene', 'sc ene', 'The last ___ of the play was sad.'], ['scent', 'sc ent', 'The ___ of pine filled the air.'],
+      ['scissors', 'sc issors', 'Cut the paper with ___.'], ['fascinate', 'fa sc inate', 'Stars ___ me.']],
+    extra: ['s', 'r', 'n'],
+    sort: { q: 'Which start?', bins: [['ps', 'ps', ''], ['pn', 'pn', ''], ['rh', 'rh', ''], ['sc', 'sc', '']], items: 'psychology/0 pneumonia/1 rhyme/2 scene/3 pseudonym/0 rhubarb/2 scent/3 rhinoceros/2' },
+    proof: 'Every line in the {sene|scene} had a {ryme|rhyme}. The {sent|scent} of {ruebarb|rhubarb} pie filled the theatre.',
+    review: ['basically', 'automatically'],
+    sentence: 'The scent of rhubarb filled the scene.' });
+
+  add({ id: 'g7-cede', band: '7', group: TRICKY7, parts: true, name: 'Endings -cede, -ceed and -sede', focus: ['-cede', '-ceed', '-sede'], key: 'proceed',
+    rule: 'Only three words end in ceed, and one in sede. The rest are cede.',
+    tip: 'Learn the short lists: proceed, exceed, succeed end in ceed; supersede ends in sede. Every other /seed/ ending is cede: precede, recede, concede.',
+    mistake: 'Writes seed or cede for the three ceed words (procede, succede).',
+    heart: ['ought'],
+    words: [['precede', 'pre cede', 'A short speech will ___ the show.'], ['recede', 're cede', 'The flood waters began to ___.'], ['concede', 'con cede', 'The losing team had to ___ the game.'], ['intercede', 'inter cede', 'The teacher had to ___ in the argument.'],
+      ['proceed', 'pro ceed', 'Please ___ to the exit.'], ['exceed', 'ex ceed', 'Do not ___ the speed limit.'], ['succeed', 'suc ceed', 'With practice, you will ___.'], ['supersede', 'super sede', 'The new rules ___ the old ones.']],
+    extra: ['seed', 'sead', 'cead'],
+    sort: { q: 'Which ending?', bins: [['-cede', '-cede', ''], ['-ceed', '-ceed', ''], ['-sede', '-sede', '']], items: 'precede/0 proceed/1 supersede/2 recede/0 exceed/1 concede/0 succeed/1 intercede/0' },
+    proof: 'Please {procede|proceed} to the gym. If you work hard, you will {succede|succeed}. Do not {exseed|exceed} the time limit.',
+    review: ['psychology', 'rhyme'],
+    sentence: 'Proceed with care and you will succeed.' });
+
   var G8 = 'Spelling for writers';
 
   add({ id: 'g8-confused', band: '8', group: G8, parts: true, name: 'Affect or effect, accept or except', focus: ['af-', 'ef-', 'ac-', 'ex-'], key: 'effect',
@@ -1133,6 +1429,20 @@
     proof: 'The cold will {effect|affect} the game. Everyone came {accept|except} Sam. Please {except|accept} my apology. The {affect|effect} was huge.',
     review: ['larvae', 'bacteria'],
     sentence: 'The storm had an effect on everyone except me.' });
+
+  add({ id: 'g8-ce-se', band: '8', group: G8, parts: true, name: 'Noun -ce, verb -se', focus: ['-ce', '-se', '-cy', '-sy'], key: 'advice',
+    rule: 'In Canada, the thing ends in ce and the action in se.',
+    tip: 'Advice is a thing you give; you advise someone. In Canadian spelling, practice and licence are things; practise and license are actions. Say the sentence with an action word: if it fits, use se.',
+    mistake: 'Uses one spelling for both (I need to practice; a driver\'s license).',
+    heart: ['business'],
+    words: [['advice', 'advi ce', 'My coach gave me good ___.'], ['advise', 'advi se', 'I ___ you to wear a helmet.'], ['practice', 'practi ce', 'Hockey ___ starts at six.'], ['practise', 'practi se', 'I ___ piano every day.'],
+      ['device', 'devi ce', 'This ___ measures the wind.'], ['devise', 'devi se', 'We need to ___ a new plan.'], ['licence', 'licen ce', 'She got her fishing ___.'], ['license', 'licen se', 'The city will ___ the new food truck.'],
+      ['prophecy', 'prophe cy', 'The old ___ came true.'], ['prophesy', 'prophe sy', 'No one can ___ the future.']],
+    extra: ['s', 'c', 'z'],
+    sort: { q: 'Which ending?', bins: [['-ce', '-ce', ''], ['-se', '-se', '']], items: 'advice/0 advise/1 practice/0 practise/1 device/0 devise/1 licence/0 license/1' },
+    proof: 'I need to {practice|practise} piano every day. My teacher gave me good {advise|advice}. My sister got her driver\'s {license|licence}.',
+    review: ['affect', 'effect'],
+    sentence: 'Practise the advice your coach gave you.' });
 
   add({ id: 'g8-science', band: '8', group: G8, parts: true, name: 'Science words: eco-, hydro-, -sphere, -vore', focus: ['eco-', 'hydro-', '-sphere', '-vore'], key: 'ecosystem',
     rule: 'Science words are built from Greek and Latin parts.',
@@ -1163,6 +1473,19 @@
     review: ['ecosystem', 'atmosphere'],
     sentence: 'The government meets in Parliament in Ottawa.' });
 
+  add({ id: 'g8-change-base', band: '8', group: G8, parts: true, name: 'When the base word changes', focus: ['-ation', '-osity', '-ance', '-ition'], key: 'explanation',
+    rule: 'Some base words lose or change a letter when an ending is added.',
+    tip: 'Explain loses its i: explanation. Pronounce loses its o: pronunciation. Curious loses its u: curiosity. Repeat changes ea to e: repetition. Say the new word slowly and spell what you hear.',
+    mistake: 'Keeps the base spelling (explaination, pronounciation, repeatition).',
+    heart: ['pronounce'],
+    words: [['explanation', 'explan ation', 'The teacher gave a clear ___.'], ['exclamation', 'exclam ation', 'End a shout with an ___ mark.'], ['proclamation', 'proclam ation', 'The king read a ___.'], ['pronunciation', 'pronunci ation', 'Check the ___ of the French word.'],
+      ['curiosity', 'curi osity', 'Her ___ led her to the cave.'], ['generosity', 'gener osity', 'Thank you for your ___.'], ['maintenance', 'mainten ance', 'The rink is closed for ___.'], ['repetition', 'repet ition', '___ helps you remember.'],
+      ['sustenance', 'susten ance', 'Berries gave the bears ___ for winter.']],
+    extra: ['ain', 'ounce', 'ous', 'eat'],
+    proof: 'The teacher gave an {explaination|explanation} of the {pronounciation|pronunciation}. {Repeatition|Repetition} helped us remember.',
+    review: ['government', 'parliament'],
+    sentence: 'Thank you for your generosity and curiosity.' });
+
   add({ id: 'g8-doubles', band: '8', group: G8, parts: true, name: 'Tricky words: one letter or two?', focus: ['cc', 'mm', 'rr', 'ss'], key: 'necessary',
     rule: 'Check each double letter: necessary has one c and two s.',
     tip: 'Say the word in parts and count the doubles: ne-c-e-ss-ary, a-cc-o-mm-odate. A memory line helps: necessary has one collar and two sleeves. Read a draft once just for these words.',
@@ -1175,4 +1498,31 @@
     proof: 'It is {neccessary|necessary} to check your draft. I {reccomend|recommend} reading it aloud {tommorow|tomorrow}. Do not let small mistakes {embarass|embarrass} you.',
     review: ['government', 'election'],
     sentence: 'It is necessary to address the committee tomorrow.' });
+
+  add({ id: 'g8-hidden', band: '8', group: G8, parts: true, name: 'Hidden vowels', focus: ['ar', 'er', 'or', 'ite'], key: 'separate',
+    rule: 'Some vowels are hard to hear. Find the hidden part to remember them.',
+    tip: 'Each word hides a part: there is a rat in separate, a mar in grammar, gory in category, and finite in definitely. Say the word the spelling way: sep-A-rate, def-I-nite-ly.',
+    mistake: 'Writes the vowel it sounds like (seperate, calender, definately).',
+    heart: ['lieutenant'],
+    words: [['calendar', 'calend ar', 'Mark the date on the ___.'], ['grammar', 'gramm ar', 'Check the ___ in your essay.'], ['similar', 'simil ar', 'The twins have ___ coats.'], ['separate', 'sep ar ate', 'Keep the eggs ___ from the flour.'],
+      ['desperate', 'desp er ate', 'The lost hikers were ___ for water.'], ['cemetery', 'cemet er y', 'Old trees grow in the ___.'], ['category', 'categ or y', 'Put each word in a ___.'], ['definitely', 'defin ite ly', 'I will ___ come to your game.'],
+      ['opposite', 'oppos ite', 'Hot is the ___ of cold.'], ['temporary', 'tempor ar y', 'The tent is a ___ shelter.']],
+    extra: ['er', 'ar', 'ate'],
+    proof: 'Please keep the papers {seperate|separate}. Check the {calender|calendar} before you plan. I will {definately|definitely} be there.',
+    review: ['necessary', 'tomorrow'],
+    sentence: 'Keep the two categories separate.' });
+
+  add({ id: 'g8-gh-ph', band: '8', group: G8, parts: true, name: 'gh and ph that say /f/', focus: ['gh', 'ph'], key: 'enough',
+    rule: 'At the end of a word, gh can say /f/. In Greek words, ph says /f/.',
+    tip: 'Laugh, enough, tough, rough and cough end in gh that says /f/. Phrase, trophy and physical come from Greek, where /f/ is ph. Keep the spelling when adding endings: laughter, roughly.',
+    mistake: 'Writes f or ff for gh or ph (enuff, fysical, trofy).',
+    heart: ['through'],
+    words: [['laughter', 'lau gh ter', 'The room filled with ___.'], ['enough', 'enou gh', 'Do we have ___ chairs?'], ['toughen', 'tou gh en', 'Practice will ___ your hands.'], ['roughly', 'rou gh ly', 'There were ___ forty people.'],
+      ['coughing', 'cou gh ing', 'He stayed home because he was ___.'], ['pharmacy', 'ph armacy', 'Pick up the medicine at the ___.'], ['physical', 'ph ysical', 'Swimming is good ___ exercise.'], ['phrase', 'ph rase', 'Write the ___ on the board.'],
+      ['trophy', 'tro ph y', 'Our team won the ___.'], ['emphasis', 'em ph asis', 'Put the ___ on the first word.']],
+    extra: ['f', 'ff', 'v'],
+    sort: { q: 'gh or ph?', bins: [['gh', 'gh', ''], ['ph', 'ph', '']], items: 'laughter/0 pharmacy/1 enough/0 trophy/1 roughly/0 phrase/1 coughing/0 emphasis/1' },
+    proof: 'We didn\'t have {enuff|enough} time, so we ran in {fysical|physical} education. Our team still won the {trofy|trophy}.',
+    review: ['separate', 'calendar'],
+    sentence: 'There was enough laughter at the pharmacy.' });
 })();
