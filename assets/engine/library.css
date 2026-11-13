@@ -117,3 +117,32 @@
 .ps-img img{display:block;width:100%;object-fit:contain}
 .ps-who{color:var(--acc)}
 .ps-ln{position:absolute;width:22px;text-align:right;font-size:10px;line-height:20px;color:var(--ink3);font-variant-numeric:tabular-nums}
+
+/* ---------- Grades 1 to 3: shorter passages, set larger (library.js adds .ps-young and .ps-g1, .ps-g2 or .ps-g3) ---------- */
+.ps-young .ps-text > p{margin-bottom:10px}
+.ps-g1 .ps-text,.ps-g2 .ps-text{columns:1;column-rule:none}
+.ps-g1 .ps-text{font-size:calc(21px * var(--z, 1));line-height:1.62}
+.ps-g2 .ps-text{font-size:calc(18px * var(--z, 1));line-height:1.58}
+.ps-g3 .ps-text{font-size:calc(15.4px * var(--z, 1));line-height:1.52}
+.ps-g1 .ps-text:not(.ps-plain) > p:first-child::first-letter,.ps-g2 .ps-text:not(.ps-plain) > p:first-child::first-letter{font-size:56px}
+/* one column: a diagram or a box sits beside the text, on the right */
+.ps-g1 .ps-fig,.ps-g1 .ps-img,.ps-g1 .ps-box,.ps-g2 .ps-fig,.ps-g2 .ps-img,.ps-g2 .ps-box{float:right;clear:right;width:46%;margin:4px 0 12px 24px}
+.ps-young .ps-box{font-size:calc(15px * var(--z, 1))}
+.ps-g1 .ps-verse{font-size:calc(21px * var(--z, 1));line-height:1.55}
+.ps-g2 .ps-verse{font-size:calc(19px * var(--z, 1));line-height:1.52}
+.ps-g3 .ps-verse{font-size:calc(16px * var(--z, 1));line-height:1.45}
+.ps-young .ps-words{font-size:13.5px;line-height:1.4}
+/* the back: bigger questions, choices and writing lines */
+.ps-g1 .ps-q .ws-qt{font-size:calc(19px * var(--z, 1))}
+.ps-g2 .ps-q .ws-qt{font-size:calc(16.4px * var(--z, 1))}
+.ps-g3 .ps-q .ws-qt{font-size:calc(15px * var(--z, 1))}
+.ps-g1 .ps-opts .ws-opt,.ps-g1 .ps-q .ws-order{font-size:calc(18px * var(--z, 1));line-height:1.45}
+.ps-g2 .ps-opts .ws-opt,.ps-g2 .ps-q .ws-order{font-size:calc(15.4px * var(--z, 1));line-height:1.4}
+.ps-g3 .ps-opts .ws-opt,.ps-g3 .ps-q .ws-order{font-size:calc(14.4px * var(--z, 1));line-height:1.36}
+.ps-young .ps-opts{gap:4px;margin-top:6px}
+.ps-young .ps-opts .ws-opt b{width:24px;height:24px;font-size:13px;margin-right:4px}
+.ps-g1 .ps-q,.ps-g2 .ps-q{padding-top:calc(12px * var(--z, 1));padding-bottom:calc(13px * var(--z, 1))}
+.ps-g1 .ps-q .ws-lines,.ps-g2 .ps-q .ws-lines{height:calc(var(--n) * 40px * var(--z, 1));background:repeating-linear-gradient(transparent 0 calc(40px * var(--z, 1) - 1px),var(--line2) calc(40px * var(--z, 1) - 1px) calc(40px * var(--z, 1)))}
+.ps-g3 .ps-q .ws-lines{height:calc(var(--n) * 31px * var(--z, 1));background:repeating-linear-gradient(transparent 0 calc(31px * var(--z, 1) - 1px),var(--line2) calc(31px * var(--z, 1) - 1px) calc(31px * var(--z, 1)))}
+.ps-g3 .ps-opts{flex-direction:row;flex-wrap:wrap;column-gap:26px}
+.ps-g3 .ps-q:not(.ws-wide) .ps-opts{flex-direction:column}

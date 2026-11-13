@@ -1206,7 +1206,15 @@ async function checkSheets(browser, base, g) {
 }
 
 /* ---------- Reading passages (library.js, gradeN/passages.js) ---------- */
-const PASSAGE_WORDS = { 4: [250, 420], 5: [270, 450], 6: [290, 480], 7: [310, 520], 8: [320, 560] };
+/* each grade's limits: words in a passage (a poem may be shorter, from poem), questions, written answers, expectations and choices.
+   Grades 1 to 3 have short passages, fewer questions and 3 choices, as on reading tests for those grades. */
+const PASSAGE_RULES = {
+  1: { words: [50, 140], poem: 40, qs: [4, 6], written: 1, codes: 3, opts: [3, 3] },
+  2: { words: [100, 200], poem: 50, qs: [5, 7], written: 1, codes: 3, opts: [3, 3] },
+  3: { words: [150, 280], poem: 70, qs: [6, 8], written: 2, codes: 4, opts: [3, 3] },
+  4: { words: [250, 420] }, 5: { words: [270, 450] }, 6: { words: [290, 480] }, 7: { words: [310, 520] }, 8: { words: [320, 560] }
+};
+Object.values(PASSAGE_RULES).forEach(r => { r.poem = r.poem || 100; r.qs = r.qs || [6, 9]; r.written = r.written || 2; r.codes = r.codes || 4; r.opts = r.opts || [3, 4]; });
 /* once a grade has its 100 passages, their questions together must reach every reading expectation (B2.3 fluency is on every key;
    C1.7 and C3.7 ask for texts by First Nations, Métis and Inuit creators, which the site cannot write, so they are taught with real books) */
 const PASSAGE_COVER = ['B2.1', 'B2.2', 'B3.1', 'B3.2', 'B3.3', 'C1.1', 'C1.2', 'C1.3', 'C1.4', 'C1.5', 'C1.6', 'C2.1', 'C2.2', 'C2.3', 'C2.4', 'C2.5', 'C2.6', 'C2.7',
@@ -1223,12 +1231,6 @@ async function checkPassages(browser, base, g) {
   await page.goto(base + '/grade' + g + '/index.html#tools');
   await page.waitForSelector('.tb-card');
   const card = await page.locator('.tb-card[href="#tools/passages"]').count();
-  if (g < 4) {
-    if (card) fail(where, 'the tool shows before Grade 4');
-    if (has) fail(where, 'grade' + g + '/passages.js exists, but the tool starts in Grade 4');
-    await ctx.close();
-    return 0;
-  }
   if (!card) fail(where, 'the tool is not on the Toolbox page');
   if (!has) { fail(where, 'grade' + g + '/passages.js is missing'); await ctx.close(); return 0; }
   await page.goto(base + '/grade' + g + '/index.html#tools/passages');
@@ -1239,7 +1241,7 @@ async function checkPassages(browser, base, g) {
     for (const dir of ['', 'thumbs']) if (!fs.existsSync(path.join(ROOT, 'assets', 'photos', dir, photo))) fail(where, id + ': assets/photos/' + (dir ? dir + '/' : '') + photo + ' is missing');
     if (!credits.includes('`' + photo + '`')) fail(where, id + ': ' + photo + ' is not listed in assets/photos/CREDITS.md');
   }
-  for (const p of await page.evaluate(([g, band, cover]) => {
+  for (const p of await page.evaluate(([g, rule, cover]) => {
     const P = Atlas.library, out = [], seen = {};
     const expand = s => s.split(/,\s*/).flatMap(p => { const m = p.match(/^([A-D]\d)\.(\d+) to \1\.(\d+)$/); if (!m) return [p]; const r = []; for (let i = +m[2]; i <= +m[3]; i++) r.push(m[1] + '.' + i); return r; });
     const valid = new Set(Atlas.meta.flatMap(m => expand(m.codes || '')));
@@ -1265,22 +1267,23 @@ async function checkPassages(browser, base, g) {
         if (!b.credit) out.push(w + 'the diagram ' + b.img + ' needs a credit');
       });
       const text = p.body.map(b => typeof b === 'string' ? b : b.text || (b.poem || []).join(' ')).join(' ');
-      if (!p.words || p.words.length < 2 || p.words.length > 3) out.push(w + 'needs 2 or 3 words to know');
+      const fewest = g < 4 ? 1 : 2;
+      if (!p.words || p.words.length < fewest || p.words.length > 3) out.push(w + 'needs ' + fewest + ' to 3 words to know');
       (p.words || []).forEach(x => { if (!text.toLowerCase().includes('<b>' + x[0].toLowerCase() + '</b>')) out.push(w + 'the word to know "' + x[0] + '" is not in bold in the text'); });
       if (!p.guide || !p.guide.before || !p.guide.after) out.push(w + 'needs a guide for the grown-up (before and after reading)');
       const n = P.count(p);
-      const low = poem ? 100 : band[0];
-      if (n < low || n > band[1]) out.push(w + 'has ' + n + ' words; a Grade ' + g + (poem ? ' poem' : ' passage') + ' has ' + low + ' to ' + band[1]);
+      const low = poem ? rule.poem : rule.words[0];
+      if (n < low || n > rule.words[1]) out.push(w + 'has ' + n + ' words; a Grade ' + g + (poem ? ' poem' : ' passage') + ' has ' + low + ' to ' + rule.words[1]);
       const qs = p.qs || [];
-      if (qs.length < 6 || qs.length > 9) out.push(w + 'has ' + qs.length + ' questions; it needs 6 to 9');
-      if (qs.filter(q => q.k === 'lines').length < 2) out.push(w + 'needs 2 or more written answers');
-      if (new Set(qs.map(q => q.code)).size < 4) out.push(w + 'its questions cover fewer than 4 expectations');
+      if (qs.length < rule.qs[0] || qs.length > rule.qs[1]) out.push(w + 'has ' + qs.length + ' questions; it needs ' + rule.qs.join(' to '));
+      if (qs.filter(q => q.k === 'lines').length < rule.written) out.push(w + 'needs ' + rule.written + ' or more written answers');
+      if (new Set(qs.map(q => q.code)).size < rule.codes) out.push(w + 'its questions cover fewer than ' + rule.codes + ' expectations');
       qs.forEach((q, i) => {
         const qw = w + 'question ' + (i + 1) + ': ';
         if (!q.q) out.push(qw + 'has no question');
         if (!valid.has(q.code)) out.push(qw + 'the code "' + q.code + '" is not a Grade ' + g + ' expectation');
         if (q.k === 'choice') {
-          if (q.opts.length < 3 || q.opts.length > 4) out.push(qw + 'needs 3 or 4 choices');
+          if (q.opts.length < rule.opts[0] || q.opts.length > rule.opts[1]) out.push(qw + 'needs ' + rule.opts.filter((v, j, a) => a.indexOf(v) === j).join(' or ') + ' choices');
           if (new Set(q.opts).size !== q.opts.length) out.push(qw + 'has the same choice twice');
           if (!(q.a >= 0 && q.a < q.opts.length)) out.push(qw + 'its answer is not one of the choices');
         } else if (q.k === 'order') {
@@ -1315,7 +1318,7 @@ async function checkPassages(browser, base, g) {
       if (miss.length) out.push('the ' + P.list.length + ' passages never ask about ' + miss.join(', ') + ' (every reading expectation needs questions)');
     }
     return out;
-  }, [g, PASSAGE_WORDS[g], PASSAGE_COVER])) fail(where, p);
+  }, [g, PASSAGE_RULES[g], PASSAGE_COVER])) fail(where, p);
   const first = await page.evaluate(() => Atlas.library.list[0].id);
   for (const vp of [{ width: 390, height: 844 }, { width: 820, height: 1180 }, { width: 1366, height: 768 }]) {
     await page.setViewportSize(vp);
