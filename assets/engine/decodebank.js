@@ -3208,7 +3208,7 @@ Atlas.decodable.more('ew-ue', {
 });
 Atlas.decodable.add({
   id: 'cle', hunt: 'Underline every word that ends in -le.', band: '1', name: 'Consonant-le', focus: ['-ble', '-tle', '-dle'], key: 'ta-ble', mark: '[bcdfgkptz]le\\b',
-  heart: ['double', 'trouble'],
+  heart: ['double', 'trouble', 'always'],
   words: ['table', 'apple', 'little', 'puddle', 'candle', 'bubble', 'turtle', 'purple', 'simple', 'giggle', 'needle', 'eagle', 'maple', 'bottle'],
   title: 'The Little Turtle',
   text: ['After a big rain, Lucy and her little brother Sam went for a walk by the pond.',
@@ -3240,17 +3240,17 @@ Atlas.decodable.more('cle', {
 });
 /* step 46, story 3 */
 Atlas.decodable.more('cle', {
-  words: ['paddle', 'eagle', 'little', 'ripple', 'maple', 'wobble', 'giggle', 'gentle', 'nibble', 'kettle', 'handle'],
-  title: 'The Eagle and the Paddle',
-  text: ['At the cottage, Zara and her big sister Ruby took the little boat out on the lake. Each girl had a paddle. The lake was still, with just a few ripples.',
-    'Then Zara saw an eagle up in a maple tree. It had a white head and a yellow beak. "Be still," said Ruby in a low voice. They held the paddles up and let the boat drift.',
-    'The eagle opened its wings. It came down to the lake, and with one splash it had a fish! Then it went up with a flap of its big wings.',
-    'The boat began to wobble, and Zara had to grab the side. She began to giggle. "That eagle fishes better than we do," said Ruby. They paddled back to the dock.'],
-  art: { set: 'lake', season: 'spring', items: [['maple', 600, { s: 1.1 }], ['bird', 540, { y: 30 }], ['kid', 270, { y: 34, skin: 3, hair: 'long', top: '#c0573e' }], ['kid', 350, { y: 34, skin: 3, hair: 'puffs', top: '#e2b84f', mood: 'oh' }], ['canoe', 310, { y: 30, water: true }]] },
+  words: ['little', 'middle', 'giggle', 'wiggle', 'tickle', 'apple', 'puzzle', 'simple', 'bubble', 'jiggle'],
+  title: 'The Middle Seat',
+  text: ['Nell, Max and their little brother Ben sat in the van. It was a long trip to see Granny. Ben had the middle seat.',
+    'Ben began to wiggle. Then he began to giggle. "Stop it, Ben!" said Max. But Ben had a tickle in his nose.',
+    'Ben sneezed, and his apple fell. It rolled under the seat. Then Nell had to giggle too.',
+    'Dad gave the kids a puzzle book. It was simple, so they did it together. "The middle seat is always the best," said Ben.'],
+  art: { set: 'town', items: [['van', 300, { colour: '#3e6d9c' }], ['kid', 450, { skin: 0, hair: 'short', hairc: 'blond', top: '#e2b84f', mood: 'oh' }], ['kid', 520, { skin: 1, hair: 'long', hairc: 'brown', top: '#c96a7a', flip: true }], ['kid', 590, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f7f8a', flip: true }], ['adult', 680, { skin: 1, hair: 'short', hairc: 'brown', top: '#5d7a4e', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What did the eagle get?', opts: ['a fish', 'a paddle', 'a frog'], a: 0, code: 'C1.1' },
-    { k: 'choice', q: 'What is the story about?', opts: ['seeing an eagle catch a fish', 'a trip to the shop', 'a lost paddle'], a: 0, code: 'C2.6' },
-    { k: 'write', q: 'Where would you like to paddle a boat?', a: 'The child\'s own idea, such as a lake, a river or a pond. Ask them to read it back to you.', code: 'C2.5' }
+    { k: 'choice', q: 'Who had the middle seat?', opts: ['Ben', 'Max', 'Nell'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Ben began to wiggle.', 'The apple fell.', 'The kids did a puzzle book.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'draw', q: 'Draw the kids in the van.', a: 'Three children in a van, Ben in the middle. Ask the child what they do on a long trip.', code: 'C1.4' }
   ]
 });
 Atlas.decodable.add({
@@ -3302,7 +3302,7 @@ Atlas.decodable.more('kind-old', {
 });
 Atlas.decodable.add({
   id: 'silent', band: '1', name: 'Silent letters kn wr gn mb', focus: ['kn', 'wr', 'gn', 'mb'], key: 'knot, wrap, lamb', mark: '\\bkn|\\bwr|\\bgn|mb\\b',
-  heart: ['answer'],
+  heart: ['answer', 'been', 'goodbye'],
   words: ['knot', 'knee', 'knock', 'knit', 'knife', 'know', 'wrap', 'write', 'wrist', 'wrong', 'gnat', 'lamb', 'thumb', 'climb', 'comb'],
   title: 'Granny Can Knit',
   text: ['Kim\'s granny can knit. She can make mitts, socks and toques. Kim likes to sit on the rug by her knee and watch.',
@@ -3319,17 +3319,17 @@ Atlas.decodable.add({
 });
 /* step 48, story 2 */
 Atlas.decodable.more('silent', {
-  words: ['lamb', 'knee', 'kneel', 'knot', 'wrap', 'wrist', 'climb', 'knock', 'thumb', 'wrong', 'knelt'],
-  title: 'The Little Lamb',
-  text: ['In the spring, Rosa went to help at her aunt\'s farm. There were six new lambs in the barn. One little lamb was black, with a white spot on its knee.',
-    'One day, the black lamb was not with the rest. Rosa went to look. She found it by the fence. Its leg was stuck in a knot of wire.',
-    'Rosa knelt down in the mud. She knew the lamb was scared, so she did not rush. She held the lamb still with one hand. With the other, she pulled the wire off its leg, bit by bit.',
-    'The lamb was free! It ran back to its mom. Rosa wiped the mud off her knees and her wrists. "You did the right thing," said her aunt. "You were calm and gentle."'],
-  art: {set: 'farm', season: 'spring', items: [['sun', 110, {y: 40}], ['ram', 300, {s: 0.6, colour: '#2b2622'}], ['kid', 380, {skin: 2, hair: 'braids', top: '#d9774b', bottom: '#5a6a3a', flip: true}], ['adult', 470, {skin: 2, hair: 'long', top: '#7aa5c4', flip: true}], ['ram', 610, {s: 0.5, y: 18}], ['ram', 650, {s: 0.45, y: 24, flip: true}]]},
+  words: ['write', 'wrote', 'knock', 'know', 'wrap', 'wrapped', 'thumb', 'knee', 'knit', 'wrong'],
+  title: 'The Thank-You Note',
+  text: ['Granny sent Lily a kite for her birthday. "You must write a note to Granny," said Mom.',
+    'Lily sat at her desk. She did not know what to write. She bit her thumb. Then she wrote: "Hi Granny. Thank you for the kite. It is the best gift I have been given."',
+    'She did a sketch of the kite and signed her name. Then she wrapped the note in red paper.',
+    'The next day, there was a knock. It was Granny! Lily gave her the note. Granny read it and gave Lily a big hug. When Granny left, Lily said, "Goodbye! Come back soon!"'],
+  art: { set: 'bedroom', items: [['table', 300], ['lamp', 360], ['kid', 300, { skin: 0, hair: 'long', hairc: 'red', top: '#8fb36a', pose: 'hold' }], ['adult', 520, { skin: 0, hair: 'bun', hairc: 'grey', top: '#7a5c8c', glasses: true, flip: true }]] },
   qs: [
-    { k: 'choice', q: 'Where was the lamb stuck?', opts: ['by the fence', 'in the barn', 'in a tree'], a: 0, code: 'C1.1' },
-    { k: 'choice', q: 'Why did Rosa not rush?', opts: ['The lamb was scared.', 'She was sleepy.', 'It was raining.'], a: 0, code: 'C3.2' },
-    { k: 'draw', q: 'Draw Rosa and the lamb.', a: 'A girl kneeling by a fence with a small black lamb. Ask the child how Rosa got the lamb free.', code: 'C1.4' }
+    { k: 'choice', q: 'What did Granny send Lily?', opts: ['a kite', 'a book', 'a hat'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Lily did a sketch of the kite.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Granny hug Lily?', opts: ['She liked the note.', 'She was cold.', 'Lily fell.'], a: 0, code: 'C3.2' }
   ]
 });
 /* step 48, story 3 */
@@ -3349,7 +3349,7 @@ Atlas.decodable.more('silent', {
 });
 Atlas.decodable.add({
   id: 'prefix', hunt: 'Underline every word that starts with un-, re- or dis-.', band: '1', name: 'Prefixes un-, re- and dis-', focus: ['un-', 're-', 'dis-'], key: 'unpack, redo, dislike', mark: '^(un|re|dis)(?=[a-z]{3})',
-  heart: ['another', 'nothing'],
+  heart: ['another', 'nothing', 'into', 'don\'t'],
   words: ['unpack', 'unlock', 'unzip', 'unkind', 'unwrap', 'unhappy', 'repack', 'refill', 'retell', 'reread', 'reuse', 'replay', 'rewind', 'reopen', 'dislike', 'distrust'],
   title: 'Unwrap It Slowly',
   text: ['It was Raj\'s birthday, and it was raining at the cottage. Granny had sent a gift in red paper with a gold bow.',
@@ -3366,17 +3366,17 @@ Atlas.decodable.add({
 });
 /* step 49, story 2 */
 Atlas.decodable.more('prefix', {
-  words: ['unpack', 'unzip', 'unroll', 'unlock', 'refill', 'repack', 'retell', 'unhook', 'reuse', 'untie', 'restart'],
-  title: 'Unpack the Van',
-  text: ['Lin and her family drove to a camp by a lake in the Rockies. They had to unpack the van and set up the tent before dark.',
-    'Lin unzipped the tent bag and unrolled the tent. Her brother Max unlocked the box with the pots and pans. Dad refilled the water jug at the tap.',
-    'Then it began to rain, hard. The tent was not up yet! "Repack it all!" said Mom. They put the tent back in the bag and ran to the van.',
-    'They sat in the van and waited. Max retold the story of the fox and the berry patch for the tenth time. At last the rain stopped, and the sun came out. "Let us unpack again," said Dad, "and this time, fast!"'],
-  art: {set: 'lake', time: 'grey', items: [['rainfall', 350, {y: 60}], ['van', 170, {colour: '#8fa9b9'}], ['kid', 310, {skin: 1, hair: 'bun', coat: '#e2b84f', pose: 'hold'}], ['tent', 430, {colour: '#7a9a5a'}], ['kid', 540, {skin: 1, hair: 'short', coat: '#c0573e', flip: true, s: 0.9}], ['adult', 620, {skin: 1, hair: 'short', coat: '#4f6d8a', flip: true}]]},
+  words: ['unwrap', 'unpack', 'refill', 'repaint', 'unplug', 'unzip', 'recheck', 'unlock', 'dislike', 'refilled'],
+  title: 'Redo the Room',
+  text: ['Mason did not like his room. "It is so dull," he said. "Can we redo it?"',
+    '"Yes," said Dad. First, they had to unpack the shelf and unplug the lamp. They put all the books into a box.',
+    'Then Dad and Mason painted the walls a deep green. Mason got paint on his nose! Dad had to repaint a spot by the bed.',
+    'Then they refilled the shelf and plugged in the lamp. Mason looked at his room. "I don\'t dislike it now," he said with a grin. "I like it a lot!"'],
+  art: { set: 'bedroom', items: [['bed', 200], ['shelf', 360], ['lamp', 430], ['kid', 520, { skin: 1, hair: 'short', hairc: 'brown', top: '#5d7a4e', flip: true }], ['adult', 610, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The tent was up when the rain came.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'Why did they repack the tent?', opts: ['It began to rain.', 'They had to go home.', 'A fox came.'], a: 0, code: 'C3.2' },
-    { k: 'draw', q: 'Draw the family in the van in the rain.', a: 'A van with people in it and rain coming down, perhaps a tent bag nearby. Ask the child what they did next.', code: 'C1.4' }
+    { k: 'choice', q: 'Why did Mason want to redo his room?', opts: ['It was dull.', 'It was wet.', 'It was small.'], a: 0, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['They unpacked the shelf.', 'They painted the walls.', 'They refilled the shelf.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'yn', q: 'Mason got paint on his nose.', a: true, code: 'C1.1' }
   ]
 });
 /* step 49, story 3 */
@@ -3428,17 +3428,17 @@ Atlas.decodable.more('suffix-more', {
 });
 /* step 50, story 3 */
 Atlas.decodable.more('suffix-more', {
-  words: ['gently', 'careful', 'thankful', 'biggest', 'longer', 'sweetest', 'daily', 'helpful', 'bigger', 'quickly', 'useless', 'sweeter'],
-  title: 'The Biggest Pumpkin',
-  text: ['Every spring, the women and men on Dana\'s street plant a garden in an empty lot in Halifax. Dana helps her grandma, who grew up in another country.',
-    'Grandma made holes in the soil, and Dana gently set the pumpkin seeds in them. "Water them daily," said Grandma. "And be careful with the little plants."',
-    'All summer, Dana watered the pumpkins. One vine grew longer and longer. On it was one pumpkin that got bigger and bigger. By fall, it was the biggest pumpkin in the garden!',
-    'Dana was proud, but she did not keep it. They cut it up, and Grandma made pumpkin soup for the whole street. "This is the sweetest soup," said a man from next door. Dana felt thankful for her grandma, for the garden and for the helpful people on her street.'],
-  art: {set: 'town', season: 'autumn', items: [['plant', 120], ['plant', 180, {flowers: true}], ['kid', 290, {skin: 3, hair: 'puffs', top: '#e2b84f'}], ['adult', 370, {skin: 3, hair: 'curly', top: '#c96a7a', pose: 'hold'}], ['wagon', 470, {load: 'pumpkins'}], ['adult', 570, {skin: 0, hair: 'short', hairc: 'brown', glasses: true, top: '#4f6d8a', flip: true}]]},
+  words: ['farmer', 'freshest', 'biggest', 'helpful', 'kindly', 'sweetest', 'thankful', 'quickly', 'shopper', 'sweeter'],
+  title: 'The Farmer at the Market',
+  text: ['On Saturday, Dana and her dad went to the market. A farmer had a stand full of fresh food.',
+    '"These are the freshest eggs," said the farmer. "And this is the sweetest corn. My cow gives the milk, too."',
+    'Dana picked the biggest bunch of beets. The farmer kindly gave her an apple. "You are a helpful shopper," he said.',
+    'Dana was thankful. "Can we come back next Saturday?" she asked. "Yes," said Dad. "We can buy all our food from the farmer."'],
+  art: { set: 'town', items: [['table', 300], ['jar', 270, { colour: '#e2b84f' }], ['adult', 330, { skin: 0, hair: 'short', hairc: 'grey', top: '#5d7a4e', hat: 'cap' }], ['kid', 480, { skin: 2, hair: 'puffs', top: '#c96a7a', flip: true, pose: 'hold' }], ['adult', 570, { skin: 2, hair: 'short', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What did Grandma make with the pumpkin?', opts: ['soup', 'pie', 'bread'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Dana kept the pumpkin for her own lunch.', a: false, code: 'C3.2' },
-    { k: 'write', q: 'What would you like to grow in a garden?', a: 'The child\'s own idea, such as carrots, beans or flowers. Ask them to read it back to you.', code: 'C2.5' }
+    { k: 'choice', q: 'What did the farmer give Dana?', opts: ['an apple', 'a cow', 'six eggs'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why was Dana thankful?', opts: ['The farmer gave her an apple.', 'She lost her bag.', 'It was cold.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Dana picked the biggest bunch of beets.', a: true, code: 'C1.1' }
   ]
 });
 /* step 50x */
@@ -3478,18 +3478,17 @@ Atlas.decodable.more('y-to-i', {
 });
 /* step 50x, story 3 */
 Atlas.decodable.more('y-to-i', {
-  words: ['babies', 'stories', 'families', 'cried', 'worried', 'rainiest', 'funnier', 'tried', 'happily', 'crankier', 'ponies'],
-  title: 'The Rainiest Week',
-  text: ['The Shaw and Patel families went to a cottage by a lake for a week. There were six kids and two babies.',
-    'But it was the rainiest week of the summer. It rained on Monday. It rained on Tuesday. The kids got crankier and crankier. The babies cried. The moms and dads were worried.',
-    'Then Grandma Patel had a plan. "Let us tell stories," she said. She began a story about a moose that tried to ride in a canoe. The kids giggled. The babies stopped crying.',
-    'Then each kid tried to tell a funnier story than the last. Ava told a story about a beaver with a toque.',
-    'By Friday, the sun was back, but the kids did not want to go out. They sat happily by the fire. "One more story!" they said.'],
-  art: {set: 'kitchen', time: 'grey', items: [['lamp', 110, {lit: true}], ['adult', 200, {skin: 3, hair: 'bun', hairc: 'grey', top: '#c96a7a', glasses: true}], ['kid', 300, {skin: 0, hair: 'braids', hairc: 'blond', top: '#7aa5c4', flip: true}], ['baby', 370, {skin: 3, top: '#e2b84f', flip: true}], ['kid', 440, {skin: 3, hair: 'short', top: '#8fb36a', flip: true}], ['kid', 520, {skin: 0, hair: 'curly', hairc: 'brown', top: '#d9774b', flip: true}]]},
+  words: ['busiest', 'tidied', 'hurried', 'carried', 'cried', 'happiest', 'tiniest', 'babies', 'families', 'tried'],
+  title: 'The Busiest Day',
+  text: ['It was the day before Christmas, and it was the busiest day of all. Mom tidied the house. Dad hurried to the shop.',
+    'Nora and her little brother, Tom, baked buns. Tom carried the tray. Then he tripped, and the buns fell! Tom cried.',
+    '"Don\'t be sad," said Mom. "We can bake more together." So they tried again and made a new tray of buns.',
+    'That night, the children set out a bun and a cup of milk for Santa. Tom was the happiest kid in the house. "This is the best Christmas," he said.'],
+  art: { set: 'kitchen', season: 'winter', items: [['stove', 180], ['table', 360], ['bun', 340], ['bun', 375], ['kid', 470, { skin: 0, hair: 'long', hairc: 'blond', top: '#c0473e', flip: true }], ['kid', 540, { skin: 0, hair: 'curly', hairc: 'blond', top: '#5d7a4e', flip: true, s: 0.9 }], ['adult', 630, { skin: 0, hair: 'long', hairc: 'brown', top: '#7a5c8c', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'Why did the babies stop crying?', opts: ['The stories were funny.', 'The sun came out.', 'They had a nap.'], a: 0, code: 'C3.2' },
-    { k: 'yn', q: 'It was sunny all week.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'What is the story mostly about?', opts: ['telling stories on rainy days', 'a moose in a canoe', 'a trip on a plane'], a: 0, code: 'C2.6' }
+    { k: 'choice', q: 'What did the kids bake?', opts: ['buns', 'a cake', 'bread'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Tom cry?', opts: ['The buns fell.', 'He was cold.', 'Santa came.'], a: 0, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Tom carried the tray.', 'The buns fell.', 'They made more buns.'], show: [1, 2, 0], code: 'C3.3' }
   ]
 });
 Atlas.decodable.add({
