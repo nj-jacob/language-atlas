@@ -23,7 +23,7 @@ Atlas.decodable.more('short-a', {
   text: ['Pam and Dad sat at the dam. Pam had a bag. The bag had ham, jam and a yam.',
     'A tan cat ran to the bag. Zap! The cat had the ham. Pam is mad. Dad is sad.',
     'Pam had to pat the cat. Pam and Dad had the jam and the yam. The cat had a nap.'],
-  art: { set: 'lake', season: 'spring', items: [['beaver', 610, { s: 0.8, y: 14 }], ['adult', 160, { skin: 4, hair: 'short', top: '#7aa5c4', mood: 'sad' }], ['kid', 250, { skin: 4, hair: 'puffs', top: '#c96a7a', mood: 'oh' }], ['bag', 340, { colour: '#c9a46a' }], ['cat', 440, { colour: '#c99a5e', flip: true }]] },
+  art: { set: 'lake', season: 'spring', items: [['beaver', 610, { s: 0.8, y: 14 }], ['adult', 160, { skin: 1, hairc: 'red', hair: 'short', top: '#7aa5c4', mood: 'sad' }], ['kid', 250, { skin: 1, hairc: 'auburn', hair: 'curly', top: '#c96a7a', mood: 'oh' }], ['bag', 340, { colour: '#c9a46a' }], ['cat', 440, { colour: '#c99a5e', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Pam and Dad sat at a van.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why is Pam mad?', opts: ['The cat had the ham.', 'Dad had a nap.', 'The bag is tan.'], a: 0, code: 'C3.2' },
@@ -37,7 +37,7 @@ Atlas.decodable.more('short-a', {
     'Tap, tap, tap! Is a rat at the bag? Is a bat at the bag?',
     'A tan cat sat at the bag. The cat is Max! Max had a tap at the bag.',
     'Jan and Dad pat Max. Max sat at Jan and had a nap.'],
-  art: { set: 'town', time: 'dusk', season: 'autumn', items: [['van', 170], ['adult', 330, { skin: 0, hair: 'short', hairc: 'brown', hat: 'cap', hatc: '#4f6d8a', top: '#8fb36a' }], ['bag', 410, { colour: '#8a6a4a' }], ['cat', 470, { colour: '#c99a5e', flip: true }], ['kid', 570, { skin: 0, hair: 'braids', hairc: 'auburn', top: '#b9a6e8', flip: true }], ['map', 645]] },
+  art: { set: 'town', time: 'dusk', season: 'autumn', items: [['van', 170], ['adult', 330, { skin: 4, hair: 'short', hairc: 'brown', hat: 'cap', hatc: '#4f6d8a', top: '#8fb36a' }], ['bag', 410, { colour: '#8a6a4a' }], ['cat', 470, { colour: '#c99a5e', flip: true }], ['kid', 570, { skin: 4, hair: 'braids', hairc: 'auburn', top: '#b9a6e8', flip: true }], ['map', 645]] },
   qs: [
     { k: 'choice', q: 'What sat at the bag?', opts: ['a rat', 'a cat', 'a bat'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Dad is mad at Max.', a: false, code: 'C3.2' },
@@ -66,7 +66,7 @@ Atlas.decodable.more('short-i', {
   text: ['Liz is it. Tim ran and hid. "I can win!" said Tim.',
     'Is Tim in the van? It is Dad, and Dad had a nap. Is Tim in the pit? It is Kit, the cat.',
     'Liz sat at a big bin. Tap, tap! Is it Kit? Liz did tip the lid. It is Tim! "I win!" said Liz. "You did," said Tim.'],
-  art: { set: 'snow', items: [['snowfall', 350, { y: 10 }], ['kid', 230, { skin: 5, hair: 'braids', top: '#c0573e', coat: '#c0573e', hat: 'toque', hatc: '#4f6d8a', pose: 'wave' }], ['box', 380, { colour: '#7f9fa8', s: 1.6 }], ['kid', 460, { skin: 1, hair: 'short', hairc: 'red', coat: '#4f7f8a', hat: 'toque', hatc: '#e2b84f', flip: true, mood: 'oh' }], ['cat', 580, { colour: '#3b3330', flip: true }]] },
+  art: { set: 'snow', items: [['snowfall', 350, { y: 10 }], ['kid', 230, { skin: 3, hair: 'braids', top: '#c0573e', coat: '#c0573e', hat: 'toque', hatc: '#4f6d8a', pose: 'wave' }], ['box', 380, { colour: '#7f9fa8', s: 1.6 }], ['kid', 460, { skin: 2, hair: 'short', hairc: 'red', coat: '#4f7f8a', hat: 'toque', hatc: '#e2b84f', flip: true, mood: 'oh' }], ['cat', 580, { colour: '#3b3330', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Tim hid in the van.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Who was in the van?', opts: ['Dad', 'Kit', 'Liz'], a: 0, code: 'C1.1' },
@@ -80,7 +80,7 @@ Atlas.decodable.more('short-i', {
     'In the bag was a tin. In the tin was a big tan wig! It did fit Kim.',
     'Kit the cat had the wig! Kit hid in a bin. Kim and Dad had to dig in the bin.',
     'Kim had the wig. Kim did a jig in the big wig!'],
-  art: { set: 'kitchen', season: 'winter', items: [['adult', 150, { skin: 2, hair: 'bun', hairc: 'grey', glasses: true, top: '#7a5c8c', dress: true }], ['table', 300], ['gift', 290, { y: 55 }], ['kid', 420, { skin: 2, hair: 'curly', hairc: 'blond', top: '#c96a7a', pose: 'wave' }], ['adult', 540, { skin: 2, hair: 'short', top: '#4f6d8a', flip: true }], ['cat', 630, { colour: '#a39a90', flip: true }]] },
+  art: { set: 'kitchen', season: 'winter', items: [['adult', 150, { skin: 1, hair: 'bun', hairc: 'grey', glasses: true, top: '#7a5c8c', dress: true }], ['table', 300], ['gift', 290, { y: 55 }], ['kid', 420, { skin: 1, hair: 'curly', hairc: 'blond', top: '#c96a7a', pose: 'wave' }], ['adult', 540, { skin: 1, hairc: 'blond', hair: 'short', top: '#4f6d8a', flip: true }], ['cat', 630, { colour: '#a39a90', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What was in the tin?', opts: ['a fig', 'a wig', 'a pin'], a: 1, code: 'C1.1' },
     { k: 'choice', q: 'Why did Kim and Dad dig in the bin?', opts: ['Kit hid in it.', 'Kim had a nap.', 'Dad had a fig.'], a: 0, code: 'C3.2' },
@@ -95,7 +95,7 @@ Atlas.decodable.add({
   text: ['Tom has a big box. The box is on top of a log.',
     'A fox is in the box! The fox is not big. It sat in the box and had a nap.',
     'Tom ran to Mom. "Do not tap the box," said Mom. Tom and Mom sat and sat. Hop! The fox ran and hid. Tom has his box.'],
-  art: { set: 'forest', season: 'autumn', items: [['log', 260], ['box', 260, { y: 22, colour: '#c9a46a', open: true }], ['fox', 400, { flip: true }], ['kid', 500, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f7f8a', flip: true }], ['adult', 590, { skin: 1, hair: 'long', hairc: 'brown', top: '#d9774b', flip: true }]] },
+  art: { set: 'forest', season: 'autumn', items: [['log', 260], ['box', 260, { y: 22, colour: '#c9a46a', open: true }], ['fox', 400, { flip: true }], ['kid', 500, { skin: 2, hair: 'short', hairc: 'brown', top: '#4f7f8a', flip: true }], ['adult', 590, { skin: 2, hair: 'long', hairc: 'brown', top: '#d9774b', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The fox is big.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Where did the fox nap?', opts: ['in a box', 'on a mat', 'in a pot'], a: 0, code: 'C1.1' },
@@ -109,7 +109,7 @@ Atlas.decodable.more('short-o', {
   text: ['Don has a dog. The dog is Bob. Bob is big. Bob can jog and hop.',
     'Don has a cot. Bob got on the cot! "Bob, no!" said Don. "It is not a dog cot!"',
     'Bob sat on the cot. Don sat on the cot. Bob and Don had a nap. It was a dog cot!'],
-  art: { set: 'bedroom', time: 'night', season: 'winter', items: [['bed', 290, { blanket: '#7aa5c4' }], ['dog', 300, { colour: '#6b4a32', asleep: true, y: 30 }], ['kid', 430, { skin: 4, hair: 'short', top: '#e2b84f', flip: true }]] },
+  art: { set: 'bedroom', time: 'night', season: 'winter', items: [['bed', 290, { blanket: '#7aa5c4' }], ['dog', 300, { colour: '#6b4a32', asleep: true, y: 30 }], ['kid', 430, { skin: 0, hairc: 'auburn', hair: 'short', top: '#e2b84f', flip: true }]] },
   qs: [
     { k: 'choice', q: 'Where did Bob nap?', opts: ['on the cot', 'in a box', 'on a log'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Don said, "Bob, no!" Why?', opts: ['Bob got on the cot.', 'Bob ran to a log.', 'Bob had a hot dog.'], a: 0, code: 'C3.2' },
@@ -123,7 +123,7 @@ Atlas.decodable.more('short-o', {
     'A dog ran to the log. It had a tag. "It is Rob," said Mom.',
     'A man ran to the log. "Rob! Rob!" said the man. Rob ran to the man.',
     '"Rob is a bad dog," said the man. "Rob is not bad," said Dot. "Rob is a top dog!"'],
-  art: { set: 'park', season: 'spring', items: [['adult', 150, { skin: 5, hair: 'long', top: '#8fb36a', bottom: '#3b3330' }], ['log', 260], ['kid', 260, { skin: 5, hair: 'puffs', top: '#e9a3b4', y: 22, pose: 'wave' }], ['dog', 410, { colour: '#d6ad78', collar: '#c0573e', flip: true }], ['adult', 550, { skin: 0, hair: 'short', hairc: 'grey', beard: true, top: '#7a5c48', flip: true }]] },
+  art: { set: 'park', season: 'spring', items: [['adult', 150, { skin: 0, hairc: 'brown', hair: 'long', top: '#8fb36a', bottom: '#3b3330' }], ['log', 260], ['kid', 260, { skin: 0, hairc: 'brown', hair: 'curly', top: '#e9a3b4', y: 22, pose: 'wave' }], ['dog', 410, { colour: '#d6ad78', collar: '#c0573e', flip: true }], ['adult', 550, { skin: 0, hair: 'short', hairc: 'grey', beard: true, top: '#7a5c48', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The dog is Rob.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Who ran to the log?', opts: ['a man', 'a fox', 'Dad'], a: 0, code: 'C1.1' },
@@ -180,7 +180,7 @@ Atlas.decodable.add({
   text: ['Meg has a red hen. The hen is Peg. Peg is in a pen.',
     'Peg is not in the pen! Meg and Ben run to get Peg. Is Peg in the den? No. Is Peg in the van? No.',
     'Peg is on the bed! "You are a bad hen," said Ben. They put Peg in the pen. They set a net on the pen.'],
-  art: { set: 'farm', season: 'autumn', items: [['net', 140], ['kid', 240, { skin: 2, hair: 'braids', hairc: 'black', top: '#7a5c8c', pose: 'wave' }], ['hen', 360, { colour: '#b8452f' }], ['kid', 470, { skin: 3, hair: 'short', top: '#e2b84f', flip: true }], ['van', 640, { y: 20, s: 0.55 }]] },
+  art: { set: 'farm', season: 'autumn', items: [['net', 140], ['kid', 240, { skin: 0, hair: 'braids', hairc: 'black', top: '#7a5c8c', pose: 'wave' }], ['hen', 360, { colour: '#b8452f' }], ['kid', 470, { skin: 0, hairc: 'red', hair: 'short', top: '#e2b84f', flip: true }], ['van', 640, { y: 20, s: 0.55 }]] },
   qs: [
     { k: 'choice', q: 'Where was Peg?', opts: ['in the van', 'on the bed', 'in the den'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Ben is mad at Peg.', a: true, code: 'C3.2' },
@@ -194,7 +194,7 @@ Atlas.decodable.more('short-e', {
   text: ['Deb has a pet. The pet is Rex. Rex has a bad leg.',
     'Deb and Mom get Rex in the van. They go to the vet. The vet set his leg. "Let Rex nap in his bed," said the vet.',
     'Rex had a big nap in his bed. Rex got up and ran to Deb. Yes!'],
-  art: { set: 'shop', items: [['adult', 230, { skin: 3, hair: 'scarf', scarf: '#4f7f8a', top: '#f2f0ea', glasses: true }], ['dog', 360, { colour: '#3b3330', chest: '#f3e8d6', flip: true, spot: true }], ['kid', 470, { skin: 4, hair: 'puffs', top: '#e2b84f', flip: true }], ['adult', 570, { skin: 4, hair: 'short', top: '#c96a5a', dress: true, flip: true }]] },
+  art: { set: 'shop', items: [['adult', 230, { skin: 0, hairc: 'brown', hair: 'long', top: '#f2f0ea', glasses: true }], ['dog', 360, { colour: '#3b3330', chest: '#f3e8d6', flip: true, spot: true }], ['kid', 470, { skin: 1, hairc: 'red', hair: 'curly', top: '#e2b84f', flip: true }], ['adult', 570, { skin: 1, hairc: 'black', hair: 'short', top: '#c96a5a', dress: true, flip: true }]] },
   qs: [
     { k: 'choice', q: 'What was bad?', opts: ['his leg', 'his bed', 'his van'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Rex had a bad leg.', 'The vet set his leg.', 'Rex got up and ran.'], show: [2, 0, 1], code: 'C3.3' },
@@ -208,7 +208,7 @@ Atlas.decodable.more('short-e', {
     'They go to Jen. Jen has a red pup in a pen. It ran to Ben.',
     'Ben fed the red pup. It had a nap in his lap. "Can I have him?" said Ben. "Yes," said Jen.',
     'The pup is Jet, and Ben has a pet!'],
-  art: { set: 'yard', season: 'spring', items: [['house', 130, { s: 0.8, y: 10 }], ['kid', 310, { skin: 5, hair: 'short', top: '#4f7f8a', pose: 'hold' }], ['pup', 400, { colour: '#b5543a', flip: true }], ['kid', 500, { skin: 2, hair: 'long', hairc: 'auburn', top: '#e9a3b4', flip: true }], ['adult', 590, { skin: 5, hair: 'scarf', scarf: '#c0573e', top: '#7a5c8c', flip: true }]] },
+  art: { set: 'yard', season: 'spring', items: [['house', 130, { s: 0.8, y: 10 }], ['kid', 310, { skin: 2, hair: 'short', top: '#4f7f8a', pose: 'hold' }], ['pup', 400, { colour: '#b5543a', flip: true }], ['kid', 500, { skin: 0, hair: 'long', hairc: 'auburn', top: '#e9a3b4', flip: true }], ['adult', 590, { skin: 2, hair: 'long', top: '#7a5c8c', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The red pup ran to Ben.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Ben and Mom go to Jen?', opts: ['to get a pet', 'to get a hen', 'to get a van'], a: 0, code: 'C3.2' },
@@ -237,7 +237,7 @@ Atlas.decodable.more('short-mix', {
   text: ['Tip is a big cat, and Dot is not. Tip and Dot nap in a box.',
     'Mom has a red hat on a peg. Tip got the hat. Dot got the hat. Rip! The hat has a big rip.',
     'Mom is not mad. "Look," said Mom. "It is a cat bed!" Tip and Dot nap in the hat.'],
-  art: { set: 'bedroom', time: 'dusk', items: [['box', 180, { colour: '#c9a46a', open: true }], ['hat', 350, { colour: '#c0573e', band: '#3b3330', s: 3.4 }], ['cat', 330, { colour: '#c99a5e', asleep: true, y: 4 }], ['kitten', 395, { colour: '#3b3330', asleep: true, y: 4 }], ['adult', 520, { skin: 3, hair: 'curly', hairc: 'black', top: '#8fb36a', flip: true, pose: 'hold' }]] },
+  art: { set: 'bedroom', time: 'dusk', items: [['box', 180, { colour: '#c9a46a', open: true }], ['hat', 350, { colour: '#c0573e', band: '#3b3330', s: 3.4 }], ['cat', 330, { colour: '#c99a5e', asleep: true, y: 4 }], ['kitten', 395, { colour: '#3b3330', asleep: true, y: 4 }], ['adult', 520, { skin: 1, hair: 'curly', hairc: 'black', top: '#8fb36a', flip: true, pose: 'hold' }]] },
   qs: [
     { k: 'choice', q: 'What did Tip and Dot get?', opts: ['a red hat', 'a big box', 'a cup'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Mom is mad at Tip and Dot.', a: false, code: 'C3.2' },
@@ -265,7 +265,7 @@ Atlas.decodable.add({
   text: ['Ben got in bed. A big bug sat on the bed. Ben did not sob. He had a job to do.',
     'Ben got a tub. He put the tub on the bug. The bug is in the tub!',
     'Dad and Ben set the bug on a bud. Ben got in bed. The bug did not!'],
-  art: { set: 'yard', time: 'night', items: [['moon', 600, { y: 40 }], ['stars', 300, { y: 30 }], ['adult', 200, { skin: 5, hair: 'bald', beard: true, top: '#4f6d8a' }], ['kid', 300, { skin: 5, hair: 'short', top: '#7aa5c4', pose: 'hold' }], ['bug', 380], ['plant', 430, { flowers: true }], ['bush', 560]] },
+  art: { set: 'yard', time: 'night', items: [['moon', 600, { y: 40 }], ['stars', 300, { y: 30 }], ['adult', 200, { skin: 0, hair: 'bald', beard: true, top: '#4f6d8a' }], ['kid', 300, { skin: 0, hairc: 'black', hair: 'short', top: '#7aa5c4', pose: 'hold' }], ['bug', 380], ['plant', 430, { flowers: true }], ['bush', 560]] },
   qs: [
     { k: 'yn', q: 'Ben was mad at the bug.', a: false, code: 'C3.2' },
     { k: 'choice', q: 'What did Ben put on the bug?', opts: ['a tub', 'a bag', 'a bun'], a: 0, code: 'C1.1' },
@@ -279,7 +279,7 @@ Atlas.decodable.more('cons-b', {
   text: ['Bev and Deb got on a big bus. Bev had a bag. In the bag was a bat and a bun.',
     'Deb had a bag, but it had no bun in it. Deb was sad.',
     'Bev got the bun. She cut it in two. "You can have a bit," said Bev. Deb and Bev sat on the bus and had the bun.'],
-  art: { set: 'town', season: 'winter', items: [['bus', 200], ['bag', 360, { colour: '#7a5c8c' }], ['kid', 430, { skin: 3, hair: 'braids', top: '#c0573e', coat: '#c0573e', hat: 'toque', hatc: '#f2f0ea', pose: 'hold' }], ['kid', 520, { skin: 1, hair: 'long', hairc: 'red', coat: '#4f7f8a', flip: true, mood: 'sad' }]] },
+  art: { set: 'town', season: 'winter', items: [['bus', 200], ['bag', 360, { colour: '#7a5c8c' }], ['kid', 430, { skin: 2, hair: 'braids', top: '#c0573e', coat: '#c0573e', hat: 'toque', hatc: '#f2f0ea', pose: 'hold' }], ['kid', 520, { skin: 0, hair: 'long', hairc: 'red', coat: '#4f7f8a', flip: true, mood: 'sad' }]] },
   qs: [
     { k: 'choice', q: 'What was in the bag?', opts: ['a bat and a bun', 'a cat and a cup', 'a bed'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Why was Deb sad?', opts: ['Deb had no bun.', 'The bus was big.'], a: 0, code: 'C3.2' },
@@ -307,7 +307,7 @@ Atlas.decodable.add({
   text: ['Cam had a red cap. He set it on his cot. Cam got his cup and ran to the bus.',
     'Cal sat on the bus. "Cam, you have no cap!" said Cal. Cam ran to get it.',
     'The cap was on the cot. Cub the cat was in it! Cub had a nap in the cap. "Cub can have it," said Cam.'],
-  art: { set: 'bedroom', items: [['bed', 260, { blanket: '#8fb36a' }], ['hat', 250, { colour: '#c0573e', band: '#c0573e', s: 2.6, y: 30 }], ['cat', 255, { colour: '#7a7068', asleep: true, y: 32 }], ['kid', 440, { skin: 2, hair: 'short', hairc: 'black', top: '#e2b84f', flip: true, mood: 'oh' }]] },
+  art: { set: 'bedroom', items: [['bed', 260, { blanket: '#8fb36a' }], ['hat', 250, { colour: '#c0573e', band: '#c0573e', s: 2.6, y: 30 }], ['cat', 255, { colour: '#7a7068', asleep: true, y: 32 }], ['kid', 440, { skin: 1, hair: 'short', hairc: 'black', top: '#e2b84f', flip: true, mood: 'oh' }]] },
   qs: [
     { k: 'yn', q: 'Cam put the cap on his cot.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Who had a nap in the cap?', opts: ['Cal', 'Cub the cat', 'Cam'], a: 1, code: 'C1.1' },
@@ -321,7 +321,7 @@ Atlas.decodable.more('cons-c', {
   text: ['Pop and Cal sat in the sun. Cal had a rod and a cap. Pop had a cup.',
     'Tug, tug! Cal got a cod! It was big and wet. Pop and Cal got it in.',
     'Pop cut up the cod. Cub the cat sat up. Pop and Cal had hot cod. Cub got a bit!'],
-  art: { set: 'shore', time: 'dusk', items: [['sun', 560, { y: 70 }], ['adult', 180, { skin: 4, hair: 'short', hairc: 'grey', beard: true, hat: 'cap', hatc: '#4f7f8a', top: '#c96a5a' }], ['kid', 290, { skin: 4, hair: 'short', top: '#e2b84f', hat: 'cap', hatc: '#c0573e' }], ['fish', 380, { jump: true }], ['cat', 500, { colour: '#3b3330', flip: true }], ['campfire', 610, { lit: true }]] },
+  art: { set: 'shore', time: 'dusk', items: [['sun', 560, { y: 70 }], ['adult', 180, { skin: 0, hair: 'short', hairc: 'grey', beard: true, hat: 'cap', hatc: '#4f7f8a', top: '#c96a5a' }], ['kid', 290, { skin: 0, hairc: 'red', hair: 'short', top: '#e2b84f', hat: 'cap', hatc: '#c0573e' }], ['fish', 380, { jump: true }], ['cat', 500, { colour: '#3b3330', flip: true }], ['campfire', 610, { lit: true }]] },
   qs: [
     { k: 'choice', q: 'What did Cal get?', opts: ['a cod', 'a cup', 'a cat'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Cub the cat got no cod.', a: false, code: 'C3.2' },
@@ -334,7 +334,7 @@ Atlas.decodable.more('cons-c', {
   text: ['It was hot. Mac sat on a cot in the sun. Mac had a cap on. Dad had a cup.',
     'Mac sat up. A cub was in the big can! It dug and dug. It got a cob and a bit of cod.',
     'Dad and Mac sat in the van. The cub had the cob and ran. Dad put a big lid on the can.'],
-  art: { set: 'park', items: [['sun', 620, { y: 30 }], ['van', 160], ['adult', 330, { skin: 1, hair: 'short', top: '#7aa5c4', flip: false, pose: 'hold' }], ['kid', 410, { skin: 1, hair: 'curly', hairc: 'brown', hat: 'cap', hatc: '#d9774b', top: '#f2f0ea', mood: 'oh' }], ['cub', 520, { flip: true }], ['box', 610, { colour: '#8a969c', s: 1.3 }]] },
+  art: { set: 'park', items: [['sun', 620, { y: 30 }], ['van', 160], ['adult', 330, { skin: 1, hairc: 'blond', hair: 'short', top: '#7aa5c4', flip: false, pose: 'hold' }], ['kid', 410, { skin: 1, hair: 'curly', hairc: 'brown', hat: 'cap', hatc: '#d9774b', top: '#f2f0ea', mood: 'oh' }], ['cub', 520, { flip: true }], ['box', 610, { colour: '#8a969c', s: 1.3 }]] },
   qs: [
     { k: 'choice', q: 'What did the cub get?', opts: ['a cob', 'a cap', 'a cup'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Dad did not run at the cub.', a: true, code: 'C1.1' },
@@ -349,7 +349,7 @@ Atlas.decodable.add({
   text: ['Dan had a red dog. The dog was Dot. Dot dug and dug in the mud.',
     'Dot ran in and hid on the bed. Mud got on the bed, the rug and Dad!',
     'Dad did not get mad. Dan and Dad got a tub. Dot had a dip in the tub. Dot is a red dog, not a mud dog!'],
-  art: { set: 'bedroom', time: 'grey', items: [['rug', 150, { colour: '#7a5c8c' }], ['bed', 300, { blanket: '#e2b84f' }], ['dog', 300, { colour: '#a0472e', y: 30, flip: true }], ['adult', 450, { skin: 3, hair: 'short', top: '#8fb36a', flip: true, mood: 'oh' }], ['kid', 540, { skin: 3, hair: 'curly', top: '#4f6d8a', flip: true }]] },
+  art: { set: 'bedroom', time: 'grey', items: [['rug', 150, { colour: '#7a5c8c' }], ['bed', 300, { blanket: '#e2b84f' }], ['dog', 300, { colour: '#a0472e', y: 30, flip: true }], ['adult', 450, { skin: 5, hair: 'short', top: '#8fb36a', flip: true, mood: 'oh' }], ['kid', 540, { skin: 5, hair: 'curly', top: '#4f6d8a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Dot dug in the mud.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Dot get a dip in the tub?', opts: ['Dot was a mud dog.', 'Dot was hot.'], a: 0, code: 'C3.2' },
@@ -363,7 +363,7 @@ Atlas.decodable.more('cons-d', {
   text: ['Ted and Dad dug in the mud. Ted put a pod in the pit. Ted did a pat on the mud.',
     'Ted got the mud wet. He sat and sat. No bud. Ted was sad.',
     'Ted got up at six. He ran to the mud. It had a red bud! "Look, Dad!" said Ted.'],
-  art: { set: 'meadow', time: 'dusk', season: 'spring', items: [['sun', 560, { y: 80 }], ['birds', 220, { y: 40 }], ['bush', 150, { berries: true }], ['kid', 290, { skin: 5, hair: 'short', top: '#d9774b', pose: 'wave' }], ['flower', 370, { colour: '#c0392b' }], ['adult', 470, { skin: 5, hair: 'short', beard: true, glasses: true, top: '#4f7f8a', flip: true }]] },
+  art: { set: 'meadow', time: 'dusk', season: 'spring', items: [['sun', 560, { y: 80 }], ['birds', 220, { y: 40 }], ['bush', 150, { berries: true }], ['kid', 290, { skin: 2, hair: 'short', top: '#d9774b', pose: 'wave' }], ['flower', 370, { colour: '#c0392b' }], ['adult', 470, { skin: 2, hair: 'short', beard: true, glasses: true, top: '#4f7f8a', flip: true }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Ted put a pod in the mud.', 'Ted was sad.', 'Ted had a red bud.'], show: [1, 2, 0], code: 'C3.3' },
     { k: 'yn', q: 'Ted did not get a bud.', a: false, code: 'C1.1' },
@@ -391,7 +391,7 @@ Atlas.decodable.add({
   text: ['Fin and Dad sit on a log in the fog. Fin has a big fig in a bag.',
     'Look! A red fox is in the fog. It is not fat.',
     'Fin put the fig on the log. The fox got the fig and ran to a den. "If the fox is fed, it can nap," said Dad.'],
-  art: { set: 'forest', time: 'grey', items: [['adult', 170, { skin: 0, hair: 'short', hairc: 'red', beard: true, coat: '#4f6d8a' }], ['log', 260], ['kid', 260, { skin: 0, hair: 'short', hairc: 'red', coat: '#e2b84f', y: 22, mood: 'oh' }], ['bag', 330, { y: 22, colour: '#8a6a4a' }], ['fox', 470, { flip: true }]] },
+  art: { set: 'forest', time: 'grey', items: [['adult', 170, { skin: 3, hair: 'short', hairc: 'red', beard: true, coat: '#4f6d8a' }], ['log', 260], ['kid', 260, { skin: 3, hair: 'short', hairc: 'red', coat: '#e2b84f', y: 22, mood: 'oh' }], ['bag', 330, { y: 22, colour: '#8a6a4a' }], ['fox', 470, { flip: true }]] },
   qs: [
     { k: 'yn', q: 'The fox is fat.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'What did the fox get?', opts: ['a hat', 'a fig', 'a bag'], a: 1, code: 'C1.1' },
@@ -405,7 +405,7 @@ Atlas.decodable.more('cons-f', {
   text: ['It is hot. Fen and Mom sit in the hut. The fat cat is hot. The fan is not on.',
     '"I can fix it," said Mom. Mom got a pin and a rag. Fen fed the cat.',
     'Mom hit the fan. It is on! Fen, Mom and the fat cat sit at the fan. It is fun.'],
-  art: { set: 'meadow', items: [['sun', 600, { y: 30 }], ['hut', 180], ['adult', 350, { skin: 3, hair: 'scarf', scarf: '#d9774b', top: '#4f6d8a', pose: 'hold' }], ['kid', 440, { skin: 3, hair: 'braids', top: '#e9a3b4' }], ['cat', 530, { colour: '#c99a5e', flip: true }]] },
+  art: { set: 'meadow', items: [['sun', 600, { y: 30 }], ['hut', 180], ['adult', 350, { skin: 1, hairc: 'auburn', hair: 'bun', top: '#4f6d8a', pose: 'hold' }], ['kid', 440, { skin: 1, hairc: 'red', hair: 'braids', top: '#e9a3b4' }], ['cat', 530, { colour: '#c99a5e', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The cat is hot.', a: true, code: 'C3.2' },
     { k: 'choice', q: 'Who can fix the fan?', opts: ['Fen', 'Mom', 'the cat'], a: 1, code: 'C1.1' },
@@ -418,7 +418,7 @@ Atlas.decodable.more('cons-f', {
   text: ['Raf and Mom sit at the hut. Mom has a pot of fig jam.',
     'In the fog, a fox got to the hut. It dug in the bag and got the fig jam! "Fox! You can not have the jam!" said Raf.',
     'The fox hid in the fog. Mom got a lid to fit the pot. "It is a fat, fed fox!" said Mom.'],
-  art: { set: 'lake', time: 'grey', season: 'autumn', items: [['hut', 170], ['adult', 310, { skin: 2, hair: 'long', hairc: 'black', top: '#7a5c8c' }], ['jam', 370], ['kid', 440, { skin: 2, hair: 'short', top: '#c0573e', pose: 'wave', mood: 'oh' }], ['fox', 580, { flip: true }]] },
+  art: { set: 'lake', time: 'grey', season: 'autumn', items: [['hut', 170], ['adult', 310, { skin: 0, hair: 'long', hairc: 'black', top: '#7a5c8c' }], ['jam', 370], ['kid', 440, { skin: 0, hairc: 'red', hair: 'short', top: '#c0573e', pose: 'wave', mood: 'oh' }], ['fox', 580, { flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did the fox get?', opts: ['fig jam', 'a fan', 'a hat'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Mom got a lid to fit the pot.', a: true, code: 'C1.1' },
@@ -433,7 +433,7 @@ Atlas.decodable.add({
   text: ['Gus has a big dog. The dog is Peg. Peg can dig and dig.',
     'Peg dug in the mud at the log. Peg got a rag and a big bug. Peg is a mud dog!',
     'Gus got a tub. Peg did not get in. Gus had to tug and tug. Peg is in the tub! Gus got wet, but Peg got a hug.'],
-  art: { set: 'yard', season: 'autumn', items: [['maple', 110, { y: 14, s: 0.9 }], ['log', 250], ['dog', 360, { colour: '#3b3330', spot: '#8a6a4a' }], ['bug', 430], ['kid', 520, { skin: 4, hair: 'short', top: '#7aa5c4', flip: true }]] },
+  art: { set: 'yard', season: 'autumn', items: [['maple', 110, { y: 14, s: 0.9 }], ['log', 250], ['dog', 360, { colour: '#3b3330', spot: '#8a6a4a' }], ['bug', 430], ['kid', 520, { skin: 1, hairc: 'blond', hair: 'short', top: '#7aa5c4', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Peg get in the mud?', opts: ['a cup and a hat', 'a rag and a bug', 'a pot'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Peg had fun in the mud.', a: true, code: 'C3.2' },
@@ -447,7 +447,7 @@ Atlas.decodable.more('cons-g', {
   text: ['Meg and Bug jog in the fog. Bug is a big dog. Bug can tug and tug.',
     'Bug ran to a log. Meg hit the log and sat in the mud. Bug ran to Meg. Wag, wag, wag!',
     'Meg got up. "I am not mad, Bug," said Meg. Meg and Bug had a big hug.'],
-  art: { set: 'park', time: 'grey', season: 'autumn', items: [['cloud', 200, { y: 30 }], ['cloud', 520, { y: 40 }], ['log', 260], ['kid', 300, { skin: 1, hair: 'puffs', hairc: 'brown', top: '#e2b84f', coat: '#c96a5a', mood: 'sad' }], ['dog', 430, { colour: '#a39a90', flip: true }]] },
+  art: { set: 'park', time: 'grey', season: 'autumn', items: [['cloud', 200, { y: 30 }], ['cloud', 520, { y: 40 }], ['log', 260], ['kid', 300, { skin: 0, hair: 'curly', hairc: 'brown', top: '#e2b84f', coat: '#c96a5a', mood: 'sad' }], ['dog', 430, { colour: '#a39a90', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Bug is a cat.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Where did Meg sit?', opts: ['in the mud', 'on a bed', 'in a van'], a: 0, code: 'C1.1' },
@@ -460,7 +460,7 @@ Atlas.decodable.more('cons-g', {
   text: ['Gil and his dad have a big pig. The pig is in a pen.',
     'The pig dug a big gap in the pen. Look! It is in the bog!',
     'Gil got a fig. "Pig, pig! Get the fig!" said Gil. The pig ran to Gil and got the fig. Dad put the pig in the pen and a log in the gap.'],
-  art: { set: 'farm', time: 'dusk', items: [['adult', 150, { skin: 4, hair: 'short', hairc: 'black', beard: true, top: '#8fb36a', hat: 'cap', hatc: '#7a5c48' }], ['kid', 260, { skin: 4, hair: 'short', top: '#c0573e', pose: 'hold' }], ['pig', 400, { mud: true, flip: true }], ['pond', 540]] },
+  art: { set: 'farm', time: 'dusk', items: [['adult', 150, { skin: 0, hair: 'short', hairc: 'black', beard: true, top: '#8fb36a', hat: 'cap', hatc: '#7a5c48' }], ['kid', 260, { skin: 0, hairc: 'brown', hair: 'short', top: '#c0573e', pose: 'hold' }], ['pig', 400, { mud: true, flip: true }], ['pond', 540]] },
   qs: [
     { k: 'yn', q: 'The pig dug a gap in the pen.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did the pig run to Gil?', opts: ['to get a nap', 'to get the fig', 'to dig'], a: 1, code: 'C3.2' },
@@ -475,7 +475,7 @@ Atlas.decodable.add({
   text: ['Hal has a red hen. It is hot. The hen is not in the hut.',
     'Hal had a look. Is the hen in the pen? No. Is the hen at the tub? No.',
     'Mom has a big hat on a peg. Hal had a look in the hat. The hen is in it! "The hen can have the hat," said Mom.'],
-  art: { set: 'yard', season: 'summer', items: [['sun', 110, { y: 30 }], ['maple', 170, { y: 10 }], ['hat', 360, { colour: '#d8c08a', band: '#c0573e', s: 3.2 }], ['hen', 360, { colour: '#b8452f', s: 0.8, y: 6 }], ['kid', 470, { skin: 0, hair: 'short', hairc: 'blond', top: '#4f7f8a', flip: true, mood: 'oh' }], ['adult', 560, { skin: 0, hair: 'curly', hairc: 'brown', top: '#c96a7a', flip: true }]] },
+  art: { set: 'yard', season: 'summer', items: [['sun', 110, { y: 30 }], ['maple', 170, { y: 10 }], ['hat', 360, { colour: '#d8c08a', band: '#c0573e', s: 3.2 }], ['hen', 360, { colour: '#b8452f', s: 0.8, y: 6 }], ['kid', 470, { skin: 1, hair: 'short', hairc: 'blond', top: '#4f7f8a', flip: true, mood: 'oh' }], ['adult', 560, { skin: 1, hair: 'curly', hairc: 'brown', top: '#c96a7a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The hen is in the hut.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Where did the hen sit?', opts: ['in a hat', 'in a tub', 'in a pen'], a: 0, code: 'C1.1' },
@@ -502,7 +502,7 @@ Atlas.decodable.more('cons-h', {
   text: ['Ben and his mom have a hut. Ben has a red hat. It is a hot hat.',
     'Ben had fun. He hit the hat up, up, up. It is on the hut! Ben can not get it.',
     'Mom got a big net. Mom had to hum and tug. The net hit the hat. Ben had his hat! "Have a hot bun," said Mom.'],
-  art: { set: 'snow', items: [['hut', 300, { smoke: true }], ['hat', 300, { colour: '#c0573e', band: '#3b3330', y: 92, s: 1.8 }], ['kid', 440, { skin: 1, hair: 'short', top: '#7aa5c4', coat: '#7aa5c4', flip: true, mood: 'oh' }], ['adult', 530, { skin: 1, hair: 'long', hairc: 'brown', coat: '#c96a5a', hat: 'toque', hatc: '#4f6d8a', flip: true, pose: 'hold' }], ['net', 590, { flip: true }]] },
+  art: { set: 'snow', items: [['hut', 300, { smoke: true }], ['hat', 300, { colour: '#c0573e', band: '#3b3330', y: 92, s: 1.8 }], ['kid', 440, { skin: 0, hairc: 'brown', hair: 'short', top: '#7aa5c4', coat: '#7aa5c4', flip: true, mood: 'oh' }], ['adult', 530, { skin: 0, hair: 'long', hairc: 'brown', coat: '#c96a5a', hat: 'toque', hatc: '#4f6d8a', flip: true, pose: 'hold' }], ['net', 590, { flip: true }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Ben hit the hat up.', 'Mom got a net.', 'Ben had his hat.'], show: [2, 0, 1], code: 'C3.3' },
     { k: 'yn', q: 'Ben can get the hat.', a: false, code: 'C1.1' },
@@ -517,7 +517,7 @@ Atlas.decodable.add({
   text: ['Jen and Jim jog to the hut. Jen has a job. Jen can get the big jug of jam.',
     'Jen got a bun. Jen put jam on it. Jim had a bun and jam. Yum! Jim did a jig.',
     'Look! A jet is up in the sun. Jen and Jim sit to see it. Jim has jam on his lip!'],
-  art: { set: 'lake', items: [['sun', 130, { y: 30 }], ['plane', 460, { y: 34 }], ['hut', 170], ['kid', 330, { skin: 3, hair: 'puffs', top: '#e2b84f', pose: 'hold' }], ['jar', 380, { fill: '#a0283a' }], ['kid', 440, { skin: 3, hair: 'short', top: '#4f6d8a', flip: true, pose: 'wave' }]] },
+  art: { set: 'lake', items: [['sun', 130, { y: 30 }], ['plane', 460, { y: 34 }], ['hut', 170], ['kid', 330, { skin: 1, hairc: 'red', hair: 'curly', top: '#e2b84f', pose: 'hold' }], ['jar', 380, { fill: '#a0283a' }], ['kid', 440, { skin: 1, hairc: 'brown', hair: 'short', top: '#4f6d8a', flip: true, pose: 'wave' }]] },
   qs: [
     { k: 'choice', q: 'What is in the jug?', opts: ['jam', 'mud', 'a bug'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Jim had fun.', a: true, code: 'C3.2' },
@@ -559,7 +559,7 @@ Atlas.decodable.add({
   text: ['Kim, Kip and Kat sit on a log. The sun is hot.',
     'Look! A fox kit is at a den. "A kit is a kid fox," said Kip.',
     'The kit has kin in the den. Kim can see the kit and the kin nap. Kat and Kip did not yap. Ken, the man at the hut, said, "Let the kit nap."'],
-  art: { set: 'den', items: [['sun', 560, { y: 30 }], ['fox', 160, { asleep: true }], ['fox', 250, { s: 0.6 }], ['kid', 390, { skin: 5, hair: 'curly', top: '#e9a3b4', flip: true }], ['kid', 470, { skin: 2, hair: 'short', top: '#e2b84f', flip: true }], ['kid', 545, { skin: 0, hair: 'braids', hairc: 'blond', top: '#7aa5c4', flip: true }]] },
+  art: { set: 'den', items: [['sun', 560, { y: 30 }], ['fox', 160, { asleep: true }], ['fox', 250, { s: 0.6 }], ['kid', 390, { skin: 5, hair: 'curly', top: '#e9a3b4', flip: true }], ['kid', 470, { skin: 0, hairc: 'blond', hair: 'short', top: '#e2b84f', flip: true }], ['kid', 545, { skin: 2, hair: 'braids', hairc: 'blond', top: '#7aa5c4', flip: true }]] },
   qs: [
     { k: 'yn', q: 'A kit is a kid fox.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Kat and Kip not yap?', opts: ['The kit had a nap.', 'Kat and Kip had a nap.', 'It was wet.'], a: 0, code: 'C3.2' },
@@ -573,7 +573,7 @@ Atlas.decodable.more('cons-k', {
   text: ['Kat, Kip and Kim got on a bus to see a yak. Kip had a kit: a pen, a pad and a map.',
     'Ken is the man at the yak pen. The big red yak sat in the mud.',
     'Kip did a yak on the pad. "It is a yak, not a pig!" said Kat. Kim had a nap on the bus.'],
-  art: { set: 'farm', time: 'grey', items: [['bus', 95, { s: 0.45, y: 26 }], ['yak', 255, { colour: '#9a4a30' }], ['adult', 380, { skin: 3, hair: 'short', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#7a5c48', flip: true }], ['kid', 460, { skin: 5, hair: 'curly', top: '#e9a3b4', flip: true }], ['kid', 530, { skin: 2, hair: 'short', top: '#e2b84f', flip: true, glasses: true }]] },
+  art: { set: 'farm', time: 'grey', items: [['bus', 95, { s: 0.45, y: 26 }], ['yak', 255, { colour: '#9a4a30' }], ['adult', 380, { skin: 0, hairc: 'brown', hair: 'short', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#7a5c48', flip: true }], ['kid', 460, { skin: 1, hairc: 'black', hair: 'curly', top: '#e9a3b4', flip: true }], ['kid', 530, { skin: 2, hair: 'short', top: '#e2b84f', flip: true, glasses: true }]] },
   qs: [
     { k: 'choice', q: 'What did Kip have in the kit?', opts: ['a pen, a pad and a map', 'a cup and a bun', 'a hat'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'The yak is big and red.', a: true, code: 'C1.1' },
@@ -586,7 +586,7 @@ Atlas.decodable.more('cons-k', {
   text: ['Kev and Kim sat on a log at the hut. Kip and Kat sat in the sun.',
     'Kev got up on the log and hit his leg. It had a cut! "Get the red kit!" said Kim. Kim ran to Ken.',
     'Ken got the kit and put a pad on the cut. "You are a big kid," said Ken. Kev did not sob.'],
-  art: { set: 'forest', season: 'spring', items: [['hut', 140], ['log', 320], ['kid', 300, { skin: 1, hair: 'short', hairc: 'brown', top: '#c0573e', y: 22, mood: 'sad' }], ['bag', 360, { colour: '#c0392b', y: 22 }], ['adult', 430, { skin: 3, hair: 'short', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#7a5c48', flip: true, pose: 'hold' }], ['kid', 520, { skin: 5, hair: 'curly', top: '#e9a3b4', flip: true }]] },
+  art: { set: 'forest', season: 'spring', items: [['hut', 140], ['log', 320], ['kid', 300, { skin: 1, hair: 'short', hairc: 'brown', top: '#c0573e', y: 22, mood: 'sad' }], ['bag', 360, { colour: '#c0392b', y: 22 }], ['adult', 430, { skin: 4, hair: 'short', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#7a5c48', flip: true, pose: 'hold' }], ['kid', 520, { skin: 2, hair: 'curly', top: '#e9a3b4', flip: true }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Kev hit his leg.', 'Kim ran to Ken.', 'Ken put a pad on the cut.'], show: [1, 2, 0], code: 'C3.3' },
     { k: 'yn', q: 'Kev had a cut on his leg.', a: true, code: 'C1.1' },
@@ -615,7 +615,7 @@ Atlas.decodable.more('cons-l', {
   text: ['Mel has a pal, Val. Val has a pet bug in a tub. The tub has a lid.',
     'Mel did not put the lid on. The bug ran up a log!',
     '"Get it!" said Val. The bug sat on the leg of Val. Val got the bug, and Mel put the lid on. Mel and Val had a lot of fun.'],
-  art: { set: 'forest', time: 'day', season: 'spring', items: [['log', 330, { moss: true }], ['bug', 370, { y: 22, s: 0.55 }], ['jar', 190, { fill: '#b9d09c', lid: '#c0573e', s: 1.4 }], ['kid', 240, { skin: 1, hair: 'long', hairc: 'blond', top: '#7aa5c4', bottom: '#6b5a7a', mood: 'oh' }], ['kid', 460, { skin: 5, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave', flip: true }]] },
+  art: { set: 'forest', time: 'day', season: 'spring', items: [['log', 330, { moss: true }], ['bug', 370, { y: 22, s: 0.55 }], ['jar', 190, { fill: '#b9d09c', lid: '#c0573e', s: 1.4 }], ['kid', 240, { skin: 0, hair: 'long', hairc: 'blond', top: '#7aa5c4', bottom: '#6b5a7a', mood: 'oh' }], ['kid', 460, { skin: 4, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Mel put the lid on the tub.', a: false, code: 'C3.2' },
     { k: 'choice', q: 'Where did the bug sit?', opts: ['on the leg of Val', 'on a hat', 'in a pot'], a: 0, code: 'C1.1' },
@@ -628,7 +628,7 @@ Atlas.decodable.more('cons-l', {
   text: ['Hal has a pal. It is Sal, a big tan lab.',
     'Hal and Sal go up to the bog. Sal led Hal. Sal got in the mud! Sal had mud on a leg and a lip.',
     'Hal got Sal up. Mom let Hal and Sal in. Hal sat in the den. Sal got up on his lap. A big lab on a lap!'],
-  art: { set: 'meadow', time: 'grey', season: 'autumn', items: [['house', 600, { s: 0.7, y: 30 }], ['pond', 290], ['dog', 300, { colour: '#d6ad78' }], ['kid', 420, { skin: 4, hair: 'curly', top: '#8fb36a', bottom: '#3f4a5a', coat: '#c0573e', flip: true }], ['birch', 110]] },
+  art: { set: 'meadow', time: 'grey', season: 'autumn', items: [['house', 600, { s: 0.7, y: 30 }], ['pond', 290], ['dog', 300, { colour: '#d6ad78' }], ['kid', 420, { skin: 5, hair: 'curly', top: '#8fb36a', bottom: '#3f4a5a', coat: '#c0573e', flip: true }], ['birch', 110]] },
   qs: [
     { k: 'choice', q: 'What is Sal?', opts: ['a lab', 'a cat', 'a hen'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Sal is a big dog.', a: true, code: 'C3.2' },
@@ -657,7 +657,7 @@ Atlas.decodable.more('cons-m', {
   text: ['Mom and Min get a ham. Mom set the ham in a pan on a mat.',
     'Mop the dog met the ham. Mop sat and had the ham! Min and Mom did not see him.',
     '"Mop!" said Mom. Mom is mad. Min and Mom had jam on a bun. Mop had a nap on the mat.'],
-  art: { set: 'kitchen', time: 'dusk', season: 'autumn', items: [['table', 280], ['pan', 280, { y: 55 }], ['rug', 300, { colour: '#c9767a', w: 140 }], ['dog', 330, { colour: '#3b2f2a', chest: '#f3e8d6' }], ['adult', 530, { skin: 5, hair: 'scarf', scarf: '#2f6b4f', top: '#e2b84f', bottom: '#5b3a24' }], ['kid', 600, { skin: 5, hair: 'puffs', top: '#c96a7a', bottom: '#4f6d8a' }]] },
+  art: { set: 'kitchen', time: 'dusk', season: 'autumn', items: [['table', 280], ['pan', 280, { y: 55 }], ['rug', 300, { colour: '#c9767a', w: 140 }], ['dog', 330, { colour: '#3b2f2a', chest: '#f3e8d6' }], ['adult', 530, { skin: 0, hairc: 'auburn', hair: 'bun', top: '#e2b84f', bottom: '#5b3a24' }], ['kid', 600, { skin: 0, hairc: 'blond', hair: 'curly', top: '#c96a7a', bottom: '#4f6d8a' }]] },
   qs: [
     { k: 'choice', q: 'Who had the ham?', opts: ['Mop', 'Min', 'Mom'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Mom is mad at Mop.', a: true, code: 'C3.2' },
@@ -685,7 +685,7 @@ Atlas.decodable.add({
   text: ['Nan and Ben go to the bog. It is hot. Nan has a net.',
     'Nan can dip the net in. Is it a bug? It is not a bug. Nan got a tin can in the net!',
     'Ben got a lid in his net. Nan and Ben put the can and the lid in a bin. "It is a fun bog!" said Ben.'],
-  art: { set: 'lake', time: 'day', season: 'summer', items: [['sun', 560, { y: 30 }], ['kid', 260, { skin: 4, hair: 'braids', top: '#7aa5c4', bottom: '#d9774b', pose: 'hold' }], ['net', 320], ['kid', 440, { skin: 1, hair: 'short', hairc: 'brown', hat: 'cap', hatc: '#2f6b4f', top: '#e2b84f', bottom: '#4f6d8a', flip: true }], ['plant', 560]] },
+  art: { set: 'lake', time: 'day', season: 'summer', items: [['sun', 560, { y: 30 }], ['kid', 260, { skin: 1, hairc: 'brown', hair: 'braids', top: '#7aa5c4', bottom: '#d9774b', pose: 'hold' }], ['net', 320], ['kid', 440, { skin: 0, hair: 'short', hairc: 'brown', hat: 'cap', hatc: '#2f6b4f', top: '#e2b84f', bottom: '#4f6d8a', flip: true }], ['plant', 560]] },
   qs: [
     { k: 'choice', q: 'What did Nan get in the net?', opts: ['a bug', 'a tin can', 'a hen'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Ben got a lid.', a: true, code: 'C1.1' },
@@ -699,7 +699,7 @@ Atlas.decodable.more('cons-n', {
   text: ['Ned has a tan hen in a pen. The hen is not big.',
     'The hen ran! It ran to the den, and it ran to the bin. Ned ran and ran.',
     'Ned got a bun. Ned set a bit of bun in the pen. The hen ran in! The hen had a nap in the sun.'],
-  art: { set: 'farm', time: 'day', season: 'spring', items: [['sun', 120, { y: 32 }], ['hen', 300, { colour: '#c79a62', s: 1.3 }], ['chick', 250], ['kid', 410, { skin: 3, hair: 'short', glasses: true, top: '#c0573e', bottom: '#4f6d8a', pose: 'hold', flip: true }], ['bun', 395, { y: 52 }]] },
+  art: { set: 'farm', time: 'day', season: 'spring', items: [['sun', 120, { y: 32 }], ['hen', 300, { colour: '#c79a62', s: 1.3 }], ['chick', 250], ['kid', 410, { skin: 1, hairc: 'brown', hair: 'short', glasses: true, top: '#c0573e', bottom: '#4f6d8a', pose: 'hold', flip: true }], ['bun', 395, { y: 52 }]] },
   qs: [
     { k: 'choice', q: 'What did Ned set in the pen?', opts: ['a bun', 'a net', 'a nut'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'The hen is big.', a: false, code: 'C1.1' },
@@ -727,7 +727,7 @@ Atlas.decodable.add({
   text: ['Pam has a pet pig. The pig is Pip. Pip is big, and Pip can hop.',
     'Pip got in a pit of mud. Pip got mud on Pam, and Pip got mud on Pop. Pop is not mad.',
     'Pam and Pop put Pip in a tub. Pam and Pop pat and rub Pip. Pip is a pig in a tub!'],
-  art: { set: 'farm', time: 'day', season: 'summer', items: [['sun', 610, { y: 32 }], ['tub', 340], ['pig', 330, { mud: true, y: 14 }], ['kid', 220, { skin: 2, hair: 'puffs', hairc: 'brown', top: '#c96a7a', bottom: '#4f6d8a', pose: 'hold' }], ['adult', 460, { skin: 2, hair: 'bald', hairc: 'grey', beard: true, glasses: true, top: '#7aa5c4', bottom: '#5b3a24', pose: 'hold', flip: true }]] },
+  art: { set: 'farm', time: 'day', season: 'summer', items: [['sun', 610, { y: 32 }], ['tub', 340], ['pig', 330, { mud: true, y: 14 }], ['kid', 220, { skin: 0, hair: 'curly', hairc: 'brown', top: '#c96a7a', bottom: '#4f6d8a', pose: 'hold' }], ['adult', 460, { skin: 0, hair: 'bald', hairc: 'grey', beard: true, glasses: true, top: '#7aa5c4', bottom: '#5b3a24', pose: 'hold', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Pop is mad at Pip.', a: false, code: 'C3.2' },
     { k: 'choice', q: 'What did Pip get in?', opts: ['a pot', 'a pit of mud', 'a pan'], a: 1, code: 'C1.1' },
@@ -741,7 +741,7 @@ Atlas.decodable.more('cons-p', {
   text: ['Peg has a cup of pop. Peg had a sip and set it on the bed.',
     'The pup got up on the bed. It hit the cup! The pop is on the bed, and the pup can lap it up.',
     '"Pup!" said Peg, but Peg did not get mad. Peg got a rag. The pup had a nap on the mat.'],
-  art: { set: 'bedroom', time: 'day', season: 'spring', items: [['bed', 300, { blanket: '#e2b84f' }], ['pup', 320, { y: 30 }], ['cup', 250, { colour: '#c0573e', y: 30 }], ['kid', 460, { skin: 5, hair: 'bun', top: '#2f8f7c', bottom: '#5b3a24', pose: 'hold', flip: true }]] },
+  art: { set: 'bedroom', time: 'day', season: 'spring', items: [['bed', 300, { blanket: '#e2b84f' }], ['pup', 320, { y: 30 }], ['cup', 250, { colour: '#c0573e', y: 30 }], ['kid', 460, { skin: 2, hair: 'bun', top: '#2f8f7c', bottom: '#5b3a24', pose: 'hold', flip: true }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Peg had a sip.', 'The pup hit the cup.', 'Peg got a rag.'], show: [2, 0, 1], code: 'C3.3' },
     { k: 'choice', q: 'What did the pup hit?', opts: ['the cup', 'the bed', 'a pan'], a: 0, code: 'C1.1' },
@@ -754,7 +754,7 @@ Atlas.decodable.more('cons-p', {
   text: ['Pat and Pop sit on a mat. Pop has a bun and a pot of jam.',
     'A pup ran up to the mat. The pup put a pad up on Pat.',
     '"Can the pup have a bit of bun?" said Pat. "Yes," said Pop. A man ran up. "Pip, you bad pup!" said the man. Pip got a bit of bun and a pat.'],
-  art: { set: 'park', time: 'day', season: 'autumn', items: [['rug', 300, { colour: '#c79a62' }], ['jam', 300, { y: 2 }], ['bun', 340, { y: 2 }], ['kid', 230, { skin: 3, hair: 'curly', hairc: 'auburn', top: '#e2b84f', bottom: '#4f6d8a' }], ['adult', 380, { skin: 3, hair: 'short', hairc: 'grey', beard: true, top: '#8a3f22', bottom: '#3f4a5a', flip: true }], ['pup', 450, { flip: true }], ['adult', 580, { skin: 0, hair: 'short', hairc: 'blond', hat: 'cap', top: '#7aa5c4', bottom: '#3b3632', pose: 'wave', flip: true }]] },
+  art: { set: 'park', time: 'day', season: 'autumn', items: [['rug', 300, { colour: '#c79a62' }], ['jam', 300, { y: 2 }], ['bun', 340, { y: 2 }], ['kid', 230, { skin: 0, hair: 'curly', hairc: 'auburn', top: '#e2b84f', bottom: '#4f6d8a' }], ['adult', 380, { skin: 0, hair: 'short', hairc: 'grey', beard: true, top: '#8a3f22', bottom: '#3f4a5a', flip: true }], ['pup', 450, { flip: true }], ['adult', 580, { skin: 0, hair: 'short', hairc: 'blond', hat: 'cap', top: '#7aa5c4', bottom: '#3b3632', pose: 'wave', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did the pup put up on Pat?', opts: ['a pad', 'a cup', 'a pot'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Pop said the pup can have a bit of bun.', a: true, code: 'C1.1' },
@@ -769,7 +769,7 @@ Atlas.decodable.add({
   text: ['Ron has a red rug. Rex the dog can nap on it. Rex is a big dog.',
     'Rap, rap! A rat ran in. Rex got up and ran at the rat. Rip! The rug got a rip.',
     'The rat hid in a log. Mom got a red rag and can fix the rip. Rex had a nap on the red rug.'],
-  art: { set: 'bedroom', time: 'night', season: 'autumn', items: [['rug', 290, { colour: '#c0573e' }], ['log', 130, { s: 0.8 }], ['mouse', 180], ['dog', 300, { colour: '#8a5636', flip: true }], ['kid', 430, { skin: 4, hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a', mood: 'oh', flip: true }]] },
+  art: { set: 'bedroom', time: 'night', season: 'autumn', items: [['rug', 290, { colour: '#c0573e' }], ['log', 130, { s: 0.8 }], ['mouse', 180], ['dog', 300, { colour: '#8a5636', flip: true }], ['kid', 430, { skin: 0, hairc: 'auburn', hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a', mood: 'oh', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What ran in?', opts: ['a pig', 'a rat', 'a fox'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Rex is a cat.', a: false, code: 'C1.1' },
@@ -783,7 +783,7 @@ Atlas.decodable.more('cons-r', {
   text: ['Ros and Dad go to see a ram. Ros can rub the big ram.',
     'Dad has a red hat on. The ram got the hat and ran! "Run, ram, run!" said Ros.',
     'The ram let go of the hat. The rim had a rip. "The ram can have it," said Dad. Ros and Dad sat and had a bun.'],
-  art: { set: 'farm', time: 'grey', season: 'autumn', items: [['ram', 380, { flip: true, s: 1.2 }], ['hat', 332, { colour: '#c0573e', y: 56 }], ['kid', 230, { skin: 4, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['adult', 560, { skin: 4, hair: 'short', beard: true, top: '#5b6b4f', bottom: '#3b3632', mood: 'oh', flip: true }]] },
+  art: { set: 'farm', time: 'grey', season: 'autumn', items: [['ram', 380, { flip: true, s: 1.2 }], ['hat', 332, { colour: '#c0573e', y: 56 }], ['kid', 230, { skin: 0, hairc: 'black', hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['adult', 560, { skin: 0, hairc: 'brown', hair: 'short', beard: true, top: '#5b6b4f', bottom: '#3b3632', mood: 'oh', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The ram got the hat.', a: true, code: 'C1.1' },
     { k: 'yn', q: 'Dad is mad at the ram.', a: false, code: 'C3.2' },
@@ -811,7 +811,7 @@ Atlas.decodable.add({
   text: ['Sam and Mom sit on a bus. The sun is hot. Sam has a sip of pop.',
     'Sam can not see the red bag! Is it on the bus? No. Sam is sad and has a sob.',
     'A man has a red bag on his lap. "Is it the bag you had?" said the man. "Yes!" said Sam. Sam is not sad.'],
-  art: { set: 'town', time: 'day', season: 'summer', items: [['sun', 620, { y: 30 }], ['bus', 200], ['kid', 400, { skin: 1, hair: 'short', hairc: 'blond', top: '#7aa5c4', bottom: '#4f6d8a' }], ['adult', 460, { skin: 1, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#3f4a5a' }], ['adult', 590, { skin: 5, hair: 'short', glasses: true, top: '#5b6b4f', bottom: '#3b3632', pose: 'hold', flip: true }], ['bag', 572, { colour: '#c0573e', y: 52 }]] },
+  art: { set: 'town', time: 'day', season: 'summer', items: [['sun', 620, { y: 30 }], ['bus', 200], ['kid', 400, { skin: 1, hair: 'short', hairc: 'blond', top: '#7aa5c4', bottom: '#4f6d8a' }], ['adult', 460, { skin: 1, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#3f4a5a' }], ['adult', 590, { skin: 1, hairc: 'red', hair: 'short', glasses: true, top: '#5b6b4f', bottom: '#3b3632', pose: 'hold', flip: true }], ['bag', 572, { colour: '#c0573e', y: 52 }]] },
   qs: [
     { k: 'choice', q: 'What is the bag?', opts: ['red', 'tan', 'big'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'The man is mad at Sam.', a: false, code: 'C3.2' },
@@ -825,7 +825,7 @@ Atlas.decodable.more('cons-s', {
   text: ['Sid has a big sub. Sid sat on a log in the sun.',
     'A pup sat at the log. The pup had a sad look. It did not quit.',
     '"Sit," said Sid. The pup sat. "Yes, you can have a bit." Sid set a bit of the sub on the log. Sid and the pup sat in the sun.'],
-  art: { set: 'lake', time: 'dusk', season: 'summer', items: [['sun', 120, { y: 70 }], ['log', 330], ['kid', 260, { skin: 5, hair: 'short', top: '#d9774b', bottom: '#4f6d8a', pose: 'hold' }], ['bun', 268, { y: 52 }], ['pup', 430, { colour: '#a39a90', flip: true }]] },
+  art: { set: 'lake', time: 'dusk', season: 'summer', items: [['sun', 120, { y: 70 }], ['log', 330], ['kid', 260, { skin: 0, hairc: 'brown', hair: 'short', top: '#d9774b', bottom: '#4f6d8a', pose: 'hold' }], ['bun', 268, { y: 52 }], ['pup', 430, { colour: '#a39a90', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Sid has a big sub.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did the pup sit at the log?', opts: ['to get a nap', 'to get a bit of the sub', 'to dig'], a: 1, code: 'C3.2' },
@@ -853,7 +853,7 @@ Atlas.decodable.add({
   text: ['Tom has a pup, Tip. Tip got in the mud. Tip is a mud pup!',
     'Tom set a tub in the sun. Tip got in the tub. Tom got a rag. Rub, rub, rub!',
     'Tip did not sit. Tip hit the tub, got up and ran. Tip ran to the mud pit! Tom is wet, and Tip is a mud pup.'],
-  art: { set: 'yard', time: 'day', season: 'summer', items: [['sun', 80, { y: 30 }], ['tub', 300, { bubbles: true }], ['pup', 300, { colour: '#7a5a3e', y: 14 }], ['kid', 430, { skin: 2, hair: 'short', hat: 'cap', hatc: '#c0573e', top: '#7aa5c4', bottom: '#4f6d8a', pose: 'hold', flip: true }]] },
+  art: { set: 'yard', time: 'day', season: 'summer', items: [['sun', 80, { y: 30 }], ['tub', 300, { bubbles: true }], ['pup', 300, { colour: '#7a5a3e', y: 14 }], ['kid', 430, { skin: 0, hairc: 'black', hair: 'short', hat: 'cap', hatc: '#c0573e', top: '#7aa5c4', bottom: '#4f6d8a', pose: 'hold', flip: true }]] },
   qs: [
     { k: 'choice', q: 'Tip is a...', opts: ['pup', 'cat', 'pig'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Tip got in the mud.', 'Tip got in the tub.', 'Tip ran to the mud pit.'], show: [1, 2, 0], code: 'C3.3' },
@@ -867,7 +867,7 @@ Atlas.decodable.more('cons-t', {
   text: ['Tam and Kit sit on a mat. Tam has a red top. It can go and go.',
     'Tut the cat sat at the mat. Tap! Tut hit the top. It hit a pot and got in it.',
     'Look! Tut is in the pot, on top of the top. "Tut, get up," said Kit. Tut did not get up. It is a cat pot!'],
-  art: { set: 'kitchen', time: 'day', season: 'spring', items: [['rug', 330, { colour: '#8fb36a', round: true }], ['pot', 330, { colour: '#6f7a80', s: 1.7 }], ['cat', 326, { y: 26 }], ['kid', 220, { skin: 4, hair: 'bun', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh' }], ['kid', 450, { skin: 2, hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', flip: true }]] },
+  art: { set: 'kitchen', time: 'day', season: 'spring', items: [['rug', 330, { colour: '#8fb36a', round: true }], ['pot', 330, { colour: '#6f7a80', s: 1.7 }], ['cat', 326, { y: 26 }], ['kid', 220, { skin: 0, hairc: 'black', hair: 'bun', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh' }], ['kid', 450, { skin: 3, hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Tut is a dog.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'What did Tut hit?', opts: ['the top', 'the pot', 'Kit'], a: 0, code: 'C1.1' },
@@ -880,7 +880,7 @@ Atlas.decodable.more('cons-t', {
   text: ['Tim, Tam and Dad go up, up, up. It is hot. Tim has a tin cup of pop.',
     'At the top is a hut. Tam and Dad set up a cot in it. Tim got a hot bun.',
     'Tim, Tam and Dad sit and see the red sun set. "It is fun at the top," said Tam. Tim had a nap on the cot.'],
-  art: { set: 'den', time: 'dusk', season: 'autumn', items: [['sun', 560, { y: 80 }], ['hut', 470, { s: 0.8 }], ['adult', 320, { skin: 3, hair: 'short', hairc: 'black', beard: true, top: '#2f6b4f', bottom: '#3f4a5a' }], ['kid', 380, { skin: 3, hair: 'long', top: '#d9774b', bottom: '#4f6d8a' }], ['kid', 250, { skin: 3, hair: 'short', top: '#7aa5c4', bottom: '#5b3a24', pose: 'hold' }], ['cup', 258, { y: 54 }]] },
+  art: { set: 'den', time: 'dusk', season: 'autumn', items: [['sun', 560, { y: 80 }], ['hut', 470, { s: 0.8 }], ['adult', 320, { skin: 1, hair: 'short', hairc: 'black', beard: true, top: '#2f6b4f', bottom: '#3f4a5a' }], ['kid', 380, { skin: 1, hairc: 'brown', hair: 'long', top: '#d9774b', bottom: '#4f6d8a' }], ['kid', 250, { skin: 1, hairc: 'red', hair: 'short', top: '#7aa5c4', bottom: '#5b3a24', pose: 'hold' }], ['cup', 258, { y: 54 }]] },
   qs: [
     { k: 'choice', q: 'What is at the top?', opts: ['a hut', 'a bus', 'a van'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Tam is sad at the top.', a: false, code: 'C3.2' },
@@ -895,7 +895,7 @@ Atlas.decodable.add({
   text: ['Viv is a vet. She has a big red van. Rev, rev! Viv can get to a sad pet.',
     'Val had a pup, Vic. Vic had a cut on his leg. Val ran to get Viv.',
     'Viv and the van got to Val. Viv put a pad on the cut. Vic got up and ran to Val!'],
-  art: { set: 'yard', time: 'day', season: 'spring', items: [['van', 180, { colour: '#c0573e' }], ['adult', 340, { skin: 5, hair: 'scarf', scarf: '#2f6b4f', top: '#f4efe6', bottom: '#4f6d8a', pose: 'hold' }], ['pup', 410], ['kid', 480, { skin: 3, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', flip: true }]] },
+  art: { set: 'yard', time: 'day', season: 'spring', items: [['van', 180, { colour: '#c0573e' }], ['adult', 340, { skin: 0, hairc: 'black', hair: 'bun', top: '#f4efe6', bottom: '#4f6d8a', pose: 'hold' }], ['pup', 410], ['kid', 480, { skin: 4, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Viv is a vet.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What did Vic have on his leg?', opts: ['a cut', 'a bug', 'a hat'], a: 0, code: 'C1.1' },
@@ -922,7 +922,7 @@ Atlas.decodable.more('cons-v', {
   text: ['Bev and Kev had a hen. It was sad. Kev ran to get the vet.',
     'Liv the vet had a red van. The van got in the mud. Rev, rev! The van sat in the mud.',
     'Liv ran to the hen. She fed the hen a bit of mix. The hen got up! "The van can sit in the mud," said Liv.'],
-  art: { set: 'farm', time: 'grey', season: 'spring', items: [['rainfall', 350, { y: 40 }], ['van', 160, { colour: '#c0573e' }], ['adult', 330, { skin: 2, hair: 'short', glasses: true, top: '#f4efe6', bottom: '#3f4a5a', coat: '#7a5c8c', pose: 'hold' }], ['hen', 400, { flip: true }], ['kid', 490, { skin: 4, hair: 'braids', top: '#e2b84f', bottom: '#4f6d8a', flip: true }], ['kid', 550, { skin: 4, hair: 'short', top: '#2f8f7c', bottom: '#5b3a24', flip: true }]] },
+  art: { set: 'farm', time: 'grey', season: 'spring', items: [['rainfall', 350, { y: 40 }], ['van', 160, { colour: '#c0573e' }], ['adult', 330, { skin: 2, hair: 'short', glasses: true, top: '#f4efe6', bottom: '#3f4a5a', coat: '#7a5c8c', pose: 'hold' }], ['hen', 400, { flip: true }], ['kid', 490, { skin: 1, hairc: 'blond', hair: 'braids', top: '#e2b84f', bottom: '#4f6d8a', flip: true }], ['kid', 550, { skin: 1, hairc: 'red', hair: 'short', top: '#2f8f7c', bottom: '#5b3a24', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The van got in the mud.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Kev run to get the vet?', opts: ['The hen was sad.', 'The van was in the mud.'], a: 0, code: 'C3.2' },
@@ -951,7 +951,7 @@ Atlas.decodable.more('cons-w', {
   text: ['Win and Wil have a big red wig. Win put on the wig. Win had fun!',
     'Bud the dog got the wig. Bud ran to the tub. The wig got wet! Win and Wil are sad.',
     'Mom got a fan. The wig is not wet. Win put on the wig, and Bud did a big wag.'],
-  art: { set: 'yard', time: 'day', season: 'autumn', items: [['tub', 330], ['dog', 210, { colour: '#3b2f2a' }], ['kid', 440, { skin: 0, hair: 'curly', hairc: 'red', top: '#7aa5c4', bottom: '#4f6d8a', mood: 'sad', flip: true }], ['kid', 500, { skin: 0, hair: 'short', hairc: 'brown', top: '#e2b84f', bottom: '#3f4a5a', flip: true }]] },
+  art: { set: 'yard', time: 'day', season: 'autumn', items: [['tub', 330], ['dog', 210, { colour: '#3b2f2a' }], ['kid', 440, { skin: 1, hair: 'curly', hairc: 'red', top: '#7aa5c4', bottom: '#4f6d8a', mood: 'sad', flip: true }], ['kid', 500, { skin: 1, hair: 'short', hairc: 'brown', top: '#e2b84f', bottom: '#3f4a5a', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Win have?', opts: ['a red wig', 'a red hat', 'a red cup'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Bud got the wig wet.', a: true, code: 'C1.1' },
@@ -979,7 +979,7 @@ Atlas.decodable.add({
   text: ['Rex is six. Rex and Max have a big box. The box has a rip. Max can fix it.',
     'Look! A red fox sat in the box. "Is it an ox?" said Rex. "No, it is a fox!" said Max. "A fox in a box!"',
     'The fox had a nap in the box. It got up and ran to a den.'],
-  art: { set: 'snow', time: 'day', season: 'winter', items: [['spruce', 600], ['box', 336, { open: true, s: 1.6 }], ['fox', 330, { y: 34, s: 0.8 }], ['kid', 220, { skin: 4, hair: 'short', hat: 'toque', hatc: '#2f6b4f', top: '#c0573e', bottom: '#3f4a5a', mood: 'oh' }], ['kid', 460, { skin: 2, hair: 'curly', hat: 'toque', top: '#7aa5c4', bottom: '#4f6d8a', flip: true }]] },
+  art: { set: 'snow', time: 'day', season: 'winter', items: [['spruce', 600], ['box', 336, { open: true, s: 1.6 }], ['fox', 330, { y: 34, s: 0.8 }], ['kid', 220, { skin: 0, hairc: 'brown', hair: 'short', hat: 'toque', hatc: '#2f6b4f', top: '#c0573e', bottom: '#3f4a5a', mood: 'oh' }], ['kid', 460, { skin: 0, hairc: 'black', hair: 'curly', hat: 'toque', top: '#7aa5c4', bottom: '#4f6d8a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Rex is six.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What sat in the box?', opts: ['an ox', 'a fox', 'a cat'], a: 1, code: 'C1.1' },
@@ -1006,7 +1006,7 @@ Atlas.decodable.more('cons-x', {
   text: ['Nan has a big red ox. The ox is Tex. Max is six. Max and Nan fed Tex in the pen.',
     'Tex got in the mud. "Get up, Tex!" said Max. Tex sat and sat. Rex, the dog, did a yap.',
     'Nan had a fix: a yam in a box. Up got Tex! Tex had the yam, and Max had mud up to his hip.'],
-  art: { set: 'meadow', time: 'dusk', season: 'autumn', items: [['ox', 290, { colour: '#a54b3c' }], ['box', 430, { open: true }], ['adult', 490, { skin: 4, hair: 'bun', hairc: 'grey', top: '#7a5c8c', bottom: '#3f4a5a', pose: 'hold', flip: true }], ['kid', 560, { skin: 4, hair: 'short', top: '#e2b84f', bottom: '#5b3a24', flip: true }], ['dog', 120, { colour: '#b97a43' }]] },
+  art: { set: 'meadow', time: 'dusk', season: 'autumn', items: [['ox', 290, { colour: '#a54b3c' }], ['box', 430, { open: true }], ['adult', 490, { skin: 3, hair: 'bun', hairc: 'grey', top: '#7a5c8c', bottom: '#3f4a5a', pose: 'hold', flip: true }], ['kid', 560, { skin: 3, hair: 'short', top: '#e2b84f', bottom: '#5b3a24', flip: true }], ['dog', 120, { colour: '#b97a43' }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Tex got in the mud.', 'Nan got a box.', 'Tex got up.'], show: [2, 0, 1], code: 'C3.3' },
     { k: 'choice', q: 'Why did Tex get up?', opts: ['Tex can get the yam.', 'Tex was hot.', 'Rex did a yap.'], a: 0, code: 'C3.2' },
@@ -1063,7 +1063,7 @@ Atlas.decodable.add({
   text: ['Zak has a big red bag. It has a zed on it and a zip. Zip, zip!',
     'Zak has a quiz. Zak set a pen in the bag. Zak had a tug, but the zip did not zip up.',
     'Liz can fix it. Liz got the zip to go zig and zag, and zip! "Yes!" said Zak. Zak and Liz ran to the bus.'],
-  art: { set: 'classroom', time: 'day', season: 'autumn', items: [['bag', 330, { colour: '#c0573e' }], ['kid', 250, { skin: 5, hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a' }], ['kid', 420, { skin: 0, hair: 'long', hairc: 'auburn', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', flip: true }]] },
+  art: { set: 'classroom', time: 'day', season: 'autumn', items: [['bag', 330, { colour: '#c0573e' }], ['kid', 250, { skin: 0, hairc: 'auburn', hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a' }], ['kid', 420, { skin: 4, hair: 'long', hairc: 'auburn', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The zip did not zip up.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Who got the zip to go?', opts: ['Zak', 'Liz', 'Mom'], a: 1, code: 'C1.1' },
@@ -1077,7 +1077,7 @@ Atlas.decodable.more('cons-z', {
   text: ['Roz and Zed sit on a log in the sun. Zed has a red fez on.',
     'A bug can zig and zag. Zip! It sat on the fez. Zed did not see it.',
     '"Zed, a bug is on the fez!" said Roz. Zed got up. Zap! The bug can zig and zag, up to the sun. Zed and Roz sat and had fun.'],
-  art: { set: 'shore', time: 'day', season: 'summer', items: [['sun', 600, { y: 30 }], ['log', 340], ['kid', 260, { skin: 3, hair: 'puffs', top: '#2f8f7c', bottom: '#4f6d8a', pose: 'wave' }], ['kid', 430, { skin: 4, hair: 'short', hat: 'cap', hatc: '#b3542b', top: '#e2b84f', bottom: '#5b3a24', flip: true }], ['bug', 436, { y: 118, s: 0.45 }]] },
+  art: { set: 'shore', time: 'day', season: 'summer', items: [['sun', 600, { y: 30 }], ['log', 340], ['kid', 260, { skin: 1, hairc: 'auburn', hair: 'curly', top: '#2f8f7c', bottom: '#4f6d8a', pose: 'wave' }], ['kid', 430, { skin: 1, hairc: 'auburn', hair: 'short', hat: 'cap', hatc: '#b3542b', top: '#e2b84f', bottom: '#5b3a24', flip: true }], ['bug', 436, { y: 118, s: 0.45 }]] },
   qs: [
     { k: 'yn', q: 'Zed has a red hat on.', a: true, code: 'C1.4' },
     { k: 'choice', q: 'What did the bug sit on?', opts: ['the log', 'the fez', 'Roz'], a: 1, code: 'C1.1' },
@@ -1090,7 +1090,7 @@ Atlas.decodable.more('cons-z', {
   text: ['Liz and Zak sit in the van. Zeb the dog can nap in it. Mom has a quiz.',
     '"It can zip," said Mom. "A bag!" said Zak. "It can zig and zag." "A bug!" said Liz.',
     '"It has a zig and a zag. It is in Liz and Zak." "A zed!" said Liz and Zak. "Yes! Ten of ten!" said Mom. Zeb had a yap.'],
-  art: { set: 'town', time: 'night', season: 'winter', items: [['moon', 560, { y: 34 }], ['van', 230], ['adult', 380, { skin: 5, hair: 'short', top: '#2f8f7c', bottom: '#3f4a5a', coat: '#7a5c8c' }], ['kid', 440, { skin: 5, hair: 'puffs', hat: 'toque', top: '#c96a7a', bottom: '#4f6d8a', flip: true }], ['kid', 500, { skin: 5, hair: 'short', hat: 'toque', hatc: '#2f6b4f', top: '#e2b84f', bottom: '#3f4a5a', flip: true }], ['dog', 590, { colour: '#b97a43', flip: true }]] },
+  art: { set: 'town', time: 'night', season: 'winter', items: [['moon', 560, { y: 34 }], ['van', 230], ['adult', 380, { skin: 4, hair: 'short', top: '#2f8f7c', bottom: '#3f4a5a', coat: '#7a5c8c' }], ['kid', 440, { skin: 4, hair: 'puffs', hat: 'toque', top: '#c96a7a', bottom: '#4f6d8a', flip: true }], ['kid', 500, { skin: 4, hair: 'short', hat: 'toque', hatc: '#2f6b4f', top: '#e2b84f', bottom: '#3f4a5a', flip: true }], ['dog', 590, { colour: '#b97a43', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What can zig and zag?', opts: ['a bag', 'a bug', 'a van'], a: 1, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Mom has a quiz.', 'Zak said a bag can zip.', 'Liz and Zak got ten of ten.'], show: [2, 0, 1], code: 'C3.3' },
@@ -1106,7 +1106,7 @@ Atlas.decodable.add({
     'Josh sat and sat. Tug! A fish is on his rod! It is a big red fish. Josh got it in his net.',
     '"Let it go, Josh," said Mom. Josh let the fish go. It shot to the mud and hid.',
     'At the fish shop, Mom got a hot dish of fish. Josh had his wish!'],
-  art: { set: 'shore', time: 'day', season: 'summer', items: [['sun', 110, { y: 30 }], ['ship', 310, { s: 1.1 }], ['adult', 282, { skin: 4, hair: 'scarf', scarf: '#c0573e', top: '#7aa5c4', bottom: '#3f4a5a', y: 26, s: 0.8 }], ['kid', 352, { skin: 4, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', y: 26, s: 0.8 }], ['fish', 480, { jump: true, y: 40 }], ['birds', 560, { y: 40 }]] },
+  art: { set: 'shore', time: 'day', season: 'summer', items: [['sun', 110, { y: 30 }], ['ship', 310, { s: 1.1 }], ['adult', 282, { skin: 2, hair: 'bun', top: '#7aa5c4', bottom: '#3f4a5a', y: 26, s: 0.8 }], ['kid', 352, { skin: 2, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', y: 26, s: 0.8 }], ['fish', 480, { jump: true, y: 40 }], ['birds', 560, { y: 40 }]] },
   qs: [
     { k: 'choice', q: 'What did Josh wish for?', opts: ['a ship', 'a fish', 'a net'], a: 1, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Josh got a fish in his net.', 'Josh let the fish go.', 'Mom got a dish of fish.'], show: [2, 0, 1], code: 'C3.3' },
@@ -1121,7 +1121,7 @@ Atlas.decodable.more('sh', {
     'Ash had a look. There, on a big rag, is a fox. The fox has a kit! The kit is tan. It had a nap on the fox.',
     '"Can we get the pot?" said Ash. "No," said Dad. "We do not have to rush. Let the fox and the kit be."',
     'Dad and Ash shut the shed. Ash had a wish: to see the kit get big.'],
-  art: { set: 'yard', time: 'dusk', season: 'spring', items: [['shed', 310, { s: 1.3 }], ['fox', 300, { asleep: true }], ['fox', 340, { asleep: true, s: 0.5 }], ['kid', 440, { skin: 2, hair: 'short', top: '#8fb36a', bottom: '#4f6d8a', mood: 'oh', flip: true }], ['adult', 510, { skin: 2, hair: 'short', beard: true, top: '#c0573e', bottom: '#3f4a5a', flip: true }]] },
+  art: { set: 'yard', time: 'dusk', season: 'spring', items: [['shed', 310, { s: 1.3 }], ['fox', 300, { asleep: true }], ['fox', 340, { asleep: true, s: 0.5 }], ['kid', 440, { skin: 0, hairc: 'brown', hair: 'short', top: '#8fb36a', bottom: '#4f6d8a', mood: 'oh', flip: true }], ['adult', 510, { skin: 0, hairc: 'blond', hair: 'short', beard: true, top: '#c0573e', bottom: '#3f4a5a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'The fox had a kit.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Dad and Ash shut the shed?', opts: ['to let the fox and kit be', 'to get the pot', 'to get the fox'], a: 0, code: 'C3.2' },
@@ -1135,7 +1135,7 @@ Atlas.decodable.more('sh', {
     'Shep can see a cat at the shed. Yap, yap! Shep is in a rush to get it. Bash! Shep hit a dish of mash.',
     'Mash is on the rug. Mash is on Shep. Mash is on Ash! Nan got up. "What is the rush?" said Nan.',
     'Ash had to mop up the mash. Shep had to sit in the shed. "Hush," said Nan. Shep had a nap in the shed, and Nan had a nap in bed.'],
-  art: { set: 'kitchen', time: 'grey', season: 'spring', items: [['rug', 300, { colour: '#7aa5c4' }], ['pan', 330, { y: 2 }], ['dog', 280, { colour: '#3b2f2a', chest: '#f3e8d6' }], ['kid', 420, { skin: 0, hair: 'short', hairc: 'blond', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh', flip: true }], ['adult', 560, { skin: 0, hair: 'short', hairc: 'grey', glasses: true, top: '#7a5c8c', bottom: '#3f4a5a', flip: true }]] },
+  art: { set: 'kitchen', time: 'grey', season: 'spring', items: [['rug', 300, { colour: '#7aa5c4' }], ['pan', 330, { y: 2 }], ['dog', 280, { colour: '#3b2f2a', chest: '#f3e8d6' }], ['kid', 420, { skin: 1, hair: 'short', hairc: 'blond', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh', flip: true }], ['adult', 560, { skin: 1, hair: 'short', hairc: 'grey', glasses: true, top: '#7a5c8c', bottom: '#3f4a5a', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Shep hit?', opts: ['a dish of mash', 'a cat', 'Nan'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Why did Shep yap?', opts: ['Shep can see a cat.', 'Shep had mash.', 'Nan got up.'], a: 0, code: 'C3.2' },
@@ -1166,7 +1166,7 @@ Atlas.decodable.more('ch', {
     '"You can chop a bit," said Dad. Chop! Chop! Chad hit the log. A chip shot up and hit his chin.',
     '"Such a big chip!" said Chad. He had a red dot on his chin. Dad had a look. "It is not much," said Dad.',
     'Dad and Chad sit on the log and chat. "You did a big job, chum," said Dad.'],
-  art: { set: 'snow', time: 'grey', season: 'winter', items: [['snowfall', 350, { y: 40 }], ['hut', 560], ['log', 320], ['kid', 230, { skin: 4, hair: 'short', hat: 'toque', hatc: '#e2b84f', top: '#c0573e', bottom: '#3f4a5a', mood: 'oh' }], ['adult', 420, { skin: 4, hair: 'short', beard: true, hat: 'toque', top: '#2f6b4f', bottom: '#3b3632', flip: true }]] },
+  art: { set: 'snow', time: 'grey', season: 'winter', items: [['snowfall', 350, { y: 40 }], ['hut', 560], ['log', 320], ['kid', 230, { skin: 0, hairc: 'auburn', hair: 'short', hat: 'toque', hatc: '#e2b84f', top: '#c0573e', bottom: '#3f4a5a', mood: 'oh' }], ['adult', 420, { skin: 0, hairc: 'auburn', hair: 'short', beard: true, hat: 'toque', top: '#2f6b4f', bottom: '#3b3632', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What hit Chad on the chin?', opts: ['a chip', 'a log', 'a cup'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Chad got to chop.', 'A chip hit his chin.', 'Dad and Chad sit and chat.'], show: [1, 2, 0], code: 'C3.3' },
@@ -1180,7 +1180,7 @@ Atlas.decodable.more('ch', {
     'A kid ran up to the log. "I am Rich," said the kid. "Can I sit?" "Yes," said Chet. Rich had a big bun. He cut it in two. "Have some," said Rich.',
     'Chet and Rich had the bun and had a chat. Rich has a pup, and Chet has a pup. Rich can do a chin up. Chet can do six!',
     'Chet was not sad. He had a chum, and Rich had a chum. Such fun!'],
-  art: { set: 'park', time: 'day', season: 'autumn', items: [['sun', 590, { y: 30 }], ['log', 340], ['kid', 260, { skin: 5, hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a' }], ['kid', 430, { skin: 0, hair: 'short', hairc: 'brown', hat: 'cap', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', flip: true }], ['bun', 412, { y: 52 }], ['pup', 560, { colour: '#a39a90', flip: true }], ['pup', 160, { colour: '#3b2f2a' }]] },
+  art: { set: 'park', time: 'day', season: 'autumn', items: [['sun', 590, { y: 30 }], ['log', 340], ['kid', 260, { skin: 2, hair: 'short', top: '#7aa5c4', bottom: '#3f4a5a' }], ['kid', 430, { skin: 0, hair: 'short', hairc: 'brown', hat: 'cap', top: '#e2b84f', bottom: '#4f6d8a', pose: 'hold', flip: true }], ['bun', 412, { y: 52 }], ['pup', 560, { colour: '#a39a90', flip: true }], ['pup', 160, { colour: '#3b2f2a' }]] },
   qs: [
     { k: 'yn', q: 'Rich is a chum to Chet.', a: true, code: 'C3.2' },
     { k: 'choice', q: 'What did Rich cut in two?', opts: ['a bun', 'a log', 'a chip'], a: 0, code: 'C1.1' },
@@ -1211,7 +1211,7 @@ Atlas.decodable.more('th', {
     'On the path is a red hat. "Is this your hat?" said Mom. "No," said Beth. "My hat is in my bag."',
     'Then they met Thad. Thad was sad. "I had a red hat," said Thad. "Is this it?" said Beth. "Yes! That is my hat!" said Thad.',
     'Beth put the hat on Thad. Then Beth, Thad and Mom go up the path to the hut.'],
-  art: { set: 'forest', season: 'autumn', items: [['hut', 580, { s: 0.75, y: 22, smoke: true }], ['cloud', 300, { y: 34 }], ['adult', 200, { skin: 4, hair: 'bun', top: '#5f8f7a', coat: '#7a5c8c', bottom: '#3f4a5a' }], ['kid', 290, { skin: 4, hair: 'braids', top: '#e2b84f', dress: true, bottom: '#6a4a3a', pose: 'hold' }], ['hat', 302, { colour: '#c0473a', band: '#3f4a5a', y: 52 }], ['kid', 400, { skin: 0, hair: 'short', hairc: 'red', top: '#4f7fa8', bottom: '#5b4a3e', mood: 'sad', flip: true }]] },
+  art: { set: 'forest', season: 'autumn', items: [['hut', 580, { s: 0.75, y: 22, smoke: true }], ['cloud', 300, { y: 34 }], ['adult', 200, { skin: 0, hairc: 'auburn', hair: 'bun', top: '#5f8f7a', coat: '#7a5c8c', bottom: '#3f4a5a' }], ['kid', 290, { skin: 0, hairc: 'brown', hair: 'braids', top: '#e2b84f', dress: true, bottom: '#6a4a3a', pose: 'hold' }], ['hat', 302, { colour: '#c0473a', band: '#3f4a5a', y: 52 }], ['kid', 400, { skin: 4, hair: 'short', hairc: 'red', top: '#4f7fa8', bottom: '#5b4a3e', mood: 'sad', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Beth has a hat in a bag.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why was Thad sad?', opts: ['He had no hat.', 'He had no bun.', 'He was hot.'], a: 0, code: 'C3.2' },
@@ -1256,7 +1256,7 @@ Atlas.decodable.more('wh', {
     '"It is in the mug!" said Ben. No nut! "Then it is in the pot." No nut! "It is in the cup!" No nut!',
     '"Which is it, Nan?" said Ben. "Look here," said Nan. She got the hat. Wham! The nut was in it!',
     '"When can I do it?" said Ben. Then Ben hid the nut.'],
-  art: { set: 'kitchen', season: 'winter', items: [['adult', 250, { skin: 5, hair: 'curly', hairc: 'grey', top: '#a54b3c', bottom: '#3f4a5a', pose: 'hold' }], ['table', 370, { cloth: '#e9dcc4' }], ['cup', 340, { colour: '#7aa5c4', y: 48 }], ['pot', 372, { y: 48, s: 0.8 }], ['hat', 405, { colour: '#c0473a', y: 48 }], ['kid', 500, { skin: 5, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', flip: true, mood: 'oh' }]] },
+  art: { set: 'kitchen', season: 'winter', items: [['adult', 250, { skin: 4, hair: 'curly', hairc: 'grey', top: '#a54b3c', bottom: '#3f4a5a', pose: 'hold' }], ['table', 370, { cloth: '#e9dcc4' }], ['cup', 340, { colour: '#7aa5c4', y: 48 }], ['pot', 372, { y: 48, s: 0.8 }], ['hat', 405, { colour: '#c0473a', y: 48 }], ['kid', 500, { skin: 4, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', flip: true, mood: 'oh' }]] },
   qs: [
     { k: 'order', q: 'Number the story in order.', items: ['Nan hid a nut.', 'Ben had a look in the mug.', 'The nut was in the hat.'], show: [1, 2, 0], code: 'C3.3' },
     { k: 'choice', q: 'Where was the nut?', opts: ['in the mug', 'in the hat', 'in the pot'], a: 1, code: 'C1.1' },
@@ -1302,7 +1302,7 @@ Atlas.decodable.more('ck', {
     'Then the chick is not in the pen! Kim and Mack look and look. Is it on the deck? No. Is it by the rock? No.',
     'Then a sack on the deck did a kick. Kim and Mack had a look in the sack.',
     'It was the chick! "You are a quick chick," said Kim. "Back you go!" Kim put the chick back in the pen with the hen.'],
-  art: { set: 'farm', season: 'spring', items: [['shed', 140, { s: 0.85, y: 6 }], ['kid', 250, { skin: 1, hair: 'bun', top: '#c96a7a', bottom: '#3f4a5a', flip: true }], ['bag', 340, { colour: '#c8b48a' }], ['chick', 352, { y: 22 }], ['kid', 430, { skin: 2, hair: 'curly', hairc: 'brown', top: '#7aa5c4', bottom: '#5b4a3e', flip: true, mood: 'oh' }], ['hen', 560, { flip: true }], ['rock', 640]] },
+  art: { set: 'farm', season: 'spring', items: [['shed', 140, { s: 0.85, y: 6 }], ['kid', 250, { skin: 0, hairc: 'brown', hair: 'bun', top: '#c96a7a', bottom: '#3f4a5a', flip: true }], ['bag', 340, { colour: '#c8b48a' }], ['chick', 352, { y: 22 }], ['kid', 430, { skin: 3, hair: 'curly', hairc: 'brown', top: '#7aa5c4', bottom: '#5b4a3e', flip: true, mood: 'oh' }], ['hen', 560, { flip: true }], ['rock', 640]] },
   qs: [
     { k: 'yn', q: 'The chick hid in the sack.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Kim and Mack look and look?', opts: ['The chick was not in the pen.', 'The hen was sick.'], a: 0, code: 'C3.2' },
@@ -1317,7 +1317,7 @@ Atlas.decodable.more('ck', {
     'Then a red fox ran up. It had a look at the sock. The fox got the sock and ran!',
     'Meg and Mom ran up the path to the back of the shack. The fox was in a pit. It had the sock, a cap and a bib.',
     '"That fox is a pack rat!" said Mom. Mom got the sock, the cap and the bib back. The fox did not look sad. Meg put on the sock. It was a bit wet, but it was back!'],
-  art: { set: 'den', time: 'dusk', season: 'autumn', items: [['fox', 200, { flip: true }], ['mitt', 170, { colour: '#7aa5c4', s: 0.8 }], ['rock', 400, { moss: true }], ['kid', 470, { skin: 4, hair: 'puffs', top: '#e2b84f', bottom: '#5b4a3e', flip: true, mood: 'oh' }], ['adult', 560, { skin: 4, hair: 'scarf', scarf: '#3f6a6a', top: '#a54b3c', bottom: '#3f4a5a', flip: true }]] },
+  art: { set: 'den', time: 'dusk', season: 'autumn', items: [['fox', 200, { flip: true }], ['mitt', 170, { colour: '#7aa5c4', s: 0.8 }], ['rock', 400, { moss: true }], ['kid', 470, { skin: 1, hairc: 'brown', hair: 'curly', top: '#e2b84f', bottom: '#5b4a3e', flip: true, mood: 'oh' }], ['adult', 560, { skin: 1, hairc: 'brown', hair: 'long', top: '#a54b3c', bottom: '#3f4a5a', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What was in the pit?', opts: ['a sock, a cap and a bib', 'a hen and a chick', 'a big rock'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Meg put the sock on a rock.', 'A fox got the sock.', 'Mom got the sock back.'], show: [1, 2, 0], code: 'C3.3' },
@@ -1333,7 +1333,7 @@ Atlas.decodable.add({
     'At the top, Russ has to puff. "Let us sit," said Jess. Jess set the bag on the hill.',
     'Then the bag fell off the hill! It hit a log and a rock. "My doll!" said Jess. Russ ran to get it. He had to pull the bag up from the mud.',
     'The doll was a mess. Jess did not fuss. "Well, it will get a bath," said Jess.'],
-  art: { set: 'forest', items: [['sun', 420, { y: 34 }], ['kid', 260, { skin: 0, hair: 'long', hairc: 'red', top: '#8fb36a', bottom: '#4f6d8a', s: 0.75, y: 40 }], ['log', 340, { colour: '#7a5a3e' }], ['rock', 210, { s: 0.9 }], ['kid', 440, { skin: 2, hair: 'short', top: '#d9774b', bottom: '#3f4a5a', pose: 'hold', flip: true }], ['bag', 420, { colour: '#7a5c8c', y: 40 }]] },
+  art: { set: 'forest', items: [['sun', 420, { y: 34 }], ['kid', 260, { skin: 4, hair: 'long', hairc: 'red', top: '#8fb36a', bottom: '#4f6d8a', s: 0.75, y: 40 }], ['log', 340, { colour: '#7a5a3e' }], ['rock', 210, { s: 0.9 }], ['kid', 440, { skin: 1, hairc: 'black', hair: 'short', top: '#d9774b', bottom: '#3f4a5a', pose: 'hold', flip: true }], ['bag', 420, { colour: '#7a5c8c', y: 40 }]] },
   qs: [
     { k: 'choice', q: 'What was in the bag?', opts: ['a doll', 'a bell', 'a cup'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['Jess set the bag on the hill.', 'The bag fell off the hill.', 'Russ got the bag.'], show: [1, 2, 0], code: 'C3.3' },
@@ -1349,7 +1349,7 @@ Atlas.decodable.more('floss', {
     'A gull sat on a log. Then it did a hop, hop, hop up to the rock.',
     'Nell did not fuss. She hid the bun in the bag. "You will not get my bun," she said. Peck! The gull got the shell, and it was off!',
     'Then the gull let go of the shell. It fell in the moss. Nell got it back. "You can have a bit of bun," said Nell. "Not my shell!"'],
-  art: { set: 'shore', time: 'dusk', items: [['sun', 150, { y: 70 }], ['bird', 520, { y: 40, s: 1.6 }], ['rock', 300, { s: 2.2 }], ['kid', 300, { skin: 5, hair: 'braids', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh', y: 58 }], ['adult', 420, { skin: 5, hair: 'bald', beard: true, top: '#f1ece3', bottom: '#4f6d8a', flip: true }], ['log', 560, { colour: '#a8977d' }]] },
+  art: { set: 'shore', time: 'dusk', items: [['sun', 150, { y: 70 }], ['bird', 520, { y: 40, s: 1.6 }], ['rock', 300, { s: 2.2 }], ['kid', 300, { skin: 1, hairc: 'blond', hair: 'braids', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh', y: 58 }], ['adult', 420, { skin: 1, hair: 'bald', beard: true, top: '#f1ece3', bottom: '#4f6d8a', flip: true }], ['log', 560, { colour: '#a8977d' }]] },
   qs: [
     { k: 'yn', q: 'The gull got the bun.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why did Nell put the bun in the bag?', opts: ['The gull did want it.', 'It was wet.'], a: 0, code: 'C3.2' },
@@ -1364,7 +1364,7 @@ Atlas.decodable.more('floss', {
     'Buzz! A big bug was in the hut. It got on the doll. Then it got on the mug!',
     'Will did not yell, and he did not fuss. "Let us not hit it," said Mom. "It is not a bad bug. It does want to get back to the sun."',
     'Will put a cup on the bug, and Mom set a lid on it. Will ran up the hill and let the bug go. Buzz! Off it shot. "You did well," said Mom.'],
-  art: { set: 'meadow', season: 'autumn', items: [['hut', 130, { s: 0.85, y: 10 }], ['adult', 300, { skin: 2, hair: 'long', hairc: 'brown', top: '#e2b84f', bottom: '#5b4a3e', pose: 'wave' }], ['kid', 400, { skin: 2, hair: 'curly', hairc: 'brown', top: '#4f7fa8', bottom: '#3f4a5a', pose: 'hold' }], ['cup', 410, { colour: '#c96a5a', y: 52 }], ['bug', 470, { colour: '#c0473a', y: 70, s: 0.8 }]] },
+  art: { set: 'meadow', season: 'autumn', items: [['hut', 130, { s: 0.85, y: 10 }], ['adult', 300, { skin: 4, hair: 'long', hairc: 'brown', top: '#e2b84f', bottom: '#5b4a3e', pose: 'wave' }], ['kid', 400, { skin: 4, hair: 'curly', hairc: 'brown', top: '#4f7fa8', bottom: '#3f4a5a', pose: 'hold' }], ['cup', 410, { colour: '#c96a5a', y: 52 }], ['bug', 470, { colour: '#c0473a', y: 70, s: 0.8 }]] },
   qs: [
     { k: 'yn', q: 'The bug got on the mug.', a: true, code: 'C1.1' },
     { k: 'order', q: 'Number the story in order.', items: ['A bug got on the mug.', 'Will put a cup on the bug.', 'Will let the bug go.'], show: [2, 0, 1], code: 'C3.3' },
@@ -1396,7 +1396,7 @@ Atlas.decodable.more('all', {
     'Was Tab in the hall? No. Was Tab on the wall? No. Kim and Mom had to call and call.',
     'Then Kim had a look at a tall box in the hall. The lid was up a bit.',
     'It was Tab! She sat in a ball on top of a red hat. "You had us all in a fuss," said Kim. Tab did not talk. She had a nap.'],
-  art: { set: 'kitchen', time: 'dusk', season: 'autumn', items: [['adult', 420, { skin: 1, hair: 'short', top: '#7a5c8c', coat: '#a87a52', bottom: '#3f4a5a', flip: true }], ['box', 320, { colour: '#c79a62', open: true, s: 1.6 }], ['hat', 316, { colour: '#c0473a', y: 58 }], ['cat', 316, { colour: '#7f7a74', asleep: true, y: 62 }], ['kid', 520, { skin: 1, hair: 'bun', top: '#e2b84f', coat: '#8fb36a', bottom: '#4f6d8a', flip: true, mood: 'oh' }]] },
+  art: { set: 'kitchen', time: 'dusk', season: 'autumn', items: [['adult', 420, { skin: 3, hair: 'short', top: '#7a5c8c', coat: '#a87a52', bottom: '#3f4a5a', flip: true }], ['box', 320, { colour: '#c79a62', open: true, s: 1.6 }], ['hat', 316, { colour: '#c0473a', y: 58 }], ['cat', 316, { colour: '#7f7a74', asleep: true, y: 62 }], ['kid', 520, { skin: 3, hair: 'bun', top: '#e2b84f', coat: '#8fb36a', bottom: '#4f6d8a', flip: true, mood: 'oh' }]] },
   qs: [
     { k: 'yn', q: 'Tab was in a box.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Kim and Mom call and call?', opts: ['They did not see Tab.', 'Tab was sick.'], a: 0, code: 'C3.2' },
@@ -1556,7 +1556,7 @@ Atlas.decodable.add({
     "Dad shut the tap off. He got a long thin pin. Dad dug and dug with the pin. He got the ring back!",
     "Pam had a big hug with Dad. \"Thank you!\" she said with a wink."
   ],
-  "art": { set: 'kitchen', time: 'night', season: 'spring', items: [['sink', 330], ['kid', 260, { skin: 3, hair: 'puffs', top: '#c96a7a', bottom: '#4f6d8a' }], ['adult', 420, { skin: 3, hair: 'short', beard: true, glasses: true, top: '#5f8f7a', bottom: '#5b4a3e', flip: true, pose: 'hold' }], ['clock', 560, { y: 110 }]] },
+  "art": { set: 'kitchen', time: 'night', season: 'spring', items: [['sink', 330], ['kid', 260, { skin: 0, hairc: 'brown', hair: 'curly', top: '#c96a7a', bottom: '#4f6d8a' }], ['adult', 420, { skin: 0, hairc: 'brown', hair: 'short', beard: true, glasses: true, top: '#5f8f7a', bottom: '#5b4a3e', flip: true, pose: 'hold' }], ['clock', 560, { y: 110 }]] },
   "qs": [
     {
       "k": "choice",
@@ -1596,7 +1596,7 @@ Atlas.decodable.more('nk', {
     'There was a tank, a bunk bed and a pink sink. "What can we do with a sink?" said Jen. Hank had to think.',
     'Then Hank got a bag of mud. Hank and Jen put the mud and a bit of moss in the sink. Then a big red bug got in!',
     'Mom had a look. "Did you think of that?" she said. "Yes," said Jen with a wink. "It is a bug sink!"'],
-  art: { set: 'meadow', items: [['shed', 560, { s: 1.1 }], ['kid', 200, { skin: 0, hair: 'short', hairc: 'blond', top: '#4f7fa8', bottom: '#5b4a3e' }], ['sink', 310, { colour: '#e9a3b4' }], ['bug', 316, { colour: '#c0473a', y: 46, s: 0.8 }], ['kid', 420, { skin: 4, hair: 'curly', top: '#e2b84f', bottom: '#3f4a5a', flip: true }], ['bag', 470, { colour: '#7a5a3e' }]] },
+  art: { set: 'meadow', items: [['shed', 560, { s: 1.1 }], ['kid', 200, { skin: 5, hair: 'short', hairc: 'blond', top: '#4f7fa8', bottom: '#5b4a3e' }], ['sink', 310, { colour: '#e9a3b4' }], ['bug', 316, { colour: '#c0473a', y: 46, s: 0.8 }], ['kid', 420, { skin: 4, hair: 'curly', top: '#e2b84f', bottom: '#3f4a5a', flip: true }], ['bag', 470, { colour: '#7a5a3e' }]] },
   qs: [
     { k: 'yn', q: 'The sink was pink.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Hank get mud?', opts: ['to fill the sink', 'to fill the tank'], a: 0, code: 'C3.2' },
@@ -1696,7 +1696,7 @@ Atlas.decodable.more('plural-s', {
     'Kim tips up a log. Bugs! Big bugs, red bugs and bugs with long legs. The bugs run and hop.',
     'Tam gets the nets, and Kim gets the cups. They fill six cups with bugs. Then Tam thinks. "The bugs should live in the logs," he says.',
     'Kim tips the cups, and the bugs run back in the logs. Then Tam and Kim go back to the hut.'],
-  art: { set: 'forest', season: 'spring', items: [['kid', 240, { skin: 3, hair: 'short', top: '#c0473a', bottom: '#5b4a3e', pose: 'hold' }], ['net', 270], ['log', 360, { moss: true, mushrooms: true }], ['bug', 340, { y: 30 }], ['bug', 400, { colour: '#c0473a' }], ['kid', 470, { skin: 0, hair: 'braids', hairc: 'blond', top: '#7aa5c4', bottom: '#3f4a5a', flip: true, pose: 'hold' }], ['cup', 456, { colour: '#f1ece3', y: 54 }]] },
+  art: { set: 'forest', season: 'spring', items: [['kid', 240, { skin: 1, hairc: 'blond', hair: 'short', top: '#c0473a', bottom: '#5b4a3e', pose: 'hold' }], ['net', 270], ['log', 360, { moss: true, mushrooms: true }], ['bug', 340, { y: 30 }], ['bug', 400, { colour: '#c0473a' }], ['kid', 470, { skin: 2, hair: 'braids', hairc: 'blond', top: '#7aa5c4', bottom: '#3f4a5a', flip: true, pose: 'hold' }], ['cup', 456, { colour: '#f1ece3', y: 54 }]] },
   qs: [
     { k: 'choice', q: 'What did Tam and Kim put in the cups?', opts: ['bugs', 'nuts', 'rocks'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Tam and Kim let the bugs go.', a: true, code: 'C3.2' },
@@ -1711,7 +1711,7 @@ Atlas.decodable.more('plural-s', {
     'Then the pigs dig a big pit, and the pit gets to the back of the pen. Six pigs run off!',
     'Gus yells, "Dad! The pigs!" The pigs run to the hens. The hens peck at the pigs. Then the pigs get to the bins and tip them. Yum! Buns, nuts and figs!',
     'Dad and Gus get the pigs back in the pen. Gus fills the pit with logs and rocks. The six pigs nap in the sun, full of buns.'],
-  art: { set: 'farm', season: 'autumn', items: [['sun', 120, { y: 32 }], ['pig', 220, { mud: true }], ['pig', 300, { asleep: true }], ['pig', 390, { s: 0.85 }], ['kid', 470, { skin: 5, hair: 'short', top: '#8fb36a', bottom: '#4f6d8a', flip: true }], ['adult', 550, { skin: 5, hair: 'short', hat: 'cap', hatc: '#c0473a', top: '#4f7fa8', bottom: '#5b4a3e', flip: true }], ['hen', 640, { flip: true }]] },
+  art: { set: 'farm', season: 'autumn', items: [['sun', 120, { y: 32 }], ['pig', 220, { mud: true }], ['pig', 300, { asleep: true }], ['pig', 390, { s: 0.85 }], ['kid', 470, { skin: 1, hairc: 'red', hair: 'short', top: '#8fb36a', bottom: '#4f6d8a', flip: true }], ['adult', 550, { skin: 1, hairc: 'auburn', hair: 'short', hat: 'cap', hatc: '#c0473a', top: '#4f7fa8', bottom: '#5b4a3e', flip: true }], ['hen', 640, { flip: true }]] },
   qs: [
     { k: 'order', q: 'Put the story in order.', items: ['The pigs dig a pit.', 'The pigs run to the hens.', 'Gus fills the pit.'], show: [1, 2, 0], code: 'C3.3' },
     { k: 'choice', q: 'Why did the pigs nap?', opts: ['They were full of buns.', 'They were sick.'], a: 0, code: 'C3.2' },
@@ -1729,7 +1729,7 @@ Atlas.decodable.add({
     'Glen sits on the sled. Flick sits on it as well. Zip! The sled slips, and it is quick!',
     'Then the sled hits a log. Flop! Glen and Flick fall off in the slush. Plop!',
     'Flick licks Glen. Glen claps and gets up. He is a mess of slush, but he is glad. "Again!" he yells. Flick yips.'],
-  art: { set: 'snow', time: 'grey', season: 'winter', items: [['snowfall', 350, { y: 40 }], ['sled', 300, { colour: '#2f2a28' }], ['kid', 290, { skin: 0, hair: 'short', hairc: 'brown', hat: 'toque', hatc: '#c0473a', coat: '#4f7fa8', bottom: '#3f4a5a', pose: 'wave', y: 10 }], ['dog', 400, { colour: '#c9a26b', flip: true }], ['log', 520, { colour: '#7a5a3e' }]] },
+  art: { set: 'snow', time: 'grey', season: 'winter', items: [['snowfall', 350, { y: 40 }], ['sled', 300, { colour: '#2f2a28' }], ['kid', 290, { skin: 1, hair: 'short', hairc: 'brown', hat: 'toque', hatc: '#c0473a', coat: '#4f7fa8', bottom: '#3f4a5a', pose: 'wave', y: 10 }], ['dog', 400, { colour: '#c9a26b', flip: true }], ['log', 520, { colour: '#7a5a3e' }]] },
   qs: [
     { k: 'choice', q: 'What did the sled hit?', opts: ['a log', 'a rock', 'a dog'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Glen had fun on the sled.', a: true, code: 'C3.2' },
@@ -1748,7 +1748,7 @@ Atlas.decodable.more('blend-start', {
     'At the dock, Fred hits the drum. Brum, brum! Then a frog hops up on the drum and grins at Fred.',
     'Fred grabs the frog. "Can I bring the frog back with us?" Dad says, "No. The frog has to be in the wet grass."',
     'Fred sets the frog in the grass. Hop! It is off. On the trip back, Fred hits his drum. "That is a frog song," he says with a grin.'],
-  art: { set: 'lake', season: 'spring', items: [['truck', 560, { colour: '#c0473a' }], ['adult', 200, { skin: 2, hair: 'short', hairc: 'red', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#8fb36a', bottom: '#5b4a3e' }], ['kid', 300, { skin: 2, hair: 'curly', hairc: 'red', top: '#e2b84f', bottom: '#3f4a5a' }], ['drum', 370, { s: 1.2 }], ['frog', 370, { y: 34, flip: true }]] },
+  art: { set: 'lake', season: 'spring', items: [['truck', 560, { colour: '#c0473a' }], ['adult', 200, { skin: 0, hair: 'short', hairc: 'red', beard: true, hat: 'cap', hatc: '#4f6d8a', top: '#8fb36a', bottom: '#5b4a3e' }], ['kid', 300, { skin: 0, hair: 'curly', hairc: 'red', top: '#e2b84f', bottom: '#3f4a5a' }], ['drum', 370, { s: 1.2 }], ['frog', 370, { y: 34, flip: true }]] },
   qs: [
     { k: 'choice', q: 'What hops up on the drum?', opts: ['a frog', 'a crab', 'a duck'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Dad says the frog can go in the truck.', a: false, code: 'C3.2' },
@@ -1766,7 +1766,7 @@ Atlas.decodable.more('blend-start', {
     'Then Liz spots a skunk by the steps. It sniffs and sniffs. The skunk can smell the snack!',
     '"Stop," says Stan. "Do not run. Sit still." Stan and Liz sit as still as a rock. The skunk steps up on the deck. It sniffs the plums. Then it has a snack of nuts!',
     'Then the skunk is full. It spins and trots back to the grass. "Well," says Liz, "that skunk had a big snack, and we did not get a smell!"'],
-  art: { set: 'yard', time: 'dusk', items: [['kid', 170, { skin: 4, hair: 'short', top: '#4f7fa8', bottom: '#5b4a3e', mood: 'oh' }], ['kid', 250, { skin: 0, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh' }], ['basket', 320, { full: true }], ['skunk', 420, { flip: true }], ['bush', 600, { berries: true }]] },
+  art: { set: 'yard', time: 'dusk', items: [['kid', 170, { skin: 0, hairc: 'brown', hair: 'short', top: '#4f7fa8', bottom: '#5b4a3e', mood: 'oh' }], ['kid', 250, { skin: 0, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#3f4a5a', mood: 'oh' }], ['basket', 320, { full: true }], ['skunk', 420, { flip: true }], ['bush', 600, { berries: true }]] },
   qs: [
     { k: 'order', q: 'Put the story in order.', items: ['Liz spots a skunk.', 'The skunk sniffs the plums.', 'The skunk trots back to the grass.'], show: [2, 0, 1], code: 'C3.3' },
     { k: 'choice', q: 'Why did Stan and Liz sit still?', opts: ['The skunk could get mad.', 'They had a nap.'], a: 0, code: 'C3.2' },
@@ -1813,7 +1813,7 @@ Atlas.decodable.add({
     "Thump! Bump! Deb grabs Dad's hand. \"What is that?\" Dad gets the lamp. It is an elk!",
     "The elk sniffs the tent. It stamps and huffs. Then it is gone. Deb and Dad grin. \"That was the best camp!\" said Deb."
   ],
-  "art": { set: 'lake', time: 'night', items: [['moon', 120, { y: 34 }], ['stars', 350, { y: 40 }], ['tent', 240, { lit: true }], ['adult', 360, { skin: 3, hair: 'bald', beard: true, top: '#a54b3c', bottom: '#3f4a5a', pose: 'hold' }], ['lamp', 368, { lit: true, y: 52, s: 0.4 }], ['kid', 420, { skin: 3, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['deer', 560, { antlers: true, flip: true, s: 1.3 }]] },
+  "art": { set: 'lake', time: 'night', items: [['moon', 120, { y: 34 }], ['stars', 350, { y: 40 }], ['tent', 240, { lit: true }], ['adult', 360, { skin: 0, hair: 'bald', beard: true, top: '#a54b3c', bottom: '#3f4a5a', pose: 'hold' }], ['lamp', 368, { lit: true, y: 52, s: 0.4 }], ['kid', 420, { skin: 0, hairc: 'brown', hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['deer', 560, { antlers: true, flip: true, s: 1.3 }]] },
   "qs": [
     {
       "k": "choice",
@@ -1849,7 +1849,7 @@ Atlas.decodable.more('blend-end', {
     '"Stop!" said Jess. "Look in it!" A finch was in the hat! It had a nest in it, and in the nest were six eggs.',
     '"I must have a hat," said Dad. "But the finch can have this one." Jess and Dad went to the shop. Dad got a black hat with a red band.',
     'Then the eggs had chicks. Jess and Dad sat on the steps and felt glad. Six chicks in a felt hat!'],
-  art: { set: 'forest', time: 'dusk', season: 'spring', items: [['hut', 470, { s: 1 }], ['adult', 240, { skin: 1, hair: 'short', glasses: true, top: '#7aa5c4', bottom: '#5b4a3e' }], ['kid', 320, { skin: 1, hair: 'long', top: '#c96a7a', bottom: '#3f4a5a', pose: 'wave', mood: 'oh' }], ['hat', 400, { colour: '#8a6a4a', s: 2.2 }], ['nest', 400, { chicks: true, y: 30, s: 0.9 }], ['bird', 420, { perch: true, y: 60 }]] },
+  art: { set: 'forest', time: 'dusk', season: 'spring', items: [['hut', 470, { s: 1 }], ['adult', 240, { skin: 1, hairc: 'auburn', hair: 'short', glasses: true, top: '#7aa5c4', bottom: '#5b4a3e' }], ['kid', 320, { skin: 1, hairc: 'blond', hair: 'long', top: '#c96a7a', bottom: '#3f4a5a', pose: 'wave', mood: 'oh' }], ['hat', 400, { colour: '#8a6a4a', s: 2.2 }], ['nest', 400, { chicks: true, y: 30, s: 0.9 }], ['bird', 420, { perch: true, y: 60 }]] },
   qs: [
     { k: 'order', q: 'Put the story in order.', items: ['Dad left his hat on the steps.', 'Jess and Dad went to the shop.', 'The eggs had chicks.'], show: [2, 0, 1], code: 'C3.3' },
     { k: 'yn', q: 'Dad was mad at the finch.', a: false, code: 'C3.2' },
@@ -1865,7 +1865,7 @@ Atlas.decodable.more('blend-end', {
     'Max and Kit set the raft on the pond and got on. The raft went to the big rock.',
     'Then a gust sent the raft back. Bump! It hit a stump, and Max and Kit fell in with a plop!',
     'They swam to the bank. "That is the best raft," said Dad, "but not in a gust!" "Next, we must get a mast!" said Kit.'],
-  art: { set: 'lake', time: 'grey', items: [['rock', 360, { s: 1.2, y: 50 }], ['adult', 200, { skin: 5, hair: 'short', top: '#5f8f7a', bottom: '#3f4a5a', pose: 'wave' }], ['kid', 300, { skin: 5, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['kid', 380, { skin: 2, hair: 'braids', top: '#c0473a', bottom: '#3f4a5a', flip: true }], ['log', 520, { colour: '#7a5a3e' }]] },
+  art: { set: 'lake', time: 'grey', items: [['rock', 360, { s: 1.2, y: 50 }], ['adult', 200, { skin: 1, hairc: 'red', hair: 'short', top: '#5f8f7a', bottom: '#3f4a5a', pose: 'wave' }], ['kid', 300, { skin: 1, hairc: 'black', hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['kid', 380, { skin: 1, hairc: 'auburn', hair: 'braids', top: '#c0473a', bottom: '#3f4a5a', flip: true }], ['log', 520, { colour: '#7a5a3e' }]] },
   qs: [
     { k: 'yn', q: 'Max and Kit fell in the pond.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did the raft hit the stump?', opts: ['A gust sent it back.', 'Max had a nap.'], a: 0, code: 'C3.2' },
@@ -1957,7 +1957,7 @@ Atlas.decodable.more('blend-three', {
     'Then Scruff ran in the mud. Squish! Splat! Scruff was a big mud blob.',
     'Ash got the tub and a brush. He had to scrub and scrub. Scruff did not want a bath. He did a big shrug, and the water went splash, on Ash!',
     'Then Ash was a mess as well. Mom had a look. "I think it is Ash that has to get a scrub!" she said.'],
-  art: { set: 'yard', items: [['tub', 260, { bubbles: true }], ['dog', 260, { colour: '#7a5a3e', y: 22 }], ['kid', 360, { skin: 4, hair: 'curly', top: '#8fb36a', bottom: '#4f6d8a', flip: true, mood: 'oh' }], ['adult', 450, { skin: 4, hair: 'scarf', scarf: '#c96a7a', top: '#4f7fa8', bottom: '#3f4a5a', flip: true }]] },
+  art: { set: 'yard', items: [['tub', 260, { bubbles: true }], ['dog', 260, { colour: '#7a5a3e', y: 22 }], ['kid', 360, { skin: 1, hairc: 'black', hair: 'curly', top: '#8fb36a', bottom: '#4f6d8a', flip: true, mood: 'oh' }], ['adult', 450, { skin: 1, hairc: 'black', hair: 'curly', top: '#4f7fa8', bottom: '#3f4a5a', flip: true }]] },
   qs: [
     { k: 'yn', q: 'Scruff ran in the mud.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Ash get wet?', opts: ['Scruff did a shrug.', 'Ash fell in the pond.'], a: 0, code: 'C3.2' },
@@ -2069,7 +2069,7 @@ Atlas.decodable.add({
     "Then a frog jumped up on the rock. Tam jumped as well. The cup tipped, and the milk spilled on Mom!",
     "Mom gasped. Then she grinned and dripped. Tam hugged Mom. The frog hopped off to the pond."
   ],
-  "art": { set: 'den', items: [['sun', 560, { y: 30 }], ['adult', 380, { skin: 2, hair: 'long', top: '#f1ece3', bottom: '#4f6d8a', mood: 'oh' }], ['kid', 470, { skin: 2, hair: 'short', top: '#c0473a', bottom: '#3f4a5a', flip: true, pose: 'hold' }], ['cup', 456, { colour: '#7aa5c4', y: 54 }], ['frog', 560, { flip: true }], ['jar', 300, { fill: '#f6f1e6' }]] },
+  "art": { set: 'den', items: [['sun', 560, { y: 30 }], ['adult', 380, { skin: 1, hairc: 'brown', hair: 'long', top: '#f1ece3', bottom: '#4f6d8a', mood: 'oh' }], ['kid', 470, { skin: 1, hairc: 'brown', hair: 'short', top: '#c0473a', bottom: '#3f4a5a', flip: true, pose: 'hold' }], ['cup', 456, { colour: '#7aa5c4', y: 54 }], ['frog', 560, { flip: true }], ['jar', 300, { fill: '#f6f1e6' }]] },
   "qs": [
     {
       "k": "choice",
@@ -2129,7 +2129,7 @@ Atlas.decodable.more('suffix-ed', {
     'Kim checked the shed and the van. Dad called, "Rex! Rex!" He checked the bed and the tub. No Rex. Kim felt sad.',
     'Then Kim spotted a lump in the big bag of mitts and hats. The lump jumped. Yip!',
     'It was Rex! He had crept in the bag, and he had napped there with the cat, Tab. Kim hugged Rex, and Dad grinned. "Well," said Dad, "that pup picked the best bed." Tab just blinked.'],
-  art: { set: 'bedroom', time: 'dusk', season: 'winter', items: [['adult', 180, { skin: 5, hair: 'short', beard: true, top: '#a54b3c', bottom: '#3f4a5a' }], ['bag', 320, { colour: '#4f7fa8', full: true, s: 1.6 }], ['dog', 330, { colour: '#c9a26b', y: 30, s: 0.8 }], ['cat', 400, { colour: '#7f7a74', asleep: true }], ['mitt', 260, { colour: '#c0473a' }], ['kid', 480, { skin: 5, hair: 'puffs', top: '#e2b84f', bottom: '#4f6d8a', flip: true, pose: 'hold' }]] },
+  art: { set: 'bedroom', time: 'dusk', season: 'winter', items: [['adult', 180, { skin: 0, hairc: 'blond', hair: 'short', beard: true, top: '#a54b3c', bottom: '#3f4a5a' }], ['bag', 320, { colour: '#4f7fa8', full: true, s: 1.6 }], ['dog', 330, { colour: '#c9a26b', y: 30, s: 0.8 }], ['cat', 400, { colour: '#7f7a74', asleep: true }], ['mitt', 260, { colour: '#c0473a' }], ['kid', 480, { skin: 0, hairc: 'blond', hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', flip: true, pose: 'hold' }]] },
   qs: [
     { k: 'choice', q: 'Who was in the bag with Rex?', opts: ['Tab, the cat', 'a hen', 'Dad'], a: 0, code: 'C1.1' },
     { k: 'order', q: 'Put the story in order.', items: ['Kim checked the shed.', 'Kim spotted a lump in the bag.', 'Kim hugged Rex.'], show: [1, 2, 0], code: 'C3.3' },
@@ -2214,7 +2214,7 @@ Atlas.decodable.more('suffix-ing', {
     'Then the sled is zipping past the rocks. Tess is yelling. Gus is clinging to the sled.',
     'Bump! The sled hits a lump and tips. Tess and Gus land in a drift. Gus sits up. He is spitting frost and grinning.',
     '"Can we go again?" said Gus. Mother is standing at the top with hot milk in a jug.'],
-  art: { set: 'snow', season: 'winter', items: [['sun', 600, { y: 34 }], ['adult', 520, { skin: 3, hair: 'scarf', scarf: '#7a5c8c', coat: '#5f8f7a', bottom: '#3f4a5a', pose: 'hold', flip: true, s: 0.75, y: 30 }], ['sled', 320, { toboggan: true }], ['kid', 290, { skin: 3, hair: 'braids', hat: 'toque', hatc: '#e2b84f', coat: '#c0473a', bottom: '#3f4a5a', pose: 'wave', y: 10 }], ['kid', 350, { skin: 0, hair: 'short', hat: 'toque', hatc: '#4f7fa8', coat: '#8fb36a', bottom: '#4f6d8a', y: 10 }], ['rock', 460]] },
+  art: { set: 'snow', season: 'winter', items: [['sun', 600, { y: 34 }], ['adult', 520, { skin: 2, hair: 'curly', coat: '#5f8f7a', bottom: '#3f4a5a', pose: 'hold', flip: true, s: 0.75, y: 30 }], ['sled', 320, { toboggan: true }], ['kid', 290, { skin: 2, hair: 'braids', hat: 'toque', hatc: '#e2b84f', coat: '#c0473a', bottom: '#3f4a5a', pose: 'wave', y: 10 }], ['kid', 350, { skin: 1, hairc: 'brown', hair: 'short', hat: 'toque', hatc: '#4f7fa8', coat: '#8fb36a', bottom: '#4f6d8a', y: 10 }], ['rock', 460]] },
   qs: [
     { k: 'choice', q: 'What did the sled hit?', opts: ['a log', 'a lump', 'a dog'], a: 1, code: 'C1.1' },
     { k: 'order', q: 'Put the story in order.', items: ['Tess and Gus drag the sled up the hill.', 'The sled tips.', 'Gus wants to go again.'], show: [1, 2, 0], code: 'C3.3' },
@@ -3103,7 +3103,7 @@ Atlas.decodable.add({
     'Dad gets a box. Kirsten sets her soft shirt in it. They take the bird to the vet.',
     'The vet fixes the wing. In a month, the bird is better.',
     'Kirsten and Dad let it go in the park. First it chirps. Then it flaps, turns and lands on a birch. Kirsten is so happy.'],
-  art: { set: 'park', season: 'spring', items: [['birch', 610, { s: 0.9 }], ['bush', 520], ['adult', 230, { skin: 1, hair: 'short', hairc: 'brown', beard: true, top: '#4f6d8a', bottom: '#6b5a4a' }], ['kid', 320, { skin: 1, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#4f6d8a', mood: 'oh' }], ['box', 400, { open: true, colour: '#c9a46b' }], ['bird', 470, { stand: true, flip: true, y: 0 }]] },
+  art: { set: 'park', season: 'spring', items: [['birch', 610, { s: 0.9 }], ['bush', 520], ['adult', 230, { skin: 2, hair: 'short', hairc: 'brown', beard: true, top: '#4f6d8a', bottom: '#6b5a4a' }], ['kid', 320, { skin: 2, hair: 'long', hairc: 'blond', top: '#c96a7a', bottom: '#4f6d8a', mood: 'oh' }], ['box', 400, { open: true, colour: '#c9a46b' }], ['bird', 470, { stand: true, flip: true, y: 0 }]] },
   qs: [
     { k: 'yn', q: 'The bird has a hurt wing.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What did Kirsten put in the box?', opts: ['her shirt', 'a fern', 'a nut'], a: 0, code: 'C1.1' },
@@ -3134,7 +3134,7 @@ Atlas.decodable.more('er-ir-ur', {
     'Fern spots a burger box in the dirt. Bert gets a cup and a torn shirt. Fern picks up a sock under a fern.',
     'Then Bert slips in the mud. Splat! His pants are dirty. "I am a litter bug!" he said.',
     'At the end, the bags are full. Then Fern spots a fish in the water. It is a perch! "That fish is glad," said Bert. "Its river is not a mess."'],
-  art: { set: 'meadow', season: 'autumn', items: [['pond', 520, { s: 1.4 }], ['fish', 540, { jump: true, y: 18 }], ['bag', 150, { full: true, colour: '#4f7a5a' }], ['adult', 210, { skin: 4, hair: 'bald', beard: true, hairc: 'black', top: '#8fa9b9', bottom: '#4a4a4a' }], ['kid', 300, { skin: 4, hair: 'short', top: '#d9774b', bottom: '#6b4c35', pose: 'hold' }], ['kid', 380, { skin: 4, hair: 'puffs', top: '#8fb36a', bottom: '#4f6d8a', pose: 'wave' }]] },
+  art: { set: 'meadow', season: 'autumn', items: [['pond', 520, { s: 1.4 }], ['fish', 540, { jump: true, y: 18 }], ['bag', 150, { full: true, colour: '#4f7a5a' }], ['adult', 210, { skin: 1, hair: 'bald', beard: true, hairc: 'black', top: '#8fa9b9', bottom: '#4a4a4a' }], ['kid', 300, { skin: 1, hairc: 'blond', hair: 'short', top: '#d9774b', bottom: '#6b4c35', pose: 'hold' }], ['kid', 380, { skin: 1, hairc: 'brown', hair: 'curly', top: '#8fb36a', bottom: '#4f6d8a', pose: 'wave' }]] },
   qs: [
     { k: 'choice', q: 'What did Fern spot in the dirt?', opts: ['a burger box', 'a shirt', 'a sock'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Why is the fish glad?', opts: ['Its river is not a mess.', 'It has a burger.', 'Bert slips.'], a: 0, code: 'C3.2' },
@@ -3152,7 +3152,7 @@ Atlas.decodable.add({
     'First they stop at the hens and the pigs. Then they see a big black mare with long hair. The mare stares at Clare. Clare stares back.',
     'Next is a big ride. It spins and dips and zips. "I do not dare," says Clare. "It is a scare!" Gramps nods. "We can just look, then."',
     'Then Clare spots a stand with pears. Gramps gets a bag of pears. They sit on a bench and share them. "This is the best part of the fair," says Clare.'],
-  art: { set: 'farm', season: 'autumn', items: [['stall', 120], ['horse', 290, { colour: '#2f2a28', mane: '#1d1a18' }], ['kid', 410, { flip: true, skin: 0, hair: 'long', hairc: 'auburn', hat: 'cap', hatc: '#c0573e', top: '#e2b84f', bottom: '#4f6d8a' }], ['adult', 480, { flip: true, skin: 0, hair: 'short', hairc: 'grey', glasses: true, top: '#7a8f5a', bottom: '#5a4a3e' }], ['hen', 590, { flip: true }], ['pig', 640, { flip: true, s: 0.9 }]] },
+  art: { set: 'farm', season: 'autumn', items: [['stall', 120], ['horse', 290, { colour: '#2f2a28', mane: '#1d1a18' }], ['kid', 410, { flip: true, skin: 4, hair: 'long', hairc: 'auburn', hat: 'cap', hatc: '#c0573e', top: '#e2b84f', bottom: '#4f6d8a' }], ['adult', 480, { flip: true, skin: 4, hair: 'short', hairc: 'grey', glasses: true, top: '#7a8f5a', bottom: '#5a4a3e' }], ['hen', 590, { flip: true }], ['pig', 640, { flip: true, s: 0.9 }]] },
   qs: [
     { k: 'choice', q: 'What do Clare and Gramps share?', opts: ['pears', 'a hat', 'glasses'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Clare wants to go on the big ride.', a: false, code: 'C3.2' },
@@ -3168,7 +3168,7 @@ Atlas.decodable.more('air-are', {
     'Then, thump, thump! Blair sits up. The hair on her neck stands up. "Mom, is it a bear?"',
     'Mom gets the lamp. She and Blair look past the tent flap. A big hare sits on the grass. It stares at them. Then it hops off.',
     '"It was just a hare," says Mom. "Not a bear!" Blair grins. "That was a big scare from a hare." Then she curls up in bed.'],
-  art: { set: 'forest', time: 'night', items: [['moon', 590, { y: 40 }], ['stars', 300, { y: 30 }], ['tent', 220], ['kid', 320, { skin: 2, hair: 'braids', top: '#7aa5c4', bottom: '#5a4a6a', mood: 'oh' }], ['adult', 380, { skin: 2, hair: 'bun', hairc: 'black', top: '#c96a7a', bottom: '#3b3f4a', pose: 'hold' }], ['rabbit', 510, { flip: true, colour: '#a08a6e' }]] },
+  art: { set: 'forest', time: 'night', items: [['moon', 590, { y: 40 }], ['stars', 300, { y: 30 }], ['tent', 220], ['kid', 320, { skin: 1, hairc: 'black', hair: 'braids', top: '#7aa5c4', bottom: '#5a4a6a', mood: 'oh' }], ['adult', 380, { skin: 1, hair: 'bun', hairc: 'black', top: '#c96a7a', bottom: '#3b3f4a', pose: 'hold' }], ['rabbit', 510, { flip: true, colour: '#a08a6e' }]] },
   qs: [
     { k: 'yn', q: 'It was a bear.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why does Blair sit up?', opts: ['There is a thump.', 'It is time to go.', 'Mom yells.'], a: 0, code: 'C3.2' },
@@ -3217,7 +3217,7 @@ Atlas.decodable.more('ai-ay', {
     'Gail stops. On a rock by the trail, there is a snail. It slides on the rock and makes a shiny trail.',
     '"Can I take it home?" asks Gail. "It can live in a tray." Dad is not sure. "A snail is happy here. It has rain, plants and shade. In a tray, it may be sad."',
     'Gail sets the snail on a wet fern by the trail. "Stay here, Snail. This is your home." On the way back, Gail spots six more snails. "Hi, snails!" she said. "I hope you have a nice day."'],
-  art: { set: 'lake', time: 'grey', season: 'spring', items: [['cloud', 520, { y: 40 }], ['adult', 210, { skin: 1, hair: 'short', hairc: 'red', beard: true, coat: '#4f7a5a', bottom: '#4a4a4a' }], ['kid', 300, { skin: 1, hair: 'curly', hairc: 'auburn', coat: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['rock', 400], ['snail', 400, { y: 22 }], ['bush', 520]] },
+  art: { set: 'lake', time: 'grey', season: 'spring', items: [['cloud', 520, { y: 40 }], ['adult', 210, { skin: 0, hair: 'short', hairc: 'red', beard: true, coat: '#4f7a5a', bottom: '#4a4a4a' }], ['kid', 300, { skin: 0, hair: 'curly', hairc: 'auburn', coat: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['rock', 400], ['snail', 400, { y: 22 }], ['bush', 520]] },
   qs: [
     { k: 'yn', q: 'Gail takes the snail home.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why is the snail happy by the trail?', opts: ['It has rain, plants and shade.', 'It has a tray.', 'It has clay.'], a: 0, code: 'C3.2' },
@@ -3250,7 +3250,7 @@ Atlas.decodable.add({
     'Lee wants to creep up and pet it. "Keep back," said Gran. "A seal needs space. This is its home. We can see it from here."',
     'So Lee and Gran sit on a log and eat a snack. They munch bread and jam and keep still.',
     'Then the seal lifts its head. It slips in the sea with a big splash. Lee waves. "See you, Seal!" The seal\'s sleek head pops up. Then it is gone.'],
-  art: { set: 'shore', items: [['sun', 610, { y: 36 }], ['birds', 380, { y: 46 }], ['adult', 160, { skin: 2, hair: 'bun', hairc: 'grey', top: '#7aa5c4', bottom: '#5a4a3e' }], ['log', 260], ['jam', 260, { y: 18 }], ['kid', 340, { skin: 2, hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['rock', 510, { s: 1.4 }]] },
+  art: { set: 'shore', items: [['sun', 610, { y: 36 }], ['birds', 380, { y: 46 }], ['adult', 160, { skin: 1, hair: 'bun', hairc: 'grey', top: '#7aa5c4', bottom: '#5a4a3e' }], ['log', 260], ['jam', 260, { y: 18 }], ['kid', 340, { skin: 1, hairc: 'blond', hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['rock', 510, { s: 1.4 }]] },
   qs: [
     { k: 'yn', q: 'The seal is asleep on a rock.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Gran say, "Keep back"?', opts: ['The seal needs space.', 'The rock is hot.', 'It is late.'], a: 0, code: 'C3.2' },
@@ -3333,7 +3333,7 @@ Atlas.decodable.more('ea-bread', {
     'Deb and Sam rushed to get the hens in the barn. At last, the hens were in, and Deb had to stop and catch her breath.',
     'Then the rain came in sheets. The family got in just in time.',
     'Instead of a picnic by the pond, they had a picnic on the rug. Dad made steak on the stove, and Sam spread jam on the bread. "This is a great picnic," said Sam. "The best one," said Deb.'],
-  art: { set: 'farm', time: 'grey', items: [['rainfall', 350], ['cloud', 160, { y: 30 }], ['kid', 180, { skin: 0, hair: 'long', hairc: 'red', coat: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['kid', 260, { skin: 0, hair: 'short', hairc: 'red', coat: '#3f5a7a', bottom: '#6b5a4a' }], ['hen', 340], ['hen', 380, { colour: '#f3e8d6' }], ['hen', 420]] },
+  art: { set: 'farm', time: 'grey', items: [['rainfall', 350], ['cloud', 160, { y: 30 }], ['kid', 180, { skin: 2, hair: 'long', hairc: 'red', coat: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['kid', 260, { skin: 2, hair: 'short', hairc: 'red', coat: '#3f5a7a', bottom: '#6b5a4a' }], ['hen', 340], ['hen', 380, { colour: '#f3e8d6' }], ['hen', 420]] },
   qs: [
     { k: 'yn', q: 'They had the picnic by the pond.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Which is the best name for this story?', opts: ['A Picnic in a Storm', 'The Lost Hen', 'A Trip to the Beach'], a: 0, code: 'C2.6' },
@@ -3349,7 +3349,7 @@ Atlas.decodable.add({
     'Joan put on her coat and her toque. She got her sled and her goat, Flo. Flo can pull a sled! They went slow up the road, and the snow did blow.',
     'At the end of the road, they met Gran. Gran had a bowl of oats and a loaf of bannock. Flo ate the oats. Then Flo ate the soap by the sink!',
     '"Flo, soap is not a snack!" said Joan. Gran grinned. Then they all sat by the stove, and Joan got the snow off her toes.'],
-  art: { set: 'snow', time: 'grey', items: [['snowfall', 350], ['house', 590, { s: 0.8 }], ['sled', 210], ['goat', 300], ['kid', 400, { flip: true, skin: 2, hair: 'long', coat: '#b2493a', bottom: '#3b3f4a', hat: 'toque', hatc: '#e2b84f', pose: 'wave' }]] },
+  art: { set: 'snow', time: 'grey', items: [['snowfall', 350], ['house', 590, { s: 0.8 }], ['sled', 210], ['goat', 300], ['kid', 400, { flip: true, skin: 0, hairc: 'blond', hair: 'long', coat: '#b2493a', bottom: '#3b3f4a', hat: 'toque', hatc: '#e2b84f', pose: 'wave' }]] },
   qs: [
     { k: 'yn', q: 'Flo is a goat.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What did Flo eat by the sink?', opts: ['soap', 'a coat', 'a boat'], a: 0, code: 'C1.1' },
@@ -3365,7 +3365,7 @@ Atlas.decodable.more('oa-ow', {
     '"Stop!" said Rowan. "Toads!" There are toads on the road. Lots of toads! They hop from the grass to the pond to lay eggs.',
     'Mom stops the car. She puts on her coat, and Rowan gets a pail. They pick up the toads one by one and carry them in the pail. The toads are bumpy and wet. One toad is so big it fills Rowan\'s hand. "Hello, Toad," he said.',
     'They let the toads go by the pond. Croak, croak! Then Mom and Rowan go home. They go slow and look for toads all the way.'],
-  art: { set: 'meadow', time: 'dusk', season: 'spring', items: [['rainfall', 350], ['car', 130, { colour: '#4f7aa5' }], ['adult', 250, { skin: 1, hair: 'long', hairc: 'brown', coat: '#c0573e', bottom: '#3b3f4a' }], ['kid', 320, { skin: 1, hair: 'short', hairc: 'brown', coat: '#e2b84f', bottom: '#4f6d8a', pose: 'hold' }], ['frog', 390, { colour: '#8a7a4a' }], ['frog', 430, { colour: '#7a6a3e', s: 0.8 }], ['pond', 550]] },
+  art: { set: 'meadow', time: 'dusk', season: 'spring', items: [['rainfall', 350], ['car', 130, { colour: '#4f7aa5' }], ['adult', 250, { skin: 5, hair: 'long', hairc: 'brown', coat: '#c0573e', bottom: '#3b3f4a' }], ['kid', 320, { skin: 5, hair: 'short', hairc: 'brown', coat: '#e2b84f', bottom: '#4f6d8a', pose: 'hold' }], ['frog', 390, { colour: '#8a7a4a' }], ['frog', 430, { colour: '#7a6a3e', s: 0.8 }], ['pond', 550]] },
   qs: [
     { k: 'yn', q: 'Rowan and Mom help the toads.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Mom stop the car?', opts: ['Toads are on the road.', 'It is late.', 'Rowan is sad.'], a: 0, code: 'C3.2' },
@@ -3381,7 +3381,7 @@ Atlas.decodable.more('oa-ow', {
     '"Oh no!" said Owen. Gran has one oar. She rows, but the boat just spins. A gust starts to blow. The boat drifts. Gran groans.',
     'Then Owen spots the oar. It is stuck in the reeds by the shore. "Gran, row on this side, then on that side," he said. The boat creeps up to the reeds. Owen grabs the oar.',
     'At last they float back to the dock, where Mom waits. "What a show!" she jokes. Gran grins. "Owen is the captain of this boat."'],
-  art: { set: 'lake', time: 'dusk', items: [['sun', 120, { y: 70 }], ['kid', 300, { y: 34, skin: 5, hair: 'short', top: '#e2b84f', mood: 'oh' }], ['adult', 380, { y: 24, flip: true, skin: 5, hair: 'curly', hairc: 'grey', top: '#4f7a5a' }], ['canoe', 340, { y: 30, water: true, paddle: false }], ['bush', 600, { y: 6 }]] },
+  art: { set: 'lake', time: 'dusk', items: [['sun', 120, { y: 70 }], ['kid', 300, { y: 34, skin: 1, hairc: 'brown', hair: 'short', top: '#e2b84f', mood: 'oh' }], ['adult', 380, { y: 24, flip: true, skin: 1, hair: 'curly', hairc: 'grey', top: '#4f7a5a' }], ['canoe', 340, { y: 30, water: true, paddle: false }], ['bush', 600, { y: 6 }]] },
   qs: [
     { k: 'yn', q: 'Gran drops an oar.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did the boat spin?', opts: ['Gran has one oar.', 'Owen tips it.', 'A heron bumps it.'], a: 0, code: 'C3.2' },
@@ -3397,7 +3397,7 @@ Atlas.decodable.add({
     'The sky was bright! Green and pink light swept high over the trees. It went this way and that way. Ben ran to Mom. "Mom, the sky is lit up!" he cried.',
     'Mom smiled. "That is the Northern Lights," she said. "My granny said the lights are a gift. We do not yell at them. We just sit and look."',
     'So they sat on the deck, tight in a quilt, with hot tea and a slice of pie. What a sight! At last the light got dim, and Ben got sleepy. "Night, night, lights," he said.'],
-  art: { set: 'snow', time: 'night', items: [['aurora', 350, { y: 50 }], ['stars', 200, { y: 26 }], ['house', 570], ['adult', 280, { skin: 1, hair: 'long', hairc: 'black', coat: '#7a5c8c', bottom: '#3b3f4a', pose: 'hold' }], ['kid', 360, { flip: true, skin: 1, hair: 'short', coat: '#3f5a7a', bottom: '#4f6d8a', mood: 'oh', pose: 'wave' }]] },
+  art: { set: 'snow', time: 'night', items: [['aurora', 350, { y: 50 }], ['stars', 200, { y: 26 }], ['house', 570], ['adult', 280, { skin: 4, hair: 'long', hairc: 'black', coat: '#7a5c8c', bottom: '#3b3f4a', pose: 'hold' }], ['kid', 360, { flip: true, skin: 4, hair: 'short', coat: '#3f5a7a', bottom: '#4f6d8a', mood: 'oh', pose: 'wave' }]] },
   qs: [
     { k: 'choice', q: 'What did Ben see in the sky?', opts: ['bright lights', 'a kite', 'rain'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'How did Ben feel at the end?', opts: ['sleepy', 'mad', 'sad'], a: 0, code: 'C3.2' },
@@ -3413,7 +3413,7 @@ Atlas.decodable.more('igh-ie', {
     'This day, a thick fog rolls in. Ivy cannot see the sea. "How will Mom see the dock?" she asks Grandpa.',
     '"We need a light," said Grandpa, "and it must be bright." They go to the shed by the dock. In it is a big lamp on a high pole. Grandpa sets it up, and Ivy flips the switch. A bright light shines in the fog.',
     'They wait. Ivy sighs. A boat glides up to the dock. It is Mom! "I spotted your light," Mom said. "It was the right sight on a foggy day." Ivy hugs her tight.'],
-  art: { set: 'shore', time: 'grey', items: [['cloud', 200, { y: 40 }], ['cloud', 470, { y: 30 }], ['ship', 560, { y: 46, s: 0.8 }], ['lamp', 150, { lit: true, s: 1.4 }], ['adult', 230, { skin: 0, hair: 'short', hairc: 'grey', beard: true, coat: '#e2b84f', bottom: '#3b3f4a' }], ['kid', 320, { skin: 0, hair: 'long', hairc: 'red', coat: '#c0573e', bottom: '#4f6d8a', pose: 'wave' }]] },
+  art: { set: 'shore', time: 'grey', items: [['cloud', 200, { y: 40 }], ['cloud', 470, { y: 30 }], ['ship', 560, { y: 46, s: 0.8 }], ['lamp', 150, { lit: true, s: 1.4 }], ['adult', 230, { skin: 4, hair: 'short', hairc: 'grey', beard: true, coat: '#e2b84f', bottom: '#3b3f4a' }], ['kid', 320, { skin: 4, hair: 'long', hairc: 'red', coat: '#c0573e', bottom: '#4f6d8a', pose: 'wave' }]] },
   qs: [
     { k: 'yn', q: 'Mom fishes in a boat.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did Ivy and Grandpa need a light?', opts: ['so Mom can see the dock', 'to read', 'to get warm'], a: 0, code: 'C3.2' },
@@ -3445,7 +3445,7 @@ Atlas.decodable.add({
     'Zoe had soup in a cup and a spoon for lunch. Then a loon swam up to the dock. It had a black head and a white neck. It did not swim off. It just sat and looked at the soup.',
     '"Too bad, loon," said Zoe. "Soup is food for me. You can dive and get a fish!" The loon gave a long, low hoot, and then it was gone, down under the water.',
     'Soon it came up with a fish in its beak. Zoe grinned. "You see? Fish is food for you." That night, under the moon, the loon called from the lake, and Zoe smiled in her room.'],
-  art: { set: 'lake', items: [['sun', 600, { y: 36 }], ['dock', 200, { y: 34 }], ['adult', 150, { y: 30, skin: 5, hair: 'curly', hairc: 'grey', top: '#7aa5c4', bottom: '#5a4a3e' }], ['kid', 240, { y: 30, skin: 5, hair: 'puffs', top: '#e2b84f', bottom: '#c0573e', pose: 'hold' }], ['cup', 268, { y: 30, hot: true }], ['loon', 420, { y: 44, flip: true }]] },
+  art: { set: 'lake', items: [['sun', 600, { y: 36 }], ['dock', 200, { y: 34 }], ['adult', 150, { y: 30, skin: 1, hair: 'curly', hairc: 'grey', top: '#7aa5c4', bottom: '#5a4a3e' }], ['kid', 240, { y: 30, skin: 1, hairc: 'auburn', hair: 'curly', top: '#e2b84f', bottom: '#c0573e', pose: 'hold' }], ['cup', 268, { y: 30, hot: true }], ['loon', 420, { y: 44, flip: true }]] },
   qs: [
     { k: 'yn', q: 'The loon ate the soup.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why did the loon dive?', opts: ['to get food', 'to see the moon', 'to swim to Zoe'], a: 0, code: 'C3.2' },
@@ -3524,7 +3524,7 @@ Atlas.decodable.more('oo-book', {
     'Nora looked at the pages. "Can we cook this?" she asked. It was a pot pie with chicken and carrots. "Good pick," said Dad.',
     'Nora put on an apron and stood on a stool by the stove. She mixed the crust and pressed it in the pan. Dad cut up the chicken and the carrots. Then he put wood in the stove.',
     'Then they waited. The kitchen smelled so good! At last, Dad took the pie from the stove. Nora took a look. The top was crisp and brown. "This is the best pie in the book," said Nora. Dad shook his head. "No," he said. "It is the best pie in Winnipeg."'],
-  art: { set: 'kitchen', season: 'winter', items: [['stove', 170], ['pot', 170, { y: 71, steam: true }], ['adult', 270, { flip: true, skin: 4, hair: 'short', top: '#e9e1cf', bottom: '#4f6d8a' }], ['table', 420], ['book', 400, { y: 55, open: true, colour: '#c0573e' }], ['kid', 500, { flip: true, skin: 4, hair: 'puffs', top: '#e2b84f', bottom: '#5a4a6a', pose: 'hold' }]] },
+  art: { set: 'kitchen', season: 'winter', items: [['stove', 170], ['pot', 170, { y: 71, steam: true }], ['adult', 270, { flip: true, skin: 0, hairc: 'auburn', hair: 'short', top: '#e9e1cf', bottom: '#4f6d8a' }], ['table', 420], ['book', 400, { y: 55, open: true, colour: '#c0573e' }], ['kid', 500, { flip: true, skin: 0, hairc: 'auburn', hair: 'curly', top: '#e2b84f', bottom: '#5a4a6a', pose: 'hold' }]] },
   qs: [
     { k: 'choice', q: 'Which is the best name for the story?', opts: ['Cooking with Dad', 'A Trip to the Farm', 'The Lost Book'], a: 0, code: 'C2.6' },
     { k: 'yn', q: 'Nora stood on a stool.', a: true, code: 'C1.1' },
@@ -3571,7 +3571,7 @@ Atlas.decodable.more('ou-ow', {
     'Grandpa showed her an inuksuk on a hill. It was made of big, flat rocks. "People made it long ago," he said. "It tells us which way to go."',
     'In the afternoon, a thick cloud came down all around them. Leah could not see the town. All the ground was white. "Do not shout, and do not run," said Grandpa. "We wait."',
     'Soon the cloud lifted a bit. Leah spotted a dark shape on a hill. "The inuksuk!" They went to it, and from there Grandpa found the trail back to town. That night, Leah made a small inuksuk out of stones by the door. Grandpa was proud of her. "You found the way," he said.'],
-  art: { set: 'meadow', time: 'grey', season: 'winter', items: [['cloud', 300, { y: 40 }], ['cloud', 560, { y: 26 }], ['sled', 120, { toboggan: true }], ['adult', 230, { skin: 2, hair: 'short', hairc: 'grey', coat: '#7d2f27', bottom: '#3b3f4a', hat: 'toque', hatc: '#3f5a7a' }], ['kid', 310, { skin: 2, hair: 'braids', coat: '#4f7aa5', bottom: '#3b3f4a', hat: 'toque', hatc: '#e2b84f', pose: 'wave' }], ['inuksuk', 470, { s: 1.3 }]] },
+  art: { set: 'meadow', time: 'grey', season: 'winter', items: [['cloud', 300, { y: 40 }], ['cloud', 560, { y: 26 }], ['sled', 120, { toboggan: true }], ['adult', 230, { skin: 0, hair: 'short', hairc: 'grey', coat: '#7d2f27', bottom: '#3b3f4a', hat: 'toque', hatc: '#3f5a7a' }], ['kid', 310, { skin: 0, hairc: 'auburn', hair: 'braids', coat: '#4f7aa5', bottom: '#3b3f4a', hat: 'toque', hatc: '#e2b84f', pose: 'wave' }], ['inuksuk', 470, { s: 1.3 }]] },
   qs: [
     { k: 'yn', q: 'Leah and Grandpa ran in the cloud.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'What is the story about?', opts: ['getting back to town', 'a trip to the zoo', 'a lost dog'], a: 0, code: 'C2.6' },
@@ -3587,7 +3587,7 @@ Atlas.decodable.add({
     'Roy dug and dug. Then his spade hit a thing with a clink. He pointed. "Dad, look! A coin!" The coin was small and dirty.',
     'Dad rubbed it with a bit of oil and some foil. Then they could see a loon on it. "It is a loonie!" said Dad. "It is a coin from Canada." Roy was full of joy.',
     'Roy did not spend it. He made a slot in a jar lid and dropped the loonie in. "My first coin," he said. Joy had to laugh. "Now go and plant the beans, boy!"'],
-  art: { set: 'yard', season: 'spring', items: [['sun', 620, { y: 30 }], ['plant', 120], ['adult', 200, { skin: 4, hair: 'short', top: '#7aa5c4', bottom: '#5a4a3e', beard: true }], ['kid', 280, { skin: 4, hair: 'short', top: '#d9774b', bottom: '#4f6d8a', pose: 'hold', mood: 'oh' }], ['coin', 318, { s: 1.8 }], ['kid', 370, { flip: true, skin: 4, hair: 'braids', top: '#8fb36a', bottom: '#5a4a6a' }]] },
+  art: { set: 'yard', season: 'spring', items: [['sun', 620, { y: 30 }], ['plant', 120], ['adult', 200, { skin: 1, hairc: 'red', hair: 'short', top: '#7aa5c4', bottom: '#5a4a3e', beard: true }], ['kid', 280, { skin: 1, hairc: 'auburn', hair: 'short', top: '#d9774b', bottom: '#4f6d8a', pose: 'hold', mood: 'oh' }], ['coin', 318, { s: 1.8 }], ['kid', 370, { flip: true, skin: 1, hairc: 'blond', hair: 'braids', top: '#8fb36a', bottom: '#5a4a6a' }]] },
   qs: [
     { k: 'choice', q: 'What did Roy dig up in the soil?', opts: ['a coin', 'a toy', 'a bean'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'How did Roy feel when he found the coin?', opts: ['glad', 'sad', 'mad'], a: 0, code: 'C3.2' },
@@ -3603,7 +3603,7 @@ Atlas.decodable.more('oi-oy', {
     'They went down to the creek to test it. Troy set the boat on the water, and it went! "It floats!" he said with joy. Joyce pointed. "Look, it is going fast!"',
     'The boat went faster and faster. Then it hit a rock and tipped. Troy let out a yell. "Oh no! My toy!"',
     'Just then their dog, Roy, jumped in. He swam to the boat and came back with it in his mouth. The foil sail was a bit bent, but the boat was fine. Troy hugged the wet dog. "Good boy, Roy!" he said. "You can be the captain."'],
-  art: { set: 'meadow', season: 'autumn', items: [['kid', 170, { skin: 0, hair: 'short', hairc: 'blond', top: '#c0573e', bottom: '#4f6d8a', pose: 'wave', mood: 'oh' }], ['kid', 240, { skin: 0, hair: 'bun', hairc: 'blond', top: '#7a5c8c', bottom: '#3b3f4a' }], ['pond', 440, { s: 1.5 }], ['ship', 470, { s: 0.3, y: 8 }], ['dog', 390, { flip: true }], ['rock', 560, { s: 0.7, y: 6 }]] },
+  art: { set: 'meadow', season: 'autumn', items: [['kid', 170, { skin: 2, hair: 'short', hairc: 'blond', top: '#c0573e', bottom: '#4f6d8a', pose: 'wave', mood: 'oh' }], ['kid', 240, { skin: 2, hair: 'bun', hairc: 'blond', top: '#7a5c8c', bottom: '#3b3f4a' }], ['pond', 440, { s: 1.5 }], ['ship', 470, { s: 0.3, y: 8 }], ['dog', 390, { flip: true }], ['rock', 560, { s: 0.7, y: 6 }]] },
   qs: [
     { k: 'yn', q: 'The sail was made of foil.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'How did Troy feel when the boat tipped?', opts: ['upset', 'glad', 'sleepy'], a: 0, code: 'C3.2' },
@@ -3634,7 +3634,7 @@ Atlas.decodable.add({
     'Paul likes to draw. He made a hawk in the sky with long wings and sharp claws. Then he made a green lawn and a red barn. It took him a long time.',
     'Then Paul\'s pup, Shawn, ran up. Shawn did not see the chalk. His paws went all over the hawk! Paul saw the mess. "Shawn! Look at my hawk!"',
     'Shawn sat down and held up a paw. It was green and red with chalk. Paul had to laugh. It was not Shawn\'s fault. So Paul made one more thing: a pup with chalk paws, next to the hawk.'],
-  art: { set: 'town', time: 'dusk', items: [['bird', 500, { y: 40 }], ['box', 220, { open: true, colour: '#7aa5c4' }], ['kid', 310, { skin: 1, hair: 'short', hairc: 'auburn', top: '#4f7a5a', bottom: '#4f6d8a', mood: 'oh' }], ['pup', 410, { flip: true }]] },
+  art: { set: 'town', time: 'dusk', items: [['bird', 500, { y: 40 }], ['box', 220, { open: true, colour: '#7aa5c4' }], ['kid', 310, { skin: 0, hair: 'short', hairc: 'auburn', top: '#4f7a5a', bottom: '#4f6d8a', mood: 'oh' }], ['pup', 410, { flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Paul draw with?', opts: ['chalk', 'a pen', 'paint'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Paul was mad at Shawn at the end.', a: false, code: 'C3.2' },
@@ -3650,7 +3650,7 @@ Atlas.decodable.more('au-aw', {
     'There was a fawn on the lawn! It had long legs and white spots on its back. Its mom was by the trees, eating the grass.',
     'Maddie wanted to go out and pet it, but Dad said, "No. We stay in and watch. If we go out, the doe will run." So Maddie sat still by the glass and did a drawing of the fawn in her book.',
     'Then a crow cawed in a tree. The doe and the fawn ran off to the woods. Maddie was sad, but she still had her drawing. "You saw them," said Dad, "and you did not scare them."'],
-  art: { set: 'yard', items: [['bird', 300, { y: 30 }], ['deer', 150, { colour: '#a8744a', s: 0.85, y: 10 }], ['deer', 320, { fawn: true, s: 0.75 }], ['kid', 550, { flip: true, skin: 2, hair: 'curly', hairc: 'black', top: '#e9a3b4', bottom: '#4f6d8a', pose: 'hold' }], ['book', 580, { open: true, y: 52 }]] },
+  art: { set: 'yard', items: [['bird', 300, { y: 30 }], ['deer', 150, { colour: '#a8744a', s: 0.85, y: 10 }], ['deer', 320, { fawn: true, s: 0.75 }], ['kid', 550, { flip: true, skin: 0, hair: 'curly', hairc: 'black', top: '#e9a3b4', bottom: '#4f6d8a', pose: 'hold' }], ['book', 580, { open: true, y: 52 }]] },
   qs: [
     { k: 'choice', q: 'When did Maddie get up?', opts: ['at dawn', 'at lunch', 'at night'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Dad wanted to scare the fawn.', a: false, code: 'C3.2' },
@@ -3665,7 +3665,7 @@ Atlas.decodable.more('au-aw', {
     'Paula and her grandpa had a big job. They had to haul the dock out of the lake before the ice came. Grandpa pulled on the rope, and Paula pushed. It was hard work.',
     'Halfway, they stopped to rest. Paula saw a hawk up in the sky. It dived down to the lake and came up with a fish in its claws! "Awesome," said Paula.',
     'Then they got back to work. At last, the dock was up on the grass, and the job was done. Paula\'s arms were sore, and she gave a big yawn. Grandpa put a hot drink in her hands. "Next spring, we launch the dock again," he said. "And we will look for that hawk."'],
-  art: { set: 'lake', season: 'autumn', items: [['bird', 470, { y: 34 }], ['maple', 80], ['kid', 180, { skin: 4, hair: 'puffs', coat: '#c0573e', bottom: '#4f6d8a' }], ['dock', 330, { s: 0.9 }], ['rope', 460], ['adult', 510, { flip: true, skin: 4, hair: 'short', hairc: 'grey', beard: true, coat: '#4f7a5a', bottom: '#3b3f4a', pose: 'hold' }]] },
+  art: { set: 'lake', season: 'autumn', items: [['bird', 470, { y: 34 }], ['maple', 80], ['kid', 180, { skin: 0, hairc: 'brown', hair: 'curly', coat: '#c0573e', bottom: '#4f6d8a' }], ['dock', 330, { s: 0.9 }], ['rope', 460], ['adult', 510, { flip: true, skin: 0, hair: 'short', hairc: 'grey', beard: true, coat: '#4f7a5a', bottom: '#3b3f4a', pose: 'hold' }]] },
   qs: [
     { k: 'write', q: 'Why did Paula and Grandpa haul out the dock?', a: 'So the ice would not hurt it in the winter (the ice was coming).', code: 'C3.2' },
     { k: 'yn', q: 'Paula saw a hawk with a fish.', a: true, code: 'C1.1' },
@@ -3681,7 +3681,7 @@ Atlas.decodable.add({
     'One day, after skating at the rink, Sue had just one mitt. "No!" she said. "I lose things all the time." Her brother Drew said, "We need a clue."',
     'They went back to the rink. Snow blew over the ice. Drew found a few tracks in the snow. Then Sue saw a bit of blue by the bench. A dog had her mitt, and it was chewing on it!',
     'Sue threw a stick. The dog let go of the mitt and ran off with the stick. The mitt was wet, but it was still Sue\'s mitt. "Whose dog is that?" asked Drew. "I am not sure," said Sue, "but it likes new mitts!"'],
-  art: { set: 'park', season: 'winter', items: [['snowfall', 350], ['bench', 180], ['kid', 290, { skin: 2, hair: 'long', coat: '#4f7aa5', bottom: '#3b3f4a', hat: 'toque', hatc: '#4f7aa5', mood: 'oh' }], ['kid', 360, { skin: 2, hair: 'short', coat: '#d9774b', bottom: '#3b3f4a', hat: 'cap' }], ['dog', 470, { flip: true, colour: '#8a5a3e' }], ['mitt', 440, { colour: '#4f7aa5' }]] },
+  art: { set: 'park', season: 'winter', items: [['snowfall', 350], ['bench', 180], ['kid', 290, { skin: 0, hairc: 'black', hair: 'long', coat: '#4f7aa5', bottom: '#3b3f4a', hat: 'toque', hatc: '#4f7aa5', mood: 'oh' }], ['kid', 360, { skin: 0, hairc: 'black', hair: 'short', coat: '#d9774b', bottom: '#3b3f4a', hat: 'cap' }], ['dog', 470, { flip: true, colour: '#8a5a3e' }], ['mitt', 440, { colour: '#4f7aa5' }]] },
   qs: [
     { k: 'yn', q: 'Sue had new red mitts.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Who had the blue mitt?', opts: ['a dog', 'a cat', 'Drew'], a: 0, code: 'C1.1' },
@@ -3712,7 +3712,7 @@ Atlas.decodable.more('ew-ue', {
     'Who was eating them? "We need a clue," said his mom. The next morning, Matthew went out early. The grass was wet with dew, and there were small tracks in the dew under the feeder.',
     'Then he found a blue feather on the deck. "A blue jay! That is one clue," he said. But the tracks were not bird tracks. They had five toes.',
     'Matthew sat by the glass door and waited. A blue jay flew in and ate a few seeds. Then a squirrel ran up the pole and chewed and chewed. It was true: there were two seed robbers! Matthew grinned. "Now I need a feeder a squirrel cannot get to!"'],
-  art: { set: 'meadow', season: 'spring', items: [['spruce', 160], ['bird', 175, { perch: true, y: 120, s: 1.5, colour: '#4f7aa5' }], ['house', 610, { s: 0.7, y: 14 }], ['squirrel', 300], ['kid', 440, { flip: true, skin: 3, hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }]] },
+  art: { set: 'meadow', season: 'spring', items: [['spruce', 160], ['bird', 175, { perch: true, y: 120, s: 1.5, colour: '#4f7aa5' }], ['house', 610, { s: 0.7, y: 14 }], ['squirrel', 300], ['kid', 440, { flip: true, skin: 1, hairc: 'auburn', hair: 'curly', top: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }]] },
   qs: [
     { k: 'yn', q: 'Matthew found a red feather.', a: false, code: 'C1.1' },
     { k: 'write', q: 'Who was eating the seeds?', a: 'A blue jay and a squirrel.', code: 'C3.2' },
@@ -3728,7 +3728,7 @@ Atlas.decodable.add({
     'In one puddle, Sam saw a little turtle. It had a dark shell with yellow lines on it. "It is in trouble," said Sam. "It is too far from the pond."',
     'Lucy did not grab it. She held the turtle by the sides of its shell. She set it down by the pond. The turtle sat. Then it gave a little wiggle and slid in.',
     'Sam began to giggle. A line of little bubbles came up, and then the pond was still. At home, Lucy and Sam sat at the table with apple slices and drew the little turtle.'],
-  art: { set: 'park', time: 'grey', season: 'spring', items: [['cloud', 200, { y: 36 }], ['kid', 220, { skin: 5, hair: 'braids', coat: '#e2b84f', bottom: '#4f6d8a' }], ['kid', 290, { skin: 5, hair: 'short', coat: '#c0573e', bottom: '#3b3f4a', s: 0.85, mood: 'oh' }], ['turtle', 380], ['pond', 520]] },
+  art: { set: 'park', time: 'grey', season: 'spring', items: [['cloud', 200, { y: 36 }], ['kid', 220, { skin: 0, hairc: 'auburn', hair: 'braids', coat: '#e2b84f', bottom: '#4f6d8a' }], ['kid', 290, { skin: 0, hairc: 'brown', hair: 'short', coat: '#c0573e', bottom: '#3b3f4a', s: 0.85, mood: 'oh' }], ['turtle', 380], ['pond', 520]] },
   qs: [
     { k: 'choice', q: 'Where did Sam see the turtle?', opts: ['in a puddle', 'on a table', 'in a tree'], a: 0, code: 'C1.1' },
     { k: 'write', q: 'Why was the turtle in trouble?', a: 'It was in a puddle, too far from the pond.', code: 'C3.2' },
@@ -3744,7 +3744,7 @@ Atlas.decodable.more('cle', {
     'The sides were simple. The trees took a long time. At last there was just one little gap, in the middle of the turtle.',
     'But the last bit was not in the box. Mabel looked under the table. Her uncle looked by the candle. No puzzle bit!',
     'Then the cat, Pickle, got up from her nap on a chair. There was the little bit, stuck to her fur! Mabel began to giggle. She put it in the middle, and the puzzle was done.'],
-  art: { set: 'bedroom', time: 'grey', season: 'autumn', items: [['chair', 170], ['cat', 170, { y: 30, colour: '#e2b84f' }], ['table', 330], ['blocks', 330, { y: 55 }], ['kid', 410, { flip: true, skin: 3, hair: 'puffs', top: '#7a5c8c', bottom: '#4f6d8a', mood: 'oh' }], ['adult', 500, { flip: true, skin: 3, hair: 'short', beard: true, top: '#8fa9b9', bottom: '#4a4a4a' }]] },
+  art: { set: 'bedroom', time: 'grey', season: 'autumn', items: [['chair', 170], ['cat', 170, { y: 30, colour: '#e2b84f' }], ['table', 330], ['blocks', 330, { y: 55 }], ['kid', 410, { flip: true, skin: 2, hair: 'puffs', top: '#7a5c8c', bottom: '#4f6d8a', mood: 'oh' }], ['adult', 500, { flip: true, skin: 2, hair: 'short', beard: true, top: '#8fa9b9', bottom: '#4a4a4a' }]] },
   qs: [
     { k: 'yn', q: 'The last bit was in the box.', a: false, code: 'C1.1' },
     { k: 'order', items: ['Mabel and her uncle did the sides.', 'Mabel looked under the table.', 'Pickle got up from her nap.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' },
@@ -3806,7 +3806,7 @@ Atlas.decodable.more('kind-old', {
     'Emma\'s little brother Jack began to cry. Jack is just a small child, and he does not like storms. "Never mind," Emma told him. "I have a good game."',
     'Emma found a candle, and Mom lit it. Emma folded a scarf and put it on Jack as a blindfold. "Now hold out your hand," she said. "What is this?" Jack felt it. "A spoon!" "Yes! And this?" "An old sock!"',
     'They played the blindfold game till the storm was over. Then the lights came back on. "Emma, you are so kind," he said. "And you are a bold boy," she told him with a smile.'],
-  art: {set: 'bedroom', time: 'night', items: [['bed', 150], ['lamp', 250, {lit: true}], ['kid', 330, {skin: 2, hair: 'braids', top: '#8fb36a', pose: 'hold'}], ['kid', 420, {skin: 2, hair: 'curly', top: '#e2b84f', s: 0.82, flip: true, pose: 'hold'}], ['adult', 520, {skin: 2, hair: 'long', hairc: 'brown', top: '#7aa5c4', flip: true}]]},
+  art: {set: 'bedroom', time: 'night', items: [['bed', 150], ['lamp', 250, {lit: true}], ['kid', 330, {skin: 4, hair: 'braids', top: '#8fb36a', pose: 'hold'}], ['kid', 420, {skin: 4, hair: 'curly', top: '#e2b84f', s: 0.82, flip: true, pose: 'hold'}], ['adult', 520, {skin: 4, hair: 'long', hairc: 'brown', top: '#7aa5c4', flip: true}]]},
   qs: [
     { k: 'choice', q: 'What went off in the storm?', opts: ['the lights', 'the rain', 'the game'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Jack was a bold boy.', a: true, code: 'C3.2' },
@@ -3822,7 +3822,7 @@ Atlas.decodable.add({
     'One day, Granny was knitting a red toque for Dad. Kim tried to help, but the yarn got in a big knot. Kim pulled at it with her thumb. That was the wrong thing to do! The knot got bigger. "I do not know what to do," said Kim.',
     'Granny smiled. "The answer is to go slow," she said. She held up the knot and pulled one bit at a time, and the yarn came free.',
     'When the toque was done, Kim wrapped it and wrote a card. Then, knock, knock! Dad was home. He put on the toque. It fell down over his nose. "I love it," said Dad, "but I cannot see!"'],
-  art: {set: 'kitchen', time: 'grey', season: 'winter', items: [['rug', 330, {w: 260}], ['adult', 200, {skin: 1, hair: 'bun', hairc: 'grey', glasses: true, top: '#8f6aa8'}], ['basket', 275, {full: true, fill: '#c0573e'}], ['kid', 360, {skin: 1, hair: 'long', top: '#e2b84f', flip: true}], ['adult', 500, {skin: 1, hair: 'short', top: '#4f6d8a', hat: 'toque', hatc: '#c0573e', flip: true, mood: 'oh'}]]},
+  art: {set: 'kitchen', time: 'grey', season: 'winter', items: [['rug', 330, {w: 260}], ['adult', 200, {skin: 1, hair: 'bun', hairc: 'grey', glasses: true, top: '#8f6aa8'}], ['basket', 275, {full: true, fill: '#c0573e'}], ['kid', 360, {skin: 1, hairc: 'black', hair: 'long', top: '#e2b84f', flip: true}], ['adult', 500, {skin: 1, hairc: 'brown', hair: 'short', top: '#4f6d8a', hat: 'toque', hatc: '#c0573e', flip: true, mood: 'oh'}]]},
   qs: [
     { k: 'yn', q: 'Granny can knit.', a: true, code: 'C1.1' },
     { k: 'order', items: ['The yarn got in a knot.', 'Kim wrapped the toque.', 'Dad put on the toque.'], show: [1, 2, 0], q: 'Number the sentences in order.', code: 'C3.3' },
@@ -3853,7 +3853,7 @@ Atlas.decodable.more('silent', {
     'Nina ran in. "Dad, you cannot put on your boot! A wren is in it!" Dad knelt down to look. "You are not wrong," he said. "I know just what to do."',
     'Dad climbed up to the attic and got his other boots. Then Nina wrote a sign: DO NOT MOVE THIS BOOT. She stuck it by the step.',
     'Every day, Nina checked on the wren with her thumb on her lips, as still as she could be. In a few weeks, little wrens sat on the boot. Then they flew off, one by one. "You were a good friend to that wren," he said.'],
-  art: {set: 'yard', season: 'spring', items: [['sun', 120, {y: 36}], ['bush', 90], ['kid', 230, {skin: 5, hair: 'puffs', top: '#e9a3b4'}], ['nest', 320, {chicks: true, s: 1.4}], ['bird', 340, {stand: true, flip: true}], ['adult', 420, {skin: 5, hair: 'short', beard: true, top: '#8fb36a', flip: true}]]},
+  art: {set: 'yard', season: 'spring', items: [['sun', 120, {y: 36}], ['bush', 90], ['kid', 230, {skin: 0, hairc: 'blond', hair: 'curly', top: '#e9a3b4'}], ['nest', 320, {chicks: true, s: 1.4}], ['bird', 340, {stand: true, flip: true}], ['adult', 420, {skin: 0, hairc: 'brown', hair: 'short', beard: true, top: '#8fb36a', flip: true}]]},
   qs: [
     { k: 'yn', q: 'The wren made a nest in a hat.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'What is the story about?', opts: ['a wren with a nest in a boot', 'a trip to the lake', 'a lost lamb'], a: 0, code: 'C2.6' },
@@ -3916,7 +3916,7 @@ Atlas.decodable.add({
     'Tobin was the smallest kid there, but he was the most helpful. He dragged the hose slowly over the ice, and the ice got smoother and smoother. The women and men worked till late. It was the coldest and longest night of the year, but the rink was spotless.',
     'In the morning, the kids skated. Tobin was not the fastest skater, but he was the happiest. He skated slowly and smiled.',
     '"Thank you," his granny said softly. "You were very helpful. You may be small, but you are stronger than you think." Tobin felt thankful for his town and the best little rink in the country.'],
-  art: {set: 'town', time: 'night', season: 'winter', items: [['moon', 600, {y: 40}], ['stars', 350, {y: 50}], ['rink', 360], ['kid', 300, {skin: 3, hair: 'short', coat: '#c0573e', hat: 'toque', hatc: '#3f6f8a', s: 0.85, pose: 'hold'}], ['kid', 420, {skin: 3, hair: 'long', coat: '#7aa5c4', flip: true}], ['adult', 560, {skin: 3, hair: 'braids', hairc: 'grey', coat: '#7a5c8c', flip: true}]]},
+  art: {set: 'town', time: 'night', season: 'winter', items: [['moon', 600, {y: 40}], ['stars', 350, {y: 50}], ['rink', 360], ['kid', 300, {skin: 1, hairc: 'brown', hair: 'short', coat: '#c0573e', hat: 'toque', hatc: '#3f6f8a', s: 0.85, pose: 'hold'}], ['kid', 420, {skin: 1, hairc: 'red', hair: 'long', coat: '#7aa5c4', flip: true}], ['adult', 560, {skin: 1, hair: 'braids', hairc: 'grey', coat: '#7a5c8c', flip: true}]]},
   qs: [
     { k: 'yn', q: 'Tobin was the fastest skater.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'How did Tobin help?', opts: ['He dragged the hose.', 'He made a snowman.', 'He sold hot dogs.'], a: 0, code: 'C1.1' },
@@ -3932,7 +3932,7 @@ Atlas.decodable.more('suffix-more', {
     'There were two hills. One was small. The other was the steepest hill in town. "Let us go on the bigger one!" said Jonah. Ruth was careful. "It is too steep. Let us go slowly first."',
     'Jonah did not listen. He zoomed down the steep hill. He went faster and faster. Then he hit a bump and landed in a snowbank, sled and all!',
     'Ruth came down slowly and safely. She helped Jonah up. He had snow in his ears and in his boots. "You were right," he said sadly. "Slower is smarter." Then they both went back up the small hill, again and again.'],
-  art: {set: 'park', season: 'winter', items: [['sun', 110, {y: 36}], ['sled', 240, {colour: '#3f6f8a'}], ['kid', 300, {skin: 2, hair: 'curly', coat: '#d9774b', hat: 'toque', hatc: '#3f6f8a', mood: 'oh'}], ['kid', 430, {skin: 0, hair: 'bun', hairc: 'brown', coat: '#8fb36a', hat: 'toque', hatc: '#c0573e', flip: true, pose: 'hold'}], ['sled', 500, {toboggan: true}]]},
+  art: {set: 'park', season: 'winter', items: [['sun', 110, {y: 36}], ['sled', 240, {colour: '#3f6f8a'}], ['kid', 300, {skin: 0, hairc: 'blond', hair: 'curly', coat: '#d9774b', hat: 'toque', hatc: '#3f6f8a', mood: 'oh'}], ['kid', 430, {skin: 0, hair: 'bun', hairc: 'brown', coat: '#8fb36a', hat: 'toque', hatc: '#c0573e', flip: true, pose: 'hold'}], ['sled', 500, {toboggan: true}]]},
   qs: [
     { k: 'order', items: ['Jonah went down the steep hill.', 'Jonah landed in the snow.', 'Ruth helped Jonah up.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' },
     { k: 'write', q: 'Why did Jonah say slower is smarter?', a: 'Because he went too fast down the steep hill and crashed into a snowbank, but Ruth went slowly and was safe.', code: 'C3.2' },
@@ -3947,7 +3947,7 @@ Atlas.decodable.more('suffix-more', {
     'Grandma made holes in the soil, and Dana gently set the pumpkin seeds in them. "Water them daily," said Grandma. "And be careful with the little plants."',
     'All summer, Dana watered the pumpkins. One vine grew longer and longer. On it was one pumpkin that got bigger and bigger. By fall, it was the biggest pumpkin in the garden!',
     'Dana was proud, but she did not keep it. They cut it up, and Grandma made pumpkin soup for the whole street. "This is the sweetest soup," said a man from next door. Dana felt thankful for her grandma, for the garden and for the helpful people on her street.'],
-  art: {set: 'town', season: 'autumn', items: [['plant', 120], ['plant', 180, {flowers: true}], ['kid', 290, {skin: 4, hair: 'puffs', top: '#e2b84f'}], ['adult', 370, {skin: 4, hair: 'scarf', scarf: '#2f8f7c', top: '#c96a7a', pose: 'hold'}], ['wagon', 470, {load: 'pumpkins'}], ['adult', 570, {skin: 0, hair: 'short', hairc: 'brown', glasses: true, top: '#4f6d8a', flip: true}]]},
+  art: {set: 'town', season: 'autumn', items: [['plant', 120], ['plant', 180, {flowers: true}], ['kid', 290, {skin: 3, hair: 'puffs', top: '#e2b84f'}], ['adult', 370, {skin: 3, hair: 'curly', top: '#c96a7a', pose: 'hold'}], ['wagon', 470, {load: 'pumpkins'}], ['adult', 570, {skin: 0, hair: 'short', hairc: 'brown', glasses: true, top: '#4f6d8a', flip: true}]]},
   qs: [
     { k: 'choice', q: 'What did Grandma make with the pumpkin?', opts: ['soup', 'pie', 'bread'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Dana kept the pumpkin for her own lunch.', a: false, code: 'C3.2' },
@@ -4015,7 +4015,7 @@ Atlas.decodable.add({
     'Grandpa is a bit of an inventor. He looked at the motor. Then he fixed it with a bent nail and a scrap of wire. The motor started up with a roar.',
     'The visitor was so thankful that he gave Abby a dollar and a jar of maple syrup. The syrup was a rich gold colour, and it had a sweet, smoky flavour.',
     '"Come back next summer," said Grandpa. "And bring your motor," said Abby. "Grandpa can fix it again."'],
-  art: {set: 'shore', time: 'grey', items: [['cloud', 200, {y: 50}], ['dock', 470], ['ship', 610, {colour: '#b2493a', y: 22}], ['kid', 230, {skin: 0, hair: 'long', hairc: 'red', coat: '#e2b84f'}], ['adult', 320, {skin: 0, hair: 'short', hairc: 'grey', beard: true, hat: 'cap', hatc: '#3f5a7a', coat: '#4f6d8a'}], ['adult', 420, {skin: 4, hair: 'short', coat: '#7a9a5a', flip: true}]]},
+  art: {set: 'shore', time: 'grey', items: [['cloud', 200, {y: 50}], ['dock', 470], ['ship', 610, {colour: '#b2493a', y: 22}], ['kid', 230, {skin: 2, hair: 'long', hairc: 'red', coat: '#e2b84f'}], ['adult', 320, {skin: 2, hair: 'short', hairc: 'grey', beard: true, hat: 'cap', hatc: '#3f5a7a', coat: '#4f6d8a'}], ['adult', 420, {skin: 1, hairc: 'blond', hair: 'short', coat: '#7a9a5a', flip: true}]]},
   qs: [
     { k: 'yn', q: 'The visitor\'s motor was stuck.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'Why did the visitor give Abby a dollar?', opts: ['He was thankful for the help.', 'He wanted a boat.', 'He was lost.'], a: 0, code: 'C3.2' },
@@ -4063,7 +4063,7 @@ Atlas.decodable.add({
     'This year, eight kids came. They piled in with thick blankets on their laps. "Can the horses pull this much weight?" asked Tess. "Hey, they are strong," said Ray. "They could pull a freight train!"',
     'Ray held the reins, and the sleigh slid off. But at the top of a hill, the horses stopped. One horse gave a loud neigh. A deer stood on the trail, as still as a rock.',
     'Ray waited. The deer looked at them, and then it hopped off to the trees. "Off we go," said Ray, and the sleigh bells rang all the way home.'],
-  art: {set: 'snow', time: 'dusk', season: 'winter', items: [['horse', 180, {colour: '#3d2a1e'}], ['sled', 300, {colour: '#7a8a96', s: 1.6}], ['kid', 290, {skin: 1, hair: 'long', hat: 'toque', hatc: '#c0573e', coat: '#3f6f8a', s: 0.85, y: 6}], ['adult', 380, {skin: 2, hair: 'short', beard: true, coat: '#6b4f3a', hat: 'toque', hatc: '#2f8f7c'}], ['deer', 560, {flip: true}]]},
+  art: {set: 'snow', time: 'dusk', season: 'winter', items: [['horse', 180, {colour: '#3d2a1e'}], ['sled', 300, {colour: '#7a8a96', s: 1.6}], ['kid', 290, {skin: 4, hair: 'long', hat: 'toque', hatc: '#c0573e', coat: '#3f6f8a', s: 0.85, y: 6}], ['adult', 380, {skin: 2, hair: 'short', beard: true, coat: '#6b4f3a', hat: 'toque', hatc: '#2f8f7c'}], ['deer', 560, {flip: true}]]},
   hunt: 'Underline every word with eigh, ei or ey saying /ay/.',
   qs: [
     { k: 'yn', q: 'Eight kids went on the sleigh ride.', a: true, code: 'C1.1' },
@@ -4095,7 +4095,7 @@ Atlas.decodable.more('ei-eigh', {
     'But Bev\'s pumpkin was much too big to lift. Eight people came to help. They slid it on a tarp and lifted it up on Bev\'s truck.',
     'At the fair, a man rolled it on a big freight scale. Owen held his breath as the scale beeped. "Three hundred and eighty kilograms!" said the man. Everyone clapped.',
     'Then the last pumpkin came in. It weighed eighteen kilograms more. Owen was a bit sad, but Bev just grinned. "Hey, there is next year," she said. "And I have kept the seeds."'],
-  art: {set: 'town', season: 'autumn', items: [['truck', 190, {colour: '#c0573e', load: 'pumpkins'}], ['stall', 560, {colour: '#3f6f8a'}], ['kid', 360, {skin: 0, hair: 'short', hairc: 'blond', top: '#7a9a5a', glasses: true}], ['adult', 440, {skin: 0, hair: 'curly', hairc: 'grey', top: '#e2b84f', flip: true, pose: 'wave'}]]},
+  art: {set: 'town', season: 'autumn', items: [['truck', 190, {colour: '#c0573e', load: 'pumpkins'}], ['stall', 560, {colour: '#3f6f8a'}], ['kid', 360, {skin: 1, hair: 'short', hairc: 'blond', top: '#7a9a5a', glasses: true}], ['adult', 440, {skin: 1, hair: 'curly', hairc: 'grey', top: '#e2b84f', flip: true, pose: 'wave'}]]},
   qs: [
     { k: 'choice', q: 'What colour was the pumpkin?', opts: ['orange', 'beige with grey spots', 'green'], a: 1, code: 'C1.1' },
     { k: 'yn', q: 'Bev and Owen had the biggest pumpkin at the fair.', a: false, code: 'C3.2' },
@@ -4191,7 +4191,7 @@ Atlas.decodable.more('ch-gh', {
     'Mom held up the brochure for the concert. It had all the kids\' names in it, and Lily\'s name was at the top. "You play the first chord," said Mom. "The rest of the orchestra will follow you."',
     'Lily thought of Kit, the brave character in her bedtime book. Kit was scared too, but she did it anyway.',
     'On the stage, Lily lifted her hands. The gym was still. Then she played the first chord, deep and strong, and it rang like an echo off the walls. The orchestra came in with her. Her stomach ache was gone.'],
-  art: {set: 'classroom', time: 'night', season: 'winter', items: [['adult', 150, {skin: 1, hair: 'long', top: '#7a5c8c'}], ['kid', 290, {skin: 1, hair: 'bun', top: '#2b2622', dress: true}], ['bell', 360], ['kid', 520, {skin: 4, hair: 'curly', top: '#2b2622', flip: true}], ['drum', 600]]},
+  art: {set: 'classroom', time: 'night', season: 'winter', items: [['adult', 150, {skin: 5, hair: 'long', top: '#7a5c8c'}], ['kid', 290, {skin: 5, hair: 'bun', top: '#2b2622', dress: true}], ['bell', 360], ['kid', 520, {skin: 3, hair: 'curly', top: '#2b2622', flip: true}], ['drum', 600]]},
   qs: [
     { k: 'yn', q: 'Lily had a stomach ache before the concert.', a: true, code: 'C1.1' },
     { k: 'choice', q: 'What is the story about?', opts: ['a girl who is brave at a concert', 'a chef who cooks spaghetti', 'a lost harp'], a: 0, code: 'C2.6' },
@@ -4238,7 +4238,7 @@ Atlas.decodable.more('tion', {
     'Each week, they had a practice session in Grandpa\'s kitchen. Tess learned the tunes, the motions of the bow and when to tap her foot.',
     'On the night of the celebration, the hall was packed. Tess felt the tension in her tummy. "I can not do it," she said. "Do not think about all the people. Just feel the motion of the bow, like in the kitchen."',
     'So Tess shut out the noise and played. The tunes rang out, and people got up to dance. When the last note ended, the whole hall clapped. Tess felt a rush of emotion. "Can we play again next year?" she asked. Grandpa laughed. "You have my permission."'],
-  art: {set: 'kitchen', time: 'dusk', season: 'winter', items: [['lamp', 120, {lit: true}], ['adult', 230, {skin: 1, hair: 'short', hairc: 'grey', glasses: true, top: '#c0573e', pose: 'hold'}], ['kid', 340, {skin: 1, hair: 'long', hairc: 'brown', top: '#3f6f8a', pose: 'hold', flip: true}], ['table', 520], ['cup', 510, {y: 50, hot: true}]]},
+  art: {set: 'kitchen', time: 'dusk', season: 'winter', items: [['lamp', 120, {lit: true}], ['adult', 230, {skin: 0, hair: 'short', hairc: 'grey', glasses: true, top: '#c0573e', pose: 'hold'}], ['kid', 340, {skin: 0, hair: 'long', hairc: 'brown', top: '#3f6f8a', pose: 'hold', flip: true}], ['table', 520], ['cup', 510, {y: 50, hot: true}]]},
   qs: [
     { k: 'choice', q: 'Where did Tess and Grandpa have a practice session?', opts: ['in the kitchen', 'at the rink', 'at school'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Tess was calm at the start of the show.', a: false, code: 'C3.2' },
@@ -4301,7 +4301,7 @@ Atlas.decodable.add({
     'The lake was as still as glass. They paddled across it, away from the cabin, and a loon swam along beside them. Then, far ahead, Lena spotted something black on a rock. "Dad, is that a bear?" she asked. She felt a little afraid.',
     'Dad held up the camera and zoomed in. Then he began to laugh. "It is a stump," he said. "It is just a big black stump with moss on it."',
     'On the way back, Lena fell asleep on her life jacket. When she woke up, they were at the dock, and Mom was waiting. "Did you see a bear?" Mom asked. Lena grinned. "Just a stump," she said. "But I got a picture of the loon."'],
-  art: {set: 'lake', time: 'dusk', items: [['sun', 110, {y: 70}], ['kid', 290, {skin: 4, hair: 'puffs', top: '#e2b84f', s: 0.9, y: 12}], ['adult', 370, {skin: 4, hair: 'short', top: '#3f6f8a', s: 0.9, y: 12}], ['canoe', 330, {water: true, s: 1.3}], ['loon', 500], ['rock', 620, {moss: true}]]},
+  art: {set: 'lake', time: 'dusk', items: [['sun', 110, {y: 70}], ['kid', 290, {skin: 5, hair: 'puffs', top: '#e2b84f', s: 0.9, y: 12}], ['adult', 370, {skin: 5, hair: 'short', top: '#3f6f8a', s: 0.9, y: 12}], ['canoe', 330, {water: true, s: 1.3}], ['loon', 500], ['rock', 620, {moss: true}]]},
   qs: [
     { k: 'yn', q: 'Lena and Dad saw a bear on the rock.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'Why did Dad laugh?', opts: ['The bear was a stump.', 'Lena fell in the lake.', 'The loon quacked.'], a: 0, code: 'C3.2' },
@@ -4413,7 +4413,7 @@ Atlas.decodable.more('prefix-g3', {
     'But the sky was overcast. Thick clouds hung overhead, and Lena felt sad. "Do not give up yet," said Mom. "Clouds can move fast out here."',
     'Lena tried hard to stay up. She drank hot cocoa. Midway through the night, a cold wind came up. The clouds slid off to the east, and the stars came out.',
     'Then, at midnight, green and pink lights rippled overhead. They swirled and danced nonstop. Lena was overjoyed. Uncle Remi said that his grandmother taught him to be calm and still under the lights, and not to whistle at them. So Lena sat still in her sleeping bag, watching, until she fell asleep.'],
-  art: {set: 'farm', time: 'night', season: 'autumn', items: [['aurora', 350, {y: 46}], ['stars', 350, {y: 50}], ['tent', 590, {lit: true, colour: '#d9774b'}], ['kid', 230, {skin: 1, hair: 'puffs', hairc: 'brown', coat: '#7aa5c4', pose: 'hold'}], ['cup', 244, {y: 40, hot: true}], ['adult', 300, {skin: 1, hair: 'long', coat: '#c96a7a'}], ['adult', 380, {skin: 2, hair: 'short', beard: true, hairc: 'brown', coat: '#5a6a3a', flip: true}]]},
+  art: {set: 'farm', time: 'night', season: 'autumn', items: [['aurora', 350, {y: 46}], ['stars', 350, {y: 50}], ['tent', 590, {lit: true, colour: '#d9774b'}], ['kid', 230, {skin: 1, hair: 'curly', hairc: 'brown', coat: '#7aa5c4', pose: 'hold'}], ['cup', 244, {y: 40, hot: true}], ['adult', 300, {skin: 1, hairc: 'blond', hair: 'long', coat: '#c96a7a'}], ['adult', 380, {skin: 1, hair: 'short', beard: true, hairc: 'brown', coat: '#5a6a3a', flip: true}]]},
   qs: [
     { k: 'yn', q: 'The sky was clear all night.', a: false, code: 'C1.1' },
     { k: 'choice', q: 'What made the clouds go away?', opts: ['a cold wind', 'the fire', 'the rain'], a: 0, code: 'C1.1' },
