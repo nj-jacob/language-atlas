@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-16
+- Decodable readers, batch 3: 12 Grade 1 long-vowel stories (a_e to ph) rewritten as everyday stories (a tag game, fixing a gate, a big slide, a lime drink, a note on the stove, a bus trip, melting cubes, a humming toy, a gusty walk, a bus driver, a messy desk, a family photo); the open-syllable and soft c/g stories kept. Dolch sight words used: 291 of 315.
 - Decodable readers, batch 2: 14 more Grade 1 stories (oll/ull to two-syllable words) rewritten as everyday stories (baking rolls, a vet, kick ball, a sink-or-float test, chores, a mechanic, a shoe shop, getting glasses, a bug bite, an art judge, a block bridge, the dentist, tennis); 7 good everyday stories kept. Dolch sight words used: 290 of 315.
 - Decodable readers: far fewer beards (8 of 255 pictures) and headscarves (1), so the people look like a typical Ontario school or street.
 - Decodable readers, pilot for more variety: the 21 Grade 1 stories from FLOSS to end blends are rewritten as everyday stories on different topics (school, cooking, building, sports, a shopping trip, simple science, feelings, a job, a funny mix-up, weather, a trip to the dump), three different topics per step, with new pictures. A new check counts the Dolch sight words the stories use (285 of 315 so far) and fails if one goes missing.

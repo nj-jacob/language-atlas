@@ -2126,32 +2126,32 @@ Atlas.decodable.add({
 });
 /* step 26, story 2 */
 Atlas.decodable.more('a-e', {
-  words: ['skate', 'lake', 'shape', 'brave', 'rake', 'spade', 'scrape', 'game', 'came', 'wave', 'take', 'safe'],
-  title: 'Skates on the Lake',
-  text: ['Kate and Nate take skates to the lake. Dad came as well. Dad has a rake and a spade to scrape the lake.',
-    'Nate skates fast. Kate skates in a big zigzag. Then Kate trips and lands flat. Thump!',
-    'Kate is safe, but she is mad. "I hate this game!" Nate skates up. "You are brave," he said. "Let us skate in a snake shape." They skate in a long snake.',
-    'Dad waves at them. Then Dad trips! "You are safe, Dad!" said Kate. "Get up and skate!"'],
-  art: {"set":"lake","season":"winter","items":[["kid",230,{"skin":4,"hair":"braids","hat":"toque","hatc":"#c0573e","coat":"#e2b84f","bottom":"#3b3f46"}],["kid",340,{"skin":4,"hair":"short","hat":"toque","hatc":"#4f6d8a","coat":"#7aa5c4","bottom":"#3b3f46","flip":true}],["adult",470,{"skin":4,"hair":"short","hat":"toque","hatc":"#5f8f6a","coat":"#6b4c35","beard":true,"flip":true,"pose":"wave"}],["skates",580]]},
+  words: ['game', 'gate', 'safe', 'base', 'came', 'late', 'same', 'chase', 'save', 'name'],
+  title: 'The Tag Game',
+  text: ['At lunch, Dave and his pals had a game of tag by the gate. Dave was "it."',
+    'Dave ran and ran, but Kate was fast. Kate got to the base. She was safe!',
+    'Then Jane came late. She was not on the base. She was not safe. Dave tagged Jane. "Same game, but you are it!" said Dave.',
+    'Jane had to chase Dave. Then the bell rang. "Same game at lunch?" said Jane. "Yes!"'],
+  art: { set: 'park', items: [['kid', 200, { skin: 0, hair: 'short', hairc: 'brown', top: '#c0473e', pose: 'wave' }], ['kid', 320, { skin: 1, hair: 'long', hairc: 'blond', top: '#4f7f8a', flip: true }], ['kid', 480, { skin: 3, hair: 'braids', top: '#e2b84f', pose: 'wave', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What did Dad have to scrape the lake?', opts: ['a rake and a spade', 'a cake and a plate'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Nate helps Kate.', a: true, code: 'C3.2' },
-    { k: 'draw', q: 'Draw Kate and Nate in a snake shape.', a: 'Two children holding hands, skating on a lake in a wavy line.', code: 'C1.4' }
+    { k: 'choice', q: 'Where did they have the game?', opts: ['by the gate', 'at the lake', 'in the van'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Kate was safe.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why was Jane not safe?', opts: ['She came late.', 'She fell.', 'She had a nap.'], a: 0, code: 'C3.2' }
   ]
 });
 /* step 26, story 3 */
 Atlas.decodable.more('a-e', {
-  words: ['whale', 'wave', 'shape', 'cape', 'shade', 'made', 'take', 'Jade', 'late', 'lane', 'gate', 'name'],
-  title: 'Jade and the Whale',
-  text: ['Jade and Gran take a ship to see the whales. The ship rocks on the waves. Jade has a red cape.',
-    'They stand and stand. No whales. Jade is sad. "Is it late? Are the whales gone?"',
-    'Then a big black shape lifts up from the waves. It is a whale! It blasts a jet of mist. The whale flaps its fin and slaps the waves. Splash! Jade and Gran get wet.',
-    'Jade waves at the whale. Gran grins. "That was a whale of a trip," she said. On the trip back, Jade naps in the shade.'],
-  art: {"set":"shore","time":"grey","items":[["cloud",140,{"y":40}],["ship",260,{"s":1.4,"y":40}],["kid",240,{"skin":0,"hair":"long","hairc":"auburn","coat":"#c0573e","y":62,"s":0.8,"pose":"wave"}],["adult",290,{"skin":0,"hair":"short","hairc":"grey","coat":"#4f6d8a","y":62,"s":0.8}],["fish",490,{"jump":true,"colour":"#3a4250","s":2.6,"y":66,"flip":true}]]},
+  words: ['gate', 'scrape', 'came', 'case', 'take', 'make', 'shape', 'safe', 'same', 'made'],
+  title: 'Kate Fixes the Gate',
+  text: ['Gran Jane has a gate that will not shut. The gate is bent, and it scrapes. Gran Jane calls Kate. Kate fixes gates.',
+    'Kate came in a van with a big case. She takes the gate off. She bends it back and makes a fresh latch.',
+    'Then she shapes a plank to make the gate safe. She sets the gate back.',
+    'Gran Jane shuts the gate. It does not scrape! "It is just the same as when it was made," said Gran Jane. "Thank you, Kate!"'],
+  art: { set: 'yard', season: 'spring', items: [['van', 160, { s: 0.9 }], ['adult', 340, { skin: 0, hair: 'bun', hairc: 'brown', top: '#3e6d9c', bottom: '#3f4a5a', pose: 'hold' }], ['adult', 480, { skin: 0, hair: 'short', hairc: 'grey', top: '#c96a7a', glasses: true, flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Jade and Gran get wet.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'How was Jade at the end?', opts: ['glad', 'mad'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What big animal do you want to see?', a: 'Any answer from the child\'s life, for example: I want to see a moose. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'What did the gate do?', opts: ['It scraped.', 'It fell.', 'It rang.'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Who fixed the gate?', opts: ['Kate', 'Gran Jane', 'Dave'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Kate came in a van.', 'Kate takes the gate off.', 'The gate does not scrape.'], show: [2, 0, 1], code: 'C3.3' }
   ]
 });
 Atlas.decodable.add({
@@ -2174,65 +2174,65 @@ Atlas.decodable.add({
 });
 /* step 27, story 2 */
 Atlas.decodable.more('i-e', {
-  words: ['hike', 'stripe', 'pine', 'side', 'while', 'white', 'miles', 'wide', 'smile', 'time', 'spine', 'like'],
-  title: 'The White Stripes',
-  text: ['Clive and his mom hike up a hill. The path twists past big pines.',
-    'Then the path splits. Clive and Mom stop. Which side? Mom has no map.',
-    'Then Clive spots a white stripe on a pine. "Mom, look! That stripe tells us the path!" On the next pine is a white stripe, and on the next.',
-    'Clive and Mom hike on. In a while, they get to the top. They can see miles of pines and a wide lake. Clive smiles. "Next time, I will spot the stripes," he said.'],
-  art: {"set":"lake","season":"spring","items":[["spruce",140,{"s":1.2}],["kid",300,{"skin":3,"hair":"curly","top":"#d9774b","bottom":"#4f6d8a","pose":"wave"}],["adult",380,{"skin":3,"hair":"scarf","scarf":"#5f8f6a","top":"#7a5c8c","bottom":"#4f4a5a"}],["spruce",560],["birds",450,{"y":40}]]},
+  words: ['ride', 'slide', 'wide', 'white', 'five', 'time', 'times', 'smile', 'fine', 'side'],
+  title: 'The Big Slide',
+  text: ['Jill and Dad ride bikes to a big slide. It is a wide, white slide.',
+    'Jill did not want to slide. "It is big," said Jill. Dad smiled. "Take your time."',
+    'Jill went up the steps. At the top, she sat still. Then she let go. Whizz! Jill slid to the end.',
+    '"That was fine!" said Jill, with a big smile. "I will slide five times!"'],
+  art: { set: 'park', items: [['slide', 300], ['kid', 300, { skin: 1, hair: 'braids', hairc: 'brown', top: '#c96a7a', y: 60 }], ['adult', 470, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f6d8a', flip: true }], ['bike', 580, { s: 0.8 }]] },
   qs: [
-    { k: 'choice', q: 'What did Clive spot on the pine?', opts: ['a white stripe', 'a red kite', 'a bike'], a: 0, code: 'C1.1' },
-    { k: 'order', q: 'Put the story in order.', items: ['The path splits.', 'Clive spots a stripe.', 'They get to the top.'], show: [2, 0, 1], code: 'C3.3' },
-    { k: 'yn', q: 'The stripes help them get to the top.', a: true, code: 'C3.2' }
+    { k: 'yn', q: 'Jill did slide at the end.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Jill not want to slide?', opts: ['It was big.', 'It was wet.', 'Dad said no.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'How did Jill and Dad get to the slide?', opts: ['on bikes', 'on a bus', 'in a van'], a: 0, code: 'C1.1' }
   ]
 });
 /* step 27, story 3 */
 Atlas.decodable.more('i-e', {
-  words: ['dive', 'time', 'wide', 'smile', 'fine', 'five', 'side', 'like', 'glide', 'white', 'tide', 'mile'],
-  title: 'Time to Dive',
-  text: ['Lin and Nan swim at the lake. Nan likes to dive off the dock. Splash! Then she bobs up and smiles.',
-    'Lin stands at the end of the dock. Lin is stiff. "I will dive next time," he said.',
-    'Nan swims up. "Take your time. Just bend and tip in," she said. Lin bends. He tips. Splash! He swims to Nan with a wide smile.',
-    '"That was fine!" said Lin. He dives five times. At the end, Nan and Lin sit on the dock in the sun. A white gull glides past. "I like to dive," said Lin.'],
-  art: {"set":"lake","time":"day","items":[["sun",120,{"y":40}],["bird",240,{"y":56}],["dock",420],["adult",380,{"skin":4,"hair":"bun","hairc":"grey","top":"#4f6d8a","bottom":"#4f6d8a","y":18}],["kid",470,{"skin":4,"hair":"short","top":"#e2b84f","bottom":"#e2b84f","y":18}]]},
+  words: ['lime', 'limes', 'five', 'bites', 'ripe', 'fine', 'time', 'mine', 'wipe', 'nine'],
+  title: 'Lime Time',
+  text: ['It is hot. Clive and Mom want a lime drink. Clive has five limes. He cuts them in halves.',
+    'Clive presses the limes, and the lime drips in a jug. Then Mom adds water and mixes it.',
+    'Clive has a sip. "Yuck! It bites!" Then Clive mixes in a ripe plum. He has a sip. It is fine!',
+    'Clive and Mom sit on the step with the lime drink. "Lime time is the best time," said Clive.'],
+  art: { set: 'yard', season: 'summer', items: [['sun', 560, { y: 36 }], ['table', 330], ['jar', 330, { y: 52, colour: '#9bc46a' }], ['cup', 380, { y: 52 }], ['kid', 220, { skin: 2, hair: 'curly', top: '#e2b84f' }], ['adult', 470, { skin: 2, hair: 'long', top: '#4f7f8a', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'Who dives off the dock and smiles?', opts: ['Nan', 'Lin', 'a gull'], a: 0, code: 'C1.1' },
-    { k: 'write', q: 'What is a thing you did when you felt brave?', a: 'Any answer from the child\'s life, for example: I swam in the deep end. Help write one short sentence.', code: 'C2.5' },
-    { k: 'draw', q: 'Draw Lin on the dock.', a: 'A child on a dock over water, maybe diving, with Nan in the lake.', code: 'C1.4' }
+    { k: 'choice', q: 'What did Clive have five of?', opts: ['limes', 'plums', 'jugs'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Clive add a ripe plum?', opts: ['The drink bit.', 'It was hot.', 'Mom had a plum.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the jug of lime drink.', a: 'A jug of green drink, maybe with limes. Ask the child what made it taste better.', code: 'C1.4' }
   ]
 });
 Atlas.decodable.add({
   id: 'o-e', band: '1', name: 'Silent e: o_e', focus: ['o_e'], key: 'rope',
   mark: 'o(?=[^aeiou\\W]e\\b)|(?<=o[^aeiou\\W])e\\b',
   heart: ['front', 'month'],
-  words: ['bone', 'home', 'hole', 'rope', 'nose', 'hose', 'rose', 'joke', 'pole', 'stone', 'stove', 'note', 'robe', 'globe', 'smoke'],
-  title: 'Dot and the Bone',
-  text: ['Rose has a dog. The dog is Dot. Dot has a big bone. Dot will not let go of the bone.',
-    'Dot digs a hole by the pond. She drops the bone in the hole. Then she runs home.',
-    'At home, Dot is sad. She wants the bone back! Rose and Dot go back to the pond. Dot sniffs with a wet nose. She digs and digs.',
-    'Dot gets the bone, and then she rolls in the mud. Rose has to hose Dot off at home. "You and your bone," Rose jokes.'],
-  art: {"set":"yard","season":"spring","items":[["pond",170,{"s":0.8}],["bone",270],["dog",340,{"colour":"#3d3530","spot":"#e8dcc4","flip":true}],["kid",470,{"skin":5,"hair":"curly","flip":true,"top":"#c96a7a","bottom":"#4f6d8a"}]]},
+  words: ['note', 'stove', 'hose', 'close', 'hope', 'home', 'cones', 'rope', 'hosed', 'closed'],
+  title: 'A Note on the Stove',
+  text: ['Mom had to go to the shop. She left Nate a note on the stove. "Nate, hose the plants. Close the shed. Hope you are well! Mom"',
+    'Nate got the hose and hosed the plants. Then he closed the shed.',
+    'Then Nate set a note on the stove: "Mom, I did it all! Can we have cones?"',
+    'When Mom got home, she spotted the note. She smiled. "Yes, we can have cones," she said.'],
+  art: { set: 'yard', season: 'summer', items: [['shed', 170], ['plant', 300], ['plant', 350], ['kid', 440, { skin: 0, hair: 'short', hairc: 'red', top: '#4f7f8a', pose: 'hold', flip: true }], ['house', 600, { s: 0.8 }]] },
   qs: [
-    { k: 'yn', q: 'Dot digs a hole.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Where did Dot drop the bone?', opts: ['in a hole', 'in a box', 'in the bed'], a: 0, code: 'C1.1' },
-    { k: 'choice', q: 'Why did Rose hose Dot?', opts: ['Dot rolls in mud.', 'Dot is hot.', 'Dot is sad.'], a: 0, code: 'C3.2' }
+    { k: 'choice', q: 'Where was the note?', opts: ['on the stove', 'on the bed', 'in the shed'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Mom left a note.', 'Nate hosed the plants.', 'Nate set a note on the stove.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'choice', q: 'What did Nate want?', opts: ['cones', 'a rope', 'a hose'], a: 0, code: 'C3.2' }
   ],
   tip: 'A silent e at the end makes the o say its name, /oh/, as in rope. Compare hop and hope, not and note. Watch for the short sound (rop for rope), and for words like come, some and love, which look the same but are heart words.'
 });
 /* step 28, story 2 */
 Atlas.decodable.more('o-e', {
-  words: ['slope', 'drove', 'rode', 'stone', 'froze', 'hope', 'woke', 'Cole', 'broke', 'spoke', 'those', 'cone'],
-  title: 'Cole on the Slope',
-  text: ['Cole and Dad drove to the big slope. Cole had a sled and a rope.',
-    'Cole rode the sled from the top. Zip! He went fast. Then the sled hit a stone and spun. Cole fell in a drift with frost on his nose.',
-    'Dad ran up. "Cole! Is all well?" Cole sat up and froze. Then he got a big smile. "I hope I can do that again!" he said.',
-    'Cole rode the slope six times. On the drive home, he had a nap with his nose in his hat.'],
-  art: {"set":"snow","time":"grey","items":[["snowfall",350,{"y":40}],["rock",470,{"s":0.8}],["sled",410,{"flip":true}],["kid",330,{"skin":1,"hair":"short","hat":"toque","hatc":"#e2b84f","coat":"#c0573e","mood":"oh","flip":true}],["adult",220,{"skin":1,"hair":"short","hairc":"brown","hat":"toque","coat":"#4f6d8a","bottom":"#3b3f46"}]]},
+  words: ['rode', 'home', 'homes', 'poles', 'stone', 'robe', 'cone', 'woke', 'spoke', 'Cole'],
+  title: 'Cole Rode the Bus',
+  text: ['Cole and Mom rode the bus to the big shops. Cole sat by the glass. The bus went past homes, poles and a big stone bridge.',
+    'At the shops, Mom had a list. They got Gran a robe. Then Cole got a cone.',
+    'Then they rode the bus home. Cole had a nap on the bus.',
+    '"Wake up," Mom spoke. Cole woke up. "We are home!"'],
+  art: { set: 'town', items: [['bus', 260], ['kid', 440, { skin: 4, hair: 'short', top: '#e2b84f', flip: true }], ['adult', 530, { skin: 4, hair: 'long', top: '#7a5c8c', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The sled hit a stone.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'How was Cole at the end?', opts: ['sad', 'glad', 'mad'], a: 1, code: 'C3.2' },
-    { k: 'draw', q: 'Draw Cole in the drift.', a: 'A child in a pile of snow beside a sled on a hill, with frost on his nose.', code: 'C1.4' }
+    { k: 'choice', q: 'What did they get Gran?', opts: ['a robe', 'a cone', 'a stone'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'How did Cole and Mom get to the shops?', opts: ['on a bus', 'on bikes', 'in a van'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Cole have to wake up?', opts: ['They were home.', 'Cole fell.', 'The bus broke.'], a: 0, code: 'C3.2' }
   ]
 });
 /* step 28, story 3 */
@@ -2270,32 +2270,32 @@ Atlas.decodable.add({
 });
 /* step 29, story 2 */
 Atlas.decodable.more('u-e', {
-  words: ['tube', 'cute', 'tune', 'dune', 'rule', 'use', 'Luke', 'mute', 'flute', 'cube', 'June', 'these'],
-  title: 'Luke and the Tube',
-  text: ['It is hot. Luke and his mom take tubes to the lake. Luke has a cute red tube.',
-    'Luke sits in his tube and drifts. He hums a tune. Then he has a nap.',
-    'Luke sits up. The dock is not close! A gust has pushed his tube past the dunes. Luke is not sure what to do.',
-    'Then Mom kicks up to him on a tube. "Rule one," she said. "Use a rope." She hands Luke a rope and tugs his tube back. "Next time, I will use the rope," said Luke.'],
-  art: {"set":"shore","items":[["sun",600,{"y":36}],["bird",140,{"y":50}],["kid",290,{"skin":2,"hair":"short","top":"#c0573e","bottom":"#2f8f7c"}],["rope",370],["adult",450,{"skin":2,"hair":"long","flip":true,"pose":"hold","top":"#4f6d8a","bottom":"#3b3f46"}]]},
+  words: ['cube', 'cubes', 'use', 'used', 'Luke', 'tune', 'cute', 'mule', 'June', 'rule'],
+  title: 'Cubes in the Sun',
+  text: ['Luke and Mom froze water in a tin. Then they had six cubes. "Which cube will melt fast?" said Luke.',
+    'Luke set one cube in the sun, one in the shade and one in a cup. "Use a clock," said Mom. Luke used the clock on the stove.',
+    'The cube in the sun melted fast. The cube in the shade did not melt as fast. The cube in the cup was last.',
+    'Luke was sure. "The hot sun melts the cubes!"'],
+  art: { set: 'yard', season: 'summer', items: [['sun', 150, { y: 34 }], ['table', 340], ['cup', 340, { y: 52 }], ['kid', 230, { skin: 0, hair: 'curly', hairc: 'blond', top: '#c0473e' }], ['adult', 470, { skin: 0, hair: 'long', hairc: 'blond', top: '#8fb36a', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What did Mom use to get Luke back?', opts: ['a rope', 'a flute', 'a net'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Luke was upset when he sat up.', a: true, code: 'C3.2' },
-    { k: 'write', q: 'What is a rule you use at a lake?', a: 'Any sensible water rule, for example: Swim with a grown-up. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'Which cube melted fast?', opts: ['the cube in the sun', 'the cube in the shade', 'the cube in the cup'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did that cube melt fast?', opts: ['The sun was hot.', 'It was big.', 'Luke hit it.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the cubes.', a: 'A cube in the sun (melting), one in the shade and one in a cup. Ask the child which melts last and why.', code: 'C1.4' }
   ]
 });
 /* step 29, story 3 */
 Atlas.decodable.more('u-e', {
-  words: ['mule', 'cube', 'rule', 'cute', 'tune', 'use', 'Prune', 'Steve', 'Eve', 'Jude', 'these', 'flute'],
-  title: 'Prune the Mule',
-  text: ['Steve and Eve are at camp. They get to ride a mule, Prune. She is a cute mule with a tan nose.',
-    '"Up the hill!" said Steve. Prune stands still. She will not budge. Steve tugs the rope. No use.',
-    'Then Jude, a man at the camp, has a tip. "Prune likes sugar cubes. It is the rule. No sugar, no trip." Eve has a sugar cube. Prune munches it and trots up the hill!',
-    'At the top, the kids can see the whole camp. "Prune is a mule with rules," said Eve. Steve gave Prune one last cube.'],
-  art: {"set":"meadow","season":"autumn","items":[["tent",600,{"s":0.6,"y":30}],["kid",190,{"skin":3,"hair":"short","pose":"hold","top":"#4f6d8a"}],["horse",330,{"colour":"#8f8070","mane":"#3d3530"}],["kid",460,{"skin":3,"hair":"long","flip":true,"pose":"hold","top":"#e2b84f"}],["adult",540,{"skin":5,"hair":"short","hat":"cap","flip":true,"beard":true,"top":"#7a5a3e"}]]},
+  words: ['Duke', 'cube', 'cute', 'tune', 'use', 'mute', 'tunes', 'cubes', 'June', 'rule'],
+  title: 'The Tune That Will Not Stop',
+  text: ['Duke has a cute red cube. If you tap it, it hums a tune.',
+    'Duke taps it. It hums a tune. It hums and hums. It will not stop! Duke taps it ten times. No use! The cube hums and hums.',
+    'Dad taps it. Mom taps it. The cube still hums the same tune.',
+    'Then the cat sits on the cube. It is mute! "That is a cute fix," said Dad.'],
+  art: { set: 'bedroom', items: [['box', 330, { s: 0.4, colour: '#c0473e' }], ['kid', 220, { skin: 1, hair: 'short', hairc: 'black', top: '#4f7f8a', mood: 'oh' }], ['cat', 380, { colour: '#c99a5e' }], ['adult', 480, { skin: 1, hair: 'short', hairc: 'black', top: '#8fb36a', flip: true }], ['adult', 580, { skin: 1, hair: 'long', hairc: 'black', top: '#c96a7a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Prune will not budge when Steve tugs.', a: true, code: 'C1.1' },
-    { k: 'order', q: 'Put the story in order.', items: ['Prune will not budge.', 'Eve has a sugar cube.', 'Prune trots up the hill.'], show: [2, 1, 0], code: 'C3.3' },
-    { k: 'choice', q: 'What is the big thing in this story?', opts: ['a mule with a rule', 'a mule that is lost'], a: 0, code: 'C2.6' }
+    { k: 'yn', q: 'The cube will not stop.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What did the cube do?', opts: ['It hummed a tune.', 'It fell.', 'It ran.'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'How did the tune stop?', opts: ['The cat sat on the cube.', 'Dad hit it.', 'Duke had a nap.'], a: 0, code: 'C3.2' }
   ]
 });
 Atlas.decodable.add({
@@ -2350,48 +2350,48 @@ Atlas.decodable.add({
   id: 'y-vowel', hunt: 'Underline every word with y at the end.', band: '1', name: 'y as a vowel', focus: ['y'], key: 'my, happy',
   mark: '(?<=[^aeiou\\W])y\\b',
   heart: ['pretty', 'ready'],
-  words: ['my', 'fly', 'try', 'cry', 'dry', 'sky', 'shy', 'happy', 'funny', 'puppy', 'sunny', 'silly', 'bunny', 'jelly', 'candy'],
-  title: 'The Silly Puppy',
-  text: ['Andy has a puppy. The puppy is fluffy and silly. His name is Fudge.',
-    'It is sunny and gusty. Andy and Fudge go up the hill. Andy has a red kite. "Let me try it," he said. The kite rises up in the sky.',
-    'Fudge yips and jumps. He wants the kite! He tugs the line, and the kite drops in a muddy ditch.',
-    'Andy is not happy. Fudge is very muddy. Then Andy has to smile. "You silly pup. Let us go home and get dry."'],
-  art: {"set":"meadow","season":"spring","items":[["kite",360,{"y":30}],["cloud",200,{"y":44}],["kid",300,{"skin":3,"hair":"curly","pose":"wave","top":"#c0573e"}],["pup",380],["pond",560,{"s":0.7}]]},
+  words: ['gusty', 'foggy', 'sunny', 'muddy', 'soggy', 'dusty', 'messy', 'happy', 'silly', 'puppy'],
+  title: 'Gusty, Foggy, Sunny',
+  text: ['It is gusty and foggy. Molly and Andy go on a walk with Mom.',
+    'Then a gust lifts the hat of Andy. It lands in a muddy ditch! Andy wants to try to get it. He gets it, but it is muddy and soggy.',
+    'Then the fog lifts. It is sunny and pretty. Molly and Andy jump in the muddy ditch.',
+    'Mom just smiles. "Gusty, foggy, sunny, muddy," she said. "What a mix!"'],
+  art: { set: 'park', time: 'grey', season: 'autumn', items: [['kid', 220, { skin: 0, hair: 'braids', hairc: 'brown', top: '#c0473e' }], ['kid', 330, { skin: 0, hair: 'short', hairc: 'brown', top: '#e2b84f', mood: 'oh' }], ['hat', 420, { y: 0 }], ['adult', 520, { skin: 0, hair: 'long', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Fudge is a puppy.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Why is Andy not happy?', opts: ['The kite is in a muddy ditch.', 'It is sunny.', 'Fudge is lost.'], a: 0, code: 'C3.2' },
-    { k: 'choice', q: 'Which word ends like sky?', opts: ['dry', 'silly', 'sun'], a: 0, code: 'C3.1' }
+    { k: 'choice', q: 'Where did the hat land?', opts: ['in a muddy ditch', 'on a dog', 'on the bus'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'It was foggy, then sunny.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why was the hat soggy?', opts: ['It fell in a muddy ditch.', 'Andy had it in the tub.', 'It was a wet hat.'], a: 0, code: 'C3.2' }
   ],
   tip: 'At the end of a short word, y says /eye/ (my, sky). At the end of a longer word, it says /ee/ (happy, puppy). At the start of a word, y is still a consonant (yes, yell). Watch for happy read as "happ-eye".'
 });
 /* step 31, story 2 */
 Atlas.decodable.more('y-vowel', {
-  words: ['sky', 'try', 'frosty', 'shy', 'sticky', 'fluffy', 'dry', 'lucky', 'bumpy', 'cry', 'sandy'],
-  title: 'A Bumpy Ride',
-  text: ['It is frosty and sunny. Penny and Dad take the sled to a big, bumpy hill.',
-    '"Let me try it by myself," said Penny. She sits on the sled and pushes off. Bump, bump, bump! The sled zips and hops. Penny can fly!',
-    'Then the sled tips. Penny lands in a fluffy drift. Penny is white with frost, but she is grinning.',
-    '"That was fun," she said. "Can you ride with me this time?" So Dad and Penny ride the sled. What a happy, bumpy trip!'],
-  art: {"set":"meadow","season":"winter","items":[["sun",140,{"y":40}],["sled",330],["kid",320,{"skin":5,"hair":"braids","hat":"toque","hatc":"#b9a6e8","coat":"#c96a7a","y":10}],["adult",450,{"skin":5,"hair":"short","hat":"toque","hatc":"#4f6d8a","coat":"#3b3f46","flip":true}]]},
+  words: ['Mandy', 'jolly', 'lady', 'baby', 'puppy', 'sticky', 'grumpy', 'happy', 'lolly', 'Teddy'],
+  title: 'Mandy Drives the Bus',
+  text: ['Mandy has a big job. She drives the red bus. She picks up lots of people. Mandy is jolly.',
+    'A lady with a baby gets on. A man with a puppy gets on. A kid, Teddy, gets on with a sticky lolly.',
+    'Then the bus is stuck in a long line of vans and trucks. Mandy is not grumpy. She hums a happy tune.',
+    'Then the bus can go. "Thank you, Mandy!" said Teddy at his stop.'],
+  art: { set: 'town', items: [['bus', 260, { colour: '#c0473e' }], ['adult', 430, { skin: 0, hair: 'curly', hairc: 'auburn', top: '#3e6d9c', pose: 'wave', flip: true }], ['kid', 530, { skin: 2, hair: 'short', top: '#e2b84f', flip: true }], ['pup', 600, { colour: '#c99a5e' }]] },
   qs: [
-    { k: 'choice', q: 'Where did Penny land?', opts: ['in a fluffy drift', 'in a pond', 'on Dad'], a: 0, code: 'C1.1' },
-    { k: 'order', q: 'Number the story in order.', items: ['Penny sits on the sled.', 'The sled tips.', 'Dad and Penny ride the sled.'], show: [1, 2, 0], code: 'C3.3' },
-    { k: 'yn', q: 'Penny is sad at the end.', a: false, code: 'C3.2' }
+    { k: 'choice', q: 'What does Mandy drive?', opts: ['a bus', 'a truck', 'a van'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Mandy got grumpy.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why was the bus stuck?', opts: ['It was in a long line.', 'It had a flat.', 'Teddy was sick.'], a: 0, code: 'C3.2' }
   ]
 });
 /* step 31, story 3 */
 Atlas.decodable.more('y-vowel', {
-  words: ['my', 'baby', 'tiny', 'shiny', 'fussy', 'misty', 'jolly', 'messy', 'fifty', 'by', 'why', 'navy'],
-  title: 'Benny and the Tiny Fish',
-  text: ['Benny and his granny fish from the dock by the lake. It is misty and still.',
-    '"When will I get a fish?" Benny asks. "Sit still," said Granny. "Fish do not like a fussy kid." Benny sits so still that a dragonfly lands on his hat.',
-    'Then his rod bends. Benny tugs. Up comes a fish! It is a tiny, shiny fish. It fits in his hand!',
-    '"It is my fish!" Benny yells. "It is a baby," said Granny. "Let it go, and it can get big." Benny drops it in the lake. "Get big," he said.'],
-  art: {"set":"lake","time":"grey","items":[["dock",200],["kid",250,{"skin":0,"hair":"short","hat":"cap","hatc":"#5f8f6a","pose":"hold","y":18,"top":"#e2b84f"}],["fish",285,{"y":40,"s":0.6}],["adult",160,{"skin":0,"hair":"curly","hairc":"grey","glasses":true,"y":18,"top":"#7a5c8c"}]]},
+  words: ['messy', 'sticky', 'tidy', 'lolly', 'soggy', 'muddy', 'jolly', 'Benny', 'Kelly', 'happy'],
+  title: 'The Messy Desk',
+  text: ['Benny has a messy desk. It is full of sticky things. "Benny, can you tidy it?" said Miss Kelly. "I will tidy it by myself," said Benny.',
+    'Benny dug in. He got a lolly, a soggy bun and a muddy sock!',
+    'Then he got a pretty pink shell. "That is from Molly!" said Benny. It was a gift.',
+    'At last, the desk was tidy. "Very tidy, Benny," said Miss Kelly. Benny was happy.'],
+  art: { set: 'classroom', items: [['table', 330], ['book', 300, { y: 52 }], ['kid', 230, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f7f8a', pose: 'hold' }], ['adult', 470, { skin: 2, hair: 'bun', top: '#7a5c8c', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The fish is big.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'Why did Benny let the fish go?', opts: ['It is a baby.', 'It bit him.', 'Granny is mad.'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What do you like to do with your family?', a: 'Any answer from the child\'s life, such as fishing, baking or a walk. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'What did Miss Kelly want Benny to do?', opts: ['tidy the desk', 'sit still', 'go home'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What was in the desk?', opts: ['a lolly, a bun and a sock', 'a cat', 'a cake'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw the messy desk.', a: 'A desk with a lolly, a soggy bun, a muddy sock and a shell. Ask the child how Benny felt at the end.', code: 'C1.4' }
   ]
 });
 Atlas.decodable.add({
@@ -2446,17 +2446,17 @@ Atlas.decodable.more('soft-cg', {
 Atlas.decodable.add({
   id: 'ph', band: '1', name: 'ph', focus: ['ph'], key: 'phone', mark: 'ph',
   heart: [],
-  words: ['phone', 'graph', 'Phil', 'Ralph', 'dolphin', 'photo', 'trophy', 'alphabet', 'elephant', 'phase', 'Steph', 'phonics'],
-  title: 'Phil and the Dolphins',
-  text: ['Phil and his mom ride a big ship on the Pacific. Phil has Mom\'s phone. He wants to get a photo of a dolphin.',
-    'Then Phil spots a fin. Splash! A dolphin jumps up. Phil lifts the phone, but the dolphin dives back in.',
-    'Splash! Splash! Six dolphins jump and dive. Phil gets six photos of splashes. He gets one of a gull. He gets one of his hand.',
-    'Phil sits on a bench. He is glum. Then Mom taps him. "Look!" A dolphin swims up next to the ship. It jumps up close. Click! Phil gets his photo at last. "That is the best photo," he says.'],
-  art: {"set":"shore","items":[["sun",620,{"y":36}],["bird",480,{"y":40}],["ship",200,{"s":1.4,"y":40}],["kid",180,{"skin":3,"hair":"short","top":"#e2b84f","y":62,"s":0.8,"pose":"hold"}],["adult",230,{"skin":3,"hair":"long","top":"#5f8f6a","y":62,"s":0.8}],["fish",400,{"jump":true,"colour":"#7f97a8","s":1.6,"y":62}],["fish",520,{"jump":true,"colour":"#7f97a8","s":1.3,"y":72}]]},
+  words: ['Phil', 'photo', 'photos', 'phone', 'Steph', 'Ralph', 'graph', 'dolphin', 'phonics', 'alphabet'],
+  title: 'The Family Photo',
+  text: ['Phil and his family want a photo. Mom sets the phone on a box. "Smile!" said Mom.',
+    'Click! Then Phil blinks. Steph makes a silly face. Ralph the dog jumps on Dad. Click!',
+    'Mom checks the photos. In the photo, Phil blinked. Steph has a silly face. Dad is on his back with Ralph on him!',
+    'The photo is a mess. "It is the best photo," said Mom. "It is just like us!"'],
+  art: { set: 'yard', season: 'summer', items: [['box', 160, { s: 0.6 }], ['adult', 300, { skin: 0, hair: 'long', hairc: 'blond', top: '#c96a7a', pose: 'wave' }], ['kid', 390, { skin: 0, hair: 'short', hairc: 'blond', top: '#4f7f8a' }], ['kid', 470, { skin: 0, hair: 'braids', hairc: 'blond', top: '#e2b84f', mood: 'oh' }], ['adult', 570, { skin: 0, hair: 'short', hairc: 'brown', top: '#8fb36a', flip: true }], ['dog', 620, { colour: '#c99a5e', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What does Phil want a photo of?', opts: ['a dolphin', 'a gull', 'a ship'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Phil is glad at the end.', a: true, code: 'C3.2' },
-    { k: 'draw', q: 'Draw the dolphin next to the ship.', a: 'A dolphin jumping up out of the water beside a ship, maybe Phil with a phone.', code: 'C1.4' }
+    { k: 'choice', q: 'What did Mom use to get the photo?', opts: ['the phone', 'a box', 'a pen'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The photo was a mess.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'Why is Dad on his back?', opts: ['Ralph jumped on him.', 'He had a nap.', 'He fell on the ice.'], a: 0, code: 'C3.2' }
   ],
   tip: 'The two letters ph work as a team and say /f/, as in phone, graph and dolphin. You do not hear a p or an h. Watch for ph read as /p/ (pone for phone), and point out that ph can come at the start, middle or end of a word.'
 });
