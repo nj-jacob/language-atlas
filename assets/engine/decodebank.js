@@ -2494,17 +2494,17 @@ Atlas.decodable.more('ph', {
 Atlas.decodable.add({
   id: 'ar', band: '1', name: 'r-controlled ar', focus: ['ar'], key: 'car', mark: 'ar',
   heart: ['warm', 'war'],
-  words: ['car', 'star', 'jar', 'farm', 'barn', 'park', 'dark', 'shark', 'cart', 'yard', 'art', 'smart', 'hard', 'march', 'garden'],
-  title: 'Star in the Dark',
-  text: ['Marta lives on a big farm. In the barn, there is a cat named Star.',
-    'It is dark, and Star is not in the barn. Marta gets a lamp and hunts in the yard. She checks the cart and the garden. No Star!',
-    'Then Marta spots a box in the back of the car. Star is in the box with six tiny kits! Marta can not stop smiling.',
-    'Marta is so glad. She sets a soft rug in the barn. Star and the kits will be safe and warm.'],
-  art: {"set":"farm","time":"night","items":[["moon",150,{"y":34}],["car",230,{"colour":"#7aa5c4"}],["box",340,{"open":true}],["cat",380,{"colour":"#e8dcc4"}],["kitten",330,{"y":30}],["kitten",352,{"y":30,"colour":"#d48c52","flip":true}],["kid",460,{"skin":2,"hair":"long","flip":true,"pose":"hold"}]]},
+  words: ['party', 'start', 'park', 'card', 'cards', 'hard', 'yard', 'jar', 'far', 'dark'],
+  title: 'A Party in the Park',
+  text: ['It is the party of Carla. It is in the park, not far from the yard. Carla has a jar of jam tarts and a stack of cards.',
+    'At the start, it is hard. Carla is shy, and the kids sit apart. Then Mark has a plan. "Let us have a game of tag!"',
+    'Carla and the kids run hard in the park. They yell and grin. Then they sit and have jam tarts.',
+    'It gets dark. Carla and Mom start back home. "That was a smart party," said Carla.'],
+  art: { set: 'park', time: 'dusk', items: [['table', 330], ['cake', 330, { y: 52 }], ['kid', 200, { skin: 0, hair: 'long', hairc: 'brown', top: '#c96a7a', pose: 'wave' }], ['kid', 450, { skin: 2, hair: 'short', top: '#4f7f8a', flip: true }], ['kid', 540, { skin: 0, hair: 'short', hairc: 'blond', top: '#e2b84f', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Star is a dog.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'Where is Star?', opts: ['in the car', 'in the barn', 'in the garden'], a: 0, code: 'C1.1' },
-    { k: 'draw', q: 'Draw Star and the kits in the box.', a: 'A cat with several small kittens in a box, perhaps in the back of a car. Ask the child to tell you about the picture.', code: 'C1.4' }
+    { k: 'choice', q: 'Where was the party?', opts: ['in the park', 'at the farm', 'in the barn'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What was the plan of Mark?', opts: ['a game of tag', 'to have tarts', 'to go home'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why was it hard at the start?', opts: ['Carla was shy.', 'It was dark.', 'It was wet.'], a: 0, code: 'C3.2' }
   ],
   tip: 'When r comes after a, the two letters make one new sound, /ar/, as in car. The r is "bossy": the a is not short any more. Watch for the a read as short (cat-r): have the child say /ar/ as one sound.'
 });
@@ -2525,49 +2525,49 @@ Atlas.decodable.more('ar', {
 });
 /* step 33, story 3 */
 Atlas.decodable.more('ar', {
-  words: ['bark', 'spark', 'far', 'mark', 'dart', 'marsh', 'tar', 'harm', 'chart', 'starch'],
-  title: 'Barking in the Dark',
-  text: ['Marcus and Dad camp at a big park. They set up a tent. Marcus has a dog named Sparky. Sparky is smart, but he barks a lot.',
-    'It gets dark. Marcus and Dad sit at the camp stove and munch hot dogs. Then Sparky starts to bark and bark. There is a black and white animal by the tent!',
-    '"Sparky, hush!" said Dad. "It is a skunk." The skunk sniffs the hot dog buns. Then it trots off in the dark.',
-    '"That was close," said Dad. "Sparky, you are a smart dog, but do not bark at a skunk!"'],
-  art: {"set":"forest","time":"night","items":[["stars",350,{"y":50}],["tent",150,{"lit":true}],["campfire",300,{"lit":true}],["adult",380,{"skin":5,"hair":"short","beard":true,"top":"#5f8f6a"}],["kid",450,{"skin":5,"hair":"short","top":"#d9774b","mood":"oh"}],["dog",520,{"colour":"#c79a6b"}],["skunk",620,{"flip":true}]]},
+  words: ['cart', 'start', 'hard', 'far', 'smart', 'part', 'parts', 'sharp', 'Carl', 'car'],
+  title: 'Start the Cart',
+  text: ['Carl and his twin, Barb, want to make a go-cart. They have a box, a plank and a wagon with no top.',
+    'It is hard. Carl cuts the plank. Barb sets the plank on the wagon. They tape the box on top. "That part is mine," said Barb.',
+    'Then they start at the top of the path. Barb sits in the cart, and Carl pushes. The cart zips far!',
+    'Then the cart hits a bump, and a part pops off. Barb is in the grass, but she is fine. "Smart cart," said Barb. "But it has to have a brake!"'],
+  art: { set: 'yard', season: 'summer', items: [['wagon', 330, { colour: '#c0473e' }], ['kid', 330, { skin: 1, hair: 'braids', hairc: 'black', top: '#e2b84f', y: 14 }], ['kid', 200, { skin: 1, hair: 'short', hairc: 'black', top: '#4f7f8a', pose: 'hold' }]] },
   qs: [
-    { k: 'order', q: 'Number the story in order.', items: ['They set up a tent.', 'Sparky barks.', 'The skunk trots off.'], show: [1, 2, 0], code: 'C3.3' },
-    { k: 'yn', q: 'The animal is a skunk.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Which word ends like bark?', opts: ['park', 'barn', 'bike'], a: 0, code: 'C3.1' }
+    { k: 'choice', q: 'What did Carl and Barb make?', opts: ['a cart', 'a car', 'a card'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Carl cuts the plank.', 'Carl pushes the cart.', 'A part pops off.'], show: [1, 2, 0], code: 'C3.3' },
+    { k: 'choice', q: 'What does the cart need?', opts: ['a brake', 'a box', 'a plank'], a: 0, code: 'C3.2' }
   ]
 });
 Atlas.decodable.add({
   id: 'or', band: '1', name: 'r-controlled or', focus: ['or', 'ore'], key: 'corn, store', mark: 'ore?',
   heart: ['door', 'floor'],
-  words: ['corn', 'fork', 'horn', 'north', 'storm', 'sport', 'short', 'fort', 'born', 'torn', 'store', 'more', 'shore', 'snore', 'core'],
-  title: 'A Storm up North',
-  text: ['Jordan and Gran go to a cabin up north. It is a short trip. They pack corn, a pot and a fork.',
-    'At the shore, the sky gets dark. A storm is coming! Gran and Jordan run to the cabin and shut the door. The storm thumps on the cabin.',
-    'Gran gets the corn and the pot. They munch hot corn and tell jokes. Then Gran snores on the cot! Jordan grins. The storm is not so bad.',
-    'The next morning, the storm is gone. Jordan and Gran go back to the shore. It is still and calm.'],
-  art: {"set":"lake","time":"grey","items":[["rainfall",350,{"y":40}],["cloud",200,{"y":36}],["hut",520],["kid",300,{"skin":3,"hair":"long","coat":"#e2b84f"}],["adult",380,{"skin":3,"hair":"long","hairc":"grey","coat":"#b2493a"}]]},
+  words: ['storm', 'porch', 'short', 'for', 'more', 'corn', 'snort', 'torch', 'fort', 'morning'],
+  title: 'A Storm at Home',
+  text: ['It is a hot morning. Jordan and Gran sit on the porch with a dish of corn. Then the sky gets dark. A storm is coming!',
+    'Gran and Jordan run in and shut the door. Big drops hit the glass. Bang! The lamps go off.',
+    'Gran gets a torch. Jordan gets a quilt. They make a fort on the floor and tell jokes. Gran snorts.',
+    'The storm is short. The lamps come back on. "Can we have more storms?" said Jordan.'],
+  art: { set: 'yard', time: 'grey', items: [['rainfall', 350, { y: 0 }], ['house', 220], ['adult', 400, { skin: 3, hair: 'bun', hairc: 'grey', top: '#7a5c8c', glasses: true }], ['kid', 490, { skin: 3, hair: 'short', top: '#e2b84f', mood: 'oh', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Gran snores on the cot.', a: true, code: 'C1.1' },
-    { k: 'order', q: 'Number the story in order.', items: ['A storm is coming.', 'Jordan and Gran munch corn.', 'The storm is gone.'], show: [1, 2, 0], code: 'C3.3' },
-    { k: 'write', q: 'What do you do in a storm?', a: 'Any answer from the child\'s life: stay inside, read, play a game, hug a grown-up. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'Where did Gran and Jordan sit?', opts: ['on the porch', 'in the car', 'at the shore'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'The storm was long.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Gran get a torch?', opts: ['The lamps went off.', 'It was morning.', 'Jordan was sick.'], a: 0, code: 'C3.2' }
   ],
   tip: 'When r comes after o, the two letters make one sound, /or/, as in corn. An e after or (store, more) is silent and does not change the sound. Watch for the o read as short (cot-r), and for or read as "ro" (from for for).'
 });
 /* step 34, story 2 */
 Atlas.decodable.more('or', {
-  words: ['for', 'torch', 'cord', 'sort', 'porch', 'thorn', 'score', 'sore', 'stork', 'forest', 'acorn'],
-  title: 'A Fort in the Forest',
-  text: ['Nora and Cory go on a hike in the forest. They want to make a fort.',
-    'They drag logs and sticks and prop them on a big rock. The fort is short, but it has a door.',
-    'Then Nora spots a chipmunk. It runs in the fort and munches an acorn.',
-    '"The chipmunk likes it," said Cory. "Let him have it." So Nora and Cory make one more fort next to it. Then the kids sit in the big fort, and the chipmunk sits in the short one.'],
-  art: {"set":"forest","season":"autumn","items":[["rock",300,{"s":1.6}],["log",250],["squirrel",360,{"nut":true}],["kid",440,{"skin":1,"hair":"braids","hairc":"blond","flip":true,"top":"#c96a7a"}],["kid",520,{"skin":4,"hair":"short","flip":true,"top":"#5f8f6a"}]]},
+  words: ['score', 'sport', 'for', 'more', 'short', 'scored', 'sort', 'north', 'forth', 'cord'],
+  title: 'Score!',
+  text: ['Norm kicks a ball at a net. It is his sport, but he has not scored yet.',
+    'The game is short, just ten minutes more. The ball comes to Norm. He kicks it, but it goes past the net.',
+    '"Kick it more with the side of your shoe," said Gord, the man in charge. Norm nods.',
+    'Then the ball comes back. Norm kicks with the side of his shoe. Score! "That is the sort of kick I like," said Gord.'],
+  art: { set: 'park', season: 'autumn', items: [['ball', 360, { colour: '#f4efe6' }], ['kid', 270, { skin: 0, hair: 'short', hairc: 'auburn', top: '#3e6d9c', pose: 'wave' }], ['kid', 460, { skin: 4, hair: 'short', top: '#c0473e', flip: true }], ['adult', 580, { skin: 1, hair: 'long', hairc: 'black', top: '#2f5d4a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The chipmunk runs in the fort.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'What did the chipmunk have?', opts: ['an acorn', 'a fork', 'a rock'], a: 0, code: 'C1.1' },
-    { k: 'choice', q: 'Which word ends like fort?', opts: ['short', 'for', 'corn'], a: 0, code: 'C3.1' }
+    { k: 'yn', q: 'Norm scored the first time.', a: false, code: 'C1.1' },
+    { k: 'choice', q: 'What tip did Gord have?', opts: ['Kick with the side of your shoe.', 'Run more.', 'Sit for a bit.'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Norm score?', opts: ['He did what Gord said.', 'The net was big.', 'The game was short.'], a: 0, code: 'C3.2' }
   ]
 });
 /* step 34, story 3 */
@@ -2653,17 +2653,17 @@ Atlas.decodable.add({
 });
 /* step 35x, story 2 */
 Atlas.decodable.more('air-are', {
-  words: ['bear', 'scare', 'stare', 'hair', 'hare', 'dare', 'chair', 'bare', 'spare', 'fair'],
-  title: 'A Bear Scare',
-  text: ['Blair and her mom camp by a lake in the North. It is dark. Blair is in bed in the tent.',
-    'Then, thump, thump! Blair sits up. The hair on her neck stands up. "Mom, is it a bear?"',
-    'Mom gets the lamp. She and Blair look past the tent flap. A big hare sits on the grass. It stares at them. Then it hops off.',
-    '"It was just a hare," says Mom. "Not a bear!" Blair grins. "That was a big scare from a hare." Then she curls up in bed.'],
-  art: { set: 'forest', time: 'night', items: [['moon', 590, { y: 40 }], ['stars', 300, { y: 30 }], ['tent', 220], ['kid', 320, { skin: 1, hairc: 'black', hair: 'braids', top: '#7aa5c4', bottom: '#5a4a6a', mood: 'oh' }], ['adult', 380, { skin: 1, hair: 'bun', hairc: 'black', top: '#c96a7a', bottom: '#3b3f4a', pose: 'hold' }], ['rabbit', 510, { flip: true, colour: '#a08a6e' }]] },
+  words: ['hair', 'chair', 'stare', 'care', 'scared', 'fair', 'pair', 'bare', 'share', 'stairs'],
+  title: 'A Hair Cut',
+  text: ['Clare has long hair. It hangs in a big mop. Then she has to get a hair cut. Clare is scared.',
+    'Clare sits in a big chair. Hal, the barber, has a pair of snips. Clare stares at the snips.',
+    '"I will take care," said Hal. Snip, snip. Bits of hair fall on the floor. It does not hurt.',
+    'Clare checks the glass. Her hair is short and smart. "That is fair," she said with a grin.'],
+  art: { set: 'shop', items: [['chair', 320], ['kid', 320, { skin: 0, hair: 'short', hairc: 'red', top: '#c96a7a', y: 20 }], ['adult', 450, { skin: 2, hair: 'short', top: '#f4efe6', pose: 'hold', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'It was a bear.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'Why does Blair sit up?', opts: ['There is a thump.', 'It is time to go.', 'Mom yells.'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What is a big scare for you?', a: 'Any sensible answer, such as: a big dog, the dark, a storm.', code: 'C2.5' }
+    { k: 'yn', q: 'Clare was scared at the start.', a: true, code: 'C1.1' },
+    { k: 'choice', q: 'What did Hal cut with?', opts: ['a pair of snips', 'a pen', 'a rake'], a: 0, code: 'C1.1' },
+    { k: 'draw', q: 'Draw Clare in the chair.', a: 'Clare in a big chair with hair falling. Ask the child how Clare felt at the end.', code: 'C1.4' }
   ]
 });
 /* step 35x, story 3 */
@@ -2702,66 +2702,64 @@ Atlas.decodable.add({
 });
 /* step 36, story 2 */
 Atlas.decodable.more('ai-ay', {
-  words: ['trail', 'way', 'chain', 'may', 'pail', 'sway', 'brain', 'spray', 'stain', 'plain', 'snail'],
-  title: 'Gail and the Snail',
-  text: ['After the rain, Gail and her dad go for a walk on the trail by the lake. The trail is wet.',
-    'Gail stops. On a rock by the trail, there is a snail. It slides on the rock and makes a shiny trail.',
-    '"Can I take it home?" asks Gail. "It can live in a tray." Dad is not sure. "A snail is happy here. It has rain, plants and shade. In a tray, it may be sad."',
-    'Gail sets the snail on a wet fern by the trail. "Stay here, Snail. This is your home." On the way back, Gail spots six more snails. "Hi, snails!" she said. "I hope you have a nice day."'],
-  art: { set: 'lake', time: 'grey', season: 'spring', items: [['cloud', 520, { y: 40 }], ['adult', 210, { skin: 0, hair: 'short', hairc: 'red', coat: '#4f7a5a', bottom: '#4a4a4a' }], ['kid', 300, { skin: 0, hair: 'curly', hairc: 'auburn', coat: '#e2b84f', bottom: '#4f6d8a', mood: 'oh' }], ['rock', 400], ['snail', 400, { y: 22 }], ['bush', 520]] },
+  words: ['play', 'day', 'today', 'stay', 'paint', 'rain', 'wait', 'train', 'trail', 'way'],
+  title: 'Play Day',
+  text: ['Today is play day for the class. Fay can not wait! She will paint and play games.',
+    'Then it starts to rain. "We can not play on the grass," said Miss Hay. "We will stay in."',
+    'Fay is sad. But in the gym, the class plays train. They run in a long trail. Then they paint a big sign: Play Day!',
+    'At the end of the day, Fay grins. "Rain or no rain, it was the best way to play," she said.'],
+  art: { set: 'classroom', time: 'grey', items: [['kid', 200, { skin: 1, hair: 'long', hairc: 'brown', top: '#e2b84f', pose: 'wave' }], ['kid', 300, { skin: 3, hair: 'short', top: '#4f7f8a' }], ['kid', 400, { skin: 0, hair: 'braids', hairc: 'blond', top: '#c96a7a' }], ['adult', 540, { skin: 0, hair: 'bun', hairc: 'brown', top: '#7a5c8c', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Gail takes the snail home.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'Why is the snail happy by the trail?', opts: ['It has rain, plants and shade.', 'It has a tray.', 'It has clay.'], a: 0, code: 'C3.2' },
-    { k: 'draw', q: 'Draw the snail on the trail.', a: 'A snail with a swirl on its shell, on a rock or fern by a path. Ask the child why Gail let it stay.', code: 'C1.4' }
+    { k: 'choice', q: 'Why did the class stay in?', opts: ['It was rainy.', 'It was hot.', 'The gym was shut.'], a: 0, code: 'C3.2' },
+    { k: 'choice', q: 'What did the class paint?', opts: ['a sign', 'a train', 'a chair'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Fay had fun at the end.', a: true, code: 'C1.1' }
   ]
 });
 /* step 36, story 3 */
 Atlas.decodable.more('ai-ay', {
-  words: ['bay', 'mail', 'today', 'raisin', 'claim', 'paid', 'sprain', 'delay', 'fail', 'railway'],
-  title: 'Jay Waits for Mail',
-  text: ['Jay has a pen pal named Tayla. Tayla is Inuk. She lives up North, in a small place by a bay.',
-    'Jay makes Tayla a letter. He tells her that he has a cat named Daisy. He adds a painting of Daisy on the stairs. Then he mails it.',
-    'Jay waits. Day one, no mail. Day two, no mail. He waits eight days. "It is a long way North," said Mom. "The mail may have to go on a plane."',
-    'On day nine, there is a fat letter in the mail. It is from Tayla! She sent a painting of her sled dogs on the ice.',
-    'Jay sets the painting on his wall. Then he gets his paints and makes Tayla a painting back. "Mail takes a long time," said Jay, "but it is the best."'],
-  art: { set: 'town', season: 'autumn', items: [['plane', 540, { y: 36 }], ['cat', 230, { colour: '#e2b84f' }], ['mailbox', 330], ['kid', 400, { flip: true, skin: 4, hair: 'curly', top: '#4f6d8a', bottom: '#6b5a4a', pose: 'hold' }], ['adult', 480, { flip: true, skin: 4, hair: 'long', top: '#d9774b', bottom: '#3b3f4a' }]] },
+  words: ['mail', 'Gail', 'day', 'way', 'rain', 'wait', 'today', 'pail', 'stay', 'snail'],
+  title: 'Gail Brings the Mail',
+  text: ['Gail brings the mail on Bay Lane. Rain or sun, she brings a letter or a box every day.',
+    'Today it is rainy and dark. Ray waits by the door. He is waiting for a box from his gran.',
+    'Then Gail is at the door with a big wet box. "This is for you, Ray," she said. "I kept it dry."',
+    'Ray rips it open. It is a red rain hat! "Thank you, Gail," said Ray. "Stay dry on the way!"'],
+  art: { set: 'town', time: 'grey', items: [['rainfall', 350, { y: 0 }], ['mailbox', 190], ['adult', 320, { skin: 4, hair: 'bun', top: '#3e6d9c', hat: 'cap', hatc: '#3e4a5a', pose: 'hold' }], ['box', 360, { s: 0.6, y: 30 }], ['kid', 460, { skin: 0, hair: 'short', hairc: 'brown', top: '#c0473e', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Jay waits eight days.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Why did the mail take a long time?', opts: ['Tayla lives far from Jay.', 'Jay lost it.', 'Daisy ate it.'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What can you tell a pen pal?', a: 'Any true detail from the child\'s life: a pet, a game, a food, the weather. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'What is the job of Gail?', opts: ['She brings the mail.', 'She drives a train.', 'She paints signs.'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What was in the box?', opts: ['a rain hat', 'a pail', 'a snail'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Gail say "Stay dry on the way!"?', opts: ['Ray had a rain hat for rainy days.', 'It was sunny.', 'Ray was going on a trip.'], a: 0, code: 'C3.2' }
   ]
 });
 Atlas.decodable.add({
   id: 'ee-ea', band: '1', name: 'Vowel team ee ea ey', focus: ['ee', 'ea', 'ey'], key: 'tree, seal, key', mark: 'ee|ea|ey',
   heart: ['head', 'bread'],
-  words: ['tree', 'bee', 'feet', 'green', 'sleep', 'sheep', 'seal', 'beach', 'team', 'leaf', 'eat', 'read', 'key', 'sea', 'week'],
-  title: 'The Seal on the Beach',
-  text: ['Lee and his gran go to the beach by the sea. It is a clear, sunny morning. They see green weeds and black rocks.',
-    'On a big rock, Lee spots a seal. It is fast asleep in the heat. Its fur is wet and sleek.',
-    'Lee wants to creep up and pet it. "Keep back," said Gran. "A seal needs space. This is its home. We can see it from here."',
-    'So Lee and Gran sit on a log and eat a snack. They munch bread and jam and keep still.',
-    'Then the seal lifts its head. It slips in the sea with a big splash. Lee waves. "See you, Seal!" The seal\'s sleek head pops up. Then it is gone.'],
-  art: { set: 'shore', items: [['sun', 610, { y: 36 }], ['birds', 380, { y: 46 }], ['adult', 160, { skin: 1, hair: 'bun', hairc: 'grey', top: '#7aa5c4', bottom: '#5a4a3e' }], ['log', 260], ['jam', 260, { y: 18 }], ['kid', 340, { skin: 1, hairc: 'blond', hair: 'short', top: '#e2b84f', bottom: '#4f6d8a', pose: 'wave' }], ['rock', 510, { s: 1.4 }]] },
+  words: ['sheep', 'feed', 'need', 'three', 'eat', 'green', 'weeds', 'sweet', 'clean', 'meet'],
+  title: 'Feeding the Sheep',
+  text: ['Neal and his gran have three sheep. Each morning, the sheep need to eat.',
+    'Neal fills a pail with feed. He gets clean water as well. The sheep meet him at the gate. Bleat!',
+    'One sheep eats green weeds by the fence. One sheep eats from the pail. The last sheep eats from the hand of Neal!',
+    '"That sheep is sweet," said Neal. His gran grins. "She likes you, Neal."'],
+  art: { set: 'farm', items: [['ram', 220, { colour: '#efe8dc' }], ['ram', 320, { colour: '#efe8dc', flip: true }], ['kid', 420, { skin: 0, hair: 'short', hairc: 'brown', top: '#4f8a7a', pose: 'hold', flip: true }], ['adult', 540, { skin: 0, hair: 'short', hairc: 'brown', top: '#8a5a3e', hat: 'cap', hatc: '#3e4a5a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The seal is asleep on a rock.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Why did Gran say, "Keep back"?', opts: ['The seal needs space.', 'The rock is hot.', 'It is late.'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What can you see at a beach?', a: 'Any answer: sand, shells, waves, rocks, birds, boats. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'How many sheep do they have?', opts: ['three', 'six', 'ten'], a: 0, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Neal fills a pail.', 'The sheep meet him at the gate.', 'A sheep eats from his hand.'], show: [2, 0, 1], code: 'C3.3' },
+    { k: 'draw', q: 'Draw Neal and the three sheep.', a: 'Neal with a pail and three sheep. Ask the child what sheep need each day.', code: 'C1.4' }
   ],
   tip: 'Ee and ea usually say the name of e, /ee/, as in tree and seal. Ey at the end of a word often says /ee/ too, as in key. Watch for ea in heart words like head and bread, where it says /e/: tell the child these are the odd ones out.'
 });
 /* step 37, story 2 */
 Atlas.decodable.more('ee-ea', {
-  words: ['sweet', 'heat', 'peek', 'clean', 'steam', 'need', 'leak', 'treat', 'cheek', 'deep', 'meat'],
-  title: 'Sweet Sap',
-  text: ['It is early spring. Dean and his grandpa go to the sugar bush. Dean\'s grandpa is Cree. "My family has made syrup from sap for a long, long time," he said.',
-    'Each tree has a pail on it. The sap leaks in the pails. Dean peeks in a pail. The sap is clear, like water. "It is not sweet!" he said.',
-    '"Not yet," said Grandpa. "We need to heat it." They heat the sap in a big pan for a long time. At last, the sap is thick, sweet syrup.',
-    'Grandpa drips hot syrup on a tray of clean, crushed ice. Dean twists it on a stick and eats it. "That is a sweet treat," said Dean.'],
-  art: { set: 'forest', time: 'dusk', season: 'winter', items: [['maple', 150, { s: 1.1 }], ['adult', 260, { skin: 2, hair: 'short', hairc: 'grey', coat: '#7d2f27', bottom: '#3b3f4a', hat: 'toque', hatc: '#3f5a7a' }], ['campfire', 350], ['pot', 350, { y: 10, steam: true }], ['kid', 440, { flip: true, skin: 2, hair: 'short', coat: '#4f7a5a', bottom: '#4f6d8a', hat: 'toque', hatc: '#e2b84f', pose: 'hold' }], ['maple', 590, { s: 0.75, y: 14 }]] },
+  words: ['please', 'read', 'sleep', 'seen', 'tree', 'dream', 'sweet', 'need', 'teeth', 'bean'],
+  title: 'Please Read to Me',
+  text: ['It is time for sleep. Dean had a bath, and his teeth are clean. "Please read to me," said Dean.',
+    'Dad gets a tale. It is a tale of a bean and a big tree. Dean leans on Dad.',
+    'Dad reads and reads. Dean is not asleep. "Please read it again," said Dean.',
+    'Dad reads it again. Then Dean is fast asleep. He has a dream of a big green tree. "Sweet dreams," said Dad.'],
+  art: { set: 'bedroom', time: 'night', items: [['bed', 330], ['kid', 330, { skin: 1, hair: 'short', hairc: 'brown', top: '#7a8fb3', y: 40, mood: 'oh' }], ['book', 420, { y: 40 }], ['adult', 480, { skin: 1, hair: 'short', hairc: 'brown', top: '#8fb36a', flip: true }], ['lamp', 600]] },
   qs: [
-    { k: 'yn', q: 'The sap is sweet when it drips from the tree.', a: false, code: 'C1.1' },
-    { k: 'order', q: 'Number the story in order.', items: ['Dean peeks in a pail.', 'They heat the sap.', 'Dean eats the sweet treat.'], show: [1, 2, 0], code: 'C3.3' },
-    { k: 'choice', q: 'Why did they heat the sap?', opts: ['to make it sweet', 'to make ice', 'to clean the pails'], a: 0, code: 'C3.2' }
+    { k: 'choice', q: 'What is in the tale?', opts: ['a bean and a big tree', 'a sheep', 'a seal'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Dad read it again?', opts: ['Dean said please.', 'Dad liked it.', 'It was short.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Dean fell asleep.', a: true, code: 'C1.1' }
   ]
 });
 /* step 37, story 3 */
@@ -2784,18 +2782,17 @@ Atlas.decodable.more('ee-ea', {
 Atlas.decodable.add({
   id: 'ea-bread', hunt: 'Underline every word where ea says /e/ as in bread or /ay/ as in great.', band: '1', name: 'ea as in bread and great', focus: ['ea'], key: 'bread, great', mark: 'ea',
   heart: [],
-  words: ['head', 'bread', 'ready', 'heavy', 'weather', 'feather', 'sweater', 'breakfast', 'instead', 'spread', 'thread', 'breath', 'great', 'break', 'steak'],
-  title: 'Bannock for Breakfast',
-  text: ['The weather was wet and chilly. Ben and his dad wanted to make bannock for breakfast.',
-    'Dad set a heavy pan on the stove. Ben mixed the bannock in a big dish. Then he pressed it flat with his hands, and Dad slid it in the pan.',
-    '"Is it ready?" Ben asked. His tummy was rumbling. "Not yet," said Dad. "Bannock needs time. Let us get the jam instead."',
-    'At last, the bannock was ready. It was hot and crisp. Ben spread jam on a big slice. He ate one slice, then a second.',
-    'Dad gave Mom a slice in bed. "This is great bread," said Mom. Ben grinned. "It is great weather for bannock," he said.'],
-  art: { set: 'kitchen', time: 'grey', season: 'autumn', items: [['stove', 180, { lit: true }], ['pan', 180, { y: 71 }], ['adult', 270, { flip: true, skin: 2, hair: 'short', beard: true, top: '#8a5a3e', bottom: '#4f6d8a' }], ['kid', 360, { flip: true, skin: 2, hair: 'short', hairc: 'brown', top: '#7aa5c4', bottom: '#4a4a4a', pose: 'hold' }], ['table', 490], ['jam', 470, { y: 55 }], ['bun', 510, { y: 55 }]] },
+  words: ['bread', 'breakfast', 'ready', 'spread', 'heavy', 'head', 'instead', 'thread', 'sweater', 'weather'],
+  title: 'Bread for Breakfast',
+  text: ['Ben and his dad wanted to make bread for breakfast. Dad set a heavy pan on the stove.',
+    'Ben mixed milk and an egg in a big dish. Dad set the bread in the pan. Then they had to wait.',
+    'At last the bread was ready. Ben spread jam on it. Dad spread butter on his instead.',
+    'Ben had jam on his head and his sweater. "Bread is the best breakfast," said Ben.'],
+  art: { set: 'kitchen', time: 'day', items: [['stove', 280], ['pan', 280, { y: 62 }], ['table', 460], ['bun', 460, { y: 52 }], ['kid', 380, { skin: 0, hair: 'short', hairc: 'brown', top: '#c0473e' }], ['adult', 570, { skin: 0, hair: 'short', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Ben and Dad made bannock for breakfast.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Why did Ben have to wait?', opts: ['Bannock needs time.', 'Dad was asleep.', 'The jam was lost.'], a: 0, code: 'C3.2' },
-    { k: 'choice', q: 'Which word ends like bread?', opts: ['head', 'bead', 'break'], a: 0, code: 'C3.1' }
+    { k: 'choice', q: 'What did Ben spread on his bread?', opts: ['jam', 'butter', 'egg'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Dad had jam on his bread.', a: false, code: 'C1.1' },
+    { k: 'order', q: 'Number the story in order.', items: ['Ben mixed it in a dish.', 'They had to wait.', 'Ben spread jam on the bread.'], show: [1, 2, 0], code: 'C3.3' }
   ],
   tip: 'Ea has three sounds. Most often it says /ee/ as in seal, but in some words it says short /e/, as in bread, head and weather, and in a few words it says /ay/, as in great, break and steak. If the child reads bread as "breed", have them try the other sounds of ea and pick the one that makes a real word.'
 });
@@ -2834,17 +2831,17 @@ Atlas.decodable.more('ea-bread', {
 Atlas.decodable.add({
   id: 'oa-ow', band: '1', name: 'Vowel team oa ow oe', focus: ['oa', 'ow', 'oe'], key: 'boat, snow, toe', mark: 'oa|ow|oe',
   heart: ['four', 'pour'],
-  words: ['boat', 'coat', 'goat', 'road', 'toad', 'soap', 'loaf', 'snow', 'grow', 'slow', 'blow', 'show', 'bowl', 'toe'],
-  title: 'Joan and the Goat',
-  text: ['Joan lives by a lake in the North. Snow fell all week. The lake froze, and the road was white with snow.',
-    'Joan put on her coat and her toque. She got her sled and her goat, Flo. Flo can pull a sled! They went slow up the road, and the snow did blow.',
-    'At the end of the road, they met Gran. Gran had a bowl of oats and a loaf of bannock. Flo ate the oats. Then Flo ate the soap by the sink!',
-    '"Flo, soap is not a snack!" said Joan. Gran grinned. Then they all sat by the stove, and Joan got the snow off her toes.'],
-  art: { set: 'snow', time: 'grey', items: [['snowfall', 350], ['house', 590, { s: 0.8 }], ['sled', 210], ['goat', 300], ['kid', 400, { flip: true, skin: 0, hairc: 'blond', hair: 'long', coat: '#b2493a', bottom: '#3b3f4a', hat: 'toque', hatc: '#e2b84f', pose: 'wave' }]] },
+  words: ['grow', 'slow', 'row', 'soak', 'show', 'below', 'soaked', 'low', 'own', 'bowl'],
+  title: 'Grow, Seed, Grow',
+  text: ['Joan has a seed of her own. She sets it in a cup of dirt. Then she soaks it with water.',
+    'Each day, Joan checks the cup. It is slow. "Grow, seed, grow," she said.',
+    'Then a green tip shows. Below it, a stem grows. Joan sets the cup in the sun.',
+    'The plant grows and grows. Joan sets it in a row with her other plants. "I did it on my own!" she said.'],
+  art: { set: 'kitchen', items: [['table', 360], ['plant', 340, { y: 52, s: 0.7 }], ['plant', 400, { y: 52, s: 0.7 }], ['kid', 230, { skin: 2, hair: 'braids', top: '#8fb36a', pose: 'hold' }]] },
   qs: [
-    { k: 'yn', q: 'Flo is a goat.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'What did Flo eat by the sink?', opts: ['soap', 'a coat', 'a boat'], a: 0, code: 'C1.1' },
-    { k: 'order', items: ['Joan put on her coat.', 'Joan and Flo went up the road.', 'Flo ate the soap.'], show: [2, 0, 1], q: 'Number the sentences in order.', code: 'C3.3' }
+    { k: 'choice', q: 'What did Joan grow?', opts: ['a plant', 'a goat', 'a bowl'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What did the seed need?', opts: ['water and sun', 'a coat', 'a road'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the seed as it grows.', a: 'A seed, then a green tip, then a plant with roots. Ask the child what a seed needs to grow.', code: 'C1.4' }
   ],
   tip: 'The letters oa, ow and oe all say the long o sound, as in boat, snow and toe. A vowel team is two letters that make one sound. Watch for ow read as in cow: in this story it always says long o, so ask "Does it make sense?"'
 });
@@ -2865,18 +2862,17 @@ Atlas.decodable.more('oa-ow', {
 });
 /* step 38, story 3 */
 Atlas.decodable.more('oa-ow', {
-  words: ['row', 'oar', 'coast', 'groan', 'moan', 'shadow', 'roam', 'pillow', 'elbow', 'tow', 'goal'],
-  title: 'The Lost Oar',
-  text: ['Owen and his gran row a boat on the lake. It is a still, warm morning.',
-    'Then Gran lets go of an oar to show Owen a heron on a log. Splash! The oar slips off the boat. It floats off, slow and low on the water.',
-    '"Oh no!" said Owen. Gran has one oar. She rows, but the boat just spins. A gust starts to blow. The boat drifts. Gran groans.',
-    'Then Owen spots the oar. It is stuck in the reeds by the shore. "Gran, row on this side, then on that side," he said. The boat creeps up to the reeds. Owen grabs the oar.',
-    'At last they float back to the dock, where Mom waits. "What a show!" she jokes. Gran grins. "Owen is the captain of this boat."'],
-  art: { set: 'lake', time: 'dusk', items: [['sun', 120, { y: 70 }], ['kid', 300, { y: 34, skin: 1, hairc: 'brown', hair: 'short', top: '#e2b84f', mood: 'oh' }], ['adult', 380, { y: 24, flip: true, skin: 1, hair: 'curly', hairc: 'grey', top: '#4f7a5a' }], ['canoe', 340, { y: 30, water: true, paddle: false }], ['bush', 600, { y: 6 }]] },
+  words: ['coat', 'Joan', 'show', 'own', 'throw', 'below', 'row', 'road', 'goal', 'soap'],
+  title: 'The Lost Coat',
+  text: ['At the end of the day, Moe cannot see his coat on its peg. It is a red coat with a zip.',
+    'Moe is upset. "I will get wet and chilly on the road home," he said.',
+    'Joan helps him. They check the row of pegs. They check below the benches. Then Joan spots a red coat on the floor in the gym.',
+    'It is his own coat! "Thank you, Joan," said Moe. "Let me show you a trick to keep it on the peg."'],
+  art: { set: 'classroom', items: [['shelf', 200], ['kid', 330, { skin: 0, hair: 'short', hairc: 'black', top: '#e2b84f', mood: 'sad' }], ['kid', 440, { skin: 3, hair: 'puffs', top: '#c96a7a', pose: 'wave', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Gran drops an oar.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Why did the boat spin?', opts: ['Gran has one oar.', 'Owen tips it.', 'A heron bumps it.'], a: 0, code: 'C3.2' },
-    { k: 'write', q: 'What can you do in a boat?', a: 'Any answer: row, fish, look at birds, swim off the side with a grown-up. Help write one short sentence.', code: 'C2.5' }
+    { k: 'choice', q: 'What did Moe not have?', opts: ['his coat', 'his goat', 'his boat'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why was Moe upset?', opts: ['He will be chilly.', 'He was sick.', 'Joan was mean.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Joan spotted the coat.', a: true, code: 'C1.1' }
   ]
 });
 Atlas.decodable.add({
