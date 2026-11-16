@@ -1,7 +1,7 @@
 /* Heart words: checks every set (run by run.js; or alone:  node hearts.js  ).
    It reads assets/engine/heartbank.js on its own, without the engine, and checks that:
    - the sets go Kindergarten, then Grades 1 to 8, with 1 to 10 words each, and no word comes twice;
-   - each word is letters only, with its heart part marked in [ ] once or more, every bracket closed and none empty;
+   - each word is letters only (a contraction such as don't may have its apostrophe), with its heart part marked in [ ] once or more, every bracket closed and none empty;
    - every heart word of the decodable readers is here (and is not a word a child can sound out by then, apart from its heart part),
      in a set no later than the reader's grade, so a child meets it in the readers and can learn it here;
    - every heart word of a Grades 4 to 8 spelling step is in a set no later than the step's grade. */
@@ -29,7 +29,7 @@ function check(sets, root) {
     if (!words.length || words.length > 10) problems.push(where + ': needs 1 to 10 words');
     words.forEach(raw => {
       const w = raw.replace(/[[\]]/g, '');
-      if (!/^[A-Za-z]+$/.test(w)) problems.push(where + ' "' + raw + '": letters only, with [ ] round the heart part');
+      if (!/^[A-Za-z]+('[a-z]+)?$/.test(w)) problems.push(where + ' "' + raw + '": letters only (and an apostrophe, as in don\'t), with [ ] round the heart part');
       if (!/\[[a-z]+\]/i.test(raw) || /\[\]|\[[^\]]*\[|\][^[]*\]|^[^[]*\]|\[[^\]]*$/.test(raw)) problems.push(where + ' "' + raw + '": needs a heart part in [ ], every bracket closed');
       const lw = w.toLowerCase();
       if (seen[lw]) problems.push(where + ' "' + w + '": is already in set ' + seen[lw]);

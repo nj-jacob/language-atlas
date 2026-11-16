@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-16
+- Heart words: the new heart words from the decodable readers (money, always, been, goodbye, into, don't) are in the Grade 1 sets, in the order the readers teach them (440 words; Grade 1 now has 13 sets). A contraction keeps its apostrophe.
 - Decodable readers, batch 8: 8 Grade 2 and Grade 3 stories rewritten as everyday stories (mailing a parcel, a soup coupon, baking muffins, reading to a preschool, a sleepover, an overdue library book, a school talent show, a solar car at a fair), in place of reindeer, caribou, northern lights and bear trips.
 - Decodable readers, batch 7: 17 Kindergarten stories rewritten as everyday stories (mopping up, a scraped knee, a sick day, cooking, chores, a fun run, a stop for gas, an art kit, mending with Nan, sharing a toy, baking, nap time, a picnic, a rainy race, a parcel from Nan, learning to hop, a stuck zipper), in place of foxes in the fog, a yak and huts by a bog.
 - Decodable readers, batch 6: 5 more Grade 1 stories (-le to y to i) rewritten as everyday stories (a long car trip, a thank-you note, painting a bedroom, a farmers' market, baking before Christmas). **All 315 Dolch sight words are now used** in the stories, and the check fails if one goes missing.
