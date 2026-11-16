@@ -7,7 +7,7 @@
    Nothing is marked on screen: the child reads and answers on paper.
 
    The pages are in assets/engine/decodebank.js, loaded when the tool first opens:
-     Atlas.decodable.add({ id, band, name, focus, key, mark, heart, words, title, text, pic, qs, tip })
+     Atlas.decodable.add({ id, band, name, focus, key, mark, heart, words, title, text, art, qs, tip })
    id     the step: tests/decodable.js lists the steps in order and works out again that every word can be sounded out at it.
    band   'K', '1', '2' or '3': the grade where Ontario's Language Foundations Continuum (2026) teaches the step's spelling.
           The story's type size goes by its length (longer stories are set smaller), not by its grade.
@@ -16,7 +16,8 @@
    heart  the new heart words (read by heart, not sounded out) for this step; earlier steps' heart words can be used too.
    words  8 to 15 warm-up words, each using the step's new spelling.
    title, text  the story's title and its paragraphs (plain text).
-   pic    the picture: a list of PICS names below, drawn left to right on the ground (sky ones up in the sky).
+   art    the story's full-colour picture: a scene (setting, time of day, season, people, animals and things), drawn by decodeart.js
+          with the parts in decodeparts.js; the top of decodeart.js describes it. Every story has its own.
    qs     3 questions, each with its Ontario code (Grade 1 code; the Grade 2 code is worked out from CODES):
             { k: 'yn', q: 'a sentence to circle yes or no for', a: true, code }
             { k: 'choice', q, opts: [...], a: 1, code }          circle one (a from 0)
@@ -26,7 +27,7 @@
    tip    for the grown-up: the rule in plain words, and what to watch for.
    hunt   (optional) the word hunt under the story, when "Underline every word with" + the focus does not say it well.
    More stories for a step come after it, with the same step's sound, rule and heart words:
-     Atlas.decodable.more(id, { title, text, pic, qs, words })
+     Atlas.decodable.more(id, { title, text, art, qs, words })
    A story may also give its own words (warm-up), name, focus, key, mark, hunt and tip, and blend ('l', 'r' or 's': a story about one kind
    of blend at the start). #tools/decodable/<id> opens a step's first story, #tools/decodable/<id>/2 its second. */
 (function () {
@@ -55,7 +56,7 @@
     schwa: 'word', 'long-words': 'word', 'prefix-g3': 'morph', 'suffix-g3': 'morph' };
   D.part = function (p) { var k = PART_OF[p.id] || 'gpc'; return PARTS.filter(function (x) { return x[0] === k; })[0]; };
 
-  /* ---------- the pictures: line art in a 100 by 100 box, the ground at 96 ---------- */
+  /* ---------- small line-art word pictures in a 100 by 100 box, the ground at 96 (the Spelling path shows them beside a word) ---------- */
   function k(d) { return '<path class="k" d="' + d + '"/>'; }
   function a(d) { return '<path class="a" d="' + d + '"/>'; }
   function t(d) { return '<path class="t" d="' + d + '"/>'; }
@@ -139,15 +140,6 @@
     rain: k('M20 50 Q10 50 12 40 Q14 30 26 32 Q30 18 46 20 Q58 10 70 24 Q86 22 86 36 Q90 50 76 50 Z') + a('M30 60 l-4 10 M50 60 l-4 10 M70 60 l-4 10 M40 76 l-4 10 M60 76 l-4 10'),
     snow: a('M50 26 V74 M29 38 L71 62 M71 38 L29 62') + t('M44 30 L50 36 L56 30 M44 70 L50 64 L56 70')
   };
-  var SKY = ['bird', 'sun', 'moon', 'star', 'cloud', 'rain', 'snow', 'kite', 'plane'];
-  D.scene = function (names) {
-    var n = names.length, w = 700, step = Math.min(160, w / n), x0 = (w - step * n) / 2;
-    var out = names.map(function (nm, i) {
-      var sky = SKY.indexOf(nm) >= 0, s = sky ? 0.9 : 1.45, x = x0 + i * step + (step - 100 * s) / 2, y = sky ? -6 : 150 - 96 * s - 4;
-      return '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') scale(' + s + ')">' + (PICS[nm] || '') + '</g>';
-    }).join('');
-    return '<svg class="dc-art" viewBox="0 0 700 150" aria-hidden="true"><path class="t" d="M0 146 H700"/>' + out + '</svg>';
-  };
 
   /* a step is its first story; its other stories share everything they do not give themselves */
   D.add = function (p) { p.n = D.list.length + 1; p.s = 1; p.stories = [p]; D.list.push(p); };
@@ -187,14 +179,19 @@
     return { k: p.band === 'K' ? KCODES : null, g1: g1, g2: g1.map(function (x) { return CODES[x] || x; }).filter(function (x, i, all) { return all.indexOf(x) === i; }).sort() };
   };
   var LOAD = null;
+  /* the pictures' engine and parts, then the stories, one after the other */
   D.load = function () {
-    LOAD = LOAD || new Promise(function (ok) {
-      var s = document.createElement('script');
-      s.src = '../assets/engine/decodebank.js';
-      s.onload = ok;
-      s.onerror = ok;
-      document.head.appendChild(s);
-    });
+    LOAD = LOAD || ['decodeart.js', 'decodeparts.js', 'decodebank.js'].reduce(function (prev, f) {
+      return prev.then(function () {
+        return new Promise(function (ok) {
+          var s = document.createElement('script');
+          s.src = '../assets/engine/' + f;
+          s.onload = ok;
+          s.onerror = ok;
+          document.head.appendChild(s);
+        });
+      });
+    }, Promise.resolve());
     return LOAD;
   };
 
@@ -213,19 +210,28 @@
     if (q.k === 'choice') h += '<div class="ws-opts dc-opts">' + q.opts.map(function (o) { return '<span class="ws-opt">' + esc(o) + '</span>'; }).join('') + '</div>';
     if (q.k === 'order') h += '<ol class="ws-order dc-order">' + q.show.map(function (j) { return '<li><span class="ws-blank ws-box"></span><span>' + esc(q.items[j]) + '</span></li>'; }).join('') + '</ol>';
     if (q.k === 'draw') h += '<div class="dc-draw"></div>';
-    if (q.k === 'write') h += '<div class="ws-lines dc-write" style="--n:1"></div>';
+    if (q.k === 'write') h += '<div class="dc-write"></div>';
     return '<div class="ws-q dc-q dc-q-' + q.k + '"><span class="ws-n">' + (i + 1) + '</span>' + h + '</div>';
   }
-  function page(p, th) {
-    var hs = hearts(p);
+  /* the story's page: 'all' (story and questions on one page), or, for a story that would then be set too small, 'story' (no questions)
+     and 'qs' (a second page: the questions, then a box to draw in) */
+  function page(p, th, part) {
+    var hs = hearts(p), foot2 = foot(p, 'Language Atlas · ' + D.band(p)[1] + ' · ' + D.count(p) + ' words');
+    if (part === 'qs') {
+      return '<div class="ws-page dc-page dc-qpage">' + head(p, th, 'Questions') + '<div class="dc-qs ws-grid">' + p.qs.map(question).join('') + '</div>' +
+        (p.qs.some(function (q) { return q.k === 'draw'; }) ?
+          '<section class="dc-own dc-own-w"><p class="ws-label">Write about the story</p><div class="dc-write"></div><div class="dc-write"></div><div class="dc-write"></div></section>' :
+          '<section class="dc-own"><p class="ws-label">Draw your favourite part of the story</p><div class="dc-draw"></div></section>') +
+        '<footer class="dc-foot"><p class="dc-reads"><span class="dc-hunt"><b>Word hunt</b> ' + esc(hunt(p)) + '</span></p>' + foot2 + '</footer></div>';
+    }
     return '<div class="ws-page dc-page dc-bK">' + head(p, th) +
       '<section class="dc-top"><div class="dc-sound"><p class="ws-label">Sound</p><p class="dc-focus' + (p.focus.length > 2 ? ' dc-many' : '') + '">' + p.focus.map(esc).join(' ') + '</p><p class="dc-key">' + marked(p.key, p) + '</p></div>' +
       '<div class="dc-warm"><p class="ws-label">Warm up · tap and blend</p><ul class="dc-words">' + p.words.map(function (w) { return '<li>' + marked(w, p) + '</li>'; }).join('') + '</ul></div></section>' +
       (hs.length ? '<p class="dc-hearts"><span class="ws-label">Heart words</span>' + hs.map(function (h) { return '<span class="dc-hw' + (h.fresh ? ' dc-new' : '') + '">' + HEART + esc(h.w) + '</span>'; }).join('') + '</p>' : '') +
-      '<figure class="dc-pic">' + D.scene(p.pic) + '</figure>' +
+      '<figure class="dc-pic">' + D.paint(p.art) + '</figure>' +
       '<div class="dc-text">' + p.text.map(function (para) { return '<p>' + esc(para) + '</p>'; }).join('') + '</div>' +
-      '<div class="dc-qs ws-grid">' + p.qs.map(question).join('') + '</div>' +
-      '<footer class="dc-foot"><p class="dc-reads"><b>Read it three times</b><i></i><i></i><i></i><span class="dc-hunt"><b>Word hunt</b> ' + esc(hunt(p)) + '</span></p>' + foot(p, 'Language Atlas · ' + D.band(p)[1] + ' · ' + D.count(p) + ' words') + '</footer></div>';
+      (part === 'story' ? '' : '<div class="dc-qs ws-grid">' + p.qs.map(question).join('') + '</div>') +
+      '<footer class="dc-foot"><p class="dc-reads"><b>Read it three times</b><i></i><i></i><i></i>' + (part === 'story' ? '<span class="dc-hunt">Questions on the next page</span>' : '<span class="dc-hunt"><b>Word hunt</b> ' + esc(hunt(p)) + '</span>') + '</p>' + foot2 + '</footer></div>';
   }
   /* after reading, the child goes back and underlines the step's words (a step can say it its own way: hunt) */
   function hunt(p) {
@@ -261,32 +267,52 @@
   /* one plain, calm look for every page (Noel): the site's own accent and face, an open book, no ornaments at the edges */
   var PLAIN = { acc: 'var(--accent)', font: 'var(--display)', mark: '<path d="M8 16 Q18 12 28 17 Q38 12 48 16 V44 Q38 40 28 45 Q18 40 8 44 Z M28 17 V45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>' };
   function themeOf() { return PLAIN; }
-  /* Draw the page ('page' or 'key') into el, a .ws-sheet box. The story is set as large as fits: short stories start at the
-     Kindergarten size (dc-bK), longer ones smaller (dc-b1, dc-b2); every size shrinks down to 77%, and the largest text that fits wins.
+  /* Draw the page ('page', 'qs' or 'key') into el, a .ws-sheet box. The story is set as large as fits: short stories start at the
+     Kindergarten size (dc-bK), longer ones smaller (dc-b1, dc-b2); every size can grow to 118% for a short story and shrinks down to 71%,
+     and the largest text that fits wins. When the questions would push the story below a good reading size (FLOOR), the story gets the
+     page to itself and the questions go on a second page ('qs'; for a story on one page, 'qs' draws nothing and hides el).
      Returns whether anything still runs off the page. */
-  var ZOOM = [1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8, 0.77];
-  var SIZES = [['K', 26], ['1', 22], ['2', 19.5]];
+  var ZOOM = [1.18, 1.12, 1.06, 1, 0.96, 0.92, 0.89, 0.86, 0.83, 0.8, 0.77, 0.74, 0.71];
+  var SIZES = [['K', 34], ['1', 29], ['2', 25]];
+  var FLOOR = [26, 24, 21];
+  var SPLIT = {};
+  function cls(p) { var n = D.count(p); return n <= 70 ? 0 : n <= 105 ? 1 : 2; }
   function tries(p, side) {
-    if (side === 'key') return ZOOM.map(function (z) { return ['', z]; });
-    var n = D.count(p), from = n <= 70 ? 0 : n <= 105 ? 1 : 2, out = [];
-    SIZES.slice(from).forEach(function (sz) { ZOOM.forEach(function (z) { out.push([sz[0], z, sz[1] * z]); }); });
+    if (side === 'key' || side === 'qs') return ZOOM.map(function (z) { return ['', z]; });
+    var out = [];
+    SIZES.slice(cls(p)).forEach(function (sz) { ZOOM.forEach(function (z) { out.push([sz[0], z, sz[1] * z]); }); });
     return out.sort(function (x, y) { return y[2] - x[2]; });
   }
-  D.render = function (el, p, side) {
-    var th = themeOf(p);
-    el.innerHTML = (side === 'key' ? key : page)(p, th);
-    var pg = el.firstChild, over, all = tries(p, side), i;
-    pg.style.setProperty('--acc', th.acc);
-    pg.style.setProperty('--face', th.font);
-    for (i = 0; i < all.length; i++) {
+  function fit(pg, all, floor) {
+    var over = true, i;
+    for (i = 0; i < all.length && !(floor && all[i][2] < floor); i++) {
       if (all[i][0]) pg.className = pg.className.replace(/ dc-b\w+/, ' dc-b' + all[i][0]);
       pg.style.setProperty('--z', all[i][1]);
-      over = $$('.dc-text, .dc-qs, .dc-kblock', pg).some(function (b) { return b.scrollHeight > b.clientHeight + 1 || b.scrollWidth > b.clientWidth + 1; }) ||
+      over = $$('.dc-text, .dc-qs, .dc-kblock, .dc-own', pg).some(function (b) { return b.scrollHeight > b.clientHeight + 1 || b.scrollWidth > b.clientWidth + 1; }) ||
         pg.scrollHeight > pg.clientHeight + 1;
       if (!over) break;
     }
     var t = all[Math.min(i, all.length - 1)];
     return { over: over, z: t[1], size: t[0] };
+  }
+  D.render = function (el, p, side) {
+    var th = themeOf(p), all = tries(p, side), code = D.code(p), r;
+    function draw(part) {
+      el.innerHTML = side === 'key' ? key(p, th) : page(p, th, part);
+      el.firstChild.style.setProperty('--acc', th.acc);
+      el.firstChild.style.setProperty('--face', th.font);
+      return el.firstChild;
+    }
+    el.hidden = false;
+    if (side === 'key') return fit(draw(), all);
+    if (side === 'qs') {
+      if (!SPLIT[code]) { el.innerHTML = ''; el.hidden = true; return { over: false, none: true }; }
+      return fit(draw('qs'), all);
+    }
+    r = fit(draw('all'), all, FLOOR[cls(p)]);
+    SPLIT[code] = r.over;
+    if (r.over) { r = fit(draw('story'), all); r.split = true; }
+    return r;
   };
 
   /* ---------- the tool: every step, and one page ---------- */
@@ -297,7 +323,7 @@
   function steps(root) {
     root.innerHTML = '<div class="dc-lib"><p class="dc-lede">' + D.all().length + ' short stories for ' + D.list.length + ' phonics steps, in teaching order. Every word can be sounded out with the steps before it, ' +
       'plus a few heart words. The steps follow Ontario\'s Language Foundations Continuum, by grade and by part, taught the Orton-Gillingham way. ' +
-      'Each prints on one page; turn on grown-up view for the answers and how to teach it.</p>' +
+      'Each prints on one page (a longer story puts its questions on a second page); turn on grown-up view for the answers and how to teach it.</p>' +
       BANDS.map(function (b) {
         var here = D.list.filter(function (p) { return p.band === b[0]; });
         return here.length ? '<section class="dc-band"><h2>' + b[1] + '</h2>' + PARTS.map(function (pt) {
@@ -318,7 +344,7 @@
       '<div class="dc-do"><button type="button" class="btn" data-print="page">Print the story</button>' +
       '<button type="button" class="btn alt ws-adult" data-print="key">Print the grown-up page</button>' +
       '<p class="ws-hint">On an iPad, tap Print, then Share, then Save to Files to keep a PDF.</p></div>' +
-      '<div class="ws-pages"><div class="ws-sheet" data-side="page"></div><div class="ws-sheet ws-adult" data-side="key"></div></div></div>';
+      '<div class="ws-pages"><div class="ws-sheet" data-side="page"></div><div class="ws-sheet" data-side="qs"></div><div class="ws-sheet ws-adult" data-side="key"></div></div></div>';
     document.documentElement.classList.add('ws-print');
     $$('[data-print]', root).forEach(function (b) {
       b.addEventListener('click', function () {

@@ -6,6 +6,7 @@ window.__page = {
     const W = window.innerWidth + 1;
     const e = [...root.querySelectorAll('*')].find(e => {
       if (e.closest('.tbl, .fig, .bar nav')) return false; /* these scroll sideways on purpose */
+      if (e.ownerSVGElement && getComputedStyle(e.ownerSVGElement).overflow !== 'visible') return false; /* a picture's own drawing, cut off at its frame */
       const b = e.getBoundingClientRect();
       return b.width && b.right > W && getComputedStyle(e).visibility !== 'hidden';
     });
