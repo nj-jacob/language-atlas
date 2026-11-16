@@ -30,12 +30,14 @@
       back and the answer key each fit on one page. The list and a passage open on a phone, an iPad and a laptop, and the key
       shows only in grown-up view.
   10. Decodable readers (tool box): every word on every page can be sounded out with the phonics steps taught so far, or is a
-      taught heart word (decodable.js works this out again); every page and its grown-up page are drawn with nothing off the page;
+      taught heart word (decodable.js works this out again); the stories use every Dolch sight word (dolch.js); every page and
+      its grown-up page are drawn with nothing off the page;
       the tool opens on a phone, an iPad and a laptop with no errors, and the grown-up page stays hidden unless grown-up view is on. */
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 const { chromium } = require('playwright');
 const startServer = require('./server');
 const decodable = require('./decodable');
+const dolch = require('./dolch');
 const spelling = require('./spelling');
 const hearts = require('./hearts');
 
@@ -1344,7 +1346,8 @@ async function checkPassages(browser, base, g) {
 /* ---------- 9. decodable readers (tool box, the same in every grade: checked once, in Grade 1) ---------- */
 async function checkDecodable(browser, base) {
   const where = 'decodable readers';
-  decodable.check(decodable.load(ROOT)).forEach(p => fail('tool box', p));
+  const pages = decodable.load(ROOT);
+  decodable.check(pages).concat(dolch.check(pages)).forEach(p => fail('tool box', p));
   const { ctx, page, errs } = await newPage(browser, base);
   await page.goto(base + '/grade1/index.html#tools/decodable');
   await page.waitForSelector('.dc-card');
