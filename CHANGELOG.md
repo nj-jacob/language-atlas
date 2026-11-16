@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-11-16
+- Decodable readers: far fewer beards (8 of 255 pictures) and headscarves (1), so the people look like a typical Ontario school or street.
+- Decodable readers, pilot for more variety: the 21 Grade 1 stories from FLOSS to end blends are rewritten as everyday stories on different topics (school, cooking, building, sports, a shopping trip, simple science, feelings, a job, a funny mix-up, weather, a trip to the dump), three different topics per step, with new pictures. A new check counts the Dolch sight words the stories use (285 of 315 so far) and fails if one goes missing.
 - Decodable readers: the people in the pictures now look like an everyday Ontario mix (families keep one look; stories whose names or setting point to a background keep theirs).
 - Decodable readers: every one of the 255 stories has its **own full-colour storybook picture** in place of the line drawing: 14 settings (meadow, forest, lake, shore, snow, town, farm, yard, park, den, kitchen, bedroom, classroom, shop) at four times of day and in four seasons, with children and grown-ups of many looks and about 120 animals, things, vehicles and buildings (`decodeart.js`, `decodeparts.js`). **Bigger text** (the story, warm-up words, questions and title). A longer story now has its page to itself and its questions go on a second page with a box to draw in, so the text stays big. The write-your-answer line is a plain line (some PDF viewers showed it as a pink box).
 
