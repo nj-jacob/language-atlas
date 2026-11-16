@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-16
+- Decodable readers, batch 5: 9 Grade 1 stories (igh to aw) rewritten as everyday stories (a high jump, soup at lunch, looking at the moon, a joke book, a cook at work, a clown at a party, a home-made gift, a noisy toy, snow melting in spring); the rest kept. Dolch sight words used: 303 of 315.
 - Decodable readers, batch 4: 12 Grade 1 stories (ar to oa/ow) rewritten as everyday stories (a party in the park, a go-cart, a storm at home, scoring a goal, a hair cut, play day, the mail carrier, feeding sheep, a bedtime story, bread for breakfast, growing a seed, a lost coat); 12 kept. Dolch sight words used: 297 of 315.
 - Decodable readers, batch 3: 12 Grade 1 long-vowel stories (a_e to ph) rewritten as everyday stories (a tag game, fixing a gate, a big slide, a lime drink, a note on the stove, a bus trip, melting cubes, a humming toy, a gusty walk, a bus driver, a messy desk, a family photo); the open-syllable and soft c/g stories kept. Dolch sight words used: 291 of 315.
 - Decodable readers, batch 2: 14 more Grade 1 stories (oll/ull to two-syllable words) rewritten as everyday stories (baking rolls, a vet, kick ball, a sink-or-float test, chores, a mechanic, a shoe shop, getting glasses, a bug bite, an art judge, a block bridge, the dentist, tennis); 7 good everyday stories kept. Dolch sight words used: 290 of 315.
