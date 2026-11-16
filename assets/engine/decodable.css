@@ -35,13 +35,14 @@
 .dc-art .k{stroke:var(--ink);stroke-width:1.7}
 .dc-art .t{stroke:var(--ink2);stroke-width:1}
 .dc-art .dot{fill:var(--ink)}
+.dc-colour{display:block}
 
 /* ---------- the printed page ---------- */
 .dc-page{padding:36px 54px 24px 60px}
 .dc-head{position:relative;padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
 .dc-head .ws-kick{padding-right:230px}
 .dc-name{position:absolute;right:0;top:0;width:210px}
-.dc-title{margin:8px 0 0;font-family:var(--face);font-size:36px;font-weight:700;line-height:1.08;color:var(--ink)}
+.dc-title{margin:8px 0 0;font-family:var(--face);font-size:40px;font-weight:700;line-height:1.08;color:var(--ink)}
 .dc-hl{color:var(--acc);font-weight:700}
 .dc-top{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;padding:10px 0 8px;border-bottom:1px solid var(--line2)}
 .dc-sound{display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px solid var(--acc);border-radius:14px;padding:6px 8px 10px;text-align:center}
@@ -50,30 +51,43 @@
 .dc-focus.dc-many{display:grid;grid-template-columns:auto auto;gap:0 12px;font-size:32px}
 .dc-key{font-size:18px;margin-top:4px!important}
 .dc-warm .ws-label{margin:0 0 6px!important}
-.dc-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px 14px;font-size:20px;line-height:1.32}
+.dc-words{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px 14px;font-size:23px;line-height:1.32}
 .dc-words li{border-bottom:1px dotted var(--line2);padding-bottom:1px}
-.dc-hearts{display:flex;flex-wrap:wrap;align-items:center;gap:3px 13px;padding:7px 0 0;font-size:15.5px}
+.dc-hearts{display:flex;flex-wrap:wrap;align-items:center;gap:3px 13px;padding:7px 0 0;font-size:17px}
 .dc-hearts .ws-label{margin:0 4px 0 0!important}
 .dc-hw{display:inline-flex;align-items:center;gap:5px}
 .dc-heart{width:14px;height:13px;fill:none;stroke:var(--acc);stroke-width:1.6}
 .dc-new .dc-heart{fill:var(--acc)}
-.dc-pic{margin:4px 0 0}
-.dc-pic .dc-art{height:calc(118px * var(--z, 1));width:100%}
-.dc-text{flex:1;min-height:0;overflow:hidden;padding:8px 0 4px;font-size:calc(26px * var(--z, 1));line-height:1.8}
-.dc-b1 .dc-text{font-size:calc(22px * var(--z, 1));line-height:1.65}
-.dc-b2 .dc-text{font-size:calc(19.5px * var(--z, 1));line-height:1.58}
+.dc-head,.dc-top,.dc-hearts,.dc-pic{flex:none}
+.dc-pic{margin:10px 0 2px}
+.dc-pic .dc-colour{width:100%;height:calc(172px * var(--z, 1));border-radius:14px;overflow:hidden}
+.dc-text{flex:1;min-height:0;overflow:hidden;padding:12px 0 4px;font-size:calc(34px * var(--z, 1));line-height:1.7}
+.dc-b1 .dc-text{font-size:calc(29px * var(--z, 1));line-height:1.62}
+.dc-b2 .dc-text{font-size:calc(25px * var(--z, 1));line-height:1.55}
 .dc-text p{margin:0 0 calc(8px * var(--z, 1))}
 .dc-qs{flex:none;padding-top:2px;row-gap:0}
 .dc-q{padding:6px 0 6px 28px}
-.dc-q .ws-qt{font-size:17px;line-height:1.35}
+.dc-q .ws-qt{font-size:19px;line-height:1.35}
 .dc-q-order,.dc-q-draw,.dc-q-write{grid-column:1/-1}
 .dc-q:last-child:nth-child(odd){grid-column:1/-1}
-.dc-opts{gap:4px 16px;font-size:17px}
+.dc-opts{gap:4px 16px;font-size:19px}
 .dc-opts .ws-opt{font-weight:400;padding:1px 12px;border:1.2px solid var(--line2)}
-.dc-order li{font-size:16px}
+.dc-order li{font-size:18px}
 .dc-order .ws-box{width:22px;min-width:22px;height:22px}
 .dc-draw{height:96px;margin-top:6px;border:1.2px dashed var(--line2);border-radius:10px}
-.dc-write{height:44px;background:repeating-linear-gradient(transparent 0 43px,var(--line2) 43px 44px)}
+.dc-write{height:48px;border-bottom:1.2px solid var(--line2)}
+.dc-qpage .dc-qs{padding-top:14px}
+.dc-qpage .dc-q{padding:12px 0 12px 34px}
+.dc-qpage .ws-qt{font-size:calc(24px * var(--z, 1))}
+.dc-qpage .dc-opts{font-size:calc(22px * var(--z, 1));gap:8px 18px}
+.dc-qpage .dc-order li{font-size:calc(21px * var(--z, 1))}
+.dc-qpage .dc-draw{height:150px}
+.dc-qpage .dc-write{height:60px}
+.dc-own{flex:1;display:flex;flex-direction:column;min-height:0;padding:14px 0 10px}
+.dc-own .ws-label{margin:0 0 8px!important}
+.dc-own .dc-draw{flex:1;height:auto;margin:0}
+.dc-own-w{flex:none}
+.dc-own-w .dc-write{height:64px}
 .dc-foot{flex:none;padding-top:8px;border-top:1px solid var(--ink)}
 .dc-reads{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2)}
 .dc-reads b{color:var(--ink);margin-right:4px}

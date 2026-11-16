@@ -236,7 +236,7 @@ function checkStory(p, si, at, heart, problems) {
     if (q.k === 'yn' && typeof q.a !== 'boolean') problems.push(where + ' question ' + (i + 1) + ': a yes or no question needs a: true or false');
     if ((q.k === 'draw' || q.k === 'write') && !q.a) problems.push(where + ' question ' + (i + 1) + ': needs a good answer (a) for the grown-up');
   });
-  if (!p.tip || !p.title || !Array.isArray(p.pic) || !p.pic.length) problems.push(where + ': needs a title, a picture (pic) and a tip for the grown-up');
+  if (!p.tip || !p.title || !p.art || !p.art.set) problems.push(where + ': needs a title, a picture (art) and a tip for the grown-up');
   const fresh = STEPS[at][1], review = REVIEW[p.id];
   const ok = (w, extra) => { const lw = w.toLowerCase(); if (heart.has(lw) || (extra && extra.has(lw))) return true; const r = when(w); return r && r.at <= at; };
   const kind = p.blend, later = kind ? KINDS.slice(KINDS.indexOf(kind) + 1) : [];

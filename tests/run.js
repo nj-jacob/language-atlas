@@ -100,7 +100,7 @@ function repoRules() {
   /* Canadian spelling in everything a child or parent reads */
   for (const f of files.filter(f => /\.(html|js|md)$/.test(f))) {
     const lines = fs.readFileSync(f, 'utf8').split('\n');
-    lines.forEach((ln, i) => { const m = ln.match(US_SPELLING); if (m && !/\bcolor-scheme\b|\bcolor-mix\b|aria-|role=/.test(ln)) fail(rel(f) + ':' + (i + 1), 'uses US spelling "' + m[0] + '". Use Canadian spelling (colour, centre, neighbour, favourite, travelled, grey).'); });
+    lines.forEach((ln, i) => { const m = ln.match(US_SPELLING); if (m && !/\bcolor-scheme\b|\bcolor-mix\b|\bstop-color\b|aria-|role=/.test(ln)) fail(rel(f) + ':' + (i + 1), 'uses US spelling "' + m[0] + '". Use Canadian spelling (colour, centre, neighbour, favourite, travelled, grey).'); });
   }
 }
 
@@ -1355,12 +1355,14 @@ async function checkDecodable(browser, base) {
     document.body.appendChild(box);
     D.all().forEach(p => {
       const name = p.id + (p.s > 1 ? ' story ' + p.s : '');
-      ['page', 'key'].forEach(side => {
+      ['page', 'qs', 'key'].forEach(side => {
         const r = D.render(box, p, side), text = box.textContent;
-        if (r.over) out.push(name + ': ' + (side === 'key' ? 'the grown-up page' : 'the page') + ' runs off the paper');
+        if (r.over) out.push(name + ': ' + ({ key: 'the grown-up page', qs: 'the questions page' }[side] || 'the page') + ' runs off the paper');
         if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(text)) out.push(name + ': shows undefined or NaN');
       });
-      p.pic.forEach(n => { if (!D.pics[n]) out.push(name + ': there is no picture called ' + n); });
+      const art = p.art || {};
+      if (!D.art.sets[art.set]) out.push(name + ': needs a picture (art) with a setting from the picture kit, not ' + art.set);
+      (art.items || []).forEach(it => { if (!D.art.parts[it[0]]) out.push(name + ': its picture has no part called ' + it[0]); });
     });
     box.remove();
     const more = D.list.filter(p => p.stories.length > 1)[0];
