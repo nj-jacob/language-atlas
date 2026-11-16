@@ -582,7 +582,7 @@ Atlas.decodable.more('cons-k', {
     'Kim has a rip in a top. Nan has a kit to fix a rip. Nan got a pin.',
     'Nan did a bit, and Kim did a bit. Kev had a rip in his bag. Nan let the kid fix it.',
     '"We can fix it!" said Kev. Kev and Kim got a big hug.'],
-  art: { set: 'den', items: [['adult', 260, { skin: 0, hair: 'bun', hairc: 'grey', top: '#7a5c8c', glasses: true, pose: 'hold' }], ['kid', 400, { skin: 0, hair: 'long', hairc: 'brown', top: '#c96a7a', flip: true }], ['kid', 500, { skin: 0, hair: 'short', hairc: 'brown', top: '#5d7a4e', flip: true }], ['bag', 600]] },
+  art: { set: 'bedroom', items: [['adult', 260, { skin: 0, hair: 'bun', hairc: 'grey', top: '#7a5c8c', glasses: true, pose: 'hold' }], ['kid', 400, { skin: 0, hair: 'long', hairc: 'brown', top: '#c96a7a', flip: true }], ['kid', 500, { skin: 0, hair: 'short', hairc: 'brown', top: '#5d7a4e', flip: true }], ['bag', 600]] },
   qs: [
     { k: 'choice', q: 'What did Kim have a rip in?', opts: ['a top', 'a bag', 'a hat'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Who did Kev and Kim go to see?', opts: ['Nan', 'Dad', 'a vet'], a: 0, code: 'C1.1' },
@@ -638,7 +638,7 @@ Atlas.decodable.more('cons-l', {
     '"Let me have a go," said Liz. Len did not let Liz.',
     'Mom sat Len on a lap. "Let Liz have a go," said Mom.',
     'Len let Liz have the jet. Len and Liz had a lot of fun.'],
-  art: { set: 'den', items: [['rug', 360], ['kid', 260, { skin: 1, hair: 'short', hairc: 'brown', top: '#3e6d9c', pose: 'hold' }], ['kid', 400, { skin: 1, hair: 'braids', hairc: 'brown', top: '#c96a7a', mood: 'sad', flip: true }], ['adult', 560, { skin: 1, hair: 'long', hairc: 'brown', top: '#8fb36a', flip: true }]] },
+  art: { set: 'bedroom', items: [['rug', 360], ['kid', 260, { skin: 1, hair: 'short', hairc: 'brown', top: '#3e6d9c', pose: 'hold' }], ['kid', 400, { skin: 1, hair: 'braids', hairc: 'brown', top: '#c96a7a', mood: 'sad', flip: true }], ['adult', 560, { skin: 1, hair: 'long', hairc: 'brown', top: '#8fb36a', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Len have?', opts: ['a red jet', 'a red hat', 'a lid'], a: 0, code: 'C1.1' },
     { k: 'choice', q: 'Why was Liz sad?', opts: ['She did not have a jet.', 'She had a cut.', 'She was hot.'], a: 0, code: 'C3.2' },
@@ -1051,7 +1051,7 @@ Atlas.decodable.more('cons-y', {
     '"Yes, you can," said Mom. Yaz had a go. Yaz sat on the rug.',
     'The pup did a yip. Yaz got up. Hop, hop, hop! "Yes!" said Yaz.',
     '"Yum! You get a bun," said Mom.'],
-  art: { set: 'den', items: [['rug', 360], ['kid', 330, { skin: 1, hair: 'puffs', hairc: 'brown', top: '#e2b84f', pose: 'wave' }], ['pup', 450, { colour: '#c99a5e' }], ['adult', 570, { skin: 1, hair: 'long', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
+  art: { set: 'bedroom', items: [['rug', 360], ['kid', 330, { skin: 1, hair: 'puffs', hairc: 'brown', top: '#e2b84f', pose: 'wave' }], ['pup', 450, { colour: '#c99a5e' }], ['adult', 570, { skin: 1, hair: 'long', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
     { k: 'choice', q: 'What did Yaz do on one leg?', opts: ['hop', 'sit', 'nap'], a: 0, code: 'C1.1' },
     { k: 'yn', q: 'Yaz did it.', a: true, code: 'C1.1' },
@@ -3577,17 +3577,17 @@ Atlas.decodable.add({
 });
 /* step 52, story 2 */
 Atlas.decodable.more('ei-eigh', {
-  words: ['survey', 'reindeer', 'eighty', 'grey', 'prey', 'eighteen', 'they', 'weigh', 'rein', 'beige', 'hey', 'convey'],
-  title: 'The Reindeer Survey',
-  text: ['In spring, Ada and her Uncle Jim went out on the land near Inuvik to do a survey of the reindeer. They had to count the herd and check on the little calves.',
-    'From the top of a hill, they could see the herd. Some reindeer were brown, and some were grey. "Eighty, eighty-one, eighty-two," Ada said as she counted.',
-    'Then Uncle Jim pointed. A big bear was on the ridge. "The calves are its prey," he said. But the herd bunched up with the calves in the middle, and the bear trotted off.',
-    'When they were done, Ada had a stiff neck. "Three hundred and eighteen," she said, and Uncle Jim wrote it down.'],
-  art: {set: 'meadow', season: 'spring', items: [['sun', 120, {y: 34}], ['kid', 220, {skin: 3, hair: 'long', coat: '#2f8f7c', pose: 'hold'}], ['adult', 290, {skin: 3, hair: 'short', coat: '#c0573e', hat: 'cap', hatc: '#2b2622'}], ['deer', 420, {antlers: true, colour: '#8a7058', s: 0.8}], ['deer', 500, {antlers: true, colour: '#9a948a', s: 0.75, flip: true}], ['deer', 560, {fawn: true, s: 0.6}], ['bear', 110, {s: 0.4, y: 62}]]},
+  words: ['eight', 'weigh', 'weighs', 'weighed', 'weight', 'neighbour', 'freight', 'grey', 'they', 'sleigh'],
+  title: 'The Heavy Parcel',
+  text: ['Our neighbour Ray had a big grey box to mail to his grandson in Calgary. It was too heavy for him to lift, so Dad and I helped.',
+    'At the post office, they let us put it on the scale. "It weighs eight kilograms," said the clerk. "That is a lot of weight!"',
+    '"It is eight jars of my plum jam," said Ray, "and a sleigh bell." The clerk said, "Then we must pack it well, or the jars might break."',
+    'We put paper around each jar. Then the box weighed a bit more. Ray paid, and they sent it off on a freight truck. "He will get it in eight days," said Ray.'],
+  art: { set: 'shop', items: [['table', 330], ['box', 330, { y: -62 }], ['adult', 220, { skin: 0, hair: 'bald', top: '#7a5c8c', glasses: true }], ['kid', 430, { skin: 1, hair: 'short', hairc: 'brown', top: '#e2b84f', flip: true }], ['adult', 560, { skin: 1, hair: 'short', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'All of the reindeer were grey.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'What is the story about?', opts: ['counting a reindeer herd', 'a trip to the lake', 'a lost bear'], a: 0, code: 'C2.6' },
-    { k: 'write', q: 'Why did the herd bunch up?', a: 'To keep the calves safe from the bear, in the middle of the herd.', code: 'C3.2' }
+    { k: 'choice', q: 'How much did the box weigh at first?', opts: ['eight kilograms', 'two kilograms', 'eighty kilograms'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did they put paper around each jar?', opts: ['so the jars would not break', 'to make the box heavy', 'to hide the jam'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'The box went on a freight truck.', a: true, code: 'C1.1' }
   ]
 });
 /* step 52, story 3 */
@@ -3640,17 +3640,17 @@ Atlas.decodable.more('ou-ough', {
 });
 /* step 53, story 3 */
 Atlas.decodable.more('ou-ough', {
-  words: ['caribou', 'brought', 'soup', 'thought', 'fought', 'group', 'youth', 'ought', 'bought', 'sought', 'thoughts'],
-  title: 'Waiting for the Caribou',
-  text: ['Every fall, the caribou cross the river near Baker Lake. This year, Lucy\'s grandpa brought her to see them. They brought a tent, a stove and a pot of fish soup.',
-    'They waited on the hill for a long time. Lucy thought the caribou ought to be there by now. "They will come," said Grandpa. "My dad sat on this hill with me, the same way."',
-    'At last, a small group came over the hill. Then a big one came, and the whole hill was full of caribou. Two big bulls fought with their antlers, and then trotted off.',
-    'The caribou swam the river, one after the next. Lucy was still for a long time. Then she thought of her own kids one day, sitting on this hill with her.'],
-  art: {set: 'lake', season: 'autumn', items: [['tent', 110, {colour: '#c79a6b'}], ['pot', 190], ['adult', 250, {skin: 3, hair: 'short', hairc: 'grey', coat: '#4f6d8a'}], ['kid', 320, {skin: 3, hair: 'braids', coat: '#c0573e'}], ['deer', 450, {antlers: true, s: 0.55, y: 44, colour: '#8a7058'}], ['deer', 530, {antlers: true, s: 0.5, y: 50, colour: '#9a948a'}], ['deer', 610, {s: 0.5, y: 44, colour: '#7d6650'}]]},
+  words: ['coupon', 'soup', 'group', 'youth', 'bought', 'thought', 'ought', 'brought', 'fought', 'sought'],
+  title: 'The Soup Coupon',
+  text: ['Mom found a coupon in the paper. It said: Two cans of soup for the price of one. "We ought to use this," she said. So we brought it to the shop.',
+    'I thought the soup would be on the top shelf, but it was not. A man who works at the shop helped us. "The soup is in the next row," he said.',
+    'We bought two cans of tomato soup and two cans of chicken soup. At the till, Mom gave the clerk the coupon, and we paid for just one can of each.',
+    'That night, my youth group came over, and we made a big pot of soup for the whole group. I thought it was the best soup ever.'],
+  art: { set: 'shop', items: [['shelf', 200], ['shelf', 330], ['adult', 440, { skin: 2, hair: 'long', top: '#c0473e', pose: 'hold' }], ['kid', 530, { skin: 2, hair: 'short', top: '#5d7a4e', flip: true }], ['adult', 640, { skin: 0, hair: 'short', hairc: 'brown', top: '#3e6d9c', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Lucy and Grandpa saw the caribou cross the river.', a: true, code: 'C1.1' },
-    { k: 'choice', q: 'Who sat on this hill with Grandpa when he was little?', opts: ['his dad', 'his bulls', 'his group'], a: 0, code: 'C1.1' },
-    { k: 'choice', q: 'What did Lucy think of at the end?', opts: ['a pot of fish soup', 'her own kids one day', 'a trip to the zoo'], a: 1, code: 'C3.2' }
+    { k: 'choice', q: 'What did Mom find in the paper?', opts: ['a coupon', 'a map', 'a letter'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did they pay for just one can of each?', opts: ['They had a coupon.', 'The cans were small.', 'The man was kind.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the big pot of soup.', a: 'A big pot of soup with children around it. Ask the child how a coupon saves money.', code: 'C1.4' }
   ]
 });
 Atlas.decodable.add({
@@ -3766,32 +3766,32 @@ Atlas.decodable.add({
 });
 /* step 56, story 2 */
 Atlas.decodable.more('affix-more', {
-  words: ['preheat', 'misread', 'sweetness', 'fixable', 'reddish', 'misspell', 'likeable', 'sadness', 'pretest', 'foolish', 'readable'],
-  title: 'Bannock with Kokum',
-  text: ['One cold day in Thunder Bay, Kokum was teaching Mason to make bannock. "First, we preheat the stove," she said. "Then we mix the flour and the baking powder."',
-    'Mason read the recipe card. He misread one line and put in a cup of sugar, not a spoonful! The mix looked sticky and a bit yellowish.',
-    'Kokum laughed. "That is a sweet mistake. But it is fixable. We can make two pans, one sweet and one plain."',
-    'The bannock came out puffy and golden brown. Mason\'s dad liked the sweetness so much that he ate three big chunks. "Next time, I will not misread the card," said Mason. "Next time, you can make it sweet on purpose."'],
-  art: {set: 'kitchen', season: 'winter', items: [['stove', 380], ['pan', 380, {y: 70}], ['adult', 280, {skin: 2, hair: 'long', hairc: 'grey', glasses: true, top: '#2f8f7c'}], ['kid', 480, {skin: 2, hair: 'short', top: '#d9774b', flip: true, pose: 'hold'}], ['adult', 580, {skin: 2, hair: 'short', top: '#4f6d8a', flip: true}]]},
+  words: ['preheat', 'misread', 'mistake', 'kindness', 'sweetness', 'foolish', 'goldish', 'enjoyable', 'reddish'],
+  title: 'The Peppery Muffins',
+  text: ['On Sunday, Bella and her dad made blueberry muffins. "First, we preheat the stove," said Dad.',
+    'Bella read the card and mixed the milk, the eggs and the oats. But she misread the card! She put in a big spoon of pepper in place of a big spoon of spice.',
+    'Dad tasted the mix and made a funny face. "This will not be enjoyable," he said. Bella felt foolish. "It was a mistake," said Dad with kindness. "We can start again."',
+    'This time Bella checked the card twice. The muffins came out a goldish brown. The kitchen was filled with sweetness.'],
+  art: { set: 'kitchen', items: [['stove', 180], ['table', 380], ['bun', 360, { y: -60 }], ['bun', 395, { y: -60 }], ['kid', 320, { skin: 0, hair: 'braids', hairc: 'brown', top: '#c96a7a', pose: 'hold' }], ['adult', 500, { skin: 0, hair: 'short', hairc: 'blond', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What did Mason misread?', opts: ['the card', 'a book', 'a map'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Kokum was cross with Mason.', a: false, code: 'C3.2' },
-    { k: 'choice', q: 'Which word ends like sweetness?', opts: ['sadness', 'sweeter', 'sweetly'], a: 0, code: 'C3.1' }
+    { k: 'choice', q: 'What did Bella misread?', opts: ['the card', 'a book', 'a map'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What did Dad show when Bella made a mistake?', opts: ['kindness', 'sadness', 'madness'], a: 0, code: 'C3.2' },
+    { k: 'order', q: 'Number the story in order.', items: ['Dad said to preheat the stove.', 'Bella put in the pepper.', 'The muffins came out goldish brown.'], show: [2, 0, 1], code: 'C3.3' }
   ]
 });
 /* step 56, story 3 */
 Atlas.decodable.more('affix-more', {
-  words: ['darkness', 'foolish', 'preheated', 'greenish', 'pinkish', 'softness', 'stillness', 'kindness', 'mislead', 'bendable', 'misplace'],
-  title: 'Lights in the Darkness',
-  text: ['Ella was at her uncle\'s cabin near Yellowknife. "Tonight we will stay up late to see the northern lights," said Uncle Ben.',
-    'At midnight, Ella put on her snow pants, her toque and mitts. Uncle Ben had preheated the truck, so it was warm inside. They drove to a hill far from town. In the darkness, the stars were bright. Ella felt sleepy and a bit grumpy. "This is foolish," she said.',
-    'Then the sky began to glow. A greenish light swept across the sky, then a pinkish one. The lights danced. The stillness was so deep that Ella heard her own breath.',
-    '"I take it back," she said softly. "It was not foolish at all." Ella will never forget that night.'],
-  art: {set: 'snow', time: 'night', season: 'winter', items: [['aurora', 350, {y: 50}], ['stars', 350, {y: 50}], ['truck', 180, {colour: '#7a2f27'}], ['kid', 360, {skin: 0, hair: 'braids', hairc: 'auburn', coat: '#7a5c8c', hat: 'toque', hatc: '#e2b84f', mood: 'oh'}], ['adult', 440, {skin: 0, hair: 'short', hairc: 'auburn', coat: '#3f5a7a', hat: 'toque', hatc: '#c0573e'}]]},
+  words: ['preschool', 'shyness', 'reddish', 'misread', 'misbehave', 'silliness', 'likable', 'happiness', 'kindness'],
+  title: 'Reading to the Preschool',
+  text: ['Our class went to read to the preschool kids next door. I felt a bit of shyness.',
+    'My buddy was a little boy named Sam. He had a reddish jacket and a big smile. I read him a book about a dog who likes to misbehave.',
+    'Sam giggled at the silliness of the dog. When I misread a word, he did not mind.',
+    'At the end, Sam gave me a hug. "You are a likable reader," said his teacher. I felt happiness all day.'],
+  art: { set: 'classroom', items: [['book', 330, { y: -40 }], ['kid', 280, { skin: 1, hair: 'long', hairc: 'brown', top: '#8fb36a' }], ['kid', 380, { skin: 0, hair: 'curly', hairc: 'blond', top: '#c0473e', s: 0.8, flip: true }], ['adult', 540, { skin: 2, hair: 'bun', top: '#7a5c8c', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'What colour was the first light?', opts: ['greenish', 'pinkish', 'reddish'], a: 0, code: 'C1.1' },
-    { k: 'yn', q: 'Ella was glad she went in the end.', a: true, code: 'C3.2' },
-    { k: 'yn', q: 'Uncle Ben preheated the truck.', a: true, code: 'C1.1' }
+    { k: 'choice', q: 'Who did the class read to?', opts: ['the preschool kids', 'a group of moms', 'the teacher'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did Sam giggle?', opts: ['The dog in the book was silly.', 'He fell.', 'The book was sad.'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'Sam gave the reader a hug.', a: true, code: 'C1.1' }
   ]
 });
 Atlas.decodable.add({
@@ -3829,18 +3829,17 @@ Atlas.decodable.more('schwa', {
 });
 /* step 57, story 3 */
 Atlas.decodable.more('schwa', {
-  words: ['tundra', 'parka', 'Canada', 'Manitoba', 'across', 'ahead', 'afraid', 'about', 'along', 'asleep', 'canoe', 'Alberta'],
-  title: 'Bears on the Tundra',
-  text: ['Hana lives in Winnipeg, Manitoba. Each fall, she and her aunt take the train north to the town of Churchill. People come from across Canada to see the polar bears there.',
-    'This year, Hana had a new red parka, and the wind was so cold that she needed it. They set off across the tundra in a big bus with huge tires. The land was flat and white. Hana held her camera and looked ahead.',
-    '"Polar bears can run fast," said the driver. "But you will be safe in this bus. Do not be afraid." Hana was not afraid. She was excited.',
-    'For a long time, they saw nothing but snow. Hana was about to give up. Then her aunt pointed. A mother bear and two cubs were walking along the shore. The cubs rolled around and swatted at each other in the snow.',
-    'Hana took a picture. That night, she fell asleep and dreamed about the cubs.'],
-  art: {set: 'shore', season: 'winter', items: [['bus', 170, {colour: '#e2b84f'}], ['kid', 330, {skin: 1, hair: 'long', coat: '#c0573e', hat: 'toque', hatc: '#f1ebdf', pose: 'hold'}], ['bear', 470, {fur: '#ece6d6'}], ['cub', 560, {fur: '#ece6d6'}], ['cub', 640, {fur: '#e3dccb', flip: true}]]},
+  words: ['sofa', 'pasta', 'extra', 'vanilla', 'banana', 'panda', 'awake', 'asleep', 'afraid', 'about'],
+  title: 'Asleep on the Sofa',
+  text: ['Nora came to sleep over at Ava\'s house. Ava\'s dad made pasta with extra cheese, and then they had vanilla ice cream with banana slices.',
+    'After supper, the girls sat on the sofa to watch a film about a panda. They said they would stay awake all night.',
+    'Nora was a bit afraid of the dark, so Ava\'s dad left a lamp on. The girls chatted about school and their pets.',
+    'When Dad came to check, both girls were asleep on the sofa, with the film still on. He put a blanket over them and turned the film off.'],
+  art: { set: 'bedroom', time: 'night', items: [['lamp', 180], ['rug', 360], ['kid', 320, { skin: 0, hair: 'long', hairc: 'blond', top: '#7a5c8c' }], ['kid', 410, { skin: 1, hair: 'puffs', hairc: 'brown', top: '#e2b84f', flip: true }], ['adult', 580, { skin: 0, hair: 'short', hairc: 'brown', top: '#4f6d8a', flip: true }]] },
   qs: [
-    { k: 'choice', q: 'Why do people come to Churchill from across Canada?', opts: ['to see the polar bears', 'to swim in the lake', 'to visit a zoo'], a: 0, code: 'C2.6' },
-    { k: 'yn', q: 'Hana was afraid of the bears.', a: false, code: 'C3.2' },
-    { k: 'choice', q: 'What did Hana see along the shore?', opts: ['a mother bear and two cubs', 'a moose and a fox', 'a red panda'], a: 0, code: 'C1.1' }
+    { k: 'choice', q: 'What did they eat for supper?', opts: ['pasta', 'soup', 'fish'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Where did the girls fall asleep?', opts: ['on the sofa', 'in a tent', 'in a canoe'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Nora was a bit afraid of the dark.', a: true, code: 'C1.1' }
   ]
 });
 Atlas.decodable.add({
@@ -3910,17 +3909,17 @@ Atlas.decodable.add({
 });
 /* step 59, story 2 */
 Atlas.decodable.more('prefix-g3', {
-  words: ['overhead', 'midnight', 'overjoyed', 'overcast', 'midway', 'nonstop', 'overgrown', 'midsummer', 'overlook', 'underline', 'subzero'],
-  title: 'Lights at Midnight',
-  text: ['Lena and her family were camping overnight on Uncle Remi\'s farm on the Prairies. Uncle Remi said the northern lights might come out at midnight.',
-    'But the sky was overcast. Thick clouds hung overhead, and Lena felt sad. "Do not give up yet," said Mom. "Clouds can move fast out here."',
-    'Lena tried hard to stay up. She drank hot cocoa. Midway through the night, a cold wind came up. The clouds slid off to the east, and the stars came out.',
-    'Then, at midnight, green and pink lights rippled overhead. They swirled and danced nonstop. Lena was overjoyed. Uncle Remi said that his grandmother taught him to be calm and still under the lights, and not to whistle at them. So Lena sat still in her sleeping bag, watching, until she fell asleep.'],
-  art: {set: 'farm', time: 'night', season: 'autumn', items: [['aurora', 350, {y: 46}], ['stars', 350, {y: 50}], ['tent', 590, {lit: true, colour: '#d9774b'}], ['kid', 230, {skin: 1, hair: 'curly', hairc: 'brown', coat: '#7aa5c4', pose: 'hold'}], ['cup', 244, {y: 40, hot: true}], ['adult', 300, {skin: 1, hairc: 'blond', hair: 'long', coat: '#c96a7a'}], ['adult', 380, {skin: 1, hair: 'short', hairc: 'brown', coat: '#5a6a3a', flip: true}]]},
+  words: ['overdue', 'overlook', 'overlooked', 'midday', 'midweek', 'nonfiction', 'submarine', 'underneath', 'subway', 'midnight'],
+  title: 'The Overdue Book',
+  text: ['Kai found a book underneath his bed. It was the library book about submarines! It was two weeks overdue. "Oh no," said Kai. "I overlooked it."',
+    'At midday, Kai and his mom went to the library. Kai felt uneasy. But the woman at the desk smiled. "This nonfiction book is one that lots of kids want," she said.',
+    'She did not charge him. "Just bring it back on time," she said. Kai was so glad that he signed up for the midweek reading club.',
+    'Now Kai puts his library books on a shelf, not underneath the bed. And he puts a sticky note on the fridge.'],
+  art: { set: 'classroom', items: [['shelf', 200], ['table', 400], ['book', 400, { y: -62 }], ['kid', 300, { skin: 2, hair: 'short', top: '#3e6d9c', pose: 'hold' }], ['adult', 500, { skin: 0, hair: 'long', hairc: 'red', top: '#8fb36a', glasses: true, flip: true }]] },
   qs: [
-    { k: 'yn', q: 'The sky was clear all night.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'What made the clouds go away?', opts: ['a cold wind', 'the fire', 'the rain'], a: 0, code: 'C1.1' },
-    { k: 'write', q: 'Why did Lena sit still under the lights?', a: 'Uncle Remi\'s grandmother taught him to be calm and still under the lights, so Lena did too.', code: 'C3.2' }
+    { k: 'choice', q: 'Where did Kai find the book?', opts: ['underneath his bed', 'in the van', 'at school'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'What kind of book was it?', opts: ['nonfiction', 'a joke book', 'a cook book'], a: 0, code: 'C1.1' },
+    { k: 'yn', q: 'Kai signed up for the midweek reading club.', a: true, code: 'C1.1' }
   ]
 });
 /* step 59, story 3 */
@@ -3957,31 +3956,31 @@ Atlas.decodable.add({
 });
 /* step 60, story 2 */
 Atlas.decodable.more('suffix-g3', {
-  words: ['festive', 'nervous', 'joyous', 'musical', 'generous', 'seasonal', 'traditional', 'comical', 'dramatic', 'thunderous', 'attractive'],
-  title: 'The Festive Drum',
-  text: ['It was Lunar New Year, and Chinatown in Vancouver looked festive. Red lanterns hung over the streets, and the shops were packed with people. The shop owners were generous and handed out sweet buns.',
-    'Lin was in a dragon dance group. She did not dance; she played the big drum. Lin felt nervous. What if she lost the beat?',
-    'Then the musical parade began. Boom, boom, boom went Lin\'s drum. The long dragon bobbed and swirled to the beat, and its jaw snapped in a comical way. The crowd clapped and cheered. It was a joyous sound.',
-    'At the end, Grandma Wu gave Lin a red envelope and a hug. "You did not look nervous at all," she said. Lin grinned. "I was," she said, "but the drum was louder than my nerves."'],
-  art: {set: 'town', time: 'dusk', season: 'winter', items: [['stall', 560, {colour: '#c0573e'}], ['kid', 290, {skin: 1, hair: 'long', top: '#c0573e', pose: 'hold'}], ['drum', 340, {colour: '#c0573e'}], ['adult', 430, {skin: 1, hair: 'bun', hairc: 'grey', top: '#e2b84f', flip: true}], ['bun', 470, {y: 60}]]},
+  words: ['magic', 'musical', 'comical', 'active', 'creative', 'nervous', 'joyous', 'famous', 'fantastic', 'supportive'],
+  title: 'The Magic Trick',
+  text: ['Our school put on a talent show. Max wanted to do a magic trick, but he was nervous. "What if my trick goes wrong?" he said.',
+    'His big sister was supportive. "Be creative, and keep at it," she said. Max worked on his trick every day.',
+    'On the night of the show, there was a musical act, a comical skit and an active dance. Then it was Max\'s turn. He held up a red scarf, and he made it go into a hat. Then he pulled out a toy rabbit!',
+    'The kids gave a joyous cheer. "That was fantastic!" said his sister. Max did not feel nervous now. He felt famous.'],
+  art: { set: 'classroom', items: [['hat', 330, { y: -50 }], ['kid', 300, { skin: 0, hair: 'short', hairc: 'brown', top: '#c0473e', pose: 'wave' }], ['rabbit', 400], ['kid', 520, { skin: 0, hair: 'long', hairc: 'brown', top: '#e2b84f', flip: true }], ['kid', 610, { skin: 3, hair: 'short', top: '#5d7a4e', flip: true }]] },
   qs: [
-    { k: 'yn', q: 'Lin danced in the dragon.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'How did Lin feel at the start?', opts: ['nervous', 'sleepy', 'cross'], a: 0, code: 'C1.1' },
-    { k: 'write', q: 'When did you feel nervous? What did you do?', a: 'The child\'s own idea, such as a first day at school or a game. Ask them to read it back to you.', code: 'C2.5' }
+    { k: 'choice', q: 'What did Max do at the show?', opts: ['a magic trick', 'a dance', 'a musical act'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'How did Max feel before the show?', opts: ['nervous', 'sleepy', 'angry'], a: 0, code: 'C3.2' },
+    { k: 'yn', q: 'The kids gave a joyous cheer.', a: true, code: 'C1.1' }
   ]
 });
 /* step 60, story 3 */
 Atlas.decodable.more('suffix-g3', {
-  words: ['national', 'natural', 'massive', 'protective', 'dangerous', 'enormous', 'historic', 'attentive', 'mountainous', 'scenic', 'active', 'arrival'],
-  title: 'Bears on the Trail',
-  text: ['Ines and her dad went to Banff National Park in Alberta. The land was mountainous and scenic. Massive peaks rose up to the clouds, and the lakes were blue-green.',
-    'One day, they hiked up a trail. Ines was the first to see them: a grizzly bear and two cubs in a patch of berries, far up the hill. The bear was enormous.',
-    'A park ranger was on the trail. "Bears are most active in the summer," she said. "A mother bear is very protective of her cubs. It is dangerous to get close." She asked them to back away slowly and stay attentive.',
-    'Ines and her dad stepped back, and they watched with binoculars from a long way off. Then the bears went off in the trees. That night, Ines wrote in her trip book: "We saw bears in their natural home, and we kept them safe by keeping our distance."'],
-  art: {set: 'forest', items: [['bush', 520, {berries: true, s: 0.6, y: 44}], ['bear', 470, {s: 0.45, y: 48, fur: '#8a6440'}], ['cub', 540, {s: 0.45, y: 48, fur: '#9a7450'}], ['adult', 200, {skin: 2, hair: 'short', hairc: 'brown', coat: '#3f6f8a'}], ['kid', 270, {skin: 2, hair: 'long', coat: '#d9774b', pose: 'hold'}], ['adult', 380, {skin: 0, hair: 'bun', hairc: 'blond', top: '#7a9a5a', hat: 'cap', hatc: '#5a6a3a', flip: true}]]},
+  words: ['electric', 'metallic', 'original', 'creative', 'massive', 'magnetic', 'comical', 'active'],
+  title: 'The Solar Car',
+  text: ['At the fair, Hana showed her project. It was a model of a solar car. It had a small motor and a metallic panel on top.',
+    '"Is it electric?" asked a judge. "Yes," said Hana. "The panel gets its power from the sun. It is an original plan." "It is very creative," said the judge.',
+    'Hana set the car in a sunny spot. It moved a little, then it stopped. "Oh no," said Hana. A massive cloud had gone over the sun.',
+    'When the sun came back, the car zoomed across the table. The judge clapped. "Well done!"'],
+  art: { set: 'classroom', items: [['table', 360], ['truck', 360, { y: -62, s: 0.4 }], ['kid', 260, { skin: 1, hair: 'braids', top: '#3e6d9c', pose: 'wave' }], ['adult', 500, { skin: 0, hair: 'short', hairc: 'grey', top: '#5d7a4e', glasses: true, flip: true }]] },
   qs: [
-    { k: 'choice', q: 'Why did the ranger say to back away?', opts: ['to keep the cubs safe', 'the trail was closed', 'it was going to rain'], a: 0, code: 'C3.2' },
-    { k: 'yn', q: 'Ines and her dad went up close to the cubs.', a: false, code: 'C1.1' },
-    { k: 'choice', q: 'What is the story mostly about?', opts: ['keeping safe near bears', 'a trip in a car', 'picking berries'], a: 0, code: 'C2.6' }
+    { k: 'choice', q: 'What did Hana make?', opts: ['a solar car', 'a robot', 'a kite'], a: 0, code: 'C1.1' },
+    { k: 'choice', q: 'Why did the car stop?', opts: ['A cloud went over the sun.', 'It ran out of gas.', 'Hana hit it.'], a: 0, code: 'C3.2' },
+    { k: 'draw', q: 'Draw the solar car in the sun.', a: 'A small car with a panel on top, in the sun. Ask the child what the panel does.', code: 'C1.4' }
   ]
 });
